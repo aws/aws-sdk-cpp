@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 
-namespace Aws
-{
-namespace BCMRecommendedActions
-{
-class BCMRecommendedActionsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace BCMRecommendedActions {
+class BCMRecommendedActionsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace BCMRecommendedActions
-} // namespace Aws
+}  // namespace BCMRecommendedActions
+}  // namespace Aws

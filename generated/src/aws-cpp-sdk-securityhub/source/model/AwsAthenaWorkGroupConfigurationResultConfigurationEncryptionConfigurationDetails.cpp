@@ -3,60 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails(JsonView jsonValue)
-{
+AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::
+    AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails& AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EncryptionOption"))
-  {
+AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails&
+AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EncryptionOption")) {
     m_encryptionOption = jsonValue.GetString("EncryptionOption");
     m_encryptionOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKey"))
-  {
+  if (jsonValue.ValueExists("KmsKey")) {
     m_kmsKey = jsonValue.GetString("KmsKey");
     m_kmsKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::Jsonize() const
-{
+JsonValue AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionOptionHasBeenSet)
-  {
-   payload.WithString("EncryptionOption", m_encryptionOption);
-
+  if (m_encryptionOptionHasBeenSet) {
+    payload.WithString("EncryptionOption", m_encryptionOption);
   }
 
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithString("KmsKey", m_kmsKey);
-
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

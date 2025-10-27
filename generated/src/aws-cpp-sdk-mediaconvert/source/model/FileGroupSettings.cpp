@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/FileGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/FileGroupSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-FileGroupSettings::FileGroupSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileGroupSettings::FileGroupSettings(JsonView jsonValue) { *this = jsonValue; }
 
-FileGroupSettings& FileGroupSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destination"))
-  {
+FileGroupSettings& FileGroupSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetString("destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationSettings"))
-  {
+  if (jsonValue.ValueExists("destinationSettings")) {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
     m_destinationSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileGroupSettings::Jsonize() const
-{
+JsonValue FileGroupSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithString("destination", m_destination);
   }
 
-  if(m_destinationSettingsHasBeenSet)
-  {
-   payload.WithObject("destinationSettings", m_destinationSettings.Jsonize());
-
+  if (m_destinationSettingsHasBeenSet) {
+    payload.WithObject("destinationSettings", m_destinationSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

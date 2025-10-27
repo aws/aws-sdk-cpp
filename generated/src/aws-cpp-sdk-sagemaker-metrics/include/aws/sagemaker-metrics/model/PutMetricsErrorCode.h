@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerMetrics
-{
-namespace Model
-{
-  enum class PutMetricsErrorCode
-  {
-    NOT_SET,
-    METRIC_LIMIT_EXCEEDED,
-    INTERNAL_ERROR,
-    VALIDATION_ERROR,
-    CONFLICT_ERROR
-  };
+namespace Aws {
+namespace SageMakerMetrics {
+namespace Model {
+enum class PutMetricsErrorCode { NOT_SET, METRIC_LIMIT_EXCEEDED, INTERNAL_ERROR, VALIDATION_ERROR, CONFLICT_ERROR };
 
-namespace PutMetricsErrorCodeMapper
-{
+namespace PutMetricsErrorCodeMapper {
 AWS_SAGEMAKERMETRICS_API PutMetricsErrorCode GetPutMetricsErrorCodeForName(const Aws::String& name);
 
 AWS_SAGEMAKERMETRICS_API Aws::String GetNameForPutMetricsErrorCode(PutMetricsErrorCode value);
-} // namespace PutMetricsErrorCodeMapper
-} // namespace Model
-} // namespace SageMakerMetrics
-} // namespace Aws
+}  // namespace PutMetricsErrorCodeMapper
+}  // namespace Model
+}  // namespace SageMakerMetrics
+}  // namespace Aws

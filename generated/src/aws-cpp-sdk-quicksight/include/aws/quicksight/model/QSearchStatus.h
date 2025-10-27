@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class QSearchStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class QSearchStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace QSearchStatusMapper
-{
+namespace QSearchStatusMapper {
 AWS_QUICKSIGHT_API QSearchStatus GetQSearchStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForQSearchStatus(QSearchStatus value);
-} // namespace QSearchStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace QSearchStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

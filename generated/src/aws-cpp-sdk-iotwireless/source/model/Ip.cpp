@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/Ip.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/Ip.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-Ip::Ip(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ip::Ip(JsonView jsonValue) { *this = jsonValue; }
 
-Ip& Ip::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpAddress"))
-  {
+Ip& Ip::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpAddress")) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ip::Jsonize() const
-{
+JsonValue Ip::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

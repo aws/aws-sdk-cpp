@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/CallAnalyticsJobDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/CallAnalyticsJobDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
 
-CallAnalyticsJobDetails::CallAnalyticsJobDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CallAnalyticsJobDetails::CallAnalyticsJobDetails(JsonView jsonValue) { *this = jsonValue; }
 
-CallAnalyticsJobDetails& CallAnalyticsJobDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Skipped"))
-  {
+CallAnalyticsJobDetails& CallAnalyticsJobDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Skipped")) {
     Aws::Utils::Array<JsonView> skippedJsonList = jsonValue.GetArray("Skipped");
-    for(unsigned skippedIndex = 0; skippedIndex < skippedJsonList.GetLength(); ++skippedIndex)
-    {
+    for (unsigned skippedIndex = 0; skippedIndex < skippedJsonList.GetLength(); ++skippedIndex) {
       m_skipped.push_back(skippedJsonList[skippedIndex].AsObject());
     }
     m_skippedHasBeenSet = true;
@@ -37,24 +28,20 @@ CallAnalyticsJobDetails& CallAnalyticsJobDetails::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CallAnalyticsJobDetails::Jsonize() const
-{
+JsonValue CallAnalyticsJobDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_skippedHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> skippedJsonList(m_skipped.size());
-   for(unsigned skippedIndex = 0; skippedIndex < skippedJsonList.GetLength(); ++skippedIndex)
-   {
-     skippedJsonList[skippedIndex].AsObject(m_skipped[skippedIndex].Jsonize());
-   }
-   payload.WithArray("Skipped", std::move(skippedJsonList));
-
+  if (m_skippedHasBeenSet) {
+    Aws::Utils::Array<JsonValue> skippedJsonList(m_skipped.size());
+    for (unsigned skippedIndex = 0; skippedIndex < skippedJsonList.GetLength(); ++skippedIndex) {
+      skippedJsonList[skippedIndex].AsObject(m_skipped[skippedIndex].Jsonize());
+    }
+    payload.WithArray("Skipped", std::move(skippedJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

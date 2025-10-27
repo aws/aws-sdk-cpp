@@ -10,32 +10,26 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ExecuteChangeSetRequest::SerializePayload() const
-{
+Aws::String ExecuteChangeSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ExecuteChangeSet&";
-  if(m_changeSetNameHasBeenSet)
-  {
+  if (m_changeSetNameHasBeenSet) {
     ss << "ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
+  if (m_clientRequestTokenHasBeenSet) {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
-  if(m_disableRollbackHasBeenSet)
-  {
+  if (m_disableRollbackHasBeenSet) {
     ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
-  if(m_retainExceptOnCreateHasBeenSet)
-  {
+  if (m_retainExceptOnCreateHasBeenSet) {
     ss << "RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String ExecuteChangeSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ExecuteChangeSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ExecuteChangeSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ListMobileSdkReleasesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/ListMobileSdkReleasesRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,26 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListMobileSdkReleasesRequest::SerializePayload() const
-{
+Aws::String ListMobileSdkReleasesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("Platform", PlatformMapper::GetNameForPlatform(m_platform));
+  if (m_platformHasBeenSet) {
+    payload.WithString("Platform", PlatformMapper::GetNameForPlatform(m_platform));
   }
 
-  if(m_nextMarkerHasBeenSet)
-  {
-   payload.WithString("NextMarker", m_nextMarker);
-
+  if (m_nextMarkerHasBeenSet) {
+    payload.WithString("NextMarker", m_nextMarker);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListMobileSdkReleasesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListMobileSdkReleasesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSWAF_20190729.ListMobileSdkReleases"));
   return headers;
-
 }
-
-
-
-

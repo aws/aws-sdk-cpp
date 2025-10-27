@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/EvaluationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/EvaluationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-EvaluationResult::EvaluationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationResult::EvaluationResult(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComplianceStatus"))
-  {
+EvaluationResult& EvaluationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComplianceStatus")) {
     m_complianceStatus = PolicyComplianceStatusTypeMapper::GetPolicyComplianceStatusTypeForName(jsonValue.GetString("ComplianceStatus"));
     m_complianceStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ViolatorCount"))
-  {
+  if (jsonValue.ValueExists("ViolatorCount")) {
     m_violatorCount = jsonValue.GetInt64("ViolatorCount");
     m_violatorCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationLimitExceeded"))
-  {
+  if (jsonValue.ValueExists("EvaluationLimitExceeded")) {
     m_evaluationLimitExceeded = jsonValue.GetBool("EvaluationLimitExceeded");
     m_evaluationLimitExceededHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationResult::Jsonize() const
-{
+JsonValue EvaluationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_complianceStatusHasBeenSet)
-  {
-   payload.WithString("ComplianceStatus", PolicyComplianceStatusTypeMapper::GetNameForPolicyComplianceStatusType(m_complianceStatus));
+  if (m_complianceStatusHasBeenSet) {
+    payload.WithString("ComplianceStatus", PolicyComplianceStatusTypeMapper::GetNameForPolicyComplianceStatusType(m_complianceStatus));
   }
 
-  if(m_violatorCountHasBeenSet)
-  {
-   payload.WithInt64("ViolatorCount", m_violatorCount);
-
+  if (m_violatorCountHasBeenSet) {
+    payload.WithInt64("ViolatorCount", m_violatorCount);
   }
 
-  if(m_evaluationLimitExceededHasBeenSet)
-  {
-   payload.WithBool("EvaluationLimitExceeded", m_evaluationLimitExceeded);
-
+  if (m_evaluationLimitExceededHasBeenSet) {
+    payload.WithBool("EvaluationLimitExceeded", m_evaluationLimitExceeded);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

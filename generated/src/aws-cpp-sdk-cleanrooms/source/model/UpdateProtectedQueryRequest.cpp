@@ -12,18 +12,12 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProtectedQueryRequest::SerializePayload() const
-{
+Aws::String UpdateProtectedQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetStatusHasBeenSet)
-  {
-   payload.WithString("targetStatus", TargetProtectedQueryStatusMapper::GetNameForTargetProtectedQueryStatus(m_targetStatus));
+  if (m_targetStatusHasBeenSet) {
+    payload.WithString("targetStatus", TargetProtectedQueryStatusMapper::GetNameForTargetProtectedQueryStatus(m_targetStatus));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/TestMigrationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/TestMigrationRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String TestMigrationRequest::SerializePayload() const
-{
+Aws::String TestMigrationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=TestMigration&";
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_customerNodeEndpointListHasBeenSet)
-  {
-    if (m_customerNodeEndpointList.empty())
-    {
+  if (m_customerNodeEndpointListHasBeenSet) {
+    if (m_customerNodeEndpointList.empty()) {
       ss << "CustomerNodeEndpointList=&";
-    }
-    else
-    {
+    } else {
       unsigned customerNodeEndpointListCount = 1;
-      for(auto& item : m_customerNodeEndpointList)
-      {
+      for (auto& item : m_customerNodeEndpointList) {
         item.OutputToStream(ss, "CustomerNodeEndpointList.member.", customerNodeEndpointListCount, "");
         customerNodeEndpointListCount++;
       }
@@ -40,8 +33,4 @@ Aws::String TestMigrationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  TestMigrationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void TestMigrationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

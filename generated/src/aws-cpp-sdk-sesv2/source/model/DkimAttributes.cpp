@@ -3,119 +3,95 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/DkimAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/DkimAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-DkimAttributes::DkimAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DkimAttributes::DkimAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-DkimAttributes& DkimAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SigningEnabled"))
-  {
+DkimAttributes& DkimAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SigningEnabled")) {
     m_signingEnabled = jsonValue.GetBool("SigningEnabled");
     m_signingEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DkimStatusMapper::GetDkimStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tokens"))
-  {
+  if (jsonValue.ValueExists("Tokens")) {
     Aws::Utils::Array<JsonView> tokensJsonList = jsonValue.GetArray("Tokens");
-    for(unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex)
-    {
+    for (unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex) {
       m_tokens.push_back(tokensJsonList[tokensIndex].AsString());
     }
     m_tokensHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SigningAttributesOrigin"))
-  {
-    m_signingAttributesOrigin = DkimSigningAttributesOriginMapper::GetDkimSigningAttributesOriginForName(jsonValue.GetString("SigningAttributesOrigin"));
+  if (jsonValue.ValueExists("SigningAttributesOrigin")) {
+    m_signingAttributesOrigin =
+        DkimSigningAttributesOriginMapper::GetDkimSigningAttributesOriginForName(jsonValue.GetString("SigningAttributesOrigin"));
     m_signingAttributesOriginHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextSigningKeyLength"))
-  {
+  if (jsonValue.ValueExists("NextSigningKeyLength")) {
     m_nextSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("NextSigningKeyLength"));
     m_nextSigningKeyLengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrentSigningKeyLength"))
-  {
+  if (jsonValue.ValueExists("CurrentSigningKeyLength")) {
     m_currentSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("CurrentSigningKeyLength"));
     m_currentSigningKeyLengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastKeyGenerationTimestamp"))
-  {
+  if (jsonValue.ValueExists("LastKeyGenerationTimestamp")) {
     m_lastKeyGenerationTimestamp = jsonValue.GetDouble("LastKeyGenerationTimestamp");
     m_lastKeyGenerationTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DkimAttributes::Jsonize() const
-{
+JsonValue DkimAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_signingEnabledHasBeenSet)
-  {
-   payload.WithBool("SigningEnabled", m_signingEnabled);
-
+  if (m_signingEnabledHasBeenSet) {
+    payload.WithBool("SigningEnabled", m_signingEnabled);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", DkimStatusMapper::GetNameForDkimStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", DkimStatusMapper::GetNameForDkimStatus(m_status));
   }
 
-  if(m_tokensHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tokensJsonList(m_tokens.size());
-   for(unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex)
-   {
-     tokensJsonList[tokensIndex].AsString(m_tokens[tokensIndex]);
-   }
-   payload.WithArray("Tokens", std::move(tokensJsonList));
-
+  if (m_tokensHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tokensJsonList(m_tokens.size());
+    for (unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex) {
+      tokensJsonList[tokensIndex].AsString(m_tokens[tokensIndex]);
+    }
+    payload.WithArray("Tokens", std::move(tokensJsonList));
   }
 
-  if(m_signingAttributesOriginHasBeenSet)
-  {
-   payload.WithString("SigningAttributesOrigin", DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
+  if (m_signingAttributesOriginHasBeenSet) {
+    payload.WithString("SigningAttributesOrigin",
+                       DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
   }
 
-  if(m_nextSigningKeyLengthHasBeenSet)
-  {
-   payload.WithString("NextSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_nextSigningKeyLength));
+  if (m_nextSigningKeyLengthHasBeenSet) {
+    payload.WithString("NextSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_nextSigningKeyLength));
   }
 
-  if(m_currentSigningKeyLengthHasBeenSet)
-  {
-   payload.WithString("CurrentSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_currentSigningKeyLength));
+  if (m_currentSigningKeyLengthHasBeenSet) {
+    payload.WithString("CurrentSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_currentSigningKeyLength));
   }
 
-  if(m_lastKeyGenerationTimestampHasBeenSet)
-  {
-   payload.WithDouble("LastKeyGenerationTimestamp", m_lastKeyGenerationTimestamp.SecondsWithMSPrecision());
+  if (m_lastKeyGenerationTimestampHasBeenSet) {
+    payload.WithDouble("LastKeyGenerationTimestamp", m_lastKeyGenerationTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

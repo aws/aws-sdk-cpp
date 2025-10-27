@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/PrivateRegistryAccess.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/PrivateRegistryAccess.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-PrivateRegistryAccess::PrivateRegistryAccess(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrivateRegistryAccess::PrivateRegistryAccess(JsonView jsonValue) { *this = jsonValue; }
 
-PrivateRegistryAccess& PrivateRegistryAccess::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ecrImagePullerRole"))
-  {
+PrivateRegistryAccess& PrivateRegistryAccess::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ecrImagePullerRole")) {
     m_ecrImagePullerRole = jsonValue.GetObject("ecrImagePullerRole");
     m_ecrImagePullerRoleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrivateRegistryAccess::Jsonize() const
-{
+JsonValue PrivateRegistryAccess::Jsonize() const {
   JsonValue payload;
 
-  if(m_ecrImagePullerRoleHasBeenSet)
-  {
-   payload.WithObject("ecrImagePullerRole", m_ecrImagePullerRole.Jsonize());
-
+  if (m_ecrImagePullerRoleHasBeenSet) {
+    payload.WithObject("ecrImagePullerRole", m_ecrImagePullerRole.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

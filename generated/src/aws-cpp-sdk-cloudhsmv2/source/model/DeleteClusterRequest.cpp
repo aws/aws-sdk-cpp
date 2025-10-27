@@ -12,27 +12,18 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteClusterRequest::SerializePayload() const
-{
+Aws::String DeleteClusterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clusterIdHasBeenSet)
-  {
-   payload.WithString("ClusterId", m_clusterId);
-
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteClusterRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.DeleteCluster"));
   return headers;
-
 }
-
-
-
-

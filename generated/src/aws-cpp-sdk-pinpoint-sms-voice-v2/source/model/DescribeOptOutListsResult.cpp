@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOptOutListsResult::DescribeOptOutListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeOptOutListsResult::DescribeOptOutListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeOptOutListsResult& DescribeOptOutListsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeOptOutListsResult& DescribeOptOutListsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("OptOutLists"))
-  {
+  if (jsonValue.ValueExists("OptOutLists")) {
     Aws::Utils::Array<JsonView> optOutListsJsonList = jsonValue.GetArray("OptOutLists");
-    for(unsigned optOutListsIndex = 0; optOutListsIndex < optOutListsJsonList.GetLength(); ++optOutListsIndex)
-    {
+    for (unsigned optOutListsIndex = 0; optOutListsIndex < optOutListsJsonList.GetLength(); ++optOutListsIndex) {
       m_optOutLists.push_back(optOutListsJsonList[optOutListsIndex].AsObject());
     }
     m_optOutListsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

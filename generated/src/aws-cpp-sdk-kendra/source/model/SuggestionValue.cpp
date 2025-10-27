@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/SuggestionValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/SuggestionValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-SuggestionValue::SuggestionValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuggestionValue::SuggestionValue(JsonView jsonValue) { *this = jsonValue; }
 
-SuggestionValue& SuggestionValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Text"))
-  {
+SuggestionValue& SuggestionValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Text")) {
     m_text = jsonValue.GetObject("Text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuggestionValue::Jsonize() const
-{
+JsonValue SuggestionValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithObject("Text", m_text.Jsonize());
-
+  if (m_textHasBeenSet) {
+    payload.WithObject("Text", m_text.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

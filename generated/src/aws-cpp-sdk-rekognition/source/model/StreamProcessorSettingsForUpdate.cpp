@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StreamProcessorSettingsForUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StreamProcessorSettingsForUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-StreamProcessorSettingsForUpdate& StreamProcessorSettingsForUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectedHomeForUpdate"))
-  {
+StreamProcessorSettingsForUpdate& StreamProcessorSettingsForUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectedHomeForUpdate")) {
     m_connectedHomeForUpdate = jsonValue.GetObject("ConnectedHomeForUpdate");
     m_connectedHomeForUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamProcessorSettingsForUpdate::Jsonize() const
-{
+JsonValue StreamProcessorSettingsForUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectedHomeForUpdateHasBeenSet)
-  {
-   payload.WithObject("ConnectedHomeForUpdate", m_connectedHomeForUpdate.Jsonize());
-
+  if (m_connectedHomeForUpdateHasBeenSet) {
+    payload.WithObject("ConnectedHomeForUpdate", m_connectedHomeForUpdate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

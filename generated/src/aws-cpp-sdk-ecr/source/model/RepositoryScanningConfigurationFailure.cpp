@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/RepositoryScanningConfigurationFailure.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/model/RepositoryScanningConfigurationFailure.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace ECR {
+namespace Model {
 
-RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryScanningConfigurationFailure& RepositoryScanningConfigurationFailure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+RepositoryScanningConfigurationFailure& RepositoryScanningConfigurationFailure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureCode"))
-  {
+  if (jsonValue.ValueExists("failureCode")) {
     m_failureCode = ScanningConfigurationFailureCodeMapper::GetScanningConfigurationFailureCodeForName(jsonValue.GetString("failureCode"));
     m_failureCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryScanningConfigurationFailure::Jsonize() const
-{
+JsonValue RepositoryScanningConfigurationFailure::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", ScanningConfigurationFailureCodeMapper::GetNameForScanningConfigurationFailureCode(m_failureCode));
+  if (m_failureCodeHasBeenSet) {
+    payload.WithString("failureCode", ScanningConfigurationFailureCodeMapper::GetNameForScanningConfigurationFailureCode(m_failureCode));
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

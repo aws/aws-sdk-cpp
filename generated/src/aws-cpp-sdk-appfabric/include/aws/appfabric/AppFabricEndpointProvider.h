@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appfabric/AppFabricEndpointRules.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/appfabric/AppFabricEndpointRules.h>
-
-
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace AppFabric {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using AppFabricClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using AppFabricDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_APPFABRIC_API AppFabricEndpointProvider : public AppFabricDefaultEpProviderBase
-{
-public:
-    using AppFabricResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_APPFABRIC_API AppFabricEndpointProvider : public AppFabricDefaultEpProviderBase {
+ public:
+  using AppFabricResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    AppFabricEndpointProvider()
-      : AppFabricDefaultEpProviderBase(Aws::AppFabric::AppFabricEndpointRules::GetRulesBlob(), Aws::AppFabric::AppFabricEndpointRules::RulesBlobSize)
-    {}
+  AppFabricEndpointProvider()
+      : AppFabricDefaultEpProviderBase(Aws::AppFabric::AppFabricEndpointRules::GetRulesBlob(),
+                                       Aws::AppFabric::AppFabricEndpointRules::RulesBlobSize) {}
 
-    ~AppFabricEndpointProvider()
-    {
-    }
+  ~AppFabricEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace AppFabric
+}  // namespace Aws

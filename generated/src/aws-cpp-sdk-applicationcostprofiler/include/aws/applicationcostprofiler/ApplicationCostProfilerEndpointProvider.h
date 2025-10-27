@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointRules.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ApplicationCostProfiler {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ApplicationCostProfilerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using ApplicationCostProfilerBuiltInParameters = Aws::Endpoint::BuiltInParameter
  * The SDK must use service-specific type for each service per specification.
  */
 using ApplicationCostProfilerEndpointProviderBase =
-    EndpointProviderBase<ApplicationCostProfilerClientConfiguration, ApplicationCostProfilerBuiltInParameters, ApplicationCostProfilerClientContextParameters>;
+    EndpointProviderBase<ApplicationCostProfilerClientConfiguration, ApplicationCostProfilerBuiltInParameters,
+                         ApplicationCostProfilerClientContextParameters>;
 
 using ApplicationCostProfilerDefaultEpProviderBase =
-    DefaultEndpointProvider<ApplicationCostProfilerClientConfiguration, ApplicationCostProfilerBuiltInParameters, ApplicationCostProfilerClientContextParameters>;
+    DefaultEndpointProvider<ApplicationCostProfilerClientConfiguration, ApplicationCostProfilerBuiltInParameters,
+                            ApplicationCostProfilerClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerEndpointProvider : public ApplicationCostProfilerDefaultEpProviderBase
-{
-public:
-    using ApplicationCostProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerEndpointProvider : public ApplicationCostProfilerDefaultEpProviderBase {
+ public:
+  using ApplicationCostProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ApplicationCostProfilerEndpointProvider()
-      : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::GetRulesBlob(), Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::RulesBlobSize)
-    {}
+  ApplicationCostProfilerEndpointProvider()
+      : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::GetRulesBlob(),
+                                                     Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::RulesBlobSize) {}
 
-    ~ApplicationCostProfilerEndpointProvider()
-    {
-    }
+  ~ApplicationCostProfilerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

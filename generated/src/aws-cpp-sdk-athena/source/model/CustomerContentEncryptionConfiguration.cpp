@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CustomerContentEncryptionConfiguration& CustomerContentEncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKey"))
-  {
+CustomerContentEncryptionConfiguration& CustomerContentEncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKey")) {
     m_kmsKey = jsonValue.GetString("KmsKey");
     m_kmsKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomerContentEncryptionConfiguration::Jsonize() const
-{
+JsonValue CustomerContentEncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithString("KmsKey", m_kmsKey);
-
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

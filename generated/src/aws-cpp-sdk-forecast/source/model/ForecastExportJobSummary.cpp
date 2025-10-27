@@ -3,113 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/ForecastExportJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/ForecastExportJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-ForecastExportJobSummary::ForecastExportJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ForecastExportJobSummary::ForecastExportJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ForecastExportJobSummary& ForecastExportJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ForecastExportJobArn"))
-  {
+ForecastExportJobSummary& ForecastExportJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ForecastExportJobArn")) {
     m_forecastExportJobArn = jsonValue.GetString("ForecastExportJobArn");
     m_forecastExportJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ForecastExportJobName"))
-  {
+  if (jsonValue.ValueExists("ForecastExportJobName")) {
     m_forecastExportJobName = jsonValue.GetString("ForecastExportJobName");
     m_forecastExportJobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Destination"))
-  {
+  if (jsonValue.ValueExists("Destination")) {
     m_destination = jsonValue.GetObject("Destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModificationTime"))
-  {
+  if (jsonValue.ValueExists("LastModificationTime")) {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
     m_lastModificationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ForecastExportJobSummary::Jsonize() const
-{
+JsonValue ForecastExportJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_forecastExportJobArnHasBeenSet)
-  {
-   payload.WithString("ForecastExportJobArn", m_forecastExportJobArn);
-
+  if (m_forecastExportJobArnHasBeenSet) {
+    payload.WithString("ForecastExportJobArn", m_forecastExportJobArn);
   }
 
-  if(m_forecastExportJobNameHasBeenSet)
-  {
-   payload.WithString("ForecastExportJobName", m_forecastExportJobName);
-
+  if (m_forecastExportJobNameHasBeenSet) {
+    payload.WithString("ForecastExportJobName", m_forecastExportJobName);
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithObject("Destination", m_destination.Jsonize());
-
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("Destination", m_destination.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModificationTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
+  if (m_lastModificationTimeHasBeenSet) {
+    payload.WithDouble("LastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

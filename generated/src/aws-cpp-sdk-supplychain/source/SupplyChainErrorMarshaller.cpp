@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SupplyChain;
 
-AWSError<CoreErrors> SupplyChainErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SupplyChainErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SupplyChainErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

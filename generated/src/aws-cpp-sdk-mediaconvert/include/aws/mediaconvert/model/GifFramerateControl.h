@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class GifFramerateControl
-  {
-    NOT_SET,
-    INITIALIZE_FROM_SOURCE,
-    SPECIFIED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class GifFramerateControl { NOT_SET, INITIALIZE_FROM_SOURCE, SPECIFIED };
 
-namespace GifFramerateControlMapper
-{
+namespace GifFramerateControlMapper {
 AWS_MEDIACONVERT_API GifFramerateControl GetGifFramerateControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForGifFramerateControl(GifFramerateControl value);
-} // namespace GifFramerateControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace GifFramerateControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

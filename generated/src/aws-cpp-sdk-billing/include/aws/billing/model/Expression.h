@@ -8,87 +8,98 @@
 #include <aws/billing/model/DimensionValues.h>
 #include <aws/billing/model/TagValues.h>
 #include <aws/billing/model/TimeRange.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Billing
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Billing {
+namespace Model {
 
+/**
+ * <p> See <a
+ * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
+ * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/Expression">AWS
+ * API Reference</a></p>
+ */
+class Expression {
+ public:
+  AWS_BILLING_API Expression() = default;
+  AWS_BILLING_API Expression(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLING_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> See <a
-   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
-   * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/Expression">AWS
-   * API Reference</a></p>
+   * <p> The specific <code>Dimension</code> to use for <code>Expression</code>. </p>
    */
-  class Expression
-  {
-  public:
-    AWS_BILLING_API Expression() = default;
-    AWS_BILLING_API Expression(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLING_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLING_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const DimensionValues& GetDimensions() const { return m_dimensions; }
+  inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+  template <typename DimensionsT = DimensionValues>
+  void SetDimensions(DimensionsT&& value) {
+    m_dimensionsHasBeenSet = true;
+    m_dimensions = std::forward<DimensionsT>(value);
+  }
+  template <typename DimensionsT = DimensionValues>
+  Expression& WithDimensions(DimensionsT&& value) {
+    SetDimensions(std::forward<DimensionsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> The specific <code>Tag</code> to use for <code>Expression</code>. </p>
+   */
+  inline const TagValues& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = TagValues>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = TagValues>
+  Expression& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The specific <code>Dimension</code> to use for <code>Expression</code>. </p>
-     */
-    inline const DimensionValues& GetDimensions() const { return m_dimensions; }
-    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    template<typename DimensionsT = DimensionValues>
-    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
-    template<typename DimensionsT = DimensionValues>
-    Expression& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p> Specifies a time range filter for the billing view data. </p>
+   */
+  inline const TimeRange& GetTimeRange() const { return m_timeRange; }
+  inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
+  template <typename TimeRangeT = TimeRange>
+  void SetTimeRange(TimeRangeT&& value) {
+    m_timeRangeHasBeenSet = true;
+    m_timeRange = std::forward<TimeRangeT>(value);
+  }
+  template <typename TimeRangeT = TimeRange>
+  Expression& WithTimeRange(TimeRangeT&& value) {
+    SetTimeRange(std::forward<TimeRangeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DimensionValues m_dimensions;
+  bool m_dimensionsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The specific <code>Tag</code> to use for <code>Expression</code>. </p>
-     */
-    inline const TagValues& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = TagValues>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = TagValues>
-    Expression& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    ///@}
+  TagValues m_tags;
+  bool m_tagsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> Specifies a time range filter for the billing view data. </p>
-     */
-    inline const TimeRange& GetTimeRange() const { return m_timeRange; }
-    inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
-    template<typename TimeRangeT = TimeRange>
-    void SetTimeRange(TimeRangeT&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::forward<TimeRangeT>(value); }
-    template<typename TimeRangeT = TimeRange>
-    Expression& WithTimeRange(TimeRangeT&& value) { SetTimeRange(std::forward<TimeRangeT>(value)); return *this;}
-    ///@}
-  private:
+  TimeRange m_timeRange;
+  bool m_timeRangeHasBeenSet = false;
+};
 
-    DimensionValues m_dimensions;
-    bool m_dimensionsHasBeenSet = false;
-
-    TagValues m_tags;
-    bool m_tagsHasBeenSet = false;
-
-    TimeRange m_timeRange;
-    bool m_timeRangeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Billing
-} // namespace Aws
+}  // namespace Model
+}  // namespace Billing
+}  // namespace Aws

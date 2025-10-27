@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/PutObjectTaggingResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/PutObjectTaggingResult.h>
 
 #include <utility>
 
@@ -16,31 +16,24 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectTaggingResult::PutObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+PutObjectTaggingResult::PutObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-PutObjectTaggingResult& PutObjectTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+PutObjectTaggingResult& PutObjectTaggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& versionIdIter = headers.find("x-amz-version-id");
-  if(versionIdIter != headers.end())
-  {
+  if (versionIdIter != headers.end()) {
     m_versionId = versionIdIter->second;
     m_versionIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

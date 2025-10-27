@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/RDSDataService_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDSDataService
-{
-namespace Model
-{
-  enum class RecordsFormatType
-  {
-    NOT_SET,
-    NONE,
-    JSON
-  };
+namespace Aws {
+namespace RDSDataService {
+namespace Model {
+enum class RecordsFormatType { NOT_SET, NONE, JSON };
 
-namespace RecordsFormatTypeMapper
-{
+namespace RecordsFormatTypeMapper {
 AWS_RDSDATASERVICE_API RecordsFormatType GetRecordsFormatTypeForName(const Aws::String& name);
 
 AWS_RDSDATASERVICE_API Aws::String GetNameForRecordsFormatType(RecordsFormatType value);
-} // namespace RecordsFormatTypeMapper
-} // namespace Model
-} // namespace RDSDataService
-} // namespace Aws
+}  // namespace RecordsFormatTypeMapper
+}  // namespace Model
+}  // namespace RDSDataService
+}  // namespace Aws

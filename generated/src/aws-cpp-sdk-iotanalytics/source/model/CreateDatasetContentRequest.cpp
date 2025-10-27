@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/CreateDatasetContentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/CreateDatasetContentRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDatasetContentRequest::SerializePayload() const
-{
+Aws::String CreateDatasetContentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_versionIdHasBeenSet)
-  {
-   payload.WithString("versionId", m_versionId);
-
+  if (m_versionIdHasBeenSet) {
+    payload.WithString("versionId", m_versionId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

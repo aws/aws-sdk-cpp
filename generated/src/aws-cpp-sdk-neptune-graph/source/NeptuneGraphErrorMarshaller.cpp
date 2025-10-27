@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::NeptuneGraph;
 
-AWSError<CoreErrors> NeptuneGraphErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> NeptuneGraphErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = NeptuneGraphErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

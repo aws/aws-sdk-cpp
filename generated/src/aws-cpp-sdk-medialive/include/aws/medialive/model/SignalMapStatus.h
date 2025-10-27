@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class SignalMapStatus
-  {
-    NOT_SET,
-    CREATE_IN_PROGRESS,
-    CREATE_COMPLETE,
-    CREATE_FAILED,
-    UPDATE_IN_PROGRESS,
-    UPDATE_COMPLETE,
-    UPDATE_REVERTED,
-    UPDATE_FAILED,
-    READY,
-    NOT_READY
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class SignalMapStatus {
+  NOT_SET,
+  CREATE_IN_PROGRESS,
+  CREATE_COMPLETE,
+  CREATE_FAILED,
+  UPDATE_IN_PROGRESS,
+  UPDATE_COMPLETE,
+  UPDATE_REVERTED,
+  UPDATE_FAILED,
+  READY,
+  NOT_READY
+};
 
-namespace SignalMapStatusMapper
-{
+namespace SignalMapStatusMapper {
 AWS_MEDIALIVE_API SignalMapStatus GetSignalMapStatusForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForSignalMapStatus(SignalMapStatus value);
-} // namespace SignalMapStatusMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace SignalMapStatusMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

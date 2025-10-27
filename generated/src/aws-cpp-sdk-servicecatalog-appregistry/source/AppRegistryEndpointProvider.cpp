@@ -5,12 +5,8 @@
 
 #include <aws/servicecatalog-appregistry/AppRegistryEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppRegistry
-} // namespace Aws
+namespace Aws {
+namespace AppRegistry {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppRegistry
+}  // namespace Aws

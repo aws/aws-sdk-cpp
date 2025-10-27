@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ListThingsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/ListThingsRequest.h>
 
 #include <utility>
 
@@ -15,57 +15,43 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListThingsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListThingsRequest::SerializePayload() const { return {}; }
+
+void ListThingsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_attributeNameHasBeenSet) {
+    ss << m_attributeName;
+    uri.AddQueryStringParameter("attributeName", ss.str());
+    ss.str("");
+  }
+
+  if (m_attributeValueHasBeenSet) {
+    ss << m_attributeValue;
+    uri.AddQueryStringParameter("attributeValue", ss.str());
+    ss.str("");
+  }
+
+  if (m_thingTypeNameHasBeenSet) {
+    ss << m_thingTypeName;
+    uri.AddQueryStringParameter("thingTypeName", ss.str());
+    ss.str("");
+  }
+
+  if (m_usePrefixAttributeValueHasBeenSet) {
+    ss << m_usePrefixAttributeValue;
+    uri.AddQueryStringParameter("usePrefixAttributeValue", ss.str());
+    ss.str("");
+  }
 }
-
-void ListThingsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_attributeNameHasBeenSet)
-    {
-      ss << m_attributeName;
-      uri.AddQueryStringParameter("attributeName", ss.str());
-      ss.str("");
-    }
-
-    if(m_attributeValueHasBeenSet)
-    {
-      ss << m_attributeValue;
-      uri.AddQueryStringParameter("attributeValue", ss.str());
-      ss.str("");
-    }
-
-    if(m_thingTypeNameHasBeenSet)
-    {
-      ss << m_thingTypeName;
-      uri.AddQueryStringParameter("thingTypeName", ss.str());
-      ss.str("");
-    }
-
-    if(m_usePrefixAttributeValueHasBeenSet)
-    {
-      ss << m_usePrefixAttributeValue;
-      uri.AddQueryStringParameter("usePrefixAttributeValue", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

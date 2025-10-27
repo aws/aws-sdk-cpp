@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
-  enum class KafkaVersionStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    DEPRECATED
-  };
+namespace Aws {
+namespace Kafka {
+namespace Model {
+enum class KafkaVersionStatus { NOT_SET, ACTIVE, DEPRECATED };
 
-namespace KafkaVersionStatusMapper
-{
+namespace KafkaVersionStatusMapper {
 AWS_KAFKA_API KafkaVersionStatus GetKafkaVersionStatusForName(const Aws::String& name);
 
 AWS_KAFKA_API Aws::String GetNameForKafkaVersionStatus(KafkaVersionStatus value);
-} // namespace KafkaVersionStatusMapper
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace KafkaVersionStatusMapper
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

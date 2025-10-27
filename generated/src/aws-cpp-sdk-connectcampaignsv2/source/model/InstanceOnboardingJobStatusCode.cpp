@@ -4,76 +4,60 @@
  */
 
 #include <aws/connectcampaignsv2/model/InstanceOnboardingJobStatusCode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
+namespace InstanceOnboardingJobStatusCodeMapper {
 
-namespace Aws
-{
-  namespace ConnectCampaignsV2
-  {
-    namespace Model
-    {
-      namespace InstanceOnboardingJobStatusCodeMapper
-      {
+static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
-        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+InstanceOnboardingJobStatusCode GetInstanceOnboardingJobStatusCodeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IN_PROGRESS_HASH) {
+    return InstanceOnboardingJobStatusCode::IN_PROGRESS;
+  } else if (hashCode == SUCCEEDED_HASH) {
+    return InstanceOnboardingJobStatusCode::SUCCEEDED;
+  } else if (hashCode == FAILED_HASH) {
+    return InstanceOnboardingJobStatusCode::FAILED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<InstanceOnboardingJobStatusCode>(hashCode);
+  }
 
+  return InstanceOnboardingJobStatusCode::NOT_SET;
+}
 
-        InstanceOnboardingJobStatusCode GetInstanceOnboardingJobStatusCodeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IN_PROGRESS_HASH)
-          {
-            return InstanceOnboardingJobStatusCode::IN_PROGRESS;
-          }
-          else if (hashCode == SUCCEEDED_HASH)
-          {
-            return InstanceOnboardingJobStatusCode::SUCCEEDED;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return InstanceOnboardingJobStatusCode::FAILED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<InstanceOnboardingJobStatusCode>(hashCode);
-          }
+Aws::String GetNameForInstanceOnboardingJobStatusCode(InstanceOnboardingJobStatusCode enumValue) {
+  switch (enumValue) {
+    case InstanceOnboardingJobStatusCode::NOT_SET:
+      return {};
+    case InstanceOnboardingJobStatusCode::IN_PROGRESS:
+      return "IN_PROGRESS";
+    case InstanceOnboardingJobStatusCode::SUCCEEDED:
+      return "SUCCEEDED";
+    case InstanceOnboardingJobStatusCode::FAILED:
+      return "FAILED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return InstanceOnboardingJobStatusCode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForInstanceOnboardingJobStatusCode(InstanceOnboardingJobStatusCode enumValue)
-        {
-          switch(enumValue)
-          {
-          case InstanceOnboardingJobStatusCode::NOT_SET:
-            return {};
-          case InstanceOnboardingJobStatusCode::IN_PROGRESS:
-            return "IN_PROGRESS";
-          case InstanceOnboardingJobStatusCode::SUCCEEDED:
-            return "SUCCEEDED";
-          case InstanceOnboardingJobStatusCode::FAILED:
-            return "FAILED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace InstanceOnboardingJobStatusCodeMapper
-    } // namespace Model
-  } // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace InstanceOnboardingJobStatusCodeMapper
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

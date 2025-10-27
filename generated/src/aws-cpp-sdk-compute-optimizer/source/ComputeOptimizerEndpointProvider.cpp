@@ -5,12 +5,8 @@
 
 #include <aws/compute-optimizer/ComputeOptimizerEndpointProvider.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ComputeOptimizer
-} // namespace Aws
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ComputeOptimizer
+}  // namespace Aws

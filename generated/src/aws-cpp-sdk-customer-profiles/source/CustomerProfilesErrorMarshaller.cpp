@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::CustomerProfiles;
 
-AWSError<CoreErrors> CustomerProfilesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> CustomerProfilesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = CustomerProfilesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

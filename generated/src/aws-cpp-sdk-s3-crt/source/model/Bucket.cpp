@@ -3,55 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/Bucket.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/Bucket.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-Bucket::Bucket(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Bucket::Bucket(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Bucket& Bucket::operator =(const XmlNode& xmlNode)
-{
+Bucket& Bucket::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
-    if(!creationDateNode.IsNull())
-    {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!creationDateNode.IsNull()) {
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(),
+                                Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode bucketRegionNode = resultNode.FirstChild("BucketRegion");
-    if(!bucketRegionNode.IsNull())
-    {
+    if (!bucketRegionNode.IsNull()) {
       m_bucketRegion = Aws::Utils::Xml::DecodeEscapedXmlText(bucketRegionNode.GetText());
       m_bucketRegionHasBeenSet = true;
     }
     XmlNode bucketArnNode = resultNode.FirstChild("BucketArn");
-    if(!bucketArnNode.IsNull())
-    {
+    if (!bucketArnNode.IsNull()) {
       m_bucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(bucketArnNode.GetText());
       m_bucketArnHasBeenSet = true;
     }
@@ -60,35 +49,29 @@ Bucket& Bucket::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Bucket::AddToNode(XmlNode& parentNode) const
-{
+void Bucket::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   XmlNode creationDateNode = parentNode.CreateChildElement("CreationDate");
-   creationDateNode.SetText(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationDateHasBeenSet) {
+    XmlNode creationDateNode = parentNode.CreateChildElement("CreationDate");
+    creationDateNode.SetText(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_bucketRegionHasBeenSet)
-  {
-   XmlNode bucketRegionNode = parentNode.CreateChildElement("BucketRegion");
-   bucketRegionNode.SetText(m_bucketRegion);
+  if (m_bucketRegionHasBeenSet) {
+    XmlNode bucketRegionNode = parentNode.CreateChildElement("BucketRegion");
+    bucketRegionNode.SetText(m_bucketRegion);
   }
 
-  if(m_bucketArnHasBeenSet)
-  {
-   XmlNode bucketArnNode = parentNode.CreateChildElement("BucketArn");
-   bucketArnNode.SetText(m_bucketArn);
+  if (m_bucketArnHasBeenSet) {
+    XmlNode bucketArnNode = parentNode.CreateChildElement("BucketArn");
+    bucketArnNode.SetText(m_bucketArn);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

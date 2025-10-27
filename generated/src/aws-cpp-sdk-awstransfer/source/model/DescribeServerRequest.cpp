@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeServerRequest::SerializePayload() const
-{
+Aws::String DescribeServerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeServerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeServerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeServer"));
   return headers;
-
 }
-
-
-
-

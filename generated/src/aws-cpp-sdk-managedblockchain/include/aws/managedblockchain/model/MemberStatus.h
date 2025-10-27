@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
-  enum class MemberStatus
-  {
-    NOT_SET,
-    CREATING,
-    AVAILABLE,
-    CREATE_FAILED,
-    UPDATING,
-    DELETING,
-    DELETED,
-    INACCESSIBLE_ENCRYPTION_KEY
-  };
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
+enum class MemberStatus { NOT_SET, CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, INACCESSIBLE_ENCRYPTION_KEY };
 
-namespace MemberStatusMapper
-{
+namespace MemberStatusMapper {
 AWS_MANAGEDBLOCKCHAIN_API MemberStatus GetMemberStatusForName(const Aws::String& name);
 
 AWS_MANAGEDBLOCKCHAIN_API Aws::String GetNameForMemberStatus(MemberStatus value);
-} // namespace MemberStatusMapper
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace MemberStatusMapper
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

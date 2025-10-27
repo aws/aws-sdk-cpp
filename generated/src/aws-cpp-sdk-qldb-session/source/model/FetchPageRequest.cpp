@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb-session/model/FetchPageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb-session/model/FetchPageRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QLDBSession
-{
-namespace Model
-{
+namespace Aws {
+namespace QLDBSession {
+namespace Model {
 
-FetchPageRequest::FetchPageRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FetchPageRequest::FetchPageRequest(JsonView jsonValue) { *this = jsonValue; }
 
-FetchPageRequest& FetchPageRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TransactionId"))
-  {
+FetchPageRequest& FetchPageRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TransactionId")) {
     m_transactionId = jsonValue.GetString("TransactionId");
     m_transactionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageToken"))
-  {
+  if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FetchPageRequest::Jsonize() const
-{
+JsonValue FetchPageRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_transactionIdHasBeenSet)
-  {
-   payload.WithString("TransactionId", m_transactionId);
-
+  if (m_transactionIdHasBeenSet) {
+    payload.WithString("TransactionId", m_transactionId);
   }
 
-  if(m_nextPageTokenHasBeenSet)
-  {
-   payload.WithString("NextPageToken", m_nextPageToken);
-
+  if (m_nextPageTokenHasBeenSet) {
+    payload.WithString("NextPageToken", m_nextPageToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace Model
+}  // namespace QLDBSession
+}  // namespace Aws

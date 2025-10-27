@@ -11,55 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ListWebhookItem::ListWebhookItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListWebhookItem::ListWebhookItem(JsonView jsonValue) { *this = jsonValue; }
 
-ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("definition"))
-  {
+ListWebhookItem& ListWebhookItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("definition")) {
     m_definition = jsonValue.GetObject("definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("url"))
-  {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorCode"))
-  {
+  if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = jsonValue.GetString("errorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastTriggered"))
-  {
+  if (jsonValue.ValueExists("lastTriggered")) {
     m_lastTriggered = jsonValue.GetDouble("lastTriggered");
     m_lastTriggeredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
@@ -67,59 +52,44 @@ ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ListWebhookItem::Jsonize() const
-{
+JsonValue ListWebhookItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithObject("definition", m_definition.Jsonize());
-
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("definition", m_definition.Jsonize());
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode", m_errorCode);
   }
 
-  if(m_lastTriggeredHasBeenSet)
-  {
-   payload.WithDouble("lastTriggered", m_lastTriggered.SecondsWithMSPrecision());
+  if (m_lastTriggeredHasBeenSet) {
+    payload.WithDouble("lastTriggered", m_lastTriggered.SecondsWithMSPrecision());
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

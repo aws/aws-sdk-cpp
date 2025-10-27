@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() const
-{
+Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteConfigurationSetEventDestination&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
-  if(m_eventDestinationNameHasBeenSet)
-  {
+  if (m_eventDestinationNameHasBeenSet) {
     ss << "EventDestinationName=" << StringUtils::URLEncode(m_eventDestinationName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() co
   return ss.str();
 }
 
-
-void  DeleteConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

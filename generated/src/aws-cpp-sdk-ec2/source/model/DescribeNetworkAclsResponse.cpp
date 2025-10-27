@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeNetworkAclsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeNetworkAclsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkAclsResponse::DescribeNetworkAclsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeNetworkAclsResponse::DescribeNetworkAclsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNetworkAclsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeNetworkAclsResponse")) {
     resultNode = rootNode.FirstChild("DescribeNetworkAclsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode networkAclsNode = resultNode.FirstChild("networkAclSet");
-    if(!networkAclsNode.IsNull())
-    {
+    if (!networkAclsNode.IsNull()) {
       XmlNode networkAclsMember = networkAclsNode.FirstChild("item");
       m_networkAclsHasBeenSet = !networkAclsMember.IsNull();
-      while(!networkAclsMember.IsNull())
-      {
+      while (!networkAclsMember.IsNull()) {
         m_networkAcls.push_back(networkAclsMember);
         networkAclsMember = networkAclsMember.NextNode("item");
       }
@@ -48,8 +40,7 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::
       m_networkAclsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +48,11 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkAclsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkAclsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

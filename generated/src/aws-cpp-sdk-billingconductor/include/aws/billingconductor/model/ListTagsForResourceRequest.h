@@ -4,52 +4,53 @@
  */
 
 #pragma once
-#include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/BillingConductorRequest.h>
+#include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public BillingConductorRequest {
+ public:
+  AWS_BILLINGCONDUCTOR_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p> The Amazon Resource Name (ARN) that identifies the resource to list the
+   * tags. </p>
    */
-  class ListTagsForResourceRequest : public BillingConductorRequest
-  {
-  public:
-    AWS_BILLINGCONDUCTOR_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
-
-    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p> The Amazon Resource Name (ARN) that identifies the resource to list the
-     * tags. </p>
-     */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

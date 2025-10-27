@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class ValueType
-  {
-    NOT_SET,
-    DATE
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class ValueType { NOT_SET, DATE };
 
-namespace ValueTypeMapper
-{
+namespace ValueTypeMapper {
 AWS_TEXTRACT_API ValueType GetValueTypeForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForValueType(ValueType value);
-} // namespace ValueTypeMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace ValueTypeMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

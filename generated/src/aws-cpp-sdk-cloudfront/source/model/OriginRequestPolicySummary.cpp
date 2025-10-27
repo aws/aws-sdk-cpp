@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/OriginRequestPolicySummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-OriginRequestPolicySummary::OriginRequestPolicySummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OriginRequestPolicySummary::OriginRequestPolicySummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OriginRequestPolicySummary& OriginRequestPolicySummary::operator =(const XmlNode& xmlNode)
-{
+OriginRequestPolicySummary& OriginRequestPolicySummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode typeNode = resultNode.FirstChild("Type");
-    if(!typeNode.IsNull())
-    {
-      m_type = OriginRequestPolicyTypeMapper::GetOriginRequestPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
+    if (!typeNode.IsNull()) {
+      m_type = OriginRequestPolicyTypeMapper::GetOriginRequestPolicyTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode originRequestPolicyNode = resultNode.FirstChild("OriginRequestPolicy");
-    if(!originRequestPolicyNode.IsNull())
-    {
+    if (!originRequestPolicyNode.IsNull()) {
       m_originRequestPolicy = originRequestPolicyNode;
       m_originRequestPolicyHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ OriginRequestPolicySummary& OriginRequestPolicySummary::operator =(const XmlNode
   return *this;
 }
 
-void OriginRequestPolicySummary::AddToNode(XmlNode& parentNode) const
-{
+void OriginRequestPolicySummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_typeHasBeenSet)
-  {
-   XmlNode typeNode = parentNode.CreateChildElement("Type");
-   typeNode.SetText(OriginRequestPolicyTypeMapper::GetNameForOriginRequestPolicyType(m_type));
+  if (m_typeHasBeenSet) {
+    XmlNode typeNode = parentNode.CreateChildElement("Type");
+    typeNode.SetText(OriginRequestPolicyTypeMapper::GetNameForOriginRequestPolicyType(m_type));
   }
 
-  if(m_originRequestPolicyHasBeenSet)
-  {
-   XmlNode originRequestPolicyNode = parentNode.CreateChildElement("OriginRequestPolicy");
-   m_originRequestPolicy.AddToNode(originRequestPolicyNode);
+  if (m_originRequestPolicyHasBeenSet) {
+    XmlNode originRequestPolicyNode = parentNode.CreateChildElement("OriginRequestPolicy");
+    m_originRequestPolicy.AddToNode(originRequestPolicyNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

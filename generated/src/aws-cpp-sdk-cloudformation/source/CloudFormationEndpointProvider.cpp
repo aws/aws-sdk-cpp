@@ -5,12 +5,8 @@
 
 #include <aws/cloudformation/CloudFormationEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudFormation
-} // namespace Aws
+namespace Aws {
+namespace CloudFormation {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudFormation
+}  // namespace Aws

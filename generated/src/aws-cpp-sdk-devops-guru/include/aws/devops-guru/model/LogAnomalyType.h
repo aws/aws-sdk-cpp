@@ -4,34 +4,29 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class LogAnomalyType
-  {
-    NOT_SET,
-    KEYWORD,
-    KEYWORD_TOKEN,
-    FORMAT,
-    HTTP_CODE,
-    BLOCK_FORMAT,
-    NUMERICAL_POINT,
-    NUMERICAL_NAN,
-    NEW_FIELD_NAME
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class LogAnomalyType {
+  NOT_SET,
+  KEYWORD,
+  KEYWORD_TOKEN,
+  FORMAT,
+  HTTP_CODE,
+  BLOCK_FORMAT,
+  NUMERICAL_POINT,
+  NUMERICAL_NAN,
+  NEW_FIELD_NAME
+};
 
-namespace LogAnomalyTypeMapper
-{
+namespace LogAnomalyTypeMapper {
 AWS_DEVOPSGURU_API LogAnomalyType GetLogAnomalyTypeForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForLogAnomalyType(LogAnomalyType value);
-} // namespace LogAnomalyTypeMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace LogAnomalyTypeMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

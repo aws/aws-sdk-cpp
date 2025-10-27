@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-Receipt::Receipt(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Receipt::Receipt(JsonView jsonValue) { *this = jsonValue; }
 
-Receipt& Receipt::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeliveredTimestamp"))
-  {
+Receipt& Receipt::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeliveredTimestamp")) {
     m_deliveredTimestamp = jsonValue.GetString("DeliveredTimestamp");
     m_deliveredTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadTimestamp"))
-  {
+  if (jsonValue.ValueExists("ReadTimestamp")) {
     m_readTimestamp = jsonValue.GetString("ReadTimestamp");
     m_readTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecipientParticipantId"))
-  {
+  if (jsonValue.ValueExists("RecipientParticipantId")) {
     m_recipientParticipantId = jsonValue.GetString("RecipientParticipantId");
     m_recipientParticipantIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Receipt::Jsonize() const
-{
+JsonValue Receipt::Jsonize() const {
   JsonValue payload;
 
-  if(m_deliveredTimestampHasBeenSet)
-  {
-   payload.WithString("DeliveredTimestamp", m_deliveredTimestamp);
-
+  if (m_deliveredTimestampHasBeenSet) {
+    payload.WithString("DeliveredTimestamp", m_deliveredTimestamp);
   }
 
-  if(m_readTimestampHasBeenSet)
-  {
-   payload.WithString("ReadTimestamp", m_readTimestamp);
-
+  if (m_readTimestampHasBeenSet) {
+    payload.WithString("ReadTimestamp", m_readTimestamp);
   }
 
-  if(m_recipientParticipantIdHasBeenSet)
-  {
-   payload.WithString("RecipientParticipantId", m_recipientParticipantId);
-
+  if (m_recipientParticipantIdHasBeenSet) {
+    payload.WithString("RecipientParticipantId", m_recipientParticipantId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

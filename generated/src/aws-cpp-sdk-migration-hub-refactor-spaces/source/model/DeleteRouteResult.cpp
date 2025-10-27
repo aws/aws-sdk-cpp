@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migration-hub-refactor-spaces/model/DeleteRouteResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/migration-hub-refactor-spaces/model/DeleteRouteResult.h>
 
 #include <utility>
 
@@ -17,53 +17,41 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DeleteRouteResult& DeleteRouteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteRouteResult& DeleteRouteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ApplicationId"))
-  {
+  if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RouteId"))
-  {
+  if (jsonValue.ValueExists("RouteId")) {
     m_routeId = jsonValue.GetString("RouteId");
     m_routeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceId"))
-  {
+  if (jsonValue.ValueExists("ServiceId")) {
     m_serviceId = jsonValue.GetString("ServiceId");
     m_serviceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = RouteStateMapper::GetRouteStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

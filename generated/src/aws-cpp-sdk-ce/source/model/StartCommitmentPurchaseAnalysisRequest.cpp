@@ -12,27 +12,18 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartCommitmentPurchaseAnalysisRequest::SerializePayload() const
-{
+Aws::String StartCommitmentPurchaseAnalysisRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_commitmentPurchaseAnalysisConfigurationHasBeenSet)
-  {
-   payload.WithObject("CommitmentPurchaseAnalysisConfiguration", m_commitmentPurchaseAnalysisConfiguration.Jsonize());
-
+  if (m_commitmentPurchaseAnalysisConfigurationHasBeenSet) {
+    payload.WithObject("CommitmentPurchaseAnalysisConfiguration", m_commitmentPurchaseAnalysisConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartCommitmentPurchaseAnalysisRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartCommitmentPurchaseAnalysisRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.StartCommitmentPurchaseAnalysis"));
   return headers;
-
 }
-
-
-
-

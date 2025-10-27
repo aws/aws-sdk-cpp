@@ -11,60 +11,44 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-LicenseConfiguration::LicenseConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfCores"))
-  {
+LicenseConfiguration& LicenseConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfCores")) {
     m_numberOfCores = jsonValue.GetInteger("numberOfCores");
     m_numberOfCoresHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceType"))
-  {
+  if (jsonValue.ValueExists("instanceType")) {
     m_instanceType = jsonValue.GetString("instanceType");
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operatingSystem"))
-  {
+  if (jsonValue.ValueExists("operatingSystem")) {
     m_operatingSystem = jsonValue.GetString("operatingSystem");
     m_operatingSystemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseEdition"))
-  {
+  if (jsonValue.ValueExists("licenseEdition")) {
     m_licenseEdition = LicenseEditionMapper::GetLicenseEditionForName(jsonValue.GetString("licenseEdition"));
     m_licenseEditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseName"))
-  {
+  if (jsonValue.ValueExists("licenseName")) {
     m_licenseName = LicenseNameMapper::GetLicenseNameForName(jsonValue.GetString("licenseName"));
     m_licenseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseModel"))
-  {
+  if (jsonValue.ValueExists("licenseModel")) {
     m_licenseModel = LicenseModelMapper::GetLicenseModelForName(jsonValue.GetString("licenseModel"));
     m_licenseModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseVersion"))
-  {
+  if (jsonValue.ValueExists("licenseVersion")) {
     m_licenseVersion = jsonValue.GetString("licenseVersion");
     m_licenseVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricsSource"))
-  {
+  if (jsonValue.ValueExists("metricsSource")) {
     Aws::Utils::Array<JsonView> metricsSourceJsonList = jsonValue.GetArray("metricsSource");
-    for(unsigned metricsSourceIndex = 0; metricsSourceIndex < metricsSourceJsonList.GetLength(); ++metricsSourceIndex)
-    {
+    for (unsigned metricsSourceIndex = 0; metricsSourceIndex < metricsSourceJsonList.GetLength(); ++metricsSourceIndex) {
       m_metricsSource.push_back(metricsSourceJsonList[metricsSourceIndex].AsObject());
     }
     m_metricsSourceHasBeenSet = true;
@@ -72,63 +56,48 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue LicenseConfiguration::Jsonize() const
-{
+JsonValue LicenseConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfCoresHasBeenSet)
-  {
-   payload.WithInteger("numberOfCores", m_numberOfCores);
-
+  if (m_numberOfCoresHasBeenSet) {
+    payload.WithInteger("numberOfCores", m_numberOfCores);
   }
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", m_instanceType);
-
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", m_instanceType);
   }
 
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("operatingSystem", m_operatingSystem);
-
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("operatingSystem", m_operatingSystem);
   }
 
-  if(m_licenseEditionHasBeenSet)
-  {
-   payload.WithString("licenseEdition", LicenseEditionMapper::GetNameForLicenseEdition(m_licenseEdition));
+  if (m_licenseEditionHasBeenSet) {
+    payload.WithString("licenseEdition", LicenseEditionMapper::GetNameForLicenseEdition(m_licenseEdition));
   }
 
-  if(m_licenseNameHasBeenSet)
-  {
-   payload.WithString("licenseName", LicenseNameMapper::GetNameForLicenseName(m_licenseName));
+  if (m_licenseNameHasBeenSet) {
+    payload.WithString("licenseName", LicenseNameMapper::GetNameForLicenseName(m_licenseName));
   }
 
-  if(m_licenseModelHasBeenSet)
-  {
-   payload.WithString("licenseModel", LicenseModelMapper::GetNameForLicenseModel(m_licenseModel));
+  if (m_licenseModelHasBeenSet) {
+    payload.WithString("licenseModel", LicenseModelMapper::GetNameForLicenseModel(m_licenseModel));
   }
 
-  if(m_licenseVersionHasBeenSet)
-  {
-   payload.WithString("licenseVersion", m_licenseVersion);
-
+  if (m_licenseVersionHasBeenSet) {
+    payload.WithString("licenseVersion", m_licenseVersion);
   }
 
-  if(m_metricsSourceHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricsSourceJsonList(m_metricsSource.size());
-   for(unsigned metricsSourceIndex = 0; metricsSourceIndex < metricsSourceJsonList.GetLength(); ++metricsSourceIndex)
-   {
-     metricsSourceJsonList[metricsSourceIndex].AsObject(m_metricsSource[metricsSourceIndex].Jsonize());
-   }
-   payload.WithArray("metricsSource", std::move(metricsSourceJsonList));
-
+  if (m_metricsSourceHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricsSourceJsonList(m_metricsSource.size());
+    for (unsigned metricsSourceIndex = 0; metricsSourceIndex < metricsSourceJsonList.GetLength(); ++metricsSourceIndex) {
+      metricsSourceJsonList[metricsSourceIndex].AsObject(m_metricsSource[metricsSourceIndex].Jsonize());
+    }
+    payload.WithArray("metricsSource", std::move(metricsSourceJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

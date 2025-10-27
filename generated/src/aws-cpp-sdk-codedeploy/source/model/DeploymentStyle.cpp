@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-DeploymentStyle::DeploymentStyle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentStyle::DeploymentStyle(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentStyle& DeploymentStyle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deploymentType"))
-  {
+DeploymentStyle& DeploymentStyle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deploymentType")) {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("deploymentType"));
     m_deploymentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentOption"))
-  {
+  if (jsonValue.ValueExists("deploymentOption")) {
     m_deploymentOption = DeploymentOptionMapper::GetDeploymentOptionForName(jsonValue.GetString("deploymentOption"));
     m_deploymentOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentStyle::Jsonize() const
-{
+JsonValue DeploymentStyle::Jsonize() const {
   JsonValue payload;
 
-  if(m_deploymentTypeHasBeenSet)
-  {
-   payload.WithString("deploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
+  if (m_deploymentTypeHasBeenSet) {
+    payload.WithString("deploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
   }
 
-  if(m_deploymentOptionHasBeenSet)
-  {
-   payload.WithString("deploymentOption", DeploymentOptionMapper::GetNameForDeploymentOption(m_deploymentOption));
+  if (m_deploymentOptionHasBeenSet) {
+    payload.WithString("deploymentOption", DeploymentOptionMapper::GetNameForDeploymentOption(m_deploymentOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

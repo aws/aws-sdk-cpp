@@ -12,39 +12,26 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListBillScenarioCommitmentModificationsRequest::SerializePayload() const
-{
+Aws::String ListBillScenarioCommitmentModificationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_billScenarioIdHasBeenSet)
-  {
-   payload.WithString("billScenarioId", m_billScenarioId);
-
+  if (m_billScenarioIdHasBeenSet) {
+    payload.WithString("billScenarioId", m_billScenarioId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListBillScenarioCommitmentModificationsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListBillScenarioCommitmentModificationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.ListBillScenarioCommitmentModifications"));
   return headers;
-
 }
-
-
-
-

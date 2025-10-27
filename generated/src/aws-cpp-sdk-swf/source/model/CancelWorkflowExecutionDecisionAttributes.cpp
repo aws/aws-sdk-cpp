@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/CancelWorkflowExecutionDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/CancelWorkflowExecutionDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-CancelWorkflowExecutionDecisionAttributes& CancelWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("details"))
-  {
+CancelWorkflowExecutionDecisionAttributes& CancelWorkflowExecutionDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("details")) {
     m_details = jsonValue.GetString("details");
     m_detailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CancelWorkflowExecutionDecisionAttributes::Jsonize() const
-{
+JsonValue CancelWorkflowExecutionDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithString("details", m_details);
-
+  if (m_detailsHasBeenSet) {
+    payload.WithString("details", m_details);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

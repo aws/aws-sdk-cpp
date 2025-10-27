@@ -12,44 +12,30 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueryResultsRequest::SerializePayload() const
-{
+Aws::String GetQueryResultsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryExecutionIdHasBeenSet)
-  {
-   payload.WithString("QueryExecutionId", m_queryExecutionId);
-
+  if (m_queryExecutionIdHasBeenSet) {
+    payload.WithString("QueryExecutionId", m_queryExecutionId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_queryResultTypeHasBeenSet)
-  {
-   payload.WithString("QueryResultType", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultType));
+  if (m_queryResultTypeHasBeenSet) {
+    payload.WithString("QueryResultType", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetQueryResultsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetQueryResultsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetQueryResults"));
   return headers;
-
 }
-
-
-
-

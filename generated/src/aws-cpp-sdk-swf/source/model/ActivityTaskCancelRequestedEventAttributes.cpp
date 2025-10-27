@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/ActivityTaskCancelRequestedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/ActivityTaskCancelRequestedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-ActivityTaskCancelRequestedEventAttributes& ActivityTaskCancelRequestedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+ActivityTaskCancelRequestedEventAttributes& ActivityTaskCancelRequestedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("activityId"))
-  {
+  if (jsonValue.ValueExists("activityId")) {
     m_activityId = jsonValue.GetString("activityId");
     m_activityIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActivityTaskCancelRequestedEventAttributes::Jsonize() const
-{
+JsonValue ActivityTaskCancelRequestedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
-  if(m_activityIdHasBeenSet)
-  {
-   payload.WithString("activityId", m_activityId);
-
+  if (m_activityIdHasBeenSet) {
+    payload.WithString("activityId", m_activityId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

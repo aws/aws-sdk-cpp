@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AttachNetworkInterfaceResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/AttachNetworkInterfaceResponse.h>
 
 #include <utility>
 
@@ -17,45 +17,37 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+AttachNetworkInterfaceResponse::AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-AttachNetworkInterfaceResponse& AttachNetworkInterfaceResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+AttachNetworkInterfaceResponse& AttachNetworkInterfaceResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "AttachNetworkInterfaceResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AttachNetworkInterfaceResponse")) {
     resultNode = rootNode.FirstChild("AttachNetworkInterfaceResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
-    if(!attachmentIdNode.IsNull())
-    {
+    if (!attachmentIdNode.IsNull()) {
       m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
       m_attachmentIdHasBeenSet = true;
     }
     XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
-    if(!networkCardIndexNode.IsNull())
-    {
-      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+    if (!networkCardIndexNode.IsNull()) {
+      m_networkCardIndex = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
       m_networkCardIndexHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AttachNetworkInterfaceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AttachNetworkInterfaceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

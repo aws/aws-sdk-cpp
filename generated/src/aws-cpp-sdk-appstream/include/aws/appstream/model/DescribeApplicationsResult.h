@@ -5,80 +5,95 @@
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/Application.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace AppStream
-{
-namespace Model
-{
-  class DescribeApplicationsResult
-  {
-  public:
-    AWS_APPSTREAM_API DescribeApplicationsResult() = default;
-    AWS_APPSTREAM_API DescribeApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_APPSTREAM_API DescribeApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppStream {
+namespace Model {
+class DescribeApplicationsResult {
+ public:
+  AWS_APPSTREAM_API DescribeApplicationsResult() = default;
+  AWS_APPSTREAM_API DescribeApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPSTREAM_API DescribeApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The applications in the list.</p>
+   */
+  inline const Aws::Vector<Application>& GetApplications() const { return m_applications; }
+  template <typename ApplicationsT = Aws::Vector<Application>>
+  void SetApplications(ApplicationsT&& value) {
+    m_applicationsHasBeenSet = true;
+    m_applications = std::forward<ApplicationsT>(value);
+  }
+  template <typename ApplicationsT = Aws::Vector<Application>>
+  DescribeApplicationsResult& WithApplications(ApplicationsT&& value) {
+    SetApplications(std::forward<ApplicationsT>(value));
+    return *this;
+  }
+  template <typename ApplicationsT = Application>
+  DescribeApplicationsResult& AddApplications(ApplicationsT&& value) {
+    m_applicationsHasBeenSet = true;
+    m_applications.emplace_back(std::forward<ApplicationsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The applications in the list.</p>
-     */
-    inline const Aws::Vector<Application>& GetApplications() const { return m_applications; }
-    template<typename ApplicationsT = Aws::Vector<Application>>
-    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
-    template<typename ApplicationsT = Aws::Vector<Application>>
-    DescribeApplicationsResult& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
-    template<typename ApplicationsT = Application>
-    DescribeApplicationsResult& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The pagination token used to retrieve the next page of results for this
+   * operation.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeApplicationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeApplicationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeApplicationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Application> m_applications;
+  bool m_applicationsHasBeenSet = false;
 
-    Aws::Vector<Application> m_applications;
-    bool m_applicationsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

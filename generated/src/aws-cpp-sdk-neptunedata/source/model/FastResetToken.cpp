@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/FastResetToken.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptunedata/model/FastResetToken.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
+namespace Aws {
+namespace neptunedata {
+namespace Model {
 
-FastResetToken::FastResetToken(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FastResetToken::FastResetToken(JsonView jsonValue) { *this = jsonValue; }
 
-FastResetToken& FastResetToken::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("token"))
-  {
+FastResetToken& FastResetToken::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("token")) {
     m_token = jsonValue.GetString("token");
     m_tokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FastResetToken::Jsonize() const
-{
+JsonValue FastResetToken::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenHasBeenSet)
-  {
-   payload.WithString("token", m_token);
-
+  if (m_tokenHasBeenSet) {
+    payload.WithString("token", m_token);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class AquaStatus
-  {
-    NOT_SET,
-    enabled,
-    disabled,
-    applying
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class AquaStatus { NOT_SET, enabled, disabled, applying };
 
-namespace AquaStatusMapper
-{
+namespace AquaStatusMapper {
 AWS_REDSHIFT_API AquaStatus GetAquaStatusForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForAquaStatus(AquaStatus value);
-} // namespace AquaStatusMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace AquaStatusMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

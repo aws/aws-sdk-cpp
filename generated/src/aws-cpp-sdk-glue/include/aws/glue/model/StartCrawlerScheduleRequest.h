@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/GlueRequest.h>
+#include <aws/glue/Glue_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
+/**
+ */
+class StartCrawlerScheduleRequest : public GlueRequest {
+ public:
+  AWS_GLUE_API StartCrawlerScheduleRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StartCrawlerSchedule"; }
+
+  AWS_GLUE_API Aws::String SerializePayload() const override;
+
+  AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Name of the crawler to schedule.</p>
    */
-  class StartCrawlerScheduleRequest : public GlueRequest
-  {
-  public:
-    AWS_GLUE_API StartCrawlerScheduleRequest() = default;
+  inline const Aws::String& GetCrawlerName() const { return m_crawlerName; }
+  inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+  template <typename CrawlerNameT = Aws::String>
+  void SetCrawlerName(CrawlerNameT&& value) {
+    m_crawlerNameHasBeenSet = true;
+    m_crawlerName = std::forward<CrawlerNameT>(value);
+  }
+  template <typename CrawlerNameT = Aws::String>
+  StartCrawlerScheduleRequest& WithCrawlerName(CrawlerNameT&& value) {
+    SetCrawlerName(std::forward<CrawlerNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_crawlerName;
+  bool m_crawlerNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "StartCrawlerSchedule"; }
-
-    AWS_GLUE_API Aws::String SerializePayload() const override;
-
-    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
-    inline const Aws::String& GetCrawlerName() const { return m_crawlerName; }
-    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
-    template<typename CrawlerNameT = Aws::String>
-    void SetCrawlerName(CrawlerNameT&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::forward<CrawlerNameT>(value); }
-    template<typename CrawlerNameT = Aws::String>
-    StartCrawlerScheduleRequest& WithCrawlerName(CrawlerNameT&& value) { SetCrawlerName(std::forward<CrawlerNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

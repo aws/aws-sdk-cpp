@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/UpdateFileCacheLustreConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/UpdateFileCacheLustreConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateFileCacheLustreConfiguration& UpdateFileCacheLustreConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
-  {
+UpdateFileCacheLustreConfiguration& UpdateFileCacheLustreConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WeeklyMaintenanceStartTime")) {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateFileCacheLustreConfiguration::Jsonize() const
-{
+JsonValue UpdateFileCacheLustreConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_weeklyMaintenanceStartTimeHasBeenSet)
-  {
-   payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
-
+  if (m_weeklyMaintenanceStartTimeHasBeenSet) {
+    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

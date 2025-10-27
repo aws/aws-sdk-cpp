@@ -13,59 +13,42 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartBrowserSessionRequest::SerializePayload() const
-{
+Aws::String StartBrowserSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_sessionTimeoutSecondsHasBeenSet)
-  {
-   payload.WithInteger("sessionTimeoutSeconds", m_sessionTimeoutSeconds);
-
+  if (m_sessionTimeoutSecondsHasBeenSet) {
+    payload.WithInteger("sessionTimeoutSeconds", m_sessionTimeoutSeconds);
   }
 
-  if(m_viewPortHasBeenSet)
-  {
-   payload.WithObject("viewPort", m_viewPort.Jsonize());
-
+  if (m_viewPortHasBeenSet) {
+    payload.WithObject("viewPort", m_viewPort.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartBrowserSessionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartBrowserSessionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_traceIdHasBeenSet)
-  {
+  if (m_traceIdHasBeenSet) {
     ss << m_traceId;
-    headers.emplace("x-amzn-trace-id",  ss.str());
+    headers.emplace("x-amzn-trace-id", ss.str());
     ss.str("");
   }
 
-  if(m_traceParentHasBeenSet)
-  {
+  if (m_traceParentHasBeenSet) {
     ss << m_traceParent;
-    headers.emplace("traceparent",  ss.str());
+    headers.emplace("traceparent", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

@@ -12,11 +12,4 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWorkspaceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeWorkspaceRequest::SerializePayload() const { return {}; }

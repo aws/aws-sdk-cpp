@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ImageVersionSortOrder
-  {
-    NOT_SET,
-    ASCENDING,
-    DESCENDING
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ImageVersionSortOrder { NOT_SET, ASCENDING, DESCENDING };
 
-namespace ImageVersionSortOrderMapper
-{
+namespace ImageVersionSortOrderMapper {
 AWS_SAGEMAKER_API ImageVersionSortOrder GetImageVersionSortOrderForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForImageVersionSortOrder(ImageVersionSortOrder value);
-} // namespace ImageVersionSortOrderMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ImageVersionSortOrderMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

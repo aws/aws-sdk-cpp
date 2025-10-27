@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
-  enum class QueryStateString
-  {
-    NOT_SET,
-    PENDING,
-    WORKUNITS_AVAILABLE,
-    ERROR_,
-    FINISHED,
-    EXPIRED
-  };
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
+enum class QueryStateString { NOT_SET, PENDING, WORKUNITS_AVAILABLE, ERROR_, FINISHED, EXPIRED };
 
-namespace QueryStateStringMapper
-{
+namespace QueryStateStringMapper {
 AWS_LAKEFORMATION_API QueryStateString GetQueryStateStringForName(const Aws::String& name);
 
 AWS_LAKEFORMATION_API Aws::String GetNameForQueryStateString(QueryStateString value);
-} // namespace QueryStateStringMapper
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace QueryStateStringMapper
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

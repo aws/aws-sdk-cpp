@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
-  enum class PermissionsBoundaryAttachmentType
-  {
-    NOT_SET,
-    PermissionsBoundaryPolicy
-  };
+namespace Aws {
+namespace IAM {
+namespace Model {
+enum class PermissionsBoundaryAttachmentType { NOT_SET, PermissionsBoundaryPolicy };
 
-namespace PermissionsBoundaryAttachmentTypeMapper
-{
+namespace PermissionsBoundaryAttachmentTypeMapper {
 AWS_IAM_API PermissionsBoundaryAttachmentType GetPermissionsBoundaryAttachmentTypeForName(const Aws::String& name);
 
 AWS_IAM_API Aws::String GetNameForPermissionsBoundaryAttachmentType(PermissionsBoundaryAttachmentType value);
-} // namespace PermissionsBoundaryAttachmentTypeMapper
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace PermissionsBoundaryAttachmentTypeMapper
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

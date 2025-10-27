@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-ApplicationInfo::ApplicationInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationInfo::ApplicationInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("applicationId"))
-  {
+ApplicationInfo& ApplicationInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("applicationId")) {
     m_applicationId = jsonValue.GetString("applicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationName"))
-  {
+  if (jsonValue.ValueExists("applicationName")) {
     m_applicationName = jsonValue.GetString("applicationName");
     m_applicationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("linkedToGitHub"))
-  {
+  if (jsonValue.ValueExists("linkedToGitHub")) {
     m_linkedToGitHub = jsonValue.GetBool("linkedToGitHub");
     m_linkedToGitHubHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gitHubAccountName"))
-  {
+  if (jsonValue.ValueExists("gitHubAccountName")) {
     m_gitHubAccountName = jsonValue.GetString("gitHubAccountName");
     m_gitHubAccountNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("computePlatform"))
-  {
+  if (jsonValue.ValueExists("computePlatform")) {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
     m_computePlatformHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationInfo::Jsonize() const
-{
+JsonValue ApplicationInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("applicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("applicationId", m_applicationId);
   }
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_linkedToGitHubHasBeenSet)
-  {
-   payload.WithBool("linkedToGitHub", m_linkedToGitHub);
-
+  if (m_linkedToGitHubHasBeenSet) {
+    payload.WithBool("linkedToGitHub", m_linkedToGitHub);
   }
 
-  if(m_gitHubAccountNameHasBeenSet)
-  {
-   payload.WithString("gitHubAccountName", m_gitHubAccountName);
-
+  if (m_gitHubAccountNameHasBeenSet) {
+    payload.WithString("gitHubAccountName", m_gitHubAccountName);
   }
 
-  if(m_computePlatformHasBeenSet)
-  {
-   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  if (m_computePlatformHasBeenSet) {
+    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

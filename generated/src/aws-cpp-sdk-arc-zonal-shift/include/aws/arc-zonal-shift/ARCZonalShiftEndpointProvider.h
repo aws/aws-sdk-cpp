@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/arc-zonal-shift/ARCZonalShiftEndpointRules.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/arc-zonal-shift/ARCZonalShiftEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ARCZonalShift
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ARCZonalShift {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ARCZonalShiftClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ARCZonalShiftDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ARCZONALSHIFT_API ARCZonalShiftEndpointProvider : public ARCZonalShiftDefaultEpProviderBase
-{
-public:
-    using ARCZonalShiftResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ARCZONALSHIFT_API ARCZonalShiftEndpointProvider : public ARCZonalShiftDefaultEpProviderBase {
+ public:
+  using ARCZonalShiftResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ARCZonalShiftEndpointProvider()
-      : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::GetRulesBlob(), Aws::ARCZonalShift::ARCZonalShiftEndpointRules::RulesBlobSize)
-    {}
+  ARCZonalShiftEndpointProvider()
+      : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::GetRulesBlob(),
+                                           Aws::ARCZonalShift::ARCZonalShiftEndpointRules::RulesBlobSize) {}
 
-    ~ARCZonalShiftEndpointProvider()
-    {
-    }
+  ~ARCZonalShiftEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ARCZonalShift
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ARCZonalShift
+}  // namespace Aws

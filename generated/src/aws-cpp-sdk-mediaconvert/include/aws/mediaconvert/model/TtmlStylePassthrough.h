@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class TtmlStylePassthrough
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class TtmlStylePassthrough { NOT_SET, ENABLED, DISABLED };
 
-namespace TtmlStylePassthroughMapper
-{
+namespace TtmlStylePassthroughMapper {
 AWS_MEDIACONVERT_API TtmlStylePassthrough GetTtmlStylePassthroughForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForTtmlStylePassthrough(TtmlStylePassthrough value);
-} // namespace TtmlStylePassthroughMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace TtmlStylePassthroughMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

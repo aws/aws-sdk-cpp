@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class VerificationChannel
-  {
-    NOT_SET,
-    TEXT,
-    VOICE
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class VerificationChannel { NOT_SET, TEXT, VOICE };
 
-namespace VerificationChannelMapper
-{
+namespace VerificationChannelMapper {
 AWS_PINPOINTSMSVOICEV2_API VerificationChannel GetVerificationChannelForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForVerificationChannel(VerificationChannel value);
-} // namespace VerificationChannelMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace VerificationChannelMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

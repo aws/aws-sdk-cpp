@@ -5,12 +5,8 @@
 
 #include <aws/synthetics/SyntheticsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Synthetics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Synthetics
-} // namespace Aws
+namespace Aws {
+namespace Synthetics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Synthetics
+}  // namespace Aws

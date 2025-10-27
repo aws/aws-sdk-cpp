@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class DocumentThumbnailType
-  {
-    NOT_SET,
-    SMALL,
-    SMALL_HQ,
-    LARGE
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class DocumentThumbnailType { NOT_SET, SMALL, SMALL_HQ, LARGE };
 
-namespace DocumentThumbnailTypeMapper
-{
+namespace DocumentThumbnailTypeMapper {
 AWS_WORKDOCS_API DocumentThumbnailType GetDocumentThumbnailTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForDocumentThumbnailType(DocumentThumbnailType value);
-} // namespace DocumentThumbnailTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace DocumentThumbnailTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

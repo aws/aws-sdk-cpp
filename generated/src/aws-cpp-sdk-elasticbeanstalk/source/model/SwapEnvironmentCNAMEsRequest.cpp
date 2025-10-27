@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/SwapEnvironmentCNAMEsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/SwapEnvironmentCNAMEsRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String SwapEnvironmentCNAMEsRequest::SerializePayload() const
-{
+Aws::String SwapEnvironmentCNAMEsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SwapEnvironmentCNAMEs&";
-  if(m_sourceEnvironmentIdHasBeenSet)
-  {
+  if (m_sourceEnvironmentIdHasBeenSet) {
     ss << "SourceEnvironmentId=" << StringUtils::URLEncode(m_sourceEnvironmentId.c_str()) << "&";
   }
 
-  if(m_sourceEnvironmentNameHasBeenSet)
-  {
+  if (m_sourceEnvironmentNameHasBeenSet) {
     ss << "SourceEnvironmentName=" << StringUtils::URLEncode(m_sourceEnvironmentName.c_str()) << "&";
   }
 
-  if(m_destinationEnvironmentIdHasBeenSet)
-  {
+  if (m_destinationEnvironmentIdHasBeenSet) {
     ss << "DestinationEnvironmentId=" << StringUtils::URLEncode(m_destinationEnvironmentId.c_str()) << "&";
   }
 
-  if(m_destinationEnvironmentNameHasBeenSet)
-  {
+  if (m_destinationEnvironmentNameHasBeenSet) {
     ss << "DestinationEnvironmentName=" << StringUtils::URLEncode(m_destinationEnvironmentName.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String SwapEnvironmentCNAMEsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SwapEnvironmentCNAMEsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SwapEnvironmentCNAMEsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

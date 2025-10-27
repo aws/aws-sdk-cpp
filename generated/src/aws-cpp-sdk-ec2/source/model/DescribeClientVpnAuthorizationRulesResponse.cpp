@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeClientVpnAuthorizationRulesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeClientVpnAuthorizationRulesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClientVpnAuthorizationRulesResponse::DescribeClientVpnAuthorizationRulesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeClientVpnAuthorizationRulesResponse::DescribeClientVpnAuthorizationRulesResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeClientVpnAuthorizationRulesResponse& DescribeClientVpnAuthorizationRulesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeClientVpnAuthorizationRulesResponse& DescribeClientVpnAuthorizationRulesResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClientVpnAuthorizationRulesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClientVpnAuthorizationRulesResponse")) {
     resultNode = rootNode.FirstChild("DescribeClientVpnAuthorizationRulesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode authorizationRulesNode = resultNode.FirstChild("authorizationRule");
-    if(!authorizationRulesNode.IsNull())
-    {
+    if (!authorizationRulesNode.IsNull()) {
       XmlNode authorizationRulesMember = authorizationRulesNode.FirstChild("item");
       m_authorizationRulesHasBeenSet = !authorizationRulesMember.IsNull();
-      while(!authorizationRulesMember.IsNull())
-      {
+      while (!authorizationRulesMember.IsNull()) {
         m_authorizationRules.push_back(authorizationRulesMember);
         authorizationRulesMember = authorizationRulesMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeClientVpnAuthorizationRulesResponse& DescribeClientVpnAuthorizationRules
       m_authorizationRulesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeClientVpnAuthorizationRulesResponse& DescribeClientVpnAuthorizationRules
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnAuthorizationRulesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnAuthorizationRulesResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

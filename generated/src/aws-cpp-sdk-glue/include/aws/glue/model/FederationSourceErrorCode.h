@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class FederationSourceErrorCode
-  {
-    NOT_SET,
-    AccessDeniedException,
-    EntityNotFoundException,
-    InvalidCredentialsException,
-    InvalidInputException,
-    InvalidResponseException,
-    OperationTimeoutException,
-    OperationNotSupportedException,
-    InternalServiceException,
-    PartialFailureException,
-    ThrottlingException
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class FederationSourceErrorCode {
+  NOT_SET,
+  AccessDeniedException,
+  EntityNotFoundException,
+  InvalidCredentialsException,
+  InvalidInputException,
+  InvalidResponseException,
+  OperationTimeoutException,
+  OperationNotSupportedException,
+  InternalServiceException,
+  PartialFailureException,
+  ThrottlingException
+};
 
-namespace FederationSourceErrorCodeMapper
-{
+namespace FederationSourceErrorCodeMapper {
 AWS_GLUE_API FederationSourceErrorCode GetFederationSourceErrorCodeForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForFederationSourceErrorCode(FederationSourceErrorCode value);
-} // namespace FederationSourceErrorCodeMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace FederationSourceErrorCodeMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

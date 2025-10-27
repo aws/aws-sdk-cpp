@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/NetworkResourceCount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/NetworkResourceCount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
 
-NetworkResourceCount::NetworkResourceCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkResourceCount::NetworkResourceCount(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkResourceCount& NetworkResourceCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+NetworkResourceCount& NetworkResourceCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkResourceCount::Jsonize() const
-{
+JsonValue NetworkResourceCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

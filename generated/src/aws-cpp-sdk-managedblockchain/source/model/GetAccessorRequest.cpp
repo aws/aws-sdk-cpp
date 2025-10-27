@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/GetAccessorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/GetAccessorRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccessorRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetAccessorRequest::SerializePayload() const { return {}; }

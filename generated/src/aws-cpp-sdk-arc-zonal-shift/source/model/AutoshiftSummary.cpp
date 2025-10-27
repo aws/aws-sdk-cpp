@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCZonalShift
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCZonalShift {
+namespace Model {
 
-AutoshiftSummary::AutoshiftSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoshiftSummary::AutoshiftSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AutoshiftSummary& AutoshiftSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("awayFrom"))
-  {
+AutoshiftSummary& AutoshiftSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("awayFrom")) {
     m_awayFrom = jsonValue.GetString("awayFrom");
     m_awayFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTime"))
-  {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = AutoshiftExecutionStatusMapper::GetAutoshiftExecutionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoshiftSummary::Jsonize() const
-{
+JsonValue AutoshiftSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_awayFromHasBeenSet)
-  {
-   payload.WithString("awayFrom", m_awayFrom);
-
+  if (m_awayFromHasBeenSet) {
+    payload.WithString("awayFrom", m_awayFrom);
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AutoshiftExecutionStatusMapper::GetNameForAutoshiftExecutionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AutoshiftExecutionStatusMapper::GetNameForAutoshiftExecutionStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCZonalShift
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCZonalShift
+}  // namespace Aws

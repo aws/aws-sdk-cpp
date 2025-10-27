@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeTransitGatewayRouteTablesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeTransitGatewayRouteTablesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTransitGatewayRouteTablesRequest::SerializePayload() const
-{
+Aws::String DescribeTransitGatewayRouteTablesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTransitGatewayRouteTables&";
-  if(m_transitGatewayRouteTableIdsHasBeenSet)
-  {
+  if (m_transitGatewayRouteTableIdsHasBeenSet) {
     unsigned transitGatewayRouteTableIdsCount = 1;
-    for(auto& item : m_transitGatewayRouteTableIds)
-    {
-      ss << "TransitGatewayRouteTableIds." << transitGatewayRouteTableIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_transitGatewayRouteTableIds) {
+      ss << "TransitGatewayRouteTableIds." << transitGatewayRouteTableIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       transitGatewayRouteTableIdsCount++;
     }
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -54,8 +45,4 @@ Aws::String DescribeTransitGatewayRouteTablesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTransitGatewayRouteTablesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTransitGatewayRouteTablesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

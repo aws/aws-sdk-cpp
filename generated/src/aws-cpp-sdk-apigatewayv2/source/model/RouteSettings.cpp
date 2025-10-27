@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-RouteSettings::RouteSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteSettings::RouteSettings(JsonView jsonValue) { *this = jsonValue; }
 
-RouteSettings& RouteSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dataTraceEnabled"))
-  {
+RouteSettings& RouteSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dataTraceEnabled")) {
     m_dataTraceEnabled = jsonValue.GetBool("dataTraceEnabled");
     m_dataTraceEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detailedMetricsEnabled"))
-  {
+  if (jsonValue.ValueExists("detailedMetricsEnabled")) {
     m_detailedMetricsEnabled = jsonValue.GetBool("detailedMetricsEnabled");
     m_detailedMetricsEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("loggingLevel"))
-  {
+  if (jsonValue.ValueExists("loggingLevel")) {
     m_loggingLevel = LoggingLevelMapper::GetLoggingLevelForName(jsonValue.GetString("loggingLevel"));
     m_loggingLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("throttlingBurstLimit"))
-  {
+  if (jsonValue.ValueExists("throttlingBurstLimit")) {
     m_throttlingBurstLimit = jsonValue.GetInteger("throttlingBurstLimit");
     m_throttlingBurstLimitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("throttlingRateLimit"))
-  {
+  if (jsonValue.ValueExists("throttlingRateLimit")) {
     m_throttlingRateLimit = jsonValue.GetDouble("throttlingRateLimit");
     m_throttlingRateLimitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RouteSettings::Jsonize() const
-{
+JsonValue RouteSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataTraceEnabledHasBeenSet)
-  {
-   payload.WithBool("dataTraceEnabled", m_dataTraceEnabled);
-
+  if (m_dataTraceEnabledHasBeenSet) {
+    payload.WithBool("dataTraceEnabled", m_dataTraceEnabled);
   }
 
-  if(m_detailedMetricsEnabledHasBeenSet)
-  {
-   payload.WithBool("detailedMetricsEnabled", m_detailedMetricsEnabled);
-
+  if (m_detailedMetricsEnabledHasBeenSet) {
+    payload.WithBool("detailedMetricsEnabled", m_detailedMetricsEnabled);
   }
 
-  if(m_loggingLevelHasBeenSet)
-  {
-   payload.WithString("loggingLevel", LoggingLevelMapper::GetNameForLoggingLevel(m_loggingLevel));
+  if (m_loggingLevelHasBeenSet) {
+    payload.WithString("loggingLevel", LoggingLevelMapper::GetNameForLoggingLevel(m_loggingLevel));
   }
 
-  if(m_throttlingBurstLimitHasBeenSet)
-  {
-   payload.WithInteger("throttlingBurstLimit", m_throttlingBurstLimit);
-
+  if (m_throttlingBurstLimitHasBeenSet) {
+    payload.WithInteger("throttlingBurstLimit", m_throttlingBurstLimit);
   }
 
-  if(m_throttlingRateLimitHasBeenSet)
-  {
-   payload.WithDouble("throttlingRateLimit", m_throttlingRateLimit);
-
+  if (m_throttlingRateLimitHasBeenSet) {
+    payload.WithDouble("throttlingRateLimit", m_throttlingRateLimit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

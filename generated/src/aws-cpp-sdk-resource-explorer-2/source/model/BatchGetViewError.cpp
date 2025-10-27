@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resource-explorer-2/model/BatchGetViewError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resource-explorer-2/model/BatchGetViewError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResourceExplorer2
-{
-namespace Model
-{
+namespace Aws {
+namespace ResourceExplorer2 {
+namespace Model {
 
-BatchGetViewError::BatchGetViewError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetViewError::BatchGetViewError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetViewError& BatchGetViewError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ViewArn"))
-  {
+BatchGetViewError& BatchGetViewError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ViewArn")) {
     m_viewArn = jsonValue.GetString("ViewArn");
     m_viewArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetViewError::Jsonize() const
-{
+JsonValue BatchGetViewError::Jsonize() const {
   JsonValue payload;
 
-  if(m_viewArnHasBeenSet)
-  {
-   payload.WithString("ViewArn", m_viewArn);
-
+  if (m_viewArnHasBeenSet) {
+    payload.WithString("ViewArn", m_viewArn);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResourceExplorer2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResourceExplorer2
+}  // namespace Aws

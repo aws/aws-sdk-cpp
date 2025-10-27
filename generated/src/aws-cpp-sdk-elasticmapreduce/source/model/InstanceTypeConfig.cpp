@@ -3,135 +3,101 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/InstanceTypeConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/InstanceTypeConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceType"))
-  {
+InstanceTypeConfig& InstanceTypeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceType")) {
     m_instanceType = jsonValue.GetString("InstanceType");
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WeightedCapacity"))
-  {
+  if (jsonValue.ValueExists("WeightedCapacity")) {
     m_weightedCapacity = jsonValue.GetInteger("WeightedCapacity");
     m_weightedCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BidPrice"))
-  {
+  if (jsonValue.ValueExists("BidPrice")) {
     m_bidPrice = jsonValue.GetString("BidPrice");
     m_bidPriceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BidPriceAsPercentageOfOnDemandPrice"))
-  {
+  if (jsonValue.ValueExists("BidPriceAsPercentageOfOnDemandPrice")) {
     m_bidPriceAsPercentageOfOnDemandPrice = jsonValue.GetDouble("BidPriceAsPercentageOfOnDemandPrice");
     m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EbsConfiguration"))
-  {
+  if (jsonValue.ValueExists("EbsConfiguration")) {
     m_ebsConfiguration = jsonValue.GetObject("EbsConfiguration");
     m_ebsConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Configurations"))
-  {
+  if (jsonValue.ValueExists("Configurations")) {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
-    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
-    {
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
     }
     m_configurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomAmiId"))
-  {
+  if (jsonValue.ValueExists("CustomAmiId")) {
     m_customAmiId = jsonValue.GetString("CustomAmiId");
     m_customAmiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetDouble("Priority");
     m_priorityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceTypeConfig::Jsonize() const
-{
+JsonValue InstanceTypeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("InstanceType", m_instanceType);
-
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("InstanceType", m_instanceType);
   }
 
-  if(m_weightedCapacityHasBeenSet)
-  {
-   payload.WithInteger("WeightedCapacity", m_weightedCapacity);
-
+  if (m_weightedCapacityHasBeenSet) {
+    payload.WithInteger("WeightedCapacity", m_weightedCapacity);
   }
 
-  if(m_bidPriceHasBeenSet)
-  {
-   payload.WithString("BidPrice", m_bidPrice);
-
+  if (m_bidPriceHasBeenSet) {
+    payload.WithString("BidPrice", m_bidPrice);
   }
 
-  if(m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet)
-  {
-   payload.WithDouble("BidPriceAsPercentageOfOnDemandPrice", m_bidPriceAsPercentageOfOnDemandPrice);
-
+  if (m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet) {
+    payload.WithDouble("BidPriceAsPercentageOfOnDemandPrice", m_bidPriceAsPercentageOfOnDemandPrice);
   }
 
-  if(m_ebsConfigurationHasBeenSet)
-  {
-   payload.WithObject("EbsConfiguration", m_ebsConfiguration.Jsonize());
-
+  if (m_ebsConfigurationHasBeenSet) {
+    payload.WithObject("EbsConfiguration", m_ebsConfiguration.Jsonize());
   }
 
-  if(m_configurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
-   for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
-   {
-     configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
-   }
-   payload.WithArray("Configurations", std::move(configurationsJsonList));
-
+  if (m_configurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
+    for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
+      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
+    }
+    payload.WithArray("Configurations", std::move(configurationsJsonList));
   }
 
-  if(m_customAmiIdHasBeenSet)
-  {
-   payload.WithString("CustomAmiId", m_customAmiId);
-
+  if (m_customAmiIdHasBeenSet) {
+    payload.WithString("CustomAmiId", m_customAmiId);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithDouble("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithDouble("Priority", m_priority);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

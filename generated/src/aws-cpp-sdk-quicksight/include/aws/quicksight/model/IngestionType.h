@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class IngestionType
-  {
-    NOT_SET,
-    INCREMENTAL_REFRESH,
-    FULL_REFRESH
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class IngestionType { NOT_SET, INCREMENTAL_REFRESH, FULL_REFRESH };
 
-namespace IngestionTypeMapper
-{
+namespace IngestionTypeMapper {
 AWS_QUICKSIGHT_API IngestionType GetIngestionTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForIngestionType(IngestionType value);
-} // namespace IngestionTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace IngestionTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

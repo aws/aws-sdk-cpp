@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class DBProxyEndpointTargetRole
-  {
-    NOT_SET,
-    READ_WRITE,
-    READ_ONLY
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class DBProxyEndpointTargetRole { NOT_SET, READ_WRITE, READ_ONLY };
 
-namespace DBProxyEndpointTargetRoleMapper
-{
+namespace DBProxyEndpointTargetRoleMapper {
 AWS_RDS_API DBProxyEndpointTargetRole GetDBProxyEndpointTargetRoleForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForDBProxyEndpointTargetRole(DBProxyEndpointTargetRole value);
-} // namespace DBProxyEndpointTargetRoleMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace DBProxyEndpointTargetRoleMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

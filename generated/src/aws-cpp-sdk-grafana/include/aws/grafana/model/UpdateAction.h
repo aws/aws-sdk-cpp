@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedGrafana
-{
-namespace Model
-{
-  enum class UpdateAction
-  {
-    NOT_SET,
-    ADD,
-    REVOKE
-  };
+namespace Aws {
+namespace ManagedGrafana {
+namespace Model {
+enum class UpdateAction { NOT_SET, ADD, REVOKE };
 
-namespace UpdateActionMapper
-{
+namespace UpdateActionMapper {
 AWS_MANAGEDGRAFANA_API UpdateAction GetUpdateActionForName(const Aws::String& name);
 
 AWS_MANAGEDGRAFANA_API Aws::String GetNameForUpdateAction(UpdateAction value);
-} // namespace UpdateActionMapper
-} // namespace Model
-} // namespace ManagedGrafana
-} // namespace Aws
+}  // namespace UpdateActionMapper
+}  // namespace Model
+}  // namespace ManagedGrafana
+}  // namespace Aws

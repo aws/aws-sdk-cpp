@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class RecordingFileFormat
-  {
-    NOT_SET,
-    Wav,
-    Opus
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class RecordingFileFormat { NOT_SET, Wav, Opus };
 
-namespace RecordingFileFormatMapper
-{
+namespace RecordingFileFormatMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API RecordingFileFormat GetRecordingFileFormatForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForRecordingFileFormat(RecordingFileFormat value);
-} // namespace RecordingFileFormatMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace RecordingFileFormatMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

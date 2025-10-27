@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class ScalingAdjustmentType
-  {
-    NOT_SET,
-    ChangeInCapacity,
-    ExactCapacity,
-    PercentChangeInCapacity
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class ScalingAdjustmentType { NOT_SET, ChangeInCapacity, ExactCapacity, PercentChangeInCapacity };
 
-namespace ScalingAdjustmentTypeMapper
-{
+namespace ScalingAdjustmentTypeMapper {
 AWS_GAMELIFT_API ScalingAdjustmentType GetScalingAdjustmentTypeForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForScalingAdjustmentType(ScalingAdjustmentType value);
-} // namespace ScalingAdjustmentTypeMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace ScalingAdjustmentTypeMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/AclConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/AclConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-AclConfiguration::AclConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AclConfiguration::AclConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AclConfiguration& AclConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowedGroupsColumnName"))
-  {
+AclConfiguration& AclConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowedGroupsColumnName")) {
     m_allowedGroupsColumnName = jsonValue.GetString("AllowedGroupsColumnName");
     m_allowedGroupsColumnNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AclConfiguration::Jsonize() const
-{
+JsonValue AclConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedGroupsColumnNameHasBeenSet)
-  {
-   payload.WithString("AllowedGroupsColumnName", m_allowedGroupsColumnName);
-
+  if (m_allowedGroupsColumnNameHasBeenSet) {
+    payload.WithString("AllowedGroupsColumnName", m_allowedGroupsColumnName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/internetmonitor/model/QueryField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/internetmonitor/model/QueryField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
 
-QueryField::QueryField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryField::QueryField(JsonView jsonValue) { *this = jsonValue; }
 
-QueryField& QueryField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+QueryField& QueryField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryField::Jsonize() const
-{
+JsonValue QueryField::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-IdeConfiguration::IdeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdeConfiguration::IdeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IdeConfiguration& IdeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("runtime"))
-  {
+IdeConfiguration& IdeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("runtime")) {
     m_runtime = jsonValue.GetString("runtime");
     m_runtimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdeConfiguration::Jsonize() const
-{
+JsonValue IdeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_runtimeHasBeenSet)
-  {
-   payload.WithString("runtime", m_runtime);
-
+  if (m_runtimeHasBeenSet) {
+    payload.WithString("runtime", m_runtime);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/DeleteFilterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/DeleteFilterRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFilterRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteFilterRequest::SerializePayload() const { return {}; }

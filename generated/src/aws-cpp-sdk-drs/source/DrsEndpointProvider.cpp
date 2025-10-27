@@ -5,12 +5,8 @@
 
 #include <aws/drs/DrsEndpointProvider.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace drs
-} // namespace Aws
+namespace Aws {
+namespace drs {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace drs
+}  // namespace Aws

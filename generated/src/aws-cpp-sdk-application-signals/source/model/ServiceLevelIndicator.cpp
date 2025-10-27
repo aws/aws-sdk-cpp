@@ -11,62 +11,49 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-ServiceLevelIndicator::ServiceLevelIndicator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceLevelIndicator::ServiceLevelIndicator(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceLevelIndicator& ServiceLevelIndicator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SliMetric"))
-  {
+ServiceLevelIndicator& ServiceLevelIndicator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SliMetric")) {
     m_sliMetric = jsonValue.GetObject("SliMetric");
     m_sliMetricHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricThreshold"))
-  {
+  if (jsonValue.ValueExists("MetricThreshold")) {
     m_metricThreshold = jsonValue.GetDouble("MetricThreshold");
     m_metricThresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComparisonOperator"))
-  {
-    m_comparisonOperator = ServiceLevelIndicatorComparisonOperatorMapper::GetServiceLevelIndicatorComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
+  if (jsonValue.ValueExists("ComparisonOperator")) {
+    m_comparisonOperator = ServiceLevelIndicatorComparisonOperatorMapper::GetServiceLevelIndicatorComparisonOperatorForName(
+        jsonValue.GetString("ComparisonOperator"));
     m_comparisonOperatorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceLevelIndicator::Jsonize() const
-{
+JsonValue ServiceLevelIndicator::Jsonize() const {
   JsonValue payload;
 
-  if(m_sliMetricHasBeenSet)
-  {
-   payload.WithObject("SliMetric", m_sliMetric.Jsonize());
-
+  if (m_sliMetricHasBeenSet) {
+    payload.WithObject("SliMetric", m_sliMetric.Jsonize());
   }
 
-  if(m_metricThresholdHasBeenSet)
-  {
-   payload.WithDouble("MetricThreshold", m_metricThreshold);
-
+  if (m_metricThresholdHasBeenSet) {
+    payload.WithDouble("MetricThreshold", m_metricThreshold);
   }
 
-  if(m_comparisonOperatorHasBeenSet)
-  {
-   payload.WithString("ComparisonOperator", ServiceLevelIndicatorComparisonOperatorMapper::GetNameForServiceLevelIndicatorComparisonOperator(m_comparisonOperator));
+  if (m_comparisonOperatorHasBeenSet) {
+    payload.WithString(
+        "ComparisonOperator",
+        ServiceLevelIndicatorComparisonOperatorMapper::GetNameForServiceLevelIndicatorComparisonOperator(m_comparisonOperator));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/GetResourcePoliciesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm/model/GetResourcePoliciesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourcePoliciesResult::GetResourcePoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetResourcePoliciesResult::GetResourcePoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetResourcePoliciesResult& GetResourcePoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetResourcePoliciesResult& GetResourcePoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Policies"))
-  {
+  if (jsonValue.ValueExists("Policies")) {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
-    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
-    {
+    for (unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex) {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
     }
     m_policiesHasBeenSet = true;
@@ -42,12 +35,10 @@ GetResourcePoliciesResult& GetResourcePoliciesResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

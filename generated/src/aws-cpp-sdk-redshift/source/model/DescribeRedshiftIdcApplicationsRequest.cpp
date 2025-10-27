@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeRedshiftIdcApplicationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeRedshiftIdcApplicationsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeRedshiftIdcApplicationsRequest::SerializePayload() const
-{
+Aws::String DescribeRedshiftIdcApplicationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeRedshiftIdcApplications&";
-  if(m_redshiftIdcApplicationArnHasBeenSet)
-  {
+  if (m_redshiftIdcApplicationArnHasBeenSet) {
     ss << "RedshiftIdcApplicationArn=" << StringUtils::URLEncode(m_redshiftIdcApplicationArn.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeRedshiftIdcApplicationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeRedshiftIdcApplicationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeRedshiftIdcApplicationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ApiGatewayV2 {
+namespace Model {
 
+/**
+ * <p>Validation constraints imposed on parameters of a request (path, query
+ * string, headers).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ParameterConstraints">AWS
+ * API Reference</a></p>
+ */
+class ParameterConstraints {
+ public:
+  AWS_APIGATEWAYV2_API ParameterConstraints() = default;
+  AWS_APIGATEWAYV2_API ParameterConstraints(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APIGATEWAYV2_API ParameterConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Validation constraints imposed on parameters of a request (path, query
-   * string, headers).</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ParameterConstraints">AWS
-   * API Reference</a></p>
+   * <p>Whether or not the parameter is required.</p>
    */
-  class ParameterConstraints
-  {
-  public:
-    AWS_APIGATEWAYV2_API ParameterConstraints() = default;
-    AWS_APIGATEWAYV2_API ParameterConstraints(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APIGATEWAYV2_API ParameterConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetRequired() const { return m_required; }
+  inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
+  inline void SetRequired(bool value) {
+    m_requiredHasBeenSet = true;
+    m_required = value;
+  }
+  inline ParameterConstraints& WithRequired(bool value) {
+    SetRequired(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_required{false};
+  bool m_requiredHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Whether or not the parameter is required.</p>
-     */
-    inline bool GetRequired() const { return m_required; }
-    inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-    inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
-    inline ParameterConstraints& WithRequired(bool value) { SetRequired(value); return *this;}
-    ///@}
-  private:
-
-    bool m_required{false};
-    bool m_requiredHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

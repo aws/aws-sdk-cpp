@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class PrincipalType
-  {
-    NOT_SET,
-    USER,
-    ROLE,
-    GROUP
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class PrincipalType { NOT_SET, USER, ROLE, GROUP };
 
-namespace PrincipalTypeMapper
-{
+namespace PrincipalTypeMapper {
 AWS_GLUE_API PrincipalType GetPrincipalTypeForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForPrincipalType(PrincipalType value);
-} // namespace PrincipalTypeMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace PrincipalTypeMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

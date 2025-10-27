@@ -7,27 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class SearchContactsMatchType
-  {
-    NOT_SET,
-    MATCH_ALL,
-    MATCH_ANY,
-    MATCH_EXACT,
-    MATCH_NONE
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class SearchContactsMatchType { NOT_SET, MATCH_ALL, MATCH_ANY, MATCH_EXACT, MATCH_NONE };
 
-namespace SearchContactsMatchTypeMapper
-{
+namespace SearchContactsMatchTypeMapper {
 AWS_CONNECT_API SearchContactsMatchType GetSearchContactsMatchTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForSearchContactsMatchType(SearchContactsMatchType value);
-} // namespace SearchContactsMatchTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace SearchContactsMatchTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

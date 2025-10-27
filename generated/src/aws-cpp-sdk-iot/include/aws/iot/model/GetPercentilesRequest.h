@@ -4,113 +4,142 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/IoTRequest.h>
+#include <aws/iot/IoT_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
+/**
+ */
+class GetPercentilesRequest : public IoTRequest {
+ public:
+  AWS_IOT_API GetPercentilesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetPercentiles"; }
+
+  AWS_IOT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the index to search.</p>
    */
-  class GetPercentilesRequest : public IoTRequest
-  {
-  public:
-    AWS_IOT_API GetPercentilesRequest() = default;
+  inline const Aws::String& GetIndexName() const { return m_indexName; }
+  inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+  template <typename IndexNameT = Aws::String>
+  void SetIndexName(IndexNameT&& value) {
+    m_indexNameHasBeenSet = true;
+    m_indexName = std::forward<IndexNameT>(value);
+  }
+  template <typename IndexNameT = Aws::String>
+  GetPercentilesRequest& WithIndexName(IndexNameT&& value) {
+    SetIndexName(std::forward<IndexNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetPercentiles"; }
+  ///@{
+  /**
+   * <p>The search query string.</p>
+   */
+  inline const Aws::String& GetQueryString() const { return m_queryString; }
+  inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+  template <typename QueryStringT = Aws::String>
+  void SetQueryString(QueryStringT&& value) {
+    m_queryStringHasBeenSet = true;
+    m_queryString = std::forward<QueryStringT>(value);
+  }
+  template <typename QueryStringT = Aws::String>
+  GetPercentilesRequest& WithQueryString(QueryStringT&& value) {
+    SetQueryString(std::forward<QueryStringT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_IOT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The field to aggregate.</p>
+   */
+  inline const Aws::String& GetAggregationField() const { return m_aggregationField; }
+  inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
+  template <typename AggregationFieldT = Aws::String>
+  void SetAggregationField(AggregationFieldT&& value) {
+    m_aggregationFieldHasBeenSet = true;
+    m_aggregationField = std::forward<AggregationFieldT>(value);
+  }
+  template <typename AggregationFieldT = Aws::String>
+  GetPercentilesRequest& WithAggregationField(AggregationFieldT&& value) {
+    SetAggregationField(std::forward<AggregationFieldT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The query version.</p>
+   */
+  inline const Aws::String& GetQueryVersion() const { return m_queryVersion; }
+  inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
+  template <typename QueryVersionT = Aws::String>
+  void SetQueryVersion(QueryVersionT&& value) {
+    m_queryVersionHasBeenSet = true;
+    m_queryVersion = std::forward<QueryVersionT>(value);
+  }
+  template <typename QueryVersionT = Aws::String>
+  GetPercentilesRequest& WithQueryVersion(QueryVersionT&& value) {
+    SetQueryVersion(std::forward<QueryVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the index to search.</p>
-     */
-    inline const Aws::String& GetIndexName() const { return m_indexName; }
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    template<typename IndexNameT = Aws::String>
-    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
-    template<typename IndexNameT = Aws::String>
-    GetPercentilesRequest& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The percentile groups returned.</p>
+   */
+  inline const Aws::Vector<double>& GetPercents() const { return m_percents; }
+  inline bool PercentsHasBeenSet() const { return m_percentsHasBeenSet; }
+  template <typename PercentsT = Aws::Vector<double>>
+  void SetPercents(PercentsT&& value) {
+    m_percentsHasBeenSet = true;
+    m_percents = std::forward<PercentsT>(value);
+  }
+  template <typename PercentsT = Aws::Vector<double>>
+  GetPercentilesRequest& WithPercents(PercentsT&& value) {
+    SetPercents(std::forward<PercentsT>(value));
+    return *this;
+  }
+  inline GetPercentilesRequest& AddPercents(double value) {
+    m_percentsHasBeenSet = true;
+    m_percents.push_back(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_indexName;
+  bool m_indexNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The search query string.</p>
-     */
-    inline const Aws::String& GetQueryString() const { return m_queryString; }
-    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    template<typename QueryStringT = Aws::String>
-    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
-    template<typename QueryStringT = Aws::String>
-    GetPercentilesRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
-    ///@}
+  Aws::String m_queryString;
+  bool m_queryStringHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The field to aggregate.</p>
-     */
-    inline const Aws::String& GetAggregationField() const { return m_aggregationField; }
-    inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
-    template<typename AggregationFieldT = Aws::String>
-    void SetAggregationField(AggregationFieldT&& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = std::forward<AggregationFieldT>(value); }
-    template<typename AggregationFieldT = Aws::String>
-    GetPercentilesRequest& WithAggregationField(AggregationFieldT&& value) { SetAggregationField(std::forward<AggregationFieldT>(value)); return *this;}
-    ///@}
+  Aws::String m_aggregationField;
+  bool m_aggregationFieldHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The query version.</p>
-     */
-    inline const Aws::String& GetQueryVersion() const { return m_queryVersion; }
-    inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
-    template<typename QueryVersionT = Aws::String>
-    void SetQueryVersion(QueryVersionT&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::forward<QueryVersionT>(value); }
-    template<typename QueryVersionT = Aws::String>
-    GetPercentilesRequest& WithQueryVersion(QueryVersionT&& value) { SetQueryVersion(std::forward<QueryVersionT>(value)); return *this;}
-    ///@}
+  Aws::String m_queryVersion;
+  bool m_queryVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The percentile groups returned.</p>
-     */
-    inline const Aws::Vector<double>& GetPercents() const { return m_percents; }
-    inline bool PercentsHasBeenSet() const { return m_percentsHasBeenSet; }
-    template<typename PercentsT = Aws::Vector<double>>
-    void SetPercents(PercentsT&& value) { m_percentsHasBeenSet = true; m_percents = std::forward<PercentsT>(value); }
-    template<typename PercentsT = Aws::Vector<double>>
-    GetPercentilesRequest& WithPercents(PercentsT&& value) { SetPercents(std::forward<PercentsT>(value)); return *this;}
-    inline GetPercentilesRequest& AddPercents(double value) { m_percentsHasBeenSet = true; m_percents.push_back(value); return *this; }
-    ///@}
-  private:
+  Aws::Vector<double> m_percents;
+  bool m_percentsHasBeenSet = false;
+};
 
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
-
-    Aws::String m_queryString;
-    bool m_queryStringHasBeenSet = false;
-
-    Aws::String m_aggregationField;
-    bool m_aggregationFieldHasBeenSet = false;
-
-    Aws::String m_queryVersion;
-    bool m_queryVersionHasBeenSet = false;
-
-    Aws::Vector<double> m_percents;
-    bool m_percentsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

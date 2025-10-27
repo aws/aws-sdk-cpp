@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/Rule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/Rule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-Rule::Rule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Rule::Rule(JsonView jsonValue) { *this = jsonValue; }
 
-Rule& Rule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("detectorId"))
-  {
+Rule& Rule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("detectorId")) {
     m_detectorId = jsonValue.GetString("detectorId");
     m_detectorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleId"))
-  {
+  if (jsonValue.ValueExists("ruleId")) {
     m_ruleId = jsonValue.GetString("ruleId");
     m_ruleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleVersion"))
-  {
+  if (jsonValue.ValueExists("ruleVersion")) {
     m_ruleVersion = jsonValue.GetString("ruleVersion");
     m_ruleVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Rule::Jsonize() const
-{
+JsonValue Rule::Jsonize() const {
   JsonValue payload;
 
-  if(m_detectorIdHasBeenSet)
-  {
-   payload.WithString("detectorId", m_detectorId);
-
+  if (m_detectorIdHasBeenSet) {
+    payload.WithString("detectorId", m_detectorId);
   }
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("ruleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("ruleId", m_ruleId);
   }
 
-  if(m_ruleVersionHasBeenSet)
-  {
-   payload.WithString("ruleVersion", m_ruleVersion);
-
+  if (m_ruleVersionHasBeenSet) {
+    payload.WithString("ruleVersion", m_ruleVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/FargateProfileSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/FargateProfileSelector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-FargateProfileSelector::FargateProfileSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FargateProfileSelector::FargateProfileSelector(JsonView jsonValue) { *this = jsonValue; }
 
-FargateProfileSelector& FargateProfileSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("namespace"))
-  {
+FargateProfileSelector& FargateProfileSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("namespace")) {
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("labels"))
-  {
+  if (jsonValue.ValueExists("labels")) {
     Aws::Map<Aws::String, JsonView> labelsJsonMap = jsonValue.GetObject("labels").GetAllObjects();
-    for(auto& labelsItem : labelsJsonMap)
-    {
+    for (auto& labelsItem : labelsJsonMap) {
       m_labels[labelsItem.first] = labelsItem.second.AsString();
     }
     m_labelsHasBeenSet = true;
@@ -42,30 +32,24 @@ FargateProfileSelector& FargateProfileSelector::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FargateProfileSelector::Jsonize() const
-{
+JsonValue FargateProfileSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("namespace", m_namespace);
   }
 
-  if(m_labelsHasBeenSet)
-  {
-   JsonValue labelsJsonMap;
-   for(auto& labelsItem : m_labels)
-   {
-     labelsJsonMap.WithString(labelsItem.first, labelsItem.second);
-   }
-   payload.WithObject("labels", std::move(labelsJsonMap));
-
+  if (m_labelsHasBeenSet) {
+    JsonValue labelsJsonMap;
+    for (auto& labelsItem : m_labels) {
+      labelsJsonMap.WithString(labelsItem.first, labelsItem.second);
+    }
+    payload.WithObject("labels", std::move(labelsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

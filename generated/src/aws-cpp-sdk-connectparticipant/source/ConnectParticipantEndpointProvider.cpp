@@ -5,12 +5,8 @@
 
 #include <aws/connectparticipant/ConnectParticipantEndpointProvider.h>
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ConnectParticipant
-} // namespace Aws
+namespace Aws {
+namespace ConnectParticipant {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ConnectParticipant
+}  // namespace Aws

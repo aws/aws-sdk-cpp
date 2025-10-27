@@ -11,41 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-EvaluationPrecomputedRetrieveAndGenerateSourceConfig::EvaluationPrecomputedRetrieveAndGenerateSourceConfig(JsonView jsonValue)
-{
+EvaluationPrecomputedRetrieveAndGenerateSourceConfig::EvaluationPrecomputedRetrieveAndGenerateSourceConfig(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-EvaluationPrecomputedRetrieveAndGenerateSourceConfig& EvaluationPrecomputedRetrieveAndGenerateSourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ragSourceIdentifier"))
-  {
+EvaluationPrecomputedRetrieveAndGenerateSourceConfig& EvaluationPrecomputedRetrieveAndGenerateSourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ragSourceIdentifier")) {
     m_ragSourceIdentifier = jsonValue.GetString("ragSourceIdentifier");
     m_ragSourceIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationPrecomputedRetrieveAndGenerateSourceConfig::Jsonize() const
-{
+JsonValue EvaluationPrecomputedRetrieveAndGenerateSourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_ragSourceIdentifierHasBeenSet)
-  {
-   payload.WithString("ragSourceIdentifier", m_ragSourceIdentifier);
-
+  if (m_ragSourceIdentifierHasBeenSet) {
+    payload.WithString("ragSourceIdentifier", m_ragSourceIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

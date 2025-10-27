@@ -7,66 +7,71 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/RepositoryMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CodeCommit {
+namespace Model {
+/**
+ * <p>Represents the output of a create repository operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepositoryOutput">AWS
+ * API Reference</a></p>
+ */
+class CreateRepositoryResult {
+ public:
+  AWS_CODECOMMIT_API CreateRepositoryResult() = default;
+  AWS_CODECOMMIT_API CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODECOMMIT_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>Represents the output of a create repository operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepositoryOutput">AWS
-   * API Reference</a></p>
+   * <p>Information about the newly created repository.</p>
    */
-  class CreateRepositoryResult
-  {
-  public:
-    AWS_CODECOMMIT_API CreateRepositoryResult() = default;
-    AWS_CODECOMMIT_API CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CODECOMMIT_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const RepositoryMetadata& GetRepositoryMetadata() const { return m_repositoryMetadata; }
+  template <typename RepositoryMetadataT = RepositoryMetadata>
+  void SetRepositoryMetadata(RepositoryMetadataT&& value) {
+    m_repositoryMetadataHasBeenSet = true;
+    m_repositoryMetadata = std::forward<RepositoryMetadataT>(value);
+  }
+  template <typename RepositoryMetadataT = RepositoryMetadata>
+  CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadataT&& value) {
+    SetRepositoryMetadata(std::forward<RepositoryMetadataT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>Information about the newly created repository.</p>
-     */
-    inline const RepositoryMetadata& GetRepositoryMetadata() const { return m_repositoryMetadata; }
-    template<typename RepositoryMetadataT = RepositoryMetadata>
-    void SetRepositoryMetadata(RepositoryMetadataT&& value) { m_repositoryMetadataHasBeenSet = true; m_repositoryMetadata = std::forward<RepositoryMetadataT>(value); }
-    template<typename RepositoryMetadataT = RepositoryMetadata>
-    CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadataT&& value) { SetRepositoryMetadata(std::forward<RepositoryMetadataT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateRepositoryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  RepositoryMetadata m_repositoryMetadata;
+  bool m_repositoryMetadataHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateRepositoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    RepositoryMetadata m_repositoryMetadata;
-    bool m_repositoryMetadataHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/KinesisStreamsInputUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/KinesisStreamsInputUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceARNUpdate"))
-  {
+KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceARNUpdate")) {
     m_resourceARNUpdate = jsonValue.GetString("ResourceARNUpdate");
     m_resourceARNUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisStreamsInputUpdate::Jsonize() const
-{
+JsonValue KinesisStreamsInputUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceARNUpdateHasBeenSet)
-  {
-   payload.WithString("ResourceARNUpdate", m_resourceARNUpdate);
-
+  if (m_resourceARNUpdateHasBeenSet) {
+    payload.WithString("ResourceARNUpdate", m_resourceARNUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

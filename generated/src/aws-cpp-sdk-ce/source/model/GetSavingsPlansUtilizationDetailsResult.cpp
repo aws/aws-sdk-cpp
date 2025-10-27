@@ -4,10 +4,10 @@
  */
 
 #include <aws/ce/model/GetSavingsPlansUtilizationDetailsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,47 +17,40 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSavingsPlansUtilizationDetailsResult::GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSavingsPlansUtilizationDetailsResult::GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetSavingsPlansUtilizationDetailsResult& GetSavingsPlansUtilizationDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSavingsPlansUtilizationDetailsResult& GetSavingsPlansUtilizationDetailsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SavingsPlansUtilizationDetails"))
-  {
+  if (jsonValue.ValueExists("SavingsPlansUtilizationDetails")) {
     Aws::Utils::Array<JsonView> savingsPlansUtilizationDetailsJsonList = jsonValue.GetArray("SavingsPlansUtilizationDetails");
-    for(unsigned savingsPlansUtilizationDetailsIndex = 0; savingsPlansUtilizationDetailsIndex < savingsPlansUtilizationDetailsJsonList.GetLength(); ++savingsPlansUtilizationDetailsIndex)
-    {
+    for (unsigned savingsPlansUtilizationDetailsIndex = 0;
+         savingsPlansUtilizationDetailsIndex < savingsPlansUtilizationDetailsJsonList.GetLength(); ++savingsPlansUtilizationDetailsIndex) {
       m_savingsPlansUtilizationDetails.push_back(savingsPlansUtilizationDetailsJsonList[savingsPlansUtilizationDetailsIndex].AsObject());
     }
     m_savingsPlansUtilizationDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Total"))
-  {
+  if (jsonValue.ValueExists("Total")) {
     m_total = jsonValue.GetObject("Total");
     m_totalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimePeriod"))
-  {
+  if (jsonValue.ValueExists("TimePeriod")) {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
     m_timePeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

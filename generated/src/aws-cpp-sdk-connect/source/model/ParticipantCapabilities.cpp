@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ParticipantCapabilities::ParticipantCapabilities(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParticipantCapabilities::ParticipantCapabilities(JsonView jsonValue) { *this = jsonValue; }
 
-ParticipantCapabilities& ParticipantCapabilities::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Video"))
-  {
+ParticipantCapabilities& ParticipantCapabilities::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Video")) {
     m_video = VideoCapabilityMapper::GetVideoCapabilityForName(jsonValue.GetString("Video"));
     m_videoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScreenShare"))
-  {
+  if (jsonValue.ValueExists("ScreenShare")) {
     m_screenShare = ScreenShareCapabilityMapper::GetScreenShareCapabilityForName(jsonValue.GetString("ScreenShare"));
     m_screenShareHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParticipantCapabilities::Jsonize() const
-{
+JsonValue ParticipantCapabilities::Jsonize() const {
   JsonValue payload;
 
-  if(m_videoHasBeenSet)
-  {
-   payload.WithString("Video", VideoCapabilityMapper::GetNameForVideoCapability(m_video));
+  if (m_videoHasBeenSet) {
+    payload.WithString("Video", VideoCapabilityMapper::GetNameForVideoCapability(m_video));
   }
 
-  if(m_screenShareHasBeenSet)
-  {
-   payload.WithString("ScreenShare", ScreenShareCapabilityMapper::GetNameForScreenShareCapability(m_screenShare));
+  if (m_screenShareHasBeenSet) {
+    payload.WithString("ScreenShare", ScreenShareCapabilityMapper::GetNameForScreenShareCapability(m_screenShare));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

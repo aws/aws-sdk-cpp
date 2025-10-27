@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::TimestreamInfluxDB;
 
-AWSError<CoreErrors> TimestreamInfluxDBErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TimestreamInfluxDBErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TimestreamInfluxDBErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

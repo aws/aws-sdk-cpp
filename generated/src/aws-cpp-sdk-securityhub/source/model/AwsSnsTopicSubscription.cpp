@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsSnsTopicSubscription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsSnsTopicSubscription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsSnsTopicSubscription::AwsSnsTopicSubscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsSnsTopicSubscription::AwsSnsTopicSubscription(JsonView jsonValue) { *this = jsonValue; }
 
-AwsSnsTopicSubscription& AwsSnsTopicSubscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Endpoint"))
-  {
+AwsSnsTopicSubscription& AwsSnsTopicSubscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Endpoint")) {
     m_endpoint = jsonValue.GetString("Endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Protocol"))
-  {
+  if (jsonValue.ValueExists("Protocol")) {
     m_protocol = jsonValue.GetString("Protocol");
     m_protocolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsSnsTopicSubscription::Jsonize() const
-{
+JsonValue AwsSnsTopicSubscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("Endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("Endpoint", m_endpoint);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("Protocol", m_protocol);
-
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", m_protocol);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

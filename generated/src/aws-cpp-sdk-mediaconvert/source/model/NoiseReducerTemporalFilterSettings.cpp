@@ -3,91 +3,75 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/NoiseReducerTemporalFilterSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/NoiseReducerTemporalFilterSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue) { *this = jsonValue; }
 
-NoiseReducerTemporalFilterSettings& NoiseReducerTemporalFilterSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aggressiveMode"))
-  {
+NoiseReducerTemporalFilterSettings& NoiseReducerTemporalFilterSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aggressiveMode")) {
     m_aggressiveMode = jsonValue.GetInteger("aggressiveMode");
     m_aggressiveModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postTemporalSharpening"))
-  {
-    m_postTemporalSharpening = NoiseFilterPostTemporalSharpeningMapper::GetNoiseFilterPostTemporalSharpeningForName(jsonValue.GetString("postTemporalSharpening"));
+  if (jsonValue.ValueExists("postTemporalSharpening")) {
+    m_postTemporalSharpening =
+        NoiseFilterPostTemporalSharpeningMapper::GetNoiseFilterPostTemporalSharpeningForName(jsonValue.GetString("postTemporalSharpening"));
     m_postTemporalSharpeningHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postTemporalSharpeningStrength"))
-  {
-    m_postTemporalSharpeningStrength = NoiseFilterPostTemporalSharpeningStrengthMapper::GetNoiseFilterPostTemporalSharpeningStrengthForName(jsonValue.GetString("postTemporalSharpeningStrength"));
+  if (jsonValue.ValueExists("postTemporalSharpeningStrength")) {
+    m_postTemporalSharpeningStrength = NoiseFilterPostTemporalSharpeningStrengthMapper::GetNoiseFilterPostTemporalSharpeningStrengthForName(
+        jsonValue.GetString("postTemporalSharpeningStrength"));
     m_postTemporalSharpeningStrengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("speed"))
-  {
+  if (jsonValue.ValueExists("speed")) {
     m_speed = jsonValue.GetInteger("speed");
     m_speedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("strength"))
-  {
+  if (jsonValue.ValueExists("strength")) {
     m_strength = jsonValue.GetInteger("strength");
     m_strengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NoiseReducerTemporalFilterSettings::Jsonize() const
-{
+JsonValue NoiseReducerTemporalFilterSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_aggressiveModeHasBeenSet)
-  {
-   payload.WithInteger("aggressiveMode", m_aggressiveMode);
-
+  if (m_aggressiveModeHasBeenSet) {
+    payload.WithInteger("aggressiveMode", m_aggressiveMode);
   }
 
-  if(m_postTemporalSharpeningHasBeenSet)
-  {
-   payload.WithString("postTemporalSharpening", NoiseFilterPostTemporalSharpeningMapper::GetNameForNoiseFilterPostTemporalSharpening(m_postTemporalSharpening));
+  if (m_postTemporalSharpeningHasBeenSet) {
+    payload.WithString("postTemporalSharpening",
+                       NoiseFilterPostTemporalSharpeningMapper::GetNameForNoiseFilterPostTemporalSharpening(m_postTemporalSharpening));
   }
 
-  if(m_postTemporalSharpeningStrengthHasBeenSet)
-  {
-   payload.WithString("postTemporalSharpeningStrength", NoiseFilterPostTemporalSharpeningStrengthMapper::GetNameForNoiseFilterPostTemporalSharpeningStrength(m_postTemporalSharpeningStrength));
+  if (m_postTemporalSharpeningStrengthHasBeenSet) {
+    payload.WithString("postTemporalSharpeningStrength",
+                       NoiseFilterPostTemporalSharpeningStrengthMapper::GetNameForNoiseFilterPostTemporalSharpeningStrength(
+                           m_postTemporalSharpeningStrength));
   }
 
-  if(m_speedHasBeenSet)
-  {
-   payload.WithInteger("speed", m_speed);
-
+  if (m_speedHasBeenSet) {
+    payload.WithInteger("speed", m_speed);
   }
 
-  if(m_strengthHasBeenSet)
-  {
-   payload.WithInteger("strength", m_strength);
-
+  if (m_strengthHasBeenSet) {
+    payload.WithInteger("strength", m_strength);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

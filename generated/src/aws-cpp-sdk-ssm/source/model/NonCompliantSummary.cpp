@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/NonCompliantSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/NonCompliantSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-NonCompliantSummary::NonCompliantSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NonCompliantSummary::NonCompliantSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NonCompliantSummary& NonCompliantSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NonCompliantCount"))
-  {
+NonCompliantSummary& NonCompliantSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NonCompliantCount")) {
     m_nonCompliantCount = jsonValue.GetInteger("NonCompliantCount");
     m_nonCompliantCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SeveritySummary"))
-  {
+  if (jsonValue.ValueExists("SeveritySummary")) {
     m_severitySummary = jsonValue.GetObject("SeveritySummary");
     m_severitySummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NonCompliantSummary::Jsonize() const
-{
+JsonValue NonCompliantSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nonCompliantCountHasBeenSet)
-  {
-   payload.WithInteger("NonCompliantCount", m_nonCompliantCount);
-
+  if (m_nonCompliantCountHasBeenSet) {
+    payload.WithInteger("NonCompliantCount", m_nonCompliantCount);
   }
 
-  if(m_severitySummaryHasBeenSet)
-  {
-   payload.WithObject("SeveritySummary", m_severitySummary.Jsonize());
-
+  if (m_severitySummaryHasBeenSet) {
+    payload.WithObject("SeveritySummary", m_severitySummary.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

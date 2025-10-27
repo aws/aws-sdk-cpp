@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class TargetConnectionNetworkType
-  {
-    NOT_SET,
-    IPV4,
-    IPV6
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class TargetConnectionNetworkType { NOT_SET, IPV4, IPV6 };
 
-namespace TargetConnectionNetworkTypeMapper
-{
+namespace TargetConnectionNetworkTypeMapper {
 AWS_RDS_API TargetConnectionNetworkType GetTargetConnectionNetworkTypeForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForTargetConnectionNetworkType(TargetConnectionNetworkType value);
-} // namespace TargetConnectionNetworkTypeMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace TargetConnectionNetworkTypeMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

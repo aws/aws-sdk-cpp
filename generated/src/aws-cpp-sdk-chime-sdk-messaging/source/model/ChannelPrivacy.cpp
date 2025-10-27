@@ -4,69 +4,55 @@
  */
 
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
+namespace ChannelPrivacyMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMessaging
-  {
-    namespace Model
-    {
-      namespace ChannelPrivacyMapper
-      {
+static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
+static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
-        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
-        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+ChannelPrivacy GetChannelPrivacyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PUBLIC__HASH) {
+    return ChannelPrivacy::PUBLIC_;
+  } else if (hashCode == PRIVATE__HASH) {
+    return ChannelPrivacy::PRIVATE_;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChannelPrivacy>(hashCode);
+  }
 
+  return ChannelPrivacy::NOT_SET;
+}
 
-        ChannelPrivacy GetChannelPrivacyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PUBLIC__HASH)
-          {
-            return ChannelPrivacy::PUBLIC_;
-          }
-          else if (hashCode == PRIVATE__HASH)
-          {
-            return ChannelPrivacy::PRIVATE_;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChannelPrivacy>(hashCode);
-          }
+Aws::String GetNameForChannelPrivacy(ChannelPrivacy enumValue) {
+  switch (enumValue) {
+    case ChannelPrivacy::NOT_SET:
+      return {};
+    case ChannelPrivacy::PUBLIC_:
+      return "PUBLIC";
+    case ChannelPrivacy::PRIVATE_:
+      return "PRIVATE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChannelPrivacy::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChannelPrivacy(ChannelPrivacy enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChannelPrivacy::NOT_SET:
-            return {};
-          case ChannelPrivacy::PUBLIC_:
-            return "PUBLIC";
-          case ChannelPrivacy::PRIVATE_:
-            return "PRIVATE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChannelPrivacyMapper
-    } // namespace Model
-  } // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace ChannelPrivacyMapper
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/SchemaAttribute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/SchemaAttribute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-SchemaAttribute::SchemaAttribute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SchemaAttribute::SchemaAttribute(JsonView jsonValue) { *this = jsonValue; }
 
-SchemaAttribute& SchemaAttribute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+SchemaAttribute& SchemaAttribute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeType"))
-  {
+  if (jsonValue.ValueExists("AttributeType")) {
     m_attributeType = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("AttributeType"));
     m_attributeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SchemaAttribute::Jsonize() const
-{
+JsonValue SchemaAttribute::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_attributeTypeHasBeenSet)
-  {
-   payload.WithString("AttributeType", AttributeTypeMapper::GetNameForAttributeType(m_attributeType));
+  if (m_attributeTypeHasBeenSet) {
+    payload.WithString("AttributeType", AttributeTypeMapper::GetNameForAttributeType(m_attributeType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

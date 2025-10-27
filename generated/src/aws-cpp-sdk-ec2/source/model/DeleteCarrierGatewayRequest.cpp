@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCarrierGatewayRequest::SerializePayload() const
-{
+Aws::String DeleteCarrierGatewayRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCarrierGateway&";
-  if(m_carrierGatewayIdHasBeenSet)
-  {
+  if (m_carrierGatewayIdHasBeenSet) {
     ss << "CarrierGatewayId=" << StringUtils::URLEncode(m_carrierGatewayId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteCarrierGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCarrierGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCarrierGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

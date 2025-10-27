@@ -11,70 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TranscriptCriteria::TranscriptCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TranscriptCriteria::TranscriptCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-TranscriptCriteria& TranscriptCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParticipantRole"))
-  {
+TranscriptCriteria& TranscriptCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParticipantRole")) {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
     m_participantRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SearchText"))
-  {
+  if (jsonValue.ValueExists("SearchText")) {
     Aws::Utils::Array<JsonView> searchTextJsonList = jsonValue.GetArray("SearchText");
-    for(unsigned searchTextIndex = 0; searchTextIndex < searchTextJsonList.GetLength(); ++searchTextIndex)
-    {
+    for (unsigned searchTextIndex = 0; searchTextIndex < searchTextJsonList.GetLength(); ++searchTextIndex) {
       m_searchText.push_back(searchTextJsonList[searchTextIndex].AsString());
     }
     m_searchTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchType"))
-  {
+  if (jsonValue.ValueExists("MatchType")) {
     m_matchType = SearchContactsMatchTypeMapper::GetSearchContactsMatchTypeForName(jsonValue.GetString("MatchType"));
     m_matchTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TranscriptCriteria::Jsonize() const
-{
+JsonValue TranscriptCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_participantRoleHasBeenSet)
-  {
-   payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  if (m_participantRoleHasBeenSet) {
+    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
   }
 
-  if(m_searchTextHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> searchTextJsonList(m_searchText.size());
-   for(unsigned searchTextIndex = 0; searchTextIndex < searchTextJsonList.GetLength(); ++searchTextIndex)
-   {
-     searchTextJsonList[searchTextIndex].AsString(m_searchText[searchTextIndex]);
-   }
-   payload.WithArray("SearchText", std::move(searchTextJsonList));
-
+  if (m_searchTextHasBeenSet) {
+    Aws::Utils::Array<JsonValue> searchTextJsonList(m_searchText.size());
+    for (unsigned searchTextIndex = 0; searchTextIndex < searchTextJsonList.GetLength(); ++searchTextIndex) {
+      searchTextJsonList[searchTextIndex].AsString(m_searchText[searchTextIndex]);
+    }
+    payload.WithArray("SearchText", std::move(searchTextJsonList));
   }
 
-  if(m_matchTypeHasBeenSet)
-  {
-   payload.WithString("MatchType", SearchContactsMatchTypeMapper::GetNameForSearchContactsMatchType(m_matchType));
+  if (m_matchTypeHasBeenSet) {
+    payload.WithString("MatchType", SearchContactsMatchTypeMapper::GetNameForSearchContactsMatchType(m_matchType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/FilterCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/FilterCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-FilterCriteria::FilterCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterCriteria::FilterCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filterCriterion"))
-  {
+FilterCriteria& FilterCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filterCriterion")) {
     Aws::Utils::Array<JsonView> filterCriterionJsonList = jsonValue.GetArray("filterCriterion");
-    for(unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex)
-    {
+    for (unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex) {
       m_filterCriterion.push_back(filterCriterionJsonList[filterCriterionIndex].AsObject());
     }
     m_filterCriterionHasBeenSet = true;
@@ -37,24 +28,20 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FilterCriteria::Jsonize() const
-{
+JsonValue FilterCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterCriterionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filterCriterionJsonList(m_filterCriterion.size());
-   for(unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex)
-   {
-     filterCriterionJsonList[filterCriterionIndex].AsObject(m_filterCriterion[filterCriterionIndex].Jsonize());
-   }
-   payload.WithArray("filterCriterion", std::move(filterCriterionJsonList));
-
+  if (m_filterCriterionHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filterCriterionJsonList(m_filterCriterion.size());
+    for (unsigned filterCriterionIndex = 0; filterCriterionIndex < filterCriterionJsonList.GetLength(); ++filterCriterionIndex) {
+      filterCriterionJsonList[filterCriterionIndex].AsObject(m_filterCriterion[filterCriterionIndex].Jsonize());
+    }
+    payload.WithArray("filterCriterion", std::move(filterCriterionJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class OpenSearchWarmPartitionInstanceType
-  {
-    NOT_SET,
-    ultrawarm1_medium_search,
-    ultrawarm1_large_search,
-    ultrawarm1_xlarge_search
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class OpenSearchWarmPartitionInstanceType { NOT_SET, ultrawarm1_medium_search, ultrawarm1_large_search, ultrawarm1_xlarge_search };
 
-namespace OpenSearchWarmPartitionInstanceTypeMapper
-{
+namespace OpenSearchWarmPartitionInstanceTypeMapper {
 AWS_OPENSEARCHSERVICE_API OpenSearchWarmPartitionInstanceType GetOpenSearchWarmPartitionInstanceTypeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForOpenSearchWarmPartitionInstanceType(OpenSearchWarmPartitionInstanceType value);
-} // namespace OpenSearchWarmPartitionInstanceTypeMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace OpenSearchWarmPartitionInstanceTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/OutputDataConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/OutputDataConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
+namespace Aws {
+namespace Translate {
+namespace Model {
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputDataConfig::OutputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+OutputDataConfig& OutputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionKey"))
-  {
+  if (jsonValue.ValueExists("EncryptionKey")) {
     m_encryptionKey = jsonValue.GetObject("EncryptionKey");
     m_encryptionKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputDataConfig::Jsonize() const
-{
+JsonValue OutputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
-  if(m_encryptionKeyHasBeenSet)
-  {
-   payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
-
+  if (m_encryptionKeyHasBeenSet) {
+    payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

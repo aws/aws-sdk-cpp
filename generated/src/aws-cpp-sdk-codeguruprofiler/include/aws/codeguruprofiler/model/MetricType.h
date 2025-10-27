@@ -7,24 +7,16 @@
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
-  enum class MetricType
-  {
-    NOT_SET,
-    AggregatedRelativeTotalTime
-  };
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
+enum class MetricType { NOT_SET, AggregatedRelativeTotalTime };
 
-namespace MetricTypeMapper
-{
+namespace MetricTypeMapper {
 AWS_CODEGURUPROFILER_API MetricType GetMetricTypeForName(const Aws::String& name);
 
 AWS_CODEGURUPROFILER_API Aws::String GetNameForMetricType(MetricType value);
-} // namespace MetricTypeMapper
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace MetricTypeMapper
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

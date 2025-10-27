@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>An optional parameter that overrides the validation strategy for all analyses
+ * and dashboards before the resource is imported.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportJobOverrideValidationStrategy">AWS
+ * API Reference</a></p>
+ */
+class AssetBundleImportJobOverrideValidationStrategy {
+ public:
+  AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy() = default;
+  AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An optional parameter that overrides the validation strategy for all analyses
-   * and dashboards before the resource is imported.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportJobOverrideValidationStrategy">AWS
-   * API Reference</a></p>
+   * <p>A Boolean value that indicates whether to import all analyses and dashboards
+   * under strict or lenient mode.</p>
    */
-  class AssetBundleImportJobOverrideValidationStrategy
-  {
-  public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy() = default;
-    AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetStrictModeForAllResources() const { return m_strictModeForAllResources; }
+  inline bool StrictModeForAllResourcesHasBeenSet() const { return m_strictModeForAllResourcesHasBeenSet; }
+  inline void SetStrictModeForAllResources(bool value) {
+    m_strictModeForAllResourcesHasBeenSet = true;
+    m_strictModeForAllResources = value;
+  }
+  inline AssetBundleImportJobOverrideValidationStrategy& WithStrictModeForAllResources(bool value) {
+    SetStrictModeForAllResources(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_strictModeForAllResources{false};
+  bool m_strictModeForAllResourcesHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>A Boolean value that indicates whether to import all analyses and dashboards
-     * under strict or lenient mode.</p>
-     */
-    inline bool GetStrictModeForAllResources() const { return m_strictModeForAllResources; }
-    inline bool StrictModeForAllResourcesHasBeenSet() const { return m_strictModeForAllResourcesHasBeenSet; }
-    inline void SetStrictModeForAllResources(bool value) { m_strictModeForAllResourcesHasBeenSet = true; m_strictModeForAllResources = value; }
-    inline AssetBundleImportJobOverrideValidationStrategy& WithStrictModeForAllResources(bool value) { SetStrictModeForAllResources(value); return *this;}
-    ///@}
-  private:
-
-    bool m_strictModeForAllResources{false};
-    bool m_strictModeForAllResourcesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

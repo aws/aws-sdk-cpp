@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/JobManifest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/JobManifest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-JobManifest::JobManifest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+JobManifest::JobManifest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JobManifest& JobManifest::operator =(const XmlNode& xmlNode)
-{
+JobManifest& JobManifest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode specNode = resultNode.FirstChild("Spec");
-    if(!specNode.IsNull())
-    {
+    if (!specNode.IsNull()) {
       m_spec = specNode;
       m_specHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("Location");
-    if(!locationNode.IsNull())
-    {
+    if (!locationNode.IsNull()) {
       m_location = locationNode;
       m_locationHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ JobManifest& JobManifest::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void JobManifest::AddToNode(XmlNode& parentNode) const
-{
+void JobManifest::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_specHasBeenSet)
-  {
-   XmlNode specNode = parentNode.CreateChildElement("Spec");
-   m_spec.AddToNode(specNode);
+  if (m_specHasBeenSet) {
+    XmlNode specNode = parentNode.CreateChildElement("Spec");
+    m_spec.AddToNode(specNode);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   XmlNode locationNode = parentNode.CreateChildElement("Location");
-   m_location.AddToNode(locationNode);
+  if (m_locationHasBeenSet) {
+    XmlNode locationNode = parentNode.CreateChildElement("Location");
+    m_location.AddToNode(locationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/GetCustomVerificationEmailTemplateResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/GetCustomVerificationEmailTemplateResult.h>
 
 #include <utility>
 
@@ -17,56 +17,47 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCustomVerificationEmailTemplateResult::GetCustomVerificationEmailTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetCustomVerificationEmailTemplateResult::GetCustomVerificationEmailTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetCustomVerificationEmailTemplateResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetCustomVerificationEmailTemplateResult")) {
     resultNode = rootNode.FirstChild("GetCustomVerificationEmailTemplateResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
-    if(!templateNameNode.IsNull())
-    {
+    if (!templateNameNode.IsNull()) {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
     }
     XmlNode fromEmailAddressNode = resultNode.FirstChild("FromEmailAddress");
-    if(!fromEmailAddressNode.IsNull())
-    {
+    if (!fromEmailAddressNode.IsNull()) {
       m_fromEmailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(fromEmailAddressNode.GetText());
       m_fromEmailAddressHasBeenSet = true;
     }
     XmlNode templateSubjectNode = resultNode.FirstChild("TemplateSubject");
-    if(!templateSubjectNode.IsNull())
-    {
+    if (!templateSubjectNode.IsNull()) {
       m_templateSubject = Aws::Utils::Xml::DecodeEscapedXmlText(templateSubjectNode.GetText());
       m_templateSubjectHasBeenSet = true;
     }
     XmlNode templateContentNode = resultNode.FirstChild("TemplateContent");
-    if(!templateContentNode.IsNull())
-    {
+    if (!templateContentNode.IsNull()) {
       m_templateContent = Aws::Utils::Xml::DecodeEscapedXmlText(templateContentNode.GetText());
       m_templateContentHasBeenSet = true;
     }
     XmlNode successRedirectionURLNode = resultNode.FirstChild("SuccessRedirectionURL");
-    if(!successRedirectionURLNode.IsNull())
-    {
+    if (!successRedirectionURLNode.IsNull()) {
       m_successRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(successRedirectionURLNode.GetText());
       m_successRedirectionURLHasBeenSet = true;
     }
     XmlNode failureRedirectionURLNode = resultNode.FirstChild("FailureRedirectionURL");
-    if(!failureRedirectionURLNode.IsNull())
-    {
+    if (!failureRedirectionURLNode.IsNull()) {
       m_failureRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(failureRedirectionURLNode.GetText());
       m_failureRedirectionURLHasBeenSet = true;
     }
@@ -76,7 +67,8 @@ GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResu
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetCustomVerificationEmailTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetCustomVerificationEmailTemplateResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

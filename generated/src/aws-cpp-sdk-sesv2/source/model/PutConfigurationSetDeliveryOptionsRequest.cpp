@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
-{
+Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tlsPolicyHasBeenSet)
-  {
-   payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  if (m_tlsPolicyHasBeenSet) {
+    payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
   }
 
-  if(m_sendingPoolNameHasBeenSet)
-  {
-   payload.WithString("SendingPoolName", m_sendingPoolName);
-
+  if (m_sendingPoolNameHasBeenSet) {
+    payload.WithString("SendingPoolName", m_sendingPoolName);
   }
 
-  if(m_maxDeliverySecondsHasBeenSet)
-  {
-   payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
-
+  if (m_maxDeliverySecondsHasBeenSet) {
+    payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

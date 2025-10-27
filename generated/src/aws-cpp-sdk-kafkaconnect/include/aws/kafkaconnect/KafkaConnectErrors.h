@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-enum class KafkaConnectErrors
-{
-  //From Core//
+namespace Aws {
+namespace KafkaConnect {
+enum class KafkaConnectErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KafkaConnectErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class KafkaConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,
@@ -56,9 +53,8 @@ enum class KafkaConnectErrors
   UNAUTHORIZED
 };
 
-class AWS_KAFKACONNECT_API KafkaConnectError : public Aws::Client::AWSError<KafkaConnectErrors>
-{
-public:
+class AWS_KAFKACONNECT_API KafkaConnectError : public Aws::Client::AWSError<KafkaConnectErrors> {
+ public:
   KafkaConnectError() {}
   KafkaConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KafkaConnectErrors>(rhs) {}
   KafkaConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KafkaConnectErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace KafkaConnectErrorMapper
-{
-  AWS_KAFKACONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KafkaConnectErrorMapper {
+AWS_KAFKACONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace KafkaConnect
+}  // namespace Aws

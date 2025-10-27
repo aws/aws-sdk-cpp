@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StandardsControlAssociationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/StandardsControlAssociationUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-StandardsControlAssociationUpdate::StandardsControlAssociationUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StandardsControlAssociationUpdate::StandardsControlAssociationUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-StandardsControlAssociationUpdate& StandardsControlAssociationUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StandardsArn"))
-  {
+StandardsControlAssociationUpdate& StandardsControlAssociationUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StandardsArn")) {
     m_standardsArn = jsonValue.GetString("StandardsArn");
     m_standardsArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityControlId"))
-  {
+  if (jsonValue.ValueExists("SecurityControlId")) {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
     m_securityControlIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationStatus"))
-  {
+  if (jsonValue.ValueExists("AssociationStatus")) {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("AssociationStatus"));
     m_associationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedReason"))
-  {
+  if (jsonValue.ValueExists("UpdatedReason")) {
     m_updatedReason = jsonValue.GetString("UpdatedReason");
     m_updatedReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StandardsControlAssociationUpdate::Jsonize() const
-{
+JsonValue StandardsControlAssociationUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_standardsArnHasBeenSet)
-  {
-   payload.WithString("StandardsArn", m_standardsArn);
-
+  if (m_standardsArnHasBeenSet) {
+    payload.WithString("StandardsArn", m_standardsArn);
   }
 
-  if(m_securityControlIdHasBeenSet)
-  {
-   payload.WithString("SecurityControlId", m_securityControlId);
-
+  if (m_securityControlIdHasBeenSet) {
+    payload.WithString("SecurityControlId", m_securityControlId);
   }
 
-  if(m_associationStatusHasBeenSet)
-  {
-   payload.WithString("AssociationStatus", AssociationStatusMapper::GetNameForAssociationStatus(m_associationStatus));
+  if (m_associationStatusHasBeenSet) {
+    payload.WithString("AssociationStatus", AssociationStatusMapper::GetNameForAssociationStatus(m_associationStatus));
   }
 
-  if(m_updatedReasonHasBeenSet)
-  {
-   payload.WithString("UpdatedReason", m_updatedReason);
-
+  if (m_updatedReasonHasBeenSet) {
+    payload.WithString("UpdatedReason", m_updatedReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

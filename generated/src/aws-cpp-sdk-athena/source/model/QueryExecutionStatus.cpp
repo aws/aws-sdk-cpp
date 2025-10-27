@@ -11,82 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue) { *this = jsonValue; }
 
-QueryExecutionStatus& QueryExecutionStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("State"))
-  {
+QueryExecutionStatus& QueryExecutionStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("State")) {
     m_state = QueryExecutionStateMapper::GetQueryExecutionStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateChangeReason"))
-  {
+  if (jsonValue.ValueExists("StateChangeReason")) {
     m_stateChangeReason = jsonValue.GetString("StateChangeReason");
     m_stateChangeReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmissionDateTime"))
-  {
+  if (jsonValue.ValueExists("SubmissionDateTime")) {
     m_submissionDateTime = jsonValue.GetDouble("SubmissionDateTime");
     m_submissionDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletionDateTime"))
-  {
+  if (jsonValue.ValueExists("CompletionDateTime")) {
     m_completionDateTime = jsonValue.GetDouble("CompletionDateTime");
     m_completionDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AthenaError"))
-  {
+  if (jsonValue.ValueExists("AthenaError")) {
     m_athenaError = jsonValue.GetObject("AthenaError");
     m_athenaErrorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryExecutionStatus::Jsonize() const
-{
+JsonValue QueryExecutionStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", QueryExecutionStateMapper::GetNameForQueryExecutionState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", QueryExecutionStateMapper::GetNameForQueryExecutionState(m_state));
   }
 
-  if(m_stateChangeReasonHasBeenSet)
-  {
-   payload.WithString("StateChangeReason", m_stateChangeReason);
-
+  if (m_stateChangeReasonHasBeenSet) {
+    payload.WithString("StateChangeReason", m_stateChangeReason);
   }
 
-  if(m_submissionDateTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmissionDateTime", m_submissionDateTime.SecondsWithMSPrecision());
+  if (m_submissionDateTimeHasBeenSet) {
+    payload.WithDouble("SubmissionDateTime", m_submissionDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_completionDateTimeHasBeenSet)
-  {
-   payload.WithDouble("CompletionDateTime", m_completionDateTime.SecondsWithMSPrecision());
+  if (m_completionDateTimeHasBeenSet) {
+    payload.WithDouble("CompletionDateTime", m_completionDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_athenaErrorHasBeenSet)
-  {
-   payload.WithObject("AthenaError", m_athenaError.Jsonize());
-
+  if (m_athenaErrorHasBeenSet) {
+    payload.WithObject("AthenaError", m_athenaError.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

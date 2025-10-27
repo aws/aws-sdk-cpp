@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/CollectionConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/CollectionConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-CollectionConfig::CollectionConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CollectionConfig::CollectionConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CollectionConfig& CollectionConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VectorConfig"))
-  {
+CollectionConfig& CollectionConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VectorConfig")) {
     m_vectorConfig = jsonValue.GetObject("VectorConfig");
     m_vectorConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CollectionConfig::Jsonize() const
-{
+JsonValue CollectionConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_vectorConfigHasBeenSet)
-  {
-   payload.WithObject("VectorConfig", m_vectorConfig.Jsonize());
-
+  if (m_vectorConfigHasBeenSet) {
+    payload.WithObject("VectorConfig", m_vectorConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

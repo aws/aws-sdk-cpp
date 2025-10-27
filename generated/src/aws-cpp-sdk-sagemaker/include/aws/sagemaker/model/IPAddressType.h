@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class IPAddressType
-  {
-    NOT_SET,
-    ipv4,
-    dualstack
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class IPAddressType { NOT_SET, ipv4, dualstack };
 
-namespace IPAddressTypeMapper
-{
+namespace IPAddressTypeMapper {
 AWS_SAGEMAKER_API IPAddressType GetIPAddressTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForIPAddressType(IPAddressType value);
-} // namespace IPAddressTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace IPAddressTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

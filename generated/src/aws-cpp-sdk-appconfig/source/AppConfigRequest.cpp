@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/appconfig/AppConfigRequest.h>
 
-namespace Aws
-{
-namespace AppConfig
-{
-} // namespace AppConfig
-} // namespace Aws
+namespace Aws {
+namespace AppConfig {}  // namespace AppConfig
+}  // namespace Aws

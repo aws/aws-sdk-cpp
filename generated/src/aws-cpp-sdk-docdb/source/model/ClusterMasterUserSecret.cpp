@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/ClusterMasterUserSecret.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/ClusterMasterUserSecret.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
-ClusterMasterUserSecret::ClusterMasterUserSecret(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ClusterMasterUserSecret::ClusterMasterUserSecret(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ClusterMasterUserSecret& ClusterMasterUserSecret::operator =(const XmlNode& xmlNode)
-{
+ClusterMasterUserSecret& ClusterMasterUserSecret::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode secretArnNode = resultNode.FirstChild("SecretArn");
-    if(!secretArnNode.IsNull())
-    {
+    if (!secretArnNode.IsNull()) {
       m_secretArn = Aws::Utils::Xml::DecodeEscapedXmlText(secretArnNode.GetText());
       m_secretArnHasBeenSet = true;
     }
     XmlNode secretStatusNode = resultNode.FirstChild("SecretStatus");
-    if(!secretStatusNode.IsNull())
-    {
+    if (!secretStatusNode.IsNull()) {
       m_secretStatus = Aws::Utils::Xml::DecodeEscapedXmlText(secretStatusNode.GetText());
       m_secretStatusHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
-    if(!kmsKeyIdNode.IsNull())
-    {
+    if (!kmsKeyIdNode.IsNull()) {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
     }
@@ -54,41 +43,32 @@ ClusterMasterUserSecret& ClusterMasterUserSecret::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void ClusterMasterUserSecret::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_secretArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SecretArn=" << StringUtils::URLEncode(m_secretArn.c_str()) << "&";
+void ClusterMasterUserSecret::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_secretArnHasBeenSet) {
+    oStream << location << index << locationValue << ".SecretArn=" << StringUtils::URLEncode(m_secretArn.c_str()) << "&";
   }
 
-  if(m_secretStatusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SecretStatus=" << StringUtils::URLEncode(m_secretStatus.c_str()) << "&";
+  if (m_secretStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".SecretStatus=" << StringUtils::URLEncode(m_secretStatus.c_str()) << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
-  }
-
-}
-
-void ClusterMasterUserSecret::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_secretArnHasBeenSet)
-  {
-      oStream << location << ".SecretArn=" << StringUtils::URLEncode(m_secretArn.c_str()) << "&";
-  }
-  if(m_secretStatusHasBeenSet)
-  {
-      oStream << location << ".SecretStatus=" << StringUtils::URLEncode(m_secretStatus.c_str()) << "&";
-  }
-  if(m_kmsKeyIdHasBeenSet)
-  {
-      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  if (m_kmsKeyIdHasBeenSet) {
+    oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+void ClusterMasterUserSecret::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_secretArnHasBeenSet) {
+    oStream << location << ".SecretArn=" << StringUtils::URLEncode(m_secretArn.c_str()) << "&";
+  }
+  if (m_secretStatusHasBeenSet) {
+    oStream << location << ".SecretStatus=" << StringUtils::URLEncode(m_secretStatus.c_str()) << "&";
+  }
+  if (m_kmsKeyIdHasBeenSet) {
+    oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

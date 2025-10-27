@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pipes/model/UpdatePipeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pipes/model/UpdatePipeRequest.h>
 
 #include <utility>
 
@@ -12,72 +12,48 @@ using namespace Aws::Pipes::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePipeRequest::SerializePayload() const
-{
+Aws::String UpdatePipeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_desiredStateHasBeenSet)
-  {
-   payload.WithString("DesiredState", RequestedPipeStateMapper::GetNameForRequestedPipeState(m_desiredState));
+  if (m_desiredStateHasBeenSet) {
+    payload.WithString("DesiredState", RequestedPipeStateMapper::GetNameForRequestedPipeState(m_desiredState));
   }
 
-  if(m_sourceParametersHasBeenSet)
-  {
-   payload.WithObject("SourceParameters", m_sourceParameters.Jsonize());
-
+  if (m_sourceParametersHasBeenSet) {
+    payload.WithObject("SourceParameters", m_sourceParameters.Jsonize());
   }
 
-  if(m_enrichmentHasBeenSet)
-  {
-   payload.WithString("Enrichment", m_enrichment);
-
+  if (m_enrichmentHasBeenSet) {
+    payload.WithString("Enrichment", m_enrichment);
   }
 
-  if(m_enrichmentParametersHasBeenSet)
-  {
-   payload.WithObject("EnrichmentParameters", m_enrichmentParameters.Jsonize());
-
+  if (m_enrichmentParametersHasBeenSet) {
+    payload.WithObject("EnrichmentParameters", m_enrichmentParameters.Jsonize());
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("Target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("Target", m_target);
   }
 
-  if(m_targetParametersHasBeenSet)
-  {
-   payload.WithObject("TargetParameters", m_targetParameters.Jsonize());
-
+  if (m_targetParametersHasBeenSet) {
+    payload.WithObject("TargetParameters", m_targetParameters.Jsonize());
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_logConfigurationHasBeenSet)
-  {
-   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
-
+  if (m_logConfigurationHasBeenSet) {
+    payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
   }
 
-  if(m_kmsKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
-
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

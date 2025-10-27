@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::NotificationsContacts;
 
-AWSError<CoreErrors> NotificationsContactsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> NotificationsContactsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = NotificationsContactsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

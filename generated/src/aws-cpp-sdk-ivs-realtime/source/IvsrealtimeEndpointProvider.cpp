@@ -5,12 +5,8 @@
 
 #include <aws/ivs-realtime/IvsrealtimeEndpointProvider.h>
 
-namespace Aws
-{
-namespace ivsrealtime
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ivsrealtime
-} // namespace Aws
+namespace Aws {
+namespace ivsrealtime {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ivsrealtime
+}  // namespace Aws

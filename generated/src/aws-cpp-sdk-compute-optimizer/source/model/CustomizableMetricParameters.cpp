@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-CustomizableMetricParameters::CustomizableMetricParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomizableMetricParameters::CustomizableMetricParameters(JsonView jsonValue) { *this = jsonValue; }
 
-CustomizableMetricParameters& CustomizableMetricParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("threshold"))
-  {
+CustomizableMetricParameters& CustomizableMetricParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("threshold")) {
     m_threshold = CustomizableMetricThresholdMapper::GetCustomizableMetricThresholdForName(jsonValue.GetString("threshold"));
     m_thresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("headroom"))
-  {
+  if (jsonValue.ValueExists("headroom")) {
     m_headroom = CustomizableMetricHeadroomMapper::GetCustomizableMetricHeadroomForName(jsonValue.GetString("headroom"));
     m_headroomHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomizableMetricParameters::Jsonize() const
-{
+JsonValue CustomizableMetricParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithString("threshold", CustomizableMetricThresholdMapper::GetNameForCustomizableMetricThreshold(m_threshold));
+  if (m_thresholdHasBeenSet) {
+    payload.WithString("threshold", CustomizableMetricThresholdMapper::GetNameForCustomizableMetricThreshold(m_threshold));
   }
 
-  if(m_headroomHasBeenSet)
-  {
-   payload.WithString("headroom", CustomizableMetricHeadroomMapper::GetNameForCustomizableMetricHeadroom(m_headroom));
+  if (m_headroomHasBeenSet) {
+    payload.WithString("headroom", CustomizableMetricHeadroomMapper::GetNameForCustomizableMetricHeadroom(m_headroom));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

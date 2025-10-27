@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FieldForReranking::FieldForReranking(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldForReranking::FieldForReranking(JsonView jsonValue) { *this = jsonValue; }
 
-FieldForReranking& FieldForReranking::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fieldName"))
-  {
+FieldForReranking& FieldForReranking::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fieldName")) {
     m_fieldName = jsonValue.GetString("fieldName");
     m_fieldNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldForReranking::Jsonize() const
-{
+JsonValue FieldForReranking::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldNameHasBeenSet)
-  {
-   payload.WithString("fieldName", m_fieldName);
-
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("fieldName", m_fieldName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

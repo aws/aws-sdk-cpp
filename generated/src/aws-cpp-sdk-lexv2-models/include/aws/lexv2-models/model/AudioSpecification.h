@@ -6,65 +6,69 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LexModelsV2 {
+namespace Model {
 
+/**
+ * <p>Specifies the audio input specifications.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AudioSpecification">AWS
+ * API Reference</a></p>
+ */
+class AudioSpecification {
+ public:
+  AWS_LEXMODELSV2_API AudioSpecification() = default;
+  AWS_LEXMODELSV2_API AudioSpecification(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API AudioSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Specifies the audio input specifications.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AudioSpecification">AWS
-   * API Reference</a></p>
+   * <p>Time for how long Amazon Lex waits before speech input is truncated and the
+   * speech is returned to application.</p>
    */
-  class AudioSpecification
-  {
-  public:
-    AWS_LEXMODELSV2_API AudioSpecification() = default;
-    AWS_LEXMODELSV2_API AudioSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API AudioSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMaxLengthMs() const { return m_maxLengthMs; }
+  inline bool MaxLengthMsHasBeenSet() const { return m_maxLengthMsHasBeenSet; }
+  inline void SetMaxLengthMs(int value) {
+    m_maxLengthMsHasBeenSet = true;
+    m_maxLengthMs = value;
+  }
+  inline AudioSpecification& WithMaxLengthMs(int value) {
+    SetMaxLengthMs(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Time for which a bot waits after the customer stops speaking to assume the
+   * utterance is finished.</p>
+   */
+  inline int GetEndTimeoutMs() const { return m_endTimeoutMs; }
+  inline bool EndTimeoutMsHasBeenSet() const { return m_endTimeoutMsHasBeenSet; }
+  inline void SetEndTimeoutMs(int value) {
+    m_endTimeoutMsHasBeenSet = true;
+    m_endTimeoutMs = value;
+  }
+  inline AudioSpecification& WithEndTimeoutMs(int value) {
+    SetEndTimeoutMs(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxLengthMs{0};
+  bool m_maxLengthMsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Time for how long Amazon Lex waits before speech input is truncated and the
-     * speech is returned to application.</p>
-     */
-    inline int GetMaxLengthMs() const { return m_maxLengthMs; }
-    inline bool MaxLengthMsHasBeenSet() const { return m_maxLengthMsHasBeenSet; }
-    inline void SetMaxLengthMs(int value) { m_maxLengthMsHasBeenSet = true; m_maxLengthMs = value; }
-    inline AudioSpecification& WithMaxLengthMs(int value) { SetMaxLengthMs(value); return *this;}
-    ///@}
+  int m_endTimeoutMs{0};
+  bool m_endTimeoutMsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Time for which a bot waits after the customer stops speaking to assume the
-     * utterance is finished.</p>
-     */
-    inline int GetEndTimeoutMs() const { return m_endTimeoutMs; }
-    inline bool EndTimeoutMsHasBeenSet() const { return m_endTimeoutMsHasBeenSet; }
-    inline void SetEndTimeoutMs(int value) { m_endTimeoutMsHasBeenSet = true; m_endTimeoutMs = value; }
-    inline AudioSpecification& WithEndTimeoutMs(int value) { SetEndTimeoutMs(value); return *this;}
-    ///@}
-  private:
-
-    int m_maxLengthMs{0};
-    bool m_maxLengthMsHasBeenSet = false;
-
-    int m_endTimeoutMs{0};
-    bool m_endTimeoutMsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

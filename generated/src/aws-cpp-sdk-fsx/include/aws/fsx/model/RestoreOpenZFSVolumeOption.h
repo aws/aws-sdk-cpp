@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class RestoreOpenZFSVolumeOption
-  {
-    NOT_SET,
-    DELETE_INTERMEDIATE_SNAPSHOTS,
-    DELETE_CLONED_VOLUMES
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class RestoreOpenZFSVolumeOption { NOT_SET, DELETE_INTERMEDIATE_SNAPSHOTS, DELETE_CLONED_VOLUMES };
 
-namespace RestoreOpenZFSVolumeOptionMapper
-{
+namespace RestoreOpenZFSVolumeOptionMapper {
 AWS_FSX_API RestoreOpenZFSVolumeOption GetRestoreOpenZFSVolumeOptionForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForRestoreOpenZFSVolumeOption(RestoreOpenZFSVolumeOption value);
-} // namespace RestoreOpenZFSVolumeOptionMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace RestoreOpenZFSVolumeOptionMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

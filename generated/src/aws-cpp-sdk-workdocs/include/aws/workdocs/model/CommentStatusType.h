@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class CommentStatusType
-  {
-    NOT_SET,
-    DRAFT,
-    PUBLISHED,
-    DELETED
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class CommentStatusType { NOT_SET, DRAFT, PUBLISHED, DELETED };
 
-namespace CommentStatusTypeMapper
-{
+namespace CommentStatusTypeMapper {
 AWS_WORKDOCS_API CommentStatusType GetCommentStatusTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForCommentStatusType(CommentStatusType value);
-} // namespace CommentStatusTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace CommentStatusTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

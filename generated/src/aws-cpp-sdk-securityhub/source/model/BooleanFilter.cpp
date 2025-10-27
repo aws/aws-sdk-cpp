@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/BooleanFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/BooleanFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-BooleanFilter::BooleanFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BooleanFilter::BooleanFilter(JsonView jsonValue) { *this = jsonValue; }
 
-BooleanFilter& BooleanFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+BooleanFilter& BooleanFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetBool("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BooleanFilter::Jsonize() const
-{
+JsonValue BooleanFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithBool("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithBool("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

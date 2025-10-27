@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ReferenceLineStaticDataConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ReferenceLineStaticDataConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ReferenceLineStaticDataConfiguration& ReferenceLineStaticDataConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+ReferenceLineStaticDataConfiguration& ReferenceLineStaticDataConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReferenceLineStaticDataConfiguration::Jsonize() const
-{
+JsonValue ReferenceLineStaticDataConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

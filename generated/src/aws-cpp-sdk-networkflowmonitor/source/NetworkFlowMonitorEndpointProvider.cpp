@@ -5,12 +5,8 @@
 
 #include <aws/networkflowmonitor/NetworkFlowMonitorEndpointProvider.h>
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

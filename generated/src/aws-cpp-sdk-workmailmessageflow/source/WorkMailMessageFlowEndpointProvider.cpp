@@ -5,12 +5,8 @@
 
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpointProvider.h>
 
-namespace Aws
-{
-namespace WorkMailMessageFlow
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WorkMailMessageFlow
-} // namespace Aws
+namespace Aws {
+namespace WorkMailMessageFlow {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WorkMailMessageFlow
+}  // namespace Aws

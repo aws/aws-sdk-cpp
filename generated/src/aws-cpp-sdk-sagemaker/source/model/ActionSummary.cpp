@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ActionSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ActionSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ActionSummary::ActionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionSummary::ActionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ActionSummary& ActionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActionArn"))
-  {
+ActionSummary& ActionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActionArn")) {
     m_actionArn = jsonValue.GetString("ActionArn");
     m_actionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionName"))
-  {
+  if (jsonValue.ValueExists("ActionName")) {
     m_actionName = jsonValue.GetString("ActionName");
     m_actionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Source"))
-  {
+  if (jsonValue.ValueExists("Source")) {
     m_source = jsonValue.GetObject("Source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionType"))
-  {
+  if (jsonValue.ValueExists("ActionType")) {
     m_actionType = jsonValue.GetString("ActionType");
     m_actionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ActionStatusMapper::GetActionStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionSummary::Jsonize() const
-{
+JsonValue ActionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionArnHasBeenSet)
-  {
-   payload.WithString("ActionArn", m_actionArn);
-
+  if (m_actionArnHasBeenSet) {
+    payload.WithString("ActionArn", m_actionArn);
   }
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("ActionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("ActionName", m_actionName);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("Source", m_source.Jsonize());
-
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
   }
 
-  if(m_actionTypeHasBeenSet)
-  {
-   payload.WithString("ActionType", m_actionType);
-
+  if (m_actionTypeHasBeenSet) {
+    payload.WithString("ActionType", m_actionType);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ActionStatusMapper::GetNameForActionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ActionStatusMapper::GetNameForActionStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

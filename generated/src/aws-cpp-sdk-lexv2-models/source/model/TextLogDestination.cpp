@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/TextLogDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/TextLogDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-TextLogDestination::TextLogDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextLogDestination::TextLogDestination(JsonView jsonValue) { *this = jsonValue; }
 
-TextLogDestination& TextLogDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cloudWatch"))
-  {
+TextLogDestination& TextLogDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cloudWatch")) {
     m_cloudWatch = jsonValue.GetObject("cloudWatch");
     m_cloudWatchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextLogDestination::Jsonize() const
-{
+JsonValue TextLogDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudWatchHasBeenSet)
-  {
-   payload.WithObject("cloudWatch", m_cloudWatch.Jsonize());
-
+  if (m_cloudWatchHasBeenSet) {
+    payload.WithObject("cloudWatch", m_cloudWatch.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

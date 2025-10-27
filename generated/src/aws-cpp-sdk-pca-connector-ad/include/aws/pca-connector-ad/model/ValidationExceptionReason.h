@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    FIELD_VALIDATION_FAILED,
-    INVALID_CA_SUBJECT,
-    INVALID_PERMISSION,
-    INVALID_STATE,
-    MISMATCHED_CONNECTOR,
-    MISMATCHED_VPC,
-    NO_CLIENT_TOKEN,
-    UNKNOWN_OPERATION,
-    OTHER
-  };
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Model {
+enum class ValidationExceptionReason {
+  NOT_SET,
+  FIELD_VALIDATION_FAILED,
+  INVALID_CA_SUBJECT,
+  INVALID_PERMISSION,
+  INVALID_STATE,
+  MISMATCHED_CONNECTOR,
+  MISMATCHED_VPC,
+  NO_CLIENT_TOKEN,
+  UNKNOWN_OPERATION,
+  OTHER
+};
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_PCACONNECTORAD_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_PCACONNECTORAD_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace PcaConnectorAd
+}  // namespace Aws

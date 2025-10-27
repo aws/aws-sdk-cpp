@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/GeospatialHeatmapColorScale.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/GeospatialHeatmapColorScale.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-GeospatialHeatmapColorScale::GeospatialHeatmapColorScale(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeospatialHeatmapColorScale::GeospatialHeatmapColorScale(JsonView jsonValue) { *this = jsonValue; }
 
-GeospatialHeatmapColorScale& GeospatialHeatmapColorScale::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Colors"))
-  {
+GeospatialHeatmapColorScale& GeospatialHeatmapColorScale::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Colors")) {
     Aws::Utils::Array<JsonView> colorsJsonList = jsonValue.GetArray("Colors");
-    for(unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex)
-    {
+    for (unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex) {
       m_colors.push_back(colorsJsonList[colorsIndex].AsObject());
     }
     m_colorsHasBeenSet = true;
@@ -37,24 +28,20 @@ GeospatialHeatmapColorScale& GeospatialHeatmapColorScale::operator =(JsonView js
   return *this;
 }
 
-JsonValue GeospatialHeatmapColorScale::Jsonize() const
-{
+JsonValue GeospatialHeatmapColorScale::Jsonize() const {
   JsonValue payload;
 
-  if(m_colorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> colorsJsonList(m_colors.size());
-   for(unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex)
-   {
-     colorsJsonList[colorsIndex].AsObject(m_colors[colorsIndex].Jsonize());
-   }
-   payload.WithArray("Colors", std::move(colorsJsonList));
-
+  if (m_colorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> colorsJsonList(m_colors.size());
+    for (unsigned colorsIndex = 0; colorsIndex < colorsJsonList.GetLength(); ++colorsIndex) {
+      colorsJsonList[colorsIndex].AsObject(m_colors[colorsIndex].Jsonize());
+    }
+    payload.WithArray("Colors", std::move(colorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

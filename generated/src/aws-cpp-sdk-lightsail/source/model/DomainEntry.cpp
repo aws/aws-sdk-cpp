@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/DomainEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/DomainEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-DomainEntry::DomainEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainEntry::DomainEntry(JsonView jsonValue) { *this = jsonValue; }
 
-DomainEntry& DomainEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+DomainEntry& DomainEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetString("target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isAlias"))
-  {
+  if (jsonValue.ValueExists("isAlias")) {
     m_isAlias = jsonValue.GetBool("isAlias");
     m_isAliasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainEntry::Jsonize() const
-{
+JsonValue DomainEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("target", m_target);
   }
 
-  if(m_isAliasHasBeenSet)
-  {
-   payload.WithBool("isAlias", m_isAlias);
-
+  if (m_isAliasHasBeenSet) {
+    payload.WithBool("isAlias", m_isAlias);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

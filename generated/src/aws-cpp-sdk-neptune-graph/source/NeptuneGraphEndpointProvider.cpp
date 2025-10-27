@@ -5,12 +5,8 @@
 
 #include <aws/neptune-graph/NeptuneGraphEndpointProvider.h>
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace NeptuneGraph
-} // namespace Aws
+namespace Aws {
+namespace NeptuneGraph {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace NeptuneGraph
+}  // namespace Aws

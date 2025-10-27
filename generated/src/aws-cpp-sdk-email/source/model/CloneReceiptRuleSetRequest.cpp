@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CloneReceiptRuleSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/CloneReceiptRuleSetRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String CloneReceiptRuleSetRequest::SerializePayload() const
-{
+Aws::String CloneReceiptRuleSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CloneReceiptRuleSet&";
-  if(m_ruleSetNameHasBeenSet)
-  {
+  if (m_ruleSetNameHasBeenSet) {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
 
-  if(m_originalRuleSetNameHasBeenSet)
-  {
+  if (m_originalRuleSetNameHasBeenSet) {
     ss << "OriginalRuleSetName=" << StringUtils::URLEncode(m_originalRuleSetName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String CloneReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CloneReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CloneReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

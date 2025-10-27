@@ -12,37 +12,24 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateConnectorRegistrationRequest::SerializePayload() const
-{
+Aws::String UpdateConnectorRegistrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorLabelHasBeenSet)
-  {
-   payload.WithString("connectorLabel", m_connectorLabel);
-
+  if (m_connectorLabelHasBeenSet) {
+    payload.WithString("connectorLabel", m_connectorLabel);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_connectorProvisioningConfigHasBeenSet)
-  {
-   payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
-
+  if (m_connectorProvisioningConfigHasBeenSet) {
+    payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudfront/model/KGKeyPairIds.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-KGKeyPairIds::KGKeyPairIds(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+KGKeyPairIds::KGKeyPairIds(const XmlNode& xmlNode) { *this = xmlNode; }
 
-KGKeyPairIds& KGKeyPairIds::operator =(const XmlNode& xmlNode)
-{
+KGKeyPairIds& KGKeyPairIds::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode keyGroupIdNode = resultNode.FirstChild("KeyGroupId");
-    if(!keyGroupIdNode.IsNull())
-    {
+    if (!keyGroupIdNode.IsNull()) {
       m_keyGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(keyGroupIdNode.GetText());
       m_keyGroupIdHasBeenSet = true;
     }
     XmlNode keyPairIdsNode = resultNode.FirstChild("KeyPairIds");
-    if(!keyPairIdsNode.IsNull())
-    {
+    if (!keyPairIdsNode.IsNull()) {
       m_keyPairIds = keyPairIdsNode;
       m_keyPairIdsHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ KGKeyPairIds& KGKeyPairIds::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void KGKeyPairIds::AddToNode(XmlNode& parentNode) const
-{
+void KGKeyPairIds::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_keyGroupIdHasBeenSet)
-  {
-   XmlNode keyGroupIdNode = parentNode.CreateChildElement("KeyGroupId");
-   keyGroupIdNode.SetText(m_keyGroupId);
+  if (m_keyGroupIdHasBeenSet) {
+    XmlNode keyGroupIdNode = parentNode.CreateChildElement("KeyGroupId");
+    keyGroupIdNode.SetText(m_keyGroupId);
   }
 
-  if(m_keyPairIdsHasBeenSet)
-  {
-   XmlNode keyPairIdsNode = parentNode.CreateChildElement("KeyPairIds");
-   m_keyPairIds.AddToNode(keyPairIdsNode);
+  if (m_keyPairIdsHasBeenSet) {
+    XmlNode keyPairIdsNode = parentNode.CreateChildElement("KeyPairIds");
+    m_keyPairIds.AddToNode(keyPairIdsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

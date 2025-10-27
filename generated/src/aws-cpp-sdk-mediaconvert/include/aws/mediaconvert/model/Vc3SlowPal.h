@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Vc3SlowPal
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Vc3SlowPal { NOT_SET, DISABLED, ENABLED };
 
-namespace Vc3SlowPalMapper
-{
+namespace Vc3SlowPalMapper {
 AWS_MEDIACONVERT_API Vc3SlowPal GetVc3SlowPalForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVc3SlowPal(Vc3SlowPal value);
-} // namespace Vc3SlowPalMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Vc3SlowPalMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

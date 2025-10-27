@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/IssuerCertificateIdentifier.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/IssuerCertificateIdentifier.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-IssuerCertificateIdentifier::IssuerCertificateIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IssuerCertificateIdentifier::IssuerCertificateIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-IssuerCertificateIdentifier& IssuerCertificateIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("issuerCertificateSubject"))
-  {
+IssuerCertificateIdentifier& IssuerCertificateIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("issuerCertificateSubject")) {
     m_issuerCertificateSubject = jsonValue.GetString("issuerCertificateSubject");
     m_issuerCertificateSubjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("issuerId"))
-  {
+  if (jsonValue.ValueExists("issuerId")) {
     m_issuerId = jsonValue.GetString("issuerId");
     m_issuerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("issuerCertificateSerialNumber"))
-  {
+  if (jsonValue.ValueExists("issuerCertificateSerialNumber")) {
     m_issuerCertificateSerialNumber = jsonValue.GetString("issuerCertificateSerialNumber");
     m_issuerCertificateSerialNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IssuerCertificateIdentifier::Jsonize() const
-{
+JsonValue IssuerCertificateIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuerCertificateSubjectHasBeenSet)
-  {
-   payload.WithString("issuerCertificateSubject", m_issuerCertificateSubject);
-
+  if (m_issuerCertificateSubjectHasBeenSet) {
+    payload.WithString("issuerCertificateSubject", m_issuerCertificateSubject);
   }
 
-  if(m_issuerIdHasBeenSet)
-  {
-   payload.WithString("issuerId", m_issuerId);
-
+  if (m_issuerIdHasBeenSet) {
+    payload.WithString("issuerId", m_issuerId);
   }
 
-  if(m_issuerCertificateSerialNumberHasBeenSet)
-  {
-   payload.WithString("issuerCertificateSerialNumber", m_issuerCertificateSerialNumber);
-
+  if (m_issuerCertificateSerialNumberHasBeenSet) {
+    payload.WithString("issuerCertificateSerialNumber", m_issuerCertificateSerialNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

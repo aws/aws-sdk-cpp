@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLaunchTemplateResponse::DeleteLaunchTemplateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DeleteLaunchTemplateResponse::DeleteLaunchTemplateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DeleteLaunchTemplateResponse& DeleteLaunchTemplateResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteLaunchTemplateResponse& DeleteLaunchTemplateResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteLaunchTemplateResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteLaunchTemplateResponse")) {
     resultNode = rootNode.FirstChild("DeleteLaunchTemplateResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode launchTemplateNode = resultNode.FirstChild("launchTemplate");
-    if(!launchTemplateNode.IsNull())
-    {
+    if (!launchTemplateNode.IsNull()) {
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ DeleteLaunchTemplateResponse& DeleteLaunchTemplateResponse::operator =(const Aws
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteLaunchTemplateResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteLaunchTemplateResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

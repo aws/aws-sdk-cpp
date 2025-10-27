@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class AutocommitPeriodType
-  {
-    NOT_SET,
-    MINUTES,
-    HOURS,
-    DAYS,
-    MONTHS,
-    YEARS,
-    NONE
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class AutocommitPeriodType { NOT_SET, MINUTES, HOURS, DAYS, MONTHS, YEARS, NONE };
 
-namespace AutocommitPeriodTypeMapper
-{
+namespace AutocommitPeriodTypeMapper {
 AWS_FSX_API AutocommitPeriodType GetAutocommitPeriodTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForAutocommitPeriodType(AutocommitPeriodType value);
-} // namespace AutocommitPeriodTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace AutocommitPeriodTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

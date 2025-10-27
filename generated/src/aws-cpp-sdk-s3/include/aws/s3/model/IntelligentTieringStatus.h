@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class IntelligentTieringStatus
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class IntelligentTieringStatus { NOT_SET, Enabled, Disabled };
 
-namespace IntelligentTieringStatusMapper
-{
+namespace IntelligentTieringStatusMapper {
 AWS_S3_API IntelligentTieringStatus GetIntelligentTieringStatusForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForIntelligentTieringStatus(IntelligentTieringStatus value);
-} // namespace IntelligentTieringStatusMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace IntelligentTieringStatusMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

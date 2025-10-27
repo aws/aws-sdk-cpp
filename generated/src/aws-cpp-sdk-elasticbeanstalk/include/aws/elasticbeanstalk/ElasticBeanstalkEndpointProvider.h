@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointRules.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ElasticBeanstalkClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using ElasticBeanstalkEndpointProviderBase =
     EndpointProviderBase<ElasticBeanstalkClientConfiguration, ElasticBeanstalkBuiltInParameters, ElasticBeanstalkClientContextParameters>;
 
 using ElasticBeanstalkDefaultEpProviderBase =
-    DefaultEndpointProvider<ElasticBeanstalkClientConfiguration, ElasticBeanstalkBuiltInParameters, ElasticBeanstalkClientContextParameters>;
+    DefaultEndpointProvider<ElasticBeanstalkClientConfiguration, ElasticBeanstalkBuiltInParameters,
+                            ElasticBeanstalkClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ELASTICBEANSTALK_API ElasticBeanstalkEndpointProvider : public ElasticBeanstalkDefaultEpProviderBase
-{
-public:
-    using ElasticBeanstalkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ELASTICBEANSTALK_API ElasticBeanstalkEndpointProvider : public ElasticBeanstalkDefaultEpProviderBase {
+ public:
+  using ElasticBeanstalkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ElasticBeanstalkEndpointProvider()
-      : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::GetRulesBlob(), Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::RulesBlobSize)
-    {}
+  ElasticBeanstalkEndpointProvider()
+      : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::GetRulesBlob(),
+                                              Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::RulesBlobSize) {}
 
-    ~ElasticBeanstalkEndpointProvider()
-    {
-    }
+  ~ElasticBeanstalkEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DhcpOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DhcpOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-DhcpOptions::DhcpOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DhcpOptions::DhcpOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
-{
+DhcpOptions& DhcpOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
+    if (!ownerIdNode.IsNull()) {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -51,18 +40,15 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
-    if(!dhcpOptionsIdNode.IsNull())
-    {
+    if (!dhcpOptionsIdNode.IsNull()) {
       m_dhcpOptionsId = Aws::Utils::Xml::DecodeEscapedXmlText(dhcpOptionsIdNode.GetText());
       m_dhcpOptionsIdHasBeenSet = true;
     }
     XmlNode dhcpConfigurationsNode = resultNode.FirstChild("dhcpConfigurationSet");
-    if(!dhcpConfigurationsNode.IsNull())
-    {
+    if (!dhcpConfigurationsNode.IsNull()) {
       XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
       m_dhcpConfigurationsHasBeenSet = !dhcpConfigurationsMember.IsNull();
-      while(!dhcpConfigurationsMember.IsNull())
-      {
+      while (!dhcpConfigurationsMember.IsNull()) {
         m_dhcpConfigurations.push_back(dhcpConfigurationsMember);
         dhcpConfigurationsMember = dhcpConfigurationsMember.NextNode("item");
       }
@@ -74,74 +60,59 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_dhcpOptionsIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  if (m_dhcpOptionsIdHasBeenSet) {
+    oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
   }
 
-  if(m_dhcpConfigurationsHasBeenSet)
-  {
-      unsigned dhcpConfigurationsIdx = 1;
-      for(auto& item : m_dhcpConfigurations)
-      {
-        Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
-        item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
-      }
-  }
-
-}
-
-void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_dhcpOptionsIdHasBeenSet)
-  {
-      oStream << location << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
-  }
-  if(m_dhcpConfigurationsHasBeenSet)
-  {
-      unsigned dhcpConfigurationsIdx = 1;
-      for(auto& item : m_dhcpConfigurations)
-      {
-        Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
-        item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
-      }
+  if (m_dhcpConfigurationsHasBeenSet) {
+    unsigned dhcpConfigurationsIdx = 1;
+    for (auto& item : m_dhcpConfigurations) {
+      Aws::StringStream dhcpConfigurationsSs;
+      dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
+      item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_dhcpOptionsIdHasBeenSet) {
+    oStream << location << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  }
+  if (m_dhcpConfigurationsHasBeenSet) {
+    unsigned dhcpConfigurationsIdx = 1;
+    for (auto& item : m_dhcpConfigurations) {
+      Aws::StringStream dhcpConfigurationsSs;
+      dhcpConfigurationsSs << location << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
+      item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

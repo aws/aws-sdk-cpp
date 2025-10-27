@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/GetSchemaRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/GetSchemaRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetSchemaRequest::SerializePayload() const
-{
+Aws::String GetSchemaRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyStoreIdHasBeenSet)
-  {
-   payload.WithString("policyStoreId", m_policyStoreId);
-
+  if (m_policyStoreIdHasBeenSet) {
+    payload.WithString("policyStoreId", m_policyStoreId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetSchemaRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetSchemaRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "VerifiedPermissions.GetSchema"));
   return headers;
-
 }
-
-
-
-

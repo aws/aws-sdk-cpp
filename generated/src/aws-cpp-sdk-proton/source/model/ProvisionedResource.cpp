@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/proton/model/ProvisionedResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/proton/model/ProvisionedResource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
+namespace Aws {
+namespace Proton {
+namespace Model {
 
-ProvisionedResource::ProvisionedResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProvisionedResource::ProvisionedResource(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisionedResource& ProvisionedResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("identifier"))
-  {
+ProvisionedResource& ProvisionedResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");
     m_identifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("provisioningEngine"))
-  {
+  if (jsonValue.ValueExists("provisioningEngine")) {
     m_provisioningEngine = ProvisionedResourceEngineMapper::GetProvisionedResourceEngineForName(jsonValue.GetString("provisioningEngine"));
     m_provisioningEngineHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProvisionedResource::Jsonize() const
-{
+JsonValue ProvisionedResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_provisioningEngineHasBeenSet)
-  {
-   payload.WithString("provisioningEngine", ProvisionedResourceEngineMapper::GetNameForProvisionedResourceEngine(m_provisioningEngine));
+  if (m_provisioningEngineHasBeenSet) {
+    payload.WithString("provisioningEngine", ProvisionedResourceEngineMapper::GetNameForProvisionedResourceEngine(m_provisioningEngine));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

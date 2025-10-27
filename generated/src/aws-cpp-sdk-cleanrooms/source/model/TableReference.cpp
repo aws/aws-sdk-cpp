@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-TableReference::TableReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableReference::TableReference(JsonView jsonValue) { *this = jsonValue; }
 
-TableReference& TableReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("glue"))
-  {
+TableReference& TableReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("glue")) {
     m_glue = jsonValue.GetObject("glue");
     m_glueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snowflake"))
-  {
+  if (jsonValue.ValueExists("snowflake")) {
     m_snowflake = jsonValue.GetObject("snowflake");
     m_snowflakeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("athena"))
-  {
+  if (jsonValue.ValueExists("athena")) {
     m_athena = jsonValue.GetObject("athena");
     m_athenaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableReference::Jsonize() const
-{
+JsonValue TableReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_glueHasBeenSet)
-  {
-   payload.WithObject("glue", m_glue.Jsonize());
-
+  if (m_glueHasBeenSet) {
+    payload.WithObject("glue", m_glue.Jsonize());
   }
 
-  if(m_snowflakeHasBeenSet)
-  {
-   payload.WithObject("snowflake", m_snowflake.Jsonize());
-
+  if (m_snowflakeHasBeenSet) {
+    payload.WithObject("snowflake", m_snowflake.Jsonize());
   }
 
-  if(m_athenaHasBeenSet)
-  {
-   payload.WithObject("athena", m_athena.Jsonize());
-
+  if (m_athenaHasBeenSet) {
+    payload.WithObject("athena", m_athena.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,79 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/UserPendingChanges.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/model/UserPendingChanges.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
+namespace Aws {
+namespace MQ {
+namespace Model {
 
-UserPendingChanges::UserPendingChanges(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserPendingChanges::UserPendingChanges(JsonView jsonValue) { *this = jsonValue; }
 
-UserPendingChanges& UserPendingChanges::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("consoleAccess"))
-  {
+UserPendingChanges& UserPendingChanges::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("consoleAccess")) {
     m_consoleAccess = jsonValue.GetBool("consoleAccess");
     m_consoleAccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groups"))
-  {
+  if (jsonValue.ValueExists("groups")) {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
-    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
-    {
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
     }
     m_groupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pendingChange"))
-  {
+  if (jsonValue.ValueExists("pendingChange")) {
     m_pendingChange = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("pendingChange"));
     m_pendingChangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserPendingChanges::Jsonize() const
-{
+JsonValue UserPendingChanges::Jsonize() const {
   JsonValue payload;
 
-  if(m_consoleAccessHasBeenSet)
-  {
-   payload.WithBool("consoleAccess", m_consoleAccess);
-
+  if (m_consoleAccessHasBeenSet) {
+    payload.WithBool("consoleAccess", m_consoleAccess);
   }
 
-  if(m_groupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
-   for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
-   {
-     groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
-   }
-   payload.WithArray("groups", std::move(groupsJsonList));
-
+  if (m_groupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
+      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
+    }
+    payload.WithArray("groups", std::move(groupsJsonList));
   }
 
-  if(m_pendingChangeHasBeenSet)
-  {
-   payload.WithString("pendingChange", ChangeTypeMapper::GetNameForChangeType(m_pendingChange));
+  if (m_pendingChangeHasBeenSet) {
+    payload.WithString("pendingChange", ChangeTypeMapper::GetNameForChangeType(m_pendingChange));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

@@ -4,67 +4,71 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Describes a port range.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestFilterPortRange">AWS
+ * API Reference</a></p>
+ */
+class RequestFilterPortRange {
+ public:
+  AWS_EC2_API RequestFilterPortRange() = default;
+  AWS_EC2_API RequestFilterPortRange(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API RequestFilterPortRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Describes a port range.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestFilterPortRange">AWS
-   * API Reference</a></p>
+   * <p>The first port in the range.</p>
    */
-  class RequestFilterPortRange
-  {
-  public:
-    AWS_EC2_API RequestFilterPortRange() = default;
-    AWS_EC2_API RequestFilterPortRange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_EC2_API RequestFilterPortRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline int GetFromPort() const { return m_fromPort; }
+  inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+  inline void SetFromPort(int value) {
+    m_fromPortHasBeenSet = true;
+    m_fromPort = value;
+  }
+  inline RequestFilterPortRange& WithFromPort(int value) {
+    SetFromPort(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The last port in the range.</p>
+   */
+  inline int GetToPort() const { return m_toPort; }
+  inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+  inline void SetToPort(int value) {
+    m_toPortHasBeenSet = true;
+    m_toPort = value;
+  }
+  inline RequestFilterPortRange& WithToPort(int value) {
+    SetToPort(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_fromPort{0};
+  bool m_fromPortHasBeenSet = false;
 
+  int m_toPort{0};
+  bool m_toPortHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The first port in the range.</p>
-     */
-    inline int GetFromPort() const { return m_fromPort; }
-    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-    inline RequestFilterPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The last port in the range.</p>
-     */
-    inline int GetToPort() const { return m_toPort; }
-    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-    inline RequestFilterPortRange& WithToPort(int value) { SetToPort(value); return *this;}
-    ///@}
-  private:
-
-    int m_fromPort{0};
-    bool m_fromPortHasBeenSet = false;
-
-    int m_toPort{0};
-    bool m_toPortHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

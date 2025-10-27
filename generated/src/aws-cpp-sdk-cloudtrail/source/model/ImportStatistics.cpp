@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-ImportStatistics::ImportStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImportStatistics::ImportStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-ImportStatistics& ImportStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PrefixesFound"))
-  {
+ImportStatistics& ImportStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PrefixesFound")) {
     m_prefixesFound = jsonValue.GetInt64("PrefixesFound");
     m_prefixesFoundHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrefixesCompleted"))
-  {
+  if (jsonValue.ValueExists("PrefixesCompleted")) {
     m_prefixesCompleted = jsonValue.GetInt64("PrefixesCompleted");
     m_prefixesCompletedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilesCompleted"))
-  {
+  if (jsonValue.ValueExists("FilesCompleted")) {
     m_filesCompleted = jsonValue.GetInt64("FilesCompleted");
     m_filesCompletedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventsCompleted"))
-  {
+  if (jsonValue.ValueExists("EventsCompleted")) {
     m_eventsCompleted = jsonValue.GetInt64("EventsCompleted");
     m_eventsCompletedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailedEntries"))
-  {
+  if (jsonValue.ValueExists("FailedEntries")) {
     m_failedEntries = jsonValue.GetInt64("FailedEntries");
     m_failedEntriesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImportStatistics::Jsonize() const
-{
+JsonValue ImportStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_prefixesFoundHasBeenSet)
-  {
-   payload.WithInt64("PrefixesFound", m_prefixesFound);
-
+  if (m_prefixesFoundHasBeenSet) {
+    payload.WithInt64("PrefixesFound", m_prefixesFound);
   }
 
-  if(m_prefixesCompletedHasBeenSet)
-  {
-   payload.WithInt64("PrefixesCompleted", m_prefixesCompleted);
-
+  if (m_prefixesCompletedHasBeenSet) {
+    payload.WithInt64("PrefixesCompleted", m_prefixesCompleted);
   }
 
-  if(m_filesCompletedHasBeenSet)
-  {
-   payload.WithInt64("FilesCompleted", m_filesCompleted);
-
+  if (m_filesCompletedHasBeenSet) {
+    payload.WithInt64("FilesCompleted", m_filesCompleted);
   }
 
-  if(m_eventsCompletedHasBeenSet)
-  {
-   payload.WithInt64("EventsCompleted", m_eventsCompleted);
-
+  if (m_eventsCompletedHasBeenSet) {
+    payload.WithInt64("EventsCompleted", m_eventsCompleted);
   }
 
-  if(m_failedEntriesHasBeenSet)
-  {
-   payload.WithInt64("FailedEntries", m_failedEntries);
-
+  if (m_failedEntriesHasBeenSet) {
+    payload.WithInt64("FailedEntries", m_failedEntries);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/ListedEntitlement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/ListedEntitlement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-ListedEntitlement::ListedEntitlement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListedEntitlement::ListedEntitlement(JsonView jsonValue) { *this = jsonValue; }
 
-ListedEntitlement& ListedEntitlement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
-  {
+ListedEntitlement& ListedEntitlement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dataTransferSubscriberFeePercent")) {
     m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
     m_dataTransferSubscriberFeePercentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("entitlementArn"))
-  {
+  if (jsonValue.ValueExists("entitlementArn")) {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
     m_entitlementArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("entitlementName"))
-  {
+  if (jsonValue.ValueExists("entitlementName")) {
     m_entitlementName = jsonValue.GetString("entitlementName");
     m_entitlementNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListedEntitlement::Jsonize() const
-{
+JsonValue ListedEntitlement::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataTransferSubscriberFeePercentHasBeenSet)
-  {
-   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
-
+  if (m_dataTransferSubscriberFeePercentHasBeenSet) {
+    payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
   }
 
-  if(m_entitlementArnHasBeenSet)
-  {
-   payload.WithString("entitlementArn", m_entitlementArn);
-
+  if (m_entitlementArnHasBeenSet) {
+    payload.WithString("entitlementArn", m_entitlementArn);
   }
 
-  if(m_entitlementNameHasBeenSet)
-  {
-   payload.WithString("entitlementName", m_entitlementName);
-
+  if (m_entitlementNameHasBeenSet) {
+    payload.WithString("entitlementName", m_entitlementName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

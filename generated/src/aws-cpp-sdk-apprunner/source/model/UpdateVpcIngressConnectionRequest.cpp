@@ -12,33 +12,22 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateVpcIngressConnectionRequest::SerializePayload() const
-{
+Aws::String UpdateVpcIngressConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vpcIngressConnectionArnHasBeenSet)
-  {
-   payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
-
+  if (m_vpcIngressConnectionArnHasBeenSet) {
+    payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
   }
 
-  if(m_ingressVpcConfigurationHasBeenSet)
-  {
-   payload.WithObject("IngressVpcConfiguration", m_ingressVpcConfiguration.Jsonize());
-
+  if (m_ingressVpcConfigurationHasBeenSet) {
+    payload.WithObject("IngressVpcConfiguration", m_ingressVpcConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateVpcIngressConnectionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateVpcIngressConnectionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.UpdateVpcIngressConnection"));
   return headers;
-
 }
-
-
-
-

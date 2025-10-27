@@ -12,24 +12,16 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ImportBackendStorageRequest::SerializePayload() const
-{
+Aws::String ImportBackendStorageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

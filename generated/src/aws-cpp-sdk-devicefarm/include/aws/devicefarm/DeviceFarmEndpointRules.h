@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-class DeviceFarmEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DeviceFarm {
+class DeviceFarmEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace DeviceFarm
+}  // namespace Aws

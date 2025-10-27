@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/VoiceChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/VoiceChannelRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-VoiceChannelRequest::VoiceChannelRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VoiceChannelRequest::VoiceChannelRequest(JsonView jsonValue) { *this = jsonValue; }
 
-VoiceChannelRequest& VoiceChannelRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+VoiceChannelRequest& VoiceChannelRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VoiceChannelRequest::Jsonize() const
-{
+JsonValue VoiceChannelRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

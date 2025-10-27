@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/Trace.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/Trace.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-Trace::Trace(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Trace::Trace(JsonView jsonValue) { *this = jsonValue; }
 
-Trace& Trace::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+Trace& Trace::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Trace::Jsonize() const
-{
+JsonValue Trace::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

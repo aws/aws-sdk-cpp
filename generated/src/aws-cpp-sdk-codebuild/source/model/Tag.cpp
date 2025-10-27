@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-Tag::Tag(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Tag::Tag(JsonView jsonValue) { *this = jsonValue; }
 
-Tag& Tag::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+Tag& Tag::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Tag::Jsonize() const
-{
+JsonValue Tag::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

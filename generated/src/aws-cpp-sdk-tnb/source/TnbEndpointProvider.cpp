@@ -5,12 +5,8 @@
 
 #include <aws/tnb/TnbEndpointProvider.h>
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace tnb
-} // namespace Aws
+namespace Aws {
+namespace tnb {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace tnb
+}  // namespace Aws

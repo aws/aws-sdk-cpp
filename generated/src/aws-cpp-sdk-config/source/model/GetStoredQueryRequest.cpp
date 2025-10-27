@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetStoredQueryRequest::SerializePayload() const
-{
+Aws::String GetStoredQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryNameHasBeenSet)
-  {
-   payload.WithString("QueryName", m_queryName);
-
+  if (m_queryNameHasBeenSet) {
+    payload.WithString("QueryName", m_queryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetStoredQueryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetStoredQueryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.GetStoredQuery"));
   return headers;
-
 }
-
-
-
-

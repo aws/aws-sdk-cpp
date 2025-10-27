@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCodeBuildProjectSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCodeBuildProjectSource::AwsCodeBuildProjectSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCodeBuildProjectSource::AwsCodeBuildProjectSource(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCodeBuildProjectSource& AwsCodeBuildProjectSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+AwsCodeBuildProjectSource& AwsCodeBuildProjectSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Location"))
-  {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GitCloneDepth"))
-  {
+  if (jsonValue.ValueExists("GitCloneDepth")) {
     m_gitCloneDepth = jsonValue.GetInteger("GitCloneDepth");
     m_gitCloneDepthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InsecureSsl"))
-  {
+  if (jsonValue.ValueExists("InsecureSsl")) {
     m_insecureSsl = jsonValue.GetBool("InsecureSsl");
     m_insecureSslHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCodeBuildProjectSource::Jsonize() const
-{
+JsonValue AwsCodeBuildProjectSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
-  if(m_gitCloneDepthHasBeenSet)
-  {
-   payload.WithInteger("GitCloneDepth", m_gitCloneDepth);
-
+  if (m_gitCloneDepthHasBeenSet) {
+    payload.WithInteger("GitCloneDepth", m_gitCloneDepth);
   }
 
-  if(m_insecureSslHasBeenSet)
-  {
-   payload.WithBool("InsecureSsl", m_insecureSsl);
-
+  if (m_insecureSslHasBeenSet) {
+    payload.WithBool("InsecureSsl", m_insecureSsl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

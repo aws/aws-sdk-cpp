@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetMetricStatisticsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/GetMetricStatisticsResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMetricStatisticsResult::GetMetricStatisticsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetMetricStatisticsResult::GetMetricStatisticsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetMetricStatisticsResult& GetMetricStatisticsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetMetricStatisticsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetMetricStatisticsResult")) {
     resultNode = rootNode.FirstChild("GetMetricStatisticsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode labelNode = resultNode.FirstChild("Label");
-    if(!labelNode.IsNull())
-    {
+    if (!labelNode.IsNull()) {
       m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
     }
     XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
-    if(!datapointsNode.IsNull())
-    {
+    if (!datapointsNode.IsNull()) {
       XmlNode datapointsMember = datapointsNode.FirstChild("member");
       m_datapointsHasBeenSet = !datapointsMember.IsNull();
-      while(!datapointsMember.IsNull())
-      {
+      while (!datapointsMember.IsNull()) {
         m_datapoints.push_back(datapointsMember);
         datapointsMember = datapointsMember.NextNode("member");
       }
@@ -59,7 +50,7 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const Aws::Amaz
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricStatisticsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricStatisticsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/oam/model/UpdateLinkRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/oam/model/UpdateLinkRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateLinkRequest::SerializePayload() const
-{
+Aws::String UpdateLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
-  if(m_includeTagsHasBeenSet)
-  {
-   payload.WithBool("IncludeTags", m_includeTags);
-
+  if (m_includeTagsHasBeenSet) {
+    payload.WithBool("IncludeTags", m_includeTags);
   }
 
-  if(m_linkConfigurationHasBeenSet)
-  {
-   payload.WithObject("LinkConfiguration", m_linkConfiguration.Jsonize());
-
+  if (m_linkConfigurationHasBeenSet) {
+    payload.WithObject("LinkConfiguration", m_linkConfiguration.Jsonize());
   }
 
-  if(m_resourceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
-   for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
-   {
-     resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
-   }
-   payload.WithArray("ResourceTypes", std::move(resourceTypesJsonList));
-
+  if (m_resourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+    for (unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex) {
+      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
+    }
+    payload.WithArray("ResourceTypes", std::move(resourceTypesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

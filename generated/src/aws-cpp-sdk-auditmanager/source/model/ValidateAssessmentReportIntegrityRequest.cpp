@@ -12,19 +12,12 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ValidateAssessmentReportIntegrityRequest::SerializePayload() const
-{
+Aws::String ValidateAssessmentReportIntegrityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_s3RelativePathHasBeenSet)
-  {
-   payload.WithString("s3RelativePath", m_s3RelativePath);
-
+  if (m_s3RelativePathHasBeenSet) {
+    payload.WithString("s3RelativePath", m_s3RelativePath);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -7,25 +7,16 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
-  enum class ApprovalState
-  {
-    NOT_SET,
-    APPROVE,
-    REVOKE
-  };
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
+enum class ApprovalState { NOT_SET, APPROVE, REVOKE };
 
-namespace ApprovalStateMapper
-{
+namespace ApprovalStateMapper {
 AWS_CODECOMMIT_API ApprovalState GetApprovalStateForName(const Aws::String& name);
 
 AWS_CODECOMMIT_API Aws::String GetNameForApprovalState(ApprovalState value);
-} // namespace ApprovalStateMapper
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace ApprovalStateMapper
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

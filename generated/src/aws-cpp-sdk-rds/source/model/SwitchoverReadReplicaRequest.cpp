@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String SwitchoverReadReplicaRequest::SerializePayload() const
-{
+Aws::String SwitchoverReadReplicaRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SwitchoverReadReplica&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String SwitchoverReadReplicaRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SwitchoverReadReplicaRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SwitchoverReadReplicaRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class OutputFormat
-  {
-    NOT_SET,
-    Excel,
-    Json
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class OutputFormat { NOT_SET, Excel, Json };
 
-namespace OutputFormatMapper
-{
+namespace OutputFormatMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OutputFormat GetOutputFormatForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForOutputFormat(OutputFormat value);
-} // namespace OutputFormatMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace OutputFormatMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

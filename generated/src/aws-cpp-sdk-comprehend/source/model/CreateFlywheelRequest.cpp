@@ -12,79 +12,54 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateFlywheelRequest::SerializePayload() const
-{
+Aws::String CreateFlywheelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_flywheelNameHasBeenSet)
-  {
-   payload.WithString("FlywheelName", m_flywheelName);
-
+  if (m_flywheelNameHasBeenSet) {
+    payload.WithString("FlywheelName", m_flywheelName);
   }
 
-  if(m_activeModelArnHasBeenSet)
-  {
-   payload.WithString("ActiveModelArn", m_activeModelArn);
-
+  if (m_activeModelArnHasBeenSet) {
+    payload.WithString("ActiveModelArn", m_activeModelArn);
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_taskConfigHasBeenSet)
-  {
-   payload.WithObject("TaskConfig", m_taskConfig.Jsonize());
-
+  if (m_taskConfigHasBeenSet) {
+    payload.WithObject("TaskConfig", m_taskConfig.Jsonize());
   }
 
-  if(m_modelTypeHasBeenSet)
-  {
-   payload.WithString("ModelType", ModelTypeMapper::GetNameForModelType(m_modelType));
+  if (m_modelTypeHasBeenSet) {
+    payload.WithString("ModelType", ModelTypeMapper::GetNameForModelType(m_modelType));
   }
 
-  if(m_dataLakeS3UriHasBeenSet)
-  {
-   payload.WithString("DataLakeS3Uri", m_dataLakeS3Uri);
-
+  if (m_dataLakeS3UriHasBeenSet) {
+    payload.WithString("DataLakeS3Uri", m_dataLakeS3Uri);
   }
 
-  if(m_dataSecurityConfigHasBeenSet)
-  {
-   payload.WithObject("DataSecurityConfig", m_dataSecurityConfig.Jsonize());
-
+  if (m_dataSecurityConfigHasBeenSet) {
+    payload.WithObject("DataSecurityConfig", m_dataSecurityConfig.Jsonize());
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateFlywheelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateFlywheelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.CreateFlywheel"));
   return headers;
-
 }
-
-
-
-

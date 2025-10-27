@@ -7,29 +7,16 @@
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
-  enum class ScalingActivityStatusCode
-  {
-    NOT_SET,
-    Pending,
-    InProgress,
-    Successful,
-    Overridden,
-    Unfulfilled,
-    Failed
-  };
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
+enum class ScalingActivityStatusCode { NOT_SET, Pending, InProgress, Successful, Overridden, Unfulfilled, Failed };
 
-namespace ScalingActivityStatusCodeMapper
-{
+namespace ScalingActivityStatusCodeMapper {
 AWS_APPLICATIONAUTOSCALING_API ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name);
 
 AWS_APPLICATIONAUTOSCALING_API Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode value);
-} // namespace ScalingActivityStatusCodeMapper
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace ScalingActivityStatusCodeMapper
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

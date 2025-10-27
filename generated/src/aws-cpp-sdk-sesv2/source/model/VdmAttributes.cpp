@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/VdmAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/VdmAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-VdmAttributes::VdmAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VdmAttributes::VdmAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-VdmAttributes& VdmAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VdmEnabled"))
-  {
+VdmAttributes& VdmAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VdmEnabled")) {
     m_vdmEnabled = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("VdmEnabled"));
     m_vdmEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DashboardAttributes"))
-  {
+  if (jsonValue.ValueExists("DashboardAttributes")) {
     m_dashboardAttributes = jsonValue.GetObject("DashboardAttributes");
     m_dashboardAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GuardianAttributes"))
-  {
+  if (jsonValue.ValueExists("GuardianAttributes")) {
     m_guardianAttributes = jsonValue.GetObject("GuardianAttributes");
     m_guardianAttributesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VdmAttributes::Jsonize() const
-{
+JsonValue VdmAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_vdmEnabledHasBeenSet)
-  {
-   payload.WithString("VdmEnabled", FeatureStatusMapper::GetNameForFeatureStatus(m_vdmEnabled));
+  if (m_vdmEnabledHasBeenSet) {
+    payload.WithString("VdmEnabled", FeatureStatusMapper::GetNameForFeatureStatus(m_vdmEnabled));
   }
 
-  if(m_dashboardAttributesHasBeenSet)
-  {
-   payload.WithObject("DashboardAttributes", m_dashboardAttributes.Jsonize());
-
+  if (m_dashboardAttributesHasBeenSet) {
+    payload.WithObject("DashboardAttributes", m_dashboardAttributes.Jsonize());
   }
 
-  if(m_guardianAttributesHasBeenSet)
-  {
-   payload.WithObject("GuardianAttributes", m_guardianAttributes.Jsonize());
-
+  if (m_guardianAttributesHasBeenSet) {
+    payload.WithObject("GuardianAttributes", m_guardianAttributes.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

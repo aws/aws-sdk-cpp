@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class InferenceExperimentStopDesiredState
-  {
-    NOT_SET,
-    Completed,
-    Cancelled
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class InferenceExperimentStopDesiredState { NOT_SET, Completed, Cancelled };
 
-namespace InferenceExperimentStopDesiredStateMapper
-{
+namespace InferenceExperimentStopDesiredStateMapper {
 AWS_SAGEMAKER_API InferenceExperimentStopDesiredState GetInferenceExperimentStopDesiredStateForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForInferenceExperimentStopDesiredState(InferenceExperimentStopDesiredState value);
-} // namespace InferenceExperimentStopDesiredStateMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace InferenceExperimentStopDesiredStateMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

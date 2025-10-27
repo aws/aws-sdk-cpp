@@ -5,12 +5,8 @@
 
 #include <aws/ds/DirectoryServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DirectoryService
-} // namespace Aws
+namespace Aws {
+namespace DirectoryService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DirectoryService
+}  // namespace Aws

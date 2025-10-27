@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SSOOIDC;
 
-AWSError<CoreErrors> SSOOIDCErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SSOOIDCErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SSOOIDCErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

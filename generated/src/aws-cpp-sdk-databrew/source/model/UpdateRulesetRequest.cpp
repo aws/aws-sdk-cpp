@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/UpdateRulesetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/UpdateRulesetRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRulesetRequest::SerializePayload() const
-{
+Aws::String UpdateRulesetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ListThemeVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/ListThemeVersionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListThemeVersionsResult& ListThemeVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListThemeVersionsResult& ListThemeVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ThemeVersionSummaryList"))
-  {
+  if (jsonValue.ValueExists("ThemeVersionSummaryList")) {
     Aws::Utils::Array<JsonView> themeVersionSummaryListJsonList = jsonValue.GetArray("ThemeVersionSummaryList");
-    for(unsigned themeVersionSummaryListIndex = 0; themeVersionSummaryListIndex < themeVersionSummaryListJsonList.GetLength(); ++themeVersionSummaryListIndex)
-    {
+    for (unsigned themeVersionSummaryListIndex = 0; themeVersionSummaryListIndex < themeVersionSummaryListJsonList.GetLength();
+         ++themeVersionSummaryListIndex) {
       m_themeVersionSummaryList.push_back(themeVersionSummaryListJsonList[themeVersionSummaryListIndex].AsObject());
     }
     m_themeVersionSummaryListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_status = static_cast<int>(result.GetResponseCode());
   m_statusHasBeenSet = true;

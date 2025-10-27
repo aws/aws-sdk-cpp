@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class FolderType
-  {
-    NOT_SET,
-    SHARED,
-    RESTRICTED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class FolderType { NOT_SET, SHARED, RESTRICTED };
 
-namespace FolderTypeMapper
-{
+namespace FolderTypeMapper {
 AWS_QUICKSIGHT_API FolderType GetFolderTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForFolderType(FolderType value);
-} // namespace FolderTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace FolderTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

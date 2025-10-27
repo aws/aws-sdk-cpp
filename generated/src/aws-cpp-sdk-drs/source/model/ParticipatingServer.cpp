@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/ParticipatingServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/ParticipatingServer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-ParticipatingServer::ParticipatingServer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParticipatingServer::ParticipatingServer(JsonView jsonValue) { *this = jsonValue; }
 
-ParticipatingServer& ParticipatingServer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("launchActionsStatus"))
-  {
+ParticipatingServer& ParticipatingServer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("launchActionsStatus")) {
     m_launchActionsStatus = jsonValue.GetObject("launchActionsStatus");
     m_launchActionsStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("launchStatus"))
-  {
+  if (jsonValue.ValueExists("launchStatus")) {
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
     m_launchStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recoveryInstanceID"))
-  {
+  if (jsonValue.ValueExists("recoveryInstanceID")) {
     m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
     m_recoveryInstanceIDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceServerID"))
-  {
+  if (jsonValue.ValueExists("sourceServerID")) {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
     m_sourceServerIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParticipatingServer::Jsonize() const
-{
+JsonValue ParticipatingServer::Jsonize() const {
   JsonValue payload;
 
-  if(m_launchActionsStatusHasBeenSet)
-  {
-   payload.WithObject("launchActionsStatus", m_launchActionsStatus.Jsonize());
-
+  if (m_launchActionsStatusHasBeenSet) {
+    payload.WithObject("launchActionsStatus", m_launchActionsStatus.Jsonize());
   }
 
-  if(m_launchStatusHasBeenSet)
-  {
-   payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
+  if (m_launchStatusHasBeenSet) {
+    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
   }
 
-  if(m_recoveryInstanceIDHasBeenSet)
-  {
-   payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
-
+  if (m_recoveryInstanceIDHasBeenSet) {
+    payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
   }
 
-  if(m_sourceServerIDHasBeenSet)
-  {
-   payload.WithString("sourceServerID", m_sourceServerID);
-
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

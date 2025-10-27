@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-UtilizationPreference::UtilizationPreference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UtilizationPreference::UtilizationPreference(JsonView jsonValue) { *this = jsonValue; }
 
-UtilizationPreference& UtilizationPreference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("metricName"))
-  {
+UtilizationPreference& UtilizationPreference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metricName")) {
     m_metricName = CustomizableMetricNameMapper::GetCustomizableMetricNameForName(jsonValue.GetString("metricName"));
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricParameters"))
-  {
+  if (jsonValue.ValueExists("metricParameters")) {
     m_metricParameters = jsonValue.GetObject("metricParameters");
     m_metricParametersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UtilizationPreference::Jsonize() const
-{
+JsonValue UtilizationPreference::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("metricName", CustomizableMetricNameMapper::GetNameForCustomizableMetricName(m_metricName));
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("metricName", CustomizableMetricNameMapper::GetNameForCustomizableMetricName(m_metricName));
   }
 
-  if(m_metricParametersHasBeenSet)
-  {
-   payload.WithObject("metricParameters", m_metricParameters.Jsonize());
-
+  if (m_metricParametersHasBeenSet) {
+    payload.WithObject("metricParameters", m_metricParameters.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

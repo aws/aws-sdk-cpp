@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/ListOrganizationInsightsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/devops-guru/model/ListOrganizationInsightsResult.h>
 
 #include <utility>
 
@@ -17,46 +17,35 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOrganizationInsightsResult::ListOrganizationInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListOrganizationInsightsResult::ListOrganizationInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListOrganizationInsightsResult& ListOrganizationInsightsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListOrganizationInsightsResult& ListOrganizationInsightsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ProactiveInsights"))
-  {
+  if (jsonValue.ValueExists("ProactiveInsights")) {
     Aws::Utils::Array<JsonView> proactiveInsightsJsonList = jsonValue.GetArray("ProactiveInsights");
-    for(unsigned proactiveInsightsIndex = 0; proactiveInsightsIndex < proactiveInsightsJsonList.GetLength(); ++proactiveInsightsIndex)
-    {
+    for (unsigned proactiveInsightsIndex = 0; proactiveInsightsIndex < proactiveInsightsJsonList.GetLength(); ++proactiveInsightsIndex) {
       m_proactiveInsights.push_back(proactiveInsightsJsonList[proactiveInsightsIndex].AsObject());
     }
     m_proactiveInsightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReactiveInsights"))
-  {
+  if (jsonValue.ValueExists("ReactiveInsights")) {
     Aws::Utils::Array<JsonView> reactiveInsightsJsonList = jsonValue.GetArray("ReactiveInsights");
-    for(unsigned reactiveInsightsIndex = 0; reactiveInsightsIndex < reactiveInsightsJsonList.GetLength(); ++reactiveInsightsIndex)
-    {
+    for (unsigned reactiveInsightsIndex = 0; reactiveInsightsIndex < reactiveInsightsJsonList.GetLength(); ++reactiveInsightsIndex) {
       m_reactiveInsights.push_back(reactiveInsightsJsonList[reactiveInsightsIndex].AsObject());
     }
     m_reactiveInsightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

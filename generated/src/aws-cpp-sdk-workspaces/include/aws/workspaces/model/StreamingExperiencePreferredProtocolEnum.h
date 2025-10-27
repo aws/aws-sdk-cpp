@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class StreamingExperiencePreferredProtocolEnum
-  {
-    NOT_SET,
-    TCP,
-    UDP
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class StreamingExperiencePreferredProtocolEnum { NOT_SET, TCP, UDP };
 
-namespace StreamingExperiencePreferredProtocolEnumMapper
-{
+namespace StreamingExperiencePreferredProtocolEnumMapper {
 AWS_WORKSPACES_API StreamingExperiencePreferredProtocolEnum GetStreamingExperiencePreferredProtocolEnumForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForStreamingExperiencePreferredProtocolEnum(StreamingExperiencePreferredProtocolEnum value);
-} // namespace StreamingExperiencePreferredProtocolEnumMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace StreamingExperiencePreferredProtocolEnumMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TotalLocalStorageGBRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TotalLocalStorageGBRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-TotalLocalStorageGBRequest::TotalLocalStorageGBRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TotalLocalStorageGBRequest::TotalLocalStorageGBRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TotalLocalStorageGBRequest& TotalLocalStorageGBRequest::operator =(const XmlNode& xmlNode)
-{
+TotalLocalStorageGBRequest& TotalLocalStorageGBRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode minNode = resultNode.FirstChild("Min");
-    if(!minNode.IsNull())
-    {
+    if (!minNode.IsNull()) {
       m_min = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
-    if(!maxNode.IsNull())
-    {
+    if (!maxNode.IsNull()) {
       m_max = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ TotalLocalStorageGBRequest& TotalLocalStorageGBRequest::operator =(const XmlNode
   return *this;
 }
 
-void TotalLocalStorageGBRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_minHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Min=" << StringUtils::URLEncode(m_min) << "&";
+void TotalLocalStorageGBRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                const char* locationValue) const {
+  if (m_minHasBeenSet) {
+    oStream << location << index << locationValue << ".Min=" << StringUtils::URLEncode(m_min) << "&";
   }
 
-  if(m_maxHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Max=" << StringUtils::URLEncode(m_max) << "&";
-  }
-
-}
-
-void TotalLocalStorageGBRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_minHasBeenSet)
-  {
-      oStream << location << ".Min=" << StringUtils::URLEncode(m_min) << "&";
-  }
-  if(m_maxHasBeenSet)
-  {
-      oStream << location << ".Max=" << StringUtils::URLEncode(m_max) << "&";
+  if (m_maxHasBeenSet) {
+    oStream << location << index << locationValue << ".Max=" << StringUtils::URLEncode(m_max) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void TotalLocalStorageGBRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_minHasBeenSet) {
+    oStream << location << ".Min=" << StringUtils::URLEncode(m_min) << "&";
+  }
+  if (m_maxHasBeenSet) {
+    oStream << location << ".Max=" << StringUtils::URLEncode(m_max) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

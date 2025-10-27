@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-FindingDetails::FindingDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FindingDetails::FindingDetails(JsonView jsonValue) { *this = jsonValue; }
 
-FindingDetails& FindingDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("internalAccessDetails"))
-  {
+FindingDetails& FindingDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("internalAccessDetails")) {
     m_internalAccessDetails = jsonValue.GetObject("internalAccessDetails");
     m_internalAccessDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalAccessDetails"))
-  {
+  if (jsonValue.ValueExists("externalAccessDetails")) {
     m_externalAccessDetails = jsonValue.GetObject("externalAccessDetails");
     m_externalAccessDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unusedPermissionDetails"))
-  {
+  if (jsonValue.ValueExists("unusedPermissionDetails")) {
     m_unusedPermissionDetails = jsonValue.GetObject("unusedPermissionDetails");
     m_unusedPermissionDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unusedIamUserAccessKeyDetails"))
-  {
+  if (jsonValue.ValueExists("unusedIamUserAccessKeyDetails")) {
     m_unusedIamUserAccessKeyDetails = jsonValue.GetObject("unusedIamUserAccessKeyDetails");
     m_unusedIamUserAccessKeyDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unusedIamRoleDetails"))
-  {
+  if (jsonValue.ValueExists("unusedIamRoleDetails")) {
     m_unusedIamRoleDetails = jsonValue.GetObject("unusedIamRoleDetails");
     m_unusedIamRoleDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unusedIamUserPasswordDetails"))
-  {
+  if (jsonValue.ValueExists("unusedIamUserPasswordDetails")) {
     m_unusedIamUserPasswordDetails = jsonValue.GetObject("unusedIamUserPasswordDetails");
     m_unusedIamUserPasswordDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FindingDetails::Jsonize() const
-{
+JsonValue FindingDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_internalAccessDetailsHasBeenSet)
-  {
-   payload.WithObject("internalAccessDetails", m_internalAccessDetails.Jsonize());
-
+  if (m_internalAccessDetailsHasBeenSet) {
+    payload.WithObject("internalAccessDetails", m_internalAccessDetails.Jsonize());
   }
 
-  if(m_externalAccessDetailsHasBeenSet)
-  {
-   payload.WithObject("externalAccessDetails", m_externalAccessDetails.Jsonize());
-
+  if (m_externalAccessDetailsHasBeenSet) {
+    payload.WithObject("externalAccessDetails", m_externalAccessDetails.Jsonize());
   }
 
-  if(m_unusedPermissionDetailsHasBeenSet)
-  {
-   payload.WithObject("unusedPermissionDetails", m_unusedPermissionDetails.Jsonize());
-
+  if (m_unusedPermissionDetailsHasBeenSet) {
+    payload.WithObject("unusedPermissionDetails", m_unusedPermissionDetails.Jsonize());
   }
 
-  if(m_unusedIamUserAccessKeyDetailsHasBeenSet)
-  {
-   payload.WithObject("unusedIamUserAccessKeyDetails", m_unusedIamUserAccessKeyDetails.Jsonize());
-
+  if (m_unusedIamUserAccessKeyDetailsHasBeenSet) {
+    payload.WithObject("unusedIamUserAccessKeyDetails", m_unusedIamUserAccessKeyDetails.Jsonize());
   }
 
-  if(m_unusedIamRoleDetailsHasBeenSet)
-  {
-   payload.WithObject("unusedIamRoleDetails", m_unusedIamRoleDetails.Jsonize());
-
+  if (m_unusedIamRoleDetailsHasBeenSet) {
+    payload.WithObject("unusedIamRoleDetails", m_unusedIamRoleDetails.Jsonize());
   }
 
-  if(m_unusedIamUserPasswordDetailsHasBeenSet)
-  {
-   payload.WithObject("unusedIamUserPasswordDetails", m_unusedIamUserPasswordDetails.Jsonize());
-
+  if (m_unusedIamUserPasswordDetailsHasBeenSet) {
+    payload.WithObject("unusedIamUserPasswordDetails", m_unusedIamUserPasswordDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

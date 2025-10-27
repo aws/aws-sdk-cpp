@@ -5,12 +5,8 @@
 
 #include <aws/apigateway/APIGatewayEndpointProvider.h>
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace APIGateway
-} // namespace Aws
+namespace Aws {
+namespace APIGateway {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace APIGateway
+}  // namespace Aws

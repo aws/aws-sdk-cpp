@@ -7,25 +7,16 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
-  enum class DirectoryListingOptimization
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Transfer {
+namespace Model {
+enum class DirectoryListingOptimization { NOT_SET, ENABLED, DISABLED };
 
-namespace DirectoryListingOptimizationMapper
-{
+namespace DirectoryListingOptimizationMapper {
 AWS_TRANSFER_API DirectoryListingOptimization GetDirectoryListingOptimizationForName(const Aws::String& name);
 
 AWS_TRANSFER_API Aws::String GetNameForDirectoryListingOptimization(DirectoryListingOptimization value);
-} // namespace DirectoryListingOptimizationMapper
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace DirectoryListingOptimizationMapper
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

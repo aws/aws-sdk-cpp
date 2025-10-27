@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::OpenSearchServerless;
 
-AWSError<CoreErrors> OpenSearchServerlessErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> OpenSearchServerlessErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = OpenSearchServerlessErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

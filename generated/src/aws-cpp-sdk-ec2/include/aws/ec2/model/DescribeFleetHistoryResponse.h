@@ -4,129 +4,162 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/HistoryRecordEntry.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
-  class DescribeFleetHistoryResponse
-  {
-  public:
-    AWS_EC2_API DescribeFleetHistoryResponse() = default;
-    AWS_EC2_API DescribeFleetHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_EC2_API DescribeFleetHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DescribeFleetHistoryResponse {
+ public:
+  AWS_EC2_API DescribeFleetHistoryResponse() = default;
+  AWS_EC2_API DescribeFleetHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DescribeFleetHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>Information about the events in the history of the EC2 Fleet.</p>
+   */
+  inline const Aws::Vector<HistoryRecordEntry>& GetHistoryRecords() const { return m_historyRecords; }
+  template <typename HistoryRecordsT = Aws::Vector<HistoryRecordEntry>>
+  void SetHistoryRecords(HistoryRecordsT&& value) {
+    m_historyRecordsHasBeenSet = true;
+    m_historyRecords = std::forward<HistoryRecordsT>(value);
+  }
+  template <typename HistoryRecordsT = Aws::Vector<HistoryRecordEntry>>
+  DescribeFleetHistoryResponse& WithHistoryRecords(HistoryRecordsT&& value) {
+    SetHistoryRecords(std::forward<HistoryRecordsT>(value));
+    return *this;
+  }
+  template <typename HistoryRecordsT = HistoryRecordEntry>
+  DescribeFleetHistoryResponse& AddHistoryRecords(HistoryRecordsT&& value) {
+    m_historyRecordsHasBeenSet = true;
+    m_historyRecords.emplace_back(std::forward<HistoryRecordsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the events in the history of the EC2 Fleet.</p>
-     */
-    inline const Aws::Vector<HistoryRecordEntry>& GetHistoryRecords() const { return m_historyRecords; }
-    template<typename HistoryRecordsT = Aws::Vector<HistoryRecordEntry>>
-    void SetHistoryRecords(HistoryRecordsT&& value) { m_historyRecordsHasBeenSet = true; m_historyRecords = std::forward<HistoryRecordsT>(value); }
-    template<typename HistoryRecordsT = Aws::Vector<HistoryRecordEntry>>
-    DescribeFleetHistoryResponse& WithHistoryRecords(HistoryRecordsT&& value) { SetHistoryRecords(std::forward<HistoryRecordsT>(value)); return *this;}
-    template<typename HistoryRecordsT = HistoryRecordEntry>
-    DescribeFleetHistoryResponse& AddHistoryRecords(HistoryRecordsT&& value) { m_historyRecordsHasBeenSet = true; m_historyRecords.emplace_back(std::forward<HistoryRecordsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The last date and time for the events, in UTC format (for example,
+   * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
+   * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
+   * there are more items, this value is not present.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const { return m_lastEvaluatedTime; }
+  template <typename LastEvaluatedTimeT = Aws::Utils::DateTime>
+  void SetLastEvaluatedTime(LastEvaluatedTimeT&& value) {
+    m_lastEvaluatedTimeHasBeenSet = true;
+    m_lastEvaluatedTime = std::forward<LastEvaluatedTimeT>(value);
+  }
+  template <typename LastEvaluatedTimeT = Aws::Utils::DateTime>
+  DescribeFleetHistoryResponse& WithLastEvaluatedTime(LastEvaluatedTimeT&& value) {
+    SetLastEvaluatedTime(std::forward<LastEvaluatedTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The last date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
-     * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more items, this value is not present.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const { return m_lastEvaluatedTime; }
-    template<typename LastEvaluatedTimeT = Aws::Utils::DateTime>
-    void SetLastEvaluatedTime(LastEvaluatedTimeT&& value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime = std::forward<LastEvaluatedTimeT>(value); }
-    template<typename LastEvaluatedTimeT = Aws::Utils::DateTime>
-    DescribeFleetHistoryResponse& WithLastEvaluatedTime(LastEvaluatedTimeT&& value) { SetLastEvaluatedTime(std::forward<LastEvaluatedTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The token to include in another request to get the next page of items. This
+   * value is <code>null</code> when there are no more items to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeFleetHistoryResponse& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The token to include in another request to get the next page of items. This
-     * value is <code>null</code> when there are no more items to return.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeFleetHistoryResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The ID of the EC Fleet.</p>
+   */
+  inline const Aws::String& GetFleetId() const { return m_fleetId; }
+  template <typename FleetIdT = Aws::String>
+  void SetFleetId(FleetIdT&& value) {
+    m_fleetIdHasBeenSet = true;
+    m_fleetId = std::forward<FleetIdT>(value);
+  }
+  template <typename FleetIdT = Aws::String>
+  DescribeFleetHistoryResponse& WithFleetId(FleetIdT&& value) {
+    SetFleetId(std::forward<FleetIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ID of the EC Fleet.</p>
-     */
-    inline const Aws::String& GetFleetId() const { return m_fleetId; }
-    template<typename FleetIdT = Aws::String>
-    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
-    template<typename FleetIdT = Aws::String>
-    DescribeFleetHistoryResponse& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The start date and time for the events, in UTC format (for example,
+   * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  DescribeFleetHistoryResponse& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The start date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    DescribeFleetHistoryResponse& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    DescribeFleetHistoryResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeFleetHistoryResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<HistoryRecordEntry> m_historyRecords;
+  bool m_historyRecordsHasBeenSet = false;
 
-    Aws::Vector<HistoryRecordEntry> m_historyRecords;
-    bool m_historyRecordsHasBeenSet = false;
+  Aws::Utils::DateTime m_lastEvaluatedTime{};
+  bool m_lastEvaluatedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastEvaluatedTime{};
-    bool m_lastEvaluatedTimeHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_fleetId;
+  bool m_fleetIdHasBeenSet = false;
 
-    Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet = false;
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime{};
-    bool m_startTimeHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/geo-maps/GeoMapsEndpointRules.h>
+#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GeoMaps {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GeoMapsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GeoMapsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GEOMAPS_API GeoMapsEndpointProvider : public GeoMapsDefaultEpProviderBase
-{
-public:
-    using GeoMapsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GEOMAPS_API GeoMapsEndpointProvider : public GeoMapsDefaultEpProviderBase {
+ public:
+  using GeoMapsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GeoMapsEndpointProvider()
-      : GeoMapsDefaultEpProviderBase(Aws::GeoMaps::GeoMapsEndpointRules::GetRulesBlob(), Aws::GeoMaps::GeoMapsEndpointRules::RulesBlobSize)
-    {}
+  GeoMapsEndpointProvider()
+      : GeoMapsDefaultEpProviderBase(Aws::GeoMaps::GeoMapsEndpointRules::GetRulesBlob(),
+                                     Aws::GeoMaps::GeoMapsEndpointRules::RulesBlobSize) {}
 
-    ~GeoMapsEndpointProvider()
-    {
-    }
+  ~GeoMapsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GeoMaps
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GeoMaps
+}  // namespace Aws

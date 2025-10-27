@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/billingconductor/BillingConductorEndpointRules.h>
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/billingconductor/BillingConductorEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BillingConductorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using BillingConductorEndpointProviderBase =
     EndpointProviderBase<BillingConductorClientConfiguration, BillingConductorBuiltInParameters, BillingConductorClientContextParameters>;
 
 using BillingConductorDefaultEpProviderBase =
-    DefaultEndpointProvider<BillingConductorClientConfiguration, BillingConductorBuiltInParameters, BillingConductorClientContextParameters>;
+    DefaultEndpointProvider<BillingConductorClientConfiguration, BillingConductorBuiltInParameters,
+                            BillingConductorClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BILLINGCONDUCTOR_API BillingConductorEndpointProvider : public BillingConductorDefaultEpProviderBase
-{
-public:
-    using BillingConductorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BILLINGCONDUCTOR_API BillingConductorEndpointProvider : public BillingConductorDefaultEpProviderBase {
+ public:
+  using BillingConductorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BillingConductorEndpointProvider()
-      : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::GetRulesBlob(), Aws::BillingConductor::BillingConductorEndpointRules::RulesBlobSize)
-    {}
+  BillingConductorEndpointProvider()
+      : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::GetRulesBlob(),
+                                              Aws::BillingConductor::BillingConductorEndpointRules::RulesBlobSize) {}
 
-    ~BillingConductorEndpointProvider()
-    {
-    }
+  ~BillingConductorEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BillingConductor
+}  // namespace Aws

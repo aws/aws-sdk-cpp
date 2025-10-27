@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TemplateAlias.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TemplateAlias.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TemplateAlias::TemplateAlias(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateAlias::TemplateAlias(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateAlias& TemplateAlias::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AliasName"))
-  {
+TemplateAlias& TemplateAlias::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AliasName")) {
     m_aliasName = jsonValue.GetString("AliasName");
     m_aliasNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateVersionNumber"))
-  {
+  if (jsonValue.ValueExists("TemplateVersionNumber")) {
     m_templateVersionNumber = jsonValue.GetInt64("TemplateVersionNumber");
     m_templateVersionNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateAlias::Jsonize() const
-{
+JsonValue TemplateAlias::Jsonize() const {
   JsonValue payload;
 
-  if(m_aliasNameHasBeenSet)
-  {
-   payload.WithString("AliasName", m_aliasName);
-
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("AliasName", m_aliasName);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_templateVersionNumberHasBeenSet)
-  {
-   payload.WithInt64("TemplateVersionNumber", m_templateVersionNumber);
-
+  if (m_templateVersionNumberHasBeenSet) {
+    payload.WithInt64("TemplateVersionNumber", m_templateVersionNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

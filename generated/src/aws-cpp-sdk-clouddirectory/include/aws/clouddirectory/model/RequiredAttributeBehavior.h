@@ -7,25 +7,16 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
-  enum class RequiredAttributeBehavior
-  {
-    NOT_SET,
-    REQUIRED_ALWAYS,
-    NOT_REQUIRED
-  };
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
+enum class RequiredAttributeBehavior { NOT_SET, REQUIRED_ALWAYS, NOT_REQUIRED };
 
-namespace RequiredAttributeBehaviorMapper
-{
+namespace RequiredAttributeBehaviorMapper {
 AWS_CLOUDDIRECTORY_API RequiredAttributeBehavior GetRequiredAttributeBehaviorForName(const Aws::String& name);
 
 AWS_CLOUDDIRECTORY_API Aws::String GetNameForRequiredAttributeBehavior(RequiredAttributeBehavior value);
-} // namespace RequiredAttributeBehaviorMapper
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace RequiredAttributeBehaviorMapper
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

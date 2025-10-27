@@ -4,69 +4,76 @@
  */
 
 #pragma once
-#include <aws/workmail/WorkMail_EXPORTS.h>
-#include <aws/workmail/WorkMailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/WorkMailRequest.h>
+#include <aws/workmail/WorkMail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
+/**
+ */
+class AssumeImpersonationRoleRequest : public WorkMailRequest {
+ public:
+  AWS_WORKMAIL_API AssumeImpersonationRoleRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AssumeImpersonationRole"; }
+
+  AWS_WORKMAIL_API Aws::String SerializePayload() const override;
+
+  AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The WorkMail organization under which the impersonation role will be
+   * assumed.</p>
    */
-  class AssumeImpersonationRoleRequest : public WorkMailRequest
-  {
-  public:
-    AWS_WORKMAIL_API AssumeImpersonationRoleRequest() = default;
+  inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
+  inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+  template <typename OrganizationIdT = Aws::String>
+  void SetOrganizationId(OrganizationIdT&& value) {
+    m_organizationIdHasBeenSet = true;
+    m_organizationId = std::forward<OrganizationIdT>(value);
+  }
+  template <typename OrganizationIdT = Aws::String>
+  AssumeImpersonationRoleRequest& WithOrganizationId(OrganizationIdT&& value) {
+    SetOrganizationId(std::forward<OrganizationIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AssumeImpersonationRole"; }
+  ///@{
+  /**
+   * <p>The impersonation role ID to assume.</p>
+   */
+  inline const Aws::String& GetImpersonationRoleId() const { return m_impersonationRoleId; }
+  inline bool ImpersonationRoleIdHasBeenSet() const { return m_impersonationRoleIdHasBeenSet; }
+  template <typename ImpersonationRoleIdT = Aws::String>
+  void SetImpersonationRoleId(ImpersonationRoleIdT&& value) {
+    m_impersonationRoleIdHasBeenSet = true;
+    m_impersonationRoleId = std::forward<ImpersonationRoleIdT>(value);
+  }
+  template <typename ImpersonationRoleIdT = Aws::String>
+  AssumeImpersonationRoleRequest& WithImpersonationRoleId(ImpersonationRoleIdT&& value) {
+    SetImpersonationRoleId(std::forward<ImpersonationRoleIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_organizationId;
+  bool m_organizationIdHasBeenSet = false;
 
-    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
+  Aws::String m_impersonationRoleId;
+  bool m_impersonationRoleIdHasBeenSet = false;
+};
 
-    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The WorkMail organization under which the impersonation role will be
-     * assumed.</p>
-     */
-    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
-    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    template<typename OrganizationIdT = Aws::String>
-    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
-    template<typename OrganizationIdT = Aws::String>
-    AssumeImpersonationRoleRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The impersonation role ID to assume.</p>
-     */
-    inline const Aws::String& GetImpersonationRoleId() const { return m_impersonationRoleId; }
-    inline bool ImpersonationRoleIdHasBeenSet() const { return m_impersonationRoleIdHasBeenSet; }
-    template<typename ImpersonationRoleIdT = Aws::String>
-    void SetImpersonationRoleId(ImpersonationRoleIdT&& value) { m_impersonationRoleIdHasBeenSet = true; m_impersonationRoleId = std::forward<ImpersonationRoleIdT>(value); }
-    template<typename ImpersonationRoleIdT = Aws::String>
-    AssumeImpersonationRoleRequest& WithImpersonationRoleId(ImpersonationRoleIdT&& value) { SetImpersonationRoleId(std::forward<ImpersonationRoleIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet = false;
-
-    Aws::String m_impersonationRoleId;
-    bool m_impersonationRoleIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

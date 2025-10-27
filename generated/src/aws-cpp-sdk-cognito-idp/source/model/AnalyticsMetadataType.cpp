@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AnalyticsMetadataType::AnalyticsMetadataType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalyticsMetadataType::AnalyticsMetadataType(JsonView jsonValue) { *this = jsonValue; }
 
-AnalyticsMetadataType& AnalyticsMetadataType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AnalyticsEndpointId"))
-  {
+AnalyticsMetadataType& AnalyticsMetadataType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AnalyticsEndpointId")) {
     m_analyticsEndpointId = jsonValue.GetString("AnalyticsEndpointId");
     m_analyticsEndpointIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalyticsMetadataType::Jsonize() const
-{
+JsonValue AnalyticsMetadataType::Jsonize() const {
   JsonValue payload;
 
-  if(m_analyticsEndpointIdHasBeenSet)
-  {
-   payload.WithString("AnalyticsEndpointId", m_analyticsEndpointId);
-
+  if (m_analyticsEndpointIdHasBeenSet) {
+    payload.WithString("AnalyticsEndpointId", m_analyticsEndpointId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

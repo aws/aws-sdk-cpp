@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class QueryExecutionMode
-  {
-    NOT_SET,
-    AUTO,
-    MANUAL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class QueryExecutionMode { NOT_SET, AUTO, MANUAL };
 
-namespace QueryExecutionModeMapper
-{
+namespace QueryExecutionModeMapper {
 AWS_QUICKSIGHT_API QueryExecutionMode GetQueryExecutionModeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForQueryExecutionMode(QueryExecutionMode value);
-} // namespace QueryExecutionModeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace QueryExecutionModeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

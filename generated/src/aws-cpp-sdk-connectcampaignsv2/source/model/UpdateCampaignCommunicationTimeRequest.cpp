@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCampaignCommunicationTimeRequest::SerializePayload() const
-{
+Aws::String UpdateCampaignCommunicationTimeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_communicationTimeConfigHasBeenSet)
-  {
-   payload.WithObject("communicationTimeConfig", m_communicationTimeConfig.Jsonize());
-
+  if (m_communicationTimeConfigHasBeenSet) {
+    payload.WithObject("communicationTimeConfig", m_communicationTimeConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

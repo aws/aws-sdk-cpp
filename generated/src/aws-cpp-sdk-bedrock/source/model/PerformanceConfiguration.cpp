@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-PerformanceConfiguration::PerformanceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PerformanceConfiguration::PerformanceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PerformanceConfiguration& PerformanceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("latency"))
-  {
+PerformanceConfiguration& PerformanceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("latency")) {
     m_latency = PerformanceConfigLatencyMapper::GetPerformanceConfigLatencyForName(jsonValue.GetString("latency"));
     m_latencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PerformanceConfiguration::Jsonize() const
-{
+JsonValue PerformanceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_latencyHasBeenSet)
-  {
-   payload.WithString("latency", PerformanceConfigLatencyMapper::GetNameForPerformanceConfigLatency(m_latency));
+  if (m_latencyHasBeenSet) {
+    payload.WithString("latency", PerformanceConfigLatencyMapper::GetNameForPerformanceConfigLatency(m_latency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

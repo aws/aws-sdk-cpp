@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::S3Control;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace S3ControlErrorMapper
-{
+namespace Aws {
+namespace S3Control {
+namespace S3ControlErrorMapper {
 
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
@@ -31,62 +28,38 @@ static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNext
 static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == IDEMPOTENCY_HASH)
-  {
+  if (hashCode == IDEMPOTENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::IDEMPOTENCY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH)
-  {
+  } else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::BUCKET_ALREADY_OWNED_BY_YOU), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == JOB_STATUS_HASH)
-  {
+  } else if (hashCode == NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == JOB_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::JOB_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BUCKET_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == BUCKET_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::BUCKET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3ControlErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace S3ControlErrorMapper
-} // namespace S3Control
-} // namespace Aws
+}  // namespace S3ControlErrorMapper
+}  // namespace S3Control
+}  // namespace Aws

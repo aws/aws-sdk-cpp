@@ -5,12 +5,8 @@
 
 #include <aws/evidently/CloudWatchEvidentlyEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudWatchEvidently
-} // namespace Aws
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

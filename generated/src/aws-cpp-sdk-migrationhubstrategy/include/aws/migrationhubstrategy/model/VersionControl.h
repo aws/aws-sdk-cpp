@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class VersionControl
-  {
-    NOT_SET,
-    GITHUB,
-    GITHUB_ENTERPRISE,
-    AZURE_DEVOPS_GIT
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class VersionControl { NOT_SET, GITHUB, GITHUB_ENTERPRISE, AZURE_DEVOPS_GIT };
 
-namespace VersionControlMapper
-{
+namespace VersionControlMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VersionControl GetVersionControlForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForVersionControl(VersionControl value);
-} // namespace VersionControlMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace VersionControlMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

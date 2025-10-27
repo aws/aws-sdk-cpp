@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb-elastic/model/ClusterInList.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/docdb-elastic/model/ClusterInList.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDBElastic {
+namespace Model {
 
-ClusterInList::ClusterInList(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterInList::ClusterInList(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterInList& ClusterInList::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clusterArn"))
-  {
+ClusterInList& ClusterInList::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clusterArn")) {
     m_clusterArn = jsonValue.GetString("clusterArn");
     m_clusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clusterName"))
-  {
+  if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterInList::Jsonize() const
-{
+JsonValue ClusterInList::Jsonize() const {
   JsonValue payload;
 
-  if(m_clusterArnHasBeenSet)
-  {
-   payload.WithString("clusterArn", m_clusterArn);
-
+  if (m_clusterArnHasBeenSet) {
+    payload.WithString("clusterArn", m_clusterArn);
   }
 
-  if(m_clusterNameHasBeenSet)
-  {
-   payload.WithString("clusterName", m_clusterName);
-
+  if (m_clusterNameHasBeenSet) {
+    payload.WithString("clusterName", m_clusterName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDBElastic
+}  // namespace Aws

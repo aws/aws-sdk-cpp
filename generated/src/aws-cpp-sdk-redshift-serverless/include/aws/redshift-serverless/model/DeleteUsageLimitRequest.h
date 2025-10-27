@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
-#include <aws/redshift-serverless/RedshiftServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-serverless/RedshiftServerlessRequest.h>
+#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
+/**
+ */
+class DeleteUsageLimitRequest : public RedshiftServerlessRequest {
+ public:
+  AWS_REDSHIFTSERVERLESS_API DeleteUsageLimitRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteUsageLimit"; }
+
+  AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
+
+  AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier of the usage limit to delete.</p>
    */
-  class DeleteUsageLimitRequest : public RedshiftServerlessRequest
-  {
-  public:
-    AWS_REDSHIFTSERVERLESS_API DeleteUsageLimitRequest() = default;
+  inline const Aws::String& GetUsageLimitId() const { return m_usageLimitId; }
+  inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
+  template <typename UsageLimitIdT = Aws::String>
+  void SetUsageLimitId(UsageLimitIdT&& value) {
+    m_usageLimitIdHasBeenSet = true;
+    m_usageLimitId = std::forward<UsageLimitIdT>(value);
+  }
+  template <typename UsageLimitIdT = Aws::String>
+  DeleteUsageLimitRequest& WithUsageLimitId(UsageLimitIdT&& value) {
+    SetUsageLimitId(std::forward<UsageLimitIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_usageLimitId;
+  bool m_usageLimitIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteUsageLimit"; }
-
-    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
-
-    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The unique identifier of the usage limit to delete.</p>
-     */
-    inline const Aws::String& GetUsageLimitId() const { return m_usageLimitId; }
-    inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
-    template<typename UsageLimitIdT = Aws::String>
-    void SetUsageLimitId(UsageLimitIdT&& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = std::forward<UsageLimitIdT>(value); }
-    template<typename UsageLimitIdT = Aws::String>
-    DeleteUsageLimitRequest& WithUsageLimitId(UsageLimitIdT&& value) { SetUsageLimitId(std::forward<UsageLimitIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/OtaaV1_0_x.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/OtaaV1_0_x.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-OtaaV1_0_x::OtaaV1_0_x(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OtaaV1_0_x::OtaaV1_0_x(JsonView jsonValue) { *this = jsonValue; }
 
-OtaaV1_0_x& OtaaV1_0_x::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AppKey"))
-  {
+OtaaV1_0_x& OtaaV1_0_x::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AppKey")) {
     m_appKey = jsonValue.GetString("AppKey");
     m_appKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AppEui"))
-  {
+  if (jsonValue.ValueExists("AppEui")) {
     m_appEui = jsonValue.GetString("AppEui");
     m_appEuiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JoinEui"))
-  {
+  if (jsonValue.ValueExists("JoinEui")) {
     m_joinEui = jsonValue.GetString("JoinEui");
     m_joinEuiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GenAppKey"))
-  {
+  if (jsonValue.ValueExists("GenAppKey")) {
     m_genAppKey = jsonValue.GetString("GenAppKey");
     m_genAppKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OtaaV1_0_x::Jsonize() const
-{
+JsonValue OtaaV1_0_x::Jsonize() const {
   JsonValue payload;
 
-  if(m_appKeyHasBeenSet)
-  {
-   payload.WithString("AppKey", m_appKey);
-
+  if (m_appKeyHasBeenSet) {
+    payload.WithString("AppKey", m_appKey);
   }
 
-  if(m_appEuiHasBeenSet)
-  {
-   payload.WithString("AppEui", m_appEui);
-
+  if (m_appEuiHasBeenSet) {
+    payload.WithString("AppEui", m_appEui);
   }
 
-  if(m_joinEuiHasBeenSet)
-  {
-   payload.WithString("JoinEui", m_joinEui);
-
+  if (m_joinEuiHasBeenSet) {
+    payload.WithString("JoinEui", m_joinEui);
   }
 
-  if(m_genAppKeyHasBeenSet)
-  {
-   payload.WithString("GenAppKey", m_genAppKey);
-
+  if (m_genAppKeyHasBeenSet) {
+    payload.WithString("GenAppKey", m_genAppKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

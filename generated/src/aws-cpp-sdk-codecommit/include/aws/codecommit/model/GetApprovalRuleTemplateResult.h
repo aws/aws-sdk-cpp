@@ -7,60 +7,65 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/ApprovalRuleTemplate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CodeCommit
-{
-namespace Model
-{
-  class GetApprovalRuleTemplateResult
-  {
-  public:
-    AWS_CODECOMMIT_API GetApprovalRuleTemplateResult() = default;
-    AWS_CODECOMMIT_API GetApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CODECOMMIT_API GetApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CodeCommit {
+namespace Model {
+class GetApprovalRuleTemplateResult {
+ public:
+  AWS_CODECOMMIT_API GetApprovalRuleTemplateResult() = default;
+  AWS_CODECOMMIT_API GetApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODECOMMIT_API GetApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The content and structure of the approval rule template.</p>
+   */
+  inline const ApprovalRuleTemplate& GetApprovalRuleTemplate() const { return m_approvalRuleTemplate; }
+  template <typename ApprovalRuleTemplateT = ApprovalRuleTemplate>
+  void SetApprovalRuleTemplate(ApprovalRuleTemplateT&& value) {
+    m_approvalRuleTemplateHasBeenSet = true;
+    m_approvalRuleTemplate = std::forward<ApprovalRuleTemplateT>(value);
+  }
+  template <typename ApprovalRuleTemplateT = ApprovalRuleTemplate>
+  GetApprovalRuleTemplateResult& WithApprovalRuleTemplate(ApprovalRuleTemplateT&& value) {
+    SetApprovalRuleTemplate(std::forward<ApprovalRuleTemplateT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The content and structure of the approval rule template.</p>
-     */
-    inline const ApprovalRuleTemplate& GetApprovalRuleTemplate() const { return m_approvalRuleTemplate; }
-    template<typename ApprovalRuleTemplateT = ApprovalRuleTemplate>
-    void SetApprovalRuleTemplate(ApprovalRuleTemplateT&& value) { m_approvalRuleTemplateHasBeenSet = true; m_approvalRuleTemplate = std::forward<ApprovalRuleTemplateT>(value); }
-    template<typename ApprovalRuleTemplateT = ApprovalRuleTemplate>
-    GetApprovalRuleTemplateResult& WithApprovalRuleTemplate(ApprovalRuleTemplateT&& value) { SetApprovalRuleTemplate(std::forward<ApprovalRuleTemplateT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetApprovalRuleTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetApprovalRuleTemplateResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ApprovalRuleTemplate m_approvalRuleTemplate;
+  bool m_approvalRuleTemplateHasBeenSet = false;
 
-    ApprovalRuleTemplate m_approvalRuleTemplate;
-    bool m_approvalRuleTemplateHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

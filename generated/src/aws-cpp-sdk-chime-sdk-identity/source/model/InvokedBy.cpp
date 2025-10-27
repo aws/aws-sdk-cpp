@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-InvokedBy::InvokedBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvokedBy::InvokedBy(JsonView jsonValue) { *this = jsonValue; }
 
-InvokedBy& InvokedBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StandardMessages"))
-  {
+InvokedBy& InvokedBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StandardMessages")) {
     m_standardMessages = StandardMessagesMapper::GetStandardMessagesForName(jsonValue.GetString("StandardMessages"));
     m_standardMessagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetedMessages"))
-  {
+  if (jsonValue.ValueExists("TargetedMessages")) {
     m_targetedMessages = TargetedMessagesMapper::GetTargetedMessagesForName(jsonValue.GetString("TargetedMessages"));
     m_targetedMessagesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvokedBy::Jsonize() const
-{
+JsonValue InvokedBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_standardMessagesHasBeenSet)
-  {
-   payload.WithString("StandardMessages", StandardMessagesMapper::GetNameForStandardMessages(m_standardMessages));
+  if (m_standardMessagesHasBeenSet) {
+    payload.WithString("StandardMessages", StandardMessagesMapper::GetNameForStandardMessages(m_standardMessages));
   }
 
-  if(m_targetedMessagesHasBeenSet)
-  {
-   payload.WithString("TargetedMessages", TargetedMessagesMapper::GetNameForTargetedMessages(m_targetedMessages));
+  if (m_targetedMessagesHasBeenSet) {
+    payload.WithString("TargetedMessages", TargetedMessagesMapper::GetNameForTargetedMessages(m_targetedMessages));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

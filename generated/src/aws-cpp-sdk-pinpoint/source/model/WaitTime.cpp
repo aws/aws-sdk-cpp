@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/WaitTime.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/WaitTime.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-WaitTime::WaitTime(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WaitTime::WaitTime(JsonView jsonValue) { *this = jsonValue; }
 
-WaitTime& WaitTime::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WaitFor"))
-  {
+WaitTime& WaitTime::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WaitFor")) {
     m_waitFor = jsonValue.GetString("WaitFor");
     m_waitForHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WaitUntil"))
-  {
+  if (jsonValue.ValueExists("WaitUntil")) {
     m_waitUntil = jsonValue.GetString("WaitUntil");
     m_waitUntilHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WaitTime::Jsonize() const
-{
+JsonValue WaitTime::Jsonize() const {
   JsonValue payload;
 
-  if(m_waitForHasBeenSet)
-  {
-   payload.WithString("WaitFor", m_waitFor);
-
+  if (m_waitForHasBeenSet) {
+    payload.WithString("WaitFor", m_waitFor);
   }
 
-  if(m_waitUntilHasBeenSet)
-  {
-   payload.WithString("WaitUntil", m_waitUntil);
-
+  if (m_waitUntilHasBeenSet) {
+    payload.WithString("WaitUntil", m_waitUntil);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

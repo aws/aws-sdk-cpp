@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class AssetModelType
-  {
-    NOT_SET,
-    ASSET_MODEL,
-    COMPONENT_MODEL,
-    INTERFACE
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class AssetModelType { NOT_SET, ASSET_MODEL, COMPONENT_MODEL, INTERFACE };
 
-namespace AssetModelTypeMapper
-{
+namespace AssetModelTypeMapper {
 AWS_IOTSITEWISE_API AssetModelType GetAssetModelTypeForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForAssetModelType(AssetModelType value);
-} // namespace AssetModelTypeMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace AssetModelTypeMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

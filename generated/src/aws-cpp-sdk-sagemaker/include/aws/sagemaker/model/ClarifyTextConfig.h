@@ -5,77 +5,82 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/sagemaker/model/ClarifyTextLanguage.h>
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
+#include <aws/sagemaker/model/ClarifyTextLanguage.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>A parameter used to configure the SageMaker Clarify explainer to treat text
+ * features as text so that explanations are provided for individual units of text.
+ * Required only for natural language processing (NLP) explainability.
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClarifyTextConfig">AWS
+ * API Reference</a></p>
+ */
+class ClarifyTextConfig {
+ public:
+  AWS_SAGEMAKER_API ClarifyTextConfig() = default;
+  AWS_SAGEMAKER_API ClarifyTextConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API ClarifyTextConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A parameter used to configure the SageMaker Clarify explainer to treat text
-   * features as text so that explanations are provided for individual units of text.
-   * Required only for natural language processing (NLP) explainability.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClarifyTextConfig">AWS
-   * API Reference</a></p>
+   * <p>Specifies the language of the text features in <a href="
+   * https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a
+   * href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported
+   * language. </p>  <p>For a mix of multiple languages, use code
+   * <code>'xx'</code>.</p>
    */
-  class ClarifyTextConfig
-  {
-  public:
-    AWS_SAGEMAKER_API ClarifyTextConfig() = default;
-    AWS_SAGEMAKER_API ClarifyTextConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API ClarifyTextConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline ClarifyTextLanguage GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  inline void SetLanguage(ClarifyTextLanguage value) {
+    m_languageHasBeenSet = true;
+    m_language = value;
+  }
+  inline ClarifyTextConfig& WithLanguage(ClarifyTextLanguage value) {
+    SetLanguage(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The unit of granularity for the analysis of text features. For example, if
+   * the unit is <code>'token'</code>, then each token (like a word in English) of
+   * the text is treated as a feature. SHAP values are computed for each
+   * unit/feature.</p>
+   */
+  inline ClarifyTextGranularity GetGranularity() const { return m_granularity; }
+  inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
+  inline void SetGranularity(ClarifyTextGranularity value) {
+    m_granularityHasBeenSet = true;
+    m_granularity = value;
+  }
+  inline ClarifyTextConfig& WithGranularity(ClarifyTextGranularity value) {
+    SetGranularity(value);
+    return *this;
+  }
+  ///@}
+ private:
+  ClarifyTextLanguage m_language{ClarifyTextLanguage::NOT_SET};
+  bool m_languageHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the language of the text features in <a href="
-     * https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a
-     * href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported
-     * language. </p>  <p>For a mix of multiple languages, use code
-     * <code>'xx'</code>.</p> 
-     */
-    inline ClarifyTextLanguage GetLanguage() const { return m_language; }
-    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(ClarifyTextLanguage value) { m_languageHasBeenSet = true; m_language = value; }
-    inline ClarifyTextConfig& WithLanguage(ClarifyTextLanguage value) { SetLanguage(value); return *this;}
-    ///@}
+  ClarifyTextGranularity m_granularity{ClarifyTextGranularity::NOT_SET};
+  bool m_granularityHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The unit of granularity for the analysis of text features. For example, if
-     * the unit is <code>'token'</code>, then each token (like a word in English) of
-     * the text is treated as a feature. SHAP values are computed for each
-     * unit/feature.</p>
-     */
-    inline ClarifyTextGranularity GetGranularity() const { return m_granularity; }
-    inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(ClarifyTextGranularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline ClarifyTextConfig& WithGranularity(ClarifyTextGranularity value) { SetGranularity(value); return *this;}
-    ///@}
-  private:
-
-    ClarifyTextLanguage m_language{ClarifyTextLanguage::NOT_SET};
-    bool m_languageHasBeenSet = false;
-
-    ClarifyTextGranularity m_granularity{ClarifyTextGranularity::NOT_SET};
-    bool m_granularityHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

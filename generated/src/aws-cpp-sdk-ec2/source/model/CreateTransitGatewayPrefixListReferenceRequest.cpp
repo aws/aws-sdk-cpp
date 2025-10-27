@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateTransitGatewayPrefixListReferenceRequest::SerializePayload() const
-{
+Aws::String CreateTransitGatewayPrefixListReferenceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateTransitGatewayPrefixListReference&";
-  if(m_transitGatewayRouteTableIdHasBeenSet)
-  {
+  if (m_transitGatewayRouteTableIdHasBeenSet) {
     ss << "TransitGatewayRouteTableId=" << StringUtils::URLEncode(m_transitGatewayRouteTableId.c_str()) << "&";
   }
 
-  if(m_prefixListIdHasBeenSet)
-  {
+  if (m_prefixListIdHasBeenSet) {
     ss << "PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 
-  if(m_transitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
     ss << "TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_blackholeHasBeenSet)
-  {
+  if (m_blackholeHasBeenSet) {
     ss << "Blackhole=" << std::boolalpha << m_blackhole << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateTransitGatewayPrefixListReferenceRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  CreateTransitGatewayPrefixListReferenceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateTransitGatewayPrefixListReferenceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

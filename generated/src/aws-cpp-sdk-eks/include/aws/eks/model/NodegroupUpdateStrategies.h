@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class NodegroupUpdateStrategies
-  {
-    NOT_SET,
-    DEFAULT,
-    MINIMAL
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class NodegroupUpdateStrategies { NOT_SET, DEFAULT, MINIMAL };
 
-namespace NodegroupUpdateStrategiesMapper
-{
+namespace NodegroupUpdateStrategiesMapper {
 AWS_EKS_API NodegroupUpdateStrategies GetNodegroupUpdateStrategiesForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForNodegroupUpdateStrategies(NodegroupUpdateStrategies value);
-} // namespace NodegroupUpdateStrategiesMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace NodegroupUpdateStrategiesMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

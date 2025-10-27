@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elastictranscoder/model/UpdatePipelineNotificationsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastictranscoder/model/UpdatePipelineNotificationsRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePipelineNotificationsRequest::SerializePayload() const
-{
+Aws::String UpdatePipelineNotificationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_notificationsHasBeenSet)
-  {
-   payload.WithObject("Notifications", m_notifications.Jsonize());
-
+  if (m_notificationsHasBeenSet) {
+    payload.WithObject("Notifications", m_notifications.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

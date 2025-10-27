@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/TimeSeriesFeedback.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/TimeSeriesFeedback.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-TimeSeriesFeedback::TimeSeriesFeedback(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeSeriesFeedback::TimeSeriesFeedback(JsonView jsonValue) { *this = jsonValue; }
 
-TimeSeriesFeedback& TimeSeriesFeedback::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeSeriesId"))
-  {
+TimeSeriesFeedback& TimeSeriesFeedback::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeSeriesId")) {
     m_timeSeriesId = jsonValue.GetString("TimeSeriesId");
     m_timeSeriesIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsAnomaly"))
-  {
+  if (jsonValue.ValueExists("IsAnomaly")) {
     m_isAnomaly = jsonValue.GetBool("IsAnomaly");
     m_isAnomalyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeSeriesFeedback::Jsonize() const
-{
+JsonValue TimeSeriesFeedback::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeSeriesIdHasBeenSet)
-  {
-   payload.WithString("TimeSeriesId", m_timeSeriesId);
-
+  if (m_timeSeriesIdHasBeenSet) {
+    payload.WithString("TimeSeriesId", m_timeSeriesId);
   }
 
-  if(m_isAnomalyHasBeenSet)
-  {
-   payload.WithBool("IsAnomaly", m_isAnomaly);
-
+  if (m_isAnomalyHasBeenSet) {
+    payload.WithBool("IsAnomaly", m_isAnomaly);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AwsJobTimeoutConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/AwsJobTimeoutConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-AwsJobTimeoutConfig::AwsJobTimeoutConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsJobTimeoutConfig::AwsJobTimeoutConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AwsJobTimeoutConfig& AwsJobTimeoutConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inProgressTimeoutInMinutes"))
-  {
+AwsJobTimeoutConfig& AwsJobTimeoutConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inProgressTimeoutInMinutes")) {
     m_inProgressTimeoutInMinutes = jsonValue.GetInt64("inProgressTimeoutInMinutes");
     m_inProgressTimeoutInMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsJobTimeoutConfig::Jsonize() const
-{
+JsonValue AwsJobTimeoutConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_inProgressTimeoutInMinutesHasBeenSet)
-  {
-   payload.WithInt64("inProgressTimeoutInMinutes", m_inProgressTimeoutInMinutes);
-
+  if (m_inProgressTimeoutInMinutesHasBeenSet) {
+    payload.WithInt64("inProgressTimeoutInMinutes", m_inProgressTimeoutInMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

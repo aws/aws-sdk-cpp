@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-TelephonyChannelSubtypeConfig::TelephonyChannelSubtypeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TelephonyChannelSubtypeConfig::TelephonyChannelSubtypeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TelephonyChannelSubtypeConfig& TelephonyChannelSubtypeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("capacity"))
-  {
+TelephonyChannelSubtypeConfig& TelephonyChannelSubtypeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("capacity")) {
     m_capacity = jsonValue.GetDouble("capacity");
     m_capacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectQueueId"))
-  {
+  if (jsonValue.ValueExists("connectQueueId")) {
     m_connectQueueId = jsonValue.GetString("connectQueueId");
     m_connectQueueIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outboundMode"))
-  {
+  if (jsonValue.ValueExists("outboundMode")) {
     m_outboundMode = jsonValue.GetObject("outboundMode");
     m_outboundModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultOutboundConfig"))
-  {
+  if (jsonValue.ValueExists("defaultOutboundConfig")) {
     m_defaultOutboundConfig = jsonValue.GetObject("defaultOutboundConfig");
     m_defaultOutboundConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TelephonyChannelSubtypeConfig::Jsonize() const
-{
+JsonValue TelephonyChannelSubtypeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_capacityHasBeenSet)
-  {
-   payload.WithDouble("capacity", m_capacity);
-
+  if (m_capacityHasBeenSet) {
+    payload.WithDouble("capacity", m_capacity);
   }
 
-  if(m_connectQueueIdHasBeenSet)
-  {
-   payload.WithString("connectQueueId", m_connectQueueId);
-
+  if (m_connectQueueIdHasBeenSet) {
+    payload.WithString("connectQueueId", m_connectQueueId);
   }
 
-  if(m_outboundModeHasBeenSet)
-  {
-   payload.WithObject("outboundMode", m_outboundMode.Jsonize());
-
+  if (m_outboundModeHasBeenSet) {
+    payload.WithObject("outboundMode", m_outboundMode.Jsonize());
   }
 
-  if(m_defaultOutboundConfigHasBeenSet)
-  {
-   payload.WithObject("defaultOutboundConfig", m_defaultOutboundConfig.Jsonize());
-
+  if (m_defaultOutboundConfigHasBeenSet) {
+    payload.WithObject("defaultOutboundConfig", m_defaultOutboundConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

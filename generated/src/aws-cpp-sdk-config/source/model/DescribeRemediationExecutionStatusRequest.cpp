@@ -12,50 +12,34 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeRemediationExecutionStatusRequest::SerializePayload() const
-{
+Aws::String DescribeRemediationExecutionStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configRuleNameHasBeenSet)
-  {
-   payload.WithString("ConfigRuleName", m_configRuleName);
-
+  if (m_configRuleNameHasBeenSet) {
+    payload.WithString("ConfigRuleName", m_configRuleName);
   }
 
-  if(m_resourceKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
-   for(unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex)
-   {
-     resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
-   }
-   payload.WithArray("ResourceKeys", std::move(resourceKeysJsonList));
-
+  if (m_resourceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
+    for (unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex) {
+      resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
+    }
+    payload.WithArray("ResourceKeys", std::move(resourceKeysJsonList));
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeRemediationExecutionStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeRemediationExecutionStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DescribeRemediationExecutionStatus"));
   return headers;
-
 }
-
-
-
-

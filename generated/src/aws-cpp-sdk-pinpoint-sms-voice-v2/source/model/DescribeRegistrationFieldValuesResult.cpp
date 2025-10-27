@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationFieldValuesResult.h>
 
 #include <utility>
 
@@ -17,52 +17,44 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRegistrationFieldValuesResult::DescribeRegistrationFieldValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeRegistrationFieldValuesResult::DescribeRegistrationFieldValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeRegistrationFieldValuesResult& DescribeRegistrationFieldValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeRegistrationFieldValuesResult& DescribeRegistrationFieldValuesResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RegistrationArn"))
-  {
+  if (jsonValue.ValueExists("RegistrationArn")) {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
     m_registrationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegistrationId"))
-  {
+  if (jsonValue.ValueExists("RegistrationId")) {
     m_registrationId = jsonValue.GetString("RegistrationId");
     m_registrationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionNumber"))
-  {
+  if (jsonValue.ValueExists("VersionNumber")) {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
     m_versionNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegistrationFieldValues"))
-  {
+  if (jsonValue.ValueExists("RegistrationFieldValues")) {
     Aws::Utils::Array<JsonView> registrationFieldValuesJsonList = jsonValue.GetArray("RegistrationFieldValues");
-    for(unsigned registrationFieldValuesIndex = 0; registrationFieldValuesIndex < registrationFieldValuesJsonList.GetLength(); ++registrationFieldValuesIndex)
-    {
+    for (unsigned registrationFieldValuesIndex = 0; registrationFieldValuesIndex < registrationFieldValuesJsonList.GetLength();
+         ++registrationFieldValuesIndex) {
       m_registrationFieldValues.push_back(registrationFieldValuesJsonList[registrationFieldValuesIndex].AsObject());
     }
     m_registrationFieldValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

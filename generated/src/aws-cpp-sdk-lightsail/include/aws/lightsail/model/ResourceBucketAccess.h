@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class ResourceBucketAccess
-  {
-    NOT_SET,
-    allow,
-    deny
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class ResourceBucketAccess { NOT_SET, allow, deny };
 
-namespace ResourceBucketAccessMapper
-{
+namespace ResourceBucketAccessMapper {
 AWS_LIGHTSAIL_API ResourceBucketAccess GetResourceBucketAccessForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForResourceBucketAccess(ResourceBucketAccess value);
-} // namespace ResourceBucketAccessMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace ResourceBucketAccessMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/DeploymentConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/DeploymentConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-DeploymentConfig::DeploymentConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentConfig::DeploymentConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentConfig& DeploymentConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("concurrentDeploymentPercentage"))
-  {
+DeploymentConfig& DeploymentConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("concurrentDeploymentPercentage")) {
     m_concurrentDeploymentPercentage = jsonValue.GetInteger("concurrentDeploymentPercentage");
     m_concurrentDeploymentPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureThresholdPercentage"))
-  {
+  if (jsonValue.ValueExists("failureThresholdPercentage")) {
     m_failureThresholdPercentage = jsonValue.GetInteger("failureThresholdPercentage");
     m_failureThresholdPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("robotDeploymentTimeoutInSeconds"))
-  {
+  if (jsonValue.ValueExists("robotDeploymentTimeoutInSeconds")) {
     m_robotDeploymentTimeoutInSeconds = jsonValue.GetInt64("robotDeploymentTimeoutInSeconds");
     m_robotDeploymentTimeoutInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("downloadConditionFile"))
-  {
+  if (jsonValue.ValueExists("downloadConditionFile")) {
     m_downloadConditionFile = jsonValue.GetObject("downloadConditionFile");
     m_downloadConditionFileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentConfig::Jsonize() const
-{
+JsonValue DeploymentConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_concurrentDeploymentPercentageHasBeenSet)
-  {
-   payload.WithInteger("concurrentDeploymentPercentage", m_concurrentDeploymentPercentage);
-
+  if (m_concurrentDeploymentPercentageHasBeenSet) {
+    payload.WithInteger("concurrentDeploymentPercentage", m_concurrentDeploymentPercentage);
   }
 
-  if(m_failureThresholdPercentageHasBeenSet)
-  {
-   payload.WithInteger("failureThresholdPercentage", m_failureThresholdPercentage);
-
+  if (m_failureThresholdPercentageHasBeenSet) {
+    payload.WithInteger("failureThresholdPercentage", m_failureThresholdPercentage);
   }
 
-  if(m_robotDeploymentTimeoutInSecondsHasBeenSet)
-  {
-   payload.WithInt64("robotDeploymentTimeoutInSeconds", m_robotDeploymentTimeoutInSeconds);
-
+  if (m_robotDeploymentTimeoutInSecondsHasBeenSet) {
+    payload.WithInt64("robotDeploymentTimeoutInSeconds", m_robotDeploymentTimeoutInSeconds);
   }
 
-  if(m_downloadConditionFileHasBeenSet)
-  {
-   payload.WithObject("downloadConditionFile", m_downloadConditionFile.Jsonize());
-
+  if (m_downloadConditionFileHasBeenSet) {
+    payload.WithObject("downloadConditionFile", m_downloadConditionFile.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

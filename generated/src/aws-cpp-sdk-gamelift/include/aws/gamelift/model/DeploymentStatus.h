@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class DeploymentStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    IMPAIRED,
-    COMPLETE,
-    ROLLBACK_IN_PROGRESS,
-    ROLLBACK_COMPLETE,
-    CANCELLED,
-    PENDING
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class DeploymentStatus { NOT_SET, IN_PROGRESS, IMPAIRED, COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_COMPLETE, CANCELLED, PENDING };
 
-namespace DeploymentStatusMapper
-{
+namespace DeploymentStatusMapper {
 AWS_GAMELIFT_API DeploymentStatus GetDeploymentStatusForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForDeploymentStatus(DeploymentStatus value);
-} // namespace DeploymentStatusMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace DeploymentStatusMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class ConversationEndState
-  {
-    NOT_SET,
-    Success,
-    Failure,
-    Dropped
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class ConversationEndState { NOT_SET, Success, Failure, Dropped };
 
-namespace ConversationEndStateMapper
-{
+namespace ConversationEndStateMapper {
 AWS_LEXMODELSV2_API ConversationEndState GetConversationEndStateForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForConversationEndState(ConversationEndState value);
-} // namespace ConversationEndStateMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace ConversationEndStateMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

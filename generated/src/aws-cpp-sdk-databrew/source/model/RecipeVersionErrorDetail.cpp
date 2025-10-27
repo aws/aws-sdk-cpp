@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/RecipeVersionErrorDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/RecipeVersionErrorDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-RecipeVersionErrorDetail::RecipeVersionErrorDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecipeVersionErrorDetail::RecipeVersionErrorDetail(JsonView jsonValue) { *this = jsonValue; }
 
-RecipeVersionErrorDetail& RecipeVersionErrorDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+RecipeVersionErrorDetail& RecipeVersionErrorDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecipeVersion"))
-  {
+  if (jsonValue.ValueExists("RecipeVersion")) {
     m_recipeVersion = jsonValue.GetString("RecipeVersion");
     m_recipeVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecipeVersionErrorDetail::Jsonize() const
-{
+JsonValue RecipeVersionErrorDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_recipeVersionHasBeenSet)
-  {
-   payload.WithString("RecipeVersion", m_recipeVersion);
-
+  if (m_recipeVersionHasBeenSet) {
+    payload.WithString("RecipeVersion", m_recipeVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

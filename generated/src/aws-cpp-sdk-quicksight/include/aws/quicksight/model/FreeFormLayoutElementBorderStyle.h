@@ -4,71 +4,76 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/Visibility.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>The background style configuration of a free-form layout
+ * element.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FreeFormLayoutElementBorderStyle">AWS
+ * API Reference</a></p>
+ */
+class FreeFormLayoutElementBorderStyle {
+ public:
+  AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle() = default;
+  AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The background style configuration of a free-form layout
-   * element.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FreeFormLayoutElementBorderStyle">AWS
-   * API Reference</a></p>
+   * <p>The border visibility of a free-form layout element.</p>
    */
-  class FreeFormLayoutElementBorderStyle
-  {
-  public:
-    AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle() = default;
-    AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API FreeFormLayoutElementBorderStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline Visibility GetVisibility() const { return m_visibility; }
+  inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+  inline void SetVisibility(Visibility value) {
+    m_visibilityHasBeenSet = true;
+    m_visibility = value;
+  }
+  inline FreeFormLayoutElementBorderStyle& WithVisibility(Visibility value) {
+    SetVisibility(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The border color of a free-form layout element.</p>
+   */
+  inline const Aws::String& GetColor() const { return m_color; }
+  inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
+  template <typename ColorT = Aws::String>
+  void SetColor(ColorT&& value) {
+    m_colorHasBeenSet = true;
+    m_color = std::forward<ColorT>(value);
+  }
+  template <typename ColorT = Aws::String>
+  FreeFormLayoutElementBorderStyle& WithColor(ColorT&& value) {
+    SetColor(std::forward<ColorT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Visibility m_visibility{Visibility::NOT_SET};
+  bool m_visibilityHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The border visibility of a free-form layout element.</p>
-     */
-    inline Visibility GetVisibility() const { return m_visibility; }
-    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline FreeFormLayoutElementBorderStyle& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
-    ///@}
+  Aws::String m_color;
+  bool m_colorHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The border color of a free-form layout element.</p>
-     */
-    inline const Aws::String& GetColor() const { return m_color; }
-    inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    template<typename ColorT = Aws::String>
-    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
-    template<typename ColorT = Aws::String>
-    FreeFormLayoutElementBorderStyle& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
-    ///@}
-  private:
-
-    Visibility m_visibility{Visibility::NOT_SET};
-    bool m_visibilityHasBeenSet = false;
-
-    Aws::String m_color;
-    bool m_colorHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

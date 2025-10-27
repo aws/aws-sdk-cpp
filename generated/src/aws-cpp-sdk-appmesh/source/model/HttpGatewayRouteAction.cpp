@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue) { *this = jsonValue; }
 
-HttpGatewayRouteAction& HttpGatewayRouteAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rewrite"))
-  {
+HttpGatewayRouteAction& HttpGatewayRouteAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rewrite")) {
     m_rewrite = jsonValue.GetObject("rewrite");
     m_rewriteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetObject("target");
     m_targetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpGatewayRouteAction::Jsonize() const
-{
+JsonValue HttpGatewayRouteAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_rewriteHasBeenSet)
-  {
-   payload.WithObject("rewrite", m_rewrite.Jsonize());
-
+  if (m_rewriteHasBeenSet) {
+    payload.WithObject("rewrite", m_rewrite.Jsonize());
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("target", m_target.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

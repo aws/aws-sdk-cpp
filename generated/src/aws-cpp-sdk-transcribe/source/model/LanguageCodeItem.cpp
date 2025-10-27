@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/LanguageCodeItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/LanguageCodeItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
 
-LanguageCodeItem::LanguageCodeItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LanguageCodeItem::LanguageCodeItem(JsonView jsonValue) { *this = jsonValue; }
 
-LanguageCodeItem& LanguageCodeItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+LanguageCodeItem& LanguageCodeItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DurationInSeconds"))
-  {
+  if (jsonValue.ValueExists("DurationInSeconds")) {
     m_durationInSeconds = jsonValue.GetDouble("DurationInSeconds");
     m_durationInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LanguageCodeItem::Jsonize() const
-{
+JsonValue LanguageCodeItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_durationInSecondsHasBeenSet)
-  {
-   payload.WithDouble("DurationInSeconds", m_durationInSeconds);
-
+  if (m_durationInSecondsHasBeenSet) {
+    payload.WithDouble("DurationInSeconds", m_durationInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

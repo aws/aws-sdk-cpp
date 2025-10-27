@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs-realtime/model/ListStagesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ivs-realtime/model/ListStagesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStagesResult::ListStagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListStagesResult::ListStagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListStagesResult& ListStagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListStagesResult& ListStagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("stages"))
-  {
+  if (jsonValue.ValueExists("stages")) {
     Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("stages");
-    for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
-    {
+    for (unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex) {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());
     }
     m_stagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

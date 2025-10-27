@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace-data/model/ChangesetErrorInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace-data/model/ChangesetErrorInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace Model
-{
+namespace Aws {
+namespace FinSpaceData {
+namespace Model {
 
-ChangesetErrorInfo::ChangesetErrorInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChangesetErrorInfo::ChangesetErrorInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ChangesetErrorInfo& ChangesetErrorInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+ChangesetErrorInfo& ChangesetErrorInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorCategory"))
-  {
+  if (jsonValue.ValueExists("errorCategory")) {
     m_errorCategory = ErrorCategoryMapper::GetErrorCategoryForName(jsonValue.GetString("errorCategory"));
     m_errorCategoryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChangesetErrorInfo::Jsonize() const
-{
+JsonValue ChangesetErrorInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
-  if(m_errorCategoryHasBeenSet)
-  {
-   payload.WithString("errorCategory", ErrorCategoryMapper::GetNameForErrorCategory(m_errorCategory));
+  if (m_errorCategoryHasBeenSet) {
+    payload.WithString("errorCategory", ErrorCategoryMapper::GetNameForErrorCategory(m_errorCategory));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace Model
+}  // namespace FinSpaceData
+}  // namespace Aws

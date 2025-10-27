@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/RAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
-  enum class ResourceOwner
-  {
-    NOT_SET,
-    SELF,
-    OTHER_ACCOUNTS
-  };
+namespace Aws {
+namespace RAM {
+namespace Model {
+enum class ResourceOwner { NOT_SET, SELF, OTHER_ACCOUNTS };
 
-namespace ResourceOwnerMapper
-{
+namespace ResourceOwnerMapper {
 AWS_RAM_API ResourceOwner GetResourceOwnerForName(const Aws::String& name);
 
 AWS_RAM_API Aws::String GetNameForResourceOwner(ResourceOwner value);
-} // namespace ResourceOwnerMapper
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace ResourceOwnerMapper
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

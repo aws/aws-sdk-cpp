@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceValue::ResourceValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceValue::ResourceValue(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceValue& ResourceValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+ResourceValue& ResourceValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = ResourceValueTypeMapper::GetResourceValueTypeForName(jsonValue.GetString("Value"));
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceValue::Jsonize() const
-{
+JsonValue ResourceValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", ResourceValueTypeMapper::GetNameForResourceValueType(m_value));
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", ResourceValueTypeMapper::GetNameForResourceValueType(m_value));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

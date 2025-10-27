@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class ProductType
-  {
-    NOT_SET,
-    CLOUD_FORMATION_TEMPLATE,
-    MARKETPLACE,
-    TERRAFORM_OPEN_SOURCE,
-    TERRAFORM_CLOUD,
-    EXTERNAL
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class ProductType { NOT_SET, CLOUD_FORMATION_TEMPLATE, MARKETPLACE, TERRAFORM_OPEN_SOURCE, TERRAFORM_CLOUD, EXTERNAL };
 
-namespace ProductTypeMapper
-{
+namespace ProductTypeMapper {
 AWS_SERVICECATALOG_API ProductType GetProductTypeForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForProductType(ProductType value);
-} // namespace ProductTypeMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ProductTypeMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

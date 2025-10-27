@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class ApplicationProgressStatus
-  {
-    NOT_SET,
-    NOT_STARTED,
-    IN_PROGRESS,
-    COMPLETED
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class ApplicationProgressStatus { NOT_SET, NOT_STARTED, IN_PROGRESS, COMPLETED };
 
-namespace ApplicationProgressStatusMapper
-{
+namespace ApplicationProgressStatusMapper {
 AWS_MGN_API ApplicationProgressStatus GetApplicationProgressStatusForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForApplicationProgressStatus(ApplicationProgressStatus value);
-} // namespace ApplicationProgressStatusMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace ApplicationProgressStatusMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

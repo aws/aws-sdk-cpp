@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/DeleteVerifiedDestinationNumberResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteVerifiedDestinationNumberResult.h>
 
 #include <utility>
 
@@ -17,43 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVerifiedDestinationNumberResult::DeleteVerifiedDestinationNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteVerifiedDestinationNumberResult::DeleteVerifiedDestinationNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DeleteVerifiedDestinationNumberResult& DeleteVerifiedDestinationNumberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteVerifiedDestinationNumberResult& DeleteVerifiedDestinationNumberResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("VerifiedDestinationNumberArn"))
-  {
+  if (jsonValue.ValueExists("VerifiedDestinationNumberArn")) {
     m_verifiedDestinationNumberArn = jsonValue.GetString("VerifiedDestinationNumberArn");
     m_verifiedDestinationNumberArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VerifiedDestinationNumberId"))
-  {
+  if (jsonValue.ValueExists("VerifiedDestinationNumberId")) {
     m_verifiedDestinationNumberId = jsonValue.GetString("VerifiedDestinationNumberId");
     m_verifiedDestinationNumberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationPhoneNumber"))
-  {
+  if (jsonValue.ValueExists("DestinationPhoneNumber")) {
     m_destinationPhoneNumber = jsonValue.GetString("DestinationPhoneNumber");
     m_destinationPhoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

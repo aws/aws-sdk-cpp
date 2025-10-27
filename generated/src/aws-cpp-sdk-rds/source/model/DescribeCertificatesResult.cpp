@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeCertificatesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribeCertificatesResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeCertificatesResult& DescribeCertificatesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCertificatesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCertificatesResult")) {
     resultNode = rootNode.FirstChild("DescribeCertificatesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode defaultCertificateForNewLaunchesNode = resultNode.FirstChild("DefaultCertificateForNewLaunches");
-    if(!defaultCertificateForNewLaunchesNode.IsNull())
-    {
+    if (!defaultCertificateForNewLaunchesNode.IsNull()) {
       m_defaultCertificateForNewLaunches = Aws::Utils::Xml::DecodeEscapedXmlText(defaultCertificateForNewLaunchesNode.GetText());
       m_defaultCertificateForNewLaunchesHasBeenSet = true;
     }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
-    if(!certificatesNode.IsNull())
-    {
+    if (!certificatesNode.IsNull()) {
       XmlNode certificatesMember = certificatesNode.FirstChild("Certificate");
       m_certificatesHasBeenSet = !certificatesMember.IsNull();
-      while(!certificatesMember.IsNull())
-      {
+      while (!certificatesMember.IsNull()) {
         m_certificates.push_back(certificatesMember);
         certificatesMember = certificatesMember.NextNode("Certificate");
       }
@@ -54,8 +45,7 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
       m_certificatesHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -65,7 +55,7 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

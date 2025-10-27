@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datapipeline/model/ListPipelinesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datapipeline/model/ListPipelinesResult.h>
 
 #include <utility>
 
@@ -17,42 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListPipelinesResult& ListPipelinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPipelinesResult& ListPipelinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("pipelineIdList"))
-  {
+  if (jsonValue.ValueExists("pipelineIdList")) {
     Aws::Utils::Array<JsonView> pipelineIdListJsonList = jsonValue.GetArray("pipelineIdList");
-    for(unsigned pipelineIdListIndex = 0; pipelineIdListIndex < pipelineIdListJsonList.GetLength(); ++pipelineIdListIndex)
-    {
+    for (unsigned pipelineIdListIndex = 0; pipelineIdListIndex < pipelineIdListJsonList.GetLength(); ++pipelineIdListIndex) {
       m_pipelineIdList.push_back(pipelineIdListJsonList[pipelineIdListIndex].AsObject());
     }
     m_pipelineIdListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("marker"))
-  {
+  if (jsonValue.ValueExists("marker")) {
     m_marker = jsonValue.GetString("marker");
     m_markerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hasMoreResults"))
-  {
+  if (jsonValue.ValueExists("hasMoreResults")) {
     m_hasMoreResults = jsonValue.GetBool("hasMoreResults");
     m_hasMoreResultsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

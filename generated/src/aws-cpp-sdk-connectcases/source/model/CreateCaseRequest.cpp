@@ -12,42 +12,28 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateCaseRequest::SerializePayload() const
-{
+Aws::String CreateCaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_templateIdHasBeenSet)
-  {
-   payload.WithString("templateId", m_templateId);
-
+  if (m_templateIdHasBeenSet) {
+    payload.WithString("templateId", m_templateId);
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-   }
-   payload.WithArray("fields", std::move(fieldsJsonList));
-
+  if (m_fieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+    for (unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex) {
+      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+    }
+    payload.WithArray("fields", std::move(fieldsJsonList));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_performedByHasBeenSet)
-  {
-   payload.WithObject("performedBy", m_performedBy.Jsonize());
-
+  if (m_performedByHasBeenSet) {
+    payload.WithObject("performedBy", m_performedBy.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

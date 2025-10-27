@@ -6,53 +6,51 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>The <code>ResourceConfig</code> to update
+ * <code>KeepAlivePeriodInSeconds</code>. Other fields in the
+ * <code>ResourceConfig</code> cannot be updated.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceConfigForUpdate">AWS
+ * API Reference</a></p>
+ */
+class ResourceConfigForUpdate {
+ public:
+  AWS_SAGEMAKER_API ResourceConfigForUpdate() = default;
+  AWS_SAGEMAKER_API ResourceConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API ResourceConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The <code>ResourceConfig</code> to update
-   * <code>KeepAlivePeriodInSeconds</code>. Other fields in the
-   * <code>ResourceConfig</code> cannot be updated.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceConfigForUpdate">AWS
-   * API Reference</a></p>
+   * <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the
+   * <code>ResourceConfig</code> to update.</p>
    */
-  class ResourceConfigForUpdate
-  {
-  public:
-    AWS_SAGEMAKER_API ResourceConfigForUpdate() = default;
-    AWS_SAGEMAKER_API ResourceConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API ResourceConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetKeepAlivePeriodInSeconds() const { return m_keepAlivePeriodInSeconds; }
+  inline bool KeepAlivePeriodInSecondsHasBeenSet() const { return m_keepAlivePeriodInSecondsHasBeenSet; }
+  inline void SetKeepAlivePeriodInSeconds(int value) {
+    m_keepAlivePeriodInSecondsHasBeenSet = true;
+    m_keepAlivePeriodInSeconds = value;
+  }
+  inline ResourceConfigForUpdate& WithKeepAlivePeriodInSeconds(int value) {
+    SetKeepAlivePeriodInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_keepAlivePeriodInSeconds{0};
+  bool m_keepAlivePeriodInSecondsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the
-     * <code>ResourceConfig</code> to update.</p>
-     */
-    inline int GetKeepAlivePeriodInSeconds() const { return m_keepAlivePeriodInSeconds; }
-    inline bool KeepAlivePeriodInSecondsHasBeenSet() const { return m_keepAlivePeriodInSecondsHasBeenSet; }
-    inline void SetKeepAlivePeriodInSeconds(int value) { m_keepAlivePeriodInSecondsHasBeenSet = true; m_keepAlivePeriodInSeconds = value; }
-    inline ResourceConfigForUpdate& WithKeepAlivePeriodInSeconds(int value) { SetKeepAlivePeriodInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    int m_keepAlivePeriodInSeconds{0};
-    bool m_keepAlivePeriodInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

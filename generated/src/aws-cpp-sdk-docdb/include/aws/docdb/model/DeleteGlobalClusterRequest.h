@@ -4,59 +4,60 @@
  */
 
 #pragma once
-#include <aws/docdb/DocDB_EXPORTS.h>
-#include <aws/docdb/DocDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/docdb/DocDBRequest.h>
+#include <aws/docdb/DocDB_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
+/**
+ * <p>Represents the input to <a>DeleteGlobalCluster</a>.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalClusterMessage">AWS
+ * API Reference</a></p>
+ */
+class DeleteGlobalClusterRequest : public DocDBRequest {
+ public:
+  AWS_DOCDB_API DeleteGlobalClusterRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteGlobalCluster"; }
+
+  AWS_DOCDB_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents the input to <a>DeleteGlobalCluster</a>.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalClusterMessage">AWS
-   * API Reference</a></p>
+   * <p>The cluster identifier of the global cluster being deleted.</p>
    */
-  class DeleteGlobalClusterRequest : public DocDBRequest
-  {
-  public:
-    AWS_DOCDB_API DeleteGlobalClusterRequest() = default;
+  inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
+  inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+  template <typename GlobalClusterIdentifierT = Aws::String>
+  void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) {
+    m_globalClusterIdentifierHasBeenSet = true;
+    m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value);
+  }
+  template <typename GlobalClusterIdentifierT = Aws::String>
+  DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) {
+    SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_globalClusterIdentifier;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteGlobalCluster"; }
-
-    AWS_DOCDB_API Aws::String SerializePayload() const override;
-
-  protected:
-    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>The cluster identifier of the global cluster being deleted.</p>
-     */
-    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
-    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-    template<typename GlobalClusterIdentifierT = Aws::String>
-    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
-    template<typename GlobalClusterIdentifierT = Aws::String>
-    DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

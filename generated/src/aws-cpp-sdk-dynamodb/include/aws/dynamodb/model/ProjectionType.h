@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ProjectionType
-  {
-    NOT_SET,
-    ALL,
-    KEYS_ONLY,
-    INCLUDE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ProjectionType { NOT_SET, ALL, KEYS_ONLY, INCLUDE };
 
-namespace ProjectionTypeMapper
-{
+namespace ProjectionTypeMapper {
 AWS_DYNAMODB_API ProjectionType GetProjectionTypeForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForProjectionType(ProjectionType value);
-} // namespace ProjectionTypeMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ProjectionTypeMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-RetentionConfiguration::RetentionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetentionConfiguration::RetentionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RetentionConfiguration& RetentionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+RetentionConfiguration& RetentionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetentionPeriodInDays"))
-  {
+  if (jsonValue.ValueExists("RetentionPeriodInDays")) {
     m_retentionPeriodInDays = jsonValue.GetInteger("RetentionPeriodInDays");
     m_retentionPeriodInDaysHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetentionConfiguration::Jsonize() const
-{
+JsonValue RetentionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_retentionPeriodInDaysHasBeenSet)
-  {
-   payload.WithInteger("RetentionPeriodInDays", m_retentionPeriodInDays);
-
+  if (m_retentionPeriodInDaysHasBeenSet) {
+    payload.WithInteger("RetentionPeriodInDays", m_retentionPeriodInDays);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

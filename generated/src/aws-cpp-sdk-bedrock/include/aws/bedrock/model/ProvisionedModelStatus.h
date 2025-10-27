@@ -7,27 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class ProvisionedModelStatus
-  {
-    NOT_SET,
-    Creating,
-    InService,
-    Updating,
-    Failed
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class ProvisionedModelStatus { NOT_SET, Creating, InService, Updating, Failed };
 
-namespace ProvisionedModelStatusMapper
-{
+namespace ProvisionedModelStatusMapper {
 AWS_BEDROCK_API ProvisionedModelStatus GetProvisionedModelStatusForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForProvisionedModelStatus(ProvisionedModelStatus value);
-} // namespace ProvisionedModelStatusMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace ProvisionedModelStatusMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

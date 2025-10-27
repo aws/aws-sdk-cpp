@@ -12,38 +12,26 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EnableStageTransitionRequest::SerializePayload() const
-{
+Aws::String EnableStageTransitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineNameHasBeenSet)
-  {
-   payload.WithString("pipelineName", m_pipelineName);
-
+  if (m_pipelineNameHasBeenSet) {
+    payload.WithString("pipelineName", m_pipelineName);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
-  if(m_transitionTypeHasBeenSet)
-  {
-   payload.WithString("transitionType", StageTransitionTypeMapper::GetNameForStageTransitionType(m_transitionType));
+  if (m_transitionTypeHasBeenSet) {
+    payload.WithString("transitionType", StageTransitionTypeMapper::GetNameForStageTransitionType(m_transitionType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection EnableStageTransitionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection EnableStageTransitionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.EnableStageTransition"));
   return headers;
-
 }
-
-
-
-

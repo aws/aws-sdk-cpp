@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class LoggingLevel
-  {
-    NOT_SET,
-    ERROR_,
-    INFO,
-    OFF
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class LoggingLevel { NOT_SET, ERROR_, INFO, OFF };
 
-namespace LoggingLevelMapper
-{
+namespace LoggingLevelMapper {
 AWS_IOTSITEWISE_API LoggingLevel GetLoggingLevelForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForLoggingLevel(LoggingLevel value);
-} // namespace LoggingLevelMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace LoggingLevelMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

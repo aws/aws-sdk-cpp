@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf/model/WebACLUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/model/WebACLUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace WAF {
+namespace Model {
 
-WebACLUpdate::WebACLUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WebACLUpdate::WebACLUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-WebACLUpdate& WebACLUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Action"))
-  {
+WebACLUpdate& WebACLUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Action")) {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActivatedRule"))
-  {
+  if (jsonValue.ValueExists("ActivatedRule")) {
     m_activatedRule = jsonValue.GetObject("ActivatedRule");
     m_activatedRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WebACLUpdate::Jsonize() const
-{
+JsonValue WebACLUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("Action", ChangeActionMapper::GetNameForChangeAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("Action", ChangeActionMapper::GetNameForChangeAction(m_action));
   }
 
-  if(m_activatedRuleHasBeenSet)
-  {
-   payload.WithObject("ActivatedRule", m_activatedRule.Jsonize());
-
+  if (m_activatedRuleHasBeenSet) {
+    payload.WithObject("ActivatedRule", m_activatedRule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/simspaceweaver/model/Domain.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/simspaceweaver/model/Domain.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SimSpaceWeaver
-{
-namespace Model
-{
+namespace Aws {
+namespace SimSpaceWeaver {
+namespace Model {
 
-Domain::Domain(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Domain::Domain(JsonView jsonValue) { *this = jsonValue; }
 
-Domain& Domain::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Lifecycle"))
-  {
+Domain& Domain::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = LifecycleManagementStrategyMapper::GetLifecycleManagementStrategyForName(jsonValue.GetString("Lifecycle"));
     m_lifecycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Domain::Jsonize() const
-{
+JsonValue Domain::Jsonize() const {
   JsonValue payload;
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithString("Lifecycle", LifecycleManagementStrategyMapper::GetNameForLifecycleManagementStrategy(m_lifecycle));
+  if (m_lifecycleHasBeenSet) {
+    payload.WithString("Lifecycle", LifecycleManagementStrategyMapper::GetNameForLifecycleManagementStrategy(m_lifecycle));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SimSpaceWeaver
-} // namespace Aws
+}  // namespace Model
+}  // namespace SimSpaceWeaver
+}  // namespace Aws

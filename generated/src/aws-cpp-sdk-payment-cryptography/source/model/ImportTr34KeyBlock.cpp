@@ -3,125 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography/model/ImportTr34KeyBlock.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography/model/ImportTr34KeyBlock.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
 
-ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue) { *this = jsonValue; }
 
-ImportTr34KeyBlock& ImportTr34KeyBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
-  {
+ImportTr34KeyBlock& ImportTr34KeyBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier")) {
     m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SigningKeyCertificate"))
-  {
+  if (jsonValue.ValueExists("SigningKeyCertificate")) {
     m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");
     m_signingKeyCertificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportToken"))
-  {
+  if (jsonValue.ValueExists("ImportToken")) {
     m_importToken = jsonValue.GetString("ImportToken");
     m_importTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WrappingKeyIdentifier"))
-  {
+  if (jsonValue.ValueExists("WrappingKeyIdentifier")) {
     m_wrappingKeyIdentifier = jsonValue.GetString("WrappingKeyIdentifier");
     m_wrappingKeyIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WrappingKeyCertificate"))
-  {
+  if (jsonValue.ValueExists("WrappingKeyCertificate")) {
     m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
     m_wrappingKeyCertificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WrappedKeyBlock"))
-  {
+  if (jsonValue.ValueExists("WrappedKeyBlock")) {
     m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
     m_wrappedKeyBlockHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyBlockFormat"))
-  {
+  if (jsonValue.ValueExists("KeyBlockFormat")) {
     m_keyBlockFormat = Tr34KeyBlockFormatMapper::GetTr34KeyBlockFormatForName(jsonValue.GetString("KeyBlockFormat"));
     m_keyBlockFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RandomNonce"))
-  {
+  if (jsonValue.ValueExists("RandomNonce")) {
     m_randomNonce = jsonValue.GetString("RandomNonce");
     m_randomNonceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImportTr34KeyBlock::Jsonize() const
-{
+JsonValue ImportTr34KeyBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityPublicKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityPublicKeyIdentifier", m_certificateAuthorityPublicKeyIdentifier);
-
+  if (m_certificateAuthorityPublicKeyIdentifierHasBeenSet) {
+    payload.WithString("CertificateAuthorityPublicKeyIdentifier", m_certificateAuthorityPublicKeyIdentifier);
   }
 
-  if(m_signingKeyCertificateHasBeenSet)
-  {
-   payload.WithString("SigningKeyCertificate", m_signingKeyCertificate);
-
+  if (m_signingKeyCertificateHasBeenSet) {
+    payload.WithString("SigningKeyCertificate", m_signingKeyCertificate);
   }
 
-  if(m_importTokenHasBeenSet)
-  {
-   payload.WithString("ImportToken", m_importToken);
-
+  if (m_importTokenHasBeenSet) {
+    payload.WithString("ImportToken", m_importToken);
   }
 
-  if(m_wrappingKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("WrappingKeyIdentifier", m_wrappingKeyIdentifier);
-
+  if (m_wrappingKeyIdentifierHasBeenSet) {
+    payload.WithString("WrappingKeyIdentifier", m_wrappingKeyIdentifier);
   }
 
-  if(m_wrappingKeyCertificateHasBeenSet)
-  {
-   payload.WithString("WrappingKeyCertificate", m_wrappingKeyCertificate);
-
+  if (m_wrappingKeyCertificateHasBeenSet) {
+    payload.WithString("WrappingKeyCertificate", m_wrappingKeyCertificate);
   }
 
-  if(m_wrappedKeyBlockHasBeenSet)
-  {
-   payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
-
+  if (m_wrappedKeyBlockHasBeenSet) {
+    payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
   }
 
-  if(m_keyBlockFormatHasBeenSet)
-  {
-   payload.WithString("KeyBlockFormat", Tr34KeyBlockFormatMapper::GetNameForTr34KeyBlockFormat(m_keyBlockFormat));
+  if (m_keyBlockFormatHasBeenSet) {
+    payload.WithString("KeyBlockFormat", Tr34KeyBlockFormatMapper::GetNameForTr34KeyBlockFormat(m_keyBlockFormat));
   }
 
-  if(m_randomNonceHasBeenSet)
-  {
-   payload.WithString("RandomNonce", m_randomNonce);
-
+  if (m_randomNonceHasBeenSet) {
+    payload.WithString("RandomNonce", m_randomNonce);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

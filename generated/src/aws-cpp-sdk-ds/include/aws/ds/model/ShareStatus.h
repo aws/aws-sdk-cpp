@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class ShareStatus
-  {
-    NOT_SET,
-    Shared,
-    PendingAcceptance,
-    Rejected,
-    Rejecting,
-    RejectFailed,
-    Sharing,
-    ShareFailed,
-    Deleted,
-    Deleting
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class ShareStatus { NOT_SET, Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting };
 
-namespace ShareStatusMapper
-{
+namespace ShareStatusMapper {
 AWS_DIRECTORYSERVICE_API ShareStatus GetShareStatusForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForShareStatus(ShareStatus value);
-} // namespace ShareStatusMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace ShareStatusMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

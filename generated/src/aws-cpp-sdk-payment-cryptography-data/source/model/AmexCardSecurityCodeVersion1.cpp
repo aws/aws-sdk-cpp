@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion1.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion1.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1(JsonView jsonValue) { *this = jsonValue; }
 
-AmexCardSecurityCodeVersion1& AmexCardSecurityCodeVersion1::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CardExpiryDate"))
-  {
+AmexCardSecurityCodeVersion1& AmexCardSecurityCodeVersion1::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CardExpiryDate")) {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
     m_cardExpiryDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AmexCardSecurityCodeVersion1::Jsonize() const
-{
+JsonValue AmexCardSecurityCodeVersion1::Jsonize() const {
   JsonValue payload;
 
-  if(m_cardExpiryDateHasBeenSet)
-  {
-   payload.WithString("CardExpiryDate", m_cardExpiryDate);
-
+  if (m_cardExpiryDateHasBeenSet) {
+    payload.WithString("CardExpiryDate", m_cardExpiryDate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

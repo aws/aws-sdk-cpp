@@ -10,32 +10,27 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListHookResultsRequest::SerializePayload() const
-{
+Aws::String ListHookResultsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListHookResults&";
-  if(m_targetTypeHasBeenSet)
-  {
-    ss << "TargetType=" << StringUtils::URLEncode(ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType)) << "&";
+  if (m_targetTypeHasBeenSet) {
+    ss << "TargetType=" << StringUtils::URLEncode(ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType))
+       << "&";
   }
 
-  if(m_targetIdHasBeenSet)
-  {
+  if (m_targetIdHasBeenSet) {
     ss << "TargetId=" << StringUtils::URLEncode(m_targetId.c_str()) << "&";
   }
 
-  if(m_typeArnHasBeenSet)
-  {
+  if (m_typeArnHasBeenSet) {
     ss << "TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(HookStatusMapper::GetNameForHookStatus(m_status)) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -43,8 +38,4 @@ Aws::String ListHookResultsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListHookResultsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListHookResultsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

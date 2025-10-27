@@ -3,114 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/CallAnalyticsItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/CallAnalyticsItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
 
-CallAnalyticsItem::CallAnalyticsItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CallAnalyticsItem::CallAnalyticsItem(JsonView jsonValue) { *this = jsonValue; }
 
-CallAnalyticsItem& CallAnalyticsItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BeginOffsetMillis"))
-  {
+CallAnalyticsItem& CallAnalyticsItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BeginOffsetMillis")) {
     m_beginOffsetMillis = jsonValue.GetInt64("BeginOffsetMillis");
     m_beginOffsetMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffsetMillis"))
-  {
+  if (jsonValue.ValueExists("EndOffsetMillis")) {
     m_endOffsetMillis = jsonValue.GetInt64("EndOffsetMillis");
     m_endOffsetMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ItemTypeMapper::GetItemTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Confidence"))
-  {
+  if (jsonValue.ValueExists("Confidence")) {
     m_confidence = jsonValue.GetDouble("Confidence");
     m_confidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyFilterMatch"))
-  {
+  if (jsonValue.ValueExists("VocabularyFilterMatch")) {
     m_vocabularyFilterMatch = jsonValue.GetBool("VocabularyFilterMatch");
     m_vocabularyFilterMatchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Stable"))
-  {
+  if (jsonValue.ValueExists("Stable")) {
     m_stable = jsonValue.GetBool("Stable");
     m_stableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CallAnalyticsItem::Jsonize() const
-{
+JsonValue CallAnalyticsItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_beginOffsetMillisHasBeenSet)
-  {
-   payload.WithInt64("BeginOffsetMillis", m_beginOffsetMillis);
-
+  if (m_beginOffsetMillisHasBeenSet) {
+    payload.WithInt64("BeginOffsetMillis", m_beginOffsetMillis);
   }
 
-  if(m_endOffsetMillisHasBeenSet)
-  {
-   payload.WithInt64("EndOffsetMillis", m_endOffsetMillis);
-
+  if (m_endOffsetMillisHasBeenSet) {
+    payload.WithInt64("EndOffsetMillis", m_endOffsetMillis);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ItemTypeMapper::GetNameForItemType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ItemTypeMapper::GetNameForItemType(m_type));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_confidenceHasBeenSet)
-  {
-   payload.WithDouble("Confidence", m_confidence);
-
+  if (m_confidenceHasBeenSet) {
+    payload.WithDouble("Confidence", m_confidence);
   }
 
-  if(m_vocabularyFilterMatchHasBeenSet)
-  {
-   payload.WithBool("VocabularyFilterMatch", m_vocabularyFilterMatch);
-
+  if (m_vocabularyFilterMatchHasBeenSet) {
+    payload.WithBool("VocabularyFilterMatch", m_vocabularyFilterMatch);
   }
 
-  if(m_stableHasBeenSet)
-  {
-   payload.WithBool("Stable", m_stable);
-
+  if (m_stableHasBeenSet) {
+    payload.WithBool("Stable", m_stable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

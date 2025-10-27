@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class PackageStatus
-  {
-    NOT_SET,
-    COPYING,
-    COPY_FAILED,
-    VALIDATING,
-    VALIDATION_FAILED,
-    AVAILABLE,
-    DELETING,
-    DELETED,
-    DELETE_FAILED
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class PackageStatus { NOT_SET, COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED };
 
-namespace PackageStatusMapper
-{
+namespace PackageStatusMapper {
 AWS_OPENSEARCHSERVICE_API PackageStatus GetPackageStatusForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForPackageStatus(PackageStatus value);
-} // namespace PackageStatusMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace PackageStatusMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

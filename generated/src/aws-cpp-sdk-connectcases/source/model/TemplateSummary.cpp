@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-TemplateSummary::TemplateSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateSummary::TemplateSummary(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("templateId"))
-  {
+TemplateSummary& TemplateSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("templateId")) {
     m_templateId = jsonValue.GetString("templateId");
     m_templateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateArn"))
-  {
+  if (jsonValue.ValueExists("templateArn")) {
     m_templateArn = jsonValue.GetString("templateArn");
     m_templateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateSummary::Jsonize() const
-{
+JsonValue TemplateSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateIdHasBeenSet)
-  {
-   payload.WithString("templateId", m_templateId);
-
+  if (m_templateIdHasBeenSet) {
+    payload.WithString("templateId", m_templateId);
   }
 
-  if(m_templateArnHasBeenSet)
-  {
-   payload.WithString("templateArn", m_templateArn);
-
+  if (m_templateArnHasBeenSet) {
+    payload.WithString("templateArn", m_templateArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-ErrorDetail::ErrorDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorDetail::ErrorDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ErrorDetail& ErrorDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorDetail::Jsonize() const
-{
+JsonValue ErrorDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

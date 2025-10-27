@@ -12,11 +12,4 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeQueueRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeQueueRequest::SerializePayload() const { return {}; }

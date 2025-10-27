@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace PersonalizeRuntime
-{
-class PersonalizeRuntimeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace PersonalizeRuntime {
+class PersonalizeRuntimeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace PersonalizeRuntime
-} // namespace Aws
+}  // namespace PersonalizeRuntime
+}  // namespace Aws

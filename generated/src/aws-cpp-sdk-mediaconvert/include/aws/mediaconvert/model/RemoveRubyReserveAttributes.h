@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class RemoveRubyReserveAttributes
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class RemoveRubyReserveAttributes { NOT_SET, DISABLED, ENABLED };
 
-namespace RemoveRubyReserveAttributesMapper
-{
+namespace RemoveRubyReserveAttributesMapper {
 AWS_MEDIACONVERT_API RemoveRubyReserveAttributes GetRemoveRubyReserveAttributesForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForRemoveRubyReserveAttributes(RemoveRubyReserveAttributes value);
-} // namespace RemoveRubyReserveAttributesMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace RemoveRubyReserveAttributesMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

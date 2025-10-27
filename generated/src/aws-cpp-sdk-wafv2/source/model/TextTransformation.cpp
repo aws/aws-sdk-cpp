@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/TextTransformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/TextTransformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-TextTransformation::TextTransformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextTransformation::TextTransformation(JsonView jsonValue) { *this = jsonValue; }
 
-TextTransformation& TextTransformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Priority"))
-  {
+TextTransformation& TextTransformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TextTransformationTypeMapper::GetTextTransformationTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextTransformation::Jsonize() const
-{
+JsonValue TextTransformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TextTransformationTypeMapper::GetNameForTextTransformationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TextTransformationTypeMapper::GetNameForTextTransformationType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

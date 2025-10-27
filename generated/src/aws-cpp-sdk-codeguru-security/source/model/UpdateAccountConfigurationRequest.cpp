@@ -12,19 +12,12 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateAccountConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
-
+  if (m_encryptionConfigHasBeenSet) {
+    payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

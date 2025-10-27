@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-SuggestModel::SuggestModel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuggestModel::SuggestModel(JsonView jsonValue) { *this = jsonValue; }
 
-SuggestModel& SuggestModel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("query"))
-  {
+SuggestModel& SuggestModel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("query")) {
     m_query = jsonValue.GetString("query");
     m_queryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("found"))
-  {
+  if (jsonValue.ValueExists("found")) {
     m_found = jsonValue.GetInt64("found");
     m_foundHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suggestions"))
-  {
+  if (jsonValue.ValueExists("suggestions")) {
     Aws::Utils::Array<JsonView> suggestionsJsonList = jsonValue.GetArray("suggestions");
-    for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
-    {
+    for (unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex) {
       m_suggestions.push_back(suggestionsJsonList[suggestionsIndex].AsObject());
     }
     m_suggestionsHasBeenSet = true;
@@ -47,36 +36,28 @@ SuggestModel& SuggestModel::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SuggestModel::Jsonize() const
-{
+JsonValue SuggestModel::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryHasBeenSet)
-  {
-   payload.WithString("query", m_query);
-
+  if (m_queryHasBeenSet) {
+    payload.WithString("query", m_query);
   }
 
-  if(m_foundHasBeenSet)
-  {
-   payload.WithInt64("found", m_found);
-
+  if (m_foundHasBeenSet) {
+    payload.WithInt64("found", m_found);
   }
 
-  if(m_suggestionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> suggestionsJsonList(m_suggestions.size());
-   for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
-   {
-     suggestionsJsonList[suggestionsIndex].AsObject(m_suggestions[suggestionsIndex].Jsonize());
-   }
-   payload.WithArray("suggestions", std::move(suggestionsJsonList));
-
+  if (m_suggestionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> suggestionsJsonList(m_suggestions.size());
+    for (unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex) {
+      suggestionsJsonList[suggestionsIndex].AsObject(m_suggestions[suggestionsIndex].Jsonize());
+    }
+    payload.WithArray("suggestions", std::move(suggestionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/CreateAppImageConfigResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/CreateAppImageConfigResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAppImageConfigResult::CreateAppImageConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateAppImageConfigResult::CreateAppImageConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateAppImageConfigResult& CreateAppImageConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateAppImageConfigResult& CreateAppImageConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AppImageConfigArn"))
-  {
+  if (jsonValue.ValueExists("AppImageConfigArn")) {
     m_appImageConfigArn = jsonValue.GetString("AppImageConfigArn");
     m_appImageConfigArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

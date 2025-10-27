@@ -12,27 +12,18 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExpireSessionRequest::SerializePayload() const
-{
+Aws::String ExpireSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("SessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ExpireSessionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ExpireSessionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.ExpireSession"));
   return headers;
-
 }
-
-
-
-

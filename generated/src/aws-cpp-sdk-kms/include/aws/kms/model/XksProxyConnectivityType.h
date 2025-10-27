@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
-  enum class XksProxyConnectivityType
-  {
-    NOT_SET,
-    PUBLIC_ENDPOINT,
-    VPC_ENDPOINT_SERVICE
-  };
+namespace Aws {
+namespace KMS {
+namespace Model {
+enum class XksProxyConnectivityType { NOT_SET, PUBLIC_ENDPOINT, VPC_ENDPOINT_SERVICE };
 
-namespace XksProxyConnectivityTypeMapper
-{
+namespace XksProxyConnectivityTypeMapper {
 AWS_KMS_API XksProxyConnectivityType GetXksProxyConnectivityTypeForName(const Aws::String& name);
 
 AWS_KMS_API Aws::String GetNameForXksProxyConnectivityType(XksProxyConnectivityType value);
-} // namespace XksProxyConnectivityTypeMapper
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace XksProxyConnectivityTypeMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

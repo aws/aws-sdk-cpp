@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
-  enum class EventType
-  {
-    NOT_SET,
-    STATE_CHANGE
-  };
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
+enum class EventType { NOT_SET, STATE_CHANGE };
 
-namespace EventTypeMapper
-{
+namespace EventTypeMapper {
 AWS_IOTEVENTSDATA_API EventType GetEventTypeForName(const Aws::String& name);
 
 AWS_IOTEVENTSDATA_API Aws::String GetNameForEventType(EventType value);
-} // namespace EventTypeMapper
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace EventTypeMapper
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

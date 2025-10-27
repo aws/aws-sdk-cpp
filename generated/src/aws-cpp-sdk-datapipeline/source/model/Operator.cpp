@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datapipeline/model/Operator.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datapipeline/model/Operator.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataPipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace DataPipeline {
+namespace Model {
 
-Operator::Operator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Operator::Operator(JsonView jsonValue) { *this = jsonValue; }
 
-Operator& Operator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+Operator& Operator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = OperatorTypeMapper::GetOperatorTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ Operator& Operator::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Operator::Jsonize() const
-{
+JsonValue Operator::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", OperatorTypeMapper::GetNameForOperatorType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", OperatorTypeMapper::GetNameForOperatorType(m_type));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataPipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataPipeline
+}  // namespace Aws

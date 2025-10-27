@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/support/Support_EXPORTS.h>
 
-namespace Aws
-{
-namespace Support
-{
-enum class SupportErrors
-{
-  //From Core//
+namespace Aws {
+namespace Support {
+enum class SupportErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SupportErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SupportErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ATTACHMENT_ID_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTACHMENT_ID_NOT_FOUND = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ATTACHMENT_LIMIT_EXCEEDED,
   ATTACHMENT_SET_EXPIRED,
   ATTACHMENT_SET_ID_NOT_FOUND,
@@ -57,9 +54,8 @@ enum class SupportErrors
   DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED
 };
 
-class AWS_SUPPORT_API SupportError : public Aws::Client::AWSError<SupportErrors>
-{
-public:
+class AWS_SUPPORT_API SupportError : public Aws::Client::AWSError<SupportErrors> {
+ public:
   SupportError() {}
   SupportError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
   SupportError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
@@ -70,10 +66,9 @@ public:
   T GetModeledError();
 };
 
-namespace SupportErrorMapper
-{
-  AWS_SUPPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SupportErrorMapper {
+AWS_SUPPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Support
-} // namespace Aws
+}  // namespace Support
+}  // namespace Aws

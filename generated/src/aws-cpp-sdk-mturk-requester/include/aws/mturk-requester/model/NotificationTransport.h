@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mturk-requester/MTurk_EXPORTS.h>
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Model
-{
-  enum class NotificationTransport
-  {
-    NOT_SET,
-    Email,
-    SQS,
-    SNS
-  };
+namespace Aws {
+namespace MTurk {
+namespace Model {
+enum class NotificationTransport { NOT_SET, Email, SQS, SNS };
 
-namespace NotificationTransportMapper
-{
+namespace NotificationTransportMapper {
 AWS_MTURK_API NotificationTransport GetNotificationTransportForName(const Aws::String& name);
 
 AWS_MTURK_API Aws::String GetNameForNotificationTransport(NotificationTransport value);
-} // namespace NotificationTransportMapper
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace NotificationTransportMapper
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

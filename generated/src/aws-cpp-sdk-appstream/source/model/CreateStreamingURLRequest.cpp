@@ -12,57 +12,38 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateStreamingURLRequest::SerializePayload() const
-{
+Aws::String CreateStreamingURLRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("StackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("StackName", m_stackName);
   }
 
-  if(m_fleetNameHasBeenSet)
-  {
-   payload.WithString("FleetName", m_fleetName);
-
+  if (m_fleetNameHasBeenSet) {
+    payload.WithString("FleetName", m_fleetName);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
-  if(m_validityHasBeenSet)
-  {
-   payload.WithInt64("Validity", m_validity);
-
+  if (m_validityHasBeenSet) {
+    payload.WithInt64("Validity", m_validity);
   }
 
-  if(m_sessionContextHasBeenSet)
-  {
-   payload.WithString("SessionContext", m_sessionContext);
-
+  if (m_sessionContextHasBeenSet) {
+    payload.WithString("SessionContext", m_sessionContext);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateStreamingURLRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateStreamingURLRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateStreamingURL"));
   return headers;
-
 }
-
-
-
-

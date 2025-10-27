@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-OrganizationConformancePackStatus::OrganizationConformancePackStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrganizationConformancePackStatus::OrganizationConformancePackStatus(JsonView jsonValue) { *this = jsonValue; }
 
-OrganizationConformancePackStatus& OrganizationConformancePackStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OrganizationConformancePackName"))
-  {
+OrganizationConformancePackStatus& OrganizationConformancePackStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OrganizationConformancePackName")) {
     m_organizationConformancePackName = jsonValue.GetString("OrganizationConformancePackName");
     m_organizationConformancePackNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = OrganizationResourceStatusMapper::GetOrganizationResourceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrganizationConformancePackStatus::Jsonize() const
-{
+JsonValue OrganizationConformancePackStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_organizationConformancePackNameHasBeenSet)
-  {
-   payload.WithString("OrganizationConformancePackName", m_organizationConformancePackName);
-
+  if (m_organizationConformancePackNameHasBeenSet) {
+    payload.WithString("OrganizationConformancePackName", m_organizationConformancePackName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", OrganizationResourceStatusMapper::GetNameForOrganizationResourceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", OrganizationResourceStatusMapper::GetNameForOrganizationResourceStatus(m_status));
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

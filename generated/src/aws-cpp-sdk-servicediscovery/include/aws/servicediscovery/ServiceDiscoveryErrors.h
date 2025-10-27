@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-enum class ServiceDiscoveryErrors
-{
-  //From Core//
+namespace Aws {
+namespace ServiceDiscovery {
+enum class ServiceDiscoveryErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ServiceDiscoveryErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ServiceDiscoveryErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CUSTOM_HEALTH_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CUSTOM_HEALTH_NOT_FOUND = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DUPLICATE_REQUEST,
   INSTANCE_NOT_FOUND,
   INVALID_INPUT,
@@ -63,9 +60,8 @@ enum class ServiceDiscoveryErrors
   TOO_MANY_TAGS
 };
 
-class AWS_SERVICEDISCOVERY_API ServiceDiscoveryError : public Aws::Client::AWSError<ServiceDiscoveryErrors>
-{
-public:
+class AWS_SERVICEDISCOVERY_API ServiceDiscoveryError : public Aws::Client::AWSError<ServiceDiscoveryErrors> {
+ public:
   ServiceDiscoveryError() {}
   ServiceDiscoveryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
   ServiceDiscoveryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
@@ -76,10 +72,9 @@ public:
   T GetModeledError();
 };
 
-namespace ServiceDiscoveryErrorMapper
-{
-  AWS_SERVICEDISCOVERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ServiceDiscoveryErrorMapper {
+AWS_SERVICEDISCOVERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace ServiceDiscovery
+}  // namespace Aws

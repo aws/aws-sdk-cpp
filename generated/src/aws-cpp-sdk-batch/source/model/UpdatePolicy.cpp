@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-UpdatePolicy::UpdatePolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdatePolicy::UpdatePolicy(JsonView jsonValue) { *this = jsonValue; }
 
-UpdatePolicy& UpdatePolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("terminateJobsOnUpdate"))
-  {
+UpdatePolicy& UpdatePolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("terminateJobsOnUpdate")) {
     m_terminateJobsOnUpdate = jsonValue.GetBool("terminateJobsOnUpdate");
     m_terminateJobsOnUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobExecutionTimeoutMinutes"))
-  {
+  if (jsonValue.ValueExists("jobExecutionTimeoutMinutes")) {
     m_jobExecutionTimeoutMinutes = jsonValue.GetInt64("jobExecutionTimeoutMinutes");
     m_jobExecutionTimeoutMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdatePolicy::Jsonize() const
-{
+JsonValue UpdatePolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_terminateJobsOnUpdateHasBeenSet)
-  {
-   payload.WithBool("terminateJobsOnUpdate", m_terminateJobsOnUpdate);
-
+  if (m_terminateJobsOnUpdateHasBeenSet) {
+    payload.WithBool("terminateJobsOnUpdate", m_terminateJobsOnUpdate);
   }
 
-  if(m_jobExecutionTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInt64("jobExecutionTimeoutMinutes", m_jobExecutionTimeoutMinutes);
-
+  if (m_jobExecutionTimeoutMinutesHasBeenSet) {
+    payload.WithInt64("jobExecutionTimeoutMinutes", m_jobExecutionTimeoutMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

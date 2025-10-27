@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRedshiftClusterVpcSecurityGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRedshiftClusterVpcSecurityGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRedshiftClusterVpcSecurityGroup::AwsRedshiftClusterVpcSecurityGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRedshiftClusterVpcSecurityGroup::AwsRedshiftClusterVpcSecurityGroup(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRedshiftClusterVpcSecurityGroup& AwsRedshiftClusterVpcSecurityGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+AwsRedshiftClusterVpcSecurityGroup& AwsRedshiftClusterVpcSecurityGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcSecurityGroupId"))
-  {
+  if (jsonValue.ValueExists("VpcSecurityGroupId")) {
     m_vpcSecurityGroupId = jsonValue.GetString("VpcSecurityGroupId");
     m_vpcSecurityGroupIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRedshiftClusterVpcSecurityGroup::Jsonize() const
-{
+JsonValue AwsRedshiftClusterVpcSecurityGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_vpcSecurityGroupIdHasBeenSet)
-  {
-   payload.WithString("VpcSecurityGroupId", m_vpcSecurityGroupId);
-
+  if (m_vpcSecurityGroupIdHasBeenSet) {
+    payload.WithString("VpcSecurityGroupId", m_vpcSecurityGroupId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

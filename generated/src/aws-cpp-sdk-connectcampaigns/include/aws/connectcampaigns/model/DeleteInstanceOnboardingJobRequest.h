@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
+#include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-  /**
-   * <p>The request for DeleteInstanceOnboardingJob API.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DeleteInstanceOnboardingJobRequest">AWS
-   * API Reference</a></p>
-   */
-  class DeleteInstanceOnboardingJobRequest : public ConnectCampaignsRequest
-  {
-  public:
-    AWS_CONNECTCAMPAIGNS_API DeleteInstanceOnboardingJobRequest() = default;
+/**
+ * <p>The request for DeleteInstanceOnboardingJob API.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DeleteInstanceOnboardingJobRequest">AWS
+ * API Reference</a></p>
+ */
+class DeleteInstanceOnboardingJobRequest : public ConnectCampaignsRequest {
+ public:
+  AWS_CONNECTCAMPAIGNS_API DeleteInstanceOnboardingJobRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteInstanceOnboardingJob"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteInstanceOnboardingJob"; }
 
-    AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
+  AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
-    inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-    template<typename ConnectInstanceIdT = Aws::String>
-    void SetConnectInstanceId(ConnectInstanceIdT&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::forward<ConnectInstanceIdT>(value); }
-    template<typename ConnectInstanceIdT = Aws::String>
-    DeleteInstanceOnboardingJobRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) { SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
+  inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
+  template <typename ConnectInstanceIdT = Aws::String>
+  void SetConnectInstanceId(ConnectInstanceIdT&& value) {
+    m_connectInstanceIdHasBeenSet = true;
+    m_connectInstanceId = std::forward<ConnectInstanceIdT>(value);
+  }
+  template <typename ConnectInstanceIdT = Aws::String>
+  DeleteInstanceOnboardingJobRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) {
+    SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_connectInstanceId;
+  bool m_connectInstanceIdHasBeenSet = false;
+};
 
-    Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

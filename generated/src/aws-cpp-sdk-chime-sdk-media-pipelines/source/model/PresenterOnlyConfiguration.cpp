@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-PresenterOnlyConfiguration::PresenterOnlyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PresenterOnlyConfiguration::PresenterOnlyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PresenterOnlyConfiguration& PresenterOnlyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PresenterPosition"))
-  {
+PresenterOnlyConfiguration& PresenterOnlyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PresenterPosition")) {
     m_presenterPosition = PresenterPositionMapper::GetPresenterPositionForName(jsonValue.GetString("PresenterPosition"));
     m_presenterPositionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PresenterOnlyConfiguration::Jsonize() const
-{
+JsonValue PresenterOnlyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_presenterPositionHasBeenSet)
-  {
-   payload.WithString("PresenterPosition", PresenterPositionMapper::GetNameForPresenterPosition(m_presenterPosition));
+  if (m_presenterPositionHasBeenSet) {
+    payload.WithString("PresenterPosition", PresenterPositionMapper::GetNameForPresenterPosition(m_presenterPosition));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

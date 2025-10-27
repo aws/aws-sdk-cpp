@@ -4,61 +4,66 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/EndpointResponse.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Pinpoint
-{
-namespace Model
-{
-  class GetEndpointResult
-  {
-  public:
-    AWS_PINPOINT_API GetEndpointResult() = default;
-    AWS_PINPOINT_API GetEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_PINPOINT_API GetEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Pinpoint {
+namespace Model {
+class GetEndpointResult {
+ public:
+  AWS_PINPOINT_API GetEndpointResult() = default;
+  AWS_PINPOINT_API GetEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PINPOINT_API GetEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const EndpointResponse& GetEndpointResponse() const { return m_endpointResponse; }
-    template<typename EndpointResponseT = EndpointResponse>
-    void SetEndpointResponse(EndpointResponseT&& value) { m_endpointResponseHasBeenSet = true; m_endpointResponse = std::forward<EndpointResponseT>(value); }
-    template<typename EndpointResponseT = EndpointResponse>
-    GetEndpointResult& WithEndpointResponse(EndpointResponseT&& value) { SetEndpointResponse(std::forward<EndpointResponseT>(value)); return *this;}
-    ///@}
+  inline const EndpointResponse& GetEndpointResponse() const { return m_endpointResponse; }
+  template <typename EndpointResponseT = EndpointResponse>
+  void SetEndpointResponse(EndpointResponseT&& value) {
+    m_endpointResponseHasBeenSet = true;
+    m_endpointResponse = std::forward<EndpointResponseT>(value);
+  }
+  template <typename EndpointResponseT = EndpointResponse>
+  GetEndpointResult& WithEndpointResponse(EndpointResponseT&& value) {
+    SetEndpointResponse(std::forward<EndpointResponseT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    EndpointResponse m_endpointResponse;
-    bool m_endpointResponseHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetEndpointResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  EndpointResponse m_endpointResponse;
+  bool m_endpointResponseHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

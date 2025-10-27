@@ -12,31 +12,20 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SubscribeRequest::SerializePayload() const
-{
+Aws::String SubscribeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithObject("Target", m_target.Jsonize());
-
+  if (m_targetHasBeenSet) {
+    payload.WithObject("Target", m_target.Jsonize());
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

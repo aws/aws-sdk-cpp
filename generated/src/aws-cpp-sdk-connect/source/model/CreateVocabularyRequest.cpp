@@ -12,47 +12,32 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateVocabularyRequest::SerializePayload() const
-{
+Aws::String CreateVocabularyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_vocabularyNameHasBeenSet)
-  {
-   payload.WithString("VocabularyName", m_vocabularyName);
-
+  if (m_vocabularyNameHasBeenSet) {
+    payload.WithString("VocabularyName", m_vocabularyName);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(m_languageCode));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

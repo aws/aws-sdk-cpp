@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iottwinmaker/IoTTwinMakerEndpointRules.h>
+#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTTwinMakerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTTwinMakerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTTWINMAKER_API IoTTwinMakerEndpointProvider : public IoTTwinMakerDefaultEpProviderBase
-{
-public:
-    using IoTTwinMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTTWINMAKER_API IoTTwinMakerEndpointProvider : public IoTTwinMakerDefaultEpProviderBase {
+ public:
+  using IoTTwinMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTTwinMakerEndpointProvider()
-      : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::GetRulesBlob(), Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::RulesBlobSize)
-    {}
+  IoTTwinMakerEndpointProvider()
+      : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::GetRulesBlob(),
+                                          Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::RulesBlobSize) {}
 
-    ~IoTTwinMakerEndpointProvider()
-    {
-    }
+  ~IoTTwinMakerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTTwinMaker
+}  // namespace Aws

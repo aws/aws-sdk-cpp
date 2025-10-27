@@ -3,264 +3,201 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/WriteJourneyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/WriteJourneyRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-WriteJourneyRequest::WriteJourneyRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WriteJourneyRequest::WriteJourneyRequest(JsonView jsonValue) { *this = jsonValue; }
 
-WriteJourneyRequest& WriteJourneyRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Activities"))
-  {
+WriteJourneyRequest& WriteJourneyRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Activities")) {
     Aws::Map<Aws::String, JsonView> activitiesJsonMap = jsonValue.GetObject("Activities").GetAllObjects();
-    for(auto& activitiesItem : activitiesJsonMap)
-    {
+    for (auto& activitiesItem : activitiesJsonMap) {
       m_activities[activitiesItem.first] = activitiesItem.second.AsObject();
     }
     m_activitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetString("CreationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Limits"))
-  {
+  if (jsonValue.ValueExists("Limits")) {
     m_limits = jsonValue.GetObject("Limits");
     m_limitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocalTime"))
-  {
+  if (jsonValue.ValueExists("LocalTime")) {
     m_localTime = jsonValue.GetBool("LocalTime");
     m_localTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuietTime"))
-  {
+  if (jsonValue.ValueExists("QuietTime")) {
     m_quietTime = jsonValue.GetObject("QuietTime");
     m_quietTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshFrequency"))
-  {
+  if (jsonValue.ValueExists("RefreshFrequency")) {
     m_refreshFrequency = jsonValue.GetString("RefreshFrequency");
     m_refreshFrequencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Schedule"))
-  {
+  if (jsonValue.ValueExists("Schedule")) {
     m_schedule = jsonValue.GetObject("Schedule");
     m_scheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartActivity"))
-  {
+  if (jsonValue.ValueExists("StartActivity")) {
     m_startActivity = jsonValue.GetString("StartActivity");
     m_startActivityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartCondition"))
-  {
+  if (jsonValue.ValueExists("StartCondition")) {
     m_startCondition = jsonValue.GetObject("StartCondition");
     m_startConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WaitForQuietTime"))
-  {
+  if (jsonValue.ValueExists("WaitForQuietTime")) {
     m_waitForQuietTime = jsonValue.GetBool("WaitForQuietTime");
     m_waitForQuietTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshOnSegmentUpdate"))
-  {
+  if (jsonValue.ValueExists("RefreshOnSegmentUpdate")) {
     m_refreshOnSegmentUpdate = jsonValue.GetBool("RefreshOnSegmentUpdate");
     m_refreshOnSegmentUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JourneyChannelSettings"))
-  {
+  if (jsonValue.ValueExists("JourneyChannelSettings")) {
     m_journeyChannelSettings = jsonValue.GetObject("JourneyChannelSettings");
     m_journeyChannelSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SendingSchedule"))
-  {
+  if (jsonValue.ValueExists("SendingSchedule")) {
     m_sendingSchedule = jsonValue.GetBool("SendingSchedule");
     m_sendingScheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OpenHours"))
-  {
+  if (jsonValue.ValueExists("OpenHours")) {
     m_openHours = jsonValue.GetObject("OpenHours");
     m_openHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClosedDays"))
-  {
+  if (jsonValue.ValueExists("ClosedDays")) {
     m_closedDays = jsonValue.GetObject("ClosedDays");
     m_closedDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimezoneEstimationMethods"))
-  {
+  if (jsonValue.ValueExists("TimezoneEstimationMethods")) {
     Aws::Utils::Array<JsonView> timezoneEstimationMethodsJsonList = jsonValue.GetArray("TimezoneEstimationMethods");
-    for(unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength(); ++timezoneEstimationMethodsIndex)
-    {
-      m_timezoneEstimationMethods.push_back(__TimezoneEstimationMethodsElementMapper::Get__TimezoneEstimationMethodsElementForName(timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString()));
+    for (unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength();
+         ++timezoneEstimationMethodsIndex) {
+      m_timezoneEstimationMethods.push_back(__TimezoneEstimationMethodsElementMapper::Get__TimezoneEstimationMethodsElementForName(
+          timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString()));
     }
     m_timezoneEstimationMethodsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WriteJourneyRequest::Jsonize() const
-{
+JsonValue WriteJourneyRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_activitiesHasBeenSet)
-  {
-   JsonValue activitiesJsonMap;
-   for(auto& activitiesItem : m_activities)
-   {
-     activitiesJsonMap.WithObject(activitiesItem.first, activitiesItem.second.Jsonize());
-   }
-   payload.WithObject("Activities", std::move(activitiesJsonMap));
-
+  if (m_activitiesHasBeenSet) {
+    JsonValue activitiesJsonMap;
+    for (auto& activitiesItem : m_activities) {
+      activitiesJsonMap.WithObject(activitiesItem.first, activitiesItem.second.Jsonize());
+    }
+    payload.WithObject("Activities", std::move(activitiesJsonMap));
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithString("CreationDate", m_creationDate);
-
+  if (m_creationDateHasBeenSet) {
+    payload.WithString("CreationDate", m_creationDate);
   }
 
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithString("LastModifiedDate", m_lastModifiedDate);
-
+  if (m_lastModifiedDateHasBeenSet) {
+    payload.WithString("LastModifiedDate", m_lastModifiedDate);
   }
 
-  if(m_limitsHasBeenSet)
-  {
-   payload.WithObject("Limits", m_limits.Jsonize());
-
+  if (m_limitsHasBeenSet) {
+    payload.WithObject("Limits", m_limits.Jsonize());
   }
 
-  if(m_localTimeHasBeenSet)
-  {
-   payload.WithBool("LocalTime", m_localTime);
-
+  if (m_localTimeHasBeenSet) {
+    payload.WithBool("LocalTime", m_localTime);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_quietTimeHasBeenSet)
-  {
-   payload.WithObject("QuietTime", m_quietTime.Jsonize());
-
+  if (m_quietTimeHasBeenSet) {
+    payload.WithObject("QuietTime", m_quietTime.Jsonize());
   }
 
-  if(m_refreshFrequencyHasBeenSet)
-  {
-   payload.WithString("RefreshFrequency", m_refreshFrequency);
-
+  if (m_refreshFrequencyHasBeenSet) {
+    payload.WithString("RefreshFrequency", m_refreshFrequency);
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithObject("Schedule", m_schedule.Jsonize());
-
+  if (m_scheduleHasBeenSet) {
+    payload.WithObject("Schedule", m_schedule.Jsonize());
   }
 
-  if(m_startActivityHasBeenSet)
-  {
-   payload.WithString("StartActivity", m_startActivity);
-
+  if (m_startActivityHasBeenSet) {
+    payload.WithString("StartActivity", m_startActivity);
   }
 
-  if(m_startConditionHasBeenSet)
-  {
-   payload.WithObject("StartCondition", m_startCondition.Jsonize());
-
+  if (m_startConditionHasBeenSet) {
+    payload.WithObject("StartCondition", m_startCondition.Jsonize());
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", StateMapper::GetNameForState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", StateMapper::GetNameForState(m_state));
   }
 
-  if(m_waitForQuietTimeHasBeenSet)
-  {
-   payload.WithBool("WaitForQuietTime", m_waitForQuietTime);
-
+  if (m_waitForQuietTimeHasBeenSet) {
+    payload.WithBool("WaitForQuietTime", m_waitForQuietTime);
   }
 
-  if(m_refreshOnSegmentUpdateHasBeenSet)
-  {
-   payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
-
+  if (m_refreshOnSegmentUpdateHasBeenSet) {
+    payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
   }
 
-  if(m_journeyChannelSettingsHasBeenSet)
-  {
-   payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
-
+  if (m_journeyChannelSettingsHasBeenSet) {
+    payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
   }
 
-  if(m_sendingScheduleHasBeenSet)
-  {
-   payload.WithBool("SendingSchedule", m_sendingSchedule);
-
+  if (m_sendingScheduleHasBeenSet) {
+    payload.WithBool("SendingSchedule", m_sendingSchedule);
   }
 
-  if(m_openHoursHasBeenSet)
-  {
-   payload.WithObject("OpenHours", m_openHours.Jsonize());
-
+  if (m_openHoursHasBeenSet) {
+    payload.WithObject("OpenHours", m_openHours.Jsonize());
   }
 
-  if(m_closedDaysHasBeenSet)
-  {
-   payload.WithObject("ClosedDays", m_closedDays.Jsonize());
-
+  if (m_closedDaysHasBeenSet) {
+    payload.WithObject("ClosedDays", m_closedDays.Jsonize());
   }
 
-  if(m_timezoneEstimationMethodsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> timezoneEstimationMethodsJsonList(m_timezoneEstimationMethods.size());
-   for(unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength(); ++timezoneEstimationMethodsIndex)
-   {
-     timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString(__TimezoneEstimationMethodsElementMapper::GetNameFor__TimezoneEstimationMethodsElement(m_timezoneEstimationMethods[timezoneEstimationMethodsIndex]));
-   }
-   payload.WithArray("TimezoneEstimationMethods", std::move(timezoneEstimationMethodsJsonList));
-
+  if (m_timezoneEstimationMethodsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> timezoneEstimationMethodsJsonList(m_timezoneEstimationMethods.size());
+    for (unsigned timezoneEstimationMethodsIndex = 0; timezoneEstimationMethodsIndex < timezoneEstimationMethodsJsonList.GetLength();
+         ++timezoneEstimationMethodsIndex) {
+      timezoneEstimationMethodsJsonList[timezoneEstimationMethodsIndex].AsString(
+          __TimezoneEstimationMethodsElementMapper::GetNameFor__TimezoneEstimationMethodsElement(
+              m_timezoneEstimationMethods[timezoneEstimationMethodsIndex]));
+    }
+    payload.WithArray("TimezoneEstimationMethods", std::move(timezoneEstimationMethodsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -11,200 +11,153 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-DescribedConnector::DescribedConnector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DescribedConnector::DescribedConnector(JsonView jsonValue) { *this = jsonValue; }
 
-DescribedConnector& DescribedConnector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DescribedConnector& DescribedConnector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorId"))
-  {
+  if (jsonValue.ValueExists("ConnectorId")) {
     m_connectorId = jsonValue.GetString("ConnectorId");
     m_connectorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Url"))
-  {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("As2Config"))
-  {
+  if (jsonValue.ValueExists("As2Config")) {
     m_as2Config = jsonValue.GetObject("As2Config");
     m_as2ConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessRole"))
-  {
+  if (jsonValue.ValueExists("AccessRole")) {
     m_accessRole = jsonValue.GetString("AccessRole");
     m_accessRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LoggingRole"))
-  {
+  if (jsonValue.ValueExists("LoggingRole")) {
     m_loggingRole = jsonValue.GetString("LoggingRole");
     m_loggingRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SftpConfig"))
-  {
+  if (jsonValue.ValueExists("SftpConfig")) {
     m_sftpConfig = jsonValue.GetObject("SftpConfig");
     m_sftpConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceManagedEgressIpAddresses"))
-  {
+  if (jsonValue.ValueExists("ServiceManagedEgressIpAddresses")) {
     Aws::Utils::Array<JsonView> serviceManagedEgressIpAddressesJsonList = jsonValue.GetArray("ServiceManagedEgressIpAddresses");
-    for(unsigned serviceManagedEgressIpAddressesIndex = 0; serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength(); ++serviceManagedEgressIpAddressesIndex)
-    {
+    for (unsigned serviceManagedEgressIpAddressesIndex = 0;
+         serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength();
+         ++serviceManagedEgressIpAddressesIndex) {
       m_serviceManagedEgressIpAddresses.push_back(serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString());
     }
     m_serviceManagedEgressIpAddressesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityPolicyName"))
-  {
+  if (jsonValue.ValueExists("SecurityPolicyName")) {
     m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
     m_securityPolicyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EgressConfig"))
-  {
+  if (jsonValue.ValueExists("EgressConfig")) {
     m_egressConfig = jsonValue.GetObject("EgressConfig");
     m_egressConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EgressType"))
-  {
+  if (jsonValue.ValueExists("EgressType")) {
     m_egressType = ConnectorEgressTypeMapper::GetConnectorEgressTypeForName(jsonValue.GetString("EgressType"));
     m_egressTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DescribedConnector::Jsonize() const
-{
+JsonValue DescribedConnector::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_connectorIdHasBeenSet)
-  {
-   payload.WithString("ConnectorId", m_connectorId);
-
+  if (m_connectorIdHasBeenSet) {
+    payload.WithString("ConnectorId", m_connectorId);
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
-  if(m_as2ConfigHasBeenSet)
-  {
-   payload.WithObject("As2Config", m_as2Config.Jsonize());
-
+  if (m_as2ConfigHasBeenSet) {
+    payload.WithObject("As2Config", m_as2Config.Jsonize());
   }
 
-  if(m_accessRoleHasBeenSet)
-  {
-   payload.WithString("AccessRole", m_accessRole);
-
+  if (m_accessRoleHasBeenSet) {
+    payload.WithString("AccessRole", m_accessRole);
   }
 
-  if(m_loggingRoleHasBeenSet)
-  {
-   payload.WithString("LoggingRole", m_loggingRole);
-
+  if (m_loggingRoleHasBeenSet) {
+    payload.WithString("LoggingRole", m_loggingRole);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_sftpConfigHasBeenSet)
-  {
-   payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
-
+  if (m_sftpConfigHasBeenSet) {
+    payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
   }
 
-  if(m_serviceManagedEgressIpAddressesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> serviceManagedEgressIpAddressesJsonList(m_serviceManagedEgressIpAddresses.size());
-   for(unsigned serviceManagedEgressIpAddressesIndex = 0; serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength(); ++serviceManagedEgressIpAddressesIndex)
-   {
-     serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString(m_serviceManagedEgressIpAddresses[serviceManagedEgressIpAddressesIndex]);
-   }
-   payload.WithArray("ServiceManagedEgressIpAddresses", std::move(serviceManagedEgressIpAddressesJsonList));
-
+  if (m_serviceManagedEgressIpAddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> serviceManagedEgressIpAddressesJsonList(m_serviceManagedEgressIpAddresses.size());
+    for (unsigned serviceManagedEgressIpAddressesIndex = 0;
+         serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength();
+         ++serviceManagedEgressIpAddressesIndex) {
+      serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString(
+          m_serviceManagedEgressIpAddresses[serviceManagedEgressIpAddressesIndex]);
+    }
+    payload.WithArray("ServiceManagedEgressIpAddresses", std::move(serviceManagedEgressIpAddressesJsonList));
   }
 
-  if(m_securityPolicyNameHasBeenSet)
-  {
-   payload.WithString("SecurityPolicyName", m_securityPolicyName);
-
+  if (m_securityPolicyNameHasBeenSet) {
+    payload.WithString("SecurityPolicyName", m_securityPolicyName);
   }
 
-  if(m_egressConfigHasBeenSet)
-  {
-   payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
-
+  if (m_egressConfigHasBeenSet) {
+    payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
   }
 
-  if(m_egressTypeHasBeenSet)
-  {
-   payload.WithString("EgressType", ConnectorEgressTypeMapper::GetNameForConnectorEgressType(m_egressType));
+  if (m_egressTypeHasBeenSet) {
+    payload.WithString("EgressType", ConnectorEgressTypeMapper::GetNameForConnectorEgressType(m_egressType));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

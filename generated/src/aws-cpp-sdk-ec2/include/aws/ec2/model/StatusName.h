@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class StatusName
-  {
-    NOT_SET,
-    reachability
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class StatusName { NOT_SET, reachability };
 
-namespace StatusNameMapper
-{
+namespace StatusNameMapper {
 AWS_EC2_API StatusName GetStatusNameForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForStatusName(StatusName value);
-} // namespace StatusNameMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace StatusNameMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

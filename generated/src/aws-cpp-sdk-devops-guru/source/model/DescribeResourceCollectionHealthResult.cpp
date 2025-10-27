@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/DescribeResourceCollectionHealthResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/devops-guru/model/DescribeResourceCollectionHealthResult.h>
 
 #include <utility>
 
@@ -17,42 +17,34 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeResourceCollectionHealthResult::DescribeResourceCollectionHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeResourceCollectionHealthResult::DescribeResourceCollectionHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeResourceCollectionHealthResult& DescribeResourceCollectionHealthResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeResourceCollectionHealthResult& DescribeResourceCollectionHealthResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CloudFormation"))
-  {
+  if (jsonValue.ValueExists("CloudFormation")) {
     Aws::Utils::Array<JsonView> cloudFormationJsonList = jsonValue.GetArray("CloudFormation");
-    for(unsigned cloudFormationIndex = 0; cloudFormationIndex < cloudFormationJsonList.GetLength(); ++cloudFormationIndex)
-    {
+    for (unsigned cloudFormationIndex = 0; cloudFormationIndex < cloudFormationJsonList.GetLength(); ++cloudFormationIndex) {
       m_cloudFormation.push_back(cloudFormationJsonList[cloudFormationIndex].AsObject());
     }
     m_cloudFormationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Service"))
-  {
+  if (jsonValue.ValueExists("Service")) {
     Aws::Utils::Array<JsonView> serviceJsonList = jsonValue.GetArray("Service");
-    for(unsigned serviceIndex = 0; serviceIndex < serviceJsonList.GetLength(); ++serviceIndex)
-    {
+    for (unsigned serviceIndex = 0; serviceIndex < serviceJsonList.GetLength(); ++serviceIndex) {
       m_service.push_back(serviceJsonList[serviceIndex].AsObject());
     }
     m_serviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
@@ -60,12 +52,10 @@ DescribeResourceCollectionHealthResult& DescribeResourceCollectionHealthResult::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

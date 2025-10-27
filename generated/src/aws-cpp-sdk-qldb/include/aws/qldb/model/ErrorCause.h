@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qldb/QLDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qldb/QLDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace QLDB
-{
-namespace Model
-{
-  enum class ErrorCause
-  {
-    NOT_SET,
-    KINESIS_STREAM_NOT_FOUND,
-    IAM_PERMISSION_REVOKED
-  };
+namespace Aws {
+namespace QLDB {
+namespace Model {
+enum class ErrorCause { NOT_SET, KINESIS_STREAM_NOT_FOUND, IAM_PERMISSION_REVOKED };
 
-namespace ErrorCauseMapper
-{
+namespace ErrorCauseMapper {
 AWS_QLDB_API ErrorCause GetErrorCauseForName(const Aws::String& name);
 
 AWS_QLDB_API Aws::String GetNameForErrorCause(ErrorCause value);
-} // namespace ErrorCauseMapper
-} // namespace Model
-} // namespace QLDB
-} // namespace Aws
+}  // namespace ErrorCauseMapper
+}  // namespace Model
+}  // namespace QLDB
+}  // namespace Aws

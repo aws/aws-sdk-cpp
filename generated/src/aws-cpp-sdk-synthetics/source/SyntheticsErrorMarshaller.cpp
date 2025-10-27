@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Synthetics;
 
-AWSError<CoreErrors> SyntheticsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SyntheticsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SyntheticsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTDeviceAdvisor;
 
-AWSError<CoreErrors> IoTDeviceAdvisorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTDeviceAdvisorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTDeviceAdvisorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

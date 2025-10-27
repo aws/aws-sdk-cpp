@@ -5,12 +5,8 @@
 
 #include <aws/codeguru-security/CodeGuruSecurityEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeGuruSecurity
-} // namespace Aws
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

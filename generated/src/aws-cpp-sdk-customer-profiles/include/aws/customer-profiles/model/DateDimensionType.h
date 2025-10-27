@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class DateDimensionType
-  {
-    NOT_SET,
-    BEFORE,
-    AFTER,
-    BETWEEN,
-    NOT_BETWEEN,
-    ON
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class DateDimensionType { NOT_SET, BEFORE, AFTER, BETWEEN, NOT_BETWEEN, ON };
 
-namespace DateDimensionTypeMapper
-{
+namespace DateDimensionTypeMapper {
 AWS_CUSTOMERPROFILES_API DateDimensionType GetDateDimensionTypeForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForDateDimensionType(DateDimensionType value);
-} // namespace DateDimensionTypeMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace DateDimensionTypeMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

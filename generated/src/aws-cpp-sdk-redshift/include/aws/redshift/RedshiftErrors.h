@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-enum class RedshiftErrors
-{
-  //From Core//
+namespace Aws {
+namespace Redshift {
+enum class RedshiftErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RedshiftErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class RedshiftErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_TO_CLUSTER_DENIED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_TO_CLUSTER_DENIED_FAULT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACCESS_TO_SNAPSHOT_DENIED_FAULT,
   AUTHENTICATION_PROFILE_ALREADY_EXISTS_FAULT,
   AUTHENTICATION_PROFILE_NOT_FOUND_FAULT,
@@ -191,9 +188,8 @@ enum class RedshiftErrors
   USAGE_LIMIT_NOT_FOUND_FAULT
 };
 
-class AWS_REDSHIFT_API RedshiftError : public Aws::Client::AWSError<RedshiftErrors>
-{
-public:
+class AWS_REDSHIFT_API RedshiftError : public Aws::Client::AWSError<RedshiftErrors> {
+ public:
   RedshiftError() {}
   RedshiftError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RedshiftErrors>(rhs) {}
   RedshiftError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RedshiftErrors>(rhs) {}
@@ -204,10 +200,9 @@ public:
   T GetModeledError();
 };
 
-namespace RedshiftErrorMapper
-{
-  AWS_REDSHIFT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RedshiftErrorMapper {
+AWS_REDSHIFT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Redshift
-} // namespace Aws
+}  // namespace Redshift
+}  // namespace Aws

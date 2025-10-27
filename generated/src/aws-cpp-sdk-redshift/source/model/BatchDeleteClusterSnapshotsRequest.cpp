@@ -3,28 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/BatchDeleteClusterSnapshotsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/BatchDeleteClusterSnapshotsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const
-{
+Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=BatchDeleteClusterSnapshots&";
-  if(m_identifiersHasBeenSet)
-  {
-    if (m_identifiers.empty())
-    {
+  if (m_identifiersHasBeenSet) {
+    if (m_identifiers.empty()) {
       ss << "Identifiers=&";
-    }
-    else
-    {
+    } else {
       unsigned identifiersCount = 1;
-      for(auto& item : m_identifiers)
-      {
+      for (auto& item : m_identifiers) {
         item.OutputToStream(ss, "Identifiers.DeleteClusterSnapshotMessage.", identifiersCount, "");
         identifiersCount++;
       }
@@ -35,8 +29,4 @@ Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  BatchDeleteClusterSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void BatchDeleteClusterSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

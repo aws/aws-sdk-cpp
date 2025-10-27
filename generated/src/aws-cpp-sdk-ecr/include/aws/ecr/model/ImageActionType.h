@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class ImageActionType
-  {
-    NOT_SET,
-    EXPIRE
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class ImageActionType { NOT_SET, EXPIRE };
 
-namespace ImageActionTypeMapper
-{
+namespace ImageActionTypeMapper {
 AWS_ECR_API ImageActionType GetImageActionTypeForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForImageActionType(ImageActionType value);
-} // namespace ImageActionTypeMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace ImageActionTypeMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

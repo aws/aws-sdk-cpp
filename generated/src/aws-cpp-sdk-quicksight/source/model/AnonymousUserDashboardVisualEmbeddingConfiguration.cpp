@@ -3,49 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AnonymousUserDashboardVisualEmbeddingConfiguration::AnonymousUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue)
-{
+AnonymousUserDashboardVisualEmbeddingConfiguration::AnonymousUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AnonymousUserDashboardVisualEmbeddingConfiguration& AnonymousUserDashboardVisualEmbeddingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InitialDashboardVisualId"))
-  {
+AnonymousUserDashboardVisualEmbeddingConfiguration& AnonymousUserDashboardVisualEmbeddingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InitialDashboardVisualId")) {
     m_initialDashboardVisualId = jsonValue.GetObject("InitialDashboardVisualId");
     m_initialDashboardVisualIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnonymousUserDashboardVisualEmbeddingConfiguration::Jsonize() const
-{
+JsonValue AnonymousUserDashboardVisualEmbeddingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_initialDashboardVisualIdHasBeenSet)
-  {
-   payload.WithObject("InitialDashboardVisualId", m_initialDashboardVisualId.Jsonize());
-
+  if (m_initialDashboardVisualIdHasBeenSet) {
+    payload.WithObject("InitialDashboardVisualId", m_initialDashboardVisualId.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

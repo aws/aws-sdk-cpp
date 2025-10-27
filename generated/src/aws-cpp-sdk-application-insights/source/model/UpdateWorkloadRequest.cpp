@@ -12,45 +12,30 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWorkloadRequest::SerializePayload() const
-{
+Aws::String UpdateWorkloadRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("ComponentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("ComponentName", m_componentName);
   }
 
-  if(m_workloadIdHasBeenSet)
-  {
-   payload.WithString("WorkloadId", m_workloadId);
-
+  if (m_workloadIdHasBeenSet) {
+    payload.WithString("WorkloadId", m_workloadId);
   }
 
-  if(m_workloadConfigurationHasBeenSet)
-  {
-   payload.WithObject("WorkloadConfiguration", m_workloadConfiguration.Jsonize());
-
+  if (m_workloadConfigurationHasBeenSet) {
+    payload.WithObject("WorkloadConfiguration", m_workloadConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateWorkloadRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateWorkloadRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateWorkload"));
   return headers;
-
 }
-
-
-
-

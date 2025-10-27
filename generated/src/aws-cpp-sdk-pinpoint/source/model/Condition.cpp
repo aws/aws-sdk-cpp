@@ -3,68 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/Condition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/Condition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-Condition::Condition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
 
-Condition& Condition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Conditions"))
-  {
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Conditions")) {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
-    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-    {
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
     }
     m_conditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operator"))
-  {
+  if (jsonValue.ValueExists("Operator")) {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
     m_operatorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Condition::Jsonize() const
-{
+JsonValue Condition::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
-   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-   {
-     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
-   }
-   payload.WithArray("Conditions", std::move(conditionsJsonList));
-
+  if (m_conditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
+      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+    }
+    payload.WithArray("Conditions", std::move(conditionsJsonList));
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("Operator", OperatorMapper::GetNameForOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("Operator", OperatorMapper::GetNameForOperator(m_operator));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

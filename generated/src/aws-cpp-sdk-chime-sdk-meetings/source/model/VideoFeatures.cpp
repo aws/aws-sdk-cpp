@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-VideoFeatures::VideoFeatures(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VideoFeatures::VideoFeatures(JsonView jsonValue) { *this = jsonValue; }
 
-VideoFeatures& VideoFeatures::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxResolution"))
-  {
+VideoFeatures& VideoFeatures::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxResolution")) {
     m_maxResolution = VideoResolutionMapper::GetVideoResolutionForName(jsonValue.GetString("MaxResolution"));
     m_maxResolutionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VideoFeatures::Jsonize() const
-{
+JsonValue VideoFeatures::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxResolutionHasBeenSet)
-  {
-   payload.WithString("MaxResolution", VideoResolutionMapper::GetNameForVideoResolution(m_maxResolution));
+  if (m_maxResolutionHasBeenSet) {
+    payload.WithString("MaxResolution", VideoResolutionMapper::GetNameForVideoResolution(m_maxResolution));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

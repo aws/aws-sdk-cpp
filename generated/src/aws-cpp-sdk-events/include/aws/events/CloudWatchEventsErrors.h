@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-enum class CloudWatchEventsErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudWatchEvents {
+enum class CloudWatchEventsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudWatchEventsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudWatchEventsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ILLEGAL_STATUS,
   INTERNAL,
   INVALID_EVENT_PATTERN,
@@ -59,9 +56,8 @@ enum class CloudWatchEventsErrors
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsError : public Aws::Client::AWSError<CloudWatchEventsErrors>
-{
-public:
+class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsError : public Aws::Client::AWSError<CloudWatchEventsErrors> {
+ public:
   CloudWatchEventsError() {}
   CloudWatchEventsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
   CloudWatchEventsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudWatchEventsErrorMapper
-{
-  AWS_CLOUDWATCHEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudWatchEventsErrorMapper {
+AWS_CLOUDWATCHEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace CloudWatchEvents
+}  // namespace Aws

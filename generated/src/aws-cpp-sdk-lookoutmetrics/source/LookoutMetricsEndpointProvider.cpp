@@ -5,12 +5,8 @@
 
 #include <aws/lookoutmetrics/LookoutMetricsEndpointProvider.h>
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LookoutMetrics
-} // namespace Aws
+namespace Aws {
+namespace LookoutMetrics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LookoutMetrics
+}  // namespace Aws

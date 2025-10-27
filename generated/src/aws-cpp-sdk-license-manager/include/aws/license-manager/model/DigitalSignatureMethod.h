@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
-  enum class DigitalSignatureMethod
-  {
-    NOT_SET,
-    JWT_PS384
-  };
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+enum class DigitalSignatureMethod { NOT_SET, JWT_PS384 };
 
-namespace DigitalSignatureMethodMapper
-{
+namespace DigitalSignatureMethodMapper {
 AWS_LICENSEMANAGER_API DigitalSignatureMethod GetDigitalSignatureMethodForName(const Aws::String& name);
 
 AWS_LICENSEMANAGER_API Aws::String GetNameForDigitalSignatureMethod(DigitalSignatureMethod value);
-} // namespace DigitalSignatureMethodMapper
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace DigitalSignatureMethodMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

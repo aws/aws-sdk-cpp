@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/ListCodeSigningConfigsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lambda/model/ListCodeSigningConfigsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCodeSigningConfigsResult::ListCodeSigningConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListCodeSigningConfigsResult::ListCodeSigningConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListCodeSigningConfigsResult& ListCodeSigningConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListCodeSigningConfigsResult& ListCodeSigningConfigsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextMarker"))
-  {
+  if (jsonValue.ValueExists("NextMarker")) {
     m_nextMarker = jsonValue.GetString("NextMarker");
     m_nextMarkerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeSigningConfigs"))
-  {
+  if (jsonValue.ValueExists("CodeSigningConfigs")) {
     Aws::Utils::Array<JsonView> codeSigningConfigsJsonList = jsonValue.GetArray("CodeSigningConfigs");
-    for(unsigned codeSigningConfigsIndex = 0; codeSigningConfigsIndex < codeSigningConfigsJsonList.GetLength(); ++codeSigningConfigsIndex)
-    {
+    for (unsigned codeSigningConfigsIndex = 0; codeSigningConfigsIndex < codeSigningConfigsJsonList.GetLength();
+         ++codeSigningConfigsIndex) {
       m_codeSigningConfigs.push_back(codeSigningConfigsJsonList[codeSigningConfigsIndex].AsObject());
     }
     m_codeSigningConfigsHasBeenSet = true;
@@ -42,12 +36,10 @@ ListCodeSigningConfigsResult& ListCodeSigningConfigsResult::operator =(const Aws
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
 
 #include <utility>
 
@@ -17,33 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetSecretValueResult::BatchGetSecretValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetSecretValueResult::BatchGetSecretValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetSecretValueResult& BatchGetSecretValueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetSecretValueResult& BatchGetSecretValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SecretValues"))
-  {
+  if (jsonValue.ValueExists("SecretValues")) {
     Aws::Utils::Array<JsonView> secretValuesJsonList = jsonValue.GetArray("SecretValues");
-    for(unsigned secretValuesIndex = 0; secretValuesIndex < secretValuesJsonList.GetLength(); ++secretValuesIndex)
-    {
+    for (unsigned secretValuesIndex = 0; secretValuesIndex < secretValuesJsonList.GetLength(); ++secretValuesIndex) {
       m_secretValues.push_back(secretValuesJsonList[secretValuesIndex].AsObject());
     }
     m_secretValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Errors"))
-  {
+  if (jsonValue.ValueExists("Errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
@@ -51,12 +42,10 @@ BatchGetSecretValueResult& BatchGetSecretValueResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

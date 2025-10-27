@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/CreateJobTemplateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/CreateJobTemplateRequest.h>
 
 #include <utility>
 
@@ -12,82 +12,56 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateJobTemplateRequest::SerializePayload() const
-{
+Aws::String CreateJobTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accelerationSettingsHasBeenSet)
-  {
-   payload.WithObject("accelerationSettings", m_accelerationSettings.Jsonize());
-
+  if (m_accelerationSettingsHasBeenSet) {
+    payload.WithObject("accelerationSettings", m_accelerationSettings.Jsonize());
   }
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", m_category);
-
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", m_category);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_hopDestinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
-   for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
-   {
-     hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
-   }
-   payload.WithArray("hopDestinations", std::move(hopDestinationsJsonList));
-
+  if (m_hopDestinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+    for (unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex) {
+      hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
+    }
+    payload.WithArray("hopDestinations", std::move(hopDestinationsJsonList));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("priority", m_priority);
   }
 
-  if(m_queueHasBeenSet)
-  {
-   payload.WithString("queue", m_queue);
-
+  if (m_queueHasBeenSet) {
+    payload.WithString("queue", m_queue);
   }
 
-  if(m_settingsHasBeenSet)
-  {
-   payload.WithObject("settings", m_settings.Jsonize());
-
+  if (m_settingsHasBeenSet) {
+    payload.WithObject("settings", m_settings.Jsonize());
   }
 
-  if(m_statusUpdateIntervalHasBeenSet)
-  {
-   payload.WithString("statusUpdateInterval", StatusUpdateIntervalMapper::GetNameForStatusUpdateInterval(m_statusUpdateInterval));
+  if (m_statusUpdateIntervalHasBeenSet) {
+    payload.WithString("statusUpdateInterval", StatusUpdateIntervalMapper::GetNameForStatusUpdateInterval(m_statusUpdateInterval));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

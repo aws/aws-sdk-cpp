@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-OAuthProperties::OAuthProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OAuthProperties::OAuthProperties(JsonView jsonValue) { *this = jsonValue; }
 
-OAuthProperties& OAuthProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tokenUrl"))
-  {
+OAuthProperties& OAuthProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tokenUrl")) {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
     m_tokenUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authCodeUrl"))
-  {
+  if (jsonValue.ValueExists("authCodeUrl")) {
     m_authCodeUrl = jsonValue.GetString("authCodeUrl");
     m_authCodeUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuthScopes"))
-  {
+  if (jsonValue.ValueExists("oAuthScopes")) {
     Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
-    for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
-    {
+    for (unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex) {
       m_oAuthScopes.push_back(oAuthScopesJsonList[oAuthScopesIndex].AsString());
     }
     m_oAuthScopesHasBeenSet = true;
@@ -47,36 +36,28 @@ OAuthProperties& OAuthProperties::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OAuthProperties::Jsonize() const
-{
+JsonValue OAuthProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenUrlHasBeenSet)
-  {
-   payload.WithString("tokenUrl", m_tokenUrl);
-
+  if (m_tokenUrlHasBeenSet) {
+    payload.WithString("tokenUrl", m_tokenUrl);
   }
 
-  if(m_authCodeUrlHasBeenSet)
-  {
-   payload.WithString("authCodeUrl", m_authCodeUrl);
-
+  if (m_authCodeUrlHasBeenSet) {
+    payload.WithString("authCodeUrl", m_authCodeUrl);
   }
 
-  if(m_oAuthScopesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
-   for(unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex)
-   {
-     oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);
-   }
-   payload.WithArray("oAuthScopes", std::move(oAuthScopesJsonList));
-
+  if (m_oAuthScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> oAuthScopesJsonList(m_oAuthScopes.size());
+    for (unsigned oAuthScopesIndex = 0; oAuthScopesIndex < oAuthScopesJsonList.GetLength(); ++oAuthScopesIndex) {
+      oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);
+    }
+    payload.WithArray("oAuthScopes", std::move(oAuthScopesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

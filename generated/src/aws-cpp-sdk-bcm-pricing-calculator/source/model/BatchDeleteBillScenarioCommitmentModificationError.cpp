@@ -11,62 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-BatchDeleteBillScenarioCommitmentModificationError::BatchDeleteBillScenarioCommitmentModificationError(JsonView jsonValue)
-{
+BatchDeleteBillScenarioCommitmentModificationError::BatchDeleteBillScenarioCommitmentModificationError(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-BatchDeleteBillScenarioCommitmentModificationError& BatchDeleteBillScenarioCommitmentModificationError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+BatchDeleteBillScenarioCommitmentModificationError& BatchDeleteBillScenarioCommitmentModificationError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = BatchDeleteBillScenarioCommitmentModificationErrorCodeMapper::GetBatchDeleteBillScenarioCommitmentModificationErrorCodeForName(jsonValue.GetString("errorCode"));
+  if (jsonValue.ValueExists("errorCode")) {
+    m_errorCode =
+        BatchDeleteBillScenarioCommitmentModificationErrorCodeMapper::GetBatchDeleteBillScenarioCommitmentModificationErrorCodeForName(
+            jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDeleteBillScenarioCommitmentModificationError::Jsonize() const
-{
+JsonValue BatchDeleteBillScenarioCommitmentModificationError::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", BatchDeleteBillScenarioCommitmentModificationErrorCodeMapper::GetNameForBatchDeleteBillScenarioCommitmentModificationErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString(
+        "errorCode",
+        BatchDeleteBillScenarioCommitmentModificationErrorCodeMapper::GetNameForBatchDeleteBillScenarioCommitmentModificationErrorCode(
+            m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

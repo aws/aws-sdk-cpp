@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class OriginEnvironment
-  {
-    NOT_SET,
-    ON_PREMISES,
-    AWS
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class OriginEnvironment { NOT_SET, ON_PREMISES, AWS };
 
-namespace OriginEnvironmentMapper
-{
+namespace OriginEnvironmentMapper {
 AWS_DRS_API OriginEnvironment GetOriginEnvironmentForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForOriginEnvironment(OriginEnvironment value);
-} // namespace OriginEnvironmentMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace OriginEnvironmentMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

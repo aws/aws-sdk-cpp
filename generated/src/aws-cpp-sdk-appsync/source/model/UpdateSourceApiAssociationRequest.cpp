@@ -12,25 +12,16 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSourceApiAssociationRequest::SerializePayload() const
-{
+Aws::String UpdateSourceApiAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_sourceApiAssociationConfigHasBeenSet)
-  {
-   payload.WithObject("sourceApiAssociationConfig", m_sourceApiAssociationConfig.Jsonize());
-
+  if (m_sourceApiAssociationConfigHasBeenSet) {
+    payload.WithObject("sourceApiAssociationConfig", m_sourceApiAssociationConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

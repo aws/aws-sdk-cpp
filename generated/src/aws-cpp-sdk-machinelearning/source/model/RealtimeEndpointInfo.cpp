@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/machinelearning/model/RealtimeEndpointInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/machinelearning/model/RealtimeEndpointInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Model
-{
+namespace Aws {
+namespace MachineLearning {
+namespace Model {
 
-RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue) { *this = jsonValue; }
 
-RealtimeEndpointInfo& RealtimeEndpointInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PeakRequestsPerSecond"))
-  {
+RealtimeEndpointInfo& RealtimeEndpointInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PeakRequestsPerSecond")) {
     m_peakRequestsPerSecond = jsonValue.GetInteger("PeakRequestsPerSecond");
     m_peakRequestsPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointUrl"))
-  {
+  if (jsonValue.ValueExists("EndpointUrl")) {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
     m_endpointUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointStatus"))
-  {
+  if (jsonValue.ValueExists("EndpointStatus")) {
     m_endpointStatus = RealtimeEndpointStatusMapper::GetRealtimeEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
     m_endpointStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealtimeEndpointInfo::Jsonize() const
-{
+JsonValue RealtimeEndpointInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_peakRequestsPerSecondHasBeenSet)
-  {
-   payload.WithInteger("PeakRequestsPerSecond", m_peakRequestsPerSecond);
-
+  if (m_peakRequestsPerSecondHasBeenSet) {
+    payload.WithInteger("PeakRequestsPerSecond", m_peakRequestsPerSecond);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_endpointUrlHasBeenSet)
-  {
-   payload.WithString("EndpointUrl", m_endpointUrl);
-
+  if (m_endpointUrlHasBeenSet) {
+    payload.WithString("EndpointUrl", m_endpointUrl);
   }
 
-  if(m_endpointStatusHasBeenSet)
-  {
-   payload.WithString("EndpointStatus", RealtimeEndpointStatusMapper::GetNameForRealtimeEndpointStatus(m_endpointStatus));
+  if (m_endpointStatusHasBeenSet) {
+    payload.WithString("EndpointStatus", RealtimeEndpointStatusMapper::GetNameForRealtimeEndpointStatus(m_endpointStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MachineLearning
-} // namespace Aws
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

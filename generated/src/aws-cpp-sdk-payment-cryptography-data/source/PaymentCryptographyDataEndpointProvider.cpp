@@ -5,12 +5,8 @@
 
 #include <aws/payment-cryptography-data/PaymentCryptographyDataEndpointProvider.h>
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PaymentCryptographyData
-} // namespace Aws
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

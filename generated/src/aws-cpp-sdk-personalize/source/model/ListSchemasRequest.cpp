@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/ListSchemasRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/ListSchemasRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListSchemasRequest::SerializePayload() const
-{
+Aws::String ListSchemasRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListSchemasRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListSchemasRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonPersonalize.ListSchemas"));
   return headers;
-
 }
-
-
-
-

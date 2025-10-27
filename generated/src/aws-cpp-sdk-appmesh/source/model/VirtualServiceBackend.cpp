@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualServiceBackend& VirtualServiceBackend::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientPolicy"))
-  {
+VirtualServiceBackend& VirtualServiceBackend::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientPolicy")) {
     m_clientPolicy = jsonValue.GetObject("clientPolicy");
     m_clientPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("virtualServiceName"))
-  {
+  if (jsonValue.ValueExists("virtualServiceName")) {
     m_virtualServiceName = jsonValue.GetString("virtualServiceName");
     m_virtualServiceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualServiceBackend::Jsonize() const
-{
+JsonValue VirtualServiceBackend::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientPolicyHasBeenSet)
-  {
-   payload.WithObject("clientPolicy", m_clientPolicy.Jsonize());
-
+  if (m_clientPolicyHasBeenSet) {
+    payload.WithObject("clientPolicy", m_clientPolicy.Jsonize());
   }
 
-  if(m_virtualServiceNameHasBeenSet)
-  {
-   payload.WithString("virtualServiceName", m_virtualServiceName);
-
+  if (m_virtualServiceNameHasBeenSet) {
+    payload.WithString("virtualServiceName", m_virtualServiceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

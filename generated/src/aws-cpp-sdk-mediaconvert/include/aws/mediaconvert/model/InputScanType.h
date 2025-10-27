@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class InputScanType
-  {
-    NOT_SET,
-    AUTO,
-    PSF
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class InputScanType { NOT_SET, AUTO, PSF };
 
-namespace InputScanTypeMapper
-{
+namespace InputScanTypeMapper {
 AWS_MEDIACONVERT_API InputScanType GetInputScanTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForInputScanType(InputScanType value);
-} // namespace InputScanTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace InputScanTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

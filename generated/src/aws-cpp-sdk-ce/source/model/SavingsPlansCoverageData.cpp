@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansCoverageData::SavingsPlansCoverageData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansCoverageData::SavingsPlansCoverageData(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansCoverageData& SavingsPlansCoverageData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SpendCoveredBySavingsPlans"))
-  {
+SavingsPlansCoverageData& SavingsPlansCoverageData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SpendCoveredBySavingsPlans")) {
     m_spendCoveredBySavingsPlans = jsonValue.GetString("SpendCoveredBySavingsPlans");
     m_spendCoveredBySavingsPlansHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandCost"))
-  {
+  if (jsonValue.ValueExists("OnDemandCost")) {
     m_onDemandCost = jsonValue.GetString("OnDemandCost");
     m_onDemandCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalCost"))
-  {
+  if (jsonValue.ValueExists("TotalCost")) {
     m_totalCost = jsonValue.GetString("TotalCost");
     m_totalCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CoveragePercentage"))
-  {
+  if (jsonValue.ValueExists("CoveragePercentage")) {
     m_coveragePercentage = jsonValue.GetString("CoveragePercentage");
     m_coveragePercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansCoverageData::Jsonize() const
-{
+JsonValue SavingsPlansCoverageData::Jsonize() const {
   JsonValue payload;
 
-  if(m_spendCoveredBySavingsPlansHasBeenSet)
-  {
-   payload.WithString("SpendCoveredBySavingsPlans", m_spendCoveredBySavingsPlans);
-
+  if (m_spendCoveredBySavingsPlansHasBeenSet) {
+    payload.WithString("SpendCoveredBySavingsPlans", m_spendCoveredBySavingsPlans);
   }
 
-  if(m_onDemandCostHasBeenSet)
-  {
-   payload.WithString("OnDemandCost", m_onDemandCost);
-
+  if (m_onDemandCostHasBeenSet) {
+    payload.WithString("OnDemandCost", m_onDemandCost);
   }
 
-  if(m_totalCostHasBeenSet)
-  {
-   payload.WithString("TotalCost", m_totalCost);
-
+  if (m_totalCostHasBeenSet) {
+    payload.WithString("TotalCost", m_totalCost);
   }
 
-  if(m_coveragePercentageHasBeenSet)
-  {
-   payload.WithString("CoveragePercentage", m_coveragePercentage);
-
+  if (m_coveragePercentageHasBeenSet) {
+    payload.WithString("CoveragePercentage", m_coveragePercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

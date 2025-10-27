@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::KinesisVideoWebRTCStorage;
 
-AWSError<CoreErrors> KinesisVideoWebRTCStorageErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KinesisVideoWebRTCStorageErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KinesisVideoWebRTCStorageErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

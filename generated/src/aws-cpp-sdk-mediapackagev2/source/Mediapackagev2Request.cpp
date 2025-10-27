@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 
-namespace Aws
-{
-namespace mediapackagev2
-{
-} // namespace mediapackagev2
-} // namespace Aws
+namespace Aws {
+namespace mediapackagev2 {}  // namespace mediapackagev2
+}  // namespace Aws

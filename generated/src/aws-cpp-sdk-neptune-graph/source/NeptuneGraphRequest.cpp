@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-} // namespace NeptuneGraph
-} // namespace Aws
+namespace Aws {
+namespace NeptuneGraph {}  // namespace NeptuneGraph
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
-  enum class LocationValues
-  {
-    NOT_SET,
-    CLOUD,
-    OUTPOST_LOCAL,
-    LOCAL_ZONE
-  };
+namespace Aws {
+namespace DLM {
+namespace Model {
+enum class LocationValues { NOT_SET, CLOUD, OUTPOST_LOCAL, LOCAL_ZONE };
 
-namespace LocationValuesMapper
-{
+namespace LocationValuesMapper {
 AWS_DLM_API LocationValues GetLocationValuesForName(const Aws::String& name);
 
 AWS_DLM_API Aws::String GetNameForLocationValues(LocationValues value);
-} // namespace LocationValuesMapper
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace LocationValuesMapper
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

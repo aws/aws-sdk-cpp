@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/SSEKMS.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/SSEKMS.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-SSEKMS::SSEKMS(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SSEKMS::SSEKMS(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SSEKMS& SSEKMS::operator =(const XmlNode& xmlNode)
-{
+SSEKMS& SSEKMS::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode keyIdNode = resultNode.FirstChild("KeyId");
-    if(!keyIdNode.IsNull())
-    {
+    if (!keyIdNode.IsNull()) {
       m_keyId = Aws::Utils::Xml::DecodeEscapedXmlText(keyIdNode.GetText());
       m_keyIdHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ SSEKMS& SSEKMS::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SSEKMS::AddToNode(XmlNode& parentNode) const
-{
+void SSEKMS::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_keyIdHasBeenSet)
-  {
-   XmlNode keyIdNode = parentNode.CreateChildElement("KeyId");
-   keyIdNode.SetText(m_keyId);
+  if (m_keyIdHasBeenSet) {
+    XmlNode keyIdNode = parentNode.CreateChildElement("KeyId");
+    keyIdNode.SetText(m_keyId);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

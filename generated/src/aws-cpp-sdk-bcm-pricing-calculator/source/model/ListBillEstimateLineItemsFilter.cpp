@@ -11,70 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-ListBillEstimateLineItemsFilter::ListBillEstimateLineItemsFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListBillEstimateLineItemsFilter::ListBillEstimateLineItemsFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListBillEstimateLineItemsFilter& ListBillEstimateLineItemsFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ListBillEstimateLineItemsFilter& ListBillEstimateLineItemsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = ListBillEstimateLineItemsFilterNameMapper::GetListBillEstimateLineItemsFilterNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("matchOption"))
-  {
+  if (jsonValue.ValueExists("matchOption")) {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("matchOption"));
     m_matchOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListBillEstimateLineItemsFilter::Jsonize() const
-{
+JsonValue ListBillEstimateLineItemsFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ListBillEstimateLineItemsFilterNameMapper::GetNameForListBillEstimateLineItemsFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ListBillEstimateLineItemsFilterNameMapper::GetNameForListBillEstimateLineItemsFilterName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
-  if(m_matchOptionHasBeenSet)
-  {
-   payload.WithString("matchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
+  if (m_matchOptionHasBeenSet) {
+    payload.WithString("matchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

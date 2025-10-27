@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-class ElasticBeanstalkEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ElasticBeanstalk {
+class ElasticBeanstalkEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

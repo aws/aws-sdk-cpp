@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/awstransfer/TransferRequest.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-} // namespace Transfer
-} // namespace Aws
+namespace Aws {
+namespace Transfer {}  // namespace Transfer
+}  // namespace Aws

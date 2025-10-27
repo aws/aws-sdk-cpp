@@ -12,19 +12,12 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAccountSettingsRequest::SerializePayload() const
-{
+Aws::String UpdateAccountSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountSettingsHasBeenSet)
-  {
-   payload.WithObject("AccountSettings", m_accountSettings.Jsonize());
-
+  if (m_accountSettingsHasBeenSet) {
+    payload.WithObject("AccountSettings", m_accountSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

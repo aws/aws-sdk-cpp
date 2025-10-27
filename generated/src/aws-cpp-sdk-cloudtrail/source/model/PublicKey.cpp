@@ -4,79 +4,62 @@
  */
 
 #include <aws/cloudtrail/model/PublicKey.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-PublicKey::PublicKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PublicKey::PublicKey(JsonView jsonValue) { *this = jsonValue; }
 
-PublicKey& PublicKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+PublicKey& PublicKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = HashingUtils::Base64Decode(jsonValue.GetString("Value"));
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidityStartTime"))
-  {
+  if (jsonValue.ValueExists("ValidityStartTime")) {
     m_validityStartTime = jsonValue.GetDouble("ValidityStartTime");
     m_validityStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidityEndTime"))
-  {
+  if (jsonValue.ValueExists("ValidityEndTime")) {
     m_validityEndTime = jsonValue.GetDouble("ValidityEndTime");
     m_validityEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Fingerprint"))
-  {
+  if (jsonValue.ValueExists("Fingerprint")) {
     m_fingerprint = jsonValue.GetString("Fingerprint");
     m_fingerprintHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PublicKey::Jsonize() const
-{
+JsonValue PublicKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", HashingUtils::Base64Encode(m_value));
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", HashingUtils::Base64Encode(m_value));
   }
 
-  if(m_validityStartTimeHasBeenSet)
-  {
-   payload.WithDouble("ValidityStartTime", m_validityStartTime.SecondsWithMSPrecision());
+  if (m_validityStartTimeHasBeenSet) {
+    payload.WithDouble("ValidityStartTime", m_validityStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_validityEndTimeHasBeenSet)
-  {
-   payload.WithDouble("ValidityEndTime", m_validityEndTime.SecondsWithMSPrecision());
+  if (m_validityEndTimeHasBeenSet) {
+    payload.WithDouble("ValidityEndTime", m_validityEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_fingerprintHasBeenSet)
-  {
-   payload.WithString("Fingerprint", m_fingerprint);
-
+  if (m_fingerprintHasBeenSet) {
+    payload.WithString("Fingerprint", m_fingerprint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

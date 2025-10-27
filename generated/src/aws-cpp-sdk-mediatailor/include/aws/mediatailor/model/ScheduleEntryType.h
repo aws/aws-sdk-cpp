@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class ScheduleEntryType
-  {
-    NOT_SET,
-    PROGRAM,
-    FILLER_SLATE,
-    ALTERNATE_MEDIA
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class ScheduleEntryType { NOT_SET, PROGRAM, FILLER_SLATE, ALTERNATE_MEDIA };
 
-namespace ScheduleEntryTypeMapper
-{
+namespace ScheduleEntryTypeMapper {
 AWS_MEDIATAILOR_API ScheduleEntryType GetScheduleEntryTypeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForScheduleEntryType(ScheduleEntryType value);
-} // namespace ScheduleEntryTypeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace ScheduleEntryTypeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class Separator
-  {
-    NOT_SET,
-    comma,
-    ctrla,
-    pipe,
-    semicolon,
-    tab
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class Separator { NOT_SET, comma, ctrla, pipe, semicolon, tab };
 
-namespace SeparatorMapper
-{
+namespace SeparatorMapper {
 AWS_GLUE_API Separator GetSeparatorForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForSeparator(Separator value);
-} // namespace SeparatorMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace SeparatorMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

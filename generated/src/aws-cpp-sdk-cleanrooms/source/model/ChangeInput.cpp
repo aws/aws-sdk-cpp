@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ChangeInput::ChangeInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChangeInput::ChangeInput(JsonView jsonValue) { *this = jsonValue; }
 
-ChangeInput& ChangeInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("specificationType"))
-  {
+ChangeInput& ChangeInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("specificationType")) {
     m_specificationType = ChangeSpecificationTypeMapper::GetChangeSpecificationTypeForName(jsonValue.GetString("specificationType"));
     m_specificationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("specification"))
-  {
+  if (jsonValue.ValueExists("specification")) {
     m_specification = jsonValue.GetObject("specification");
     m_specificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChangeInput::Jsonize() const
-{
+JsonValue ChangeInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_specificationTypeHasBeenSet)
-  {
-   payload.WithString("specificationType", ChangeSpecificationTypeMapper::GetNameForChangeSpecificationType(m_specificationType));
+  if (m_specificationTypeHasBeenSet) {
+    payload.WithString("specificationType", ChangeSpecificationTypeMapper::GetNameForChangeSpecificationType(m_specificationType));
   }
 
-  if(m_specificationHasBeenSet)
-  {
-   payload.WithObject("specification", m_specification.Jsonize());
-
+  if (m_specificationHasBeenSet) {
+    payload.WithObject("specification", m_specification.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/Relationship.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/Relationship.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-Relationship::Relationship(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Relationship::Relationship(JsonView jsonValue) { *this = jsonValue; }
 
-Relationship& Relationship::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Relationship& Relationship::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Ids"))
-  {
+  if (jsonValue.ValueExists("Ids")) {
     Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
-    for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
-    {
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
       m_ids.push_back(idsJsonList[idsIndex].AsString());
     }
     m_idsHasBeenSet = true;
@@ -42,29 +32,24 @@ Relationship& Relationship::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Relationship::Jsonize() const
-{
+JsonValue Relationship::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", RelationshipTypeMapper::GetNameForRelationshipType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RelationshipTypeMapper::GetNameForRelationshipType(m_type));
   }
 
-  if(m_idsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
-   for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
-   {
-     idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
-   }
-   payload.WithArray("Ids", std::move(idsJsonList));
-
+  if (m_idsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
+      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
+    }
+    payload.WithArray("Ids", std::move(idsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

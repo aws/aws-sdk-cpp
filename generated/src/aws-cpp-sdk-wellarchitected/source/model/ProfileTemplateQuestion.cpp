@@ -3,113 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ProfileTemplateQuestion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/ProfileTemplateQuestion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-ProfileTemplateQuestion::ProfileTemplateQuestion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileTemplateQuestion::ProfileTemplateQuestion(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileTemplateQuestion& ProfileTemplateQuestion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QuestionId"))
-  {
+ProfileTemplateQuestion& ProfileTemplateQuestion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QuestionId")) {
     m_questionId = jsonValue.GetString("QuestionId");
     m_questionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuestionTitle"))
-  {
+  if (jsonValue.ValueExists("QuestionTitle")) {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
     m_questionTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuestionDescription"))
-  {
+  if (jsonValue.ValueExists("QuestionDescription")) {
     m_questionDescription = jsonValue.GetString("QuestionDescription");
     m_questionDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuestionChoices"))
-  {
+  if (jsonValue.ValueExists("QuestionChoices")) {
     Aws::Utils::Array<JsonView> questionChoicesJsonList = jsonValue.GetArray("QuestionChoices");
-    for(unsigned questionChoicesIndex = 0; questionChoicesIndex < questionChoicesJsonList.GetLength(); ++questionChoicesIndex)
-    {
+    for (unsigned questionChoicesIndex = 0; questionChoicesIndex < questionChoicesJsonList.GetLength(); ++questionChoicesIndex) {
       m_questionChoices.push_back(questionChoicesJsonList[questionChoicesIndex].AsObject());
     }
     m_questionChoicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinSelectedChoices"))
-  {
+  if (jsonValue.ValueExists("MinSelectedChoices")) {
     m_minSelectedChoices = jsonValue.GetInteger("MinSelectedChoices");
     m_minSelectedChoicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxSelectedChoices"))
-  {
+  if (jsonValue.ValueExists("MaxSelectedChoices")) {
     m_maxSelectedChoices = jsonValue.GetInteger("MaxSelectedChoices");
     m_maxSelectedChoicesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfileTemplateQuestion::Jsonize() const
-{
+JsonValue ProfileTemplateQuestion::Jsonize() const {
   JsonValue payload;
 
-  if(m_questionIdHasBeenSet)
-  {
-   payload.WithString("QuestionId", m_questionId);
-
+  if (m_questionIdHasBeenSet) {
+    payload.WithString("QuestionId", m_questionId);
   }
 
-  if(m_questionTitleHasBeenSet)
-  {
-   payload.WithString("QuestionTitle", m_questionTitle);
-
+  if (m_questionTitleHasBeenSet) {
+    payload.WithString("QuestionTitle", m_questionTitle);
   }
 
-  if(m_questionDescriptionHasBeenSet)
-  {
-   payload.WithString("QuestionDescription", m_questionDescription);
-
+  if (m_questionDescriptionHasBeenSet) {
+    payload.WithString("QuestionDescription", m_questionDescription);
   }
 
-  if(m_questionChoicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> questionChoicesJsonList(m_questionChoices.size());
-   for(unsigned questionChoicesIndex = 0; questionChoicesIndex < questionChoicesJsonList.GetLength(); ++questionChoicesIndex)
-   {
-     questionChoicesJsonList[questionChoicesIndex].AsObject(m_questionChoices[questionChoicesIndex].Jsonize());
-   }
-   payload.WithArray("QuestionChoices", std::move(questionChoicesJsonList));
-
+  if (m_questionChoicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> questionChoicesJsonList(m_questionChoices.size());
+    for (unsigned questionChoicesIndex = 0; questionChoicesIndex < questionChoicesJsonList.GetLength(); ++questionChoicesIndex) {
+      questionChoicesJsonList[questionChoicesIndex].AsObject(m_questionChoices[questionChoicesIndex].Jsonize());
+    }
+    payload.WithArray("QuestionChoices", std::move(questionChoicesJsonList));
   }
 
-  if(m_minSelectedChoicesHasBeenSet)
-  {
-   payload.WithInteger("MinSelectedChoices", m_minSelectedChoices);
-
+  if (m_minSelectedChoicesHasBeenSet) {
+    payload.WithInteger("MinSelectedChoices", m_minSelectedChoices);
   }
 
-  if(m_maxSelectedChoicesHasBeenSet)
-  {
-   payload.WithInteger("MaxSelectedChoices", m_maxSelectedChoices);
-
+  if (m_maxSelectedChoicesHasBeenSet) {
+    payload.WithInteger("MaxSelectedChoices", m_maxSelectedChoices);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

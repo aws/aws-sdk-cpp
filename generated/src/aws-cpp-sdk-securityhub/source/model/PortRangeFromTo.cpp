@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/PortRangeFromTo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/PortRangeFromTo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-PortRangeFromTo::PortRangeFromTo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PortRangeFromTo::PortRangeFromTo(JsonView jsonValue) { *this = jsonValue; }
 
-PortRangeFromTo& PortRangeFromTo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("From"))
-  {
+PortRangeFromTo& PortRangeFromTo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("From")) {
     m_from = jsonValue.GetInteger("From");
     m_fromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("To"))
-  {
+  if (jsonValue.ValueExists("To")) {
     m_to = jsonValue.GetInteger("To");
     m_toHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PortRangeFromTo::Jsonize() const
-{
+JsonValue PortRangeFromTo::Jsonize() const {
   JsonValue payload;
 
-  if(m_fromHasBeenSet)
-  {
-   payload.WithInteger("From", m_from);
-
+  if (m_fromHasBeenSet) {
+    payload.WithInteger("From", m_from);
   }
 
-  if(m_toHasBeenSet)
-  {
-   payload.WithInteger("To", m_to);
-
+  if (m_toHasBeenSet) {
+    payload.WithInteger("To", m_to);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

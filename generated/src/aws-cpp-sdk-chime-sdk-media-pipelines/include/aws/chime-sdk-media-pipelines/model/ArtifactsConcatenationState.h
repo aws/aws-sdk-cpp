@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class ArtifactsConcatenationState
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class ArtifactsConcatenationState { NOT_SET, Enabled, Disabled };
 
-namespace ArtifactsConcatenationStateMapper
-{
+namespace ArtifactsConcatenationStateMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConcatenationState GetArtifactsConcatenationStateForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForArtifactsConcatenationState(ArtifactsConcatenationState value);
-} // namespace ArtifactsConcatenationStateMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace ArtifactsConcatenationStateMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

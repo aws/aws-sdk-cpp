@@ -4,76 +4,60 @@
  */
 
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+namespace UserPoolMfaTypeMapper {
 
-namespace Aws
-{
-  namespace CognitoIdentityProvider
-  {
-    namespace Model
-    {
-      namespace UserPoolMfaTypeMapper
-      {
+static const int OFF_HASH = HashingUtils::HashString("OFF");
+static const int ON_HASH = HashingUtils::HashString("ON");
+static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
 
-        static const int OFF_HASH = HashingUtils::HashString("OFF");
-        static const int ON_HASH = HashingUtils::HashString("ON");
-        static const int OPTIONAL_HASH = HashingUtils::HashString("OPTIONAL");
+UserPoolMfaType GetUserPoolMfaTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OFF_HASH) {
+    return UserPoolMfaType::OFF;
+  } else if (hashCode == ON_HASH) {
+    return UserPoolMfaType::ON;
+  } else if (hashCode == OPTIONAL_HASH) {
+    return UserPoolMfaType::OPTIONAL;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<UserPoolMfaType>(hashCode);
+  }
 
+  return UserPoolMfaType::NOT_SET;
+}
 
-        UserPoolMfaType GetUserPoolMfaTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OFF_HASH)
-          {
-            return UserPoolMfaType::OFF;
-          }
-          else if (hashCode == ON_HASH)
-          {
-            return UserPoolMfaType::ON;
-          }
-          else if (hashCode == OPTIONAL_HASH)
-          {
-            return UserPoolMfaType::OPTIONAL;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<UserPoolMfaType>(hashCode);
-          }
+Aws::String GetNameForUserPoolMfaType(UserPoolMfaType enumValue) {
+  switch (enumValue) {
+    case UserPoolMfaType::NOT_SET:
+      return {};
+    case UserPoolMfaType::OFF:
+      return "OFF";
+    case UserPoolMfaType::ON:
+      return "ON";
+    case UserPoolMfaType::OPTIONAL:
+      return "OPTIONAL";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return UserPoolMfaType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForUserPoolMfaType(UserPoolMfaType enumValue)
-        {
-          switch(enumValue)
-          {
-          case UserPoolMfaType::NOT_SET:
-            return {};
-          case UserPoolMfaType::OFF:
-            return "OFF";
-          case UserPoolMfaType::ON:
-            return "ON";
-          case UserPoolMfaType::OPTIONAL:
-            return "OPTIONAL";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace UserPoolMfaTypeMapper
-    } // namespace Model
-  } // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace UserPoolMfaTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

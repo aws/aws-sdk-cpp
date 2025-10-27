@@ -12,39 +12,26 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteNotificationRequest::SerializePayload() const
-{
+Aws::String DeleteNotificationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_budgetNameHasBeenSet)
-  {
-   payload.WithString("BudgetName", m_budgetName);
-
+  if (m_budgetNameHasBeenSet) {
+    payload.WithString("BudgetName", m_budgetName);
   }
 
-  if(m_notificationHasBeenSet)
-  {
-   payload.WithObject("Notification", m_notification.Jsonize());
-
+  if (m_notificationHasBeenSet) {
+    payload.WithObject("Notification", m_notification.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteNotificationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteNotificationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBudgetServiceGateway.DeleteNotification"));
   return headers;
-
 }
-
-
-
-

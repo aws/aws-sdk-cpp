@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class Severity
-  {
-    NOT_SET,
-    Low,
-    Medium,
-    High,
-    Informational,
-    Undefined
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class Severity { NOT_SET, Low, Medium, High, Informational, Undefined };
 
-namespace SeverityMapper
-{
+namespace SeverityMapper {
 AWS_INSPECTOR_API Severity GetSeverityForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForSeverity(Severity value);
-} // namespace SeverityMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace SeverityMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

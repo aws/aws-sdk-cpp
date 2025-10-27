@@ -3,86 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/NodeGroupMemberUpdateStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/NodeGroupMemberUpdateStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
 
-NodeGroupMemberUpdateStatus::NodeGroupMemberUpdateStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+NodeGroupMemberUpdateStatus::NodeGroupMemberUpdateStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NodeGroupMemberUpdateStatus& NodeGroupMemberUpdateStatus::operator =(const XmlNode& xmlNode)
-{
+NodeGroupMemberUpdateStatus& NodeGroupMemberUpdateStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
-    if(!cacheClusterIdNode.IsNull())
-    {
+    if (!cacheClusterIdNode.IsNull()) {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
-    if(!cacheNodeIdNode.IsNull())
-    {
+    if (!cacheNodeIdNode.IsNull()) {
       m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeUpdateStatusNode = resultNode.FirstChild("NodeUpdateStatus");
-    if(!nodeUpdateStatusNode.IsNull())
-    {
-      m_nodeUpdateStatus = NodeUpdateStatusMapper::GetNodeUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusNode.GetText()).c_str()));
+    if (!nodeUpdateStatusNode.IsNull()) {
+      m_nodeUpdateStatus = NodeUpdateStatusMapper::GetNodeUpdateStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusNode.GetText()).c_str()));
       m_nodeUpdateStatusHasBeenSet = true;
     }
     XmlNode nodeDeletionDateNode = resultNode.FirstChild("NodeDeletionDate");
-    if(!nodeDeletionDateNode.IsNull())
-    {
-      m_nodeDeletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeDeletionDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!nodeDeletionDateNode.IsNull()) {
+      m_nodeDeletionDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeDeletionDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_nodeDeletionDateHasBeenSet = true;
     }
     XmlNode nodeUpdateStartDateNode = resultNode.FirstChild("NodeUpdateStartDate");
-    if(!nodeUpdateStartDateNode.IsNull())
-    {
-      m_nodeUpdateStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStartDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!nodeUpdateStartDateNode.IsNull()) {
+      m_nodeUpdateStartDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStartDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_nodeUpdateStartDateHasBeenSet = true;
     }
     XmlNode nodeUpdateEndDateNode = resultNode.FirstChild("NodeUpdateEndDate");
-    if(!nodeUpdateEndDateNode.IsNull())
-    {
-      m_nodeUpdateEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!nodeUpdateEndDateNode.IsNull()) {
+      m_nodeUpdateEndDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateEndDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_nodeUpdateEndDateHasBeenSet = true;
     }
     XmlNode nodeUpdateInitiatedByNode = resultNode.FirstChild("NodeUpdateInitiatedBy");
-    if(!nodeUpdateInitiatedByNode.IsNull())
-    {
-      m_nodeUpdateInitiatedBy = NodeUpdateInitiatedByMapper::GetNodeUpdateInitiatedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedByNode.GetText()).c_str()));
+    if (!nodeUpdateInitiatedByNode.IsNull()) {
+      m_nodeUpdateInitiatedBy = NodeUpdateInitiatedByMapper::GetNodeUpdateInitiatedByForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedByNode.GetText()).c_str()));
       m_nodeUpdateInitiatedByHasBeenSet = true;
     }
     XmlNode nodeUpdateInitiatedDateNode = resultNode.FirstChild("NodeUpdateInitiatedDate");
-    if(!nodeUpdateInitiatedDateNode.IsNull())
-    {
-      m_nodeUpdateInitiatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!nodeUpdateInitiatedDateNode.IsNull()) {
+      m_nodeUpdateInitiatedDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_nodeUpdateInitiatedDateHasBeenSet = true;
     }
     XmlNode nodeUpdateStatusModifiedDateNode = resultNode.FirstChild("NodeUpdateStatusModifiedDate");
-    if(!nodeUpdateStatusModifiedDateNode.IsNull())
-    {
-      m_nodeUpdateStatusModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!nodeUpdateStatusModifiedDateNode.IsNull()) {
+      m_nodeUpdateStatusModifiedDate =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusModifiedDateNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_nodeUpdateStatusModifiedDateHasBeenSet = true;
     }
   }
@@ -90,95 +85,95 @@ NodeGroupMemberUpdateStatus& NodeGroupMemberUpdateStatus::operator =(const XmlNo
   return *this;
 }
 
-void NodeGroupMemberUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_cacheClusterIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+void NodeGroupMemberUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_cacheClusterIdHasBeenSet) {
+    oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_cacheNodeIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
+  if (m_cacheNodeIdHasBeenSet) {
+    oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
   }
 
-  if(m_nodeUpdateStatusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus)) << "&";
+  if (m_nodeUpdateStatusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus))
+            << "&";
   }
 
-  if(m_nodeDeletionDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeDeletionDate=" << StringUtils::URLEncode(m_nodeDeletionDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_nodeDeletionDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".NodeDeletionDate=" << StringUtils::URLEncode(m_nodeDeletionDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
 
-  if(m_nodeUpdateStartDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateStartDate=" << StringUtils::URLEncode(m_nodeUpdateStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_nodeUpdateStartDateHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeUpdateStartDate="
+            << StringUtils::URLEncode(m_nodeUpdateStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_nodeUpdateEndDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateEndDate=" << StringUtils::URLEncode(m_nodeUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_nodeUpdateEndDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".NodeUpdateEndDate=" << StringUtils::URLEncode(m_nodeUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
 
-  if(m_nodeUpdateInitiatedByHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateInitiatedBy=" << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
+  if (m_nodeUpdateInitiatedByHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeUpdateInitiatedBy="
+            << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
   }
 
-  if(m_nodeUpdateInitiatedDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateInitiatedDate=" << StringUtils::URLEncode(m_nodeUpdateInitiatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_nodeUpdateInitiatedDateHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeUpdateInitiatedDate="
+            << StringUtils::URLEncode(m_nodeUpdateInitiatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_nodeUpdateStatusModifiedDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NodeUpdateStatusModifiedDate=" << StringUtils::URLEncode(m_nodeUpdateStatusModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-}
-
-void NodeGroupMemberUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_cacheClusterIdHasBeenSet)
-  {
-      oStream << location << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
-  }
-  if(m_cacheNodeIdHasBeenSet)
-  {
-      oStream << location << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
-  }
-  if(m_nodeUpdateStatusHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus)) << "&";
-  }
-  if(m_nodeDeletionDateHasBeenSet)
-  {
-      oStream << location << ".NodeDeletionDate=" << StringUtils::URLEncode(m_nodeDeletionDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_nodeUpdateStartDateHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateStartDate=" << StringUtils::URLEncode(m_nodeUpdateStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_nodeUpdateEndDateHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateEndDate=" << StringUtils::URLEncode(m_nodeUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_nodeUpdateInitiatedByHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateInitiatedBy=" << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
-  }
-  if(m_nodeUpdateInitiatedDateHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateInitiatedDate=" << StringUtils::URLEncode(m_nodeUpdateInitiatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_nodeUpdateStatusModifiedDateHasBeenSet)
-  {
-      oStream << location << ".NodeUpdateStatusModifiedDate=" << StringUtils::URLEncode(m_nodeUpdateStatusModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_nodeUpdateStatusModifiedDateHasBeenSet) {
+    oStream << location << index << locationValue << ".NodeUpdateStatusModifiedDate="
+            << StringUtils::URLEncode(m_nodeUpdateStatusModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+void NodeGroupMemberUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_cacheClusterIdHasBeenSet) {
+    oStream << location << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
+  if (m_cacheNodeIdHasBeenSet) {
+    oStream << location << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
+  }
+  if (m_nodeUpdateStatusHasBeenSet) {
+    oStream << location
+            << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus))
+            << "&";
+  }
+  if (m_nodeDeletionDateHasBeenSet) {
+    oStream << location
+            << ".NodeDeletionDate=" << StringUtils::URLEncode(m_nodeDeletionDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_nodeUpdateStartDateHasBeenSet) {
+    oStream << location << ".NodeUpdateStartDate="
+            << StringUtils::URLEncode(m_nodeUpdateStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_nodeUpdateEndDateHasBeenSet) {
+    oStream << location
+            << ".NodeUpdateEndDate=" << StringUtils::URLEncode(m_nodeUpdateEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_nodeUpdateInitiatedByHasBeenSet) {
+    oStream << location << ".NodeUpdateInitiatedBy="
+            << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
+  }
+  if (m_nodeUpdateInitiatedDateHasBeenSet) {
+    oStream << location << ".NodeUpdateInitiatedDate="
+            << StringUtils::URLEncode(m_nodeUpdateInitiatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_nodeUpdateStatusModifiedDateHasBeenSet) {
+    oStream << location << ".NodeUpdateStatusModifiedDate="
+            << StringUtils::URLEncode(m_nodeUpdateStatusModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/eventbridge/EventBridgeRequest.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-} // namespace EventBridge
-} // namespace Aws
+namespace Aws {
+namespace EventBridge {}  // namespace EventBridge
+}  // namespace Aws

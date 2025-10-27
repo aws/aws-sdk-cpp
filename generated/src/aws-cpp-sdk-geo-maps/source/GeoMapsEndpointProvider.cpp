@@ -5,12 +5,8 @@
 
 #include <aws/geo-maps/GeoMapsEndpointProvider.h>
 
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GeoMaps
-} // namespace Aws
+namespace Aws {
+namespace GeoMaps {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GeoMaps
+}  // namespace Aws

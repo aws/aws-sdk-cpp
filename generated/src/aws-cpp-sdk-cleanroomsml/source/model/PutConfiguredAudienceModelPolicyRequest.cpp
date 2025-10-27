@@ -12,30 +12,21 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutConfiguredAudienceModelPolicyRequest::SerializePayload() const
-{
+Aws::String PutConfiguredAudienceModelPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configuredAudienceModelPolicyHasBeenSet)
-  {
-   payload.WithString("configuredAudienceModelPolicy", m_configuredAudienceModelPolicy);
-
+  if (m_configuredAudienceModelPolicyHasBeenSet) {
+    payload.WithString("configuredAudienceModelPolicy", m_configuredAudienceModelPolicy);
   }
 
-  if(m_previousPolicyHashHasBeenSet)
-  {
-   payload.WithString("previousPolicyHash", m_previousPolicyHash);
-
+  if (m_previousPolicyHashHasBeenSet) {
+    payload.WithString("previousPolicyHash", m_previousPolicyHash);
   }
 
-  if(m_policyExistenceConditionHasBeenSet)
-  {
-   payload.WithString("policyExistenceCondition", PolicyExistenceConditionMapper::GetNameForPolicyExistenceCondition(m_policyExistenceCondition));
+  if (m_policyExistenceConditionHasBeenSet) {
+    payload.WithString("policyExistenceCondition",
+                       PolicyExistenceConditionMapper::GetNameForPolicyExistenceCondition(m_policyExistenceCondition));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

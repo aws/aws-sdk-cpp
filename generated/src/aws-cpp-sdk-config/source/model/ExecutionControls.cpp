@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ExecutionControls::ExecutionControls(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionControls::ExecutionControls(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionControls& ExecutionControls::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SsmControls"))
-  {
+ExecutionControls& ExecutionControls::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SsmControls")) {
     m_ssmControls = jsonValue.GetObject("SsmControls");
     m_ssmControlsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionControls::Jsonize() const
-{
+JsonValue ExecutionControls::Jsonize() const {
   JsonValue payload;
 
-  if(m_ssmControlsHasBeenSet)
-  {
-   payload.WithObject("SsmControls", m_ssmControls.Jsonize());
-
+  if (m_ssmControlsHasBeenSet) {
+    payload.WithObject("SsmControls", m_ssmControls.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

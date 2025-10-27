@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/states/model/ExecutionRedrivenEventDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/states/model/ExecutionRedrivenEventDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
+namespace Aws {
+namespace SFN {
+namespace Model {
 
-ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionRedrivenEventDetails& ExecutionRedrivenEventDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("redriveCount"))
-  {
+ExecutionRedrivenEventDetails& ExecutionRedrivenEventDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("redriveCount")) {
     m_redriveCount = jsonValue.GetInteger("redriveCount");
     m_redriveCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionRedrivenEventDetails::Jsonize() const
-{
+JsonValue ExecutionRedrivenEventDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_redriveCountHasBeenSet)
-  {
-   payload.WithInteger("redriveCount", m_redriveCount);
-
+  if (m_redriveCountHasBeenSet) {
+    payload.WithInteger("redriveCount", m_redriveCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

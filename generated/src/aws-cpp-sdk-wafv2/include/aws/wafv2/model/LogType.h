@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
-  enum class LogType
-  {
-    NOT_SET,
-    WAF_LOGS
-  };
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
+enum class LogType { NOT_SET, WAF_LOGS };
 
-namespace LogTypeMapper
-{
+namespace LogTypeMapper {
 AWS_WAFV2_API LogType GetLogTypeForName(const Aws::String& name);
 
 AWS_WAFV2_API Aws::String GetNameForLogType(LogType value);
-} // namespace LogTypeMapper
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace LogTypeMapper
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

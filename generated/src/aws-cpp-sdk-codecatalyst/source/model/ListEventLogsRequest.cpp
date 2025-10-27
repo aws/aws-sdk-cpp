@@ -12,41 +12,28 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListEventLogsRequest::SerializePayload() const
-{
+Aws::String ListEventLogsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_endTimeHasBeenSet) {
+    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_eventNameHasBeenSet)
-  {
-   payload.WithString("eventName", m_eventName);
-
+  if (m_eventNameHasBeenSet) {
+    payload.WithString("eventName", m_eventName);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

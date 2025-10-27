@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/UpdatePullThroughCacheRuleResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ecr/model/UpdatePullThroughCacheRuleResult.h>
 
 #include <utility>
 
@@ -17,53 +17,41 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePullThroughCacheRuleResult::UpdatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdatePullThroughCacheRuleResult::UpdatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdatePullThroughCacheRuleResult& UpdatePullThroughCacheRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdatePullThroughCacheRuleResult& UpdatePullThroughCacheRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ecrRepositoryPrefix"))
-  {
+  if (jsonValue.ValueExists("ecrRepositoryPrefix")) {
     m_ecrRepositoryPrefix = jsonValue.GetString("ecrRepositoryPrefix");
     m_ecrRepositoryPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("registryId"))
-  {
+  if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");
     m_registryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialArn"))
-  {
+  if (jsonValue.ValueExists("credentialArn")) {
     m_credentialArn = jsonValue.GetString("credentialArn");
     m_credentialArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customRoleArn"))
-  {
+  if (jsonValue.ValueExists("customRoleArn")) {
     m_customRoleArn = jsonValue.GetString("customRoleArn");
     m_customRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("upstreamRepositoryPrefix"))
-  {
+  if (jsonValue.ValueExists("upstreamRepositoryPrefix")) {
     m_upstreamRepositoryPrefix = jsonValue.GetString("upstreamRepositoryPrefix");
     m_upstreamRepositoryPrefixHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

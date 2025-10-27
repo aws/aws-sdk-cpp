@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/DeleteDatasetRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/DeleteDatasetRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteDatasetRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteDatasetRequest::SerializePayload() const { return {}; }
+
+void DeleteDatasetRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteDatasetRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_clientTokenHasBeenSet)
-    {
-      ss << m_clientToken;
-      uri.AddQueryStringParameter("clientToken", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -11,98 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ConsolidatedPolicyAggregation::ConsolidatedPolicyAggregation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConsolidatedPolicyAggregation::ConsolidatedPolicyAggregation(JsonView jsonValue) { *this = jsonValue; }
 
-ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("aggregateColumns"))
-  {
+ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("aggregateColumns")) {
     Aws::Utils::Array<JsonView> aggregateColumnsJsonList = jsonValue.GetArray("aggregateColumns");
-    for(unsigned aggregateColumnsIndex = 0; aggregateColumnsIndex < aggregateColumnsJsonList.GetLength(); ++aggregateColumnsIndex)
-    {
+    for (unsigned aggregateColumnsIndex = 0; aggregateColumnsIndex < aggregateColumnsJsonList.GetLength(); ++aggregateColumnsIndex) {
       m_aggregateColumns.push_back(aggregateColumnsJsonList[aggregateColumnsIndex].AsObject());
     }
     m_aggregateColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("joinColumns"))
-  {
+  if (jsonValue.ValueExists("joinColumns")) {
     Aws::Utils::Array<JsonView> joinColumnsJsonList = jsonValue.GetArray("joinColumns");
-    for(unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex)
-    {
+    for (unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex) {
       m_joinColumns.push_back(joinColumnsJsonList[joinColumnsIndex].AsString());
     }
     m_joinColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("joinRequired"))
-  {
+  if (jsonValue.ValueExists("joinRequired")) {
     m_joinRequired = JoinRequiredOptionMapper::GetJoinRequiredOptionForName(jsonValue.GetString("joinRequired"));
     m_joinRequiredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowedJoinOperators"))
-  {
+  if (jsonValue.ValueExists("allowedJoinOperators")) {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
-    for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
-    {
-      m_allowedJoinOperators.push_back(JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
+    for (unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength();
+         ++allowedJoinOperatorsIndex) {
+      m_allowedJoinOperators.push_back(
+          JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dimensionColumns"))
-  {
+  if (jsonValue.ValueExists("dimensionColumns")) {
     Aws::Utils::Array<JsonView> dimensionColumnsJsonList = jsonValue.GetArray("dimensionColumns");
-    for(unsigned dimensionColumnsIndex = 0; dimensionColumnsIndex < dimensionColumnsJsonList.GetLength(); ++dimensionColumnsIndex)
-    {
+    for (unsigned dimensionColumnsIndex = 0; dimensionColumnsIndex < dimensionColumnsJsonList.GetLength(); ++dimensionColumnsIndex) {
       m_dimensionColumns.push_back(dimensionColumnsJsonList[dimensionColumnsIndex].AsString());
     }
     m_dimensionColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scalarFunctions"))
-  {
+  if (jsonValue.ValueExists("scalarFunctions")) {
     Aws::Utils::Array<JsonView> scalarFunctionsJsonList = jsonValue.GetArray("scalarFunctions");
-    for(unsigned scalarFunctionsIndex = 0; scalarFunctionsIndex < scalarFunctionsJsonList.GetLength(); ++scalarFunctionsIndex)
-    {
-      m_scalarFunctions.push_back(ScalarFunctionsMapper::GetScalarFunctionsForName(scalarFunctionsJsonList[scalarFunctionsIndex].AsString()));
+    for (unsigned scalarFunctionsIndex = 0; scalarFunctionsIndex < scalarFunctionsJsonList.GetLength(); ++scalarFunctionsIndex) {
+      m_scalarFunctions.push_back(
+          ScalarFunctionsMapper::GetScalarFunctionsForName(scalarFunctionsJsonList[scalarFunctionsIndex].AsString()));
     }
     m_scalarFunctionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputConstraints"))
-  {
+  if (jsonValue.ValueExists("outputConstraints")) {
     Aws::Utils::Array<JsonView> outputConstraintsJsonList = jsonValue.GetArray("outputConstraints");
-    for(unsigned outputConstraintsIndex = 0; outputConstraintsIndex < outputConstraintsJsonList.GetLength(); ++outputConstraintsIndex)
-    {
+    for (unsigned outputConstraintsIndex = 0; outputConstraintsIndex < outputConstraintsJsonList.GetLength(); ++outputConstraintsIndex) {
       m_outputConstraints.push_back(outputConstraintsJsonList[outputConstraintsIndex].AsObject());
     }
     m_outputConstraintsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("additionalAnalyses"))
-  {
+  if (jsonValue.ValueExists("additionalAnalyses")) {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
     m_additionalAnalysesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowedResultReceivers"))
-  {
+  if (jsonValue.ValueExists("allowedResultReceivers")) {
     Aws::Utils::Array<JsonView> allowedResultReceiversJsonList = jsonValue.GetArray("allowedResultReceivers");
-    for(unsigned allowedResultReceiversIndex = 0; allowedResultReceiversIndex < allowedResultReceiversJsonList.GetLength(); ++allowedResultReceiversIndex)
-    {
+    for (unsigned allowedResultReceiversIndex = 0; allowedResultReceiversIndex < allowedResultReceiversJsonList.GetLength();
+         ++allowedResultReceiversIndex) {
       m_allowedResultReceivers.push_back(allowedResultReceiversJsonList[allowedResultReceiversIndex].AsString());
     }
     m_allowedResultReceiversHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowedAdditionalAnalyses"))
-  {
+  if (jsonValue.ValueExists("allowedAdditionalAnalyses")) {
     Aws::Utils::Array<JsonView> allowedAdditionalAnalysesJsonList = jsonValue.GetArray("allowedAdditionalAnalyses");
-    for(unsigned allowedAdditionalAnalysesIndex = 0; allowedAdditionalAnalysesIndex < allowedAdditionalAnalysesJsonList.GetLength(); ++allowedAdditionalAnalysesIndex)
-    {
+    for (unsigned allowedAdditionalAnalysesIndex = 0; allowedAdditionalAnalysesIndex < allowedAdditionalAnalysesJsonList.GetLength();
+         ++allowedAdditionalAnalysesIndex) {
       m_allowedAdditionalAnalyses.push_back(allowedAdditionalAnalysesJsonList[allowedAdditionalAnalysesIndex].AsString());
     }
     m_allowedAdditionalAnalysesHasBeenSet = true;
@@ -110,111 +90,90 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
   return *this;
 }
 
-JsonValue ConsolidatedPolicyAggregation::Jsonize() const
-{
+JsonValue ConsolidatedPolicyAggregation::Jsonize() const {
   JsonValue payload;
 
-  if(m_aggregateColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> aggregateColumnsJsonList(m_aggregateColumns.size());
-   for(unsigned aggregateColumnsIndex = 0; aggregateColumnsIndex < aggregateColumnsJsonList.GetLength(); ++aggregateColumnsIndex)
-   {
-     aggregateColumnsJsonList[aggregateColumnsIndex].AsObject(m_aggregateColumns[aggregateColumnsIndex].Jsonize());
-   }
-   payload.WithArray("aggregateColumns", std::move(aggregateColumnsJsonList));
-
+  if (m_aggregateColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aggregateColumnsJsonList(m_aggregateColumns.size());
+    for (unsigned aggregateColumnsIndex = 0; aggregateColumnsIndex < aggregateColumnsJsonList.GetLength(); ++aggregateColumnsIndex) {
+      aggregateColumnsJsonList[aggregateColumnsIndex].AsObject(m_aggregateColumns[aggregateColumnsIndex].Jsonize());
+    }
+    payload.WithArray("aggregateColumns", std::move(aggregateColumnsJsonList));
   }
 
-  if(m_joinColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> joinColumnsJsonList(m_joinColumns.size());
-   for(unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex)
-   {
-     joinColumnsJsonList[joinColumnsIndex].AsString(m_joinColumns[joinColumnsIndex]);
-   }
-   payload.WithArray("joinColumns", std::move(joinColumnsJsonList));
-
+  if (m_joinColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> joinColumnsJsonList(m_joinColumns.size());
+    for (unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex) {
+      joinColumnsJsonList[joinColumnsIndex].AsString(m_joinColumns[joinColumnsIndex]);
+    }
+    payload.WithArray("joinColumns", std::move(joinColumnsJsonList));
   }
 
-  if(m_joinRequiredHasBeenSet)
-  {
-   payload.WithString("joinRequired", JoinRequiredOptionMapper::GetNameForJoinRequiredOption(m_joinRequired));
+  if (m_joinRequiredHasBeenSet) {
+    payload.WithString("joinRequired", JoinRequiredOptionMapper::GetNameForJoinRequiredOption(m_joinRequired));
   }
 
-  if(m_allowedJoinOperatorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
-   for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
-   {
-     allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
-   }
-   payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
-
+  if (m_allowedJoinOperatorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
+    for (unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength();
+         ++allowedJoinOperatorsIndex) {
+      allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(
+          JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
+    }
+    payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
   }
 
-  if(m_dimensionColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dimensionColumnsJsonList(m_dimensionColumns.size());
-   for(unsigned dimensionColumnsIndex = 0; dimensionColumnsIndex < dimensionColumnsJsonList.GetLength(); ++dimensionColumnsIndex)
-   {
-     dimensionColumnsJsonList[dimensionColumnsIndex].AsString(m_dimensionColumns[dimensionColumnsIndex]);
-   }
-   payload.WithArray("dimensionColumns", std::move(dimensionColumnsJsonList));
-
+  if (m_dimensionColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dimensionColumnsJsonList(m_dimensionColumns.size());
+    for (unsigned dimensionColumnsIndex = 0; dimensionColumnsIndex < dimensionColumnsJsonList.GetLength(); ++dimensionColumnsIndex) {
+      dimensionColumnsJsonList[dimensionColumnsIndex].AsString(m_dimensionColumns[dimensionColumnsIndex]);
+    }
+    payload.WithArray("dimensionColumns", std::move(dimensionColumnsJsonList));
   }
 
-  if(m_scalarFunctionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> scalarFunctionsJsonList(m_scalarFunctions.size());
-   for(unsigned scalarFunctionsIndex = 0; scalarFunctionsIndex < scalarFunctionsJsonList.GetLength(); ++scalarFunctionsIndex)
-   {
-     scalarFunctionsJsonList[scalarFunctionsIndex].AsString(ScalarFunctionsMapper::GetNameForScalarFunctions(m_scalarFunctions[scalarFunctionsIndex]));
-   }
-   payload.WithArray("scalarFunctions", std::move(scalarFunctionsJsonList));
-
+  if (m_scalarFunctionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scalarFunctionsJsonList(m_scalarFunctions.size());
+    for (unsigned scalarFunctionsIndex = 0; scalarFunctionsIndex < scalarFunctionsJsonList.GetLength(); ++scalarFunctionsIndex) {
+      scalarFunctionsJsonList[scalarFunctionsIndex].AsString(
+          ScalarFunctionsMapper::GetNameForScalarFunctions(m_scalarFunctions[scalarFunctionsIndex]));
+    }
+    payload.WithArray("scalarFunctions", std::move(scalarFunctionsJsonList));
   }
 
-  if(m_outputConstraintsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputConstraintsJsonList(m_outputConstraints.size());
-   for(unsigned outputConstraintsIndex = 0; outputConstraintsIndex < outputConstraintsJsonList.GetLength(); ++outputConstraintsIndex)
-   {
-     outputConstraintsJsonList[outputConstraintsIndex].AsObject(m_outputConstraints[outputConstraintsIndex].Jsonize());
-   }
-   payload.WithArray("outputConstraints", std::move(outputConstraintsJsonList));
-
+  if (m_outputConstraintsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputConstraintsJsonList(m_outputConstraints.size());
+    for (unsigned outputConstraintsIndex = 0; outputConstraintsIndex < outputConstraintsJsonList.GetLength(); ++outputConstraintsIndex) {
+      outputConstraintsJsonList[outputConstraintsIndex].AsObject(m_outputConstraints[outputConstraintsIndex].Jsonize());
+    }
+    payload.WithArray("outputConstraints", std::move(outputConstraintsJsonList));
   }
 
-  if(m_additionalAnalysesHasBeenSet)
-  {
-   payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
+  if (m_additionalAnalysesHasBeenSet) {
+    payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
   }
 
-  if(m_allowedResultReceiversHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedResultReceiversJsonList(m_allowedResultReceivers.size());
-   for(unsigned allowedResultReceiversIndex = 0; allowedResultReceiversIndex < allowedResultReceiversJsonList.GetLength(); ++allowedResultReceiversIndex)
-   {
-     allowedResultReceiversJsonList[allowedResultReceiversIndex].AsString(m_allowedResultReceivers[allowedResultReceiversIndex]);
-   }
-   payload.WithArray("allowedResultReceivers", std::move(allowedResultReceiversJsonList));
-
+  if (m_allowedResultReceiversHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedResultReceiversJsonList(m_allowedResultReceivers.size());
+    for (unsigned allowedResultReceiversIndex = 0; allowedResultReceiversIndex < allowedResultReceiversJsonList.GetLength();
+         ++allowedResultReceiversIndex) {
+      allowedResultReceiversJsonList[allowedResultReceiversIndex].AsString(m_allowedResultReceivers[allowedResultReceiversIndex]);
+    }
+    payload.WithArray("allowedResultReceivers", std::move(allowedResultReceiversJsonList));
   }
 
-  if(m_allowedAdditionalAnalysesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedAdditionalAnalysesJsonList(m_allowedAdditionalAnalyses.size());
-   for(unsigned allowedAdditionalAnalysesIndex = 0; allowedAdditionalAnalysesIndex < allowedAdditionalAnalysesJsonList.GetLength(); ++allowedAdditionalAnalysesIndex)
-   {
-     allowedAdditionalAnalysesJsonList[allowedAdditionalAnalysesIndex].AsString(m_allowedAdditionalAnalyses[allowedAdditionalAnalysesIndex]);
-   }
-   payload.WithArray("allowedAdditionalAnalyses", std::move(allowedAdditionalAnalysesJsonList));
-
+  if (m_allowedAdditionalAnalysesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedAdditionalAnalysesJsonList(m_allowedAdditionalAnalyses.size());
+    for (unsigned allowedAdditionalAnalysesIndex = 0; allowedAdditionalAnalysesIndex < allowedAdditionalAnalysesJsonList.GetLength();
+         ++allowedAdditionalAnalysesIndex) {
+      allowedAdditionalAnalysesJsonList[allowedAdditionalAnalysesIndex].AsString(
+          m_allowedAdditionalAnalyses[allowedAdditionalAnalysesIndex]);
+    }
+    payload.WithArray("allowedAdditionalAnalyses", std::move(allowedAdditionalAnalysesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

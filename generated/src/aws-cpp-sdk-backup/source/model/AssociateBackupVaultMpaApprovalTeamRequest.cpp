@@ -12,25 +12,16 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateBackupVaultMpaApprovalTeamRequest::SerializePayload() const
-{
+Aws::String AssociateBackupVaultMpaApprovalTeamRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_mpaApprovalTeamArnHasBeenSet)
-  {
-   payload.WithString("MpaApprovalTeamArn", m_mpaApprovalTeamArn);
-
+  if (m_mpaApprovalTeamArnHasBeenSet) {
+    payload.WithString("MpaApprovalTeamArn", m_mpaApprovalTeamArn);
   }
 
-  if(m_requesterCommentHasBeenSet)
-  {
-   payload.WithString("RequesterComment", m_requesterComment);
-
+  if (m_requesterCommentHasBeenSet) {
+    payload.WithString("RequesterComment", m_requesterComment);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

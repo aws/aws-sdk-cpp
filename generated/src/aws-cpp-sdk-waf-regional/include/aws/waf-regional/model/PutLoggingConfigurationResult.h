@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/model/LoggingConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace WAFRegional
-{
-namespace Model
-{
-  class PutLoggingConfigurationResult
-  {
-  public:
-    AWS_WAFREGIONAL_API PutLoggingConfigurationResult() = default;
-    AWS_WAFREGIONAL_API PutLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_WAFREGIONAL_API PutLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace WAFRegional {
+namespace Model {
+class PutLoggingConfigurationResult {
+ public:
+  AWS_WAFREGIONAL_API PutLoggingConfigurationResult() = default;
+  AWS_WAFREGIONAL_API PutLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WAFREGIONAL_API PutLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The <a>LoggingConfiguration</a> that you submitted in the request.</p>
+   */
+  inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+  template <typename LoggingConfigurationT = LoggingConfiguration>
+  void SetLoggingConfiguration(LoggingConfigurationT&& value) {
+    m_loggingConfigurationHasBeenSet = true;
+    m_loggingConfiguration = std::forward<LoggingConfigurationT>(value);
+  }
+  template <typename LoggingConfigurationT = LoggingConfiguration>
+  PutLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) {
+    SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <a>LoggingConfiguration</a> that you submitted in the request.</p>
-     */
-    inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
-    template<typename LoggingConfigurationT = LoggingConfiguration>
-    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
-    template<typename LoggingConfigurationT = LoggingConfiguration>
-    PutLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    PutLoggingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  PutLoggingConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  LoggingConfiguration m_loggingConfiguration;
+  bool m_loggingConfigurationHasBeenSet = false;
 
-    LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

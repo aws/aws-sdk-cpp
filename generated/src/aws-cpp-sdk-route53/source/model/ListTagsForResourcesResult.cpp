@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/ListTagsForResourcesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ListTagsForResourcesResult.h>
 
 #include <utility>
 
@@ -16,25 +16,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourcesResult::ListTagsForResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListTagsForResourcesResult::ListTagsForResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListTagsForResourcesResult& ListTagsForResourcesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode resourceTagSetsNode = resultNode.FirstChild("ResourceTagSets");
-    if(!resourceTagSetsNode.IsNull())
-    {
+    if (!resourceTagSetsNode.IsNull()) {
       XmlNode resourceTagSetsMember = resourceTagSetsNode.FirstChild("ResourceTagSet");
       m_resourceTagSetsHasBeenSet = !resourceTagSetsMember.IsNull();
-      while(!resourceTagSetsMember.IsNull())
-      {
+      while (!resourceTagSetsMember.IsNull()) {
         m_resourceTagSets.push_back(resourceTagSetsMember);
         resourceTagSetsMember = resourceTagSetsMember.NextNode("ResourceTagSet");
       }
@@ -45,8 +38,7 @@ ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/partnercentral-selling/model/PaymentFrequency.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/partnercentral-selling/model/PaymentFrequency.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+namespace PaymentFrequencyMapper {
 
-namespace Aws
-{
-  namespace PartnerCentralSelling
-  {
-    namespace Model
-    {
-      namespace PaymentFrequencyMapper
-      {
+static const int Monthly_HASH = HashingUtils::HashString("Monthly");
 
-        static const int Monthly_HASH = HashingUtils::HashString("Monthly");
+PaymentFrequency GetPaymentFrequencyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Monthly_HASH) {
+    return PaymentFrequency::Monthly;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PaymentFrequency>(hashCode);
+  }
 
+  return PaymentFrequency::NOT_SET;
+}
 
-        PaymentFrequency GetPaymentFrequencyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Monthly_HASH)
-          {
-            return PaymentFrequency::Monthly;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PaymentFrequency>(hashCode);
-          }
+Aws::String GetNameForPaymentFrequency(PaymentFrequency enumValue) {
+  switch (enumValue) {
+    case PaymentFrequency::NOT_SET:
+      return {};
+    case PaymentFrequency::Monthly:
+      return "Monthly";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PaymentFrequency::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPaymentFrequency(PaymentFrequency enumValue)
-        {
-          switch(enumValue)
-          {
-          case PaymentFrequency::NOT_SET:
-            return {};
-          case PaymentFrequency::Monthly:
-            return "Monthly";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PaymentFrequencyMapper
-    } // namespace Model
-  } // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace PaymentFrequencyMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

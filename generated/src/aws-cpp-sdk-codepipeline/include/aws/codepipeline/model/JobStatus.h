@@ -7,30 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    Created,
-    Queued,
-    Dispatched,
-    InProgress,
-    TimedOut,
-    Succeeded,
-    Failed
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class JobStatus { NOT_SET, Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_CODEPIPELINE_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

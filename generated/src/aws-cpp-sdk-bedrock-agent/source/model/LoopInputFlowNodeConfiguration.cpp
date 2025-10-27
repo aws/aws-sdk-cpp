@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-LoopInputFlowNodeConfiguration::LoopInputFlowNodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoopInputFlowNodeConfiguration::LoopInputFlowNodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LoopInputFlowNodeConfiguration& LoopInputFlowNodeConfiguration::operator =(JsonView jsonValue)
-{
+LoopInputFlowNodeConfiguration& LoopInputFlowNodeConfiguration::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue LoopInputFlowNodeConfiguration::Jsonize() const
-{
+JsonValue LoopInputFlowNodeConfiguration::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

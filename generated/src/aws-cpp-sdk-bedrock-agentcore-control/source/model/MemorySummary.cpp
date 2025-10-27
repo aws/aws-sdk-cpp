@@ -11,82 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-MemorySummary::MemorySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemorySummary::MemorySummary(JsonView jsonValue) { *this = jsonValue; }
 
-MemorySummary& MemorySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+MemorySummary& MemorySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = MemoryStatusMapper::GetMemoryStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemorySummary::Jsonize() const
-{
+JsonValue MemorySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", MemoryStatusMapper::GetNameForMemoryStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", MemoryStatusMapper::GetNameForMemoryStatus(m_status));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

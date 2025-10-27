@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/invoicing/Invoicing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/invoicing/Invoicing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Invoicing
-{
-namespace Model
-{
-  enum class InvoiceType
-  {
-    NOT_SET,
-    INVOICE,
-    CREDIT_MEMO
-  };
+namespace Aws {
+namespace Invoicing {
+namespace Model {
+enum class InvoiceType { NOT_SET, INVOICE, CREDIT_MEMO };
 
-namespace InvoiceTypeMapper
-{
+namespace InvoiceTypeMapper {
 AWS_INVOICING_API InvoiceType GetInvoiceTypeForName(const Aws::String& name);
 
 AWS_INVOICING_API Aws::String GetNameForInvoiceType(InvoiceType value);
-} // namespace InvoiceTypeMapper
-} // namespace Model
-} // namespace Invoicing
-} // namespace Aws
+}  // namespace InvoiceTypeMapper
+}  // namespace Model
+}  // namespace Invoicing
+}  // namespace Aws

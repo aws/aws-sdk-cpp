@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-DuplicateConnectionsFlowValidationDetails::DuplicateConnectionsFlowValidationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DuplicateConnectionsFlowValidationDetails::DuplicateConnectionsFlowValidationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DuplicateConnectionsFlowValidationDetails& DuplicateConnectionsFlowValidationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+DuplicateConnectionsFlowValidationDetails& DuplicateConnectionsFlowValidationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetString("target");
     m_targetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DuplicateConnectionsFlowValidationDetails::Jsonize() const
-{
+JsonValue DuplicateConnectionsFlowValidationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("target", m_target);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/ForwardActionConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/ForwardActionConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-ForwardActionConfig::ForwardActionConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ForwardActionConfig::ForwardActionConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ForwardActionConfig& ForwardActionConfig::operator =(const XmlNode& xmlNode)
-{
+ForwardActionConfig& ForwardActionConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode targetGroupsNode = resultNode.FirstChild("TargetGroups");
-    if(!targetGroupsNode.IsNull())
-    {
+    if (!targetGroupsNode.IsNull()) {
       XmlNode targetGroupsMember = targetGroupsNode.FirstChild("member");
       m_targetGroupsHasBeenSet = !targetGroupsMember.IsNull();
-      while(!targetGroupsMember.IsNull())
-      {
+      while (!targetGroupsMember.IsNull()) {
         m_targetGroups.push_back(targetGroupsMember);
         targetGroupsMember = targetGroupsMember.NextNode("member");
       }
@@ -45,8 +35,7 @@ ForwardActionConfig& ForwardActionConfig::operator =(const XmlNode& xmlNode)
       m_targetGroupsHasBeenSet = true;
     }
     XmlNode targetGroupStickinessConfigNode = resultNode.FirstChild("TargetGroupStickinessConfig");
-    if(!targetGroupStickinessConfigNode.IsNull())
-    {
+    if (!targetGroupStickinessConfigNode.IsNull()) {
       m_targetGroupStickinessConfig = targetGroupStickinessConfigNode;
       m_targetGroupStickinessConfigHasBeenSet = true;
     }
@@ -55,48 +44,39 @@ ForwardActionConfig& ForwardActionConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ForwardActionConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_targetGroupsHasBeenSet)
-  {
-      unsigned targetGroupsIdx = 1;
-      for(auto& item : m_targetGroups)
-      {
-        Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location << index << locationValue << ".TargetGroups.member." << targetGroupsIdx++;
-        item.OutputToStream(oStream, targetGroupsSs.str().c_str());
-      }
+void ForwardActionConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_targetGroupsHasBeenSet) {
+    unsigned targetGroupsIdx = 1;
+    for (auto& item : m_targetGroups) {
+      Aws::StringStream targetGroupsSs;
+      targetGroupsSs << location << index << locationValue << ".TargetGroups.member." << targetGroupsIdx++;
+      item.OutputToStream(oStream, targetGroupsSs.str().c_str());
+    }
   }
 
-  if(m_targetGroupStickinessConfigHasBeenSet)
-  {
-      Aws::StringStream targetGroupStickinessConfigLocationAndMemberSs;
-      targetGroupStickinessConfigLocationAndMemberSs << location << index << locationValue << ".TargetGroupStickinessConfig";
-      m_targetGroupStickinessConfig.OutputToStream(oStream, targetGroupStickinessConfigLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void ForwardActionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_targetGroupsHasBeenSet)
-  {
-      unsigned targetGroupsIdx = 1;
-      for(auto& item : m_targetGroups)
-      {
-        Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location << ".TargetGroups.member." << targetGroupsIdx++;
-        item.OutputToStream(oStream, targetGroupsSs.str().c_str());
-      }
-  }
-  if(m_targetGroupStickinessConfigHasBeenSet)
-  {
-      Aws::String targetGroupStickinessConfigLocationAndMember(location);
-      targetGroupStickinessConfigLocationAndMember += ".TargetGroupStickinessConfig";
-      m_targetGroupStickinessConfig.OutputToStream(oStream, targetGroupStickinessConfigLocationAndMember.c_str());
+  if (m_targetGroupStickinessConfigHasBeenSet) {
+    Aws::StringStream targetGroupStickinessConfigLocationAndMemberSs;
+    targetGroupStickinessConfigLocationAndMemberSs << location << index << locationValue << ".TargetGroupStickinessConfig";
+    m_targetGroupStickinessConfig.OutputToStream(oStream, targetGroupStickinessConfigLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void ForwardActionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_targetGroupsHasBeenSet) {
+    unsigned targetGroupsIdx = 1;
+    for (auto& item : m_targetGroups) {
+      Aws::StringStream targetGroupsSs;
+      targetGroupsSs << location << ".TargetGroups.member." << targetGroupsIdx++;
+      item.OutputToStream(oStream, targetGroupsSs.str().c_str());
+    }
+  }
+  if (m_targetGroupStickinessConfigHasBeenSet) {
+    Aws::String targetGroupStickinessConfigLocationAndMember(location);
+    targetGroupStickinessConfigLocationAndMember += ".TargetGroupStickinessConfig";
+    m_targetGroupStickinessConfig.OutputToStream(oStream, targetGroupStickinessConfigLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

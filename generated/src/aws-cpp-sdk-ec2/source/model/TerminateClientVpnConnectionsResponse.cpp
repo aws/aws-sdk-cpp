@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TerminateClientVpnConnectionsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TerminateClientVpnConnectionsResponse.h>
 
 #include <utility>
 
@@ -17,42 +17,35 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TerminateClientVpnConnectionsResponse::TerminateClientVpnConnectionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+TerminateClientVpnConnectionsResponse::TerminateClientVpnConnectionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-TerminateClientVpnConnectionsResponse& TerminateClientVpnConnectionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+TerminateClientVpnConnectionsResponse& TerminateClientVpnConnectionsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "TerminateClientVpnConnectionsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "TerminateClientVpnConnectionsResponse")) {
     resultNode = rootNode.FirstChild("TerminateClientVpnConnectionsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
-    if(!clientVpnEndpointIdNode.IsNull())
-    {
+    if (!clientVpnEndpointIdNode.IsNull()) {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode usernameNode = resultNode.FirstChild("username");
-    if(!usernameNode.IsNull())
-    {
+    if (!usernameNode.IsNull()) {
       m_username = Aws::Utils::Xml::DecodeEscapedXmlText(usernameNode.GetText());
       m_usernameHasBeenSet = true;
     }
     XmlNode connectionStatusesNode = resultNode.FirstChild("connectionStatuses");
-    if(!connectionStatusesNode.IsNull())
-    {
+    if (!connectionStatusesNode.IsNull()) {
       XmlNode connectionStatusesMember = connectionStatusesNode.FirstChild("item");
       m_connectionStatusesHasBeenSet = !connectionStatusesMember.IsNull();
-      while(!connectionStatusesMember.IsNull())
-      {
+      while (!connectionStatusesMember.IsNull()) {
         m_connectionStatuses.push_back(connectionStatusesMember);
         connectionStatusesMember = connectionStatusesMember.NextNode("item");
       }
@@ -63,12 +56,12 @@ TerminateClientVpnConnectionsResponse& TerminateClientVpnConnectionsResponse::op
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::TerminateClientVpnConnectionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::TerminateClientVpnConnectionsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

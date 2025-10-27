@@ -12,27 +12,18 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeApplicationStateRequest::SerializePayload() const
-{
+Aws::String DescribeApplicationStateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeApplicationStateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeApplicationStateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMigrationHub.DescribeApplicationState"));
   return headers;
-
 }
-
-
-
-

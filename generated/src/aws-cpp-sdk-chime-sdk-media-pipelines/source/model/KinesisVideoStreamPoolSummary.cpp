@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamPoolSummary& KinesisVideoStreamPoolSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PoolName"))
-  {
+KinesisVideoStreamPoolSummary& KinesisVideoStreamPoolSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PoolName")) {
     m_poolName = jsonValue.GetString("PoolName");
     m_poolNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PoolId"))
-  {
+  if (jsonValue.ValueExists("PoolId")) {
     m_poolId = jsonValue.GetString("PoolId");
     m_poolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PoolArn"))
-  {
+  if (jsonValue.ValueExists("PoolArn")) {
     m_poolArn = jsonValue.GetString("PoolArn");
     m_poolArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamPoolSummary::Jsonize() const
-{
+JsonValue KinesisVideoStreamPoolSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_poolNameHasBeenSet)
-  {
-   payload.WithString("PoolName", m_poolName);
-
+  if (m_poolNameHasBeenSet) {
+    payload.WithString("PoolName", m_poolName);
   }
 
-  if(m_poolIdHasBeenSet)
-  {
-   payload.WithString("PoolId", m_poolId);
-
+  if (m_poolIdHasBeenSet) {
+    payload.WithString("PoolId", m_poolId);
   }
 
-  if(m_poolArnHasBeenSet)
-  {
-   payload.WithString("PoolArn", m_poolArn);
-
+  if (m_poolArnHasBeenSet) {
+    payload.WithString("PoolArn", m_poolArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

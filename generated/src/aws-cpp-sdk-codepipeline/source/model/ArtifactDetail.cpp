@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ArtifactDetail::ArtifactDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArtifactDetail::ArtifactDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ArtifactDetail& ArtifactDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ArtifactDetail& ArtifactDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3location"))
-  {
+  if (jsonValue.ValueExists("s3location")) {
     m_s3location = jsonValue.GetObject("s3location");
     m_s3locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArtifactDetail::Jsonize() const
-{
+JsonValue ArtifactDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_s3locationHasBeenSet)
-  {
-   payload.WithObject("s3location", m_s3location.Jsonize());
-
+  if (m_s3locationHasBeenSet) {
+    payload.WithObject("s3location", m_s3location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

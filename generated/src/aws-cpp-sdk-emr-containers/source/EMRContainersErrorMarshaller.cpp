@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EMRContainers;
 
-AWSError<CoreErrors> EMRContainersErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EMRContainersErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EMRContainersErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

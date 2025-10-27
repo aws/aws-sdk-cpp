@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SFN;
 
-AWSError<CoreErrors> SFNErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SFNErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SFNErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

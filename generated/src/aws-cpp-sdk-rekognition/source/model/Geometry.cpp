@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/Geometry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/Geometry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-Geometry::Geometry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Geometry::Geometry(JsonView jsonValue) { *this = jsonValue; }
 
-Geometry& Geometry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BoundingBox"))
-  {
+Geometry& Geometry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BoundingBox")) {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
     m_boundingBoxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Polygon"))
-  {
+  if (jsonValue.ValueExists("Polygon")) {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
-    for(unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex)
-    {
+    for (unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex) {
       m_polygon.push_back(polygonJsonList[polygonIndex].AsObject());
     }
     m_polygonHasBeenSet = true;
@@ -42,30 +32,24 @@ Geometry& Geometry::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Geometry::Jsonize() const
-{
+JsonValue Geometry::Jsonize() const {
   JsonValue payload;
 
-  if(m_boundingBoxHasBeenSet)
-  {
-   payload.WithObject("BoundingBox", m_boundingBox.Jsonize());
-
+  if (m_boundingBoxHasBeenSet) {
+    payload.WithObject("BoundingBox", m_boundingBox.Jsonize());
   }
 
-  if(m_polygonHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> polygonJsonList(m_polygon.size());
-   for(unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex)
-   {
-     polygonJsonList[polygonIndex].AsObject(m_polygon[polygonIndex].Jsonize());
-   }
-   payload.WithArray("Polygon", std::move(polygonJsonList));
-
+  if (m_polygonHasBeenSet) {
+    Aws::Utils::Array<JsonValue> polygonJsonList(m_polygon.size());
+    for (unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex) {
+      polygonJsonList[polygonIndex].AsObject(m_polygon[polygonIndex].Jsonize());
+    }
+    payload.WithArray("Polygon", std::move(polygonJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

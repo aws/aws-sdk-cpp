@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-DevEnvironmentAccessDetails::DevEnvironmentAccessDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DevEnvironmentAccessDetails::DevEnvironmentAccessDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DevEnvironmentAccessDetails& DevEnvironmentAccessDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamUrl"))
-  {
+DevEnvironmentAccessDetails& DevEnvironmentAccessDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamUrl")) {
     m_streamUrl = jsonValue.GetString("streamUrl");
     m_streamUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenValue"))
-  {
+  if (jsonValue.ValueExists("tokenValue")) {
     m_tokenValue = jsonValue.GetString("tokenValue");
     m_tokenValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DevEnvironmentAccessDetails::Jsonize() const
-{
+JsonValue DevEnvironmentAccessDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamUrlHasBeenSet)
-  {
-   payload.WithString("streamUrl", m_streamUrl);
-
+  if (m_streamUrlHasBeenSet) {
+    payload.WithString("streamUrl", m_streamUrl);
   }
 
-  if(m_tokenValueHasBeenSet)
-  {
-   payload.WithString("tokenValue", m_tokenValue);
-
+  if (m_tokenValueHasBeenSet) {
+    payload.WithString("tokenValue", m_tokenValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

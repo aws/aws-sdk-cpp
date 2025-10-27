@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/Group.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/Group.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-Group::Group(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Group::Group(JsonView jsonValue) { *this = jsonValue; }
 
-Group& Group::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+Group& Group::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupName"))
-  {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrincipalId"))
-  {
+  if (jsonValue.ValueExists("PrincipalId")) {
     m_principalId = jsonValue.GetString("PrincipalId");
     m_principalIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Group::Jsonize() const
-{
+JsonValue Group::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("PrincipalId", m_principalId);
-
+  if (m_principalIdHasBeenSet) {
+    payload.WithString("PrincipalId", m_principalId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

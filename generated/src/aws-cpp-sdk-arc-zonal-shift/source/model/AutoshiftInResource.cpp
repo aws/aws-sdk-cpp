@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCZonalShift
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCZonalShift {
+namespace Model {
 
-AutoshiftInResource::AutoshiftInResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoshiftInResource::AutoshiftInResource(JsonView jsonValue) { *this = jsonValue; }
 
-AutoshiftInResource& AutoshiftInResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("appliedStatus"))
-  {
+AutoshiftInResource& AutoshiftInResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("appliedStatus")) {
     m_appliedStatus = AutoshiftAppliedStatusMapper::GetAutoshiftAppliedStatusForName(jsonValue.GetString("appliedStatus"));
     m_appliedStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awayFrom"))
-  {
+  if (jsonValue.ValueExists("awayFrom")) {
     m_awayFrom = jsonValue.GetString("awayFrom");
     m_awayFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoshiftInResource::Jsonize() const
-{
+JsonValue AutoshiftInResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_appliedStatusHasBeenSet)
-  {
-   payload.WithString("appliedStatus", AutoshiftAppliedStatusMapper::GetNameForAutoshiftAppliedStatus(m_appliedStatus));
+  if (m_appliedStatusHasBeenSet) {
+    payload.WithString("appliedStatus", AutoshiftAppliedStatusMapper::GetNameForAutoshiftAppliedStatus(m_appliedStatus));
   }
 
-  if(m_awayFromHasBeenSet)
-  {
-   payload.WithString("awayFrom", m_awayFrom);
-
+  if (m_awayFromHasBeenSet) {
+    payload.WithString("awayFrom", m_awayFrom);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCZonalShift
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCZonalShift
+}  // namespace Aws

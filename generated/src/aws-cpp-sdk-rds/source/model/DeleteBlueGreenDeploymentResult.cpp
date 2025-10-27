@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteBlueGreenDeploymentResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DeleteBlueGreenDeploymentResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBlueGreenDeploymentResult::DeleteBlueGreenDeploymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DeleteBlueGreenDeploymentResult::DeleteBlueGreenDeploymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DeleteBlueGreenDeploymentResult& DeleteBlueGreenDeploymentResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteBlueGreenDeploymentResult& DeleteBlueGreenDeploymentResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteBlueGreenDeploymentResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteBlueGreenDeploymentResult")) {
     resultNode = rootNode.FirstChild("DeleteBlueGreenDeploymentResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode blueGreenDeploymentNode = resultNode.FirstChild("BlueGreenDeployment");
-    if(!blueGreenDeploymentNode.IsNull())
-    {
+    if (!blueGreenDeploymentNode.IsNull()) {
       m_blueGreenDeployment = blueGreenDeploymentNode;
       m_blueGreenDeploymentHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ DeleteBlueGreenDeploymentResult& DeleteBlueGreenDeploymentResult::operator =(con
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteBlueGreenDeploymentResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteBlueGreenDeploymentResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

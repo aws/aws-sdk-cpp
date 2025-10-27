@@ -5,12 +5,8 @@
 
 #include <aws/medialive/MediaLiveEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaLive
-} // namespace Aws
+namespace Aws {
+namespace MediaLive {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaLive
+}  // namespace Aws

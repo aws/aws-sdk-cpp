@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVpcTenancyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVpcTenancyRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVpcTenancyRequest::SerializePayload() const
-{
+Aws::String ModifyVpcTenancyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVpcTenancy&";
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_instanceTenancyHasBeenSet)
-  {
+  if (m_instanceTenancyHasBeenSet) {
     ss << "InstanceTenancy=" << StringUtils::URLEncode(VpcTenancyMapper::GetNameForVpcTenancy(m_instanceTenancy)) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ModifyVpcTenancyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyVpcTenancyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyVpcTenancyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

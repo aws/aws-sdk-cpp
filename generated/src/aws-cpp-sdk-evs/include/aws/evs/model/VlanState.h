@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/evs/EVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evs/EVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EVS
-{
-namespace Model
-{
-  enum class VlanState
-  {
-    NOT_SET,
-    CREATING,
-    CREATED,
-    DELETING,
-    DELETED,
-    CREATE_FAILED
-  };
+namespace Aws {
+namespace EVS {
+namespace Model {
+enum class VlanState { NOT_SET, CREATING, CREATED, DELETING, DELETED, CREATE_FAILED };
 
-namespace VlanStateMapper
-{
+namespace VlanStateMapper {
 AWS_EVS_API VlanState GetVlanStateForName(const Aws::String& name);
 
 AWS_EVS_API Aws::String GetNameForVlanState(VlanState value);
-} // namespace VlanStateMapper
-} // namespace Model
-} // namespace EVS
-} // namespace Aws
+}  // namespace VlanStateMapper
+}  // namespace Model
+}  // namespace EVS
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/QueryLanguageVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptunedata/model/QueryLanguageVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
+namespace Aws {
+namespace neptunedata {
+namespace Model {
 
-QueryLanguageVersion::QueryLanguageVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryLanguageVersion::QueryLanguageVersion(JsonView jsonValue) { *this = jsonValue; }
 
-QueryLanguageVersion& QueryLanguageVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("version"))
-  {
+QueryLanguageVersion& QueryLanguageVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryLanguageVersion::Jsonize() const
-{
+JsonValue QueryLanguageVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

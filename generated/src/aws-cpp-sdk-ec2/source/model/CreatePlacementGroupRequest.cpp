@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreatePlacementGroupRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreatePlacementGroupRequest::SerializePayload() const
-{
+Aws::String CreatePlacementGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreatePlacementGroup&";
-  if(m_partitionCountHasBeenSet)
-  {
+  if (m_partitionCountHasBeenSet) {
     ss << "PartitionCount=" << m_partitionCount << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_spreadLevelHasBeenSet)
-  {
+  if (m_spreadLevelHasBeenSet) {
     ss << "SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_strategyHasBeenSet)
-  {
+  if (m_strategyHasBeenSet) {
     ss << "Strategy=" << StringUtils::URLEncode(PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy)) << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreatePlacementGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreatePlacementGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteFerryAfterTravelStepType
-  {
-    NOT_SET,
-    Deboard
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteFerryAfterTravelStepType { NOT_SET, Deboard };
 
-namespace RouteFerryAfterTravelStepTypeMapper
-{
+namespace RouteFerryAfterTravelStepTypeMapper {
 AWS_GEOROUTES_API RouteFerryAfterTravelStepType GetRouteFerryAfterTravelStepTypeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteFerryAfterTravelStepType(RouteFerryAfterTravelStepType value);
-} // namespace RouteFerryAfterTravelStepTypeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteFerryAfterTravelStepTypeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

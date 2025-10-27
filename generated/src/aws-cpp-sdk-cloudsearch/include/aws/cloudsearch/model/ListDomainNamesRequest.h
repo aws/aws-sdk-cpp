@@ -4,37 +4,33 @@
  */
 
 #pragma once
-#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/CloudSearchRequest.h>
+#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
-  /**
-   */
-  class ListDomainNamesRequest : public CloudSearchRequest
-  {
-  public:
-    AWS_CLOUDSEARCH_API ListDomainNamesRequest() = default;
+/**
+ */
+class ListDomainNamesRequest : public CloudSearchRequest {
+ public:
+  AWS_CLOUDSEARCH_API ListDomainNamesRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListDomainNames"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDomainNames"; }
 
-    AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
+  AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+ protected:
+  AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
-  public:
-  };
+ public:
+};
 
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

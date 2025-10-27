@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-KmsConfiguration::KmsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KmsConfiguration::KmsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KmsConfiguration& KmsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("keyType"))
-  {
+KmsConfiguration& KmsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("keyType")) {
     m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("keyType"));
     m_keyTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KmsConfiguration::Jsonize() const
-{
+JsonValue KmsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyTypeHasBeenSet)
-  {
-   payload.WithString("keyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
+  if (m_keyTypeHasBeenSet) {
+    payload.WithString("keyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

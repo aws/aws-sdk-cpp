@@ -12,19 +12,10 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPreferencesRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String GetPreferencesRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection GetPreferencesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPreferencesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.GetPreferences"));
   return headers;
-
 }
-
-
-
-

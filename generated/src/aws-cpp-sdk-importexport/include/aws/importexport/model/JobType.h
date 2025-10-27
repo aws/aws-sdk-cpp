@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/importexport/ImportExport_EXPORTS.h>
 
-namespace Aws
-{
-namespace ImportExport
-{
-namespace Model
-{
-  enum class JobType
-  {
-    NOT_SET,
-    Import,
-    Export
-  };
+namespace Aws {
+namespace ImportExport {
+namespace Model {
+enum class JobType { NOT_SET, Import, Export };
 
-namespace JobTypeMapper
-{
+namespace JobTypeMapper {
 AWS_IMPORTEXPORT_API JobType GetJobTypeForName(const Aws::String& name);
 
 AWS_IMPORTEXPORT_API Aws::String GetNameForJobType(JobType value);
-} // namespace JobTypeMapper
-} // namespace Model
-} // namespace ImportExport
-} // namespace Aws
+}  // namespace JobTypeMapper
+}  // namespace Model
+}  // namespace ImportExport
+}  // namespace Aws

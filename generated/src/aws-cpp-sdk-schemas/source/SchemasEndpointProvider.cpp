@@ -5,12 +5,8 @@
 
 #include <aws/schemas/SchemasEndpointProvider.h>
 
-namespace Aws
-{
-namespace Schemas
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Schemas
-} // namespace Aws
+namespace Aws {
+namespace Schemas {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Schemas
+}  // namespace Aws

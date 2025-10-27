@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/Term.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/Term.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
+namespace Aws {
+namespace Translate {
+namespace Model {
 
-Term::Term(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Term::Term(JsonView jsonValue) { *this = jsonValue; }
 
-Term& Term::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceText"))
-  {
+Term& Term::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceText")) {
     m_sourceText = jsonValue.GetString("SourceText");
     m_sourceTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetText"))
-  {
+  if (jsonValue.ValueExists("TargetText")) {
     m_targetText = jsonValue.GetString("TargetText");
     m_targetTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Term::Jsonize() const
-{
+JsonValue Term::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceTextHasBeenSet)
-  {
-   payload.WithString("SourceText", m_sourceText);
-
+  if (m_sourceTextHasBeenSet) {
+    payload.WithString("SourceText", m_sourceText);
   }
 
-  if(m_targetTextHasBeenSet)
-  {
-   payload.WithString("TargetText", m_targetText);
-
+  if (m_targetTextHasBeenSet) {
+    payload.WithString("TargetText", m_targetText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

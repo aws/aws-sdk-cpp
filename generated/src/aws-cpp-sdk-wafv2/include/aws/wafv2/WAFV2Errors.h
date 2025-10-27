@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-enum class WAFV2Errors
-{
-  //From Core//
+namespace Aws {
+namespace WAFV2 {
+enum class WAFV2Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WAFV2Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class WAFV2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  W_A_F_ASSOCIATED_ITEM= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  W_A_F_ASSOCIATED_ITEM = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   W_A_F_CONFIGURATION_WARNING,
   W_A_F_DUPLICATE_ITEM,
   W_A_F_EXPIRED_MANAGED_RULE_GROUP_VERSION,
@@ -68,9 +65,8 @@ enum class WAFV2Errors
   W_A_F_UNSUPPORTED_AGGREGATE_KEY_TYPE
 };
 
-class AWS_WAFV2_API WAFV2Error : public Aws::Client::AWSError<WAFV2Errors>
-{
-public:
+class AWS_WAFV2_API WAFV2Error : public Aws::Client::AWSError<WAFV2Errors> {
+ public:
   WAFV2Error() {}
   WAFV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
   WAFV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
@@ -81,10 +77,9 @@ public:
   T GetModeledError();
 };
 
-namespace WAFV2ErrorMapper
-{
-  AWS_WAFV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WAFV2ErrorMapper {
+AWS_WAFV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace WAFV2
+}  // namespace Aws

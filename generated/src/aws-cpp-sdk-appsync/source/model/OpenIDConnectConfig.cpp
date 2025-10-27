@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OpenIDConnectConfig& OpenIDConnectConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("issuer"))
-  {
+OpenIDConnectConfig& OpenIDConnectConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("issuer")) {
     m_issuer = jsonValue.GetString("issuer");
     m_issuerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientId"))
-  {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iatTTL"))
-  {
+  if (jsonValue.ValueExists("iatTTL")) {
     m_iatTTL = jsonValue.GetInt64("iatTTL");
     m_iatTTLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authTTL"))
-  {
+  if (jsonValue.ValueExists("authTTL")) {
     m_authTTL = jsonValue.GetInt64("authTTL");
     m_authTTLHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenIDConnectConfig::Jsonize() const
-{
+JsonValue OpenIDConnectConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuerHasBeenSet)
-  {
-   payload.WithString("issuer", m_issuer);
-
+  if (m_issuerHasBeenSet) {
+    payload.WithString("issuer", m_issuer);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
-  if(m_iatTTLHasBeenSet)
-  {
-   payload.WithInt64("iatTTL", m_iatTTL);
-
+  if (m_iatTTLHasBeenSet) {
+    payload.WithInt64("iatTTL", m_iatTTL);
   }
 
-  if(m_authTTLHasBeenSet)
-  {
-   payload.WithInt64("authTTL", m_authTTL);
-
+  if (m_authTTLHasBeenSet) {
+    payload.WithInt64("authTTL", m_authTTL);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/lookoutvision/LookoutforVisionEndpointProvider.h>
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LookoutforVision
-} // namespace Aws
+namespace Aws {
+namespace LookoutforVision {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LookoutforVision
+}  // namespace Aws

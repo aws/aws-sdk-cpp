@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class MessageFeedbackStatus
-  {
-    NOT_SET,
-    RECEIVED,
-    FAILED
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class MessageFeedbackStatus { NOT_SET, RECEIVED, FAILED };
 
-namespace MessageFeedbackStatusMapper
-{
+namespace MessageFeedbackStatusMapper {
 AWS_PINPOINTSMSVOICEV2_API MessageFeedbackStatus GetMessageFeedbackStatusForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForMessageFeedbackStatus(MessageFeedbackStatus value);
-} // namespace MessageFeedbackStatusMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace MessageFeedbackStatusMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

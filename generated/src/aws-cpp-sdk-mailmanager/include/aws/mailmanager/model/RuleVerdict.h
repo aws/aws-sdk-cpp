@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class RuleVerdict
-  {
-    NOT_SET,
-    PASS,
-    FAIL,
-    GRAY,
-    PROCESSING_FAILED
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class RuleVerdict { NOT_SET, PASS, FAIL, GRAY, PROCESSING_FAILED };
 
-namespace RuleVerdictMapper
-{
+namespace RuleVerdictMapper {
 AWS_MAILMANAGER_API RuleVerdict GetRuleVerdictForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForRuleVerdict(RuleVerdict value);
-} // namespace RuleVerdictMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace RuleVerdictMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

@@ -12,37 +12,24 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateConsumableResourceRequest::SerializePayload() const
-{
+Aws::String UpdateConsumableResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_consumableResourceHasBeenSet)
-  {
-   payload.WithString("consumableResource", m_consumableResource);
-
+  if (m_consumableResourceHasBeenSet) {
+    payload.WithString("consumableResource", m_consumableResource);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("operation", m_operation);
   }
 
-  if(m_quantityHasBeenSet)
-  {
-   payload.WithInt64("quantity", m_quantity);
-
+  if (m_quantityHasBeenSet) {
+    payload.WithInt64("quantity", m_quantity);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

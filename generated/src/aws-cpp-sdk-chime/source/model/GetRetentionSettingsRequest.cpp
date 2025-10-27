@@ -12,11 +12,4 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRetentionSettingsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetRetentionSettingsRequest::SerializePayload() const { return {}; }

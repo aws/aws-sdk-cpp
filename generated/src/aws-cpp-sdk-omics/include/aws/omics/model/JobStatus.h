@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    IN_PROGRESS,
-    CANCELLED,
-    COMPLETED,
-    FAILED,
-    COMPLETED_WITH_FAILURES
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class JobStatus { NOT_SET, SUBMITTED, IN_PROGRESS, CANCELLED, COMPLETED, FAILED, COMPLETED_WITH_FAILURES };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_OMICS_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

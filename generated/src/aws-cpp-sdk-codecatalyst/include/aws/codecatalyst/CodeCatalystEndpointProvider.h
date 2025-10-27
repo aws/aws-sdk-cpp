@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codecatalyst/CodeCatalystEndpointRules.h>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/codecatalyst/CodeCatalystEndpointRules.h>
-
-
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using CodeCatalystClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using CodeCatalystDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CODECATALYST_API CodeCatalystEndpointProvider : public CodeCatalystDefaultEpProviderBase
-{
-public:
-    using CodeCatalystResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CODECATALYST_API CodeCatalystEndpointProvider : public CodeCatalystDefaultEpProviderBase {
+ public:
+  using CodeCatalystResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    CodeCatalystEndpointProvider()
-      : CodeCatalystDefaultEpProviderBase(Aws::CodeCatalyst::CodeCatalystEndpointRules::GetRulesBlob(), Aws::CodeCatalyst::CodeCatalystEndpointRules::RulesBlobSize)
-    {}
+  CodeCatalystEndpointProvider()
+      : CodeCatalystDefaultEpProviderBase(Aws::CodeCatalyst::CodeCatalystEndpointRules::GetRulesBlob(),
+                                          Aws::CodeCatalyst::CodeCatalystEndpointRules::RulesBlobSize) {}
 
-    ~CodeCatalystEndpointProvider()
-    {
-    }
+  ~CodeCatalystEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace CodeCatalyst
+}  // namespace Aws

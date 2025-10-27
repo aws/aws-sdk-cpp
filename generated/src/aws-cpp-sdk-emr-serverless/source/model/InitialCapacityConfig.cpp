@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-serverless/model/InitialCapacityConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
 
-InitialCapacityConfig::InitialCapacityConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InitialCapacityConfig::InitialCapacityConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InitialCapacityConfig& InitialCapacityConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workerCount"))
-  {
+InitialCapacityConfig& InitialCapacityConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workerCount")) {
     m_workerCount = jsonValue.GetInt64("workerCount");
     m_workerCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workerConfiguration"))
-  {
+  if (jsonValue.ValueExists("workerConfiguration")) {
     m_workerConfiguration = jsonValue.GetObject("workerConfiguration");
     m_workerConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InitialCapacityConfig::Jsonize() const
-{
+JsonValue InitialCapacityConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_workerCountHasBeenSet)
-  {
-   payload.WithInt64("workerCount", m_workerCount);
-
+  if (m_workerCountHasBeenSet) {
+    payload.WithInt64("workerCount", m_workerCount);
   }
 
-  if(m_workerConfigurationHasBeenSet)
-  {
-   payload.WithObject("workerConfiguration", m_workerConfiguration.Jsonize());
-
+  if (m_workerConfigurationHasBeenSet) {
+    payload.WithObject("workerConfiguration", m_workerConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

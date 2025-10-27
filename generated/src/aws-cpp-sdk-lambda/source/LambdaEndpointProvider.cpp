@@ -5,12 +5,8 @@
 
 #include <aws/lambda/LambdaEndpointProvider.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Lambda
-} // namespace Aws
+namespace Aws {
+namespace Lambda {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Lambda
+}  // namespace Aws

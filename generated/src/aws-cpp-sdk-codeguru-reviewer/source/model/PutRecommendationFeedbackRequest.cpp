@@ -12,36 +12,24 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRecommendationFeedbackRequest::SerializePayload() const
-{
+Aws::String PutRecommendationFeedbackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_codeReviewArnHasBeenSet)
-  {
-   payload.WithString("CodeReviewArn", m_codeReviewArn);
-
+  if (m_codeReviewArnHasBeenSet) {
+    payload.WithString("CodeReviewArn", m_codeReviewArn);
   }
 
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("RecommendationId", m_recommendationId);
-
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("RecommendationId", m_recommendationId);
   }
 
-  if(m_reactionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> reactionsJsonList(m_reactions.size());
-   for(unsigned reactionsIndex = 0; reactionsIndex < reactionsJsonList.GetLength(); ++reactionsIndex)
-   {
-     reactionsJsonList[reactionsIndex].AsString(ReactionMapper::GetNameForReaction(m_reactions[reactionsIndex]));
-   }
-   payload.WithArray("Reactions", std::move(reactionsJsonList));
-
+  if (m_reactionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> reactionsJsonList(m_reactions.size());
+    for (unsigned reactionsIndex = 0; reactionsIndex < reactionsJsonList.GetLength(); ++reactionsIndex) {
+      reactionsJsonList[reactionsIndex].AsString(ReactionMapper::GetNameForReaction(m_reactions[reactionsIndex]));
+    }
+    payload.WithArray("Reactions", std::move(reactionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

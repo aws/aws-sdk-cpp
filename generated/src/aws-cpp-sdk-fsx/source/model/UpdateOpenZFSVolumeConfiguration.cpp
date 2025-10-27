@@ -3,132 +3,104 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/UpdateOpenZFSVolumeConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/UpdateOpenZFSVolumeConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateOpenZFSVolumeConfiguration& UpdateOpenZFSVolumeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StorageCapacityReservationGiB"))
-  {
+UpdateOpenZFSVolumeConfiguration& UpdateOpenZFSVolumeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StorageCapacityReservationGiB")) {
     m_storageCapacityReservationGiB = jsonValue.GetInteger("StorageCapacityReservationGiB");
     m_storageCapacityReservationGiBHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StorageCapacityQuotaGiB"))
-  {
+  if (jsonValue.ValueExists("StorageCapacityQuotaGiB")) {
     m_storageCapacityQuotaGiB = jsonValue.GetInteger("StorageCapacityQuotaGiB");
     m_storageCapacityQuotaGiBHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecordSizeKiB"))
-  {
+  if (jsonValue.ValueExists("RecordSizeKiB")) {
     m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
     m_recordSizeKiBHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataCompressionType"))
-  {
-    m_dataCompressionType = OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
+  if (jsonValue.ValueExists("DataCompressionType")) {
+    m_dataCompressionType =
+        OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
     m_dataCompressionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NfsExports"))
-  {
+  if (jsonValue.ValueExists("NfsExports")) {
     Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
-    for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
-    {
+    for (unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex) {
       m_nfsExports.push_back(nfsExportsJsonList[nfsExportsIndex].AsObject());
     }
     m_nfsExportsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserAndGroupQuotas"))
-  {
+  if (jsonValue.ValueExists("UserAndGroupQuotas")) {
     Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
-    for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
-    {
+    for (unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength();
+         ++userAndGroupQuotasIndex) {
       m_userAndGroupQuotas.push_back(userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject());
     }
     m_userAndGroupQuotasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadOnly"))
-  {
+  if (jsonValue.ValueExists("ReadOnly")) {
     m_readOnly = jsonValue.GetBool("ReadOnly");
     m_readOnlyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateOpenZFSVolumeConfiguration::Jsonize() const
-{
+JsonValue UpdateOpenZFSVolumeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_storageCapacityReservationGiBHasBeenSet)
-  {
-   payload.WithInteger("StorageCapacityReservationGiB", m_storageCapacityReservationGiB);
-
+  if (m_storageCapacityReservationGiBHasBeenSet) {
+    payload.WithInteger("StorageCapacityReservationGiB", m_storageCapacityReservationGiB);
   }
 
-  if(m_storageCapacityQuotaGiBHasBeenSet)
-  {
-   payload.WithInteger("StorageCapacityQuotaGiB", m_storageCapacityQuotaGiB);
-
+  if (m_storageCapacityQuotaGiBHasBeenSet) {
+    payload.WithInteger("StorageCapacityQuotaGiB", m_storageCapacityQuotaGiB);
   }
 
-  if(m_recordSizeKiBHasBeenSet)
-  {
-   payload.WithInteger("RecordSizeKiB", m_recordSizeKiB);
-
+  if (m_recordSizeKiBHasBeenSet) {
+    payload.WithInteger("RecordSizeKiB", m_recordSizeKiB);
   }
 
-  if(m_dataCompressionTypeHasBeenSet)
-  {
-   payload.WithString("DataCompressionType", OpenZFSDataCompressionTypeMapper::GetNameForOpenZFSDataCompressionType(m_dataCompressionType));
+  if (m_dataCompressionTypeHasBeenSet) {
+    payload.WithString("DataCompressionType",
+                       OpenZFSDataCompressionTypeMapper::GetNameForOpenZFSDataCompressionType(m_dataCompressionType));
   }
 
-  if(m_nfsExportsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
-   for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
-   {
-     nfsExportsJsonList[nfsExportsIndex].AsObject(m_nfsExports[nfsExportsIndex].Jsonize());
-   }
-   payload.WithArray("NfsExports", std::move(nfsExportsJsonList));
-
+  if (m_nfsExportsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
+    for (unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex) {
+      nfsExportsJsonList[nfsExportsIndex].AsObject(m_nfsExports[nfsExportsIndex].Jsonize());
+    }
+    payload.WithArray("NfsExports", std::move(nfsExportsJsonList));
   }
 
-  if(m_userAndGroupQuotasHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
-   for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
-   {
-     userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject(m_userAndGroupQuotas[userAndGroupQuotasIndex].Jsonize());
-   }
-   payload.WithArray("UserAndGroupQuotas", std::move(userAndGroupQuotasJsonList));
-
+  if (m_userAndGroupQuotasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
+    for (unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength();
+         ++userAndGroupQuotasIndex) {
+      userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject(m_userAndGroupQuotas[userAndGroupQuotasIndex].Jsonize());
+    }
+    payload.WithArray("UserAndGroupQuotas", std::move(userAndGroupQuotasJsonList));
   }
 
-  if(m_readOnlyHasBeenSet)
-  {
-   payload.WithBool("ReadOnly", m_readOnly);
-
+  if (m_readOnlyHasBeenSet) {
+    payload.WithBool("ReadOnly", m_readOnly);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

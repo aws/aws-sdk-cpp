@@ -12,44 +12,31 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutHypervisorPropertyMappingsRequest::SerializePayload() const
-{
+Aws::String PutHypervisorPropertyMappingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hypervisorArnHasBeenSet)
-  {
-   payload.WithString("HypervisorArn", m_hypervisorArn);
-
+  if (m_hypervisorArnHasBeenSet) {
+    payload.WithString("HypervisorArn", m_hypervisorArn);
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_vmwareToAwsTagMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vmwareToAwsTagMappingsJsonList(m_vmwareToAwsTagMappings.size());
-   for(unsigned vmwareToAwsTagMappingsIndex = 0; vmwareToAwsTagMappingsIndex < vmwareToAwsTagMappingsJsonList.GetLength(); ++vmwareToAwsTagMappingsIndex)
-   {
-     vmwareToAwsTagMappingsJsonList[vmwareToAwsTagMappingsIndex].AsObject(m_vmwareToAwsTagMappings[vmwareToAwsTagMappingsIndex].Jsonize());
-   }
-   payload.WithArray("VmwareToAwsTagMappings", std::move(vmwareToAwsTagMappingsJsonList));
-
+  if (m_vmwareToAwsTagMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vmwareToAwsTagMappingsJsonList(m_vmwareToAwsTagMappings.size());
+    for (unsigned vmwareToAwsTagMappingsIndex = 0; vmwareToAwsTagMappingsIndex < vmwareToAwsTagMappingsJsonList.GetLength();
+         ++vmwareToAwsTagMappingsIndex) {
+      vmwareToAwsTagMappingsJsonList[vmwareToAwsTagMappingsIndex].AsObject(m_vmwareToAwsTagMappings[vmwareToAwsTagMappingsIndex].Jsonize());
+    }
+    payload.WithArray("VmwareToAwsTagMappings", std::move(vmwareToAwsTagMappingsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutHypervisorPropertyMappingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutHypervisorPropertyMappingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.PutHypervisorPropertyMappings"));
   return headers;
-
 }
-
-
-
-

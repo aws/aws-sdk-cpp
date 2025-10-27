@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/SetLoadBalancerListenerSSLCertificateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/SetLoadBalancerListenerSSLCertificateRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() const
-{
+Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetLoadBalancerListenerSSLCertificate&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_loadBalancerPortHasBeenSet)
-  {
+  if (m_loadBalancerPortHasBeenSet) {
     ss << "LoadBalancerPort=" << m_loadBalancerPort << "&";
   }
 
-  if(m_sSLCertificateIdHasBeenSet)
-  {
+  if (m_sSLCertificateIdHasBeenSet) {
     ss << "SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() con
   return ss.str();
 }
 
-
-void  SetLoadBalancerListenerSSLCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetLoadBalancerListenerSSLCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,181 +4,232 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/model/ResponseMetadata.h>
+#include <aws/redshift/model/Tag.h>
+#include <aws/redshift/model/UsageLimitBreachAction.h>
 #include <aws/redshift/model/UsageLimitFeatureType.h>
 #include <aws/redshift/model/UsageLimitLimitType.h>
 #include <aws/redshift/model/UsageLimitPeriod.h>
-#include <aws/redshift/model/UsageLimitBreachAction.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/redshift/model/ResponseMetadata.h>
-#include <aws/redshift/model/Tag.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace Redshift {
+namespace Model {
 
+/**
+ * <p>Describes a usage limit object for a cluster. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UsageLimit">AWS
+ * API Reference</a></p>
+ */
+class UsageLimit {
+ public:
+  AWS_REDSHIFT_API UsageLimit() = default;
+  AWS_REDSHIFT_API UsageLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_REDSHIFT_API UsageLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Describes a usage limit object for a cluster. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UsageLimit">AWS
-   * API Reference</a></p>
+   * <p>The identifier of the usage limit.</p>
    */
-  class UsageLimit
-  {
-  public:
-    AWS_REDSHIFT_API UsageLimit() = default;
-    AWS_REDSHIFT_API UsageLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_REDSHIFT_API UsageLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetUsageLimitId() const { return m_usageLimitId; }
+  inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
+  template <typename UsageLimitIdT = Aws::String>
+  void SetUsageLimitId(UsageLimitIdT&& value) {
+    m_usageLimitIdHasBeenSet = true;
+    m_usageLimitId = std::forward<UsageLimitIdT>(value);
+  }
+  template <typename UsageLimitIdT = Aws::String>
+  UsageLimit& WithUsageLimitId(UsageLimitIdT&& value) {
+    SetUsageLimitId(std::forward<UsageLimitIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The identifier of the cluster with a usage limit.</p>
+   */
+  inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
+  inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+  template <typename ClusterIdentifierT = Aws::String>
+  void SetClusterIdentifier(ClusterIdentifierT&& value) {
+    m_clusterIdentifierHasBeenSet = true;
+    m_clusterIdentifier = std::forward<ClusterIdentifierT>(value);
+  }
+  template <typename ClusterIdentifierT = Aws::String>
+  UsageLimit& WithClusterIdentifier(ClusterIdentifierT&& value) {
+    SetClusterIdentifier(std::forward<ClusterIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The Amazon Redshift feature to which the limit applies.</p>
+   */
+  inline UsageLimitFeatureType GetFeatureType() const { return m_featureType; }
+  inline bool FeatureTypeHasBeenSet() const { return m_featureTypeHasBeenSet; }
+  inline void SetFeatureType(UsageLimitFeatureType value) {
+    m_featureTypeHasBeenSet = true;
+    m_featureType = value;
+  }
+  inline UsageLimit& WithFeatureType(UsageLimitFeatureType value) {
+    SetFeatureType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the usage limit.</p>
-     */
-    inline const Aws::String& GetUsageLimitId() const { return m_usageLimitId; }
-    inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
-    template<typename UsageLimitIdT = Aws::String>
-    void SetUsageLimitId(UsageLimitIdT&& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = std::forward<UsageLimitIdT>(value); }
-    template<typename UsageLimitIdT = Aws::String>
-    UsageLimit& WithUsageLimitId(UsageLimitIdT&& value) { SetUsageLimitId(std::forward<UsageLimitIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The type of limit. Depending on the feature type, this can be based on a time
+   * duration or data size.</p>
+   */
+  inline UsageLimitLimitType GetLimitType() const { return m_limitType; }
+  inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }
+  inline void SetLimitType(UsageLimitLimitType value) {
+    m_limitTypeHasBeenSet = true;
+    m_limitType = value;
+  }
+  inline UsageLimit& WithLimitType(UsageLimitLimitType value) {
+    SetLimitType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the cluster with a usage limit.</p>
-     */
-    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
-    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    template<typename ClusterIdentifierT = Aws::String>
-    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
-    template<typename ClusterIdentifierT = Aws::String>
-    UsageLimit& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The limit amount. If time-based, this amount is in minutes. If data-based,
+   * this amount is in terabytes (TB).</p>
+   */
+  inline long long GetAmount() const { return m_amount; }
+  inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+  inline void SetAmount(long long value) {
+    m_amountHasBeenSet = true;
+    m_amount = value;
+  }
+  inline UsageLimit& WithAmount(long long value) {
+    SetAmount(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Redshift feature to which the limit applies.</p>
-     */
-    inline UsageLimitFeatureType GetFeatureType() const { return m_featureType; }
-    inline bool FeatureTypeHasBeenSet() const { return m_featureTypeHasBeenSet; }
-    inline void SetFeatureType(UsageLimitFeatureType value) { m_featureTypeHasBeenSet = true; m_featureType = value; }
-    inline UsageLimit& WithFeatureType(UsageLimitFeatureType value) { SetFeatureType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time period that the amount applies to. A <code>weekly</code> period
+   * begins on Sunday. The default is <code>monthly</code>. </p>
+   */
+  inline UsageLimitPeriod GetPeriod() const { return m_period; }
+  inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+  inline void SetPeriod(UsageLimitPeriod value) {
+    m_periodHasBeenSet = true;
+    m_period = value;
+  }
+  inline UsageLimit& WithPeriod(UsageLimitPeriod value) {
+    SetPeriod(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of limit. Depending on the feature type, this can be based on a time
-     * duration or data size.</p>
-     */
-    inline UsageLimitLimitType GetLimitType() const { return m_limitType; }
-    inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }
-    inline void SetLimitType(UsageLimitLimitType value) { m_limitTypeHasBeenSet = true; m_limitType = value; }
-    inline UsageLimit& WithLimitType(UsageLimitLimitType value) { SetLimitType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The action that Amazon Redshift takes when the limit is reached. Possible
+   * values are: </p> <ul> <li> <p> <b>log</b> - To log an event in a system table.
+   * The default is log.</p> </li> <li> <p> <b>emit-metric</b> - To emit CloudWatch
+   * metrics.</p> </li> <li> <p> <b>disable</b> - To disable the feature until the
+   * next usage period begins.</p> </li> </ul>
+   */
+  inline UsageLimitBreachAction GetBreachAction() const { return m_breachAction; }
+  inline bool BreachActionHasBeenSet() const { return m_breachActionHasBeenSet; }
+  inline void SetBreachAction(UsageLimitBreachAction value) {
+    m_breachActionHasBeenSet = true;
+    m_breachAction = value;
+  }
+  inline UsageLimit& WithBreachAction(UsageLimitBreachAction value) {
+    SetBreachAction(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The limit amount. If time-based, this amount is in minutes. If data-based,
-     * this amount is in terabytes (TB).</p>
-     */
-    inline long long GetAmount() const { return m_amount; }
-    inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
-    inline void SetAmount(long long value) { m_amountHasBeenSet = true; m_amount = value; }
-    inline UsageLimit& WithAmount(long long value) { SetAmount(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A list of tag instances.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  UsageLimit& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  UsageLimit& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time period that the amount applies to. A <code>weekly</code> period
-     * begins on Sunday. The default is <code>monthly</code>. </p>
-     */
-    inline UsageLimitPeriod GetPeriod() const { return m_period; }
-    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(UsageLimitPeriod value) { m_periodHasBeenSet = true; m_period = value; }
-    inline UsageLimit& WithPeriod(UsageLimitPeriod value) { SetPeriod(value); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>The action that Amazon Redshift takes when the limit is reached. Possible
-     * values are: </p> <ul> <li> <p> <b>log</b> - To log an event in a system table.
-     * The default is log.</p> </li> <li> <p> <b>emit-metric</b> - To emit CloudWatch
-     * metrics.</p> </li> <li> <p> <b>disable</b> - To disable the feature until the
-     * next usage period begins.</p> </li> </ul>
-     */
-    inline UsageLimitBreachAction GetBreachAction() const { return m_breachAction; }
-    inline bool BreachActionHasBeenSet() const { return m_breachActionHasBeenSet; }
-    inline void SetBreachAction(UsageLimitBreachAction value) { m_breachActionHasBeenSet = true; m_breachAction = value; }
-    inline UsageLimit& WithBreachAction(UsageLimitBreachAction value) { SetBreachAction(value); return *this;}
-    ///@}
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  UsageLimit& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_usageLimitId;
+  bool m_usageLimitIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of tag instances.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    UsageLimit& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    UsageLimit& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
+  Aws::String m_clusterIdentifier;
+  bool m_clusterIdentifierHasBeenSet = false;
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    UsageLimit& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  UsageLimitFeatureType m_featureType{UsageLimitFeatureType::NOT_SET};
+  bool m_featureTypeHasBeenSet = false;
 
-    Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet = false;
+  UsageLimitLimitType m_limitType{UsageLimitLimitType::NOT_SET};
+  bool m_limitTypeHasBeenSet = false;
 
-    Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet = false;
+  long long m_amount{0};
+  bool m_amountHasBeenSet = false;
 
-    UsageLimitFeatureType m_featureType{UsageLimitFeatureType::NOT_SET};
-    bool m_featureTypeHasBeenSet = false;
+  UsageLimitPeriod m_period{UsageLimitPeriod::NOT_SET};
+  bool m_periodHasBeenSet = false;
 
-    UsageLimitLimitType m_limitType{UsageLimitLimitType::NOT_SET};
-    bool m_limitTypeHasBeenSet = false;
+  UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
+  bool m_breachActionHasBeenSet = false;
 
-    long long m_amount{0};
-    bool m_amountHasBeenSet = false;
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
 
-    UsageLimitPeriod m_period{UsageLimitPeriod::NOT_SET};
-    bool m_periodHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = true;
+};
 
-    UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
-    bool m_breachActionHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
-
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/VisaPin.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/VisaPin.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-VisaPin::VisaPin(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VisaPin::VisaPin(JsonView jsonValue) { *this = jsonValue; }
 
-VisaPin& VisaPin::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PinVerificationKeyIndex"))
-  {
+VisaPin& VisaPin::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PinVerificationKeyIndex")) {
     m_pinVerificationKeyIndex = jsonValue.GetInteger("PinVerificationKeyIndex");
     m_pinVerificationKeyIndexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VisaPin::Jsonize() const
-{
+JsonValue VisaPin::Jsonize() const {
   JsonValue payload;
 
-  if(m_pinVerificationKeyIndexHasBeenSet)
-  {
-   payload.WithInteger("PinVerificationKeyIndex", m_pinVerificationKeyIndex);
-
+  if (m_pinVerificationKeyIndexHasBeenSet) {
+    payload.WithInteger("PinVerificationKeyIndex", m_pinVerificationKeyIndex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

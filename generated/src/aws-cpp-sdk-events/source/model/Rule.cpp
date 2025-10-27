@@ -3,136 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/events/model/Rule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/Rule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
 
-Rule::Rule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Rule::Rule(JsonView jsonValue) { *this = jsonValue; }
 
-Rule& Rule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Rule& Rule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventPattern"))
-  {
+  if (jsonValue.ValueExists("EventPattern")) {
     m_eventPattern = jsonValue.GetString("EventPattern");
     m_eventPatternHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = RuleStateMapper::GetRuleStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduleExpression"))
-  {
+  if (jsonValue.ValueExists("ScheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ManagedBy"))
-  {
+  if (jsonValue.ValueExists("ManagedBy")) {
     m_managedBy = jsonValue.GetString("ManagedBy");
     m_managedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventBusName"))
-  {
+  if (jsonValue.ValueExists("EventBusName")) {
     m_eventBusName = jsonValue.GetString("EventBusName");
     m_eventBusNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Rule::Jsonize() const
-{
+JsonValue Rule::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_eventPatternHasBeenSet)
-  {
-   payload.WithString("EventPattern", m_eventPattern);
-
+  if (m_eventPatternHasBeenSet) {
+    payload.WithString("EventPattern", m_eventPattern);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", RuleStateMapper::GetNameForRuleState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", RuleStateMapper::GetNameForRuleState(m_state));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_scheduleExpressionHasBeenSet)
-  {
-   payload.WithString("ScheduleExpression", m_scheduleExpression);
-
+  if (m_scheduleExpressionHasBeenSet) {
+    payload.WithString("ScheduleExpression", m_scheduleExpression);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_managedByHasBeenSet)
-  {
-   payload.WithString("ManagedBy", m_managedBy);
-
+  if (m_managedByHasBeenSet) {
+    payload.WithString("ManagedBy", m_managedBy);
   }
 
-  if(m_eventBusNameHasBeenSet)
-  {
-   payload.WithString("EventBusName", m_eventBusName);
-
+  if (m_eventBusNameHasBeenSet) {
+    payload.WithString("EventBusName", m_eventBusName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

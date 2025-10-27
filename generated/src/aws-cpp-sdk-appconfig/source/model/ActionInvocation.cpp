@@ -11,107 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-ActionInvocation::ActionInvocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionInvocation::ActionInvocation(JsonView jsonValue) { *this = jsonValue; }
 
-ActionInvocation& ActionInvocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExtensionIdentifier"))
-  {
+ActionInvocation& ActionInvocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExtensionIdentifier")) {
     m_extensionIdentifier = jsonValue.GetString("ExtensionIdentifier");
     m_extensionIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionName"))
-  {
+  if (jsonValue.ValueExists("ActionName")) {
     m_actionName = jsonValue.GetString("ActionName");
     m_actionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Uri"))
-  {
+  if (jsonValue.ValueExists("Uri")) {
     m_uri = jsonValue.GetString("Uri");
     m_uriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvocationId"))
-  {
+  if (jsonValue.ValueExists("InvocationId")) {
     m_invocationId = jsonValue.GetString("InvocationId");
     m_invocationIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionInvocation::Jsonize() const
-{
+JsonValue ActionInvocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_extensionIdentifierHasBeenSet)
-  {
-   payload.WithString("ExtensionIdentifier", m_extensionIdentifier);
-
+  if (m_extensionIdentifierHasBeenSet) {
+    payload.WithString("ExtensionIdentifier", m_extensionIdentifier);
   }
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("ActionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("ActionName", m_actionName);
   }
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("Uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("Uri", m_uri);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("InvocationId", m_invocationId);
-
+  if (m_invocationIdHasBeenSet) {
+    payload.WithString("InvocationId", m_invocationId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

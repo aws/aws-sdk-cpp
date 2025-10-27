@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QApps_EXPORTS.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Model
-{
-  enum class Sender
-  {
-    NOT_SET,
-    USER,
-    SYSTEM
-  };
+namespace Aws {
+namespace QApps {
+namespace Model {
+enum class Sender { NOT_SET, USER, SYSTEM };
 
-namespace SenderMapper
-{
+namespace SenderMapper {
 AWS_QAPPS_API Sender GetSenderForName(const Aws::String& name);
 
 AWS_QAPPS_API Aws::String GetNameForSender(Sender value);
-} // namespace SenderMapper
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace SenderMapper
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

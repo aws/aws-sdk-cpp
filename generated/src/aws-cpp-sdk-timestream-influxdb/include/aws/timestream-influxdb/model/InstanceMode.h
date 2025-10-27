@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-namespace Model
-{
-  enum class InstanceMode
-  {
-    NOT_SET,
-    PRIMARY,
-    STANDBY,
-    REPLICA,
-    INGEST,
-    QUERY,
-    COMPACT,
-    PROCESS
-  };
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Model {
+enum class InstanceMode { NOT_SET, PRIMARY, STANDBY, REPLICA, INGEST, QUERY, COMPACT, PROCESS };
 
-namespace InstanceModeMapper
-{
+namespace InstanceModeMapper {
 AWS_TIMESTREAMINFLUXDB_API InstanceMode GetInstanceModeForName(const Aws::String& name);
 
 AWS_TIMESTREAMINFLUXDB_API Aws::String GetNameForInstanceMode(InstanceMode value);
-} // namespace InstanceModeMapper
-} // namespace Model
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+}  // namespace InstanceModeMapper
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

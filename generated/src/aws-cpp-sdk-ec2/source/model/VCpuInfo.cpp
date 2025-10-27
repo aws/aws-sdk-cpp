@@ -3,59 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VCpuInfo.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VCpuInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VCpuInfo::VCpuInfo(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VCpuInfo::VCpuInfo(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VCpuInfo& VCpuInfo::operator =(const XmlNode& xmlNode)
-{
+VCpuInfo& VCpuInfo::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode defaultVCpusNode = resultNode.FirstChild("defaultVCpus");
-    if(!defaultVCpusNode.IsNull())
-    {
-      m_defaultVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVCpusNode.GetText()).c_str()).c_str());
+    if (!defaultVCpusNode.IsNull()) {
+      m_defaultVCpus =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVCpusNode.GetText()).c_str()).c_str());
       m_defaultVCpusHasBeenSet = true;
     }
     XmlNode defaultCoresNode = resultNode.FirstChild("defaultCores");
-    if(!defaultCoresNode.IsNull())
-    {
-      m_defaultCores = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultCoresNode.GetText()).c_str()).c_str());
+    if (!defaultCoresNode.IsNull()) {
+      m_defaultCores =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultCoresNode.GetText()).c_str()).c_str());
       m_defaultCoresHasBeenSet = true;
     }
     XmlNode defaultThreadsPerCoreNode = resultNode.FirstChild("defaultThreadsPerCore");
-    if(!defaultThreadsPerCoreNode.IsNull())
-    {
-      m_defaultThreadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultThreadsPerCoreNode.GetText()).c_str()).c_str());
+    if (!defaultThreadsPerCoreNode.IsNull()) {
+      m_defaultThreadsPerCore = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultThreadsPerCoreNode.GetText()).c_str()).c_str());
       m_defaultThreadsPerCoreHasBeenSet = true;
     }
     XmlNode validCoresNode = resultNode.FirstChild("validCores");
-    if(!validCoresNode.IsNull())
-    {
+    if (!validCoresNode.IsNull()) {
       XmlNode validCoresMember = validCoresNode.FirstChild("item");
       m_validCoresHasBeenSet = !validCoresMember.IsNull();
-      while(!validCoresMember.IsNull())
-      {
+      while (!validCoresMember.IsNull()) {
         m_validCores.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(validCoresMember.GetText().c_str()).c_str()));
         validCoresMember = validCoresMember.NextNode("item");
       }
@@ -63,13 +53,12 @@ VCpuInfo& VCpuInfo::operator =(const XmlNode& xmlNode)
       m_validCoresHasBeenSet = true;
     }
     XmlNode validThreadsPerCoreNode = resultNode.FirstChild("validThreadsPerCore");
-    if(!validThreadsPerCoreNode.IsNull())
-    {
+    if (!validThreadsPerCoreNode.IsNull()) {
       XmlNode validThreadsPerCoreMember = validThreadsPerCoreNode.FirstChild("item");
       m_validThreadsPerCoreHasBeenSet = !validThreadsPerCoreMember.IsNull();
-      while(!validThreadsPerCoreMember.IsNull())
-      {
-        m_validThreadsPerCore.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(validThreadsPerCoreMember.GetText().c_str()).c_str()));
+      while (!validThreadsPerCoreMember.IsNull()) {
+        m_validThreadsPerCore.push_back(
+            StringUtils::ConvertToInt32(StringUtils::Trim(validThreadsPerCoreMember.GetText().c_str()).c_str()));
         validThreadsPerCoreMember = validThreadsPerCoreMember.NextNode("item");
       }
 
@@ -80,75 +69,58 @@ VCpuInfo& VCpuInfo::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VCpuInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_defaultVCpusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultVCpus=" << m_defaultVCpus << "&";
+void VCpuInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_defaultVCpusHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultVCpus=" << m_defaultVCpus << "&";
   }
 
-  if(m_defaultCoresHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultCores=" << m_defaultCores << "&";
+  if (m_defaultCoresHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultCores=" << m_defaultCores << "&";
   }
 
-  if(m_defaultThreadsPerCoreHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultThreadsPerCore=" << m_defaultThreadsPerCore << "&";
+  if (m_defaultThreadsPerCoreHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultThreadsPerCore=" << m_defaultThreadsPerCore << "&";
   }
 
-  if(m_validCoresHasBeenSet)
-  {
-      unsigned validCoresIdx = 1;
-      for(auto& item : m_validCores)
-      {
-        oStream << location << index << locationValue << ".ValidCores." << validCoresIdx++ << "=" << item << "&";
-      }
+  if (m_validCoresHasBeenSet) {
+    unsigned validCoresIdx = 1;
+    for (auto& item : m_validCores) {
+      oStream << location << index << locationValue << ".ValidCores." << validCoresIdx++ << "=" << item << "&";
+    }
   }
 
-  if(m_validThreadsPerCoreHasBeenSet)
-  {
-      unsigned validThreadsPerCoreIdx = 1;
-      for(auto& item : m_validThreadsPerCore)
-      {
-        oStream << location << index << locationValue << ".ValidThreadsPerCore." << validThreadsPerCoreIdx++ << "=" << item << "&";
-      }
-  }
-
-}
-
-void VCpuInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_defaultVCpusHasBeenSet)
-  {
-      oStream << location << ".DefaultVCpus=" << m_defaultVCpus << "&";
-  }
-  if(m_defaultCoresHasBeenSet)
-  {
-      oStream << location << ".DefaultCores=" << m_defaultCores << "&";
-  }
-  if(m_defaultThreadsPerCoreHasBeenSet)
-  {
-      oStream << location << ".DefaultThreadsPerCore=" << m_defaultThreadsPerCore << "&";
-  }
-  if(m_validCoresHasBeenSet)
-  {
-      unsigned validCoresIdx = 1;
-      for(auto& item : m_validCores)
-      {
-        oStream << location << ".ValidCores." << validCoresIdx++ << "=" << item << "&";
-      }
-  }
-  if(m_validThreadsPerCoreHasBeenSet)
-  {
-      unsigned validThreadsPerCoreIdx = 1;
-      for(auto& item : m_validThreadsPerCore)
-      {
-        oStream << location << ".ValidThreadsPerCore." << validThreadsPerCoreIdx++ << "=" << item << "&";
-      }
+  if (m_validThreadsPerCoreHasBeenSet) {
+    unsigned validThreadsPerCoreIdx = 1;
+    for (auto& item : m_validThreadsPerCore) {
+      oStream << location << index << locationValue << ".ValidThreadsPerCore." << validThreadsPerCoreIdx++ << "=" << item << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VCpuInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_defaultVCpusHasBeenSet) {
+    oStream << location << ".DefaultVCpus=" << m_defaultVCpus << "&";
+  }
+  if (m_defaultCoresHasBeenSet) {
+    oStream << location << ".DefaultCores=" << m_defaultCores << "&";
+  }
+  if (m_defaultThreadsPerCoreHasBeenSet) {
+    oStream << location << ".DefaultThreadsPerCore=" << m_defaultThreadsPerCore << "&";
+  }
+  if (m_validCoresHasBeenSet) {
+    unsigned validCoresIdx = 1;
+    for (auto& item : m_validCores) {
+      oStream << location << ".ValidCores." << validCoresIdx++ << "=" << item << "&";
+    }
+  }
+  if (m_validThreadsPerCoreHasBeenSet) {
+    unsigned validThreadsPerCoreIdx = 1;
+    for (auto& item : m_validThreadsPerCore) {
+      oStream << location << ".ValidThreadsPerCore." << validThreadsPerCoreIdx++ << "=" << item << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

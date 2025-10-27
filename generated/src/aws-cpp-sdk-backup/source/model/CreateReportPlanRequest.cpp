@@ -12,54 +12,36 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateReportPlanRequest::SerializePayload() const
-{
+Aws::String CreateReportPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_reportPlanNameHasBeenSet)
-  {
-   payload.WithString("ReportPlanName", m_reportPlanName);
-
+  if (m_reportPlanNameHasBeenSet) {
+    payload.WithString("ReportPlanName", m_reportPlanName);
   }
 
-  if(m_reportPlanDescriptionHasBeenSet)
-  {
-   payload.WithString("ReportPlanDescription", m_reportPlanDescription);
-
+  if (m_reportPlanDescriptionHasBeenSet) {
+    payload.WithString("ReportPlanDescription", m_reportPlanDescription);
   }
 
-  if(m_reportDeliveryChannelHasBeenSet)
-  {
-   payload.WithObject("ReportDeliveryChannel", m_reportDeliveryChannel.Jsonize());
-
+  if (m_reportDeliveryChannelHasBeenSet) {
+    payload.WithObject("ReportDeliveryChannel", m_reportDeliveryChannel.Jsonize());
   }
 
-  if(m_reportSettingHasBeenSet)
-  {
-   payload.WithObject("ReportSetting", m_reportSetting.Jsonize());
-
+  if (m_reportSettingHasBeenSet) {
+    payload.WithObject("ReportSetting", m_reportSetting.Jsonize());
   }
 
-  if(m_reportPlanTagsHasBeenSet)
-  {
-   JsonValue reportPlanTagsJsonMap;
-   for(auto& reportPlanTagsItem : m_reportPlanTags)
-   {
-     reportPlanTagsJsonMap.WithString(reportPlanTagsItem.first, reportPlanTagsItem.second);
-   }
-   payload.WithObject("ReportPlanTags", std::move(reportPlanTagsJsonMap));
-
+  if (m_reportPlanTagsHasBeenSet) {
+    JsonValue reportPlanTagsJsonMap;
+    for (auto& reportPlanTagsItem : m_reportPlanTags) {
+      reportPlanTagsJsonMap.WithString(reportPlanTagsItem.first, reportPlanTagsItem.second);
+    }
+    payload.WithObject("ReportPlanTags", std::move(reportPlanTagsJsonMap));
   }
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

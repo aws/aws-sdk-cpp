@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography-data/model/CryptogramAuthResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/model/CryptogramAuthResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
 
-CryptogramAuthResponse::CryptogramAuthResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CryptogramAuthResponse::CryptogramAuthResponse(JsonView jsonValue) { *this = jsonValue; }
 
-CryptogramAuthResponse& CryptogramAuthResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ArpcMethod1"))
-  {
+CryptogramAuthResponse& CryptogramAuthResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ArpcMethod1")) {
     m_arpcMethod1 = jsonValue.GetObject("ArpcMethod1");
     m_arpcMethod1HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArpcMethod2"))
-  {
+  if (jsonValue.ValueExists("ArpcMethod2")) {
     m_arpcMethod2 = jsonValue.GetObject("ArpcMethod2");
     m_arpcMethod2HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CryptogramAuthResponse::Jsonize() const
-{
+JsonValue CryptogramAuthResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_arpcMethod1HasBeenSet)
-  {
-   payload.WithObject("ArpcMethod1", m_arpcMethod1.Jsonize());
-
+  if (m_arpcMethod1HasBeenSet) {
+    payload.WithObject("ArpcMethod1", m_arpcMethod1.Jsonize());
   }
 
-  if(m_arpcMethod2HasBeenSet)
-  {
-   payload.WithObject("ArpcMethod2", m_arpcMethod2.Jsonize());
-
+  if (m_arpcMethod2HasBeenSet) {
+    payload.WithObject("ArpcMethod2", m_arpcMethod2.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

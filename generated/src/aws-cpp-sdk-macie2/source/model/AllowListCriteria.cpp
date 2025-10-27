@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/AllowListCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/AllowListCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-AllowListCriteria::AllowListCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AllowListCriteria::AllowListCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-AllowListCriteria& AllowListCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("regex"))
-  {
+AllowListCriteria& AllowListCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("regex")) {
     m_regex = jsonValue.GetString("regex");
     m_regexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3WordsList"))
-  {
+  if (jsonValue.ValueExists("s3WordsList")) {
     m_s3WordsList = jsonValue.GetObject("s3WordsList");
     m_s3WordsListHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AllowListCriteria::Jsonize() const
-{
+JsonValue AllowListCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_regexHasBeenSet)
-  {
-   payload.WithString("regex", m_regex);
-
+  if (m_regexHasBeenSet) {
+    payload.WithString("regex", m_regex);
   }
 
-  if(m_s3WordsListHasBeenSet)
-  {
-   payload.WithObject("s3WordsList", m_s3WordsList.Jsonize());
-
+  if (m_s3WordsListHasBeenSet) {
+    payload.WithObject("s3WordsList", m_s3WordsList.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

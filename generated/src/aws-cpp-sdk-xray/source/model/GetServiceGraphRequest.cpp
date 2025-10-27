@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/GetServiceGraphRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/GetServiceGraphRequest.h>
 
 #include <utility>
 
@@ -12,41 +12,28 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetServiceGraphRequest::SerializePayload() const
-{
+Aws::String GetServiceGraphRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_groupARNHasBeenSet)
-  {
-   payload.WithString("GroupARN", m_groupARN);
-
+  if (m_groupARNHasBeenSet) {
+    payload.WithString("GroupARN", m_groupARN);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/DescribeInventoryDeletionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm/model/DescribeInventoryDeletionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInventoryDeletionsResult::DescribeInventoryDeletionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeInventoryDeletionsResult::DescribeInventoryDeletionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeInventoryDeletionsResult& DescribeInventoryDeletionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeInventoryDeletionsResult& DescribeInventoryDeletionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("InventoryDeletions"))
-  {
+  if (jsonValue.ValueExists("InventoryDeletions")) {
     Aws::Utils::Array<JsonView> inventoryDeletionsJsonList = jsonValue.GetArray("InventoryDeletions");
-    for(unsigned inventoryDeletionsIndex = 0; inventoryDeletionsIndex < inventoryDeletionsJsonList.GetLength(); ++inventoryDeletionsIndex)
-    {
+    for (unsigned inventoryDeletionsIndex = 0; inventoryDeletionsIndex < inventoryDeletionsJsonList.GetLength();
+         ++inventoryDeletionsIndex) {
       m_inventoryDeletions.push_back(inventoryDeletionsJsonList[inventoryDeletionsIndex].AsObject());
     }
     m_inventoryDeletionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

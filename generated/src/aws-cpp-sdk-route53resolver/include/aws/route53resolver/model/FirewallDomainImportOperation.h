@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
-  enum class FirewallDomainImportOperation
-  {
-    NOT_SET,
-    REPLACE
-  };
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
+enum class FirewallDomainImportOperation { NOT_SET, REPLACE };
 
-namespace FirewallDomainImportOperationMapper
-{
+namespace FirewallDomainImportOperationMapper {
 AWS_ROUTE53RESOLVER_API FirewallDomainImportOperation GetFirewallDomainImportOperationForName(const Aws::String& name);
 
 AWS_ROUTE53RESOLVER_API Aws::String GetNameForFirewallDomainImportOperation(FirewallDomainImportOperation value);
-} // namespace FirewallDomainImportOperationMapper
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace FirewallDomainImportOperationMapper
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

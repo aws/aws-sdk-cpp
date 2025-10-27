@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-LaunchIntoInstanceProperties::LaunchIntoInstanceProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LaunchIntoInstanceProperties::LaunchIntoInstanceProperties(JsonView jsonValue) { *this = jsonValue; }
 
-LaunchIntoInstanceProperties& LaunchIntoInstanceProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("launchIntoEC2InstanceID"))
-  {
+LaunchIntoInstanceProperties& LaunchIntoInstanceProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("launchIntoEC2InstanceID")) {
     m_launchIntoEC2InstanceID = jsonValue.GetString("launchIntoEC2InstanceID");
     m_launchIntoEC2InstanceIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LaunchIntoInstanceProperties::Jsonize() const
-{
+JsonValue LaunchIntoInstanceProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_launchIntoEC2InstanceIDHasBeenSet)
-  {
-   payload.WithString("launchIntoEC2InstanceID", m_launchIntoEC2InstanceID);
-
+  if (m_launchIntoEC2InstanceIDHasBeenSet) {
+    payload.WithString("launchIntoEC2InstanceID", m_launchIntoEC2InstanceID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

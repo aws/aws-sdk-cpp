@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-DependencyGraph::DependencyGraph(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DependencyGraph::DependencyGraph(JsonView jsonValue) { *this = jsonValue; }
 
-DependencyGraph& DependencyGraph::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Nodes"))
-  {
+DependencyGraph& DependencyGraph::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Nodes")) {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
-    for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
-    {
+    for (unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex) {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
     }
     m_nodesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Edges"))
-  {
+  if (jsonValue.ValueExists("Edges")) {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
-    for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
-    {
+    for (unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex) {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
     }
     m_edgesHasBeenSet = true;
@@ -46,35 +35,28 @@ DependencyGraph& DependencyGraph::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DependencyGraph::Jsonize() const
-{
+JsonValue DependencyGraph::Jsonize() const {
   JsonValue payload;
 
-  if(m_nodesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
-   for(unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex)
-   {
-     nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
-   }
-   payload.WithArray("Nodes", std::move(nodesJsonList));
-
+  if (m_nodesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nodesJsonList(m_nodes.size());
+    for (unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex) {
+      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
+    }
+    payload.WithArray("Nodes", std::move(nodesJsonList));
   }
 
-  if(m_edgesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
-   for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
-   {
-     edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());
-   }
-   payload.WithArray("Edges", std::move(edgesJsonList));
-
+  if (m_edgesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
+    for (unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex) {
+      edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());
+    }
+    payload.WithArray("Edges", std::move(edgesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-SigninDelegateGroup::SigninDelegateGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SigninDelegateGroup::SigninDelegateGroup(JsonView jsonValue) { *this = jsonValue; }
 
-SigninDelegateGroup& SigninDelegateGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupName"))
-  {
+SigninDelegateGroup& SigninDelegateGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SigninDelegateGroup::Jsonize() const
-{
+JsonValue SigninDelegateGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

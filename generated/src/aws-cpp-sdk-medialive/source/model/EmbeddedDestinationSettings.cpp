@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/EmbeddedDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/EmbeddedDestinationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator =(JsonView jsonValue)
-{
+EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue EmbeddedDestinationSettings::Jsonize() const
-{
+JsonValue EmbeddedDestinationSettings::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

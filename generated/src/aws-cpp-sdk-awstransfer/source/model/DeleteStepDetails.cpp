@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-DeleteStepDetails::DeleteStepDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteStepDetails::DeleteStepDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteStepDetails& DeleteStepDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DeleteStepDetails& DeleteStepDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceFileLocation"))
-  {
+  if (jsonValue.ValueExists("SourceFileLocation")) {
     m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
     m_sourceFileLocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeleteStepDetails::Jsonize() const
-{
+JsonValue DeleteStepDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_sourceFileLocationHasBeenSet)
-  {
-   payload.WithString("SourceFileLocation", m_sourceFileLocation);
-
+  if (m_sourceFileLocationHasBeenSet) {
+    payload.WithString("SourceFileLocation", m_sourceFileLocation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

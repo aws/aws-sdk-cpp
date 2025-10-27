@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-GeneratedPolicy::GeneratedPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeneratedPolicy::GeneratedPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-GeneratedPolicy& GeneratedPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("policy"))
-  {
+GeneratedPolicy& GeneratedPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("policy")) {
     m_policy = jsonValue.GetString("policy");
     m_policyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeneratedPolicy::Jsonize() const
-{
+JsonValue GeneratedPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

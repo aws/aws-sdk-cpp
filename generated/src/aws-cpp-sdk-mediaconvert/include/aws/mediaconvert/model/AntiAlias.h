@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AntiAlias
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AntiAlias { NOT_SET, DISABLED, ENABLED };
 
-namespace AntiAliasMapper
-{
+namespace AntiAliasMapper {
 AWS_MEDIACONVERT_API AntiAlias GetAntiAliasForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAntiAlias(AntiAlias value);
-} // namespace AntiAliasMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AntiAliasMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

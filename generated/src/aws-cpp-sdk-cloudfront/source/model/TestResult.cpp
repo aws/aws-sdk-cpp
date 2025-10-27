@@ -4,52 +4,40 @@
  */
 
 #include <aws/cloudfront/model/TestResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-TestResult::TestResult(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TestResult::TestResult(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TestResult& TestResult::operator =(const XmlNode& xmlNode)
-{
+TestResult& TestResult::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode functionSummaryNode = resultNode.FirstChild("FunctionSummary");
-    if(!functionSummaryNode.IsNull())
-    {
+    if (!functionSummaryNode.IsNull()) {
       m_functionSummary = functionSummaryNode;
       m_functionSummaryHasBeenSet = true;
     }
     XmlNode computeUtilizationNode = resultNode.FirstChild("ComputeUtilization");
-    if(!computeUtilizationNode.IsNull())
-    {
+    if (!computeUtilizationNode.IsNull()) {
       m_computeUtilization = Aws::Utils::Xml::DecodeEscapedXmlText(computeUtilizationNode.GetText());
       m_computeUtilizationHasBeenSet = true;
     }
     XmlNode functionExecutionLogsNode = resultNode.FirstChild("FunctionExecutionLogs");
-    if(!functionExecutionLogsNode.IsNull())
-    {
+    if (!functionExecutionLogsNode.IsNull()) {
       XmlNode functionExecutionLogsMember = functionExecutionLogsNode.FirstChild("member");
       m_functionExecutionLogsHasBeenSet = !functionExecutionLogsMember.IsNull();
-      while(!functionExecutionLogsMember.IsNull())
-      {
+      while (!functionExecutionLogsMember.IsNull()) {
         m_functionExecutionLogs.push_back(functionExecutionLogsMember.GetText());
         functionExecutionLogsMember = functionExecutionLogsMember.NextNode("member");
       }
@@ -57,14 +45,12 @@ TestResult& TestResult::operator =(const XmlNode& xmlNode)
       m_functionExecutionLogsHasBeenSet = true;
     }
     XmlNode functionErrorMessageNode = resultNode.FirstChild("FunctionErrorMessage");
-    if(!functionErrorMessageNode.IsNull())
-    {
+    if (!functionErrorMessageNode.IsNull()) {
       m_functionErrorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(functionErrorMessageNode.GetText());
       m_functionErrorMessageHasBeenSet = true;
     }
     XmlNode functionOutputNode = resultNode.FirstChild("FunctionOutput");
-    if(!functionOutputNode.IsNull())
-    {
+    if (!functionOutputNode.IsNull()) {
       m_functionOutput = Aws::Utils::Xml::DecodeEscapedXmlText(functionOutputNode.GetText());
       m_functionOutputHasBeenSet = true;
     }
@@ -73,45 +59,37 @@ TestResult& TestResult::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void TestResult::AddToNode(XmlNode& parentNode) const
-{
+void TestResult::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_functionSummaryHasBeenSet)
-  {
-   XmlNode functionSummaryNode = parentNode.CreateChildElement("FunctionSummary");
-   m_functionSummary.AddToNode(functionSummaryNode);
+  if (m_functionSummaryHasBeenSet) {
+    XmlNode functionSummaryNode = parentNode.CreateChildElement("FunctionSummary");
+    m_functionSummary.AddToNode(functionSummaryNode);
   }
 
-  if(m_computeUtilizationHasBeenSet)
-  {
-   XmlNode computeUtilizationNode = parentNode.CreateChildElement("ComputeUtilization");
-   computeUtilizationNode.SetText(m_computeUtilization);
+  if (m_computeUtilizationHasBeenSet) {
+    XmlNode computeUtilizationNode = parentNode.CreateChildElement("ComputeUtilization");
+    computeUtilizationNode.SetText(m_computeUtilization);
   }
 
-  if(m_functionExecutionLogsHasBeenSet)
-  {
-   XmlNode functionExecutionLogsParentNode = parentNode.CreateChildElement("FunctionExecutionLogs");
-   for(const auto& item : m_functionExecutionLogs)
-   {
-     XmlNode functionExecutionLogsNode = functionExecutionLogsParentNode.CreateChildElement("member");
-     functionExecutionLogsNode.SetText(item);
-   }
+  if (m_functionExecutionLogsHasBeenSet) {
+    XmlNode functionExecutionLogsParentNode = parentNode.CreateChildElement("FunctionExecutionLogs");
+    for (const auto& item : m_functionExecutionLogs) {
+      XmlNode functionExecutionLogsNode = functionExecutionLogsParentNode.CreateChildElement("member");
+      functionExecutionLogsNode.SetText(item);
+    }
   }
 
-  if(m_functionErrorMessageHasBeenSet)
-  {
-   XmlNode functionErrorMessageNode = parentNode.CreateChildElement("FunctionErrorMessage");
-   functionErrorMessageNode.SetText(m_functionErrorMessage);
+  if (m_functionErrorMessageHasBeenSet) {
+    XmlNode functionErrorMessageNode = parentNode.CreateChildElement("FunctionErrorMessage");
+    functionErrorMessageNode.SetText(m_functionErrorMessage);
   }
 
-  if(m_functionOutputHasBeenSet)
-  {
-   XmlNode functionOutputNode = parentNode.CreateChildElement("FunctionOutput");
-   functionOutputNode.SetText(m_functionOutput);
+  if (m_functionOutputHasBeenSet) {
+    XmlNode functionOutputNode = parentNode.CreateChildElement("FunctionOutput");
+    functionOutputNode.SetText(m_functionOutput);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

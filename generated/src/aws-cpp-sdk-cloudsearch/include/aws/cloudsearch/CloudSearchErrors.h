@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudSearch
-{
-enum class CloudSearchErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudSearch {
+enum class CloudSearchErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudSearchErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudSearchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BASE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BASE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,
@@ -55,9 +52,8 @@ enum class CloudSearchErrors
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_CLOUDSEARCH_API CloudSearchError : public Aws::Client::AWSError<CloudSearchErrors>
-{
-public:
+class AWS_CLOUDSEARCH_API CloudSearchError : public Aws::Client::AWSError<CloudSearchErrors> {
+ public:
   CloudSearchError() {}
   CloudSearchError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
   CloudSearchError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudSearchErrorMapper
-{
-  AWS_CLOUDSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudSearchErrorMapper {
+AWS_CLOUDSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudSearch
-} // namespace Aws
+}  // namespace CloudSearch
+}  // namespace Aws

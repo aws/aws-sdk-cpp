@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class ServerCriteria
-  {
-    NOT_SET,
-    NOT_DEFINED,
-    OS_NAME,
-    STRATEGY,
-    DESTINATION,
-    SERVER_ID,
-    ANALYSIS_STATUS,
-    ERROR_CATEGORY
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class ServerCriteria { NOT_SET, NOT_DEFINED, OS_NAME, STRATEGY, DESTINATION, SERVER_ID, ANALYSIS_STATUS, ERROR_CATEGORY };
 
-namespace ServerCriteriaMapper
-{
+namespace ServerCriteriaMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerCriteria GetServerCriteriaForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForServerCriteria(ServerCriteria value);
-} // namespace ServerCriteriaMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace ServerCriteriaMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

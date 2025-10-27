@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SecurityLake;
 
-AWSError<CoreErrors> SecurityLakeErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SecurityLakeErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SecurityLakeErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

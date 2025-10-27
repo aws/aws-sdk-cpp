@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra-ranking/model/DeleteRescoreExecutionPlanRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra-ranking/model/DeleteRescoreExecutionPlanRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::KendraRanking::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRescoreExecutionPlanRequest::SerializePayload() const
-{
+Aws::String DeleteRescoreExecutionPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteRescoreExecutionPlanRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteRescoreExecutionPlanRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSKendraRerankingFrontendService.DeleteRescoreExecutionPlan"));
   return headers;
-
 }
-
-
-
-

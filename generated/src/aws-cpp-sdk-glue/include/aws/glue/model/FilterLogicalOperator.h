@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class FilterLogicalOperator
-  {
-    NOT_SET,
-    AND,
-    OR
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class FilterLogicalOperator { NOT_SET, AND, OR };
 
-namespace FilterLogicalOperatorMapper
-{
+namespace FilterLogicalOperatorMapper {
 AWS_GLUE_API FilterLogicalOperator GetFilterLogicalOperatorForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForFilterLogicalOperator(FilterLogicalOperator value);
-} // namespace FilterLogicalOperatorMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace FilterLogicalOperatorMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

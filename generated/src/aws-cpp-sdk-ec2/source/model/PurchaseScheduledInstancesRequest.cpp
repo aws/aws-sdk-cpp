@@ -3,32 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseScheduledInstancesRequest::SerializePayload() const
-{
+Aws::String PurchaseScheduledInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseScheduledInstances&";
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_purchaseRequestsHasBeenSet)
-  {
+  if (m_purchaseRequestsHasBeenSet) {
     unsigned purchaseRequestsCount = 1;
-    for(auto& item : m_purchaseRequests)
-    {
+    for (auto& item : m_purchaseRequests) {
       item.OutputToStream(ss, "PurchaseRequest.", purchaseRequestsCount, "");
       purchaseRequestsCount++;
     }
@@ -38,8 +33,4 @@ Aws::String PurchaseScheduledInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PurchaseScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

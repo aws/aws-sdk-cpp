@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PromptFlowNodeResourceConfiguration::PromptFlowNodeResourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PromptFlowNodeResourceConfiguration::PromptFlowNodeResourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PromptFlowNodeResourceConfiguration& PromptFlowNodeResourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("promptArn"))
-  {
+PromptFlowNodeResourceConfiguration& PromptFlowNodeResourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("promptArn")) {
     m_promptArn = jsonValue.GetString("promptArn");
     m_promptArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PromptFlowNodeResourceConfiguration::Jsonize() const
-{
+JsonValue PromptFlowNodeResourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_promptArnHasBeenSet)
-  {
-   payload.WithString("promptArn", m_promptArn);
-
+  if (m_promptArnHasBeenSet) {
+    payload.WithString("promptArn", m_promptArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

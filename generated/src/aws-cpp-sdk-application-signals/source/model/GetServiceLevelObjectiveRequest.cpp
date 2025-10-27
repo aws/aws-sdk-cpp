@@ -12,11 +12,4 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetServiceLevelObjectiveRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetServiceLevelObjectiveRequest::SerializePayload() const { return {}; }

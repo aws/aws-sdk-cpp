@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-SubmitAutoEvaluationActionDefinition& SubmitAutoEvaluationActionDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationFormId"))
-  {
+SubmitAutoEvaluationActionDefinition& SubmitAutoEvaluationActionDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationFormId")) {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
     m_evaluationFormIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubmitAutoEvaluationActionDefinition::Jsonize() const
-{
+JsonValue SubmitAutoEvaluationActionDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationFormIdHasBeenSet)
-  {
-   payload.WithString("EvaluationFormId", m_evaluationFormId);
-
+  if (m_evaluationFormIdHasBeenSet) {
+    payload.WithString("EvaluationFormId", m_evaluationFormId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

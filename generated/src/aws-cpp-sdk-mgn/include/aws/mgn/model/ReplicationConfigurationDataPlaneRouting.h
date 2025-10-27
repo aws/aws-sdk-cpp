@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class ReplicationConfigurationDataPlaneRouting
-  {
-    NOT_SET,
-    PRIVATE_IP,
-    PUBLIC_IP
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class ReplicationConfigurationDataPlaneRouting { NOT_SET, PRIVATE_IP, PUBLIC_IP };
 
-namespace ReplicationConfigurationDataPlaneRoutingMapper
-{
+namespace ReplicationConfigurationDataPlaneRoutingMapper {
 AWS_MGN_API ReplicationConfigurationDataPlaneRouting GetReplicationConfigurationDataPlaneRoutingForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForReplicationConfigurationDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value);
-} // namespace ReplicationConfigurationDataPlaneRoutingMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace ReplicationConfigurationDataPlaneRoutingMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

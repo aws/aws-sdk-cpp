@@ -12,19 +12,12 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAppliedSchemaVersionRequest::SerializePayload() const
-{
+Aws::String GetAppliedSchemaVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_schemaArnHasBeenSet)
-  {
-   payload.WithString("SchemaArn", m_schemaArn);
-
+  if (m_schemaArnHasBeenSet) {
+    payload.WithString("SchemaArn", m_schemaArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

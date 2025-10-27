@@ -7,60 +7,65 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/ImageBuilder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace AppStream
-{
-namespace Model
-{
-  class CreateImageBuilderResult
-  {
-  public:
-    AWS_APPSTREAM_API CreateImageBuilderResult() = default;
-    AWS_APPSTREAM_API CreateImageBuilderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_APPSTREAM_API CreateImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppStream {
+namespace Model {
+class CreateImageBuilderResult {
+ public:
+  AWS_APPSTREAM_API CreateImageBuilderResult() = default;
+  AWS_APPSTREAM_API CreateImageBuilderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPSTREAM_API CreateImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Information about the image builder.</p>
+   */
+  inline const ImageBuilder& GetImageBuilder() const { return m_imageBuilder; }
+  template <typename ImageBuilderT = ImageBuilder>
+  void SetImageBuilder(ImageBuilderT&& value) {
+    m_imageBuilderHasBeenSet = true;
+    m_imageBuilder = std::forward<ImageBuilderT>(value);
+  }
+  template <typename ImageBuilderT = ImageBuilder>
+  CreateImageBuilderResult& WithImageBuilder(ImageBuilderT&& value) {
+    SetImageBuilder(std::forward<ImageBuilderT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the image builder.</p>
-     */
-    inline const ImageBuilder& GetImageBuilder() const { return m_imageBuilder; }
-    template<typename ImageBuilderT = ImageBuilder>
-    void SetImageBuilder(ImageBuilderT&& value) { m_imageBuilderHasBeenSet = true; m_imageBuilder = std::forward<ImageBuilderT>(value); }
-    template<typename ImageBuilderT = ImageBuilder>
-    CreateImageBuilderResult& WithImageBuilder(ImageBuilderT&& value) { SetImageBuilder(std::forward<ImageBuilderT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateImageBuilderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateImageBuilderResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ImageBuilder m_imageBuilder;
+  bool m_imageBuilderHasBeenSet = false;
 
-    ImageBuilder m_imageBuilder;
-    bool m_imageBuilderHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

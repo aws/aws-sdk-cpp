@@ -12,11 +12,4 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeResourcePolicyRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeResourcePolicyRequest::SerializePayload() const { return {}; }

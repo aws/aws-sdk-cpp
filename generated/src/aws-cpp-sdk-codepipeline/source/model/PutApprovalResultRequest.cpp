@@ -12,51 +12,34 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutApprovalResultRequest::SerializePayload() const
-{
+Aws::String PutApprovalResultRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineNameHasBeenSet)
-  {
-   payload.WithString("pipelineName", m_pipelineName);
-
+  if (m_pipelineNameHasBeenSet) {
+    payload.WithString("pipelineName", m_pipelineName);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("actionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("actionName", m_actionName);
   }
 
-  if(m_resultHasBeenSet)
-  {
-   payload.WithObject("result", m_result.Jsonize());
-
+  if (m_resultHasBeenSet) {
+    payload.WithObject("result", m_result.Jsonize());
   }
 
-  if(m_tokenHasBeenSet)
-  {
-   payload.WithString("token", m_token);
-
+  if (m_tokenHasBeenSet) {
+    payload.WithString("token", m_token);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutApprovalResultRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutApprovalResultRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutApprovalResult"));
   return headers;
-
 }
-
-
-
-

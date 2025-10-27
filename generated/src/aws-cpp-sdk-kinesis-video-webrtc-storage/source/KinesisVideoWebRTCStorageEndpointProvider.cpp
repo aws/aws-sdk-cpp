@@ -5,12 +5,8 @@
 
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointProvider.h>
 
-namespace Aws
-{
-namespace KinesisVideoWebRTCStorage
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KinesisVideoWebRTCStorage
-} // namespace Aws
+namespace Aws {
+namespace KinesisVideoWebRTCStorage {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KinesisVideoWebRTCStorage
+}  // namespace Aws

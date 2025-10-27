@@ -7,29 +7,24 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class ValidatePolicyResourceType
-  {
-    NOT_SET,
-    AWS_S3_Bucket,
-    AWS_S3_AccessPoint,
-    AWS_S3_MultiRegionAccessPoint,
-    AWS_S3ObjectLambda_AccessPoint,
-    AWS_IAM_AssumeRolePolicyDocument,
-    AWS_DynamoDB_Table
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class ValidatePolicyResourceType {
+  NOT_SET,
+  AWS_S3_Bucket,
+  AWS_S3_AccessPoint,
+  AWS_S3_MultiRegionAccessPoint,
+  AWS_S3ObjectLambda_AccessPoint,
+  AWS_IAM_AssumeRolePolicyDocument,
+  AWS_DynamoDB_Table
+};
 
-namespace ValidatePolicyResourceTypeMapper
-{
+namespace ValidatePolicyResourceTypeMapper {
 AWS_ACCESSANALYZER_API ValidatePolicyResourceType GetValidatePolicyResourceTypeForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForValidatePolicyResourceType(ValidatePolicyResourceType value);
-} // namespace ValidatePolicyResourceTypeMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace ValidatePolicyResourceTypeMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

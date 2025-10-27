@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/ResourcePath.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workdocs/model/ResourcePath.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
 
-ResourcePath::ResourcePath(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourcePath::ResourcePath(JsonView jsonValue) { *this = jsonValue; }
 
-ResourcePath& ResourcePath::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Components"))
-  {
+ResourcePath& ResourcePath::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Components")) {
     Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("Components");
-    for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
-    {
+    for (unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex) {
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());
     }
     m_componentsHasBeenSet = true;
@@ -37,24 +28,20 @@ ResourcePath& ResourcePath::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ResourcePath::Jsonize() const
-{
+JsonValue ResourcePath::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
-   for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
-   {
-     componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
-   }
-   payload.WithArray("Components", std::move(componentsJsonList));
-
+  if (m_componentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
+    for (unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex) {
+      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
+    }
+    payload.WithArray("Components", std::move(componentsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

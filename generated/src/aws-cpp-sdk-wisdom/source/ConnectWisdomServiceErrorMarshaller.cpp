@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ConnectWisdomService;
 
-AWSError<CoreErrors> ConnectWisdomServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ConnectWisdomServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ConnectWisdomServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

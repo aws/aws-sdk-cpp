@@ -3,59 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AttributeAggregationFunction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AttributeAggregationFunction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AttributeAggregationFunction::AttributeAggregationFunction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttributeAggregationFunction::AttributeAggregationFunction(JsonView jsonValue) { *this = jsonValue; }
 
-AttributeAggregationFunction& AttributeAggregationFunction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SimpleAttributeAggregation"))
-  {
-    m_simpleAttributeAggregation = SimpleAttributeAggregationFunctionMapper::GetSimpleAttributeAggregationFunctionForName(jsonValue.GetString("SimpleAttributeAggregation"));
+AttributeAggregationFunction& AttributeAggregationFunction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SimpleAttributeAggregation")) {
+    m_simpleAttributeAggregation = SimpleAttributeAggregationFunctionMapper::GetSimpleAttributeAggregationFunctionForName(
+        jsonValue.GetString("SimpleAttributeAggregation"));
     m_simpleAttributeAggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValueForMultipleValues"))
-  {
+  if (jsonValue.ValueExists("ValueForMultipleValues")) {
     m_valueForMultipleValues = jsonValue.GetString("ValueForMultipleValues");
     m_valueForMultipleValuesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttributeAggregationFunction::Jsonize() const
-{
+JsonValue AttributeAggregationFunction::Jsonize() const {
   JsonValue payload;
 
-  if(m_simpleAttributeAggregationHasBeenSet)
-  {
-   payload.WithString("SimpleAttributeAggregation", SimpleAttributeAggregationFunctionMapper::GetNameForSimpleAttributeAggregationFunction(m_simpleAttributeAggregation));
+  if (m_simpleAttributeAggregationHasBeenSet) {
+    payload.WithString("SimpleAttributeAggregation", SimpleAttributeAggregationFunctionMapper::GetNameForSimpleAttributeAggregationFunction(
+                                                         m_simpleAttributeAggregation));
   }
 
-  if(m_valueForMultipleValuesHasBeenSet)
-  {
-   payload.WithString("ValueForMultipleValues", m_valueForMultipleValues);
-
+  if (m_valueForMultipleValuesHasBeenSet) {
+    payload.WithString("ValueForMultipleValues", m_valueForMultipleValues);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

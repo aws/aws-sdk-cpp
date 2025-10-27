@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-FailedRequest::FailedRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailedRequest::FailedRequest(JsonView jsonValue) { *this = jsonValue; }
 
-FailedRequest& FailedRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RequestIdentifier"))
-  {
+FailedRequest& FailedRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RequestIdentifier")) {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
     m_requestIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReasonCode"))
-  {
+  if (jsonValue.ValueExists("FailureReasonCode")) {
     m_failureReasonCode = FailureReasonCodeMapper::GetFailureReasonCodeForName(jsonValue.GetString("FailureReasonCode"));
     m_failureReasonCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReasonMessage"))
-  {
+  if (jsonValue.ValueExists("FailureReasonMessage")) {
     m_failureReasonMessage = jsonValue.GetString("FailureReasonMessage");
     m_failureReasonMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailedRequest::Jsonize() const
-{
+JsonValue FailedRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestIdentifierHasBeenSet)
-  {
-   payload.WithString("RequestIdentifier", m_requestIdentifier);
-
+  if (m_requestIdentifierHasBeenSet) {
+    payload.WithString("RequestIdentifier", m_requestIdentifier);
   }
 
-  if(m_failureReasonCodeHasBeenSet)
-  {
-   payload.WithString("FailureReasonCode", FailureReasonCodeMapper::GetNameForFailureReasonCode(m_failureReasonCode));
+  if (m_failureReasonCodeHasBeenSet) {
+    payload.WithString("FailureReasonCode", FailureReasonCodeMapper::GetNameForFailureReasonCode(m_failureReasonCode));
   }
 
-  if(m_failureReasonMessageHasBeenSet)
-  {
-   payload.WithString("FailureReasonMessage", m_failureReasonMessage);
-
+  if (m_failureReasonMessageHasBeenSet) {
+    payload.WithString("FailureReasonMessage", m_failureReasonMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

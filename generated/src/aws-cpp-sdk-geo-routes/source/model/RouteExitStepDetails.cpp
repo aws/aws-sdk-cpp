@@ -3,100 +3,77 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RouteExitStepDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RouteExitStepDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RouteExitStepDetails::RouteExitStepDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteExitStepDetails::RouteExitStepDetails(JsonView jsonValue) { *this = jsonValue; }
 
-RouteExitStepDetails& RouteExitStepDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Intersection"))
-  {
+RouteExitStepDetails& RouteExitStepDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Intersection")) {
     Aws::Utils::Array<JsonView> intersectionJsonList = jsonValue.GetArray("Intersection");
-    for(unsigned intersectionIndex = 0; intersectionIndex < intersectionJsonList.GetLength(); ++intersectionIndex)
-    {
+    for (unsigned intersectionIndex = 0; intersectionIndex < intersectionJsonList.GetLength(); ++intersectionIndex) {
       m_intersection.push_back(intersectionJsonList[intersectionIndex].AsObject());
     }
     m_intersectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelativeExit"))
-  {
+  if (jsonValue.ValueExists("RelativeExit")) {
     m_relativeExit = jsonValue.GetInteger("RelativeExit");
     m_relativeExitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SteeringDirection"))
-  {
+  if (jsonValue.ValueExists("SteeringDirection")) {
     m_steeringDirection = RouteSteeringDirectionMapper::GetRouteSteeringDirectionForName(jsonValue.GetString("SteeringDirection"));
     m_steeringDirectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TurnAngle"))
-  {
+  if (jsonValue.ValueExists("TurnAngle")) {
     m_turnAngle = jsonValue.GetDouble("TurnAngle");
     m_turnAngleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TurnIntensity"))
-  {
+  if (jsonValue.ValueExists("TurnIntensity")) {
     m_turnIntensity = RouteTurnIntensityMapper::GetRouteTurnIntensityForName(jsonValue.GetString("TurnIntensity"));
     m_turnIntensityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RouteExitStepDetails::Jsonize() const
-{
+JsonValue RouteExitStepDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_intersectionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> intersectionJsonList(m_intersection.size());
-   for(unsigned intersectionIndex = 0; intersectionIndex < intersectionJsonList.GetLength(); ++intersectionIndex)
-   {
-     intersectionJsonList[intersectionIndex].AsObject(m_intersection[intersectionIndex].Jsonize());
-   }
-   payload.WithArray("Intersection", std::move(intersectionJsonList));
-
+  if (m_intersectionHasBeenSet) {
+    Aws::Utils::Array<JsonValue> intersectionJsonList(m_intersection.size());
+    for (unsigned intersectionIndex = 0; intersectionIndex < intersectionJsonList.GetLength(); ++intersectionIndex) {
+      intersectionJsonList[intersectionIndex].AsObject(m_intersection[intersectionIndex].Jsonize());
+    }
+    payload.WithArray("Intersection", std::move(intersectionJsonList));
   }
 
-  if(m_relativeExitHasBeenSet)
-  {
-   payload.WithInteger("RelativeExit", m_relativeExit);
-
+  if (m_relativeExitHasBeenSet) {
+    payload.WithInteger("RelativeExit", m_relativeExit);
   }
 
-  if(m_steeringDirectionHasBeenSet)
-  {
-   payload.WithString("SteeringDirection", RouteSteeringDirectionMapper::GetNameForRouteSteeringDirection(m_steeringDirection));
+  if (m_steeringDirectionHasBeenSet) {
+    payload.WithString("SteeringDirection", RouteSteeringDirectionMapper::GetNameForRouteSteeringDirection(m_steeringDirection));
   }
 
-  if(m_turnAngleHasBeenSet)
-  {
-   payload.WithDouble("TurnAngle", m_turnAngle);
-
+  if (m_turnAngleHasBeenSet) {
+    payload.WithDouble("TurnAngle", m_turnAngle);
   }
 
-  if(m_turnIntensityHasBeenSet)
-  {
-   payload.WithString("TurnIntensity", RouteTurnIntensityMapper::GetNameForRouteTurnIntensity(m_turnIntensity));
+  if (m_turnIntensityHasBeenSet) {
+    payload.WithString("TurnIntensity", RouteTurnIntensityMapper::GetNameForRouteTurnIntensity(m_turnIntensity));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

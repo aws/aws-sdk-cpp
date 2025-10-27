@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/QuickResponseContents.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/QuickResponseContents.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-QuickResponseContents::QuickResponseContents(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickResponseContents::QuickResponseContents(JsonView jsonValue) { *this = jsonValue; }
 
-QuickResponseContents& QuickResponseContents::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("markdown"))
-  {
+QuickResponseContents& QuickResponseContents::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("markdown")) {
     m_markdown = jsonValue.GetObject("markdown");
     m_markdownHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("plainText"))
-  {
+  if (jsonValue.ValueExists("plainText")) {
     m_plainText = jsonValue.GetObject("plainText");
     m_plainTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickResponseContents::Jsonize() const
-{
+JsonValue QuickResponseContents::Jsonize() const {
   JsonValue payload;
 
-  if(m_markdownHasBeenSet)
-  {
-   payload.WithObject("markdown", m_markdown.Jsonize());
-
+  if (m_markdownHasBeenSet) {
+    payload.WithObject("markdown", m_markdown.Jsonize());
   }
 
-  if(m_plainTextHasBeenSet)
-  {
-   payload.WithObject("plainText", m_plainText.Jsonize());
-
+  if (m_plainTextHasBeenSet) {
+    payload.WithObject("plainText", m_plainText.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

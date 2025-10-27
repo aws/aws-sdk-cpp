@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VerifiedAccessEndpointProtocol.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/VerifiedAccessEndpointProtocol.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace VerifiedAccessEndpointProtocolMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace VerifiedAccessEndpointProtocolMapper
-      {
+static const int http_HASH = HashingUtils::HashString("http");
+static const int https_HASH = HashingUtils::HashString("https");
+static const int tcp_HASH = HashingUtils::HashString("tcp");
 
-        static const int http_HASH = HashingUtils::HashString("http");
-        static const int https_HASH = HashingUtils::HashString("https");
-        static const int tcp_HASH = HashingUtils::HashString("tcp");
+VerifiedAccessEndpointProtocol GetVerifiedAccessEndpointProtocolForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == http_HASH) {
+    return VerifiedAccessEndpointProtocol::http;
+  } else if (hashCode == https_HASH) {
+    return VerifiedAccessEndpointProtocol::https;
+  } else if (hashCode == tcp_HASH) {
+    return VerifiedAccessEndpointProtocol::tcp;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VerifiedAccessEndpointProtocol>(hashCode);
+  }
 
+  return VerifiedAccessEndpointProtocol::NOT_SET;
+}
 
-        VerifiedAccessEndpointProtocol GetVerifiedAccessEndpointProtocolForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == http_HASH)
-          {
-            return VerifiedAccessEndpointProtocol::http;
-          }
-          else if (hashCode == https_HASH)
-          {
-            return VerifiedAccessEndpointProtocol::https;
-          }
-          else if (hashCode == tcp_HASH)
-          {
-            return VerifiedAccessEndpointProtocol::tcp;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VerifiedAccessEndpointProtocol>(hashCode);
-          }
+Aws::String GetNameForVerifiedAccessEndpointProtocol(VerifiedAccessEndpointProtocol enumValue) {
+  switch (enumValue) {
+    case VerifiedAccessEndpointProtocol::NOT_SET:
+      return {};
+    case VerifiedAccessEndpointProtocol::http:
+      return "http";
+    case VerifiedAccessEndpointProtocol::https:
+      return "https";
+    case VerifiedAccessEndpointProtocol::tcp:
+      return "tcp";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VerifiedAccessEndpointProtocol::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVerifiedAccessEndpointProtocol(VerifiedAccessEndpointProtocol enumValue)
-        {
-          switch(enumValue)
-          {
-          case VerifiedAccessEndpointProtocol::NOT_SET:
-            return {};
-          case VerifiedAccessEndpointProtocol::http:
-            return "http";
-          case VerifiedAccessEndpointProtocol::https:
-            return "https";
-          case VerifiedAccessEndpointProtocol::tcp:
-            return "tcp";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VerifiedAccessEndpointProtocolMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace VerifiedAccessEndpointProtocolMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

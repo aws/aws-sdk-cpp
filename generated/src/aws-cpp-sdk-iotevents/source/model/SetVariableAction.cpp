@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/SetVariableAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/SetVariableAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-SetVariableAction::SetVariableAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SetVariableAction::SetVariableAction(JsonView jsonValue) { *this = jsonValue; }
 
-SetVariableAction& SetVariableAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("variableName"))
-  {
+SetVariableAction& SetVariableAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("variableName")) {
     m_variableName = jsonValue.GetString("variableName");
     m_variableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SetVariableAction::Jsonize() const
-{
+JsonValue SetVariableAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_variableNameHasBeenSet)
-  {
-   payload.WithString("variableName", m_variableName);
-
+  if (m_variableNameHasBeenSet) {
+    payload.WithString("variableName", m_variableName);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

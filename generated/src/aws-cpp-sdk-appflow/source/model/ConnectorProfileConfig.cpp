@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ConnectorProfileConfig::ConnectorProfileConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectorProfileConfig::ConnectorProfileConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectorProfileConfig& ConnectorProfileConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectorProfileProperties"))
-  {
+ConnectorProfileConfig& ConnectorProfileConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectorProfileProperties")) {
     m_connectorProfileProperties = jsonValue.GetObject("connectorProfileProperties");
     m_connectorProfilePropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorProfileCredentials"))
-  {
+  if (jsonValue.ValueExists("connectorProfileCredentials")) {
     m_connectorProfileCredentials = jsonValue.GetObject("connectorProfileCredentials");
     m_connectorProfileCredentialsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectorProfileConfig::Jsonize() const
-{
+JsonValue ConnectorProfileConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectorProfilePropertiesHasBeenSet)
-  {
-   payload.WithObject("connectorProfileProperties", m_connectorProfileProperties.Jsonize());
-
+  if (m_connectorProfilePropertiesHasBeenSet) {
+    payload.WithObject("connectorProfileProperties", m_connectorProfileProperties.Jsonize());
   }
 
-  if(m_connectorProfileCredentialsHasBeenSet)
-  {
-   payload.WithObject("connectorProfileCredentials", m_connectorProfileCredentials.Jsonize());
-
+  if (m_connectorProfileCredentialsHasBeenSet) {
+    payload.WithObject("connectorProfileCredentials", m_connectorProfileCredentials.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

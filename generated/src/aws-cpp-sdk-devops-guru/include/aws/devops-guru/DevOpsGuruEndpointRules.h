@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-class DevOpsGuruEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DevOpsGuru {
+class DevOpsGuruEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace DevOpsGuru
+}  // namespace Aws

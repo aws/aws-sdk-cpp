@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/TimeRangeType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/xray/model/TimeRangeType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace XRay {
+namespace Model {
+namespace TimeRangeTypeMapper {
 
-namespace Aws
-{
-  namespace XRay
-  {
-    namespace Model
-    {
-      namespace TimeRangeTypeMapper
-      {
+static const int TraceId_HASH = HashingUtils::HashString("TraceId");
+static const int Event_HASH = HashingUtils::HashString("Event");
+static const int Service_HASH = HashingUtils::HashString("Service");
 
-        static const int TraceId_HASH = HashingUtils::HashString("TraceId");
-        static const int Event_HASH = HashingUtils::HashString("Event");
-        static const int Service_HASH = HashingUtils::HashString("Service");
+TimeRangeType GetTimeRangeTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TraceId_HASH) {
+    return TimeRangeType::TraceId;
+  } else if (hashCode == Event_HASH) {
+    return TimeRangeType::Event;
+  } else if (hashCode == Service_HASH) {
+    return TimeRangeType::Service;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TimeRangeType>(hashCode);
+  }
 
+  return TimeRangeType::NOT_SET;
+}
 
-        TimeRangeType GetTimeRangeTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TraceId_HASH)
-          {
-            return TimeRangeType::TraceId;
-          }
-          else if (hashCode == Event_HASH)
-          {
-            return TimeRangeType::Event;
-          }
-          else if (hashCode == Service_HASH)
-          {
-            return TimeRangeType::Service;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TimeRangeType>(hashCode);
-          }
+Aws::String GetNameForTimeRangeType(TimeRangeType enumValue) {
+  switch (enumValue) {
+    case TimeRangeType::NOT_SET:
+      return {};
+    case TimeRangeType::TraceId:
+      return "TraceId";
+    case TimeRangeType::Event:
+      return "Event";
+    case TimeRangeType::Service:
+      return "Service";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TimeRangeType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTimeRangeType(TimeRangeType enumValue)
-        {
-          switch(enumValue)
-          {
-          case TimeRangeType::NOT_SET:
-            return {};
-          case TimeRangeType::TraceId:
-            return "TraceId";
-          case TimeRangeType::Event:
-            return "Event";
-          case TimeRangeType::Service:
-            return "Service";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TimeRangeTypeMapper
-    } // namespace Model
-  } // namespace XRay
-} // namespace Aws
+}  // namespace TimeRangeTypeMapper
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

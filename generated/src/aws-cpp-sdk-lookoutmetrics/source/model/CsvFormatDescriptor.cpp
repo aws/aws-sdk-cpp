@@ -3,112 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/CsvFormatDescriptor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/CsvFormatDescriptor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-CsvFormatDescriptor::CsvFormatDescriptor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CsvFormatDescriptor::CsvFormatDescriptor(JsonView jsonValue) { *this = jsonValue; }
 
-CsvFormatDescriptor& CsvFormatDescriptor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FileCompression"))
-  {
+CsvFormatDescriptor& CsvFormatDescriptor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FileCompression")) {
     m_fileCompression = CSVFileCompressionMapper::GetCSVFileCompressionForName(jsonValue.GetString("FileCompression"));
     m_fileCompressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Charset"))
-  {
+  if (jsonValue.ValueExists("Charset")) {
     m_charset = jsonValue.GetString("Charset");
     m_charsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainsHeader"))
-  {
+  if (jsonValue.ValueExists("ContainsHeader")) {
     m_containsHeader = jsonValue.GetBool("ContainsHeader");
     m_containsHeaderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Delimiter"))
-  {
+  if (jsonValue.ValueExists("Delimiter")) {
     m_delimiter = jsonValue.GetString("Delimiter");
     m_delimiterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HeaderList"))
-  {
+  if (jsonValue.ValueExists("HeaderList")) {
     Aws::Utils::Array<JsonView> headerListJsonList = jsonValue.GetArray("HeaderList");
-    for(unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex)
-    {
+    for (unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex) {
       m_headerList.push_back(headerListJsonList[headerListIndex].AsString());
     }
     m_headerListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuoteSymbol"))
-  {
+  if (jsonValue.ValueExists("QuoteSymbol")) {
     m_quoteSymbol = jsonValue.GetString("QuoteSymbol");
     m_quoteSymbolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CsvFormatDescriptor::Jsonize() const
-{
+JsonValue CsvFormatDescriptor::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileCompressionHasBeenSet)
-  {
-   payload.WithString("FileCompression", CSVFileCompressionMapper::GetNameForCSVFileCompression(m_fileCompression));
+  if (m_fileCompressionHasBeenSet) {
+    payload.WithString("FileCompression", CSVFileCompressionMapper::GetNameForCSVFileCompression(m_fileCompression));
   }
 
-  if(m_charsetHasBeenSet)
-  {
-   payload.WithString("Charset", m_charset);
-
+  if (m_charsetHasBeenSet) {
+    payload.WithString("Charset", m_charset);
   }
 
-  if(m_containsHeaderHasBeenSet)
-  {
-   payload.WithBool("ContainsHeader", m_containsHeader);
-
+  if (m_containsHeaderHasBeenSet) {
+    payload.WithBool("ContainsHeader", m_containsHeader);
   }
 
-  if(m_delimiterHasBeenSet)
-  {
-   payload.WithString("Delimiter", m_delimiter);
-
+  if (m_delimiterHasBeenSet) {
+    payload.WithString("Delimiter", m_delimiter);
   }
 
-  if(m_headerListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headerListJsonList(m_headerList.size());
-   for(unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex)
-   {
-     headerListJsonList[headerListIndex].AsString(m_headerList[headerListIndex]);
-   }
-   payload.WithArray("HeaderList", std::move(headerListJsonList));
-
+  if (m_headerListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> headerListJsonList(m_headerList.size());
+    for (unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex) {
+      headerListJsonList[headerListIndex].AsString(m_headerList[headerListIndex]);
+    }
+    payload.WithArray("HeaderList", std::move(headerListJsonList));
   }
 
-  if(m_quoteSymbolHasBeenSet)
-  {
-   payload.WithString("QuoteSymbol", m_quoteSymbol);
-
+  if (m_quoteSymbolHasBeenSet) {
+    payload.WithString("QuoteSymbol", m_quoteSymbol);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

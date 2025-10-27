@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-deployment/model/PutDeploymentParameterResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/marketplace-deployment/model/PutDeploymentParameterResult.h>
 
 #include <utility>
 
@@ -17,34 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDeploymentParameterResult::PutDeploymentParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutDeploymentParameterResult::PutDeploymentParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutDeploymentParameterResult& PutDeploymentParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutDeploymentParameterResult& PutDeploymentParameterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("agreementId"))
-  {
+  if (jsonValue.ValueExists("agreementId")) {
     m_agreementId = jsonValue.GetString("agreementId");
     m_agreementIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentParameterId"))
-  {
+  if (jsonValue.ValueExists("deploymentParameterId")) {
     m_deploymentParameterId = jsonValue.GetString("deploymentParameterId");
     m_deploymentParameterIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceArn"))
-  {
+  if (jsonValue.ValueExists("resourceArn")) {
     m_resourceArn = jsonValue.GetString("resourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -52,12 +43,10 @@ PutDeploymentParameterResult& PutDeploymentParameterResult::operator =(const Aws
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-FargatePlatformConfiguration::FargatePlatformConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FargatePlatformConfiguration::FargatePlatformConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FargatePlatformConfiguration& FargatePlatformConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("platformVersion"))
-  {
+FargatePlatformConfiguration& FargatePlatformConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("platformVersion")) {
     m_platformVersion = jsonValue.GetString("platformVersion");
     m_platformVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FargatePlatformConfiguration::Jsonize() const
-{
+JsonValue FargatePlatformConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_platformVersionHasBeenSet)
-  {
-   payload.WithString("platformVersion", m_platformVersion);
-
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("platformVersion", m_platformVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutAppInstanceUserExpirationSettingsRequest::SerializePayload() const
-{
+Aws::String PutAppInstanceUserExpirationSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_expirationSettingsHasBeenSet)
-  {
-   payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
-
+  if (m_expirationSettingsHasBeenSet) {
+    payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

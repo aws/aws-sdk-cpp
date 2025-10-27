@@ -12,11 +12,4 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteViewVersionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteViewVersionRequest::SerializePayload() const { return {}; }

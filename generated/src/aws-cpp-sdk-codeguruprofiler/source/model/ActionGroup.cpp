@@ -4,62 +4,50 @@
  */
 
 #include <aws/codeguruprofiler/model/ActionGroup.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
+namespace ActionGroupMapper {
 
-namespace Aws
-{
-  namespace CodeGuruProfiler
-  {
-    namespace Model
-    {
-      namespace ActionGroupMapper
-      {
+static const int agentPermissions_HASH = HashingUtils::HashString("agentPermissions");
 
-        static const int agentPermissions_HASH = HashingUtils::HashString("agentPermissions");
+ActionGroup GetActionGroupForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == agentPermissions_HASH) {
+    return ActionGroup::agentPermissions;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ActionGroup>(hashCode);
+  }
 
+  return ActionGroup::NOT_SET;
+}
 
-        ActionGroup GetActionGroupForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == agentPermissions_HASH)
-          {
-            return ActionGroup::agentPermissions;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ActionGroup>(hashCode);
-          }
+Aws::String GetNameForActionGroup(ActionGroup enumValue) {
+  switch (enumValue) {
+    case ActionGroup::NOT_SET:
+      return {};
+    case ActionGroup::agentPermissions:
+      return "agentPermissions";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ActionGroup::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForActionGroup(ActionGroup enumValue)
-        {
-          switch(enumValue)
-          {
-          case ActionGroup::NOT_SET:
-            return {};
-          case ActionGroup::agentPermissions:
-            return "agentPermissions";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ActionGroupMapper
-    } // namespace Model
-  } // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace ActionGroupMapper
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

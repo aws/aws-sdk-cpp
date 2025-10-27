@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Model
-{
-  enum class CapacityReservationPreferenceEnum
-  {
-    NOT_SET,
-    capacity_reservations_only,
-    open,
-    none
-  };
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Model {
+enum class CapacityReservationPreferenceEnum { NOT_SET, capacity_reservations_only, open, none };
 
-namespace CapacityReservationPreferenceEnumMapper
-{
+namespace CapacityReservationPreferenceEnumMapper {
 AWS_WORKSPACESINSTANCES_API CapacityReservationPreferenceEnum GetCapacityReservationPreferenceEnumForName(const Aws::String& name);
 
 AWS_WORKSPACESINSTANCES_API Aws::String GetNameForCapacityReservationPreferenceEnum(CapacityReservationPreferenceEnum value);
-} // namespace CapacityReservationPreferenceEnumMapper
-} // namespace Model
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace CapacityReservationPreferenceEnumMapper
+}  // namespace Model
+}  // namespace WorkspacesInstances
+}  // namespace Aws

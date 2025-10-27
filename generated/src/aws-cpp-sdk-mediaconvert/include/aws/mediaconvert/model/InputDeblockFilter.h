@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class InputDeblockFilter
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class InputDeblockFilter { NOT_SET, ENABLED, DISABLED };
 
-namespace InputDeblockFilterMapper
-{
+namespace InputDeblockFilterMapper {
 AWS_MEDIACONVERT_API InputDeblockFilter GetInputDeblockFilterForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForInputDeblockFilter(InputDeblockFilter value);
-} // namespace InputDeblockFilterMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace InputDeblockFilterMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

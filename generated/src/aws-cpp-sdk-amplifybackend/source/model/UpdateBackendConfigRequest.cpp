@@ -12,19 +12,12 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateBackendConfigRequest::SerializePayload() const
-{
+Aws::String UpdateBackendConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_loginAuthConfigHasBeenSet)
-  {
-   payload.WithObject("loginAuthConfig", m_loginAuthConfig.Jsonize());
-
+  if (m_loginAuthConfigHasBeenSet) {
+    payload.WithObject("loginAuthConfig", m_loginAuthConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/UpdateProtectConfigurationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/UpdateProtectConfigurationResult.h>
 
 #include <utility>
 
@@ -17,48 +17,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProtectConfigurationResult::UpdateProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateProtectConfigurationResult::UpdateProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateProtectConfigurationResult& UpdateProtectConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateProtectConfigurationResult& UpdateProtectConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ProtectConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("ProtectConfigurationArn")) {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");
     m_protectConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProtectConfigurationId"))
-  {
+  if (jsonValue.ValueExists("ProtectConfigurationId")) {
     m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
     m_protectConfigurationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountDefault"))
-  {
+  if (jsonValue.ValueExists("AccountDefault")) {
     m_accountDefault = jsonValue.GetBool("AccountDefault");
     m_accountDefaultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
-  {
+  if (jsonValue.ValueExists("DeletionProtectionEnabled")) {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

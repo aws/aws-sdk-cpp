@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Profiles
-{
-enum class Route53ProfilesErrors
-{
-  //From Core//
+namespace Aws {
+namespace Route53Profiles {
+enum class Route53ProfilesErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class Route53ProfilesErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class Route53ProfilesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE_ERROR,
   INVALID_NEXT_TOKEN,
   INVALID_PARAMETER,
@@ -55,9 +52,8 @@ enum class Route53ProfilesErrors
   RESOURCE_EXISTS
 };
 
-class AWS_ROUTE53PROFILES_API Route53ProfilesError : public Aws::Client::AWSError<Route53ProfilesErrors>
-{
-public:
+class AWS_ROUTE53PROFILES_API Route53ProfilesError : public Aws::Client::AWSError<Route53ProfilesErrors> {
+ public:
   Route53ProfilesError() {}
   Route53ProfilesError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Route53ProfilesErrors>(rhs) {}
   Route53ProfilesError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Route53ProfilesErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace Route53ProfilesErrorMapper
-{
-  AWS_ROUTE53PROFILES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace Route53ProfilesErrorMapper {
+AWS_ROUTE53PROFILES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Route53Profiles
-} // namespace Aws
+}  // namespace Route53Profiles
+}  // namespace Aws

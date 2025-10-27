@@ -3,221 +3,166 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/SolutionVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/SolutionVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-SolutionVersion::SolutionVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SolutionVersion::SolutionVersion(JsonView jsonValue) { *this = jsonValue; }
 
-SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SolutionVersion& SolutionVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("solutionVersionArn"))
-  {
+  if (jsonValue.ValueExists("solutionVersionArn")) {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
     m_solutionVersionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("solutionArn"))
-  {
+  if (jsonValue.ValueExists("solutionArn")) {
     m_solutionArn = jsonValue.GetString("solutionArn");
     m_solutionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("performHPO"))
-  {
+  if (jsonValue.ValueExists("performHPO")) {
     m_performHPO = jsonValue.GetBool("performHPO");
     m_performHPOHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("performAutoML"))
-  {
+  if (jsonValue.ValueExists("performAutoML")) {
     m_performAutoML = jsonValue.GetBool("performAutoML");
     m_performAutoMLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recipeArn"))
-  {
+  if (jsonValue.ValueExists("recipeArn")) {
     m_recipeArn = jsonValue.GetString("recipeArn");
     m_recipeArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventType"))
-  {
+  if (jsonValue.ValueExists("eventType")) {
     m_eventType = jsonValue.GetString("eventType");
     m_eventTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datasetGroupArn"))
-  {
+  if (jsonValue.ValueExists("datasetGroupArn")) {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
     m_datasetGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("solutionConfig"))
-  {
+  if (jsonValue.ValueExists("solutionConfig")) {
     m_solutionConfig = jsonValue.GetObject("solutionConfig");
     m_solutionConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingHours"))
-  {
+  if (jsonValue.ValueExists("trainingHours")) {
     m_trainingHours = jsonValue.GetDouble("trainingHours");
     m_trainingHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingMode"))
-  {
+  if (jsonValue.ValueExists("trainingMode")) {
     m_trainingMode = TrainingModeMapper::GetTrainingModeForName(jsonValue.GetString("trainingMode"));
     m_trainingModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tunedHPOParams"))
-  {
+  if (jsonValue.ValueExists("tunedHPOParams")) {
     m_tunedHPOParams = jsonValue.GetObject("tunedHPOParams");
     m_tunedHPOParamsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trainingType"))
-  {
+  if (jsonValue.ValueExists("trainingType")) {
     m_trainingType = TrainingTypeMapper::GetTrainingTypeForName(jsonValue.GetString("trainingType"));
     m_trainingTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SolutionVersion::Jsonize() const
-{
+JsonValue SolutionVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_solutionVersionArnHasBeenSet)
-  {
-   payload.WithString("solutionVersionArn", m_solutionVersionArn);
-
+  if (m_solutionVersionArnHasBeenSet) {
+    payload.WithString("solutionVersionArn", m_solutionVersionArn);
   }
 
-  if(m_solutionArnHasBeenSet)
-  {
-   payload.WithString("solutionArn", m_solutionArn);
-
+  if (m_solutionArnHasBeenSet) {
+    payload.WithString("solutionArn", m_solutionArn);
   }
 
-  if(m_performHPOHasBeenSet)
-  {
-   payload.WithBool("performHPO", m_performHPO);
-
+  if (m_performHPOHasBeenSet) {
+    payload.WithBool("performHPO", m_performHPO);
   }
 
-  if(m_performAutoMLHasBeenSet)
-  {
-   payload.WithBool("performAutoML", m_performAutoML);
-
+  if (m_performAutoMLHasBeenSet) {
+    payload.WithBool("performAutoML", m_performAutoML);
   }
 
-  if(m_recipeArnHasBeenSet)
-  {
-   payload.WithString("recipeArn", m_recipeArn);
-
+  if (m_recipeArnHasBeenSet) {
+    payload.WithString("recipeArn", m_recipeArn);
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-   payload.WithString("eventType", m_eventType);
-
+  if (m_eventTypeHasBeenSet) {
+    payload.WithString("eventType", m_eventType);
   }
 
-  if(m_datasetGroupArnHasBeenSet)
-  {
-   payload.WithString("datasetGroupArn", m_datasetGroupArn);
-
+  if (m_datasetGroupArnHasBeenSet) {
+    payload.WithString("datasetGroupArn", m_datasetGroupArn);
   }
 
-  if(m_solutionConfigHasBeenSet)
-  {
-   payload.WithObject("solutionConfig", m_solutionConfig.Jsonize());
-
+  if (m_solutionConfigHasBeenSet) {
+    payload.WithObject("solutionConfig", m_solutionConfig.Jsonize());
   }
 
-  if(m_trainingHoursHasBeenSet)
-  {
-   payload.WithDouble("trainingHours", m_trainingHours);
-
+  if (m_trainingHoursHasBeenSet) {
+    payload.WithDouble("trainingHours", m_trainingHours);
   }
 
-  if(m_trainingModeHasBeenSet)
-  {
-   payload.WithString("trainingMode", TrainingModeMapper::GetNameForTrainingMode(m_trainingMode));
+  if (m_trainingModeHasBeenSet) {
+    payload.WithString("trainingMode", TrainingModeMapper::GetNameForTrainingMode(m_trainingMode));
   }
 
-  if(m_tunedHPOParamsHasBeenSet)
-  {
-   payload.WithObject("tunedHPOParams", m_tunedHPOParams.Jsonize());
-
+  if (m_tunedHPOParamsHasBeenSet) {
+    payload.WithObject("tunedHPOParams", m_tunedHPOParams.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_trainingTypeHasBeenSet)
-  {
-   payload.WithString("trainingType", TrainingTypeMapper::GetNameForTrainingType(m_trainingType));
+  if (m_trainingTypeHasBeenSet) {
+    payload.WithString("trainingType", TrainingTypeMapper::GetNameForTrainingType(m_trainingType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

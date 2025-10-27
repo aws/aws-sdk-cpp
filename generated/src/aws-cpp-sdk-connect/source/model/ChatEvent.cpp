@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ChatEvent::ChatEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChatEvent::ChatEvent(JsonView jsonValue) { *this = jsonValue; }
 
-ChatEvent& ChatEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ChatEvent& ChatEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ChatEventTypeMapper::GetChatEventTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentType"))
-  {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChatEvent::Jsonize() const
-{
+JsonValue ChatEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChatEventTypeMapper::GetNameForChatEventType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChatEventTypeMapper::GetNameForChatEventType(m_type));
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

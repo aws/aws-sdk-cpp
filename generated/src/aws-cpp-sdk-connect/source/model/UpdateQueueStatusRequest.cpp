@@ -12,18 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateQueueStatusRequest::SerializePayload() const
-{
+Aws::String UpdateQueueStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", QueueStatusMapper::GetNameForQueueStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", QueueStatusMapper::GetNameForQueueStatus(m_status));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

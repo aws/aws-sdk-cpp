@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
-  enum class AttackLayer
-  {
-    NOT_SET,
-    NETWORK,
-    APPLICATION
-  };
+namespace Aws {
+namespace Shield {
+namespace Model {
+enum class AttackLayer { NOT_SET, NETWORK, APPLICATION };
 
-namespace AttackLayerMapper
-{
+namespace AttackLayerMapper {
 AWS_SHIELD_API AttackLayer GetAttackLayerForName(const Aws::String& name);
 
 AWS_SHIELD_API Aws::String GetNameForAttackLayer(AttackLayer value);
-} // namespace AttackLayerMapper
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace AttackLayerMapper
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

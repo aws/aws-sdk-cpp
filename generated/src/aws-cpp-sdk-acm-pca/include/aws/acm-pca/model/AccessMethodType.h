@@ -7,26 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class AccessMethodType
-  {
-    NOT_SET,
-    CA_REPOSITORY,
-    RESOURCE_PKI_MANIFEST,
-    RESOURCE_PKI_NOTIFY
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class AccessMethodType { NOT_SET, CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY };
 
-namespace AccessMethodTypeMapper
-{
+namespace AccessMethodTypeMapper {
 AWS_ACMPCA_API AccessMethodType GetAccessMethodTypeForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForAccessMethodType(AccessMethodType value);
-} // namespace AccessMethodTypeMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace AccessMethodTypeMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

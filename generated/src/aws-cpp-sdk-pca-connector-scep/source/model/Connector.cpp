@@ -3,143 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pca-connector-scep/model/Connector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pca-connector-scep/model/Connector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PcaConnectorScep
-{
-namespace Model
-{
+namespace Aws {
+namespace PcaConnectorScep {
+namespace Model {
 
-Connector::Connector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Connector::Connector(JsonView jsonValue) { *this = jsonValue; }
 
-Connector& Connector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+Connector& Connector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CertificateAuthorityArn"))
-  {
+  if (jsonValue.ValueExists("CertificateAuthorityArn")) {
     m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
     m_certificateAuthorityArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MobileDeviceManagement"))
-  {
+  if (jsonValue.ValueExists("MobileDeviceManagement")) {
     m_mobileDeviceManagement = jsonValue.GetObject("MobileDeviceManagement");
     m_mobileDeviceManagementHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OpenIdConfiguration"))
-  {
+  if (jsonValue.ValueExists("OpenIdConfiguration")) {
     m_openIdConfiguration = jsonValue.GetObject("OpenIdConfiguration");
     m_openIdConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusReason"))
-  {
+  if (jsonValue.ValueExists("StatusReason")) {
     m_statusReason = ConnectorStatusReasonMapper::GetConnectorStatusReasonForName(jsonValue.GetString("StatusReason"));
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Endpoint"))
-  {
+  if (jsonValue.ValueExists("Endpoint")) {
     m_endpoint = jsonValue.GetString("Endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Connector::Jsonize() const
-{
+JsonValue Connector::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ConnectorTypeMapper::GetNameForConnectorType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ConnectorTypeMapper::GetNameForConnectorType(m_type));
   }
 
-  if(m_mobileDeviceManagementHasBeenSet)
-  {
-   payload.WithObject("MobileDeviceManagement", m_mobileDeviceManagement.Jsonize());
-
+  if (m_mobileDeviceManagementHasBeenSet) {
+    payload.WithObject("MobileDeviceManagement", m_mobileDeviceManagement.Jsonize());
   }
 
-  if(m_openIdConfigurationHasBeenSet)
-  {
-   payload.WithObject("OpenIdConfiguration", m_openIdConfiguration.Jsonize());
-
+  if (m_openIdConfigurationHasBeenSet) {
+    payload.WithObject("OpenIdConfiguration", m_openIdConfiguration.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("StatusReason", ConnectorStatusReasonMapper::GetNameForConnectorStatusReason(m_statusReason));
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", ConnectorStatusReasonMapper::GetNameForConnectorStatusReason(m_statusReason));
   }
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("Endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("Endpoint", m_endpoint);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PcaConnectorScep
-} // namespace Aws
+}  // namespace Model
+}  // namespace PcaConnectorScep
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
 
-LambdaUngraceful::LambdaUngraceful(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaUngraceful::LambdaUngraceful(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaUngraceful& LambdaUngraceful::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("behavior"))
-  {
+LambdaUngraceful& LambdaUngraceful::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("behavior")) {
     m_behavior = LambdaUngracefulBehaviorMapper::GetLambdaUngracefulBehaviorForName(jsonValue.GetString("behavior"));
     m_behaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaUngraceful::Jsonize() const
-{
+JsonValue LambdaUngraceful::Jsonize() const {
   JsonValue payload;
 
-  if(m_behaviorHasBeenSet)
-  {
-   payload.WithString("behavior", LambdaUngracefulBehaviorMapper::GetNameForLambdaUngracefulBehavior(m_behavior));
+  if (m_behaviorHasBeenSet) {
+    payload.WithString("behavior", LambdaUngracefulBehaviorMapper::GetNameForLambdaUngracefulBehavior(m_behavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

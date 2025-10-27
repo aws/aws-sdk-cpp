@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/TextTranslationJobFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/TextTranslationJobFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
+namespace Aws {
+namespace Translate {
+namespace Model {
 
-TextTranslationJobFilter::TextTranslationJobFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextTranslationJobFilter::TextTranslationJobFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TextTranslationJobFilter& TextTranslationJobFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobName"))
-  {
+TextTranslationJobFilter& TextTranslationJobFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmittedBeforeTime"))
-  {
+  if (jsonValue.ValueExists("SubmittedBeforeTime")) {
     m_submittedBeforeTime = jsonValue.GetDouble("SubmittedBeforeTime");
     m_submittedBeforeTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmittedAfterTime"))
-  {
+  if (jsonValue.ValueExists("SubmittedAfterTime")) {
     m_submittedAfterTime = jsonValue.GetDouble("SubmittedAfterTime");
     m_submittedAfterTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextTranslationJobFilter::Jsonize() const
-{
+JsonValue TextTranslationJobFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_submittedBeforeTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmittedBeforeTime", m_submittedBeforeTime.SecondsWithMSPrecision());
+  if (m_submittedBeforeTimeHasBeenSet) {
+    payload.WithDouble("SubmittedBeforeTime", m_submittedBeforeTime.SecondsWithMSPrecision());
   }
 
-  if(m_submittedAfterTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmittedAfterTime", m_submittedAfterTime.SecondsWithMSPrecision());
+  if (m_submittedAfterTimeHasBeenSet) {
+    payload.WithDouble("SubmittedAfterTime", m_submittedAfterTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace KeyspacesStreams
-{
-namespace Model
-{
-  enum class ShardIteratorType
-  {
-    NOT_SET,
-    TRIM_HORIZON,
-    LATEST,
-    AT_SEQUENCE_NUMBER,
-    AFTER_SEQUENCE_NUMBER
-  };
+namespace Aws {
+namespace KeyspacesStreams {
+namespace Model {
+enum class ShardIteratorType { NOT_SET, TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER };
 
-namespace ShardIteratorTypeMapper
-{
+namespace ShardIteratorTypeMapper {
 AWS_KEYSPACESSTREAMS_API ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name);
 
 AWS_KEYSPACESSTREAMS_API Aws::String GetNameForShardIteratorType(ShardIteratorType value);
-} // namespace ShardIteratorTypeMapper
-} // namespace Model
-} // namespace KeyspacesStreams
-} // namespace Aws
+}  // namespace ShardIteratorTypeMapper
+}  // namespace Model
+}  // namespace KeyspacesStreams
+}  // namespace Aws

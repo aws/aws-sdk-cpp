@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/OnFailure.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/OnFailure.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-OnFailure::OnFailure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnFailure::OnFailure(JsonView jsonValue) { *this = jsonValue; }
 
-OnFailure& OnFailure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Destination"))
-  {
+OnFailure& OnFailure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Destination")) {
     m_destination = jsonValue.GetString("Destination");
     m_destinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OnFailure::Jsonize() const
-{
+JsonValue OnFailure::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("Destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithString("Destination", m_destination);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

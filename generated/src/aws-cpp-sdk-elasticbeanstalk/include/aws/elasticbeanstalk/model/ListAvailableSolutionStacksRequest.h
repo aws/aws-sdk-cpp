@@ -4,37 +4,33 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
 
-  /**
-   */
-  class ListAvailableSolutionStacksRequest : public ElasticBeanstalkRequest
-  {
-  public:
-    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksRequest() = default;
+/**
+ */
+class ListAvailableSolutionStacksRequest : public ElasticBeanstalkRequest {
+ public:
+  AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListAvailableSolutionStacks"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListAvailableSolutionStacks"; }
 
-    AWS_ELASTICBEANSTALK_API Aws::String SerializePayload() const override;
+  AWS_ELASTICBEANSTALK_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_ELASTICBEANSTALK_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+ protected:
+  AWS_ELASTICBEANSTALK_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
-  public:
-  };
+ public:
+};
 
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

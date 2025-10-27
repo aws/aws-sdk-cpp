@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class JobEndBehavior
-  {
-    NOT_SET,
-    STOP_ROLLOUT,
-    CANCEL,
-    FORCE_CANCEL
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class JobEndBehavior { NOT_SET, STOP_ROLLOUT, CANCEL, FORCE_CANCEL };
 
-namespace JobEndBehaviorMapper
-{
+namespace JobEndBehaviorMapper {
 AWS_IOT_API JobEndBehavior GetJobEndBehaviorForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForJobEndBehavior(JobEndBehavior value);
-} // namespace JobEndBehaviorMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace JobEndBehaviorMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

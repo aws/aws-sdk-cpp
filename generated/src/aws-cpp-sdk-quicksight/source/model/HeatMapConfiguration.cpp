@@ -3,159 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/HeatMapConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/HeatMapConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-HeatMapConfiguration::HeatMapConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HeatMapConfiguration::HeatMapConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HeatMapConfiguration& HeatMapConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldWells"))
-  {
+HeatMapConfiguration& HeatMapConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldWells")) {
     m_fieldWells = jsonValue.GetObject("FieldWells");
     m_fieldWellsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SortConfiguration"))
-  {
+  if (jsonValue.ValueExists("SortConfiguration")) {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
     m_sortConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowAxisDisplayOptions"))
-  {
+  if (jsonValue.ValueExists("RowAxisDisplayOptions")) {
     m_rowAxisDisplayOptions = jsonValue.GetObject("RowAxisDisplayOptions");
     m_rowAxisDisplayOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowLabelOptions"))
-  {
+  if (jsonValue.ValueExists("RowLabelOptions")) {
     m_rowLabelOptions = jsonValue.GetObject("RowLabelOptions");
     m_rowLabelOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnAxisDisplayOptions"))
-  {
+  if (jsonValue.ValueExists("ColumnAxisDisplayOptions")) {
     m_columnAxisDisplayOptions = jsonValue.GetObject("ColumnAxisDisplayOptions");
     m_columnAxisDisplayOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnLabelOptions"))
-  {
+  if (jsonValue.ValueExists("ColumnLabelOptions")) {
     m_columnLabelOptions = jsonValue.GetObject("ColumnLabelOptions");
     m_columnLabelOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColorScale"))
-  {
+  if (jsonValue.ValueExists("ColorScale")) {
     m_colorScale = jsonValue.GetObject("ColorScale");
     m_colorScaleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Legend"))
-  {
+  if (jsonValue.ValueExists("Legend")) {
     m_legend = jsonValue.GetObject("Legend");
     m_legendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataLabels"))
-  {
+  if (jsonValue.ValueExists("DataLabels")) {
     m_dataLabels = jsonValue.GetObject("DataLabels");
     m_dataLabelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tooltip"))
-  {
+  if (jsonValue.ValueExists("Tooltip")) {
     m_tooltip = jsonValue.GetObject("Tooltip");
     m_tooltipHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Interactions"))
-  {
+  if (jsonValue.ValueExists("Interactions")) {
     m_interactions = jsonValue.GetObject("Interactions");
     m_interactionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HeatMapConfiguration::Jsonize() const
-{
+JsonValue HeatMapConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldWellsHasBeenSet)
-  {
-   payload.WithObject("FieldWells", m_fieldWells.Jsonize());
-
+  if (m_fieldWellsHasBeenSet) {
+    payload.WithObject("FieldWells", m_fieldWells.Jsonize());
   }
 
-  if(m_sortConfigurationHasBeenSet)
-  {
-   payload.WithObject("SortConfiguration", m_sortConfiguration.Jsonize());
-
+  if (m_sortConfigurationHasBeenSet) {
+    payload.WithObject("SortConfiguration", m_sortConfiguration.Jsonize());
   }
 
-  if(m_rowAxisDisplayOptionsHasBeenSet)
-  {
-   payload.WithObject("RowAxisDisplayOptions", m_rowAxisDisplayOptions.Jsonize());
-
+  if (m_rowAxisDisplayOptionsHasBeenSet) {
+    payload.WithObject("RowAxisDisplayOptions", m_rowAxisDisplayOptions.Jsonize());
   }
 
-  if(m_rowLabelOptionsHasBeenSet)
-  {
-   payload.WithObject("RowLabelOptions", m_rowLabelOptions.Jsonize());
-
+  if (m_rowLabelOptionsHasBeenSet) {
+    payload.WithObject("RowLabelOptions", m_rowLabelOptions.Jsonize());
   }
 
-  if(m_columnAxisDisplayOptionsHasBeenSet)
-  {
-   payload.WithObject("ColumnAxisDisplayOptions", m_columnAxisDisplayOptions.Jsonize());
-
+  if (m_columnAxisDisplayOptionsHasBeenSet) {
+    payload.WithObject("ColumnAxisDisplayOptions", m_columnAxisDisplayOptions.Jsonize());
   }
 
-  if(m_columnLabelOptionsHasBeenSet)
-  {
-   payload.WithObject("ColumnLabelOptions", m_columnLabelOptions.Jsonize());
-
+  if (m_columnLabelOptionsHasBeenSet) {
+    payload.WithObject("ColumnLabelOptions", m_columnLabelOptions.Jsonize());
   }
 
-  if(m_colorScaleHasBeenSet)
-  {
-   payload.WithObject("ColorScale", m_colorScale.Jsonize());
-
+  if (m_colorScaleHasBeenSet) {
+    payload.WithObject("ColorScale", m_colorScale.Jsonize());
   }
 
-  if(m_legendHasBeenSet)
-  {
-   payload.WithObject("Legend", m_legend.Jsonize());
-
+  if (m_legendHasBeenSet) {
+    payload.WithObject("Legend", m_legend.Jsonize());
   }
 
-  if(m_dataLabelsHasBeenSet)
-  {
-   payload.WithObject("DataLabels", m_dataLabels.Jsonize());
-
+  if (m_dataLabelsHasBeenSet) {
+    payload.WithObject("DataLabels", m_dataLabels.Jsonize());
   }
 
-  if(m_tooltipHasBeenSet)
-  {
-   payload.WithObject("Tooltip", m_tooltip.Jsonize());
-
+  if (m_tooltipHasBeenSet) {
+    payload.WithObject("Tooltip", m_tooltip.Jsonize());
   }
 
-  if(m_interactionsHasBeenSet)
-  {
-   payload.WithObject("Interactions", m_interactions.Jsonize());
-
+  if (m_interactionsHasBeenSet) {
+    payload.WithObject("Interactions", m_interactions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -12,52 +12,36 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMediaConcatenationPipelineRequest::SerializePayload() const
-{
+Aws::String CreateMediaConcatenationPipelineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
-   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-   {
-     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
-   }
-   payload.WithArray("Sources", std::move(sourcesJsonList));
-
+  if (m_sourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
+      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+    }
+    payload.WithArray("Sources", std::move(sourcesJsonList));
   }
 
-  if(m_sinksHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
-   for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
-   {
-     sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());
-   }
-   payload.WithArray("Sinks", std::move(sinksJsonList));
-
+  if (m_sinksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
+    for (unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex) {
+      sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());
+    }
+    payload.WithArray("Sinks", std::move(sinksJsonList));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

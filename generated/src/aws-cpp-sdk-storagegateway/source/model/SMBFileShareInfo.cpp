@@ -3,390 +3,290 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/SMBFileShareInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/SMBFileShareInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
 
-SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) { *this = jsonValue; }
 
-SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FileShareARN"))
-  {
+SMBFileShareInfo& SMBFileShareInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FileShareARN")) {
     m_fileShareARN = jsonValue.GetString("FileShareARN");
     m_fileShareARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileShareId"))
-  {
+  if (jsonValue.ValueExists("FileShareId")) {
     m_fileShareId = jsonValue.GetString("FileShareId");
     m_fileShareIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileShareStatus"))
-  {
+  if (jsonValue.ValueExists("FileShareStatus")) {
     m_fileShareStatus = jsonValue.GetString("FileShareStatus");
     m_fileShareStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GatewayARN"))
-  {
+  if (jsonValue.ValueExists("GatewayARN")) {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
     m_gatewayARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionType"))
-  {
+  if (jsonValue.ValueExists("EncryptionType")) {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
     m_encryptionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KMSKey"))
-  {
+  if (jsonValue.ValueExists("KMSKey")) {
     m_kMSKey = jsonValue.GetString("KMSKey");
     m_kMSKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocationARN"))
-  {
+  if (jsonValue.ValueExists("LocationARN")) {
     m_locationARN = jsonValue.GetString("LocationARN");
     m_locationARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultStorageClass"))
-  {
+  if (jsonValue.ValueExists("DefaultStorageClass")) {
     m_defaultStorageClass = jsonValue.GetString("DefaultStorageClass");
     m_defaultStorageClassHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectACL"))
-  {
+  if (jsonValue.ValueExists("ObjectACL")) {
     m_objectACL = ObjectACLMapper::GetObjectACLForName(jsonValue.GetString("ObjectACL"));
     m_objectACLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadOnly"))
-  {
+  if (jsonValue.ValueExists("ReadOnly")) {
     m_readOnly = jsonValue.GetBool("ReadOnly");
     m_readOnlyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GuessMIMETypeEnabled"))
-  {
+  if (jsonValue.ValueExists("GuessMIMETypeEnabled")) {
     m_guessMIMETypeEnabled = jsonValue.GetBool("GuessMIMETypeEnabled");
     m_guessMIMETypeEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequesterPays"))
-  {
+  if (jsonValue.ValueExists("RequesterPays")) {
     m_requesterPays = jsonValue.GetBool("RequesterPays");
     m_requesterPaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SMBACLEnabled"))
-  {
+  if (jsonValue.ValueExists("SMBACLEnabled")) {
     m_sMBACLEnabled = jsonValue.GetBool("SMBACLEnabled");
     m_sMBACLEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessBasedEnumeration"))
-  {
+  if (jsonValue.ValueExists("AccessBasedEnumeration")) {
     m_accessBasedEnumeration = jsonValue.GetBool("AccessBasedEnumeration");
     m_accessBasedEnumerationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdminUserList"))
-  {
+  if (jsonValue.ValueExists("AdminUserList")) {
     Aws::Utils::Array<JsonView> adminUserListJsonList = jsonValue.GetArray("AdminUserList");
-    for(unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex)
-    {
+    for (unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex) {
       m_adminUserList.push_back(adminUserListJsonList[adminUserListIndex].AsString());
     }
     m_adminUserListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidUserList"))
-  {
+  if (jsonValue.ValueExists("ValidUserList")) {
     Aws::Utils::Array<JsonView> validUserListJsonList = jsonValue.GetArray("ValidUserList");
-    for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
-    {
+    for (unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex) {
       m_validUserList.push_back(validUserListJsonList[validUserListIndex].AsString());
     }
     m_validUserListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvalidUserList"))
-  {
+  if (jsonValue.ValueExists("InvalidUserList")) {
     Aws::Utils::Array<JsonView> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
-    for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
-    {
+    for (unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex) {
       m_invalidUserList.push_back(invalidUserListJsonList[invalidUserListIndex].AsString());
     }
     m_invalidUserListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuditDestinationARN"))
-  {
+  if (jsonValue.ValueExists("AuditDestinationARN")) {
     m_auditDestinationARN = jsonValue.GetString("AuditDestinationARN");
     m_auditDestinationARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Authentication"))
-  {
+  if (jsonValue.ValueExists("Authentication")) {
     m_authentication = jsonValue.GetString("Authentication");
     m_authenticationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CaseSensitivity"))
-  {
+  if (jsonValue.ValueExists("CaseSensitivity")) {
     m_caseSensitivity = CaseSensitivityMapper::GetCaseSensitivityForName(jsonValue.GetString("CaseSensitivity"));
     m_caseSensitivityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileShareName"))
-  {
+  if (jsonValue.ValueExists("FileShareName")) {
     m_fileShareName = jsonValue.GetString("FileShareName");
     m_fileShareNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CacheAttributes"))
-  {
+  if (jsonValue.ValueExists("CacheAttributes")) {
     m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
     m_cacheAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotificationPolicy"))
-  {
+  if (jsonValue.ValueExists("NotificationPolicy")) {
     m_notificationPolicy = jsonValue.GetString("NotificationPolicy");
     m_notificationPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VPCEndpointDNSName"))
-  {
+  if (jsonValue.ValueExists("VPCEndpointDNSName")) {
     m_vPCEndpointDNSName = jsonValue.GetString("VPCEndpointDNSName");
     m_vPCEndpointDNSNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BucketRegion"))
-  {
+  if (jsonValue.ValueExists("BucketRegion")) {
     m_bucketRegion = jsonValue.GetString("BucketRegion");
     m_bucketRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OplocksEnabled"))
-  {
+  if (jsonValue.ValueExists("OplocksEnabled")) {
     m_oplocksEnabled = jsonValue.GetBool("OplocksEnabled");
     m_oplocksEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SMBFileShareInfo::Jsonize() const
-{
+JsonValue SMBFileShareInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileShareARNHasBeenSet)
-  {
-   payload.WithString("FileShareARN", m_fileShareARN);
-
+  if (m_fileShareARNHasBeenSet) {
+    payload.WithString("FileShareARN", m_fileShareARN);
   }
 
-  if(m_fileShareIdHasBeenSet)
-  {
-   payload.WithString("FileShareId", m_fileShareId);
-
+  if (m_fileShareIdHasBeenSet) {
+    payload.WithString("FileShareId", m_fileShareId);
   }
 
-  if(m_fileShareStatusHasBeenSet)
-  {
-   payload.WithString("FileShareStatus", m_fileShareStatus);
-
+  if (m_fileShareStatusHasBeenSet) {
+    payload.WithString("FileShareStatus", m_fileShareStatus);
   }
 
-  if(m_gatewayARNHasBeenSet)
-  {
-   payload.WithString("GatewayARN", m_gatewayARN);
-
+  if (m_gatewayARNHasBeenSet) {
+    payload.WithString("GatewayARN", m_gatewayARN);
   }
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
-  if(m_kMSKeyHasBeenSet)
-  {
-   payload.WithString("KMSKey", m_kMSKey);
-
+  if (m_kMSKeyHasBeenSet) {
+    payload.WithString("KMSKey", m_kMSKey);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_locationARNHasBeenSet)
-  {
-   payload.WithString("LocationARN", m_locationARN);
-
+  if (m_locationARNHasBeenSet) {
+    payload.WithString("LocationARN", m_locationARN);
   }
 
-  if(m_defaultStorageClassHasBeenSet)
-  {
-   payload.WithString("DefaultStorageClass", m_defaultStorageClass);
-
+  if (m_defaultStorageClassHasBeenSet) {
+    payload.WithString("DefaultStorageClass", m_defaultStorageClass);
   }
 
-  if(m_objectACLHasBeenSet)
-  {
-   payload.WithString("ObjectACL", ObjectACLMapper::GetNameForObjectACL(m_objectACL));
+  if (m_objectACLHasBeenSet) {
+    payload.WithString("ObjectACL", ObjectACLMapper::GetNameForObjectACL(m_objectACL));
   }
 
-  if(m_readOnlyHasBeenSet)
-  {
-   payload.WithBool("ReadOnly", m_readOnly);
-
+  if (m_readOnlyHasBeenSet) {
+    payload.WithBool("ReadOnly", m_readOnly);
   }
 
-  if(m_guessMIMETypeEnabledHasBeenSet)
-  {
-   payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
-
+  if (m_guessMIMETypeEnabledHasBeenSet) {
+    payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
   }
 
-  if(m_requesterPaysHasBeenSet)
-  {
-   payload.WithBool("RequesterPays", m_requesterPays);
-
+  if (m_requesterPaysHasBeenSet) {
+    payload.WithBool("RequesterPays", m_requesterPays);
   }
 
-  if(m_sMBACLEnabledHasBeenSet)
-  {
-   payload.WithBool("SMBACLEnabled", m_sMBACLEnabled);
-
+  if (m_sMBACLEnabledHasBeenSet) {
+    payload.WithBool("SMBACLEnabled", m_sMBACLEnabled);
   }
 
-  if(m_accessBasedEnumerationHasBeenSet)
-  {
-   payload.WithBool("AccessBasedEnumeration", m_accessBasedEnumeration);
-
+  if (m_accessBasedEnumerationHasBeenSet) {
+    payload.WithBool("AccessBasedEnumeration", m_accessBasedEnumeration);
   }
 
-  if(m_adminUserListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
-   for(unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex)
-   {
-     adminUserListJsonList[adminUserListIndex].AsString(m_adminUserList[adminUserListIndex]);
-   }
-   payload.WithArray("AdminUserList", std::move(adminUserListJsonList));
-
+  if (m_adminUserListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
+    for (unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex) {
+      adminUserListJsonList[adminUserListIndex].AsString(m_adminUserList[adminUserListIndex]);
+    }
+    payload.WithArray("AdminUserList", std::move(adminUserListJsonList));
   }
 
-  if(m_validUserListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> validUserListJsonList(m_validUserList.size());
-   for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
-   {
-     validUserListJsonList[validUserListIndex].AsString(m_validUserList[validUserListIndex]);
-   }
-   payload.WithArray("ValidUserList", std::move(validUserListJsonList));
-
+  if (m_validUserListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validUserListJsonList(m_validUserList.size());
+    for (unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex) {
+      validUserListJsonList[validUserListIndex].AsString(m_validUserList[validUserListIndex]);
+    }
+    payload.WithArray("ValidUserList", std::move(validUserListJsonList));
   }
 
-  if(m_invalidUserListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
-   for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
-   {
-     invalidUserListJsonList[invalidUserListIndex].AsString(m_invalidUserList[invalidUserListIndex]);
-   }
-   payload.WithArray("InvalidUserList", std::move(invalidUserListJsonList));
-
+  if (m_invalidUserListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
+    for (unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex) {
+      invalidUserListJsonList[invalidUserListIndex].AsString(m_invalidUserList[invalidUserListIndex]);
+    }
+    payload.WithArray("InvalidUserList", std::move(invalidUserListJsonList));
   }
 
-  if(m_auditDestinationARNHasBeenSet)
-  {
-   payload.WithString("AuditDestinationARN", m_auditDestinationARN);
-
+  if (m_auditDestinationARNHasBeenSet) {
+    payload.WithString("AuditDestinationARN", m_auditDestinationARN);
   }
 
-  if(m_authenticationHasBeenSet)
-  {
-   payload.WithString("Authentication", m_authentication);
-
+  if (m_authenticationHasBeenSet) {
+    payload.WithString("Authentication", m_authentication);
   }
 
-  if(m_caseSensitivityHasBeenSet)
-  {
-   payload.WithString("CaseSensitivity", CaseSensitivityMapper::GetNameForCaseSensitivity(m_caseSensitivity));
+  if (m_caseSensitivityHasBeenSet) {
+    payload.WithString("CaseSensitivity", CaseSensitivityMapper::GetNameForCaseSensitivity(m_caseSensitivity));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_fileShareNameHasBeenSet)
-  {
-   payload.WithString("FileShareName", m_fileShareName);
-
+  if (m_fileShareNameHasBeenSet) {
+    payload.WithString("FileShareName", m_fileShareName);
   }
 
-  if(m_cacheAttributesHasBeenSet)
-  {
-   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
-
+  if (m_cacheAttributesHasBeenSet) {
+    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
   }
 
-  if(m_notificationPolicyHasBeenSet)
-  {
-   payload.WithString("NotificationPolicy", m_notificationPolicy);
-
+  if (m_notificationPolicyHasBeenSet) {
+    payload.WithString("NotificationPolicy", m_notificationPolicy);
   }
 
-  if(m_vPCEndpointDNSNameHasBeenSet)
-  {
-   payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
-
+  if (m_vPCEndpointDNSNameHasBeenSet) {
+    payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
   }
 
-  if(m_bucketRegionHasBeenSet)
-  {
-   payload.WithString("BucketRegion", m_bucketRegion);
-
+  if (m_bucketRegionHasBeenSet) {
+    payload.WithString("BucketRegion", m_bucketRegion);
   }
 
-  if(m_oplocksEnabledHasBeenSet)
-  {
-   payload.WithBool("OplocksEnabled", m_oplocksEnabled);
-
+  if (m_oplocksEnabledHasBeenSet) {
+    payload.WithBool("OplocksEnabled", m_oplocksEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

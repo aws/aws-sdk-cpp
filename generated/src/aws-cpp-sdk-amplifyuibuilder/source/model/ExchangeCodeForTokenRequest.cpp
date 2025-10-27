@@ -12,18 +12,12 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExchangeCodeForTokenRequest::SerializePayload() const
-{
+Aws::String ExchangeCodeForTokenRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_requestHasBeenSet)
-  {
-   payload = m_request.Jsonize();
+  if (m_requestHasBeenSet) {
+    payload = m_request.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

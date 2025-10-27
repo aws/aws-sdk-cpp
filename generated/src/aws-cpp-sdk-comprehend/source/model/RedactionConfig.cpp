@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-RedactionConfig::RedactionConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedactionConfig::RedactionConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RedactionConfig& RedactionConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PiiEntityTypes"))
-  {
+RedactionConfig& RedactionConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PiiEntityTypes")) {
     Aws::Utils::Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
-    for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
-    {
+    for (unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex) {
       m_piiEntityTypes.push_back(PiiEntityTypeMapper::GetPiiEntityTypeForName(piiEntityTypesJsonList[piiEntityTypesIndex].AsString()));
     }
     m_piiEntityTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaskMode"))
-  {
+  if (jsonValue.ValueExists("MaskMode")) {
     m_maskMode = PiiEntitiesDetectionMaskModeMapper::GetPiiEntitiesDetectionMaskModeForName(jsonValue.GetString("MaskMode"));
     m_maskModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaskCharacter"))
-  {
+  if (jsonValue.ValueExists("MaskCharacter")) {
     m_maskCharacter = jsonValue.GetString("MaskCharacter");
     m_maskCharacterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedactionConfig::Jsonize() const
-{
+JsonValue RedactionConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_piiEntityTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
-   for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
-   {
-     piiEntityTypesJsonList[piiEntityTypesIndex].AsString(PiiEntityTypeMapper::GetNameForPiiEntityType(m_piiEntityTypes[piiEntityTypesIndex]));
-   }
-   payload.WithArray("PiiEntityTypes", std::move(piiEntityTypesJsonList));
-
+  if (m_piiEntityTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
+    for (unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex) {
+      piiEntityTypesJsonList[piiEntityTypesIndex].AsString(
+          PiiEntityTypeMapper::GetNameForPiiEntityType(m_piiEntityTypes[piiEntityTypesIndex]));
+    }
+    payload.WithArray("PiiEntityTypes", std::move(piiEntityTypesJsonList));
   }
 
-  if(m_maskModeHasBeenSet)
-  {
-   payload.WithString("MaskMode", PiiEntitiesDetectionMaskModeMapper::GetNameForPiiEntitiesDetectionMaskMode(m_maskMode));
+  if (m_maskModeHasBeenSet) {
+    payload.WithString("MaskMode", PiiEntitiesDetectionMaskModeMapper::GetNameForPiiEntitiesDetectionMaskMode(m_maskMode));
   }
 
-  if(m_maskCharacterHasBeenSet)
-  {
-   payload.WithString("MaskCharacter", m_maskCharacter);
-
+  if (m_maskCharacterHasBeenSet) {
+    payload.WithString("MaskCharacter", m_maskCharacter);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

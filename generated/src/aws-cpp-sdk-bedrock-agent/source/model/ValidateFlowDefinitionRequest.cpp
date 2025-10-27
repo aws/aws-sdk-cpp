@@ -12,19 +12,12 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ValidateFlowDefinitionRequest::SerializePayload() const
-{
+Aws::String ValidateFlowDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithObject("definition", m_definition.Jsonize());
-
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("definition", m_definition.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

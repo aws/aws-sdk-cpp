@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class DataCompressionType
-  {
-    NOT_SET,
-    NONE,
-    LZ4
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class DataCompressionType { NOT_SET, NONE, LZ4 };
 
-namespace DataCompressionTypeMapper
-{
+namespace DataCompressionTypeMapper {
 AWS_FSX_API DataCompressionType GetDataCompressionTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForDataCompressionType(DataCompressionType value);
-} // namespace DataCompressionTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace DataCompressionTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

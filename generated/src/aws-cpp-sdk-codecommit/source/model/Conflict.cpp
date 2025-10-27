@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-Conflict::Conflict(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Conflict::Conflict(JsonView jsonValue) { *this = jsonValue; }
 
-Conflict& Conflict::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("conflictMetadata"))
-  {
+Conflict& Conflict::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("conflictMetadata")) {
     m_conflictMetadata = jsonValue.GetObject("conflictMetadata");
     m_conflictMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mergeHunks"))
-  {
+  if (jsonValue.ValueExists("mergeHunks")) {
     Aws::Utils::Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
-    for(unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex)
-    {
+    for (unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex) {
       m_mergeHunks.push_back(mergeHunksJsonList[mergeHunksIndex].AsObject());
     }
     m_mergeHunksHasBeenSet = true;
@@ -42,30 +32,24 @@ Conflict& Conflict::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Conflict::Jsonize() const
-{
+JsonValue Conflict::Jsonize() const {
   JsonValue payload;
 
-  if(m_conflictMetadataHasBeenSet)
-  {
-   payload.WithObject("conflictMetadata", m_conflictMetadata.Jsonize());
-
+  if (m_conflictMetadataHasBeenSet) {
+    payload.WithObject("conflictMetadata", m_conflictMetadata.Jsonize());
   }
 
-  if(m_mergeHunksHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mergeHunksJsonList(m_mergeHunks.size());
-   for(unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex)
-   {
-     mergeHunksJsonList[mergeHunksIndex].AsObject(m_mergeHunks[mergeHunksIndex].Jsonize());
-   }
-   payload.WithArray("mergeHunks", std::move(mergeHunksJsonList));
-
+  if (m_mergeHunksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mergeHunksJsonList(m_mergeHunks.size());
+    for (unsigned mergeHunksIndex = 0; mergeHunksIndex < mergeHunksJsonList.GetLength(); ++mergeHunksIndex) {
+      mergeHunksJsonList[mergeHunksIndex].AsObject(m_mergeHunks[mergeHunksIndex].Jsonize());
+    }
+    payload.WithArray("mergeHunks", std::move(mergeHunksJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
-Resource::Resource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
-Resource& Resource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+Resource& Resource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subResourceId"))
-  {
+  if (jsonValue.ValueExists("subResourceId")) {
     m_subResourceId = jsonValue.GetString("subResourceId");
     m_subResourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Resource::Jsonize() const
-{
+JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_subResourceIdHasBeenSet)
-  {
-   payload.WithString("subResourceId", m_subResourceId);
-
+  if (m_subResourceIdHasBeenSet) {
+    payload.WithString("subResourceId", m_subResourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

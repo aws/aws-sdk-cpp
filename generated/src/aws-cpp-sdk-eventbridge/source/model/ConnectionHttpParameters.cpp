@@ -3,51 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/ConnectionHttpParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/ConnectionHttpParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-ConnectionHttpParameters::ConnectionHttpParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionHttpParameters::ConnectionHttpParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionHttpParameters& ConnectionHttpParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HeaderParameters"))
-  {
+ConnectionHttpParameters& ConnectionHttpParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HeaderParameters")) {
     Aws::Utils::Array<JsonView> headerParametersJsonList = jsonValue.GetArray("HeaderParameters");
-    for(unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex)
-    {
+    for (unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex) {
       m_headerParameters.push_back(headerParametersJsonList[headerParametersIndex].AsObject());
     }
     m_headerParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryStringParameters"))
-  {
+  if (jsonValue.ValueExists("QueryStringParameters")) {
     Aws::Utils::Array<JsonView> queryStringParametersJsonList = jsonValue.GetArray("QueryStringParameters");
-    for(unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength(); ++queryStringParametersIndex)
-    {
+    for (unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength();
+         ++queryStringParametersIndex) {
       m_queryStringParameters.push_back(queryStringParametersJsonList[queryStringParametersIndex].AsObject());
     }
     m_queryStringParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BodyParameters"))
-  {
+  if (jsonValue.ValueExists("BodyParameters")) {
     Aws::Utils::Array<JsonView> bodyParametersJsonList = jsonValue.GetArray("BodyParameters");
-    for(unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex)
-    {
+    for (unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex) {
       m_bodyParameters.push_back(bodyParametersJsonList[bodyParametersIndex].AsObject());
     }
     m_bodyParametersHasBeenSet = true;
@@ -55,46 +43,37 @@ ConnectionHttpParameters& ConnectionHttpParameters::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue ConnectionHttpParameters::Jsonize() const
-{
+JsonValue ConnectionHttpParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_headerParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headerParametersJsonList(m_headerParameters.size());
-   for(unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex)
-   {
-     headerParametersJsonList[headerParametersIndex].AsObject(m_headerParameters[headerParametersIndex].Jsonize());
-   }
-   payload.WithArray("HeaderParameters", std::move(headerParametersJsonList));
-
+  if (m_headerParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> headerParametersJsonList(m_headerParameters.size());
+    for (unsigned headerParametersIndex = 0; headerParametersIndex < headerParametersJsonList.GetLength(); ++headerParametersIndex) {
+      headerParametersJsonList[headerParametersIndex].AsObject(m_headerParameters[headerParametersIndex].Jsonize());
+    }
+    payload.WithArray("HeaderParameters", std::move(headerParametersJsonList));
   }
 
-  if(m_queryStringParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queryStringParametersJsonList(m_queryStringParameters.size());
-   for(unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength(); ++queryStringParametersIndex)
-   {
-     queryStringParametersJsonList[queryStringParametersIndex].AsObject(m_queryStringParameters[queryStringParametersIndex].Jsonize());
-   }
-   payload.WithArray("QueryStringParameters", std::move(queryStringParametersJsonList));
-
+  if (m_queryStringParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queryStringParametersJsonList(m_queryStringParameters.size());
+    for (unsigned queryStringParametersIndex = 0; queryStringParametersIndex < queryStringParametersJsonList.GetLength();
+         ++queryStringParametersIndex) {
+      queryStringParametersJsonList[queryStringParametersIndex].AsObject(m_queryStringParameters[queryStringParametersIndex].Jsonize());
+    }
+    payload.WithArray("QueryStringParameters", std::move(queryStringParametersJsonList));
   }
 
-  if(m_bodyParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> bodyParametersJsonList(m_bodyParameters.size());
-   for(unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex)
-   {
-     bodyParametersJsonList[bodyParametersIndex].AsObject(m_bodyParameters[bodyParametersIndex].Jsonize());
-   }
-   payload.WithArray("BodyParameters", std::move(bodyParametersJsonList));
-
+  if (m_bodyParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> bodyParametersJsonList(m_bodyParameters.size());
+    for (unsigned bodyParametersIndex = 0; bodyParametersIndex < bodyParametersJsonList.GetLength(); ++bodyParametersIndex) {
+      bodyParametersJsonList[bodyParametersIndex].AsObject(m_bodyParameters[bodyParametersIndex].Jsonize());
+    }
+    payload.WithArray("BodyParameters", std::move(bodyParametersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

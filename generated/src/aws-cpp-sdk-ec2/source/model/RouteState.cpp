@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RouteState.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/RouteState.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace RouteStateMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace RouteStateMapper
-      {
+static const int active_HASH = HashingUtils::HashString("active");
+static const int blackhole_HASH = HashingUtils::HashString("blackhole");
+static const int filtered_HASH = HashingUtils::HashString("filtered");
 
-        static const int active_HASH = HashingUtils::HashString("active");
-        static const int blackhole_HASH = HashingUtils::HashString("blackhole");
-        static const int filtered_HASH = HashingUtils::HashString("filtered");
+RouteState GetRouteStateForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == active_HASH) {
+    return RouteState::active;
+  } else if (hashCode == blackhole_HASH) {
+    return RouteState::blackhole;
+  } else if (hashCode == filtered_HASH) {
+    return RouteState::filtered;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RouteState>(hashCode);
+  }
 
+  return RouteState::NOT_SET;
+}
 
-        RouteState GetRouteStateForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == active_HASH)
-          {
-            return RouteState::active;
-          }
-          else if (hashCode == blackhole_HASH)
-          {
-            return RouteState::blackhole;
-          }
-          else if (hashCode == filtered_HASH)
-          {
-            return RouteState::filtered;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<RouteState>(hashCode);
-          }
+Aws::String GetNameForRouteState(RouteState enumValue) {
+  switch (enumValue) {
+    case RouteState::NOT_SET:
+      return {};
+    case RouteState::active:
+      return "active";
+    case RouteState::blackhole:
+      return "blackhole";
+    case RouteState::filtered:
+      return "filtered";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return RouteState::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForRouteState(RouteState enumValue)
-        {
-          switch(enumValue)
-          {
-          case RouteState::NOT_SET:
-            return {};
-          case RouteState::active:
-            return "active";
-          case RouteState::blackhole:
-            return "blackhole";
-          case RouteState::filtered:
-            return "filtered";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace RouteStateMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace RouteStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

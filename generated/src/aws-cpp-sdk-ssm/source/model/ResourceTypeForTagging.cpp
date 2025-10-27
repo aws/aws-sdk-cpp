@@ -3,119 +3,91 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/ResourceTypeForTagging.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ssm/model/ResourceTypeForTagging.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SSM {
+namespace Model {
+namespace ResourceTypeForTaggingMapper {
 
-namespace Aws
-{
-  namespace SSM
-  {
-    namespace Model
-    {
-      namespace ResourceTypeForTaggingMapper
-      {
+static const int Document_HASH = HashingUtils::HashString("Document");
+static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
+static const int MaintenanceWindow_HASH = HashingUtils::HashString("MaintenanceWindow");
+static const int Parameter_HASH = HashingUtils::HashString("Parameter");
+static const int PatchBaseline_HASH = HashingUtils::HashString("PatchBaseline");
+static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
+static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
+static const int Automation_HASH = HashingUtils::HashString("Automation");
+static const int Association_HASH = HashingUtils::HashString("Association");
 
-        static const int Document_HASH = HashingUtils::HashString("Document");
-        static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
-        static const int MaintenanceWindow_HASH = HashingUtils::HashString("MaintenanceWindow");
-        static const int Parameter_HASH = HashingUtils::HashString("Parameter");
-        static const int PatchBaseline_HASH = HashingUtils::HashString("PatchBaseline");
-        static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
-        static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
-        static const int Automation_HASH = HashingUtils::HashString("Automation");
-        static const int Association_HASH = HashingUtils::HashString("Association");
+ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Document_HASH) {
+    return ResourceTypeForTagging::Document;
+  } else if (hashCode == ManagedInstance_HASH) {
+    return ResourceTypeForTagging::ManagedInstance;
+  } else if (hashCode == MaintenanceWindow_HASH) {
+    return ResourceTypeForTagging::MaintenanceWindow;
+  } else if (hashCode == Parameter_HASH) {
+    return ResourceTypeForTagging::Parameter;
+  } else if (hashCode == PatchBaseline_HASH) {
+    return ResourceTypeForTagging::PatchBaseline;
+  } else if (hashCode == OpsItem_HASH) {
+    return ResourceTypeForTagging::OpsItem;
+  } else if (hashCode == OpsMetadata_HASH) {
+    return ResourceTypeForTagging::OpsMetadata;
+  } else if (hashCode == Automation_HASH) {
+    return ResourceTypeForTagging::Automation;
+  } else if (hashCode == Association_HASH) {
+    return ResourceTypeForTagging::Association;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResourceTypeForTagging>(hashCode);
+  }
 
+  return ResourceTypeForTagging::NOT_SET;
+}
 
-        ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Document_HASH)
-          {
-            return ResourceTypeForTagging::Document;
-          }
-          else if (hashCode == ManagedInstance_HASH)
-          {
-            return ResourceTypeForTagging::ManagedInstance;
-          }
-          else if (hashCode == MaintenanceWindow_HASH)
-          {
-            return ResourceTypeForTagging::MaintenanceWindow;
-          }
-          else if (hashCode == Parameter_HASH)
-          {
-            return ResourceTypeForTagging::Parameter;
-          }
-          else if (hashCode == PatchBaseline_HASH)
-          {
-            return ResourceTypeForTagging::PatchBaseline;
-          }
-          else if (hashCode == OpsItem_HASH)
-          {
-            return ResourceTypeForTagging::OpsItem;
-          }
-          else if (hashCode == OpsMetadata_HASH)
-          {
-            return ResourceTypeForTagging::OpsMetadata;
-          }
-          else if (hashCode == Automation_HASH)
-          {
-            return ResourceTypeForTagging::Automation;
-          }
-          else if (hashCode == Association_HASH)
-          {
-            return ResourceTypeForTagging::Association;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResourceTypeForTagging>(hashCode);
-          }
+Aws::String GetNameForResourceTypeForTagging(ResourceTypeForTagging enumValue) {
+  switch (enumValue) {
+    case ResourceTypeForTagging::NOT_SET:
+      return {};
+    case ResourceTypeForTagging::Document:
+      return "Document";
+    case ResourceTypeForTagging::ManagedInstance:
+      return "ManagedInstance";
+    case ResourceTypeForTagging::MaintenanceWindow:
+      return "MaintenanceWindow";
+    case ResourceTypeForTagging::Parameter:
+      return "Parameter";
+    case ResourceTypeForTagging::PatchBaseline:
+      return "PatchBaseline";
+    case ResourceTypeForTagging::OpsItem:
+      return "OpsItem";
+    case ResourceTypeForTagging::OpsMetadata:
+      return "OpsMetadata";
+    case ResourceTypeForTagging::Automation:
+      return "Automation";
+    case ResourceTypeForTagging::Association:
+      return "Association";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ResourceTypeForTagging::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForResourceTypeForTagging(ResourceTypeForTagging enumValue)
-        {
-          switch(enumValue)
-          {
-          case ResourceTypeForTagging::NOT_SET:
-            return {};
-          case ResourceTypeForTagging::Document:
-            return "Document";
-          case ResourceTypeForTagging::ManagedInstance:
-            return "ManagedInstance";
-          case ResourceTypeForTagging::MaintenanceWindow:
-            return "MaintenanceWindow";
-          case ResourceTypeForTagging::Parameter:
-            return "Parameter";
-          case ResourceTypeForTagging::PatchBaseline:
-            return "PatchBaseline";
-          case ResourceTypeForTagging::OpsItem:
-            return "OpsItem";
-          case ResourceTypeForTagging::OpsMetadata:
-            return "OpsMetadata";
-          case ResourceTypeForTagging::Automation:
-            return "Automation";
-          case ResourceTypeForTagging::Association:
-            return "Association";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ResourceTypeForTaggingMapper
-    } // namespace Model
-  } // namespace SSM
-} // namespace Aws
+}  // namespace ResourceTypeForTaggingMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAggregationAuthorizationRequest::SerializePayload() const
-{
+Aws::String DeleteAggregationAuthorizationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_authorizedAccountIdHasBeenSet)
-  {
-   payload.WithString("AuthorizedAccountId", m_authorizedAccountId);
-
+  if (m_authorizedAccountIdHasBeenSet) {
+    payload.WithString("AuthorizedAccountId", m_authorizedAccountId);
   }
 
-  if(m_authorizedAwsRegionHasBeenSet)
-  {
-   payload.WithString("AuthorizedAwsRegion", m_authorizedAwsRegion);
-
+  if (m_authorizedAwsRegionHasBeenSet) {
+    payload.WithString("AuthorizedAwsRegion", m_authorizedAwsRegion);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteAggregationAuthorizationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteAggregationAuthorizationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteAggregationAuthorization"));
   return headers;
-
 }
-
-
-
-

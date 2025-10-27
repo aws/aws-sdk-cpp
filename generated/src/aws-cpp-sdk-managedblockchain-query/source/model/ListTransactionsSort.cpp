@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain-query/model/ListTransactionsSort.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain-query/model/ListTransactionsSort.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchainQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchainQuery {
+namespace Model {
 
-ListTransactionsSort::ListTransactionsSort(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListTransactionsSort::ListTransactionsSort(JsonView jsonValue) { *this = jsonValue; }
 
-ListTransactionsSort& ListTransactionsSort::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sortBy"))
-  {
+ListTransactionsSort& ListTransactionsSort::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sortBy")) {
     m_sortBy = ListTransactionsSortByMapper::GetListTransactionsSortByForName(jsonValue.GetString("sortBy"));
     m_sortByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListTransactionsSort::Jsonize() const
-{
+JsonValue ListTransactionsSort::Jsonize() const {
   JsonValue payload;
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", ListTransactionsSortByMapper::GetNameForListTransactionsSortBy(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", ListTransactionsSortByMapper::GetNameForListTransactionsSortBy(m_sortBy));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchainQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeApplicationRequest::SerializePayload() const
-{
+Aws::String DescribeApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeApplicationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeApplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.DescribeApplication"));
   return headers;
-
 }
-
-
-
-

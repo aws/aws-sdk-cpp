@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class ComputeAssetState
-  {
-    NOT_SET,
-    ACTIVE,
-    ISOLATED,
-    RETIRING
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class ComputeAssetState { NOT_SET, ACTIVE, ISOLATED, RETIRING };
 
-namespace ComputeAssetStateMapper
-{
+namespace ComputeAssetStateMapper {
 AWS_OUTPOSTS_API ComputeAssetState GetComputeAssetStateForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForComputeAssetState(ComputeAssetState value);
-} // namespace ComputeAssetStateMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace ComputeAssetStateMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

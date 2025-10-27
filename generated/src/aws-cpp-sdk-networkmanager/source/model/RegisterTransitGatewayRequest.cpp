@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterTransitGatewayRequest::SerializePayload() const
-{
+Aws::String RegisterTransitGatewayRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transitGatewayArnHasBeenSet)
-  {
-   payload.WithString("TransitGatewayArn", m_transitGatewayArn);
-
+  if (m_transitGatewayArnHasBeenSet) {
+    payload.WithString("TransitGatewayArn", m_transitGatewayArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

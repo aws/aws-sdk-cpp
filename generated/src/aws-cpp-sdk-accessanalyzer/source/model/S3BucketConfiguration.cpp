@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketPolicy"))
-  {
+S3BucketConfiguration& S3BucketConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketPolicy")) {
     m_bucketPolicy = jsonValue.GetString("bucketPolicy");
     m_bucketPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketAclGrants"))
-  {
+  if (jsonValue.ValueExists("bucketAclGrants")) {
     Aws::Utils::Array<JsonView> bucketAclGrantsJsonList = jsonValue.GetArray("bucketAclGrants");
-    for(unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex)
-    {
+    for (unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex) {
       m_bucketAclGrants.push_back(bucketAclGrantsJsonList[bucketAclGrantsIndex].AsObject());
     }
     m_bucketAclGrantsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketPublicAccessBlock"))
-  {
+  if (jsonValue.ValueExists("bucketPublicAccessBlock")) {
     m_bucketPublicAccessBlock = jsonValue.GetObject("bucketPublicAccessBlock");
     m_bucketPublicAccessBlockHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accessPoints"))
-  {
+  if (jsonValue.ValueExists("accessPoints")) {
     Aws::Map<Aws::String, JsonView> accessPointsJsonMap = jsonValue.GetObject("accessPoints").GetAllObjects();
-    for(auto& accessPointsItem : accessPointsJsonMap)
-    {
+    for (auto& accessPointsItem : accessPointsJsonMap) {
       m_accessPoints[accessPointsItem.first] = accessPointsItem.second.AsObject();
     }
     m_accessPointsHasBeenSet = true;
@@ -56,47 +43,36 @@ S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue S3BucketConfiguration::Jsonize() const
-{
+JsonValue S3BucketConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketPolicyHasBeenSet)
-  {
-   payload.WithString("bucketPolicy", m_bucketPolicy);
-
+  if (m_bucketPolicyHasBeenSet) {
+    payload.WithString("bucketPolicy", m_bucketPolicy);
   }
 
-  if(m_bucketAclGrantsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> bucketAclGrantsJsonList(m_bucketAclGrants.size());
-   for(unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex)
-   {
-     bucketAclGrantsJsonList[bucketAclGrantsIndex].AsObject(m_bucketAclGrants[bucketAclGrantsIndex].Jsonize());
-   }
-   payload.WithArray("bucketAclGrants", std::move(bucketAclGrantsJsonList));
-
+  if (m_bucketAclGrantsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> bucketAclGrantsJsonList(m_bucketAclGrants.size());
+    for (unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex) {
+      bucketAclGrantsJsonList[bucketAclGrantsIndex].AsObject(m_bucketAclGrants[bucketAclGrantsIndex].Jsonize());
+    }
+    payload.WithArray("bucketAclGrants", std::move(bucketAclGrantsJsonList));
   }
 
-  if(m_bucketPublicAccessBlockHasBeenSet)
-  {
-   payload.WithObject("bucketPublicAccessBlock", m_bucketPublicAccessBlock.Jsonize());
-
+  if (m_bucketPublicAccessBlockHasBeenSet) {
+    payload.WithObject("bucketPublicAccessBlock", m_bucketPublicAccessBlock.Jsonize());
   }
 
-  if(m_accessPointsHasBeenSet)
-  {
-   JsonValue accessPointsJsonMap;
-   for(auto& accessPointsItem : m_accessPoints)
-   {
-     accessPointsJsonMap.WithObject(accessPointsItem.first, accessPointsItem.second.Jsonize());
-   }
-   payload.WithObject("accessPoints", std::move(accessPointsJsonMap));
-
+  if (m_accessPointsHasBeenSet) {
+    JsonValue accessPointsJsonMap;
+    for (auto& accessPointsItem : m_accessPoints) {
+      accessPointsJsonMap.WithObject(accessPointsItem.first, accessPointsItem.second.Jsonize());
+    }
+    payload.WithObject("accessPoints", std::move(accessPointsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

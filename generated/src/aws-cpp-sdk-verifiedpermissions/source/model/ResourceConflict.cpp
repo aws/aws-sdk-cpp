@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/ResourceConflict.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/ResourceConflict.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-ResourceConflict::ResourceConflict(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceConflict::ResourceConflict(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceConflict& ResourceConflict::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceId"))
-  {
+ResourceConflict& ResourceConflict::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceConflict::Jsonize() const
-{
+JsonValue ResourceConflict::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

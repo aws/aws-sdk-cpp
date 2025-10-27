@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-SupportTerm::SupportTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SupportTerm::SupportTerm(JsonView jsonValue) { *this = jsonValue; }
 
-SupportTerm& SupportTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("refundPolicyDescription"))
-  {
+SupportTerm& SupportTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("refundPolicyDescription")) {
     m_refundPolicyDescription = jsonValue.GetString("refundPolicyDescription");
     m_refundPolicyDescriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SupportTerm::Jsonize() const
-{
+JsonValue SupportTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_refundPolicyDescriptionHasBeenSet)
-  {
-   payload.WithString("refundPolicyDescription", m_refundPolicyDescription);
-
+  if (m_refundPolicyDescriptionHasBeenSet) {
+    payload.WithString("refundPolicyDescription", m_refundPolicyDescription);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

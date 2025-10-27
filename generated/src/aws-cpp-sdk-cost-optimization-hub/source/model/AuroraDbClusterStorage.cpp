@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/AuroraDbClusterStorage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/AuroraDbClusterStorage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-AuroraDbClusterStorage::AuroraDbClusterStorage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuroraDbClusterStorage::AuroraDbClusterStorage(JsonView jsonValue) { *this = jsonValue; }
 
-AuroraDbClusterStorage& AuroraDbClusterStorage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("configuration"))
-  {
+AuroraDbClusterStorage& AuroraDbClusterStorage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("configuration")) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("costCalculation"))
-  {
+  if (jsonValue.ValueExists("costCalculation")) {
     m_costCalculation = jsonValue.GetObject("costCalculation");
     m_costCalculationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuroraDbClusterStorage::Jsonize() const
-{
+JsonValue AuroraDbClusterStorage::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
-  if(m_costCalculationHasBeenSet)
-  {
-   payload.WithObject("costCalculation", m_costCalculation.Jsonize());
-
+  if (m_costCalculationHasBeenSet) {
+    payload.WithObject("costCalculation", m_costCalculation.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

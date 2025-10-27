@@ -5,12 +5,8 @@
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
 
-namespace Aws
-{
-namespace MigrationHubRefactorSpaces
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MigrationHubRefactorSpaces
-} // namespace Aws
+namespace Aws {
+namespace MigrationHubRefactorSpaces {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MigrationHubRefactorSpaces
+}  // namespace Aws

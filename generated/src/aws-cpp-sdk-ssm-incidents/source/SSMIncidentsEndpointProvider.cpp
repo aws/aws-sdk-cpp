@@ -5,12 +5,8 @@
 
 #include <aws/ssm-incidents/SSMIncidentsEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSMIncidents
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSMIncidents
-} // namespace Aws
+namespace Aws {
+namespace SSMIncidents {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSMIncidents
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteConfigurationAggregatorRequest::SerializePayload() const
-{
+Aws::String DeleteConfigurationAggregatorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationAggregatorNameHasBeenSet)
-  {
-   payload.WithString("ConfigurationAggregatorName", m_configurationAggregatorName);
-
+  if (m_configurationAggregatorNameHasBeenSet) {
+    payload.WithString("ConfigurationAggregatorName", m_configurationAggregatorName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteConfigurationAggregatorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteConfigurationAggregatorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteConfigurationAggregator"));
   return headers;
-
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/ListServiceProfilesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/ListServiceProfilesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceProfilesResult::ListServiceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListServiceProfilesResult::ListServiceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListServiceProfilesResult& ListServiceProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListServiceProfilesResult& ListServiceProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceProfileList"))
-  {
+  if (jsonValue.ValueExists("ServiceProfileList")) {
     Aws::Utils::Array<JsonView> serviceProfileListJsonList = jsonValue.GetArray("ServiceProfileList");
-    for(unsigned serviceProfileListIndex = 0; serviceProfileListIndex < serviceProfileListJsonList.GetLength(); ++serviceProfileListIndex)
-    {
+    for (unsigned serviceProfileListIndex = 0; serviceProfileListIndex < serviceProfileListJsonList.GetLength();
+         ++serviceProfileListIndex) {
       m_serviceProfileList.push_back(serviceProfileListJsonList[serviceProfileListIndex].AsObject());
     }
     m_serviceProfileListHasBeenSet = true;
@@ -42,12 +36,10 @@ ListServiceProfilesResult& ListServiceProfilesResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

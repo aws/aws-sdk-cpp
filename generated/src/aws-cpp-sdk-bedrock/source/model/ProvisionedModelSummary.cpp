@@ -11,157 +11,118 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-ProvisionedModelSummary::ProvisionedModelSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProvisionedModelSummary::ProvisionedModelSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisionedModelSummary& ProvisionedModelSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("provisionedModelName"))
-  {
+ProvisionedModelSummary& ProvisionedModelSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("provisionedModelName")) {
     m_provisionedModelName = jsonValue.GetString("provisionedModelName");
     m_provisionedModelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("provisionedModelArn"))
-  {
+  if (jsonValue.ValueExists("provisionedModelArn")) {
     m_provisionedModelArn = jsonValue.GetString("provisionedModelArn");
     m_provisionedModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelArn"))
-  {
+  if (jsonValue.ValueExists("modelArn")) {
     m_modelArn = jsonValue.GetString("modelArn");
     m_modelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("desiredModelArn"))
-  {
+  if (jsonValue.ValueExists("desiredModelArn")) {
     m_desiredModelArn = jsonValue.GetString("desiredModelArn");
     m_desiredModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("foundationModelArn"))
-  {
+  if (jsonValue.ValueExists("foundationModelArn")) {
     m_foundationModelArn = jsonValue.GetString("foundationModelArn");
     m_foundationModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelUnits"))
-  {
+  if (jsonValue.ValueExists("modelUnits")) {
     m_modelUnits = jsonValue.GetInteger("modelUnits");
     m_modelUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("desiredModelUnits"))
-  {
+  if (jsonValue.ValueExists("desiredModelUnits")) {
     m_desiredModelUnits = jsonValue.GetInteger("desiredModelUnits");
     m_desiredModelUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ProvisionedModelStatusMapper::GetProvisionedModelStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commitmentDuration"))
-  {
+  if (jsonValue.ValueExists("commitmentDuration")) {
     m_commitmentDuration = CommitmentDurationMapper::GetCommitmentDurationForName(jsonValue.GetString("commitmentDuration"));
     m_commitmentDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commitmentExpirationTime"))
-  {
+  if (jsonValue.ValueExists("commitmentExpirationTime")) {
     m_commitmentExpirationTime = jsonValue.GetString("commitmentExpirationTime");
     m_commitmentExpirationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProvisionedModelSummary::Jsonize() const
-{
+JsonValue ProvisionedModelSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_provisionedModelNameHasBeenSet)
-  {
-   payload.WithString("provisionedModelName", m_provisionedModelName);
-
+  if (m_provisionedModelNameHasBeenSet) {
+    payload.WithString("provisionedModelName", m_provisionedModelName);
   }
 
-  if(m_provisionedModelArnHasBeenSet)
-  {
-   payload.WithString("provisionedModelArn", m_provisionedModelArn);
-
+  if (m_provisionedModelArnHasBeenSet) {
+    payload.WithString("provisionedModelArn", m_provisionedModelArn);
   }
 
-  if(m_modelArnHasBeenSet)
-  {
-   payload.WithString("modelArn", m_modelArn);
-
+  if (m_modelArnHasBeenSet) {
+    payload.WithString("modelArn", m_modelArn);
   }
 
-  if(m_desiredModelArnHasBeenSet)
-  {
-   payload.WithString("desiredModelArn", m_desiredModelArn);
-
+  if (m_desiredModelArnHasBeenSet) {
+    payload.WithString("desiredModelArn", m_desiredModelArn);
   }
 
-  if(m_foundationModelArnHasBeenSet)
-  {
-   payload.WithString("foundationModelArn", m_foundationModelArn);
-
+  if (m_foundationModelArnHasBeenSet) {
+    payload.WithString("foundationModelArn", m_foundationModelArn);
   }
 
-  if(m_modelUnitsHasBeenSet)
-  {
-   payload.WithInteger("modelUnits", m_modelUnits);
-
+  if (m_modelUnitsHasBeenSet) {
+    payload.WithInteger("modelUnits", m_modelUnits);
   }
 
-  if(m_desiredModelUnitsHasBeenSet)
-  {
-   payload.WithInteger("desiredModelUnits", m_desiredModelUnits);
-
+  if (m_desiredModelUnitsHasBeenSet) {
+    payload.WithInteger("desiredModelUnits", m_desiredModelUnits);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ProvisionedModelStatusMapper::GetNameForProvisionedModelStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ProvisionedModelStatusMapper::GetNameForProvisionedModelStatus(m_status));
   }
 
-  if(m_commitmentDurationHasBeenSet)
-  {
-   payload.WithString("commitmentDuration", CommitmentDurationMapper::GetNameForCommitmentDuration(m_commitmentDuration));
+  if (m_commitmentDurationHasBeenSet) {
+    payload.WithString("commitmentDuration", CommitmentDurationMapper::GetNameForCommitmentDuration(m_commitmentDuration));
   }
 
-  if(m_commitmentExpirationTimeHasBeenSet)
-  {
-   payload.WithString("commitmentExpirationTime", m_commitmentExpirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_commitmentExpirationTimeHasBeenSet) {
+    payload.WithString("commitmentExpirationTime", m_commitmentExpirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

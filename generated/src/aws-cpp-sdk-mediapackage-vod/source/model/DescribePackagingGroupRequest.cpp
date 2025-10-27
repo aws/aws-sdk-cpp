@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage-vod/model/DescribePackagingGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage-vod/model/DescribePackagingGroupRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribePackagingGroupRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribePackagingGroupRequest::SerializePayload() const { return {}; }

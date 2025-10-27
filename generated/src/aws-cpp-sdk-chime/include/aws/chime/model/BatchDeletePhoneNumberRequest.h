@@ -4,54 +4,59 @@
  */
 
 #pragma once
-#include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
+/**
+ */
+class BatchDeletePhoneNumberRequest : public ChimeRequest {
+ public:
+  AWS_CHIME_API BatchDeletePhoneNumberRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "BatchDeletePhoneNumber"; }
+
+  AWS_CHIME_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>List of phone number IDs.</p>
    */
-  class BatchDeletePhoneNumberRequest : public ChimeRequest
-  {
-  public:
-    AWS_CHIME_API BatchDeletePhoneNumberRequest() = default;
+  inline const Aws::Vector<Aws::String>& GetPhoneNumberIds() const { return m_phoneNumberIds; }
+  inline bool PhoneNumberIdsHasBeenSet() const { return m_phoneNumberIdsHasBeenSet; }
+  template <typename PhoneNumberIdsT = Aws::Vector<Aws::String>>
+  void SetPhoneNumberIds(PhoneNumberIdsT&& value) {
+    m_phoneNumberIdsHasBeenSet = true;
+    m_phoneNumberIds = std::forward<PhoneNumberIdsT>(value);
+  }
+  template <typename PhoneNumberIdsT = Aws::Vector<Aws::String>>
+  BatchDeletePhoneNumberRequest& WithPhoneNumberIds(PhoneNumberIdsT&& value) {
+    SetPhoneNumberIds(std::forward<PhoneNumberIdsT>(value));
+    return *this;
+  }
+  template <typename PhoneNumberIdsT = Aws::String>
+  BatchDeletePhoneNumberRequest& AddPhoneNumberIds(PhoneNumberIdsT&& value) {
+    m_phoneNumberIdsHasBeenSet = true;
+    m_phoneNumberIds.emplace_back(std::forward<PhoneNumberIdsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_phoneNumberIds;
+  bool m_phoneNumberIdsHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "BatchDeletePhoneNumber"; }
-
-    AWS_CHIME_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>List of phone number IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetPhoneNumberIds() const { return m_phoneNumberIds; }
-    inline bool PhoneNumberIdsHasBeenSet() const { return m_phoneNumberIdsHasBeenSet; }
-    template<typename PhoneNumberIdsT = Aws::Vector<Aws::String>>
-    void SetPhoneNumberIds(PhoneNumberIdsT&& value) { m_phoneNumberIdsHasBeenSet = true; m_phoneNumberIds = std::forward<PhoneNumberIdsT>(value); }
-    template<typename PhoneNumberIdsT = Aws::Vector<Aws::String>>
-    BatchDeletePhoneNumberRequest& WithPhoneNumberIds(PhoneNumberIdsT&& value) { SetPhoneNumberIds(std::forward<PhoneNumberIdsT>(value)); return *this;}
-    template<typename PhoneNumberIdsT = Aws::String>
-    BatchDeletePhoneNumberRequest& AddPhoneNumberIds(PhoneNumberIdsT&& value) { m_phoneNumberIdsHasBeenSet = true; m_phoneNumberIds.emplace_back(std::forward<PhoneNumberIdsT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<Aws::String> m_phoneNumberIds;
-    bool m_phoneNumberIdsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/BuiltInIntentSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/BuiltInIntentSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-BuiltInIntentSummary::BuiltInIntentSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BuiltInIntentSummary::BuiltInIntentSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BuiltInIntentSummary& BuiltInIntentSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("intentSignature"))
-  {
+BuiltInIntentSummary& BuiltInIntentSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("intentSignature")) {
     m_intentSignature = jsonValue.GetString("intentSignature");
     m_intentSignatureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BuiltInIntentSummary::Jsonize() const
-{
+JsonValue BuiltInIntentSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_intentSignatureHasBeenSet)
-  {
-   payload.WithString("intentSignature", m_intentSignature);
-
+  if (m_intentSignatureHasBeenSet) {
+    payload.WithString("intentSignature", m_intentSignature);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

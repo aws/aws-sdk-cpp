@@ -7,24 +7,16 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
-  enum class RecordType
-  {
-    NOT_SET,
-    CNAME
-  };
+namespace Aws {
+namespace ACM {
+namespace Model {
+enum class RecordType { NOT_SET, CNAME };
 
-namespace RecordTypeMapper
-{
+namespace RecordTypeMapper {
 AWS_ACM_API RecordType GetRecordTypeForName(const Aws::String& name);
 
 AWS_ACM_API Aws::String GetNameForRecordType(RecordType value);
-} // namespace RecordTypeMapper
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace RecordTypeMapper
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

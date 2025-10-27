@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class TimeUnit
-  {
-    NOT_SET,
-    HOURS
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class TimeUnit { NOT_SET, HOURS };
 
-namespace TimeUnitMapper
-{
+namespace TimeUnitMapper {
 AWS_ELASTICSEARCHSERVICE_API TimeUnit GetTimeUnitForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForTimeUnit(TimeUnit value);
-} // namespace TimeUnitMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite(JsonView jsonValue) { *this = jsonValue; }
 
-HttpGatewayRoutePathRewrite& HttpGatewayRoutePathRewrite::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exact"))
-  {
+HttpGatewayRoutePathRewrite& HttpGatewayRoutePathRewrite::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exact")) {
     m_exact = jsonValue.GetString("exact");
     m_exactHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpGatewayRoutePathRewrite::Jsonize() const
-{
+JsonValue HttpGatewayRoutePathRewrite::Jsonize() const {
   JsonValue payload;
 
-  if(m_exactHasBeenSet)
-  {
-   payload.WithString("exact", m_exact);
-
+  if (m_exactHasBeenSet) {
+    payload.WithString("exact", m_exact);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

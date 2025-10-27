@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class EventSourceMappingMetric
-  {
-    NOT_SET,
-    EventCount
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class EventSourceMappingMetric { NOT_SET, EventCount };
 
-namespace EventSourceMappingMetricMapper
-{
+namespace EventSourceMappingMetricMapper {
 AWS_LAMBDA_API EventSourceMappingMetric GetEventSourceMappingMetricForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForEventSourceMappingMetric(EventSourceMappingMetric value);
-} // namespace EventSourceMappingMetricMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace EventSourceMappingMetricMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

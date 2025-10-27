@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class Effect
-  {
-    NOT_SET,
-    Allow,
-    Deny
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class Effect { NOT_SET, Allow, Deny };
 
-namespace EffectMapper
-{
+namespace EffectMapper {
 AWS_LEXMODELSV2_API Effect GetEffectForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForEffect(Effect value);
-} // namespace EffectMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace EffectMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

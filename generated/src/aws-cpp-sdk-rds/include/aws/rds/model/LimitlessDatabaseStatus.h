@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class LimitlessDatabaseStatus
-  {
-    NOT_SET,
-    active,
-    not_in_use,
-    enabled,
-    disabled,
-    enabling,
-    disabling,
-    modifying_max_capacity,
-    error
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class LimitlessDatabaseStatus { NOT_SET, active, not_in_use, enabled, disabled, enabling, disabling, modifying_max_capacity, error };
 
-namespace LimitlessDatabaseStatusMapper
-{
+namespace LimitlessDatabaseStatusMapper {
 AWS_RDS_API LimitlessDatabaseStatus GetLimitlessDatabaseStatusForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForLimitlessDatabaseStatus(LimitlessDatabaseStatus value);
-} // namespace LimitlessDatabaseStatusMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace LimitlessDatabaseStatusMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

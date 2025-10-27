@@ -7,24 +7,16 @@
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
-  enum class LanguageCode
-  {
-    NOT_SET,
-    en
-  };
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
+enum class LanguageCode { NOT_SET, en };
 
-namespace LanguageCodeMapper
-{
+namespace LanguageCodeMapper {
 AWS_COMPREHENDMEDICAL_API LanguageCode GetLanguageCodeForName(const Aws::String& name);
 
 AWS_COMPREHENDMEDICAL_API Aws::String GetNameForLanguageCode(LanguageCode value);
-} // namespace LanguageCodeMapper
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace LanguageCodeMapper
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

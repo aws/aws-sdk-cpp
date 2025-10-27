@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptVpcPeeringConnectionResponse::AcceptVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+AcceptVpcPeeringConnectionResponse::AcceptVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-AcceptVpcPeeringConnectionResponse& AcceptVpcPeeringConnectionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+AcceptVpcPeeringConnectionResponse& AcceptVpcPeeringConnectionResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "AcceptVpcPeeringConnectionResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AcceptVpcPeeringConnectionResponse")) {
     resultNode = rootNode.FirstChild("AcceptVpcPeeringConnectionResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode vpcPeeringConnectionNode = resultNode.FirstChild("vpcPeeringConnection");
-    if(!vpcPeeringConnectionNode.IsNull())
-    {
+    if (!vpcPeeringConnectionNode.IsNull()) {
       m_vpcPeeringConnection = vpcPeeringConnectionNode;
       m_vpcPeeringConnectionHasBeenSet = true;
     }
@@ -44,12 +39,11 @@ AcceptVpcPeeringConnectionResponse& AcceptVpcPeeringConnectionResponse::operator
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AcceptVpcPeeringConnectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AcceptVpcPeeringConnectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class SSEStatus
-  {
-    NOT_SET,
-    ENABLING,
-    ENABLED,
-    DISABLING,
-    DISABLED,
-    UPDATING
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class SSEStatus { NOT_SET, ENABLING, ENABLED, DISABLING, DISABLED, UPDATING };
 
-namespace SSEStatusMapper
-{
+namespace SSEStatusMapper {
 AWS_DYNAMODB_API SSEStatus GetSSEStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForSSEStatus(SSEStatus value);
-} // namespace SSEStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace SSEStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-enum class SSMErrors
-{
-  //From Core//
+namespace Aws {
+namespace SSM {
+enum class SSMErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SSMErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SSMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ASSOCIATED_INSTANCES,
   ASSOCIATION_ALREADY_EXISTS,
   ASSOCIATION_DOES_NOT_EXIST,
@@ -182,9 +179,8 @@ enum class SSMErrors
   UNSUPPORTED_PLATFORM_TYPE
 };
 
-class AWS_SSM_API SSMError : public Aws::Client::AWSError<SSMErrors>
-{
-public:
+class AWS_SSM_API SSMError : public Aws::Client::AWSError<SSMErrors> {
+ public:
   SSMError() {}
   SSMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
   SSMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
@@ -195,10 +191,9 @@ public:
   T GetModeledError();
 };
 
-namespace SSMErrorMapper
-{
-  AWS_SSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SSMErrorMapper {
+AWS_SSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SSM
-} // namespace Aws
+}  // namespace SSM
+}  // namespace Aws

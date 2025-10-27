@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sts/STS_EXPORTS.h>
 
-namespace Aws
-{
-namespace STS
-{
-enum class STSErrors
-{
-  //From Core//
+namespace Aws {
+namespace STS {
+enum class STSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class STSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class STSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_TOKEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_TOKEN = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_AUTHORIZATION_MESSAGE,
   INVALID_IDENTITY_TOKEN,
   I_D_P_COMMUNICATION_ERROR,
@@ -57,9 +54,8 @@ enum class STSErrors
   REGION_DISABLED
 };
 
-class AWS_STS_API STSError : public Aws::Client::AWSError<STSErrors>
-{
-public:
+class AWS_STS_API STSError : public Aws::Client::AWSError<STSErrors> {
+ public:
   STSError() {}
   STSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
   STSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
@@ -70,10 +66,9 @@ public:
   T GetModeledError();
 };
 
-namespace STSErrorMapper
-{
-  AWS_STS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace STSErrorMapper {
+AWS_STS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace STS
-} // namespace Aws
+}  // namespace STS
+}  // namespace Aws

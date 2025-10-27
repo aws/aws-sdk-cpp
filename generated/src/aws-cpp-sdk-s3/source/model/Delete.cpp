@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/Delete.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/Delete.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-Delete::Delete(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Delete::Delete(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Delete& Delete::operator =(const XmlNode& xmlNode)
-{
+Delete& Delete::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode objectsNode = resultNode.FirstChild("Object");
-    if(!objectsNode.IsNull())
-    {
+    if (!objectsNode.IsNull()) {
       XmlNode objectMember = objectsNode;
       m_objectsHasBeenSet = !objectMember.IsNull();
-      while(!objectMember.IsNull())
-      {
+      while (!objectMember.IsNull()) {
         m_objects.push_back(objectMember);
         objectMember = objectMember.NextNode("Object");
       }
@@ -45,8 +35,7 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
       m_objectsHasBeenSet = true;
     }
     XmlNode quietNode = resultNode.FirstChild("Quiet");
-    if(!quietNode.IsNull())
-    {
+    if (!quietNode.IsNull()) {
       m_quiet = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quietNode.GetText()).c_str()).c_str());
       m_quietHasBeenSet = true;
     }
@@ -55,28 +44,23 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Delete::AddToNode(XmlNode& parentNode) const
-{
+void Delete::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_objectsHasBeenSet)
-  {
-   for(const auto& item : m_objects)
-   {
-     XmlNode objectsNode = parentNode.CreateChildElement("Object");
-     item.AddToNode(objectsNode);
-   }
+  if (m_objectsHasBeenSet) {
+    for (const auto& item : m_objects) {
+      XmlNode objectsNode = parentNode.CreateChildElement("Object");
+      item.AddToNode(objectsNode);
+    }
   }
 
-  if(m_quietHasBeenSet)
-  {
-   XmlNode quietNode = parentNode.CreateChildElement("Quiet");
-   ss << std::boolalpha << m_quiet;
-   quietNode.SetText(ss.str());
-   ss.str("");
+  if (m_quietHasBeenSet) {
+    XmlNode quietNode = parentNode.CreateChildElement("Quiet");
+    ss << std::boolalpha << m_quiet;
+    quietNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

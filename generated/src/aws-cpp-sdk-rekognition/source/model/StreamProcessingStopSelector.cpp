@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StreamProcessingStopSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StreamProcessingStopSelector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StreamProcessingStopSelector::StreamProcessingStopSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamProcessingStopSelector::StreamProcessingStopSelector(JsonView jsonValue) { *this = jsonValue; }
 
-StreamProcessingStopSelector& StreamProcessingStopSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxDurationInSeconds"))
-  {
+StreamProcessingStopSelector& StreamProcessingStopSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxDurationInSeconds")) {
     m_maxDurationInSeconds = jsonValue.GetInt64("MaxDurationInSeconds");
     m_maxDurationInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamProcessingStopSelector::Jsonize() const
-{
+JsonValue StreamProcessingStopSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxDurationInSecondsHasBeenSet)
-  {
-   payload.WithInt64("MaxDurationInSeconds", m_maxDurationInSeconds);
-
+  if (m_maxDurationInSecondsHasBeenSet) {
+    payload.WithInt64("MaxDurationInSeconds", m_maxDurationInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

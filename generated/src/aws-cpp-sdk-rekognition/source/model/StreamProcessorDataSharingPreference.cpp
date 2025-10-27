@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StreamProcessorDataSharingPreference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StreamProcessorDataSharingPreference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference(JsonView jsonValue) { *this = jsonValue; }
 
-StreamProcessorDataSharingPreference& StreamProcessorDataSharingPreference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OptIn"))
-  {
+StreamProcessorDataSharingPreference& StreamProcessorDataSharingPreference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OptIn")) {
     m_optIn = jsonValue.GetBool("OptIn");
     m_optInHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamProcessorDataSharingPreference::Jsonize() const
-{
+JsonValue StreamProcessorDataSharingPreference::Jsonize() const {
   JsonValue payload;
 
-  if(m_optInHasBeenSet)
-  {
-   payload.WithBool("OptIn", m_optIn);
-
+  if (m_optInHasBeenSet) {
+    payload.WithBool("OptIn", m_optIn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

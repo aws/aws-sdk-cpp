@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/WorkspaceConnectionStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/WorkspaceConnectionStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-WorkspaceConnectionStatus::WorkspaceConnectionStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkspaceConnectionStatus::WorkspaceConnectionStatus(JsonView jsonValue) { *this = jsonValue; }
 
-WorkspaceConnectionStatus& WorkspaceConnectionStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WorkspaceId"))
-  {
+WorkspaceConnectionStatus& WorkspaceConnectionStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WorkspaceId")) {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
     m_workspaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionState"))
-  {
+  if (jsonValue.ValueExists("ConnectionState")) {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("ConnectionState"));
     m_connectionStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionStateCheckTimestamp"))
-  {
+  if (jsonValue.ValueExists("ConnectionStateCheckTimestamp")) {
     m_connectionStateCheckTimestamp = jsonValue.GetDouble("ConnectionStateCheckTimestamp");
     m_connectionStateCheckTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastKnownUserConnectionTimestamp"))
-  {
+  if (jsonValue.ValueExists("LastKnownUserConnectionTimestamp")) {
     m_lastKnownUserConnectionTimestamp = jsonValue.GetDouble("LastKnownUserConnectionTimestamp");
     m_lastKnownUserConnectionTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkspaceConnectionStatus::Jsonize() const
-{
+JsonValue WorkspaceConnectionStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_workspaceIdHasBeenSet)
-  {
-   payload.WithString("WorkspaceId", m_workspaceId);
-
+  if (m_workspaceIdHasBeenSet) {
+    payload.WithString("WorkspaceId", m_workspaceId);
   }
 
-  if(m_connectionStateHasBeenSet)
-  {
-   payload.WithString("ConnectionState", ConnectionStateMapper::GetNameForConnectionState(m_connectionState));
+  if (m_connectionStateHasBeenSet) {
+    payload.WithString("ConnectionState", ConnectionStateMapper::GetNameForConnectionState(m_connectionState));
   }
 
-  if(m_connectionStateCheckTimestampHasBeenSet)
-  {
-   payload.WithDouble("ConnectionStateCheckTimestamp", m_connectionStateCheckTimestamp.SecondsWithMSPrecision());
+  if (m_connectionStateCheckTimestampHasBeenSet) {
+    payload.WithDouble("ConnectionStateCheckTimestamp", m_connectionStateCheckTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_lastKnownUserConnectionTimestampHasBeenSet)
-  {
-   payload.WithDouble("LastKnownUserConnectionTimestamp", m_lastKnownUserConnectionTimestamp.SecondsWithMSPrecision());
+  if (m_lastKnownUserConnectionTimestampHasBeenSet) {
+    payload.WithDouble("LastKnownUserConnectionTimestamp", m_lastKnownUserConnectionTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

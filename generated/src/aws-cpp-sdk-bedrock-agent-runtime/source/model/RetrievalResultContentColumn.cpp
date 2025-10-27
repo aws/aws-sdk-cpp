@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RetrievalResultContentColumn::RetrievalResultContentColumn(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrievalResultContentColumn::RetrievalResultContentColumn(JsonView jsonValue) { *this = jsonValue; }
 
-RetrievalResultContentColumn& RetrievalResultContentColumn::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("columnName"))
-  {
+RetrievalResultContentColumn& RetrievalResultContentColumn::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("columnName")) {
     m_columnName = jsonValue.GetString("columnName");
     m_columnNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("columnValue"))
-  {
+  if (jsonValue.ValueExists("columnValue")) {
     m_columnValue = jsonValue.GetString("columnValue");
     m_columnValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = RetrievalResultContentColumnTypeMapper::GetRetrievalResultContentColumnTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetrievalResultContentColumn::Jsonize() const
-{
+JsonValue RetrievalResultContentColumn::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnNameHasBeenSet)
-  {
-   payload.WithString("columnName", m_columnName);
-
+  if (m_columnNameHasBeenSet) {
+    payload.WithString("columnName", m_columnName);
   }
 
-  if(m_columnValueHasBeenSet)
-  {
-   payload.WithString("columnValue", m_columnValue);
-
+  if (m_columnValueHasBeenSet) {
+    payload.WithString("columnValue", m_columnValue);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RetrievalResultContentColumnTypeMapper::GetNameForRetrievalResultContentColumnType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RetrievalResultContentColumnTypeMapper::GetNameForRetrievalResultContentColumnType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

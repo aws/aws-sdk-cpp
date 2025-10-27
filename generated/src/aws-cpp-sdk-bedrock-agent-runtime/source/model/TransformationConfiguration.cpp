@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-TransformationConfiguration::TransformationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransformationConfiguration::TransformationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TransformationConfiguration& TransformationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mode"))
-  {
+TransformationConfiguration& TransformationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mode")) {
     m_mode = QueryTransformationModeMapper::GetQueryTransformationModeForName(jsonValue.GetString("mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("textToSqlConfiguration"))
-  {
+  if (jsonValue.ValueExists("textToSqlConfiguration")) {
     m_textToSqlConfiguration = jsonValue.GetObject("textToSqlConfiguration");
     m_textToSqlConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransformationConfiguration::Jsonize() const
-{
+JsonValue TransformationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", QueryTransformationModeMapper::GetNameForQueryTransformationMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("mode", QueryTransformationModeMapper::GetNameForQueryTransformationMode(m_mode));
   }
 
-  if(m_textToSqlConfigurationHasBeenSet)
-  {
-   payload.WithObject("textToSqlConfiguration", m_textToSqlConfiguration.Jsonize());
-
+  if (m_textToSqlConfigurationHasBeenSet) {
+    payload.WithObject("textToSqlConfiguration", m_textToSqlConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

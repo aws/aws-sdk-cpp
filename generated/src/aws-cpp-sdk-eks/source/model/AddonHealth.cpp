@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AddonHealth.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AddonHealth.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-AddonHealth::AddonHealth(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AddonHealth::AddonHealth(JsonView jsonValue) { *this = jsonValue; }
 
-AddonHealth& AddonHealth::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("issues"))
-  {
+AddonHealth& AddonHealth::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("issues")) {
     Aws::Utils::Array<JsonView> issuesJsonList = jsonValue.GetArray("issues");
-    for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
-    {
+    for (unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex) {
       m_issues.push_back(issuesJsonList[issuesIndex].AsObject());
     }
     m_issuesHasBeenSet = true;
@@ -37,24 +28,20 @@ AddonHealth& AddonHealth::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AddonHealth::Jsonize() const
-{
+JsonValue AddonHealth::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> issuesJsonList(m_issues.size());
-   for(unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex)
-   {
-     issuesJsonList[issuesIndex].AsObject(m_issues[issuesIndex].Jsonize());
-   }
-   payload.WithArray("issues", std::move(issuesJsonList));
-
+  if (m_issuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> issuesJsonList(m_issues.size());
+    for (unsigned issuesIndex = 0; issuesIndex < issuesJsonList.GetLength(); ++issuesIndex) {
+      issuesJsonList[issuesIndex].AsObject(m_issues[issuesIndex].Jsonize());
+    }
+    payload.WithArray("issues", std::move(issuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

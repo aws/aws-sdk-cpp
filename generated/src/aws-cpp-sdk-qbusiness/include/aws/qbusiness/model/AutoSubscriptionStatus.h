@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class AutoSubscriptionStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class AutoSubscriptionStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace AutoSubscriptionStatusMapper
-{
+namespace AutoSubscriptionStatusMapper {
 AWS_QBUSINESS_API AutoSubscriptionStatus GetAutoSubscriptionStatusForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForAutoSubscriptionStatus(AutoSubscriptionStatus value);
-} // namespace AutoSubscriptionStatusMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace AutoSubscriptionStatusMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

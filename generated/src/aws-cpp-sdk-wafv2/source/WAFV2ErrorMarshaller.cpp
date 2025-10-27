@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::WAFV2;
 
-AWSError<CoreErrors> WAFV2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> WAFV2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = WAFV2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-enum class WellArchitectedErrors
-{
-  //From Core//
+namespace Aws {
+namespace WellArchitected {
+enum class WellArchitectedErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WellArchitectedErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class WellArchitectedErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_WELLARCHITECTED_API WellArchitectedError : public Aws::Client::AWSError<WellArchitectedErrors>
-{
-public:
+class AWS_WELLARCHITECTED_API WellArchitectedError : public Aws::Client::AWSError<WellArchitectedErrors> {
+ public:
   WellArchitectedError() {}
   WellArchitectedError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WellArchitectedErrors>(rhs) {}
   WellArchitectedError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WellArchitectedErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace WellArchitectedErrorMapper
-{
-  AWS_WELLARCHITECTED_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WellArchitectedErrorMapper {
+AWS_WELLARCHITECTED_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace WellArchitected
+}  // namespace Aws

@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyIpamResourceCidrRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyIpamResourceCidrRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyIpamResourceCidrRequest::SerializePayload() const
-{
+Aws::String ModifyIpamResourceCidrRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyIpamResourceCidr&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
+  if (m_resourceIdHasBeenSet) {
     ss << "ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
 
-  if(m_resourceCidrHasBeenSet)
-  {
+  if (m_resourceCidrHasBeenSet) {
     ss << "ResourceCidr=" << StringUtils::URLEncode(m_resourceCidr.c_str()) << "&";
   }
 
-  if(m_resourceRegionHasBeenSet)
-  {
+  if (m_resourceRegionHasBeenSet) {
     ss << "ResourceRegion=" << StringUtils::URLEncode(m_resourceRegion.c_str()) << "&";
   }
 
-  if(m_currentIpamScopeIdHasBeenSet)
-  {
+  if (m_currentIpamScopeIdHasBeenSet) {
     ss << "CurrentIpamScopeId=" << StringUtils::URLEncode(m_currentIpamScopeId.c_str()) << "&";
   }
 
-  if(m_destinationIpamScopeIdHasBeenSet)
-  {
+  if (m_destinationIpamScopeIdHasBeenSet) {
     ss << "DestinationIpamScopeId=" << StringUtils::URLEncode(m_destinationIpamScopeId.c_str()) << "&";
   }
 
-  if(m_monitoredHasBeenSet)
-  {
+  if (m_monitoredHasBeenSet) {
     ss << "Monitored=" << std::boolalpha << m_monitored << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String ModifyIpamResourceCidrRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyIpamResourceCidrRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyIpamResourceCidrRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

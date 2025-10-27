@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/CloudWatchEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
-  enum class AssignPublicIp
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
+enum class AssignPublicIp { NOT_SET, ENABLED, DISABLED };
 
-namespace AssignPublicIpMapper
-{
+namespace AssignPublicIpMapper {
 AWS_CLOUDWATCHEVENTS_API AssignPublicIp GetAssignPublicIpForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVENTS_API Aws::String GetNameForAssignPublicIp(AssignPublicIp value);
-} // namespace AssignPublicIpMapper
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace AssignPublicIpMapper
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

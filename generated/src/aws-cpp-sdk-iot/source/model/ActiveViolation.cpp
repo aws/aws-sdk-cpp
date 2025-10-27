@@ -3,145 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ActiveViolation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/ActiveViolation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-ActiveViolation::ActiveViolation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActiveViolation::ActiveViolation(JsonView jsonValue) { *this = jsonValue; }
 
-ActiveViolation& ActiveViolation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("violationId"))
-  {
+ActiveViolation& ActiveViolation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("violationId")) {
     m_violationId = jsonValue.GetString("violationId");
     m_violationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("thingName"))
-  {
+  if (jsonValue.ValueExists("thingName")) {
     m_thingName = jsonValue.GetString("thingName");
     m_thingNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("securityProfileName"))
-  {
+  if (jsonValue.ValueExists("securityProfileName")) {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
     m_securityProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("behavior"))
-  {
+  if (jsonValue.ValueExists("behavior")) {
     m_behavior = jsonValue.GetObject("behavior");
     m_behaviorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastViolationValue"))
-  {
+  if (jsonValue.ValueExists("lastViolationValue")) {
     m_lastViolationValue = jsonValue.GetObject("lastViolationValue");
     m_lastViolationValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("violationEventAdditionalInfo"))
-  {
+  if (jsonValue.ValueExists("violationEventAdditionalInfo")) {
     m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
     m_violationEventAdditionalInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verificationState"))
-  {
+  if (jsonValue.ValueExists("verificationState")) {
     m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("verificationState"));
     m_verificationStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verificationStateDescription"))
-  {
+  if (jsonValue.ValueExists("verificationStateDescription")) {
     m_verificationStateDescription = jsonValue.GetString("verificationStateDescription");
     m_verificationStateDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastViolationTime"))
-  {
+  if (jsonValue.ValueExists("lastViolationTime")) {
     m_lastViolationTime = jsonValue.GetDouble("lastViolationTime");
     m_lastViolationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("violationStartTime"))
-  {
+  if (jsonValue.ValueExists("violationStartTime")) {
     m_violationStartTime = jsonValue.GetDouble("violationStartTime");
     m_violationStartTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActiveViolation::Jsonize() const
-{
+JsonValue ActiveViolation::Jsonize() const {
   JsonValue payload;
 
-  if(m_violationIdHasBeenSet)
-  {
-   payload.WithString("violationId", m_violationId);
-
+  if (m_violationIdHasBeenSet) {
+    payload.WithString("violationId", m_violationId);
   }
 
-  if(m_thingNameHasBeenSet)
-  {
-   payload.WithString("thingName", m_thingName);
-
+  if (m_thingNameHasBeenSet) {
+    payload.WithString("thingName", m_thingName);
   }
 
-  if(m_securityProfileNameHasBeenSet)
-  {
-   payload.WithString("securityProfileName", m_securityProfileName);
-
+  if (m_securityProfileNameHasBeenSet) {
+    payload.WithString("securityProfileName", m_securityProfileName);
   }
 
-  if(m_behaviorHasBeenSet)
-  {
-   payload.WithObject("behavior", m_behavior.Jsonize());
-
+  if (m_behaviorHasBeenSet) {
+    payload.WithObject("behavior", m_behavior.Jsonize());
   }
 
-  if(m_lastViolationValueHasBeenSet)
-  {
-   payload.WithObject("lastViolationValue", m_lastViolationValue.Jsonize());
-
+  if (m_lastViolationValueHasBeenSet) {
+    payload.WithObject("lastViolationValue", m_lastViolationValue.Jsonize());
   }
 
-  if(m_violationEventAdditionalInfoHasBeenSet)
-  {
-   payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
-
+  if (m_violationEventAdditionalInfoHasBeenSet) {
+    payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
   }
 
-  if(m_verificationStateHasBeenSet)
-  {
-   payload.WithString("verificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
+  if (m_verificationStateHasBeenSet) {
+    payload.WithString("verificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
   }
 
-  if(m_verificationStateDescriptionHasBeenSet)
-  {
-   payload.WithString("verificationStateDescription", m_verificationStateDescription);
-
+  if (m_verificationStateDescriptionHasBeenSet) {
+    payload.WithString("verificationStateDescription", m_verificationStateDescription);
   }
 
-  if(m_lastViolationTimeHasBeenSet)
-  {
-   payload.WithDouble("lastViolationTime", m_lastViolationTime.SecondsWithMSPrecision());
+  if (m_lastViolationTimeHasBeenSet) {
+    payload.WithDouble("lastViolationTime", m_lastViolationTime.SecondsWithMSPrecision());
   }
 
-  if(m_violationStartTimeHasBeenSet)
-  {
-   payload.WithDouble("violationStartTime", m_violationStartTime.SecondsWithMSPrecision());
+  if (m_violationStartTimeHasBeenSet) {
+    payload.WithDouble("violationStartTime", m_violationStartTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

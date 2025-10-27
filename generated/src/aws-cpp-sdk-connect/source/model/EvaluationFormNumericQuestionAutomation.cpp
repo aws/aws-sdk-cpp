@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationFormNumericQuestionAutomation& EvaluationFormNumericQuestionAutomation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PropertyValue"))
-  {
+EvaluationFormNumericQuestionAutomation& EvaluationFormNumericQuestionAutomation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PropertyValue")) {
     m_propertyValue = jsonValue.GetObject("PropertyValue");
     m_propertyValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationFormNumericQuestionAutomation::Jsonize() const
-{
+JsonValue EvaluationFormNumericQuestionAutomation::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertyValueHasBeenSet)
-  {
-   payload.WithObject("PropertyValue", m_propertyValue.Jsonize());
-
+  if (m_propertyValueHasBeenSet) {
+    payload.WithObject("PropertyValue", m_propertyValue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

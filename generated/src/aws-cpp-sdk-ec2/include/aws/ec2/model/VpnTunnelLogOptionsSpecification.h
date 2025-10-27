@@ -4,58 +4,57 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CloudWatchLogOptionsSpecification.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Options for logging VPN tunnel activity.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnTunnelLogOptionsSpecification">AWS
+ * API Reference</a></p>
+ */
+class VpnTunnelLogOptionsSpecification {
+ public:
+  AWS_EC2_API VpnTunnelLogOptionsSpecification() = default;
+  AWS_EC2_API VpnTunnelLogOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API VpnTunnelLogOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Options for logging VPN tunnel activity.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnTunnelLogOptionsSpecification">AWS
-   * API Reference</a></p>
+   * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
    */
-  class VpnTunnelLogOptionsSpecification
-  {
-  public:
-    AWS_EC2_API VpnTunnelLogOptionsSpecification() = default;
-    AWS_EC2_API VpnTunnelLogOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_EC2_API VpnTunnelLogOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const CloudWatchLogOptionsSpecification& GetCloudWatchLogOptions() const { return m_cloudWatchLogOptions; }
+  inline bool CloudWatchLogOptionsHasBeenSet() const { return m_cloudWatchLogOptionsHasBeenSet; }
+  template <typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
+  void SetCloudWatchLogOptions(CloudWatchLogOptionsT&& value) {
+    m_cloudWatchLogOptionsHasBeenSet = true;
+    m_cloudWatchLogOptions = std::forward<CloudWatchLogOptionsT>(value);
+  }
+  template <typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
+  VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(CloudWatchLogOptionsT&& value) {
+    SetCloudWatchLogOptions(std::forward<CloudWatchLogOptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  CloudWatchLogOptionsSpecification m_cloudWatchLogOptions;
+  bool m_cloudWatchLogOptionsHasBeenSet = false;
+};
 
-    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-
-    ///@{
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
-    inline const CloudWatchLogOptionsSpecification& GetCloudWatchLogOptions() const { return m_cloudWatchLogOptions; }
-    inline bool CloudWatchLogOptionsHasBeenSet() const { return m_cloudWatchLogOptionsHasBeenSet; }
-    template<typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
-    void SetCloudWatchLogOptions(CloudWatchLogOptionsT&& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = std::forward<CloudWatchLogOptionsT>(value); }
-    template<typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
-    VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(CloudWatchLogOptionsT&& value) { SetCloudWatchLogOptions(std::forward<CloudWatchLogOptionsT>(value)); return *this;}
-    ///@}
-  private:
-
-    CloudWatchLogOptionsSpecification m_cloudWatchLogOptions;
-    bool m_cloudWatchLogOptionsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -7,47 +7,42 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
-  enum class ConnectorType
-  {
-    NOT_SET,
-    Salesforce,
-    Singular,
-    Slack,
-    Redshift,
-    S3,
-    Marketo,
-    Googleanalytics,
-    Zendesk,
-    Servicenow,
-    Datadog,
-    Trendmicro,
-    Snowflake,
-    Dynatrace,
-    Infornexus,
-    Amplitude,
-    Veeva,
-    EventBridge,
-    LookoutMetrics,
-    Upsolver,
-    Honeycode,
-    CustomerProfiles,
-    SAPOData,
-    CustomConnector,
-    Pardot
-  };
+namespace Aws {
+namespace Appflow {
+namespace Model {
+enum class ConnectorType {
+  NOT_SET,
+  Salesforce,
+  Singular,
+  Slack,
+  Redshift,
+  S3,
+  Marketo,
+  Googleanalytics,
+  Zendesk,
+  Servicenow,
+  Datadog,
+  Trendmicro,
+  Snowflake,
+  Dynatrace,
+  Infornexus,
+  Amplitude,
+  Veeva,
+  EventBridge,
+  LookoutMetrics,
+  Upsolver,
+  Honeycode,
+  CustomerProfiles,
+  SAPOData,
+  CustomConnector,
+  Pardot
+};
 
-namespace ConnectorTypeMapper
-{
+namespace ConnectorTypeMapper {
 AWS_APPFLOW_API ConnectorType GetConnectorTypeForName(const Aws::String& name);
 
 AWS_APPFLOW_API Aws::String GetNameForConnectorType(ConnectorType value);
-} // namespace ConnectorTypeMapper
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace ConnectorTypeMapper
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

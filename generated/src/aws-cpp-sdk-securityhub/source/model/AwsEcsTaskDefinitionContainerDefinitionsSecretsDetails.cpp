@@ -3,60 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails& AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails& AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValueFrom"))
-  {
+  if (jsonValue.ValueExists("ValueFrom")) {
     m_valueFrom = jsonValue.GetString("ValueFrom");
     m_valueFromHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueFromHasBeenSet)
-  {
-   payload.WithString("ValueFrom", m_valueFrom);
-
+  if (m_valueFromHasBeenSet) {
+    payload.WithString("ValueFrom", m_valueFrom);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

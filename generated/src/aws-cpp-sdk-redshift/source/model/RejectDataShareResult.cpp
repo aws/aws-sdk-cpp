@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/RejectDataShareResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/RejectDataShareResult.h>
 
 #include <utility>
 
@@ -17,48 +17,38 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RejectDataShareResult::RejectDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+RejectDataShareResult::RejectDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-RejectDataShareResult& RejectDataShareResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+RejectDataShareResult& RejectDataShareResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "RejectDataShareResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "RejectDataShareResult")) {
     resultNode = rootNode.FirstChild("RejectDataShareResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dataShareArnNode = resultNode.FirstChild("DataShareArn");
-    if(!dataShareArnNode.IsNull())
-    {
+    if (!dataShareArnNode.IsNull()) {
       m_dataShareArn = Aws::Utils::Xml::DecodeEscapedXmlText(dataShareArnNode.GetText());
       m_dataShareArnHasBeenSet = true;
     }
     XmlNode producerArnNode = resultNode.FirstChild("ProducerArn");
-    if(!producerArnNode.IsNull())
-    {
+    if (!producerArnNode.IsNull()) {
       m_producerArn = Aws::Utils::Xml::DecodeEscapedXmlText(producerArnNode.GetText());
       m_producerArnHasBeenSet = true;
     }
     XmlNode allowPubliclyAccessibleConsumersNode = resultNode.FirstChild("AllowPubliclyAccessibleConsumers");
-    if(!allowPubliclyAccessibleConsumersNode.IsNull())
-    {
-      m_allowPubliclyAccessibleConsumers = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowPubliclyAccessibleConsumersNode.GetText()).c_str()).c_str());
+    if (!allowPubliclyAccessibleConsumersNode.IsNull()) {
+      m_allowPubliclyAccessibleConsumers = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowPubliclyAccessibleConsumersNode.GetText()).c_str()).c_str());
       m_allowPubliclyAccessibleConsumersHasBeenSet = true;
     }
     XmlNode dataShareAssociationsNode = resultNode.FirstChild("DataShareAssociations");
-    if(!dataShareAssociationsNode.IsNull())
-    {
+    if (!dataShareAssociationsNode.IsNull()) {
       XmlNode dataShareAssociationsMember = dataShareAssociationsNode.FirstChild("member");
       m_dataShareAssociationsHasBeenSet = !dataShareAssociationsMember.IsNull();
-      while(!dataShareAssociationsMember.IsNull())
-      {
+      while (!dataShareAssociationsMember.IsNull()) {
         m_dataShareAssociations.push_back(dataShareAssociationsMember);
         dataShareAssociationsMember = dataShareAssociationsMember.NextNode("member");
       }
@@ -66,15 +56,14 @@ RejectDataShareResult& RejectDataShareResult::operator =(const Aws::AmazonWebSer
       m_dataShareAssociationsHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
-    if(!managedByNode.IsNull())
-    {
+    if (!managedByNode.IsNull()) {
       m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
       m_managedByHasBeenSet = true;
     }
     XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
-    if(!dataShareTypeNode.IsNull())
-    {
-      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()));
+    if (!dataShareTypeNode.IsNull()) {
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()));
       m_dataShareTypeHasBeenSet = true;
     }
   }
@@ -83,7 +72,7 @@ RejectDataShareResult& RejectDataShareResult::operator =(const Aws::AmazonWebSer
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::RejectDataShareResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::RejectDataShareResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-DeleteCloudFormationStepOutput::DeleteCloudFormationStepOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteCloudFormationStepOutput::DeleteCloudFormationStepOutput(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteCloudFormationStepOutput& DeleteCloudFormationStepOutput::operator =(JsonView jsonValue)
-{
+DeleteCloudFormationStepOutput& DeleteCloudFormationStepOutput::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue DeleteCloudFormationStepOutput::Jsonize() const
-{
+JsonValue DeleteCloudFormationStepOutput::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

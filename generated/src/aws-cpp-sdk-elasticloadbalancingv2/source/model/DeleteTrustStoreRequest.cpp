@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DeleteTrustStoreRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DeleteTrustStoreRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTrustStoreRequest::SerializePayload() const
-{
+Aws::String DeleteTrustStoreRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTrustStore&";
-  if(m_trustStoreArnHasBeenSet)
-  {
+  if (m_trustStoreArnHasBeenSet) {
     ss << "TrustStoreArn=" << StringUtils::URLEncode(m_trustStoreArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteTrustStoreRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteTrustStoreRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTrustStoreRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

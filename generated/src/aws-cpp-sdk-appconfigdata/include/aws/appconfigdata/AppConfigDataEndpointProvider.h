@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appconfigdata/AppConfigDataEndpointRules.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/appconfigdata/AppConfigDataEndpointRules.h>
-
-
-namespace Aws
-{
-namespace AppConfigData
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace AppConfigData {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using AppConfigDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using AppConfigDataDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_APPCONFIGDATA_API AppConfigDataEndpointProvider : public AppConfigDataDefaultEpProviderBase
-{
-public:
-    using AppConfigDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_APPCONFIGDATA_API AppConfigDataEndpointProvider : public AppConfigDataDefaultEpProviderBase {
+ public:
+  using AppConfigDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    AppConfigDataEndpointProvider()
-      : AppConfigDataDefaultEpProviderBase(Aws::AppConfigData::AppConfigDataEndpointRules::GetRulesBlob(), Aws::AppConfigData::AppConfigDataEndpointRules::RulesBlobSize)
-    {}
+  AppConfigDataEndpointProvider()
+      : AppConfigDataDefaultEpProviderBase(Aws::AppConfigData::AppConfigDataEndpointRules::GetRulesBlob(),
+                                           Aws::AppConfigData::AppConfigDataEndpointRules::RulesBlobSize) {}
 
-    ~AppConfigDataEndpointProvider()
-    {
-    }
+  ~AppConfigDataEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace AppConfigData
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace AppConfigData
+}  // namespace Aws

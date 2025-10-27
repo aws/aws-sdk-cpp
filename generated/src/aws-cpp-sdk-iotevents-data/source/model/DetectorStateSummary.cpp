@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/DetectorStateSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/DetectorStateSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-DetectorStateSummary::DetectorStateSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectorStateSummary::DetectorStateSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DetectorStateSummary& DetectorStateSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stateName"))
-  {
+DetectorStateSummary& DetectorStateSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stateName")) {
     m_stateName = jsonValue.GetString("stateName");
     m_stateNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DetectorStateSummary::Jsonize() const
-{
+JsonValue DetectorStateSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateNameHasBeenSet)
-  {
-   payload.WithString("stateName", m_stateName);
-
+  if (m_stateNameHasBeenSet) {
+    payload.WithString("stateName", m_stateName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

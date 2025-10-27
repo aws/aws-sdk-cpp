@@ -12,51 +12,34 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateLogPatternRequest::SerializePayload() const
-{
+Aws::String UpdateLogPatternRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_patternSetNameHasBeenSet)
-  {
-   payload.WithString("PatternSetName", m_patternSetName);
-
+  if (m_patternSetNameHasBeenSet) {
+    payload.WithString("PatternSetName", m_patternSetName);
   }
 
-  if(m_patternNameHasBeenSet)
-  {
-   payload.WithString("PatternName", m_patternName);
-
+  if (m_patternNameHasBeenSet) {
+    payload.WithString("PatternName", m_patternName);
   }
 
-  if(m_patternHasBeenSet)
-  {
-   payload.WithString("Pattern", m_pattern);
-
+  if (m_patternHasBeenSet) {
+    payload.WithString("Pattern", m_pattern);
   }
 
-  if(m_rankHasBeenSet)
-  {
-   payload.WithInteger("Rank", m_rank);
-
+  if (m_rankHasBeenSet) {
+    payload.WithInteger("Rank", m_rank);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateLogPatternRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateLogPatternRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateLogPattern"));
   return headers;
-
 }
-
-
-
-

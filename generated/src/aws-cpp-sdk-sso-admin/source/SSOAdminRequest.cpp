@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sso-admin/SSOAdminRequest.h>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-} // namespace SSOAdmin
-} // namespace Aws
+namespace Aws {
+namespace SSOAdmin {}  // namespace SSOAdmin
+}  // namespace Aws

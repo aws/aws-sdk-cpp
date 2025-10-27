@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGlobalTableSettingsResult::UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateGlobalTableSettingsResult::UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("GlobalTableName"))
-  {
+  if (jsonValue.ValueExists("GlobalTableName")) {
     m_globalTableName = jsonValue.GetString("GlobalTableName");
     m_globalTableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicaSettings"))
-  {
+  if (jsonValue.ValueExists("ReplicaSettings")) {
     Aws::Utils::Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
-    for(unsigned replicaSettingsIndex = 0; replicaSettingsIndex < replicaSettingsJsonList.GetLength(); ++replicaSettingsIndex)
-    {
+    for (unsigned replicaSettingsIndex = 0; replicaSettingsIndex < replicaSettingsJsonList.GetLength(); ++replicaSettingsIndex) {
       m_replicaSettings.push_back(replicaSettingsJsonList[replicaSettingsIndex].AsObject());
     }
     m_replicaSettingsHasBeenSet = true;
@@ -42,12 +35,10 @@ UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

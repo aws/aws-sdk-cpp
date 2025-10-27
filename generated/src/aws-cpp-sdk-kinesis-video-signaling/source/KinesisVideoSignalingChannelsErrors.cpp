@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::KinesisVideoSignalingChannels;
 
-namespace Aws
-{
-namespace KinesisVideoSignalingChannels
-{
-namespace KinesisVideoSignalingChannelsErrorMapper
-{
+namespace Aws {
+namespace KinesisVideoSignalingChannels {
+namespace KinesisVideoSignalingChannelsErrorMapper {
 
 static const int SESSION_EXPIRED_HASH = HashingUtils::HashString("SessionExpiredException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
@@ -24,34 +21,26 @@ static const int INVALID_CLIENT_HASH = HashingUtils::HashString("InvalidClientEx
 static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SESSION_EXPIRED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::SESSION_EXPIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_AUTHORIZED_HASH)
-  {
+  if (hashCode == SESSION_EXPIRED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::SESSION_EXPIRED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NOT_AUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_CLIENT_HASH)
-  {
+  } else if (hashCode == INVALID_CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_CLIENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::CLIENT_LIMIT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ARGUMENT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_ARGUMENT),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace KinesisVideoSignalingChannelsErrorMapper
-} // namespace KinesisVideoSignalingChannels
-} // namespace Aws
+}  // namespace KinesisVideoSignalingChannelsErrorMapper
+}  // namespace KinesisVideoSignalingChannels
+}  // namespace Aws

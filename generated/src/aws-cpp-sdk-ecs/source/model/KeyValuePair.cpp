@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/KeyValuePair.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/KeyValuePair.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-KeyValuePair::KeyValuePair(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KeyValuePair::KeyValuePair(JsonView jsonValue) { *this = jsonValue; }
 
-KeyValuePair& KeyValuePair::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+KeyValuePair& KeyValuePair::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KeyValuePair::Jsonize() const
-{
+JsonValue KeyValuePair::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/StorageConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/StorageConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Model
-{
+namespace Aws {
+namespace MainframeModernization {
+namespace Model {
 
-StorageConfiguration::StorageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StorageConfiguration::StorageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("efs"))
-  {
+StorageConfiguration& StorageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("efs")) {
     m_efs = jsonValue.GetObject("efs");
     m_efsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fsx"))
-  {
+  if (jsonValue.ValueExists("fsx")) {
     m_fsx = jsonValue.GetObject("fsx");
     m_fsxHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StorageConfiguration::Jsonize() const
-{
+JsonValue StorageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_efsHasBeenSet)
-  {
-   payload.WithObject("efs", m_efs.Jsonize());
-
+  if (m_efsHasBeenSet) {
+    payload.WithObject("efs", m_efs.Jsonize());
   }
 
-  if(m_fsxHasBeenSet)
-  {
-   payload.WithObject("fsx", m_fsx.Jsonize());
-
+  if (m_fsxHasBeenSet) {
+    payload.WithObject("fsx", m_fsx.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

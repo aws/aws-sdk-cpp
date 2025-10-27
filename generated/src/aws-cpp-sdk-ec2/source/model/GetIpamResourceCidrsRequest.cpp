@@ -3,69 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetIpamResourceCidrsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetIpamResourceCidrsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetIpamResourceCidrsRequest::SerializePayload() const
-{
+Aws::String GetIpamResourceCidrsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetIpamResourceCidrs&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_ipamScopeIdHasBeenSet)
-  {
+  if (m_ipamScopeIdHasBeenSet) {
     ss << "IpamScopeId=" << StringUtils::URLEncode(m_ipamScopeId.c_str()) << "&";
   }
 
-  if(m_ipamPoolIdHasBeenSet)
-  {
+  if (m_ipamPoolIdHasBeenSet) {
     ss << "IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
+  if (m_resourceIdHasBeenSet) {
     ss << "ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
+  if (m_resourceTypeHasBeenSet) {
     ss << "ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
 
-  if(m_resourceTagHasBeenSet)
-  {
+  if (m_resourceTagHasBeenSet) {
     m_resourceTag.OutputToStream(ss, "ResourceTag");
   }
 
-  if(m_resourceOwnerHasBeenSet)
-  {
+  if (m_resourceOwnerHasBeenSet) {
     ss << "ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
   }
 
@@ -73,8 +61,4 @@ Aws::String GetIpamResourceCidrsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetIpamResourceCidrsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetIpamResourceCidrsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

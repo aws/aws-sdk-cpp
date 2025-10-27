@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/ListDatasetLabelsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/ListDatasetLabelsRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDatasetLabelsRequest::SerializePayload() const
-{
+Aws::String ListDatasetLabelsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_datasetArnHasBeenSet)
-  {
-   payload.WithString("DatasetArn", m_datasetArn);
-
+  if (m_datasetArnHasBeenSet) {
+    payload.WithString("DatasetArn", m_datasetArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListDatasetLabelsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListDatasetLabelsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.ListDatasetLabels"));
   return headers;
-
 }
-
-
-
-

@@ -4,69 +4,55 @@
  */
 
 #include <aws/compute-optimizer/model/CustomizableMetricName.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+namespace CustomizableMetricNameMapper {
 
-namespace Aws
-{
-  namespace ComputeOptimizer
-  {
-    namespace Model
-    {
-      namespace CustomizableMetricNameMapper
-      {
+static const int CpuUtilization_HASH = HashingUtils::HashString("CpuUtilization");
+static const int MemoryUtilization_HASH = HashingUtils::HashString("MemoryUtilization");
 
-        static const int CpuUtilization_HASH = HashingUtils::HashString("CpuUtilization");
-        static const int MemoryUtilization_HASH = HashingUtils::HashString("MemoryUtilization");
+CustomizableMetricName GetCustomizableMetricNameForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CpuUtilization_HASH) {
+    return CustomizableMetricName::CpuUtilization;
+  } else if (hashCode == MemoryUtilization_HASH) {
+    return CustomizableMetricName::MemoryUtilization;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CustomizableMetricName>(hashCode);
+  }
 
+  return CustomizableMetricName::NOT_SET;
+}
 
-        CustomizableMetricName GetCustomizableMetricNameForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CpuUtilization_HASH)
-          {
-            return CustomizableMetricName::CpuUtilization;
-          }
-          else if (hashCode == MemoryUtilization_HASH)
-          {
-            return CustomizableMetricName::MemoryUtilization;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CustomizableMetricName>(hashCode);
-          }
+Aws::String GetNameForCustomizableMetricName(CustomizableMetricName enumValue) {
+  switch (enumValue) {
+    case CustomizableMetricName::NOT_SET:
+      return {};
+    case CustomizableMetricName::CpuUtilization:
+      return "CpuUtilization";
+    case CustomizableMetricName::MemoryUtilization:
+      return "MemoryUtilization";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CustomizableMetricName::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCustomizableMetricName(CustomizableMetricName enumValue)
-        {
-          switch(enumValue)
-          {
-          case CustomizableMetricName::NOT_SET:
-            return {};
-          case CustomizableMetricName::CpuUtilization:
-            return "CpuUtilization";
-          case CustomizableMetricName::MemoryUtilization:
-            return "MemoryUtilization";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CustomizableMetricNameMapper
-    } // namespace Model
-  } // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace CustomizableMetricNameMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

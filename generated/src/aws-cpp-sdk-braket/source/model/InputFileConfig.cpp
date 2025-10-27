@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-InputFileConfig::InputFileConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputFileConfig::InputFileConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InputFileConfig& InputFileConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channelName"))
-  {
+InputFileConfig& InputFileConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channelName")) {
     m_channelName = jsonValue.GetString("channelName");
     m_channelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = jsonValue.GetString("contentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSource"))
-  {
+  if (jsonValue.ValueExists("dataSource")) {
     m_dataSource = jsonValue.GetObject("dataSource");
     m_dataSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputFileConfig::Jsonize() const
-{
+JsonValue InputFileConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelNameHasBeenSet)
-  {
-   payload.WithString("channelName", m_channelName);
-
+  if (m_channelNameHasBeenSet) {
+    payload.WithString("channelName", m_channelName);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithObject("dataSource", m_dataSource.Jsonize());
-
+  if (m_dataSourceHasBeenSet) {
+    payload.WithObject("dataSource", m_dataSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

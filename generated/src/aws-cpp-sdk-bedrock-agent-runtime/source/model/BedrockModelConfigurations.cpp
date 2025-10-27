@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-BedrockModelConfigurations::BedrockModelConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BedrockModelConfigurations::BedrockModelConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-BedrockModelConfigurations& BedrockModelConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("performanceConfig"))
-  {
+BedrockModelConfigurations& BedrockModelConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("performanceConfig")) {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockModelConfigurations::Jsonize() const
-{
+JsonValue BedrockModelConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_performanceConfigHasBeenSet)
-  {
-   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
-
+  if (m_performanceConfigHasBeenSet) {
+    payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppConfigData
-{
-namespace Model
-{
-  enum class InvalidParameterProblem
-  {
-    NOT_SET,
-    Corrupted,
-    Expired,
-    PollIntervalNotSatisfied
-  };
+namespace Aws {
+namespace AppConfigData {
+namespace Model {
+enum class InvalidParameterProblem { NOT_SET, Corrupted, Expired, PollIntervalNotSatisfied };
 
-namespace InvalidParameterProblemMapper
-{
+namespace InvalidParameterProblemMapper {
 AWS_APPCONFIGDATA_API InvalidParameterProblem GetInvalidParameterProblemForName(const Aws::String& name);
 
 AWS_APPCONFIGDATA_API Aws::String GetNameForInvalidParameterProblem(InvalidParameterProblem value);
-} // namespace InvalidParameterProblemMapper
-} // namespace Model
-} // namespace AppConfigData
-} // namespace Aws
+}  // namespace InvalidParameterProblemMapper
+}  // namespace Model
+}  // namespace AppConfigData
+}  // namespace Aws

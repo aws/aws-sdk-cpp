@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/DescribeAccountPoliciesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/logs/model/DescribeAccountPoliciesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountPoliciesResult::DescribeAccountPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeAccountPoliciesResult::DescribeAccountPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeAccountPoliciesResult& DescribeAccountPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeAccountPoliciesResult& DescribeAccountPoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accountPolicies"))
-  {
+  if (jsonValue.ValueExists("accountPolicies")) {
     Aws::Utils::Array<JsonView> accountPoliciesJsonList = jsonValue.GetArray("accountPolicies");
-    for(unsigned accountPoliciesIndex = 0; accountPoliciesIndex < accountPoliciesJsonList.GetLength(); ++accountPoliciesIndex)
-    {
+    for (unsigned accountPoliciesIndex = 0; accountPoliciesIndex < accountPoliciesJsonList.GetLength(); ++accountPoliciesIndex) {
       m_accountPolicies.push_back(accountPoliciesJsonList[accountPoliciesIndex].AsObject());
     }
     m_accountPoliciesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -7,26 +7,16 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
-  enum class CertificateUsageType
-  {
-    NOT_SET,
-    SIGNING,
-    ENCRYPTION,
-    TLS
-  };
+namespace Aws {
+namespace Transfer {
+namespace Model {
+enum class CertificateUsageType { NOT_SET, SIGNING, ENCRYPTION, TLS };
 
-namespace CertificateUsageTypeMapper
-{
+namespace CertificateUsageTypeMapper {
 AWS_TRANSFER_API CertificateUsageType GetCertificateUsageTypeForName(const Aws::String& name);
 
 AWS_TRANSFER_API Aws::String GetNameForCertificateUsageType(CertificateUsageType value);
-} // namespace CertificateUsageTypeMapper
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace CertificateUsageTypeMapper
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

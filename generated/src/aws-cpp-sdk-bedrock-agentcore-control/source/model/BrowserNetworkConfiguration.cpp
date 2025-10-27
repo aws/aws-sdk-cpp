@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-BrowserNetworkConfiguration::BrowserNetworkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BrowserNetworkConfiguration::BrowserNetworkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BrowserNetworkConfiguration& BrowserNetworkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("networkMode"))
-  {
+BrowserNetworkConfiguration& BrowserNetworkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("networkMode")) {
     m_networkMode = BrowserNetworkModeMapper::GetBrowserNetworkModeForName(jsonValue.GetString("networkMode"));
     m_networkModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcConfig"))
-  {
+  if (jsonValue.ValueExists("vpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BrowserNetworkConfiguration::Jsonize() const
-{
+JsonValue BrowserNetworkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkModeHasBeenSet)
-  {
-   payload.WithString("networkMode", BrowserNetworkModeMapper::GetNameForBrowserNetworkMode(m_networkMode));
+  if (m_networkModeHasBeenSet) {
+    payload.WithString("networkMode", BrowserNetworkModeMapper::GetNameForBrowserNetworkMode(m_networkMode));
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

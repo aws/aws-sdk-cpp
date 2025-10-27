@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/UnprocessedConfigurationPolicyAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/UnprocessedConfigurationPolicyAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedConfigurationPolicyAssociation& UnprocessedConfigurationPolicyAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigurationPolicyAssociationIdentifiers"))
-  {
+UnprocessedConfigurationPolicyAssociation& UnprocessedConfigurationPolicyAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigurationPolicyAssociationIdentifiers")) {
     m_configurationPolicyAssociationIdentifiers = jsonValue.GetObject("ConfigurationPolicyAssociationIdentifiers");
     m_configurationPolicyAssociationIdentifiersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorReason"))
-  {
+  if (jsonValue.ValueExists("ErrorReason")) {
     m_errorReason = jsonValue.GetString("ErrorReason");
     m_errorReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedConfigurationPolicyAssociation::Jsonize() const
-{
+JsonValue UnprocessedConfigurationPolicyAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationPolicyAssociationIdentifiersHasBeenSet)
-  {
-   payload.WithObject("ConfigurationPolicyAssociationIdentifiers", m_configurationPolicyAssociationIdentifiers.Jsonize());
-
+  if (m_configurationPolicyAssociationIdentifiersHasBeenSet) {
+    payload.WithObject("ConfigurationPolicyAssociationIdentifiers", m_configurationPolicyAssociationIdentifiers.Jsonize());
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_errorReasonHasBeenSet)
-  {
-   payload.WithString("ErrorReason", m_errorReason);
-
+  if (m_errorReasonHasBeenSet) {
+    payload.WithString("ErrorReason", m_errorReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

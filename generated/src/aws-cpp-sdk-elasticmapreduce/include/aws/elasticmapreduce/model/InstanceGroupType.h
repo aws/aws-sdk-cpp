@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class InstanceGroupType
-  {
-    NOT_SET,
-    MASTER,
-    CORE,
-    TASK
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class InstanceGroupType { NOT_SET, MASTER, CORE, TASK };
 
-namespace InstanceGroupTypeMapper
-{
+namespace InstanceGroupTypeMapper {
 AWS_EMR_API InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForInstanceGroupType(InstanceGroupType value);
-} // namespace InstanceGroupTypeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace InstanceGroupTypeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

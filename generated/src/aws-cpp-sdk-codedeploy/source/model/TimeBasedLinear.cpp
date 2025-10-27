@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-TimeBasedLinear::TimeBasedLinear(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeBasedLinear::TimeBasedLinear(JsonView jsonValue) { *this = jsonValue; }
 
-TimeBasedLinear& TimeBasedLinear::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("linearPercentage"))
-  {
+TimeBasedLinear& TimeBasedLinear::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("linearPercentage")) {
     m_linearPercentage = jsonValue.GetInteger("linearPercentage");
     m_linearPercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("linearInterval"))
-  {
+  if (jsonValue.ValueExists("linearInterval")) {
     m_linearInterval = jsonValue.GetInteger("linearInterval");
     m_linearIntervalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeBasedLinear::Jsonize() const
-{
+JsonValue TimeBasedLinear::Jsonize() const {
   JsonValue payload;
 
-  if(m_linearPercentageHasBeenSet)
-  {
-   payload.WithInteger("linearPercentage", m_linearPercentage);
-
+  if (m_linearPercentageHasBeenSet) {
+    payload.WithInteger("linearPercentage", m_linearPercentage);
   }
 
-  if(m_linearIntervalHasBeenSet)
-  {
-   payload.WithInteger("linearInterval", m_linearInterval);
-
+  if (m_linearIntervalHasBeenSet) {
+    payload.WithInteger("linearInterval", m_linearInterval);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

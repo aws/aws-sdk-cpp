@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudtrail/model/CreateEventDataStoreResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,96 +17,76 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventDataStoreResult::CreateEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateEventDataStoreResult::CreateEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateEventDataStoreResult& CreateEventDataStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateEventDataStoreResult& CreateEventDataStoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EventDataStoreArn"))
-  {
+  if (jsonValue.ValueExists("EventDataStoreArn")) {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
     m_eventDataStoreArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = EventDataStoreStatusMapper::GetEventDataStoreStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdvancedEventSelectors"))
-  {
+  if (jsonValue.ValueExists("AdvancedEventSelectors")) {
     Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
-    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
-    {
+    for (unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength();
+         ++advancedEventSelectorsIndex) {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
     }
     m_advancedEventSelectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiRegionEnabled"))
-  {
+  if (jsonValue.ValueExists("MultiRegionEnabled")) {
     m_multiRegionEnabled = jsonValue.GetBool("MultiRegionEnabled");
     m_multiRegionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationEnabled"))
-  {
+  if (jsonValue.ValueExists("OrganizationEnabled")) {
     m_organizationEnabled = jsonValue.GetBool("OrganizationEnabled");
     m_organizationEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetentionPeriod"))
-  {
+  if (jsonValue.ValueExists("RetentionPeriod")) {
     m_retentionPeriod = jsonValue.GetInteger("RetentionPeriod");
     m_retentionPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TerminationProtectionEnabled"))
-  {
+  if (jsonValue.ValueExists("TerminationProtectionEnabled")) {
     m_terminationProtectionEnabled = jsonValue.GetBool("TerminationProtectionEnabled");
     m_terminationProtectionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagsList"))
-  {
+  if (jsonValue.ValueExists("TagsList")) {
     Aws::Utils::Array<JsonView> tagsListJsonList = jsonValue.GetArray("TagsList");
-    for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
-    {
+    for (unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex) {
       m_tagsList.push_back(tagsListJsonList[tagsListIndex].AsObject());
     }
     m_tagsListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetDouble("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillingMode"))
-  {
+  if (jsonValue.ValueExists("BillingMode")) {
     m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
     m_billingModeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

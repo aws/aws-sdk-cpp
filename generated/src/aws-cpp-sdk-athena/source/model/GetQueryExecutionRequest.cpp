@@ -12,27 +12,18 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueryExecutionRequest::SerializePayload() const
-{
+Aws::String GetQueryExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryExecutionIdHasBeenSet)
-  {
-   payload.WithString("QueryExecutionId", m_queryExecutionId);
-
+  if (m_queryExecutionIdHasBeenSet) {
+    payload.WithString("QueryExecutionId", m_queryExecutionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetQueryExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetQueryExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetQueryExecution"));
   return headers;
-
 }
-
-
-
-

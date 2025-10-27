@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/GetMailDomainRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/GetMailDomainRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMailDomainRequest::SerializePayload() const
-{
+Aws::String GetMailDomainRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetMailDomainRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetMailDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.GetMailDomain"));
   return headers;
-
 }
-
-
-
-

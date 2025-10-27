@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-Attendee::Attendee(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attendee::Attendee(JsonView jsonValue) { *this = jsonValue; }
 
-Attendee& Attendee::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttendeeId"))
-  {
+Attendee& Attendee::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttendeeId")) {
     m_attendeeId = jsonValue.GetString("AttendeeId");
     m_attendeeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JoinToken"))
-  {
+  if (jsonValue.ValueExists("JoinToken")) {
     m_joinToken = jsonValue.GetString("JoinToken");
     m_joinTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Attendee::Jsonize() const
-{
+JsonValue Attendee::Jsonize() const {
   JsonValue payload;
 
-  if(m_attendeeIdHasBeenSet)
-  {
-   payload.WithString("AttendeeId", m_attendeeId);
-
+  if (m_attendeeIdHasBeenSet) {
+    payload.WithString("AttendeeId", m_attendeeId);
   }
 
-  if(m_joinTokenHasBeenSet)
-  {
-   payload.WithString("JoinToken", m_joinToken);
-
+  if (m_joinTokenHasBeenSet) {
+    payload.WithString("JoinToken", m_joinToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

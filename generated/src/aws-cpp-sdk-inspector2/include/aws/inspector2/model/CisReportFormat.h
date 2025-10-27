@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CisReportFormat
-  {
-    NOT_SET,
-    PDF,
-    CSV
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CisReportFormat { NOT_SET, PDF, CSV };
 
-namespace CisReportFormatMapper
-{
+namespace CisReportFormatMapper {
 AWS_INSPECTOR2_API CisReportFormat GetCisReportFormatForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCisReportFormat(CisReportFormat value);
-} // namespace CisReportFormatMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CisReportFormatMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

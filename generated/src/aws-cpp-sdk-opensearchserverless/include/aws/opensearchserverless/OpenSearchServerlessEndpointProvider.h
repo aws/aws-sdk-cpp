@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/opensearchserverless/OpenSearchServerlessEndpointRules.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using OpenSearchServerlessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using OpenSearchServerlessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using OpenSearchServerlessEndpointProviderBase =
-    EndpointProviderBase<OpenSearchServerlessClientConfiguration, OpenSearchServerlessBuiltInParameters, OpenSearchServerlessClientContextParameters>;
+    EndpointProviderBase<OpenSearchServerlessClientConfiguration, OpenSearchServerlessBuiltInParameters,
+                         OpenSearchServerlessClientContextParameters>;
 
 using OpenSearchServerlessDefaultEpProviderBase =
-    DefaultEndpointProvider<OpenSearchServerlessClientConfiguration, OpenSearchServerlessBuiltInParameters, OpenSearchServerlessClientContextParameters>;
+    DefaultEndpointProvider<OpenSearchServerlessClientConfiguration, OpenSearchServerlessBuiltInParameters,
+                            OpenSearchServerlessClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessEndpointProvider : public OpenSearchServerlessDefaultEpProviderBase
-{
-public:
-    using OpenSearchServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessEndpointProvider : public OpenSearchServerlessDefaultEpProviderBase {
+ public:
+  using OpenSearchServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    OpenSearchServerlessEndpointProvider()
-      : OpenSearchServerlessDefaultEpProviderBase(Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::GetRulesBlob(), Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::RulesBlobSize)
-    {}
+  OpenSearchServerlessEndpointProvider()
+      : OpenSearchServerlessDefaultEpProviderBase(Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::GetRulesBlob(),
+                                                  Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::RulesBlobSize) {}
 
-    ~OpenSearchServerlessEndpointProvider()
-    {
-    }
+  ~OpenSearchServerlessEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace OpenSearchServerless
+}  // namespace Aws

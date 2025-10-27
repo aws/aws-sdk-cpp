@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateFleetResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateFleetResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFleetResponse::CreateFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateFleetResponse::CreateFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateFleetResponse& CreateFleetResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateFleetResponse& CreateFleetResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateFleetResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateFleetResponse")) {
     resultNode = rootNode.FirstChild("CreateFleetResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
-    if(!fleetIdNode.IsNull())
-    {
+    if (!fleetIdNode.IsNull()) {
       m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
       m_fleetIdHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("errorSet");
-    if(!errorsNode.IsNull())
-    {
+    if (!errorsNode.IsNull()) {
       XmlNode errorsMember = errorsNode.FirstChild("item");
       m_errorsHasBeenSet = !errorsMember.IsNull();
-      while(!errorsMember.IsNull())
-      {
+      while (!errorsMember.IsNull()) {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("item");
       }
@@ -54,12 +45,10 @@ CreateFleetResponse& CreateFleetResponse::operator =(const Aws::AmazonWebService
       m_errorsHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("fleetInstanceSet");
-    if(!instancesNode.IsNull())
-    {
+    if (!instancesNode.IsNull()) {
       XmlNode instancesMember = instancesNode.FirstChild("item");
       m_instancesHasBeenSet = !instancesMember.IsNull();
-      while(!instancesMember.IsNull())
-      {
+      while (!instancesMember.IsNull()) {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("item");
       }
@@ -70,12 +59,11 @@ CreateFleetResponse& CreateFleetResponse::operator =(const Aws::AmazonWebService
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateFleetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateFleetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

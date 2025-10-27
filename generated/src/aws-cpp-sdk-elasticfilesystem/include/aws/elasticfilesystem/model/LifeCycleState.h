@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
-  enum class LifeCycleState
-  {
-    NOT_SET,
-    creating,
-    available,
-    updating,
-    deleting,
-    deleted,
-    error
-  };
+namespace Aws {
+namespace EFS {
+namespace Model {
+enum class LifeCycleState { NOT_SET, creating, available, updating, deleting, deleted, error };
 
-namespace LifeCycleStateMapper
-{
+namespace LifeCycleStateMapper {
 AWS_EFS_API LifeCycleState GetLifeCycleStateForName(const Aws::String& name);
 
 AWS_EFS_API Aws::String GetNameForLifeCycleState(LifeCycleState value);
-} // namespace LifeCycleStateMapper
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace LifeCycleStateMapper
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

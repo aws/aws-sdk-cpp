@@ -4,36 +4,27 @@
  */
 
 #include <aws/cloudfront/model/ContinuousDeploymentPolicySummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ContinuousDeploymentPolicySummary& ContinuousDeploymentPolicySummary::operator =(const XmlNode& xmlNode)
-{
+ContinuousDeploymentPolicySummary& ContinuousDeploymentPolicySummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode continuousDeploymentPolicyNode = resultNode.FirstChild("ContinuousDeploymentPolicy");
-    if(!continuousDeploymentPolicyNode.IsNull())
-    {
+    if (!continuousDeploymentPolicyNode.IsNull()) {
       m_continuousDeploymentPolicy = continuousDeploymentPolicyNode;
       m_continuousDeploymentPolicyHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ ContinuousDeploymentPolicySummary& ContinuousDeploymentPolicySummary::operator =
   return *this;
 }
 
-void ContinuousDeploymentPolicySummary::AddToNode(XmlNode& parentNode) const
-{
+void ContinuousDeploymentPolicySummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_continuousDeploymentPolicyHasBeenSet)
-  {
-   XmlNode continuousDeploymentPolicyNode = parentNode.CreateChildElement("ContinuousDeploymentPolicy");
-   m_continuousDeploymentPolicy.AddToNode(continuousDeploymentPolicyNode);
+  if (m_continuousDeploymentPolicyHasBeenSet) {
+    XmlNode continuousDeploymentPolicyNode = parentNode.CreateChildElement("ContinuousDeploymentPolicy");
+    m_continuousDeploymentPolicy.AddToNode(continuousDeploymentPolicyNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

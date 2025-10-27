@@ -5,12 +5,8 @@
 
 #include <aws/firehose/FirehoseEndpointProvider.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Firehose
-} // namespace Aws
+namespace Aws {
+namespace Firehose {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Firehose
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/UsageFeatureResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/UsageFeatureResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-UsageFeatureResult::UsageFeatureResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsageFeatureResult::UsageFeatureResult(JsonView jsonValue) { *this = jsonValue; }
 
-UsageFeatureResult& UsageFeatureResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("feature"))
-  {
+UsageFeatureResult& UsageFeatureResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("feature")) {
     m_feature = UsageFeatureMapper::GetUsageFeatureForName(jsonValue.GetString("feature"));
     m_featureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("total"))
-  {
+  if (jsonValue.ValueExists("total")) {
     m_total = jsonValue.GetObject("total");
     m_totalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UsageFeatureResult::Jsonize() const
-{
+JsonValue UsageFeatureResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureHasBeenSet)
-  {
-   payload.WithString("feature", UsageFeatureMapper::GetNameForUsageFeature(m_feature));
+  if (m_featureHasBeenSet) {
+    payload.WithString("feature", UsageFeatureMapper::GetNameForUsageFeature(m_feature));
   }
 
-  if(m_totalHasBeenSet)
-  {
-   payload.WithObject("total", m_total.Jsonize());
-
+  if (m_totalHasBeenSet) {
+    payload.WithObject("total", m_total.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

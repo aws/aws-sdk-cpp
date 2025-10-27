@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableVpcClassicLinkDnsSupportRequest::SerializePayload() const
-{
+Aws::String DisableVpcClassicLinkDnsSupportRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableVpcClassicLinkDnsSupport&";
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DisableVpcClassicLinkDnsSupportRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableVpcClassicLinkDnsSupportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableVpcClassicLinkDnsSupportRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FieldPosition::FieldPosition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldPosition::FieldPosition(JsonView jsonValue) { *this = jsonValue; }
 
-FieldPosition& FieldPosition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fixed"))
-  {
+FieldPosition& FieldPosition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fixed")) {
     m_fixed = FixedPositionMapper::GetFixedPositionForName(jsonValue.GetString("fixed"));
     m_fixedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rightOf"))
-  {
+  if (jsonValue.ValueExists("rightOf")) {
     m_rightOf = jsonValue.GetString("rightOf");
     m_rightOfHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("below"))
-  {
+  if (jsonValue.ValueExists("below")) {
     m_below = jsonValue.GetString("below");
     m_belowHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldPosition::Jsonize() const
-{
+JsonValue FieldPosition::Jsonize() const {
   JsonValue payload;
 
-  if(m_fixedHasBeenSet)
-  {
-   payload.WithString("fixed", FixedPositionMapper::GetNameForFixedPosition(m_fixed));
+  if (m_fixedHasBeenSet) {
+    payload.WithString("fixed", FixedPositionMapper::GetNameForFixedPosition(m_fixed));
   }
 
-  if(m_rightOfHasBeenSet)
-  {
-   payload.WithString("rightOf", m_rightOf);
-
+  if (m_rightOfHasBeenSet) {
+    payload.WithString("rightOf", m_rightOf);
   }
 
-  if(m_belowHasBeenSet)
-  {
-   payload.WithString("below", m_below);
-
+  if (m_belowHasBeenSet) {
+    payload.WithString("below", m_below);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class FirstBoot
-  {
-    NOT_SET,
-    WAITING,
-    SUCCEEDED,
-    UNKNOWN,
-    STOPPED
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class FirstBoot { NOT_SET, WAITING, SUCCEEDED, UNKNOWN, STOPPED };
 
-namespace FirstBootMapper
-{
+namespace FirstBootMapper {
 AWS_MGN_API FirstBoot GetFirstBootForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForFirstBoot(FirstBoot value);
-} // namespace FirstBootMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace FirstBootMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

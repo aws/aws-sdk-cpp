@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/tnb/Tnb_EXPORTS.h>
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
-  enum class NsLcmOperationState
-  {
-    NOT_SET,
-    PROCESSING,
-    COMPLETED,
-    FAILED,
-    CANCELLING,
-    CANCELLED
-  };
+namespace Aws {
+namespace tnb {
+namespace Model {
+enum class NsLcmOperationState { NOT_SET, PROCESSING, COMPLETED, FAILED, CANCELLING, CANCELLED };
 
-namespace NsLcmOperationStateMapper
-{
+namespace NsLcmOperationStateMapper {
 AWS_TNB_API NsLcmOperationState GetNsLcmOperationStateForName(const Aws::String& name);
 
 AWS_TNB_API Aws::String GetNameForNsLcmOperationState(NsLcmOperationState value);
-} // namespace NsLcmOperationStateMapper
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace NsLcmOperationStateMapper
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

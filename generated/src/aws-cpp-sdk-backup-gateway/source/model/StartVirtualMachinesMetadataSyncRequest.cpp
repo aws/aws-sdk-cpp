@@ -12,27 +12,18 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartVirtualMachinesMetadataSyncRequest::SerializePayload() const
-{
+Aws::String StartVirtualMachinesMetadataSyncRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hypervisorArnHasBeenSet)
-  {
-   payload.WithString("HypervisorArn", m_hypervisorArn);
-
+  if (m_hypervisorArnHasBeenSet) {
+    payload.WithString("HypervisorArn", m_hypervisorArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartVirtualMachinesMetadataSyncRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartVirtualMachinesMetadataSyncRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.StartVirtualMachinesMetadataSync"));
   return headers;
-
 }
-
-
-
-

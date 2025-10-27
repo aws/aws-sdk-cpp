@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/SidewalkEventNotificationConfigurations.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/SidewalkEventNotificationConfigurations.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-SidewalkEventNotificationConfigurations& SidewalkEventNotificationConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AmazonIdEventTopic"))
-  {
-    m_amazonIdEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("AmazonIdEventTopic"));
+SidewalkEventNotificationConfigurations& SidewalkEventNotificationConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AmazonIdEventTopic")) {
+    m_amazonIdEventTopic =
+        EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("AmazonIdEventTopic"));
     m_amazonIdEventTopicHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SidewalkEventNotificationConfigurations::Jsonize() const
-{
+JsonValue SidewalkEventNotificationConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_amazonIdEventTopicHasBeenSet)
-  {
-   payload.WithString("AmazonIdEventTopic", EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_amazonIdEventTopic));
+  if (m_amazonIdEventTopicHasBeenSet) {
+    payload.WithString("AmazonIdEventTopic",
+                       EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_amazonIdEventTopic));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

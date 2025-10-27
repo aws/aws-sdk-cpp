@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/ProjectMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutvision/model/ProjectMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
 
-ProjectMetadata::ProjectMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectMetadata::ProjectMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectMetadata& ProjectMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProjectArn"))
-  {
+ProjectMetadata& ProjectMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProjectArn")) {
     m_projectArn = jsonValue.GetString("ProjectArn");
     m_projectArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectName"))
-  {
+  if (jsonValue.ValueExists("ProjectName")) {
     m_projectName = jsonValue.GetString("ProjectName");
     m_projectNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreationTimestamp")) {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
     m_creationTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectMetadata::Jsonize() const
-{
+JsonValue ProjectMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_projectArnHasBeenSet)
-  {
-   payload.WithString("ProjectArn", m_projectArn);
-
+  if (m_projectArnHasBeenSet) {
+    payload.WithString("ProjectArn", m_projectArn);
   }
 
-  if(m_projectNameHasBeenSet)
-  {
-   payload.WithString("ProjectName", m_projectName);
-
+  if (m_projectNameHasBeenSet) {
+    payload.WithString("ProjectName", m_projectName);
   }
 
-  if(m_creationTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreationTimestamp", m_creationTimestamp.SecondsWithMSPrecision());
+  if (m_creationTimestampHasBeenSet) {
+    payload.WithDouble("CreationTimestamp", m_creationTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

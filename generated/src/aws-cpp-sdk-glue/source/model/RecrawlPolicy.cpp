@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/RecrawlPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-RecrawlPolicy::RecrawlPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecrawlPolicy::RecrawlPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-RecrawlPolicy& RecrawlPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RecrawlBehavior"))
-  {
+RecrawlPolicy& RecrawlPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RecrawlBehavior")) {
     m_recrawlBehavior = RecrawlBehaviorMapper::GetRecrawlBehaviorForName(jsonValue.GetString("RecrawlBehavior"));
     m_recrawlBehaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecrawlPolicy::Jsonize() const
-{
+JsonValue RecrawlPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_recrawlBehaviorHasBeenSet)
-  {
-   payload.WithString("RecrawlBehavior", RecrawlBehaviorMapper::GetNameForRecrawlBehavior(m_recrawlBehavior));
+  if (m_recrawlBehaviorHasBeenSet) {
+    payload.WithString("RecrawlBehavior", RecrawlBehaviorMapper::GetNameForRecrawlBehavior(m_recrawlBehavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

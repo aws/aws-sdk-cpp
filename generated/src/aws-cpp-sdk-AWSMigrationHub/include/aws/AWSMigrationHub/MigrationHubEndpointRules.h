@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHub
-{
-class MigrationHubEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MigrationHub {
+class MigrationHubEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace MigrationHub
+}  // namespace Aws

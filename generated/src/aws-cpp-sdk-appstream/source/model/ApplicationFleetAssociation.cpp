@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ApplicationFleetAssociation::ApplicationFleetAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationFleetAssociation::ApplicationFleetAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationFleetAssociation& ApplicationFleetAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FleetName"))
-  {
+ApplicationFleetAssociation& ApplicationFleetAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FleetName")) {
     m_fleetName = jsonValue.GetString("FleetName");
     m_fleetNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationArn"))
-  {
+  if (jsonValue.ValueExists("ApplicationArn")) {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
     m_applicationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationFleetAssociation::Jsonize() const
-{
+JsonValue ApplicationFleetAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_fleetNameHasBeenSet)
-  {
-   payload.WithString("FleetName", m_fleetName);
-
+  if (m_fleetNameHasBeenSet) {
+    payload.WithString("FleetName", m_fleetName);
   }
 
-  if(m_applicationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationArn", m_applicationArn);
-
+  if (m_applicationArnHasBeenSet) {
+    payload.WithString("ApplicationArn", m_applicationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

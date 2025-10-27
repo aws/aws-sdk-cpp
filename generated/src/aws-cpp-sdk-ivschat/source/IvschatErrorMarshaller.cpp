@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ivschat;
 
-AWSError<CoreErrors> IvschatErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IvschatErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IvschatErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

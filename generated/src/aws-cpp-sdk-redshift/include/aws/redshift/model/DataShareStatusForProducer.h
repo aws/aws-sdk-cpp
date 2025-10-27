@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class DataShareStatusForProducer
-  {
-    NOT_SET,
-    ACTIVE,
-    AUTHORIZED,
-    PENDING_AUTHORIZATION,
-    DEAUTHORIZED,
-    REJECTED
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class DataShareStatusForProducer { NOT_SET, ACTIVE, AUTHORIZED, PENDING_AUTHORIZATION, DEAUTHORIZED, REJECTED };
 
-namespace DataShareStatusForProducerMapper
-{
+namespace DataShareStatusForProducerMapper {
 AWS_REDSHIFT_API DataShareStatusForProducer GetDataShareStatusForProducerForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForDataShareStatusForProducer(DataShareStatusForProducer value);
-} // namespace DataShareStatusForProducerMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace DataShareStatusForProducerMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

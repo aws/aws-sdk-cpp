@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/Deployment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/Deployment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-Deployment::Deployment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Deployment::Deployment(JsonView jsonValue) { *this = jsonValue; }
 
-Deployment& Deployment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+Deployment& Deployment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetString("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentArn"))
-  {
+  if (jsonValue.ValueExists("DeploymentArn")) {
     m_deploymentArn = jsonValue.GetString("DeploymentArn");
     m_deploymentArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentId"))
-  {
+  if (jsonValue.ValueExists("DeploymentId")) {
     m_deploymentId = jsonValue.GetString("DeploymentId");
     m_deploymentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentType"))
-  {
+  if (jsonValue.ValueExists("DeploymentType")) {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
     m_deploymentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupArn"))
-  {
+  if (jsonValue.ValueExists("GroupArn")) {
     m_groupArn = jsonValue.GetString("GroupArn");
     m_groupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Deployment::Jsonize() const
-{
+JsonValue Deployment::Jsonize() const {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("CreatedAt", m_createdAt);
-
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("CreatedAt", m_createdAt);
   }
 
-  if(m_deploymentArnHasBeenSet)
-  {
-   payload.WithString("DeploymentArn", m_deploymentArn);
-
+  if (m_deploymentArnHasBeenSet) {
+    payload.WithString("DeploymentArn", m_deploymentArn);
   }
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("DeploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("DeploymentId", m_deploymentId);
   }
 
-  if(m_deploymentTypeHasBeenSet)
-  {
-   payload.WithString("DeploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
+  if (m_deploymentTypeHasBeenSet) {
+    payload.WithString("DeploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
   }
 
-  if(m_groupArnHasBeenSet)
-  {
-   payload.WithString("GroupArn", m_groupArn);
-
+  if (m_groupArnHasBeenSet) {
+    payload.WithString("GroupArn", m_groupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

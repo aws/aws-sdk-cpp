@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/GetWirelessGatewayCertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/GetWirelessGatewayCertificateRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetWirelessGatewayCertificateRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetWirelessGatewayCertificateRequest::SerializePayload() const { return {}; }

@@ -7,25 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class WebScopeType
-  {
-    NOT_SET,
-    HOST_ONLY,
-    SUBDOMAINS
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class WebScopeType { NOT_SET, HOST_ONLY, SUBDOMAINS };
 
-namespace WebScopeTypeMapper
-{
+namespace WebScopeTypeMapper {
 AWS_BEDROCKAGENT_API WebScopeType GetWebScopeTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForWebScopeType(WebScopeType value);
-} // namespace WebScopeTypeMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace WebScopeTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

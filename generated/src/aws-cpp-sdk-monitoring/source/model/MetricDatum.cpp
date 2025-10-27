@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/MetricDatum.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/MetricDatum.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-MetricDatum::MetricDatum(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MetricDatum::MetricDatum(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
-{
+MetricDatum& MetricDatum::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if(!metricNameNode.IsNull())
-    {
+    if (!metricNameNode.IsNull()) {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
-    if(!dimensionsNode.IsNull())
-    {
+    if (!dimensionsNode.IsNull()) {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
       m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
-      while(!dimensionsMember.IsNull())
-      {
+      while (!dimensionsMember.IsNull()) {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
@@ -51,30 +40,26 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_dimensionsHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!timestampNode.IsNull()) {
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(!valueNode.IsNull())
-    {
+    if (!valueNode.IsNull()) {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
     }
     XmlNode statisticValuesNode = resultNode.FirstChild("StatisticValues");
-    if(!statisticValuesNode.IsNull())
-    {
+    if (!statisticValuesNode.IsNull()) {
       m_statisticValues = statisticValuesNode;
       m_statisticValuesHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
-    if(!valuesNode.IsNull())
-    {
+    if (!valuesNode.IsNull()) {
       XmlNode valuesMember = valuesNode.FirstChild("member");
       m_valuesHasBeenSet = !valuesMember.IsNull();
-      while(!valuesMember.IsNull())
-      {
+      while (!valuesMember.IsNull()) {
         m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
         valuesMember = valuesMember.NextNode("member");
       }
@@ -82,12 +67,10 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_valuesHasBeenSet = true;
     }
     XmlNode countsNode = resultNode.FirstChild("Counts");
-    if(!countsNode.IsNull())
-    {
+    if (!countsNode.IsNull()) {
       XmlNode countsMember = countsNode.FirstChild("member");
       m_countsHasBeenSet = !countsMember.IsNull();
-      while(!countsMember.IsNull())
-      {
+      while (!countsMember.IsNull()) {
         m_counts.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(countsMember.GetText().c_str()).c_str()));
         countsMember = countsMember.NextNode("member");
       }
@@ -95,15 +78,15 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       m_countsHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
-    if(!unitNode.IsNull())
-    {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
+    if (!unitNode.IsNull()) {
+      m_unit =
+          StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
     }
     XmlNode storageResolutionNode = resultNode.FirstChild("StorageResolution");
-    if(!storageResolutionNode.IsNull())
-    {
-      m_storageResolution = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageResolutionNode.GetText()).c_str()).c_str());
+    if (!storageResolutionNode.IsNull()) {
+      m_storageResolution = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageResolutionNode.GetText()).c_str()).c_str());
       m_storageResolutionHasBeenSet = true;
     }
   }
@@ -111,127 +94,103 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_metricNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_metricNameHasBeenSet) {
+    oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
 
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
-        item.OutputToStream(oStream, dimensionsSs.str().c_str());
-      }
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      Aws::StringStream dimensionsSs;
+      dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
+      item.OutputToStream(oStream, dimensionsSs.str().c_str());
+    }
   }
 
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_timestampHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_valueHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+  if (m_valueHasBeenSet) {
+    oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
 
-  if(m_statisticValuesHasBeenSet)
-  {
-      Aws::StringStream statisticValuesLocationAndMemberSs;
-      statisticValuesLocationAndMemberSs << location << index << locationValue << ".StatisticValues";
-      m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMemberSs.str().c_str());
+  if (m_statisticValuesHasBeenSet) {
+    Aws::StringStream statisticValuesLocationAndMemberSs;
+    statisticValuesLocationAndMemberSs << location << index << locationValue << ".StatisticValues";
+    m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMemberSs.str().c_str());
   }
 
-  if(m_valuesHasBeenSet)
-  {
-      unsigned valuesIdx = 1;
-      for(auto& item : m_values)
-      {
-        oStream << location << index << locationValue << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
+  if (m_valuesHasBeenSet) {
+    unsigned valuesIdx = 1;
+    for (auto& item : m_values) {
+      oStream << location << index << locationValue << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    }
   }
 
-  if(m_countsHasBeenSet)
-  {
-      unsigned countsIdx = 1;
-      for(auto& item : m_counts)
-      {
-        oStream << location << index << locationValue << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
+  if (m_countsHasBeenSet) {
+    unsigned countsIdx = 1;
+    for (auto& item : m_counts) {
+      oStream << location << index << locationValue << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    }
   }
 
-  if(m_unitHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
+  if (m_unitHasBeenSet) {
+    oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit))
+            << "&";
   }
 
-  if(m_storageResolutionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageResolution=" << m_storageResolution << "&";
-  }
-
-}
-
-void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_metricNameHasBeenSet)
-  {
-      oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
-  }
-  if(m_dimensionsHasBeenSet)
-  {
-      unsigned dimensionsIdx = 1;
-      for(auto& item : m_dimensions)
-      {
-        Aws::StringStream dimensionsSs;
-        dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
-        item.OutputToStream(oStream, dimensionsSs.str().c_str());
-      }
-  }
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_valueHasBeenSet)
-  {
-      oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
-  }
-  if(m_statisticValuesHasBeenSet)
-  {
-      Aws::String statisticValuesLocationAndMember(location);
-      statisticValuesLocationAndMember += ".StatisticValues";
-      m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMember.c_str());
-  }
-  if(m_valuesHasBeenSet)
-  {
-      unsigned valuesIdx = 1;
-      for(auto& item : m_values)
-      {
-        oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
-  }
-  if(m_countsHasBeenSet)
-  {
-      unsigned countsIdx = 1;
-      for(auto& item : m_counts)
-      {
-        oStream << location << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-      }
-  }
-  if(m_unitHasBeenSet)
-  {
-      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
-  }
-  if(m_storageResolutionHasBeenSet)
-  {
-      oStream << location << ".StorageResolution=" << m_storageResolution << "&";
+  if (m_storageResolutionHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageResolution=" << m_storageResolution << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_metricNameHasBeenSet) {
+    oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+  }
+  if (m_dimensionsHasBeenSet) {
+    unsigned dimensionsIdx = 1;
+    for (auto& item : m_dimensions) {
+      Aws::StringStream dimensionsSs;
+      dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
+      item.OutputToStream(oStream, dimensionsSs.str().c_str());
+    }
+  }
+  if (m_timestampHasBeenSet) {
+    oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_valueHasBeenSet) {
+    oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+  }
+  if (m_statisticValuesHasBeenSet) {
+    Aws::String statisticValuesLocationAndMember(location);
+    statisticValuesLocationAndMember += ".StatisticValues";
+    m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMember.c_str());
+  }
+  if (m_valuesHasBeenSet) {
+    unsigned valuesIdx = 1;
+    for (auto& item : m_values) {
+      oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    }
+  }
+  if (m_countsHasBeenSet) {
+    unsigned countsIdx = 1;
+    for (auto& item : m_counts) {
+      oStream << location << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    }
+  }
+  if (m_unitHasBeenSet) {
+    oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
+  }
+  if (m_storageResolutionHasBeenSet) {
+    oStream << location << ".StorageResolution=" << m_storageResolution << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

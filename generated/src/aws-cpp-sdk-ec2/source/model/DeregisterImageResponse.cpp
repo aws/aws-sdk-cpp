@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeregisterImageResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeregisterImageResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterImageResponse::DeregisterImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DeregisterImageResponse::DeregisterImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DeregisterImageResponse& DeregisterImageResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeregisterImageResponse& DeregisterImageResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeregisterImageResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeregisterImageResponse")) {
     resultNode = rootNode.FirstChild("DeregisterImageResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode returnNode = resultNode.FirstChild("return");
-    if(!returnNode.IsNull())
-    {
+    if (!returnNode.IsNull()) {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
       m_returnHasBeenSet = true;
     }
     XmlNode deleteSnapshotResultsNode = resultNode.FirstChild("deleteSnapshotResultSet");
-    if(!deleteSnapshotResultsNode.IsNull())
-    {
+    if (!deleteSnapshotResultsNode.IsNull()) {
       XmlNode deleteSnapshotResultsMember = deleteSnapshotResultsNode.FirstChild("item");
       m_deleteSnapshotResultsHasBeenSet = !deleteSnapshotResultsMember.IsNull();
-      while(!deleteSnapshotResultsMember.IsNull())
-      {
+      while (!deleteSnapshotResultsMember.IsNull()) {
         m_deleteSnapshotResults.push_back(deleteSnapshotResultsMember);
         deleteSnapshotResultsMember = deleteSnapshotResultsMember.NextNode("item");
       }
@@ -57,12 +48,11 @@ DeregisterImageResponse& DeregisterImageResponse::operator =(const Aws::AmazonWe
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeregisterImageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeregisterImageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

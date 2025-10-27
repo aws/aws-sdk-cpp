@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
-namespace Aws
-{
-namespace ivsrealtime
-{
-namespace Model
-{
-  enum class PipPosition
-  {
-    NOT_SET,
-    TOP_LEFT,
-    TOP_RIGHT,
-    BOTTOM_LEFT,
-    BOTTOM_RIGHT
-  };
+namespace Aws {
+namespace ivsrealtime {
+namespace Model {
+enum class PipPosition { NOT_SET, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT };
 
-namespace PipPositionMapper
-{
+namespace PipPositionMapper {
 AWS_IVSREALTIME_API PipPosition GetPipPositionForName(const Aws::String& name);
 
 AWS_IVSREALTIME_API Aws::String GetNameForPipPosition(PipPosition value);
-} // namespace PipPositionMapper
-} // namespace Model
-} // namespace ivsrealtime
-} // namespace Aws
+}  // namespace PipPositionMapper
+}  // namespace Model
+}  // namespace ivsrealtime
+}  // namespace Aws

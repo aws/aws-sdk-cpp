@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/RegistrationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/RegistrationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-RegistrationConfig::RegistrationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegistrationConfig::RegistrationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RegistrationConfig& RegistrationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("templateBody"))
-  {
+RegistrationConfig& RegistrationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("templateBody")) {
     m_templateBody = jsonValue.GetString("templateBody");
     m_templateBodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateName"))
-  {
+  if (jsonValue.ValueExists("templateName")) {
     m_templateName = jsonValue.GetString("templateName");
     m_templateNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RegistrationConfig::Jsonize() const
-{
+JsonValue RegistrationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateBodyHasBeenSet)
-  {
-   payload.WithString("templateBody", m_templateBody);
-
+  if (m_templateBodyHasBeenSet) {
+    payload.WithString("templateBody", m_templateBody);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("templateName", m_templateName);
-
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("templateName", m_templateName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

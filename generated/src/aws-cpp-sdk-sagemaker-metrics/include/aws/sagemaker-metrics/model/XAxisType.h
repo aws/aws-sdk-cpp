@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerMetrics
-{
-namespace Model
-{
-  enum class XAxisType
-  {
-    NOT_SET,
-    IterationNumber,
-    Timestamp
-  };
+namespace Aws {
+namespace SageMakerMetrics {
+namespace Model {
+enum class XAxisType { NOT_SET, IterationNumber, Timestamp };
 
-namespace XAxisTypeMapper
-{
+namespace XAxisTypeMapper {
 AWS_SAGEMAKERMETRICS_API XAxisType GetXAxisTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKERMETRICS_API Aws::String GetNameForXAxisType(XAxisType value);
-} // namespace XAxisTypeMapper
-} // namespace Model
-} // namespace SageMakerMetrics
-} // namespace Aws
+}  // namespace XAxisTypeMapper
+}  // namespace Model
+}  // namespace SageMakerMetrics
+}  // namespace Aws

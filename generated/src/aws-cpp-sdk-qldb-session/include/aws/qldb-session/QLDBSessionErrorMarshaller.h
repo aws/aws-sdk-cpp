@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/qldb-session/QLDBSession_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/qldb-session/QLDBSession_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_QLDBSESSION_API QLDBSessionErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_QLDBSESSION_API QLDBSessionErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

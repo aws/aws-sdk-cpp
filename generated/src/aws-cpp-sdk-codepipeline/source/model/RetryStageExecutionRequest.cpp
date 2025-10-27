@@ -12,44 +12,30 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RetryStageExecutionRequest::SerializePayload() const
-{
+Aws::String RetryStageExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineNameHasBeenSet)
-  {
-   payload.WithString("pipelineName", m_pipelineName);
-
+  if (m_pipelineNameHasBeenSet) {
+    payload.WithString("pipelineName", m_pipelineName);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
-  if(m_pipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
-
+  if (m_pipelineExecutionIdHasBeenSet) {
+    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
   }
 
-  if(m_retryModeHasBeenSet)
-  {
-   payload.WithString("retryMode", StageRetryModeMapper::GetNameForStageRetryMode(m_retryMode));
+  if (m_retryModeHasBeenSet) {
+    payload.WithString("retryMode", StageRetryModeMapper::GetNameForStageRetryMode(m_retryMode));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RetryStageExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RetryStageExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.RetryStageExecution"));
   return headers;
-
 }
-
-
-
-

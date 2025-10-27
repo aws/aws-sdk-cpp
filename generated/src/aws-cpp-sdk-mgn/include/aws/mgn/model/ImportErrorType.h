@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class ImportErrorType
-  {
-    NOT_SET,
-    VALIDATION_ERROR,
-    PROCESSING_ERROR
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class ImportErrorType { NOT_SET, VALIDATION_ERROR, PROCESSING_ERROR };
 
-namespace ImportErrorTypeMapper
-{
+namespace ImportErrorTypeMapper {
 AWS_MGN_API ImportErrorType GetImportErrorTypeForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForImportErrorType(ImportErrorType value);
-} // namespace ImportErrorTypeMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace ImportErrorTypeMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PatternObjectFilterConfiguration::PatternObjectFilterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PatternObjectFilterConfiguration::PatternObjectFilterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PatternObjectFilterConfiguration& PatternObjectFilterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filters"))
-  {
+PatternObjectFilterConfiguration& PatternObjectFilterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filters")) {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
-    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-    {
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
     }
     m_filtersHasBeenSet = true;
@@ -37,24 +28,20 @@ PatternObjectFilterConfiguration& PatternObjectFilterConfiguration::operator =(J
   return *this;
 }
 
-JsonValue PatternObjectFilterConfiguration::Jsonize() const
-{
+JsonValue PatternObjectFilterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_filtersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
-
+  if (m_filtersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
+      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    }
+    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

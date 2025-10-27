@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAttendeeCapabilitiesRequest::SerializePayload() const
-{
+Aws::String UpdateAttendeeCapabilitiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   payload.WithObject("Capabilities", m_capabilities.Jsonize());
-
+  if (m_capabilitiesHasBeenSet) {
+    payload.WithObject("Capabilities", m_capabilities.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

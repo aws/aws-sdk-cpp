@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-} // namespace IoTTwinMaker
-} // namespace Aws
+namespace Aws {
+namespace IoTTwinMaker {}  // namespace IoTTwinMaker
+}  // namespace Aws

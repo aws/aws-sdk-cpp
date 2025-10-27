@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class QueryResultType
-  {
-    NOT_SET,
-    KNOWLEDGE_CONTENT,
-    INTENT_ANSWER,
-    GENERATIVE_ANSWER,
-    GENERATIVE_ANSWER_CHUNK,
-    BLOCKED_GENERATIVE_ANSWER_CHUNK,
-    INTENT_ANSWER_CHUNK,
-    BLOCKED_INTENT_ANSWER_CHUNK,
-    EMAIL_RESPONSE_CHUNK,
-    EMAIL_OVERVIEW_CHUNK,
-    EMAIL_GENERATIVE_ANSWER_CHUNK
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class QueryResultType {
+  NOT_SET,
+  KNOWLEDGE_CONTENT,
+  INTENT_ANSWER,
+  GENERATIVE_ANSWER,
+  GENERATIVE_ANSWER_CHUNK,
+  BLOCKED_GENERATIVE_ANSWER_CHUNK,
+  INTENT_ANSWER_CHUNK,
+  BLOCKED_INTENT_ANSWER_CHUNK,
+  EMAIL_RESPONSE_CHUNK,
+  EMAIL_OVERVIEW_CHUNK,
+  EMAIL_GENERATIVE_ANSWER_CHUNK
+};
 
-namespace QueryResultTypeMapper
-{
+namespace QueryResultTypeMapper {
 AWS_QCONNECT_API QueryResultType GetQueryResultTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForQueryResultType(QueryResultType value);
-} // namespace QueryResultTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace QueryResultTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

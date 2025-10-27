@@ -3,167 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/LabelingJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/LabelingJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-LabelingJobSummary::LabelingJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LabelingJobSummary::LabelingJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-LabelingJobSummary& LabelingJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LabelingJobName"))
-  {
+LabelingJobSummary& LabelingJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LabelingJobName")) {
     m_labelingJobName = jsonValue.GetString("LabelingJobName");
     m_labelingJobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LabelingJobArn"))
-  {
+  if (jsonValue.ValueExists("LabelingJobArn")) {
     m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
     m_labelingJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LabelingJobStatus"))
-  {
+  if (jsonValue.ValueExists("LabelingJobStatus")) {
     m_labelingJobStatus = LabelingJobStatusMapper::GetLabelingJobStatusForName(jsonValue.GetString("LabelingJobStatus"));
     m_labelingJobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LabelCounters"))
-  {
+  if (jsonValue.ValueExists("LabelCounters")) {
     m_labelCounters = jsonValue.GetObject("LabelCounters");
     m_labelCountersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkteamArn"))
-  {
+  if (jsonValue.ValueExists("WorkteamArn")) {
     m_workteamArn = jsonValue.GetString("WorkteamArn");
     m_workteamArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PreHumanTaskLambdaArn"))
-  {
+  if (jsonValue.ValueExists("PreHumanTaskLambdaArn")) {
     m_preHumanTaskLambdaArn = jsonValue.GetString("PreHumanTaskLambdaArn");
     m_preHumanTaskLambdaArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AnnotationConsolidationLambdaArn"))
-  {
+  if (jsonValue.ValueExists("AnnotationConsolidationLambdaArn")) {
     m_annotationConsolidationLambdaArn = jsonValue.GetString("AnnotationConsolidationLambdaArn");
     m_annotationConsolidationLambdaArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
+  if (jsonValue.ValueExists("FailureReason")) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LabelingJobOutput"))
-  {
+  if (jsonValue.ValueExists("LabelingJobOutput")) {
     m_labelingJobOutput = jsonValue.GetObject("LabelingJobOutput");
     m_labelingJobOutputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputConfig"))
-  {
+  if (jsonValue.ValueExists("InputConfig")) {
     m_inputConfig = jsonValue.GetObject("InputConfig");
     m_inputConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LabelingJobSummary::Jsonize() const
-{
+JsonValue LabelingJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_labelingJobNameHasBeenSet)
-  {
-   payload.WithString("LabelingJobName", m_labelingJobName);
-
+  if (m_labelingJobNameHasBeenSet) {
+    payload.WithString("LabelingJobName", m_labelingJobName);
   }
 
-  if(m_labelingJobArnHasBeenSet)
-  {
-   payload.WithString("LabelingJobArn", m_labelingJobArn);
-
+  if (m_labelingJobArnHasBeenSet) {
+    payload.WithString("LabelingJobArn", m_labelingJobArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_labelingJobStatusHasBeenSet)
-  {
-   payload.WithString("LabelingJobStatus", LabelingJobStatusMapper::GetNameForLabelingJobStatus(m_labelingJobStatus));
+  if (m_labelingJobStatusHasBeenSet) {
+    payload.WithString("LabelingJobStatus", LabelingJobStatusMapper::GetNameForLabelingJobStatus(m_labelingJobStatus));
   }
 
-  if(m_labelCountersHasBeenSet)
-  {
-   payload.WithObject("LabelCounters", m_labelCounters.Jsonize());
-
+  if (m_labelCountersHasBeenSet) {
+    payload.WithObject("LabelCounters", m_labelCounters.Jsonize());
   }
 
-  if(m_workteamArnHasBeenSet)
-  {
-   payload.WithString("WorkteamArn", m_workteamArn);
-
+  if (m_workteamArnHasBeenSet) {
+    payload.WithString("WorkteamArn", m_workteamArn);
   }
 
-  if(m_preHumanTaskLambdaArnHasBeenSet)
-  {
-   payload.WithString("PreHumanTaskLambdaArn", m_preHumanTaskLambdaArn);
-
+  if (m_preHumanTaskLambdaArnHasBeenSet) {
+    payload.WithString("PreHumanTaskLambdaArn", m_preHumanTaskLambdaArn);
   }
 
-  if(m_annotationConsolidationLambdaArnHasBeenSet)
-  {
-   payload.WithString("AnnotationConsolidationLambdaArn", m_annotationConsolidationLambdaArn);
-
+  if (m_annotationConsolidationLambdaArnHasBeenSet) {
+    payload.WithString("AnnotationConsolidationLambdaArn", m_annotationConsolidationLambdaArn);
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("FailureReason", m_failureReason);
   }
 
-  if(m_labelingJobOutputHasBeenSet)
-  {
-   payload.WithObject("LabelingJobOutput", m_labelingJobOutput.Jsonize());
-
+  if (m_labelingJobOutputHasBeenSet) {
+    payload.WithObject("LabelingJobOutput", m_labelingJobOutput.Jsonize());
   }
 
-  if(m_inputConfigHasBeenSet)
-  {
-   payload.WithObject("InputConfig", m_inputConfig.Jsonize());
-
+  if (m_inputConfigHasBeenSet) {
+    payload.WithObject("InputConfig", m_inputConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-OrderedPhoneNumber::OrderedPhoneNumber(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrderedPhoneNumber::OrderedPhoneNumber(JsonView jsonValue) { *this = jsonValue; }
 
-OrderedPhoneNumber& OrderedPhoneNumber::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("E164PhoneNumber"))
-  {
+OrderedPhoneNumber& OrderedPhoneNumber::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("E164PhoneNumber")) {
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
     m_e164PhoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = OrderedPhoneNumberStatusMapper::GetOrderedPhoneNumberStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrderedPhoneNumber::Jsonize() const
-{
+JsonValue OrderedPhoneNumber::Jsonize() const {
   JsonValue payload;
 
-  if(m_e164PhoneNumberHasBeenSet)
-  {
-   payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
-
+  if (m_e164PhoneNumberHasBeenSet) {
+    payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", OrderedPhoneNumberStatusMapper::GetNameForOrderedPhoneNumberStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", OrderedPhoneNumberStatusMapper::GetNameForOrderedPhoneNumberStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

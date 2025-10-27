@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class ProvisioningType
-  {
-    NOT_SET,
-    FLEET_PROVISIONING,
-    JITR
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class ProvisioningType { NOT_SET, FLEET_PROVISIONING, JITR };
 
-namespace ProvisioningTypeMapper
-{
+namespace ProvisioningTypeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API ProvisioningType GetProvisioningTypeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForProvisioningType(ProvisioningType value);
-} // namespace ProvisioningTypeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace ProvisioningTypeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

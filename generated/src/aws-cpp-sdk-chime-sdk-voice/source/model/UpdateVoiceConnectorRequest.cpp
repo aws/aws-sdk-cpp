@@ -12,25 +12,16 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateVoiceConnectorRequest::SerializePayload() const
-{
+Aws::String UpdateVoiceConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_requireEncryptionHasBeenSet)
-  {
-   payload.WithBool("RequireEncryption", m_requireEncryption);
-
+  if (m_requireEncryptionHasBeenSet) {
+    payload.WithBool("RequireEncryption", m_requireEncryption);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

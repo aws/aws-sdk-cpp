@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/Attachment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/Attachment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-Attachment::Attachment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attachment::Attachment(JsonView jsonValue) { *this = jsonValue; }
 
-Attachment& Attachment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+Attachment& Attachment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("details"))
-  {
+  if (jsonValue.ValueExists("details")) {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
-    for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
-    {
+    for (unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex) {
       m_details.push_back(detailsJsonList[detailsIndex].AsObject());
     }
     m_detailsHasBeenSet = true;
@@ -52,42 +40,32 @@ Attachment& Attachment::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Attachment::Jsonize() const
-{
+JsonValue Attachment::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_detailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> detailsJsonList(m_details.size());
-   for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
-   {
-     detailsJsonList[detailsIndex].AsObject(m_details[detailsIndex].Jsonize());
-   }
-   payload.WithArray("details", std::move(detailsJsonList));
-
+  if (m_detailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> detailsJsonList(m_details.size());
+    for (unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex) {
+      detailsJsonList[detailsIndex].AsObject(m_details[detailsIndex].Jsonize());
+    }
+    payload.WithArray("details", std::move(detailsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

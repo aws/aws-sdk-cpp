@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-containers/model/Credentials.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/model/Credentials.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRContainers {
+namespace Model {
 
-Credentials::Credentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Credentials::Credentials(JsonView jsonValue) { *this = jsonValue; }
 
-Credentials& Credentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("token"))
-  {
+Credentials& Credentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("token")) {
     m_token = jsonValue.GetString("token");
     m_tokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Credentials::Jsonize() const
-{
+JsonValue Credentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenHasBeenSet)
-  {
-   payload.WithString("token", m_token);
-
+  if (m_tokenHasBeenSet) {
+    payload.WithString("token", m_token);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRContainers
+}  // namespace Aws

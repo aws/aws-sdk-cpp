@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AvcIntraUhdQualityTuningLevel
-  {
-    NOT_SET,
-    SINGLE_PASS,
-    MULTI_PASS
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AvcIntraUhdQualityTuningLevel { NOT_SET, SINGLE_PASS, MULTI_PASS };
 
-namespace AvcIntraUhdQualityTuningLevelMapper
-{
+namespace AvcIntraUhdQualityTuningLevelMapper {
 AWS_MEDIACONVERT_API AvcIntraUhdQualityTuningLevel GetAvcIntraUhdQualityTuningLevelForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAvcIntraUhdQualityTuningLevel(AvcIntraUhdQualityTuningLevel value);
-} // namespace AvcIntraUhdQualityTuningLevelMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AvcIntraUhdQualityTuningLevelMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

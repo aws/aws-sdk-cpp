@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
 
-WorkerTypeSpecificationInput::WorkerTypeSpecificationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkerTypeSpecificationInput::WorkerTypeSpecificationInput(JsonView jsonValue) { *this = jsonValue; }
 
-WorkerTypeSpecificationInput& WorkerTypeSpecificationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("imageConfiguration"))
-  {
+WorkerTypeSpecificationInput& WorkerTypeSpecificationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("imageConfiguration")) {
     m_imageConfiguration = jsonValue.GetObject("imageConfiguration");
     m_imageConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkerTypeSpecificationInput::Jsonize() const
-{
+JsonValue WorkerTypeSpecificationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_imageConfigurationHasBeenSet)
-  {
-   payload.WithObject("imageConfiguration", m_imageConfiguration.Jsonize());
-
+  if (m_imageConfigurationHasBeenSet) {
+    payload.WithObject("imageConfiguration", m_imageConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

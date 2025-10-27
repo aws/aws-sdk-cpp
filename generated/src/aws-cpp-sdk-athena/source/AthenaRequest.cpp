@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/athena/AthenaRequest.h>
 
-namespace Aws
-{
-namespace Athena
-{
-} // namespace Athena
-} // namespace Aws
+namespace Aws {
+namespace Athena {}  // namespace Athena
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetDocumentClassifierInputDataConfig& DatasetDocumentClassifierInputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+DatasetDocumentClassifierInputDataConfig& DatasetDocumentClassifierInputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LabelDelimiter"))
-  {
+  if (jsonValue.ValueExists("LabelDelimiter")) {
     m_labelDelimiter = jsonValue.GetString("LabelDelimiter");
     m_labelDelimiterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetDocumentClassifierInputDataConfig::Jsonize() const
-{
+JsonValue DatasetDocumentClassifierInputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
-  if(m_labelDelimiterHasBeenSet)
-  {
-   payload.WithString("LabelDelimiter", m_labelDelimiter);
-
+  if (m_labelDelimiterHasBeenSet) {
+    payload.WithString("LabelDelimiter", m_labelDelimiter);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

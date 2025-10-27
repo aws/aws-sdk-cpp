@@ -13,45 +13,32 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateChannelRequest::SerializePayload() const
-{
+Aws::String UpdateChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", ChannelModeMapper::GetNameForChannelMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", ChannelModeMapper::GetNameForChannelMode(m_mode));
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateChannelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateChannelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

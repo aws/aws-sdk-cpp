@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-namespace Model
-{
-  enum class StepActionType
-  {
-    NOT_SET,
-    MANUAL,
-    AUTOMATED
-  };
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Model {
+enum class StepActionType { NOT_SET, MANUAL, AUTOMATED };
 
-namespace StepActionTypeMapper
-{
+namespace StepActionTypeMapper {
 AWS_MIGRATIONHUBORCHESTRATOR_API StepActionType GetStepActionTypeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBORCHESTRATOR_API Aws::String GetNameForStepActionType(StepActionType value);
-} // namespace StepActionTypeMapper
-} // namespace Model
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace StepActionTypeMapper
+}  // namespace Model
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/AWSMigrationHub/MigrationHubErrorMarshaller.h>
 #include <aws/AWSMigrationHub/MigrationHubErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::MigrationHub;
 
-AWSError<CoreErrors> MigrationHubErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MigrationHubErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MigrationHubErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

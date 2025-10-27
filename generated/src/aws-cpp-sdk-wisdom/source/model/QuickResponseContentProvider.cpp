@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/QuickResponseContentProvider.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/QuickResponseContentProvider.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-QuickResponseContentProvider::QuickResponseContentProvider(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickResponseContentProvider::QuickResponseContentProvider(JsonView jsonValue) { *this = jsonValue; }
 
-QuickResponseContentProvider& QuickResponseContentProvider::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+QuickResponseContentProvider& QuickResponseContentProvider::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickResponseContentProvider::Jsonize() const
-{
+JsonValue QuickResponseContentProvider::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-BillInterval::BillInterval(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BillInterval::BillInterval(JsonView jsonValue) { *this = jsonValue; }
 
-BillInterval& BillInterval::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("start"))
-  {
+BillInterval& BillInterval::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetDouble("start");
     m_startHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("end"))
-  {
+  if (jsonValue.ValueExists("end")) {
     m_end = jsonValue.GetDouble("end");
     m_endHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BillInterval::Jsonize() const
-{
+JsonValue BillInterval::Jsonize() const {
   JsonValue payload;
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithDouble("start", m_start.SecondsWithMSPrecision());
+  if (m_startHasBeenSet) {
+    payload.WithDouble("start", m_start.SecondsWithMSPrecision());
   }
 
-  if(m_endHasBeenSet)
-  {
-   payload.WithDouble("end", m_end.SecondsWithMSPrecision());
+  if (m_endHasBeenSet) {
+    payload.WithDouble("end", m_end.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

@@ -11,50 +11,36 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-EventIntegrationAssociation::EventIntegrationAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventIntegrationAssociation::EventIntegrationAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-EventIntegrationAssociation& EventIntegrationAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventIntegrationAssociationArn"))
-  {
+EventIntegrationAssociation& EventIntegrationAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventIntegrationAssociationArn")) {
     m_eventIntegrationAssociationArn = jsonValue.GetString("EventIntegrationAssociationArn");
     m_eventIntegrationAssociationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventIntegrationAssociationId"))
-  {
+  if (jsonValue.ValueExists("EventIntegrationAssociationId")) {
     m_eventIntegrationAssociationId = jsonValue.GetString("EventIntegrationAssociationId");
     m_eventIntegrationAssociationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventIntegrationName"))
-  {
+  if (jsonValue.ValueExists("EventIntegrationName")) {
     m_eventIntegrationName = jsonValue.GetString("EventIntegrationName");
     m_eventIntegrationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientId"))
-  {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventBridgeRuleName"))
-  {
+  if (jsonValue.ValueExists("EventBridgeRuleName")) {
     m_eventBridgeRuleName = jsonValue.GetString("EventBridgeRuleName");
     m_eventBridgeRuleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientAssociationMetadata"))
-  {
+  if (jsonValue.ValueExists("ClientAssociationMetadata")) {
     Aws::Map<Aws::String, JsonView> clientAssociationMetadataJsonMap = jsonValue.GetObject("ClientAssociationMetadata").GetAllObjects();
-    for(auto& clientAssociationMetadataItem : clientAssociationMetadataJsonMap)
-    {
+    for (auto& clientAssociationMetadataItem : clientAssociationMetadataJsonMap) {
       m_clientAssociationMetadata[clientAssociationMetadataItem.first] = clientAssociationMetadataItem.second.AsString();
     }
     m_clientAssociationMetadataHasBeenSet = true;
@@ -62,54 +48,40 @@ EventIntegrationAssociation& EventIntegrationAssociation::operator =(JsonView js
   return *this;
 }
 
-JsonValue EventIntegrationAssociation::Jsonize() const
-{
+JsonValue EventIntegrationAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventIntegrationAssociationArnHasBeenSet)
-  {
-   payload.WithString("EventIntegrationAssociationArn", m_eventIntegrationAssociationArn);
-
+  if (m_eventIntegrationAssociationArnHasBeenSet) {
+    payload.WithString("EventIntegrationAssociationArn", m_eventIntegrationAssociationArn);
   }
 
-  if(m_eventIntegrationAssociationIdHasBeenSet)
-  {
-   payload.WithString("EventIntegrationAssociationId", m_eventIntegrationAssociationId);
-
+  if (m_eventIntegrationAssociationIdHasBeenSet) {
+    payload.WithString("EventIntegrationAssociationId", m_eventIntegrationAssociationId);
   }
 
-  if(m_eventIntegrationNameHasBeenSet)
-  {
-   payload.WithString("EventIntegrationName", m_eventIntegrationName);
-
+  if (m_eventIntegrationNameHasBeenSet) {
+    payload.WithString("EventIntegrationName", m_eventIntegrationName);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_eventBridgeRuleNameHasBeenSet)
-  {
-   payload.WithString("EventBridgeRuleName", m_eventBridgeRuleName);
-
+  if (m_eventBridgeRuleNameHasBeenSet) {
+    payload.WithString("EventBridgeRuleName", m_eventBridgeRuleName);
   }
 
-  if(m_clientAssociationMetadataHasBeenSet)
-  {
-   JsonValue clientAssociationMetadataJsonMap;
-   for(auto& clientAssociationMetadataItem : m_clientAssociationMetadata)
-   {
-     clientAssociationMetadataJsonMap.WithString(clientAssociationMetadataItem.first, clientAssociationMetadataItem.second);
-   }
-   payload.WithObject("ClientAssociationMetadata", std::move(clientAssociationMetadataJsonMap));
-
+  if (m_clientAssociationMetadataHasBeenSet) {
+    JsonValue clientAssociationMetadataJsonMap;
+    for (auto& clientAssociationMetadataItem : m_clientAssociationMetadata) {
+      clientAssociationMetadataJsonMap.WithString(clientAssociationMetadataItem.first, clientAssociationMetadataItem.second);
+    }
+    payload.WithObject("ClientAssociationMetadata", std::move(clientAssociationMetadataJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

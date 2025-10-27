@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FlowConnection::FlowConnection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowConnection::FlowConnection(JsonView jsonValue) { *this = jsonValue; }
 
-FlowConnection& FlowConnection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FlowConnection& FlowConnection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = FlowConnectionTypeMapper::GetFlowConnectionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetString("target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configuration"))
-  {
+  if (jsonValue.ValueExists("configuration")) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowConnection::Jsonize() const
-{
+JsonValue FlowConnection::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FlowConnectionTypeMapper::GetNameForFlowConnectionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FlowConnectionTypeMapper::GetNameForFlowConnectionType(m_type));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("target", m_target);
   }
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

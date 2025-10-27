@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-namespace Model
-{
-  enum class DeletionMode
-  {
-    NOT_SET,
-    SoftDelete,
-    HardDelete
-  };
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {
+namespace Model {
+enum class DeletionMode { NOT_SET, SoftDelete, HardDelete };
 
-namespace DeletionModeMapper
-{
+namespace DeletionModeMapper {
 AWS_SAGEMAKERFEATURESTORERUNTIME_API DeletionMode GetDeletionModeForName(const Aws::String& name);
 
 AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::String GetNameForDeletionMode(DeletionMode value);
-} // namespace DeletionModeMapper
-} // namespace Model
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+}  // namespace DeletionModeMapper
+}  // namespace Model
+}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

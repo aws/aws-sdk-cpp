@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String GetMetricWidgetImageRequest::SerializePayload() const
-{
+Aws::String GetMetricWidgetImageRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetMetricWidgetImage&";
-  if(m_metricWidgetHasBeenSet)
-  {
+  if (m_metricWidgetHasBeenSet) {
     ss << "MetricWidget=" << StringUtils::URLEncode(m_metricWidget.c_str()) << "&";
   }
 
-  if(m_outputFormatHasBeenSet)
-  {
+  if (m_outputFormatHasBeenSet) {
     ss << "OutputFormat=" << StringUtils::URLEncode(m_outputFormat.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetMetricWidgetImageRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetMetricWidgetImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetMetricWidgetImageRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

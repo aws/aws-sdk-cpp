@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class DatabaseStatus
-  {
-    NOT_SET,
-    RUNNING,
-    STARTING,
-    STOPPED,
-    WARNING,
-    UNKNOWN,
-    ERROR_
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class DatabaseStatus { NOT_SET, RUNNING, STARTING, STOPPED, WARNING, UNKNOWN, ERROR_ };
 
-namespace DatabaseStatusMapper
-{
+namespace DatabaseStatusMapper {
 AWS_SSMSAP_API DatabaseStatus GetDatabaseStatusForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForDatabaseStatus(DatabaseStatus value);
-} // namespace DatabaseStatusMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace DatabaseStatusMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

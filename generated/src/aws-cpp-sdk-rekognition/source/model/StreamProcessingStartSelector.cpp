@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StreamProcessingStartSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StreamProcessingStartSelector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StreamProcessingStartSelector::StreamProcessingStartSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamProcessingStartSelector::StreamProcessingStartSelector(JsonView jsonValue) { *this = jsonValue; }
 
-StreamProcessingStartSelector& StreamProcessingStartSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KVSStreamStartSelector"))
-  {
+StreamProcessingStartSelector& StreamProcessingStartSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KVSStreamStartSelector")) {
     m_kVSStreamStartSelector = jsonValue.GetObject("KVSStreamStartSelector");
     m_kVSStreamStartSelectorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamProcessingStartSelector::Jsonize() const
-{
+JsonValue StreamProcessingStartSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_kVSStreamStartSelectorHasBeenSet)
-  {
-   payload.WithObject("KVSStreamStartSelector", m_kVSStreamStartSelector.Jsonize());
-
+  if (m_kVSStreamStartSelectorHasBeenSet) {
+    payload.WithObject("KVSStreamStartSelector", m_kVSStreamStartSelector.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

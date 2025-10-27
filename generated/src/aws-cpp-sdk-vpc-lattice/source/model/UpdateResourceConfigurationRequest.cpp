@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/UpdateResourceConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/UpdateResourceConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateResourceConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateResourceConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceConfigurationDefinitionHasBeenSet)
-  {
-   payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
-
+  if (m_resourceConfigurationDefinitionHasBeenSet) {
+    payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
   }
 
-  if(m_allowAssociationToShareableServiceNetworkHasBeenSet)
-  {
-   payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
-
+  if (m_allowAssociationToShareableServiceNetworkHasBeenSet) {
+    payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
   }
 
-  if(m_portRangesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
-   for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
-   {
-     portRangesJsonList[portRangesIndex].AsString(m_portRanges[portRangesIndex]);
-   }
-   payload.WithArray("portRanges", std::move(portRangesJsonList));
-
+  if (m_portRangesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
+    for (unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex) {
+      portRangesJsonList[portRangesIndex].AsString(m_portRanges[portRangesIndex]);
+    }
+    payload.WithArray("portRanges", std::move(portRangesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
-EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionConfig::EncryptionConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+EncryptionConfig& EncryptionConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionConfig::Jsonize() const
-{
+JsonValue EncryptionConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

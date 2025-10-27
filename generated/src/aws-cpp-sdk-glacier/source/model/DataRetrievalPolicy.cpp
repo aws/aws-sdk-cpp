@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/DataRetrievalPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/DataRetrievalPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
+namespace Aws {
+namespace Glacier {
+namespace Model {
 
-DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-DataRetrievalPolicy& DataRetrievalPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Rules"))
-  {
+DataRetrievalPolicy& DataRetrievalPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Rules")) {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
     m_rulesHasBeenSet = true;
@@ -37,24 +28,20 @@ DataRetrievalPolicy& DataRetrievalPolicy::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DataRetrievalPolicy::Jsonize() const
-{
+JsonValue DataRetrievalPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

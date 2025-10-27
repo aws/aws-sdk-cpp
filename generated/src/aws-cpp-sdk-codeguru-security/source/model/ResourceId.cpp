@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
-ResourceId::ResourceId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceId::ResourceId(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceId& ResourceId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("codeArtifactId"))
-  {
+ResourceId& ResourceId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("codeArtifactId")) {
     m_codeArtifactId = jsonValue.GetString("codeArtifactId");
     m_codeArtifactIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceId::Jsonize() const
-{
+JsonValue ResourceId::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeArtifactIdHasBeenSet)
-  {
-   payload.WithString("codeArtifactId", m_codeArtifactId);
-
+  if (m_codeArtifactIdHasBeenSet) {
+    payload.WithString("codeArtifactId", m_codeArtifactId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

@@ -10,27 +10,22 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeStackInstanceRequest::SerializePayload() const
-{
+Aws::String DescribeStackInstanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeStackInstance&";
-  if(m_stackSetNameHasBeenSet)
-  {
+  if (m_stackSetNameHasBeenSet) {
     ss << "StackSetName=" << StringUtils::URLEncode(m_stackSetName.c_str()) << "&";
   }
 
-  if(m_stackInstanceAccountHasBeenSet)
-  {
+  if (m_stackInstanceAccountHasBeenSet) {
     ss << "StackInstanceAccount=" << StringUtils::URLEncode(m_stackInstanceAccount.c_str()) << "&";
   }
 
-  if(m_stackInstanceRegionHasBeenSet)
-  {
+  if (m_stackInstanceRegionHasBeenSet) {
     ss << "StackInstanceRegion=" << StringUtils::URLEncode(m_stackInstanceRegion.c_str()) << "&";
   }
 
-  if(m_callAsHasBeenSet)
-  {
+  if (m_callAsHasBeenSet) {
     ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeStackInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeStackInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeStackInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

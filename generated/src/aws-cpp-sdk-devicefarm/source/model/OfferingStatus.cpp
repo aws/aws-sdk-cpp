@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devicefarm/model/OfferingStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devicefarm/model/OfferingStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
 
-OfferingStatus::OfferingStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OfferingStatus::OfferingStatus(JsonView jsonValue) { *this = jsonValue; }
 
-OfferingStatus& OfferingStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+OfferingStatus& OfferingStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = OfferingTransactionTypeMapper::GetOfferingTransactionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("offering"))
-  {
+  if (jsonValue.ValueExists("offering")) {
     m_offering = jsonValue.GetObject("offering");
     m_offeringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quantity"))
-  {
+  if (jsonValue.ValueExists("quantity")) {
     m_quantity = jsonValue.GetInteger("quantity");
     m_quantityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("effectiveOn"))
-  {
+  if (jsonValue.ValueExists("effectiveOn")) {
     m_effectiveOn = jsonValue.GetDouble("effectiveOn");
     m_effectiveOnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OfferingStatus::Jsonize() const
-{
+JsonValue OfferingStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", OfferingTransactionTypeMapper::GetNameForOfferingTransactionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", OfferingTransactionTypeMapper::GetNameForOfferingTransactionType(m_type));
   }
 
-  if(m_offeringHasBeenSet)
-  {
-   payload.WithObject("offering", m_offering.Jsonize());
-
+  if (m_offeringHasBeenSet) {
+    payload.WithObject("offering", m_offering.Jsonize());
   }
 
-  if(m_quantityHasBeenSet)
-  {
-   payload.WithInteger("quantity", m_quantity);
-
+  if (m_quantityHasBeenSet) {
+    payload.WithInteger("quantity", m_quantity);
   }
 
-  if(m_effectiveOnHasBeenSet)
-  {
-   payload.WithDouble("effectiveOn", m_effectiveOn.SecondsWithMSPrecision());
+  if (m_effectiveOnHasBeenSet) {
+    payload.WithDouble("effectiveOn", m_effectiveOn.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

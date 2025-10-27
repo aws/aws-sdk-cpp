@@ -12,25 +12,16 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisableControlRequest::SerializePayload() const
-{
+Aws::String DisableControlRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_controlIdentifierHasBeenSet)
-  {
-   payload.WithString("controlIdentifier", m_controlIdentifier);
-
+  if (m_controlIdentifierHasBeenSet) {
+    payload.WithString("controlIdentifier", m_controlIdentifier);
   }
 
-  if(m_targetIdentifierHasBeenSet)
-  {
-   payload.WithString("targetIdentifier", m_targetIdentifier);
-
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

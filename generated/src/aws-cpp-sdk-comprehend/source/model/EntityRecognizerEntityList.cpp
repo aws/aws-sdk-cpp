@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognizerEntityList::EntityRecognizerEntityList(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognizerEntityList::EntityRecognizerEntityList(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognizerEntityList& EntityRecognizerEntityList::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+EntityRecognizerEntityList& EntityRecognizerEntityList::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityRecognizerEntityList::Jsonize() const
-{
+JsonValue EntityRecognizerEntityList::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

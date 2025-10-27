@@ -5,12 +5,8 @@
 
 #include <aws/lex/LexRuntimeServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace LexRuntimeService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LexRuntimeService
-} // namespace Aws
+namespace Aws {
+namespace LexRuntimeService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LexRuntimeService
+}  // namespace Aws

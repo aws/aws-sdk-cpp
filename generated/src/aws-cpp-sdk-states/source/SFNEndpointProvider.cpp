@@ -5,12 +5,8 @@
 
 #include <aws/states/SFNEndpointProvider.h>
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SFN
-} // namespace Aws
+namespace Aws {
+namespace SFN {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SFN
+}  // namespace Aws

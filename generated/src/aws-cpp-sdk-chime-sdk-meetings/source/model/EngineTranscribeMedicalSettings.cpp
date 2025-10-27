@@ -11,91 +11,73 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonValue) { *this = jsonValue; }
 
-EngineTranscribeMedicalSettings& EngineTranscribeMedicalSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+EngineTranscribeMedicalSettings& EngineTranscribeMedicalSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = TranscribeMedicalLanguageCodeMapper::GetTranscribeMedicalLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Specialty"))
-  {
+  if (jsonValue.ValueExists("Specialty")) {
     m_specialty = TranscribeMedicalSpecialtyMapper::GetTranscribeMedicalSpecialtyForName(jsonValue.GetString("Specialty"));
     m_specialtyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TranscribeMedicalTypeMapper::GetTranscribeMedicalTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyName"))
-  {
+  if (jsonValue.ValueExists("VocabularyName")) {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
     m_vocabularyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Region"))
-  {
+  if (jsonValue.ValueExists("Region")) {
     m_region = TranscribeMedicalRegionMapper::GetTranscribeMedicalRegionForName(jsonValue.GetString("Region"));
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentIdentificationType"))
-  {
-    m_contentIdentificationType = TranscribeMedicalContentIdentificationTypeMapper::GetTranscribeMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
+  if (jsonValue.ValueExists("ContentIdentificationType")) {
+    m_contentIdentificationType = TranscribeMedicalContentIdentificationTypeMapper::GetTranscribeMedicalContentIdentificationTypeForName(
+        jsonValue.GetString("ContentIdentificationType"));
     m_contentIdentificationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EngineTranscribeMedicalSettings::Jsonize() const
-{
+JsonValue EngineTranscribeMedicalSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", TranscribeMedicalLanguageCodeMapper::GetNameForTranscribeMedicalLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", TranscribeMedicalLanguageCodeMapper::GetNameForTranscribeMedicalLanguageCode(m_languageCode));
   }
 
-  if(m_specialtyHasBeenSet)
-  {
-   payload.WithString("Specialty", TranscribeMedicalSpecialtyMapper::GetNameForTranscribeMedicalSpecialty(m_specialty));
+  if (m_specialtyHasBeenSet) {
+    payload.WithString("Specialty", TranscribeMedicalSpecialtyMapper::GetNameForTranscribeMedicalSpecialty(m_specialty));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TranscribeMedicalTypeMapper::GetNameForTranscribeMedicalType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TranscribeMedicalTypeMapper::GetNameForTranscribeMedicalType(m_type));
   }
 
-  if(m_vocabularyNameHasBeenSet)
-  {
-   payload.WithString("VocabularyName", m_vocabularyName);
-
+  if (m_vocabularyNameHasBeenSet) {
+    payload.WithString("VocabularyName", m_vocabularyName);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", TranscribeMedicalRegionMapper::GetNameForTranscribeMedicalRegion(m_region));
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", TranscribeMedicalRegionMapper::GetNameForTranscribeMedicalRegion(m_region));
   }
 
-  if(m_contentIdentificationTypeHasBeenSet)
-  {
-   payload.WithString("ContentIdentificationType", TranscribeMedicalContentIdentificationTypeMapper::GetNameForTranscribeMedicalContentIdentificationType(m_contentIdentificationType));
+  if (m_contentIdentificationTypeHasBeenSet) {
+    payload.WithString("ContentIdentificationType",
+                       TranscribeMedicalContentIdentificationTypeMapper::GetNameForTranscribeMedicalContentIdentificationType(
+                           m_contentIdentificationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

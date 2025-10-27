@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/ModifyWorkspacePropertiesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/ModifyWorkspacePropertiesRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,26 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ModifyWorkspacePropertiesRequest::SerializePayload() const
-{
+Aws::String ModifyWorkspacePropertiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workspaceIdHasBeenSet)
-  {
-   payload.WithString("WorkspaceId", m_workspaceId);
-
+  if (m_workspaceIdHasBeenSet) {
+    payload.WithString("WorkspaceId", m_workspaceId);
   }
 
-  if(m_workspacePropertiesHasBeenSet)
-  {
-   payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
-
+  if (m_workspacePropertiesHasBeenSet) {
+    payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
   }
 
-  if(m_dataReplicationHasBeenSet)
-  {
-   payload.WithString("DataReplication", DataReplicationMapper::GetNameForDataReplication(m_dataReplication));
+  if (m_dataReplicationHasBeenSet) {
+    payload.WithString("DataReplication", DataReplicationMapper::GetNameForDataReplication(m_dataReplication));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ModifyWorkspacePropertiesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ModifyWorkspacePropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.ModifyWorkspaceProperties"));
   return headers;
-
 }
-
-
-
-

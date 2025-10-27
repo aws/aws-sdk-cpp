@@ -11,72 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-GroupingAttributeDefinition::GroupingAttributeDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GroupingAttributeDefinition::GroupingAttributeDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-GroupingAttributeDefinition& GroupingAttributeDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupingName"))
-  {
+GroupingAttributeDefinition& GroupingAttributeDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupingName")) {
     m_groupingName = jsonValue.GetString("GroupingName");
     m_groupingNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupingSourceKeys"))
-  {
+  if (jsonValue.ValueExists("GroupingSourceKeys")) {
     Aws::Utils::Array<JsonView> groupingSourceKeysJsonList = jsonValue.GetArray("GroupingSourceKeys");
-    for(unsigned groupingSourceKeysIndex = 0; groupingSourceKeysIndex < groupingSourceKeysJsonList.GetLength(); ++groupingSourceKeysIndex)
-    {
+    for (unsigned groupingSourceKeysIndex = 0; groupingSourceKeysIndex < groupingSourceKeysJsonList.GetLength();
+         ++groupingSourceKeysIndex) {
       m_groupingSourceKeys.push_back(groupingSourceKeysJsonList[groupingSourceKeysIndex].AsString());
     }
     m_groupingSourceKeysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultGroupingValue"))
-  {
+  if (jsonValue.ValueExists("DefaultGroupingValue")) {
     m_defaultGroupingValue = jsonValue.GetString("DefaultGroupingValue");
     m_defaultGroupingValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GroupingAttributeDefinition::Jsonize() const
-{
+JsonValue GroupingAttributeDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupingNameHasBeenSet)
-  {
-   payload.WithString("GroupingName", m_groupingName);
-
+  if (m_groupingNameHasBeenSet) {
+    payload.WithString("GroupingName", m_groupingName);
   }
 
-  if(m_groupingSourceKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupingSourceKeysJsonList(m_groupingSourceKeys.size());
-   for(unsigned groupingSourceKeysIndex = 0; groupingSourceKeysIndex < groupingSourceKeysJsonList.GetLength(); ++groupingSourceKeysIndex)
-   {
-     groupingSourceKeysJsonList[groupingSourceKeysIndex].AsString(m_groupingSourceKeys[groupingSourceKeysIndex]);
-   }
-   payload.WithArray("GroupingSourceKeys", std::move(groupingSourceKeysJsonList));
-
+  if (m_groupingSourceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupingSourceKeysJsonList(m_groupingSourceKeys.size());
+    for (unsigned groupingSourceKeysIndex = 0; groupingSourceKeysIndex < groupingSourceKeysJsonList.GetLength();
+         ++groupingSourceKeysIndex) {
+      groupingSourceKeysJsonList[groupingSourceKeysIndex].AsString(m_groupingSourceKeys[groupingSourceKeysIndex]);
+    }
+    payload.WithArray("GroupingSourceKeys", std::move(groupingSourceKeysJsonList));
   }
 
-  if(m_defaultGroupingValueHasBeenSet)
-  {
-   payload.WithString("DefaultGroupingValue", m_defaultGroupingValue);
-
+  if (m_defaultGroupingValueHasBeenSet) {
+    payload.WithString("DefaultGroupingValue", m_defaultGroupingValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

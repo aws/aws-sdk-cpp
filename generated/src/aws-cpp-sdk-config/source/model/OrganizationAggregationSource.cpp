@@ -11,72 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-OrganizationAggregationSource::OrganizationAggregationSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrganizationAggregationSource::OrganizationAggregationSource(JsonView jsonValue) { *this = jsonValue; }
 
-OrganizationAggregationSource& OrganizationAggregationSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+OrganizationAggregationSource& OrganizationAggregationSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegions"))
-  {
+  if (jsonValue.ValueExists("AwsRegions")) {
     Aws::Utils::Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
-    for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
-    {
+    for (unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex) {
       m_awsRegions.push_back(awsRegionsJsonList[awsRegionsIndex].AsString());
     }
     m_awsRegionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllAwsRegions"))
-  {
+  if (jsonValue.ValueExists("AllAwsRegions")) {
     m_allAwsRegions = jsonValue.GetBool("AllAwsRegions");
     m_allAwsRegionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrganizationAggregationSource::Jsonize() const
-{
+JsonValue OrganizationAggregationSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_awsRegionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
-   for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
-   {
-     awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
-   }
-   payload.WithArray("AwsRegions", std::move(awsRegionsJsonList));
-
+  if (m_awsRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+    for (unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex) {
+      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
+    }
+    payload.WithArray("AwsRegions", std::move(awsRegionsJsonList));
   }
 
-  if(m_allAwsRegionsHasBeenSet)
-  {
-   payload.WithBool("AllAwsRegions", m_allAwsRegions);
-
+  if (m_allAwsRegionsHasBeenSet) {
+    payload.WithBool("AllAwsRegions", m_allAwsRegions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

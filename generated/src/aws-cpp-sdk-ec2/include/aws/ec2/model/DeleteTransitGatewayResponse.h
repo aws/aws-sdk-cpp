@@ -5,62 +5,67 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/model/TransitGateway.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/TransitGateway.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
-  class DeleteTransitGatewayResponse
-  {
-  public:
-    AWS_EC2_API DeleteTransitGatewayResponse() = default;
-    AWS_EC2_API DeleteTransitGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_EC2_API DeleteTransitGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DeleteTransitGatewayResponse {
+ public:
+  AWS_EC2_API DeleteTransitGatewayResponse() = default;
+  AWS_EC2_API DeleteTransitGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DeleteTransitGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>Information about the deleted transit gateway.</p>
+   */
+  inline const TransitGateway& GetTransitGateway() const { return m_transitGateway; }
+  template <typename TransitGatewayT = TransitGateway>
+  void SetTransitGateway(TransitGatewayT&& value) {
+    m_transitGatewayHasBeenSet = true;
+    m_transitGateway = std::forward<TransitGatewayT>(value);
+  }
+  template <typename TransitGatewayT = TransitGateway>
+  DeleteTransitGatewayResponse& WithTransitGateway(TransitGatewayT&& value) {
+    SetTransitGateway(std::forward<TransitGatewayT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the deleted transit gateway.</p>
-     */
-    inline const TransitGateway& GetTransitGateway() const { return m_transitGateway; }
-    template<typename TransitGatewayT = TransitGateway>
-    void SetTransitGateway(TransitGatewayT&& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = std::forward<TransitGatewayT>(value); }
-    template<typename TransitGatewayT = TransitGateway>
-    DeleteTransitGatewayResponse& WithTransitGateway(TransitGatewayT&& value) { SetTransitGateway(std::forward<TransitGatewayT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    DeleteTransitGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DeleteTransitGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  TransitGateway m_transitGateway;
+  bool m_transitGatewayHasBeenSet = false;
 
-    TransitGateway m_transitGateway;
-    bool m_transitGatewayHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

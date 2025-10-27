@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/VaultLockPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/VaultLockPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
+namespace Aws {
+namespace Glacier {
+namespace Model {
 
-VaultLockPolicy::VaultLockPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VaultLockPolicy::VaultLockPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-VaultLockPolicy& VaultLockPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Policy"))
-  {
+VaultLockPolicy& VaultLockPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Policy")) {
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VaultLockPolicy::Jsonize() const
-{
+JsonValue VaultLockPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("Policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("Policy", m_policy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

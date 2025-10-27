@@ -5,12 +5,8 @@
 
 #include <aws/mgn/MgnEndpointProvider.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace mgn
-} // namespace Aws
+namespace Aws {
+namespace mgn {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace mgn
+}  // namespace Aws

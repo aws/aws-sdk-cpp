@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class IpDiscovery
-  {
-    NOT_SET,
-    ipv4,
-    ipv6
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class IpDiscovery { NOT_SET, ipv4, ipv6 };
 
-namespace IpDiscoveryMapper
-{
+namespace IpDiscoveryMapper {
 AWS_ELASTICACHE_API IpDiscovery GetIpDiscoveryForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForIpDiscovery(IpDiscovery value);
-} // namespace IpDiscoveryMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace IpDiscoveryMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class IdcUserAssignment
-  {
-    NOT_SET,
-    REQUIRED,
-    OPTIONAL
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class IdcUserAssignment { NOT_SET, REQUIRED, OPTIONAL };
 
-namespace IdcUserAssignmentMapper
-{
+namespace IdcUserAssignmentMapper {
 AWS_EMR_API IdcUserAssignment GetIdcUserAssignmentForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForIdcUserAssignment(IdcUserAssignment value);
-} // namespace IdcUserAssignmentMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace IdcUserAssignmentMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-RedshiftDestinationProperties::RedshiftDestinationProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftDestinationProperties::RedshiftDestinationProperties(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftDestinationProperties& RedshiftDestinationProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("object"))
-  {
+RedshiftDestinationProperties& RedshiftDestinationProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("object")) {
     m_object = jsonValue.GetString("object");
     m_objectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("intermediateBucketName"))
-  {
+  if (jsonValue.ValueExists("intermediateBucketName")) {
     m_intermediateBucketName = jsonValue.GetString("intermediateBucketName");
     m_intermediateBucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketPrefix"))
-  {
+  if (jsonValue.ValueExists("bucketPrefix")) {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
     m_bucketPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorHandlingConfig"))
-  {
+  if (jsonValue.ValueExists("errorHandlingConfig")) {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
     m_errorHandlingConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftDestinationProperties::Jsonize() const
-{
+JsonValue RedshiftDestinationProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectHasBeenSet)
-  {
-   payload.WithString("object", m_object);
-
+  if (m_objectHasBeenSet) {
+    payload.WithString("object", m_object);
   }
 
-  if(m_intermediateBucketNameHasBeenSet)
-  {
-   payload.WithString("intermediateBucketName", m_intermediateBucketName);
-
+  if (m_intermediateBucketNameHasBeenSet) {
+    payload.WithString("intermediateBucketName", m_intermediateBucketName);
   }
 
-  if(m_bucketPrefixHasBeenSet)
-  {
-   payload.WithString("bucketPrefix", m_bucketPrefix);
-
+  if (m_bucketPrefixHasBeenSet) {
+    payload.WithString("bucketPrefix", m_bucketPrefix);
   }
 
-  if(m_errorHandlingConfigHasBeenSet)
-  {
-   payload.WithObject("errorHandlingConfig", m_errorHandlingConfig.Jsonize());
-
+  if (m_errorHandlingConfigHasBeenSet) {
+    payload.WithObject("errorHandlingConfig", m_errorHandlingConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

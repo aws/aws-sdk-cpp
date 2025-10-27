@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-AuthorizationConfig::AuthorizationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthorizationConfig::AuthorizationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AuthorizationConfig& AuthorizationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authorizationType"))
-  {
+AuthorizationConfig& AuthorizationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorizationType")) {
     m_authorizationType = AuthorizationTypeMapper::GetAuthorizationTypeForName(jsonValue.GetString("authorizationType"));
     m_authorizationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsIamConfig"))
-  {
+  if (jsonValue.ValueExists("awsIamConfig")) {
     m_awsIamConfig = jsonValue.GetObject("awsIamConfig");
     m_awsIamConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthorizationConfig::Jsonize() const
-{
+JsonValue AuthorizationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizationTypeHasBeenSet)
-  {
-   payload.WithString("authorizationType", AuthorizationTypeMapper::GetNameForAuthorizationType(m_authorizationType));
+  if (m_authorizationTypeHasBeenSet) {
+    payload.WithString("authorizationType", AuthorizationTypeMapper::GetNameForAuthorizationType(m_authorizationType));
   }
 
-  if(m_awsIamConfigHasBeenSet)
-  {
-   payload.WithObject("awsIamConfig", m_awsIamConfig.Jsonize());
-
+  if (m_awsIamConfigHasBeenSet) {
+    payload.WithObject("awsIamConfig", m_awsIamConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

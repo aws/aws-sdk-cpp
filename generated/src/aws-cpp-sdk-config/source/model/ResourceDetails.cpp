@@ -11,73 +11,56 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceDetails::ResourceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceDetails::ResourceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceConfiguration"))
-  {
+  if (jsonValue.ValueExists("ResourceConfiguration")) {
     m_resourceConfiguration = jsonValue.GetString("ResourceConfiguration");
     m_resourceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceConfigurationSchemaType"))
-  {
-    m_resourceConfigurationSchemaType = ResourceConfigurationSchemaTypeMapper::GetResourceConfigurationSchemaTypeForName(jsonValue.GetString("ResourceConfigurationSchemaType"));
+  if (jsonValue.ValueExists("ResourceConfigurationSchemaType")) {
+    m_resourceConfigurationSchemaType = ResourceConfigurationSchemaTypeMapper::GetResourceConfigurationSchemaTypeForName(
+        jsonValue.GetString("ResourceConfigurationSchemaType"));
     m_resourceConfigurationSchemaTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceDetails::Jsonize() const
-{
+JsonValue ResourceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_resourceConfigurationHasBeenSet)
-  {
-   payload.WithString("ResourceConfiguration", m_resourceConfiguration);
-
+  if (m_resourceConfigurationHasBeenSet) {
+    payload.WithString("ResourceConfiguration", m_resourceConfiguration);
   }
 
-  if(m_resourceConfigurationSchemaTypeHasBeenSet)
-  {
-   payload.WithString("ResourceConfigurationSchemaType", ResourceConfigurationSchemaTypeMapper::GetNameForResourceConfigurationSchemaType(m_resourceConfigurationSchemaType));
+  if (m_resourceConfigurationSchemaTypeHasBeenSet) {
+    payload.WithString("ResourceConfigurationSchemaType",
+                       ResourceConfigurationSchemaTypeMapper::GetNameForResourceConfigurationSchemaType(m_resourceConfigurationSchemaType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

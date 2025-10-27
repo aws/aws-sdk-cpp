@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/GetAssessmentReportRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/GetAssessmentReportRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,26 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAssessmentReportRequest::SerializePayload() const
-{
+Aws::String GetAssessmentReportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assessmentRunArnHasBeenSet)
-  {
-   payload.WithString("assessmentRunArn", m_assessmentRunArn);
-
+  if (m_assessmentRunArnHasBeenSet) {
+    payload.WithString("assessmentRunArn", m_assessmentRunArn);
   }
 
-  if(m_reportFileFormatHasBeenSet)
-  {
-   payload.WithString("reportFileFormat", ReportFileFormatMapper::GetNameForReportFileFormat(m_reportFileFormat));
+  if (m_reportFileFormatHasBeenSet) {
+    payload.WithString("reportFileFormat", ReportFileFormatMapper::GetNameForReportFileFormat(m_reportFileFormat));
   }
 
-  if(m_reportTypeHasBeenSet)
-  {
-   payload.WithString("reportType", ReportTypeMapper::GetNameForReportType(m_reportType));
+  if (m_reportTypeHasBeenSet) {
+    payload.WithString("reportType", ReportTypeMapper::GetNameForReportType(m_reportType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAssessmentReportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAssessmentReportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "InspectorService.GetAssessmentReport"));
   return headers;
-
 }
-
-
-
-

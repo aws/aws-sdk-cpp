@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class MediaPipelineStatusUpdate
-  {
-    NOT_SET,
-    Pause,
-    Resume
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class MediaPipelineStatusUpdate { NOT_SET, Pause, Resume };
 
-namespace MediaPipelineStatusUpdateMapper
-{
+namespace MediaPipelineStatusUpdateMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API MediaPipelineStatusUpdate GetMediaPipelineStatusUpdateForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForMediaPipelineStatusUpdate(MediaPipelineStatusUpdate value);
-} // namespace MediaPipelineStatusUpdateMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace MediaPipelineStatusUpdateMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

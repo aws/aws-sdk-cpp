@@ -4,64 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
 #include <aws/ssm-quicksetup/model/ServiceSettings.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SSMQuickSetup
-{
-namespace Model
-{
-  class GetServiceSettingsResult
-  {
-  public:
-    AWS_SSMQUICKSETUP_API GetServiceSettingsResult() = default;
-    AWS_SSMQUICKSETUP_API GetServiceSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SSMQUICKSETUP_API GetServiceSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSMQuickSetup {
+namespace Model {
+class GetServiceSettingsResult {
+ public:
+  AWS_SSMQUICKSETUP_API GetServiceSettingsResult() = default;
+  AWS_SSMQUICKSETUP_API GetServiceSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSMQUICKSETUP_API GetServiceSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Returns details about the settings for Quick Setup in the requesting Amazon
+   * Web Services account and Amazon Web Services Region.</p>
+   */
+  inline const ServiceSettings& GetServiceSettings() const { return m_serviceSettings; }
+  template <typename ServiceSettingsT = ServiceSettings>
+  void SetServiceSettings(ServiceSettingsT&& value) {
+    m_serviceSettingsHasBeenSet = true;
+    m_serviceSettings = std::forward<ServiceSettingsT>(value);
+  }
+  template <typename ServiceSettingsT = ServiceSettings>
+  GetServiceSettingsResult& WithServiceSettings(ServiceSettingsT&& value) {
+    SetServiceSettings(std::forward<ServiceSettingsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Returns details about the settings for Quick Setup in the requesting Amazon
-     * Web Services account and Amazon Web Services Region.</p>
-     */
-    inline const ServiceSettings& GetServiceSettings() const { return m_serviceSettings; }
-    template<typename ServiceSettingsT = ServiceSettings>
-    void SetServiceSettings(ServiceSettingsT&& value) { m_serviceSettingsHasBeenSet = true; m_serviceSettings = std::forward<ServiceSettingsT>(value); }
-    template<typename ServiceSettingsT = ServiceSettings>
-    GetServiceSettingsResult& WithServiceSettings(ServiceSettingsT&& value) { SetServiceSettings(std::forward<ServiceSettingsT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetServiceSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetServiceSettingsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ServiceSettings m_serviceSettings;
+  bool m_serviceSettingsHasBeenSet = false;
 
-    ServiceSettings m_serviceSettings;
-    bool m_serviceSettingsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSMQuickSetup
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSMQuickSetup
+}  // namespace Aws

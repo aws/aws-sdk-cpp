@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rbin/RecycleBin_EXPORTS.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Model
-{
-  enum class ServiceQuotaExceededExceptionReason
-  {
-    NOT_SET,
-    SERVICE_QUOTA_EXCEEDED
-  };
+namespace Aws {
+namespace RecycleBin {
+namespace Model {
+enum class ServiceQuotaExceededExceptionReason { NOT_SET, SERVICE_QUOTA_EXCEEDED };
 
-namespace ServiceQuotaExceededExceptionReasonMapper
-{
+namespace ServiceQuotaExceededExceptionReasonMapper {
 AWS_RECYCLEBIN_API ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name);
 
 AWS_RECYCLEBIN_API Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededExceptionReason value);
-} // namespace ServiceQuotaExceededExceptionReasonMapper
-} // namespace Model
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace ServiceQuotaExceededExceptionReasonMapper
+}  // namespace Model
+}  // namespace RecycleBin
+}  // namespace Aws

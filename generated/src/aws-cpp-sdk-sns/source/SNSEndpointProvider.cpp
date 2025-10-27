@@ -5,12 +5,8 @@
 
 #include <aws/sns/SNSEndpointProvider.h>
 
-namespace Aws
-{
-namespace SNS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SNS
-} // namespace Aws
+namespace Aws {
+namespace SNS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SNS
+}  // namespace Aws

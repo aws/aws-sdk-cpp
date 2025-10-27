@@ -3,91 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsContainerDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsContainerDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsContainerDetails::AwsEcsContainerDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEcsContainerDetails::AwsEcsContainerDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEcsContainerDetails& AwsEcsContainerDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AwsEcsContainerDetails& AwsEcsContainerDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Image"))
-  {
+  if (jsonValue.ValueExists("Image")) {
     m_image = jsonValue.GetString("Image");
     m_imageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MountPoints"))
-  {
+  if (jsonValue.ValueExists("MountPoints")) {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
-    for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
-    {
+    for (unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex) {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
     }
     m_mountPointsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Privileged"))
-  {
+  if (jsonValue.ValueExists("Privileged")) {
     m_privileged = jsonValue.GetBool("Privileged");
     m_privilegedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsContainerDetails::Jsonize() const
-{
+JsonValue AwsEcsContainerDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_imageHasBeenSet)
-  {
-   payload.WithString("Image", m_image);
-
+  if (m_imageHasBeenSet) {
+    payload.WithString("Image", m_image);
   }
 
-  if(m_mountPointsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
-   for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
-   {
-     mountPointsJsonList[mountPointsIndex].AsObject(m_mountPoints[mountPointsIndex].Jsonize());
-   }
-   payload.WithArray("MountPoints", std::move(mountPointsJsonList));
-
+  if (m_mountPointsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
+    for (unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex) {
+      mountPointsJsonList[mountPointsIndex].AsObject(m_mountPoints[mountPointsIndex].Jsonize());
+    }
+    payload.WithArray("MountPoints", std::move(mountPointsJsonList));
   }
 
-  if(m_privilegedHasBeenSet)
-  {
-   payload.WithBool("Privileged", m_privileged);
-
+  if (m_privilegedHasBeenSet) {
+    payload.WithBool("Privileged", m_privileged);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

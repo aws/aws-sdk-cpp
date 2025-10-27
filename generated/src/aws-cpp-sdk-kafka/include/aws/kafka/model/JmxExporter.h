@@ -6,56 +6,54 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Kafka {
+namespace Model {
 
+/**
+ *
+          <p>Indicates whether you want to turn on or turn off the JMX
+ * Exporter.</p>
+       <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/JmxExporter">AWS
+ * API Reference</a></p>
+ */
+class JmxExporter {
+ public:
+  AWS_KAFKA_API JmxExporter() = default;
+  AWS_KAFKA_API JmxExporter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKA_API JmxExporter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * 
-            <p>Indicates whether you want to turn on or turn off the JMX
+   *
+          <p>Indicates whether you want to turn on or turn off the JMX
    * Exporter.</p>
-         <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/JmxExporter">AWS
-   * API Reference</a></p>
+
    */
-  class JmxExporter
-  {
-  public:
-    AWS_KAFKA_API JmxExporter() = default;
-    AWS_KAFKA_API JmxExporter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKA_API JmxExporter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetEnabledInBroker() const { return m_enabledInBroker; }
+  inline bool EnabledInBrokerHasBeenSet() const { return m_enabledInBrokerHasBeenSet; }
+  inline void SetEnabledInBroker(bool value) {
+    m_enabledInBrokerHasBeenSet = true;
+    m_enabledInBroker = value;
+  }
+  inline JmxExporter& WithEnabledInBroker(bool value) {
+    SetEnabledInBroker(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enabledInBroker{false};
+  bool m_enabledInBrokerHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
-    inline bool GetEnabledInBroker() const { return m_enabledInBroker; }
-    inline bool EnabledInBrokerHasBeenSet() const { return m_enabledInBrokerHasBeenSet; }
-    inline void SetEnabledInBroker(bool value) { m_enabledInBrokerHasBeenSet = true; m_enabledInBroker = value; }
-    inline JmxExporter& WithEnabledInBroker(bool value) { SetEnabledInBroker(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enabledInBroker{false};
-    bool m_enabledInBrokerHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopRxNormInferenceJobRequest::SerializePayload() const
-{
+Aws::String StopRxNormInferenceJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopRxNormInferenceJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopRxNormInferenceJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComprehendMedical_20181030.StopRxNormInferenceJob"));
   return headers;
-
 }
-
-
-
-

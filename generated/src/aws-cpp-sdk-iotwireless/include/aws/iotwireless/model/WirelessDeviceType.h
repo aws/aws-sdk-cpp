@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class WirelessDeviceType
-  {
-    NOT_SET,
-    Sidewalk,
-    LoRaWAN
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class WirelessDeviceType { NOT_SET, Sidewalk, LoRaWAN };
 
-namespace WirelessDeviceTypeMapper
-{
+namespace WirelessDeviceTypeMapper {
 AWS_IOTWIRELESS_API WirelessDeviceType GetWirelessDeviceTypeForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForWirelessDeviceType(WirelessDeviceType value);
-} // namespace WirelessDeviceTypeMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace WirelessDeviceTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

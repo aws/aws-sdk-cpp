@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivschat/model/GetRoomRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivschat/model/GetRoomRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRoomRequest::SerializePayload() const
-{
+Aws::String GetRoomRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

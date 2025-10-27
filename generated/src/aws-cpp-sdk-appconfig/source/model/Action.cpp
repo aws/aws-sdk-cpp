@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-Action::Action(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Action::Action(JsonView jsonValue) { *this = jsonValue; }
 
-Action& Action::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Action& Action::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Uri"))
-  {
+  if (jsonValue.ValueExists("Uri")) {
     m_uri = jsonValue.GetString("Uri");
     m_uriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Action::Jsonize() const
-{
+JsonValue Action::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("Uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("Uri", m_uri);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

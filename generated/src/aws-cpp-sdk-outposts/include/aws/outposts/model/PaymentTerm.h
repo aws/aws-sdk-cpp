@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class PaymentTerm
-  {
-    NOT_SET,
-    THREE_YEARS,
-    ONE_YEAR,
-    FIVE_YEARS
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class PaymentTerm { NOT_SET, THREE_YEARS, ONE_YEAR, FIVE_YEARS };
 
-namespace PaymentTermMapper
-{
+namespace PaymentTermMapper {
 AWS_OUTPOSTS_API PaymentTerm GetPaymentTermForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForPaymentTerm(PaymentTerm value);
-} // namespace PaymentTermMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace PaymentTermMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

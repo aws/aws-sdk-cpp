@@ -5,12 +5,8 @@
 
 #include <aws/dataexchange/DataExchangeEndpointProvider.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DataExchange
-} // namespace Aws
+namespace Aws {
+namespace DataExchange {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DataExchange
+}  // namespace Aws

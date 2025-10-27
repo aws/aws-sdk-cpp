@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/schemas/Schemas_EXPORTS.h>
 
-namespace Aws
-{
-namespace Schemas
-{
-class SchemasEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Schemas {
+class SchemasEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Schemas
-} // namespace Aws
+}  // namespace Schemas
+}  // namespace Aws

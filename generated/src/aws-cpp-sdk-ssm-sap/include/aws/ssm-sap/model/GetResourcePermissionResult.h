@@ -4,62 +4,67 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SsmSap
-{
-namespace Model
-{
-  class GetResourcePermissionResult
-  {
-  public:
-    AWS_SSMSAP_API GetResourcePermissionResult() = default;
-    AWS_SSMSAP_API GetResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SSMSAP_API GetResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SsmSap {
+namespace Model {
+class GetResourcePermissionResult {
+ public:
+  AWS_SSMSAP_API GetResourcePermissionResult() = default;
+  AWS_SSMSAP_API GetResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSMSAP_API GetResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p/>
+   */
+  inline const Aws::String& GetPolicy() const { return m_policy; }
+  template <typename PolicyT = Aws::String>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Aws::String>
+  GetResourcePermissionResult& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p/>
-     */
-    inline const Aws::String& GetPolicy() const { return m_policy; }
-    template<typename PolicyT = Aws::String>
-    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
-    template<typename PolicyT = Aws::String>
-    GetResourcePermissionResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetResourcePermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetResourcePermissionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_policy;
+  bool m_policyHasBeenSet = false;
 
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

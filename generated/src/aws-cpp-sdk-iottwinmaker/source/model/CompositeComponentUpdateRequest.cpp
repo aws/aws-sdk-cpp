@@ -3,52 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/CompositeComponentUpdateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/CompositeComponentUpdateRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-CompositeComponentUpdateRequest::CompositeComponentUpdateRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompositeComponentUpdateRequest::CompositeComponentUpdateRequest(JsonView jsonValue) { *this = jsonValue; }
 
-CompositeComponentUpdateRequest& CompositeComponentUpdateRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("updateType"))
-  {
+CompositeComponentUpdateRequest& CompositeComponentUpdateRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("updateType")) {
     m_updateType = ComponentUpdateTypeMapper::GetComponentUpdateTypeForName(jsonValue.GetString("updateType"));
     m_updateTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyUpdates"))
-  {
+  if (jsonValue.ValueExists("propertyUpdates")) {
     Aws::Map<Aws::String, JsonView> propertyUpdatesJsonMap = jsonValue.GetObject("propertyUpdates").GetAllObjects();
-    for(auto& propertyUpdatesItem : propertyUpdatesJsonMap)
-    {
+    for (auto& propertyUpdatesItem : propertyUpdatesJsonMap) {
       m_propertyUpdates[propertyUpdatesItem.first] = propertyUpdatesItem.second.AsObject();
     }
     m_propertyUpdatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyGroupUpdates"))
-  {
+  if (jsonValue.ValueExists("propertyGroupUpdates")) {
     Aws::Map<Aws::String, JsonView> propertyGroupUpdatesJsonMap = jsonValue.GetObject("propertyGroupUpdates").GetAllObjects();
-    for(auto& propertyGroupUpdatesItem : propertyGroupUpdatesJsonMap)
-    {
+    for (auto& propertyGroupUpdatesItem : propertyGroupUpdatesJsonMap) {
       m_propertyGroupUpdates[propertyGroupUpdatesItem.first] = propertyGroupUpdatesItem.second.AsObject();
     }
     m_propertyGroupUpdatesHasBeenSet = true;
@@ -56,46 +43,36 @@ CompositeComponentUpdateRequest& CompositeComponentUpdateRequest::operator =(Jso
   return *this;
 }
 
-JsonValue CompositeComponentUpdateRequest::Jsonize() const
-{
+JsonValue CompositeComponentUpdateRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_updateTypeHasBeenSet)
-  {
-   payload.WithString("updateType", ComponentUpdateTypeMapper::GetNameForComponentUpdateType(m_updateType));
+  if (m_updateTypeHasBeenSet) {
+    payload.WithString("updateType", ComponentUpdateTypeMapper::GetNameForComponentUpdateType(m_updateType));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_propertyUpdatesHasBeenSet)
-  {
-   JsonValue propertyUpdatesJsonMap;
-   for(auto& propertyUpdatesItem : m_propertyUpdates)
-   {
-     propertyUpdatesJsonMap.WithObject(propertyUpdatesItem.first, propertyUpdatesItem.second.Jsonize());
-   }
-   payload.WithObject("propertyUpdates", std::move(propertyUpdatesJsonMap));
-
+  if (m_propertyUpdatesHasBeenSet) {
+    JsonValue propertyUpdatesJsonMap;
+    for (auto& propertyUpdatesItem : m_propertyUpdates) {
+      propertyUpdatesJsonMap.WithObject(propertyUpdatesItem.first, propertyUpdatesItem.second.Jsonize());
+    }
+    payload.WithObject("propertyUpdates", std::move(propertyUpdatesJsonMap));
   }
 
-  if(m_propertyGroupUpdatesHasBeenSet)
-  {
-   JsonValue propertyGroupUpdatesJsonMap;
-   for(auto& propertyGroupUpdatesItem : m_propertyGroupUpdates)
-   {
-     propertyGroupUpdatesJsonMap.WithObject(propertyGroupUpdatesItem.first, propertyGroupUpdatesItem.second.Jsonize());
-   }
-   payload.WithObject("propertyGroupUpdates", std::move(propertyGroupUpdatesJsonMap));
-
+  if (m_propertyGroupUpdatesHasBeenSet) {
+    JsonValue propertyGroupUpdatesJsonMap;
+    for (auto& propertyGroupUpdatesItem : m_propertyGroupUpdates) {
+      propertyGroupUpdatesJsonMap.WithObject(propertyGroupUpdatesItem.first, propertyGroupUpdatesItem.second.Jsonize());
+    }
+    payload.WithObject("propertyGroupUpdates", std::move(propertyGroupUpdatesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

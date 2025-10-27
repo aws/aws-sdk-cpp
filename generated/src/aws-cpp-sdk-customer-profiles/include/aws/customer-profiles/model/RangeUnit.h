@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class RangeUnit
-  {
-    NOT_SET,
-    DAYS
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class RangeUnit { NOT_SET, DAYS };
 
-namespace RangeUnitMapper
-{
+namespace RangeUnitMapper {
 AWS_CUSTOMERPROFILES_API RangeUnit GetRangeUnitForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForRangeUnit(RangeUnit value);
-} // namespace RangeUnitMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace RangeUnitMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

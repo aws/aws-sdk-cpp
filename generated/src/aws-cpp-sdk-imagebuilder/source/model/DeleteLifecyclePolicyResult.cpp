@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/DeleteLifecyclePolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/imagebuilder/model/DeleteLifecyclePolicyResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLifecyclePolicyResult::DeleteLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DeleteLifecyclePolicyResult::DeleteLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DeleteLifecyclePolicyResult& DeleteLifecyclePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DeleteLifecyclePolicyResult& DeleteLifecyclePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("lifecyclePolicyArn"))
-  {
+  if (jsonValue.ValueExists("lifecyclePolicyArn")) {
     m_lifecyclePolicyArn = jsonValue.GetString("lifecyclePolicyArn");
     m_lifecyclePolicyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

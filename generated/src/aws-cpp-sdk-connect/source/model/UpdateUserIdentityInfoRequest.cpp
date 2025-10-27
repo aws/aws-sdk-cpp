@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserIdentityInfoRequest::SerializePayload() const
-{
+Aws::String UpdateUserIdentityInfoRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityInfoHasBeenSet)
-  {
-   payload.WithObject("IdentityInfo", m_identityInfo.Jsonize());
-
+  if (m_identityInfoHasBeenSet) {
+    payload.WithObject("IdentityInfo", m_identityInfo.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

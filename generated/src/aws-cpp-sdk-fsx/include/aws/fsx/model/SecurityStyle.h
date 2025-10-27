@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class SecurityStyle
-  {
-    NOT_SET,
-    UNIX,
-    NTFS,
-    MIXED
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class SecurityStyle { NOT_SET, UNIX, NTFS, MIXED };
 
-namespace SecurityStyleMapper
-{
+namespace SecurityStyleMapper {
 AWS_FSX_API SecurityStyle GetSecurityStyleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForSecurityStyle(SecurityStyle value);
-} // namespace SecurityStyleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace SecurityStyleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

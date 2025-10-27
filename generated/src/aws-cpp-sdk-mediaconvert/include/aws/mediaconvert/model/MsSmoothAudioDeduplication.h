@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MsSmoothAudioDeduplication
-  {
-    NOT_SET,
-    COMBINE_DUPLICATE_STREAMS,
-    NONE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MsSmoothAudioDeduplication { NOT_SET, COMBINE_DUPLICATE_STREAMS, NONE };
 
-namespace MsSmoothAudioDeduplicationMapper
-{
+namespace MsSmoothAudioDeduplicationMapper {
 AWS_MEDIACONVERT_API MsSmoothAudioDeduplication GetMsSmoothAudioDeduplicationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMsSmoothAudioDeduplication(MsSmoothAudioDeduplication value);
-} // namespace MsSmoothAudioDeduplicationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MsSmoothAudioDeduplicationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/LogType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/network-firewall/model/LogType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+namespace LogTypeMapper {
 
-namespace Aws
-{
-  namespace NetworkFirewall
-  {
-    namespace Model
-    {
-      namespace LogTypeMapper
-      {
+static const int ALERT_HASH = HashingUtils::HashString("ALERT");
+static const int FLOW_HASH = HashingUtils::HashString("FLOW");
+static const int TLS_HASH = HashingUtils::HashString("TLS");
 
-        static const int ALERT_HASH = HashingUtils::HashString("ALERT");
-        static const int FLOW_HASH = HashingUtils::HashString("FLOW");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
+LogType GetLogTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ALERT_HASH) {
+    return LogType::ALERT;
+  } else if (hashCode == FLOW_HASH) {
+    return LogType::FLOW;
+  } else if (hashCode == TLS_HASH) {
+    return LogType::TLS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LogType>(hashCode);
+  }
 
+  return LogType::NOT_SET;
+}
 
-        LogType GetLogTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ALERT_HASH)
-          {
-            return LogType::ALERT;
-          }
-          else if (hashCode == FLOW_HASH)
-          {
-            return LogType::FLOW;
-          }
-          else if (hashCode == TLS_HASH)
-          {
-            return LogType::TLS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LogType>(hashCode);
-          }
+Aws::String GetNameForLogType(LogType enumValue) {
+  switch (enumValue) {
+    case LogType::NOT_SET:
+      return {};
+    case LogType::ALERT:
+      return "ALERT";
+    case LogType::FLOW:
+      return "FLOW";
+    case LogType::TLS:
+      return "TLS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LogType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLogType(LogType enumValue)
-        {
-          switch(enumValue)
-          {
-          case LogType::NOT_SET:
-            return {};
-          case LogType::ALERT:
-            return "ALERT";
-          case LogType::FLOW:
-            return "FLOW";
-          case LogType::TLS:
-            return "TLS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LogTypeMapper
-    } // namespace Model
-  } // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace LogTypeMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

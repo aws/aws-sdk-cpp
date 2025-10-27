@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/Intent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/model/Intent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
 
-Intent::Intent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Intent::Intent(JsonView jsonValue) { *this = jsonValue; }
 
-Intent& Intent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("intentName"))
-  {
+Intent& Intent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("intentName")) {
     m_intentName = jsonValue.GetString("intentName");
     m_intentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("intentVersion"))
-  {
+  if (jsonValue.ValueExists("intentVersion")) {
     m_intentVersion = jsonValue.GetString("intentVersion");
     m_intentVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Intent::Jsonize() const
-{
+JsonValue Intent::Jsonize() const {
   JsonValue payload;
 
-  if(m_intentNameHasBeenSet)
-  {
-   payload.WithString("intentName", m_intentName);
-
+  if (m_intentNameHasBeenSet) {
+    payload.WithString("intentName", m_intentName);
   }
 
-  if(m_intentVersionHasBeenSet)
-  {
-   payload.WithString("intentVersion", m_intentVersion);
-
+  if (m_intentVersionHasBeenSet) {
+    payload.WithString("intentVersion", m_intentVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

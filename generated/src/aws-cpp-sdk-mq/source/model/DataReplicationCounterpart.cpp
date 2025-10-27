@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/DataReplicationCounterpart.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/model/DataReplicationCounterpart.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
+namespace Aws {
+namespace MQ {
+namespace Model {
 
-DataReplicationCounterpart::DataReplicationCounterpart(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataReplicationCounterpart::DataReplicationCounterpart(JsonView jsonValue) { *this = jsonValue; }
 
-DataReplicationCounterpart& DataReplicationCounterpart::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("brokerId"))
-  {
+DataReplicationCounterpart& DataReplicationCounterpart::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("brokerId")) {
     m_brokerId = jsonValue.GetString("brokerId");
     m_brokerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("region"))
-  {
+  if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataReplicationCounterpart::Jsonize() const
-{
+JsonValue DataReplicationCounterpart::Jsonize() const {
   JsonValue payload;
 
-  if(m_brokerIdHasBeenSet)
-  {
-   payload.WithString("brokerId", m_brokerId);
-
+  if (m_brokerIdHasBeenSet) {
+    payload.WithString("brokerId", m_brokerId);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

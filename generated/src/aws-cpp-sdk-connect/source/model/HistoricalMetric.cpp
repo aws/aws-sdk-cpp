@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-HistoricalMetric::HistoricalMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HistoricalMetric::HistoricalMetric(JsonView jsonValue) { *this = jsonValue; }
 
-HistoricalMetric& HistoricalMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+HistoricalMetric& HistoricalMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = HistoricalMetricNameMapper::GetHistoricalMetricNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Threshold"))
-  {
+  if (jsonValue.ValueExists("Threshold")) {
     m_threshold = jsonValue.GetObject("Threshold");
     m_thresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Statistic"))
-  {
+  if (jsonValue.ValueExists("Statistic")) {
     m_statistic = StatisticMapper::GetStatisticForName(jsonValue.GetString("Statistic"));
     m_statisticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
     m_unitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HistoricalMetric::Jsonize() const
-{
+JsonValue HistoricalMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", HistoricalMetricNameMapper::GetNameForHistoricalMetricName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", HistoricalMetricNameMapper::GetNameForHistoricalMetricName(m_name));
   }
 
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithObject("Threshold", m_threshold.Jsonize());
-
+  if (m_thresholdHasBeenSet) {
+    payload.WithObject("Threshold", m_threshold.Jsonize());
   }
 
-  if(m_statisticHasBeenSet)
-  {
-   payload.WithString("Statistic", StatisticMapper::GetNameForStatistic(m_statistic));
+  if (m_statisticHasBeenSet) {
+    payload.WithString("Statistic", StatisticMapper::GetNameForStatistic(m_statistic));
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", UnitMapper::GetNameForUnit(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", UnitMapper::GetNameForUnit(m_unit));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -13,34 +13,24 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateChannelModeratorRequest::SerializePayload() const
-{
+Aws::String CreateChannelModeratorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_channelModeratorArnHasBeenSet)
-  {
-   payload.WithString("ChannelModeratorArn", m_channelModeratorArn);
-
+  if (m_channelModeratorArnHasBeenSet) {
+    payload.WithString("ChannelModeratorArn", m_channelModeratorArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateChannelModeratorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateChannelModeratorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

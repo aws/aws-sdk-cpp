@@ -6,52 +6,51 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/TagStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ECR {
+namespace Model {
 
+/**
+ * <p>The filter for the lifecycle policy preview.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyPreviewFilter">AWS
+ * API Reference</a></p>
+ */
+class LifecyclePolicyPreviewFilter {
+ public:
+  AWS_ECR_API LifecyclePolicyPreviewFilter() = default;
+  AWS_ECR_API LifecyclePolicyPreviewFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API LifecyclePolicyPreviewFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The filter for the lifecycle policy preview.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyPreviewFilter">AWS
-   * API Reference</a></p>
+   * <p>The tag status of the image.</p>
    */
-  class LifecyclePolicyPreviewFilter
-  {
-  public:
-    AWS_ECR_API LifecyclePolicyPreviewFilter() = default;
-    AWS_ECR_API LifecyclePolicyPreviewFilter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECR_API LifecyclePolicyPreviewFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline TagStatus GetTagStatus() const { return m_tagStatus; }
+  inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
+  inline void SetTagStatus(TagStatus value) {
+    m_tagStatusHasBeenSet = true;
+    m_tagStatus = value;
+  }
+  inline LifecyclePolicyPreviewFilter& WithTagStatus(TagStatus value) {
+    SetTagStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  TagStatus m_tagStatus{TagStatus::NOT_SET};
+  bool m_tagStatusHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The tag status of the image.</p>
-     */
-    inline TagStatus GetTagStatus() const { return m_tagStatus; }
-    inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
-    inline void SetTagStatus(TagStatus value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
-    inline LifecyclePolicyPreviewFilter& WithTagStatus(TagStatus value) { SetTagStatus(value); return *this;}
-    ///@}
-  private:
-
-    TagStatus m_tagStatus{TagStatus::NOT_SET};
-    bool m_tagStatusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-KafkaClusterEncryptionInTransitDescription::KafkaClusterEncryptionInTransitDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KafkaClusterEncryptionInTransitDescription::KafkaClusterEncryptionInTransitDescription(JsonView jsonValue) { *this = jsonValue; }
 
-KafkaClusterEncryptionInTransitDescription& KafkaClusterEncryptionInTransitDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("encryptionType"))
-  {
-    m_encryptionType = KafkaClusterEncryptionInTransitTypeMapper::GetKafkaClusterEncryptionInTransitTypeForName(jsonValue.GetString("encryptionType"));
+KafkaClusterEncryptionInTransitDescription& KafkaClusterEncryptionInTransitDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("encryptionType")) {
+    m_encryptionType =
+        KafkaClusterEncryptionInTransitTypeMapper::GetKafkaClusterEncryptionInTransitTypeForName(jsonValue.GetString("encryptionType"));
     m_encryptionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KafkaClusterEncryptionInTransitDescription::Jsonize() const
-{
+JsonValue KafkaClusterEncryptionInTransitDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("encryptionType", KafkaClusterEncryptionInTransitTypeMapper::GetNameForKafkaClusterEncryptionInTransitType(m_encryptionType));
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("encryptionType",
+                       KafkaClusterEncryptionInTransitTypeMapper::GetNameForKafkaClusterEncryptionInTransitType(m_encryptionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

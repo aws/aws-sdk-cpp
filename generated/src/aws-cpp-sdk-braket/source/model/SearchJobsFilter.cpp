@@ -11,71 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-SearchJobsFilter::SearchJobsFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchJobsFilter::SearchJobsFilter(JsonView jsonValue) { *this = jsonValue; }
 
-SearchJobsFilter& SearchJobsFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SearchJobsFilter& SearchJobsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operator"))
-  {
+  if (jsonValue.ValueExists("operator")) {
     m_operator = SearchJobsFilterOperatorMapper::GetSearchJobsFilterOperatorForName(jsonValue.GetString("operator"));
     m_operatorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SearchJobsFilter::Jsonize() const
-{
+JsonValue SearchJobsFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", SearchJobsFilterOperatorMapper::GetNameForSearchJobsFilterOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("operator", SearchJobsFilterOperatorMapper::GetNameForSearchJobsFilterOperator(m_operator));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

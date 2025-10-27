@@ -4,43 +4,34 @@
  */
 
 #include <aws/cloudfront/model/FunctionAssociation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-FunctionAssociation::FunctionAssociation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+FunctionAssociation::FunctionAssociation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-FunctionAssociation& FunctionAssociation::operator =(const XmlNode& xmlNode)
-{
+FunctionAssociation& FunctionAssociation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode functionARNNode = resultNode.FirstChild("FunctionARN");
-    if(!functionARNNode.IsNull())
-    {
+    if (!functionARNNode.IsNull()) {
       m_functionARN = Aws::Utils::Xml::DecodeEscapedXmlText(functionARNNode.GetText());
       m_functionARNHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
-    if(!eventTypeNode.IsNull())
-    {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
+    if (!eventTypeNode.IsNull()) {
+      m_eventType =
+          EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
     }
   }
@@ -48,23 +39,19 @@ FunctionAssociation& FunctionAssociation::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void FunctionAssociation::AddToNode(XmlNode& parentNode) const
-{
+void FunctionAssociation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_functionARNHasBeenSet)
-  {
-   XmlNode functionARNNode = parentNode.CreateChildElement("FunctionARN");
-   functionARNNode.SetText(m_functionARN);
+  if (m_functionARNHasBeenSet) {
+    XmlNode functionARNNode = parentNode.CreateChildElement("FunctionARN");
+    functionARNNode.SetText(m_functionARN);
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-   XmlNode eventTypeNode = parentNode.CreateChildElement("EventType");
-   eventTypeNode.SetText(EventTypeMapper::GetNameForEventType(m_eventType));
+  if (m_eventTypeHasBeenSet) {
+    XmlNode eventTypeNode = parentNode.CreateChildElement("EventType");
+    eventTypeNode.SetText(EventTypeMapper::GetNameForEventType(m_eventType));
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

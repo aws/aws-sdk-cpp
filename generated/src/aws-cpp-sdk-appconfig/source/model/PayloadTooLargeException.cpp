@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue) { *this = jsonValue; }
 
-PayloadTooLargeException& PayloadTooLargeException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+PayloadTooLargeException& PayloadTooLargeException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Measure"))
-  {
+  if (jsonValue.ValueExists("Measure")) {
     m_measure = BytesMeasureMapper::GetBytesMeasureForName(jsonValue.GetString("Measure"));
     m_measureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Limit"))
-  {
+  if (jsonValue.ValueExists("Limit")) {
     m_limit = jsonValue.GetDouble("Limit");
     m_limitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Size"))
-  {
+  if (jsonValue.ValueExists("Size")) {
     m_size = jsonValue.GetDouble("Size");
     m_sizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PayloadTooLargeException::Jsonize() const
-{
+JsonValue PayloadTooLargeException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_measureHasBeenSet)
-  {
-   payload.WithString("Measure", BytesMeasureMapper::GetNameForBytesMeasure(m_measure));
+  if (m_measureHasBeenSet) {
+    payload.WithString("Measure", BytesMeasureMapper::GetNameForBytesMeasure(m_measure));
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithDouble("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithDouble("Limit", m_limit);
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithDouble("Size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithDouble("Size", m_size);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

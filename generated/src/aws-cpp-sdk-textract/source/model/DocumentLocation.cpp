@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/DocumentLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/DocumentLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-DocumentLocation::DocumentLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentLocation::DocumentLocation(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentLocation& DocumentLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Object"))
-  {
+DocumentLocation& DocumentLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Object")) {
     m_s3Object = jsonValue.GetObject("S3Object");
     m_s3ObjectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentLocation::Jsonize() const
-{
+JsonValue DocumentLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ObjectHasBeenSet)
-  {
-   payload.WithObject("S3Object", m_s3Object.Jsonize());
-
+  if (m_s3ObjectHasBeenSet) {
+    payload.WithObject("S3Object", m_s3Object.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

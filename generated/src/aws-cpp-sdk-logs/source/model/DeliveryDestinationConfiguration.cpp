@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/DeliveryDestinationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/DeliveryDestinationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-DeliveryDestinationConfiguration::DeliveryDestinationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeliveryDestinationConfiguration::DeliveryDestinationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DeliveryDestinationConfiguration& DeliveryDestinationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destinationResourceArn"))
-  {
+DeliveryDestinationConfiguration& DeliveryDestinationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationResourceArn")) {
     m_destinationResourceArn = jsonValue.GetString("destinationResourceArn");
     m_destinationResourceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeliveryDestinationConfiguration::Jsonize() const
-{
+JsonValue DeliveryDestinationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationResourceArnHasBeenSet)
-  {
-   payload.WithString("destinationResourceArn", m_destinationResourceArn);
-
+  if (m_destinationResourceArnHasBeenSet) {
+    payload.WithString("destinationResourceArn", m_destinationResourceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

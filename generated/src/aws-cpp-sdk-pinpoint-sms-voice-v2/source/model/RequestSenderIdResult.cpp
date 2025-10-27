@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/RequestSenderIdResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/RequestSenderIdResult.h>
 
 #include <utility>
 
@@ -17,58 +17,44 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RequestSenderIdResult::RequestSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RequestSenderIdResult::RequestSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RequestSenderIdResult& RequestSenderIdResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RequestSenderIdResult& RequestSenderIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SenderIdArn"))
-  {
+  if (jsonValue.ValueExists("SenderIdArn")) {
     m_senderIdArn = jsonValue.GetString("SenderIdArn");
     m_senderIdArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SenderId"))
-  {
+  if (jsonValue.ValueExists("SenderId")) {
     m_senderId = jsonValue.GetString("SenderId");
     m_senderIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsoCountryCode"))
-  {
+  if (jsonValue.ValueExists("IsoCountryCode")) {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
     m_isoCountryCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MessageTypes"))
-  {
+  if (jsonValue.ValueExists("MessageTypes")) {
     Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
-    for(unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex)
-    {
+    for (unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex) {
       m_messageTypes.push_back(MessageTypeMapper::GetMessageTypeForName(messageTypesJsonList[messageTypesIndex].AsString()));
     }
     m_messageTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MonthlyLeasingPrice"))
-  {
+  if (jsonValue.ValueExists("MonthlyLeasingPrice")) {
     m_monthlyLeasingPrice = jsonValue.GetString("MonthlyLeasingPrice");
     m_monthlyLeasingPriceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
-  {
+  if (jsonValue.ValueExists("DeletionProtectionEnabled")) {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Registered"))
-  {
+  if (jsonValue.ValueExists("Registered")) {
     m_registered = jsonValue.GetBool("Registered");
     m_registeredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
@@ -76,12 +62,10 @@ RequestSenderIdResult& RequestSenderIdResult::operator =(const Aws::AmazonWebSer
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

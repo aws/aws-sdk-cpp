@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/CompatibleVersionsMap.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/CompatibleVersionsMap.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-CompatibleVersionsMap::CompatibleVersionsMap(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompatibleVersionsMap::CompatibleVersionsMap(JsonView jsonValue) { *this = jsonValue; }
 
-CompatibleVersionsMap& CompatibleVersionsMap::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceVersion"))
-  {
+CompatibleVersionsMap& CompatibleVersionsMap::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceVersion")) {
     m_sourceVersion = jsonValue.GetString("SourceVersion");
     m_sourceVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetVersions"))
-  {
+  if (jsonValue.ValueExists("TargetVersions")) {
     Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("TargetVersions");
-    for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
-    {
+    for (unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex) {
       m_targetVersions.push_back(targetVersionsJsonList[targetVersionsIndex].AsString());
     }
     m_targetVersionsHasBeenSet = true;
@@ -42,30 +32,24 @@ CompatibleVersionsMap& CompatibleVersionsMap::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CompatibleVersionsMap::Jsonize() const
-{
+JsonValue CompatibleVersionsMap::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceVersionHasBeenSet)
-  {
-   payload.WithString("SourceVersion", m_sourceVersion);
-
+  if (m_sourceVersionHasBeenSet) {
+    payload.WithString("SourceVersion", m_sourceVersion);
   }
 
-  if(m_targetVersionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
-   for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
-   {
-     targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);
-   }
-   payload.WithArray("TargetVersions", std::move(targetVersionsJsonList));
-
+  if (m_targetVersionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
+    for (unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex) {
+      targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);
+    }
+    payload.WithArray("TargetVersions", std::move(targetVersionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TopBottomSortOrder
-  {
-    NOT_SET,
-    PERCENT_DIFFERENCE,
-    ABSOLUTE_DIFFERENCE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TopBottomSortOrder { NOT_SET, PERCENT_DIFFERENCE, ABSOLUTE_DIFFERENCE };
 
-namespace TopBottomSortOrderMapper
-{
+namespace TopBottomSortOrderMapper {
 AWS_QUICKSIGHT_API TopBottomSortOrder GetTopBottomSortOrderForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTopBottomSortOrder(TopBottomSortOrder value);
-} // namespace TopBottomSortOrderMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TopBottomSortOrderMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

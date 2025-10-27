@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualNodeStatus::VirtualNodeStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualNodeStatus::VirtualNodeStatus(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualNodeStatus& VirtualNodeStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+VirtualNodeStatus& VirtualNodeStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = VirtualNodeStatusCodeMapper::GetVirtualNodeStatusCodeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualNodeStatus::Jsonize() const
-{
+JsonValue VirtualNodeStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", VirtualNodeStatusCodeMapper::GetNameForVirtualNodeStatusCode(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", VirtualNodeStatusCodeMapper::GetNameForVirtualNodeStatusCode(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

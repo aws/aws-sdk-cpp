@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSecurityGroupsResponse::DescribeSecurityGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeSecurityGroupsResponse::DescribeSecurityGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeSecurityGroupsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeSecurityGroupsResponse")) {
     resultNode = rootNode.FirstChild("DescribeSecurityGroupsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("securityGroupInfo");
-    if(!securityGroupsNode.IsNull())
-    {
+    if (!securityGroupsNode.IsNull()) {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
       m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
-      while(!securityGroupsMember.IsNull())
-      {
+      while (!securityGroupsMember.IsNull()) {
         m_securityGroups.push_back(securityGroupsMember);
         securityGroupsMember = securityGroupsMember.NextNode("item");
       }
@@ -57,12 +48,11 @@ DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator =(const
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSecurityGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSecurityGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

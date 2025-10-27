@@ -11,93 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-BlueprintSummary::BlueprintSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BlueprintSummary::BlueprintSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BlueprintSummary& BlueprintSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("blueprintArn"))
-  {
+BlueprintSummary& BlueprintSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("blueprintArn")) {
     m_blueprintArn = jsonValue.GetString("blueprintArn");
     m_blueprintArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("blueprintVersion"))
-  {
+  if (jsonValue.ValueExists("blueprintVersion")) {
     m_blueprintVersion = jsonValue.GetString("blueprintVersion");
     m_blueprintVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("blueprintStage"))
-  {
+  if (jsonValue.ValueExists("blueprintStage")) {
     m_blueprintStage = BlueprintStageMapper::GetBlueprintStageForName(jsonValue.GetString("blueprintStage"));
     m_blueprintStageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("blueprintName"))
-  {
+  if (jsonValue.ValueExists("blueprintName")) {
     m_blueprintName = jsonValue.GetString("blueprintName");
     m_blueprintNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BlueprintSummary::Jsonize() const
-{
+JsonValue BlueprintSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_blueprintArnHasBeenSet)
-  {
-   payload.WithString("blueprintArn", m_blueprintArn);
-
+  if (m_blueprintArnHasBeenSet) {
+    payload.WithString("blueprintArn", m_blueprintArn);
   }
 
-  if(m_blueprintVersionHasBeenSet)
-  {
-   payload.WithString("blueprintVersion", m_blueprintVersion);
-
+  if (m_blueprintVersionHasBeenSet) {
+    payload.WithString("blueprintVersion", m_blueprintVersion);
   }
 
-  if(m_blueprintStageHasBeenSet)
-  {
-   payload.WithString("blueprintStage", BlueprintStageMapper::GetNameForBlueprintStage(m_blueprintStage));
+  if (m_blueprintStageHasBeenSet) {
+    payload.WithString("blueprintStage", BlueprintStageMapper::GetNameForBlueprintStage(m_blueprintStage));
   }
 
-  if(m_blueprintNameHasBeenSet)
-  {
-   payload.WithString("blueprintName", m_blueprintName);
-
+  if (m_blueprintNameHasBeenSet) {
+    payload.WithString("blueprintName", m_blueprintName);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

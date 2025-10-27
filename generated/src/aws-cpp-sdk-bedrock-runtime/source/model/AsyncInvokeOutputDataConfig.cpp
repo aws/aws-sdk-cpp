@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-AsyncInvokeOutputDataConfig::AsyncInvokeOutputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AsyncInvokeOutputDataConfig::AsyncInvokeOutputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AsyncInvokeOutputDataConfig& AsyncInvokeOutputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3OutputDataConfig"))
-  {
+AsyncInvokeOutputDataConfig& AsyncInvokeOutputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3OutputDataConfig")) {
     m_s3OutputDataConfig = jsonValue.GetObject("s3OutputDataConfig");
     m_s3OutputDataConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AsyncInvokeOutputDataConfig::Jsonize() const
-{
+JsonValue AsyncInvokeOutputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3OutputDataConfigHasBeenSet)
-  {
-   payload.WithObject("s3OutputDataConfig", m_s3OutputDataConfig.Jsonize());
-
+  if (m_s3OutputDataConfigHasBeenSet) {
+    payload.WithObject("s3OutputDataConfig", m_s3OutputDataConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

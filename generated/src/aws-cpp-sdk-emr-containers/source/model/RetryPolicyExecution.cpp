@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-containers/model/RetryPolicyExecution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/model/RetryPolicyExecution.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRContainers {
+namespace Model {
 
-RetryPolicyExecution::RetryPolicyExecution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetryPolicyExecution::RetryPolicyExecution(JsonView jsonValue) { *this = jsonValue; }
 
-RetryPolicyExecution& RetryPolicyExecution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("currentAttemptCount"))
-  {
+RetryPolicyExecution& RetryPolicyExecution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("currentAttemptCount")) {
     m_currentAttemptCount = jsonValue.GetInteger("currentAttemptCount");
     m_currentAttemptCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetryPolicyExecution::Jsonize() const
-{
+JsonValue RetryPolicyExecution::Jsonize() const {
   JsonValue payload;
 
-  if(m_currentAttemptCountHasBeenSet)
-  {
-   payload.WithInteger("currentAttemptCount", m_currentAttemptCount);
-
+  if (m_currentAttemptCountHasBeenSet) {
+    payload.WithInteger("currentAttemptCount", m_currentAttemptCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRContainers
+}  // namespace Aws

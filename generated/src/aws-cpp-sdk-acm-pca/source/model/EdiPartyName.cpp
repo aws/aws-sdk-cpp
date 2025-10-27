@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-EdiPartyName::EdiPartyName(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdiPartyName::EdiPartyName(JsonView jsonValue) { *this = jsonValue; }
 
-EdiPartyName& EdiPartyName::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PartyName"))
-  {
+EdiPartyName& EdiPartyName::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PartyName")) {
     m_partyName = jsonValue.GetString("PartyName");
     m_partyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NameAssigner"))
-  {
+  if (jsonValue.ValueExists("NameAssigner")) {
     m_nameAssigner = jsonValue.GetString("NameAssigner");
     m_nameAssignerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EdiPartyName::Jsonize() const
-{
+JsonValue EdiPartyName::Jsonize() const {
   JsonValue payload;
 
-  if(m_partyNameHasBeenSet)
-  {
-   payload.WithString("PartyName", m_partyName);
-
+  if (m_partyNameHasBeenSet) {
+    payload.WithString("PartyName", m_partyName);
   }
 
-  if(m_nameAssignerHasBeenSet)
-  {
-   payload.WithString("NameAssigner", m_nameAssigner);
-
+  if (m_nameAssignerHasBeenSet) {
+    payload.WithString("NameAssigner", m_nameAssigner);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

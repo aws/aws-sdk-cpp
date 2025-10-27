@@ -13,9 +13,4 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-std::shared_ptr<Aws::IOStream> InvokeModelWithBidirectionalStreamRequest::GetBody() const
-{
-    return m_body;
-}
-
-
+std::shared_ptr<Aws::IOStream> InvokeModelWithBidirectionalStreamRequest::GetBody() const { return m_body; }

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/MinBottomRenditionSize.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/MinBottomRenditionSize.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-MinBottomRenditionSize::MinBottomRenditionSize(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MinBottomRenditionSize::MinBottomRenditionSize(JsonView jsonValue) { *this = jsonValue; }
 
-MinBottomRenditionSize& MinBottomRenditionSize::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("height"))
-  {
+MinBottomRenditionSize& MinBottomRenditionSize::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("height")) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("width"))
-  {
+  if (jsonValue.ValueExists("width")) {
     m_width = jsonValue.GetInteger("width");
     m_widthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MinBottomRenditionSize::Jsonize() const
-{
+JsonValue MinBottomRenditionSize::Jsonize() const {
   JsonValue payload;
 
-  if(m_heightHasBeenSet)
-  {
-   payload.WithInteger("height", m_height);
-
+  if (m_heightHasBeenSet) {
+    payload.WithInteger("height", m_height);
   }
 
-  if(m_widthHasBeenSet)
-  {
-   payload.WithInteger("width", m_width);
-
+  if (m_widthHasBeenSet) {
+    payload.WithInteger("width", m_width);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

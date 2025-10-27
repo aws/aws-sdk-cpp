@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-ScalableTargetAction::ScalableTargetAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScalableTargetAction::ScalableTargetAction(JsonView jsonValue) { *this = jsonValue; }
 
-ScalableTargetAction& ScalableTargetAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinCapacity"))
-  {
+ScalableTargetAction& ScalableTargetAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinCapacity")) {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
     m_minCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxCapacity"))
-  {
+  if (jsonValue.ValueExists("MaxCapacity")) {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
     m_maxCapacityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScalableTargetAction::Jsonize() const
-{
+JsonValue ScalableTargetAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_minCapacityHasBeenSet)
-  {
-   payload.WithInteger("MinCapacity", m_minCapacity);
-
+  if (m_minCapacityHasBeenSet) {
+    payload.WithInteger("MinCapacity", m_minCapacity);
   }
 
-  if(m_maxCapacityHasBeenSet)
-  {
-   payload.WithInteger("MaxCapacity", m_maxCapacity);
-
+  if (m_maxCapacityHasBeenSet) {
+    payload.WithInteger("MaxCapacity", m_maxCapacity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

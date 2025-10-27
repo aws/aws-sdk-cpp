@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::PinpointSMSVoice;
 
-namespace Aws
-{
-namespace PinpointSMSVoice
-{
-namespace PinpointSMSVoiceErrorMapper
-{
+namespace Aws {
+namespace PinpointSMSVoice {
+namespace PinpointSMSVoiceErrorMapper {
 
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -25,38 +22,25 @@ static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsEx
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
-  {
+  if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::INTERNAL_SERVICE_ERROR), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace PinpointSMSVoiceErrorMapper
-} // namespace PinpointSMSVoice
-} // namespace Aws
+}  // namespace PinpointSMSVoiceErrorMapper
+}  // namespace PinpointSMSVoice
+}  // namespace Aws

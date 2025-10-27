@@ -7,26 +7,16 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class FindingChangeType
-  {
-    NOT_SET,
-    CHANGED,
-    NEW_,
-    UNCHANGED
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class FindingChangeType { NOT_SET, CHANGED, NEW_, UNCHANGED };
 
-namespace FindingChangeTypeMapper
-{
+namespace FindingChangeTypeMapper {
 AWS_ACCESSANALYZER_API FindingChangeType GetFindingChangeTypeForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForFindingChangeType(FindingChangeType value);
-} // namespace FindingChangeTypeMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace FindingChangeTypeMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/RecommendationTriggerData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/RecommendationTriggerData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-RecommendationTriggerData::RecommendationTriggerData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationTriggerData::RecommendationTriggerData(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationTriggerData& RecommendationTriggerData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("query"))
-  {
+RecommendationTriggerData& RecommendationTriggerData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("query")) {
     m_query = jsonValue.GetObject("query");
     m_queryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationTriggerData::Jsonize() const
-{
+JsonValue RecommendationTriggerData::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryHasBeenSet)
-  {
-   payload.WithObject("query", m_query.Jsonize());
-
+  if (m_queryHasBeenSet) {
+    payload.WithObject("query", m_query.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

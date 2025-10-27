@@ -5,12 +5,8 @@
 
 #include <aws/networkmonitor/NetworkMonitorEndpointProvider.h>
 
-namespace Aws
-{
-namespace NetworkMonitor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace NetworkMonitor
-} // namespace Aws
+namespace Aws {
+namespace NetworkMonitor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace NetworkMonitor
+}  // namespace Aws

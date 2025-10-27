@@ -12,48 +12,34 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String MonitorContactRequest::SerializePayload() const
-{
+Aws::String MonitorContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
-  if(m_allowedMonitorCapabilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedMonitorCapabilitiesJsonList(m_allowedMonitorCapabilities.size());
-   for(unsigned allowedMonitorCapabilitiesIndex = 0; allowedMonitorCapabilitiesIndex < allowedMonitorCapabilitiesJsonList.GetLength(); ++allowedMonitorCapabilitiesIndex)
-   {
-     allowedMonitorCapabilitiesJsonList[allowedMonitorCapabilitiesIndex].AsString(MonitorCapabilityMapper::GetNameForMonitorCapability(m_allowedMonitorCapabilities[allowedMonitorCapabilitiesIndex]));
-   }
-   payload.WithArray("AllowedMonitorCapabilities", std::move(allowedMonitorCapabilitiesJsonList));
-
+  if (m_allowedMonitorCapabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedMonitorCapabilitiesJsonList(m_allowedMonitorCapabilities.size());
+    for (unsigned allowedMonitorCapabilitiesIndex = 0; allowedMonitorCapabilitiesIndex < allowedMonitorCapabilitiesJsonList.GetLength();
+         ++allowedMonitorCapabilitiesIndex) {
+      allowedMonitorCapabilitiesJsonList[allowedMonitorCapabilitiesIndex].AsString(
+          MonitorCapabilityMapper::GetNameForMonitorCapability(m_allowedMonitorCapabilities[allowedMonitorCapabilitiesIndex]));
+    }
+    payload.WithArray("AllowedMonitorCapabilities", std::move(allowedMonitorCapabilitiesJsonList));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

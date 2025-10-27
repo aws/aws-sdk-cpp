@@ -7,26 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class ChangeSetType
-  {
-    NOT_SET,
-    CREATE,
-    UPDATE,
-    IMPORT
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class ChangeSetType { NOT_SET, CREATE, UPDATE, IMPORT };
 
-namespace ChangeSetTypeMapper
-{
+namespace ChangeSetTypeMapper {
 AWS_CLOUDFORMATION_API ChangeSetType GetChangeSetTypeForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForChangeSetType(ChangeSetType value);
-} // namespace ChangeSetTypeMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace ChangeSetTypeMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

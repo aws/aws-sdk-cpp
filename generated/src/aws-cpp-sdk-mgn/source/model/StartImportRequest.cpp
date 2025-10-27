@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/StartImportRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/StartImportRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartImportRequest::SerializePayload() const
-{
+Aws::String StartImportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_s3BucketSourceHasBeenSet)
-  {
-   payload.WithObject("s3BucketSource", m_s3BucketSource.Jsonize());
-
+  if (m_s3BucketSourceHasBeenSet) {
+    payload.WithObject("s3BucketSource", m_s3BucketSource.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

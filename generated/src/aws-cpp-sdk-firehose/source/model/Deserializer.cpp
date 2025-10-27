@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/firehose/model/Deserializer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/model/Deserializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Firehose {
+namespace Model {
 
-Deserializer::Deserializer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Deserializer::Deserializer(JsonView jsonValue) { *this = jsonValue; }
 
-Deserializer& Deserializer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OpenXJsonSerDe"))
-  {
+Deserializer& Deserializer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OpenXJsonSerDe")) {
     m_openXJsonSerDe = jsonValue.GetObject("OpenXJsonSerDe");
     m_openXJsonSerDeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HiveJsonSerDe"))
-  {
+  if (jsonValue.ValueExists("HiveJsonSerDe")) {
     m_hiveJsonSerDe = jsonValue.GetObject("HiveJsonSerDe");
     m_hiveJsonSerDeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Deserializer::Jsonize() const
-{
+JsonValue Deserializer::Jsonize() const {
   JsonValue payload;
 
-  if(m_openXJsonSerDeHasBeenSet)
-  {
-   payload.WithObject("OpenXJsonSerDe", m_openXJsonSerDe.Jsonize());
-
+  if (m_openXJsonSerDeHasBeenSet) {
+    payload.WithObject("OpenXJsonSerDe", m_openXJsonSerDe.Jsonize());
   }
 
-  if(m_hiveJsonSerDeHasBeenSet)
-  {
-   payload.WithObject("HiveJsonSerDe", m_hiveJsonSerDe.Jsonize());
-
+  if (m_hiveJsonSerDeHasBeenSet) {
+    payload.WithObject("HiveJsonSerDe", m_hiveJsonSerDe.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeStarconnections
-{
-enum class CodeStarconnectionsErrors
-{
-  //From Core//
+namespace Aws {
+namespace CodeStarconnections {
+enum class CodeStarconnectionsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CodeStarconnectionsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CodeStarconnectionsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONDITIONAL_CHECK_FAILED,
   CONFLICT,
   INTERNAL_SERVER,
@@ -63,23 +60,24 @@ enum class CodeStarconnectionsErrors
   UPDATE_OUT_OF_SYNC
 };
 
-class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsError : public Aws::Client::AWSError<CodeStarconnectionsErrors>
-{
-public:
+class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsError : public Aws::Client::AWSError<CodeStarconnectionsErrors> {
+ public:
   CodeStarconnectionsError() {}
-  CodeStarconnectionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
   CodeStarconnectionsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
-  CodeStarconnectionsError(const Aws::Client::AWSError<CodeStarconnectionsErrors>& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
-  CodeStarconnectionsError(Aws::Client::AWSError<CodeStarconnectionsErrors>&& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(const Aws::Client::AWSError<CodeStarconnectionsErrors>& rhs)
+      : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(Aws::Client::AWSError<CodeStarconnectionsErrors>&& rhs)
+      : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace CodeStarconnectionsErrorMapper
-{
-  AWS_CODESTARCONNECTIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CodeStarconnectionsErrorMapper {
+AWS_CODESTARCONNECTIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CodeStarconnections
-} // namespace Aws
+}  // namespace CodeStarconnections
+}  // namespace Aws

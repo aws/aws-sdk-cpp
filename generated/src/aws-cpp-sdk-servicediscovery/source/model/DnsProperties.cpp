@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/DnsProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/DnsProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-DnsProperties::DnsProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DnsProperties::DnsProperties(JsonView jsonValue) { *this = jsonValue; }
 
-DnsProperties& DnsProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HostedZoneId"))
-  {
+DnsProperties& DnsProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HostedZoneId")) {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
     m_hostedZoneIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SOA"))
-  {
+  if (jsonValue.ValueExists("SOA")) {
     m_sOA = jsonValue.GetObject("SOA");
     m_sOAHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DnsProperties::Jsonize() const
-{
+JsonValue DnsProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostedZoneIdHasBeenSet)
-  {
-   payload.WithString("HostedZoneId", m_hostedZoneId);
-
+  if (m_hostedZoneIdHasBeenSet) {
+    payload.WithString("HostedZoneId", m_hostedZoneId);
   }
 
-  if(m_sOAHasBeenSet)
-  {
-   payload.WithObject("SOA", m_sOA.Jsonize());
-
+  if (m_sOAHasBeenSet) {
+    payload.WithObject("SOA", m_sOA.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

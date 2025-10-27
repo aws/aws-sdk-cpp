@@ -3,205 +3,167 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/Catalog.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/Catalog.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-Catalog::Catalog(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Catalog::Catalog(JsonView jsonValue) { *this = jsonValue; }
 
-Catalog& Catalog::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CatalogId"))
-  {
+Catalog& Catalog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");
     m_catalogIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
-    for(auto& parametersItem : parametersJsonMap)
-    {
+    for (auto& parametersItem : parametersJsonMap) {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();
     }
     m_parametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTime"))
-  {
+  if (jsonValue.ValueExists("CreateTime")) {
     m_createTime = jsonValue.GetDouble("CreateTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
+  if (jsonValue.ValueExists("UpdateTime")) {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
     m_updateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetRedshiftCatalog"))
-  {
+  if (jsonValue.ValueExists("TargetRedshiftCatalog")) {
     m_targetRedshiftCatalog = jsonValue.GetObject("TargetRedshiftCatalog");
     m_targetRedshiftCatalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FederatedCatalog"))
-  {
+  if (jsonValue.ValueExists("FederatedCatalog")) {
     m_federatedCatalog = jsonValue.GetObject("FederatedCatalog");
     m_federatedCatalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CatalogProperties"))
-  {
+  if (jsonValue.ValueExists("CatalogProperties")) {
     m_catalogProperties = jsonValue.GetObject("CatalogProperties");
     m_catalogPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
-  {
+  if (jsonValue.ValueExists("CreateTableDefaultPermissions")) {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
-    for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
-    {
+    for (unsigned createTableDefaultPermissionsIndex = 0;
+         createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex) {
       m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateDatabaseDefaultPermissions"))
-  {
+  if (jsonValue.ValueExists("CreateDatabaseDefaultPermissions")) {
     Aws::Utils::Array<JsonView> createDatabaseDefaultPermissionsJsonList = jsonValue.GetArray("CreateDatabaseDefaultPermissions");
-    for(unsigned createDatabaseDefaultPermissionsIndex = 0; createDatabaseDefaultPermissionsIndex < createDatabaseDefaultPermissionsJsonList.GetLength(); ++createDatabaseDefaultPermissionsIndex)
-    {
-      m_createDatabaseDefaultPermissions.push_back(createDatabaseDefaultPermissionsJsonList[createDatabaseDefaultPermissionsIndex].AsObject());
+    for (unsigned createDatabaseDefaultPermissionsIndex = 0;
+         createDatabaseDefaultPermissionsIndex < createDatabaseDefaultPermissionsJsonList.GetLength();
+         ++createDatabaseDefaultPermissionsIndex) {
+      m_createDatabaseDefaultPermissions.push_back(
+          createDatabaseDefaultPermissionsJsonList[createDatabaseDefaultPermissionsIndex].AsObject());
     }
     m_createDatabaseDefaultPermissionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowFullTableExternalDataAccess"))
-  {
-    m_allowFullTableExternalDataAccess = AllowFullTableExternalDataAccessEnumMapper::GetAllowFullTableExternalDataAccessEnumForName(jsonValue.GetString("AllowFullTableExternalDataAccess"));
+  if (jsonValue.ValueExists("AllowFullTableExternalDataAccess")) {
+    m_allowFullTableExternalDataAccess = AllowFullTableExternalDataAccessEnumMapper::GetAllowFullTableExternalDataAccessEnumForName(
+        jsonValue.GetString("AllowFullTableExternalDataAccess"));
     m_allowFullTableExternalDataAccessHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Catalog::Jsonize() const
-{
+JsonValue Catalog::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogIdHasBeenSet)
-  {
-   payload.WithString("CatalogId", m_catalogId);
-
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("UpdateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("UpdateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
-  if(m_targetRedshiftCatalogHasBeenSet)
-  {
-   payload.WithObject("TargetRedshiftCatalog", m_targetRedshiftCatalog.Jsonize());
-
+  if (m_targetRedshiftCatalogHasBeenSet) {
+    payload.WithObject("TargetRedshiftCatalog", m_targetRedshiftCatalog.Jsonize());
   }
 
-  if(m_federatedCatalogHasBeenSet)
-  {
-   payload.WithObject("FederatedCatalog", m_federatedCatalog.Jsonize());
-
+  if (m_federatedCatalogHasBeenSet) {
+    payload.WithObject("FederatedCatalog", m_federatedCatalog.Jsonize());
   }
 
-  if(m_catalogPropertiesHasBeenSet)
-  {
-   payload.WithObject("CatalogProperties", m_catalogProperties.Jsonize());
-
+  if (m_catalogPropertiesHasBeenSet) {
+    payload.WithObject("CatalogProperties", m_catalogProperties.Jsonize());
   }
 
-  if(m_createTableDefaultPermissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> createTableDefaultPermissionsJsonList(m_createTableDefaultPermissions.size());
-   for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
-   {
-     createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
-   }
-   payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
-
+  if (m_createTableDefaultPermissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> createTableDefaultPermissionsJsonList(m_createTableDefaultPermissions.size());
+    for (unsigned createTableDefaultPermissionsIndex = 0;
+         createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex) {
+      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(
+          m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
+    }
+    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
   }
 
-  if(m_createDatabaseDefaultPermissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> createDatabaseDefaultPermissionsJsonList(m_createDatabaseDefaultPermissions.size());
-   for(unsigned createDatabaseDefaultPermissionsIndex = 0; createDatabaseDefaultPermissionsIndex < createDatabaseDefaultPermissionsJsonList.GetLength(); ++createDatabaseDefaultPermissionsIndex)
-   {
-     createDatabaseDefaultPermissionsJsonList[createDatabaseDefaultPermissionsIndex].AsObject(m_createDatabaseDefaultPermissions[createDatabaseDefaultPermissionsIndex].Jsonize());
-   }
-   payload.WithArray("CreateDatabaseDefaultPermissions", std::move(createDatabaseDefaultPermissionsJsonList));
-
+  if (m_createDatabaseDefaultPermissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> createDatabaseDefaultPermissionsJsonList(m_createDatabaseDefaultPermissions.size());
+    for (unsigned createDatabaseDefaultPermissionsIndex = 0;
+         createDatabaseDefaultPermissionsIndex < createDatabaseDefaultPermissionsJsonList.GetLength();
+         ++createDatabaseDefaultPermissionsIndex) {
+      createDatabaseDefaultPermissionsJsonList[createDatabaseDefaultPermissionsIndex].AsObject(
+          m_createDatabaseDefaultPermissions[createDatabaseDefaultPermissionsIndex].Jsonize());
+    }
+    payload.WithArray("CreateDatabaseDefaultPermissions", std::move(createDatabaseDefaultPermissionsJsonList));
   }
 
-  if(m_allowFullTableExternalDataAccessHasBeenSet)
-  {
-   payload.WithString("AllowFullTableExternalDataAccess", AllowFullTableExternalDataAccessEnumMapper::GetNameForAllowFullTableExternalDataAccessEnum(m_allowFullTableExternalDataAccess));
+  if (m_allowFullTableExternalDataAccessHasBeenSet) {
+    payload.WithString(
+        "AllowFullTableExternalDataAccess",
+        AllowFullTableExternalDataAccessEnumMapper::GetNameForAllowFullTableExternalDataAccessEnum(m_allowFullTableExternalDataAccess));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

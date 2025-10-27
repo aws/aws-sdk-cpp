@@ -3,47 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/JobManifestSpec.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/JobManifestSpec.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-JobManifestSpec::JobManifestSpec(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+JobManifestSpec::JobManifestSpec(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JobManifestSpec& JobManifestSpec::operator =(const XmlNode& xmlNode)
-{
+JobManifestSpec& JobManifestSpec::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode formatNode = resultNode.FirstChild("Format");
-    if(!formatNode.IsNull())
-    {
-      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
+    if (!formatNode.IsNull()) {
+      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode fieldsNode = resultNode.FirstChild("Fields");
-    if(!fieldsNode.IsNull())
-    {
+    if (!fieldsNode.IsNull()) {
       XmlNode fieldsMember = fieldsNode.FirstChild("member");
       m_fieldsHasBeenSet = !fieldsMember.IsNull();
-      while(!fieldsMember.IsNull())
-      {
+      while (!fieldsMember.IsNull()) {
         m_fields.push_back(JobManifestFieldNameMapper::GetJobManifestFieldNameForName(StringUtils::Trim(fieldsMember.GetText().c_str())));
         fieldsMember = fieldsMember.NextNode("member");
       }
@@ -55,27 +45,22 @@ JobManifestSpec& JobManifestSpec::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void JobManifestSpec::AddToNode(XmlNode& parentNode) const
-{
+void JobManifestSpec::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_formatHasBeenSet)
-  {
-   XmlNode formatNode = parentNode.CreateChildElement("Format");
-   formatNode.SetText(JobManifestFormatMapper::GetNameForJobManifestFormat(m_format));
+  if (m_formatHasBeenSet) {
+    XmlNode formatNode = parentNode.CreateChildElement("Format");
+    formatNode.SetText(JobManifestFormatMapper::GetNameForJobManifestFormat(m_format));
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
-   for(const auto& item : m_fields)
-   {
-     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("member");
-     fieldsNode.SetText(JobManifestFieldNameMapper::GetNameForJobManifestFieldName(item));
-   }
+  if (m_fieldsHasBeenSet) {
+    XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
+    for (const auto& item : m_fields) {
+      XmlNode fieldsNode = fieldsParentNode.CreateChildElement("member");
+      fieldsNode.SetText(JobManifestFieldNameMapper::GetNameForJobManifestFieldName(item));
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

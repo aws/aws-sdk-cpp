@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteClusterSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteClusterSnapshotRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteClusterSnapshotRequest::SerializePayload() const
-{
+Aws::String DeleteClusterSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterSnapshot&";
-  if(m_snapshotIdentifierHasBeenSet)
-  {
+  if (m_snapshotIdentifierHasBeenSet) {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_snapshotClusterIdentifierHasBeenSet)
-  {
+  if (m_snapshotClusterIdentifierHasBeenSet) {
     ss << "SnapshotClusterIdentifier=" << StringUtils::URLEncode(m_snapshotClusterIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

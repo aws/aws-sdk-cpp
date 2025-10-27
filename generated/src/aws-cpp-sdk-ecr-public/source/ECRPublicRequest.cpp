@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/ecr-public/ECRPublicRequest.h>
 
-namespace Aws
-{
-namespace ECRPublic
-{
-} // namespace ECRPublic
-} // namespace Aws
+namespace Aws {
+namespace ECRPublic {}  // namespace ECRPublic
+}  // namespace Aws

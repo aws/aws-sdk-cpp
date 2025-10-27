@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationConfiguration::DestinationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("auditLog"))
-  {
+DestinationConfiguration& DestinationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("auditLog")) {
     m_auditLog = jsonValue.GetObject("auditLog");
     m_auditLogHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationConfiguration::Jsonize() const
-{
+JsonValue DestinationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_auditLogHasBeenSet)
-  {
-   payload.WithObject("auditLog", m_auditLog.Jsonize());
-
+  if (m_auditLogHasBeenSet) {
+    payload.WithObject("auditLog", m_auditLog.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

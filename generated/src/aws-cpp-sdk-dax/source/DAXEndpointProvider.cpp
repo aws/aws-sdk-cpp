@@ -5,12 +5,8 @@
 
 #include <aws/dax/DAXEndpointProvider.h>
 
-namespace Aws
-{
-namespace DAX
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DAX
-} // namespace Aws
+namespace Aws {
+namespace DAX {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DAX
+}  // namespace Aws

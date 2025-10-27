@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/GCMChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/GCMChannelRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-GCMChannelRequest::GCMChannelRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GCMChannelRequest::GCMChannelRequest(JsonView jsonValue) { *this = jsonValue; }
 
-GCMChannelRequest& GCMChannelRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApiKey"))
-  {
+GCMChannelRequest& GCMChannelRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApiKey")) {
     m_apiKey = jsonValue.GetString("ApiKey");
     m_apiKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
-  {
+  if (jsonValue.ValueExists("DefaultAuthenticationMethod")) {
     m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
     m_defaultAuthenticationMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Enabled"))
-  {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceJson"))
-  {
+  if (jsonValue.ValueExists("ServiceJson")) {
     m_serviceJson = jsonValue.GetString("ServiceJson");
     m_serviceJsonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GCMChannelRequest::Jsonize() const
-{
+JsonValue GCMChannelRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("ApiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("ApiKey", m_apiKey);
   }
 
-  if(m_defaultAuthenticationMethodHasBeenSet)
-  {
-   payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
-
+  if (m_defaultAuthenticationMethodHasBeenSet) {
+    payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_serviceJsonHasBeenSet)
-  {
-   payload.WithString("ServiceJson", m_serviceJson);
-
+  if (m_serviceJsonHasBeenSet) {
+    payload.WithString("ServiceJson", m_serviceJson);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

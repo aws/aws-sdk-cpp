@@ -7,25 +7,16 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
-  enum class CostCategoryStatus
-  {
-    NOT_SET,
-    PROCESSING,
-    APPLIED
-  };
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
+enum class CostCategoryStatus { NOT_SET, PROCESSING, APPLIED };
 
-namespace CostCategoryStatusMapper
-{
+namespace CostCategoryStatusMapper {
 AWS_COSTEXPLORER_API CostCategoryStatus GetCostCategoryStatusForName(const Aws::String& name);
 
 AWS_COSTEXPLORER_API Aws::String GetNameForCostCategoryStatus(CostCategoryStatus value);
-} // namespace CostCategoryStatusMapper
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace CostCategoryStatusMapper
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

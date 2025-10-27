@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace mgn
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace mgn {
+namespace Model {
 
+/**
+ * <p>Configure Licensing.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/Licensing">AWS API
+ * Reference</a></p>
+ */
+class Licensing {
+ public:
+  AWS_MGN_API Licensing() = default;
+  AWS_MGN_API Licensing(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API Licensing& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configure Licensing.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/Licensing">AWS API
-   * Reference</a></p>
+   * <p>Configure BYOL OS licensing.</p>
    */
-  class Licensing
-  {
-  public:
-    AWS_MGN_API Licensing() = default;
-    AWS_MGN_API Licensing(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MGN_API Licensing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetOsByol() const { return m_osByol; }
+  inline bool OsByolHasBeenSet() const { return m_osByolHasBeenSet; }
+  inline void SetOsByol(bool value) {
+    m_osByolHasBeenSet = true;
+    m_osByol = value;
+  }
+  inline Licensing& WithOsByol(bool value) {
+    SetOsByol(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_osByol{false};
+  bool m_osByolHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Configure BYOL OS licensing.</p>
-     */
-    inline bool GetOsByol() const { return m_osByol; }
-    inline bool OsByolHasBeenSet() const { return m_osByolHasBeenSet; }
-    inline void SetOsByol(bool value) { m_osByolHasBeenSet = true; m_osByol = value; }
-    inline Licensing& WithOsByol(bool value) { SetOsByol(value); return *this;}
-    ///@}
-  private:
-
-    bool m_osByol{false};
-    bool m_osByolHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

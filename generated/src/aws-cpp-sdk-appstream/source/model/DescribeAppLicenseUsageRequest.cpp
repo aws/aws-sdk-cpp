@@ -12,39 +12,26 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeAppLicenseUsageRequest::SerializePayload() const
-{
+Aws::String DescribeAppLicenseUsageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_billingPeriodHasBeenSet)
-  {
-   payload.WithString("BillingPeriod", m_billingPeriod);
-
+  if (m_billingPeriodHasBeenSet) {
+    payload.WithString("BillingPeriod", m_billingPeriod);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeAppLicenseUsageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeAppLicenseUsageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DescribeAppLicenseUsage"));
   return headers;
-
 }
-
-
-
-

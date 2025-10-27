@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_EC2_API EC2ErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_EC2_API EC2ErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

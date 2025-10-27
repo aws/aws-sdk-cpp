@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
-namespace Aws
-{
-namespace LaunchWizard
-{
-enum class LaunchWizardErrors
-{
-  //From Core//
+namespace Aws {
+namespace LaunchWizard {
+enum class LaunchWizardErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class LaunchWizardErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class LaunchWizardErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   RESOURCE_LIMIT
 };
 
-class AWS_LAUNCHWIZARD_API LaunchWizardError : public Aws::Client::AWSError<LaunchWizardErrors>
-{
-public:
+class AWS_LAUNCHWIZARD_API LaunchWizardError : public Aws::Client::AWSError<LaunchWizardErrors> {
+ public:
   LaunchWizardError() {}
   LaunchWizardError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LaunchWizardErrors>(rhs) {}
   LaunchWizardError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LaunchWizardErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace LaunchWizardErrorMapper
-{
-  AWS_LAUNCHWIZARD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace LaunchWizardErrorMapper {
+AWS_LAUNCHWIZARD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace LaunchWizard
-} // namespace Aws
+}  // namespace LaunchWizard
+}  // namespace Aws

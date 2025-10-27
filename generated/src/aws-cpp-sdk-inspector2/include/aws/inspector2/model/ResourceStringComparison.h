@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class ResourceStringComparison
-  {
-    NOT_SET,
-    EQUALS,
-    NOT_EQUALS
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class ResourceStringComparison { NOT_SET, EQUALS, NOT_EQUALS };
 
-namespace ResourceStringComparisonMapper
-{
+namespace ResourceStringComparisonMapper {
 AWS_INSPECTOR2_API ResourceStringComparison GetResourceStringComparisonForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForResourceStringComparison(ResourceStringComparison value);
-} // namespace ResourceStringComparisonMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace ResourceStringComparisonMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

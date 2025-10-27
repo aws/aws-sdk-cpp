@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/LongFormatText.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/LongFormatText.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-LongFormatText::LongFormatText(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LongFormatText::LongFormatText(JsonView jsonValue) { *this = jsonValue; }
 
-LongFormatText& LongFormatText::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PlainText"))
-  {
+LongFormatText& LongFormatText::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PlainText")) {
     m_plainText = jsonValue.GetString("PlainText");
     m_plainTextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RichText"))
-  {
+  if (jsonValue.ValueExists("RichText")) {
     m_richText = jsonValue.GetString("RichText");
     m_richTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LongFormatText::Jsonize() const
-{
+JsonValue LongFormatText::Jsonize() const {
   JsonValue payload;
 
-  if(m_plainTextHasBeenSet)
-  {
-   payload.WithString("PlainText", m_plainText);
-
+  if (m_plainTextHasBeenSet) {
+    payload.WithString("PlainText", m_plainText);
   }
 
-  if(m_richTextHasBeenSet)
-  {
-   payload.WithString("RichText", m_richText);
-
+  if (m_richTextHasBeenSet) {
+    payload.WithString("RichText", m_richText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

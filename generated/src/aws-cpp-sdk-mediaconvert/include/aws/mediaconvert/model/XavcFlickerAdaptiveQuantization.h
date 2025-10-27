@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class XavcFlickerAdaptiveQuantization
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class XavcFlickerAdaptiveQuantization { NOT_SET, DISABLED, ENABLED };
 
-namespace XavcFlickerAdaptiveQuantizationMapper
-{
+namespace XavcFlickerAdaptiveQuantizationMapper {
 AWS_MEDIACONVERT_API XavcFlickerAdaptiveQuantization GetXavcFlickerAdaptiveQuantizationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForXavcFlickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization value);
-} // namespace XavcFlickerAdaptiveQuantizationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace XavcFlickerAdaptiveQuantizationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

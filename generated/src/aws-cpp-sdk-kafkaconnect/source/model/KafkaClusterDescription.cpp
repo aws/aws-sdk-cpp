@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/KafkaClusterDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/KafkaClusterDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-KafkaClusterDescription::KafkaClusterDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KafkaClusterDescription::KafkaClusterDescription(JsonView jsonValue) { *this = jsonValue; }
 
-KafkaClusterDescription& KafkaClusterDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apacheKafkaCluster"))
-  {
+KafkaClusterDescription& KafkaClusterDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apacheKafkaCluster")) {
     m_apacheKafkaCluster = jsonValue.GetObject("apacheKafkaCluster");
     m_apacheKafkaClusterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KafkaClusterDescription::Jsonize() const
-{
+JsonValue KafkaClusterDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_apacheKafkaClusterHasBeenSet)
-  {
-   payload.WithObject("apacheKafkaCluster", m_apacheKafkaCluster.Jsonize());
-
+  if (m_apacheKafkaClusterHasBeenSet) {
+    payload.WithObject("apacheKafkaCluster", m_apacheKafkaCluster.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

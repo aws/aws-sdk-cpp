@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/qldb-session/QLDBSession_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/qldb-session/QLDBSessionEndpointRules.h>
+#include <aws/qldb-session/QLDBSession_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace QLDBSession
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace QLDBSession {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using QLDBSessionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using QLDBSessionDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_QLDBSESSION_API QLDBSessionEndpointProvider : public QLDBSessionDefaultEpProviderBase
-{
-public:
-    using QLDBSessionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_QLDBSESSION_API QLDBSessionEndpointProvider : public QLDBSessionDefaultEpProviderBase {
+ public:
+  using QLDBSessionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    QLDBSessionEndpointProvider()
-      : QLDBSessionDefaultEpProviderBase(Aws::QLDBSession::QLDBSessionEndpointRules::GetRulesBlob(), Aws::QLDBSession::QLDBSessionEndpointRules::RulesBlobSize)
-    {}
+  QLDBSessionEndpointProvider()
+      : QLDBSessionDefaultEpProviderBase(Aws::QLDBSession::QLDBSessionEndpointRules::GetRulesBlob(),
+                                         Aws::QLDBSession::QLDBSessionEndpointRules::RulesBlobSize) {}
 
-    ~QLDBSessionEndpointProvider()
-    {
-    }
+  ~QLDBSessionEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace QLDBSession
+}  // namespace Aws

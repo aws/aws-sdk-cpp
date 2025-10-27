@@ -5,93 +5,102 @@
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/cloudformation/model/WarningType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/WarningProperty.h>
+#include <aws/cloudformation/model/WarningType.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFormation {
+namespace Model {
 
+/**
+ * <p>The warnings generated for a specific resource for this generated
+ * template.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/WarningDetail">AWS
+ * API Reference</a></p>
+ */
+class WarningDetail {
+ public:
+  AWS_CLOUDFORMATION_API WarningDetail() = default;
+  AWS_CLOUDFORMATION_API WarningDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_CLOUDFORMATION_API WarningDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>The warnings generated for a specific resource for this generated
-   * template.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/WarningDetail">AWS
-   * API Reference</a></p>
+   * <p>The type of this warning. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve
+   * write-only properties</a> in the <i>CloudFormation User Guide</i>.</p> <ul> <li>
+   * <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires
+   * mutually-exclusive write-only properties. The IaC generator selects one set of
+   * mutually exclusive properties and converts the included properties into
+   * parameters. The parameter names have a suffix <code>OneOf</code> and the
+   * parameter descriptions indicate that the corresponding property can be replaced
+   * with other exclusive properties.</p> </li> <li> <p>
+   * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
+   * resource. One example of unsupported properties would be a required write-only
+   * property that is an array, because a parameter cannot be an array. Another
+   * example is an optional write-only property.</p> </li> <li> <p>
+   * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
+   * properties are found in the resource, and the type of that property can be any
+   * of several types.</p> </li> </ul>  <p>Currently the resource and property
+   * reference documentation does not indicate if a property uses a type of
+   * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
+   * provider schema.</p>
    */
-  class WarningDetail
-  {
-  public:
-    AWS_CLOUDFORMATION_API WarningDetail() = default;
-    AWS_CLOUDFORMATION_API WarningDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_CLOUDFORMATION_API WarningDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline WarningType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(WarningType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline WarningDetail& WithType(WarningType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The properties of the resource that are impacted by this warning.</p>
+   */
+  inline const Aws::Vector<WarningProperty>& GetProperties() const { return m_properties; }
+  inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+  template <typename PropertiesT = Aws::Vector<WarningProperty>>
+  void SetProperties(PropertiesT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties = std::forward<PropertiesT>(value);
+  }
+  template <typename PropertiesT = Aws::Vector<WarningProperty>>
+  WarningDetail& WithProperties(PropertiesT&& value) {
+    SetProperties(std::forward<PropertiesT>(value));
+    return *this;
+  }
+  template <typename PropertiesT = WarningProperty>
+  WarningDetail& AddProperties(PropertiesT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties.emplace_back(std::forward<PropertiesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  WarningType m_type{WarningType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
+  Aws::Vector<WarningProperty> m_properties;
+  bool m_propertiesHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve
-     * write-only properties</a> in the <i>CloudFormation User Guide</i>.</p> <ul> <li>
-     * <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires
-     * mutually-exclusive write-only properties. The IaC generator selects one set of
-     * mutually exclusive properties and converts the included properties into
-     * parameters. The parameter names have a suffix <code>OneOf</code> and the
-     * parameter descriptions indicate that the corresponding property can be replaced
-     * with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
-    inline WarningType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(WarningType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline WarningDetail& WithType(WarningType value) { SetType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
-    inline const Aws::Vector<WarningProperty>& GetProperties() const { return m_properties; }
-    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    template<typename PropertiesT = Aws::Vector<WarningProperty>>
-    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
-    template<typename PropertiesT = Aws::Vector<WarningProperty>>
-    WarningDetail& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
-    template<typename PropertiesT = WarningProperty>
-    WarningDetail& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
-    ///@}
-  private:
-
-    WarningType m_type{WarningType::NOT_SET};
-    bool m_typeHasBeenSet = false;
-
-    Aws::Vector<WarningProperty> m_properties;
-    bool m_propertiesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

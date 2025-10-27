@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/billing/BillingEndpointRules.h>
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/billing/BillingEndpointRules.h>
-
-
-namespace Aws
-{
-namespace Billing
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Billing {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BillingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using BillingDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BILLING_API BillingEndpointProvider : public BillingDefaultEpProviderBase
-{
-public:
-    using BillingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BILLING_API BillingEndpointProvider : public BillingDefaultEpProviderBase {
+ public:
+  using BillingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BillingEndpointProvider()
-      : BillingDefaultEpProviderBase(Aws::Billing::BillingEndpointRules::GetRulesBlob(), Aws::Billing::BillingEndpointRules::RulesBlobSize)
-    {}
+  BillingEndpointProvider()
+      : BillingDefaultEpProviderBase(Aws::Billing::BillingEndpointRules::GetRulesBlob(),
+                                     Aws::Billing::BillingEndpointRules::RulesBlobSize) {}
 
-    ~BillingEndpointProvider()
-    {
-    }
+  ~BillingEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Billing
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Billing
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/inspector/InspectorEndpointProvider.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Inspector
-} // namespace Aws
+namespace Aws {
+namespace Inspector {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Inspector
+}  // namespace Aws

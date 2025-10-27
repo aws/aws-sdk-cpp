@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/TextOutputEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/TextOutputEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-TextOutputEvent::TextOutputEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextOutputEvent::TextOutputEvent(JsonView jsonValue) { *this = jsonValue; }
 
-TextOutputEvent& TextOutputEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("systemMessageType"))
-  {
+TextOutputEvent& TextOutputEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("systemMessageType")) {
     m_systemMessageType = SystemMessageTypeMapper::GetSystemMessageTypeForName(jsonValue.GetString("systemMessageType"));
     m_systemMessageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conversationId"))
-  {
+  if (jsonValue.ValueExists("conversationId")) {
     m_conversationId = jsonValue.GetString("conversationId");
     m_conversationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userMessageId"))
-  {
+  if (jsonValue.ValueExists("userMessageId")) {
     m_userMessageId = jsonValue.GetString("userMessageId");
     m_userMessageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("systemMessageId"))
-  {
+  if (jsonValue.ValueExists("systemMessageId")) {
     m_systemMessageId = jsonValue.GetString("systemMessageId");
     m_systemMessageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("systemMessage"))
-  {
+  if (jsonValue.ValueExists("systemMessage")) {
     m_systemMessage = jsonValue.GetString("systemMessage");
     m_systemMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextOutputEvent::Jsonize() const
-{
+JsonValue TextOutputEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_systemMessageTypeHasBeenSet)
-  {
-   payload.WithString("systemMessageType", SystemMessageTypeMapper::GetNameForSystemMessageType(m_systemMessageType));
+  if (m_systemMessageTypeHasBeenSet) {
+    payload.WithString("systemMessageType", SystemMessageTypeMapper::GetNameForSystemMessageType(m_systemMessageType));
   }
 
-  if(m_conversationIdHasBeenSet)
-  {
-   payload.WithString("conversationId", m_conversationId);
-
+  if (m_conversationIdHasBeenSet) {
+    payload.WithString("conversationId", m_conversationId);
   }
 
-  if(m_userMessageIdHasBeenSet)
-  {
-   payload.WithString("userMessageId", m_userMessageId);
-
+  if (m_userMessageIdHasBeenSet) {
+    payload.WithString("userMessageId", m_userMessageId);
   }
 
-  if(m_systemMessageIdHasBeenSet)
-  {
-   payload.WithString("systemMessageId", m_systemMessageId);
-
+  if (m_systemMessageIdHasBeenSet) {
+    payload.WithString("systemMessageId", m_systemMessageId);
   }
 
-  if(m_systemMessageHasBeenSet)
-  {
-   payload.WithString("systemMessage", m_systemMessage);
-
+  if (m_systemMessageHasBeenSet) {
+    payload.WithString("systemMessage", m_systemMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetModelRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetModelRequest::SerializePayload() const { return {}; }

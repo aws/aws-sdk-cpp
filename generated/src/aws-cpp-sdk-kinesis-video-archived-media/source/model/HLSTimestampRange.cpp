@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis-video-archived-media/model/HLSTimestampRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis-video-archived-media/model/HLSTimestampRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
 
-HLSTimestampRange::HLSTimestampRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HLSTimestampRange::HLSTimestampRange(JsonView jsonValue) { *this = jsonValue; }
 
-HLSTimestampRange& HLSTimestampRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StartTimestamp"))
-  {
+HLSTimestampRange& HLSTimestampRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StartTimestamp")) {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
     m_startTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTimestamp"))
-  {
+  if (jsonValue.ValueExists("EndTimestamp")) {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
     m_endTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HLSTimestampRange::Jsonize() const
-{
+JsonValue HLSTimestampRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimestampHasBeenSet)
-  {
-   payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
+  if (m_startTimestampHasBeenSet) {
+    payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_endTimestampHasBeenSet)
-  {
-   payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
+  if (m_endTimestampHasBeenSet) {
+    payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

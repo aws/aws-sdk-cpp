@@ -5,12 +5,8 @@
 
 #include <aws/docdb/DocDBEndpointProvider.h>
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DocDB
-} // namespace Aws
+namespace Aws {
+namespace DocDB {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DocDB
+}  // namespace Aws

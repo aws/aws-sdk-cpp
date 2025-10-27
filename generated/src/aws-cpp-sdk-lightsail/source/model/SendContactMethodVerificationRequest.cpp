@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
 
 #include <utility>
 
@@ -12,26 +12,18 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SendContactMethodVerificationRequest::SerializePayload() const
-{
+Aws::String SendContactMethodVerificationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", ContactMethodVerificationProtocolMapper::GetNameForContactMethodVerificationProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", ContactMethodVerificationProtocolMapper::GetNameForContactMethodVerificationProtocol(m_protocol));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SendContactMethodVerificationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SendContactMethodVerificationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.SendContactMethodVerification"));
   return headers;
-
 }
-
-
-
-

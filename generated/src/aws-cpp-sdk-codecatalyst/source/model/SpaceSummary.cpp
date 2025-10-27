@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-SpaceSummary::SpaceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpaceSummary::SpaceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-SpaceSummary& SpaceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SpaceSummary& SpaceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("regionName"))
-  {
+  if (jsonValue.ValueExists("regionName")) {
     m_regionName = jsonValue.GetString("regionName");
     m_regionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
-  {
+  if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SpaceSummary::Jsonize() const
-{
+JsonValue SpaceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_regionNameHasBeenSet)
-  {
-   payload.WithString("regionName", m_regionName);
-
+  if (m_regionNameHasBeenSet) {
+    payload.WithString("regionName", m_regionName);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

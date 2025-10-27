@@ -12,45 +12,30 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListIdentitiesRequest::SerializePayload() const
-{
+Aws::String ListIdentitiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_hideDisabledHasBeenSet)
-  {
-   payload.WithBool("HideDisabled", m_hideDisabled);
-
+  if (m_hideDisabledHasBeenSet) {
+    payload.WithBool("HideDisabled", m_hideDisabled);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListIdentitiesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListIdentitiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.ListIdentities"));
   return headers;
-
 }
-
-
-
-

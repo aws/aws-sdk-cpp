@@ -12,49 +12,35 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDeploymentTargetsRequest::SerializePayload() const
-{
+Aws::String ListDeploymentTargetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_targetFiltersHasBeenSet)
-  {
-   JsonValue targetFiltersJsonMap;
-   for(auto& targetFiltersItem : m_targetFilters)
-   {
-     Aws::Utils::Array<JsonValue> filterValueListJsonList(targetFiltersItem.second.size());
-     for(unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex)
-     {
-       filterValueListJsonList[filterValueListIndex].AsString(targetFiltersItem.second[filterValueListIndex]);
-     }
-     targetFiltersJsonMap.WithArray(TargetFilterNameMapper::GetNameForTargetFilterName(targetFiltersItem.first), std::move(filterValueListJsonList));
-   }
-   payload.WithObject("targetFilters", std::move(targetFiltersJsonMap));
-
+  if (m_targetFiltersHasBeenSet) {
+    JsonValue targetFiltersJsonMap;
+    for (auto& targetFiltersItem : m_targetFilters) {
+      Aws::Utils::Array<JsonValue> filterValueListJsonList(targetFiltersItem.second.size());
+      for (unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex) {
+        filterValueListJsonList[filterValueListIndex].AsString(targetFiltersItem.second[filterValueListIndex]);
+      }
+      targetFiltersJsonMap.WithArray(TargetFilterNameMapper::GetNameForTargetFilterName(targetFiltersItem.first),
+                                     std::move(filterValueListJsonList));
+    }
+    payload.WithObject("targetFilters", std::move(targetFiltersJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListDeploymentTargetsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListDeploymentTargetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListDeploymentTargets"));
   return headers;
-
 }
-
-
-
-

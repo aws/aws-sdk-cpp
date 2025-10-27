@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-VpcConfig::VpcConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConfig::VpcConfig(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConfig& VpcConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("securityGroups"))
-  {
+VpcConfig& VpcConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("securityGroups")) {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
-    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
-    {
+    for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
     m_securityGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subnets"))
-  {
+  if (jsonValue.ValueExists("subnets")) {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
-    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
-    {
+    for (unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex) {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
     }
     m_subnetsHasBeenSet = true;
@@ -46,35 +35,28 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue VpcConfig::Jsonize() const
-{
+JsonValue VpcConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_securityGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
-   for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
-   {
-     securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
-   }
-   payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
-
+  if (m_securityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+    for (unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex) {
+      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
+    }
+    payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
   }
 
-  if(m_subnetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
-   for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
-   {
-     subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
-   }
-   payload.WithArray("subnets", std::move(subnetsJsonList));
-
+  if (m_subnetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
+    for (unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex) {
+      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
+    }
+    payload.WithArray("subnets", std::move(subnetsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-namespace Model
-{
-  enum class LogFormats
-  {
-    NOT_SET,
-    full
-  };
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Model {
+enum class LogFormats { NOT_SET, full };
 
-namespace LogFormatsMapper
-{
+namespace LogFormatsMapper {
 AWS_TIMESTREAMINFLUXDB_API LogFormats GetLogFormatsForName(const Aws::String& name);
 
 AWS_TIMESTREAMINFLUXDB_API Aws::String GetNameForLogFormats(LogFormats value);
-} // namespace LogFormatsMapper
-} // namespace Model
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+}  // namespace LogFormatsMapper
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/Address.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/Address.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-Address::Address(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Address::Address(JsonView jsonValue) { *this = jsonValue; }
 
-Address& Address::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AddressDefinition"))
-  {
+Address& Address::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AddressDefinition")) {
     m_addressDefinition = jsonValue.GetString("AddressDefinition");
     m_addressDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Address::Jsonize() const
-{
+JsonValue Address::Jsonize() const {
   JsonValue payload;
 
-  if(m_addressDefinitionHasBeenSet)
-  {
-   payload.WithString("AddressDefinition", m_addressDefinition);
-
+  if (m_addressDefinitionHasBeenSet) {
+    payload.WithString("AddressDefinition", m_addressDefinition);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

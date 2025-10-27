@@ -17,23 +17,17 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
+void ImportApiKeysRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_formatHasBeenSet) {
+    ss << ApiKeysFormatMapper::GetNameForApiKeysFormat(m_format);
+    uri.AddQueryStringParameter("format", ss.str());
+    ss.str("");
+  }
 
-void ImportApiKeysRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_formatHasBeenSet)
-    {
-      ss << ApiKeysFormatMapper::GetNameForApiKeysFormat(m_format);
-      uri.AddQueryStringParameter("format", ss.str());
-      ss.str("");
-    }
-
-    if(m_failOnWarningsHasBeenSet)
-    {
-      ss << m_failOnWarnings;
-      uri.AddQueryStringParameter("failonwarnings", ss.str());
-      ss.str("");
-    }
-
+  if (m_failOnWarningsHasBeenSet) {
+    ss << m_failOnWarnings;
+    uri.AddQueryStringParameter("failonwarnings", ss.str());
+    ss.str("");
+  }
 }
-

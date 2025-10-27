@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class AutoUpdate
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class AutoUpdate { NOT_SET, ENABLED, DISABLED };
 
-namespace AutoUpdateMapper
-{
+namespace AutoUpdateMapper {
 AWS_TEXTRACT_API AutoUpdate GetAutoUpdateForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForAutoUpdate(AutoUpdate value);
-} // namespace AutoUpdateMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace AutoUpdateMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

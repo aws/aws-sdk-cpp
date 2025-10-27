@@ -4,74 +4,80 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticBeanstalk {
+namespace Model {
 
+/**
+ * <p>The bucket and key of an item stored in Amazon S3.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/S3Location">AWS
+ * API Reference</a></p>
+ */
+class S3Location {
+ public:
+  AWS_ELASTICBEANSTALK_API S3Location() = default;
+  AWS_ELASTICBEANSTALK_API S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_ELASTICBEANSTALK_API S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index,
+                                               const char* locationValue) const;
+  AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>The bucket and key of an item stored in Amazon S3.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/S3Location">AWS
-   * API Reference</a></p>
+   * <p>The Amazon S3 bucket where the data is located.</p>
    */
-  class S3Location
-  {
-  public:
-    AWS_ELASTICBEANSTALK_API S3Location() = default;
-    AWS_ELASTICBEANSTALK_API S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_ELASTICBEANSTALK_API S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
+  inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+  template <typename S3BucketT = Aws::String>
+  void SetS3Bucket(S3BucketT&& value) {
+    m_s3BucketHasBeenSet = true;
+    m_s3Bucket = std::forward<S3BucketT>(value);
+  }
+  template <typename S3BucketT = Aws::String>
+  S3Location& WithS3Bucket(S3BucketT&& value) {
+    SetS3Bucket(std::forward<S3BucketT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The Amazon S3 key where the data is located.</p>
+   */
+  inline const Aws::String& GetS3Key() const { return m_s3Key; }
+  inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+  template <typename S3KeyT = Aws::String>
+  void SetS3Key(S3KeyT&& value) {
+    m_s3KeyHasBeenSet = true;
+    m_s3Key = std::forward<S3KeyT>(value);
+  }
+  template <typename S3KeyT = Aws::String>
+  S3Location& WithS3Key(S3KeyT&& value) {
+    SetS3Key(std::forward<S3KeyT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_s3Bucket;
+  bool m_s3BucketHasBeenSet = false;
 
+  Aws::String m_s3Key;
+  bool m_s3KeyHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The Amazon S3 bucket where the data is located.</p>
-     */
-    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
-    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    template<typename S3BucketT = Aws::String>
-    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
-    template<typename S3BucketT = Aws::String>
-    S3Location& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon S3 key where the data is located.</p>
-     */
-    inline const Aws::String& GetS3Key() const { return m_s3Key; }
-    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    template<typename S3KeyT = Aws::String>
-    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
-    template<typename S3KeyT = Aws::String>
-    S3Location& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet = false;
-
-    Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

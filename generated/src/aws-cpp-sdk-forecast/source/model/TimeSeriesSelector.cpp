@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/TimeSeriesSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/TimeSeriesSelector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-TimeSeriesSelector::TimeSeriesSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeSeriesSelector::TimeSeriesSelector(JsonView jsonValue) { *this = jsonValue; }
 
-TimeSeriesSelector& TimeSeriesSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeSeriesIdentifiers"))
-  {
+TimeSeriesSelector& TimeSeriesSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeSeriesIdentifiers")) {
     m_timeSeriesIdentifiers = jsonValue.GetObject("TimeSeriesIdentifiers");
     m_timeSeriesIdentifiersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeSeriesSelector::Jsonize() const
-{
+JsonValue TimeSeriesSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeSeriesIdentifiersHasBeenSet)
-  {
-   payload.WithObject("TimeSeriesIdentifiers", m_timeSeriesIdentifiers.Jsonize());
-
+  if (m_timeSeriesIdentifiersHasBeenSet) {
+    payload.WithObject("TimeSeriesIdentifiers", m_timeSeriesIdentifiers.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

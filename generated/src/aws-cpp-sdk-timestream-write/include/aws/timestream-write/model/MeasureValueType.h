@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
-  enum class MeasureValueType
-  {
-    NOT_SET,
-    DOUBLE,
-    BIGINT,
-    VARCHAR,
-    BOOLEAN,
-    TIMESTAMP,
-    MULTI
-  };
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
+enum class MeasureValueType { NOT_SET, DOUBLE, BIGINT, VARCHAR, BOOLEAN, TIMESTAMP, MULTI };
 
-namespace MeasureValueTypeMapper
-{
+namespace MeasureValueTypeMapper {
 AWS_TIMESTREAMWRITE_API MeasureValueType GetMeasureValueTypeForName(const Aws::String& name);
 
 AWS_TIMESTREAMWRITE_API Aws::String GetNameForMeasureValueType(MeasureValueType value);
-} // namespace MeasureValueTypeMapper
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace MeasureValueTypeMapper
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

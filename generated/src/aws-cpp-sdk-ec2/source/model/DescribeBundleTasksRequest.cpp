@@ -3,38 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeBundleTasksRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeBundleTasksRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeBundleTasksRequest::SerializePayload() const
-{
+Aws::String DescribeBundleTasksRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeBundleTasks&";
-  if(m_bundleIdsHasBeenSet)
-  {
+  if (m_bundleIdsHasBeenSet) {
     unsigned bundleIdsCount = 1;
-    for(auto& item : m_bundleIds)
-    {
-      ss << "BundleId." << bundleIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_bundleIds) {
+      ss << "BundleId." << bundleIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       bundleIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
@@ -44,8 +37,4 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeBundleTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeBundleTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class ThreatEntitySetStatus
-  {
-    NOT_SET,
-    INACTIVE,
-    ACTIVATING,
-    ACTIVE,
-    DEACTIVATING,
-    ERROR_,
-    DELETE_PENDING,
-    DELETED
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class ThreatEntitySetStatus { NOT_SET, INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR_, DELETE_PENDING, DELETED };
 
-namespace ThreatEntitySetStatusMapper
-{
+namespace ThreatEntitySetStatusMapper {
 AWS_GUARDDUTY_API ThreatEntitySetStatus GetThreatEntitySetStatusForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForThreatEntitySetStatus(ThreatEntitySetStatus value);
-} // namespace ThreatEntitySetStatusMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace ThreatEntitySetStatusMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

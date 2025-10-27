@@ -4,48 +4,43 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
 #if defined(_WIN32) && defined(interface)
 #undef interface
 #endif
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class NetworkInterfaceType
-  {
-    NOT_SET,
-    interface,
-    natGateway,
-    efa,
-    efa_only,
-    trunk,
-    load_balancer,
-    network_load_balancer,
-    vpc_endpoint,
-    branch,
-    transit_gateway,
-    lambda,
-    quicksight,
-    global_accelerator_managed,
-    api_gateway_managed,
-    gateway_load_balancer,
-    gateway_load_balancer_endpoint,
-    iot_rules_managed,
-    aws_codestar_connections_managed
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class NetworkInterfaceType {
+  NOT_SET,
+  interface,
+  natGateway,
+  efa,
+  efa_only,
+  trunk,
+  load_balancer,
+  network_load_balancer,
+  vpc_endpoint,
+  branch,
+  transit_gateway,
+  lambda,
+  quicksight,
+  global_accelerator_managed,
+  api_gateway_managed,
+  gateway_load_balancer,
+  gateway_load_balancer_endpoint,
+  iot_rules_managed,
+  aws_codestar_connections_managed
+};
 
-namespace NetworkInterfaceTypeMapper
-{
+namespace NetworkInterfaceTypeMapper {
 AWS_EC2_API NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType value);
-} // namespace NetworkInterfaceTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace NetworkInterfaceTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

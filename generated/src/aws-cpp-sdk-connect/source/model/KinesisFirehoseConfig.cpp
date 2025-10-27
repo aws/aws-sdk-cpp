@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-KinesisFirehoseConfig::KinesisFirehoseConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisFirehoseConfig::KinesisFirehoseConfig(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisFirehoseConfig& KinesisFirehoseConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirehoseArn"))
-  {
+KinesisFirehoseConfig& KinesisFirehoseConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirehoseArn")) {
     m_firehoseArn = jsonValue.GetString("FirehoseArn");
     m_firehoseArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisFirehoseConfig::Jsonize() const
-{
+JsonValue KinesisFirehoseConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_firehoseArnHasBeenSet)
-  {
-   payload.WithString("FirehoseArn", m_firehoseArn);
-
+  if (m_firehoseArnHasBeenSet) {
+    payload.WithString("FirehoseArn", m_firehoseArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

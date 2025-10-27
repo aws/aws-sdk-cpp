@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pca-connector-ad/model/AccessRights.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pca-connector-ad/model/AccessRights.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Model
-{
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Model {
 
-AccessRights::AccessRights(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessRights::AccessRights(JsonView jsonValue) { *this = jsonValue; }
 
-AccessRights& AccessRights::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutoEnroll"))
-  {
+AccessRights& AccessRights::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutoEnroll")) {
     m_autoEnroll = AccessRightMapper::GetAccessRightForName(jsonValue.GetString("AutoEnroll"));
     m_autoEnrollHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Enroll"))
-  {
+  if (jsonValue.ValueExists("Enroll")) {
     m_enroll = AccessRightMapper::GetAccessRightForName(jsonValue.GetString("Enroll"));
     m_enrollHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessRights::Jsonize() const
-{
+JsonValue AccessRights::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoEnrollHasBeenSet)
-  {
-   payload.WithString("AutoEnroll", AccessRightMapper::GetNameForAccessRight(m_autoEnroll));
+  if (m_autoEnrollHasBeenSet) {
+    payload.WithString("AutoEnroll", AccessRightMapper::GetNameForAccessRight(m_autoEnroll));
   }
 
-  if(m_enrollHasBeenSet)
-  {
-   payload.WithString("Enroll", AccessRightMapper::GetNameForAccessRight(m_enroll));
+  if (m_enrollHasBeenSet) {
+    payload.WithString("Enroll", AccessRightMapper::GetNameForAccessRight(m_enroll));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace Model
+}  // namespace PcaConnectorAd
+}  // namespace Aws

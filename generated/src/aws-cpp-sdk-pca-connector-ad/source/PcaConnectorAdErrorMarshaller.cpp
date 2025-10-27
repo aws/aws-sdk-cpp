@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::PcaConnectorAd;
 
-AWSError<CoreErrors> PcaConnectorAdErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PcaConnectorAdErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PcaConnectorAdErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

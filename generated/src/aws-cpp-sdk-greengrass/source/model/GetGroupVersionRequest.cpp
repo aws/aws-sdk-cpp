@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/GetGroupVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/GetGroupVersionRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetGroupVersionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetGroupVersionRequest::SerializePayload() const { return {}; }

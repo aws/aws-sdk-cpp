@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rtbfabric/model/DeleteOutboundExternalLinkRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rtbfabric/model/DeleteOutboundExternalLinkRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::RTBFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteOutboundExternalLinkRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteOutboundExternalLinkRequest::SerializePayload() const { return {}; }

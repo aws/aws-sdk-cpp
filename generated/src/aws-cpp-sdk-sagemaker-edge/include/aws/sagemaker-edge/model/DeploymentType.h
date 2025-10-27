@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-namespace Model
-{
-  enum class DeploymentType
-  {
-    NOT_SET,
-    Model
-  };
+namespace Aws {
+namespace SagemakerEdgeManager {
+namespace Model {
+enum class DeploymentType { NOT_SET, Model };
 
-namespace DeploymentTypeMapper
-{
+namespace DeploymentTypeMapper {
 AWS_SAGEMAKEREDGEMANAGER_API DeploymentType GetDeploymentTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKEREDGEMANAGER_API Aws::String GetNameForDeploymentType(DeploymentType value);
-} // namespace DeploymentTypeMapper
-} // namespace Model
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace DeploymentTypeMapper
+}  // namespace Model
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

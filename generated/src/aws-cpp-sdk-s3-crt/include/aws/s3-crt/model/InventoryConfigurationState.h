@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class InventoryConfigurationState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class InventoryConfigurationState { NOT_SET, ENABLED, DISABLED };
 
-namespace InventoryConfigurationStateMapper
-{
+namespace InventoryConfigurationStateMapper {
 AWS_S3CRT_API InventoryConfigurationState GetInventoryConfigurationStateForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForInventoryConfigurationState(InventoryConfigurationState value);
-} // namespace InventoryConfigurationStateMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace InventoryConfigurationStateMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

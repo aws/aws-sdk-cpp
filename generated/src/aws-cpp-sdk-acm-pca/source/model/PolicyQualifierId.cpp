@@ -4,62 +4,50 @@
  */
 
 #include <aws/acm-pca/model/PolicyQualifierId.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+namespace PolicyQualifierIdMapper {
 
-namespace Aws
-{
-  namespace ACMPCA
-  {
-    namespace Model
-    {
-      namespace PolicyQualifierIdMapper
-      {
+static const int CPS_HASH = HashingUtils::HashString("CPS");
 
-        static const int CPS_HASH = HashingUtils::HashString("CPS");
+PolicyQualifierId GetPolicyQualifierIdForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CPS_HASH) {
+    return PolicyQualifierId::CPS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PolicyQualifierId>(hashCode);
+  }
 
+  return PolicyQualifierId::NOT_SET;
+}
 
-        PolicyQualifierId GetPolicyQualifierIdForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CPS_HASH)
-          {
-            return PolicyQualifierId::CPS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PolicyQualifierId>(hashCode);
-          }
+Aws::String GetNameForPolicyQualifierId(PolicyQualifierId enumValue) {
+  switch (enumValue) {
+    case PolicyQualifierId::NOT_SET:
+      return {};
+    case PolicyQualifierId::CPS:
+      return "CPS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PolicyQualifierId::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPolicyQualifierId(PolicyQualifierId enumValue)
-        {
-          switch(enumValue)
-          {
-          case PolicyQualifierId::NOT_SET:
-            return {};
-          case PolicyQualifierId::CPS:
-            return "CPS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PolicyQualifierIdMapper
-    } // namespace Model
-  } // namespace ACMPCA
-} // namespace Aws
+}  // namespace PolicyQualifierIdMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

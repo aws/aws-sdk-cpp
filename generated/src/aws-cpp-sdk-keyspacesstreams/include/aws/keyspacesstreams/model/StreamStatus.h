@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace KeyspacesStreams
-{
-namespace Model
-{
-  enum class StreamStatus
-  {
-    NOT_SET,
-    ENABLING,
-    ENABLED,
-    DISABLING,
-    DISABLED
-  };
+namespace Aws {
+namespace KeyspacesStreams {
+namespace Model {
+enum class StreamStatus { NOT_SET, ENABLING, ENABLED, DISABLING, DISABLED };
 
-namespace StreamStatusMapper
-{
+namespace StreamStatusMapper {
 AWS_KEYSPACESSTREAMS_API StreamStatus GetStreamStatusForName(const Aws::String& name);
 
 AWS_KEYSPACESSTREAMS_API Aws::String GetNameForStreamStatus(StreamStatus value);
-} // namespace StreamStatusMapper
-} // namespace Model
-} // namespace KeyspacesStreams
-} // namespace Aws
+}  // namespace StreamStatusMapper
+}  // namespace Model
+}  // namespace KeyspacesStreams
+}  // namespace Aws

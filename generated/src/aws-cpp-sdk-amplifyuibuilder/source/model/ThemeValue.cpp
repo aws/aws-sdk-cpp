@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ThemeValue::ThemeValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThemeValue::ThemeValue(JsonView jsonValue) { *this = jsonValue; }
 
-ThemeValue& ThemeValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+ThemeValue& ThemeValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("children"))
-  {
+  if (jsonValue.ValueExists("children")) {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
-    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
-    {
+    for (unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex) {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
     }
     m_childrenHasBeenSet = true;
@@ -42,30 +32,24 @@ ThemeValue& ThemeValue::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ThemeValue::Jsonize() const
-{
+JsonValue ThemeValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_childrenHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
-   for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
-   {
-     childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
-   }
-   payload.WithArray("children", std::move(childrenJsonList));
-
+  if (m_childrenHasBeenSet) {
+    Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
+    for (unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex) {
+      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
+    }
+    payload.WithArray("children", std::move(childrenJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

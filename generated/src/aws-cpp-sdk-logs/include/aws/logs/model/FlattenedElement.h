@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class FlattenedElement
-  {
-    NOT_SET,
-    first,
-    last
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class FlattenedElement { NOT_SET, first, last };
 
-namespace FlattenedElementMapper
-{
+namespace FlattenedElementMapper {
 AWS_CLOUDWATCHLOGS_API FlattenedElement GetFlattenedElementForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForFlattenedElement(FlattenedElement value);
-} // namespace FlattenedElementMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace FlattenedElementMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

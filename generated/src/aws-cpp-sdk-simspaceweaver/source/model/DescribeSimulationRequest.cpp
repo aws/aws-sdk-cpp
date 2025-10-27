@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/simspaceweaver/model/DescribeSimulationRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/simspaceweaver/model/DescribeSimulationRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DescribeSimulationRequest::SerializePayload() const
-{
-  return {};
+Aws::String DescribeSimulationRequest::SerializePayload() const { return {}; }
+
+void DescribeSimulationRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_simulationHasBeenSet) {
+    ss << m_simulation;
+    uri.AddQueryStringParameter("simulation", ss.str());
+    ss.str("");
+  }
 }
-
-void DescribeSimulationRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_simulationHasBeenSet)
-    {
-      ss << m_simulation;
-      uri.AddQueryStringParameter("simulation", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

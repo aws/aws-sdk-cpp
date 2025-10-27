@@ -3,69 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TopicRelativeDateFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TopicRelativeDateFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TopicRelativeDateFilter::TopicRelativeDateFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TopicRelativeDateFilter::TopicRelativeDateFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TopicRelativeDateFilter& TopicRelativeDateFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeGranularity"))
-  {
+TopicRelativeDateFilter& TopicRelativeDateFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeGranularity")) {
     m_timeGranularity = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
     m_timeGranularityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelativeDateFilterFunction"))
-  {
-    m_relativeDateFilterFunction = TopicRelativeDateFilterFunctionMapper::GetTopicRelativeDateFilterFunctionForName(jsonValue.GetString("RelativeDateFilterFunction"));
+  if (jsonValue.ValueExists("RelativeDateFilterFunction")) {
+    m_relativeDateFilterFunction =
+        TopicRelativeDateFilterFunctionMapper::GetTopicRelativeDateFilterFunctionForName(jsonValue.GetString("RelativeDateFilterFunction"));
     m_relativeDateFilterFunctionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Constant"))
-  {
+  if (jsonValue.ValueExists("Constant")) {
     m_constant = jsonValue.GetObject("Constant");
     m_constantHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TopicRelativeDateFilter::Jsonize() const
-{
+JsonValue TopicRelativeDateFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeGranularityHasBeenSet)
-  {
-   payload.WithString("TimeGranularity", TopicTimeGranularityMapper::GetNameForTopicTimeGranularity(m_timeGranularity));
+  if (m_timeGranularityHasBeenSet) {
+    payload.WithString("TimeGranularity", TopicTimeGranularityMapper::GetNameForTopicTimeGranularity(m_timeGranularity));
   }
 
-  if(m_relativeDateFilterFunctionHasBeenSet)
-  {
-   payload.WithString("RelativeDateFilterFunction", TopicRelativeDateFilterFunctionMapper::GetNameForTopicRelativeDateFilterFunction(m_relativeDateFilterFunction));
+  if (m_relativeDateFilterFunctionHasBeenSet) {
+    payload.WithString("RelativeDateFilterFunction",
+                       TopicRelativeDateFilterFunctionMapper::GetNameForTopicRelativeDateFilterFunction(m_relativeDateFilterFunction));
   }
 
-  if(m_constantHasBeenSet)
-  {
-   payload.WithObject("Constant", m_constant.Jsonize());
-
+  if (m_constantHasBeenSet) {
+    payload.WithObject("Constant", m_constant.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterFromWorkMailRequest::SerializePayload() const
-{
+Aws::String DeregisterFromWorkMailRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_entityIdHasBeenSet)
-  {
-   payload.WithString("EntityId", m_entityId);
-
+  if (m_entityIdHasBeenSet) {
+    payload.WithString("EntityId", m_entityId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeregisterFromWorkMailRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeregisterFromWorkMailRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.DeregisterFromWorkMail"));
   return headers;
-
 }
-
-
-
-

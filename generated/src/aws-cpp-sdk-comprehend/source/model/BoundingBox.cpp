@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-BoundingBox::BoundingBox(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BoundingBox::BoundingBox(JsonView jsonValue) { *this = jsonValue; }
 
-BoundingBox& BoundingBox::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Height"))
-  {
+BoundingBox& BoundingBox::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Height")) {
     m_height = jsonValue.GetDouble("Height");
     m_heightHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Left"))
-  {
+  if (jsonValue.ValueExists("Left")) {
     m_left = jsonValue.GetDouble("Left");
     m_leftHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Top"))
-  {
+  if (jsonValue.ValueExists("Top")) {
     m_top = jsonValue.GetDouble("Top");
     m_topHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Width"))
-  {
+  if (jsonValue.ValueExists("Width")) {
     m_width = jsonValue.GetDouble("Width");
     m_widthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BoundingBox::Jsonize() const
-{
+JsonValue BoundingBox::Jsonize() const {
   JsonValue payload;
 
-  if(m_heightHasBeenSet)
-  {
-   payload.WithDouble("Height", m_height);
-
+  if (m_heightHasBeenSet) {
+    payload.WithDouble("Height", m_height);
   }
 
-  if(m_leftHasBeenSet)
-  {
-   payload.WithDouble("Left", m_left);
-
+  if (m_leftHasBeenSet) {
+    payload.WithDouble("Left", m_left);
   }
 
-  if(m_topHasBeenSet)
-  {
-   payload.WithDouble("Top", m_top);
-
+  if (m_topHasBeenSet) {
+    payload.WithDouble("Top", m_top);
   }
 
-  if(m_widthHasBeenSet)
-  {
-   payload.WithDouble("Width", m_width);
-
+  if (m_widthHasBeenSet) {
+    payload.WithDouble("Width", m_width);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

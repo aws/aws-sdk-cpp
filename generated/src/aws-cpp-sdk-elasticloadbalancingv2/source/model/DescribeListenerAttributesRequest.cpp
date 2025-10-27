@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DescribeListenerAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenerAttributesRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeListenerAttributesRequest::SerializePayload() const
-{
+Aws::String DescribeListenerAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeListenerAttributes&";
-  if(m_listenerArnHasBeenSet)
-  {
+  if (m_listenerArnHasBeenSet) {
     ss << "ListenerArn=" << StringUtils::URLEncode(m_listenerArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeListenerAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeListenerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeListenerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

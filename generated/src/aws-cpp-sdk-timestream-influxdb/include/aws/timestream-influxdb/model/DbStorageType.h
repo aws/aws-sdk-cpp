@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-namespace Model
-{
-  enum class DbStorageType
-  {
-    NOT_SET,
-    InfluxIOIncludedT1,
-    InfluxIOIncludedT2,
-    InfluxIOIncludedT3
-  };
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Model {
+enum class DbStorageType { NOT_SET, InfluxIOIncludedT1, InfluxIOIncludedT2, InfluxIOIncludedT3 };
 
-namespace DbStorageTypeMapper
-{
+namespace DbStorageTypeMapper {
 AWS_TIMESTREAMINFLUXDB_API DbStorageType GetDbStorageTypeForName(const Aws::String& name);
 
 AWS_TIMESTREAMINFLUXDB_API Aws::String GetNameForDbStorageType(DbStorageType value);
-} // namespace DbStorageTypeMapper
-} // namespace Model
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+}  // namespace DbStorageTypeMapper
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

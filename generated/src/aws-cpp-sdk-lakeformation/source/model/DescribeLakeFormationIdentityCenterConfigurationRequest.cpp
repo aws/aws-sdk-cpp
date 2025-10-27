@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeLakeFormationIdentityCenterConfigurationRequest::SerializePayload() const
-{
+Aws::String DescribeLakeFormationIdentityCenterConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_catalogIdHasBeenSet)
-  {
-   payload.WithString("CatalogId", m_catalogId);
-
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,113 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TimeEqualityFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TimeEqualityFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TimeEqualityFilter& TimeEqualityFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FilterId"))
-  {
+TimeEqualityFilter& TimeEqualityFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FilterId")) {
     m_filterId = jsonValue.GetString("FilterId");
     m_filterIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Column"))
-  {
+  if (jsonValue.ValueExists("Column")) {
     m_column = jsonValue.GetObject("Column");
     m_columnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterName"))
-  {
+  if (jsonValue.ValueExists("ParameterName")) {
     m_parameterName = jsonValue.GetString("ParameterName");
     m_parameterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeGranularity"))
-  {
+  if (jsonValue.ValueExists("TimeGranularity")) {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
     m_timeGranularityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RollingDate"))
-  {
+  if (jsonValue.ValueExists("RollingDate")) {
     m_rollingDate = jsonValue.GetObject("RollingDate");
     m_rollingDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
-  {
+  if (jsonValue.ValueExists("DefaultFilterControlConfiguration")) {
     m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
     m_defaultFilterControlConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimeEqualityFilter::Jsonize() const
-{
+JsonValue TimeEqualityFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterIdHasBeenSet)
-  {
-   payload.WithString("FilterId", m_filterId);
-
+  if (m_filterIdHasBeenSet) {
+    payload.WithString("FilterId", m_filterId);
   }
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithObject("Column", m_column.Jsonize());
-
+  if (m_columnHasBeenSet) {
+    payload.WithObject("Column", m_column.Jsonize());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value.SecondsWithMSPrecision());
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value.SecondsWithMSPrecision());
   }
 
-  if(m_parameterNameHasBeenSet)
-  {
-   payload.WithString("ParameterName", m_parameterName);
-
+  if (m_parameterNameHasBeenSet) {
+    payload.WithString("ParameterName", m_parameterName);
   }
 
-  if(m_timeGranularityHasBeenSet)
-  {
-   payload.WithString("TimeGranularity", TimeGranularityMapper::GetNameForTimeGranularity(m_timeGranularity));
+  if (m_timeGranularityHasBeenSet) {
+    payload.WithString("TimeGranularity", TimeGranularityMapper::GetNameForTimeGranularity(m_timeGranularity));
   }
 
-  if(m_rollingDateHasBeenSet)
-  {
-   payload.WithObject("RollingDate", m_rollingDate.Jsonize());
-
+  if (m_rollingDateHasBeenSet) {
+    payload.WithObject("RollingDate", m_rollingDate.Jsonize());
   }
 
-  if(m_defaultFilterControlConfigurationHasBeenSet)
-  {
-   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
-
+  if (m_defaultFilterControlConfigurationHasBeenSet) {
+    payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

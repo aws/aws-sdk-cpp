@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/UpdateEmailChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/UpdateEmailChannelRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateEmailChannelRequest::SerializePayload() const
-{
+Aws::String UpdateEmailChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_emailChannelRequestHasBeenSet)
-  {
-   payload = m_emailChannelRequest.Jsonize();
+  if (m_emailChannelRequestHasBeenSet) {
+    payload = m_emailChannelRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

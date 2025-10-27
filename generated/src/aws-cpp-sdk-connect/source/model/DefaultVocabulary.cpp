@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-DefaultVocabulary::DefaultVocabulary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultVocabulary::DefaultVocabulary(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultVocabulary& DefaultVocabulary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+DefaultVocabulary& DefaultVocabulary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = VocabularyLanguageCodeMapper::GetVocabularyLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyId"))
-  {
+  if (jsonValue.ValueExists("VocabularyId")) {
     m_vocabularyId = jsonValue.GetString("VocabularyId");
     m_vocabularyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyName"))
-  {
+  if (jsonValue.ValueExists("VocabularyName")) {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
     m_vocabularyNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultVocabulary::Jsonize() const
-{
+JsonValue DefaultVocabulary::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(m_languageCode));
   }
 
-  if(m_vocabularyIdHasBeenSet)
-  {
-   payload.WithString("VocabularyId", m_vocabularyId);
-
+  if (m_vocabularyIdHasBeenSet) {
+    payload.WithString("VocabularyId", m_vocabularyId);
   }
 
-  if(m_vocabularyNameHasBeenSet)
-  {
-   payload.WithString("VocabularyName", m_vocabularyName);
-
+  if (m_vocabularyNameHasBeenSet) {
+    payload.WithString("VocabularyName", m_vocabularyName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

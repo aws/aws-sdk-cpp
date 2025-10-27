@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerMetrics
-{
-namespace Model
-{
-  enum class MetricStatistic
-  {
-    NOT_SET,
-    Min,
-    Max,
-    Avg,
-    Count,
-    StdDev,
-    Last
-  };
+namespace Aws {
+namespace SageMakerMetrics {
+namespace Model {
+enum class MetricStatistic { NOT_SET, Min, Max, Avg, Count, StdDev, Last };
 
-namespace MetricStatisticMapper
-{
+namespace MetricStatisticMapper {
 AWS_SAGEMAKERMETRICS_API MetricStatistic GetMetricStatisticForName(const Aws::String& name);
 
 AWS_SAGEMAKERMETRICS_API Aws::String GetNameForMetricStatistic(MetricStatistic value);
-} // namespace MetricStatisticMapper
-} // namespace Model
-} // namespace SageMakerMetrics
-} // namespace Aws
+}  // namespace MetricStatisticMapper
+}  // namespace Model
+}  // namespace SageMakerMetrics
+}  // namespace Aws

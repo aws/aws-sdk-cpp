@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRegistrationTypeDefinitionsResult::DescribeRegistrationTypeDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeRegistrationTypeDefinitionsResult::DescribeRegistrationTypeDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeRegistrationTypeDefinitionsResult& DescribeRegistrationTypeDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeRegistrationTypeDefinitionsResult& DescribeRegistrationTypeDefinitionsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RegistrationTypeDefinitions"))
-  {
+  if (jsonValue.ValueExists("RegistrationTypeDefinitions")) {
     Aws::Utils::Array<JsonView> registrationTypeDefinitionsJsonList = jsonValue.GetArray("RegistrationTypeDefinitions");
-    for(unsigned registrationTypeDefinitionsIndex = 0; registrationTypeDefinitionsIndex < registrationTypeDefinitionsJsonList.GetLength(); ++registrationTypeDefinitionsIndex)
-    {
+    for (unsigned registrationTypeDefinitionsIndex = 0; registrationTypeDefinitionsIndex < registrationTypeDefinitionsJsonList.GetLength();
+         ++registrationTypeDefinitionsIndex) {
       m_registrationTypeDefinitions.push_back(registrationTypeDefinitionsJsonList[registrationTypeDefinitionsIndex].AsObject());
     }
     m_registrationTypeDefinitionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

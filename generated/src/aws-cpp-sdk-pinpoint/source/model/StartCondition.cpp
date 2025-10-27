@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/StartCondition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/StartCondition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-StartCondition::StartCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartCondition::StartCondition(JsonView jsonValue) { *this = jsonValue; }
 
-StartCondition& StartCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+StartCondition& StartCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventStartCondition"))
-  {
+  if (jsonValue.ValueExists("EventStartCondition")) {
     m_eventStartCondition = jsonValue.GetObject("EventStartCondition");
     m_eventStartConditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentStartCondition"))
-  {
+  if (jsonValue.ValueExists("SegmentStartCondition")) {
     m_segmentStartCondition = jsonValue.GetObject("SegmentStartCondition");
     m_segmentStartConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartCondition::Jsonize() const
-{
+JsonValue StartCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_eventStartConditionHasBeenSet)
-  {
-   payload.WithObject("EventStartCondition", m_eventStartCondition.Jsonize());
-
+  if (m_eventStartConditionHasBeenSet) {
+    payload.WithObject("EventStartCondition", m_eventStartCondition.Jsonize());
   }
 
-  if(m_segmentStartConditionHasBeenSet)
-  {
-   payload.WithObject("SegmentStartCondition", m_segmentStartCondition.Jsonize());
-
+  if (m_segmentStartConditionHasBeenSet) {
+    payload.WithObject("SegmentStartCondition", m_segmentStartCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

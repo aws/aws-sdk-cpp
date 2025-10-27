@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/ExecuteQueryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/ExecuteQueryRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,24 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExecuteQueryRequest::SerializePayload() const
-{
+Aws::String ExecuteQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workspaceIdHasBeenSet)
-  {
-   payload.WithString("workspaceId", m_workspaceId);
-
+  if (m_workspaceIdHasBeenSet) {
+    payload.WithString("workspaceId", m_workspaceId);
   }
 
-  if(m_queryStatementHasBeenSet)
-  {
-   payload.WithString("queryStatement", m_queryStatement);
-
+  if (m_queryStatementHasBeenSet) {
+    payload.WithString("queryStatement", m_queryStatement);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

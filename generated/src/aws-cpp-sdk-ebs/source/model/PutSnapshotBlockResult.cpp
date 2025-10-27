@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ebs/model/PutSnapshotBlockResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ebs/model/PutSnapshotBlockResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSnapshotBlockResult::PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutSnapshotBlockResult::PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutSnapshotBlockResult& PutSnapshotBlockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutSnapshotBlockResult& PutSnapshotBlockResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& checksumIter = headers.find("x-amz-checksum");
-  if(checksumIter != headers.end())
-  {
+  if (checksumIter != headers.end()) {
     m_checksum = checksumIter->second;
     m_checksumHasBeenSet = true;
   }
 
   const auto& checksumAlgorithmIter = headers.find("x-amz-checksum-algorithm");
-  if(checksumAlgorithmIter != headers.end())
-  {
+  if (checksumAlgorithmIter != headers.end()) {
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
     m_checksumAlgorithmHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

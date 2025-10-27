@@ -7,27 +7,16 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
-  enum class IndexStatus
-  {
-    NOT_SET,
-    PENDING,
-    ACTIVE,
-    FAILED,
-    DELETING
-  };
+namespace Aws {
+namespace Backup {
+namespace Model {
+enum class IndexStatus { NOT_SET, PENDING, ACTIVE, FAILED, DELETING };
 
-namespace IndexStatusMapper
-{
+namespace IndexStatusMapper {
 AWS_BACKUP_API IndexStatus GetIndexStatusForName(const Aws::String& name);
 
 AWS_BACKUP_API Aws::String GetNameForIndexStatus(IndexStatus value);
-} // namespace IndexStatusMapper
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace IndexStatusMapper
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

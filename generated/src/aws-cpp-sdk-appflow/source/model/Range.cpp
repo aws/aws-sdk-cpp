@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-Range::Range(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Range::Range(JsonView jsonValue) { *this = jsonValue; }
 
-Range& Range::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maximum"))
-  {
+Range& Range::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maximum")) {
     m_maximum = jsonValue.GetDouble("maximum");
     m_maximumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimum"))
-  {
+  if (jsonValue.ValueExists("minimum")) {
     m_minimum = jsonValue.GetDouble("minimum");
     m_minimumHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Range::Jsonize() const
-{
+JsonValue Range::Jsonize() const {
   JsonValue payload;
 
-  if(m_maximumHasBeenSet)
-  {
-   payload.WithDouble("maximum", m_maximum);
-
+  if (m_maximumHasBeenSet) {
+    payload.WithDouble("maximum", m_maximum);
   }
 
-  if(m_minimumHasBeenSet)
-  {
-   payload.WithDouble("minimum", m_minimum);
-
+  if (m_minimumHasBeenSet) {
+    payload.WithDouble("minimum", m_minimum);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLocalGatewayRouteTableVpcAssociationRequest::SerializePayload() const
-{
+Aws::String DeleteLocalGatewayRouteTableVpcAssociationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLocalGatewayRouteTableVpcAssociation&";
-  if(m_localGatewayRouteTableVpcAssociationIdHasBeenSet)
-  {
+  if (m_localGatewayRouteTableVpcAssociationIdHasBeenSet) {
     ss << "LocalGatewayRouteTableVpcAssociationId=" << StringUtils::URLEncode(m_localGatewayRouteTableVpcAssociationId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteLocalGatewayRouteTableVpcAssociationRequest::SerializePayload(
   return ss.str();
 }
 
-
-void  DeleteLocalGatewayRouteTableVpcAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLocalGatewayRouteTableVpcAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

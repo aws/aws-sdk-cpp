@@ -5,12 +5,8 @@
 
 #include <aws/ecs/ECSEndpointProvider.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ECS
-} // namespace Aws
+namespace Aws {
+namespace ECS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ECS
+}  // namespace Aws

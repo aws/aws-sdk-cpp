@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/DeploymentProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/DeploymentProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-DeploymentProperties::DeploymentProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentProperties::DeploymentProperties(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentProperties& DeploymentProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endTimeoutMinutes"))
-  {
+DeploymentProperties& DeploymentProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endTimeoutMinutes")) {
     m_endTimeoutMinutes = jsonValue.GetInteger("endTimeoutMinutes");
     m_endTimeoutMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimeoutMinutes"))
-  {
+  if (jsonValue.ValueExists("startTimeoutMinutes")) {
     m_startTimeoutMinutes = jsonValue.GetInteger("startTimeoutMinutes");
     m_startTimeoutMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentProperties::Jsonize() const
-{
+JsonValue DeploymentProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_endTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("endTimeoutMinutes", m_endTimeoutMinutes);
-
+  if (m_endTimeoutMinutesHasBeenSet) {
+    payload.WithInteger("endTimeoutMinutes", m_endTimeoutMinutes);
   }
 
-  if(m_startTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("startTimeoutMinutes", m_startTimeoutMinutes);
-
+  if (m_startTimeoutMinutesHasBeenSet) {
+    payload.WithInteger("startTimeoutMinutes", m_startTimeoutMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

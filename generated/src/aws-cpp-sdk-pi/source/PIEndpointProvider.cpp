@@ -5,12 +5,8 @@
 
 #include <aws/pi/PIEndpointProvider.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PI
-} // namespace Aws
+namespace Aws {
+namespace PI {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PI
+}  // namespace Aws

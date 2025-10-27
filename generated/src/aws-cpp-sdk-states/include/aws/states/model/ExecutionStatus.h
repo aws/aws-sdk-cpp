@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/SFN_EXPORTS.h>
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
-  enum class ExecutionStatus
-  {
-    NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    TIMED_OUT,
-    ABORTED,
-    PENDING_REDRIVE
-  };
+namespace Aws {
+namespace SFN {
+namespace Model {
+enum class ExecutionStatus { NOT_SET, RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED, PENDING_REDRIVE };
 
-namespace ExecutionStatusMapper
-{
+namespace ExecutionStatusMapper {
 AWS_SFN_API ExecutionStatus GetExecutionStatusForName(const Aws::String& name);
 
 AWS_SFN_API Aws::String GetNameForExecutionStatus(ExecutionStatus value);
-} // namespace ExecutionStatusMapper
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace ExecutionStatusMapper
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

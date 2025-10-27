@@ -5,12 +5,8 @@
 
 #include <aws/workdocs/WorkDocsEndpointProvider.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WorkDocs
-} // namespace Aws
+namespace Aws {
+namespace WorkDocs {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WorkDocs
+}  // namespace Aws

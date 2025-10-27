@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/importexport/ImportExportEndpointRules.h>
+#include <aws/importexport/ImportExport_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ImportExport
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ImportExport {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ImportExportClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ImportExportDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IMPORTEXPORT_API ImportExportEndpointProvider : public ImportExportDefaultEpProviderBase
-{
-public:
-    using ImportExportResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IMPORTEXPORT_API ImportExportEndpointProvider : public ImportExportDefaultEpProviderBase {
+ public:
+  using ImportExportResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ImportExportEndpointProvider()
-      : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::GetRulesBlob(), Aws::ImportExport::ImportExportEndpointRules::RulesBlobSize)
-    {}
+  ImportExportEndpointProvider()
+      : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::GetRulesBlob(),
+                                          Aws::ImportExport::ImportExportEndpointRules::RulesBlobSize) {}
 
-    ~ImportExportEndpointProvider()
-    {
-    }
+  ~ImportExportEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ImportExport
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ImportExport
+}  // namespace Aws

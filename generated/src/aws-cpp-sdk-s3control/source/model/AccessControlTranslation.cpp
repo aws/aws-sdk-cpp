@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/AccessControlTranslation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/AccessControlTranslation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-AccessControlTranslation::AccessControlTranslation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AccessControlTranslation::AccessControlTranslation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccessControlTranslation& AccessControlTranslation::operator =(const XmlNode& xmlNode)
-{
+AccessControlTranslation& AccessControlTranslation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ownerNode = resultNode.FirstChild("Owner");
-    if(!ownerNode.IsNull())
-    {
-      m_owner = OwnerOverrideMapper::GetOwnerOverrideForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText()).c_str()));
+    if (!ownerNode.IsNull()) {
+      m_owner = OwnerOverrideMapper::GetOwnerOverrideForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText()).c_str()));
       m_ownerHasBeenSet = true;
     }
   }
@@ -42,17 +34,14 @@ AccessControlTranslation& AccessControlTranslation::operator =(const XmlNode& xm
   return *this;
 }
 
-void AccessControlTranslation::AddToNode(XmlNode& parentNode) const
-{
+void AccessControlTranslation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_ownerHasBeenSet)
-  {
-   XmlNode ownerNode = parentNode.CreateChildElement("Owner");
-   ownerNode.SetText(OwnerOverrideMapper::GetNameForOwnerOverride(m_owner));
+  if (m_ownerHasBeenSet) {
+    XmlNode ownerNode = parentNode.CreateChildElement("Owner");
+    ownerNode.SetText(OwnerOverrideMapper::GetNameForOwnerOverride(m_owner));
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

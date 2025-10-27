@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ProductViewAggregationValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ProductViewAggregationValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ProductViewAggregationValue::ProductViewAggregationValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProductViewAggregationValue::ProductViewAggregationValue(JsonView jsonValue) { *this = jsonValue; }
 
-ProductViewAggregationValue& ProductViewAggregationValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Value"))
-  {
+ProductViewAggregationValue& ProductViewAggregationValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApproximateCount"))
-  {
+  if (jsonValue.ValueExists("ApproximateCount")) {
     m_approximateCount = jsonValue.GetInteger("ApproximateCount");
     m_approximateCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProductViewAggregationValue::Jsonize() const
-{
+JsonValue ProductViewAggregationValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_approximateCountHasBeenSet)
-  {
-   payload.WithInteger("ApproximateCount", m_approximateCount);
-
+  if (m_approximateCountHasBeenSet) {
+    payload.WithInteger("ApproximateCount", m_approximateCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

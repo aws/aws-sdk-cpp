@@ -6,53 +6,52 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/MeetingFeatureStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
 
+/**
+ * <p>Has audio-specific configurations as the operating parameter for Echo
+ * Reduction.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AudioFeatures">AWS
+ * API Reference</a></p>
+ */
+class AudioFeatures {
+ public:
+  AWS_CONNECT_API AudioFeatures() = default;
+  AWS_CONNECT_API AudioFeatures(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API AudioFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Has audio-specific configurations as the operating parameter for Echo
-   * Reduction.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AudioFeatures">AWS
-   * API Reference</a></p>
+   * <p>Makes echo reduction available to clients who connect to the meeting.</p>
    */
-  class AudioFeatures
-  {
-  public:
-    AWS_CONNECT_API AudioFeatures() = default;
-    AWS_CONNECT_API AudioFeatures(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECT_API AudioFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline MeetingFeatureStatus GetEchoReduction() const { return m_echoReduction; }
+  inline bool EchoReductionHasBeenSet() const { return m_echoReductionHasBeenSet; }
+  inline void SetEchoReduction(MeetingFeatureStatus value) {
+    m_echoReductionHasBeenSet = true;
+    m_echoReduction = value;
+  }
+  inline AudioFeatures& WithEchoReduction(MeetingFeatureStatus value) {
+    SetEchoReduction(value);
+    return *this;
+  }
+  ///@}
+ private:
+  MeetingFeatureStatus m_echoReduction{MeetingFeatureStatus::NOT_SET};
+  bool m_echoReductionHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
-    inline MeetingFeatureStatus GetEchoReduction() const { return m_echoReduction; }
-    inline bool EchoReductionHasBeenSet() const { return m_echoReductionHasBeenSet; }
-    inline void SetEchoReduction(MeetingFeatureStatus value) { m_echoReductionHasBeenSet = true; m_echoReduction = value; }
-    inline AudioFeatures& WithEchoReduction(MeetingFeatureStatus value) { SetEchoReduction(value); return *this;}
-    ///@}
-  private:
-
-    MeetingFeatureStatus m_echoReduction{MeetingFeatureStatus::NOT_SET};
-    bool m_echoReductionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

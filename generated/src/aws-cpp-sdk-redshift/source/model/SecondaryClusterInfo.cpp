@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/SecondaryClusterInfo.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/SecondaryClusterInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-SecondaryClusterInfo::SecondaryClusterInfo(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SecondaryClusterInfo::SecondaryClusterInfo(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SecondaryClusterInfo& SecondaryClusterInfo::operator =(const XmlNode& xmlNode)
-{
+SecondaryClusterInfo& SecondaryClusterInfo::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
+    if (!availabilityZoneNode.IsNull()) {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode clusterNodesNode = resultNode.FirstChild("ClusterNodes");
-    if(!clusterNodesNode.IsNull())
-    {
+    if (!clusterNodesNode.IsNull()) {
       XmlNode clusterNodesMember = clusterNodesNode.FirstChild("member");
       m_clusterNodesHasBeenSet = !clusterNodesMember.IsNull();
-      while(!clusterNodesMember.IsNull())
-      {
+      while (!clusterNodesMember.IsNull()) {
         m_clusterNodes.push_back(clusterNodesMember);
         clusterNodesMember = clusterNodesMember.NextNode("member");
       }
@@ -55,44 +44,35 @@ SecondaryClusterInfo& SecondaryClusterInfo::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SecondaryClusterInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+void SecondaryClusterInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  if(m_clusterNodesHasBeenSet)
-  {
-      unsigned clusterNodesIdx = 1;
-      for(auto& item : m_clusterNodes)
-      {
-        Aws::StringStream clusterNodesSs;
-        clusterNodesSs << location << index << locationValue << ".ClusterNodes.member." << clusterNodesIdx++;
-        item.OutputToStream(oStream, clusterNodesSs.str().c_str());
-      }
-  }
-
-}
-
-void SecondaryClusterInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-  if(m_clusterNodesHasBeenSet)
-  {
-      unsigned clusterNodesIdx = 1;
-      for(auto& item : m_clusterNodes)
-      {
-        Aws::StringStream clusterNodesSs;
-        clusterNodesSs << location << ".ClusterNodes.member." << clusterNodesIdx++;
-        item.OutputToStream(oStream, clusterNodesSs.str().c_str());
-      }
+  if (m_clusterNodesHasBeenSet) {
+    unsigned clusterNodesIdx = 1;
+    for (auto& item : m_clusterNodes) {
+      Aws::StringStream clusterNodesSs;
+      clusterNodesSs << location << index << locationValue << ".ClusterNodes.member." << clusterNodesIdx++;
+      item.OutputToStream(oStream, clusterNodesSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void SecondaryClusterInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_clusterNodesHasBeenSet) {
+    unsigned clusterNodesIdx = 1;
+    for (auto& item : m_clusterNodes) {
+      Aws::StringStream clusterNodesSs;
+      clusterNodesSs << location << ".ClusterNodes.member." << clusterNodesIdx++;
+      item.OutputToStream(oStream, clusterNodesSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

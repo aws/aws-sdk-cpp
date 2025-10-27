@@ -7,26 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class OnFailure
-  {
-    NOT_SET,
-    DO_NOTHING,
-    ROLLBACK,
-    DELETE_
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class OnFailure { NOT_SET, DO_NOTHING, ROLLBACK, DELETE_ };
 
-namespace OnFailureMapper
-{
+namespace OnFailureMapper {
 AWS_CLOUDFORMATION_API OnFailure GetOnFailureForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForOnFailure(OnFailure value);
-} // namespace OnFailureMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace OnFailureMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

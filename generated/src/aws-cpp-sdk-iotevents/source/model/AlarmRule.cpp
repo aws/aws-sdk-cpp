@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/AlarmRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/AlarmRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-AlarmRule::AlarmRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlarmRule::AlarmRule(JsonView jsonValue) { *this = jsonValue; }
 
-AlarmRule& AlarmRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("simpleRule"))
-  {
+AlarmRule& AlarmRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("simpleRule")) {
     m_simpleRule = jsonValue.GetObject("simpleRule");
     m_simpleRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlarmRule::Jsonize() const
-{
+JsonValue AlarmRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_simpleRuleHasBeenSet)
-  {
-   payload.WithObject("simpleRule", m_simpleRule.Jsonize());
-
+  if (m_simpleRuleHasBeenSet) {
+    payload.WithObject("simpleRule", m_simpleRule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

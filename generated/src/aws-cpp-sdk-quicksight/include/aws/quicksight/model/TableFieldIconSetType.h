@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TableFieldIconSetType
-  {
-    NOT_SET,
-    LINK
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TableFieldIconSetType { NOT_SET, LINK };
 
-namespace TableFieldIconSetTypeMapper
-{
+namespace TableFieldIconSetTypeMapper {
 AWS_QUICKSIGHT_API TableFieldIconSetType GetTableFieldIconSetTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTableFieldIconSetType(TableFieldIconSetType value);
-} // namespace TableFieldIconSetTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TableFieldIconSetTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

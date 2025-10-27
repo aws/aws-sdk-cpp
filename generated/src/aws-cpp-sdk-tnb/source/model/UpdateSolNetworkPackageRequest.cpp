@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/UpdateSolNetworkPackageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/UpdateSolNetworkPackageRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSolNetworkPackageRequest::SerializePayload() const
-{
+Aws::String UpdateSolNetworkPackageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nsdOperationalStateHasBeenSet)
-  {
-   payload.WithString("nsdOperationalState", NsdOperationalStateMapper::GetNameForNsdOperationalState(m_nsdOperationalState));
+  if (m_nsdOperationalStateHasBeenSet) {
+    payload.WithString("nsdOperationalState", NsdOperationalStateMapper::GetNameForNsdOperationalState(m_nsdOperationalState));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,113 +4,138 @@
  */
 
 #pragma once
-#include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AuthenticationType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
+/**
+ */
+class DescribeUserStackAssociationsRequest : public AppStreamRequest {
+ public:
+  AWS_APPSTREAM_API DescribeUserStackAssociationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeUserStackAssociations"; }
+
+  AWS_APPSTREAM_API Aws::String SerializePayload() const override;
+
+  AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the stack that is associated with the user.</p>
    */
-  class DescribeUserStackAssociationsRequest : public AppStreamRequest
-  {
-  public:
-    AWS_APPSTREAM_API DescribeUserStackAssociationsRequest() = default;
+  inline const Aws::String& GetStackName() const { return m_stackName; }
+  inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+  template <typename StackNameT = Aws::String>
+  void SetStackName(StackNameT&& value) {
+    m_stackNameHasBeenSet = true;
+    m_stackName = std::forward<StackNameT>(value);
+  }
+  template <typename StackNameT = Aws::String>
+  DescribeUserStackAssociationsRequest& WithStackName(StackNameT&& value) {
+    SetStackName(std::forward<StackNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeUserStackAssociations"; }
+  ///@{
+  /**
+   * <p>The email address of the user who is associated with the stack.</p>
+   * <p>Users' email addresses are case-sensitive.</p>
+   */
+  inline const Aws::String& GetUserName() const { return m_userName; }
+  inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+  template <typename UserNameT = Aws::String>
+  void SetUserName(UserNameT&& value) {
+    m_userNameHasBeenSet = true;
+    m_userName = std::forward<UserNameT>(value);
+  }
+  template <typename UserNameT = Aws::String>
+  DescribeUserStackAssociationsRequest& WithUserName(UserNameT&& value) {
+    SetUserName(std::forward<UserNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The authentication type for the user who is associated with the stack. You
+   * must specify USERPOOL.</p>
+   */
+  inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
+  inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+  inline void SetAuthenticationType(AuthenticationType value) {
+    m_authenticationTypeHasBeenSet = true;
+    m_authenticationType = value;
+  }
+  inline DescribeUserStackAssociationsRequest& WithAuthenticationType(AuthenticationType value) {
+    SetAuthenticationType(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The maximum size of each page of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeUserStackAssociationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The pagination token to use to retrieve the next page of results for this
+   * operation. If this value is null, it retrieves the first page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeUserStackAssociationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_stackName;
+  bool m_stackNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the stack that is associated with the user.</p>
-     */
-    inline const Aws::String& GetStackName() const { return m_stackName; }
-    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    template<typename StackNameT = Aws::String>
-    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
-    template<typename StackNameT = Aws::String>
-    DescribeUserStackAssociationsRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_userName;
+  bool m_userNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The email address of the user who is associated with the stack.</p> 
-     * <p>Users' email addresses are case-sensitive.</p> 
-     */
-    inline const Aws::String& GetUserName() const { return m_userName; }
-    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    template<typename UserNameT = Aws::String>
-    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
-    template<typename UserNameT = Aws::String>
-    DescribeUserStackAssociationsRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
-    ///@}
+  AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+  bool m_authenticationTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The authentication type for the user who is associated with the stack. You
-     * must specify USERPOOL.</p>
-     */
-    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
-    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline DescribeUserStackAssociationsRequest& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum size of each page of results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeUserStackAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeUserStackAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_stackName;
-    bool m_stackNameHasBeenSet = false;
-
-    Aws::String m_userName;
-    bool m_userNameHasBeenSet = false;
-
-    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-    bool m_authenticationTypeHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

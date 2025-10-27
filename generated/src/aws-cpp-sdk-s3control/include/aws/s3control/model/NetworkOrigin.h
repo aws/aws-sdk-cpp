@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/S3Control_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
-  enum class NetworkOrigin
-  {
-    NOT_SET,
-    Internet,
-    VPC
-  };
+namespace Aws {
+namespace S3Control {
+namespace Model {
+enum class NetworkOrigin { NOT_SET, Internet, VPC };
 
-namespace NetworkOriginMapper
-{
+namespace NetworkOriginMapper {
 AWS_S3CONTROL_API NetworkOrigin GetNetworkOriginForName(const Aws::String& name);
 
 AWS_S3CONTROL_API Aws::String GetNameForNetworkOrigin(NetworkOrigin value);
-} // namespace NetworkOriginMapper
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace NetworkOriginMapper
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

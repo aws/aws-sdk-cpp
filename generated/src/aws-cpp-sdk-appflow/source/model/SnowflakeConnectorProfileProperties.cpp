@@ -11,107 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SnowflakeConnectorProfileProperties& SnowflakeConnectorProfileProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("warehouse"))
-  {
+SnowflakeConnectorProfileProperties& SnowflakeConnectorProfileProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("warehouse")) {
     m_warehouse = jsonValue.GetString("warehouse");
     m_warehouseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stage"))
-  {
+  if (jsonValue.ValueExists("stage")) {
     m_stage = jsonValue.GetString("stage");
     m_stageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketName"))
-  {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketPrefix"))
-  {
+  if (jsonValue.ValueExists("bucketPrefix")) {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
     m_bucketPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateLinkServiceName"))
-  {
+  if (jsonValue.ValueExists("privateLinkServiceName")) {
     m_privateLinkServiceName = jsonValue.GetString("privateLinkServiceName");
     m_privateLinkServiceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accountName"))
-  {
+  if (jsonValue.ValueExists("accountName")) {
     m_accountName = jsonValue.GetString("accountName");
     m_accountNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("region"))
-  {
+  if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnowflakeConnectorProfileProperties::Jsonize() const
-{
+JsonValue SnowflakeConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_warehouseHasBeenSet)
-  {
-   payload.WithString("warehouse", m_warehouse);
-
+  if (m_warehouseHasBeenSet) {
+    payload.WithString("warehouse", m_warehouse);
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("stage", m_stage);
-
+  if (m_stageHasBeenSet) {
+    payload.WithString("stage", m_stage);
   }
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
-  if(m_bucketPrefixHasBeenSet)
-  {
-   payload.WithString("bucketPrefix", m_bucketPrefix);
-
+  if (m_bucketPrefixHasBeenSet) {
+    payload.WithString("bucketPrefix", m_bucketPrefix);
   }
 
-  if(m_privateLinkServiceNameHasBeenSet)
-  {
-   payload.WithString("privateLinkServiceName", m_privateLinkServiceName);
-
+  if (m_privateLinkServiceNameHasBeenSet) {
+    payload.WithString("privateLinkServiceName", m_privateLinkServiceName);
   }
 
-  if(m_accountNameHasBeenSet)
-  {
-   payload.WithString("accountName", m_accountName);
-
+  if (m_accountNameHasBeenSet) {
+    payload.WithString("accountName", m_accountName);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

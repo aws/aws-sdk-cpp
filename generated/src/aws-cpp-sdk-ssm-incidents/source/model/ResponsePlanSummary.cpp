@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-incidents/model/ResponsePlanSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-incidents/model/ResponsePlanSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSMIncidents
-{
-namespace Model
-{
+namespace Aws {
+namespace SSMIncidents {
+namespace Model {
 
-ResponsePlanSummary::ResponsePlanSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResponsePlanSummary::ResponsePlanSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ResponsePlanSummary& ResponsePlanSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+ResponsePlanSummary& ResponsePlanSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayName"))
-  {
+  if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResponsePlanSummary::Jsonize() const
-{
+JsonValue ResponsePlanSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSMIncidents
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSMIncidents
+}  // namespace Aws

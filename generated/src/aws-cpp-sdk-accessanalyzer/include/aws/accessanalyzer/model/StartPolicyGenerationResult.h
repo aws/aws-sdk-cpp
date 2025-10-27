@@ -6,64 +6,69 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  class StartPolicyGenerationResult
-  {
-  public:
-    AWS_ACCESSANALYZER_API StartPolicyGenerationResult() = default;
-    AWS_ACCESSANALYZER_API StartPolicyGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_ACCESSANALYZER_API StartPolicyGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AccessAnalyzer {
+namespace Model {
+class StartPolicyGenerationResult {
+ public:
+  AWS_ACCESSANALYZER_API StartPolicyGenerationResult() = default;
+  AWS_ACCESSANALYZER_API StartPolicyGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ACCESSANALYZER_API StartPolicyGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The <code>JobId</code> that is returned by the
+   * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
+   * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
+   * with <code>CancelPolicyGeneration</code> to cancel the policy generation
+   * request.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  StartPolicyGenerationResult& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
-    inline const Aws::String& GetJobId() const { return m_jobId; }
-    template<typename JobIdT = Aws::String>
-    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
-    template<typename JobIdT = Aws::String>
-    StartPolicyGenerationResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    StartPolicyGenerationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartPolicyGenerationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_jobId;
+  bool m_jobIdHasBeenSet = false;
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

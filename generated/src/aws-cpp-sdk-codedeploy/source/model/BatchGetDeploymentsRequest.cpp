@@ -12,32 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetDeploymentsRequest::SerializePayload() const
-{
+Aws::String BatchGetDeploymentsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deploymentIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> deploymentIdsJsonList(m_deploymentIds.size());
-   for(unsigned deploymentIdsIndex = 0; deploymentIdsIndex < deploymentIdsJsonList.GetLength(); ++deploymentIdsIndex)
-   {
-     deploymentIdsJsonList[deploymentIdsIndex].AsString(m_deploymentIds[deploymentIdsIndex]);
-   }
-   payload.WithArray("deploymentIds", std::move(deploymentIdsJsonList));
-
+  if (m_deploymentIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deploymentIdsJsonList(m_deploymentIds.size());
+    for (unsigned deploymentIdsIndex = 0; deploymentIdsIndex < deploymentIdsJsonList.GetLength(); ++deploymentIdsIndex) {
+      deploymentIdsJsonList[deploymentIdsIndex].AsString(m_deploymentIds[deploymentIdsIndex]);
+    }
+    payload.WithArray("deploymentIds", std::move(deploymentIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchGetDeploymentsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchGetDeploymentsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.BatchGetDeployments"));
   return headers;
-
 }
-
-
-
-

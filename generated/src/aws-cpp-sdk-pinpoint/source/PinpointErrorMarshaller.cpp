@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Pinpoint;
 
-AWSError<CoreErrors> PinpointErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PinpointErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PinpointErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

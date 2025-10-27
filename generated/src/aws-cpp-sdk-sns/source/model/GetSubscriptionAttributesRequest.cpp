@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/GetSubscriptionAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/GetSubscriptionAttributesRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetSubscriptionAttributesRequest::SerializePayload() const
-{
+Aws::String GetSubscriptionAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetSubscriptionAttributes&";
-  if(m_subscriptionArnHasBeenSet)
-  {
+  if (m_subscriptionArnHasBeenSet) {
     ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetSubscriptionAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetSubscriptionAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetSubscriptionAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

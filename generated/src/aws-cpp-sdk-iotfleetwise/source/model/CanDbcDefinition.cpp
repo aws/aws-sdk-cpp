@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/CanDbcDefinition.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/CanDbcDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-CanDbcDefinition::CanDbcDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CanDbcDefinition::CanDbcDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("networkInterface"))
-  {
+CanDbcDefinition& CanDbcDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("networkInterface")) {
     m_networkInterface = jsonValue.GetString("networkInterface");
     m_networkInterfaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("canDbcFiles"))
-  {
+  if (jsonValue.ValueExists("canDbcFiles")) {
     Aws::Utils::Array<JsonView> canDbcFilesJsonList = jsonValue.GetArray("canDbcFiles");
-    for(unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex)
-    {
+    for (unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex) {
       m_canDbcFiles.push_back(HashingUtils::Base64Decode(canDbcFilesJsonList[canDbcFilesIndex].AsString()));
     }
     m_canDbcFilesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signalsMap"))
-  {
+  if (jsonValue.ValueExists("signalsMap")) {
     Aws::Map<Aws::String, JsonView> signalsMapJsonMap = jsonValue.GetObject("signalsMap").GetAllObjects();
-    for(auto& signalsMapItem : signalsMapJsonMap)
-    {
+    for (auto& signalsMapItem : signalsMapJsonMap) {
       m_signalsMap[signalsMapItem.first] = signalsMapItem.second.AsString();
     }
     m_signalsMapHasBeenSet = true;
@@ -52,41 +40,32 @@ CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CanDbcDefinition::Jsonize() const
-{
+JsonValue CanDbcDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkInterfaceHasBeenSet)
-  {
-   payload.WithString("networkInterface", m_networkInterface);
-
+  if (m_networkInterfaceHasBeenSet) {
+    payload.WithString("networkInterface", m_networkInterface);
   }
 
-  if(m_canDbcFilesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> canDbcFilesJsonList(m_canDbcFiles.size());
-   for(unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex)
-   {
-     canDbcFilesJsonList[canDbcFilesIndex].AsString(HashingUtils::Base64Encode(m_canDbcFiles[canDbcFilesIndex]));
-   }
-   payload.WithArray("canDbcFiles", std::move(canDbcFilesJsonList));
-
+  if (m_canDbcFilesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> canDbcFilesJsonList(m_canDbcFiles.size());
+    for (unsigned canDbcFilesIndex = 0; canDbcFilesIndex < canDbcFilesJsonList.GetLength(); ++canDbcFilesIndex) {
+      canDbcFilesJsonList[canDbcFilesIndex].AsString(HashingUtils::Base64Encode(m_canDbcFiles[canDbcFilesIndex]));
+    }
+    payload.WithArray("canDbcFiles", std::move(canDbcFilesJsonList));
   }
 
-  if(m_signalsMapHasBeenSet)
-  {
-   JsonValue signalsMapJsonMap;
-   for(auto& signalsMapItem : m_signalsMap)
-   {
-     signalsMapJsonMap.WithString(signalsMapItem.first, signalsMapItem.second);
-   }
-   payload.WithObject("signalsMap", std::move(signalsMapJsonMap));
-
+  if (m_signalsMapHasBeenSet) {
+    JsonValue signalsMapJsonMap;
+    for (auto& signalsMapItem : m_signalsMap) {
+      signalsMapJsonMap.WithString(signalsMapItem.first, signalsMapItem.second);
+    }
+    payload.WithObject("signalsMap", std::move(signalsMapJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

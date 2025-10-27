@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class LifecyclePolicyResourceType
-  {
-    NOT_SET,
-    AMI_IMAGE,
-    CONTAINER_IMAGE
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class LifecyclePolicyResourceType { NOT_SET, AMI_IMAGE, CONTAINER_IMAGE };
 
-namespace LifecyclePolicyResourceTypeMapper
-{
+namespace LifecyclePolicyResourceTypeMapper {
 AWS_IMAGEBUILDER_API LifecyclePolicyResourceType GetLifecyclePolicyResourceTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForLifecyclePolicyResourceType(LifecyclePolicyResourceType value);
-} // namespace LifecyclePolicyResourceTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace LifecyclePolicyResourceTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

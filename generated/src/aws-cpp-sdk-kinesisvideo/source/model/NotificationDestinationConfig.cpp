@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/NotificationDestinationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/NotificationDestinationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-NotificationDestinationConfig::NotificationDestinationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationDestinationConfig::NotificationDestinationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationDestinationConfig& NotificationDestinationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Uri"))
-  {
+NotificationDestinationConfig& NotificationDestinationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Uri")) {
     m_uri = jsonValue.GetString("Uri");
     m_uriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationDestinationConfig::Jsonize() const
-{
+JsonValue NotificationDestinationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("Uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("Uri", m_uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

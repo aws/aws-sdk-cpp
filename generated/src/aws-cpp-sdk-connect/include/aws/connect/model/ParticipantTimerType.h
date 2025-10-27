@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class ParticipantTimerType
-  {
-    NOT_SET,
-    IDLE,
-    DISCONNECT_NONCUSTOMER
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class ParticipantTimerType { NOT_SET, IDLE, DISCONNECT_NONCUSTOMER };
 
-namespace ParticipantTimerTypeMapper
-{
+namespace ParticipantTimerTypeMapper {
 AWS_CONNECT_API ParticipantTimerType GetParticipantTimerTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForParticipantTimerType(ParticipantTimerType value);
-} // namespace ParticipantTimerTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ParticipantTimerTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

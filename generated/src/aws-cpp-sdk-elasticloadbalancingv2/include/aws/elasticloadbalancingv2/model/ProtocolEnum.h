@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class ProtocolEnum
-  {
-    NOT_SET,
-    HTTP,
-    HTTPS,
-    TCP,
-    TLS,
-    UDP,
-    TCP_UDP,
-    GENEVE
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class ProtocolEnum { NOT_SET, HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE };
 
-namespace ProtocolEnumMapper
-{
+namespace ProtocolEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API ProtocolEnum GetProtocolEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForProtocolEnum(ProtocolEnum value);
-} // namespace ProtocolEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace ProtocolEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

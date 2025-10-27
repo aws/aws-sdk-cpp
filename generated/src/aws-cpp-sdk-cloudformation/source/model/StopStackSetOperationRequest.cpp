@@ -10,22 +10,18 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String StopStackSetOperationRequest::SerializePayload() const
-{
+Aws::String StopStackSetOperationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StopStackSetOperation&";
-  if(m_stackSetNameHasBeenSet)
-  {
+  if (m_stackSetNameHasBeenSet) {
     ss << "StackSetName=" << StringUtils::URLEncode(m_stackSetName.c_str()) << "&";
   }
 
-  if(m_operationIdHasBeenSet)
-  {
+  if (m_operationIdHasBeenSet) {
     ss << "OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
   }
 
-  if(m_callAsHasBeenSet)
-  {
+  if (m_callAsHasBeenSet) {
     ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String StopStackSetOperationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StopStackSetOperationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StopStackSetOperationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

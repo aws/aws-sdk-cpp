@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/ValidationExceptionDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/ValidationExceptionDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-ValidationExceptionDetail::ValidationExceptionDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationExceptionDetail::ValidationExceptionDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationExceptionDetail& ValidationExceptionDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fieldName"))
-  {
+ValidationExceptionDetail& ValidationExceptionDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fieldName")) {
     m_fieldName = jsonValue.GetString("fieldName");
     m_fieldNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationExceptionDetail::Jsonize() const
-{
+JsonValue ValidationExceptionDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldNameHasBeenSet)
-  {
-   payload.WithString("fieldName", m_fieldName);
-
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("fieldName", m_fieldName);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

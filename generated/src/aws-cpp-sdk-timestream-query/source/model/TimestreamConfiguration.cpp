@@ -3,133 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/TimestreamConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/TimestreamConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
-TimestreamConfiguration::TimestreamConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimestreamConfiguration::TimestreamConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DatabaseName"))
-  {
+TimestreamConfiguration& TimestreamConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DatabaseName")) {
     m_databaseName = jsonValue.GetString("DatabaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableName"))
-  {
+  if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeColumn"))
-  {
+  if (jsonValue.ValueExists("TimeColumn")) {
     m_timeColumn = jsonValue.GetString("TimeColumn");
     m_timeColumnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DimensionMappings"))
-  {
+  if (jsonValue.ValueExists("DimensionMappings")) {
     Aws::Utils::Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
-    for(unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex)
-    {
+    for (unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex) {
       m_dimensionMappings.push_back(dimensionMappingsJsonList[dimensionMappingsIndex].AsObject());
     }
     m_dimensionMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiMeasureMappings"))
-  {
+  if (jsonValue.ValueExists("MultiMeasureMappings")) {
     m_multiMeasureMappings = jsonValue.GetObject("MultiMeasureMappings");
     m_multiMeasureMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MixedMeasureMappings"))
-  {
+  if (jsonValue.ValueExists("MixedMeasureMappings")) {
     Aws::Utils::Array<JsonView> mixedMeasureMappingsJsonList = jsonValue.GetArray("MixedMeasureMappings");
-    for(unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength(); ++mixedMeasureMappingsIndex)
-    {
+    for (unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength();
+         ++mixedMeasureMappingsIndex) {
       m_mixedMeasureMappings.push_back(mixedMeasureMappingsJsonList[mixedMeasureMappingsIndex].AsObject());
     }
     m_mixedMeasureMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MeasureNameColumn"))
-  {
+  if (jsonValue.ValueExists("MeasureNameColumn")) {
     m_measureNameColumn = jsonValue.GetString("MeasureNameColumn");
     m_measureNameColumnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimestreamConfiguration::Jsonize() const
-{
+JsonValue TimestreamConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_timeColumnHasBeenSet)
-  {
-   payload.WithString("TimeColumn", m_timeColumn);
-
+  if (m_timeColumnHasBeenSet) {
+    payload.WithString("TimeColumn", m_timeColumn);
   }
 
-  if(m_dimensionMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dimensionMappingsJsonList(m_dimensionMappings.size());
-   for(unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex)
-   {
-     dimensionMappingsJsonList[dimensionMappingsIndex].AsObject(m_dimensionMappings[dimensionMappingsIndex].Jsonize());
-   }
-   payload.WithArray("DimensionMappings", std::move(dimensionMappingsJsonList));
-
+  if (m_dimensionMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dimensionMappingsJsonList(m_dimensionMappings.size());
+    for (unsigned dimensionMappingsIndex = 0; dimensionMappingsIndex < dimensionMappingsJsonList.GetLength(); ++dimensionMappingsIndex) {
+      dimensionMappingsJsonList[dimensionMappingsIndex].AsObject(m_dimensionMappings[dimensionMappingsIndex].Jsonize());
+    }
+    payload.WithArray("DimensionMappings", std::move(dimensionMappingsJsonList));
   }
 
-  if(m_multiMeasureMappingsHasBeenSet)
-  {
-   payload.WithObject("MultiMeasureMappings", m_multiMeasureMappings.Jsonize());
-
+  if (m_multiMeasureMappingsHasBeenSet) {
+    payload.WithObject("MultiMeasureMappings", m_multiMeasureMappings.Jsonize());
   }
 
-  if(m_mixedMeasureMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mixedMeasureMappingsJsonList(m_mixedMeasureMappings.size());
-   for(unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength(); ++mixedMeasureMappingsIndex)
-   {
-     mixedMeasureMappingsJsonList[mixedMeasureMappingsIndex].AsObject(m_mixedMeasureMappings[mixedMeasureMappingsIndex].Jsonize());
-   }
-   payload.WithArray("MixedMeasureMappings", std::move(mixedMeasureMappingsJsonList));
-
+  if (m_mixedMeasureMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mixedMeasureMappingsJsonList(m_mixedMeasureMappings.size());
+    for (unsigned mixedMeasureMappingsIndex = 0; mixedMeasureMappingsIndex < mixedMeasureMappingsJsonList.GetLength();
+         ++mixedMeasureMappingsIndex) {
+      mixedMeasureMappingsJsonList[mixedMeasureMappingsIndex].AsObject(m_mixedMeasureMappings[mixedMeasureMappingsIndex].Jsonize());
+    }
+    payload.WithArray("MixedMeasureMappings", std::move(mixedMeasureMappingsJsonList));
   }
 
-  if(m_measureNameColumnHasBeenSet)
-  {
-   payload.WithString("MeasureNameColumn", m_measureNameColumn);
-
+  if (m_measureNameColumnHasBeenSet) {
+    payload.WithString("MeasureNameColumn", m_measureNameColumn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

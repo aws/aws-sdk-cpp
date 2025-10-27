@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
 
 #include <utility>
 
@@ -17,32 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetEbsEncryptionByDefaultResponse& GetEbsEncryptionByDefaultResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetEbsEncryptionByDefaultResponse& GetEbsEncryptionByDefaultResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetEbsEncryptionByDefaultResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetEbsEncryptionByDefaultResponse")) {
     resultNode = rootNode.FirstChild("GetEbsEncryptionByDefaultResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ebsEncryptionByDefaultNode = resultNode.FirstChild("ebsEncryptionByDefault");
-    if(!ebsEncryptionByDefaultNode.IsNull())
-    {
-      m_ebsEncryptionByDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsEncryptionByDefaultNode.GetText()).c_str()).c_str());
+    if (!ebsEncryptionByDefaultNode.IsNull()) {
+      m_ebsEncryptionByDefault = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsEncryptionByDefaultNode.GetText()).c_str()).c_str());
       m_ebsEncryptionByDefaultHasBeenSet = true;
     }
     XmlNode sseTypeNode = resultNode.FirstChild("sseType");
-    if(!sseTypeNode.IsNull())
-    {
+    if (!sseTypeNode.IsNull()) {
       m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()));
       m_sseTypeHasBeenSet = true;
     }
@@ -50,12 +45,11 @@ GetEbsEncryptionByDefaultResponse& GetEbsEncryptionByDefaultResponse::operator =
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetEbsEncryptionByDefaultResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetEbsEncryptionByDefaultResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

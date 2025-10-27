@@ -12,11 +12,4 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ResumeCampaignRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String ResumeCampaignRequest::SerializePayload() const { return {}; }

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetLoginProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetLoginProfileRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetLoginProfileRequest::SerializePayload() const
-{
+Aws::String GetLoginProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetLoginProfile&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetLoginProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class SessionFilterKey
-  {
-    NOT_SET,
-    InvokedAfter,
-    InvokedBefore,
-    Target,
-    Owner,
-    Status,
-    SessionId,
-    AccessType
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class SessionFilterKey { NOT_SET, InvokedAfter, InvokedBefore, Target, Owner, Status, SessionId, AccessType };
 
-namespace SessionFilterKeyMapper
-{
+namespace SessionFilterKeyMapper {
 AWS_SSM_API SessionFilterKey GetSessionFilterKeyForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForSessionFilterKey(SessionFilterKey value);
-} // namespace SessionFilterKeyMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace SessionFilterKeyMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

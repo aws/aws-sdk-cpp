@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-ConditionParameter::ConditionParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConditionParameter::ConditionParameter(JsonView jsonValue) { *this = jsonValue; }
 
-ConditionParameter& ConditionParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConditionKey"))
-  {
+ConditionParameter& ConditionParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConditionKey")) {
     m_conditionKey = jsonValue.GetString("ConditionKey");
     m_conditionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConditionValue"))
-  {
+  if (jsonValue.ValueExists("ConditionValue")) {
     m_conditionValue = jsonValue.GetString("ConditionValue");
     m_conditionValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConditionParameter::Jsonize() const
-{
+JsonValue ConditionParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionKeyHasBeenSet)
-  {
-   payload.WithString("ConditionKey", m_conditionKey);
-
+  if (m_conditionKeyHasBeenSet) {
+    payload.WithString("ConditionKey", m_conditionKey);
   }
 
-  if(m_conditionValueHasBeenSet)
-  {
-   payload.WithString("ConditionValue", m_conditionValue);
-
+  if (m_conditionValueHasBeenSet) {
+    payload.WithString("ConditionValue", m_conditionValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

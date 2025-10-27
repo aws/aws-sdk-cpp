@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/ConflictException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/ConflictException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-ConflictException::ConflictException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConflictException::ConflictException(JsonView jsonValue) { *this = jsonValue; }
 
-ConflictException& ConflictException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ConflictException& ConflictException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("__type"))
-  {
+  if (jsonValue.ValueExists("__type")) {
     m_type = jsonValue.GetString("__type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConflictException::Jsonize() const
-{
+JsonValue ConflictException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("__type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("__type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

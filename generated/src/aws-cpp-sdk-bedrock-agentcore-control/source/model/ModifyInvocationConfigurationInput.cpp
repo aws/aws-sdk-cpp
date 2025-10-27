@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-ModifyInvocationConfigurationInput::ModifyInvocationConfigurationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModifyInvocationConfigurationInput::ModifyInvocationConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
-ModifyInvocationConfigurationInput& ModifyInvocationConfigurationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("topicArn"))
-  {
+ModifyInvocationConfigurationInput& ModifyInvocationConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("topicArn")) {
     m_topicArn = jsonValue.GetString("topicArn");
     m_topicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("payloadDeliveryBucketName"))
-  {
+  if (jsonValue.ValueExists("payloadDeliveryBucketName")) {
     m_payloadDeliveryBucketName = jsonValue.GetString("payloadDeliveryBucketName");
     m_payloadDeliveryBucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModifyInvocationConfigurationInput::Jsonize() const
-{
+JsonValue ModifyInvocationConfigurationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_topicArnHasBeenSet)
-  {
-   payload.WithString("topicArn", m_topicArn);
-
+  if (m_topicArnHasBeenSet) {
+    payload.WithString("topicArn", m_topicArn);
   }
 
-  if(m_payloadDeliveryBucketNameHasBeenSet)
-  {
-   payload.WithString("payloadDeliveryBucketName", m_payloadDeliveryBucketName);
-
+  if (m_payloadDeliveryBucketNameHasBeenSet) {
+    payload.WithString("payloadDeliveryBucketName", m_payloadDeliveryBucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

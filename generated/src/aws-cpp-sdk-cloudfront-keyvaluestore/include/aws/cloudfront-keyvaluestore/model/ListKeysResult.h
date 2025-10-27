@@ -5,80 +5,95 @@
 
 #pragma once
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
+#include <aws/cloudfront-keyvaluestore/model/ListKeysResponseListItem.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cloudfront-keyvaluestore/model/ListKeysResponseListItem.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CloudFrontKeyValueStore
-{
-namespace Model
-{
-  class ListKeysResult
-  {
-  public:
-    AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult() = default;
-    AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CloudFrontKeyValueStore {
+namespace Model {
+class ListKeysResult {
+ public:
+  AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult() = default;
+  AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CLOUDFRONTKEYVALUESTORE_API ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>If nextToken is returned in the response, there are more results available.
+   * Make the next call using the returned token to retrieve the next page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListKeysResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If nextToken is returned in the response, there are more results available.
-     * Make the next call using the returned token to retrieve the next page.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListKeysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Key value pairs</p>
+   */
+  inline const Aws::Vector<ListKeysResponseListItem>& GetItems() const { return m_items; }
+  template <typename ItemsT = Aws::Vector<ListKeysResponseListItem>>
+  void SetItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items = std::forward<ItemsT>(value);
+  }
+  template <typename ItemsT = Aws::Vector<ListKeysResponseListItem>>
+  ListKeysResult& WithItems(ItemsT&& value) {
+    SetItems(std::forward<ItemsT>(value));
+    return *this;
+  }
+  template <typename ItemsT = ListKeysResponseListItem>
+  ListKeysResult& AddItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items.emplace_back(std::forward<ItemsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Key value pairs</p>
-     */
-    inline const Aws::Vector<ListKeysResponseListItem>& GetItems() const { return m_items; }
-    template<typename ItemsT = Aws::Vector<ListKeysResponseListItem>>
-    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
-    template<typename ItemsT = Aws::Vector<ListKeysResponseListItem>>
-    ListKeysResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
-    template<typename ItemsT = ListKeysResponseListItem>
-    ListKeysResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListKeysResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::Vector<ListKeysResponseListItem> m_items;
+  bool m_itemsHasBeenSet = false;
 
-    Aws::Vector<ListKeysResponseListItem> m_items;
-    bool m_itemsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFrontKeyValueStore
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFrontKeyValueStore
+}  // namespace Aws

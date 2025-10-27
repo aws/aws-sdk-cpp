@@ -7,25 +7,16 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
-  enum class ConnectionType
-  {
-    NOT_SET,
-    INTERNET,
-    VPC_LINK
-  };
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
+enum class ConnectionType { NOT_SET, INTERNET, VPC_LINK };
 
-namespace ConnectionTypeMapper
-{
+namespace ConnectionTypeMapper {
 AWS_APIGATEWAYV2_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
 
 AWS_APIGATEWAYV2_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace ConnectionTypeMapper
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

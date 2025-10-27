@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-TerminateRecommendationDetail::TerminateRecommendationDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TerminateRecommendationDetail::TerminateRecommendationDetail(JsonView jsonValue) { *this = jsonValue; }
 
-TerminateRecommendationDetail& TerminateRecommendationDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EstimatedMonthlySavings"))
-  {
+TerminateRecommendationDetail& TerminateRecommendationDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EstimatedMonthlySavings")) {
     m_estimatedMonthlySavings = jsonValue.GetString("EstimatedMonthlySavings");
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrencyCode"))
-  {
+  if (jsonValue.ValueExists("CurrencyCode")) {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
     m_currencyCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TerminateRecommendationDetail::Jsonize() const
-{
+JsonValue TerminateRecommendationDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_estimatedMonthlySavingsHasBeenSet)
-  {
-   payload.WithString("EstimatedMonthlySavings", m_estimatedMonthlySavings);
-
+  if (m_estimatedMonthlySavingsHasBeenSet) {
+    payload.WithString("EstimatedMonthlySavings", m_estimatedMonthlySavings);
   }
 
-  if(m_currencyCodeHasBeenSet)
-  {
-   payload.WithString("CurrencyCode", m_currencyCode);
-
+  if (m_currencyCodeHasBeenSet) {
+    payload.WithString("CurrencyCode", m_currencyCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

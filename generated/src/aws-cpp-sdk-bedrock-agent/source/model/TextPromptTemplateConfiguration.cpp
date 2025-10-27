@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-TextPromptTemplateConfiguration::TextPromptTemplateConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextPromptTemplateConfiguration::TextPromptTemplateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cachePoint"))
-  {
+  if (jsonValue.ValueExists("cachePoint")) {
     m_cachePoint = jsonValue.GetObject("cachePoint");
     m_cachePointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputVariables"))
-  {
+  if (jsonValue.ValueExists("inputVariables")) {
     Aws::Utils::Array<JsonView> inputVariablesJsonList = jsonValue.GetArray("inputVariables");
-    for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
-    {
+    for (unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex) {
       m_inputVariables.push_back(inputVariablesJsonList[inputVariablesIndex].AsObject());
     }
     m_inputVariablesHasBeenSet = true;
@@ -47,36 +36,28 @@ TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(Jso
   return *this;
 }
 
-JsonValue TextPromptTemplateConfiguration::Jsonize() const
-{
+JsonValue TextPromptTemplateConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_cachePointHasBeenSet)
-  {
-   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
-
+  if (m_cachePointHasBeenSet) {
+    payload.WithObject("cachePoint", m_cachePoint.Jsonize());
   }
 
-  if(m_inputVariablesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputVariablesJsonList(m_inputVariables.size());
-   for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
-   {
-     inputVariablesJsonList[inputVariablesIndex].AsObject(m_inputVariables[inputVariablesIndex].Jsonize());
-   }
-   payload.WithArray("inputVariables", std::move(inputVariablesJsonList));
-
+  if (m_inputVariablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputVariablesJsonList(m_inputVariables.size());
+    for (unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex) {
+      inputVariablesJsonList[inputVariablesIndex].AsObject(m_inputVariables[inputVariablesIndex].Jsonize());
+    }
+    payload.WithArray("inputVariables", std::move(inputVariablesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

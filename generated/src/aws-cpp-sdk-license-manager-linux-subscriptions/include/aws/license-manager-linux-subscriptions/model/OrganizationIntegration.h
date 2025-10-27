@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManagerLinuxSubscriptions
-{
-namespace Model
-{
-  enum class OrganizationIntegration
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace LicenseManagerLinuxSubscriptions {
+namespace Model {
+enum class OrganizationIntegration { NOT_SET, Enabled, Disabled };
 
-namespace OrganizationIntegrationMapper
-{
+namespace OrganizationIntegrationMapper {
 AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API OrganizationIntegration GetOrganizationIntegrationForName(const Aws::String& name);
 
 AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Aws::String GetNameForOrganizationIntegration(OrganizationIntegration value);
-} // namespace OrganizationIntegrationMapper
-} // namespace Model
-} // namespace LicenseManagerLinuxSubscriptions
-} // namespace Aws
+}  // namespace OrganizationIntegrationMapper
+}  // namespace Model
+}  // namespace LicenseManagerLinuxSubscriptions
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace-data/model/ResourcePermission.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace-data/model/ResourcePermission.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace Model
-{
+namespace Aws {
+namespace FinSpaceData {
+namespace Model {
 
-ResourcePermission::ResourcePermission(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourcePermission::ResourcePermission(JsonView jsonValue) { *this = jsonValue; }
 
-ResourcePermission& ResourcePermission::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("permission"))
-  {
+ResourcePermission& ResourcePermission::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("permission")) {
     m_permission = jsonValue.GetString("permission");
     m_permissionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourcePermission::Jsonize() const
-{
+JsonValue ResourcePermission::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionHasBeenSet)
-  {
-   payload.WithString("permission", m_permission);
-
+  if (m_permissionHasBeenSet) {
+    payload.WithString("permission", m_permission);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace Model
+}  // namespace FinSpaceData
+}  // namespace Aws

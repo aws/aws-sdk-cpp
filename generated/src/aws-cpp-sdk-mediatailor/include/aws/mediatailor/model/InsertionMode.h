@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class InsertionMode
-  {
-    NOT_SET,
-    STITCHED_ONLY,
-    PLAYER_SELECT
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class InsertionMode { NOT_SET, STITCHED_ONLY, PLAYER_SELECT };
 
-namespace InsertionModeMapper
-{
+namespace InsertionModeMapper {
 AWS_MEDIATAILOR_API InsertionMode GetInsertionModeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForInsertionMode(InsertionMode value);
-} // namespace InsertionModeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace InsertionModeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

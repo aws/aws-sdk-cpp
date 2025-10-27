@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-RecommendedStep::RecommendedStep(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendedStep::RecommendedStep(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendedStep& RecommendedStep::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unusedPermissionsRecommendedStep"))
-  {
+RecommendedStep& RecommendedStep::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unusedPermissionsRecommendedStep")) {
     m_unusedPermissionsRecommendedStep = jsonValue.GetObject("unusedPermissionsRecommendedStep");
     m_unusedPermissionsRecommendedStepHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendedStep::Jsonize() const
-{
+JsonValue RecommendedStep::Jsonize() const {
   JsonValue payload;
 
-  if(m_unusedPermissionsRecommendedStepHasBeenSet)
-  {
-   payload.WithObject("unusedPermissionsRecommendedStep", m_unusedPermissionsRecommendedStep.Jsonize());
-
+  if (m_unusedPermissionsRecommendedStepHasBeenSet) {
+    payload.WithObject("unusedPermissionsRecommendedStep", m_unusedPermissionsRecommendedStep.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elastictranscoder/model/CreatePipelineRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastictranscoder/model/CreatePipelineRequest.h>
 
 #include <utility>
 
@@ -12,61 +12,40 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePipelineRequest::SerializePayload() const
-{
+Aws::String CreatePipelineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_inputBucketHasBeenSet)
-  {
-   payload.WithString("InputBucket", m_inputBucket);
-
+  if (m_inputBucketHasBeenSet) {
+    payload.WithString("InputBucket", m_inputBucket);
   }
 
-  if(m_outputBucketHasBeenSet)
-  {
-   payload.WithString("OutputBucket", m_outputBucket);
-
+  if (m_outputBucketHasBeenSet) {
+    payload.WithString("OutputBucket", m_outputBucket);
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_awsKmsKeyArnHasBeenSet)
-  {
-   payload.WithString("AwsKmsKeyArn", m_awsKmsKeyArn);
-
+  if (m_awsKmsKeyArnHasBeenSet) {
+    payload.WithString("AwsKmsKeyArn", m_awsKmsKeyArn);
   }
 
-  if(m_notificationsHasBeenSet)
-  {
-   payload.WithObject("Notifications", m_notifications.Jsonize());
-
+  if (m_notificationsHasBeenSet) {
+    payload.WithObject("Notifications", m_notifications.Jsonize());
   }
 
-  if(m_contentConfigHasBeenSet)
-  {
-   payload.WithObject("ContentConfig", m_contentConfig.Jsonize());
-
+  if (m_contentConfigHasBeenSet) {
+    payload.WithObject("ContentConfig", m_contentConfig.Jsonize());
   }
 
-  if(m_thumbnailConfigHasBeenSet)
-  {
-   payload.WithObject("ThumbnailConfig", m_thumbnailConfig.Jsonize());
-
+  if (m_thumbnailConfigHasBeenSet) {
+    payload.WithObject("ThumbnailConfig", m_thumbnailConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

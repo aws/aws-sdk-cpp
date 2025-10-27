@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/DiskInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/DiskInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-DiskInfo::DiskInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DiskInfo::DiskInfo(JsonView jsonValue) { *this = jsonValue; }
 
-DiskInfo& DiskInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DiskInfo& DiskInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sizeInGb"))
-  {
+  if (jsonValue.ValueExists("sizeInGb")) {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
     m_sizeInGbHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isSystemDisk"))
-  {
+  if (jsonValue.ValueExists("isSystemDisk")) {
     m_isSystemDisk = jsonValue.GetBool("isSystemDisk");
     m_isSystemDiskHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DiskInfo::Jsonize() const
-{
+JsonValue DiskInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_sizeInGbHasBeenSet)
-  {
-   payload.WithInteger("sizeInGb", m_sizeInGb);
-
+  if (m_sizeInGbHasBeenSet) {
+    payload.WithInteger("sizeInGb", m_sizeInGb);
   }
 
-  if(m_isSystemDiskHasBeenSet)
-  {
-   payload.WithBool("isSystemDisk", m_isSystemDisk);
-
+  if (m_isSystemDiskHasBeenSet) {
+    payload.WithBool("isSystemDisk", m_isSystemDisk);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

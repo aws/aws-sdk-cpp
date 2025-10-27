@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
-  enum class TargetType
-  {
-    NOT_SET,
-    AWS_ACCOUNT
-  };
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
+enum class TargetType { NOT_SET, AWS_ACCOUNT };
 
-namespace TargetTypeMapper
-{
+namespace TargetTypeMapper {
 AWS_SSOADMIN_API TargetType GetTargetTypeForName(const Aws::String& name);
 
 AWS_SSOADMIN_API Aws::String GetNameForTargetType(TargetType value);
-} // namespace TargetTypeMapper
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace TargetTypeMapper
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

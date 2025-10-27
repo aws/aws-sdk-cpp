@@ -5,12 +5,8 @@
 
 #include <aws/imagebuilder/ImagebuilderEndpointProvider.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace imagebuilder
-} // namespace Aws
+namespace Aws {
+namespace imagebuilder {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace imagebuilder
+}  // namespace Aws

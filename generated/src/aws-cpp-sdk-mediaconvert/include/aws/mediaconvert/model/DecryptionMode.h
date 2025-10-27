@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DecryptionMode
-  {
-    NOT_SET,
-    AES_CTR,
-    AES_CBC,
-    AES_GCM
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DecryptionMode { NOT_SET, AES_CTR, AES_CBC, AES_GCM };
 
-namespace DecryptionModeMapper
-{
+namespace DecryptionModeMapper {
 AWS_MEDIACONVERT_API DecryptionMode GetDecryptionModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDecryptionMode(DecryptionMode value);
-} // namespace DecryptionModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DecryptionModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

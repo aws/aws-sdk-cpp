@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/FastLaunchSnapshotConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/FastLaunchSnapshotConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FastLaunchSnapshotConfiguration& FastLaunchSnapshotConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("targetResourceCount"))
-  {
+FastLaunchSnapshotConfiguration& FastLaunchSnapshotConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetResourceCount")) {
     m_targetResourceCount = jsonValue.GetInteger("targetResourceCount");
     m_targetResourceCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FastLaunchSnapshotConfiguration::Jsonize() const
-{
+JsonValue FastLaunchSnapshotConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetResourceCountHasBeenSet)
-  {
-   payload.WithInteger("targetResourceCount", m_targetResourceCount);
-
+  if (m_targetResourceCountHasBeenSet) {
+    payload.WithInteger("targetResourceCount", m_targetResourceCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

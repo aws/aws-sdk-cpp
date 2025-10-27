@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String StopDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const
-{
+Aws::String StopDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StopDBInstanceAutomatedBackupsReplication&";
-  if(m_sourceDBInstanceArnHasBeenSet)
-  {
+  if (m_sourceDBInstanceArnHasBeenSet) {
     ss << "SourceDBInstanceArn=" << StringUtils::URLEncode(m_sourceDBInstanceArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String StopDBInstanceAutomatedBackupsReplicationRequest::SerializePayload()
   return ss.str();
 }
 
-
-void  StopDBInstanceAutomatedBackupsReplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StopDBInstanceAutomatedBackupsReplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

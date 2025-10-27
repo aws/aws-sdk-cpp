@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-ImageRepository::ImageRepository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageRepository::ImageRepository(JsonView jsonValue) { *this = jsonValue; }
 
-ImageRepository& ImageRepository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ImageIdentifier"))
-  {
+ImageRepository& ImageRepository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ImageIdentifier")) {
     m_imageIdentifier = jsonValue.GetString("ImageIdentifier");
     m_imageIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImageConfiguration"))
-  {
+  if (jsonValue.ValueExists("ImageConfiguration")) {
     m_imageConfiguration = jsonValue.GetObject("ImageConfiguration");
     m_imageConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImageRepositoryType"))
-  {
+  if (jsonValue.ValueExists("ImageRepositoryType")) {
     m_imageRepositoryType = ImageRepositoryTypeMapper::GetImageRepositoryTypeForName(jsonValue.GetString("ImageRepositoryType"));
     m_imageRepositoryTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageRepository::Jsonize() const
-{
+JsonValue ImageRepository::Jsonize() const {
   JsonValue payload;
 
-  if(m_imageIdentifierHasBeenSet)
-  {
-   payload.WithString("ImageIdentifier", m_imageIdentifier);
-
+  if (m_imageIdentifierHasBeenSet) {
+    payload.WithString("ImageIdentifier", m_imageIdentifier);
   }
 
-  if(m_imageConfigurationHasBeenSet)
-  {
-   payload.WithObject("ImageConfiguration", m_imageConfiguration.Jsonize());
-
+  if (m_imageConfigurationHasBeenSet) {
+    payload.WithObject("ImageConfiguration", m_imageConfiguration.Jsonize());
   }
 
-  if(m_imageRepositoryTypeHasBeenSet)
-  {
-   payload.WithString("ImageRepositoryType", ImageRepositoryTypeMapper::GetNameForImageRepositoryType(m_imageRepositoryType));
+  if (m_imageRepositoryTypeHasBeenSet) {
+    payload.WithString("ImageRepositoryType", ImageRepositoryTypeMapper::GetNameForImageRepositoryType(m_imageRepositoryType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

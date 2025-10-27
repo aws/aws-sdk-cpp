@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/KxDeploymentConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/KxDeploymentConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-KxDeploymentConfiguration::KxDeploymentConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KxDeploymentConfiguration::KxDeploymentConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KxDeploymentConfiguration& KxDeploymentConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deploymentStrategy"))
-  {
+KxDeploymentConfiguration& KxDeploymentConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deploymentStrategy")) {
     m_deploymentStrategy = KxDeploymentStrategyMapper::GetKxDeploymentStrategyForName(jsonValue.GetString("deploymentStrategy"));
     m_deploymentStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KxDeploymentConfiguration::Jsonize() const
-{
+JsonValue KxDeploymentConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_deploymentStrategyHasBeenSet)
-  {
-   payload.WithString("deploymentStrategy", KxDeploymentStrategyMapper::GetNameForKxDeploymentStrategy(m_deploymentStrategy));
+  if (m_deploymentStrategyHasBeenSet) {
+    payload.WithString("deploymentStrategy", KxDeploymentStrategyMapper::GetNameForKxDeploymentStrategy(m_deploymentStrategy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

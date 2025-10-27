@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/GetLabelsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/frauddetector/model/GetLabelsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLabelsResult::GetLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetLabelsResult::GetLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetLabelsResult& GetLabelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetLabelsResult& GetLabelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("labels"))
-  {
+  if (jsonValue.ValueExists("labels")) {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
-    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
-    {
+    for (unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex) {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
     }
     m_labelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

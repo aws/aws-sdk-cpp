@@ -12,25 +12,16 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateIdMappingTableRequest::SerializePayload() const
-{
+Aws::String UpdateIdMappingTableRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

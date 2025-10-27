@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-MessageBasedTriggerInput::MessageBasedTriggerInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MessageBasedTriggerInput::MessageBasedTriggerInput(JsonView jsonValue) { *this = jsonValue; }
 
-MessageBasedTriggerInput& MessageBasedTriggerInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messageCount"))
-  {
+MessageBasedTriggerInput& MessageBasedTriggerInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messageCount")) {
     m_messageCount = jsonValue.GetInteger("messageCount");
     m_messageCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MessageBasedTriggerInput::Jsonize() const
-{
+JsonValue MessageBasedTriggerInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageCountHasBeenSet)
-  {
-   payload.WithInteger("messageCount", m_messageCount);
-
+  if (m_messageCountHasBeenSet) {
+    payload.WithInteger("messageCount", m_messageCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

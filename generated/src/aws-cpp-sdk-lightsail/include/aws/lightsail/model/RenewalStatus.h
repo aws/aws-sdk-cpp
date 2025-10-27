@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class RenewalStatus
-  {
-    NOT_SET,
-    PendingAutoRenewal,
-    PendingValidation,
-    Success,
-    Failed
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class RenewalStatus { NOT_SET, PendingAutoRenewal, PendingValidation, Success, Failed };
 
-namespace RenewalStatusMapper
-{
+namespace RenewalStatusMapper {
 AWS_LIGHTSAIL_API RenewalStatus GetRenewalStatusForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForRenewalStatus(RenewalStatus value);
-} // namespace RenewalStatusMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace RenewalStatusMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

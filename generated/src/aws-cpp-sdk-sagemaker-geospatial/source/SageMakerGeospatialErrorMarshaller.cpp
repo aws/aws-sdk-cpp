@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SageMakerGeospatial;
 
-AWSError<CoreErrors> SageMakerGeospatialErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SageMakerGeospatialErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SageMakerGeospatialErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

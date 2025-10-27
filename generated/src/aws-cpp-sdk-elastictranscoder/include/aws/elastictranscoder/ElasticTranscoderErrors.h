@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticTranscoder
-{
-enum class ElasticTranscoderErrors
-{
-  //From Core//
+namespace Aws {
+namespace ElasticTranscoder {
+enum class ElasticTranscoderErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ElasticTranscoderErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class ElasticTranscoderErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INCOMPATIBLE_VERSION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INCOMPATIBLE_VERSION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE,
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };
 
-class AWS_ELASTICTRANSCODER_API ElasticTranscoderError : public Aws::Client::AWSError<ElasticTranscoderErrors>
-{
-public:
+class AWS_ELASTICTRANSCODER_API ElasticTranscoderError : public Aws::Client::AWSError<ElasticTranscoderErrors> {
+ public:
   ElasticTranscoderError() {}
   ElasticTranscoderError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticTranscoderErrors>(rhs) {}
   ElasticTranscoderError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticTranscoderErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace ElasticTranscoderErrorMapper
-{
-  AWS_ELASTICTRANSCODER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ElasticTranscoderErrorMapper {
+AWS_ELASTICTRANSCODER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ElasticTranscoder
-} // namespace Aws
+}  // namespace ElasticTranscoder
+}  // namespace Aws

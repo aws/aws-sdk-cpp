@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class BaseModelName
-  {
-    NOT_SET,
-    NarrowBand,
-    WideBand
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class BaseModelName { NOT_SET, NarrowBand, WideBand };
 
-namespace BaseModelNameMapper
-{
+namespace BaseModelNameMapper {
 AWS_TRANSCRIBESERVICE_API BaseModelName GetBaseModelNameForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForBaseModelName(BaseModelName value);
-} // namespace BaseModelNameMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace BaseModelNameMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

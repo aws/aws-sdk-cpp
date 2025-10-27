@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/DeleteKxDatabaseRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/finspace/model/DeleteKxDatabaseRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteKxDatabaseRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteKxDatabaseRequest::SerializePayload() const { return {}; }
+
+void DeleteKxDatabaseRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteKxDatabaseRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_clientTokenHasBeenSet)
-    {
-      ss << m_clientToken;
-      uri.AddQueryStringParameter("clientToken", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

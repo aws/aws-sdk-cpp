@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/UtteranceDataSortBy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/UtteranceDataSortBy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-UtteranceDataSortBy::UtteranceDataSortBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UtteranceDataSortBy::UtteranceDataSortBy(JsonView jsonValue) { *this = jsonValue; }
 
-UtteranceDataSortBy& UtteranceDataSortBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+UtteranceDataSortBy& UtteranceDataSortBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = AnalyticsUtteranceSortByNameMapper::GetAnalyticsUtteranceSortByNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("order"))
-  {
+  if (jsonValue.ValueExists("order")) {
     m_order = AnalyticsSortOrderMapper::GetAnalyticsSortOrderForName(jsonValue.GetString("order"));
     m_orderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UtteranceDataSortBy::Jsonize() const
-{
+JsonValue UtteranceDataSortBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", AnalyticsUtteranceSortByNameMapper::GetNameForAnalyticsUtteranceSortByName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", AnalyticsUtteranceSortByNameMapper::GetNameForAnalyticsUtteranceSortByName(m_name));
   }
 
-  if(m_orderHasBeenSet)
-  {
-   payload.WithString("order", AnalyticsSortOrderMapper::GetNameForAnalyticsSortOrder(m_order));
+  if (m_orderHasBeenSet) {
+    payload.WithString("order", AnalyticsSortOrderMapper::GetNameForAnalyticsSortOrder(m_order));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

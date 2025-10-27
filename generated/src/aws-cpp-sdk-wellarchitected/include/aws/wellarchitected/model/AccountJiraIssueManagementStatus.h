@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
-  enum class AccountJiraIssueManagementStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
+enum class AccountJiraIssueManagementStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace AccountJiraIssueManagementStatusMapper
-{
+namespace AccountJiraIssueManagementStatusMapper {
 AWS_WELLARCHITECTED_API AccountJiraIssueManagementStatus GetAccountJiraIssueManagementStatusForName(const Aws::String& name);
 
 AWS_WELLARCHITECTED_API Aws::String GetNameForAccountJiraIssueManagementStatus(AccountJiraIssueManagementStatus value);
-} // namespace AccountJiraIssueManagementStatusMapper
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace AccountJiraIssueManagementStatusMapper
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

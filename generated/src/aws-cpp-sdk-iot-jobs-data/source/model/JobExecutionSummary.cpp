@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-jobs-data/model/JobExecutionSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-jobs-data/model/JobExecutionSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTJobsDataPlane
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTJobsDataPlane {
+namespace Model {
 
-JobExecutionSummary::JobExecutionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobExecutionSummary::JobExecutionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-JobExecutionSummary& JobExecutionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobId"))
-  {
+JobExecutionSummary& JobExecutionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobId")) {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queuedAt"))
-  {
+  if (jsonValue.ValueExists("queuedAt")) {
     m_queuedAt = jsonValue.GetInt64("queuedAt");
     m_queuedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetInt64("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetInt64("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionNumber"))
-  {
+  if (jsonValue.ValueExists("versionNumber")) {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
     m_versionNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionNumber"))
-  {
+  if (jsonValue.ValueExists("executionNumber")) {
     m_executionNumber = jsonValue.GetInt64("executionNumber");
     m_executionNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobExecutionSummary::Jsonize() const
-{
+JsonValue JobExecutionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_queuedAtHasBeenSet)
-  {
-   payload.WithInt64("queuedAt", m_queuedAt);
-
+  if (m_queuedAtHasBeenSet) {
+    payload.WithInt64("queuedAt", m_queuedAt);
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithInt64("startedAt", m_startedAt);
-
+  if (m_startedAtHasBeenSet) {
+    payload.WithInt64("startedAt", m_startedAt);
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithInt64("lastUpdatedAt", m_lastUpdatedAt);
-
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithInt64("lastUpdatedAt", m_lastUpdatedAt);
   }
 
-  if(m_versionNumberHasBeenSet)
-  {
-   payload.WithInt64("versionNumber", m_versionNumber);
-
+  if (m_versionNumberHasBeenSet) {
+    payload.WithInt64("versionNumber", m_versionNumber);
   }
 
-  if(m_executionNumberHasBeenSet)
-  {
-   payload.WithInt64("executionNumber", m_executionNumber);
-
+  if (m_executionNumberHasBeenSet) {
+    payload.WithInt64("executionNumber", m_executionNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTJobsDataPlane
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTJobsDataPlane
+}  // namespace Aws

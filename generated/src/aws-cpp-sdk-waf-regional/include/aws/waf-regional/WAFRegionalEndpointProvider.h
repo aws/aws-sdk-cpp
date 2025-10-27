@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/waf-regional/WAFRegionalEndpointRules.h>
+#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using WAFRegionalClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using WAFRegionalDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_WAFREGIONAL_API WAFRegionalEndpointProvider : public WAFRegionalDefaultEpProviderBase
-{
-public:
-    using WAFRegionalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_WAFREGIONAL_API WAFRegionalEndpointProvider : public WAFRegionalDefaultEpProviderBase {
+ public:
+  using WAFRegionalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    WAFRegionalEndpointProvider()
-      : WAFRegionalDefaultEpProviderBase(Aws::WAFRegional::WAFRegionalEndpointRules::GetRulesBlob(), Aws::WAFRegional::WAFRegionalEndpointRules::RulesBlobSize)
-    {}
+  WAFRegionalEndpointProvider()
+      : WAFRegionalDefaultEpProviderBase(Aws::WAFRegional::WAFRegionalEndpointRules::GetRulesBlob(),
+                                         Aws::WAFRegional::WAFRegionalEndpointRules::RulesBlobSize) {}
 
-    ~WAFRegionalEndpointProvider()
-    {
-    }
+  ~WAFRegionalEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace WAFRegional
+}  // namespace Aws

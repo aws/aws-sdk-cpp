@@ -12,19 +12,12 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRestoreTestingPlanRequest::SerializePayload() const
-{
+Aws::String UpdateRestoreTestingPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_restoreTestingPlanHasBeenSet)
-  {
-   payload.WithObject("RestoreTestingPlan", m_restoreTestingPlan.Jsonize());
-
+  if (m_restoreTestingPlanHasBeenSet) {
+    payload.WithObject("RestoreTestingPlan", m_restoreTestingPlan.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

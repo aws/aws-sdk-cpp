@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class AddonIssueCode
-  {
-    NOT_SET,
-    AccessDenied,
-    InternalFailure,
-    ClusterUnreachable,
-    InsufficientNumberOfReplicas,
-    ConfigurationConflict,
-    AdmissionRequestDenied,
-    UnsupportedAddonModification,
-    K8sResourceNotFound,
-    AddonSubscriptionNeeded,
-    AddonPermissionFailure
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class AddonIssueCode {
+  NOT_SET,
+  AccessDenied,
+  InternalFailure,
+  ClusterUnreachable,
+  InsufficientNumberOfReplicas,
+  ConfigurationConflict,
+  AdmissionRequestDenied,
+  UnsupportedAddonModification,
+  K8sResourceNotFound,
+  AddonSubscriptionNeeded,
+  AddonPermissionFailure
+};
 
-namespace AddonIssueCodeMapper
-{
+namespace AddonIssueCodeMapper {
 AWS_EKS_API AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForAddonIssueCode(AddonIssueCode value);
-} // namespace AddonIssueCodeMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace AddonIssueCodeMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TopicRelativeDateFilterFunction
-  {
-    NOT_SET,
-    PREVIOUS,
-    THIS,
-    LAST,
-    NEXT,
-    NOW
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TopicRelativeDateFilterFunction { NOT_SET, PREVIOUS, THIS, LAST, NEXT, NOW };
 
-namespace TopicRelativeDateFilterFunctionMapper
-{
+namespace TopicRelativeDateFilterFunctionMapper {
 AWS_QUICKSIGHT_API TopicRelativeDateFilterFunction GetTopicRelativeDateFilterFunctionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTopicRelativeDateFilterFunction(TopicRelativeDateFilterFunction value);
-} // namespace TopicRelativeDateFilterFunctionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TopicRelativeDateFilterFunctionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

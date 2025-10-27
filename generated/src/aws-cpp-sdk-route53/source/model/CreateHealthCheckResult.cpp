@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/CreateHealthCheckResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/CreateHealthCheckResult.h>
 
 #include <utility>
 
@@ -16,21 +16,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateHealthCheckResult::CreateHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateHealthCheckResult::CreateHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateHealthCheckResult& CreateHealthCheckResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateHealthCheckResult& CreateHealthCheckResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
-    if(!healthCheckNode.IsNull())
-    {
+    if (!healthCheckNode.IsNull()) {
       m_healthCheck = healthCheckNode;
       m_healthCheckHasBeenSet = true;
     }
@@ -38,15 +32,13 @@ CreateHealthCheckResult& CreateHealthCheckResult::operator =(const Aws::AmazonWe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& locationIter = headers.find("location");
-  if(locationIter != headers.end())
-  {
+  if (locationIter != headers.end()) {
     m_location = locationIter->second;
     m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class TagStatus
-  {
-    NOT_SET,
-    TAGGED,
-    UNTAGGED,
-    ANY
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class TagStatus { NOT_SET, TAGGED, UNTAGGED, ANY };
 
-namespace TagStatusMapper
-{
+namespace TagStatusMapper {
 AWS_ECR_API TagStatus GetTagStatusForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForTagStatus(TagStatus value);
-} // namespace TagStatusMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace TagStatusMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

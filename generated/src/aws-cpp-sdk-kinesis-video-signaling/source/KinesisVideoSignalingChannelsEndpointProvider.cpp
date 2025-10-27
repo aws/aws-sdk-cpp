@@ -5,12 +5,8 @@
 
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointProvider.h>
 
-namespace Aws
-{
-namespace KinesisVideoSignalingChannels
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KinesisVideoSignalingChannels
-} // namespace Aws
+namespace Aws {
+namespace KinesisVideoSignalingChannels {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KinesisVideoSignalingChannels
+}  // namespace Aws

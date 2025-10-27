@@ -3,196 +3,151 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/Project.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/Project.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-Project::Project(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Project::Project(JsonView jsonValue) { *this = jsonValue; }
 
-Project& Project::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProjectArn"))
-  {
+Project& Project::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProjectArn")) {
     m_projectArn = jsonValue.GetString("ProjectArn");
     m_projectArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectName"))
-  {
+  if (jsonValue.ValueExists("ProjectName")) {
     m_projectName = jsonValue.GetString("ProjectName");
     m_projectNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectId"))
-  {
+  if (jsonValue.ValueExists("ProjectId")) {
     m_projectId = jsonValue.GetString("ProjectId");
     m_projectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectDescription"))
-  {
+  if (jsonValue.ValueExists("ProjectDescription")) {
     m_projectDescription = jsonValue.GetString("ProjectDescription");
     m_projectDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCatalogProvisioningDetails"))
-  {
+  if (jsonValue.ValueExists("ServiceCatalogProvisioningDetails")) {
     m_serviceCatalogProvisioningDetails = jsonValue.GetObject("ServiceCatalogProvisioningDetails");
     m_serviceCatalogProvisioningDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCatalogProvisionedProductDetails"))
-  {
+  if (jsonValue.ValueExists("ServiceCatalogProvisionedProductDetails")) {
     m_serviceCatalogProvisionedProductDetails = jsonValue.GetObject("ServiceCatalogProvisionedProductDetails");
     m_serviceCatalogProvisionedProductDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectStatus"))
-  {
+  if (jsonValue.ValueExists("ProjectStatus")) {
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("ProjectStatus"));
     m_projectStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
-  {
+  if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateProviderDetails"))
-  {
+  if (jsonValue.ValueExists("TemplateProviderDetails")) {
     Aws::Utils::Array<JsonView> templateProviderDetailsJsonList = jsonValue.GetArray("TemplateProviderDetails");
-    for(unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength(); ++templateProviderDetailsIndex)
-    {
+    for (unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength();
+         ++templateProviderDetailsIndex) {
       m_templateProviderDetails.push_back(templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject());
     }
     m_templateProviderDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedBy"))
-  {
+  if (jsonValue.ValueExists("LastModifiedBy")) {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Project::Jsonize() const
-{
+JsonValue Project::Jsonize() const {
   JsonValue payload;
 
-  if(m_projectArnHasBeenSet)
-  {
-   payload.WithString("ProjectArn", m_projectArn);
-
+  if (m_projectArnHasBeenSet) {
+    payload.WithString("ProjectArn", m_projectArn);
   }
 
-  if(m_projectNameHasBeenSet)
-  {
-   payload.WithString("ProjectName", m_projectName);
-
+  if (m_projectNameHasBeenSet) {
+    payload.WithString("ProjectName", m_projectName);
   }
 
-  if(m_projectIdHasBeenSet)
-  {
-   payload.WithString("ProjectId", m_projectId);
-
+  if (m_projectIdHasBeenSet) {
+    payload.WithString("ProjectId", m_projectId);
   }
 
-  if(m_projectDescriptionHasBeenSet)
-  {
-   payload.WithString("ProjectDescription", m_projectDescription);
-
+  if (m_projectDescriptionHasBeenSet) {
+    payload.WithString("ProjectDescription", m_projectDescription);
   }
 
-  if(m_serviceCatalogProvisioningDetailsHasBeenSet)
-  {
-   payload.WithObject("ServiceCatalogProvisioningDetails", m_serviceCatalogProvisioningDetails.Jsonize());
-
+  if (m_serviceCatalogProvisioningDetailsHasBeenSet) {
+    payload.WithObject("ServiceCatalogProvisioningDetails", m_serviceCatalogProvisioningDetails.Jsonize());
   }
 
-  if(m_serviceCatalogProvisionedProductDetailsHasBeenSet)
-  {
-   payload.WithObject("ServiceCatalogProvisionedProductDetails", m_serviceCatalogProvisionedProductDetails.Jsonize());
-
+  if (m_serviceCatalogProvisionedProductDetailsHasBeenSet) {
+    payload.WithObject("ServiceCatalogProvisionedProductDetails", m_serviceCatalogProvisionedProductDetails.Jsonize());
   }
 
-  if(m_projectStatusHasBeenSet)
-  {
-   payload.WithString("ProjectStatus", ProjectStatusMapper::GetNameForProjectStatus(m_projectStatus));
+  if (m_projectStatusHasBeenSet) {
+    payload.WithString("ProjectStatus", ProjectStatusMapper::GetNameForProjectStatus(m_projectStatus));
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithObject("CreatedBy", m_createdBy.Jsonize());
-
+  if (m_createdByHasBeenSet) {
+    payload.WithObject("CreatedBy", m_createdBy.Jsonize());
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_templateProviderDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> templateProviderDetailsJsonList(m_templateProviderDetails.size());
-   for(unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength(); ++templateProviderDetailsIndex)
-   {
-     templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject(m_templateProviderDetails[templateProviderDetailsIndex].Jsonize());
-   }
-   payload.WithArray("TemplateProviderDetails", std::move(templateProviderDetailsJsonList));
-
+  if (m_templateProviderDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> templateProviderDetailsJsonList(m_templateProviderDetails.size());
+    for (unsigned templateProviderDetailsIndex = 0; templateProviderDetailsIndex < templateProviderDetailsJsonList.GetLength();
+         ++templateProviderDetailsIndex) {
+      templateProviderDetailsJsonList[templateProviderDetailsIndex].AsObject(
+          m_templateProviderDetails[templateProviderDetailsIndex].Jsonize());
+    }
+    payload.WithArray("TemplateProviderDetails", std::move(templateProviderDetailsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedByHasBeenSet)
-  {
-   payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
-
+  if (m_lastModifiedByHasBeenSet) {
+    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

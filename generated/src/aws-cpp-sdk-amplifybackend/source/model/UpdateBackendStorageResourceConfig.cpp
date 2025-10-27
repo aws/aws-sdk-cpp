@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-UpdateBackendStorageResourceConfig::UpdateBackendStorageResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBackendStorageResourceConfig::UpdateBackendStorageResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBackendStorageResourceConfig& UpdateBackendStorageResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("permissions"))
-  {
+UpdateBackendStorageResourceConfig& UpdateBackendStorageResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("permissions")) {
     m_permissions = jsonValue.GetObject("permissions");
     m_permissionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceName"))
-  {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("serviceName"));
     m_serviceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBackendStorageResourceConfig::Jsonize() const
-{
+JsonValue UpdateBackendStorageResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_permissionsHasBeenSet)
-  {
-   payload.WithObject("permissions", m_permissions.Jsonize());
-
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("permissions", m_permissions.Jsonize());
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

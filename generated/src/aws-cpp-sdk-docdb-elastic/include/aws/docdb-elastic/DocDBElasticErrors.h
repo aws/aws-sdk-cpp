@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-enum class DocDBElasticErrors
-{
-  //From Core//
+namespace Aws {
+namespace DocDBElastic {
+enum class DocDBElasticErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DocDBElasticErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class DocDBElasticErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_DOCDBELASTIC_API DocDBElasticError : public Aws::Client::AWSError<DocDBElasticErrors>
-{
-public:
+class AWS_DOCDBELASTIC_API DocDBElasticError : public Aws::Client::AWSError<DocDBElasticErrors> {
+ public:
   DocDBElasticError() {}
   DocDBElasticError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DocDBElasticErrors>(rhs) {}
   DocDBElasticError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DocDBElasticErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace DocDBElasticErrorMapper
-{
-  AWS_DOCDBELASTIC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DocDBElasticErrorMapper {
+AWS_DOCDBELASTIC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace DocDBElastic
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/LabelingJobResourceConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/LabelingJobResourceConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-LabelingJobResourceConfig::LabelingJobResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LabelingJobResourceConfig::LabelingJobResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LabelingJobResourceConfig& LabelingJobResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VolumeKmsKeyId"))
-  {
+LabelingJobResourceConfig& LabelingJobResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VolumeKmsKeyId")) {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcConfig"))
-  {
+  if (jsonValue.ValueExists("VpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LabelingJobResourceConfig::Jsonize() const
-{
+JsonValue LabelingJobResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_volumeKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
-
+  if (m_volumeKmsKeyIdHasBeenSet) {
+    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

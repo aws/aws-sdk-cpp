@@ -4,46 +4,35 @@
  */
 
 #include <aws/autoscaling/model/LaunchTemplate.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
-{
+LaunchTemplate& LaunchTemplate::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode launchTemplateSpecificationNode = resultNode.FirstChild("LaunchTemplateSpecification");
-    if(!launchTemplateSpecificationNode.IsNull())
-    {
+    if (!launchTemplateSpecificationNode.IsNull()) {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode overridesNode = resultNode.FirstChild("Overrides");
-    if(!overridesNode.IsNull())
-    {
+    if (!overridesNode.IsNull()) {
       XmlNode overridesMember = overridesNode.FirstChild("member");
       m_overridesHasBeenSet = !overridesMember.IsNull();
-      while(!overridesMember.IsNull())
-      {
+      while (!overridesMember.IsNull()) {
         m_overrides.push_back(overridesMember);
         overridesMember = overridesMember.NextNode("member");
       }
@@ -55,48 +44,39 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_launchTemplateSpecificationHasBeenSet)
-  {
-      Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
-      launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
-      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
+void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_launchTemplateSpecificationHasBeenSet) {
+    Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
+    launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
+    m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_overridesHasBeenSet)
-  {
-      unsigned overridesIdx = 1;
-      for(auto& item : m_overrides)
-      {
-        Aws::StringStream overridesSs;
-        overridesSs << location << index << locationValue << ".Overrides.member." << overridesIdx++;
-        item.OutputToStream(oStream, overridesSs.str().c_str());
-      }
-  }
-
-}
-
-void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_launchTemplateSpecificationHasBeenSet)
-  {
-      Aws::String launchTemplateSpecificationLocationAndMember(location);
-      launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
-      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
-  }
-  if(m_overridesHasBeenSet)
-  {
-      unsigned overridesIdx = 1;
-      for(auto& item : m_overrides)
-      {
-        Aws::StringStream overridesSs;
-        overridesSs << location << ".Overrides.member." << overridesIdx++;
-        item.OutputToStream(oStream, overridesSs.str().c_str());
-      }
+  if (m_overridesHasBeenSet) {
+    unsigned overridesIdx = 1;
+    for (auto& item : m_overrides) {
+      Aws::StringStream overridesSs;
+      overridesSs << location << index << locationValue << ".Overrides.member." << overridesIdx++;
+      item.OutputToStream(oStream, overridesSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_launchTemplateSpecificationHasBeenSet) {
+    Aws::String launchTemplateSpecificationLocationAndMember(location);
+    launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
+    m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
+  }
+  if (m_overridesHasBeenSet) {
+    unsigned overridesIdx = 1;
+    for (auto& item : m_overrides) {
+      Aws::StringStream overridesSs;
+      overridesSs << location << ".Overrides.member." << overridesIdx++;
+      item.OutputToStream(oStream, overridesSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

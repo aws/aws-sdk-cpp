@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class GuardrailContentFilterAction
-  {
-    NOT_SET,
-    BLOCK,
-    NONE
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class GuardrailContentFilterAction { NOT_SET, BLOCK, NONE };
 
-namespace GuardrailContentFilterActionMapper
-{
+namespace GuardrailContentFilterActionMapper {
 AWS_BEDROCK_API GuardrailContentFilterAction GetGuardrailContentFilterActionForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForGuardrailContentFilterAction(GuardrailContentFilterAction value);
-} // namespace GuardrailContentFilterActionMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace GuardrailContentFilterActionMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

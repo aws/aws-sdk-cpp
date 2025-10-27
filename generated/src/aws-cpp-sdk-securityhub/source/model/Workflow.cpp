@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/Workflow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/Workflow.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-Workflow::Workflow(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Workflow::Workflow(JsonView jsonValue) { *this = jsonValue; }
 
-Workflow& Workflow::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+Workflow& Workflow::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Workflow::Jsonize() const
-{
+JsonValue Workflow::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", WorkflowStatusMapper::GetNameForWorkflowStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", WorkflowStatusMapper::GetNameForWorkflowStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/SlotValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/SlotValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-SlotValue::SlotValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlotValue::SlotValue(JsonView jsonValue) { *this = jsonValue; }
 
-SlotValue& SlotValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("interpretedValue"))
-  {
+SlotValue& SlotValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("interpretedValue")) {
     m_interpretedValue = jsonValue.GetString("interpretedValue");
     m_interpretedValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SlotValue::Jsonize() const
-{
+JsonValue SlotValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_interpretedValueHasBeenSet)
-  {
-   payload.WithString("interpretedValue", m_interpretedValue);
-
+  if (m_interpretedValueHasBeenSet) {
+    payload.WithString("interpretedValue", m_interpretedValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class AuditCheckRunStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    WAITING_FOR_DATA_COLLECTION,
-    CANCELED,
-    COMPLETED_COMPLIANT,
-    COMPLETED_NON_COMPLIANT,
-    FAILED
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class AuditCheckRunStatus {
+  NOT_SET,
+  IN_PROGRESS,
+  WAITING_FOR_DATA_COLLECTION,
+  CANCELED,
+  COMPLETED_COMPLIANT,
+  COMPLETED_NON_COMPLIANT,
+  FAILED
+};
 
-namespace AuditCheckRunStatusMapper
-{
+namespace AuditCheckRunStatusMapper {
 AWS_IOT_API AuditCheckRunStatus GetAuditCheckRunStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForAuditCheckRunStatus(AuditCheckRunStatus value);
-} // namespace AuditCheckRunStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace AuditCheckRunStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

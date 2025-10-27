@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/lexv2-models/LexModelsV2EndpointRules.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LexModelsV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using LexModelsV2DefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LEXMODELSV2_API LexModelsV2EndpointProvider : public LexModelsV2DefaultEpProviderBase
-{
-public:
-    using LexModelsV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LEXMODELSV2_API LexModelsV2EndpointProvider : public LexModelsV2DefaultEpProviderBase {
+ public:
+  using LexModelsV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LexModelsV2EndpointProvider()
-      : LexModelsV2DefaultEpProviderBase(Aws::LexModelsV2::LexModelsV2EndpointRules::GetRulesBlob(), Aws::LexModelsV2::LexModelsV2EndpointRules::RulesBlobSize)
-    {}
+  LexModelsV2EndpointProvider()
+      : LexModelsV2DefaultEpProviderBase(Aws::LexModelsV2::LexModelsV2EndpointRules::GetRulesBlob(),
+                                         Aws::LexModelsV2::LexModelsV2EndpointRules::RulesBlobSize) {}
 
-    ~LexModelsV2EndpointProvider()
-    {
-    }
+  ~LexModelsV2EndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::AugmentedAIRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteHumanLoopRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteHumanLoopRequest::SerializePayload() const { return {}; }

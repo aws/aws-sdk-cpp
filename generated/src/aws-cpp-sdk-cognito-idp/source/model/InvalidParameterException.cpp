@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidParameterException::InvalidParameterException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidParameterException& InvalidParameterException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+InvalidParameterException& InvalidParameterException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reasonCode"))
-  {
+  if (jsonValue.ValueExists("reasonCode")) {
     m_reasonCode = jsonValue.GetString("reasonCode");
     m_reasonCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidParameterException::Jsonize() const
-{
+JsonValue InvalidParameterException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_reasonCodeHasBeenSet)
-  {
-   payload.WithString("reasonCode", m_reasonCode);
-
+  if (m_reasonCodeHasBeenSet) {
+    payload.WithString("reasonCode", m_reasonCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

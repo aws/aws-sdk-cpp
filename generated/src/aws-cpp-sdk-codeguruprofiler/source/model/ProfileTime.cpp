@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-ProfileTime::ProfileTime(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileTime::ProfileTime(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileTime& ProfileTime::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("start"))
-  {
+ProfileTime& ProfileTime::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetString("start");
     m_startHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfileTime::Jsonize() const
-{
+JsonValue ProfileTime::Jsonize() const {
   JsonValue payload;
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithString("start", m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startHasBeenSet) {
+    payload.WithString("start", m_start.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

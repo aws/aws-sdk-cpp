@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
-  enum class PolicyTypeValues
-  {
-    NOT_SET,
-    EBS_SNAPSHOT_MANAGEMENT,
-    IMAGE_MANAGEMENT,
-    EVENT_BASED_POLICY
-  };
+namespace Aws {
+namespace DLM {
+namespace Model {
+enum class PolicyTypeValues { NOT_SET, EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY };
 
-namespace PolicyTypeValuesMapper
-{
+namespace PolicyTypeValuesMapper {
 AWS_DLM_API PolicyTypeValues GetPolicyTypeValuesForName(const Aws::String& name);
 
 AWS_DLM_API Aws::String GetNameForPolicyTypeValues(PolicyTypeValues value);
-} // namespace PolicyTypeValuesMapper
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace PolicyTypeValuesMapper
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

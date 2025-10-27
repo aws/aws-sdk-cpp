@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::WorkSpaces;
 
-AWSError<CoreErrors> WorkSpacesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> WorkSpacesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = WorkSpacesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

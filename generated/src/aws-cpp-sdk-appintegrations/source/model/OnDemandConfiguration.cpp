@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-OnDemandConfiguration::OnDemandConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnDemandConfiguration::OnDemandConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OnDemandConfiguration& OnDemandConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StartTime"))
-  {
+OnDemandConfiguration& OnDemandConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetString("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetString("EndTime");
     m_endTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OnDemandConfiguration::Jsonize() const
-{
+JsonValue OnDemandConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("StartTime", m_startTime);
-
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("StartTime", m_startTime);
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("EndTime", m_endTime);
-
+  if (m_endTimeHasBeenSet) {
+    payload.WithString("EndTime", m_endTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

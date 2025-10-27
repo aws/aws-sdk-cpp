@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/GluePolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/GluePolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-GluePolicy::GluePolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GluePolicy::GluePolicy(JsonView jsonValue) { *this = jsonValue; }
 
-GluePolicy& GluePolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyInJson"))
-  {
+GluePolicy& GluePolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyInJson")) {
     m_policyInJson = jsonValue.GetString("PolicyInJson");
     m_policyInJsonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyHash"))
-  {
+  if (jsonValue.ValueExists("PolicyHash")) {
     m_policyHash = jsonValue.GetString("PolicyHash");
     m_policyHashHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTime"))
-  {
+  if (jsonValue.ValueExists("CreateTime")) {
     m_createTime = jsonValue.GetDouble("CreateTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
+  if (jsonValue.ValueExists("UpdateTime")) {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GluePolicy::Jsonize() const
-{
+JsonValue GluePolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyInJsonHasBeenSet)
-  {
-   payload.WithString("PolicyInJson", m_policyInJson);
-
+  if (m_policyInJsonHasBeenSet) {
+    payload.WithString("PolicyInJson", m_policyInJson);
   }
 
-  if(m_policyHashHasBeenSet)
-  {
-   payload.WithString("PolicyHash", m_policyHash);
-
+  if (m_policyHashHasBeenSet) {
+    payload.WithString("PolicyHash", m_policyHash);
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("UpdateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("UpdateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

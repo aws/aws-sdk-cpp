@@ -4,48 +4,37 @@
  */
 
 #include <aws/cloudfront/model/ContentTypeProfile.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ContentTypeProfile::ContentTypeProfile(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ContentTypeProfile::ContentTypeProfile(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ContentTypeProfile& ContentTypeProfile::operator =(const XmlNode& xmlNode)
-{
+ContentTypeProfile& ContentTypeProfile::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode formatNode = resultNode.FirstChild("Format");
-    if(!formatNode.IsNull())
-    {
+    if (!formatNode.IsNull()) {
       m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
-    if(!profileIdNode.IsNull())
-    {
+    if (!profileIdNode.IsNull()) {
       m_profileId = Aws::Utils::Xml::DecodeEscapedXmlText(profileIdNode.GetText());
       m_profileIdHasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
-    if(!contentTypeNode.IsNull())
-    {
+    if (!contentTypeNode.IsNull()) {
       m_contentType = Aws::Utils::Xml::DecodeEscapedXmlText(contentTypeNode.GetText());
       m_contentTypeHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ ContentTypeProfile& ContentTypeProfile::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ContentTypeProfile::AddToNode(XmlNode& parentNode) const
-{
+void ContentTypeProfile::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_formatHasBeenSet)
-  {
-   XmlNode formatNode = parentNode.CreateChildElement("Format");
-   formatNode.SetText(FormatMapper::GetNameForFormat(m_format));
+  if (m_formatHasBeenSet) {
+    XmlNode formatNode = parentNode.CreateChildElement("Format");
+    formatNode.SetText(FormatMapper::GetNameForFormat(m_format));
   }
 
-  if(m_profileIdHasBeenSet)
-  {
-   XmlNode profileIdNode = parentNode.CreateChildElement("ProfileId");
-   profileIdNode.SetText(m_profileId);
+  if (m_profileIdHasBeenSet) {
+    XmlNode profileIdNode = parentNode.CreateChildElement("ProfileId");
+    profileIdNode.SetText(m_profileId);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   XmlNode contentTypeNode = parentNode.CreateChildElement("ContentType");
-   contentTypeNode.SetText(m_contentType);
+  if (m_contentTypeHasBeenSet) {
+    XmlNode contentTypeNode = parentNode.CreateChildElement("ContentType");
+    contentTypeNode.SetText(m_contentType);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

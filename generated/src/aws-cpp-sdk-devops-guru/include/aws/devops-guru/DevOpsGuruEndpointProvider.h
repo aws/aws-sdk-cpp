@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/devops-guru/DevOpsGuruEndpointRules.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DevOpsGuru {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DevOpsGuruClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DevOpsGuruDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DEVOPSGURU_API DevOpsGuruEndpointProvider : public DevOpsGuruDefaultEpProviderBase
-{
-public:
-    using DevOpsGuruResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DEVOPSGURU_API DevOpsGuruEndpointProvider : public DevOpsGuruDefaultEpProviderBase {
+ public:
+  using DevOpsGuruResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DevOpsGuruEndpointProvider()
-      : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::GetRulesBlob(), Aws::DevOpsGuru::DevOpsGuruEndpointRules::RulesBlobSize)
-    {}
+  DevOpsGuruEndpointProvider()
+      : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::GetRulesBlob(),
+                                        Aws::DevOpsGuru::DevOpsGuruEndpointRules::RulesBlobSize) {}
 
-    ~DevOpsGuruEndpointProvider()
-    {
-    }
+  ~DevOpsGuruEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DevOpsGuru
+}  // namespace Aws

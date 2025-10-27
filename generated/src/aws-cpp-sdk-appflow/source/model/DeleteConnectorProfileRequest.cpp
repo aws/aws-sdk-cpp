@@ -12,25 +12,16 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteConnectorProfileRequest::SerializePayload() const
-{
+Aws::String DeleteConnectorProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorProfileNameHasBeenSet)
-  {
-   payload.WithString("connectorProfileName", m_connectorProfileName);
-
+  if (m_connectorProfileNameHasBeenSet) {
+    payload.WithString("connectorProfileName", m_connectorProfileName);
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
-   payload.WithBool("forceDelete", m_forceDelete);
-
+  if (m_forceDeleteHasBeenSet) {
+    payload.WithBool("forceDelete", m_forceDelete);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

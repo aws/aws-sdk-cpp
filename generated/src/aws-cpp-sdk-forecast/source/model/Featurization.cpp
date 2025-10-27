@@ -3,38 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/Featurization.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/Featurization.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-Featurization::Featurization(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Featurization::Featurization(JsonView jsonValue) { *this = jsonValue; }
 
-Featurization& Featurization::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+Featurization& Featurization::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FeaturizationPipeline"))
-  {
+  if (jsonValue.ValueExists("FeaturizationPipeline")) {
     Aws::Utils::Array<JsonView> featurizationPipelineJsonList = jsonValue.GetArray("FeaturizationPipeline");
-    for(unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength(); ++featurizationPipelineIndex)
-    {
+    for (unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength();
+         ++featurizationPipelineIndex) {
       m_featurizationPipeline.push_back(featurizationPipelineJsonList[featurizationPipelineIndex].AsObject());
     }
     m_featurizationPipelineHasBeenSet = true;
@@ -42,30 +33,25 @@ Featurization& Featurization::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Featurization::Jsonize() const
-{
+JsonValue Featurization::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_featurizationPipelineHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> featurizationPipelineJsonList(m_featurizationPipeline.size());
-   for(unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength(); ++featurizationPipelineIndex)
-   {
-     featurizationPipelineJsonList[featurizationPipelineIndex].AsObject(m_featurizationPipeline[featurizationPipelineIndex].Jsonize());
-   }
-   payload.WithArray("FeaturizationPipeline", std::move(featurizationPipelineJsonList));
-
+  if (m_featurizationPipelineHasBeenSet) {
+    Aws::Utils::Array<JsonValue> featurizationPipelineJsonList(m_featurizationPipeline.size());
+    for (unsigned featurizationPipelineIndex = 0; featurizationPipelineIndex < featurizationPipelineJsonList.GetLength();
+         ++featurizationPipelineIndex) {
+      featurizationPipelineJsonList[featurizationPipelineIndex].AsObject(m_featurizationPipeline[featurizationPipelineIndex].Jsonize());
+    }
+    payload.WithArray("FeaturizationPipeline", std::move(featurizationPipelineJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

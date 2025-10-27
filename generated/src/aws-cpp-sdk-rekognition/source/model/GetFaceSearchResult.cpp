@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/GetFaceSearchResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rekognition/model/GetFaceSearchResult.h>
 
 #include <utility>
 
@@ -17,67 +17,52 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFaceSearchResult::GetFaceSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetFaceSearchResult::GetFaceSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetFaceSearchResult& GetFaceSearchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetFaceSearchResult& GetFaceSearchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VideoMetadata"))
-  {
+  if (jsonValue.ValueExists("VideoMetadata")) {
     m_videoMetadata = jsonValue.GetObject("VideoMetadata");
     m_videoMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Persons"))
-  {
+  if (jsonValue.ValueExists("Persons")) {
     Aws::Utils::Array<JsonView> personsJsonList = jsonValue.GetArray("Persons");
-    for(unsigned personsIndex = 0; personsIndex < personsJsonList.GetLength(); ++personsIndex)
-    {
+    for (unsigned personsIndex = 0; personsIndex < personsJsonList.GetLength(); ++personsIndex) {
       m_persons.push_back(personsJsonList[personsIndex].AsObject());
     }
     m_personsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobId"))
-  {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Video"))
-  {
+  if (jsonValue.ValueExists("Video")) {
     m_video = jsonValue.GetObject("Video");
     m_videoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobTag"))
-  {
+  if (jsonValue.ValueExists("JobTag")) {
     m_jobTag = jsonValue.GetString("JobTag");
     m_jobTagHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

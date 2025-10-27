@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-HeaderMatchMethod::HeaderMatchMethod(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HeaderMatchMethod::HeaderMatchMethod(JsonView jsonValue) { *this = jsonValue; }
 
-HeaderMatchMethod& HeaderMatchMethod::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exact"))
-  {
+HeaderMatchMethod& HeaderMatchMethod::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exact")) {
     m_exact = jsonValue.GetString("exact");
     m_exactHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("prefix"))
-  {
+  if (jsonValue.ValueExists("prefix")) {
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("range"))
-  {
+  if (jsonValue.ValueExists("range")) {
     m_range = jsonValue.GetObject("range");
     m_rangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("regex"))
-  {
+  if (jsonValue.ValueExists("regex")) {
     m_regex = jsonValue.GetString("regex");
     m_regexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suffix"))
-  {
+  if (jsonValue.ValueExists("suffix")) {
     m_suffix = jsonValue.GetString("suffix");
     m_suffixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HeaderMatchMethod::Jsonize() const
-{
+JsonValue HeaderMatchMethod::Jsonize() const {
   JsonValue payload;
 
-  if(m_exactHasBeenSet)
-  {
-   payload.WithString("exact", m_exact);
-
+  if (m_exactHasBeenSet) {
+    payload.WithString("exact", m_exact);
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("prefix", m_prefix);
   }
 
-  if(m_rangeHasBeenSet)
-  {
-   payload.WithObject("range", m_range.Jsonize());
-
+  if (m_rangeHasBeenSet) {
+    payload.WithObject("range", m_range.Jsonize());
   }
 
-  if(m_regexHasBeenSet)
-  {
-   payload.WithString("regex", m_regex);
-
+  if (m_regexHasBeenSet) {
+    payload.WithString("regex", m_regex);
   }
 
-  if(m_suffixHasBeenSet)
-  {
-   payload.WithString("suffix", m_suffix);
-
+  if (m_suffixHasBeenSet) {
+    payload.WithString("suffix", m_suffix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

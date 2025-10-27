@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class RecursiveLoop
-  {
-    NOT_SET,
-    Allow,
-    Terminate
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class RecursiveLoop { NOT_SET, Allow, Terminate };
 
-namespace RecursiveLoopMapper
-{
+namespace RecursiveLoopMapper {
 AWS_LAMBDA_API RecursiveLoop GetRecursiveLoopForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForRecursiveLoop(RecursiveLoop value);
-} // namespace RecursiveLoopMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace RecursiveLoopMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

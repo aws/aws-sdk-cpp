@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-InstanceDetails::InstanceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceDetails::InstanceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EC2InstanceDetails"))
-  {
+InstanceDetails& InstanceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EC2InstanceDetails")) {
     m_eC2InstanceDetails = jsonValue.GetObject("EC2InstanceDetails");
     m_eC2InstanceDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RDSInstanceDetails"))
-  {
+  if (jsonValue.ValueExists("RDSInstanceDetails")) {
     m_rDSInstanceDetails = jsonValue.GetObject("RDSInstanceDetails");
     m_rDSInstanceDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RedshiftInstanceDetails"))
-  {
+  if (jsonValue.ValueExists("RedshiftInstanceDetails")) {
     m_redshiftInstanceDetails = jsonValue.GetObject("RedshiftInstanceDetails");
     m_redshiftInstanceDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ElastiCacheInstanceDetails"))
-  {
+  if (jsonValue.ValueExists("ElastiCacheInstanceDetails")) {
     m_elastiCacheInstanceDetails = jsonValue.GetObject("ElastiCacheInstanceDetails");
     m_elastiCacheInstanceDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ESInstanceDetails"))
-  {
+  if (jsonValue.ValueExists("ESInstanceDetails")) {
     m_eSInstanceDetails = jsonValue.GetObject("ESInstanceDetails");
     m_eSInstanceDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MemoryDBInstanceDetails"))
-  {
+  if (jsonValue.ValueExists("MemoryDBInstanceDetails")) {
     m_memoryDBInstanceDetails = jsonValue.GetObject("MemoryDBInstanceDetails");
     m_memoryDBInstanceDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceDetails::Jsonize() const
-{
+JsonValue InstanceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_eC2InstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("EC2InstanceDetails", m_eC2InstanceDetails.Jsonize());
-
+  if (m_eC2InstanceDetailsHasBeenSet) {
+    payload.WithObject("EC2InstanceDetails", m_eC2InstanceDetails.Jsonize());
   }
 
-  if(m_rDSInstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("RDSInstanceDetails", m_rDSInstanceDetails.Jsonize());
-
+  if (m_rDSInstanceDetailsHasBeenSet) {
+    payload.WithObject("RDSInstanceDetails", m_rDSInstanceDetails.Jsonize());
   }
 
-  if(m_redshiftInstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("RedshiftInstanceDetails", m_redshiftInstanceDetails.Jsonize());
-
+  if (m_redshiftInstanceDetailsHasBeenSet) {
+    payload.WithObject("RedshiftInstanceDetails", m_redshiftInstanceDetails.Jsonize());
   }
 
-  if(m_elastiCacheInstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("ElastiCacheInstanceDetails", m_elastiCacheInstanceDetails.Jsonize());
-
+  if (m_elastiCacheInstanceDetailsHasBeenSet) {
+    payload.WithObject("ElastiCacheInstanceDetails", m_elastiCacheInstanceDetails.Jsonize());
   }
 
-  if(m_eSInstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("ESInstanceDetails", m_eSInstanceDetails.Jsonize());
-
+  if (m_eSInstanceDetailsHasBeenSet) {
+    payload.WithObject("ESInstanceDetails", m_eSInstanceDetails.Jsonize());
   }
 
-  if(m_memoryDBInstanceDetailsHasBeenSet)
-  {
-   payload.WithObject("MemoryDBInstanceDetails", m_memoryDBInstanceDetails.Jsonize());
-
+  if (m_memoryDBInstanceDetailsHasBeenSet) {
+    payload.WithObject("MemoryDBInstanceDetails", m_memoryDBInstanceDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

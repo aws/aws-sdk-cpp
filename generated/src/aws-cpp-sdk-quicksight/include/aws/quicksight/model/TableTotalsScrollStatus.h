@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TableTotalsScrollStatus
-  {
-    NOT_SET,
-    PINNED,
-    SCROLLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TableTotalsScrollStatus { NOT_SET, PINNED, SCROLLED };
 
-namespace TableTotalsScrollStatusMapper
-{
+namespace TableTotalsScrollStatusMapper {
 AWS_QUICKSIGHT_API TableTotalsScrollStatus GetTableTotalsScrollStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTableTotalsScrollStatus(TableTotalsScrollStatus value);
-} // namespace TableTotalsScrollStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TableTotalsScrollStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

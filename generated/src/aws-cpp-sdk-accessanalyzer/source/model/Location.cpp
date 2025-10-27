@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Location::Location(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Location::Location(JsonView jsonValue) { *this = jsonValue; }
 
-Location& Location::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("path"))
-  {
+Location& Location::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("path")) {
     Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("path");
-    for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
-    {
+    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
       m_path.push_back(pathJsonList[pathIndex].AsObject());
     }
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("span"))
-  {
+  if (jsonValue.ValueExists("span")) {
     m_span = jsonValue.GetObject("span");
     m_spanHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Location::Jsonize() const
-{
+JsonValue Location::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
-   for(unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex)
-   {
-     pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
-   }
-   payload.WithArray("path", std::move(pathJsonList));
-
+  if (m_pathHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
+    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
+      pathJsonList[pathIndex].AsObject(m_path[pathIndex].Jsonize());
+    }
+    payload.WithArray("path", std::move(pathJsonList));
   }
 
-  if(m_spanHasBeenSet)
-  {
-   payload.WithObject("span", m_span.Jsonize());
-
+  if (m_spanHasBeenSet) {
+    payload.WithObject("span", m_span.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

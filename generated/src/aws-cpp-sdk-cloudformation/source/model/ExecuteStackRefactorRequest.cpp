@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ExecuteStackRefactorRequest::SerializePayload() const
-{
+Aws::String ExecuteStackRefactorRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ExecuteStackRefactor&";
-  if(m_stackRefactorIdHasBeenSet)
-  {
+  if (m_stackRefactorIdHasBeenSet) {
     ss << "StackRefactorId=" << StringUtils::URLEncode(m_stackRefactorId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String ExecuteStackRefactorRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ExecuteStackRefactorRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ExecuteStackRefactorRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

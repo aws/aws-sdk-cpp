@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/StrategyOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/StrategyOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-StrategyOption::StrategyOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StrategyOption::StrategyOption(JsonView jsonValue) { *this = jsonValue; }
 
-StrategyOption& StrategyOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isPreferred"))
-  {
+StrategyOption& StrategyOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isPreferred")) {
     m_isPreferred = jsonValue.GetBool("isPreferred");
     m_isPreferredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("strategy"))
-  {
+  if (jsonValue.ValueExists("strategy")) {
     m_strategy = StrategyMapper::GetStrategyForName(jsonValue.GetString("strategy"));
     m_strategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetDestination"))
-  {
+  if (jsonValue.ValueExists("targetDestination")) {
     m_targetDestination = TargetDestinationMapper::GetTargetDestinationForName(jsonValue.GetString("targetDestination"));
     m_targetDestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("toolName"))
-  {
+  if (jsonValue.ValueExists("toolName")) {
     m_toolName = TransformationToolNameMapper::GetTransformationToolNameForName(jsonValue.GetString("toolName"));
     m_toolNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StrategyOption::Jsonize() const
-{
+JsonValue StrategyOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_isPreferredHasBeenSet)
-  {
-   payload.WithBool("isPreferred", m_isPreferred);
-
+  if (m_isPreferredHasBeenSet) {
+    payload.WithBool("isPreferred", m_isPreferred);
   }
 
-  if(m_strategyHasBeenSet)
-  {
-   payload.WithString("strategy", StrategyMapper::GetNameForStrategy(m_strategy));
+  if (m_strategyHasBeenSet) {
+    payload.WithString("strategy", StrategyMapper::GetNameForStrategy(m_strategy));
   }
 
-  if(m_targetDestinationHasBeenSet)
-  {
-   payload.WithString("targetDestination", TargetDestinationMapper::GetNameForTargetDestination(m_targetDestination));
+  if (m_targetDestinationHasBeenSet) {
+    payload.WithString("targetDestination", TargetDestinationMapper::GetNameForTargetDestination(m_targetDestination));
   }
 
-  if(m_toolNameHasBeenSet)
-  {
-   payload.WithString("toolName", TransformationToolNameMapper::GetNameForTransformationToolName(m_toolName));
+  if (m_toolNameHasBeenSet) {
+    payload.WithString("toolName", TransformationToolNameMapper::GetNameForTransformationToolName(m_toolName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

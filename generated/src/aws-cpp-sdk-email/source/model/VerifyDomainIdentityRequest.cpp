@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/VerifyDomainIdentityRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/VerifyDomainIdentityRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String VerifyDomainIdentityRequest::SerializePayload() const
-{
+Aws::String VerifyDomainIdentityRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=VerifyDomainIdentity&";
-  if(m_domainHasBeenSet)
-  {
+  if (m_domainHasBeenSet) {
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String VerifyDomainIdentityRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  VerifyDomainIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void VerifyDomainIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

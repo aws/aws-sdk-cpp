@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-CitationSourceContent::CitationSourceContent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CitationSourceContent::CitationSourceContent(JsonView jsonValue) { *this = jsonValue; }
 
-CitationSourceContent& CitationSourceContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+CitationSourceContent& CitationSourceContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CitationSourceContent::Jsonize() const
-{
+JsonValue CitationSourceContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

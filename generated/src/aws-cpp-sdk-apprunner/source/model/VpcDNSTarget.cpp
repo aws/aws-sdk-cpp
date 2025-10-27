@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-VpcDNSTarget::VpcDNSTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcDNSTarget::VpcDNSTarget(JsonView jsonValue) { *this = jsonValue; }
 
-VpcDNSTarget& VpcDNSTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcIngressConnectionArn"))
-  {
+VpcDNSTarget& VpcDNSTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcIngressConnectionArn")) {
     m_vpcIngressConnectionArn = jsonValue.GetString("VpcIngressConnectionArn");
     m_vpcIngressConnectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainName"))
-  {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcDNSTarget::Jsonize() const
-{
+JsonValue VpcDNSTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIngressConnectionArnHasBeenSet)
-  {
-   payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
-
+  if (m_vpcIngressConnectionArnHasBeenSet) {
+    payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

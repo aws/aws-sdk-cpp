@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/Predicate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/Predicate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-Predicate::Predicate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Predicate::Predicate(JsonView jsonValue) { *this = jsonValue; }
 
-Predicate& Predicate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Logical"))
-  {
+Predicate& Predicate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Logical")) {
     m_logical = LogicalMapper::GetLogicalForName(jsonValue.GetString("Logical"));
     m_logicalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Conditions"))
-  {
+  if (jsonValue.ValueExists("Conditions")) {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
-    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-    {
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
     }
     m_conditionsHasBeenSet = true;
@@ -42,29 +32,24 @@ Predicate& Predicate::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Predicate::Jsonize() const
-{
+JsonValue Predicate::Jsonize() const {
   JsonValue payload;
 
-  if(m_logicalHasBeenSet)
-  {
-   payload.WithString("Logical", LogicalMapper::GetNameForLogical(m_logical));
+  if (m_logicalHasBeenSet) {
+    payload.WithString("Logical", LogicalMapper::GetNameForLogical(m_logical));
   }
 
-  if(m_conditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
-   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-   {
-     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
-   }
-   payload.WithArray("Conditions", std::move(conditionsJsonList));
-
+  if (m_conditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
+      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+    }
+    payload.WithArray("Conditions", std::move(conditionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

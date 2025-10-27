@@ -12,38 +12,27 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateCertificateAuthorityAuditReportRequest::SerializePayload() const
-{
+Aws::String CreateCertificateAuthorityAuditReportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
-  if(m_auditReportResponseFormatHasBeenSet)
-  {
-   payload.WithString("AuditReportResponseFormat", AuditReportResponseFormatMapper::GetNameForAuditReportResponseFormat(m_auditReportResponseFormat));
+  if (m_auditReportResponseFormatHasBeenSet) {
+    payload.WithString("AuditReportResponseFormat",
+                       AuditReportResponseFormatMapper::GetNameForAuditReportResponseFormat(m_auditReportResponseFormat));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateCertificateAuthorityAuditReportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateCertificateAuthorityAuditReportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.CreateCertificateAuthorityAuditReport"));
   return headers;
-
 }
-
-
-
-

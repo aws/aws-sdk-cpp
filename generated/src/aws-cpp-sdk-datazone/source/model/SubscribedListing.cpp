@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/SubscribedListing.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/SubscribedListing.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-SubscribedListing::SubscribedListing(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubscribedListing::SubscribedListing(JsonView jsonValue) { *this = jsonValue; }
 
-SubscribedListing& SubscribedListing::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+SubscribedListing& SubscribedListing::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("item"))
-  {
+  if (jsonValue.ValueExists("item")) {
     m_item = jsonValue.GetObject("item");
     m_itemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ownerProjectId"))
-  {
+  if (jsonValue.ValueExists("ownerProjectId")) {
     m_ownerProjectId = jsonValue.GetString("ownerProjectId");
     m_ownerProjectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ownerProjectName"))
-  {
+  if (jsonValue.ValueExists("ownerProjectName")) {
     m_ownerProjectName = jsonValue.GetString("ownerProjectName");
     m_ownerProjectNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revision"))
-  {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubscribedListing::Jsonize() const
-{
+JsonValue SubscribedListing::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_itemHasBeenSet)
-  {
-   payload.WithObject("item", m_item.Jsonize());
-
+  if (m_itemHasBeenSet) {
+    payload.WithObject("item", m_item.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_ownerProjectIdHasBeenSet)
-  {
-   payload.WithString("ownerProjectId", m_ownerProjectId);
-
+  if (m_ownerProjectIdHasBeenSet) {
+    payload.WithString("ownerProjectId", m_ownerProjectId);
   }
 
-  if(m_ownerProjectNameHasBeenSet)
-  {
-   payload.WithString("ownerProjectName", m_ownerProjectName);
-
+  if (m_ownerProjectNameHasBeenSet) {
+    payload.WithString("ownerProjectName", m_ownerProjectName);
   }
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithString("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

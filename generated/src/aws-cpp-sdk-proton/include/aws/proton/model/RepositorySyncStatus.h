@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class RepositorySyncStatus
-  {
-    NOT_SET,
-    INITIATED,
-    IN_PROGRESS,
-    SUCCEEDED,
-    FAILED,
-    QUEUED
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class RepositorySyncStatus { NOT_SET, INITIATED, IN_PROGRESS, SUCCEEDED, FAILED, QUEUED };
 
-namespace RepositorySyncStatusMapper
-{
+namespace RepositorySyncStatusMapper {
 AWS_PROTON_API RepositorySyncStatus GetRepositorySyncStatusForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForRepositorySyncStatus(RepositorySyncStatus value);
-} // namespace RepositorySyncStatusMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace RepositorySyncStatusMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

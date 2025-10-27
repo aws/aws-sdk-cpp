@@ -4,55 +4,53 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace RDS {
+namespace Model {
 
+/**
+ * <p>The metric reference details when the reference is a scalar.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalarReferenceDetails">AWS
+ * API Reference</a></p>
+ */
+class ScalarReferenceDetails {
+ public:
+  AWS_RDS_API ScalarReferenceDetails() = default;
+  AWS_RDS_API ScalarReferenceDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RDS_API ScalarReferenceDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>The metric reference details when the reference is a scalar.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalarReferenceDetails">AWS
-   * API Reference</a></p>
+   * <p>The value of a scalar reference.</p>
    */
-  class ScalarReferenceDetails
-  {
-  public:
-    AWS_RDS_API ScalarReferenceDetails() = default;
-    AWS_RDS_API ScalarReferenceDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_RDS_API ScalarReferenceDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline double GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(double value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline ScalarReferenceDetails& WithValue(double value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_value{0.0};
+  bool m_valueHasBeenSet = false;
+};
 
-    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-
-    ///@{
-    /**
-     * <p>The value of a scalar reference.</p>
-     */
-    inline double GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-    inline ScalarReferenceDetails& WithValue(double value) { SetValue(value); return *this;}
-    ///@}
-  private:
-
-    double m_value{0.0};
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

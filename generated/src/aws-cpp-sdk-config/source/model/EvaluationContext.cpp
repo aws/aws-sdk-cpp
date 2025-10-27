@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-EvaluationContext::EvaluationContext(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationContext::EvaluationContext(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationContext& EvaluationContext::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationContextIdentifier"))
-  {
+EvaluationContext& EvaluationContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationContextIdentifier")) {
     m_evaluationContextIdentifier = jsonValue.GetString("EvaluationContextIdentifier");
     m_evaluationContextIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationContext::Jsonize() const
-{
+JsonValue EvaluationContext::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationContextIdentifierHasBeenSet)
-  {
-   payload.WithString("EvaluationContextIdentifier", m_evaluationContextIdentifier);
-
+  if (m_evaluationContextIdentifierHasBeenSet) {
+    payload.WithString("EvaluationContextIdentifier", m_evaluationContextIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

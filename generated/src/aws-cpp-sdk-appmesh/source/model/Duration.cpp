@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-Duration::Duration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Duration::Duration(JsonView jsonValue) { *this = jsonValue; }
 
-Duration& Duration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unit"))
-  {
+Duration& Duration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unit")) {
     m_unit = DurationUnitMapper::GetDurationUnitForName(jsonValue.GetString("unit"));
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetInt64("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Duration::Jsonize() const
-{
+JsonValue Duration::Jsonize() const {
   JsonValue payload;
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("unit", DurationUnitMapper::GetNameForDurationUnit(m_unit));
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", DurationUnitMapper::GetNameForDurationUnit(m_unit));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithInt64("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithInt64("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

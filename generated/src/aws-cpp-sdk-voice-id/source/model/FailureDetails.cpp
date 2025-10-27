@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/FailureDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/FailureDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
+namespace Aws {
+namespace VoiceID {
+namespace Model {
 
-FailureDetails::FailureDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailureDetails::FailureDetails(JsonView jsonValue) { *this = jsonValue; }
 
-FailureDetails& FailureDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+FailureDetails& FailureDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusCode"))
-  {
+  if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = jsonValue.GetInteger("StatusCode");
     m_statusCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailureDetails::Jsonize() const
-{
+JsonValue FailureDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithInteger("StatusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithInteger("StatusCode", m_statusCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

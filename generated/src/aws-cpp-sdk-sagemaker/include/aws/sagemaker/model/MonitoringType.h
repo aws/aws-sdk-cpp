@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class MonitoringType
-  {
-    NOT_SET,
-    DataQuality,
-    ModelQuality,
-    ModelBias,
-    ModelExplainability
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class MonitoringType { NOT_SET, DataQuality, ModelQuality, ModelBias, ModelExplainability };
 
-namespace MonitoringTypeMapper
-{
+namespace MonitoringTypeMapper {
 AWS_SAGEMAKER_API MonitoringType GetMonitoringTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForMonitoringType(MonitoringType value);
-} // namespace MonitoringTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace MonitoringTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

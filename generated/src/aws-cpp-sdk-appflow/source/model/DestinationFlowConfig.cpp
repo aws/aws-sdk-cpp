@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationFlowConfig& DestinationFlowConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectorType"))
-  {
+DestinationFlowConfig& DestinationFlowConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectorType")) {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
     m_connectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiVersion"))
-  {
+  if (jsonValue.ValueExists("apiVersion")) {
     m_apiVersion = jsonValue.GetString("apiVersion");
     m_apiVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectorProfileName"))
-  {
+  if (jsonValue.ValueExists("connectorProfileName")) {
     m_connectorProfileName = jsonValue.GetString("connectorProfileName");
     m_connectorProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationConnectorProperties"))
-  {
+  if (jsonValue.ValueExists("destinationConnectorProperties")) {
     m_destinationConnectorProperties = jsonValue.GetObject("destinationConnectorProperties");
     m_destinationConnectorPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationFlowConfig::Jsonize() const
-{
+JsonValue DestinationFlowConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectorTypeHasBeenSet)
-  {
-   payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  if (m_connectorTypeHasBeenSet) {
+    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
   }
 
-  if(m_apiVersionHasBeenSet)
-  {
-   payload.WithString("apiVersion", m_apiVersion);
-
+  if (m_apiVersionHasBeenSet) {
+    payload.WithString("apiVersion", m_apiVersion);
   }
 
-  if(m_connectorProfileNameHasBeenSet)
-  {
-   payload.WithString("connectorProfileName", m_connectorProfileName);
-
+  if (m_connectorProfileNameHasBeenSet) {
+    payload.WithString("connectorProfileName", m_connectorProfileName);
   }
 
-  if(m_destinationConnectorPropertiesHasBeenSet)
-  {
-   payload.WithObject("destinationConnectorProperties", m_destinationConnectorProperties.Jsonize());
-
+  if (m_destinationConnectorPropertiesHasBeenSet) {
+    payload.WithObject("destinationConnectorProperties", m_destinationConnectorProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

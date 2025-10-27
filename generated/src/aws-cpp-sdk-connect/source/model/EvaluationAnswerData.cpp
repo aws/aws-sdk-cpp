@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationAnswerData::EvaluationAnswerData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationAnswerData::EvaluationAnswerData(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationAnswerData& EvaluationAnswerData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StringValue"))
-  {
+EvaluationAnswerData& EvaluationAnswerData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StringValue")) {
     m_stringValue = jsonValue.GetString("StringValue");
     m_stringValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumericValue"))
-  {
+  if (jsonValue.ValueExists("NumericValue")) {
     m_numericValue = jsonValue.GetDouble("NumericValue");
     m_numericValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotApplicable"))
-  {
+  if (jsonValue.ValueExists("NotApplicable")) {
     m_notApplicable = jsonValue.GetBool("NotApplicable");
     m_notApplicableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationAnswerData::Jsonize() const
-{
+JsonValue EvaluationAnswerData::Jsonize() const {
   JsonValue payload;
 
-  if(m_stringValueHasBeenSet)
-  {
-   payload.WithString("StringValue", m_stringValue);
-
+  if (m_stringValueHasBeenSet) {
+    payload.WithString("StringValue", m_stringValue);
   }
 
-  if(m_numericValueHasBeenSet)
-  {
-   payload.WithDouble("NumericValue", m_numericValue);
-
+  if (m_numericValueHasBeenSet) {
+    payload.WithDouble("NumericValue", m_numericValue);
   }
 
-  if(m_notApplicableHasBeenSet)
-  {
-   payload.WithBool("NotApplicable", m_notApplicable);
-
+  if (m_notApplicableHasBeenSet) {
+    payload.WithBool("NotApplicable", m_notApplicable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

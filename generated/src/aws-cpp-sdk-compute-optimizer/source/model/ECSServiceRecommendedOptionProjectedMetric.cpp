@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ECSServiceRecommendedOptionProjectedMetric& ECSServiceRecommendedOptionProjectedMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("recommendedCpuUnits"))
-  {
+ECSServiceRecommendedOptionProjectedMetric& ECSServiceRecommendedOptionProjectedMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("recommendedCpuUnits")) {
     m_recommendedCpuUnits = jsonValue.GetInteger("recommendedCpuUnits");
     m_recommendedCpuUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recommendedMemorySize"))
-  {
+  if (jsonValue.ValueExists("recommendedMemorySize")) {
     m_recommendedMemorySize = jsonValue.GetInteger("recommendedMemorySize");
     m_recommendedMemorySizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectedMetrics"))
-  {
+  if (jsonValue.ValueExists("projectedMetrics")) {
     Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
-    for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
-    {
+    for (unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex) {
       m_projectedMetrics.push_back(projectedMetricsJsonList[projectedMetricsIndex].AsObject());
     }
     m_projectedMetricsHasBeenSet = true;
@@ -47,36 +36,28 @@ ECSServiceRecommendedOptionProjectedMetric& ECSServiceRecommendedOptionProjected
   return *this;
 }
 
-JsonValue ECSServiceRecommendedOptionProjectedMetric::Jsonize() const
-{
+JsonValue ECSServiceRecommendedOptionProjectedMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendedCpuUnitsHasBeenSet)
-  {
-   payload.WithInteger("recommendedCpuUnits", m_recommendedCpuUnits);
-
+  if (m_recommendedCpuUnitsHasBeenSet) {
+    payload.WithInteger("recommendedCpuUnits", m_recommendedCpuUnits);
   }
 
-  if(m_recommendedMemorySizeHasBeenSet)
-  {
-   payload.WithInteger("recommendedMemorySize", m_recommendedMemorySize);
-
+  if (m_recommendedMemorySizeHasBeenSet) {
+    payload.WithInteger("recommendedMemorySize", m_recommendedMemorySize);
   }
 
-  if(m_projectedMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
-   for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
-   {
-     projectedMetricsJsonList[projectedMetricsIndex].AsObject(m_projectedMetrics[projectedMetricsIndex].Jsonize());
-   }
-   payload.WithArray("projectedMetrics", std::move(projectedMetricsJsonList));
-
+  if (m_projectedMetricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
+    for (unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex) {
+      projectedMetricsJsonList[projectedMetricsIndex].AsObject(m_projectedMetrics[projectedMetricsIndex].Jsonize());
+    }
+    payload.WithArray("projectedMetrics", std::move(projectedMetricsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

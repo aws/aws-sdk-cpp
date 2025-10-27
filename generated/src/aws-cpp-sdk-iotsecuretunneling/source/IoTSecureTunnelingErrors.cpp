@@ -11,27 +11,21 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::IoTSecureTunneling;
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-namespace IoTSecureTunnelingErrorMapper
-{
+namespace Aws {
+namespace IoTSecureTunneling {
+namespace IoTSecureTunnelingErrorMapper {
 
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTSecureTunnelingErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTSecureTunnelingErrorMapper
-} // namespace IoTSecureTunneling
-} // namespace Aws
+}  // namespace IoTSecureTunnelingErrorMapper
+}  // namespace IoTSecureTunneling
+}  // namespace Aws

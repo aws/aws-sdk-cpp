@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/ChecksumMode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/s3-crt/model/ChecksumMode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+namespace ChecksumModeMapper {
 
-namespace Aws
-{
-  namespace S3Crt
-  {
-    namespace Model
-    {
-      namespace ChecksumModeMapper
-      {
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+ChecksumMode GetChecksumModeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ENABLED_HASH) {
+    return ChecksumMode::ENABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChecksumMode>(hashCode);
+  }
 
+  return ChecksumMode::NOT_SET;
+}
 
-        ChecksumMode GetChecksumModeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ENABLED_HASH)
-          {
-            return ChecksumMode::ENABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChecksumMode>(hashCode);
-          }
+Aws::String GetNameForChecksumMode(ChecksumMode enumValue) {
+  switch (enumValue) {
+    case ChecksumMode::NOT_SET:
+      return {};
+    case ChecksumMode::ENABLED:
+      return "ENABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChecksumMode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChecksumMode(ChecksumMode enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChecksumMode::NOT_SET:
-            return {};
-          case ChecksumMode::ENABLED:
-            return "ENABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChecksumModeMapper
-    } // namespace Model
-  } // namespace S3Crt
-} // namespace Aws
+}  // namespace ChecksumModeMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-SoftwareTokenMfaConfigType::SoftwareTokenMfaConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SoftwareTokenMfaConfigType::SoftwareTokenMfaConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-SoftwareTokenMfaConfigType& SoftwareTokenMfaConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+SoftwareTokenMfaConfigType& SoftwareTokenMfaConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SoftwareTokenMfaConfigType::Jsonize() const
-{
+JsonValue SoftwareTokenMfaConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

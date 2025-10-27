@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class ResolveConflicts
-  {
-    NOT_SET,
-    OVERWRITE,
-    NONE,
-    PRESERVE
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class ResolveConflicts { NOT_SET, OVERWRITE, NONE, PRESERVE };
 
-namespace ResolveConflictsMapper
-{
+namespace ResolveConflictsMapper {
 AWS_EKS_API ResolveConflicts GetResolveConflictsForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForResolveConflicts(ResolveConflicts value);
-} // namespace ResolveConflictsMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace ResolveConflictsMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
-  enum class HealthStatus
-  {
-    NOT_SET,
-    HEALTHY,
-    UNHEALTHY,
-    UNKNOWN
-  };
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
+enum class HealthStatus { NOT_SET, HEALTHY, UNHEALTHY, UNKNOWN };
 
-namespace HealthStatusMapper
-{
+namespace HealthStatusMapper {
 AWS_SERVICEDISCOVERY_API HealthStatus GetHealthStatusForName(const Aws::String& name);
 
 AWS_SERVICEDISCOVERY_API Aws::String GetNameForHealthStatus(HealthStatus value);
-} // namespace HealthStatusMapper
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace HealthStatusMapper
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/OnlineAbDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/OnlineAbDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-OnlineAbDefinition::OnlineAbDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnlineAbDefinition::OnlineAbDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-OnlineAbDefinition& OnlineAbDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("controlTreatmentName"))
-  {
+OnlineAbDefinition& OnlineAbDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("controlTreatmentName")) {
     m_controlTreatmentName = jsonValue.GetString("controlTreatmentName");
     m_controlTreatmentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("treatmentWeights"))
-  {
+  if (jsonValue.ValueExists("treatmentWeights")) {
     Aws::Map<Aws::String, JsonView> treatmentWeightsJsonMap = jsonValue.GetObject("treatmentWeights").GetAllObjects();
-    for(auto& treatmentWeightsItem : treatmentWeightsJsonMap)
-    {
+    for (auto& treatmentWeightsItem : treatmentWeightsJsonMap) {
       m_treatmentWeights[treatmentWeightsItem.first] = treatmentWeightsItem.second.AsInt64();
     }
     m_treatmentWeightsHasBeenSet = true;
@@ -42,30 +32,24 @@ OnlineAbDefinition& OnlineAbDefinition::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OnlineAbDefinition::Jsonize() const
-{
+JsonValue OnlineAbDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_controlTreatmentNameHasBeenSet)
-  {
-   payload.WithString("controlTreatmentName", m_controlTreatmentName);
-
+  if (m_controlTreatmentNameHasBeenSet) {
+    payload.WithString("controlTreatmentName", m_controlTreatmentName);
   }
 
-  if(m_treatmentWeightsHasBeenSet)
-  {
-   JsonValue treatmentWeightsJsonMap;
-   for(auto& treatmentWeightsItem : m_treatmentWeights)
-   {
-     treatmentWeightsJsonMap.WithInt64(treatmentWeightsItem.first, treatmentWeightsItem.second);
-   }
-   payload.WithObject("treatmentWeights", std::move(treatmentWeightsJsonMap));
-
+  if (m_treatmentWeightsHasBeenSet) {
+    JsonValue treatmentWeightsJsonMap;
+    for (auto& treatmentWeightsItem : m_treatmentWeights) {
+      treatmentWeightsJsonMap.WithInt64(treatmentWeightsItem.first, treatmentWeightsItem.second);
+    }
+    payload.WithObject("treatmentWeights", std::move(treatmentWeightsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

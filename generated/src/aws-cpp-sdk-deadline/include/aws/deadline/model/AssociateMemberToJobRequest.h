@@ -4,139 +4,176 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
-#include <aws/deadline/DeadlineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/deadline/model/PrincipalType.h>
+#include <aws/deadline/DeadlineRequest.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/MembershipLevel.h>
+#include <aws/deadline/model/PrincipalType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
+namespace Aws {
+namespace deadline {
+namespace Model {
 
+/**
+ */
+class AssociateMemberToJobRequest : public DeadlineRequest {
+ public:
+  AWS_DEADLINE_API AssociateMemberToJobRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AssociateMemberToJob"; }
+
+  AWS_DEADLINE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The farm ID of the job to associate with the member.</p>
    */
-  class AssociateMemberToJobRequest : public DeadlineRequest
-  {
-  public:
-    AWS_DEADLINE_API AssociateMemberToJobRequest() = default;
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  AssociateMemberToJobRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AssociateMemberToJob"; }
+  ///@{
+  /**
+   * <p>The queue ID to associate to the member.</p>
+   */
+  inline const Aws::String& GetQueueId() const { return m_queueId; }
+  inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+  template <typename QueueIdT = Aws::String>
+  void SetQueueId(QueueIdT&& value) {
+    m_queueIdHasBeenSet = true;
+    m_queueId = std::forward<QueueIdT>(value);
+  }
+  template <typename QueueIdT = Aws::String>
+  AssociateMemberToJobRequest& WithQueueId(QueueIdT&& value) {
+    SetQueueId(std::forward<QueueIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DEADLINE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The job ID to associate with the member.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  AssociateMemberToJobRequest& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The member's principal ID to associate with the job.</p>
+   */
+  inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+  inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+  template <typename PrincipalIdT = Aws::String>
+  void SetPrincipalId(PrincipalIdT&& value) {
+    m_principalIdHasBeenSet = true;
+    m_principalId = std::forward<PrincipalIdT>(value);
+  }
+  template <typename PrincipalIdT = Aws::String>
+  AssociateMemberToJobRequest& WithPrincipalId(PrincipalIdT&& value) {
+    SetPrincipalId(std::forward<PrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The farm ID of the job to associate with the member.</p>
-     */
-    inline const Aws::String& GetFarmId() const { return m_farmId; }
-    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    template<typename FarmIdT = Aws::String>
-    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
-    template<typename FarmIdT = Aws::String>
-    AssociateMemberToJobRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The member's principal type to associate with the job.</p>
+   */
+  inline PrincipalType GetPrincipalType() const { return m_principalType; }
+  inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+  inline void SetPrincipalType(PrincipalType value) {
+    m_principalTypeHasBeenSet = true;
+    m_principalType = value;
+  }
+  inline AssociateMemberToJobRequest& WithPrincipalType(PrincipalType value) {
+    SetPrincipalType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The queue ID to associate to the member.</p>
-     */
-    inline const Aws::String& GetQueueId() const { return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    template<typename QueueIdT = Aws::String>
-    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
-    template<typename QueueIdT = Aws::String>
-    AssociateMemberToJobRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The member's identity store ID to associate with the job.</p>
+   */
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  }
+  template <typename IdentityStoreIdT = Aws::String>
+  AssociateMemberToJobRequest& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The job ID to associate with the member.</p>
-     */
-    inline const Aws::String& GetJobId() const { return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    template<typename JobIdT = Aws::String>
-    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
-    template<typename JobIdT = Aws::String>
-    AssociateMemberToJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The principal's membership level for the associated job.</p>
+   */
+  inline MembershipLevel GetMembershipLevel() const { return m_membershipLevel; }
+  inline bool MembershipLevelHasBeenSet() const { return m_membershipLevelHasBeenSet; }
+  inline void SetMembershipLevel(MembershipLevel value) {
+    m_membershipLevelHasBeenSet = true;
+    m_membershipLevel = value;
+  }
+  inline AssociateMemberToJobRequest& WithMembershipLevel(MembershipLevel value) {
+    SetMembershipLevel(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_farmId;
+  bool m_farmIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The member's principal ID to associate with the job.</p>
-     */
-    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
-    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    template<typename PrincipalIdT = Aws::String>
-    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
-    template<typename PrincipalIdT = Aws::String>
-    AssociateMemberToJobRequest& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_queueId;
+  bool m_queueIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The member's principal type to associate with the job.</p>
-     */
-    inline PrincipalType GetPrincipalType() const { return m_principalType; }
-    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline AssociateMemberToJobRequest& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
-    ///@}
+  Aws::String m_jobId;
+  bool m_jobIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The member's identity store ID to associate with the job.</p>
-     */
-    inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
-    inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-    template<typename IdentityStoreIdT = Aws::String>
-    void SetIdentityStoreId(IdentityStoreIdT&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::forward<IdentityStoreIdT>(value); }
-    template<typename IdentityStoreIdT = Aws::String>
-    AssociateMemberToJobRequest& WithIdentityStoreId(IdentityStoreIdT&& value) { SetIdentityStoreId(std::forward<IdentityStoreIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_principalId;
+  bool m_principalIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The principal's membership level for the associated job.</p>
-     */
-    inline MembershipLevel GetMembershipLevel() const { return m_membershipLevel; }
-    inline bool MembershipLevelHasBeenSet() const { return m_membershipLevelHasBeenSet; }
-    inline void SetMembershipLevel(MembershipLevel value) { m_membershipLevelHasBeenSet = true; m_membershipLevel = value; }
-    inline AssociateMemberToJobRequest& WithMembershipLevel(MembershipLevel value) { SetMembershipLevel(value); return *this;}
-    ///@}
-  private:
+  PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_principalTypeHasBeenSet = false;
 
-    Aws::String m_farmId;
-    bool m_farmIdHasBeenSet = false;
+  Aws::String m_identityStoreId;
+  bool m_identityStoreIdHasBeenSet = false;
 
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
+  MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
+  bool m_membershipLevelHasBeenSet = false;
+};
 
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
-
-    Aws::String m_principalId;
-    bool m_principalIdHasBeenSet = false;
-
-    PrincipalType m_principalType{PrincipalType::NOT_SET};
-    bool m_principalTypeHasBeenSet = false;
-
-    Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet = false;
-
-    MembershipLevel m_membershipLevel{MembershipLevel::NOT_SET};
-    bool m_membershipLevelHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

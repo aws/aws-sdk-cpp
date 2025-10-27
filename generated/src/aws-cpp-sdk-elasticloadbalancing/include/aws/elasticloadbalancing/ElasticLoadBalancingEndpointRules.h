@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-class ElasticLoadBalancingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ElasticLoadBalancing {
+class ElasticLoadBalancingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

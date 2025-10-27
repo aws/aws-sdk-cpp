@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class OTAUpdateStatus
-  {
-    NOT_SET,
-    CREATE_PENDING,
-    CREATE_IN_PROGRESS,
-    CREATE_COMPLETE,
-    CREATE_FAILED,
-    DELETE_IN_PROGRESS,
-    DELETE_FAILED
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class OTAUpdateStatus {
+  NOT_SET,
+  CREATE_PENDING,
+  CREATE_IN_PROGRESS,
+  CREATE_COMPLETE,
+  CREATE_FAILED,
+  DELETE_IN_PROGRESS,
+  DELETE_FAILED
+};
 
-namespace OTAUpdateStatusMapper
-{
+namespace OTAUpdateStatusMapper {
 AWS_IOT_API OTAUpdateStatus GetOTAUpdateStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForOTAUpdateStatus(OTAUpdateStatus value);
-} // namespace OTAUpdateStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace OTAUpdateStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

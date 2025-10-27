@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/BackupRequest.h>
+#include <aws/backup/Backup_EXPORTS.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-  /**
-   */
-  class GetSupportedResourceTypesRequest : public BackupRequest
-  {
-  public:
-    AWS_BACKUP_API GetSupportedResourceTypesRequest() = default;
+/**
+ */
+class GetSupportedResourceTypesRequest : public BackupRequest {
+ public:
+  AWS_BACKUP_API GetSupportedResourceTypesRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetSupportedResourceTypes"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetSupportedResourceTypes"; }
 
-    AWS_BACKUP_API Aws::String SerializePayload() const override;
+  AWS_BACKUP_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

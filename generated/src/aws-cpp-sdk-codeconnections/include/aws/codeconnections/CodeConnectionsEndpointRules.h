@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeConnections
-{
-class CodeConnectionsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeConnections {
+class CodeConnectionsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace CodeConnections
+}  // namespace Aws

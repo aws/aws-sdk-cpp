@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/OperationNotSupportedException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/OperationNotSupportedException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-OperationNotSupportedException::OperationNotSupportedException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OperationNotSupportedException::OperationNotSupportedException(JsonView jsonValue) { *this = jsonValue; }
 
-OperationNotSupportedException& OperationNotSupportedException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+OperationNotSupportedException& OperationNotSupportedException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OperationNotSupportedException::Jsonize() const
-{
+JsonValue OperationNotSupportedException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

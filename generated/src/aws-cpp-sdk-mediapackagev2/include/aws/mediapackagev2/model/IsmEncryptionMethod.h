@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
-namespace Aws
-{
-namespace mediapackagev2
-{
-namespace Model
-{
-  enum class IsmEncryptionMethod
-  {
-    NOT_SET,
-    CENC
-  };
+namespace Aws {
+namespace mediapackagev2 {
+namespace Model {
+enum class IsmEncryptionMethod { NOT_SET, CENC };
 
-namespace IsmEncryptionMethodMapper
-{
+namespace IsmEncryptionMethodMapper {
 AWS_MEDIAPACKAGEV2_API IsmEncryptionMethod GetIsmEncryptionMethodForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGEV2_API Aws::String GetNameForIsmEncryptionMethod(IsmEncryptionMethod value);
-} // namespace IsmEncryptionMethodMapper
-} // namespace Model
-} // namespace mediapackagev2
-} // namespace Aws
+}  // namespace IsmEncryptionMethodMapper
+}  // namespace Model
+}  // namespace mediapackagev2
+}  // namespace Aws

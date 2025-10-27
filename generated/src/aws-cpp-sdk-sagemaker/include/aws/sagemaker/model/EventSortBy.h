@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class EventSortBy
-  {
-    NOT_SET,
-    EventTime
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class EventSortBy { NOT_SET, EventTime };
 
-namespace EventSortByMapper
-{
+namespace EventSortByMapper {
 AWS_SAGEMAKER_API EventSortBy GetEventSortByForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForEventSortBy(EventSortBy value);
-} // namespace EventSortByMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace EventSortByMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

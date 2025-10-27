@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class GlobalTableStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    DELETING,
-    UPDATING
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class GlobalTableStatus { NOT_SET, CREATING, ACTIVE, DELETING, UPDATING };
 
-namespace GlobalTableStatusMapper
-{
+namespace GlobalTableStatusMapper {
 AWS_DYNAMODB_API GlobalTableStatus GetGlobalTableStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForGlobalTableStatus(GlobalTableStatus value);
-} // namespace GlobalTableStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace GlobalTableStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

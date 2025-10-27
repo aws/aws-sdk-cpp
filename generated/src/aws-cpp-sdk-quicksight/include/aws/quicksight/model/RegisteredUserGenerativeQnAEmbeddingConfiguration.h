@@ -4,65 +4,64 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>An object that provides information about the configuration of a Generative
+ * Q&amp;A experience.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserGenerativeQnAEmbeddingConfiguration">AWS
+ * API Reference</a></p>
+ */
+class RegisteredUserGenerativeQnAEmbeddingConfiguration {
+ public:
+  AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration() = default;
+  AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object that provides information about the configuration of a Generative
-   * Q&amp;A experience.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserGenerativeQnAEmbeddingConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The ID of the new Q reader experience topic that you want to make the
+   * starting topic in the Generative Q&amp;A experience. You can find a topic ID by
+   * navigating to the Topics pane in the QuickSight application and opening a topic.
+   * The ID is in the URL for the topic that you open.</p> <p>If you don't specify an
+   * initial topic or you specify a legacy topic, a list of all shared new reader
+   * experience topics is shown in the Generative Q&amp;A experience for your
+   * readers. When you select an initial new reader experience topic, you can specify
+   * whether or not readers are allowed to select other new reader experience topics
+   * from the available ones in the list.</p>
    */
-  class RegisteredUserGenerativeQnAEmbeddingConfiguration
-  {
-  public:
-    AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration() = default;
-    AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API RegisteredUserGenerativeQnAEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetInitialTopicId() const { return m_initialTopicId; }
+  inline bool InitialTopicIdHasBeenSet() const { return m_initialTopicIdHasBeenSet; }
+  template <typename InitialTopicIdT = Aws::String>
+  void SetInitialTopicId(InitialTopicIdT&& value) {
+    m_initialTopicIdHasBeenSet = true;
+    m_initialTopicId = std::forward<InitialTopicIdT>(value);
+  }
+  template <typename InitialTopicIdT = Aws::String>
+  RegisteredUserGenerativeQnAEmbeddingConfiguration& WithInitialTopicId(InitialTopicIdT&& value) {
+    SetInitialTopicId(std::forward<InitialTopicIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_initialTopicId;
+  bool m_initialTopicIdHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The ID of the new Q reader experience topic that you want to make the
-     * starting topic in the Generative Q&amp;A experience. You can find a topic ID by
-     * navigating to the Topics pane in the QuickSight application and opening a topic.
-     * The ID is in the URL for the topic that you open.</p> <p>If you don't specify an
-     * initial topic or you specify a legacy topic, a list of all shared new reader
-     * experience topics is shown in the Generative Q&amp;A experience for your
-     * readers. When you select an initial new reader experience topic, you can specify
-     * whether or not readers are allowed to select other new reader experience topics
-     * from the available ones in the list.</p>
-     */
-    inline const Aws::String& GetInitialTopicId() const { return m_initialTopicId; }
-    inline bool InitialTopicIdHasBeenSet() const { return m_initialTopicIdHasBeenSet; }
-    template<typename InitialTopicIdT = Aws::String>
-    void SetInitialTopicId(InitialTopicIdT&& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = std::forward<InitialTopicIdT>(value); }
-    template<typename InitialTopicIdT = Aws::String>
-    RegisteredUserGenerativeQnAEmbeddingConfiguration& WithInitialTopicId(InitialTopicIdT&& value) { SetInitialTopicId(std::forward<InitialTopicIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_initialTopicId;
-    bool m_initialTopicIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

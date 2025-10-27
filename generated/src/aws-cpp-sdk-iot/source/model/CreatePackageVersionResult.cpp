@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CreatePackageVersionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/CreatePackageVersionResult.h>
 
 #include <utility>
 
@@ -17,62 +17,48 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePackageVersionResult::CreatePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreatePackageVersionResult::CreatePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreatePackageVersionResult& CreatePackageVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreatePackageVersionResult& CreatePackageVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("packageVersionArn"))
-  {
+  if (jsonValue.ValueExists("packageVersionArn")) {
     m_packageVersionArn = jsonValue.GetString("packageVersionArn");
     m_packageVersionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("packageName"))
-  {
+  if (jsonValue.ValueExists("packageName")) {
     m_packageName = jsonValue.GetString("packageName");
     m_packageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionName"))
-  {
+  if (jsonValue.ValueExists("versionName")) {
     m_versionName = jsonValue.GetString("versionName");
     m_versionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attributes"))
-  {
+  if (jsonValue.ValueExists("attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorReason"))
-  {
+  if (jsonValue.ValueExists("errorReason")) {
     m_errorReason = jsonValue.GetString("errorReason");
     m_errorReasonHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -3,102 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/WorkerConfigurationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/WorkerConfigurationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-WorkerConfigurationSummary& WorkerConfigurationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("creationTime"))
-  {
+WorkerConfigurationSummary& WorkerConfigurationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestRevision"))
-  {
+  if (jsonValue.ValueExists("latestRevision")) {
     m_latestRevision = jsonValue.GetObject("latestRevision");
     m_latestRevisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workerConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("workerConfigurationArn")) {
     m_workerConfigurationArn = jsonValue.GetString("workerConfigurationArn");
     m_workerConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workerConfigurationState"))
-  {
-    m_workerConfigurationState = WorkerConfigurationStateMapper::GetWorkerConfigurationStateForName(jsonValue.GetString("workerConfigurationState"));
+  if (jsonValue.ValueExists("workerConfigurationState")) {
+    m_workerConfigurationState =
+        WorkerConfigurationStateMapper::GetWorkerConfigurationStateForName(jsonValue.GetString("workerConfigurationState"));
     m_workerConfigurationStateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkerConfigurationSummary::Jsonize() const
-{
+JsonValue WorkerConfigurationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_latestRevisionHasBeenSet)
-  {
-   payload.WithObject("latestRevision", m_latestRevision.Jsonize());
-
+  if (m_latestRevisionHasBeenSet) {
+    payload.WithObject("latestRevision", m_latestRevision.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_workerConfigurationArnHasBeenSet)
-  {
-   payload.WithString("workerConfigurationArn", m_workerConfigurationArn);
-
+  if (m_workerConfigurationArnHasBeenSet) {
+    payload.WithString("workerConfigurationArn", m_workerConfigurationArn);
   }
 
-  if(m_workerConfigurationStateHasBeenSet)
-  {
-   payload.WithString("workerConfigurationState", WorkerConfigurationStateMapper::GetNameForWorkerConfigurationState(m_workerConfigurationState));
+  if (m_workerConfigurationStateHasBeenSet) {
+    payload.WithString("workerConfigurationState",
+                       WorkerConfigurationStateMapper::GetNameForWorkerConfigurationState(m_workerConfigurationState));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

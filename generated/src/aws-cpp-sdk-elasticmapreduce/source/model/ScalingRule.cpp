@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/ScalingRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/ScalingRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-ScalingRule::ScalingRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScalingRule::ScalingRule(JsonView jsonValue) { *this = jsonValue; }
 
-ScalingRule& ScalingRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ScalingRule& ScalingRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Action"))
-  {
+  if (jsonValue.ValueExists("Action")) {
     m_action = jsonValue.GetObject("Action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Trigger"))
-  {
+  if (jsonValue.ValueExists("Trigger")) {
     m_trigger = jsonValue.GetObject("Trigger");
     m_triggerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScalingRule::Jsonize() const
-{
+JsonValue ScalingRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("Action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("Action", m_action.Jsonize());
   }
 
-  if(m_triggerHasBeenSet)
-  {
-   payload.WithObject("Trigger", m_trigger.Jsonize());
-
+  if (m_triggerHasBeenSet) {
+    payload.WithObject("Trigger", m_trigger.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

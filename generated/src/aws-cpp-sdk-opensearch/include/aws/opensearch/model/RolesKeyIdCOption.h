@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class RolesKeyIdCOption
-  {
-    NOT_SET,
-    GroupName,
-    GroupId
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class RolesKeyIdCOption { NOT_SET, GroupName, GroupId };
 
-namespace RolesKeyIdCOptionMapper
-{
+namespace RolesKeyIdCOptionMapper {
 AWS_OPENSEARCHSERVICE_API RolesKeyIdCOption GetRolesKeyIdCOptionForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForRolesKeyIdCOption(RolesKeyIdCOption value);
-} // namespace RolesKeyIdCOptionMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace RolesKeyIdCOptionMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

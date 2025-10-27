@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class PriorityType
-  {
-    NOT_SET,
-    LATENCY,
-    COST,
-    DESTINATION,
-    LOCATION
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class PriorityType { NOT_SET, LATENCY, COST, DESTINATION, LOCATION };
 
-namespace PriorityTypeMapper
-{
+namespace PriorityTypeMapper {
 AWS_GAMELIFT_API PriorityType GetPriorityTypeForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForPriorityType(PriorityType value);
-} // namespace PriorityTypeMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace PriorityTypeMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class OSType
-  {
-    NOT_SET,
-    LINUX,
-    WINDOWS
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class OSType { NOT_SET, LINUX, WINDOWS };
 
-namespace OSTypeMapper
-{
+namespace OSTypeMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OSType GetOSTypeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForOSType(OSType value);
-} // namespace OSTypeMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace OSTypeMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

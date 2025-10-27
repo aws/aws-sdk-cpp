@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/AvailabilityZoneRebalancing.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ecs/model/AvailabilityZoneRebalancing.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ECS {
+namespace Model {
+namespace AvailabilityZoneRebalancingMapper {
 
-namespace Aws
-{
-  namespace ECS
-  {
-    namespace Model
-    {
-      namespace AvailabilityZoneRebalancingMapper
-      {
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+AvailabilityZoneRebalancing GetAvailabilityZoneRebalancingForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ENABLED_HASH) {
+    return AvailabilityZoneRebalancing::ENABLED;
+  } else if (hashCode == DISABLED_HASH) {
+    return AvailabilityZoneRebalancing::DISABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AvailabilityZoneRebalancing>(hashCode);
+  }
 
+  return AvailabilityZoneRebalancing::NOT_SET;
+}
 
-        AvailabilityZoneRebalancing GetAvailabilityZoneRebalancingForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ENABLED_HASH)
-          {
-            return AvailabilityZoneRebalancing::ENABLED;
-          }
-          else if (hashCode == DISABLED_HASH)
-          {
-            return AvailabilityZoneRebalancing::DISABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AvailabilityZoneRebalancing>(hashCode);
-          }
+Aws::String GetNameForAvailabilityZoneRebalancing(AvailabilityZoneRebalancing enumValue) {
+  switch (enumValue) {
+    case AvailabilityZoneRebalancing::NOT_SET:
+      return {};
+    case AvailabilityZoneRebalancing::ENABLED:
+      return "ENABLED";
+    case AvailabilityZoneRebalancing::DISABLED:
+      return "DISABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AvailabilityZoneRebalancing::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAvailabilityZoneRebalancing(AvailabilityZoneRebalancing enumValue)
-        {
-          switch(enumValue)
-          {
-          case AvailabilityZoneRebalancing::NOT_SET:
-            return {};
-          case AvailabilityZoneRebalancing::ENABLED:
-            return "ENABLED";
-          case AvailabilityZoneRebalancing::DISABLED:
-            return "DISABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AvailabilityZoneRebalancingMapper
-    } // namespace Model
-  } // namespace ECS
-} // namespace Aws
+}  // namespace AvailabilityZoneRebalancingMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

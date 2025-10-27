@@ -11,72 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketArn"))
-  {
+S3DataSourceConfiguration& S3DataSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketArn")) {
     m_bucketArn = jsonValue.GetString("bucketArn");
     m_bucketArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inclusionPrefixes"))
-  {
+  if (jsonValue.ValueExists("inclusionPrefixes")) {
     Aws::Utils::Array<JsonView> inclusionPrefixesJsonList = jsonValue.GetArray("inclusionPrefixes");
-    for(unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex)
-    {
+    for (unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex) {
       m_inclusionPrefixes.push_back(inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString());
     }
     m_inclusionPrefixesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketOwnerAccountId"))
-  {
+  if (jsonValue.ValueExists("bucketOwnerAccountId")) {
     m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
     m_bucketOwnerAccountIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3DataSourceConfiguration::Jsonize() const
-{
+JsonValue S3DataSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketArnHasBeenSet)
-  {
-   payload.WithString("bucketArn", m_bucketArn);
-
+  if (m_bucketArnHasBeenSet) {
+    payload.WithString("bucketArn", m_bucketArn);
   }
 
-  if(m_inclusionPrefixesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inclusionPrefixesJsonList(m_inclusionPrefixes.size());
-   for(unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex)
-   {
-     inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString(m_inclusionPrefixes[inclusionPrefixesIndex]);
-   }
-   payload.WithArray("inclusionPrefixes", std::move(inclusionPrefixesJsonList));
-
+  if (m_inclusionPrefixesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inclusionPrefixesJsonList(m_inclusionPrefixes.size());
+    for (unsigned inclusionPrefixesIndex = 0; inclusionPrefixesIndex < inclusionPrefixesJsonList.GetLength(); ++inclusionPrefixesIndex) {
+      inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString(m_inclusionPrefixes[inclusionPrefixesIndex]);
+    }
+    payload.WithArray("inclusionPrefixes", std::move(inclusionPrefixesJsonList));
   }
 
-  if(m_bucketOwnerAccountIdHasBeenSet)
-  {
-   payload.WithString("bucketOwnerAccountId", m_bucketOwnerAccountId);
-
+  if (m_bucketOwnerAccountIdHasBeenSet) {
+    payload.WithString("bucketOwnerAccountId", m_bucketOwnerAccountId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

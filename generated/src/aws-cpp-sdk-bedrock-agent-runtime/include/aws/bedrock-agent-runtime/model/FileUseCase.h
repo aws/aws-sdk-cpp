@@ -7,25 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class FileUseCase
-  {
-    NOT_SET,
-    CODE_INTERPRETER,
-    CHAT
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class FileUseCase { NOT_SET, CODE_INTERPRETER, CHAT };
 
-namespace FileUseCaseMapper
-{
+namespace FileUseCaseMapper {
 AWS_BEDROCKAGENTRUNTIME_API FileUseCase GetFileUseCaseForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForFileUseCase(FileUseCase value);
-} // namespace FileUseCaseMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace FileUseCaseMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

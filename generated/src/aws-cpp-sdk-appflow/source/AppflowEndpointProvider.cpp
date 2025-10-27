@@ -5,12 +5,8 @@
 
 #include <aws/appflow/AppflowEndpointProvider.h>
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Appflow
-} // namespace Aws
+namespace Aws {
+namespace Appflow {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Appflow
+}  // namespace Aws

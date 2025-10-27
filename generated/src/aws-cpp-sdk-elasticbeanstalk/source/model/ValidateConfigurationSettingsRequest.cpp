@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/ValidateConfigurationSettingsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/ValidateConfigurationSettingsRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
-{
+Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ValidateConfigurationSettings&";
-  if(m_applicationNameHasBeenSet)
-  {
+  if (m_applicationNameHasBeenSet) {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
 
-  if(m_templateNameHasBeenSet)
-  {
+  if (m_templateNameHasBeenSet) {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_optionSettingsHasBeenSet)
-  {
-    if (m_optionSettings.empty())
-    {
+  if (m_optionSettingsHasBeenSet) {
+    if (m_optionSettings.empty()) {
       ss << "OptionSettings=&";
-    }
-    else
-    {
+    } else {
       unsigned optionSettingsCount = 1;
-      for(auto& item : m_optionSettings)
-      {
+      for (auto& item : m_optionSettings) {
         item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
         optionSettingsCount++;
       }
@@ -50,8 +41,4 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ValidateConfigurationSettingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ValidateConfigurationSettingsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

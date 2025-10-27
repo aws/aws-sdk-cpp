@@ -10,27 +10,22 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const
-{
+Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetPredictiveScalingForecast&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_policyNameHasBeenSet)
-  {
+  if (m_policyNameHasBeenSet) {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetPredictiveScalingForecastRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetPredictiveScalingForecastRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

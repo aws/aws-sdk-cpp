@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-managed-integrations/model/ProvisioningProfileSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-managed-integrations/model/ProvisioningProfileSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
 
-ProvisioningProfileSummary::ProvisioningProfileSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProvisioningProfileSummary::ProvisioningProfileSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisioningProfileSummary& ProvisioningProfileSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ProvisioningProfileSummary& ProvisioningProfileSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisioningType"))
-  {
+  if (jsonValue.ValueExists("ProvisioningType")) {
     m_provisioningType = ProvisioningTypeMapper::GetProvisioningTypeForName(jsonValue.GetString("ProvisioningType"));
     m_provisioningTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProvisioningProfileSummary::Jsonize() const
-{
+JsonValue ProvisioningProfileSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_provisioningTypeHasBeenSet)
-  {
-   payload.WithString("ProvisioningType", ProvisioningTypeMapper::GetNameForProvisioningType(m_provisioningType));
+  if (m_provisioningTypeHasBeenSet) {
+    payload.WithString("ProvisioningType", ProvisioningTypeMapper::GetNameForProvisioningType(m_provisioningType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

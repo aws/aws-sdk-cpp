@@ -4,10 +4,10 @@
  */
 
 #include <aws/ce/model/GetAnomalySubscriptionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAnomalySubscriptionsResult::GetAnomalySubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAnomalySubscriptionsResult::GetAnomalySubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAnomalySubscriptionsResult& GetAnomalySubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAnomalySubscriptionsResult& GetAnomalySubscriptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AnomalySubscriptions"))
-  {
+  if (jsonValue.ValueExists("AnomalySubscriptions")) {
     Aws::Utils::Array<JsonView> anomalySubscriptionsJsonList = jsonValue.GetArray("AnomalySubscriptions");
-    for(unsigned anomalySubscriptionsIndex = 0; anomalySubscriptionsIndex < anomalySubscriptionsJsonList.GetLength(); ++anomalySubscriptionsIndex)
-    {
+    for (unsigned anomalySubscriptionsIndex = 0; anomalySubscriptionsIndex < anomalySubscriptionsJsonList.GetLength();
+         ++anomalySubscriptionsIndex) {
       m_anomalySubscriptions.push_back(anomalySubscriptionsJsonList[anomalySubscriptionsIndex].AsObject());
     }
     m_anomalySubscriptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageToken"))
-  {
+  if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

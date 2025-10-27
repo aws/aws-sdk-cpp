@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class FileSourceConvert608To708
-  {
-    NOT_SET,
-    UPCONVERT,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class FileSourceConvert608To708 { NOT_SET, UPCONVERT, DISABLED };
 
-namespace FileSourceConvert608To708Mapper
-{
+namespace FileSourceConvert608To708Mapper {
 AWS_MEDIACONVERT_API FileSourceConvert608To708 GetFileSourceConvert608To708ForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForFileSourceConvert608To708(FileSourceConvert608To708 value);
-} // namespace FileSourceConvert608To708Mapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace FileSourceConvert608To708Mapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

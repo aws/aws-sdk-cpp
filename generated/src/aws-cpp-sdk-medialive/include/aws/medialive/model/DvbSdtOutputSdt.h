@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class DvbSdtOutputSdt
-  {
-    NOT_SET,
-    SDT_FOLLOW,
-    SDT_FOLLOW_IF_PRESENT,
-    SDT_MANUAL,
-    SDT_NONE
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class DvbSdtOutputSdt { NOT_SET, SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE };
 
-namespace DvbSdtOutputSdtMapper
-{
+namespace DvbSdtOutputSdtMapper {
 AWS_MEDIALIVE_API DvbSdtOutputSdt GetDvbSdtOutputSdtForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForDvbSdtOutputSdt(DvbSdtOutputSdt value);
-} // namespace DvbSdtOutputSdtMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace DvbSdtOutputSdtMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

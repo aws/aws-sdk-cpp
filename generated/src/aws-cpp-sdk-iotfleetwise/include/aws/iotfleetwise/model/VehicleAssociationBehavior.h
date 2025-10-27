@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class VehicleAssociationBehavior
-  {
-    NOT_SET,
-    CreateIotThing,
-    ValidateIotThingExists
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class VehicleAssociationBehavior { NOT_SET, CreateIotThing, ValidateIotThingExists };
 
-namespace VehicleAssociationBehaviorMapper
-{
+namespace VehicleAssociationBehaviorMapper {
 AWS_IOTFLEETWISE_API VehicleAssociationBehavior GetVehicleAssociationBehaviorForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForVehicleAssociationBehavior(VehicleAssociationBehavior value);
-} // namespace VehicleAssociationBehaviorMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace VehicleAssociationBehaviorMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

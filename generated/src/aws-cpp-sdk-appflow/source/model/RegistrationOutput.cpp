@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-RegistrationOutput::RegistrationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegistrationOutput::RegistrationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-RegistrationOutput& RegistrationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+RegistrationOutput& RegistrationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("result"))
-  {
+  if (jsonValue.ValueExists("result")) {
     m_result = jsonValue.GetString("result");
     m_resultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RegistrationOutput::Jsonize() const
-{
+JsonValue RegistrationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_resultHasBeenSet)
-  {
-   payload.WithString("result", m_result);
-
+  if (m_resultHasBeenSet) {
+    payload.WithString("result", m_result);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ExecutionStatusMapper::GetNameForExecutionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ExecutionStatusMapper::GetNameForExecutionStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

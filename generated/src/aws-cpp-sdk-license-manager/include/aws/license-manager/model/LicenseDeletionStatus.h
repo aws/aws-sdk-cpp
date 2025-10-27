@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
-  enum class LicenseDeletionStatus
-  {
-    NOT_SET,
-    PENDING_DELETE,
-    DELETED
-  };
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+enum class LicenseDeletionStatus { NOT_SET, PENDING_DELETE, DELETED };
 
-namespace LicenseDeletionStatusMapper
-{
+namespace LicenseDeletionStatusMapper {
 AWS_LICENSEMANAGER_API LicenseDeletionStatus GetLicenseDeletionStatusForName(const Aws::String& name);
 
 AWS_LICENSEMANAGER_API Aws::String GetNameForLicenseDeletionStatus(LicenseDeletionStatus value);
-} // namespace LicenseDeletionStatusMapper
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace LicenseDeletionStatusMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

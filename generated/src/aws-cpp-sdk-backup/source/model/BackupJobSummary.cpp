@@ -11,115 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-BackupJobSummary::BackupJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackupJobSummary::BackupJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BackupJobSummary& BackupJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Region"))
-  {
+BackupJobSummary& BackupJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = BackupJobStatusMapper::GetBackupJobStatusForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MessageCategory"))
-  {
+  if (jsonValue.ValueExists("MessageCategory")) {
     m_messageCategory = jsonValue.GetString("MessageCategory");
     m_messageCategoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTime"))
-  {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetDouble("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackupJobSummary::Jsonize() const
-{
+JsonValue BackupJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", BackupJobStatusMapper::GetNameForBackupJobStatus(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", BackupJobStatusMapper::GetNameForBackupJobStatus(m_state));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_messageCategoryHasBeenSet)
-  {
-   payload.WithString("MessageCategory", m_messageCategory);
-
+  if (m_messageCategoryHasBeenSet) {
+    payload.WithString("MessageCategory", m_messageCategory);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

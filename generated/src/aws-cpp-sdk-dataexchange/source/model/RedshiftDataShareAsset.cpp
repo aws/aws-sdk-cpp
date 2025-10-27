@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/RedshiftDataShareAsset.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/RedshiftDataShareAsset.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-RedshiftDataShareAsset::RedshiftDataShareAsset(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftDataShareAsset::RedshiftDataShareAsset(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftDataShareAsset& RedshiftDataShareAsset::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+RedshiftDataShareAsset& RedshiftDataShareAsset::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftDataShareAsset::Jsonize() const
-{
+JsonValue RedshiftDataShareAsset::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

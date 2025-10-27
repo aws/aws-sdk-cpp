@@ -12,27 +12,18 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RestoreBackupRequest::SerializePayload() const
-{
+Aws::String RestoreBackupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_backupIdHasBeenSet)
-  {
-   payload.WithString("BackupId", m_backupId);
-
+  if (m_backupIdHasBeenSet) {
+    payload.WithString("BackupId", m_backupId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RestoreBackupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RestoreBackupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.RestoreBackup"));
   return headers;
-
 }
-
-
-
-

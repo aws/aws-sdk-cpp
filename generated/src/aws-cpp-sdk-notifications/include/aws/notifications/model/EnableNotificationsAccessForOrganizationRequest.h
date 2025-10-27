@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/notifications/NotificationsRequest.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
+namespace Aws {
+namespace Notifications {
+namespace Model {
 
-  /**
-   */
-  class EnableNotificationsAccessForOrganizationRequest : public NotificationsRequest
-  {
-  public:
-    AWS_NOTIFICATIONS_API EnableNotificationsAccessForOrganizationRequest() = default;
+/**
+ */
+class EnableNotificationsAccessForOrganizationRequest : public NotificationsRequest {
+ public:
+  AWS_NOTIFICATIONS_API EnableNotificationsAccessForOrganizationRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "EnableNotificationsAccessForOrganization"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "EnableNotificationsAccessForOrganization"; }
 
-    AWS_NOTIFICATIONS_API Aws::String SerializePayload() const override;
+  AWS_NOTIFICATIONS_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

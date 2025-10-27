@@ -12,56 +12,38 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAutoScalingConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateAutoScalingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_autoScalingConfigurationNameHasBeenSet)
-  {
-   payload.WithString("AutoScalingConfigurationName", m_autoScalingConfigurationName);
-
+  if (m_autoScalingConfigurationNameHasBeenSet) {
+    payload.WithString("AutoScalingConfigurationName", m_autoScalingConfigurationName);
   }
 
-  if(m_maxConcurrencyHasBeenSet)
-  {
-   payload.WithInteger("MaxConcurrency", m_maxConcurrency);
-
+  if (m_maxConcurrencyHasBeenSet) {
+    payload.WithInteger("MaxConcurrency", m_maxConcurrency);
   }
 
-  if(m_minSizeHasBeenSet)
-  {
-   payload.WithInteger("MinSize", m_minSize);
-
+  if (m_minSizeHasBeenSet) {
+    payload.WithInteger("MinSize", m_minSize);
   }
 
-  if(m_maxSizeHasBeenSet)
-  {
-   payload.WithInteger("MaxSize", m_maxSize);
-
+  if (m_maxSizeHasBeenSet) {
+    payload.WithInteger("MaxSize", m_maxSize);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateAutoScalingConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateAutoScalingConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.CreateAutoScalingConfiguration"));
   return headers;
-
 }
-
-
-
-

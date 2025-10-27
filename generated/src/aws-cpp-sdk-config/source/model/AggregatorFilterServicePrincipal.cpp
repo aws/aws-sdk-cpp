@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregatorFilterServicePrincipal::AggregatorFilterServicePrincipal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregatorFilterServicePrincipal::AggregatorFilterServicePrincipal(JsonView jsonValue) { *this = jsonValue; }
 
-AggregatorFilterServicePrincipal& AggregatorFilterServicePrincipal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+AggregatorFilterServicePrincipal& AggregatorFilterServicePrincipal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = AggregatorFilterTypeMapper::GetAggregatorFilterTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
-    for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
-    {
+    for (unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex) {
       m_value.push_back(valueJsonList[valueIndex].AsString());
     }
     m_valueHasBeenSet = true;
@@ -42,29 +32,24 @@ AggregatorFilterServicePrincipal& AggregatorFilterServicePrincipal::operator =(J
   return *this;
 }
 
-JsonValue AggregatorFilterServicePrincipal::Jsonize() const
-{
+JsonValue AggregatorFilterServicePrincipal::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", AggregatorFilterTypeMapper::GetNameForAggregatorFilterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", AggregatorFilterTypeMapper::GetNameForAggregatorFilterType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valueJsonList(m_value.size());
-   for(unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex)
-   {
-     valueJsonList[valueIndex].AsString(m_value[valueIndex]);
-   }
-   payload.WithArray("Value", std::move(valueJsonList));
-
+  if (m_valueHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valueJsonList(m_value.size());
+    for (unsigned valueIndex = 0; valueIndex < valueJsonList.GetLength(); ++valueIndex) {
+      valueJsonList[valueIndex].AsString(m_value[valueIndex]);
+    }
+    payload.WithArray("Value", std::move(valueJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

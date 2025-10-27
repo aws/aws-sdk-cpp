@@ -3,54 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/CreateTopicRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/CreateTopicRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateTopicRequest::SerializePayload() const
-{
+Aws::String CreateTopicRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateTopic&";
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_attributesHasBeenSet)
-  {
+  if (m_attributesHasBeenSet) {
     unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
+    for (auto& item : m_attributes) {
+      ss << "Attributes.entry." << attributesCount << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "Attributes.entry." << attributesCount << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
     }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_dataProtectionPolicyHasBeenSet)
-  {
+  if (m_dataProtectionPolicyHasBeenSet) {
     ss << "DataProtectionPolicy=" << StringUtils::URLEncode(m_dataProtectionPolicy.c_str()) << "&";
   }
 
@@ -58,8 +46,4 @@ Aws::String CreateTopicRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

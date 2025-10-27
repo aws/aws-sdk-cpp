@@ -7,28 +7,16 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    unknownOperation,
-    cannotParse,
-    fieldValidationFailed,
-    other,
-    notSupported
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class ValidationExceptionReason { NOT_SET, unknownOperation, cannotParse, fieldValidationFailed, other, notSupported };
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_ACCESSANALYZER_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

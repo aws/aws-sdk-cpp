@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String GetClusterCredentialsWithIAMRequest::SerializePayload() const
-{
+Aws::String GetClusterCredentialsWithIAMRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetClusterCredentialsWithIAM&";
-  if(m_dbNameHasBeenSet)
-  {
+  if (m_dbNameHasBeenSet) {
     ss << "DbName=" << StringUtils::URLEncode(m_dbName.c_str()) << "&";
   }
 
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
+  if (m_durationSecondsHasBeenSet) {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
 
-  if(m_customDomainNameHasBeenSet)
-  {
+  if (m_customDomainNameHasBeenSet) {
     ss << "CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String GetClusterCredentialsWithIAMRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetClusterCredentialsWithIAMRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetClusterCredentialsWithIAMRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

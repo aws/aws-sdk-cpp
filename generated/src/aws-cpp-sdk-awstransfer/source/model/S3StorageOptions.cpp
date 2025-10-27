@@ -11,40 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-S3StorageOptions::S3StorageOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3StorageOptions::S3StorageOptions(JsonView jsonValue) { *this = jsonValue; }
 
-S3StorageOptions& S3StorageOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DirectoryListingOptimization"))
-  {
-    m_directoryListingOptimization = DirectoryListingOptimizationMapper::GetDirectoryListingOptimizationForName(jsonValue.GetString("DirectoryListingOptimization"));
+S3StorageOptions& S3StorageOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DirectoryListingOptimization")) {
+    m_directoryListingOptimization =
+        DirectoryListingOptimizationMapper::GetDirectoryListingOptimizationForName(jsonValue.GetString("DirectoryListingOptimization"));
     m_directoryListingOptimizationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3StorageOptions::Jsonize() const
-{
+JsonValue S3StorageOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_directoryListingOptimizationHasBeenSet)
-  {
-   payload.WithString("DirectoryListingOptimization", DirectoryListingOptimizationMapper::GetNameForDirectoryListingOptimization(m_directoryListingOptimization));
+  if (m_directoryListingOptimizationHasBeenSet) {
+    payload.WithString("DirectoryListingOptimization",
+                       DirectoryListingOptimizationMapper::GetNameForDirectoryListingOptimization(m_directoryListingOptimization));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

@@ -12,27 +12,19 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetConnectionRequest::SerializePayload() const
-{
+Aws::String GetConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetConnectionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetConnectionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection"));
   return headers;
-
 }
-
-
-
-

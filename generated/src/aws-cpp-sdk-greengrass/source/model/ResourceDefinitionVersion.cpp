@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/ResourceDefinitionVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/ResourceDefinitionVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceDefinitionVersion& ResourceDefinitionVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Resources"))
-  {
+ResourceDefinitionVersion& ResourceDefinitionVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Resources")) {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
-    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
-    {
+    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
     }
     m_resourcesHasBeenSet = true;
@@ -37,24 +28,20 @@ ResourceDefinitionVersion& ResourceDefinitionVersion::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue ResourceDefinitionVersion::Jsonize() const
-{
+JsonValue ResourceDefinitionVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
-   for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
-   {
-     resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
-   }
-   payload.WithArray("Resources", std::move(resourcesJsonList));
-
+  if (m_resourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
+    for (unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex) {
+      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
+    }
+    payload.WithArray("Resources", std::move(resourcesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

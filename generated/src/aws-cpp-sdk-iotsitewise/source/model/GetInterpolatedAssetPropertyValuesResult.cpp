@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInterpolatedAssetPropertyValuesResult::GetInterpolatedAssetPropertyValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetInterpolatedAssetPropertyValuesResult::GetInterpolatedAssetPropertyValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetInterpolatedAssetPropertyValuesResult& GetInterpolatedAssetPropertyValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetInterpolatedAssetPropertyValuesResult& GetInterpolatedAssetPropertyValuesResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("interpolatedAssetPropertyValues"))
-  {
+  if (jsonValue.ValueExists("interpolatedAssetPropertyValues")) {
     Aws::Utils::Array<JsonView> interpolatedAssetPropertyValuesJsonList = jsonValue.GetArray("interpolatedAssetPropertyValues");
-    for(unsigned interpolatedAssetPropertyValuesIndex = 0; interpolatedAssetPropertyValuesIndex < interpolatedAssetPropertyValuesJsonList.GetLength(); ++interpolatedAssetPropertyValuesIndex)
-    {
+    for (unsigned interpolatedAssetPropertyValuesIndex = 0;
+         interpolatedAssetPropertyValuesIndex < interpolatedAssetPropertyValuesJsonList.GetLength();
+         ++interpolatedAssetPropertyValuesIndex) {
       m_interpolatedAssetPropertyValues.push_back(interpolatedAssetPropertyValuesJsonList[interpolatedAssetPropertyValuesIndex].AsObject());
     }
     m_interpolatedAssetPropertyValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

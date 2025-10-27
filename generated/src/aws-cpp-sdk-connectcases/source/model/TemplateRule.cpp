@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-TemplateRule::TemplateRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateRule::TemplateRule(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateRule& TemplateRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("caseRuleId"))
-  {
+TemplateRule& TemplateRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("caseRuleId")) {
     m_caseRuleId = jsonValue.GetString("caseRuleId");
     m_caseRuleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldId"))
-  {
+  if (jsonValue.ValueExists("fieldId")) {
     m_fieldId = jsonValue.GetString("fieldId");
     m_fieldIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateRule::Jsonize() const
-{
+JsonValue TemplateRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_caseRuleIdHasBeenSet)
-  {
-   payload.WithString("caseRuleId", m_caseRuleId);
-
+  if (m_caseRuleIdHasBeenSet) {
+    payload.WithString("caseRuleId", m_caseRuleId);
   }
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("fieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("fieldId", m_fieldId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

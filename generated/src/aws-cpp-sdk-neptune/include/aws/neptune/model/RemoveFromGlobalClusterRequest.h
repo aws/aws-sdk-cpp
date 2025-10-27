@@ -4,72 +4,79 @@
  */
 
 #pragma once
-#include <aws/neptune/Neptune_EXPORTS.h>
-#include <aws/neptune/NeptuneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/neptune/NeptuneRequest.h>
+#include <aws/neptune/Neptune_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Neptune
-{
-namespace Model
-{
+namespace Aws {
+namespace Neptune {
+namespace Model {
 
+/**
+ */
+class RemoveFromGlobalClusterRequest : public NeptuneRequest {
+ public:
+  AWS_NEPTUNE_API RemoveFromGlobalClusterRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "RemoveFromGlobalCluster"; }
+
+  AWS_NEPTUNE_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The identifier of the Neptune global database from which to detach the
+   * specified Neptune DB cluster.</p>
    */
-  class RemoveFromGlobalClusterRequest : public NeptuneRequest
-  {
-  public:
-    AWS_NEPTUNE_API RemoveFromGlobalClusterRequest() = default;
+  inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
+  inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+  template <typename GlobalClusterIdentifierT = Aws::String>
+  void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) {
+    m_globalClusterIdentifierHasBeenSet = true;
+    m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value);
+  }
+  template <typename GlobalClusterIdentifierT = Aws::String>
+  RemoveFromGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) {
+    SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "RemoveFromGlobalCluster"; }
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from
+   * the Neptune global database cluster.</p>
+   */
+  inline const Aws::String& GetDbClusterIdentifier() const { return m_dbClusterIdentifier; }
+  inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
+  template <typename DbClusterIdentifierT = Aws::String>
+  void SetDbClusterIdentifier(DbClusterIdentifierT&& value) {
+    m_dbClusterIdentifierHasBeenSet = true;
+    m_dbClusterIdentifier = std::forward<DbClusterIdentifierT>(value);
+  }
+  template <typename DbClusterIdentifierT = Aws::String>
+  RemoveFromGlobalClusterRequest& WithDbClusterIdentifier(DbClusterIdentifierT&& value) {
+    SetDbClusterIdentifier(std::forward<DbClusterIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_globalClusterIdentifier;
+  bool m_globalClusterIdentifierHasBeenSet = false;
 
-    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
+  Aws::String m_dbClusterIdentifier;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+};
 
-  protected:
-    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>The identifier of the Neptune global database from which to detach the
-     * specified Neptune DB cluster.</p>
-     */
-    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
-    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-    template<typename GlobalClusterIdentifierT = Aws::String>
-    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
-    template<typename GlobalClusterIdentifierT = Aws::String>
-    RemoveFromGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from
-     * the Neptune global database cluster.</p>
-     */
-    inline const Aws::String& GetDbClusterIdentifier() const { return m_dbClusterIdentifier; }
-    inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
-    template<typename DbClusterIdentifierT = Aws::String>
-    void SetDbClusterIdentifier(DbClusterIdentifierT&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::forward<DbClusterIdentifierT>(value); }
-    template<typename DbClusterIdentifierT = Aws::String>
-    RemoveFromGlobalClusterRequest& WithDbClusterIdentifier(DbClusterIdentifierT&& value) { SetDbClusterIdentifier(std::forward<DbClusterIdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet = false;
-
-    Aws::String m_dbClusterIdentifier;
-    bool m_dbClusterIdentifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Neptune
-} // namespace Aws
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

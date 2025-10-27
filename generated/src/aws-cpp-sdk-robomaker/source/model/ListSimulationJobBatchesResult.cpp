@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/ListSimulationJobBatchesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/robomaker/model/ListSimulationJobBatchesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSimulationJobBatchesResult::ListSimulationJobBatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListSimulationJobBatchesResult::ListSimulationJobBatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListSimulationJobBatchesResult& ListSimulationJobBatchesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListSimulationJobBatchesResult& ListSimulationJobBatchesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("simulationJobBatchSummaries"))
-  {
+  if (jsonValue.ValueExists("simulationJobBatchSummaries")) {
     Aws::Utils::Array<JsonView> simulationJobBatchSummariesJsonList = jsonValue.GetArray("simulationJobBatchSummaries");
-    for(unsigned simulationJobBatchSummariesIndex = 0; simulationJobBatchSummariesIndex < simulationJobBatchSummariesJsonList.GetLength(); ++simulationJobBatchSummariesIndex)
-    {
+    for (unsigned simulationJobBatchSummariesIndex = 0; simulationJobBatchSummariesIndex < simulationJobBatchSummariesJsonList.GetLength();
+         ++simulationJobBatchSummariesIndex) {
       m_simulationJobBatchSummaries.push_back(simulationJobBatchSummariesJsonList[simulationJobBatchSummariesIndex].AsObject());
     }
     m_simulationJobBatchSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

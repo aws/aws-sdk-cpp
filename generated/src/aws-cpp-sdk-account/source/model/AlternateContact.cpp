@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Account
-{
-namespace Model
-{
+namespace Aws {
+namespace Account {
+namespace Model {
 
-AlternateContact::AlternateContact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlternateContact::AlternateContact(JsonView jsonValue) { *this = jsonValue; }
 
-AlternateContact& AlternateContact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AlternateContactType"))
-  {
+AlternateContact& AlternateContact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AlternateContactType")) {
     m_alternateContactType = AlternateContactTypeMapper::GetAlternateContactTypeForName(jsonValue.GetString("AlternateContactType"));
     m_alternateContactTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailAddress"))
-  {
+  if (jsonValue.ValueExists("EmailAddress")) {
     m_emailAddress = jsonValue.GetString("EmailAddress");
     m_emailAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PhoneNumber"))
-  {
+  if (jsonValue.ValueExists("PhoneNumber")) {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
     m_phoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Title"))
-  {
+  if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");
     m_titleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlternateContact::Jsonize() const
-{
+JsonValue AlternateContact::Jsonize() const {
   JsonValue payload;
 
-  if(m_alternateContactTypeHasBeenSet)
-  {
-   payload.WithString("AlternateContactType", AlternateContactTypeMapper::GetNameForAlternateContactType(m_alternateContactType));
+  if (m_alternateContactTypeHasBeenSet) {
+    payload.WithString("AlternateContactType", AlternateContactTypeMapper::GetNameForAlternateContactType(m_alternateContactType));
   }
 
-  if(m_emailAddressHasBeenSet)
-  {
-   payload.WithString("EmailAddress", m_emailAddress);
-
+  if (m_emailAddressHasBeenSet) {
+    payload.WithString("EmailAddress", m_emailAddress);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_phoneNumberHasBeenSet)
-  {
-   payload.WithString("PhoneNumber", m_phoneNumber);
-
+  if (m_phoneNumberHasBeenSet) {
+    payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Account
-} // namespace Aws
+}  // namespace Model
+}  // namespace Account
+}  // namespace Aws

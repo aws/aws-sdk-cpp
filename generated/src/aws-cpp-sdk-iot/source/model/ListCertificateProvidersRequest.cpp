@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ListCertificateProvidersRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/ListCertificateProvidersRequest.h>
 
 #include <utility>
 
@@ -15,29 +15,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListCertificateProvidersRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListCertificateProvidersRequest::SerializePayload() const { return {}; }
+
+void ListCertificateProvidersRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_ascendingOrderHasBeenSet) {
+    ss << m_ascendingOrder;
+    uri.AddQueryStringParameter("isAscendingOrder", ss.str());
+    ss.str("");
+  }
 }
-
-void ListCertificateProvidersRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_ascendingOrderHasBeenSet)
-    {
-      ss << m_ascendingOrder;
-      uri.AddQueryStringParameter("isAscendingOrder", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

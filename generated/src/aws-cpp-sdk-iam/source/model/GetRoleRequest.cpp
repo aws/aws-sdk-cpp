@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetRoleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetRoleRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetRoleRequest::SerializePayload() const
-{
+Aws::String GetRoleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetRole&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetRoleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

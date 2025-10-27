@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/ForwardingConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/ForwardingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-ForwardingConfig::ForwardingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ForwardingConfig::ForwardingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ForwardingConfig& ForwardingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("state"))
-  {
+ForwardingConfig& ForwardingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("state")) {
     m_state = ForwardingConfigStateMapper::GetForwardingConfigStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ForwardingConfig::Jsonize() const
-{
+JsonValue ForwardingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", ForwardingConfigStateMapper::GetNameForForwardingConfigState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", ForwardingConfigStateMapper::GetNameForForwardingConfigState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

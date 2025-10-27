@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class DomainPackageStatus
-  {
-    NOT_SET,
-    ASSOCIATING,
-    ASSOCIATION_FAILED,
-    ACTIVE,
-    DISSOCIATING,
-    DISSOCIATION_FAILED
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class DomainPackageStatus { NOT_SET, ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED };
 
-namespace DomainPackageStatusMapper
-{
+namespace DomainPackageStatusMapper {
 AWS_ELASTICSEARCHSERVICE_API DomainPackageStatus GetDomainPackageStatusForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForDomainPackageStatus(DomainPackageStatus value);
-} // namespace DomainPackageStatusMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace DomainPackageStatusMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

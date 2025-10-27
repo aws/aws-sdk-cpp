@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/globalaccelerator/model/ByoipCidr.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace GlobalAccelerator
-{
-namespace Model
-{
-  class WithdrawByoipCidrResult
-  {
-  public:
-    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult() = default;
-    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace GlobalAccelerator {
+namespace Model {
+class WithdrawByoipCidrResult {
+ public:
+  AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult() = default;
+  AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Information about the BYOIP address pool.</p>
+   */
+  inline const ByoipCidr& GetByoipCidr() const { return m_byoipCidr; }
+  template <typename ByoipCidrT = ByoipCidr>
+  void SetByoipCidr(ByoipCidrT&& value) {
+    m_byoipCidrHasBeenSet = true;
+    m_byoipCidr = std::forward<ByoipCidrT>(value);
+  }
+  template <typename ByoipCidrT = ByoipCidr>
+  WithdrawByoipCidrResult& WithByoipCidr(ByoipCidrT&& value) {
+    SetByoipCidr(std::forward<ByoipCidrT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the BYOIP address pool.</p>
-     */
-    inline const ByoipCidr& GetByoipCidr() const { return m_byoipCidr; }
-    template<typename ByoipCidrT = ByoipCidr>
-    void SetByoipCidr(ByoipCidrT&& value) { m_byoipCidrHasBeenSet = true; m_byoipCidr = std::forward<ByoipCidrT>(value); }
-    template<typename ByoipCidrT = ByoipCidr>
-    WithdrawByoipCidrResult& WithByoipCidr(ByoipCidrT&& value) { SetByoipCidr(std::forward<ByoipCidrT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    WithdrawByoipCidrResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  WithdrawByoipCidrResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ByoipCidr m_byoipCidr;
+  bool m_byoipCidrHasBeenSet = false;
 
-    ByoipCidr m_byoipCidr;
-    bool m_byoipCidrHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

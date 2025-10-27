@@ -4,86 +4,99 @@
  */
 
 #pragma once
-#include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
+/**
+ */
+class ListDataSourcesRequest : public BedrockAgentRequest {
+ public:
+  AWS_BEDROCKAGENT_API ListDataSourcesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDataSources"; }
+
+  AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier of the knowledge base for which to return a list of
+   * information.</p>
    */
-  class ListDataSourcesRequest : public BedrockAgentRequest
-  {
-  public:
-    AWS_BEDROCKAGENT_API ListDataSourcesRequest() = default;
+  inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+  inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+  template <typename KnowledgeBaseIdT = Aws::String>
+  void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) {
+    m_knowledgeBaseIdHasBeenSet = true;
+    m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value);
+  }
+  template <typename KnowledgeBaseIdT = Aws::String>
+  ListDataSourcesRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) {
+    SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListDataSources"; }
+  ///@{
+  /**
+   * <p>The maximum number of results to return in the response. If the total number
+   * of results is greater than this value, use the token returned in the response in
+   * the <code>nextToken</code> field when making another request to return the next
+   * batch of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListDataSourcesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>If the total number of results is greater than the <code>maxResults</code>
+   * value provided in the request, enter the token returned in the
+   * <code>nextToken</code> field in the response in this field to return the next
+   * batch of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDataSourcesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_knowledgeBaseId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
 
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The unique identifier of the knowledge base for which to return a list of
-     * information.</p>
-     */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    ListDataSourcesRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of results to return in the response. If the total number
-     * of results is greater than this value, use the token returned in the response in
-     * the <code>nextToken</code> field when making another request to return the next
-     * batch of results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListDataSourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>If the total number of results is greater than the <code>maxResults</code>
-     * value provided in the request, enter the token returned in the
-     * <code>nextToken</code> field in the response in this field to return the next
-     * batch of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDataSourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

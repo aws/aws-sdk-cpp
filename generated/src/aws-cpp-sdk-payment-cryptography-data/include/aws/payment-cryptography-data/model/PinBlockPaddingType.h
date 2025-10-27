@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
-  enum class PinBlockPaddingType
-  {
-    NOT_SET,
-    NO_PADDING,
-    ISO_IEC_7816_4
-  };
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
+enum class PinBlockPaddingType { NOT_SET, NO_PADDING, ISO_IEC_7816_4 };
 
-namespace PinBlockPaddingTypeMapper
-{
+namespace PinBlockPaddingTypeMapper {
 AWS_PAYMENTCRYPTOGRAPHYDATA_API PinBlockPaddingType GetPinBlockPaddingTypeForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::String GetNameForPinBlockPaddingType(PinBlockPaddingType value);
-} // namespace PinBlockPaddingTypeMapper
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace PinBlockPaddingTypeMapper
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

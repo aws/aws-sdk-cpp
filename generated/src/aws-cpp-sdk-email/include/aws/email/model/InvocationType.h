@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
-  enum class InvocationType
-  {
-    NOT_SET,
-    Event,
-    RequestResponse
-  };
+namespace Aws {
+namespace SES {
+namespace Model {
+enum class InvocationType { NOT_SET, Event, RequestResponse };
 
-namespace InvocationTypeMapper
-{
+namespace InvocationTypeMapper {
 AWS_SES_API InvocationType GetInvocationTypeForName(const Aws::String& name);
 
 AWS_SES_API Aws::String GetNameForInvocationType(InvocationType value);
-} // namespace InvocationTypeMapper
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace InvocationTypeMapper
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

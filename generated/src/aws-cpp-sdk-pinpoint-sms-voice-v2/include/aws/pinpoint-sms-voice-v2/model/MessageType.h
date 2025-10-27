@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class MessageType
-  {
-    NOT_SET,
-    TRANSACTIONAL,
-    PROMOTIONAL
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class MessageType { NOT_SET, TRANSACTIONAL, PROMOTIONAL };
 
-namespace MessageTypeMapper
-{
+namespace MessageTypeMapper {
 AWS_PINPOINTSMSVOICEV2_API MessageType GetMessageTypeForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForMessageType(MessageType value);
-} // namespace MessageTypeMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace MessageTypeMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

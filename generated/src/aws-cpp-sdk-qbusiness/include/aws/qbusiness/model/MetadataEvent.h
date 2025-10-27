@@ -4,125 +4,152 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/SourceAttribution.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QBusiness {
+namespace Model {
 
+/**
+ * <p>A metadata event for a AI-generated text output message in a Amazon Q
+ * Business conversation, containing associated metadata generated.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/MetadataEvent">AWS
+ * API Reference</a></p>
+ */
+class MetadataEvent {
+ public:
+  AWS_QBUSINESS_API MetadataEvent() = default;
+  AWS_QBUSINESS_API MetadataEvent(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QBUSINESS_API MetadataEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A metadata event for a AI-generated text output message in a Amazon Q
-   * Business conversation, containing associated metadata generated.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/MetadataEvent">AWS
-   * API Reference</a></p>
+   * <p>The identifier of the conversation with which the generated metadata is
+   * associated.</p>
    */
-  class MetadataEvent
-  {
-  public:
-    AWS_QBUSINESS_API MetadataEvent() = default;
-    AWS_QBUSINESS_API MetadataEvent(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QBUSINESS_API MetadataEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetConversationId() const { return m_conversationId; }
+  inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
+  template <typename ConversationIdT = Aws::String>
+  void SetConversationId(ConversationIdT&& value) {
+    m_conversationIdHasBeenSet = true;
+    m_conversationId = std::forward<ConversationIdT>(value);
+  }
+  template <typename ConversationIdT = Aws::String>
+  MetadataEvent& WithConversationId(ConversationIdT&& value) {
+    SetConversationId(std::forward<ConversationIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The identifier of an Amazon Q Business end user text input message within the
+   * conversation.</p>
+   */
+  inline const Aws::String& GetUserMessageId() const { return m_userMessageId; }
+  inline bool UserMessageIdHasBeenSet() const { return m_userMessageIdHasBeenSet; }
+  template <typename UserMessageIdT = Aws::String>
+  void SetUserMessageId(UserMessageIdT&& value) {
+    m_userMessageIdHasBeenSet = true;
+    m_userMessageId = std::forward<UserMessageIdT>(value);
+  }
+  template <typename UserMessageIdT = Aws::String>
+  MetadataEvent& WithUserMessageId(UserMessageIdT&& value) {
+    SetUserMessageId(std::forward<UserMessageIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the conversation with which the generated metadata is
-     * associated.</p>
-     */
-    inline const Aws::String& GetConversationId() const { return m_conversationId; }
-    inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    template<typename ConversationIdT = Aws::String>
-    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
-    template<typename ConversationIdT = Aws::String>
-    MetadataEvent& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier of an Amazon Q Business AI generated message within the
+   * conversation.</p>
+   */
+  inline const Aws::String& GetSystemMessageId() const { return m_systemMessageId; }
+  inline bool SystemMessageIdHasBeenSet() const { return m_systemMessageIdHasBeenSet; }
+  template <typename SystemMessageIdT = Aws::String>
+  void SetSystemMessageId(SystemMessageIdT&& value) {
+    m_systemMessageIdHasBeenSet = true;
+    m_systemMessageId = std::forward<SystemMessageIdT>(value);
+  }
+  template <typename SystemMessageIdT = Aws::String>
+  MetadataEvent& WithSystemMessageId(SystemMessageIdT&& value) {
+    SetSystemMessageId(std::forward<SystemMessageIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of an Amazon Q Business end user text input message within the
-     * conversation.</p>
-     */
-    inline const Aws::String& GetUserMessageId() const { return m_userMessageId; }
-    inline bool UserMessageIdHasBeenSet() const { return m_userMessageIdHasBeenSet; }
-    template<typename UserMessageIdT = Aws::String>
-    void SetUserMessageId(UserMessageIdT&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::forward<UserMessageIdT>(value); }
-    template<typename UserMessageIdT = Aws::String>
-    MetadataEvent& WithUserMessageId(UserMessageIdT&& value) { SetUserMessageId(std::forward<UserMessageIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The source documents used to generate the conversation response.</p>
+   */
+  inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const { return m_sourceAttributions; }
+  inline bool SourceAttributionsHasBeenSet() const { return m_sourceAttributionsHasBeenSet; }
+  template <typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
+  void SetSourceAttributions(SourceAttributionsT&& value) {
+    m_sourceAttributionsHasBeenSet = true;
+    m_sourceAttributions = std::forward<SourceAttributionsT>(value);
+  }
+  template <typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
+  MetadataEvent& WithSourceAttributions(SourceAttributionsT&& value) {
+    SetSourceAttributions(std::forward<SourceAttributionsT>(value));
+    return *this;
+  }
+  template <typename SourceAttributionsT = SourceAttribution>
+  MetadataEvent& AddSourceAttributions(SourceAttributionsT&& value) {
+    m_sourceAttributionsHasBeenSet = true;
+    m_sourceAttributions.emplace_back(std::forward<SourceAttributionsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of an Amazon Q Business AI generated message within the
-     * conversation.</p>
-     */
-    inline const Aws::String& GetSystemMessageId() const { return m_systemMessageId; }
-    inline bool SystemMessageIdHasBeenSet() const { return m_systemMessageIdHasBeenSet; }
-    template<typename SystemMessageIdT = Aws::String>
-    void SetSystemMessageId(SystemMessageIdT&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::forward<SystemMessageIdT>(value); }
-    template<typename SystemMessageIdT = Aws::String>
-    MetadataEvent& WithSystemMessageId(SystemMessageIdT&& value) { SetSystemMessageId(std::forward<SystemMessageIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The final text output message generated by the system.</p>
+   */
+  inline const Aws::String& GetFinalTextMessage() const { return m_finalTextMessage; }
+  inline bool FinalTextMessageHasBeenSet() const { return m_finalTextMessageHasBeenSet; }
+  template <typename FinalTextMessageT = Aws::String>
+  void SetFinalTextMessage(FinalTextMessageT&& value) {
+    m_finalTextMessageHasBeenSet = true;
+    m_finalTextMessage = std::forward<FinalTextMessageT>(value);
+  }
+  template <typename FinalTextMessageT = Aws::String>
+  MetadataEvent& WithFinalTextMessage(FinalTextMessageT&& value) {
+    SetFinalTextMessage(std::forward<FinalTextMessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_conversationId;
+  bool m_conversationIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const { return m_sourceAttributions; }
-    inline bool SourceAttributionsHasBeenSet() const { return m_sourceAttributionsHasBeenSet; }
-    template<typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
-    void SetSourceAttributions(SourceAttributionsT&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions = std::forward<SourceAttributionsT>(value); }
-    template<typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
-    MetadataEvent& WithSourceAttributions(SourceAttributionsT&& value) { SetSourceAttributions(std::forward<SourceAttributionsT>(value)); return *this;}
-    template<typename SourceAttributionsT = SourceAttribution>
-    MetadataEvent& AddSourceAttributions(SourceAttributionsT&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions.emplace_back(std::forward<SourceAttributionsT>(value)); return *this; }
-    ///@}
+  Aws::String m_userMessageId;
+  bool m_userMessageIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The final text output message generated by the system.</p>
-     */
-    inline const Aws::String& GetFinalTextMessage() const { return m_finalTextMessage; }
-    inline bool FinalTextMessageHasBeenSet() const { return m_finalTextMessageHasBeenSet; }
-    template<typename FinalTextMessageT = Aws::String>
-    void SetFinalTextMessage(FinalTextMessageT&& value) { m_finalTextMessageHasBeenSet = true; m_finalTextMessage = std::forward<FinalTextMessageT>(value); }
-    template<typename FinalTextMessageT = Aws::String>
-    MetadataEvent& WithFinalTextMessage(FinalTextMessageT&& value) { SetFinalTextMessage(std::forward<FinalTextMessageT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_systemMessageId;
+  bool m_systemMessageIdHasBeenSet = false;
 
-    Aws::String m_conversationId;
-    bool m_conversationIdHasBeenSet = false;
+  Aws::Vector<SourceAttribution> m_sourceAttributions;
+  bool m_sourceAttributionsHasBeenSet = false;
 
-    Aws::String m_userMessageId;
-    bool m_userMessageIdHasBeenSet = false;
+  Aws::String m_finalTextMessage;
+  bool m_finalTextMessageHasBeenSet = false;
+};
 
-    Aws::String m_systemMessageId;
-    bool m_systemMessageIdHasBeenSet = false;
-
-    Aws::Vector<SourceAttribution> m_sourceAttributions;
-    bool m_sourceAttributionsHasBeenSet = false;
-
-    Aws::String m_finalTextMessage;
-    bool m_finalTextMessageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/FailureInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/FailureInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-FailureInfo::FailureInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailureInfo::FailureInfo(JsonView jsonValue) { *this = jsonValue; }
 
-FailureInfo& FailureInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FailedRecordsS3Url"))
-  {
+FailureInfo& FailureInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FailedRecordsS3Url")) {
     m_failedRecordsS3Url = jsonValue.GetString("FailedRecordsS3Url");
     m_failedRecordsS3UrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailureInfo::Jsonize() const
-{
+JsonValue FailureInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_failedRecordsS3UrlHasBeenSet)
-  {
-   payload.WithString("FailedRecordsS3Url", m_failedRecordsS3Url);
-
+  if (m_failedRecordsS3UrlHasBeenSet) {
+    payload.WithString("FailedRecordsS3Url", m_failedRecordsS3Url);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

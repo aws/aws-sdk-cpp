@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/KinesisVideoStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/KinesisVideoStream.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-KinesisVideoStream::KinesisVideoStream(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStream::KinesisVideoStream(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStream& KinesisVideoStream::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+KinesisVideoStream& KinesisVideoStream::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStream::Jsonize() const
-{
+JsonValue KinesisVideoStream::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

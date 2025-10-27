@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class TransitGatewayRouteType
-  {
-    NOT_SET,
-    static_,
-    propagated
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class TransitGatewayRouteType { NOT_SET, static_, propagated };
 
-namespace TransitGatewayRouteTypeMapper
-{
+namespace TransitGatewayRouteTypeMapper {
 AWS_EC2_API TransitGatewayRouteType GetTransitGatewayRouteTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTransitGatewayRouteType(TransitGatewayRouteType value);
-} // namespace TransitGatewayRouteTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TransitGatewayRouteTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

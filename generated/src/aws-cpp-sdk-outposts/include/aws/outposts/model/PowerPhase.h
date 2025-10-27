@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class PowerPhase
-  {
-    NOT_SET,
-    SINGLE_PHASE,
-    THREE_PHASE
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class PowerPhase { NOT_SET, SINGLE_PHASE, THREE_PHASE };
 
-namespace PowerPhaseMapper
-{
+namespace PowerPhaseMapper {
 AWS_OUTPOSTS_API PowerPhase GetPowerPhaseForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForPowerPhase(PowerPhase value);
-} // namespace PowerPhaseMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace PowerPhaseMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

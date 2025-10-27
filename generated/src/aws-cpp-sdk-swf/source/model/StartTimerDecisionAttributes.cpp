@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/StartTimerDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/StartTimerDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-StartTimerDecisionAttributes& StartTimerDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timerId"))
-  {
+StartTimerDecisionAttributes& StartTimerDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timerId")) {
     m_timerId = jsonValue.GetString("timerId");
     m_timerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("control"))
-  {
+  if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetString("control");
     m_controlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startToFireTimeout"))
-  {
+  if (jsonValue.ValueExists("startToFireTimeout")) {
     m_startToFireTimeout = jsonValue.GetString("startToFireTimeout");
     m_startToFireTimeoutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartTimerDecisionAttributes::Jsonize() const
-{
+JsonValue StartTimerDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_timerIdHasBeenSet)
-  {
-   payload.WithString("timerId", m_timerId);
-
+  if (m_timerIdHasBeenSet) {
+    payload.WithString("timerId", m_timerId);
   }
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", m_control);
-
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", m_control);
   }
 
-  if(m_startToFireTimeoutHasBeenSet)
-  {
-   payload.WithString("startToFireTimeout", m_startToFireTimeout);
-
+  if (m_startToFireTimeoutHasBeenSet) {
+    payload.WithString("startToFireTimeout", m_startToFireTimeout);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

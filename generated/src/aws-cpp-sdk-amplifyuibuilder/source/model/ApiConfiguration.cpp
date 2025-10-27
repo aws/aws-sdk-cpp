@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ApiConfiguration::ApiConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiConfiguration::ApiConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ApiConfiguration& ApiConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("graphQLConfig"))
-  {
+ApiConfiguration& ApiConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("graphQLConfig")) {
     m_graphQLConfig = jsonValue.GetObject("graphQLConfig");
     m_graphQLConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataStoreConfig"))
-  {
+  if (jsonValue.ValueExists("dataStoreConfig")) {
     m_dataStoreConfig = jsonValue.GetObject("dataStoreConfig");
     m_dataStoreConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("noApiConfig"))
-  {
+  if (jsonValue.ValueExists("noApiConfig")) {
     m_noApiConfig = jsonValue.GetObject("noApiConfig");
     m_noApiConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiConfiguration::Jsonize() const
-{
+JsonValue ApiConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_graphQLConfigHasBeenSet)
-  {
-   payload.WithObject("graphQLConfig", m_graphQLConfig.Jsonize());
-
+  if (m_graphQLConfigHasBeenSet) {
+    payload.WithObject("graphQLConfig", m_graphQLConfig.Jsonize());
   }
 
-  if(m_dataStoreConfigHasBeenSet)
-  {
-   payload.WithObject("dataStoreConfig", m_dataStoreConfig.Jsonize());
-
+  if (m_dataStoreConfigHasBeenSet) {
+    payload.WithObject("dataStoreConfig", m_dataStoreConfig.Jsonize());
   }
 
-  if(m_noApiConfigHasBeenSet)
-  {
-   payload.WithObject("noApiConfig", m_noApiConfig.Jsonize());
-
+  if (m_noApiConfigHasBeenSet) {
+    payload.WithObject("noApiConfig", m_noApiConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-MetricsConfigurationPolicy::MetricsConfigurationPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricsConfigurationPolicy::MetricsConfigurationPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-MetricsConfigurationPolicy& MetricsConfigurationPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("noiseLevel"))
-  {
+MetricsConfigurationPolicy& MetricsConfigurationPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("noiseLevel")) {
     m_noiseLevel = NoiseLevelTypeMapper::GetNoiseLevelTypeForName(jsonValue.GetString("noiseLevel"));
     m_noiseLevelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricsConfigurationPolicy::Jsonize() const
-{
+JsonValue MetricsConfigurationPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_noiseLevelHasBeenSet)
-  {
-   payload.WithString("noiseLevel", NoiseLevelTypeMapper::GetNameForNoiseLevelType(m_noiseLevel));
+  if (m_noiseLevelHasBeenSet) {
+    payload.WithString("noiseLevel", NoiseLevelTypeMapper::GetNameForNoiseLevelType(m_noiseLevel));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

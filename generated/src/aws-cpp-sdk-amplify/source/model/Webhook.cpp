@@ -11,116 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-Webhook::Webhook(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Webhook::Webhook(JsonView jsonValue) { *this = jsonValue; }
 
-Webhook& Webhook::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("webhookArn"))
-  {
+Webhook& Webhook::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("webhookArn")) {
     m_webhookArn = jsonValue.GetString("webhookArn");
     m_webhookArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("webhookId"))
-  {
+  if (jsonValue.ValueExists("webhookId")) {
     m_webhookId = jsonValue.GetString("webhookId");
     m_webhookIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("webhookUrl"))
-  {
+  if (jsonValue.ValueExists("webhookUrl")) {
     m_webhookUrl = jsonValue.GetString("webhookUrl");
     m_webhookUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("appId"))
-  {
+  if (jsonValue.ValueExists("appId")) {
     m_appId = jsonValue.GetString("appId");
     m_appIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchName"))
-  {
+  if (jsonValue.ValueExists("branchName")) {
     m_branchName = jsonValue.GetString("branchName");
     m_branchNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetDouble("updateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Webhook::Jsonize() const
-{
+JsonValue Webhook::Jsonize() const {
   JsonValue payload;
 
-  if(m_webhookArnHasBeenSet)
-  {
-   payload.WithString("webhookArn", m_webhookArn);
-
+  if (m_webhookArnHasBeenSet) {
+    payload.WithString("webhookArn", m_webhookArn);
   }
 
-  if(m_webhookIdHasBeenSet)
-  {
-   payload.WithString("webhookId", m_webhookId);
-
+  if (m_webhookIdHasBeenSet) {
+    payload.WithString("webhookId", m_webhookId);
   }
 
-  if(m_webhookUrlHasBeenSet)
-  {
-   payload.WithString("webhookUrl", m_webhookUrl);
-
+  if (m_webhookUrlHasBeenSet) {
+    payload.WithString("webhookUrl", m_webhookUrl);
   }
 
-  if(m_appIdHasBeenSet)
-  {
-   payload.WithString("appId", m_appId);
-
+  if (m_appIdHasBeenSet) {
+    payload.WithString("appId", m_appId);
   }
 
-  if(m_branchNameHasBeenSet)
-  {
-   payload.WithString("branchName", m_branchName);
-
+  if (m_branchNameHasBeenSet) {
+    payload.WithString("branchName", m_branchName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

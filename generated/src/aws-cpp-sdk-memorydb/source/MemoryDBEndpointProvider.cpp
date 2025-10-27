@@ -5,12 +5,8 @@
 
 #include <aws/memorydb/MemoryDBEndpointProvider.h>
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MemoryDB
-} // namespace Aws
+namespace Aws {
+namespace MemoryDB {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MemoryDB
+}  // namespace Aws

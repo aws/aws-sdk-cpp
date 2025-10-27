@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/UnsubscribeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/UnsubscribeRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String UnsubscribeRequest::SerializePayload() const
-{
+Aws::String UnsubscribeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=Unsubscribe&";
-  if(m_subscriptionArnHasBeenSet)
-  {
+  if (m_subscriptionArnHasBeenSet) {
     ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String UnsubscribeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UnsubscribeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UnsubscribeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/CacheBehaviorPerPath.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-CacheBehaviorPerPath::CacheBehaviorPerPath(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CacheBehaviorPerPath::CacheBehaviorPerPath(JsonView jsonValue) { *this = jsonValue; }
 
-CacheBehaviorPerPath& CacheBehaviorPerPath::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("path"))
-  {
+CacheBehaviorPerPath& CacheBehaviorPerPath::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("behavior"))
-  {
+  if (jsonValue.ValueExists("behavior")) {
     m_behavior = BehaviorEnumMapper::GetBehaviorEnumForName(jsonValue.GetString("behavior"));
     m_behaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CacheBehaviorPerPath::Jsonize() const
-{
+JsonValue CacheBehaviorPerPath::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_behaviorHasBeenSet)
-  {
-   payload.WithString("behavior", BehaviorEnumMapper::GetNameForBehaviorEnum(m_behavior));
+  if (m_behaviorHasBeenSet) {
+    payload.WithString("behavior", BehaviorEnumMapper::GetNameForBehaviorEnum(m_behavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

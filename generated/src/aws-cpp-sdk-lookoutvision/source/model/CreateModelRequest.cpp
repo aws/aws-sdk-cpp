@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/CreateModelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lookoutvision/model/CreateModelRequest.h>
 
 #include <utility>
 
@@ -13,57 +13,40 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateModelRequest::SerializePayload() const
-{
+Aws::String CreateModelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_outputConfigHasBeenSet)
-  {
-   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
-
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateModelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateModelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

@@ -4,69 +4,55 @@
  */
 
 #include <aws/cognito-idp/model/VerifySoftwareTokenResponseType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+namespace VerifySoftwareTokenResponseTypeMapper {
 
-namespace Aws
-{
-  namespace CognitoIdentityProvider
-  {
-    namespace Model
-    {
-      namespace VerifySoftwareTokenResponseTypeMapper
-      {
+static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+VerifySoftwareTokenResponseType GetVerifySoftwareTokenResponseTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SUCCESS_HASH) {
+    return VerifySoftwareTokenResponseType::SUCCESS;
+  } else if (hashCode == ERROR__HASH) {
+    return VerifySoftwareTokenResponseType::ERROR_;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VerifySoftwareTokenResponseType>(hashCode);
+  }
 
+  return VerifySoftwareTokenResponseType::NOT_SET;
+}
 
-        VerifySoftwareTokenResponseType GetVerifySoftwareTokenResponseTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SUCCESS_HASH)
-          {
-            return VerifySoftwareTokenResponseType::SUCCESS;
-          }
-          else if (hashCode == ERROR__HASH)
-          {
-            return VerifySoftwareTokenResponseType::ERROR_;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VerifySoftwareTokenResponseType>(hashCode);
-          }
+Aws::String GetNameForVerifySoftwareTokenResponseType(VerifySoftwareTokenResponseType enumValue) {
+  switch (enumValue) {
+    case VerifySoftwareTokenResponseType::NOT_SET:
+      return {};
+    case VerifySoftwareTokenResponseType::SUCCESS:
+      return "SUCCESS";
+    case VerifySoftwareTokenResponseType::ERROR_:
+      return "ERROR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VerifySoftwareTokenResponseType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVerifySoftwareTokenResponseType(VerifySoftwareTokenResponseType enumValue)
-        {
-          switch(enumValue)
-          {
-          case VerifySoftwareTokenResponseType::NOT_SET:
-            return {};
-          case VerifySoftwareTokenResponseType::SUCCESS:
-            return "SUCCESS";
-          case VerifySoftwareTokenResponseType::ERROR_:
-            return "ERROR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VerifySoftwareTokenResponseTypeMapper
-    } // namespace Model
-  } // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace VerifySoftwareTokenResponseTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

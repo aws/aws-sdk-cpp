@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devicefarm/model/ListSuitesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/devicefarm/model/ListSuitesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSuitesResult::ListSuitesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListSuitesResult::ListSuitesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListSuitesResult& ListSuitesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListSuitesResult& ListSuitesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("suites"))
-  {
+  if (jsonValue.ValueExists("suites")) {
     Aws::Utils::Array<JsonView> suitesJsonList = jsonValue.GetArray("suites");
-    for(unsigned suitesIndex = 0; suitesIndex < suitesJsonList.GetLength(); ++suitesIndex)
-    {
+    for (unsigned suitesIndex = 0; suitesIndex < suitesJsonList.GetLength(); ++suitesIndex) {
       m_suites.push_back(suitesJsonList[suitesIndex].AsObject());
     }
     m_suitesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

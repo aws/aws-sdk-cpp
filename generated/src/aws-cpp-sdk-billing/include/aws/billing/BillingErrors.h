@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/billing/Billing_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/billing/Billing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Billing
-{
-enum class BillingErrors
-{
-  //From Core//
+namespace Aws {
+namespace Billing {
+enum class BillingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class BillingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class BillingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BILLING_VIEW_HEALTH_STATUS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BILLING_VIEW_HEALTH_STATUS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_BILLING_API BillingError : public Aws::Client::AWSError<BillingErrors>
-{
-public:
+class AWS_BILLING_API BillingError : public Aws::Client::AWSError<BillingErrors> {
+ public:
   BillingError() {}
   BillingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BillingErrors>(rhs) {}
   BillingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BillingErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace BillingErrorMapper
-{
-  AWS_BILLING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace BillingErrorMapper {
+AWS_BILLING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Billing
-} // namespace Aws
+}  // namespace Billing
+}  // namespace Aws

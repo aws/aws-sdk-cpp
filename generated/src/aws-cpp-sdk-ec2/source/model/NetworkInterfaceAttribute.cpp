@@ -3,91 +3,71 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/NetworkInterfaceAttribute.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/NetworkInterfaceAttribute.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace NetworkInterfaceAttributeMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace NetworkInterfaceAttributeMapper
-      {
+static const int description_HASH = HashingUtils::HashString("description");
+static const int groupSet_HASH = HashingUtils::HashString("groupSet");
+static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
+static const int attachment_HASH = HashingUtils::HashString("attachment");
+static const int associatePublicIpAddress_HASH = HashingUtils::HashString("associatePublicIpAddress");
 
-        static const int description_HASH = HashingUtils::HashString("description");
-        static const int groupSet_HASH = HashingUtils::HashString("groupSet");
-        static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
-        static const int attachment_HASH = HashingUtils::HashString("attachment");
-        static const int associatePublicIpAddress_HASH = HashingUtils::HashString("associatePublicIpAddress");
+NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == description_HASH) {
+    return NetworkInterfaceAttribute::description;
+  } else if (hashCode == groupSet_HASH) {
+    return NetworkInterfaceAttribute::groupSet;
+  } else if (hashCode == sourceDestCheck_HASH) {
+    return NetworkInterfaceAttribute::sourceDestCheck;
+  } else if (hashCode == attachment_HASH) {
+    return NetworkInterfaceAttribute::attachment;
+  } else if (hashCode == associatePublicIpAddress_HASH) {
+    return NetworkInterfaceAttribute::associatePublicIpAddress;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<NetworkInterfaceAttribute>(hashCode);
+  }
 
+  return NetworkInterfaceAttribute::NOT_SET;
+}
 
-        NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == description_HASH)
-          {
-            return NetworkInterfaceAttribute::description;
-          }
-          else if (hashCode == groupSet_HASH)
-          {
-            return NetworkInterfaceAttribute::groupSet;
-          }
-          else if (hashCode == sourceDestCheck_HASH)
-          {
-            return NetworkInterfaceAttribute::sourceDestCheck;
-          }
-          else if (hashCode == attachment_HASH)
-          {
-            return NetworkInterfaceAttribute::attachment;
-          }
-          else if (hashCode == associatePublicIpAddress_HASH)
-          {
-            return NetworkInterfaceAttribute::associatePublicIpAddress;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NetworkInterfaceAttribute>(hashCode);
-          }
+Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute enumValue) {
+  switch (enumValue) {
+    case NetworkInterfaceAttribute::NOT_SET:
+      return {};
+    case NetworkInterfaceAttribute::description:
+      return "description";
+    case NetworkInterfaceAttribute::groupSet:
+      return "groupSet";
+    case NetworkInterfaceAttribute::sourceDestCheck:
+      return "sourceDestCheck";
+    case NetworkInterfaceAttribute::attachment:
+      return "attachment";
+    case NetworkInterfaceAttribute::associatePublicIpAddress:
+      return "associatePublicIpAddress";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return NetworkInterfaceAttribute::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute enumValue)
-        {
-          switch(enumValue)
-          {
-          case NetworkInterfaceAttribute::NOT_SET:
-            return {};
-          case NetworkInterfaceAttribute::description:
-            return "description";
-          case NetworkInterfaceAttribute::groupSet:
-            return "groupSet";
-          case NetworkInterfaceAttribute::sourceDestCheck:
-            return "sourceDestCheck";
-          case NetworkInterfaceAttribute::attachment:
-            return "attachment";
-          case NetworkInterfaceAttribute::associatePublicIpAddress:
-            return "associatePublicIpAddress";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace NetworkInterfaceAttributeMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace NetworkInterfaceAttributeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

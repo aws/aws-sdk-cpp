@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-ApiPassthrough::ApiPassthrough(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiPassthrough::ApiPassthrough(JsonView jsonValue) { *this = jsonValue; }
 
-ApiPassthrough& ApiPassthrough::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Extensions"))
-  {
+ApiPassthrough& ApiPassthrough::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Extensions")) {
     m_extensions = jsonValue.GetObject("Extensions");
     m_extensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subject"))
-  {
+  if (jsonValue.ValueExists("Subject")) {
     m_subject = jsonValue.GetObject("Subject");
     m_subjectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiPassthrough::Jsonize() const
-{
+JsonValue ApiPassthrough::Jsonize() const {
   JsonValue payload;
 
-  if(m_extensionsHasBeenSet)
-  {
-   payload.WithObject("Extensions", m_extensions.Jsonize());
-
+  if (m_extensionsHasBeenSet) {
+    payload.WithObject("Extensions", m_extensions.Jsonize());
   }
 
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithObject("Subject", m_subject.Jsonize());
-
+  if (m_subjectHasBeenSet) {
+    payload.WithObject("Subject", m_subject.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

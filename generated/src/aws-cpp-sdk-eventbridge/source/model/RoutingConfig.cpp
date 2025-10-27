@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/RoutingConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/RoutingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-RoutingConfig::RoutingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingConfig::RoutingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingConfig& RoutingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FailoverConfig"))
-  {
+RoutingConfig& RoutingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FailoverConfig")) {
     m_failoverConfig = jsonValue.GetObject("FailoverConfig");
     m_failoverConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingConfig::Jsonize() const
-{
+JsonValue RoutingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_failoverConfigHasBeenSet)
-  {
-   payload.WithObject("FailoverConfig", m_failoverConfig.Jsonize());
-
+  if (m_failoverConfigHasBeenSet) {
+    payload.WithObject("FailoverConfig", m_failoverConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

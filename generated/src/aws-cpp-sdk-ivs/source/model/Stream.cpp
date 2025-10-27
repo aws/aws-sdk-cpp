@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs/model/Stream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs/model/Stream.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
+namespace Aws {
+namespace IVS {
+namespace Model {
 
-Stream::Stream(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Stream::Stream(JsonView jsonValue) { *this = jsonValue; }
 
-Stream& Stream::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channelArn"))
-  {
+Stream& Stream::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channelArn")) {
     m_channelArn = jsonValue.GetString("channelArn");
     m_channelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("health"))
-  {
+  if (jsonValue.ValueExists("health")) {
     m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
     m_healthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("playbackUrl"))
-  {
+  if (jsonValue.ValueExists("playbackUrl")) {
     m_playbackUrl = jsonValue.GetString("playbackUrl");
     m_playbackUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetString("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = StreamStateMapper::GetStreamStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamId"))
-  {
+  if (jsonValue.ValueExists("streamId")) {
     m_streamId = jsonValue.GetString("streamId");
     m_streamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("viewerCount"))
-  {
+  if (jsonValue.ValueExists("viewerCount")) {
     m_viewerCount = jsonValue.GetInt64("viewerCount");
     m_viewerCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Stream::Jsonize() const
-{
+JsonValue Stream::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelArnHasBeenSet)
-  {
-   payload.WithString("channelArn", m_channelArn);
-
+  if (m_channelArnHasBeenSet) {
+    payload.WithString("channelArn", m_channelArn);
   }
 
-  if(m_healthHasBeenSet)
-  {
-   payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
+  if (m_healthHasBeenSet) {
+    payload.WithString("health", StreamHealthMapper::GetNameForStreamHealth(m_health));
   }
 
-  if(m_playbackUrlHasBeenSet)
-  {
-   payload.WithString("playbackUrl", m_playbackUrl);
-
+  if (m_playbackUrlHasBeenSet) {
+    payload.WithString("playbackUrl", m_playbackUrl);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", StreamStateMapper::GetNameForStreamState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", StreamStateMapper::GetNameForStreamState(m_state));
   }
 
-  if(m_streamIdHasBeenSet)
-  {
-   payload.WithString("streamId", m_streamId);
-
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("streamId", m_streamId);
   }
 
-  if(m_viewerCountHasBeenSet)
-  {
-   payload.WithInt64("viewerCount", m_viewerCount);
-
+  if (m_viewerCountHasBeenSet) {
+    payload.WithInt64("viewerCount", m_viewerCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

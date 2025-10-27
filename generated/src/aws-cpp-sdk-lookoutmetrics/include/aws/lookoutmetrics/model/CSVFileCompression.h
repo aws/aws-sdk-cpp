@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
-  enum class CSVFileCompression
-  {
-    NOT_SET,
-    NONE,
-    GZIP
-  };
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
+enum class CSVFileCompression { NOT_SET, NONE, GZIP };
 
-namespace CSVFileCompressionMapper
-{
+namespace CSVFileCompressionMapper {
 AWS_LOOKOUTMETRICS_API CSVFileCompression GetCSVFileCompressionForName(const Aws::String& name);
 
 AWS_LOOKOUTMETRICS_API Aws::String GetNameForCSVFileCompression(CSVFileCompression value);
-} // namespace CSVFileCompressionMapper
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace CSVFileCompressionMapper
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

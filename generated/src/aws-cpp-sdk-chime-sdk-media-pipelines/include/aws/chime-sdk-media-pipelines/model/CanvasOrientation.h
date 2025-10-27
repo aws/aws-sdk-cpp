@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class CanvasOrientation
-  {
-    NOT_SET,
-    Landscape,
-    Portrait
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class CanvasOrientation { NOT_SET, Landscape, Portrait };
 
-namespace CanvasOrientationMapper
-{
+namespace CanvasOrientationMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API CanvasOrientation GetCanvasOrientationForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForCanvasOrientation(CanvasOrientation value);
-} // namespace CanvasOrientationMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace CanvasOrientationMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

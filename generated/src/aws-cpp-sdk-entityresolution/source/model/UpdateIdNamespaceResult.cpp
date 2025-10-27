@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/entityresolution/model/UpdateIdNamespaceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/entityresolution/model/UpdateIdNamespaceResult.h>
 
 #include <utility>
 
@@ -17,76 +17,60 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateIdNamespaceResult::UpdateIdNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateIdNamespaceResult::UpdateIdNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateIdNamespaceResult& UpdateIdNamespaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateIdNamespaceResult& UpdateIdNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("idNamespaceName"))
-  {
+  if (jsonValue.ValueExists("idNamespaceName")) {
     m_idNamespaceName = jsonValue.GetString("idNamespaceName");
     m_idNamespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idNamespaceArn"))
-  {
+  if (jsonValue.ValueExists("idNamespaceArn")) {
     m_idNamespaceArn = jsonValue.GetString("idNamespaceArn");
     m_idNamespaceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputSourceConfig"))
-  {
+  if (jsonValue.ValueExists("inputSourceConfig")) {
     Aws::Utils::Array<JsonView> inputSourceConfigJsonList = jsonValue.GetArray("inputSourceConfig");
-    for(unsigned inputSourceConfigIndex = 0; inputSourceConfigIndex < inputSourceConfigJsonList.GetLength(); ++inputSourceConfigIndex)
-    {
+    for (unsigned inputSourceConfigIndex = 0; inputSourceConfigIndex < inputSourceConfigJsonList.GetLength(); ++inputSourceConfigIndex) {
       m_inputSourceConfig.push_back(inputSourceConfigJsonList[inputSourceConfigIndex].AsObject());
     }
     m_inputSourceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("idMappingWorkflowProperties"))
-  {
+  if (jsonValue.ValueExists("idMappingWorkflowProperties")) {
     Aws::Utils::Array<JsonView> idMappingWorkflowPropertiesJsonList = jsonValue.GetArray("idMappingWorkflowProperties");
-    for(unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength(); ++idMappingWorkflowPropertiesIndex)
-    {
+    for (unsigned idMappingWorkflowPropertiesIndex = 0; idMappingWorkflowPropertiesIndex < idMappingWorkflowPropertiesJsonList.GetLength();
+         ++idMappingWorkflowPropertiesIndex) {
       m_idMappingWorkflowProperties.push_back(idMappingWorkflowPropertiesJsonList[idMappingWorkflowPropertiesIndex].AsObject());
     }
     m_idMappingWorkflowPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

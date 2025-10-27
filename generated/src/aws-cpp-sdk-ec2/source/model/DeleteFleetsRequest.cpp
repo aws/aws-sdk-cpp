@@ -3,35 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteFleetsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteFleetsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteFleetsRequest::SerializePayload() const
-{
+Aws::String DeleteFleetsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteFleets&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_fleetIdsHasBeenSet)
-  {
+  if (m_fleetIdsHasBeenSet) {
     unsigned fleetIdsCount = 1;
-    for(auto& item : m_fleetIds)
-    {
-      ss << "FleetId." << fleetIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_fleetIds) {
+      ss << "FleetId." << fleetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       fleetIdsCount++;
     }
   }
 
-  if(m_terminateInstancesHasBeenSet)
-  {
+  if (m_terminateInstancesHasBeenSet) {
     ss << "TerminateInstances=" << std::boolalpha << m_terminateInstances << "&";
   }
 
@@ -39,8 +33,4 @@ Aws::String DeleteFleetsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteFleetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteFleetsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

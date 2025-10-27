@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/ChatSyncRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qbusiness/model/ChatSyncRequest.h>
 
 #include <utility>
 
@@ -15,98 +15,69 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ChatSyncRequest::SerializePayload() const
-{
+Aws::String ChatSyncRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userMessageHasBeenSet)
-  {
-   payload.WithString("userMessage", m_userMessage);
-
+  if (m_userMessageHasBeenSet) {
+    payload.WithString("userMessage", m_userMessage);
   }
 
-  if(m_attachmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
-   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
-   {
-     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
-   }
-   payload.WithArray("attachments", std::move(attachmentsJsonList));
-
+  if (m_attachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+    }
+    payload.WithArray("attachments", std::move(attachmentsJsonList));
   }
 
-  if(m_actionExecutionHasBeenSet)
-  {
-   payload.WithObject("actionExecution", m_actionExecution.Jsonize());
-
+  if (m_actionExecutionHasBeenSet) {
+    payload.WithObject("actionExecution", m_actionExecution.Jsonize());
   }
 
-  if(m_authChallengeResponseHasBeenSet)
-  {
-   payload.WithObject("authChallengeResponse", m_authChallengeResponse.Jsonize());
-
+  if (m_authChallengeResponseHasBeenSet) {
+    payload.WithObject("authChallengeResponse", m_authChallengeResponse.Jsonize());
   }
 
-  if(m_conversationIdHasBeenSet)
-  {
-   payload.WithString("conversationId", m_conversationId);
-
+  if (m_conversationIdHasBeenSet) {
+    payload.WithString("conversationId", m_conversationId);
   }
 
-  if(m_parentMessageIdHasBeenSet)
-  {
-   payload.WithString("parentMessageId", m_parentMessageId);
-
+  if (m_parentMessageIdHasBeenSet) {
+    payload.WithString("parentMessageId", m_parentMessageId);
   }
 
-  if(m_attributeFilterHasBeenSet)
-  {
-   payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
-
+  if (m_attributeFilterHasBeenSet) {
+    payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
   }
 
-  if(m_chatModeHasBeenSet)
-  {
-   payload.WithString("chatMode", ChatModeMapper::GetNameForChatMode(m_chatMode));
+  if (m_chatModeHasBeenSet) {
+    payload.WithString("chatMode", ChatModeMapper::GetNameForChatMode(m_chatMode));
   }
 
-  if(m_chatModeConfigurationHasBeenSet)
-  {
-   payload.WithObject("chatModeConfiguration", m_chatModeConfiguration.Jsonize());
-
+  if (m_chatModeConfigurationHasBeenSet) {
+    payload.WithObject("chatModeConfiguration", m_chatModeConfiguration.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-void ChatSyncRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_userIdHasBeenSet)
-    {
-      ss << m_userId;
-      uri.AddQueryStringParameter("userId", ss.str());
+void ChatSyncRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_userIdHasBeenSet) {
+    ss << m_userId;
+    uri.AddQueryStringParameter("userId", ss.str());
+    ss.str("");
+  }
+
+  if (m_userGroupsHasBeenSet) {
+    for (const auto& item : m_userGroups) {
+      ss << item;
+      uri.AddQueryStringParameter("userGroups", ss.str());
       ss.str("");
     }
-
-    if(m_userGroupsHasBeenSet)
-    {
-      for(const auto& item : m_userGroups)
-      {
-        ss << item;
-        uri.AddQueryStringParameter("userGroups", ss.str());
-        ss.str("");
-      }
-    }
-
+  }
 }
-
-
-

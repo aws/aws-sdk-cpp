@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/schemas/model/PutCodeBindingRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/schemas/model/PutCodeBindingRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String PutCodeBindingRequest::SerializePayload() const
-{
-  return {};
+Aws::String PutCodeBindingRequest::SerializePayload() const { return {}; }
+
+void PutCodeBindingRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_schemaVersionHasBeenSet) {
+    ss << m_schemaVersion;
+    uri.AddQueryStringParameter("schemaVersion", ss.str());
+    ss.str("");
+  }
 }
-
-void PutCodeBindingRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_schemaVersionHasBeenSet)
-    {
-      ss << m_schemaVersion;
-      uri.AddQueryStringParameter("schemaVersion", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p>Replica-specific configuration for the provisioned throughput.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProvisionedThroughputOverride">AWS
+ * API Reference</a></p>
+ */
+class AwsDynamoDbTableProvisionedThroughputOverride {
+ public:
+  AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride() = default;
+  AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Replica-specific configuration for the provisioned throughput.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProvisionedThroughputOverride">AWS
-   * API Reference</a></p>
+   * <p>The read capacity units for the replica.</p>
    */
-  class AwsDynamoDbTableProvisionedThroughputOverride
-  {
-  public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride() = default;
-    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetReadCapacityUnits() const { return m_readCapacityUnits; }
+  inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
+  inline void SetReadCapacityUnits(int value) {
+    m_readCapacityUnitsHasBeenSet = true;
+    m_readCapacityUnits = value;
+  }
+  inline AwsDynamoDbTableProvisionedThroughputOverride& WithReadCapacityUnits(int value) {
+    SetReadCapacityUnits(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_readCapacityUnits{0};
+  bool m_readCapacityUnitsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The read capacity units for the replica.</p>
-     */
-    inline int GetReadCapacityUnits() const { return m_readCapacityUnits; }
-    inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
-    inline void SetReadCapacityUnits(int value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
-    inline AwsDynamoDbTableProvisionedThroughputOverride& WithReadCapacityUnits(int value) { SetReadCapacityUnits(value); return *this;}
-    ///@}
-  private:
-
-    int m_readCapacityUnits{0};
-    bool m_readCapacityUnitsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

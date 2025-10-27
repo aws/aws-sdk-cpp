@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/ServiceQuotaExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutvision/model/ServiceQuotaExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ServiceQuotaExceededException& ServiceQuotaExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuotaCode"))
-  {
+  if (jsonValue.ValueExists("QuotaCode")) {
     m_quotaCode = jsonValue.GetString("QuotaCode");
     m_quotaCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCode"))
-  {
+  if (jsonValue.ValueExists("ServiceCode")) {
     m_serviceCode = jsonValue.GetString("ServiceCode");
     m_serviceCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceQuotaExceededException::Jsonize() const
-{
+JsonValue ServiceQuotaExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("QuotaCode", m_quotaCode);
-
+  if (m_quotaCodeHasBeenSet) {
+    payload.WithString("QuotaCode", m_quotaCode);
   }
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("ServiceCode", m_serviceCode);
-
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("ServiceCode", m_serviceCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

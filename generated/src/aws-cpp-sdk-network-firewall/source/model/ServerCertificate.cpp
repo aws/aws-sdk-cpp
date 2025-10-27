@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/ServerCertificate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/ServerCertificate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-ServerCertificate::ServerCertificate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerCertificate::ServerCertificate(JsonView jsonValue) { *this = jsonValue; }
 
-ServerCertificate& ServerCertificate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+ServerCertificate& ServerCertificate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerCertificate::Jsonize() const
-{
+JsonValue ServerCertificate::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/robomaker/RoboMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
-  enum class FailureBehavior
-  {
-    NOT_SET,
-    Fail,
-    Continue
-  };
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
+enum class FailureBehavior { NOT_SET, Fail, Continue };
 
-namespace FailureBehaviorMapper
-{
+namespace FailureBehaviorMapper {
 AWS_ROBOMAKER_API FailureBehavior GetFailureBehaviorForName(const Aws::String& name);
 
 AWS_ROBOMAKER_API Aws::String GetNameForFailureBehavior(FailureBehavior value);
-} // namespace FailureBehaviorMapper
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace FailureBehaviorMapper
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

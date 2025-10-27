@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ScriptDetails::ScriptDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScriptDetails::ScriptDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ScriptDetails& ScriptDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScriptS3Location"))
-  {
+ScriptDetails& ScriptDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScriptS3Location")) {
     m_scriptS3Location = jsonValue.GetObject("ScriptS3Location");
     m_scriptS3LocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutablePath"))
-  {
+  if (jsonValue.ValueExists("ExecutablePath")) {
     m_executablePath = jsonValue.GetString("ExecutablePath");
     m_executablePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutableParameters"))
-  {
+  if (jsonValue.ValueExists("ExecutableParameters")) {
     m_executableParameters = jsonValue.GetString("ExecutableParameters");
     m_executableParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeoutInSeconds"))
-  {
+  if (jsonValue.ValueExists("TimeoutInSeconds")) {
     m_timeoutInSeconds = jsonValue.GetInteger("TimeoutInSeconds");
     m_timeoutInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScriptDetails::Jsonize() const
-{
+JsonValue ScriptDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_scriptS3LocationHasBeenSet)
-  {
-   payload.WithObject("ScriptS3Location", m_scriptS3Location.Jsonize());
-
+  if (m_scriptS3LocationHasBeenSet) {
+    payload.WithObject("ScriptS3Location", m_scriptS3Location.Jsonize());
   }
 
-  if(m_executablePathHasBeenSet)
-  {
-   payload.WithString("ExecutablePath", m_executablePath);
-
+  if (m_executablePathHasBeenSet) {
+    payload.WithString("ExecutablePath", m_executablePath);
   }
 
-  if(m_executableParametersHasBeenSet)
-  {
-   payload.WithString("ExecutableParameters", m_executableParameters);
-
+  if (m_executableParametersHasBeenSet) {
+    payload.WithString("ExecutableParameters", m_executableParameters);
   }
 
-  if(m_timeoutInSecondsHasBeenSet)
-  {
-   payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
-
+  if (m_timeoutInSecondsHasBeenSet) {
+    payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

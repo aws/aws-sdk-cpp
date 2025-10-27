@@ -10,39 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListResourceScanRelatedResourcesRequest::SerializePayload() const
-{
+Aws::String ListResourceScanRelatedResourcesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListResourceScanRelatedResources&";
-  if(m_resourceScanIdHasBeenSet)
-  {
+  if (m_resourceScanIdHasBeenSet) {
     ss << "ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
   }
 
-  if(m_resourcesHasBeenSet)
-  {
-    if (m_resources.empty())
-    {
+  if (m_resourcesHasBeenSet) {
+    if (m_resources.empty()) {
       ss << "Resources=&";
-    }
-    else
-    {
+    } else {
       unsigned resourcesCount = 1;
-      for(auto& item : m_resources)
-      {
+      for (auto& item : m_resources) {
         item.OutputToStream(ss, "Resources.member.", resourcesCount, "");
         resourcesCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -50,8 +41,4 @@ Aws::String ListResourceScanRelatedResourcesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListResourceScanRelatedResourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListResourceScanRelatedResourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

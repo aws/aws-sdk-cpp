@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/ListPermissionSetsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/ListPermissionSetsRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListPermissionSetsRequest::SerializePayload() const
-{
+Aws::String ListPermissionSetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
+  if (m_instanceArnHasBeenSet) {
+    payload.WithString("InstanceArn", m_instanceArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListPermissionSetsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListPermissionSetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SWBExternalService.ListPermissionSets"));
   return headers;
-
 }
-
-
-
-

@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-SyncConfig::SyncConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SyncConfig::SyncConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SyncConfig& SyncConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("conflictHandler"))
-  {
+SyncConfig& SyncConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("conflictHandler")) {
     m_conflictHandler = ConflictHandlerTypeMapper::GetConflictHandlerTypeForName(jsonValue.GetString("conflictHandler"));
     m_conflictHandlerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conflictDetection"))
-  {
+  if (jsonValue.ValueExists("conflictDetection")) {
     m_conflictDetection = ConflictDetectionTypeMapper::GetConflictDetectionTypeForName(jsonValue.GetString("conflictDetection"));
     m_conflictDetectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaConflictHandlerConfig"))
-  {
+  if (jsonValue.ValueExists("lambdaConflictHandlerConfig")) {
     m_lambdaConflictHandlerConfig = jsonValue.GetObject("lambdaConflictHandlerConfig");
     m_lambdaConflictHandlerConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SyncConfig::Jsonize() const
-{
+JsonValue SyncConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_conflictHandlerHasBeenSet)
-  {
-   payload.WithString("conflictHandler", ConflictHandlerTypeMapper::GetNameForConflictHandlerType(m_conflictHandler));
+  if (m_conflictHandlerHasBeenSet) {
+    payload.WithString("conflictHandler", ConflictHandlerTypeMapper::GetNameForConflictHandlerType(m_conflictHandler));
   }
 
-  if(m_conflictDetectionHasBeenSet)
-  {
-   payload.WithString("conflictDetection", ConflictDetectionTypeMapper::GetNameForConflictDetectionType(m_conflictDetection));
+  if (m_conflictDetectionHasBeenSet) {
+    payload.WithString("conflictDetection", ConflictDetectionTypeMapper::GetNameForConflictDetectionType(m_conflictDetection));
   }
 
-  if(m_lambdaConflictHandlerConfigHasBeenSet)
-  {
-   payload.WithObject("lambdaConflictHandlerConfig", m_lambdaConflictHandlerConfig.Jsonize());
-
+  if (m_lambdaConflictHandlerConfigHasBeenSet) {
+    payload.WithObject("lambdaConflictHandlerConfig", m_lambdaConflictHandlerConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

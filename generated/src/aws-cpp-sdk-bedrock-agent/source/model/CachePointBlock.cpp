@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-CachePointBlock::CachePointBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CachePointBlock::CachePointBlock(JsonView jsonValue) { *this = jsonValue; }
 
-CachePointBlock& CachePointBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+CachePointBlock& CachePointBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = CachePointTypeMapper::GetCachePointTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CachePointBlock::Jsonize() const
-{
+JsonValue CachePointBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CachePointTypeMapper::GetNameForCachePointType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CachePointTypeMapper::GetNameForCachePointType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

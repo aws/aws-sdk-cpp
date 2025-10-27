@@ -12,36 +12,25 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSipRuleRequest::SerializePayload() const
-{
+Aws::String UpdateSipRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_disabledHasBeenSet)
-  {
-   payload.WithBool("Disabled", m_disabled);
-
+  if (m_disabledHasBeenSet) {
+    payload.WithBool("Disabled", m_disabled);
   }
 
-  if(m_targetApplicationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
-   for(unsigned targetApplicationsIndex = 0; targetApplicationsIndex < targetApplicationsJsonList.GetLength(); ++targetApplicationsIndex)
-   {
-     targetApplicationsJsonList[targetApplicationsIndex].AsObject(m_targetApplications[targetApplicationsIndex].Jsonize());
-   }
-   payload.WithArray("TargetApplications", std::move(targetApplicationsJsonList));
-
+  if (m_targetApplicationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
+    for (unsigned targetApplicationsIndex = 0; targetApplicationsIndex < targetApplicationsJsonList.GetLength();
+         ++targetApplicationsIndex) {
+      targetApplicationsJsonList[targetApplicationsIndex].AsObject(m_targetApplications[targetApplicationsIndex].Jsonize());
+    }
+    payload.WithArray("TargetApplications", std::move(targetApplicationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

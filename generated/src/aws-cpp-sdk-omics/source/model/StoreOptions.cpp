@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/StoreOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/StoreOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-StoreOptions::StoreOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StoreOptions::StoreOptions(JsonView jsonValue) { *this = jsonValue; }
 
-StoreOptions& StoreOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tsvStoreOptions"))
-  {
+StoreOptions& StoreOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tsvStoreOptions")) {
     m_tsvStoreOptions = jsonValue.GetObject("tsvStoreOptions");
     m_tsvStoreOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StoreOptions::Jsonize() const
-{
+JsonValue StoreOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_tsvStoreOptionsHasBeenSet)
-  {
-   payload.WithObject("tsvStoreOptions", m_tsvStoreOptions.Jsonize());
-
+  if (m_tsvStoreOptionsHasBeenSet) {
+    payload.WithObject("tsvStoreOptions", m_tsvStoreOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-TaskTemplateFieldIdentifier& TaskTemplateFieldIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+TaskTemplateFieldIdentifier& TaskTemplateFieldIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TaskTemplateFieldIdentifier::Jsonize() const
-{
+JsonValue TaskTemplateFieldIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

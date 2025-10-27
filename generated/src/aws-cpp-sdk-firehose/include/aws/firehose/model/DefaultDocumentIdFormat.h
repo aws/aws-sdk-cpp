@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class DefaultDocumentIdFormat
-  {
-    NOT_SET,
-    FIREHOSE_DEFAULT,
-    NO_DOCUMENT_ID
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class DefaultDocumentIdFormat { NOT_SET, FIREHOSE_DEFAULT, NO_DOCUMENT_ID };
 
-namespace DefaultDocumentIdFormatMapper
-{
+namespace DefaultDocumentIdFormatMapper {
 AWS_FIREHOSE_API DefaultDocumentIdFormat GetDefaultDocumentIdFormatForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForDefaultDocumentIdFormat(DefaultDocumentIdFormat value);
-} // namespace DefaultDocumentIdFormatMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace DefaultDocumentIdFormatMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

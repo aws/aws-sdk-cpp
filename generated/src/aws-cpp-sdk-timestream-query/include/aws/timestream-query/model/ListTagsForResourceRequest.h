@@ -4,82 +4,95 @@
  */
 
 #pragma once
-#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-query/TimestreamQueryRequest.h>
+#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public TimestreamQueryRequest {
+ public:
+  AWS_TIMESTREAMQUERY_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_TIMESTREAMQUERY_API Aws::String SerializePayload() const override;
+
+  AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The Timestream resource with tags to be listed. This value is an Amazon
+   * Resource Name (ARN).</p>
    */
-  class ListTagsForResourceRequest : public TimestreamQueryRequest
-  {
-  public:
-    AWS_TIMESTREAMQUERY_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+  inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+  template <typename ResourceARNT = Aws::String>
+  void SetResourceARN(ResourceARNT&& value) {
+    m_resourceARNHasBeenSet = true;
+    m_resourceARN = std::forward<ResourceARNT>(value);
+  }
+  template <typename ResourceARNT = Aws::String>
+  ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) {
+    SetResourceARN(std::forward<ResourceARNT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+  ///@{
+  /**
+   * <p>The maximum number of tags to return.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListTagsForResourceRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_TIMESTREAMQUERY_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A pagination token to resume pagination.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTagsForResourceRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceARN;
+  bool m_resourceARNHasBeenSet = false;
 
-    AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN).</p>
-     */
-    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
-    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    template<typename ResourceARNT = Aws::String>
-    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
-    template<typename ResourceARNT = Aws::String>
-    ListTagsForResourceRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of tags to return.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A pagination token to resume pagination.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListTagsForResourceRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

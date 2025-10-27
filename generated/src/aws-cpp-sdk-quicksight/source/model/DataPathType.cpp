@@ -3,48 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DataPathType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DataPathType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DataPathType::DataPathType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataPathType::DataPathType(JsonView jsonValue) { *this = jsonValue; }
 
-DataPathType& DataPathType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PivotTableDataPathType"))
-  {
-    m_pivotTableDataPathType = PivotTableDataPathTypeMapper::GetPivotTableDataPathTypeForName(jsonValue.GetString("PivotTableDataPathType"));
+DataPathType& DataPathType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PivotTableDataPathType")) {
+    m_pivotTableDataPathType =
+        PivotTableDataPathTypeMapper::GetPivotTableDataPathTypeForName(jsonValue.GetString("PivotTableDataPathType"));
     m_pivotTableDataPathTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataPathType::Jsonize() const
-{
+JsonValue DataPathType::Jsonize() const {
   JsonValue payload;
 
-  if(m_pivotTableDataPathTypeHasBeenSet)
-  {
-   payload.WithString("PivotTableDataPathType", PivotTableDataPathTypeMapper::GetNameForPivotTableDataPathType(m_pivotTableDataPathType));
+  if (m_pivotTableDataPathTypeHasBeenSet) {
+    payload.WithString("PivotTableDataPathType", PivotTableDataPathTypeMapper::GetNameForPivotTableDataPathType(m_pivotTableDataPathType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

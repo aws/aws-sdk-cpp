@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-EventFilter::EventFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventFilter::EventFilter(JsonView jsonValue) { *this = jsonValue; }
 
-EventFilter& EventFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Source"))
-  {
+EventFilter& EventFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Source")) {
     m_source = jsonValue.GetString("Source");
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventFilter::Jsonize() const
-{
+JsonValue EventFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("Source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("Source", m_source);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

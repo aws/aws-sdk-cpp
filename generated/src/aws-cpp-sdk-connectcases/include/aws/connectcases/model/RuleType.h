@@ -7,24 +7,16 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
-  enum class RuleType
-  {
-    NOT_SET,
-    Required
-  };
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
+enum class RuleType { NOT_SET, Required };
 
-namespace RuleTypeMapper
-{
+namespace RuleTypeMapper {
 AWS_CONNECTCASES_API RuleType GetRuleTypeForName(const Aws::String& name);
 
 AWS_CONNECTCASES_API Aws::String GetNameForRuleType(RuleType value);
-} // namespace RuleTypeMapper
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace RuleTypeMapper
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

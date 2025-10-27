@@ -11,32 +11,26 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::MarketplaceEntitlementService;
 
-namespace Aws
-{
-namespace MarketplaceEntitlementService
-{
-namespace MarketplaceEntitlementServiceErrorMapper
-{
+namespace Aws {
+namespace MarketplaceEntitlementService {
+namespace MarketplaceEntitlementServiceErrorMapper {
 
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
+  if (hashCode == INVALID_PARAMETER_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INVALID_PARAMETER),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVICE_ERROR_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INTERNAL_SERVICE_ERROR),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace MarketplaceEntitlementServiceErrorMapper
-} // namespace MarketplaceEntitlementService
-} // namespace Aws
+}  // namespace MarketplaceEntitlementServiceErrorMapper
+}  // namespace MarketplaceEntitlementService
+}  // namespace Aws

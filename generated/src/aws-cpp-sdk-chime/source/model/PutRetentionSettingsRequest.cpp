@@ -12,19 +12,12 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRetentionSettingsRequest::SerializePayload() const
-{
+Aws::String PutRetentionSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_retentionSettingsHasBeenSet)
-  {
-   payload.WithObject("RetentionSettings", m_retentionSettings.Jsonize());
-
+  if (m_retentionSettingsHasBeenSet) {
+    payload.WithObject("RetentionSettings", m_retentionSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

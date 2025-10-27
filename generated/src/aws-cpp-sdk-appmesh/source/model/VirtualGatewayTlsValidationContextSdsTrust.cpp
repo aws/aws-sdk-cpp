@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayTlsValidationContextSdsTrust& VirtualGatewayTlsValidationContextSdsTrust::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("secretName"))
-  {
+VirtualGatewayTlsValidationContextSdsTrust& VirtualGatewayTlsValidationContextSdsTrust::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("secretName")) {
     m_secretName = jsonValue.GetString("secretName");
     m_secretNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayTlsValidationContextSdsTrust::Jsonize() const
-{
+JsonValue VirtualGatewayTlsValidationContextSdsTrust::Jsonize() const {
   JsonValue payload;
 
-  if(m_secretNameHasBeenSet)
-  {
-   payload.WithString("secretName", m_secretName);
-
+  if (m_secretNameHasBeenSet) {
+    payload.WithString("secretName", m_secretName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

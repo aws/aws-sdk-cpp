@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoSync
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoSync {
+namespace Model {
 
-IdentityPoolUsage::IdentityPoolUsage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdentityPoolUsage::IdentityPoolUsage(JsonView jsonValue) { *this = jsonValue; }
 
-IdentityPoolUsage& IdentityPoolUsage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IdentityPoolId"))
-  {
+IdentityPoolUsage& IdentityPoolUsage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IdentityPoolId")) {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
     m_identityPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SyncSessionsCount"))
-  {
+  if (jsonValue.ValueExists("SyncSessionsCount")) {
     m_syncSessionsCount = jsonValue.GetInt64("SyncSessionsCount");
     m_syncSessionsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataStorage"))
-  {
+  if (jsonValue.ValueExists("DataStorage")) {
     m_dataStorage = jsonValue.GetInt64("DataStorage");
     m_dataStorageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdentityPoolUsage::Jsonize() const
-{
+JsonValue IdentityPoolUsage::Jsonize() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_syncSessionsCountHasBeenSet)
-  {
-   payload.WithInt64("SyncSessionsCount", m_syncSessionsCount);
-
+  if (m_syncSessionsCountHasBeenSet) {
+    payload.WithInt64("SyncSessionsCount", m_syncSessionsCount);
   }
 
-  if(m_dataStorageHasBeenSet)
-  {
-   payload.WithInt64("DataStorage", m_dataStorage);
-
+  if (m_dataStorageHasBeenSet) {
+    payload.WithInt64("DataStorage", m_dataStorage);
   }
 
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  if (m_lastModifiedDateHasBeenSet) {
+    payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoSync
+}  // namespace Aws

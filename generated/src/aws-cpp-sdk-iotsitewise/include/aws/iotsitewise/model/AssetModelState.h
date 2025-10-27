@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class AssetModelState
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    UPDATING,
-    PROPAGATING,
-    DELETING,
-    FAILED
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class AssetModelState { NOT_SET, CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED };
 
-namespace AssetModelStateMapper
-{
+namespace AssetModelStateMapper {
 AWS_IOTSITEWISE_API AssetModelState GetAssetModelStateForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForAssetModelState(AssetModelState value);
-} // namespace AssetModelStateMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace AssetModelStateMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

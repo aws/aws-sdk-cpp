@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsAppSyncGraphQlApiOpenIdConnectConfigDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsAppSyncGraphQlApiOpenIdConnectConfigDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AuthTtL"))
-  {
+AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AuthTtL")) {
     m_authTtL = jsonValue.GetInt64("AuthTtL");
     m_authTtLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientId"))
-  {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IatTtL"))
-  {
+  if (jsonValue.ValueExists("IatTtL")) {
     m_iatTtL = jsonValue.GetInt64("IatTtL");
     m_iatTtLHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Issuer"))
-  {
+  if (jsonValue.ValueExists("Issuer")) {
     m_issuer = jsonValue.GetString("Issuer");
     m_issuerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::Jsonize() const
-{
+JsonValue AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_authTtLHasBeenSet)
-  {
-   payload.WithInt64("AuthTtL", m_authTtL);
-
+  if (m_authTtLHasBeenSet) {
+    payload.WithInt64("AuthTtL", m_authTtL);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_iatTtLHasBeenSet)
-  {
-   payload.WithInt64("IatTtL", m_iatTtL);
-
+  if (m_iatTtLHasBeenSet) {
+    payload.WithInt64("IatTtL", m_iatTtL);
   }
 
-  if(m_issuerHasBeenSet)
-  {
-   payload.WithString("Issuer", m_issuer);
-
+  if (m_issuerHasBeenSet) {
+    payload.WithString("Issuer", m_issuer);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

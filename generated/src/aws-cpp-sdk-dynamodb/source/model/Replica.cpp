@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/Replica.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/Replica.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-Replica::Replica(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Replica::Replica(JsonView jsonValue) { *this = jsonValue; }
 
-Replica& Replica::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RegionName"))
-  {
+Replica& Replica::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RegionName")) {
     m_regionName = jsonValue.GetString("RegionName");
     m_regionNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Replica::Jsonize() const
-{
+JsonValue Replica::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionNameHasBeenSet)
-  {
-   payload.WithString("RegionName", m_regionName);
-
+  if (m_regionNameHasBeenSet) {
+    payload.WithString("RegionName", m_regionName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

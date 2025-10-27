@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class AggregatedUtterancesSortAttribute
-  {
-    NOT_SET,
-    HitCount,
-    MissedCount
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class AggregatedUtterancesSortAttribute { NOT_SET, HitCount, MissedCount };
 
-namespace AggregatedUtterancesSortAttributeMapper
-{
+namespace AggregatedUtterancesSortAttributeMapper {
 AWS_LEXMODELSV2_API AggregatedUtterancesSortAttribute GetAggregatedUtterancesSortAttributeForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForAggregatedUtterancesSortAttribute(AggregatedUtterancesSortAttribute value);
-} // namespace AggregatedUtterancesSortAttributeMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace AggregatedUtterancesSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

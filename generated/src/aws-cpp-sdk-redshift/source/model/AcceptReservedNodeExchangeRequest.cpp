@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String AcceptReservedNodeExchangeRequest::SerializePayload() const
-{
+Aws::String AcceptReservedNodeExchangeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AcceptReservedNodeExchange&";
-  if(m_reservedNodeIdHasBeenSet)
-  {
+  if (m_reservedNodeIdHasBeenSet) {
     ss << "ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
   }
 
-  if(m_targetReservedNodeOfferingIdHasBeenSet)
-  {
+  if (m_targetReservedNodeOfferingIdHasBeenSet) {
     ss << "TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AcceptReservedNodeExchangeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AcceptReservedNodeExchangeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AcceptReservedNodeExchangeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

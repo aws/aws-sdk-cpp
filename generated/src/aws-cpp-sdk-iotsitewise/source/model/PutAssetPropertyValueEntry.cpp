@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/PutAssetPropertyValueEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/PutAssetPropertyValueEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-PutAssetPropertyValueEntry::PutAssetPropertyValueEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PutAssetPropertyValueEntry::PutAssetPropertyValueEntry(JsonView jsonValue) { *this = jsonValue; }
 
-PutAssetPropertyValueEntry& PutAssetPropertyValueEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entryId"))
-  {
+PutAssetPropertyValueEntry& PutAssetPropertyValueEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entryId")) {
     m_entryId = jsonValue.GetString("entryId");
     m_entryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assetId"))
-  {
+  if (jsonValue.ValueExists("assetId")) {
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyId"))
-  {
+  if (jsonValue.ValueExists("propertyId")) {
     m_propertyId = jsonValue.GetString("propertyId");
     m_propertyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyAlias"))
-  {
+  if (jsonValue.ValueExists("propertyAlias")) {
     m_propertyAlias = jsonValue.GetString("propertyAlias");
     m_propertyAliasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyValues"))
-  {
+  if (jsonValue.ValueExists("propertyValues")) {
     Aws::Utils::Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
-    for(unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex)
-    {
+    for (unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex) {
       m_propertyValues.push_back(propertyValuesJsonList[propertyValuesIndex].AsObject());
     }
     m_propertyValuesHasBeenSet = true;
@@ -57,48 +44,36 @@ PutAssetPropertyValueEntry& PutAssetPropertyValueEntry::operator =(JsonView json
   return *this;
 }
 
-JsonValue PutAssetPropertyValueEntry::Jsonize() const
-{
+JsonValue PutAssetPropertyValueEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_entryIdHasBeenSet)
-  {
-   payload.WithString("entryId", m_entryId);
-
+  if (m_entryIdHasBeenSet) {
+    payload.WithString("entryId", m_entryId);
   }
 
-  if(m_assetIdHasBeenSet)
-  {
-   payload.WithString("assetId", m_assetId);
-
+  if (m_assetIdHasBeenSet) {
+    payload.WithString("assetId", m_assetId);
   }
 
-  if(m_propertyIdHasBeenSet)
-  {
-   payload.WithString("propertyId", m_propertyId);
-
+  if (m_propertyIdHasBeenSet) {
+    payload.WithString("propertyId", m_propertyId);
   }
 
-  if(m_propertyAliasHasBeenSet)
-  {
-   payload.WithString("propertyAlias", m_propertyAlias);
-
+  if (m_propertyAliasHasBeenSet) {
+    payload.WithString("propertyAlias", m_propertyAlias);
   }
 
-  if(m_propertyValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertyValuesJsonList(m_propertyValues.size());
-   for(unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex)
-   {
-     propertyValuesJsonList[propertyValuesIndex].AsObject(m_propertyValues[propertyValuesIndex].Jsonize());
-   }
-   payload.WithArray("propertyValues", std::move(propertyValuesJsonList));
-
+  if (m_propertyValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> propertyValuesJsonList(m_propertyValues.size());
+    for (unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex) {
+      propertyValuesJsonList[propertyValuesIndex].AsObject(m_propertyValues[propertyValuesIndex].Jsonize());
+    }
+    payload.WithArray("propertyValues", std::move(propertyValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

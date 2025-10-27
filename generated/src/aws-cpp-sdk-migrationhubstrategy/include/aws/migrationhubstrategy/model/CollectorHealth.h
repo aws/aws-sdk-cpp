@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class CollectorHealth
-  {
-    NOT_SET,
-    COLLECTOR_HEALTHY,
-    COLLECTOR_UNHEALTHY
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class CollectorHealth { NOT_SET, COLLECTOR_HEALTHY, COLLECTOR_UNHEALTHY };
 
-namespace CollectorHealthMapper
-{
+namespace CollectorHealthMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API CollectorHealth GetCollectorHealthForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForCollectorHealth(CollectorHealth value);
-} // namespace CollectorHealthMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace CollectorHealthMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

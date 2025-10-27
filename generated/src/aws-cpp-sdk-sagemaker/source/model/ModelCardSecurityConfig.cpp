@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelCardSecurityConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ModelCardSecurityConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ModelCardSecurityConfig::ModelCardSecurityConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelCardSecurityConfig::ModelCardSecurityConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ModelCardSecurityConfig& ModelCardSecurityConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+ModelCardSecurityConfig& ModelCardSecurityConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelCardSecurityConfig::Jsonize() const
-{
+JsonValue ModelCardSecurityConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

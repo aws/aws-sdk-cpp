@@ -13,114 +13,85 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateIdentityPoolRequest::SerializePayload() const
-{
+Aws::String UpdateIdentityPoolRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_identityPoolNameHasBeenSet)
-  {
-   payload.WithString("IdentityPoolName", m_identityPoolName);
-
+  if (m_identityPoolNameHasBeenSet) {
+    payload.WithString("IdentityPoolName", m_identityPoolName);
   }
 
-  if(m_allowUnauthenticatedIdentitiesHasBeenSet)
-  {
-   payload.WithBool("AllowUnauthenticatedIdentities", m_allowUnauthenticatedIdentities);
-
+  if (m_allowUnauthenticatedIdentitiesHasBeenSet) {
+    payload.WithBool("AllowUnauthenticatedIdentities", m_allowUnauthenticatedIdentities);
   }
 
-  if(m_allowClassicFlowHasBeenSet)
-  {
-   payload.WithBool("AllowClassicFlow", m_allowClassicFlow);
-
+  if (m_allowClassicFlowHasBeenSet) {
+    payload.WithBool("AllowClassicFlow", m_allowClassicFlow);
   }
 
-  if(m_supportedLoginProvidersHasBeenSet)
-  {
-   JsonValue supportedLoginProvidersJsonMap;
-   for(auto& supportedLoginProvidersItem : m_supportedLoginProviders)
-   {
-     supportedLoginProvidersJsonMap.WithString(supportedLoginProvidersItem.first, supportedLoginProvidersItem.second);
-   }
-   payload.WithObject("SupportedLoginProviders", std::move(supportedLoginProvidersJsonMap));
-
+  if (m_supportedLoginProvidersHasBeenSet) {
+    JsonValue supportedLoginProvidersJsonMap;
+    for (auto& supportedLoginProvidersItem : m_supportedLoginProviders) {
+      supportedLoginProvidersJsonMap.WithString(supportedLoginProvidersItem.first, supportedLoginProvidersItem.second);
+    }
+    payload.WithObject("SupportedLoginProviders", std::move(supportedLoginProvidersJsonMap));
   }
 
-  if(m_developerProviderNameHasBeenSet)
-  {
-   payload.WithString("DeveloperProviderName", m_developerProviderName);
-
+  if (m_developerProviderNameHasBeenSet) {
+    payload.WithString("DeveloperProviderName", m_developerProviderName);
   }
 
-  if(m_openIdConnectProviderARNsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> openIdConnectProviderARNsJsonList(m_openIdConnectProviderARNs.size());
-   for(unsigned openIdConnectProviderARNsIndex = 0; openIdConnectProviderARNsIndex < openIdConnectProviderARNsJsonList.GetLength(); ++openIdConnectProviderARNsIndex)
-   {
-     openIdConnectProviderARNsJsonList[openIdConnectProviderARNsIndex].AsString(m_openIdConnectProviderARNs[openIdConnectProviderARNsIndex]);
-   }
-   payload.WithArray("OpenIdConnectProviderARNs", std::move(openIdConnectProviderARNsJsonList));
-
+  if (m_openIdConnectProviderARNsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> openIdConnectProviderARNsJsonList(m_openIdConnectProviderARNs.size());
+    for (unsigned openIdConnectProviderARNsIndex = 0; openIdConnectProviderARNsIndex < openIdConnectProviderARNsJsonList.GetLength();
+         ++openIdConnectProviderARNsIndex) {
+      openIdConnectProviderARNsJsonList[openIdConnectProviderARNsIndex].AsString(
+          m_openIdConnectProviderARNs[openIdConnectProviderARNsIndex]);
+    }
+    payload.WithArray("OpenIdConnectProviderARNs", std::move(openIdConnectProviderARNsJsonList));
   }
 
-  if(m_cognitoIdentityProvidersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
-   for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
-   {
-     cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
-   }
-   payload.WithArray("CognitoIdentityProviders", std::move(cognitoIdentityProvidersJsonList));
-
+  if (m_cognitoIdentityProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
+    for (unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength();
+         ++cognitoIdentityProvidersIndex) {
+      cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(
+          m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
+    }
+    payload.WithArray("CognitoIdentityProviders", std::move(cognitoIdentityProvidersJsonList));
   }
 
-  if(m_samlProviderARNsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
-   for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
-   {
-     samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);
-   }
-   payload.WithArray("SamlProviderARNs", std::move(samlProviderARNsJsonList));
-
+  if (m_samlProviderARNsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
+    for (unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex) {
+      samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);
+    }
+    payload.WithArray("SamlProviderARNs", std::move(samlProviderARNsJsonList));
   }
 
-  if(m_identityPoolTagsHasBeenSet)
-  {
-   JsonValue identityPoolTagsJsonMap;
-   for(auto& identityPoolTagsItem : m_identityPoolTags)
-   {
-     identityPoolTagsJsonMap.WithString(identityPoolTagsItem.first, identityPoolTagsItem.second);
-   }
-   payload.WithObject("IdentityPoolTags", std::move(identityPoolTagsJsonMap));
-
+  if (m_identityPoolTagsHasBeenSet) {
+    JsonValue identityPoolTagsJsonMap;
+    for (auto& identityPoolTagsItem : m_identityPoolTags) {
+      identityPoolTagsJsonMap.WithString(identityPoolTagsItem.first, identityPoolTagsItem.second);
+    }
+    payload.WithObject("IdentityPoolTags", std::move(identityPoolTagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateIdentityPoolRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateIdentityPoolRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UpdateIdentityPool"));
   Aws::StringStream ss;
-  if(m_requestIdHasBeenSet)
-  {
+  if (m_requestIdHasBeenSet) {
     ss << m_requestId;
-    headers.emplace("x-amzn-requestid",  ss.str());
+    headers.emplace("x-amzn-requestid", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

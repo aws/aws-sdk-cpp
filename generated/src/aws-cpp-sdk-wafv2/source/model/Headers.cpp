@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/Headers.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/Headers.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-Headers::Headers(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Headers::Headers(JsonView jsonValue) { *this = jsonValue; }
 
-Headers& Headers::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MatchPattern"))
-  {
+Headers& Headers::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MatchPattern")) {
     m_matchPattern = jsonValue.GetObject("MatchPattern");
     m_matchPatternHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MatchScope"))
-  {
+  if (jsonValue.ValueExists("MatchScope")) {
     m_matchScope = MapMatchScopeMapper::GetMapMatchScopeForName(jsonValue.GetString("MatchScope"));
     m_matchScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OversizeHandling"))
-  {
+  if (jsonValue.ValueExists("OversizeHandling")) {
     m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
     m_oversizeHandlingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Headers::Jsonize() const
-{
+JsonValue Headers::Jsonize() const {
   JsonValue payload;
 
-  if(m_matchPatternHasBeenSet)
-  {
-   payload.WithObject("MatchPattern", m_matchPattern.Jsonize());
-
+  if (m_matchPatternHasBeenSet) {
+    payload.WithObject("MatchPattern", m_matchPattern.Jsonize());
   }
 
-  if(m_matchScopeHasBeenSet)
-  {
-   payload.WithString("MatchScope", MapMatchScopeMapper::GetNameForMapMatchScope(m_matchScope));
+  if (m_matchScopeHasBeenSet) {
+    payload.WithString("MatchScope", MapMatchScopeMapper::GetNameForMapMatchScope(m_matchScope));
   }
 
-  if(m_oversizeHandlingHasBeenSet)
-  {
-   payload.WithString("OversizeHandling", OversizeHandlingMapper::GetNameForOversizeHandling(m_oversizeHandling));
+  if (m_oversizeHandlingHasBeenSet) {
+    payload.WithString("OversizeHandling", OversizeHandlingMapper::GetNameForOversizeHandling(m_oversizeHandling));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

@@ -12,41 +12,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-ValidationException::ValidationException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationException& ValidationException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ValidationException& ValidationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationException::Jsonize() const
-{
+JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

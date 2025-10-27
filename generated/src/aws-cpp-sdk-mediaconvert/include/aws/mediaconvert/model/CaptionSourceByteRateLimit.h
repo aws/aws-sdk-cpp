@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CaptionSourceByteRateLimit
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CaptionSourceByteRateLimit { NOT_SET, ENABLED, DISABLED };
 
-namespace CaptionSourceByteRateLimitMapper
-{
+namespace CaptionSourceByteRateLimitMapper {
 AWS_MEDIACONVERT_API CaptionSourceByteRateLimit GetCaptionSourceByteRateLimitForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCaptionSourceByteRateLimit(CaptionSourceByteRateLimit value);
-} // namespace CaptionSourceByteRateLimitMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CaptionSourceByteRateLimitMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

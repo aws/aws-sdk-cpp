@@ -6,60 +6,65 @@
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
-  class CreateChannelFlowResult
-  {
-  public:
-    AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult() = default;
-    AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKMessaging {
+namespace Model {
+class CreateChannelFlowResult {
+ public:
+  AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult() = default;
+  AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIMESDKMESSAGING_API CreateChannelFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The ARN of the channel flow.</p>
+   */
+  inline const Aws::String& GetChannelFlowArn() const { return m_channelFlowArn; }
+  template <typename ChannelFlowArnT = Aws::String>
+  void SetChannelFlowArn(ChannelFlowArnT&& value) {
+    m_channelFlowArnHasBeenSet = true;
+    m_channelFlowArn = std::forward<ChannelFlowArnT>(value);
+  }
+  template <typename ChannelFlowArnT = Aws::String>
+  CreateChannelFlowResult& WithChannelFlowArn(ChannelFlowArnT&& value) {
+    SetChannelFlowArn(std::forward<ChannelFlowArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
-    inline const Aws::String& GetChannelFlowArn() const { return m_channelFlowArn; }
-    template<typename ChannelFlowArnT = Aws::String>
-    void SetChannelFlowArn(ChannelFlowArnT&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::forward<ChannelFlowArnT>(value); }
-    template<typename ChannelFlowArnT = Aws::String>
-    CreateChannelFlowResult& WithChannelFlowArn(ChannelFlowArnT&& value) { SetChannelFlowArn(std::forward<ChannelFlowArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateChannelFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateChannelFlowResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_channelFlowArn;
+  bool m_channelFlowArnHasBeenSet = false;
 
-    Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

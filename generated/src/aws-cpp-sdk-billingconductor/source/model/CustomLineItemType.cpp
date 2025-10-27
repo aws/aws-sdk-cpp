@@ -4,69 +4,55 @@
  */
 
 #include <aws/billingconductor/model/CustomLineItemType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
+namespace CustomLineItemTypeMapper {
 
-namespace Aws
-{
-  namespace BillingConductor
-  {
-    namespace Model
-    {
-      namespace CustomLineItemTypeMapper
-      {
+static const int CREDIT_HASH = HashingUtils::HashString("CREDIT");
+static const int FEE_HASH = HashingUtils::HashString("FEE");
 
-        static const int CREDIT_HASH = HashingUtils::HashString("CREDIT");
-        static const int FEE_HASH = HashingUtils::HashString("FEE");
+CustomLineItemType GetCustomLineItemTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CREDIT_HASH) {
+    return CustomLineItemType::CREDIT;
+  } else if (hashCode == FEE_HASH) {
+    return CustomLineItemType::FEE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CustomLineItemType>(hashCode);
+  }
 
+  return CustomLineItemType::NOT_SET;
+}
 
-        CustomLineItemType GetCustomLineItemTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREDIT_HASH)
-          {
-            return CustomLineItemType::CREDIT;
-          }
-          else if (hashCode == FEE_HASH)
-          {
-            return CustomLineItemType::FEE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CustomLineItemType>(hashCode);
-          }
+Aws::String GetNameForCustomLineItemType(CustomLineItemType enumValue) {
+  switch (enumValue) {
+    case CustomLineItemType::NOT_SET:
+      return {};
+    case CustomLineItemType::CREDIT:
+      return "CREDIT";
+    case CustomLineItemType::FEE:
+      return "FEE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CustomLineItemType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCustomLineItemType(CustomLineItemType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CustomLineItemType::NOT_SET:
-            return {};
-          case CustomLineItemType::CREDIT:
-            return "CREDIT";
-          case CustomLineItemType::FEE:
-            return "FEE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CustomLineItemTypeMapper
-    } // namespace Model
-  } // namespace BillingConductor
-} // namespace Aws
+}  // namespace CustomLineItemTypeMapper
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

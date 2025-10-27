@@ -4,62 +4,67 @@
  */
 
 #pragma once
-#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace LookoutMetrics
-{
-namespace Model
-{
-  class UpdateAnomalyDetectorResult
-  {
-  public:
-    AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult() = default;
-    AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace LookoutMetrics {
+namespace Model {
+class UpdateAnomalyDetectorResult {
+ public:
+  AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult() = default;
+  AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_LOOKOUTMETRICS_API UpdateAnomalyDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The ARN of the updated detector.</p>
+   */
+  inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
+  template <typename AnomalyDetectorArnT = Aws::String>
+  void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) {
+    m_anomalyDetectorArnHasBeenSet = true;
+    m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value);
+  }
+  template <typename AnomalyDetectorArnT = Aws::String>
+  UpdateAnomalyDetectorResult& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) {
+    SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the updated detector.</p>
-     */
-    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
-    template<typename AnomalyDetectorArnT = Aws::String>
-    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
-    template<typename AnomalyDetectorArnT = Aws::String>
-    UpdateAnomalyDetectorResult& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    UpdateAnomalyDetectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateAnomalyDetectorResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_anomalyDetectorArn;
+  bool m_anomalyDetectorArnHasBeenSet = false;
 
-    Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

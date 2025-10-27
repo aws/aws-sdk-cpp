@@ -3,113 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/IpRouteInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/IpRouteInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-IpRouteInfo::IpRouteInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IpRouteInfo::IpRouteInfo(JsonView jsonValue) { *this = jsonValue; }
 
-IpRouteInfo& IpRouteInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DirectoryId"))
-  {
+IpRouteInfo& IpRouteInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DirectoryId")) {
     m_directoryId = jsonValue.GetString("DirectoryId");
     m_directoryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CidrIp"))
-  {
+  if (jsonValue.ValueExists("CidrIp")) {
     m_cidrIp = jsonValue.GetString("CidrIp");
     m_cidrIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CidrIpv6"))
-  {
+  if (jsonValue.ValueExists("CidrIpv6")) {
     m_cidrIpv6 = jsonValue.GetString("CidrIpv6");
     m_cidrIpv6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpRouteStatusMsg"))
-  {
+  if (jsonValue.ValueExists("IpRouteStatusMsg")) {
     m_ipRouteStatusMsg = IpRouteStatusMsgMapper::GetIpRouteStatusMsgForName(jsonValue.GetString("IpRouteStatusMsg"));
     m_ipRouteStatusMsgHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddedDateTime"))
-  {
+  if (jsonValue.ValueExists("AddedDateTime")) {
     m_addedDateTime = jsonValue.GetDouble("AddedDateTime");
     m_addedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpRouteStatusReason"))
-  {
+  if (jsonValue.ValueExists("IpRouteStatusReason")) {
     m_ipRouteStatusReason = jsonValue.GetString("IpRouteStatusReason");
     m_ipRouteStatusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IpRouteInfo::Jsonize() const
-{
+JsonValue IpRouteInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_directoryIdHasBeenSet)
-  {
-   payload.WithString("DirectoryId", m_directoryId);
-
+  if (m_directoryIdHasBeenSet) {
+    payload.WithString("DirectoryId", m_directoryId);
   }
 
-  if(m_cidrIpHasBeenSet)
-  {
-   payload.WithString("CidrIp", m_cidrIp);
-
+  if (m_cidrIpHasBeenSet) {
+    payload.WithString("CidrIp", m_cidrIp);
   }
 
-  if(m_cidrIpv6HasBeenSet)
-  {
-   payload.WithString("CidrIpv6", m_cidrIpv6);
-
+  if (m_cidrIpv6HasBeenSet) {
+    payload.WithString("CidrIpv6", m_cidrIpv6);
   }
 
-  if(m_ipRouteStatusMsgHasBeenSet)
-  {
-   payload.WithString("IpRouteStatusMsg", IpRouteStatusMsgMapper::GetNameForIpRouteStatusMsg(m_ipRouteStatusMsg));
+  if (m_ipRouteStatusMsgHasBeenSet) {
+    payload.WithString("IpRouteStatusMsg", IpRouteStatusMsgMapper::GetNameForIpRouteStatusMsg(m_ipRouteStatusMsg));
   }
 
-  if(m_addedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("AddedDateTime", m_addedDateTime.SecondsWithMSPrecision());
+  if (m_addedDateTimeHasBeenSet) {
+    payload.WithDouble("AddedDateTime", m_addedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_ipRouteStatusReasonHasBeenSet)
-  {
-   payload.WithString("IpRouteStatusReason", m_ipRouteStatusReason);
-
+  if (m_ipRouteStatusReasonHasBeenSet) {
+    payload.WithString("IpRouteStatusReason", m_ipRouteStatusReason);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

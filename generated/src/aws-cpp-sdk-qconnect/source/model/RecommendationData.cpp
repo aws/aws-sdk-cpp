@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/RecommendationData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/RecommendationData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-RecommendationData::RecommendationData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationData::RecommendationData(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationData& RecommendationData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("recommendationId"))
-  {
+RecommendationData& RecommendationData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("recommendationId")) {
     m_recommendationId = jsonValue.GetString("recommendationId");
     m_recommendationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("document"))
-  {
+  if (jsonValue.ValueExists("document")) {
     m_document = jsonValue.GetObject("document");
     m_documentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relevanceScore"))
-  {
+  if (jsonValue.ValueExists("relevanceScore")) {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relevanceLevel"))
-  {
+  if (jsonValue.ValueExists("relevanceLevel")) {
     m_relevanceLevel = RelevanceLevelMapper::GetRelevanceLevelForName(jsonValue.GetString("relevanceLevel"));
     m_relevanceLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = RecommendationTypeMapper::GetRecommendationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("data"))
-  {
+  if (jsonValue.ValueExists("data")) {
     m_data = jsonValue.GetObject("data");
     m_dataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationData::Jsonize() const
-{
+JsonValue RecommendationData::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("recommendationId", m_recommendationId);
-
+  if (m_recommendationIdHasBeenSet) {
+    payload.WithString("recommendationId", m_recommendationId);
   }
 
-  if(m_documentHasBeenSet)
-  {
-   payload.WithObject("document", m_document.Jsonize());
-
+  if (m_documentHasBeenSet) {
+    payload.WithObject("document", m_document.Jsonize());
   }
 
-  if(m_relevanceScoreHasBeenSet)
-  {
-   payload.WithDouble("relevanceScore", m_relevanceScore);
-
+  if (m_relevanceScoreHasBeenSet) {
+    payload.WithDouble("relevanceScore", m_relevanceScore);
   }
 
-  if(m_relevanceLevelHasBeenSet)
-  {
-   payload.WithString("relevanceLevel", RelevanceLevelMapper::GetNameForRelevanceLevel(m_relevanceLevel));
+  if (m_relevanceLevelHasBeenSet) {
+    payload.WithString("relevanceLevel", RelevanceLevelMapper::GetNameForRelevanceLevel(m_relevanceLevel));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RecommendationTypeMapper::GetNameForRecommendationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RecommendationTypeMapper::GetNameForRecommendationType(m_type));
   }
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithObject("data", m_data.Jsonize());
-
+  if (m_dataHasBeenSet) {
+    payload.WithObject("data", m_data.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

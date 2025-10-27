@@ -12,19 +12,12 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePricingRuleRequest::SerializePayload() const
-{
+Aws::String DeletePricingRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

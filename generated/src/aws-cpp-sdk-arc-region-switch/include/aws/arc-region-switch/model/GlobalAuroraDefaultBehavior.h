@@ -7,25 +7,16 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
-  enum class GlobalAuroraDefaultBehavior
-  {
-    NOT_SET,
-    switchoverOnly,
-    failover
-  };
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
+enum class GlobalAuroraDefaultBehavior { NOT_SET, switchoverOnly, failover };
 
-namespace GlobalAuroraDefaultBehaviorMapper
-{
+namespace GlobalAuroraDefaultBehaviorMapper {
 AWS_ARCREGIONSWITCH_API GlobalAuroraDefaultBehavior GetGlobalAuroraDefaultBehaviorForName(const Aws::String& name);
 
 AWS_ARCREGIONSWITCH_API Aws::String GetNameForGlobalAuroraDefaultBehavior(GlobalAuroraDefaultBehavior value);
-} // namespace GlobalAuroraDefaultBehaviorMapper
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace GlobalAuroraDefaultBehaviorMapper
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

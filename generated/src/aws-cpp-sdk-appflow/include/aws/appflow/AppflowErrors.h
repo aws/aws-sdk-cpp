@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/appflow/Appflow_EXPORTS.h>
 
-namespace Aws
-{
-namespace Appflow
-{
-enum class AppflowErrors
-{
-  //From Core//
+namespace Aws {
+namespace Appflow {
+enum class AppflowErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AppflowErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class AppflowErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONNECTOR_AUTHENTICATION,
   CONNECTOR_SERVER,
   INTERNAL_SERVER,
@@ -55,9 +52,8 @@ enum class AppflowErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_APPFLOW_API AppflowError : public Aws::Client::AWSError<AppflowErrors>
-{
-public:
+class AWS_APPFLOW_API AppflowError : public Aws::Client::AWSError<AppflowErrors> {
+ public:
   AppflowError() {}
   AppflowError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AppflowErrors>(rhs) {}
   AppflowError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AppflowErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace AppflowErrorMapper
-{
-  AWS_APPFLOW_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AppflowErrorMapper {
+AWS_APPFLOW_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Appflow
+}  // namespace Aws

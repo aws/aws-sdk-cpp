@@ -4,88 +4,105 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
-#include <aws/ssm/SSMRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/SSMRequest.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DescribeActivationsFilter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
+/**
+ */
+class DescribeActivationsRequest : public SSMRequest {
+ public:
+  AWS_SSM_API DescribeActivationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeActivations"; }
+
+  AWS_SSM_API Aws::String SerializePayload() const override;
+
+  AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>A filter to view information about your activations.</p>
    */
-  class DescribeActivationsRequest : public SSMRequest
-  {
-  public:
-    AWS_SSM_API DescribeActivationsRequest() = default;
+  inline const Aws::Vector<DescribeActivationsFilter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<DescribeActivationsFilter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<DescribeActivationsFilter>>
+  DescribeActivationsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = DescribeActivationsFilter>
+  DescribeActivationsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeActivations"; }
+  ///@{
+  /**
+   * <p>The maximum number of items to return for this call. The call also returns a
+   * token that you can specify in a subsequent call to get the next set of
+   * results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeActivationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_SSM_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A token to start the list. Use this token to get the next set of results.
+   * </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeActivationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<DescribeActivationsFilter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>A filter to view information about your activations.</p>
-     */
-    inline const Aws::Vector<DescribeActivationsFilter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<DescribeActivationsFilter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<DescribeActivationsFilter>>
-    DescribeActivationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = DescribeActivationsFilter>
-    DescribeActivationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeActivationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeActivationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::Vector<DescribeActivationsFilter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

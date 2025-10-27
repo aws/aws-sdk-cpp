@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/TestExecutionResultFilterBy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/TestExecutionResultFilterBy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-TestExecutionResultFilterBy::TestExecutionResultFilterBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestExecutionResultFilterBy::TestExecutionResultFilterBy(JsonView jsonValue) { *this = jsonValue; }
 
-TestExecutionResultFilterBy& TestExecutionResultFilterBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resultTypeFilter"))
-  {
+TestExecutionResultFilterBy& TestExecutionResultFilterBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resultTypeFilter")) {
     m_resultTypeFilter = TestResultTypeFilterMapper::GetTestResultTypeFilterForName(jsonValue.GetString("resultTypeFilter"));
     m_resultTypeFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conversationLevelTestResultsFilterBy"))
-  {
+  if (jsonValue.ValueExists("conversationLevelTestResultsFilterBy")) {
     m_conversationLevelTestResultsFilterBy = jsonValue.GetObject("conversationLevelTestResultsFilterBy");
     m_conversationLevelTestResultsFilterByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestExecutionResultFilterBy::Jsonize() const
-{
+JsonValue TestExecutionResultFilterBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultTypeFilterHasBeenSet)
-  {
-   payload.WithString("resultTypeFilter", TestResultTypeFilterMapper::GetNameForTestResultTypeFilter(m_resultTypeFilter));
+  if (m_resultTypeFilterHasBeenSet) {
+    payload.WithString("resultTypeFilter", TestResultTypeFilterMapper::GetNameForTestResultTypeFilter(m_resultTypeFilter));
   }
 
-  if(m_conversationLevelTestResultsFilterByHasBeenSet)
-  {
-   payload.WithObject("conversationLevelTestResultsFilterBy", m_conversationLevelTestResultsFilterBy.Jsonize());
-
+  if (m_conversationLevelTestResultsFilterByHasBeenSet) {
+    payload.WithObject("conversationLevelTestResultsFilterBy", m_conversationLevelTestResultsFilterBy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpcState.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/VpcState.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace VpcStateMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace VpcStateMapper
-      {
+static const int pending_HASH = HashingUtils::HashString("pending");
+static const int available_HASH = HashingUtils::HashString("available");
 
-        static const int pending_HASH = HashingUtils::HashString("pending");
-        static const int available_HASH = HashingUtils::HashString("available");
+VpcState GetVpcStateForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == pending_HASH) {
+    return VpcState::pending;
+  } else if (hashCode == available_HASH) {
+    return VpcState::available;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VpcState>(hashCode);
+  }
 
+  return VpcState::NOT_SET;
+}
 
-        VpcState GetVpcStateForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == pending_HASH)
-          {
-            return VpcState::pending;
-          }
-          else if (hashCode == available_HASH)
-          {
-            return VpcState::available;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VpcState>(hashCode);
-          }
+Aws::String GetNameForVpcState(VpcState enumValue) {
+  switch (enumValue) {
+    case VpcState::NOT_SET:
+      return {};
+    case VpcState::pending:
+      return "pending";
+    case VpcState::available:
+      return "available";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VpcState::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVpcState(VpcState enumValue)
-        {
-          switch(enumValue)
-          {
-          case VpcState::NOT_SET:
-            return {};
-          case VpcState::pending:
-            return "pending";
-          case VpcState::available:
-            return "available";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VpcStateMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace VpcStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

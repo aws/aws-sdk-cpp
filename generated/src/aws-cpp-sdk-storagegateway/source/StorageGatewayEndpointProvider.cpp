@@ -5,12 +5,8 @@
 
 #include <aws/storagegateway/StorageGatewayEndpointProvider.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace StorageGateway
-} // namespace Aws
+namespace Aws {
+namespace StorageGateway {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace StorageGateway
+}  // namespace Aws
