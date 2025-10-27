@@ -121,6 +121,23 @@ class CreateStreamRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum record size of a single record in kibibyte (KiB) that you can
+   * write to, and read from a stream.</p>
+   */
+  inline int GetMaxRecordSizeInKiB() const { return m_maxRecordSizeInKiB; }
+  inline bool MaxRecordSizeInKiBHasBeenSet() const { return m_maxRecordSizeInKiBHasBeenSet; }
+  inline void SetMaxRecordSizeInKiB(int value) {
+    m_maxRecordSizeInKiBHasBeenSet = true;
+    m_maxRecordSizeInKiB = value;
+  }
+  inline CreateStreamRequest& WithMaxRecordSizeInKiB(int value) {
+    SetMaxRecordSizeInKiB(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
   bool m_streamNameHasBeenSet = false;
@@ -133,6 +150,9 @@ class CreateStreamRequest : public KinesisRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  int m_maxRecordSizeInKiB{0};
+  bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 
 }  // namespace Model

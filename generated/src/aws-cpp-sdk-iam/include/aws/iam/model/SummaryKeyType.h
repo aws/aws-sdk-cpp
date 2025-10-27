@@ -38,7 +38,14 @@ enum class SummaryKeyType {
   PolicyVersionsInUse,
   PolicyVersionsInUseQuota,
   VersionsPerPolicyQuota,
-  GlobalEndpointTokenVersion
+  GlobalEndpointTokenVersion,
+  AssumeRolePolicySizeQuota,
+  InstanceProfiles,
+  InstanceProfilesQuota,
+  Providers,
+  RolePolicySizeQuota,
+  Roles,
+  RolesQuota
 };
 
 namespace SummaryKeyTypeMapper {
