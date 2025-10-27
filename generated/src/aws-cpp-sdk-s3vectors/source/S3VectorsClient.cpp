@@ -143,7 +143,7 @@ void S3VectorsClient::init(const S3Vectors::S3VectorsClientConfiguration& config
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "s3vectors");
 }
 
 void S3VectorsClient::OverrideEndpoint(const Aws::String& endpoint) {

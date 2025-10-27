@@ -178,7 +178,7 @@ void LexModelBuildingServiceClient::init(const LexModelBuildingService::LexModel
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "lex");
 }
 
 void LexModelBuildingServiceClient::OverrideEndpoint(const Aws::String& endpoint) {

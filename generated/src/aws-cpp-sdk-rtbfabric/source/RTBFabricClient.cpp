@@ -154,7 +154,7 @@ void RTBFabricClient::init(const RTBFabric::RTBFabricClientConfiguration& config
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "rtbfabric");
 }
 
 void RTBFabricClient::OverrideEndpoint(const Aws::String& endpoint) {

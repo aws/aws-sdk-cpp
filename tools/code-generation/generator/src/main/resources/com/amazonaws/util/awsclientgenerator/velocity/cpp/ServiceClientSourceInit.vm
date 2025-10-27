@@ -346,7 +346,7 @@ void ${className}::init(const ${clientConfigurationCls}& config)
   }
 #if($serviceModel.endpointRules)
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "${metadata.signingName}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end##if($AdditionalServiceSpecificConfigLoadString)

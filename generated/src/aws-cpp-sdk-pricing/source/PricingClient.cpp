@@ -132,7 +132,7 @@ void PricingClient::init(const Pricing::PricingClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "pricing");
 }
 
 void PricingClient::OverrideEndpoint(const Aws::String& endpoint) {

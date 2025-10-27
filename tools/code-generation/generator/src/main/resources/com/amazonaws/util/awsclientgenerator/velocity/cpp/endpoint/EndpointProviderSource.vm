@@ -64,6 +64,33 @@ namespace Endpoint
     SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config));
 
 #if($serviceModel.metadata.serviceId == "S3")
+    SetS3SpecificParameters(config);
+#end
+#if($serviceModel.metadata.serviceId == "S3 Control")
+    static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
+    SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+    if(!config.accountId.empty()) {
+      SetStringParameter("AccountId", config.accountId);
+    }
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+    if(!config.accountIdEndpointMode.empty()) {
+      SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
+    }
+#end
+  }
+
+#if($serviceModel.metadata.serviceId == "S3")
+  void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config, const Aws::String& serviceName)
+  {
+    SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+    SetS3SpecificParameters(config);
+  }
+
+  void ${epBuiltInClassName}::SetS3SpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config)
+  {
     static const char* AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
     if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
       SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);
@@ -88,22 +115,8 @@ namespace Endpoint
     if(config.disableS3ExpressAuth) {
       SetBooleanParameter(AWS_S3_DISABLE_EXPRESS_AUTH, true);
     }
-#end
-#if($serviceModel.metadata.serviceId == "S3 Control")
-    static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
-    SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
-    if(!config.accountId.empty()) {
-      SetStringParameter("AccountId", config.accountId);
-    }
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
-    if(!config.accountIdEndpointMode.empty()) {
-      SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
-    }
-#end
   }
+#end
 #end
 #end
 } // namespace Endpoint

@@ -147,7 +147,7 @@ void Route53ProfilesClient::init(const Route53Profiles::Route53ProfilesClientCon
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "route53profiles");
 }
 
 void Route53ProfilesClient::OverrideEndpoint(const Aws::String& endpoint) {

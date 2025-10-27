@@ -146,7 +146,7 @@ void DAXClient::init(const DAX::DAXClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "dax");
 }
 
 void DAXClient::OverrideEndpoint(const Aws::String& endpoint) {

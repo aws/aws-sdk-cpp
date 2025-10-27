@@ -162,7 +162,7 @@ void IoTAnalyticsClient::init(const IoTAnalytics::IoTAnalyticsClientConfiguratio
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "iotanalytics");
 }
 
 void IoTAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint) {

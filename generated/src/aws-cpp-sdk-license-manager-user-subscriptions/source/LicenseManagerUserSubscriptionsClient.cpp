@@ -154,7 +154,7 @@ void LicenseManagerUserSubscriptionsClient::init(
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "license-manager-user-subscriptions");
 }
 
 void LicenseManagerUserSubscriptionsClient::OverrideEndpoint(const Aws::String& endpoint) {

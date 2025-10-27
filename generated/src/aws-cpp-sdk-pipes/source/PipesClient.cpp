@@ -137,7 +137,7 @@ void PipesClient::init(const Pipes::PipesClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "pipes");
 }
 
 void PipesClient::OverrideEndpoint(const Aws::String& endpoint) {

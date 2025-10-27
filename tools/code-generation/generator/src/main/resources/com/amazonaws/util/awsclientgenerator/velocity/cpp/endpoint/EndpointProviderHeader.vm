@@ -75,6 +75,12 @@ public:
     virtual ~${epBuiltInClassName}(){};
     using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
     virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config);
+#if($serviceModel.metadata.serviceId == "S3")
+    virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config, const Aws::String& serviceName);
+
+private:
+    void SetS3SpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config);
+#end
 };
 #else
 using ${epBuiltInClassName} = Aws::Endpoint::BuiltInParameters;

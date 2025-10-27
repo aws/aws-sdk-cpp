@@ -166,7 +166,7 @@ void BatchClient::init(const Batch::BatchClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "batch");
 }
 
 void BatchClient::OverrideEndpoint(const Aws::String& endpoint) {
