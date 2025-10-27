@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProgressUpdateStreamSummary& ProgressUpdateStreamSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProgressUpdateStreamName"))
-  {
+ProgressUpdateStreamSummary& ProgressUpdateStreamSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProgressUpdateStreamName")) {
     m_progressUpdateStreamName = jsonValue.GetString("ProgressUpdateStreamName");
     m_progressUpdateStreamNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProgressUpdateStreamSummary::Jsonize() const
-{
+JsonValue ProgressUpdateStreamSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamNameHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStreamName", m_progressUpdateStreamName);
-
+  if (m_progressUpdateStreamNameHasBeenSet) {
+    payload.WithString("ProgressUpdateStreamName", m_progressUpdateStreamName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

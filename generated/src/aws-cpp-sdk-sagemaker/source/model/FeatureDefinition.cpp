@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/FeatureDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/FeatureDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-FeatureDefinition::FeatureDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FeatureDefinition::FeatureDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-FeatureDefinition& FeatureDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FeatureName"))
-  {
+FeatureDefinition& FeatureDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FeatureName")) {
     m_featureName = jsonValue.GetString("FeatureName");
     m_featureNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FeatureType"))
-  {
+  if (jsonValue.ValueExists("FeatureType")) {
     m_featureType = FeatureTypeMapper::GetFeatureTypeForName(jsonValue.GetString("FeatureType"));
     m_featureTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CollectionType"))
-  {
+  if (jsonValue.ValueExists("CollectionType")) {
     m_collectionType = CollectionTypeMapper::GetCollectionTypeForName(jsonValue.GetString("CollectionType"));
     m_collectionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CollectionConfig"))
-  {
+  if (jsonValue.ValueExists("CollectionConfig")) {
     m_collectionConfig = jsonValue.GetObject("CollectionConfig");
     m_collectionConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FeatureDefinition::Jsonize() const
-{
+JsonValue FeatureDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_featureNameHasBeenSet)
-  {
-   payload.WithString("FeatureName", m_featureName);
-
+  if (m_featureNameHasBeenSet) {
+    payload.WithString("FeatureName", m_featureName);
   }
 
-  if(m_featureTypeHasBeenSet)
-  {
-   payload.WithString("FeatureType", FeatureTypeMapper::GetNameForFeatureType(m_featureType));
+  if (m_featureTypeHasBeenSet) {
+    payload.WithString("FeatureType", FeatureTypeMapper::GetNameForFeatureType(m_featureType));
   }
 
-  if(m_collectionTypeHasBeenSet)
-  {
-   payload.WithString("CollectionType", CollectionTypeMapper::GetNameForCollectionType(m_collectionType));
+  if (m_collectionTypeHasBeenSet) {
+    payload.WithString("CollectionType", CollectionTypeMapper::GetNameForCollectionType(m_collectionType));
   }
 
-  if(m_collectionConfigHasBeenSet)
-  {
-   payload.WithObject("CollectionConfig", m_collectionConfig.Jsonize());
-
+  if (m_collectionConfigHasBeenSet) {
+    payload.WithObject("CollectionConfig", m_collectionConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

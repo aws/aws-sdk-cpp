@@ -5,12 +5,8 @@
 
 #include <aws/awstransfer/TransferEndpointProvider.h>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Transfer
-} // namespace Aws
+namespace Aws {
+namespace Transfer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Transfer
+}  // namespace Aws

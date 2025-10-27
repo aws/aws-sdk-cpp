@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Model
-{
-  enum class Auth
-  {
-    NOT_SET,
-    PLAIN_TEXT,
-    SECRET_ARN
-  };
+namespace Aws {
+namespace DocDBElastic {
+namespace Model {
+enum class Auth { NOT_SET, PLAIN_TEXT, SECRET_ARN };
 
-namespace AuthMapper
-{
+namespace AuthMapper {
 AWS_DOCDBELASTIC_API Auth GetAuthForName(const Aws::String& name);
 
 AWS_DOCDBELASTIC_API Aws::String GetNameForAuth(Auth value);
-} // namespace AuthMapper
-} // namespace Model
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace AuthMapper
+}  // namespace Model
+}  // namespace DocDBElastic
+}  // namespace Aws

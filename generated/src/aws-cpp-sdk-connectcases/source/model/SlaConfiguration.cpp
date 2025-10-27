@@ -11,112 +11,85 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-SlaConfiguration::SlaConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlaConfiguration::SlaConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SlaConfiguration& SlaConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SlaConfiguration& SlaConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = SlaTypeMapper::GetSlaTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = SlaStatusMapper::GetSlaStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldId"))
-  {
+  if (jsonValue.ValueExists("fieldId")) {
     m_fieldId = jsonValue.GetString("fieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetFieldValues"))
-  {
+  if (jsonValue.ValueExists("targetFieldValues")) {
     Aws::Utils::Array<JsonView> targetFieldValuesJsonList = jsonValue.GetArray("targetFieldValues");
-    for(unsigned targetFieldValuesIndex = 0; targetFieldValuesIndex < targetFieldValuesJsonList.GetLength(); ++targetFieldValuesIndex)
-    {
+    for (unsigned targetFieldValuesIndex = 0; targetFieldValuesIndex < targetFieldValuesJsonList.GetLength(); ++targetFieldValuesIndex) {
       m_targetFieldValues.push_back(targetFieldValuesJsonList[targetFieldValuesIndex].AsObject());
     }
     m_targetFieldValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetTime"))
-  {
+  if (jsonValue.ValueExists("targetTime")) {
     m_targetTime = jsonValue.GetString("targetTime");
     m_targetTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("completionTime"))
-  {
+  if (jsonValue.ValueExists("completionTime")) {
     m_completionTime = jsonValue.GetString("completionTime");
     m_completionTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SlaConfiguration::Jsonize() const
-{
+JsonValue SlaConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", SlaStatusMapper::GetNameForSlaStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", SlaStatusMapper::GetNameForSlaStatus(m_status));
   }
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("fieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("fieldId", m_fieldId);
   }
 
-  if(m_targetFieldValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetFieldValuesJsonList(m_targetFieldValues.size());
-   for(unsigned targetFieldValuesIndex = 0; targetFieldValuesIndex < targetFieldValuesJsonList.GetLength(); ++targetFieldValuesIndex)
-   {
-     targetFieldValuesJsonList[targetFieldValuesIndex].AsObject(m_targetFieldValues[targetFieldValuesIndex].Jsonize());
-   }
-   payload.WithArray("targetFieldValues", std::move(targetFieldValuesJsonList));
-
+  if (m_targetFieldValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetFieldValuesJsonList(m_targetFieldValues.size());
+    for (unsigned targetFieldValuesIndex = 0; targetFieldValuesIndex < targetFieldValuesJsonList.GetLength(); ++targetFieldValuesIndex) {
+      targetFieldValuesJsonList[targetFieldValuesIndex].AsObject(m_targetFieldValues[targetFieldValuesIndex].Jsonize());
+    }
+    payload.WithArray("targetFieldValues", std::move(targetFieldValuesJsonList));
   }
 
-  if(m_targetTimeHasBeenSet)
-  {
-   payload.WithString("targetTime", m_targetTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_targetTimeHasBeenSet) {
+    payload.WithString("targetTime", m_targetTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_completionTimeHasBeenSet)
-  {
-   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_completionTimeHasBeenSet) {
+    payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

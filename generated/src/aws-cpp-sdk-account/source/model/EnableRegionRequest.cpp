@@ -12,25 +12,16 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EnableRegionRequest::SerializePayload() const
-{
+Aws::String EnableRegionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_regionNameHasBeenSet)
-  {
-   payload.WithString("RegionName", m_regionName);
-
+  if (m_regionNameHasBeenSet) {
+    payload.WithString("RegionName", m_regionName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

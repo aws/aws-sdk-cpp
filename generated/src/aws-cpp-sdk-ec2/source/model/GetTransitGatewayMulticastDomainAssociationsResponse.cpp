@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransitGatewayMulticastDomainAssociationsResponse::GetTransitGatewayMulticastDomainAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetTransitGatewayMulticastDomainAssociationsResponse::GetTransitGatewayMulticastDomainAssociationsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetTransitGatewayMulticastDomainAssociationsResponse& GetTransitGatewayMulticastDomainAssociationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetTransitGatewayMulticastDomainAssociationsResponse& GetTransitGatewayMulticastDomainAssociationsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetTransitGatewayMulticastDomainAssociationsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetTransitGatewayMulticastDomainAssociationsResponse")) {
     resultNode = rootNode.FirstChild("GetTransitGatewayMulticastDomainAssociationsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode multicastDomainAssociationsNode = resultNode.FirstChild("multicastDomainAssociations");
-    if(!multicastDomainAssociationsNode.IsNull())
-    {
+    if (!multicastDomainAssociationsNode.IsNull()) {
       XmlNode multicastDomainAssociationsMember = multicastDomainAssociationsNode.FirstChild("item");
       m_multicastDomainAssociationsHasBeenSet = !multicastDomainAssociationsMember.IsNull();
-      while(!multicastDomainAssociationsMember.IsNull())
-      {
+      while (!multicastDomainAssociationsMember.IsNull()) {
         m_multicastDomainAssociations.push_back(multicastDomainAssociationsMember);
         multicastDomainAssociationsMember = multicastDomainAssociationsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ GetTransitGatewayMulticastDomainAssociationsResponse& GetTransitGatewayMulticast
       m_multicastDomainAssociationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ GetTransitGatewayMulticastDomainAssociationsResponse& GetTransitGatewayMulticast
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayMulticastDomainAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayMulticastDomainAssociationsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

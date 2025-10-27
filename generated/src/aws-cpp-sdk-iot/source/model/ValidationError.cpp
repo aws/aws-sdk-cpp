@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ValidationError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/ValidationError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-ValidationError::ValidationError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationError::ValidationError(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationError& ValidationError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+ValidationError& ValidationError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationError::Jsonize() const
-{
+JsonValue ValidationError::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

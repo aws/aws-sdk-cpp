@@ -3,70 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeSnapshotsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeSnapshotsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeSnapshotsRequest::SerializePayload() const
-{
+Aws::String DescribeSnapshotsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeSnapshots&";
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_ownerIdsHasBeenSet)
-  {
+  if (m_ownerIdsHasBeenSet) {
     unsigned ownerIdsCount = 1;
-    for(auto& item : m_ownerIds)
-    {
-      ss << "Owner." << ownerIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_ownerIds) {
+      ss << "Owner." << ownerIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       ownerIdsCount++;
     }
   }
 
-  if(m_restorableByUserIdsHasBeenSet)
-  {
+  if (m_restorableByUserIdsHasBeenSet) {
     unsigned restorableByUserIdsCount = 1;
-    for(auto& item : m_restorableByUserIds)
-    {
-      ss << "RestorableBy." << restorableByUserIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_restorableByUserIds) {
+      ss << "RestorableBy." << restorableByUserIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       restorableByUserIdsCount++;
     }
   }
 
-  if(m_snapshotIdsHasBeenSet)
-  {
+  if (m_snapshotIdsHasBeenSet) {
     unsigned snapshotIdsCount = 1;
-    for(auto& item : m_snapshotIds)
-    {
-      ss << "SnapshotId." << snapshotIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_snapshotIds) {
+      ss << "SnapshotId." << snapshotIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       snapshotIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
@@ -76,8 +61,4 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

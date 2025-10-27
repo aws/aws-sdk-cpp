@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/neptunedata/NeptunedataEndpointRules.h>
+#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace neptunedata {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NeptunedataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using NeptunedataDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NEPTUNEDATA_API NeptunedataEndpointProvider : public NeptunedataDefaultEpProviderBase
-{
-public:
-    using NeptunedataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NEPTUNEDATA_API NeptunedataEndpointProvider : public NeptunedataDefaultEpProviderBase {
+ public:
+  using NeptunedataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NeptunedataEndpointProvider()
-      : NeptunedataDefaultEpProviderBase(Aws::neptunedata::NeptunedataEndpointRules::GetRulesBlob(), Aws::neptunedata::NeptunedataEndpointRules::RulesBlobSize)
-    {}
+  NeptunedataEndpointProvider()
+      : NeptunedataDefaultEpProviderBase(Aws::neptunedata::NeptunedataEndpointRules::GetRulesBlob(),
+                                         Aws::neptunedata::NeptunedataEndpointRules::RulesBlobSize) {}
 
-    ~NeptunedataEndpointProvider()
-    {
-    }
+  ~NeptunedataEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace neptunedata
+}  // namespace Aws

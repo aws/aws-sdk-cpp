@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/ListLanguageModelsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/transcribe/model/ListLanguageModelsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLanguageModelsResult::ListLanguageModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListLanguageModelsResult::ListLanguageModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListLanguageModelsResult& ListLanguageModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListLanguageModelsResult& ListLanguageModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Models"))
-  {
+  if (jsonValue.ValueExists("Models")) {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
-    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-    {
+    for (unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex) {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());
     }
     m_modelsHasBeenSet = true;
@@ -42,12 +35,10 @@ ListLanguageModelsResult& ListLanguageModelsResult::operator =(const Aws::Amazon
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

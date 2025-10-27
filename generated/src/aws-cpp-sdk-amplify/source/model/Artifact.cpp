@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-Artifact::Artifact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Artifact::Artifact(JsonView jsonValue) { *this = jsonValue; }
 
-Artifact& Artifact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("artifactFileName"))
-  {
+Artifact& Artifact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("artifactFileName")) {
     m_artifactFileName = jsonValue.GetString("artifactFileName");
     m_artifactFileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("artifactId"))
-  {
+  if (jsonValue.ValueExists("artifactId")) {
     m_artifactId = jsonValue.GetString("artifactId");
     m_artifactIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Artifact::Jsonize() const
-{
+JsonValue Artifact::Jsonize() const {
   JsonValue payload;
 
-  if(m_artifactFileNameHasBeenSet)
-  {
-   payload.WithString("artifactFileName", m_artifactFileName);
-
+  if (m_artifactFileNameHasBeenSet) {
+    payload.WithString("artifactFileName", m_artifactFileName);
   }
 
-  if(m_artifactIdHasBeenSet)
-  {
-   payload.WithString("artifactId", m_artifactId);
-
+  if (m_artifactIdHasBeenSet) {
+    payload.WithString("artifactId", m_artifactId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

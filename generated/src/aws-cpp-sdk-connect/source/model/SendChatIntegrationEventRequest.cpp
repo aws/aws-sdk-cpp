@@ -12,43 +12,28 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SendChatIntegrationEventRequest::SerializePayload() const
-{
+Aws::String SendChatIntegrationEventRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceIdHasBeenSet)
-  {
-   payload.WithString("SourceId", m_sourceId);
-
+  if (m_sourceIdHasBeenSet) {
+    payload.WithString("SourceId", m_sourceId);
   }
 
-  if(m_destinationIdHasBeenSet)
-  {
-   payload.WithString("DestinationId", m_destinationId);
-
+  if (m_destinationIdHasBeenSet) {
+    payload.WithString("DestinationId", m_destinationId);
   }
 
-  if(m_subtypeHasBeenSet)
-  {
-   payload.WithString("Subtype", m_subtype);
-
+  if (m_subtypeHasBeenSet) {
+    payload.WithString("Subtype", m_subtype);
   }
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithObject("Event", m_event.Jsonize());
-
+  if (m_eventHasBeenSet) {
+    payload.WithObject("Event", m_event.Jsonize());
   }
 
-  if(m_newSessionDetailsHasBeenSet)
-  {
-   payload.WithObject("NewSessionDetails", m_newSessionDetails.Jsonize());
-
+  if (m_newSessionDetailsHasBeenSet) {
+    payload.WithObject("NewSessionDetails", m_newSessionDetails.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

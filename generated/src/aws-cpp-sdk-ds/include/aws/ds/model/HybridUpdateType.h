@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class HybridUpdateType
-  {
-    NOT_SET,
-    SelfManagedInstances,
-    HybridAdministratorAccount
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class HybridUpdateType { NOT_SET, SelfManagedInstances, HybridAdministratorAccount };
 
-namespace HybridUpdateTypeMapper
-{
+namespace HybridUpdateTypeMapper {
 AWS_DIRECTORYSERVICE_API HybridUpdateType GetHybridUpdateTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForHybridUpdateType(HybridUpdateType value);
-} // namespace HybridUpdateTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace HybridUpdateTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

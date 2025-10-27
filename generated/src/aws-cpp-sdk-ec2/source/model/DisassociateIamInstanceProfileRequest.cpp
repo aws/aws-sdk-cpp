@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateIamInstanceProfileRequest::SerializePayload() const
-{
+Aws::String DisassociateIamInstanceProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateIamInstanceProfile&";
-  if(m_associationIdHasBeenSet)
-  {
+  if (m_associationIdHasBeenSet) {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DisassociateIamInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateIamInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateIamInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

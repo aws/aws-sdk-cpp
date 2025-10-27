@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyInstanceCapacityReservationAttributesRequest::SerializePayload() const
-{
+Aws::String ModifyInstanceCapacityReservationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyInstanceCapacityReservationAttributes&";
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_capacityReservationSpecificationHasBeenSet)
-  {
+  if (m_capacityReservationSpecificationHasBeenSet) {
     m_capacityReservationSpecification.OutputToStream(ss, "CapacityReservationSpecification");
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,6 @@ Aws::String ModifyInstanceCapacityReservationAttributesRequest::SerializePayload
   return ss.str();
 }
 
-
-void  ModifyInstanceCapacityReservationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ModifyInstanceCapacityReservationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

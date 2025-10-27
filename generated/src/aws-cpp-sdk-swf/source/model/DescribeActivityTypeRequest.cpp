@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/DescribeActivityTypeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/DescribeActivityTypeRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeActivityTypeRequest::SerializePayload() const
-{
+Aws::String DescribeActivityTypeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("domain", m_domain);
   }
 
-  if(m_activityTypeHasBeenSet)
-  {
-   payload.WithObject("activityType", m_activityType.Jsonize());
-
+  if (m_activityTypeHasBeenSet) {
+    payload.WithObject("activityType", m_activityType.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeActivityTypeRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeActivityTypeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.DescribeActivityType"));
   return headers;
-
 }
-
-
-
-

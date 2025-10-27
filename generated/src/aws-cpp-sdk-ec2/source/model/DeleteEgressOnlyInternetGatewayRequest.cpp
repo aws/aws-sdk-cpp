@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteEgressOnlyInternetGatewayRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteEgressOnlyInternetGatewayRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteEgressOnlyInternetGatewayRequest::SerializePayload() const
-{
+Aws::String DeleteEgressOnlyInternetGatewayRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteEgressOnlyInternetGateway&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_egressOnlyInternetGatewayIdHasBeenSet)
-  {
+  if (m_egressOnlyInternetGatewayIdHasBeenSet) {
     ss << "EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteEgressOnlyInternetGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteEgressOnlyInternetGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteEgressOnlyInternetGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

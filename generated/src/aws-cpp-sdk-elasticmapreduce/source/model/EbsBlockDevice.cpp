@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-EbsBlockDevice::EbsBlockDevice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EbsBlockDevice::EbsBlockDevice(JsonView jsonValue) { *this = jsonValue; }
 
-EbsBlockDevice& EbsBlockDevice::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VolumeSpecification"))
-  {
+EbsBlockDevice& EbsBlockDevice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VolumeSpecification")) {
     m_volumeSpecification = jsonValue.GetObject("VolumeSpecification");
     m_volumeSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Device"))
-  {
+  if (jsonValue.ValueExists("Device")) {
     m_device = jsonValue.GetString("Device");
     m_deviceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EbsBlockDevice::Jsonize() const
-{
+JsonValue EbsBlockDevice::Jsonize() const {
   JsonValue payload;
 
-  if(m_volumeSpecificationHasBeenSet)
-  {
-   payload.WithObject("VolumeSpecification", m_volumeSpecification.Jsonize());
-
+  if (m_volumeSpecificationHasBeenSet) {
+    payload.WithObject("VolumeSpecification", m_volumeSpecification.Jsonize());
   }
 
-  if(m_deviceHasBeenSet)
-  {
-   payload.WithString("Device", m_device);
-
+  if (m_deviceHasBeenSet) {
+    payload.WithString("Device", m_device);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

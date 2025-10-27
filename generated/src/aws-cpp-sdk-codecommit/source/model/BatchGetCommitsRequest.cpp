@@ -12,38 +12,26 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetCommitsRequest::SerializePayload() const
-{
+Aws::String BatchGetCommitsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_commitIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> commitIdsJsonList(m_commitIds.size());
-   for(unsigned commitIdsIndex = 0; commitIdsIndex < commitIdsJsonList.GetLength(); ++commitIdsIndex)
-   {
-     commitIdsJsonList[commitIdsIndex].AsString(m_commitIds[commitIdsIndex]);
-   }
-   payload.WithArray("commitIds", std::move(commitIdsJsonList));
-
+  if (m_commitIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> commitIdsJsonList(m_commitIds.size());
+    for (unsigned commitIdsIndex = 0; commitIdsIndex < commitIdsJsonList.GetLength(); ++commitIdsIndex) {
+      commitIdsJsonList[commitIdsIndex].AsString(m_commitIds[commitIdsIndex]);
+    }
+    payload.WithArray("commitIds", std::move(commitIdsJsonList));
   }
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchGetCommitsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchGetCommitsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.BatchGetCommits"));
   return headers;
-
 }
-
-
-
-

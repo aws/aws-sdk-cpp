@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/CreateDatasetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lookoutvision/model/CreateDatasetRequest.h>
 
 #include <utility>
 
@@ -13,40 +13,28 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDatasetRequest::SerializePayload() const
-{
+Aws::String CreateDatasetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_datasetTypeHasBeenSet)
-  {
-   payload.WithString("DatasetType", m_datasetType);
-
+  if (m_datasetTypeHasBeenSet) {
+    payload.WithString("DatasetType", m_datasetType);
   }
 
-  if(m_datasetSourceHasBeenSet)
-  {
-   payload.WithObject("DatasetSource", m_datasetSource.Jsonize());
-
+  if (m_datasetSourceHasBeenSet) {
+    payload.WithObject("DatasetSource", m_datasetSource.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateDatasetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateDatasetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

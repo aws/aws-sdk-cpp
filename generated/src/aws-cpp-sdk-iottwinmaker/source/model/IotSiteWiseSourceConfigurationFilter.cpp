@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/IotSiteWiseSourceConfigurationFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/IotSiteWiseSourceConfigurationFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-IotSiteWiseSourceConfigurationFilter::IotSiteWiseSourceConfigurationFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IotSiteWiseSourceConfigurationFilter::IotSiteWiseSourceConfigurationFilter(JsonView jsonValue) { *this = jsonValue; }
 
-IotSiteWiseSourceConfigurationFilter& IotSiteWiseSourceConfigurationFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filterByAssetModel"))
-  {
+IotSiteWiseSourceConfigurationFilter& IotSiteWiseSourceConfigurationFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filterByAssetModel")) {
     m_filterByAssetModel = jsonValue.GetObject("filterByAssetModel");
     m_filterByAssetModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterByAsset"))
-  {
+  if (jsonValue.ValueExists("filterByAsset")) {
     m_filterByAsset = jsonValue.GetObject("filterByAsset");
     m_filterByAssetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IotSiteWiseSourceConfigurationFilter::Jsonize() const
-{
+JsonValue IotSiteWiseSourceConfigurationFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_filterByAssetModelHasBeenSet)
-  {
-   payload.WithObject("filterByAssetModel", m_filterByAssetModel.Jsonize());
-
+  if (m_filterByAssetModelHasBeenSet) {
+    payload.WithObject("filterByAssetModel", m_filterByAssetModel.Jsonize());
   }
 
-  if(m_filterByAssetHasBeenSet)
-  {
-   payload.WithObject("filterByAsset", m_filterByAsset.Jsonize());
-
+  if (m_filterByAssetHasBeenSet) {
+    payload.WithObject("filterByAsset", m_filterByAsset.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

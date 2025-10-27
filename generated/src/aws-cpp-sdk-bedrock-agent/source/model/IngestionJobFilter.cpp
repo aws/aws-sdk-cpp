@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-IngestionJobFilter::IngestionJobFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IngestionJobFilter::IngestionJobFilter(JsonView jsonValue) { *this = jsonValue; }
 
-IngestionJobFilter& IngestionJobFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attribute"))
-  {
+IngestionJobFilter& IngestionJobFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attribute")) {
     m_attribute = IngestionJobFilterAttributeMapper::GetIngestionJobFilterAttributeForName(jsonValue.GetString("attribute"));
     m_attributeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operator"))
-  {
+  if (jsonValue.ValueExists("operator")) {
     m_operator = IngestionJobFilterOperatorMapper::GetIngestionJobFilterOperatorForName(jsonValue.GetString("operator"));
     m_operatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -47,34 +36,28 @@ IngestionJobFilter& IngestionJobFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue IngestionJobFilter::Jsonize() const
-{
+JsonValue IngestionJobFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("attribute", IngestionJobFilterAttributeMapper::GetNameForIngestionJobFilterAttribute(m_attribute));
+  if (m_attributeHasBeenSet) {
+    payload.WithString("attribute", IngestionJobFilterAttributeMapper::GetNameForIngestionJobFilterAttribute(m_attribute));
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", IngestionJobFilterOperatorMapper::GetNameForIngestionJobFilterOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("operator", IngestionJobFilterOperatorMapper::GetNameForIngestionJobFilterOperator(m_operator));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class LDAPSType
-  {
-    NOT_SET,
-    Client
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class LDAPSType { NOT_SET, Client };
 
-namespace LDAPSTypeMapper
-{
+namespace LDAPSTypeMapper {
 AWS_DIRECTORYSERVICE_API LDAPSType GetLDAPSTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForLDAPSType(LDAPSType value);
-} // namespace LDAPSTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace LDAPSTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

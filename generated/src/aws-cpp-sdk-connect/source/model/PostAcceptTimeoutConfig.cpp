@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-PostAcceptTimeoutConfig::PostAcceptTimeoutConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PostAcceptTimeoutConfig::PostAcceptTimeoutConfig(JsonView jsonValue) { *this = jsonValue; }
 
-PostAcceptTimeoutConfig& PostAcceptTimeoutConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DurationInSeconds"))
-  {
+PostAcceptTimeoutConfig& PostAcceptTimeoutConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DurationInSeconds")) {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
     m_durationInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PostAcceptTimeoutConfig::Jsonize() const
-{
+JsonValue PostAcceptTimeoutConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_durationInSecondsHasBeenSet)
-  {
-   payload.WithInteger("DurationInSeconds", m_durationInSeconds);
-
+  if (m_durationInSecondsHasBeenSet) {
+    payload.WithInteger("DurationInSeconds", m_durationInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

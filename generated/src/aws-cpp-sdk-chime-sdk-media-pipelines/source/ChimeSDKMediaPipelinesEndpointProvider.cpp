@@ -5,12 +5,8 @@
 
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

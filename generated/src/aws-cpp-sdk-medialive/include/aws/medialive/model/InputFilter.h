@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class InputFilter
-  {
-    NOT_SET,
-    AUTO,
-    DISABLED,
-    FORCED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class InputFilter { NOT_SET, AUTO, DISABLED, FORCED };
 
-namespace InputFilterMapper
-{
+namespace InputFilterMapper {
 AWS_MEDIALIVE_API InputFilter GetInputFilterForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForInputFilter(InputFilter value);
-} // namespace InputFilterMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace InputFilterMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

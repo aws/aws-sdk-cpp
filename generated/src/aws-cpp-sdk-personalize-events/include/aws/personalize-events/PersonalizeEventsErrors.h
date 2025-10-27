@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace PersonalizeEvents
-{
-enum class PersonalizeEventsErrors
-{
-  //From Core//
+namespace Aws {
+namespace PersonalizeEvents {
+enum class PersonalizeEventsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class PersonalizeEventsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class PersonalizeEventsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_INPUT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   RESOURCE_IN_USE
 };
 
-class AWS_PERSONALIZEEVENTS_API PersonalizeEventsError : public Aws::Client::AWSError<PersonalizeEventsErrors>
-{
-public:
+class AWS_PERSONALIZEEVENTS_API PersonalizeEventsError : public Aws::Client::AWSError<PersonalizeEventsErrors> {
+ public:
   PersonalizeEventsError() {}
   PersonalizeEventsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
   PersonalizeEventsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace PersonalizeEventsErrorMapper
-{
-  AWS_PERSONALIZEEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace PersonalizeEventsErrorMapper {
+AWS_PERSONALIZEEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace PersonalizeEvents
-} // namespace Aws
+}  // namespace PersonalizeEvents
+}  // namespace Aws

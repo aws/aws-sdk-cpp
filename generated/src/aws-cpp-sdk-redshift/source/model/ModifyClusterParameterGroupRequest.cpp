@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterParameterGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/ModifyClusterParameterGroupRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
-{
+Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterParameterGroup&";
-  if(m_parameterGroupNameHasBeenSet)
-  {
+  if (m_parameterGroupNameHasBeenSet) {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
 
-  if(m_parametersHasBeenSet)
-  {
-    if (m_parameters.empty())
-    {
+  if (m_parametersHasBeenSet) {
+    if (m_parameters.empty()) {
       ss << "Parameters=&";
-    }
-    else
-    {
+    } else {
       unsigned parametersCount = 1;
-      for(auto& item : m_parameters)
-      {
+      for (auto& item : m_parameters) {
         item.OutputToStream(ss, "Parameters.Parameter.", parametersCount, "");
         parametersCount++;
       }
@@ -40,8 +33,4 @@ Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

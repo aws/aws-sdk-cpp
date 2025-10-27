@@ -7,24 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class RerankSourceType
-  {
-    NOT_SET,
-    INLINE
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class RerankSourceType { NOT_SET, INLINE };
 
-namespace RerankSourceTypeMapper
-{
+namespace RerankSourceTypeMapper {
 AWS_BEDROCKAGENTRUNTIME_API RerankSourceType GetRerankSourceTypeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForRerankSourceType(RerankSourceType value);
-} // namespace RerankSourceTypeMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace RerankSourceTypeMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

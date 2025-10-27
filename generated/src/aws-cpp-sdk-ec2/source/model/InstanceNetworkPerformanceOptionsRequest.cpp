@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-InstanceNetworkPerformanceOptionsRequest::InstanceNetworkPerformanceOptionsRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceNetworkPerformanceOptionsRequest::InstanceNetworkPerformanceOptionsRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceNetworkPerformanceOptionsRequest& InstanceNetworkPerformanceOptionsRequest::operator =(const XmlNode& xmlNode)
-{
+InstanceNetworkPerformanceOptionsRequest& InstanceNetworkPerformanceOptionsRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode bandwidthWeightingNode = resultNode.FirstChild("BandwidthWeighting");
-    if(!bandwidthWeightingNode.IsNull())
-    {
-      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()));
+    if (!bandwidthWeightingNode.IsNull()) {
+      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()));
       m_bandwidthWeightingHasBeenSet = true;
     }
   }
@@ -42,23 +34,21 @@ InstanceNetworkPerformanceOptionsRequest& InstanceNetworkPerformanceOptionsReque
   return *this;
 }
 
-void InstanceNetworkPerformanceOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_bandwidthWeightingHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".BandwidthWeighting=" << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
-  }
-
-}
-
-void InstanceNetworkPerformanceOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_bandwidthWeightingHasBeenSet)
-  {
-      oStream << location << ".BandwidthWeighting=" << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
+void InstanceNetworkPerformanceOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                              const char* locationValue) const {
+  if (m_bandwidthWeightingHasBeenSet) {
+    oStream << location << index << locationValue << ".BandwidthWeighting="
+            << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void InstanceNetworkPerformanceOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_bandwidthWeightingHasBeenSet) {
+    oStream << location << ".BandwidthWeighting="
+            << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

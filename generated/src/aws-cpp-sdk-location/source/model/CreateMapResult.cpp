@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/CreateMapResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/location/model/CreateMapResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMapResult::CreateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateMapResult::CreateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateMapResult& CreateMapResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateMapResult& CreateMapResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MapName"))
-  {
+  if (jsonValue.ValueExists("MapName")) {
     m_mapName = jsonValue.GetString("MapName");
     m_mapNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MapArn"))
-  {
+  if (jsonValue.ValueExists("MapArn")) {
     m_mapArn = jsonValue.GetString("MapArn");
     m_mapArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTime"))
-  {
+  if (jsonValue.ValueExists("CreateTime")) {
     m_createTime = jsonValue.GetString("CreateTime");
     m_createTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

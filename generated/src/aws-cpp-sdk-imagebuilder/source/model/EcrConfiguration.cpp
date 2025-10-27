@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/EcrConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/EcrConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-EcrConfiguration::EcrConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcrConfiguration::EcrConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EcrConfiguration& EcrConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+EcrConfiguration& EcrConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containerTags"))
-  {
+  if (jsonValue.ValueExists("containerTags")) {
     Aws::Utils::Array<JsonView> containerTagsJsonList = jsonValue.GetArray("containerTags");
-    for(unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex)
-    {
+    for (unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex) {
       m_containerTags.push_back(containerTagsJsonList[containerTagsIndex].AsString());
     }
     m_containerTagsHasBeenSet = true;
@@ -42,30 +32,24 @@ EcrConfiguration& EcrConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EcrConfiguration::Jsonize() const
-{
+JsonValue EcrConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_containerTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> containerTagsJsonList(m_containerTags.size());
-   for(unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex)
-   {
-     containerTagsJsonList[containerTagsIndex].AsString(m_containerTags[containerTagsIndex]);
-   }
-   payload.WithArray("containerTags", std::move(containerTagsJsonList));
-
+  if (m_containerTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> containerTagsJsonList(m_containerTags.size());
+    for (unsigned containerTagsIndex = 0; containerTagsIndex < containerTagsJsonList.GetLength(); ++containerTagsIndex) {
+      containerTagsJsonList[containerTagsIndex].AsString(m_containerTags[containerTagsIndex]);
+    }
+    payload.WithArray("containerTags", std::move(containerTagsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

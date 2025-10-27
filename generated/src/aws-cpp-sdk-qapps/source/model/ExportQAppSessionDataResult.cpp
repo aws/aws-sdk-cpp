@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qapps/model/ExportQAppSessionDataResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qapps/model/ExportQAppSessionDataResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportQAppSessionDataResult::ExportQAppSessionDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ExportQAppSessionDataResult::ExportQAppSessionDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ExportQAppSessionDataResult& ExportQAppSessionDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ExportQAppSessionDataResult& ExportQAppSessionDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("csvFileLink"))
-  {
+  if (jsonValue.ValueExists("csvFileLink")) {
     m_csvFileLink = jsonValue.GetString("csvFileLink");
     m_csvFileLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expiresAt"))
-  {
+  if (jsonValue.ValueExists("expiresAt")) {
     m_expiresAt = jsonValue.GetString("expiresAt");
     m_expiresAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionArn"))
-  {
+  if (jsonValue.ValueExists("sessionArn")) {
     m_sessionArn = jsonValue.GetString("sessionArn");
     m_sessionArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

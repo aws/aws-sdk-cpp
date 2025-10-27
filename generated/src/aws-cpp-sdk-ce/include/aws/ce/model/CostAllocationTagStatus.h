@@ -7,25 +7,16 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
-  enum class CostAllocationTagStatus
-  {
-    NOT_SET,
-    Active,
-    Inactive
-  };
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
+enum class CostAllocationTagStatus { NOT_SET, Active, Inactive };
 
-namespace CostAllocationTagStatusMapper
-{
+namespace CostAllocationTagStatusMapper {
 AWS_COSTEXPLORER_API CostAllocationTagStatus GetCostAllocationTagStatusForName(const Aws::String& name);
 
 AWS_COSTEXPLORER_API Aws::String GetNameForCostAllocationTagStatus(CostAllocationTagStatus value);
-} // namespace CostAllocationTagStatusMapper
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace CostAllocationTagStatusMapper
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

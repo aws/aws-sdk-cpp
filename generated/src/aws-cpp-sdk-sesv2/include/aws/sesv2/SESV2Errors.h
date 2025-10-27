@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-enum class SESV2Errors
-{
-  //From Core//
+namespace Aws {
+namespace SESV2 {
+enum class SESV2Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SESV2Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SESV2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_SUSPENDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_SUSPENDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ALREADY_EXISTS,
   BAD_REQUEST,
   CONCURRENT_MODIFICATION,
@@ -62,9 +59,8 @@ enum class SESV2Errors
   TOO_MANY_REQUESTS
 };
 
-class AWS_SESV2_API SESV2Error : public Aws::Client::AWSError<SESV2Errors>
-{
-public:
+class AWS_SESV2_API SESV2Error : public Aws::Client::AWSError<SESV2Errors> {
+ public:
   SESV2Error() {}
   SESV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SESV2Errors>(rhs) {}
   SESV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SESV2Errors>(rhs) {}
@@ -75,10 +71,9 @@ public:
   T GetModeledError();
 };
 
-namespace SESV2ErrorMapper
-{
-  AWS_SESV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SESV2ErrorMapper {
+AWS_SESV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SESV2
-} // namespace Aws
+}  // namespace SESV2
+}  // namespace Aws

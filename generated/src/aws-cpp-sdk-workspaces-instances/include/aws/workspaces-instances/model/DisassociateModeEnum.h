@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Model
-{
-  enum class DisassociateModeEnum
-  {
-    NOT_SET,
-    FORCE,
-    NO_FORCE
-  };
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Model {
+enum class DisassociateModeEnum { NOT_SET, FORCE, NO_FORCE };
 
-namespace DisassociateModeEnumMapper
-{
+namespace DisassociateModeEnumMapper {
 AWS_WORKSPACESINSTANCES_API DisassociateModeEnum GetDisassociateModeEnumForName(const Aws::String& name);
 
 AWS_WORKSPACESINSTANCES_API Aws::String GetNameForDisassociateModeEnum(DisassociateModeEnum value);
-} // namespace DisassociateModeEnumMapper
-} // namespace Model
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace DisassociateModeEnumMapper
+}  // namespace Model
+}  // namespace WorkspacesInstances
+}  // namespace Aws

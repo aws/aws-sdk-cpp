@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ModelMetadataFilterType
-  {
-    NOT_SET,
-    Domain,
-    Framework,
-    Task,
-    FrameworkVersion
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ModelMetadataFilterType { NOT_SET, Domain, Framework, Task, FrameworkVersion };
 
-namespace ModelMetadataFilterTypeMapper
-{
+namespace ModelMetadataFilterTypeMapper {
 AWS_SAGEMAKER_API ModelMetadataFilterType GetModelMetadataFilterTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForModelMetadataFilterType(ModelMetadataFilterType value);
-} // namespace ModelMetadataFilterTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ModelMetadataFilterTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

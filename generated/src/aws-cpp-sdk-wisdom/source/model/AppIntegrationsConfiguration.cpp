@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/AppIntegrationsConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/AppIntegrationsConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-AppIntegrationsConfiguration::AppIntegrationsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppIntegrationsConfiguration::AppIntegrationsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("appIntegrationArn"))
-  {
+AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("appIntegrationArn")) {
     m_appIntegrationArn = jsonValue.GetString("appIntegrationArn");
     m_appIntegrationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("objectFields"))
-  {
+  if (jsonValue.ValueExists("objectFields")) {
     Aws::Utils::Array<JsonView> objectFieldsJsonList = jsonValue.GetArray("objectFields");
-    for(unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex)
-    {
+    for (unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex) {
       m_objectFields.push_back(objectFieldsJsonList[objectFieldsIndex].AsString());
     }
     m_objectFieldsHasBeenSet = true;
@@ -42,30 +32,24 @@ AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator =(JsonView 
   return *this;
 }
 
-JsonValue AppIntegrationsConfiguration::Jsonize() const
-{
+JsonValue AppIntegrationsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_appIntegrationArnHasBeenSet)
-  {
-   payload.WithString("appIntegrationArn", m_appIntegrationArn);
-
+  if (m_appIntegrationArnHasBeenSet) {
+    payload.WithString("appIntegrationArn", m_appIntegrationArn);
   }
 
-  if(m_objectFieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> objectFieldsJsonList(m_objectFields.size());
-   for(unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex)
-   {
-     objectFieldsJsonList[objectFieldsIndex].AsString(m_objectFields[objectFieldsIndex]);
-   }
-   payload.WithArray("objectFields", std::move(objectFieldsJsonList));
-
+  if (m_objectFieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> objectFieldsJsonList(m_objectFields.size());
+    for (unsigned objectFieldsIndex = 0; objectFieldsIndex < objectFieldsJsonList.GetLength(); ++objectFieldsIndex) {
+      objectFieldsJsonList[objectFieldsIndex].AsString(m_objectFields[objectFieldsIndex]);
+    }
+    payload.WithArray("objectFields", std::move(objectFieldsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

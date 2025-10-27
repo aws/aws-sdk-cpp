@@ -10,22 +10,18 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String GetTemplateRequest::SerializePayload() const
-{
+Aws::String GetTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetTemplate&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_changeSetNameHasBeenSet)
-  {
+  if (m_changeSetNameHasBeenSet) {
     ss << "ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
 
-  if(m_templateStageHasBeenSet)
-  {
+  if (m_templateStageHasBeenSet) {
     ss << "TemplateStage=" << StringUtils::URLEncode(TemplateStageMapper::GetNameForTemplateStage(m_templateStage)) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String GetTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

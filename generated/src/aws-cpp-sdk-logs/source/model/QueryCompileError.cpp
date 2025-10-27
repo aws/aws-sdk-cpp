@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/QueryCompileError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/QueryCompileError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-QueryCompileError::QueryCompileError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryCompileError::QueryCompileError(JsonView jsonValue) { *this = jsonValue; }
 
-QueryCompileError& QueryCompileError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("location"))
-  {
+QueryCompileError& QueryCompileError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryCompileError::Jsonize() const
-{
+JsonValue QueryCompileError::Jsonize() const {
   JsonValue payload;
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("location", m_location.Jsonize());
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

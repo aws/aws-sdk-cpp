@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCampaignCommunicationLimitsRequest::SerializePayload() const
-{
+Aws::String UpdateCampaignCommunicationLimitsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_communicationLimitsOverrideHasBeenSet)
-  {
-   payload.WithObject("communicationLimitsOverride", m_communicationLimitsOverride.Jsonize());
-
+  if (m_communicationLimitsOverrideHasBeenSet) {
+    payload.WithObject("communicationLimitsOverride", m_communicationLimitsOverride.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

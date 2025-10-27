@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisSegmentIssues::RealTimeContactAnalysisSegmentIssues(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisSegmentIssues::RealTimeContactAnalysisSegmentIssues(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisSegmentIssues& RealTimeContactAnalysisSegmentIssues::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IssuesDetected"))
-  {
+RealTimeContactAnalysisSegmentIssues& RealTimeContactAnalysisSegmentIssues::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IssuesDetected")) {
     Aws::Utils::Array<JsonView> issuesDetectedJsonList = jsonValue.GetArray("IssuesDetected");
-    for(unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex)
-    {
+    for (unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex) {
       m_issuesDetected.push_back(issuesDetectedJsonList[issuesDetectedIndex].AsObject());
     }
     m_issuesDetectedHasBeenSet = true;
@@ -37,24 +28,20 @@ RealTimeContactAnalysisSegmentIssues& RealTimeContactAnalysisSegmentIssues::oper
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisSegmentIssues::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisSegmentIssues::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuesDetectedHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> issuesDetectedJsonList(m_issuesDetected.size());
-   for(unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex)
-   {
-     issuesDetectedJsonList[issuesDetectedIndex].AsObject(m_issuesDetected[issuesDetectedIndex].Jsonize());
-   }
-   payload.WithArray("IssuesDetected", std::move(issuesDetectedJsonList));
-
+  if (m_issuesDetectedHasBeenSet) {
+    Aws::Utils::Array<JsonValue> issuesDetectedJsonList(m_issuesDetected.size());
+    for (unsigned issuesDetectedIndex = 0; issuesDetectedIndex < issuesDetectedJsonList.GetLength(); ++issuesDetectedIndex) {
+      issuesDetectedJsonList[issuesDetectedIndex].AsObject(m_issuesDetected[issuesDetectedIndex].Jsonize());
+    }
+    payload.WithArray("IssuesDetected", std::move(issuesDetectedJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

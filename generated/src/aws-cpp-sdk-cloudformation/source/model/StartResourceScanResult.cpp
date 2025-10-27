@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/StartResourceScanResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartResourceScanResult::StartResourceScanResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+StartResourceScanResult::StartResourceScanResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-StartResourceScanResult& StartResourceScanResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+StartResourceScanResult& StartResourceScanResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "StartResourceScanResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "StartResourceScanResult")) {
     resultNode = rootNode.FirstChild("StartResourceScanResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode resourceScanIdNode = resultNode.FirstChild("ResourceScanId");
-    if(!resourceScanIdNode.IsNull())
-    {
+    if (!resourceScanIdNode.IsNull()) {
       m_resourceScanId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceScanIdNode.GetText());
       m_resourceScanIdHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ StartResourceScanResult& StartResourceScanResult::operator =(const Aws::AmazonWe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::StartResourceScanResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::StartResourceScanResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

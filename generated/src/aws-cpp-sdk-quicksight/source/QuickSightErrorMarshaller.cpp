@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::QuickSight;
 
-AWSError<CoreErrors> QuickSightErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> QuickSightErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = QuickSightErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

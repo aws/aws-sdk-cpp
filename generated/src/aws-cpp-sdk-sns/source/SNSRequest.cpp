@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sns/SNSRequest.h>
 
-namespace Aws
-{
-namespace SNS
-{
-} // namespace SNS
-} // namespace Aws
+namespace Aws {
+namespace SNS {}  // namespace SNS
+}  // namespace Aws

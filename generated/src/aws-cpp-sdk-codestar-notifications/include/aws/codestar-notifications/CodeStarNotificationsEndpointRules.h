@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeStarNotifications
-{
-class CodeStarNotificationsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeStarNotifications {
+class CodeStarNotificationsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeStarNotifications
-} // namespace Aws
+}  // namespace CodeStarNotifications
+}  // namespace Aws

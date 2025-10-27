@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/CreateFileCacheLustreConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/CreateFileCacheLustreConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CreateFileCacheLustreConfiguration& CreateFileCacheLustreConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PerUnitStorageThroughput"))
-  {
+CreateFileCacheLustreConfiguration& CreateFileCacheLustreConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PerUnitStorageThroughput")) {
     m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
     m_perUnitStorageThroughputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentType"))
-  {
+  if (jsonValue.ValueExists("DeploymentType")) {
     m_deploymentType = FileCacheLustreDeploymentTypeMapper::GetFileCacheLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
     m_deploymentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
-  {
+  if (jsonValue.ValueExists("WeeklyMaintenanceStartTime")) {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetadataConfiguration"))
-  {
+  if (jsonValue.ValueExists("MetadataConfiguration")) {
     m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
     m_metadataConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateFileCacheLustreConfiguration::Jsonize() const
-{
+JsonValue CreateFileCacheLustreConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_perUnitStorageThroughputHasBeenSet)
-  {
-   payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
-
+  if (m_perUnitStorageThroughputHasBeenSet) {
+    payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
   }
 
-  if(m_deploymentTypeHasBeenSet)
-  {
-   payload.WithString("DeploymentType", FileCacheLustreDeploymentTypeMapper::GetNameForFileCacheLustreDeploymentType(m_deploymentType));
+  if (m_deploymentTypeHasBeenSet) {
+    payload.WithString("DeploymentType", FileCacheLustreDeploymentTypeMapper::GetNameForFileCacheLustreDeploymentType(m_deploymentType));
   }
 
-  if(m_weeklyMaintenanceStartTimeHasBeenSet)
-  {
-   payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
-
+  if (m_weeklyMaintenanceStartTimeHasBeenSet) {
+    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
   }
 
-  if(m_metadataConfigurationHasBeenSet)
-  {
-   payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
-
+  if (m_metadataConfigurationHasBeenSet) {
+    payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

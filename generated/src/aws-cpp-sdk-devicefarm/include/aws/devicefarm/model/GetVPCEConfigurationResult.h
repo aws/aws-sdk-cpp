@@ -4,64 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/VPCEConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace DeviceFarm
-{
-namespace Model
-{
-  class GetVPCEConfigurationResult
-  {
-  public:
-    AWS_DEVICEFARM_API GetVPCEConfigurationResult() = default;
-    AWS_DEVICEFARM_API GetVPCEConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_DEVICEFARM_API GetVPCEConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DeviceFarm {
+namespace Model {
+class GetVPCEConfigurationResult {
+ public:
+  AWS_DEVICEFARM_API GetVPCEConfigurationResult() = default;
+  AWS_DEVICEFARM_API GetVPCEConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DEVICEFARM_API GetVPCEConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>An object that contains information about your VPC endpoint
+   * configuration.</p>
+   */
+  inline const VPCEConfiguration& GetVpceConfiguration() const { return m_vpceConfiguration; }
+  template <typename VpceConfigurationT = VPCEConfiguration>
+  void SetVpceConfiguration(VpceConfigurationT&& value) {
+    m_vpceConfigurationHasBeenSet = true;
+    m_vpceConfiguration = std::forward<VpceConfigurationT>(value);
+  }
+  template <typename VpceConfigurationT = VPCEConfiguration>
+  GetVPCEConfigurationResult& WithVpceConfiguration(VpceConfigurationT&& value) {
+    SetVpceConfiguration(std::forward<VpceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An object that contains information about your VPC endpoint
-     * configuration.</p>
-     */
-    inline const VPCEConfiguration& GetVpceConfiguration() const { return m_vpceConfiguration; }
-    template<typename VpceConfigurationT = VPCEConfiguration>
-    void SetVpceConfiguration(VpceConfigurationT&& value) { m_vpceConfigurationHasBeenSet = true; m_vpceConfiguration = std::forward<VpceConfigurationT>(value); }
-    template<typename VpceConfigurationT = VPCEConfiguration>
-    GetVPCEConfigurationResult& WithVpceConfiguration(VpceConfigurationT&& value) { SetVpceConfiguration(std::forward<VpceConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetVPCEConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetVPCEConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  VPCEConfiguration m_vpceConfiguration;
+  bool m_vpceConfigurationHasBeenSet = false;
 
-    VPCEConfiguration m_vpceConfiguration;
-    bool m_vpceConfigurationHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

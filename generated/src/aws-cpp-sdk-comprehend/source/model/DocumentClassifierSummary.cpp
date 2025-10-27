@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentClassifierSummary::DocumentClassifierSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentClassifierSummary::DocumentClassifierSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentClassifierSummary& DocumentClassifierSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DocumentClassifierName"))
-  {
+DocumentClassifierSummary& DocumentClassifierSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentClassifierName")) {
     m_documentClassifierName = jsonValue.GetString("DocumentClassifierName");
     m_documentClassifierNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfVersions"))
-  {
+  if (jsonValue.ValueExists("NumberOfVersions")) {
     m_numberOfVersions = jsonValue.GetInteger("NumberOfVersions");
     m_numberOfVersionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestVersionCreatedAt"))
-  {
+  if (jsonValue.ValueExists("LatestVersionCreatedAt")) {
     m_latestVersionCreatedAt = jsonValue.GetDouble("LatestVersionCreatedAt");
     m_latestVersionCreatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestVersionName"))
-  {
+  if (jsonValue.ValueExists("LatestVersionName")) {
     m_latestVersionName = jsonValue.GetString("LatestVersionName");
     m_latestVersionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestVersionStatus"))
-  {
+  if (jsonValue.ValueExists("LatestVersionStatus")) {
     m_latestVersionStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("LatestVersionStatus"));
     m_latestVersionStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentClassifierSummary::Jsonize() const
-{
+JsonValue DocumentClassifierSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentClassifierNameHasBeenSet)
-  {
-   payload.WithString("DocumentClassifierName", m_documentClassifierName);
-
+  if (m_documentClassifierNameHasBeenSet) {
+    payload.WithString("DocumentClassifierName", m_documentClassifierName);
   }
 
-  if(m_numberOfVersionsHasBeenSet)
-  {
-   payload.WithInteger("NumberOfVersions", m_numberOfVersions);
-
+  if (m_numberOfVersionsHasBeenSet) {
+    payload.WithInteger("NumberOfVersions", m_numberOfVersions);
   }
 
-  if(m_latestVersionCreatedAtHasBeenSet)
-  {
-   payload.WithDouble("LatestVersionCreatedAt", m_latestVersionCreatedAt.SecondsWithMSPrecision());
+  if (m_latestVersionCreatedAtHasBeenSet) {
+    payload.WithDouble("LatestVersionCreatedAt", m_latestVersionCreatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_latestVersionNameHasBeenSet)
-  {
-   payload.WithString("LatestVersionName", m_latestVersionName);
-
+  if (m_latestVersionNameHasBeenSet) {
+    payload.WithString("LatestVersionName", m_latestVersionName);
   }
 
-  if(m_latestVersionStatusHasBeenSet)
-  {
-   payload.WithString("LatestVersionStatus", ModelStatusMapper::GetNameForModelStatus(m_latestVersionStatus));
+  if (m_latestVersionStatusHasBeenSet) {
+    payload.WithString("LatestVersionStatus", ModelStatusMapper::GetNameForModelStatus(m_latestVersionStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

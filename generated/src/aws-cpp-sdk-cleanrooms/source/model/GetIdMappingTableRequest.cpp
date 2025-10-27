@@ -12,11 +12,4 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetIdMappingTableRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetIdMappingTableRequest::SerializePayload() const { return {}; }

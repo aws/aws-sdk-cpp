@@ -5,12 +5,8 @@
 
 #include <aws/vpc-lattice/VPCLatticeEndpointProvider.h>
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace VPCLattice
-} // namespace Aws
+namespace Aws {
+namespace VPCLattice {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace VPCLattice
+}  // namespace Aws

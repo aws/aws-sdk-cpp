@@ -13,33 +13,27 @@ using namespace Aws::Utils;
 using namespace Aws::GeoRoutes;
 using namespace Aws::GeoRoutes::Model;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-template<> AWS_GEOROUTES_API ValidationException GeoRoutesError::GetModeledError()
-{
+namespace Aws {
+namespace GeoRoutes {
+template <>
+AWS_GEOROUTES_API ValidationException GeoRoutesError::GetModeledError() {
   assert(this->GetErrorType() == GeoRoutesErrors::VALIDATION);
   return ValidationException(this->GetJsonPayload().View());
 }
 
-namespace GeoRoutesErrorMapper
-{
+namespace GeoRoutesErrorMapper {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GeoRoutesErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace GeoRoutesErrorMapper
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace GeoRoutesErrorMapper
+}  // namespace GeoRoutes
+}  // namespace Aws

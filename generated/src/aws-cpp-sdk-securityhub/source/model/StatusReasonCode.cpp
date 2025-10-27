@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StatusReasonCode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/securityhub/model/StatusReasonCode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+namespace StatusReasonCodeMapper {
 
-namespace Aws
-{
-  namespace SecurityHub
-  {
-    namespace Model
-    {
-      namespace StatusReasonCodeMapper
-      {
+static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
+static const int MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 
-        static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
-        static const int MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
-        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH) {
+    return StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER;
+  } else if (hashCode == MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH) {
+    return StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED;
+  } else if (hashCode == INTERNAL_ERROR_HASH) {
+    return StatusReasonCode::INTERNAL_ERROR;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<StatusReasonCode>(hashCode);
+  }
 
+  return StatusReasonCode::NOT_SET;
+}
 
-        StatusReasonCode GetStatusReasonCodeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH)
-          {
-            return StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER;
-          }
-          else if (hashCode == MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH)
-          {
-            return StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED;
-          }
-          else if (hashCode == INTERNAL_ERROR_HASH)
-          {
-            return StatusReasonCode::INTERNAL_ERROR;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StatusReasonCode>(hashCode);
-          }
+Aws::String GetNameForStatusReasonCode(StatusReasonCode enumValue) {
+  switch (enumValue) {
+    case StatusReasonCode::NOT_SET:
+      return {};
+    case StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER:
+      return "NO_AVAILABLE_CONFIGURATION_RECORDER";
+    case StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED:
+      return "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED";
+    case StatusReasonCode::INTERNAL_ERROR:
+      return "INTERNAL_ERROR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return StatusReasonCode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForStatusReasonCode(StatusReasonCode enumValue)
-        {
-          switch(enumValue)
-          {
-          case StatusReasonCode::NOT_SET:
-            return {};
-          case StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER:
-            return "NO_AVAILABLE_CONFIGURATION_RECORDER";
-          case StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED:
-            return "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED";
-          case StatusReasonCode::INTERNAL_ERROR:
-            return "INTERNAL_ERROR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace StatusReasonCodeMapper
-    } // namespace Model
-  } // namespace SecurityHub
-} // namespace Aws
+}  // namespace StatusReasonCodeMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

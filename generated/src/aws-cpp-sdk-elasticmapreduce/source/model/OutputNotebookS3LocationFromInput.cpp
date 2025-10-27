@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/OutputNotebookS3LocationFromInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/OutputNotebookS3LocationFromInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-OutputNotebookS3LocationFromInput::OutputNotebookS3LocationFromInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputNotebookS3LocationFromInput::OutputNotebookS3LocationFromInput(JsonView jsonValue) { *this = jsonValue; }
 
-OutputNotebookS3LocationFromInput& OutputNotebookS3LocationFromInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Bucket"))
-  {
+OutputNotebookS3LocationFromInput& OutputNotebookS3LocationFromInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Bucket")) {
     m_bucket = jsonValue.GetString("Bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputNotebookS3LocationFromInput::Jsonize() const
-{
+JsonValue OutputNotebookS3LocationFromInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("Bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("Bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

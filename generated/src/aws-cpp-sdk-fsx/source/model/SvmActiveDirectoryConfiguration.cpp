@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/SvmActiveDirectoryConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/SvmActiveDirectoryConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-SvmActiveDirectoryConfiguration::SvmActiveDirectoryConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SvmActiveDirectoryConfiguration::SvmActiveDirectoryConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SvmActiveDirectoryConfiguration& SvmActiveDirectoryConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NetBiosName"))
-  {
+SvmActiveDirectoryConfiguration& SvmActiveDirectoryConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NetBiosName")) {
     m_netBiosName = jsonValue.GetString("NetBiosName");
     m_netBiosNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration"))
-  {
+  if (jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration")) {
     m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
     m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SvmActiveDirectoryConfiguration::Jsonize() const
-{
+JsonValue SvmActiveDirectoryConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_netBiosNameHasBeenSet)
-  {
-   payload.WithString("NetBiosName", m_netBiosName);
-
+  if (m_netBiosNameHasBeenSet) {
+    payload.WithString("NetBiosName", m_netBiosName);
   }
 
-  if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
-  {
-   payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
-
+  if (m_selfManagedActiveDirectoryConfigurationHasBeenSet) {
+    payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

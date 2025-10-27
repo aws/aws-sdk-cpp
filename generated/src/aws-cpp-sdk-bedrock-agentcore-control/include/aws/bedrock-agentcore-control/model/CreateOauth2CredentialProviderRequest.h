@@ -4,106 +4,127 @@
  */
 
 #pragma once
-#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderVendorType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigInput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
+/**
+ */
+class CreateOauth2CredentialProviderRequest : public BedrockAgentCoreControlRequest {
+ public:
+  AWS_BEDROCKAGENTCORECONTROL_API CreateOauth2CredentialProviderRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateOauth2CredentialProvider"; }
+
+  AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the OAuth2 credential provider. The name must be unique within
+   * your account.</p>
    */
-  class CreateOauth2CredentialProviderRequest : public BedrockAgentCoreControlRequest
-  {
-  public:
-    AWS_BEDROCKAGENTCORECONTROL_API CreateOauth2CredentialProviderRequest() = default;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateOauth2CredentialProviderRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateOauth2CredentialProvider"; }
+  ///@{
+  /**
+   * <p>The vendor of the OAuth2 credential provider. This specifies which OAuth2
+   * implementation to use.</p>
+   */
+  inline CredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
+  inline bool CredentialProviderVendorHasBeenSet() const { return m_credentialProviderVendorHasBeenSet; }
+  inline void SetCredentialProviderVendor(CredentialProviderVendorType value) {
+    m_credentialProviderVendorHasBeenSet = true;
+    m_credentialProviderVendor = value;
+  }
+  inline CreateOauth2CredentialProviderRequest& WithCredentialProviderVendor(CredentialProviderVendorType value) {
+    SetCredentialProviderVendor(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The configuration settings for the OAuth2 provider, including client ID,
+   * client secret, and other vendor-specific settings.</p>
+   */
+  inline const Oauth2ProviderConfigInput& GetOauth2ProviderConfigInput() const { return m_oauth2ProviderConfigInput; }
+  inline bool Oauth2ProviderConfigInputHasBeenSet() const { return m_oauth2ProviderConfigInputHasBeenSet; }
+  template <typename Oauth2ProviderConfigInputT = Oauth2ProviderConfigInput>
+  void SetOauth2ProviderConfigInput(Oauth2ProviderConfigInputT&& value) {
+    m_oauth2ProviderConfigInputHasBeenSet = true;
+    m_oauth2ProviderConfigInput = std::forward<Oauth2ProviderConfigInputT>(value);
+  }
+  template <typename Oauth2ProviderConfigInputT = Oauth2ProviderConfigInput>
+  CreateOauth2CredentialProviderRequest& WithOauth2ProviderConfigInput(Oauth2ProviderConfigInputT&& value) {
+    SetOauth2ProviderConfigInput(std::forward<Oauth2ProviderConfigInputT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A map of tag keys and values to assign to the OAuth2 credential provider.
+   * Tags enable you to categorize your resources in different ways, for example, by
+   * purpose, owner, or environment.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateOauth2CredentialProviderRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateOauth2CredentialProviderRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the OAuth2 credential provider. The name must be unique within
-     * your account.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateOauth2CredentialProviderRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
+  bool m_credentialProviderVendorHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The vendor of the OAuth2 credential provider. This specifies which OAuth2
-     * implementation to use.</p>
-     */
-    inline CredentialProviderVendorType GetCredentialProviderVendor() const { return m_credentialProviderVendor; }
-    inline bool CredentialProviderVendorHasBeenSet() const { return m_credentialProviderVendorHasBeenSet; }
-    inline void SetCredentialProviderVendor(CredentialProviderVendorType value) { m_credentialProviderVendorHasBeenSet = true; m_credentialProviderVendor = value; }
-    inline CreateOauth2CredentialProviderRequest& WithCredentialProviderVendor(CredentialProviderVendorType value) { SetCredentialProviderVendor(value); return *this;}
-    ///@}
+  Oauth2ProviderConfigInput m_oauth2ProviderConfigInput;
+  bool m_oauth2ProviderConfigInputHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The configuration settings for the OAuth2 provider, including client ID,
-     * client secret, and other vendor-specific settings.</p>
-     */
-    inline const Oauth2ProviderConfigInput& GetOauth2ProviderConfigInput() const { return m_oauth2ProviderConfigInput; }
-    inline bool Oauth2ProviderConfigInputHasBeenSet() const { return m_oauth2ProviderConfigInputHasBeenSet; }
-    template<typename Oauth2ProviderConfigInputT = Oauth2ProviderConfigInput>
-    void SetOauth2ProviderConfigInput(Oauth2ProviderConfigInputT&& value) { m_oauth2ProviderConfigInputHasBeenSet = true; m_oauth2ProviderConfigInput = std::forward<Oauth2ProviderConfigInputT>(value); }
-    template<typename Oauth2ProviderConfigInputT = Oauth2ProviderConfigInput>
-    CreateOauth2CredentialProviderRequest& WithOauth2ProviderConfigInput(Oauth2ProviderConfigInputT&& value) { SetOauth2ProviderConfigInput(std::forward<Oauth2ProviderConfigInputT>(value)); return *this;}
-    ///@}
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>A map of tag keys and values to assign to the OAuth2 credential provider.
-     * Tags enable you to categorize your resources in different ways, for example, by
-     * purpose, owner, or environment.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    CreateOauth2CredentialProviderRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    CreateOauth2CredentialProviderRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
-    bool m_credentialProviderVendorHasBeenSet = false;
-
-    Oauth2ProviderConfigInput m_oauth2ProviderConfigInput;
-    bool m_oauth2ProviderConfigInputHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

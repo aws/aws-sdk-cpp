@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BillingConductor {
+namespace Model {
 
+/**
+ * <p>A representation of the charge details that are associated with a flat custom
+ * line item.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemFlatChargeDetails">AWS
+ * API Reference</a></p>
+ */
+class CustomLineItemFlatChargeDetails {
+ public:
+  AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails() = default;
+  AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A representation of the charge details that are associated with a flat custom
-   * line item.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemFlatChargeDetails">AWS
-   * API Reference</a></p>
+   * <p>The custom line item's fixed charge value in USD.</p>
    */
-  class CustomLineItemFlatChargeDetails
-  {
-  public:
-    AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails() = default;
-    AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLINGCONDUCTOR_API CustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline double GetChargeValue() const { return m_chargeValue; }
+  inline bool ChargeValueHasBeenSet() const { return m_chargeValueHasBeenSet; }
+  inline void SetChargeValue(double value) {
+    m_chargeValueHasBeenSet = true;
+    m_chargeValue = value;
+  }
+  inline CustomLineItemFlatChargeDetails& WithChargeValue(double value) {
+    SetChargeValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_chargeValue{0.0};
+  bool m_chargeValueHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The custom line item's fixed charge value in USD.</p>
-     */
-    inline double GetChargeValue() const { return m_chargeValue; }
-    inline bool ChargeValueHasBeenSet() const { return m_chargeValueHasBeenSet; }
-    inline void SetChargeValue(double value) { m_chargeValueHasBeenSet = true; m_chargeValue = value; }
-    inline CustomLineItemFlatChargeDetails& WithChargeValue(double value) { SetChargeValue(value); return *this;}
-    ///@}
-  private:
-
-    double m_chargeValue{0.0};
-    bool m_chargeValueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBranchRequest::SerializePayload() const
-{
+Aws::String GetBranchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_branchNameHasBeenSet)
-  {
-   payload.WithString("branchName", m_branchName);
-
+  if (m_branchNameHasBeenSet) {
+    payload.WithString("branchName", m_branchName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetBranchRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetBranchRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetBranch"));
   return headers;
-
 }
-
-
-
-

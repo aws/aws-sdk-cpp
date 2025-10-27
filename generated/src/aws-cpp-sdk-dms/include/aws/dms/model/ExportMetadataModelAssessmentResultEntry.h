@@ -4,73 +4,78 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
 
+/**
+ * <p>Provides information about an exported metadata model
+ * assessment.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessmentResultEntry">AWS
+ * API Reference</a></p>
+ */
+class ExportMetadataModelAssessmentResultEntry {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides information about an exported metadata model
-   * assessment.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessmentResultEntry">AWS
-   * API Reference</a></p>
+   * <p>The object key for the object containing the exported metadata model
+   * assessment.</p>
    */
-  class ExportMetadataModelAssessmentResultEntry
-  {
-  public:
-    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry() = default;
-    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetS3ObjectKey() const { return m_s3ObjectKey; }
+  inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }
+  template <typename S3ObjectKeyT = Aws::String>
+  void SetS3ObjectKey(S3ObjectKeyT&& value) {
+    m_s3ObjectKeyHasBeenSet = true;
+    m_s3ObjectKey = std::forward<S3ObjectKeyT>(value);
+  }
+  template <typename S3ObjectKeyT = Aws::String>
+  ExportMetadataModelAssessmentResultEntry& WithS3ObjectKey(S3ObjectKeyT&& value) {
+    SetS3ObjectKey(std::forward<S3ObjectKeyT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The URL for the object containing the exported metadata model assessment.</p>
+   */
+  inline const Aws::String& GetObjectURL() const { return m_objectURL; }
+  inline bool ObjectURLHasBeenSet() const { return m_objectURLHasBeenSet; }
+  template <typename ObjectURLT = Aws::String>
+  void SetObjectURL(ObjectURLT&& value) {
+    m_objectURLHasBeenSet = true;
+    m_objectURL = std::forward<ObjectURLT>(value);
+  }
+  template <typename ObjectURLT = Aws::String>
+  ExportMetadataModelAssessmentResultEntry& WithObjectURL(ObjectURLT&& value) {
+    SetObjectURL(std::forward<ObjectURLT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_s3ObjectKey;
+  bool m_s3ObjectKeyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The object key for the object containing the exported metadata model
-     * assessment.</p>
-     */
-    inline const Aws::String& GetS3ObjectKey() const { return m_s3ObjectKey; }
-    inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }
-    template<typename S3ObjectKeyT = Aws::String>
-    void SetS3ObjectKey(S3ObjectKeyT&& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = std::forward<S3ObjectKeyT>(value); }
-    template<typename S3ObjectKeyT = Aws::String>
-    ExportMetadataModelAssessmentResultEntry& WithS3ObjectKey(S3ObjectKeyT&& value) { SetS3ObjectKey(std::forward<S3ObjectKeyT>(value)); return *this;}
-    ///@}
+  Aws::String m_objectURL;
+  bool m_objectURLHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The URL for the object containing the exported metadata model assessment.</p>
-     */
-    inline const Aws::String& GetObjectURL() const { return m_objectURL; }
-    inline bool ObjectURLHasBeenSet() const { return m_objectURLHasBeenSet; }
-    template<typename ObjectURLT = Aws::String>
-    void SetObjectURL(ObjectURLT&& value) { m_objectURLHasBeenSet = true; m_objectURL = std::forward<ObjectURLT>(value); }
-    template<typename ObjectURLT = Aws::String>
-    ExportMetadataModelAssessmentResultEntry& WithObjectURL(ObjectURLT&& value) { SetObjectURL(std::forward<ObjectURLT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_s3ObjectKey;
-    bool m_s3ObjectKeyHasBeenSet = false;
-
-    Aws::String m_objectURL;
-    bool m_objectURLHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

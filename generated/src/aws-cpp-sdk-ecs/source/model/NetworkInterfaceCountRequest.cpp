@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/NetworkInterfaceCountRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/NetworkInterfaceCountRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-NetworkInterfaceCountRequest::NetworkInterfaceCountRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkInterfaceCountRequest::NetworkInterfaceCountRequest(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkInterfaceCountRequest& NetworkInterfaceCountRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("min"))
-  {
+NetworkInterfaceCountRequest& NetworkInterfaceCountRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("min")) {
     m_min = jsonValue.GetInteger("min");
     m_minHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("max"))
-  {
+  if (jsonValue.ValueExists("max")) {
     m_max = jsonValue.GetInteger("max");
     m_maxHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkInterfaceCountRequest::Jsonize() const
-{
+JsonValue NetworkInterfaceCountRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_minHasBeenSet)
-  {
-   payload.WithInteger("min", m_min);
-
+  if (m_minHasBeenSet) {
+    payload.WithInteger("min", m_min);
   }
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithInteger("max", m_max);
-
+  if (m_maxHasBeenSet) {
+    payload.WithInteger("max", m_max);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

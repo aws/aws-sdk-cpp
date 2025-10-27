@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Model
-{
-  enum class TimeUnit
-  {
-    NOT_SET,
-    HOURLY,
-    DAILY,
-    MONTHLY
-  };
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Model {
+enum class TimeUnit { NOT_SET, HOURLY, DAILY, MONTHLY };
 
-namespace TimeUnitMapper
-{
+namespace TimeUnitMapper {
 AWS_COSTANDUSAGEREPORTSERVICE_API TimeUnit GetTimeUnitForName(const Aws::String& name);
 
 AWS_COSTANDUSAGEREPORTSERVICE_API Aws::String GetNameForTimeUnit(TimeUnit value);
-} // namespace TimeUnitMapper
-} // namespace Model
-} // namespace CostandUsageReportService
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace CostandUsageReportService
+}  // namespace Aws

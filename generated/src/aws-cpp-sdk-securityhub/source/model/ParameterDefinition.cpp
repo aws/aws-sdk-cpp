@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/ParameterDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/ParameterDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-ParameterDefinition::ParameterDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterDefinition::ParameterDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+ParameterDefinition& ParameterDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConfigurationOptions"))
-  {
+  if (jsonValue.ValueExists("ConfigurationOptions")) {
     m_configurationOptions = jsonValue.GetObject("ConfigurationOptions");
     m_configurationOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterDefinition::Jsonize() const
-{
+JsonValue ParameterDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_configurationOptionsHasBeenSet)
-  {
-   payload.WithObject("ConfigurationOptions", m_configurationOptions.Jsonize());
-
+  if (m_configurationOptionsHasBeenSet) {
+    payload.WithObject("ConfigurationOptions", m_configurationOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

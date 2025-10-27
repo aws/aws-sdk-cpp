@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class PadVideo
-  {
-    NOT_SET,
-    DISABLED,
-    BLACK
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class PadVideo { NOT_SET, DISABLED, BLACK };
 
-namespace PadVideoMapper
-{
+namespace PadVideoMapper {
 AWS_MEDIACONVERT_API PadVideo GetPadVideoForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForPadVideo(PadVideo value);
-} // namespace PadVideoMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace PadVideoMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

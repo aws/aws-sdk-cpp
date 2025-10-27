@@ -12,18 +12,12 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRoomMembershipRequest::SerializePayload() const
-{
+Aws::String UpdateRoomMembershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", RoomMembershipRoleMapper::GetNameForRoomMembershipRole(m_role));
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", RoomMembershipRoleMapper::GetNameForRoomMembershipRole(m_role));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

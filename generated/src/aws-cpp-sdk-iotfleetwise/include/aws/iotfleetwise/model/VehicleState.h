@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class VehicleState
-  {
-    NOT_SET,
-    CREATED,
-    READY,
-    HEALTHY,
-    SUSPENDED,
-    DELETING,
-    READY_FOR_CHECKIN
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class VehicleState { NOT_SET, CREATED, READY, HEALTHY, SUSPENDED, DELETING, READY_FOR_CHECKIN };
 
-namespace VehicleStateMapper
-{
+namespace VehicleStateMapper {
 AWS_IOTFLEETWISE_API VehicleState GetVehicleStateForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForVehicleState(VehicleState value);
-} // namespace VehicleStateMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace VehicleStateMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

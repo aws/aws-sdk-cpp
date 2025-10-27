@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/SecurityPolicyStats.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearchserverless/model/SecurityPolicyStats.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
 
-SecurityPolicyStats::SecurityPolicyStats(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecurityPolicyStats::SecurityPolicyStats(JsonView jsonValue) { *this = jsonValue; }
 
-SecurityPolicyStats& SecurityPolicyStats::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EncryptionPolicyCount"))
-  {
+SecurityPolicyStats& SecurityPolicyStats::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EncryptionPolicyCount")) {
     m_encryptionPolicyCount = jsonValue.GetInt64("EncryptionPolicyCount");
     m_encryptionPolicyCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkPolicyCount"))
-  {
+  if (jsonValue.ValueExists("NetworkPolicyCount")) {
     m_networkPolicyCount = jsonValue.GetInt64("NetworkPolicyCount");
     m_networkPolicyCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecurityPolicyStats::Jsonize() const
-{
+JsonValue SecurityPolicyStats::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptionPolicyCountHasBeenSet)
-  {
-   payload.WithInt64("EncryptionPolicyCount", m_encryptionPolicyCount);
-
+  if (m_encryptionPolicyCountHasBeenSet) {
+    payload.WithInt64("EncryptionPolicyCount", m_encryptionPolicyCount);
   }
 
-  if(m_networkPolicyCountHasBeenSet)
-  {
-   payload.WithInt64("NetworkPolicyCount", m_networkPolicyCount);
-
+  if (m_networkPolicyCountHasBeenSet) {
+    payload.WithInt64("NetworkPolicyCount", m_networkPolicyCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

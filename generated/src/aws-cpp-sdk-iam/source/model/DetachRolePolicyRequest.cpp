@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DetachRolePolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DetachRolePolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DetachRolePolicyRequest::SerializePayload() const
-{
+Aws::String DetachRolePolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetachRolePolicy&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DetachRolePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetachRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetachRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

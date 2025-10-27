@@ -7,25 +7,16 @@
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
-  enum class Persona
-  {
-    NOT_SET,
-    admin,
-    endUser
-  };
+namespace Aws {
+namespace AppFabric {
+namespace Model {
+enum class Persona { NOT_SET, admin, endUser };
 
-namespace PersonaMapper
-{
+namespace PersonaMapper {
 AWS_APPFABRIC_API Persona GetPersonaForName(const Aws::String& name);
 
 AWS_APPFABRIC_API Aws::String GetNameForPersona(Persona value);
-} // namespace PersonaMapper
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace PersonaMapper
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

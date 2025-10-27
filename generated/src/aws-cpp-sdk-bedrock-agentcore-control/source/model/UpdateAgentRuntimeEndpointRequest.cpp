@@ -12,31 +12,20 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAgentRuntimeEndpointRequest::SerializePayload() const
-{
+Aws::String UpdateAgentRuntimeEndpointRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_agentRuntimeVersionHasBeenSet)
-  {
-   payload.WithString("agentRuntimeVersion", m_agentRuntimeVersion);
-
+  if (m_agentRuntimeVersionHasBeenSet) {
+    payload.WithString("agentRuntimeVersion", m_agentRuntimeVersion);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

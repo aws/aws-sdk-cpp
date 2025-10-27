@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/UpdateAccountSettingsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/timestream-query/model/UpdateAccountSettingsResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAccountSettingsResult::UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateAccountSettingsResult::UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateAccountSettingsResult& UpdateAccountSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateAccountSettingsResult& UpdateAccountSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MaxQueryTCU"))
-  {
+  if (jsonValue.ValueExists("MaxQueryTCU")) {
     m_maxQueryTCU = jsonValue.GetInteger("MaxQueryTCU");
     m_maxQueryTCUHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryPricingModel"))
-  {
+  if (jsonValue.ValueExists("QueryPricingModel")) {
     m_queryPricingModel = QueryPricingModelMapper::GetQueryPricingModelForName(jsonValue.GetString("QueryPricingModel"));
     m_queryPricingModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryCompute"))
-  {
+  if (jsonValue.ValueExists("QueryCompute")) {
     m_queryCompute = jsonValue.GetObject("QueryCompute");
     m_queryComputeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

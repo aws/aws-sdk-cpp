@@ -6,58 +6,57 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/MeasurementProcessingConfig.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace IoTSiteWise {
+namespace Model {
 
+/**
+ * <p>Contains an asset measurement property. For more information, see <a
+ * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
+ * in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Measurement">AWS
+ * API Reference</a></p>
+ */
+class Measurement {
+ public:
+  AWS_IOTSITEWISE_API Measurement() = default;
+  AWS_IOTSITEWISE_API Measurement(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTSITEWISE_API Measurement& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains an asset measurement property. For more information, see <a
-   * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
-   * in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Measurement">AWS
-   * API Reference</a></p>
+   * <p>The processing configuration for the given measurement property. You can
+   * configure measurements to be kept at the edge or forwarded to the Amazon Web
+   * Services Cloud. By default, measurements are forwarded to the cloud.</p>
    */
-  class Measurement
-  {
-  public:
-    AWS_IOTSITEWISE_API Measurement() = default;
-    AWS_IOTSITEWISE_API Measurement(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTSITEWISE_API Measurement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const MeasurementProcessingConfig& GetProcessingConfig() const { return m_processingConfig; }
+  inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
+  template <typename ProcessingConfigT = MeasurementProcessingConfig>
+  void SetProcessingConfig(ProcessingConfigT&& value) {
+    m_processingConfigHasBeenSet = true;
+    m_processingConfig = std::forward<ProcessingConfigT>(value);
+  }
+  template <typename ProcessingConfigT = MeasurementProcessingConfig>
+  Measurement& WithProcessingConfig(ProcessingConfigT&& value) {
+    SetProcessingConfig(std::forward<ProcessingConfigT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  MeasurementProcessingConfig m_processingConfig;
+  bool m_processingConfigHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
-    inline const MeasurementProcessingConfig& GetProcessingConfig() const { return m_processingConfig; }
-    inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
-    template<typename ProcessingConfigT = MeasurementProcessingConfig>
-    void SetProcessingConfig(ProcessingConfigT&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::forward<ProcessingConfigT>(value); }
-    template<typename ProcessingConfigT = MeasurementProcessingConfig>
-    Measurement& WithProcessingConfig(ProcessingConfigT&& value) { SetProcessingConfig(std::forward<ProcessingConfigT>(value)); return *this;}
-    ///@}
-  private:
-
-    MeasurementProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

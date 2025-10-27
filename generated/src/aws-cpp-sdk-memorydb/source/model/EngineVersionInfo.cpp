@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/EngineVersionInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/memorydb/model/EngineVersionInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
 
-EngineVersionInfo::EngineVersionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EngineVersionInfo::EngineVersionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-EngineVersionInfo& EngineVersionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Engine"))
-  {
+EngineVersionInfo& EngineVersionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Engine")) {
     m_engine = jsonValue.GetString("Engine");
     m_engineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngineVersion"))
-  {
+  if (jsonValue.ValueExists("EngineVersion")) {
     m_engineVersion = jsonValue.GetString("EngineVersion");
     m_engineVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnginePatchVersion"))
-  {
+  if (jsonValue.ValueExists("EnginePatchVersion")) {
     m_enginePatchVersion = jsonValue.GetString("EnginePatchVersion");
     m_enginePatchVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterGroupFamily"))
-  {
+  if (jsonValue.ValueExists("ParameterGroupFamily")) {
     m_parameterGroupFamily = jsonValue.GetString("ParameterGroupFamily");
     m_parameterGroupFamilyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EngineVersionInfo::Jsonize() const
-{
+JsonValue EngineVersionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_engineHasBeenSet)
-  {
-   payload.WithString("Engine", m_engine);
-
+  if (m_engineHasBeenSet) {
+    payload.WithString("Engine", m_engine);
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
-   payload.WithString("EngineVersion", m_engineVersion);
-
+  if (m_engineVersionHasBeenSet) {
+    payload.WithString("EngineVersion", m_engineVersion);
   }
 
-  if(m_enginePatchVersionHasBeenSet)
-  {
-   payload.WithString("EnginePatchVersion", m_enginePatchVersion);
-
+  if (m_enginePatchVersionHasBeenSet) {
+    payload.WithString("EnginePatchVersion", m_enginePatchVersion);
   }
 
-  if(m_parameterGroupFamilyHasBeenSet)
-  {
-   payload.WithString("ParameterGroupFamily", m_parameterGroupFamily);
-
+  if (m_parameterGroupFamilyHasBeenSet) {
+    payload.WithString("ParameterGroupFamily", m_parameterGroupFamily);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/oam/model/GetLinkRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/oam/model/GetLinkRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetLinkRequest::SerializePayload() const
-{
+Aws::String GetLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
-  if(m_includeTagsHasBeenSet)
-  {
-   payload.WithBool("IncludeTags", m_includeTags);
-
+  if (m_includeTagsHasBeenSet) {
+    payload.WithBool("IncludeTags", m_includeTags);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

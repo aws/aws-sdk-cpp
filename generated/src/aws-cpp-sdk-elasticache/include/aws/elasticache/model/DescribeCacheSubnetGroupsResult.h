@@ -4,88 +4,103 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/elasticache/model/ResponseMetadata.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheSubnetGroup.h>
+#include <aws/elasticache/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElastiCache {
+namespace Model {
+/**
+ * <p>Represents the output of a <code>DescribeCacheSubnetGroups</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSubnetGroupMessage">AWS
+ * API Reference</a></p>
+ */
+class DescribeCacheSubnetGroupsResult {
+ public:
+  AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult() = default;
+  AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
   /**
-   * <p>Represents the output of a <code>DescribeCacheSubnetGroups</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSubnetGroupMessage">AWS
-   * API Reference</a></p>
+   * <p>Provides an identifier to allow retrieval of paginated results.</p>
    */
-  class DescribeCacheSubnetGroupsResult
-  {
-  public:
-    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult() = default;
-    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  inline const Aws::String& GetMarker() const { return m_marker; }
+  template <typename MarkerT = Aws::String>
+  void SetMarker(MarkerT&& value) {
+    m_markerHasBeenSet = true;
+    m_marker = std::forward<MarkerT>(value);
+  }
+  template <typename MarkerT = Aws::String>
+  DescribeCacheSubnetGroupsResult& WithMarker(MarkerT&& value) {
+    SetMarker(std::forward<MarkerT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A list of cache subnet groups. Each element in the list contains detailed
+   * information about one group.</p>
+   */
+  inline const Aws::Vector<CacheSubnetGroup>& GetCacheSubnetGroups() const { return m_cacheSubnetGroups; }
+  template <typename CacheSubnetGroupsT = Aws::Vector<CacheSubnetGroup>>
+  void SetCacheSubnetGroups(CacheSubnetGroupsT&& value) {
+    m_cacheSubnetGroupsHasBeenSet = true;
+    m_cacheSubnetGroups = std::forward<CacheSubnetGroupsT>(value);
+  }
+  template <typename CacheSubnetGroupsT = Aws::Vector<CacheSubnetGroup>>
+  DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(CacheSubnetGroupsT&& value) {
+    SetCacheSubnetGroups(std::forward<CacheSubnetGroupsT>(value));
+    return *this;
+  }
+  template <typename CacheSubnetGroupsT = CacheSubnetGroup>
+  DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroupsT&& value) {
+    m_cacheSubnetGroupsHasBeenSet = true;
+    m_cacheSubnetGroups.emplace_back(std::forward<CacheSubnetGroupsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
-    inline const Aws::String& GetMarker() const { return m_marker; }
-    template<typename MarkerT = Aws::String>
-    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
-    template<typename MarkerT = Aws::String>
-    DescribeCacheSubnetGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
-    inline const Aws::Vector<CacheSubnetGroup>& GetCacheSubnetGroups() const { return m_cacheSubnetGroups; }
-    template<typename CacheSubnetGroupsT = Aws::Vector<CacheSubnetGroup>>
-    void SetCacheSubnetGroups(CacheSubnetGroupsT&& value) { m_cacheSubnetGroupsHasBeenSet = true; m_cacheSubnetGroups = std::forward<CacheSubnetGroupsT>(value); }
-    template<typename CacheSubnetGroupsT = Aws::Vector<CacheSubnetGroup>>
-    DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(CacheSubnetGroupsT&& value) { SetCacheSubnetGroups(std::forward<CacheSubnetGroupsT>(value)); return *this;}
-    template<typename CacheSubnetGroupsT = CacheSubnetGroup>
-    DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroupsT&& value) { m_cacheSubnetGroupsHasBeenSet = true; m_cacheSubnetGroups.emplace_back(std::forward<CacheSubnetGroupsT>(value)); return *this; }
-    ///@}
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeCacheSubnetGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_marker;
+  bool m_markerHasBeenSet = false;
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    DescribeCacheSubnetGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::Vector<CacheSubnetGroup> m_cacheSubnetGroups;
+  bool m_cacheSubnetGroupsHasBeenSet = false;
 
-    Aws::String m_marker;
-    bool m_markerHasBeenSet = false;
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-    Aws::Vector<CacheSubnetGroup> m_cacheSubnetGroups;
-    bool m_cacheSubnetGroupsHasBeenSet = false;
-
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

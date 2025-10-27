@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetHub
-{
-class IoTFleetHubEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IoTFleetHub {
+class IoTFleetHubEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IoTFleetHub
-} // namespace Aws
+}  // namespace IoTFleetHub
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/memorydb/MemoryDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
-  enum class IpDiscovery
-  {
-    NOT_SET,
-    ipv4,
-    ipv6
-  };
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
+enum class IpDiscovery { NOT_SET, ipv4, ipv6 };
 
-namespace IpDiscoveryMapper
-{
+namespace IpDiscoveryMapper {
 AWS_MEMORYDB_API IpDiscovery GetIpDiscoveryForName(const Aws::String& name);
 
 AWS_MEMORYDB_API Aws::String GetNameForIpDiscovery(IpDiscovery value);
-} // namespace IpDiscoveryMapper
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace IpDiscoveryMapper
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

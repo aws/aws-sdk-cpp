@@ -12,24 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserProficienciesRequest::SerializePayload() const
-{
+Aws::String UpdateUserProficienciesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userProficienciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userProficienciesJsonList(m_userProficiencies.size());
-   for(unsigned userProficienciesIndex = 0; userProficienciesIndex < userProficienciesJsonList.GetLength(); ++userProficienciesIndex)
-   {
-     userProficienciesJsonList[userProficienciesIndex].AsObject(m_userProficiencies[userProficienciesIndex].Jsonize());
-   }
-   payload.WithArray("UserProficiencies", std::move(userProficienciesJsonList));
-
+  if (m_userProficienciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userProficienciesJsonList(m_userProficiencies.size());
+    for (unsigned userProficienciesIndex = 0; userProficienciesIndex < userProficienciesJsonList.GetLength(); ++userProficienciesIndex) {
+      userProficienciesJsonList[userProficienciesIndex].AsObject(m_userProficiencies[userProficienciesIndex].Jsonize());
+    }
+    payload.WithArray("UserProficiencies", std::move(userProficienciesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

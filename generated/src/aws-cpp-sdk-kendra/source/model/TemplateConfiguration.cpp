@@ -3,51 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/TemplateConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/TemplateConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-TemplateConfiguration::TemplateConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateConfiguration::TemplateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateConfiguration& TemplateConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Template"))
-  {
+TemplateConfiguration& TemplateConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Template")) {
     m_template = jsonValue.GetObject("Template");
     m_templateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateConfiguration::Jsonize() const
-{
+JsonValue TemplateConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateHasBeenSet)
-  {
-    if(!m_template.View().IsNull())
-    {
-       payload.WithObject("Template", JsonValue(m_template.View()));
+  if (m_templateHasBeenSet) {
+    if (!m_template.View().IsNull()) {
+      payload.WithObject("Template", JsonValue(m_template.View()));
     }
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

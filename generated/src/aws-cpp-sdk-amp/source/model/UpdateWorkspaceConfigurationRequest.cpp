@@ -12,36 +12,24 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWorkspaceConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateWorkspaceConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_limitsPerLabelSetHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> limitsPerLabelSetJsonList(m_limitsPerLabelSet.size());
-   for(unsigned limitsPerLabelSetIndex = 0; limitsPerLabelSetIndex < limitsPerLabelSetJsonList.GetLength(); ++limitsPerLabelSetIndex)
-   {
-     limitsPerLabelSetJsonList[limitsPerLabelSetIndex].AsObject(m_limitsPerLabelSet[limitsPerLabelSetIndex].Jsonize());
-   }
-   payload.WithArray("limitsPerLabelSet", std::move(limitsPerLabelSetJsonList));
-
+  if (m_limitsPerLabelSetHasBeenSet) {
+    Aws::Utils::Array<JsonValue> limitsPerLabelSetJsonList(m_limitsPerLabelSet.size());
+    for (unsigned limitsPerLabelSetIndex = 0; limitsPerLabelSetIndex < limitsPerLabelSetJsonList.GetLength(); ++limitsPerLabelSetIndex) {
+      limitsPerLabelSetJsonList[limitsPerLabelSetIndex].AsObject(m_limitsPerLabelSet[limitsPerLabelSetIndex].Jsonize());
+    }
+    payload.WithArray("limitsPerLabelSet", std::move(limitsPerLabelSetJsonList));
   }
 
-  if(m_retentionPeriodInDaysHasBeenSet)
-  {
-   payload.WithInteger("retentionPeriodInDays", m_retentionPeriodInDays);
-
+  if (m_retentionPeriodInDaysHasBeenSet) {
+    payload.WithInteger("retentionPeriodInDays", m_retentionPeriodInDays);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

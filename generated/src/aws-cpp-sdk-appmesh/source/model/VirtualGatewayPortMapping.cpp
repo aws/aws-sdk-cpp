@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayPortMapping::VirtualGatewayPortMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayPortMapping::VirtualGatewayPortMapping(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayPortMapping& VirtualGatewayPortMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("port"))
-  {
+VirtualGatewayPortMapping& VirtualGatewayPortMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
-  {
+  if (jsonValue.ValueExists("protocol")) {
     m_protocol = VirtualGatewayPortProtocolMapper::GetVirtualGatewayPortProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayPortMapping::Jsonize() const
-{
+JsonValue VirtualGatewayPortMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", VirtualGatewayPortProtocolMapper::GetNameForVirtualGatewayPortProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", VirtualGatewayPortProtocolMapper::GetNameForVirtualGatewayPortProtocol(m_protocol));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

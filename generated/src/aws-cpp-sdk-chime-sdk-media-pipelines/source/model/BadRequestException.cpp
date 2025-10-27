@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-BadRequestException::BadRequestException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BadRequestException::BadRequestException(JsonView jsonValue) { *this = jsonValue; }
 
-BadRequestException& BadRequestException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+BadRequestException& BadRequestException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestId"))
-  {
+  if (jsonValue.ValueExists("RequestId")) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BadRequestException::Jsonize() const
-{
+JsonValue BadRequestException::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", ErrorCodeMapper::GetNameForErrorCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", ErrorCodeMapper::GetNameForErrorCode(m_code));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("RequestId", m_requestId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

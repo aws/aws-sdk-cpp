@@ -5,12 +5,8 @@
 
 #include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTJobsDataPlane
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTJobsDataPlane
-} // namespace Aws
+namespace Aws {
+namespace IoTJobsDataPlane {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTJobsDataPlane
+}  // namespace Aws

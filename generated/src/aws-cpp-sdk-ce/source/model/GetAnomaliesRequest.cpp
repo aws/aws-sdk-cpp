@@ -12,56 +12,38 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAnomaliesRequest::SerializePayload() const
-{
+Aws::String GetAnomaliesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_monitorArnHasBeenSet)
-  {
-   payload.WithString("MonitorArn", m_monitorArn);
-
+  if (m_monitorArnHasBeenSet) {
+    payload.WithString("MonitorArn", m_monitorArn);
   }
 
-  if(m_dateIntervalHasBeenSet)
-  {
-   payload.WithObject("DateInterval", m_dateInterval.Jsonize());
-
+  if (m_dateIntervalHasBeenSet) {
+    payload.WithObject("DateInterval", m_dateInterval.Jsonize());
   }
 
-  if(m_feedbackHasBeenSet)
-  {
-   payload.WithString("Feedback", AnomalyFeedbackTypeMapper::GetNameForAnomalyFeedbackType(m_feedback));
+  if (m_feedbackHasBeenSet) {
+    payload.WithString("Feedback", AnomalyFeedbackTypeMapper::GetNameForAnomalyFeedbackType(m_feedback));
   }
 
-  if(m_totalImpactHasBeenSet)
-  {
-   payload.WithObject("TotalImpact", m_totalImpact.Jsonize());
-
+  if (m_totalImpactHasBeenSet) {
+    payload.WithObject("TotalImpact", m_totalImpact.Jsonize());
   }
 
-  if(m_nextPageTokenHasBeenSet)
-  {
-   payload.WithString("NextPageToken", m_nextPageToken);
-
+  if (m_nextPageTokenHasBeenSet) {
+    payload.WithString("NextPageToken", m_nextPageToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAnomaliesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAnomaliesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.GetAnomalies"));
   return headers;
-
 }
-
-
-
-

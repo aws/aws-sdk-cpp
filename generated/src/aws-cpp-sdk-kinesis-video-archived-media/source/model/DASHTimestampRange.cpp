@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis-video-archived-media/model/DASHTimestampRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis-video-archived-media/model/DASHTimestampRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
 
-DASHTimestampRange::DASHTimestampRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DASHTimestampRange::DASHTimestampRange(JsonView jsonValue) { *this = jsonValue; }
 
-DASHTimestampRange& DASHTimestampRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StartTimestamp"))
-  {
+DASHTimestampRange& DASHTimestampRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StartTimestamp")) {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
     m_startTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTimestamp"))
-  {
+  if (jsonValue.ValueExists("EndTimestamp")) {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
     m_endTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DASHTimestampRange::Jsonize() const
-{
+JsonValue DASHTimestampRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimestampHasBeenSet)
-  {
-   payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
+  if (m_startTimestampHasBeenSet) {
+    payload.WithDouble("StartTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_endTimestampHasBeenSet)
-  {
-   payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
+  if (m_endTimestampHasBeenSet) {
+    payload.WithDouble("EndTimestamp", m_endTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

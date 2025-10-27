@@ -4,61 +4,66 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/EventsResponse.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Pinpoint
-{
-namespace Model
-{
-  class PutEventsResult
-  {
-  public:
-    AWS_PINPOINT_API PutEventsResult() = default;
-    AWS_PINPOINT_API PutEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_PINPOINT_API PutEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Pinpoint {
+namespace Model {
+class PutEventsResult {
+ public:
+  AWS_PINPOINT_API PutEventsResult() = default;
+  AWS_PINPOINT_API PutEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PINPOINT_API PutEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const EventsResponse& GetEventsResponse() const { return m_eventsResponse; }
-    template<typename EventsResponseT = EventsResponse>
-    void SetEventsResponse(EventsResponseT&& value) { m_eventsResponseHasBeenSet = true; m_eventsResponse = std::forward<EventsResponseT>(value); }
-    template<typename EventsResponseT = EventsResponse>
-    PutEventsResult& WithEventsResponse(EventsResponseT&& value) { SetEventsResponse(std::forward<EventsResponseT>(value)); return *this;}
-    ///@}
+  inline const EventsResponse& GetEventsResponse() const { return m_eventsResponse; }
+  template <typename EventsResponseT = EventsResponse>
+  void SetEventsResponse(EventsResponseT&& value) {
+    m_eventsResponseHasBeenSet = true;
+    m_eventsResponse = std::forward<EventsResponseT>(value);
+  }
+  template <typename EventsResponseT = EventsResponse>
+  PutEventsResult& WithEventsResponse(EventsResponseT&& value) {
+    SetEventsResponse(std::forward<EventsResponseT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    PutEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    EventsResponse m_eventsResponse;
-    bool m_eventsResponseHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  PutEventsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  EventsResponse m_eventsResponse;
+  bool m_eventsResponseHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

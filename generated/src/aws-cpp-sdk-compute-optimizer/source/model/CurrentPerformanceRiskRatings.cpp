@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings(JsonView jsonValue) { *this = jsonValue; }
 
-CurrentPerformanceRiskRatings& CurrentPerformanceRiskRatings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("high"))
-  {
+CurrentPerformanceRiskRatings& CurrentPerformanceRiskRatings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("high")) {
     m_high = jsonValue.GetInt64("high");
     m_highHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("medium"))
-  {
+  if (jsonValue.ValueExists("medium")) {
     m_medium = jsonValue.GetInt64("medium");
     m_mediumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("low"))
-  {
+  if (jsonValue.ValueExists("low")) {
     m_low = jsonValue.GetInt64("low");
     m_lowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("veryLow"))
-  {
+  if (jsonValue.ValueExists("veryLow")) {
     m_veryLow = jsonValue.GetInt64("veryLow");
     m_veryLowHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CurrentPerformanceRiskRatings::Jsonize() const
-{
+JsonValue CurrentPerformanceRiskRatings::Jsonize() const {
   JsonValue payload;
 
-  if(m_highHasBeenSet)
-  {
-   payload.WithInt64("high", m_high);
-
+  if (m_highHasBeenSet) {
+    payload.WithInt64("high", m_high);
   }
 
-  if(m_mediumHasBeenSet)
-  {
-   payload.WithInt64("medium", m_medium);
-
+  if (m_mediumHasBeenSet) {
+    payload.WithInt64("medium", m_medium);
   }
 
-  if(m_lowHasBeenSet)
-  {
-   payload.WithInt64("low", m_low);
-
+  if (m_lowHasBeenSet) {
+    payload.WithInt64("low", m_low);
   }
 
-  if(m_veryLowHasBeenSet)
-  {
-   payload.WithInt64("veryLow", m_veryLow);
-
+  if (m_veryLowHasBeenSet) {
+    payload.WithInt64("veryLow", m_veryLow);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-JobComputePaymentConfig::JobComputePaymentConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobComputePaymentConfig::JobComputePaymentConfig(JsonView jsonValue) { *this = jsonValue; }
 
-JobComputePaymentConfig& JobComputePaymentConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isResponsible"))
-  {
+JobComputePaymentConfig& JobComputePaymentConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isResponsible")) {
     m_isResponsible = jsonValue.GetBool("isResponsible");
     m_isResponsibleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobComputePaymentConfig::Jsonize() const
-{
+JsonValue JobComputePaymentConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_isResponsibleHasBeenSet)
-  {
-   payload.WithBool("isResponsible", m_isResponsible);
-
+  if (m_isResponsibleHasBeenSet) {
+    payload.WithBool("isResponsible", m_isResponsible);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

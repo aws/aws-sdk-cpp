@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/PutApplicationSessionConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/PutApplicationSessionConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,24 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutApplicationSessionConfigurationRequest::SerializePayload() const
-{
+Aws::String PutApplicationSessionConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationArn", m_applicationArn);
-
+  if (m_applicationArnHasBeenSet) {
+    payload.WithString("ApplicationArn", m_applicationArn);
   }
 
-  if(m_userBackgroundSessionApplicationStatusHasBeenSet)
-  {
-   payload.WithString("UserBackgroundSessionApplicationStatus", UserBackgroundSessionApplicationStatusMapper::GetNameForUserBackgroundSessionApplicationStatus(m_userBackgroundSessionApplicationStatus));
+  if (m_userBackgroundSessionApplicationStatusHasBeenSet) {
+    payload.WithString("UserBackgroundSessionApplicationStatus",
+                       UserBackgroundSessionApplicationStatusMapper::GetNameForUserBackgroundSessionApplicationStatus(
+                           m_userBackgroundSessionApplicationStatus));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutApplicationSessionConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutApplicationSessionConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SWBExternalService.PutApplicationSessionConfiguration"));
   return headers;
-
 }
-
-
-
-

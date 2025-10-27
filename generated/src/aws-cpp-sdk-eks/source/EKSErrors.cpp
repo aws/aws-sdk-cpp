@@ -7,87 +7,84 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/eks/EKSErrors.h>
 #include <aws/eks/model/ClientException.h>
+#include <aws/eks/model/InvalidParameterException.h>
+#include <aws/eks/model/InvalidRequestException.h>
+#include <aws/eks/model/InvalidStateException.h>
+#include <aws/eks/model/ResourceInUseException.h>
+#include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
 #include <aws/eks/model/ServerException.h>
-#include <aws/eks/model/InvalidStateException.h>
 #include <aws/eks/model/ThrottlingException.h>
-#include <aws/eks/model/InvalidParameterException.h>
-#include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/UnsupportedAvailabilityZoneException.h>
-#include <aws/eks/model/ResourceInUseException.h>
-#include <aws/eks/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::EKS;
 using namespace Aws::EKS::Model;
 
-namespace Aws
-{
-namespace EKS
-{
-template<> AWS_EKS_API ClientException EKSError::GetModeledError()
-{
+namespace Aws {
+namespace EKS {
+template <>
+AWS_EKS_API ClientException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::CLIENT);
   return ClientException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API ResourceNotFoundException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API ResourceNotFoundException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API ServerException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API ServerException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::SERVER);
   return ServerException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API InvalidStateException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API InvalidStateException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::INVALID_STATE);
   return InvalidStateException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API ThrottlingException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API ThrottlingException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API InvalidParameterException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API InvalidParameterException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::INVALID_PARAMETER);
   return InvalidParameterException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API ResourceLimitExceededException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API ResourceLimitExceededException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::RESOURCE_LIMIT_EXCEEDED);
   return ResourceLimitExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API UnsupportedAvailabilityZoneException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API UnsupportedAvailabilityZoneException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE);
   return UnsupportedAvailabilityZoneException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API ResourceInUseException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API ResourceInUseException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::RESOURCE_IN_USE);
   return ResourceInUseException(this->GetJsonPayload().View());
 }
 
-template<> AWS_EKS_API InvalidRequestException EKSError::GetModeledError()
-{
+template <>
+AWS_EKS_API InvalidRequestException EKSError::GetModeledError() {
   assert(this->GetErrorType() == EKSErrors::INVALID_REQUEST);
   return InvalidRequestException(this->GetJsonPayload().View());
 }
 
-namespace EKSErrorMapper
-{
+namespace EKSErrorMapper {
 
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
@@ -101,58 +98,35 @@ static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestExceptio
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CLIENT_HASH)
-  {
+  if (hashCode == CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::CLIENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_AVAILABILITY_ZONE_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_AVAILABILITY_ZONE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVER_HASH)
-  {
+  } else if (hashCode == SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_PROPAGATION_DELAY_HASH)
-  {
+  } else if (hashCode == RESOURCE_PROPAGATION_DELAY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_PROPAGATION_DELAY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_STATE_HASH)
-  {
+  } else if (hashCode == INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace EKSErrorMapper
-} // namespace EKS
-} // namespace Aws
+}  // namespace EKSErrorMapper
+}  // namespace EKS
+}  // namespace Aws

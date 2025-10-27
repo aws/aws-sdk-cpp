@@ -4,62 +4,50 @@
  */
 
 #include <aws/bedrock/model/InferenceProfileStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+namespace InferenceProfileStatusMapper {
 
-namespace Aws
-{
-  namespace Bedrock
-  {
-    namespace Model
-    {
-      namespace InferenceProfileStatusMapper
-      {
+static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+InferenceProfileStatus GetInferenceProfileStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ACTIVE_HASH) {
+    return InferenceProfileStatus::ACTIVE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<InferenceProfileStatus>(hashCode);
+  }
 
+  return InferenceProfileStatus::NOT_SET;
+}
 
-        InferenceProfileStatus GetInferenceProfileStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
-          {
-            return InferenceProfileStatus::ACTIVE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<InferenceProfileStatus>(hashCode);
-          }
+Aws::String GetNameForInferenceProfileStatus(InferenceProfileStatus enumValue) {
+  switch (enumValue) {
+    case InferenceProfileStatus::NOT_SET:
+      return {};
+    case InferenceProfileStatus::ACTIVE:
+      return "ACTIVE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return InferenceProfileStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForInferenceProfileStatus(InferenceProfileStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case InferenceProfileStatus::NOT_SET:
-            return {};
-          case InferenceProfileStatus::ACTIVE:
-            return "ACTIVE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace InferenceProfileStatusMapper
-    } // namespace Model
-  } // namespace Bedrock
-} // namespace Aws
+}  // namespace InferenceProfileStatusMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

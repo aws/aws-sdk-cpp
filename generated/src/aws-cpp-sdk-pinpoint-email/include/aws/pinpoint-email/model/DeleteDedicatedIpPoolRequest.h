@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
-#include <aws/pinpoint-email/PinpointEmailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/PinpointEmailRequest.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
+/**
+ * <p>A request to delete a dedicated IP pool.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPoolRequest">AWS
+ * API Reference</a></p>
+ */
+class DeleteDedicatedIpPoolRequest : public PinpointEmailRequest {
+ public:
+  AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteDedicatedIpPool"; }
+
+  AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>A request to delete a dedicated IP pool.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPoolRequest">AWS
-   * API Reference</a></p>
+   * <p>The name of the dedicated IP pool that you want to delete.</p>
    */
-  class DeleteDedicatedIpPoolRequest : public PinpointEmailRequest
-  {
-  public:
-    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolRequest() = default;
+  inline const Aws::String& GetPoolName() const { return m_poolName; }
+  inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
+  template <typename PoolNameT = Aws::String>
+  void SetPoolName(PoolNameT&& value) {
+    m_poolNameHasBeenSet = true;
+    m_poolName = std::forward<PoolNameT>(value);
+  }
+  template <typename PoolNameT = Aws::String>
+  DeleteDedicatedIpPoolRequest& WithPoolName(PoolNameT&& value) {
+    SetPoolName(std::forward<PoolNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_poolName;
+  bool m_poolNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteDedicatedIpPool"; }
-
-    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
-    inline const Aws::String& GetPoolName() const { return m_poolName; }
-    inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    template<typename PoolNameT = Aws::String>
-    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
-    template<typename PoolNameT = Aws::String>
-    DeleteDedicatedIpPoolRequest& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_poolName;
-    bool m_poolNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

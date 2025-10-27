@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/StaticPolicyDefinitionItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/StaticPolicyDefinitionItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-StaticPolicyDefinitionItem::StaticPolicyDefinitionItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StaticPolicyDefinitionItem::StaticPolicyDefinitionItem(JsonView jsonValue) { *this = jsonValue; }
 
-StaticPolicyDefinitionItem& StaticPolicyDefinitionItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+StaticPolicyDefinitionItem& StaticPolicyDefinitionItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StaticPolicyDefinitionItem::Jsonize() const
-{
+JsonValue StaticPolicyDefinitionItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

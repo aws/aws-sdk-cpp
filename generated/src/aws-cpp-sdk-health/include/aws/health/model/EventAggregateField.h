@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/health/Health_EXPORTS.h>
 
-namespace Aws
-{
-namespace Health
-{
-namespace Model
-{
-  enum class EventAggregateField
-  {
-    NOT_SET,
-    eventTypeCategory
-  };
+namespace Aws {
+namespace Health {
+namespace Model {
+enum class EventAggregateField { NOT_SET, eventTypeCategory };
 
-namespace EventAggregateFieldMapper
-{
+namespace EventAggregateFieldMapper {
 AWS_HEALTH_API EventAggregateField GetEventAggregateFieldForName(const Aws::String& name);
 
 AWS_HEALTH_API Aws::String GetNameForEventAggregateField(EventAggregateField value);
-} // namespace EventAggregateFieldMapper
-} // namespace Model
-} // namespace Health
-} // namespace Aws
+}  // namespace EventAggregateFieldMapper
+}  // namespace Model
+}  // namespace Health
+}  // namespace Aws

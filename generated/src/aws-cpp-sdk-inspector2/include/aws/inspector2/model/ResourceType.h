@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    AWS_EC2_INSTANCE,
-    AWS_ECR_CONTAINER_IMAGE,
-    AWS_ECR_REPOSITORY,
-    AWS_LAMBDA_FUNCTION,
-    CODE_REPOSITORY
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class ResourceType { NOT_SET, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY, AWS_LAMBDA_FUNCTION, CODE_REPOSITORY };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_INSPECTOR2_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

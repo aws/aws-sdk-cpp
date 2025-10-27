@@ -4,47 +4,43 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class ConnectionType
-  {
-    NOT_SET,
-    ATHENA,
-    BIGQUERY,
-    DATABRICKS,
-    DOCUMENTDB,
-    DYNAMODB,
-    HYPERPOD,
-    IAM,
-    MYSQL,
-    OPENSEARCH,
-    ORACLE,
-    POSTGRESQL,
-    REDSHIFT,
-    S3,
-    SAPHANA,
-    SNOWFLAKE,
-    SPARK,
-    SQLSERVER,
-    TERADATA,
-    VERTICA,
-    WORKFLOWS_MWAA,
-    AMAZON_Q
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class ConnectionType {
+  NOT_SET,
+  ATHENA,
+  BIGQUERY,
+  DATABRICKS,
+  DOCUMENTDB,
+  DYNAMODB,
+  HYPERPOD,
+  IAM,
+  MYSQL,
+  OPENSEARCH,
+  ORACLE,
+  POSTGRESQL,
+  REDSHIFT,
+  S3,
+  SAPHANA,
+  SNOWFLAKE,
+  SPARK,
+  SQLSERVER,
+  TERADATA,
+  VERTICA,
+  WORKFLOWS_MWAA,
+  AMAZON_Q,
+  MLFLOW
+};
 
-namespace ConnectionTypeMapper
-{
+namespace ConnectionTypeMapper {
 AWS_DATAZONE_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace ConnectionTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

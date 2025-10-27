@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKey"))
-  {
+EncryptionConfiguration& EncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKey")) {
     m_kmsKey = jsonValue.GetString("KmsKey");
     m_kmsKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionConfiguration::Jsonize() const
-{
+JsonValue EncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithString("KmsKey", m_kmsKey);
-
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class SourceType
-  {
-    NOT_SET,
-    CODESTAR
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class SourceType { NOT_SET, CODESTAR };
 
-namespace SourceTypeMapper
-{
+namespace SourceTypeMapper {
 AWS_SERVICECATALOG_API SourceType GetSourceTypeForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForSourceType(SourceType value);
-} // namespace SourceTypeMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace SourceTypeMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

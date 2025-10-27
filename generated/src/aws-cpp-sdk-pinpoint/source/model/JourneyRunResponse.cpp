@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/JourneyRunResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/JourneyRunResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-JourneyRunResponse::JourneyRunResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JourneyRunResponse::JourneyRunResponse(JsonView jsonValue) { *this = jsonValue; }
 
-JourneyRunResponse& JourneyRunResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+JourneyRunResponse& JourneyRunResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetString("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetString("LastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RunId"))
-  {
+  if (jsonValue.ValueExists("RunId")) {
     m_runId = jsonValue.GetString("RunId");
     m_runIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = JourneyRunStatusMapper::GetJourneyRunStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JourneyRunResponse::Jsonize() const
-{
+JsonValue JourneyRunResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("CreationTime", m_creationTime);
-
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("CreationTime", m_creationTime);
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithString("LastUpdateTime", m_lastUpdateTime);
-
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithString("LastUpdateTime", m_lastUpdateTime);
   }
 
-  if(m_runIdHasBeenSet)
-  {
-   payload.WithString("RunId", m_runId);
-
+  if (m_runIdHasBeenSet) {
+    payload.WithString("RunId", m_runId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", JourneyRunStatusMapper::GetNameForJourneyRunStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", JourneyRunStatusMapper::GetNameForJourneyRunStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

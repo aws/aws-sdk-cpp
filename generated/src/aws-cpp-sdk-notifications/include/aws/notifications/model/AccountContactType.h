@@ -4,30 +4,25 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class AccountContactType
-  {
-    NOT_SET,
-    ACCOUNT_PRIMARY,
-    ACCOUNT_ALTERNATE_BILLING,
-    ACCOUNT_ALTERNATE_OPERATIONS,
-    ACCOUNT_ALTERNATE_SECURITY
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class AccountContactType {
+  NOT_SET,
+  ACCOUNT_PRIMARY,
+  ACCOUNT_ALTERNATE_BILLING,
+  ACCOUNT_ALTERNATE_OPERATIONS,
+  ACCOUNT_ALTERNATE_SECURITY
+};
 
-namespace AccountContactTypeMapper
-{
+namespace AccountContactTypeMapper {
 AWS_NOTIFICATIONS_API AccountContactType GetAccountContactTypeForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForAccountContactType(AccountContactType value);
-} // namespace AccountContactTypeMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace AccountContactTypeMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteQueuedReservedInstancesResponse::DeleteQueuedReservedInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteQueuedReservedInstancesResponse::DeleteQueuedReservedInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteQueuedReservedInstancesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteQueuedReservedInstancesResponse")) {
     resultNode = rootNode.FirstChild("DeleteQueuedReservedInstancesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode successfulQueuedPurchaseDeletionsNode = resultNode.FirstChild("successfulQueuedPurchaseDeletionSet");
-    if(!successfulQueuedPurchaseDeletionsNode.IsNull())
-    {
+    if (!successfulQueuedPurchaseDeletionsNode.IsNull()) {
       XmlNode successfulQueuedPurchaseDeletionsMember = successfulQueuedPurchaseDeletionsNode.FirstChild("item");
       m_successfulQueuedPurchaseDeletionsHasBeenSet = !successfulQueuedPurchaseDeletionsMember.IsNull();
-      while(!successfulQueuedPurchaseDeletionsMember.IsNull())
-      {
+      while (!successfulQueuedPurchaseDeletionsMember.IsNull()) {
         m_successfulQueuedPurchaseDeletions.push_back(successfulQueuedPurchaseDeletionsMember);
         successfulQueuedPurchaseDeletionsMember = successfulQueuedPurchaseDeletionsMember.NextNode("item");
       }
@@ -48,12 +43,10 @@ DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::op
       m_successfulQueuedPurchaseDeletionsHasBeenSet = true;
     }
     XmlNode failedQueuedPurchaseDeletionsNode = resultNode.FirstChild("failedQueuedPurchaseDeletionSet");
-    if(!failedQueuedPurchaseDeletionsNode.IsNull())
-    {
+    if (!failedQueuedPurchaseDeletionsNode.IsNull()) {
       XmlNode failedQueuedPurchaseDeletionsMember = failedQueuedPurchaseDeletionsNode.FirstChild("item");
       m_failedQueuedPurchaseDeletionsHasBeenSet = !failedQueuedPurchaseDeletionsMember.IsNull();
-      while(!failedQueuedPurchaseDeletionsMember.IsNull())
-      {
+      while (!failedQueuedPurchaseDeletionsMember.IsNull()) {
         m_failedQueuedPurchaseDeletions.push_back(failedQueuedPurchaseDeletionsMember);
         failedQueuedPurchaseDeletionsMember = failedQueuedPurchaseDeletionsMember.NextNode("item");
       }
@@ -64,12 +57,12 @@ DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::op
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteQueuedReservedInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteQueuedReservedInstancesResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

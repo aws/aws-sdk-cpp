@@ -7,74 +7,85 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/KeyGroupConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace CloudFront
-{
-namespace Model
-{
-  class GetKeyGroupConfig2020_05_31Result
-  {
-  public:
-    AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result() = default;
-    AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFront {
+namespace Model {
+class GetKeyGroupConfig2020_05_31Result {
+ public:
+  AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result() = default;
+  AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_CLOUDFRONT_API GetKeyGroupConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>The key group configuration.</p>
+   */
+  inline const KeyGroupConfig& GetKeyGroupConfig() const { return m_keyGroupConfig; }
+  template <typename KeyGroupConfigT = KeyGroupConfig>
+  void SetKeyGroupConfig(KeyGroupConfigT&& value) {
+    m_keyGroupConfigHasBeenSet = true;
+    m_keyGroupConfig = std::forward<KeyGroupConfigT>(value);
+  }
+  template <typename KeyGroupConfigT = KeyGroupConfig>
+  GetKeyGroupConfig2020_05_31Result& WithKeyGroupConfig(KeyGroupConfigT&& value) {
+    SetKeyGroupConfig(std::forward<KeyGroupConfigT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The key group configuration.</p>
-     */
-    inline const KeyGroupConfig& GetKeyGroupConfig() const { return m_keyGroupConfig; }
-    template<typename KeyGroupConfigT = KeyGroupConfig>
-    void SetKeyGroupConfig(KeyGroupConfigT&& value) { m_keyGroupConfigHasBeenSet = true; m_keyGroupConfig = std::forward<KeyGroupConfigT>(value); }
-    template<typename KeyGroupConfigT = KeyGroupConfig>
-    GetKeyGroupConfig2020_05_31Result& WithKeyGroupConfig(KeyGroupConfigT&& value) { SetKeyGroupConfig(std::forward<KeyGroupConfigT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier for this version of the key group.</p>
+   */
+  inline const Aws::String& GetETag() const { return m_eTag; }
+  template <typename ETagT = Aws::String>
+  void SetETag(ETagT&& value) {
+    m_eTagHasBeenSet = true;
+    m_eTag = std::forward<ETagT>(value);
+  }
+  template <typename ETagT = Aws::String>
+  GetKeyGroupConfig2020_05_31Result& WithETag(ETagT&& value) {
+    SetETag(std::forward<ETagT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
-    inline const Aws::String& GetETag() const { return m_eTag; }
-    template<typename ETagT = Aws::String>
-    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
-    template<typename ETagT = Aws::String>
-    GetKeyGroupConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetKeyGroupConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetKeyGroupConfig2020_05_31Result& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  KeyGroupConfig m_keyGroupConfig;
+  bool m_keyGroupConfigHasBeenSet = false;
 
-    KeyGroupConfig m_keyGroupConfig;
-    bool m_keyGroupConfigHasBeenSet = false;
+  Aws::String m_eTag;
+  bool m_eTagHasBeenSet = false;
 
-    Aws::String m_eTag;
-    bool m_eTagHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

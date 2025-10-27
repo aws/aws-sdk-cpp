@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ProvisionIpamByoasnRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ProvisionIpamByoasnRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ProvisionIpamByoasnRequest::SerializePayload() const
-{
+Aws::String ProvisionIpamByoasnRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ProvisionIpamByoasn&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamIdHasBeenSet)
-  {
+  if (m_ipamIdHasBeenSet) {
     ss << "IpamId=" << StringUtils::URLEncode(m_ipamId.c_str()) << "&";
   }
 
-  if(m_asnHasBeenSet)
-  {
+  if (m_asnHasBeenSet) {
     ss << "Asn=" << StringUtils::URLEncode(m_asn.c_str()) << "&";
   }
 
-  if(m_asnAuthorizationContextHasBeenSet)
-  {
+  if (m_asnAuthorizationContextHasBeenSet) {
     m_asnAuthorizationContext.OutputToStream(ss, "AsnAuthorizationContext");
   }
 
@@ -38,8 +33,4 @@ Aws::String ProvisionIpamByoasnRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ProvisionIpamByoasnRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ProvisionIpamByoasnRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

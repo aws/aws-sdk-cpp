@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-IdMappingConfig::IdMappingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdMappingConfig::IdMappingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IdMappingConfig& IdMappingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowUseAsDimensionColumn"))
-  {
+IdMappingConfig& IdMappingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowUseAsDimensionColumn")) {
     m_allowUseAsDimensionColumn = jsonValue.GetBool("allowUseAsDimensionColumn");
     m_allowUseAsDimensionColumnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdMappingConfig::Jsonize() const
-{
+JsonValue IdMappingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowUseAsDimensionColumnHasBeenSet)
-  {
-   payload.WithBool("allowUseAsDimensionColumn", m_allowUseAsDimensionColumn);
-
+  if (m_allowUseAsDimensionColumnHasBeenSet) {
+    payload.WithBool("allowUseAsDimensionColumn", m_allowUseAsDimensionColumn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

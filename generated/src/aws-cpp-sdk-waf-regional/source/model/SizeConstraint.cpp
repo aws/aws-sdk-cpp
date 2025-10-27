@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/SizeConstraint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/model/SizeConstraint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-SizeConstraint::SizeConstraint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SizeConstraint::SizeConstraint(JsonView jsonValue) { *this = jsonValue; }
 
-SizeConstraint& SizeConstraint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldToMatch"))
-  {
+SizeConstraint& SizeConstraint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldToMatch")) {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
     m_fieldToMatchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextTransformation"))
-  {
+  if (jsonValue.ValueExists("TextTransformation")) {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
     m_textTransformationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComparisonOperator"))
-  {
+  if (jsonValue.ValueExists("ComparisonOperator")) {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
     m_comparisonOperatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Size"))
-  {
+  if (jsonValue.ValueExists("Size")) {
     m_size = jsonValue.GetInt64("Size");
     m_sizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SizeConstraint::Jsonize() const
-{
+JsonValue SizeConstraint::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldToMatchHasBeenSet)
-  {
-   payload.WithObject("FieldToMatch", m_fieldToMatch.Jsonize());
-
+  if (m_fieldToMatchHasBeenSet) {
+    payload.WithObject("FieldToMatch", m_fieldToMatch.Jsonize());
   }
 
-  if(m_textTransformationHasBeenSet)
-  {
-   payload.WithString("TextTransformation", TextTransformationMapper::GetNameForTextTransformation(m_textTransformation));
+  if (m_textTransformationHasBeenSet) {
+    payload.WithString("TextTransformation", TextTransformationMapper::GetNameForTextTransformation(m_textTransformation));
   }
 
-  if(m_comparisonOperatorHasBeenSet)
-  {
-   payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  if (m_comparisonOperatorHasBeenSet) {
+    payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInt64("Size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInt64("Size", m_size);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

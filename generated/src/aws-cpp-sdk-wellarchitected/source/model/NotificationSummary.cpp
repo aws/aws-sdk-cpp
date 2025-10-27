@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/NotificationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/NotificationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-NotificationSummary::NotificationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationSummary::NotificationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationSummary& NotificationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+NotificationSummary& NotificationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LensUpgradeSummary"))
-  {
+  if (jsonValue.ValueExists("LensUpgradeSummary")) {
     m_lensUpgradeSummary = jsonValue.GetObject("LensUpgradeSummary");
     m_lensUpgradeSummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationSummary::Jsonize() const
-{
+JsonValue NotificationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", NotificationTypeMapper::GetNameForNotificationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", NotificationTypeMapper::GetNameForNotificationType(m_type));
   }
 
-  if(m_lensUpgradeSummaryHasBeenSet)
-  {
-   payload.WithObject("LensUpgradeSummary", m_lensUpgradeSummary.Jsonize());
-
+  if (m_lensUpgradeSummaryHasBeenSet) {
+    payload.WithObject("LensUpgradeSummary", m_lensUpgradeSummary.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

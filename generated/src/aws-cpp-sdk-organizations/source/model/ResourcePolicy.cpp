@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/ResourcePolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/organizations/model/ResourcePolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
+namespace Aws {
+namespace Organizations {
+namespace Model {
 
-ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourcePolicy::ResourcePolicy(JsonView jsonValue) { *this = jsonValue; }
 
-ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourcePolicySummary"))
-  {
+ResourcePolicy& ResourcePolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourcePolicySummary")) {
     m_resourcePolicySummary = jsonValue.GetObject("ResourcePolicySummary");
     m_resourcePolicySummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourcePolicy::Jsonize() const
-{
+JsonValue ResourcePolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourcePolicySummaryHasBeenSet)
-  {
-   payload.WithObject("ResourcePolicySummary", m_resourcePolicySummary.Jsonize());
-
+  if (m_resourcePolicySummaryHasBeenSet) {
+    payload.WithObject("ResourcePolicySummary", m_resourcePolicySummary.Jsonize());
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

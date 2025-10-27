@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/GameSessionQueueDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/GameSessionQueueDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-GameSessionQueueDestination::GameSessionQueueDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GameSessionQueueDestination::GameSessionQueueDestination(JsonView jsonValue) { *this = jsonValue; }
 
-GameSessionQueueDestination& GameSessionQueueDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DestinationArn"))
-  {
+GameSessionQueueDestination& GameSessionQueueDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DestinationArn")) {
     m_destinationArn = jsonValue.GetString("DestinationArn");
     m_destinationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GameSessionQueueDestination::Jsonize() const
-{
+JsonValue GameSessionQueueDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("DestinationArn", m_destinationArn);
-
+  if (m_destinationArnHasBeenSet) {
+    payload.WithString("DestinationArn", m_destinationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

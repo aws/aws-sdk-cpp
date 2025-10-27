@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-RoleConfiguration::RoleConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoleConfiguration::RoleConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RoleConfiguration& RoleConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceRoleArn"))
-  {
+RoleConfiguration& RoleConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceRoleArn")) {
     m_sourceRoleArn = jsonValue.GetString("sourceRoleArn");
     m_sourceRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetRoleArn"))
-  {
+  if (jsonValue.ValueExists("targetRoleArn")) {
     m_targetRoleArn = jsonValue.GetString("targetRoleArn");
     m_targetRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoleConfiguration::Jsonize() const
-{
+JsonValue RoleConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceRoleArnHasBeenSet)
-  {
-   payload.WithString("sourceRoleArn", m_sourceRoleArn);
-
+  if (m_sourceRoleArnHasBeenSet) {
+    payload.WithString("sourceRoleArn", m_sourceRoleArn);
   }
 
-  if(m_targetRoleArnHasBeenSet)
-  {
-   payload.WithString("targetRoleArn", m_targetRoleArn);
-
+  if (m_targetRoleArnHasBeenSet) {
+    payload.WithString("targetRoleArn", m_targetRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

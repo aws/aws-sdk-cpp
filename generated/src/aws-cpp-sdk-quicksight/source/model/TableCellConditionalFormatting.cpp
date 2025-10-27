@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TableCellConditionalFormatting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TableCellConditionalFormatting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TableCellConditionalFormatting::TableCellConditionalFormatting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableCellConditionalFormatting::TableCellConditionalFormatting(JsonView jsonValue) { *this = jsonValue; }
 
-TableCellConditionalFormatting& TableCellConditionalFormatting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldId"))
-  {
+TableCellConditionalFormatting& TableCellConditionalFormatting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldId")) {
     m_fieldId = jsonValue.GetString("FieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextFormat"))
-  {
+  if (jsonValue.ValueExists("TextFormat")) {
     m_textFormat = jsonValue.GetObject("TextFormat");
     m_textFormatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableCellConditionalFormatting::Jsonize() const
-{
+JsonValue TableCellConditionalFormatting::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("FieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("FieldId", m_fieldId);
   }
 
-  if(m_textFormatHasBeenSet)
-  {
-   payload.WithObject("TextFormat", m_textFormat.Jsonize());
-
+  if (m_textFormatHasBeenSet) {
+    payload.WithObject("TextFormat", m_textFormat.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

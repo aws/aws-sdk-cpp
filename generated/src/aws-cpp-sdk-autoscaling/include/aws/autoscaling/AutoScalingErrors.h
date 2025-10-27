@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/autoscaling/AutoScaling_EXPORTS.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-enum class AutoScalingErrors
-{
-  //From Core//
+namespace Aws {
+namespace AutoScaling {
+enum class AutoScalingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AutoScalingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class AutoScalingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ALREADY_EXISTS_FAULT,
   INSTANCE_REFRESH_IN_PROGRESS_FAULT,
   INVALID_NEXT_TOKEN,
@@ -59,9 +56,8 @@ enum class AutoScalingErrors
   SERVICE_LINKED_ROLE_FAILURE
 };
 
-class AWS_AUTOSCALING_API AutoScalingError : public Aws::Client::AWSError<AutoScalingErrors>
-{
-public:
+class AWS_AUTOSCALING_API AutoScalingError : public Aws::Client::AWSError<AutoScalingErrors> {
+ public:
   AutoScalingError() {}
   AutoScalingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
   AutoScalingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace AutoScalingErrorMapper
-{
-  AWS_AUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AutoScalingErrorMapper {
+AWS_AUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace AutoScaling
+}  // namespace Aws

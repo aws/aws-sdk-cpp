@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/FilterByAssetModel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/FilterByAssetModel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-FilterByAssetModel::FilterByAssetModel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterByAssetModel::FilterByAssetModel(JsonView jsonValue) { *this = jsonValue; }
 
-FilterByAssetModel& FilterByAssetModel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("assetModelId"))
-  {
+FilterByAssetModel& FilterByAssetModel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("assetModelId")) {
     m_assetModelId = jsonValue.GetString("assetModelId");
     m_assetModelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assetModelExternalId"))
-  {
+  if (jsonValue.ValueExists("assetModelExternalId")) {
     m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
     m_assetModelExternalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includeOffspring"))
-  {
+  if (jsonValue.ValueExists("includeOffspring")) {
     m_includeOffspring = jsonValue.GetBool("includeOffspring");
     m_includeOffspringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includeAssets"))
-  {
+  if (jsonValue.ValueExists("includeAssets")) {
     m_includeAssets = jsonValue.GetBool("includeAssets");
     m_includeAssetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FilterByAssetModel::Jsonize() const
-{
+JsonValue FilterByAssetModel::Jsonize() const {
   JsonValue payload;
 
-  if(m_assetModelIdHasBeenSet)
-  {
-   payload.WithString("assetModelId", m_assetModelId);
-
+  if (m_assetModelIdHasBeenSet) {
+    payload.WithString("assetModelId", m_assetModelId);
   }
 
-  if(m_assetModelExternalIdHasBeenSet)
-  {
-   payload.WithString("assetModelExternalId", m_assetModelExternalId);
-
+  if (m_assetModelExternalIdHasBeenSet) {
+    payload.WithString("assetModelExternalId", m_assetModelExternalId);
   }
 
-  if(m_includeOffspringHasBeenSet)
-  {
-   payload.WithBool("includeOffspring", m_includeOffspring);
-
+  if (m_includeOffspringHasBeenSet) {
+    payload.WithBool("includeOffspring", m_includeOffspring);
   }
 
-  if(m_includeAssetsHasBeenSet)
-  {
-   payload.WithBool("includeAssets", m_includeAssets);
-
+  if (m_includeAssetsHasBeenSet) {
+    payload.WithBool("includeAssets", m_includeAssets);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

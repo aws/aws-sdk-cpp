@@ -5,12 +5,8 @@
 
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
 
-namespace Aws
-{
-namespace RolesAnywhere
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RolesAnywhere
-} // namespace Aws
+namespace Aws {
+namespace RolesAnywhere {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RolesAnywhere
+}  // namespace Aws

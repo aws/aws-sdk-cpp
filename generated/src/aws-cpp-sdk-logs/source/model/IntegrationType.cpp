@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/IntegrationType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/logs/model/IntegrationType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+namespace IntegrationTypeMapper {
 
-namespace Aws
-{
-  namespace CloudWatchLogs
-  {
-    namespace Model
-    {
-      namespace IntegrationTypeMapper
-      {
+static const int OPENSEARCH_HASH = HashingUtils::HashString("OPENSEARCH");
 
-        static const int OPENSEARCH_HASH = HashingUtils::HashString("OPENSEARCH");
+IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OPENSEARCH_HASH) {
+    return IntegrationType::OPENSEARCH;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IntegrationType>(hashCode);
+  }
 
+  return IntegrationType::NOT_SET;
+}
 
-        IntegrationType GetIntegrationTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OPENSEARCH_HASH)
-          {
-            return IntegrationType::OPENSEARCH;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<IntegrationType>(hashCode);
-          }
+Aws::String GetNameForIntegrationType(IntegrationType enumValue) {
+  switch (enumValue) {
+    case IntegrationType::NOT_SET:
+      return {};
+    case IntegrationType::OPENSEARCH:
+      return "OPENSEARCH";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return IntegrationType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForIntegrationType(IntegrationType enumValue)
-        {
-          switch(enumValue)
-          {
-          case IntegrationType::NOT_SET:
-            return {};
-          case IntegrationType::OPENSEARCH:
-            return "OPENSEARCH";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace IntegrationTypeMapper
-    } // namespace Model
-  } // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace IntegrationTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

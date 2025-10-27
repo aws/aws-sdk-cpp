@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/HostTenancy.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/HostTenancy.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace HostTenancyMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace HostTenancyMapper
-      {
+static const int default__HASH = HashingUtils::HashString("default");
+static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+static const int host_HASH = HashingUtils::HashString("host");
 
-        static const int default__HASH = HashingUtils::HashString("default");
-        static const int dedicated_HASH = HashingUtils::HashString("dedicated");
-        static const int host_HASH = HashingUtils::HashString("host");
+HostTenancy GetHostTenancyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == default__HASH) {
+    return HostTenancy::default_;
+  } else if (hashCode == dedicated_HASH) {
+    return HostTenancy::dedicated;
+  } else if (hashCode == host_HASH) {
+    return HostTenancy::host;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<HostTenancy>(hashCode);
+  }
 
+  return HostTenancy::NOT_SET;
+}
 
-        HostTenancy GetHostTenancyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == default__HASH)
-          {
-            return HostTenancy::default_;
-          }
-          else if (hashCode == dedicated_HASH)
-          {
-            return HostTenancy::dedicated;
-          }
-          else if (hashCode == host_HASH)
-          {
-            return HostTenancy::host;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<HostTenancy>(hashCode);
-          }
+Aws::String GetNameForHostTenancy(HostTenancy enumValue) {
+  switch (enumValue) {
+    case HostTenancy::NOT_SET:
+      return {};
+    case HostTenancy::default_:
+      return "default";
+    case HostTenancy::dedicated:
+      return "dedicated";
+    case HostTenancy::host:
+      return "host";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return HostTenancy::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForHostTenancy(HostTenancy enumValue)
-        {
-          switch(enumValue)
-          {
-          case HostTenancy::NOT_SET:
-            return {};
-          case HostTenancy::default_:
-            return "default";
-          case HostTenancy::dedicated:
-            return "dedicated";
-          case HostTenancy::host:
-            return "host";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace HostTenancyMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace HostTenancyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

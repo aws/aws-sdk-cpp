@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
-  enum class ClusterType
-  {
-    NOT_SET,
-    PROVISIONED,
-    SERVERLESS
-  };
+namespace Aws {
+namespace Kafka {
+namespace Model {
+enum class ClusterType { NOT_SET, PROVISIONED, SERVERLESS };
 
-namespace ClusterTypeMapper
-{
+namespace ClusterTypeMapper {
 AWS_KAFKA_API ClusterType GetClusterTypeForName(const Aws::String& name);
 
 AWS_KAFKA_API Aws::String GetNameForClusterType(ClusterType value);
-} // namespace ClusterTypeMapper
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace ClusterTypeMapper
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

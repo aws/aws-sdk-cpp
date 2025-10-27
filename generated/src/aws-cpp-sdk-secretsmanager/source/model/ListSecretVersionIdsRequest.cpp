@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/secretsmanager/model/ListSecretVersionIdsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/secretsmanager/model/ListSecretVersionIdsRequest.h>
 
 #include <utility>
 
@@ -12,45 +12,30 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListSecretVersionIdsRequest::SerializePayload() const
-{
+Aws::String ListSecretVersionIdsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_secretIdHasBeenSet)
-  {
-   payload.WithString("SecretId", m_secretId);
-
+  if (m_secretIdHasBeenSet) {
+    payload.WithString("SecretId", m_secretId);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_includeDeprecatedHasBeenSet)
-  {
-   payload.WithBool("IncludeDeprecated", m_includeDeprecated);
-
+  if (m_includeDeprecatedHasBeenSet) {
+    payload.WithBool("IncludeDeprecated", m_includeDeprecated);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListSecretVersionIdsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListSecretVersionIdsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "secretsmanager.ListSecretVersionIds"));
   return headers;
-
 }
-
-
-
-

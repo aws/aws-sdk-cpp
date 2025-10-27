@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/PrincipalUser.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/PrincipalUser.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-PrincipalUser::PrincipalUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrincipalUser::PrincipalUser(JsonView jsonValue) { *this = jsonValue; }
 
-PrincipalUser& PrincipalUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+PrincipalUser& PrincipalUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("access"))
-  {
+  if (jsonValue.ValueExists("access")) {
     m_access = ReadAccessTypeMapper::GetReadAccessTypeForName(jsonValue.GetString("access"));
     m_accessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("membershipType"))
-  {
+  if (jsonValue.ValueExists("membershipType")) {
     m_membershipType = MembershipTypeMapper::GetMembershipTypeForName(jsonValue.GetString("membershipType"));
     m_membershipTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrincipalUser::Jsonize() const
-{
+JsonValue PrincipalUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_accessHasBeenSet)
-  {
-   payload.WithString("access", ReadAccessTypeMapper::GetNameForReadAccessType(m_access));
+  if (m_accessHasBeenSet) {
+    payload.WithString("access", ReadAccessTypeMapper::GetNameForReadAccessType(m_access));
   }
 
-  if(m_membershipTypeHasBeenSet)
-  {
-   payload.WithString("membershipType", MembershipTypeMapper::GetNameForMembershipType(m_membershipType));
+  if (m_membershipTypeHasBeenSet) {
+    payload.WithString("membershipType", MembershipTypeMapper::GetNameForMembershipType(m_membershipType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/EmailRecipients.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/EmailRecipients.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-EmailRecipients::EmailRecipients(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailRecipients::EmailRecipients(JsonView jsonValue) { *this = jsonValue; }
 
-EmailRecipients& EmailRecipients::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("to"))
-  {
+EmailRecipients& EmailRecipients::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("to")) {
     Aws::Utils::Array<JsonView> toJsonList = jsonValue.GetArray("to");
-    for(unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex)
-    {
+    for (unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex) {
       m_to.push_back(toJsonList[toIndex].AsObject());
     }
     m_toHasBeenSet = true;
@@ -37,24 +28,20 @@ EmailRecipients& EmailRecipients::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EmailRecipients::Jsonize() const
-{
+JsonValue EmailRecipients::Jsonize() const {
   JsonValue payload;
 
-  if(m_toHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> toJsonList(m_to.size());
-   for(unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex)
-   {
-     toJsonList[toIndex].AsObject(m_to[toIndex].Jsonize());
-   }
-   payload.WithArray("to", std::move(toJsonList));
-
+  if (m_toHasBeenSet) {
+    Aws::Utils::Array<JsonValue> toJsonList(m_to.size());
+    for (unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex) {
+      toJsonList[toIndex].AsObject(m_to[toIndex].Jsonize());
+    }
+    payload.WithArray("to", std::move(toJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

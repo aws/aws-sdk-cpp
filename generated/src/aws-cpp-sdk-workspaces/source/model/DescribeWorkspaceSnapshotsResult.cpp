@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkspaceSnapshotsResult::DescribeWorkspaceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeWorkspaceSnapshotsResult::DescribeWorkspaceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RebuildSnapshots"))
-  {
+  if (jsonValue.ValueExists("RebuildSnapshots")) {
     Aws::Utils::Array<JsonView> rebuildSnapshotsJsonList = jsonValue.GetArray("RebuildSnapshots");
-    for(unsigned rebuildSnapshotsIndex = 0; rebuildSnapshotsIndex < rebuildSnapshotsJsonList.GetLength(); ++rebuildSnapshotsIndex)
-    {
+    for (unsigned rebuildSnapshotsIndex = 0; rebuildSnapshotsIndex < rebuildSnapshotsJsonList.GetLength(); ++rebuildSnapshotsIndex) {
       m_rebuildSnapshots.push_back(rebuildSnapshotsJsonList[rebuildSnapshotsIndex].AsObject());
     }
     m_rebuildSnapshotsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RestoreSnapshots"))
-  {
+  if (jsonValue.ValueExists("RestoreSnapshots")) {
     Aws::Utils::Array<JsonView> restoreSnapshotsJsonList = jsonValue.GetArray("RestoreSnapshots");
-    for(unsigned restoreSnapshotsIndex = 0; restoreSnapshotsIndex < restoreSnapshotsJsonList.GetLength(); ++restoreSnapshotsIndex)
-    {
+    for (unsigned restoreSnapshotsIndex = 0; restoreSnapshotsIndex < restoreSnapshotsJsonList.GetLength(); ++restoreSnapshotsIndex) {
       m_restoreSnapshots.push_back(restoreSnapshotsJsonList[restoreSnapshotsIndex].AsObject());
     }
     m_restoreSnapshotsHasBeenSet = true;
@@ -46,12 +38,10 @@ DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(c
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

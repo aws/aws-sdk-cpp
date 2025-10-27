@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-SubModule::SubModule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubModule::SubModule(JsonView jsonValue) { *this = jsonValue; }
 
-SubModule& SubModule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("commitId"))
-  {
+SubModule& SubModule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("commitId")) {
     m_commitId = jsonValue.GetString("commitId");
     m_commitIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("absolutePath"))
-  {
+  if (jsonValue.ValueExists("absolutePath")) {
     m_absolutePath = jsonValue.GetString("absolutePath");
     m_absolutePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relativePath"))
-  {
+  if (jsonValue.ValueExists("relativePath")) {
     m_relativePath = jsonValue.GetString("relativePath");
     m_relativePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubModule::Jsonize() const
-{
+JsonValue SubModule::Jsonize() const {
   JsonValue payload;
 
-  if(m_commitIdHasBeenSet)
-  {
-   payload.WithString("commitId", m_commitId);
-
+  if (m_commitIdHasBeenSet) {
+    payload.WithString("commitId", m_commitId);
   }
 
-  if(m_absolutePathHasBeenSet)
-  {
-   payload.WithString("absolutePath", m_absolutePath);
-
+  if (m_absolutePathHasBeenSet) {
+    payload.WithString("absolutePath", m_absolutePath);
   }
 
-  if(m_relativePathHasBeenSet)
-  {
-   payload.WithString("relativePath", m_relativePath);
-
+  if (m_relativePathHasBeenSet) {
+    payload.WithString("relativePath", m_relativePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

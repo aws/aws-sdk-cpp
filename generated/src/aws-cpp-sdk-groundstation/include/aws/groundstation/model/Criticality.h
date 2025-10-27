@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/groundstation/GroundStation_EXPORTS.h>
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
-  enum class Criticality
-  {
-    NOT_SET,
-    REQUIRED,
-    PREFERRED,
-    REMOVED
-  };
+namespace Aws {
+namespace GroundStation {
+namespace Model {
+enum class Criticality { NOT_SET, REQUIRED, PREFERRED, REMOVED };
 
-namespace CriticalityMapper
-{
+namespace CriticalityMapper {
 AWS_GROUNDSTATION_API Criticality GetCriticalityForName(const Aws::String& name);
 
 AWS_GROUNDSTATION_API Aws::String GetNameForCriticality(Criticality value);
-} // namespace CriticalityMapper
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace CriticalityMapper
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

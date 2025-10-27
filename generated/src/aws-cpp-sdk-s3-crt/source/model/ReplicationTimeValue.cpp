@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/ReplicationTimeValue.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/ReplicationTimeValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReplicationTimeValue& ReplicationTimeValue::operator =(const XmlNode& xmlNode)
-{
+ReplicationTimeValue& ReplicationTimeValue::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode minutesNode = resultNode.FirstChild("Minutes");
-    if(!minutesNode.IsNull())
-    {
-      m_minutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minutesNode.GetText()).c_str()).c_str());
+    if (!minutesNode.IsNull()) {
+      m_minutes =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minutesNode.GetText()).c_str()).c_str());
       m_minutesHasBeenSet = true;
     }
   }
@@ -42,19 +34,16 @@ ReplicationTimeValue& ReplicationTimeValue::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ReplicationTimeValue::AddToNode(XmlNode& parentNode) const
-{
+void ReplicationTimeValue::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_minutesHasBeenSet)
-  {
-   XmlNode minutesNode = parentNode.CreateChildElement("Minutes");
-   ss << m_minutes;
-   minutesNode.SetText(ss.str());
-   ss.str("");
+  if (m_minutesHasBeenSet) {
+    XmlNode minutesNode = parentNode.CreateChildElement("Minutes");
+    ss << m_minutes;
+    minutesNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

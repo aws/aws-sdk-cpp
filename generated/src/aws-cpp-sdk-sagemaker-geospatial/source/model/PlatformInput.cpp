@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/PlatformInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/PlatformInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-PlatformInput::PlatformInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PlatformInput::PlatformInput(JsonView jsonValue) { *this = jsonValue; }
 
-PlatformInput& PlatformInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComparisonOperator"))
-  {
+PlatformInput& PlatformInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComparisonOperator")) {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
     m_comparisonOperatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PlatformInput::Jsonize() const
-{
+JsonValue PlatformInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonOperatorHasBeenSet)
-  {
-   payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  if (m_comparisonOperatorHasBeenSet) {
+    payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

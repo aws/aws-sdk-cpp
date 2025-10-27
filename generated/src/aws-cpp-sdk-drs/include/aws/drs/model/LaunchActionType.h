@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class LaunchActionType
-  {
-    NOT_SET,
-    SSM_AUTOMATION,
-    SSM_COMMAND
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class LaunchActionType { NOT_SET, SSM_AUTOMATION, SSM_COMMAND };
 
-namespace LaunchActionTypeMapper
-{
+namespace LaunchActionTypeMapper {
 AWS_DRS_API LaunchActionType GetLaunchActionTypeForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForLaunchActionType(LaunchActionType value);
-} // namespace LaunchActionTypeMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace LaunchActionTypeMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

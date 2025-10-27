@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormButton::FormButton(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormButton::FormButton(JsonView jsonValue) { *this = jsonValue; }
 
-FormButton& FormButton::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("excluded"))
-  {
+FormButton& FormButton::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("excluded")) {
     m_excluded = jsonValue.GetBool("excluded");
     m_excludedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("children"))
-  {
+  if (jsonValue.ValueExists("children")) {
     m_children = jsonValue.GetString("children");
     m_childrenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("position"))
-  {
+  if (jsonValue.ValueExists("position")) {
     m_position = jsonValue.GetObject("position");
     m_positionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormButton::Jsonize() const
-{
+JsonValue FormButton::Jsonize() const {
   JsonValue payload;
 
-  if(m_excludedHasBeenSet)
-  {
-   payload.WithBool("excluded", m_excluded);
-
+  if (m_excludedHasBeenSet) {
+    payload.WithBool("excluded", m_excluded);
   }
 
-  if(m_childrenHasBeenSet)
-  {
-   payload.WithString("children", m_children);
-
+  if (m_childrenHasBeenSet) {
+    payload.WithString("children", m_children);
   }
 
-  if(m_positionHasBeenSet)
-  {
-   payload.WithObject("position", m_position.Jsonize());
-
+  if (m_positionHasBeenSet) {
+    payload.WithObject("position", m_position.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

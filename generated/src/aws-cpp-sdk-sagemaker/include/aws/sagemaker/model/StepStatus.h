@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class StepStatus
-  {
-    NOT_SET,
-    Starting,
-    Executing,
-    Stopping,
-    Stopped,
-    Failed,
-    Succeeded
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class StepStatus { NOT_SET, Starting, Executing, Stopping, Stopped, Failed, Succeeded };
 
-namespace StepStatusMapper
-{
+namespace StepStatusMapper {
 AWS_SAGEMAKER_API StepStatus GetStepStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForStepStatus(StepStatus value);
-} // namespace StepStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace StepStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

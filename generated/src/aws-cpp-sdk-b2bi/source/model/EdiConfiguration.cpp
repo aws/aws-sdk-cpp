@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
-EdiConfiguration::EdiConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdiConfiguration::EdiConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EdiConfiguration& EdiConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("capabilityDirection"))
-  {
+EdiConfiguration& EdiConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("capabilityDirection")) {
     m_capabilityDirection = CapabilityDirectionMapper::GetCapabilityDirectionForName(jsonValue.GetString("capabilityDirection"));
     m_capabilityDirectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetObject("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputLocation"))
-  {
+  if (jsonValue.ValueExists("inputLocation")) {
     m_inputLocation = jsonValue.GetObject("inputLocation");
     m_inputLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outputLocation"))
-  {
+  if (jsonValue.ValueExists("outputLocation")) {
     m_outputLocation = jsonValue.GetObject("outputLocation");
     m_outputLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("transformerId"))
-  {
+  if (jsonValue.ValueExists("transformerId")) {
     m_transformerId = jsonValue.GetString("transformerId");
     m_transformerIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EdiConfiguration::Jsonize() const
-{
+JsonValue EdiConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_capabilityDirectionHasBeenSet)
-  {
-   payload.WithString("capabilityDirection", CapabilityDirectionMapper::GetNameForCapabilityDirection(m_capabilityDirection));
+  if (m_capabilityDirectionHasBeenSet) {
+    payload.WithString("capabilityDirection", CapabilityDirectionMapper::GetNameForCapabilityDirection(m_capabilityDirection));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("type", m_type.Jsonize());
   }
 
-  if(m_inputLocationHasBeenSet)
-  {
-   payload.WithObject("inputLocation", m_inputLocation.Jsonize());
-
+  if (m_inputLocationHasBeenSet) {
+    payload.WithObject("inputLocation", m_inputLocation.Jsonize());
   }
 
-  if(m_outputLocationHasBeenSet)
-  {
-   payload.WithObject("outputLocation", m_outputLocation.Jsonize());
-
+  if (m_outputLocationHasBeenSet) {
+    payload.WithObject("outputLocation", m_outputLocation.Jsonize());
   }
 
-  if(m_transformerIdHasBeenSet)
-  {
-   payload.WithString("transformerId", m_transformerId);
-
+  if (m_transformerIdHasBeenSet) {
+    payload.WithString("transformerId", m_transformerId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

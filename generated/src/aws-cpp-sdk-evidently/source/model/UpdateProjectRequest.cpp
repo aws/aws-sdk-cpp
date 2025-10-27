@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/UpdateProjectRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/UpdateProjectRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProjectRequest::SerializePayload() const
-{
+Aws::String UpdateProjectRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appConfigResourceHasBeenSet)
-  {
-   payload.WithObject("appConfigResource", m_appConfigResource.Jsonize());
-
+  if (m_appConfigResourceHasBeenSet) {
+    payload.WithObject("appConfigResource", m_appConfigResource.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

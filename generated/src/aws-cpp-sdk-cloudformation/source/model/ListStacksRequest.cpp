@@ -10,28 +10,21 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListStacksRequest::SerializePayload() const
-{
+Aws::String ListStacksRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListStacks&";
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_stackStatusFilterHasBeenSet)
-  {
-    if (m_stackStatusFilter.empty())
-    {
+  if (m_stackStatusFilterHasBeenSet) {
+    if (m_stackStatusFilter.empty()) {
       ss << "StackStatusFilter=&";
-    }
-    else
-    {
+    } else {
       unsigned stackStatusFilterCount = 1;
-      for(auto& item : m_stackStatusFilter)
-      {
+      for (auto& item : m_stackStatusFilter) {
         ss << "StackStatusFilter.member." << stackStatusFilterCount << "="
-            << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item)) << "&";
+           << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item)) << "&";
         stackStatusFilterCount++;
       }
     }
@@ -41,8 +34,4 @@ Aws::String ListStacksRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListStacksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListStacksRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

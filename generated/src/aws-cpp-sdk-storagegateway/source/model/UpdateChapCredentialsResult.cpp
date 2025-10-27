@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/UpdateChapCredentialsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/storagegateway/model/UpdateChapCredentialsResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateChapCredentialsResult::UpdateChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateChapCredentialsResult::UpdateChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateChapCredentialsResult& UpdateChapCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateChapCredentialsResult& UpdateChapCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TargetARN"))
-  {
+  if (jsonValue.ValueExists("TargetARN")) {
     m_targetARN = jsonValue.GetString("TargetARN");
     m_targetARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InitiatorName"))
-  {
+  if (jsonValue.ValueExists("InitiatorName")) {
     m_initiatorName = jsonValue.GetString("InitiatorName");
     m_initiatorNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

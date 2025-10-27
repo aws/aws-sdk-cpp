@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/ServerProcess.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/ServerProcess.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-ServerProcess::ServerProcess(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerProcess::ServerProcess(JsonView jsonValue) { *this = jsonValue; }
 
-ServerProcess& ServerProcess::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LaunchPath"))
-  {
+ServerProcess& ServerProcess::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LaunchPath")) {
     m_launchPath = jsonValue.GetString("LaunchPath");
     m_launchPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     m_parameters = jsonValue.GetString("Parameters");
     m_parametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConcurrentExecutions"))
-  {
+  if (jsonValue.ValueExists("ConcurrentExecutions")) {
     m_concurrentExecutions = jsonValue.GetInteger("ConcurrentExecutions");
     m_concurrentExecutionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerProcess::Jsonize() const
-{
+JsonValue ServerProcess::Jsonize() const {
   JsonValue payload;
 
-  if(m_launchPathHasBeenSet)
-  {
-   payload.WithString("LaunchPath", m_launchPath);
-
+  if (m_launchPathHasBeenSet) {
+    payload.WithString("LaunchPath", m_launchPath);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   payload.WithString("Parameters", m_parameters);
-
+  if (m_parametersHasBeenSet) {
+    payload.WithString("Parameters", m_parameters);
   }
 
-  if(m_concurrentExecutionsHasBeenSet)
-  {
-   payload.WithInteger("ConcurrentExecutions", m_concurrentExecutions);
-
+  if (m_concurrentExecutionsHasBeenSet) {
+    payload.WithInteger("ConcurrentExecutions", m_concurrentExecutions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

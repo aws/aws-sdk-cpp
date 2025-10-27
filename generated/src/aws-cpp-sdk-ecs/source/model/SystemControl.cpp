@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/SystemControl.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/SystemControl.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-SystemControl::SystemControl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SystemControl::SystemControl(JsonView jsonValue) { *this = jsonValue; }
 
-SystemControl& SystemControl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("namespace"))
-  {
+SystemControl& SystemControl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("namespace")) {
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SystemControl::Jsonize() const
-{
+JsonValue SystemControl::Jsonize() const {
   JsonValue payload;
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("namespace", m_namespace);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

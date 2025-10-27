@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-InvalidConfigurationDetail::InvalidConfigurationDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidConfigurationDetail::InvalidConfigurationDetail(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidConfigurationDetail& InvalidConfigurationDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Constraint"))
-  {
+InvalidConfigurationDetail& InvalidConfigurationDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Constraint")) {
     m_constraint = jsonValue.GetString("Constraint");
     m_constraintHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Location"))
-  {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetString("Reason");
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidConfigurationDetail::Jsonize() const
-{
+JsonValue InvalidConfigurationDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_constraintHasBeenSet)
-  {
-   payload.WithString("Constraint", m_constraint);
-
+  if (m_constraintHasBeenSet) {
+    payload.WithString("Constraint", m_constraint);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", m_reason);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

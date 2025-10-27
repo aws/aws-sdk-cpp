@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/PrepareQueryResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/timestream-query/model/PrepareQueryResult.h>
 
 #include <utility>
 
@@ -17,33 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PrepareQueryResult::PrepareQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PrepareQueryResult::PrepareQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PrepareQueryResult& PrepareQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("QueryString"))
-  {
+  if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
     m_queryStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Columns"))
-  {
+  if (jsonValue.ValueExists("Columns")) {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
-    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
-    {
+    for (unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex) {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
     }
     m_columnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
-    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-    {
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
     m_parametersHasBeenSet = true;
@@ -51,12 +42,10 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

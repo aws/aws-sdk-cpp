@@ -3,50 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/LimitExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lex-models/model/LimitExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
 
-LimitExceededException::LimitExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LimitExceededException::LimitExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-LimitExceededException& LimitExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+LimitExceededException& LimitExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LimitExceededException::Jsonize() const
-{
+JsonValue LimitExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

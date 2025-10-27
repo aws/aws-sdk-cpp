@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/UpdateAbpV1_1.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/UpdateAbpV1_1.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-UpdateAbpV1_1::UpdateAbpV1_1(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateAbpV1_1::UpdateAbpV1_1(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateAbpV1_1& UpdateAbpV1_1::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FCntStart"))
-  {
+UpdateAbpV1_1& UpdateAbpV1_1::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FCntStart")) {
     m_fCntStart = jsonValue.GetInteger("FCntStart");
     m_fCntStartHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateAbpV1_1::Jsonize() const
-{
+JsonValue UpdateAbpV1_1::Jsonize() const {
   JsonValue payload;
 
-  if(m_fCntStartHasBeenSet)
-  {
-   payload.WithInteger("FCntStart", m_fCntStart);
-
+  if (m_fCntStartHasBeenSet) {
+    payload.WithInteger("FCntStart", m_fCntStart);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -4,95 +4,100 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/IPSetDescriptorType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WAF {
+namespace Model {
 
+/**
+ *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+ * see <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+ * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
+ * WAF</b>, use the AWS WAFV2 API and see the <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+ * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
+ * endpoints for regional and global use. </p>  <p>Specifies the IP address
+ * type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR
+ * format) that web requests originate from.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor">AWS
+ * API Reference</a></p>
+ */
+class IPSetDescriptor {
+ public:
+  AWS_WAF_API IPSetDescriptor() = default;
+  AWS_WAF_API IPSetDescriptor(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WAF_API IPSetDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
-   * see <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
-   * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
-   * WAF</b>, use the AWS WAFV2 API and see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-   * endpoints for regional and global use. </p>  <p>Specifies the IP address
-   * type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR
-   * format) that web requests originate from.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor">AWS
-   * API Reference</a></p>
+   * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
    */
-  class IPSetDescriptor
-  {
-  public:
-    AWS_WAF_API IPSetDescriptor() = default;
-    AWS_WAF_API IPSetDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WAF_API IPSetDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline IPSetDescriptorType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(IPSetDescriptorType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline IPSetDescriptor& WithType(IPSetDescriptorType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>
+   * <p>To configure AWS WAF to allow, block, or count requests that originated from
+   * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
+   * <p>To configure AWS WAF to allow, block, or count requests that originated from
+   * IP addresses from 192.0.2.0 to 192.0.2.255, specify
+   * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+   * notation, see the Wikipedia entry <a
+   * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+   * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+   * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+   * requests that originated from the IP address
+   * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+   * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+   * configure AWS WAF to allow, block, or count requests that originated from IP
+   * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+   * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+   * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  IPSetDescriptor& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  IPSetDescriptorType m_type{IPSetDescriptorType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-     */
-    inline IPSetDescriptorType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(IPSetDescriptorType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline IPSetDescriptor& WithType(IPSetDescriptorType value) { SetType(value); return *this;}
-    ///@}
+  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>
-     * <p>To configure AWS WAF to allow, block, or count requests that originated from
-     * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
-     * <p>To configure AWS WAF to allow, block, or count requests that originated from
-     * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
-     * notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
-     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
-     * requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
-     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
-     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
-     */
-    inline const Aws::String& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::String>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::String>
-    IPSetDescriptor& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    IPSetDescriptorType m_type{IPSetDescriptorType::NOT_SET};
-    bool m_typeHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

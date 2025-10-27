@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-WarningsListItem::WarningsListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WarningsListItem::WarningsListItem(JsonView jsonValue) { *this = jsonValue; }
 
-WarningsListItem& WarningsListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Page"))
-  {
+WarningsListItem& WarningsListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Page")) {
     m_page = jsonValue.GetInteger("Page");
     m_pageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WarnCode"))
-  {
+  if (jsonValue.ValueExists("WarnCode")) {
     m_warnCode = PageBasedWarningCodeMapper::GetPageBasedWarningCodeForName(jsonValue.GetString("WarnCode"));
     m_warnCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WarnMessage"))
-  {
+  if (jsonValue.ValueExists("WarnMessage")) {
     m_warnMessage = jsonValue.GetString("WarnMessage");
     m_warnMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WarningsListItem::Jsonize() const
-{
+JsonValue WarningsListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_pageHasBeenSet)
-  {
-   payload.WithInteger("Page", m_page);
-
+  if (m_pageHasBeenSet) {
+    payload.WithInteger("Page", m_page);
   }
 
-  if(m_warnCodeHasBeenSet)
-  {
-   payload.WithString("WarnCode", PageBasedWarningCodeMapper::GetNameForPageBasedWarningCode(m_warnCode));
+  if (m_warnCodeHasBeenSet) {
+    payload.WithString("WarnCode", PageBasedWarningCodeMapper::GetNameForPageBasedWarningCode(m_warnCode));
   }
 
-  if(m_warnMessageHasBeenSet)
-  {
-   payload.WithString("WarnMessage", m_warnMessage);
-
+  if (m_warnMessageHasBeenSet) {
+    payload.WithString("WarnMessage", m_warnMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

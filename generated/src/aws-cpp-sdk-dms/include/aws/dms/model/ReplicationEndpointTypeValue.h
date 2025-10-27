@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class ReplicationEndpointTypeValue
-  {
-    NOT_SET,
-    source,
-    target
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class ReplicationEndpointTypeValue { NOT_SET, source, target };
 
-namespace ReplicationEndpointTypeValueMapper
-{
+namespace ReplicationEndpointTypeValueMapper {
 AWS_DATABASEMIGRATIONSERVICE_API ReplicationEndpointTypeValue GetReplicationEndpointTypeValueForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForReplicationEndpointTypeValue(ReplicationEndpointTypeValue value);
-} // namespace ReplicationEndpointTypeValueMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace ReplicationEndpointTypeValueMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

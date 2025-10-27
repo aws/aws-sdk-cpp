@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
-  enum class ResourceManagedType
-  {
-    NOT_SET,
-    AWS_MANAGED_THREAT_SIGNATURES,
-    AWS_MANAGED_DOMAIN_LISTS,
-    ACTIVE_THREAT_DEFENSE
-  };
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+enum class ResourceManagedType { NOT_SET, AWS_MANAGED_THREAT_SIGNATURES, AWS_MANAGED_DOMAIN_LISTS, ACTIVE_THREAT_DEFENSE };
 
-namespace ResourceManagedTypeMapper
-{
+namespace ResourceManagedTypeMapper {
 AWS_NETWORKFIREWALL_API ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name);
 
 AWS_NETWORKFIREWALL_API Aws::String GetNameForResourceManagedType(ResourceManagedType value);
-} // namespace ResourceManagedTypeMapper
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace ResourceManagedTypeMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

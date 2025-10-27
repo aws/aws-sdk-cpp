@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CompositedVideoArtifactsConfiguration& CompositedVideoArtifactsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Layout"))
-  {
+CompositedVideoArtifactsConfiguration& CompositedVideoArtifactsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Layout")) {
     m_layout = LayoutOptionMapper::GetLayoutOptionForName(jsonValue.GetString("Layout"));
     m_layoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Resolution"))
-  {
+  if (jsonValue.ValueExists("Resolution")) {
     m_resolution = ResolutionOptionMapper::GetResolutionOptionForName(jsonValue.GetString("Resolution"));
     m_resolutionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GridViewConfiguration"))
-  {
+  if (jsonValue.ValueExists("GridViewConfiguration")) {
     m_gridViewConfiguration = jsonValue.GetObject("GridViewConfiguration");
     m_gridViewConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CompositedVideoArtifactsConfiguration::Jsonize() const
-{
+JsonValue CompositedVideoArtifactsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_layoutHasBeenSet)
-  {
-   payload.WithString("Layout", LayoutOptionMapper::GetNameForLayoutOption(m_layout));
+  if (m_layoutHasBeenSet) {
+    payload.WithString("Layout", LayoutOptionMapper::GetNameForLayoutOption(m_layout));
   }
 
-  if(m_resolutionHasBeenSet)
-  {
-   payload.WithString("Resolution", ResolutionOptionMapper::GetNameForResolutionOption(m_resolution));
+  if (m_resolutionHasBeenSet) {
+    payload.WithString("Resolution", ResolutionOptionMapper::GetNameForResolutionOption(m_resolution));
   }
 
-  if(m_gridViewConfigurationHasBeenSet)
-  {
-   payload.WithObject("GridViewConfiguration", m_gridViewConfiguration.Jsonize());
-
+  if (m_gridViewConfigurationHasBeenSet) {
+    payload.WithObject("GridViewConfiguration", m_gridViewConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

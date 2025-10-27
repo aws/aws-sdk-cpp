@@ -12,27 +12,19 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterOrganizationDelegatedAdminRequest::SerializePayload() const
-{
+Aws::String DeregisterOrganizationDelegatedAdminRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_delegatedAdminAccountIdHasBeenSet)
-  {
-   payload.WithString("DelegatedAdminAccountId", m_delegatedAdminAccountId);
-
+  if (m_delegatedAdminAccountIdHasBeenSet) {
+    payload.WithString("DelegatedAdminAccountId", m_delegatedAdminAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeregisterOrganizationDelegatedAdminRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeregisterOrganizationDelegatedAdminRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeregisterOrganizationDelegatedAdmin"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target",
+                                            "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeregisterOrganizationDelegatedAdmin"));
   return headers;
-
 }
-
-
-
-

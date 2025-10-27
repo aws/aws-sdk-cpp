@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class ListingStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class ListingStatus { NOT_SET, CREATING, ACTIVE, INACTIVE };
 
-namespace ListingStatusMapper
-{
+namespace ListingStatusMapper {
 AWS_DATAZONE_API ListingStatus GetListingStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForListingStatus(ListingStatus value);
-} // namespace ListingStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace ListingStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

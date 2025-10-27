@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mailmanager/model/StopArchiveExportRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mailmanager/model/StopArchiveExportRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopArchiveExportRequest::SerializePayload() const
-{
+Aws::String StopArchiveExportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_exportIdHasBeenSet)
-  {
-   payload.WithString("ExportId", m_exportId);
-
+  if (m_exportIdHasBeenSet) {
+    payload.WithString("ExportId", m_exportId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopArchiveExportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopArchiveExportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.StopArchiveExport"));
   return headers;
-
 }
-
-
-
-

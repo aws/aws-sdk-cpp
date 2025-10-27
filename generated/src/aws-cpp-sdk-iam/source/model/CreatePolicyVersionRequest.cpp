@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/CreatePolicyVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/CreatePolicyVersionRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String CreatePolicyVersionRequest::SerializePayload() const
-{
+Aws::String CreatePolicyVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreatePolicyVersion&";
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
-  if(m_policyDocumentHasBeenSet)
-  {
+  if (m_policyDocumentHasBeenSet) {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
 
-  if(m_setAsDefaultHasBeenSet)
-  {
+  if (m_setAsDefaultHasBeenSet) {
     ss << "SetAsDefault=" << std::boolalpha << m_setAsDefault << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreatePolicyVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreatePolicyVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

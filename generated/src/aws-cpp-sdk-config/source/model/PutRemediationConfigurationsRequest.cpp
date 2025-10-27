@@ -12,32 +12,24 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutRemediationConfigurationsRequest::SerializePayload() const
-{
+Aws::String PutRemediationConfigurationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_remediationConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> remediationConfigurationsJsonList(m_remediationConfigurations.size());
-   for(unsigned remediationConfigurationsIndex = 0; remediationConfigurationsIndex < remediationConfigurationsJsonList.GetLength(); ++remediationConfigurationsIndex)
-   {
-     remediationConfigurationsJsonList[remediationConfigurationsIndex].AsObject(m_remediationConfigurations[remediationConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("RemediationConfigurations", std::move(remediationConfigurationsJsonList));
-
+  if (m_remediationConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remediationConfigurationsJsonList(m_remediationConfigurations.size());
+    for (unsigned remediationConfigurationsIndex = 0; remediationConfigurationsIndex < remediationConfigurationsJsonList.GetLength();
+         ++remediationConfigurationsIndex) {
+      remediationConfigurationsJsonList[remediationConfigurationsIndex].AsObject(
+          m_remediationConfigurations[remediationConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("RemediationConfigurations", std::move(remediationConfigurationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutRemediationConfigurationsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutRemediationConfigurationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.PutRemediationConfigurations"));
   return headers;
-
 }
-
-
-
-

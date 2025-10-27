@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceDeployment
-{
-class MarketplaceDeploymentEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MarketplaceDeployment {
+class MarketplaceDeploymentEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MarketplaceDeployment
-} // namespace Aws
+}  // namespace MarketplaceDeployment
+}  // namespace Aws

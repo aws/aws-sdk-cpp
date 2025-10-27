@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ResetEbsDefaultKmsKeyIdRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ResetEbsDefaultKmsKeyIdRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ResetEbsDefaultKmsKeyIdRequest::SerializePayload() const
-{
+Aws::String ResetEbsDefaultKmsKeyIdRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ResetEbsDefaultKmsKeyId&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String ResetEbsDefaultKmsKeyIdRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ResetEbsDefaultKmsKeyIdRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ResetEbsDefaultKmsKeyIdRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

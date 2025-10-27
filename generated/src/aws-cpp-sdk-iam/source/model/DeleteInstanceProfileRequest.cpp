@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteInstanceProfileRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteInstanceProfileRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteInstanceProfileRequest::SerializePayload() const
-{
+Aws::String DeleteInstanceProfileRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteInstanceProfile&";
-  if(m_instanceProfileNameHasBeenSet)
-  {
+  if (m_instanceProfileNameHasBeenSet) {
     ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

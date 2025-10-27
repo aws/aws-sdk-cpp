@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class CapacityProviderUpdateStatus
-  {
-    NOT_SET,
-    CREATE_IN_PROGRESS,
-    CREATE_COMPLETE,
-    CREATE_FAILED,
-    DELETE_IN_PROGRESS,
-    DELETE_COMPLETE,
-    DELETE_FAILED,
-    UPDATE_IN_PROGRESS,
-    UPDATE_COMPLETE,
-    UPDATE_FAILED
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class CapacityProviderUpdateStatus {
+  NOT_SET,
+  CREATE_IN_PROGRESS,
+  CREATE_COMPLETE,
+  CREATE_FAILED,
+  DELETE_IN_PROGRESS,
+  DELETE_COMPLETE,
+  DELETE_FAILED,
+  UPDATE_IN_PROGRESS,
+  UPDATE_COMPLETE,
+  UPDATE_FAILED
+};
 
-namespace CapacityProviderUpdateStatusMapper
-{
+namespace CapacityProviderUpdateStatusMapper {
 AWS_ECS_API CapacityProviderUpdateStatus GetCapacityProviderUpdateStatusForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForCapacityProviderUpdateStatus(CapacityProviderUpdateStatus value);
-} // namespace CapacityProviderUpdateStatusMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace CapacityProviderUpdateStatusMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

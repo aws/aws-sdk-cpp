@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DatastorePartitions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/DatastorePartitions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-DatastorePartitions::DatastorePartitions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatastorePartitions::DatastorePartitions(JsonView jsonValue) { *this = jsonValue; }
 
-DatastorePartitions& DatastorePartitions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("partitions"))
-  {
+DatastorePartitions& DatastorePartitions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("partitions")) {
     Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("partitions");
-    for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
-    {
+    for (unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex) {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
     }
     m_partitionsHasBeenSet = true;
@@ -37,24 +28,20 @@ DatastorePartitions& DatastorePartitions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DatastorePartitions::Jsonize() const
-{
+JsonValue DatastorePartitions::Jsonize() const {
   JsonValue payload;
 
-  if(m_partitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
-   for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
-   {
-     partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());
-   }
-   payload.WithArray("partitions", std::move(partitionsJsonList));
-
+  if (m_partitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
+    for (unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex) {
+      partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());
+    }
+    payload.WithArray("partitions", std::move(partitionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/PlayerLatencyPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-PlayerLatencyPolicy& PlayerLatencyPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaximumIndividualPlayerLatencyMilliseconds"))
-  {
+PlayerLatencyPolicy& PlayerLatencyPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaximumIndividualPlayerLatencyMilliseconds")) {
     m_maximumIndividualPlayerLatencyMilliseconds = jsonValue.GetInteger("MaximumIndividualPlayerLatencyMilliseconds");
     m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyDurationSeconds"))
-  {
+  if (jsonValue.ValueExists("PolicyDurationSeconds")) {
     m_policyDurationSeconds = jsonValue.GetInteger("PolicyDurationSeconds");
     m_policyDurationSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PlayerLatencyPolicy::Jsonize() const
-{
+JsonValue PlayerLatencyPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet)
-  {
-   payload.WithInteger("MaximumIndividualPlayerLatencyMilliseconds", m_maximumIndividualPlayerLatencyMilliseconds);
-
+  if (m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet) {
+    payload.WithInteger("MaximumIndividualPlayerLatencyMilliseconds", m_maximumIndividualPlayerLatencyMilliseconds);
   }
 
-  if(m_policyDurationSecondsHasBeenSet)
-  {
-   payload.WithInteger("PolicyDurationSeconds", m_policyDurationSeconds);
-
+  if (m_policyDurationSecondsHasBeenSet) {
+    payload.WithInteger("PolicyDurationSeconds", m_policyDurationSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

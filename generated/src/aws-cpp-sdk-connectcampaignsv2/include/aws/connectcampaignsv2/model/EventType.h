@@ -7,27 +7,16 @@
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
-  enum class EventType
-  {
-    NOT_SET,
-    Campaign_Email,
-    Campaign_SMS,
-    Campaign_Telephony,
-    Campaign_Orchestration
-  };
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
+enum class EventType { NOT_SET, Campaign_Email, Campaign_SMS, Campaign_Telephony, Campaign_Orchestration };
 
-namespace EventTypeMapper
-{
+namespace EventTypeMapper {
 AWS_CONNECTCAMPAIGNSV2_API EventType GetEventTypeForName(const Aws::String& name);
 
 AWS_CONNECTCAMPAIGNSV2_API Aws::String GetNameForEventType(EventType value);
-} // namespace EventTypeMapper
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace EventTypeMapper
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

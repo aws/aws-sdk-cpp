@@ -7,25 +7,16 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
-  enum class InsightType
-  {
-    NOT_SET,
-    ApiCallRateInsight,
-    ApiErrorRateInsight
-  };
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
+enum class InsightType { NOT_SET, ApiCallRateInsight, ApiErrorRateInsight };
 
-namespace InsightTypeMapper
-{
+namespace InsightTypeMapper {
 AWS_CLOUDTRAIL_API InsightType GetInsightTypeForName(const Aws::String& name);
 
 AWS_CLOUDTRAIL_API Aws::String GetNameForInsightType(InsightType value);
-} // namespace InsightTypeMapper
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace InsightTypeMapper
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

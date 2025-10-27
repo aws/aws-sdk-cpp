@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-ContainerImage::ContainerImage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerImage::ContainerImage(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerImage& ContainerImage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("uri"))
-  {
+ContainerImage& ContainerImage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("uri")) {
     m_uri = jsonValue.GetString("uri");
     m_uriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerImage::Jsonize() const
-{
+JsonValue ContainerImage::Jsonize() const {
   JsonValue payload;
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("uri", m_uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

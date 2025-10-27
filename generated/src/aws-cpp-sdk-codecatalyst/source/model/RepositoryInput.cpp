@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-RepositoryInput::RepositoryInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryInput::RepositoryInput(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryInput& RepositoryInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+RepositoryInput& RepositoryInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchName"))
-  {
+  if (jsonValue.ValueExists("branchName")) {
     m_branchName = jsonValue.GetString("branchName");
     m_branchNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryInput::Jsonize() const
-{
+JsonValue RepositoryInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_branchNameHasBeenSet)
-  {
-   payload.WithString("branchName", m_branchName);
-
+  if (m_branchNameHasBeenSet) {
+    payload.WithString("branchName", m_branchName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

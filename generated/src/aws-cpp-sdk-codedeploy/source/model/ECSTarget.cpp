@@ -11,59 +11,43 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-ECSTarget::ECSTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ECSTarget::ECSTarget(JsonView jsonValue) { *this = jsonValue; }
 
-ECSTarget& ECSTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deploymentId"))
-  {
+ECSTarget& ECSTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deploymentId")) {
     m_deploymentId = jsonValue.GetString("deploymentId");
     m_deploymentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetId"))
-  {
+  if (jsonValue.ValueExists("targetId")) {
     m_targetId = jsonValue.GetString("targetId");
     m_targetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetArn"))
-  {
+  if (jsonValue.ValueExists("targetArn")) {
     m_targetArn = jsonValue.GetString("targetArn");
     m_targetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lifecycleEvents"))
-  {
+  if (jsonValue.ValueExists("lifecycleEvents")) {
     Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
-    for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
-    {
+    for (unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex) {
       m_lifecycleEvents.push_back(lifecycleEventsJsonList[lifecycleEventsIndex].AsObject());
     }
     m_lifecycleEventsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskSetsInfo"))
-  {
+  if (jsonValue.ValueExists("taskSetsInfo")) {
     Aws::Utils::Array<JsonView> taskSetsInfoJsonList = jsonValue.GetArray("taskSetsInfo");
-    for(unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex)
-    {
+    for (unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex) {
       m_taskSetsInfo.push_back(taskSetsInfoJsonList[taskSetsInfoIndex].AsObject());
     }
     m_taskSetsInfoHasBeenSet = true;
@@ -71,63 +55,48 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ECSTarget::Jsonize() const
-{
+JsonValue ECSTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_targetIdHasBeenSet)
-  {
-   payload.WithString("targetId", m_targetId);
-
+  if (m_targetIdHasBeenSet) {
+    payload.WithString("targetId", m_targetId);
   }
 
-  if(m_targetArnHasBeenSet)
-  {
-   payload.WithString("targetArn", m_targetArn);
-
+  if (m_targetArnHasBeenSet) {
+    payload.WithString("targetArn", m_targetArn);
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_lifecycleEventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
-   for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
-   {
-     lifecycleEventsJsonList[lifecycleEventsIndex].AsObject(m_lifecycleEvents[lifecycleEventsIndex].Jsonize());
-   }
-   payload.WithArray("lifecycleEvents", std::move(lifecycleEventsJsonList));
-
+  if (m_lifecycleEventsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
+    for (unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex) {
+      lifecycleEventsJsonList[lifecycleEventsIndex].AsObject(m_lifecycleEvents[lifecycleEventsIndex].Jsonize());
+    }
+    payload.WithArray("lifecycleEvents", std::move(lifecycleEventsJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TargetStatusMapper::GetNameForTargetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TargetStatusMapper::GetNameForTargetStatus(m_status));
   }
 
-  if(m_taskSetsInfoHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> taskSetsInfoJsonList(m_taskSetsInfo.size());
-   for(unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex)
-   {
-     taskSetsInfoJsonList[taskSetsInfoIndex].AsObject(m_taskSetsInfo[taskSetsInfoIndex].Jsonize());
-   }
-   payload.WithArray("taskSetsInfo", std::move(taskSetsInfoJsonList));
-
+  if (m_taskSetsInfoHasBeenSet) {
+    Aws::Utils::Array<JsonValue> taskSetsInfoJsonList(m_taskSetsInfo.size());
+    for (unsigned taskSetsInfoIndex = 0; taskSetsInfoIndex < taskSetsInfoJsonList.GetLength(); ++taskSetsInfoIndex) {
+      taskSetsInfoJsonList[taskSetsInfoIndex].AsObject(m_taskSetsInfo[taskSetsInfoIndex].Jsonize());
+    }
+    payload.WithArray("taskSetsInfo", std::move(taskSetsInfoJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

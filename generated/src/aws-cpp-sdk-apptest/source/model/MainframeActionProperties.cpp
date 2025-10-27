@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-MainframeActionProperties::MainframeActionProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MainframeActionProperties::MainframeActionProperties(JsonView jsonValue) { *this = jsonValue; }
 
-MainframeActionProperties& MainframeActionProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dmsTaskArn"))
-  {
+MainframeActionProperties& MainframeActionProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dmsTaskArn")) {
     m_dmsTaskArn = jsonValue.GetString("dmsTaskArn");
     m_dmsTaskArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MainframeActionProperties::Jsonize() const
-{
+JsonValue MainframeActionProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_dmsTaskArnHasBeenSet)
-  {
-   payload.WithString("dmsTaskArn", m_dmsTaskArn);
-
+  if (m_dmsTaskArnHasBeenSet) {
+    payload.WithString("dmsTaskArn", m_dmsTaskArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

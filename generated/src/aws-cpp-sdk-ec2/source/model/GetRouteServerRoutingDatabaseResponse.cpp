@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetRouteServerRoutingDatabaseResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/GetRouteServerRoutingDatabaseResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,31 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRouteServerRoutingDatabaseResponse::GetRouteServerRoutingDatabaseResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetRouteServerRoutingDatabaseResponse::GetRouteServerRoutingDatabaseResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetRouteServerRoutingDatabaseResponse& GetRouteServerRoutingDatabaseResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetRouteServerRoutingDatabaseResponse& GetRouteServerRoutingDatabaseResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetRouteServerRoutingDatabaseResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetRouteServerRoutingDatabaseResponse")) {
     resultNode = rootNode.FirstChild("GetRouteServerRoutingDatabaseResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode areRoutesPersistedNode = resultNode.FirstChild("areRoutesPersisted");
-    if(!areRoutesPersistedNode.IsNull())
-    {
-      m_areRoutesPersisted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(areRoutesPersistedNode.GetText()).c_str()).c_str());
+    if (!areRoutesPersistedNode.IsNull()) {
+      m_areRoutesPersisted = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(areRoutesPersistedNode.GetText()).c_str()).c_str());
       m_areRoutesPersistedHasBeenSet = true;
     }
     XmlNode routesNode = resultNode.FirstChild("routeSet");
-    if(!routesNode.IsNull())
-    {
+    if (!routesNode.IsNull()) {
       XmlNode routesMember = routesNode.FirstChild("item");
       m_routesHasBeenSet = !routesMember.IsNull();
-      while(!routesMember.IsNull())
-      {
+      while (!routesMember.IsNull()) {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
@@ -54,8 +49,7 @@ GetRouteServerRoutingDatabaseResponse& GetRouteServerRoutingDatabaseResponse::op
       m_routesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -63,12 +57,12 @@ GetRouteServerRoutingDatabaseResponse& GetRouteServerRoutingDatabaseResponse::op
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetRouteServerRoutingDatabaseResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetRouteServerRoutingDatabaseResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

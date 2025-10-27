@@ -3,134 +3,103 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/InstanceFleetConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/InstanceFleetConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-InstanceFleetConfig::InstanceFleetConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceFleetConfig::InstanceFleetConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceFleetConfig& InstanceFleetConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+InstanceFleetConfig& InstanceFleetConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceFleetType"))
-  {
+  if (jsonValue.ValueExists("InstanceFleetType")) {
     m_instanceFleetType = InstanceFleetTypeMapper::GetInstanceFleetTypeForName(jsonValue.GetString("InstanceFleetType"));
     m_instanceFleetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetOnDemandCapacity"))
-  {
+  if (jsonValue.ValueExists("TargetOnDemandCapacity")) {
     m_targetOnDemandCapacity = jsonValue.GetInteger("TargetOnDemandCapacity");
     m_targetOnDemandCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetSpotCapacity"))
-  {
+  if (jsonValue.ValueExists("TargetSpotCapacity")) {
     m_targetSpotCapacity = jsonValue.GetInteger("TargetSpotCapacity");
     m_targetSpotCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceTypeConfigs"))
-  {
+  if (jsonValue.ValueExists("InstanceTypeConfigs")) {
     Aws::Utils::Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
-    for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
-    {
+    for (unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength();
+         ++instanceTypeConfigsIndex) {
       m_instanceTypeConfigs.push_back(instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject());
     }
     m_instanceTypeConfigsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LaunchSpecifications"))
-  {
+  if (jsonValue.ValueExists("LaunchSpecifications")) {
     m_launchSpecifications = jsonValue.GetObject("LaunchSpecifications");
     m_launchSpecificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResizeSpecifications"))
-  {
+  if (jsonValue.ValueExists("ResizeSpecifications")) {
     m_resizeSpecifications = jsonValue.GetObject("ResizeSpecifications");
     m_resizeSpecificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Context"))
-  {
+  if (jsonValue.ValueExists("Context")) {
     m_context = jsonValue.GetString("Context");
     m_contextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceFleetConfig::Jsonize() const
-{
+JsonValue InstanceFleetConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_instanceFleetTypeHasBeenSet)
-  {
-   payload.WithString("InstanceFleetType", InstanceFleetTypeMapper::GetNameForInstanceFleetType(m_instanceFleetType));
+  if (m_instanceFleetTypeHasBeenSet) {
+    payload.WithString("InstanceFleetType", InstanceFleetTypeMapper::GetNameForInstanceFleetType(m_instanceFleetType));
   }
 
-  if(m_targetOnDemandCapacityHasBeenSet)
-  {
-   payload.WithInteger("TargetOnDemandCapacity", m_targetOnDemandCapacity);
-
+  if (m_targetOnDemandCapacityHasBeenSet) {
+    payload.WithInteger("TargetOnDemandCapacity", m_targetOnDemandCapacity);
   }
 
-  if(m_targetSpotCapacityHasBeenSet)
-  {
-   payload.WithInteger("TargetSpotCapacity", m_targetSpotCapacity);
-
+  if (m_targetSpotCapacityHasBeenSet) {
+    payload.WithInteger("TargetSpotCapacity", m_targetSpotCapacity);
   }
 
-  if(m_instanceTypeConfigsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> instanceTypeConfigsJsonList(m_instanceTypeConfigs.size());
-   for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
-   {
-     instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject(m_instanceTypeConfigs[instanceTypeConfigsIndex].Jsonize());
-   }
-   payload.WithArray("InstanceTypeConfigs", std::move(instanceTypeConfigsJsonList));
-
+  if (m_instanceTypeConfigsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceTypeConfigsJsonList(m_instanceTypeConfigs.size());
+    for (unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength();
+         ++instanceTypeConfigsIndex) {
+      instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject(m_instanceTypeConfigs[instanceTypeConfigsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceTypeConfigs", std::move(instanceTypeConfigsJsonList));
   }
 
-  if(m_launchSpecificationsHasBeenSet)
-  {
-   payload.WithObject("LaunchSpecifications", m_launchSpecifications.Jsonize());
-
+  if (m_launchSpecificationsHasBeenSet) {
+    payload.WithObject("LaunchSpecifications", m_launchSpecifications.Jsonize());
   }
 
-  if(m_resizeSpecificationsHasBeenSet)
-  {
-   payload.WithObject("ResizeSpecifications", m_resizeSpecifications.Jsonize());
-
+  if (m_resizeSpecificationsHasBeenSet) {
+    payload.WithObject("ResizeSpecifications", m_resizeSpecifications.Jsonize());
   }
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithString("Context", m_context);
-
+  if (m_contextHasBeenSet) {
+    payload.WithString("Context", m_context);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

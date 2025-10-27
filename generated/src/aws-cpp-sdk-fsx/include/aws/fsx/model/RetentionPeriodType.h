@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class RetentionPeriodType
-  {
-    NOT_SET,
-    SECONDS,
-    MINUTES,
-    HOURS,
-    DAYS,
-    MONTHS,
-    YEARS,
-    INFINITE,
-    UNSPECIFIED
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class RetentionPeriodType { NOT_SET, SECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS, INFINITE, UNSPECIFIED };
 
-namespace RetentionPeriodTypeMapper
-{
+namespace RetentionPeriodTypeMapper {
 AWS_FSX_API RetentionPeriodType GetRetentionPeriodTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForRetentionPeriodType(RetentionPeriodType value);
-} // namespace RetentionPeriodTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace RetentionPeriodTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

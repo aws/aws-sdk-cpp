@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ImageVersionStatus
-  {
-    NOT_SET,
-    CREATING,
-    CREATED,
-    CREATE_FAILED,
-    DELETING,
-    DELETE_FAILED
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ImageVersionStatus { NOT_SET, CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED };
 
-namespace ImageVersionStatusMapper
-{
+namespace ImageVersionStatusMapper {
 AWS_SAGEMAKER_API ImageVersionStatus GetImageVersionStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForImageVersionStatus(ImageVersionStatus value);
-} // namespace ImageVersionStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ImageVersionStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

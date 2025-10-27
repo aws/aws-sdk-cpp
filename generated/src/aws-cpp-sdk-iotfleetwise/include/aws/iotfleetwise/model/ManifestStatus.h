@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class ManifestStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    DRAFT,
-    INVALID,
-    VALIDATING
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class ManifestStatus { NOT_SET, ACTIVE, DRAFT, INVALID, VALIDATING };
 
-namespace ManifestStatusMapper
-{
+namespace ManifestStatusMapper {
 AWS_IOTFLEETWISE_API ManifestStatus GetManifestStatusForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForManifestStatus(ManifestStatus value);
-} // namespace ManifestStatusMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace ManifestStatusMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

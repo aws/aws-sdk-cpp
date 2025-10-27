@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/InitializationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/InitializationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-InitializationConfiguration::InitializationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InitializationConfiguration::InitializationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InitializationConfiguration& InitializationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("disabledOnInitialization"))
-  {
+InitializationConfiguration& InitializationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("disabledOnInitialization")) {
     m_disabledOnInitialization = jsonValue.GetBool("disabledOnInitialization");
     m_disabledOnInitializationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InitializationConfiguration::Jsonize() const
-{
+JsonValue InitializationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_disabledOnInitializationHasBeenSet)
-  {
-   payload.WithBool("disabledOnInitialization", m_disabledOnInitialization);
-
+  if (m_disabledOnInitializationHasBeenSet) {
+    payload.WithBool("disabledOnInitialization", m_disabledOnInitialization);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

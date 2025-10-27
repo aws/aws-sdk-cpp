@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-IngressConfiguration::IngressConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IngressConfiguration::IngressConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IngressConfiguration& IngressConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IsPubliclyAccessible"))
-  {
+IngressConfiguration& IngressConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IsPubliclyAccessible")) {
     m_isPubliclyAccessible = jsonValue.GetBool("IsPubliclyAccessible");
     m_isPubliclyAccessibleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IngressConfiguration::Jsonize() const
-{
+JsonValue IngressConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_isPubliclyAccessibleHasBeenSet)
-  {
-   payload.WithBool("IsPubliclyAccessible", m_isPubliclyAccessible);
-
+  if (m_isPubliclyAccessibleHasBeenSet) {
+    payload.WithBool("IsPubliclyAccessible", m_isPubliclyAccessible);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

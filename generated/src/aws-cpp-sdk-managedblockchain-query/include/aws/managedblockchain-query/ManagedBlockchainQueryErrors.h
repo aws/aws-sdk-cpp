@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedBlockchainQuery
-{
-enum class ManagedBlockchainQueryErrors
-{
-  //From Core//
+namespace Aws {
+namespace ManagedBlockchainQuery {
+enum class ManagedBlockchainQueryErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ManagedBlockchainQueryErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class ManagedBlockchainQueryErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryError : public Aws::Client::AWSError<ManagedBlockchainQueryErrors>
-{
-public:
+class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryError : public Aws::Client::AWSError<ManagedBlockchainQueryErrors> {
+ public:
   ManagedBlockchainQueryError() {}
-  ManagedBlockchainQueryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
-  ManagedBlockchainQueryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
-  ManagedBlockchainQueryError(const Aws::Client::AWSError<ManagedBlockchainQueryErrors>& rhs) : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
-  ManagedBlockchainQueryError(Aws::Client::AWSError<ManagedBlockchainQueryErrors>&& rhs) : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
+  ManagedBlockchainQueryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
+  ManagedBlockchainQueryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
+  ManagedBlockchainQueryError(const Aws::Client::AWSError<ManagedBlockchainQueryErrors>& rhs)
+      : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
+  ManagedBlockchainQueryError(Aws::Client::AWSError<ManagedBlockchainQueryErrors>&& rhs)
+      : Aws::Client::AWSError<ManagedBlockchainQueryErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ManagedBlockchainQueryErrorMapper
-{
-  AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ManagedBlockchainQueryErrorMapper {
+AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ManagedBlockchainQuery
-} // namespace Aws
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

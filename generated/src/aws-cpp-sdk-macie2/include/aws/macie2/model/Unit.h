@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class Unit
-  {
-    NOT_SET,
-    TERABYTES
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class Unit { NOT_SET, TERABYTES };
 
-namespace UnitMapper
-{
+namespace UnitMapper {
 AWS_MACIE2_API Unit GetUnitForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForUnit(Unit value);
-} // namespace UnitMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace UnitMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/InstanceHealthSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/InstanceHealthSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-InstanceHealthSummary::InstanceHealthSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceHealthSummary::InstanceHealthSummary(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceHealthSummary& InstanceHealthSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceName"))
-  {
+InstanceHealthSummary& InstanceHealthSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceName")) {
     m_instanceName = jsonValue.GetString("instanceName");
     m_instanceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceHealth"))
-  {
+  if (jsonValue.ValueExists("instanceHealth")) {
     m_instanceHealth = InstanceHealthStateMapper::GetInstanceHealthStateForName(jsonValue.GetString("instanceHealth"));
     m_instanceHealthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceHealthReason"))
-  {
+  if (jsonValue.ValueExists("instanceHealthReason")) {
     m_instanceHealthReason = InstanceHealthReasonMapper::GetInstanceHealthReasonForName(jsonValue.GetString("instanceHealthReason"));
     m_instanceHealthReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceHealthSummary::Jsonize() const
-{
+JsonValue InstanceHealthSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceNameHasBeenSet)
-  {
-   payload.WithString("instanceName", m_instanceName);
-
+  if (m_instanceNameHasBeenSet) {
+    payload.WithString("instanceName", m_instanceName);
   }
 
-  if(m_instanceHealthHasBeenSet)
-  {
-   payload.WithString("instanceHealth", InstanceHealthStateMapper::GetNameForInstanceHealthState(m_instanceHealth));
+  if (m_instanceHealthHasBeenSet) {
+    payload.WithString("instanceHealth", InstanceHealthStateMapper::GetNameForInstanceHealthState(m_instanceHealth));
   }
 
-  if(m_instanceHealthReasonHasBeenSet)
-  {
-   payload.WithString("instanceHealthReason", InstanceHealthReasonMapper::GetNameForInstanceHealthReason(m_instanceHealthReason));
+  if (m_instanceHealthReasonHasBeenSet) {
+    payload.WithString("instanceHealthReason", InstanceHealthReasonMapper::GetNameForInstanceHealthReason(m_instanceHealthReason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

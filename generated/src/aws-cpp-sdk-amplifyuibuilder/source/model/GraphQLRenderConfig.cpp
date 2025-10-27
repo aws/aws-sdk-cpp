@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-GraphQLRenderConfig::GraphQLRenderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GraphQLRenderConfig::GraphQLRenderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-GraphQLRenderConfig& GraphQLRenderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("typesFilePath"))
-  {
+GraphQLRenderConfig& GraphQLRenderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("typesFilePath")) {
     m_typesFilePath = jsonValue.GetString("typesFilePath");
     m_typesFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queriesFilePath"))
-  {
+  if (jsonValue.ValueExists("queriesFilePath")) {
     m_queriesFilePath = jsonValue.GetString("queriesFilePath");
     m_queriesFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mutationsFilePath"))
-  {
+  if (jsonValue.ValueExists("mutationsFilePath")) {
     m_mutationsFilePath = jsonValue.GetString("mutationsFilePath");
     m_mutationsFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subscriptionsFilePath"))
-  {
+  if (jsonValue.ValueExists("subscriptionsFilePath")) {
     m_subscriptionsFilePath = jsonValue.GetString("subscriptionsFilePath");
     m_subscriptionsFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fragmentsFilePath"))
-  {
+  if (jsonValue.ValueExists("fragmentsFilePath")) {
     m_fragmentsFilePath = jsonValue.GetString("fragmentsFilePath");
     m_fragmentsFilePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GraphQLRenderConfig::Jsonize() const
-{
+JsonValue GraphQLRenderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_typesFilePathHasBeenSet)
-  {
-   payload.WithString("typesFilePath", m_typesFilePath);
-
+  if (m_typesFilePathHasBeenSet) {
+    payload.WithString("typesFilePath", m_typesFilePath);
   }
 
-  if(m_queriesFilePathHasBeenSet)
-  {
-   payload.WithString("queriesFilePath", m_queriesFilePath);
-
+  if (m_queriesFilePathHasBeenSet) {
+    payload.WithString("queriesFilePath", m_queriesFilePath);
   }
 
-  if(m_mutationsFilePathHasBeenSet)
-  {
-   payload.WithString("mutationsFilePath", m_mutationsFilePath);
-
+  if (m_mutationsFilePathHasBeenSet) {
+    payload.WithString("mutationsFilePath", m_mutationsFilePath);
   }
 
-  if(m_subscriptionsFilePathHasBeenSet)
-  {
-   payload.WithString("subscriptionsFilePath", m_subscriptionsFilePath);
-
+  if (m_subscriptionsFilePathHasBeenSet) {
+    payload.WithString("subscriptionsFilePath", m_subscriptionsFilePath);
   }
 
-  if(m_fragmentsFilePathHasBeenSet)
-  {
-   payload.WithString("fragmentsFilePath", m_fragmentsFilePath);
-
+  if (m_fragmentsFilePathHasBeenSet) {
+    payload.WithString("fragmentsFilePath", m_fragmentsFilePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

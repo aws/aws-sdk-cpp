@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-KnowledgeBaseDocument::KnowledgeBaseDocument(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KnowledgeBaseDocument::KnowledgeBaseDocument(JsonView jsonValue) { *this = jsonValue; }
 
-KnowledgeBaseDocument& KnowledgeBaseDocument::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("metadata"))
-  {
+KnowledgeBaseDocument& KnowledgeBaseDocument::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metadata")) {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("content"))
-  {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KnowledgeBaseDocument::Jsonize() const
-{
+JsonValue KnowledgeBaseDocument::Jsonize() const {
   JsonValue payload;
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
-
+  if (m_metadataHasBeenSet) {
+    payload.WithObject("metadata", m_metadata.Jsonize());
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/CidrRoutingConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/CidrRoutingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CidrRoutingConfig& CidrRoutingConfig::operator =(const XmlNode& xmlNode)
-{
+CidrRoutingConfig& CidrRoutingConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode collectionIdNode = resultNode.FirstChild("CollectionId");
-    if(!collectionIdNode.IsNull())
-    {
+    if (!collectionIdNode.IsNull()) {
       m_collectionId = Aws::Utils::Xml::DecodeEscapedXmlText(collectionIdNode.GetText());
       m_collectionIdHasBeenSet = true;
     }
     XmlNode locationNameNode = resultNode.FirstChild("LocationName");
-    if(!locationNameNode.IsNull())
-    {
+    if (!locationNameNode.IsNull()) {
       m_locationName = Aws::Utils::Xml::DecodeEscapedXmlText(locationNameNode.GetText());
       m_locationNameHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ CidrRoutingConfig& CidrRoutingConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CidrRoutingConfig::AddToNode(XmlNode& parentNode) const
-{
+void CidrRoutingConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_collectionIdHasBeenSet)
-  {
-   XmlNode collectionIdNode = parentNode.CreateChildElement("CollectionId");
-   collectionIdNode.SetText(m_collectionId);
+  if (m_collectionIdHasBeenSet) {
+    XmlNode collectionIdNode = parentNode.CreateChildElement("CollectionId");
+    collectionIdNode.SetText(m_collectionId);
   }
 
-  if(m_locationNameHasBeenSet)
-  {
-   XmlNode locationNameNode = parentNode.CreateChildElement("LocationName");
-   locationNameNode.SetText(m_locationName);
+  if (m_locationNameHasBeenSet) {
+    XmlNode locationNameNode = parentNode.CreateChildElement("LocationName");
+    locationNameNode.SetText(m_locationName);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

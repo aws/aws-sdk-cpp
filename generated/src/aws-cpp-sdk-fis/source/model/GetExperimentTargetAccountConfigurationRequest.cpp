@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/GetExperimentTargetAccountConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/GetExperimentTargetAccountConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetExperimentTargetAccountConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetExperimentTargetAccountConfigurationRequest::SerializePayload() const { return {}; }

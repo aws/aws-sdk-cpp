@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class RefreshFailureAlertStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class RefreshFailureAlertStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace RefreshFailureAlertStatusMapper
-{
+namespace RefreshFailureAlertStatusMapper {
 AWS_QUICKSIGHT_API RefreshFailureAlertStatus GetRefreshFailureAlertStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForRefreshFailureAlertStatus(RefreshFailureAlertStatus value);
-} // namespace RefreshFailureAlertStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace RefreshFailureAlertStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

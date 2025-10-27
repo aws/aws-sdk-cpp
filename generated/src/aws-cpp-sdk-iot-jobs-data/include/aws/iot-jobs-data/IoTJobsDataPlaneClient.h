@@ -4,243 +4,251 @@
  */
 
 #pragma once
-#include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
-#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTJobsDataPlane
-{
+namespace Aws {
+namespace IoTJobsDataPlane {
+/**
+ * <p>IoT Jobs is a service that allows you to define a set of jobs — remote
+ * operations that are sent to and executed on one or more devices connected to
+ * Amazon Web Services IoT Core. For example, you can define a job that instructs a
+ * set of devices to download and install application or firmware updates, reboot,
+ * rotate certificates, or perform remote troubleshooting operations.</p> <p>Find
+ * the endpoint address for actions in the IoT jobs data plane by running this CLI
+ * command:</p> <p> <code>aws iot describe-endpoint --endpoint-type iot:Jobs</code>
+ * </p> <p>The service name used by <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
+ * Web Services Signature Version 4</a> to sign requests is:
+ * <i>iot-jobs-data</i>.</p> <p> To create a job, you make a job document which is
+ * a description of the remote operations to be performed, and you specify a list
+ * of targets that should perform the operations. The targets can be individual
+ * things, thing groups or both.</p> <p> IoT Jobs sends a message to inform the
+ * targets that a job is available. The target starts the execution of the job by
+ * downloading the job document, performing the operations it specifies, and
+ * reporting its progress to Amazon Web Services IoT Core. The Jobs service
+ * provides commands to track the progress of a job on a specific target and for
+ * all the targets of the job</p>
+ */
+class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient,
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient> {
+ public:
+  typedef Aws::Client::AWSJsonClient BASECLASS;
+  static const char* GetServiceName();
+  static const char* GetAllocationTag();
+
+  typedef IoTJobsDataPlaneClientConfiguration ClientConfigurationType;
+  typedef IoTJobsDataPlaneEndpointProvider EndpointProviderType;
+
   /**
-   * <p>IoT Jobs is a service that allows you to define a set of jobs — remote
-   * operations that are sent to and executed on one or more devices connected to
-   * Amazon Web Services IoT Core. For example, you can define a job that instructs a
-   * set of devices to download and install application or firmware updates, reboot,
-   * rotate certificates, or perform remote troubleshooting operations.</p> <p>Find
-   * the endpoint address for actions in the IoT jobs data plane by running this CLI
-   * command:</p> <p> <code>aws iot describe-endpoint --endpoint-type iot:Jobs</code>
-   * </p> <p>The service name used by <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
-   * Web Services Signature Version 4</a> to sign requests is:
-   * <i>iot-jobs-data</i>.</p> <p> To create a job, you make a job document which is
-   * a description of the remote operations to be performed, and you specify a list
-   * of targets that should perform the operations. The targets can be individual
-   * things, thing groups or both.</p> <p> IoT Jobs sends a message to inform the
-   * targets that a job is available. The target starts the execution of the job by
-   * downloading the job document, performing the operations it specifies, and
-   * reporting its progress to Amazon Web Services IoT Core. The Jobs service
-   * provides commands to track the progress of a job on a specific target and for
-   * all the targets of the job</p>
+   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
+   * config is not specified, it will be initialized to default values.
    */
-  class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>
-  {
-    public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* GetServiceName();
-      static const char* GetAllocationTag();
+  IoTJobsDataPlaneClient(const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration =
+                             Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration(),
+                         std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr);
 
-      typedef IoTJobsDataPlaneClientConfiguration ClientConfigurationType;
-      typedef IoTJobsDataPlaneEndpointProvider EndpointProviderType;
+  /**
+   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+   * is not specified, it will be initialized to default values.
+   */
+  IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
+                         const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration =
+                             Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
 
-       /**
-        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
-        * is not specified, it will be initialized to default values.
-        */
-        IoTJobsDataPlaneClient(const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration(),
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr);
+  /**
+   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+   * the default http client factory will be used
+   */
+  IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
+                         const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration =
+                             Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
 
-       /**
-        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-        * is not specified, it will be initialized to default values.
-        */
-        IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
-                               const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
+  /* Legacy constructors due deprecation */
+  /**
+   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
+   * config is not specified, it will be initialized to default values.
+   */
+  IoTJobsDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration);
 
-       /**
-        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-        * the default http client factory will be used
-        */
-        IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
-                               const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
+  /**
+   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+   * is not specified, it will be initialized to default values.
+   */
+  IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
 
+  /**
+   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+   * the default http client factory will be used
+   */
+  IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
 
-        /* Legacy constructors due deprecation */
-       /**
-        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
-        * is not specified, it will be initialized to default values.
-        */
-        IoTJobsDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+  /* End of legacy constructors due deprecation */
+  virtual ~IoTJobsDataPlaneClient();
 
-       /**
-        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-        * is not specified, it will be initialized to default values.
-        */
-        IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
-                               const Aws::Client::ClientConfiguration& clientConfiguration);
+  /**
+   * <p>Gets details of a job execution.</p> <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeJobExecutionOutcome DescribeJobExecution(const Model::DescribeJobExecutionRequest& request) const;
 
-       /**
-        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-        * the default http client factory will be used
-        */
-        IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               const Aws::Client::ClientConfiguration& clientConfiguration);
+  /**
+   * A Callable wrapper for DescribeJobExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeJobExecutionRequestT = Model::DescribeJobExecutionRequest>
+  Model::DescribeJobExecutionOutcomeCallable DescribeJobExecutionCallable(const DescribeJobExecutionRequestT& request) const {
+    return SubmitCallable(&IoTJobsDataPlaneClient::DescribeJobExecution, request);
+  }
 
-        /* End of legacy constructors due deprecation */
-        virtual ~IoTJobsDataPlaneClient();
+  /**
+   * An Async wrapper for DescribeJobExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeJobExecutionRequestT = Model::DescribeJobExecutionRequest>
+  void DescribeJobExecutionAsync(const DescribeJobExecutionRequestT& request, const DescribeJobExecutionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTJobsDataPlaneClient::DescribeJobExecution, request, handler, context);
+  }
 
-        /**
-         * <p>Gets details of a job execution.</p> <p>Requires permission to access the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeJobExecutionOutcome DescribeJobExecution(const Model::DescribeJobExecutionRequest& request) const;
+  /**
+   * <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
+   * <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPendingJobExecutionsOutcome GetPendingJobExecutions(const Model::GetPendingJobExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DescribeJobExecutionRequestT = Model::DescribeJobExecutionRequest>
-        Model::DescribeJobExecutionOutcomeCallable DescribeJobExecutionCallable(const DescribeJobExecutionRequestT& request) const
-        {
-            return SubmitCallable(&IoTJobsDataPlaneClient::DescribeJobExecution, request);
-        }
+  /**
+   * A Callable wrapper for GetPendingJobExecutions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPendingJobExecutionsRequestT = Model::GetPendingJobExecutionsRequest>
+  Model::GetPendingJobExecutionsOutcomeCallable GetPendingJobExecutionsCallable(const GetPendingJobExecutionsRequestT& request) const {
+    return SubmitCallable(&IoTJobsDataPlaneClient::GetPendingJobExecutions, request);
+  }
 
-        /**
-         * An Async wrapper for DescribeJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DescribeJobExecutionRequestT = Model::DescribeJobExecutionRequest>
-        void DescribeJobExecutionAsync(const DescribeJobExecutionRequestT& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&IoTJobsDataPlaneClient::DescribeJobExecution, request, handler, context);
-        }
+  /**
+   * An Async wrapper for GetPendingJobExecutions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPendingJobExecutionsRequestT = Model::GetPendingJobExecutionsRequest>
+  void GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequestT& request,
+                                    const GetPendingJobExecutionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTJobsDataPlaneClient::GetPendingJobExecutions, request, handler, context);
+  }
 
-        /**
-         * <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
-         * <p>Requires permission to access the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetPendingJobExecutionsOutcome GetPendingJobExecutions(const Model::GetPendingJobExecutionsRequest& request) const;
+  /**
+   * <p>Using the command created with the <code>CreateCommand</code> API, start a
+   * command execution on a specific device.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartCommandExecutionOutcome StartCommandExecution(const Model::StartCommandExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPendingJobExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetPendingJobExecutionsRequestT = Model::GetPendingJobExecutionsRequest>
-        Model::GetPendingJobExecutionsOutcomeCallable GetPendingJobExecutionsCallable(const GetPendingJobExecutionsRequestT& request) const
-        {
-            return SubmitCallable(&IoTJobsDataPlaneClient::GetPendingJobExecutions, request);
-        }
+  /**
+   * A Callable wrapper for StartCommandExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
+  Model::StartCommandExecutionOutcomeCallable StartCommandExecutionCallable(const StartCommandExecutionRequestT& request) const {
+    return SubmitCallable(&IoTJobsDataPlaneClient::StartCommandExecution, request);
+  }
 
-        /**
-         * An Async wrapper for GetPendingJobExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetPendingJobExecutionsRequestT = Model::GetPendingJobExecutionsRequest>
-        void GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequestT& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&IoTJobsDataPlaneClient::GetPendingJobExecutions, request, handler, context);
-        }
+  /**
+   * An Async wrapper for StartCommandExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
+  void StartCommandExecutionAsync(const StartCommandExecutionRequestT& request, const StartCommandExecutionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTJobsDataPlaneClient::StartCommandExecution, request, handler, context);
+  }
 
-        /**
-         * <p>Using the command created with the <code>CreateCommand</code> API, start a
-         * command execution on a specific device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::StartCommandExecutionOutcome StartCommandExecution(const Model::StartCommandExecutionRequest& request) const;
+  /**
+   * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
+   * for a thing.</p> <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartNextPendingJobExecution</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartNextPendingJobExecutionOutcome StartNextPendingJobExecution(
+      const Model::StartNextPendingJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartCommandExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
-        Model::StartCommandExecutionOutcomeCallable StartCommandExecutionCallable(const StartCommandExecutionRequestT& request) const
-        {
-            return SubmitCallable(&IoTJobsDataPlaneClient::StartCommandExecution, request);
-        }
+  /**
+   * A Callable wrapper for StartNextPendingJobExecution that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartNextPendingJobExecutionRequestT = Model::StartNextPendingJobExecutionRequest>
+  Model::StartNextPendingJobExecutionOutcomeCallable StartNextPendingJobExecutionCallable(
+      const StartNextPendingJobExecutionRequestT& request) const {
+    return SubmitCallable(&IoTJobsDataPlaneClient::StartNextPendingJobExecution, request);
+  }
 
-        /**
-         * An Async wrapper for StartCommandExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
-        void StartCommandExecutionAsync(const StartCommandExecutionRequestT& request, const StartCommandExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&IoTJobsDataPlaneClient::StartCommandExecution, request, handler, context);
-        }
+  /**
+   * An Async wrapper for StartNextPendingJobExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartNextPendingJobExecutionRequestT = Model::StartNextPendingJobExecutionRequest>
+  void StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequestT& request,
+                                         const StartNextPendingJobExecutionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTJobsDataPlaneClient::StartNextPendingJobExecution, request, handler, context);
+  }
 
-        /**
-         * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
-         * for a thing.</p> <p>Requires permission to access the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartNextPendingJobExecution</a>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::StartNextPendingJobExecutionOutcome StartNextPendingJobExecution(const Model::StartNextPendingJobExecutionRequest& request) const;
+  /**
+   * <p>Updates the status of a job execution.</p> <p>Requires permission to access
+   * the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html">UpdateJobExecution</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateJobExecutionOutcome UpdateJobExecution(const Model::UpdateJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNextPendingJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename StartNextPendingJobExecutionRequestT = Model::StartNextPendingJobExecutionRequest>
-        Model::StartNextPendingJobExecutionOutcomeCallable StartNextPendingJobExecutionCallable(const StartNextPendingJobExecutionRequestT& request) const
-        {
-            return SubmitCallable(&IoTJobsDataPlaneClient::StartNextPendingJobExecution, request);
-        }
+  /**
+   * A Callable wrapper for UpdateJobExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateJobExecutionRequestT = Model::UpdateJobExecutionRequest>
+  Model::UpdateJobExecutionOutcomeCallable UpdateJobExecutionCallable(const UpdateJobExecutionRequestT& request) const {
+    return SubmitCallable(&IoTJobsDataPlaneClient::UpdateJobExecution, request);
+  }
 
-        /**
-         * An Async wrapper for StartNextPendingJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename StartNextPendingJobExecutionRequestT = Model::StartNextPendingJobExecutionRequest>
-        void StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequestT& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&IoTJobsDataPlaneClient::StartNextPendingJobExecution, request, handler, context);
-        }
+  /**
+   * An Async wrapper for UpdateJobExecution that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateJobExecutionRequestT = Model::UpdateJobExecutionRequest>
+  void UpdateJobExecutionAsync(const UpdateJobExecutionRequestT& request, const UpdateJobExecutionResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTJobsDataPlaneClient::UpdateJobExecution, request, handler, context);
+  }
 
-        /**
-         * <p>Updates the status of a job execution.</p> <p>Requires permission to access
-         * the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html">UpdateJobExecution</a>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::UpdateJobExecutionOutcome UpdateJobExecution(const Model::UpdateJobExecutionRequest& request) const;
+  void OverrideEndpoint(const Aws::String& endpoint);
+  std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
 
-        /**
-         * A Callable wrapper for UpdateJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename UpdateJobExecutionRequestT = Model::UpdateJobExecutionRequest>
-        Model::UpdateJobExecutionOutcomeCallable UpdateJobExecutionCallable(const UpdateJobExecutionRequestT& request) const
-        {
-            return SubmitCallable(&IoTJobsDataPlaneClient::UpdateJobExecution, request);
-        }
+ private:
+  friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
+  void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
 
-        /**
-         * An Async wrapper for UpdateJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename UpdateJobExecutionRequestT = Model::UpdateJobExecutionRequest>
-        void UpdateJobExecutionAsync(const UpdateJobExecutionRequestT& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&IoTJobsDataPlaneClient::UpdateJobExecution, request, handler, context);
-        }
+  IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
+  std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;
+};
 
-
-      void OverrideEndpoint(const Aws::String& endpoint);
-      std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
-    private:
-      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
-      void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
-
-      IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;
-  };
-
-} // namespace IoTJobsDataPlane
-} // namespace Aws
+}  // namespace IoTJobsDataPlane
+}  // namespace Aws

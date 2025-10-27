@@ -5,12 +5,8 @@
 
 #include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
 
-namespace Aws
-{
-namespace CognitoSync
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CognitoSync
-} // namespace Aws
+namespace Aws {
+namespace CognitoSync {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CognitoSync
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListPolicyVersionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ListPolicyVersionsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPolicyVersionsResult::ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListPolicyVersionsResult::ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListPolicyVersionsResult& ListPolicyVersionsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListPolicyVersionsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListPolicyVersionsResult")) {
     resultNode = rootNode.FirstChild("ListPolicyVersionsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode versionsNode = resultNode.FirstChild("Versions");
-    if(!versionsNode.IsNull())
-    {
+    if (!versionsNode.IsNull()) {
       XmlNode versionsMember = versionsNode.FirstChild("member");
       m_versionsHasBeenSet = !versionsMember.IsNull();
-      while(!versionsMember.IsNull())
-      {
+      while (!versionsMember.IsNull()) {
         m_versions.push_back(versionsMember);
         versionsMember = versionsMember.NextNode("member");
       }
@@ -48,14 +40,13 @@ ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const Aws::Amazon
       m_versionsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(!isTruncatedNode.IsNull())
-    {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+    if (!isTruncatedNode.IsNull()) {
+      m_isTruncated =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -65,7 +56,7 @@ ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const Aws::Amazon
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListPolicyVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListPolicyVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

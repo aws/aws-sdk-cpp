@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAttributeGroupsResult::ListAttributeGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAttributeGroupsResult::ListAttributeGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAttributeGroupsResult& ListAttributeGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAttributeGroupsResult& ListAttributeGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("attributeGroups"))
-  {
+  if (jsonValue.ValueExists("attributeGroups")) {
     Aws::Utils::Array<JsonView> attributeGroupsJsonList = jsonValue.GetArray("attributeGroups");
-    for(unsigned attributeGroupsIndex = 0; attributeGroupsIndex < attributeGroupsJsonList.GetLength(); ++attributeGroupsIndex)
-    {
+    for (unsigned attributeGroupsIndex = 0; attributeGroupsIndex < attributeGroupsJsonList.GetLength(); ++attributeGroupsIndex) {
       m_attributeGroups.push_back(attributeGroupsJsonList[attributeGroupsIndex].AsObject());
     }
     m_attributeGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

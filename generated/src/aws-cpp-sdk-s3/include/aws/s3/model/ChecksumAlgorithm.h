@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class ChecksumAlgorithm
-  {
-    NOT_SET,
-    CRC32,
-    CRC32C,
-    SHA1,
-    SHA256,
-    CRC64NVME
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class ChecksumAlgorithm { NOT_SET, CRC32, CRC32C, SHA1, SHA256, CRC64NVME };
 
-namespace ChecksumAlgorithmMapper
-{
+namespace ChecksumAlgorithmMapper {
 AWS_S3_API ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForChecksumAlgorithm(ChecksumAlgorithm value);
-} // namespace ChecksumAlgorithmMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace ChecksumAlgorithmMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

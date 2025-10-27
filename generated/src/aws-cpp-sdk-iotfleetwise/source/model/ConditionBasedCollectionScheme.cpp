@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/ConditionBasedCollectionScheme.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/ConditionBasedCollectionScheme.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-ConditionBasedCollectionScheme::ConditionBasedCollectionScheme(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConditionBasedCollectionScheme::ConditionBasedCollectionScheme(JsonView jsonValue) { *this = jsonValue; }
 
-ConditionBasedCollectionScheme& ConditionBasedCollectionScheme::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("expression"))
-  {
+ConditionBasedCollectionScheme& ConditionBasedCollectionScheme::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expression")) {
     m_expression = jsonValue.GetString("expression");
     m_expressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimumTriggerIntervalMs"))
-  {
+  if (jsonValue.ValueExists("minimumTriggerIntervalMs")) {
     m_minimumTriggerIntervalMs = jsonValue.GetInt64("minimumTriggerIntervalMs");
     m_minimumTriggerIntervalMsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("triggerMode"))
-  {
+  if (jsonValue.ValueExists("triggerMode")) {
     m_triggerMode = TriggerModeMapper::GetTriggerModeForName(jsonValue.GetString("triggerMode"));
     m_triggerModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conditionLanguageVersion"))
-  {
+  if (jsonValue.ValueExists("conditionLanguageVersion")) {
     m_conditionLanguageVersion = jsonValue.GetInteger("conditionLanguageVersion");
     m_conditionLanguageVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConditionBasedCollectionScheme::Jsonize() const
-{
+JsonValue ConditionBasedCollectionScheme::Jsonize() const {
   JsonValue payload;
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
-  if(m_minimumTriggerIntervalMsHasBeenSet)
-  {
-   payload.WithInt64("minimumTriggerIntervalMs", m_minimumTriggerIntervalMs);
-
+  if (m_minimumTriggerIntervalMsHasBeenSet) {
+    payload.WithInt64("minimumTriggerIntervalMs", m_minimumTriggerIntervalMs);
   }
 
-  if(m_triggerModeHasBeenSet)
-  {
-   payload.WithString("triggerMode", TriggerModeMapper::GetNameForTriggerMode(m_triggerMode));
+  if (m_triggerModeHasBeenSet) {
+    payload.WithString("triggerMode", TriggerModeMapper::GetNameForTriggerMode(m_triggerMode));
   }
 
-  if(m_conditionLanguageVersionHasBeenSet)
-  {
-   payload.WithInteger("conditionLanguageVersion", m_conditionLanguageVersion);
-
+  if (m_conditionLanguageVersionHasBeenSet) {
+    payload.WithInteger("conditionLanguageVersion", m_conditionLanguageVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

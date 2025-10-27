@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/apptest/AppTest_EXPORTS.h>
 #include <aws/apptest/AppTestRequest.h>
+#include <aws/apptest/AppTest_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
+/**
+ */
+class DeleteTestCaseRequest : public AppTestRequest {
+ public:
+  AWS_APPTEST_API DeleteTestCaseRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteTestCase"; }
+
+  AWS_APPTEST_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The test case ID of the test case.</p>
    */
-  class DeleteTestCaseRequest : public AppTestRequest
-  {
-  public:
-    AWS_APPTEST_API DeleteTestCaseRequest() = default;
+  inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
+  inline bool TestCaseIdHasBeenSet() const { return m_testCaseIdHasBeenSet; }
+  template <typename TestCaseIdT = Aws::String>
+  void SetTestCaseId(TestCaseIdT&& value) {
+    m_testCaseIdHasBeenSet = true;
+    m_testCaseId = std::forward<TestCaseIdT>(value);
+  }
+  template <typename TestCaseIdT = Aws::String>
+  DeleteTestCaseRequest& WithTestCaseId(TestCaseIdT&& value) {
+    SetTestCaseId(std::forward<TestCaseIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_testCaseId;
+  bool m_testCaseIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteTestCase"; }
-
-    AWS_APPTEST_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The test case ID of the test case.</p>
-     */
-    inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
-    inline bool TestCaseIdHasBeenSet() const { return m_testCaseIdHasBeenSet; }
-    template<typename TestCaseIdT = Aws::String>
-    void SetTestCaseId(TestCaseIdT&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::forward<TestCaseIdT>(value); }
-    template<typename TestCaseIdT = Aws::String>
-    DeleteTestCaseRequest& WithTestCaseId(TestCaseIdT&& value) { SetTestCaseId(std::forward<TestCaseIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_testCaseId;
-    bool m_testCaseIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

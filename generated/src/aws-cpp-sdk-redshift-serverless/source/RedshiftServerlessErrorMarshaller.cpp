@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RedshiftServerless;
 
-AWSError<CoreErrors> RedshiftServerlessErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RedshiftServerlessErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RedshiftServerlessErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

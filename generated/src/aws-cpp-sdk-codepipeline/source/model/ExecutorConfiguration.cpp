@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ExecutorConfiguration::ExecutorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutorConfiguration::ExecutorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutorConfiguration& ExecutorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambdaExecutorConfiguration"))
-  {
+ExecutorConfiguration& ExecutorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambdaExecutorConfiguration")) {
     m_lambdaExecutorConfiguration = jsonValue.GetObject("lambdaExecutorConfiguration");
     m_lambdaExecutorConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobWorkerExecutorConfiguration"))
-  {
+  if (jsonValue.ValueExists("jobWorkerExecutorConfiguration")) {
     m_jobWorkerExecutorConfiguration = jsonValue.GetObject("jobWorkerExecutorConfiguration");
     m_jobWorkerExecutorConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutorConfiguration::Jsonize() const
-{
+JsonValue ExecutorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaExecutorConfigurationHasBeenSet)
-  {
-   payload.WithObject("lambdaExecutorConfiguration", m_lambdaExecutorConfiguration.Jsonize());
-
+  if (m_lambdaExecutorConfigurationHasBeenSet) {
+    payload.WithObject("lambdaExecutorConfiguration", m_lambdaExecutorConfiguration.Jsonize());
   }
 
-  if(m_jobWorkerExecutorConfigurationHasBeenSet)
-  {
-   payload.WithObject("jobWorkerExecutorConfiguration", m_jobWorkerExecutorConfiguration.Jsonize());
-
+  if (m_jobWorkerExecutorConfigurationHasBeenSet) {
+    payload.WithObject("jobWorkerExecutorConfiguration", m_jobWorkerExecutorConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

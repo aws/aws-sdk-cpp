@@ -11,37 +11,27 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::DynamoDBStreams;
 
-namespace Aws
-{
-namespace DynamoDBStreams
-{
-namespace DynamoDBStreamsErrorMapper
-{
+namespace Aws {
+namespace DynamoDBStreams {
+namespace DynamoDBStreamsErrorMapper {
 
 static const int TRIMMED_DATA_ACCESS_HASH = HashingUtils::HashString("TrimmedDataAccessException");
 static const int EXPIRED_ITERATOR_HASH = HashingUtils::HashString("ExpiredIteratorException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == TRIMMED_DATA_ACCESS_HASH)
-  {
+  if (hashCode == TRIMMED_DATA_ACCESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::TRIMMED_DATA_ACCESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXPIRED_ITERATOR_HASH)
-  {
+  } else if (hashCode == EXPIRED_ITERATOR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::EXPIRED_ITERATOR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace DynamoDBStreamsErrorMapper
-} // namespace DynamoDBStreams
-} // namespace Aws
+}  // namespace DynamoDBStreamsErrorMapper
+}  // namespace DynamoDBStreams
+}  // namespace Aws

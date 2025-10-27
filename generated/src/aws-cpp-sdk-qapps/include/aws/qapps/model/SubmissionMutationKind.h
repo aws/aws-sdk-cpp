@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QApps_EXPORTS.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Model
-{
-  enum class SubmissionMutationKind
-  {
-    NOT_SET,
-    edit,
-    delete_,
-    add
-  };
+namespace Aws {
+namespace QApps {
+namespace Model {
+enum class SubmissionMutationKind { NOT_SET, edit, delete_, add };
 
-namespace SubmissionMutationKindMapper
-{
+namespace SubmissionMutationKindMapper {
 AWS_QAPPS_API SubmissionMutationKind GetSubmissionMutationKindForName(const Aws::String& name);
 
 AWS_QAPPS_API Aws::String GetNameForSubmissionMutationKind(SubmissionMutationKind value);
-} // namespace SubmissionMutationKindMapper
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace SubmissionMutationKindMapper
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

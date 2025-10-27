@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-namespace Model
-{
-  enum class FailureHandlingPolicy
-  {
-    NOT_SET,
-    ROLLBACK_ON_FAILURE,
-    DO_NOTHING
-  };
+namespace Aws {
+namespace SagemakerEdgeManager {
+namespace Model {
+enum class FailureHandlingPolicy { NOT_SET, ROLLBACK_ON_FAILURE, DO_NOTHING };
 
-namespace FailureHandlingPolicyMapper
-{
+namespace FailureHandlingPolicyMapper {
 AWS_SAGEMAKEREDGEMANAGER_API FailureHandlingPolicy GetFailureHandlingPolicyForName(const Aws::String& name);
 
 AWS_SAGEMAKEREDGEMANAGER_API Aws::String GetNameForFailureHandlingPolicy(FailureHandlingPolicy value);
-} // namespace FailureHandlingPolicyMapper
-} // namespace Model
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace FailureHandlingPolicyMapper
+}  // namespace Model
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

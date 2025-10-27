@@ -12,27 +12,18 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEnvironmentRequest::SerializePayload() const
-{
+Aws::String DeleteEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_environmentIdHasBeenSet)
-  {
-   payload.WithString("environmentId", m_environmentId);
-
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteEnvironmentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteEnvironmentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.DeleteEnvironment"));
   return headers;
-
 }
-
-
-
-

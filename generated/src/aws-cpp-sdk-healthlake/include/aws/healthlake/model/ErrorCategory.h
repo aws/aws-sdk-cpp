@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/healthlake/HealthLake_EXPORTS.h>
 
-namespace Aws
-{
-namespace HealthLake
-{
-namespace Model
-{
-  enum class ErrorCategory
-  {
-    NOT_SET,
-    RETRYABLE_ERROR,
-    NON_RETRYABLE_ERROR
-  };
+namespace Aws {
+namespace HealthLake {
+namespace Model {
+enum class ErrorCategory { NOT_SET, RETRYABLE_ERROR, NON_RETRYABLE_ERROR };
 
-namespace ErrorCategoryMapper
-{
+namespace ErrorCategoryMapper {
 AWS_HEALTHLAKE_API ErrorCategory GetErrorCategoryForName(const Aws::String& name);
 
 AWS_HEALTHLAKE_API Aws::String GetNameForErrorCategory(ErrorCategory value);
-} // namespace ErrorCategoryMapper
-} // namespace Model
-} // namespace HealthLake
-} // namespace Aws
+}  // namespace ErrorCategoryMapper
+}  // namespace Model
+}  // namespace HealthLake
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/medialive/MediaLiveEndpointRules.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MediaLive {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MediaLiveClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MediaLiveDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MEDIALIVE_API MediaLiveEndpointProvider : public MediaLiveDefaultEpProviderBase
-{
-public:
-    using MediaLiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MEDIALIVE_API MediaLiveEndpointProvider : public MediaLiveDefaultEpProviderBase {
+ public:
+  using MediaLiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MediaLiveEndpointProvider()
-      : MediaLiveDefaultEpProviderBase(Aws::MediaLive::MediaLiveEndpointRules::GetRulesBlob(), Aws::MediaLive::MediaLiveEndpointRules::RulesBlobSize)
-    {}
+  MediaLiveEndpointProvider()
+      : MediaLiveDefaultEpProviderBase(Aws::MediaLive::MediaLiveEndpointRules::GetRulesBlob(),
+                                       Aws::MediaLive::MediaLiveEndpointRules::RulesBlobSize) {}
 
-    ~MediaLiveEndpointProvider()
-    {
-    }
+  ~MediaLiveEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MediaLive
+}  // namespace Aws

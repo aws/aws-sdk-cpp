@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/UpdateDocumentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/UpdateDocumentRequest.h>
 
 #include <utility>
 
@@ -12,73 +12,50 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateDocumentRequest::SerializePayload() const
-{
+Aws::String UpdateDocumentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_attachmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
-   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
-   {
-     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
-   }
-   payload.WithArray("Attachments", std::move(attachmentsJsonList));
-
+  if (m_attachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+    }
+    payload.WithArray("Attachments", std::move(attachmentsJsonList));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_versionNameHasBeenSet)
-  {
-   payload.WithString("VersionName", m_versionName);
-
+  if (m_versionNameHasBeenSet) {
+    payload.WithString("VersionName", m_versionName);
   }
 
-  if(m_documentVersionHasBeenSet)
-  {
-   payload.WithString("DocumentVersion", m_documentVersion);
-
+  if (m_documentVersionHasBeenSet) {
+    payload.WithString("DocumentVersion", m_documentVersion);
   }
 
-  if(m_documentFormatHasBeenSet)
-  {
-   payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
+  if (m_documentFormatHasBeenSet) {
+    payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
   }
 
-  if(m_targetTypeHasBeenSet)
-  {
-   payload.WithString("TargetType", m_targetType);
-
+  if (m_targetTypeHasBeenSet) {
+    payload.WithString("TargetType", m_targetType);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateDocumentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateDocumentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.UpdateDocument"));
   return headers;
-
 }
-
-
-
-

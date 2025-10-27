@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-Host::Host(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Host::Host(JsonView jsonValue) { *this = jsonValue; }
 
-Host& Host::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourcePath"))
-  {
+Host& Host::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourcePath")) {
     m_sourcePath = jsonValue.GetString("sourcePath");
     m_sourcePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Host::Jsonize() const
-{
+JsonValue Host::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourcePathHasBeenSet)
-  {
-   payload.WithString("sourcePath", m_sourcePath);
-
+  if (m_sourcePathHasBeenSet) {
+    payload.WithString("sourcePath", m_sourcePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

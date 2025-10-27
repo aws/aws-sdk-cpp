@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class AllocationType
-  {
-    NOT_SET,
-    VPC_SUBNET,
-    ELASTIC_IP,
-    OVERLAY,
-    UNKNOWN
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class AllocationType { NOT_SET, VPC_SUBNET, ELASTIC_IP, OVERLAY, UNKNOWN };
 
-namespace AllocationTypeMapper
-{
+namespace AllocationTypeMapper {
 AWS_SSMSAP_API AllocationType GetAllocationTypeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForAllocationType(AllocationType value);
-} // namespace AllocationTypeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace AllocationTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

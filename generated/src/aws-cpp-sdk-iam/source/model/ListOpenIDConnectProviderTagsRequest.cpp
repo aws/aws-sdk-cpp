@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListOpenIDConnectProviderTagsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListOpenIDConnectProviderTagsRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListOpenIDConnectProviderTagsRequest::SerializePayload() const
-{
+Aws::String ListOpenIDConnectProviderTagsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListOpenIDConnectProviderTags&";
-  if(m_openIDConnectProviderArnHasBeenSet)
-  {
+  if (m_openIDConnectProviderArnHasBeenSet) {
     ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListOpenIDConnectProviderTagsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListOpenIDConnectProviderTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListOpenIDConnectProviderTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

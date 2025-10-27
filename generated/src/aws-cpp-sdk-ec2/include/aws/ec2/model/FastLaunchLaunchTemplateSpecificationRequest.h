@@ -4,94 +4,105 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Request to create a launch template for a Windows fast launch enabled
+ * AMI.</p>  <p>Note - You can specify either the
+ * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+ * both.</p> <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchLaunchTemplateSpecificationRequest">AWS
+ * API Reference</a></p>
+ */
+class FastLaunchLaunchTemplateSpecificationRequest {
+ public:
+  AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest() = default;
+  AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Request to create a launch template for a Windows fast launch enabled
-   * AMI.</p>  <p>Note - You can specify either the
-   * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-   * both.</p> <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchLaunchTemplateSpecificationRequest">AWS
-   * API Reference</a></p>
+   * <p>Specify the ID of the launch template that the AMI should use for Windows
+   * fast launch.</p>
    */
-  class FastLaunchLaunchTemplateSpecificationRequest
-  {
-  public:
-    AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest() = default;
-    AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_EC2_API FastLaunchLaunchTemplateSpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
+  inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+  template <typename LaunchTemplateIdT = Aws::String>
+  void SetLaunchTemplateId(LaunchTemplateIdT&& value) {
+    m_launchTemplateIdHasBeenSet = true;
+    m_launchTemplateId = std::forward<LaunchTemplateIdT>(value);
+  }
+  template <typename LaunchTemplateIdT = Aws::String>
+  FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateId(LaunchTemplateIdT&& value) {
+    SetLaunchTemplateId(std::forward<LaunchTemplateIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>Specify the name of the launch template that the AMI should use for Windows
+   * fast launch.</p>
+   */
+  inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
+  inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
+  template <typename LaunchTemplateNameT = Aws::String>
+  void SetLaunchTemplateName(LaunchTemplateNameT&& value) {
+    m_launchTemplateNameHasBeenSet = true;
+    m_launchTemplateName = std::forward<LaunchTemplateNameT>(value);
+  }
+  template <typename LaunchTemplateNameT = Aws::String>
+  FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateName(LaunchTemplateNameT&& value) {
+    SetLaunchTemplateName(std::forward<LaunchTemplateNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specify the version of the launch template that the AMI should use for
+   * Windows fast launch.</p>
+   */
+  inline const Aws::String& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = Aws::String>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
+  }
+  template <typename VersionT = Aws::String>
+  FastLaunchLaunchTemplateSpecificationRequest& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_launchTemplateId;
+  bool m_launchTemplateIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specify the ID of the launch template that the AMI should use for Windows
-     * fast launch.</p>
-     */
-    inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
-    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
-    template<typename LaunchTemplateIdT = Aws::String>
-    void SetLaunchTemplateId(LaunchTemplateIdT&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::forward<LaunchTemplateIdT>(value); }
-    template<typename LaunchTemplateIdT = Aws::String>
-    FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateId(LaunchTemplateIdT&& value) { SetLaunchTemplateId(std::forward<LaunchTemplateIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_launchTemplateName;
+  bool m_launchTemplateNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specify the name of the launch template that the AMI should use for Windows
-     * fast launch.</p>
-     */
-    inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
-    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
-    template<typename LaunchTemplateNameT = Aws::String>
-    void SetLaunchTemplateName(LaunchTemplateNameT&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::forward<LaunchTemplateNameT>(value); }
-    template<typename LaunchTemplateNameT = Aws::String>
-    FastLaunchLaunchTemplateSpecificationRequest& WithLaunchTemplateName(LaunchTemplateNameT&& value) { SetLaunchTemplateName(std::forward<LaunchTemplateNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_version;
+  bool m_versionHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specify the version of the launch template that the AMI should use for
-     * Windows fast launch.</p>
-     */
-    inline const Aws::String& GetVersion() const { return m_version; }
-    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    template<typename VersionT = Aws::String>
-    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
-    template<typename VersionT = Aws::String>
-    FastLaunchLaunchTemplateSpecificationRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet = false;
-
-    Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet = false;
-
-    Aws::String m_version;
-    bool m_versionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

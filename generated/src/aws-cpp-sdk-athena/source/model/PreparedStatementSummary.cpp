@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-PreparedStatementSummary::PreparedStatementSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PreparedStatementSummary::PreparedStatementSummary(JsonView jsonValue) { *this = jsonValue; }
 
-PreparedStatementSummary& PreparedStatementSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StatementName"))
-  {
+PreparedStatementSummary& PreparedStatementSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StatementName")) {
     m_statementName = jsonValue.GetString("StatementName");
     m_statementNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PreparedStatementSummary::Jsonize() const
-{
+JsonValue PreparedStatementSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_statementNameHasBeenSet)
-  {
-   payload.WithString("StatementName", m_statementName);
-
+  if (m_statementNameHasBeenSet) {
+    payload.WithString("StatementName", m_statementName);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

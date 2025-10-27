@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/AWSMigrationHub/MigrationHubEndpointRules.h>
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/AWSMigrationHub/MigrationHubEndpointRules.h>
-
-
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MigrationHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MigrationHubDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MIGRATIONHUB_API MigrationHubEndpointProvider : public MigrationHubDefaultEpProviderBase
-{
-public:
-    using MigrationHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MIGRATIONHUB_API MigrationHubEndpointProvider : public MigrationHubDefaultEpProviderBase {
+ public:
+  using MigrationHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MigrationHubEndpointProvider()
-      : MigrationHubDefaultEpProviderBase(Aws::MigrationHub::MigrationHubEndpointRules::GetRulesBlob(), Aws::MigrationHub::MigrationHubEndpointRules::RulesBlobSize)
-    {}
+  MigrationHubEndpointProvider()
+      : MigrationHubDefaultEpProviderBase(Aws::MigrationHub::MigrationHubEndpointRules::GetRulesBlob(),
+                                          Aws::MigrationHub::MigrationHubEndpointRules::RulesBlobSize) {}
 
-    ~MigrationHubEndpointProvider()
-    {
-    }
+  ~MigrationHubEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MigrationHub
+}  // namespace Aws

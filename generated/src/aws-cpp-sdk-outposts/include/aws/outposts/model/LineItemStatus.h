@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class LineItemStatus
-  {
-    NOT_SET,
-    PREPARING,
-    BUILDING,
-    SHIPPED,
-    DELIVERED,
-    INSTALLING,
-    INSTALLED,
-    ERROR_,
-    CANCELLED,
-    REPLACED
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class LineItemStatus { NOT_SET, PREPARING, BUILDING, SHIPPED, DELIVERED, INSTALLING, INSTALLED, ERROR_, CANCELLED, REPLACED };
 
-namespace LineItemStatusMapper
-{
+namespace LineItemStatusMapper {
 AWS_OUTPOSTS_API LineItemStatus GetLineItemStatusForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForLineItemStatus(LineItemStatus value);
-} // namespace LineItemStatusMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace LineItemStatusMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

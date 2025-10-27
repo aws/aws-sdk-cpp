@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/VpcConnection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/VpcConnection.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-VpcConnection::VpcConnection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConnection::VpcConnection(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConnection& VpcConnection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vpcConnectionArn"))
-  {
+VpcConnection& VpcConnection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vpcConnectionArn")) {
     m_vpcConnectionArn = jsonValue.GetString("vpcConnectionArn");
     m_vpcConnectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetClusterArn"))
-  {
+  if (jsonValue.ValueExists("targetClusterArn")) {
     m_targetClusterArn = jsonValue.GetString("targetClusterArn");
     m_targetClusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authentication"))
-  {
+  if (jsonValue.ValueExists("authentication")) {
     m_authentication = jsonValue.GetString("authentication");
     m_authenticationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcId"))
-  {
+  if (jsonValue.ValueExists("vpcId")) {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = VpcConnectionStateMapper::GetVpcConnectionStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcConnection::Jsonize() const
-{
+JsonValue VpcConnection::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcConnectionArnHasBeenSet)
-  {
-   payload.WithString("vpcConnectionArn", m_vpcConnectionArn);
-
+  if (m_vpcConnectionArnHasBeenSet) {
+    payload.WithString("vpcConnectionArn", m_vpcConnectionArn);
   }
 
-  if(m_targetClusterArnHasBeenSet)
-  {
-   payload.WithString("targetClusterArn", m_targetClusterArn);
-
+  if (m_targetClusterArnHasBeenSet) {
+    payload.WithString("targetClusterArn", m_targetClusterArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_authenticationHasBeenSet)
-  {
-   payload.WithString("authentication", m_authentication);
-
+  if (m_authenticationHasBeenSet) {
+    payload.WithString("authentication", m_authentication);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("vpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("vpcId", m_vpcId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", VpcConnectionStateMapper::GetNameForVpcConnectionState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", VpcConnectionStateMapper::GetNameForVpcConnectionState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-PersistentStorage::PersistentStorage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PersistentStorage::PersistentStorage(JsonView jsonValue) { *this = jsonValue; }
 
-PersistentStorage& PersistentStorage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sizeInGiB"))
-  {
+PersistentStorage& PersistentStorage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sizeInGiB")) {
     m_sizeInGiB = jsonValue.GetInteger("sizeInGiB");
     m_sizeInGiBHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PersistentStorage::Jsonize() const
-{
+JsonValue PersistentStorage::Jsonize() const {
   JsonValue payload;
 
-  if(m_sizeInGiBHasBeenSet)
-  {
-   payload.WithInteger("sizeInGiB", m_sizeInGiB);
-
+  if (m_sizeInGiBHasBeenSet) {
+    payload.WithInteger("sizeInGiB", m_sizeInGiB);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

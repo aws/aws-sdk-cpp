@@ -3,103 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/StartChildWorkflowExecutionFailedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/StartChildWorkflowExecutionFailedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
-{
+StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-StartChildWorkflowExecutionFailedEventAttributes& StartChildWorkflowExecutionFailedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowType"))
-  {
+StartChildWorkflowExecutionFailedEventAttributes& StartChildWorkflowExecutionFailedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowType")) {
     m_workflowType = jsonValue.GetObject("workflowType");
     m_workflowTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cause"))
-  {
+  if (jsonValue.ValueExists("cause")) {
     m_cause = StartChildWorkflowExecutionFailedCauseMapper::GetStartChildWorkflowExecutionFailedCauseForName(jsonValue.GetString("cause"));
     m_causeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workflowId"))
-  {
+  if (jsonValue.ValueExists("workflowId")) {
     m_workflowId = jsonValue.GetString("workflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("initiatedEventId"))
-  {
+  if (jsonValue.ValueExists("initiatedEventId")) {
     m_initiatedEventId = jsonValue.GetInt64("initiatedEventId");
     m_initiatedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("control"))
-  {
+  if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetString("control");
     m_controlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartChildWorkflowExecutionFailedEventAttributes::Jsonize() const
-{
+JsonValue StartChildWorkflowExecutionFailedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowTypeHasBeenSet)
-  {
-   payload.WithObject("workflowType", m_workflowType.Jsonize());
-
+  if (m_workflowTypeHasBeenSet) {
+    payload.WithObject("workflowType", m_workflowType.Jsonize());
   }
 
-  if(m_causeHasBeenSet)
-  {
-   payload.WithString("cause", StartChildWorkflowExecutionFailedCauseMapper::GetNameForStartChildWorkflowExecutionFailedCause(m_cause));
+  if (m_causeHasBeenSet) {
+    payload.WithString("cause", StartChildWorkflowExecutionFailedCauseMapper::GetNameForStartChildWorkflowExecutionFailedCause(m_cause));
   }
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_initiatedEventIdHasBeenSet)
-  {
-   payload.WithInt64("initiatedEventId", m_initiatedEventId);
-
+  if (m_initiatedEventIdHasBeenSet) {
+    payload.WithInt64("initiatedEventId", m_initiatedEventId);
   }
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", m_control);
-
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", m_control);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

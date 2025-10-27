@@ -11,116 +11,85 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-Node::Node(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Node::Node(JsonView jsonValue) { *this = jsonValue; }
 
-Node& Node::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyAttributes"))
-  {
+Node& Node::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyAttributes")) {
     Aws::Map<Aws::String, JsonView> keyAttributesJsonMap = jsonValue.GetObject("KeyAttributes").GetAllObjects();
-    for(auto& keyAttributesItem : keyAttributesJsonMap)
-    {
+    for (auto& keyAttributesItem : keyAttributesJsonMap) {
       m_keyAttributes[keyAttributesItem.first] = keyAttributesItem.second.AsString();
     }
     m_keyAttributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NodeId"))
-  {
+  if (jsonValue.ValueExists("NodeId")) {
     m_nodeId = jsonValue.GetString("NodeId");
     m_nodeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operation"))
-  {
+  if (jsonValue.ValueExists("Operation")) {
     m_operation = jsonValue.GetString("Operation");
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Duration"))
-  {
+  if (jsonValue.ValueExists("Duration")) {
     m_duration = jsonValue.GetDouble("Duration");
     m_durationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Node::Jsonize() const
-{
+JsonValue Node::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyAttributesHasBeenSet)
-  {
-   JsonValue keyAttributesJsonMap;
-   for(auto& keyAttributesItem : m_keyAttributes)
-   {
-     keyAttributesJsonMap.WithString(keyAttributesItem.first, keyAttributesItem.second);
-   }
-   payload.WithObject("KeyAttributes", std::move(keyAttributesJsonMap));
-
+  if (m_keyAttributesHasBeenSet) {
+    JsonValue keyAttributesJsonMap;
+    for (auto& keyAttributesItem : m_keyAttributes) {
+      keyAttributesJsonMap.WithString(keyAttributesItem.first, keyAttributesItem.second);
+    }
+    payload.WithObject("KeyAttributes", std::move(keyAttributesJsonMap));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_nodeIdHasBeenSet)
-  {
-   payload.WithString("NodeId", m_nodeId);
-
+  if (m_nodeIdHasBeenSet) {
+    payload.WithString("NodeId", m_nodeId);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("Operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("Operation", m_operation);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_durationHasBeenSet)
-  {
-   payload.WithDouble("Duration", m_duration);
-
+  if (m_durationHasBeenSet) {
+    payload.WithDouble("Duration", m_duration);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

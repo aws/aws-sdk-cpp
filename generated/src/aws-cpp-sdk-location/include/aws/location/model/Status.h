@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
-  enum class Status
-  {
-    NOT_SET,
-    Active,
-    Expired
-  };
+namespace Aws {
+namespace LocationService {
+namespace Model {
+enum class Status { NOT_SET, Active, Expired };
 
-namespace StatusMapper
-{
+namespace StatusMapper {
 AWS_LOCATIONSERVICE_API Status GetStatusForName(const Aws::String& name);
 
 AWS_LOCATIONSERVICE_API Aws::String GetNameForStatus(Status value);
-} // namespace StatusMapper
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

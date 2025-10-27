@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/ErrorMetric.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/ErrorMetric.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-ErrorMetric::ErrorMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorMetric::ErrorMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorMetric& ErrorMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ForecastType"))
-  {
+ErrorMetric& ErrorMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ForecastType")) {
     m_forecastType = jsonValue.GetString("ForecastType");
     m_forecastTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WAPE"))
-  {
+  if (jsonValue.ValueExists("WAPE")) {
     m_wAPE = jsonValue.GetDouble("WAPE");
     m_wAPEHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RMSE"))
-  {
+  if (jsonValue.ValueExists("RMSE")) {
     m_rMSE = jsonValue.GetDouble("RMSE");
     m_rMSEHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MASE"))
-  {
+  if (jsonValue.ValueExists("MASE")) {
     m_mASE = jsonValue.GetDouble("MASE");
     m_mASEHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MAPE"))
-  {
+  if (jsonValue.ValueExists("MAPE")) {
     m_mAPE = jsonValue.GetDouble("MAPE");
     m_mAPEHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorMetric::Jsonize() const
-{
+JsonValue ErrorMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_forecastTypeHasBeenSet)
-  {
-   payload.WithString("ForecastType", m_forecastType);
-
+  if (m_forecastTypeHasBeenSet) {
+    payload.WithString("ForecastType", m_forecastType);
   }
 
-  if(m_wAPEHasBeenSet)
-  {
-   payload.WithDouble("WAPE", m_wAPE);
-
+  if (m_wAPEHasBeenSet) {
+    payload.WithDouble("WAPE", m_wAPE);
   }
 
-  if(m_rMSEHasBeenSet)
-  {
-   payload.WithDouble("RMSE", m_rMSE);
-
+  if (m_rMSEHasBeenSet) {
+    payload.WithDouble("RMSE", m_rMSE);
   }
 
-  if(m_mASEHasBeenSet)
-  {
-   payload.WithDouble("MASE", m_mASE);
-
+  if (m_mASEHasBeenSet) {
+    payload.WithDouble("MASE", m_mASE);
   }
 
-  if(m_mAPEHasBeenSet)
-  {
-   payload.WithDouble("MAPE", m_mAPE);
-
+  if (m_mAPEHasBeenSet) {
+    payload.WithDouble("MAPE", m_mAPE);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

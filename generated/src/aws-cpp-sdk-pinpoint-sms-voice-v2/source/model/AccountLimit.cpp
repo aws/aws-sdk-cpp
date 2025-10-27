@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/AccountLimit.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/AccountLimit.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
 
-AccountLimit::AccountLimit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountLimit::AccountLimit(JsonView jsonValue) { *this = jsonValue; }
 
-AccountLimit& AccountLimit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AccountLimit& AccountLimit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = AccountLimitNameMapper::GetAccountLimitNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Used"))
-  {
+  if (jsonValue.ValueExists("Used")) {
     m_used = jsonValue.GetInt64("Used");
     m_usedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Max"))
-  {
+  if (jsonValue.ValueExists("Max")) {
     m_max = jsonValue.GetInt64("Max");
     m_maxHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountLimit::Jsonize() const
-{
+JsonValue AccountLimit::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", AccountLimitNameMapper::GetNameForAccountLimitName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", AccountLimitNameMapper::GetNameForAccountLimitName(m_name));
   }
 
-  if(m_usedHasBeenSet)
-  {
-   payload.WithInt64("Used", m_used);
-
+  if (m_usedHasBeenSet) {
+    payload.WithInt64("Used", m_used);
   }
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithInt64("Max", m_max);
-
+  if (m_maxHasBeenSet) {
+    payload.WithInt64("Max", m_max);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

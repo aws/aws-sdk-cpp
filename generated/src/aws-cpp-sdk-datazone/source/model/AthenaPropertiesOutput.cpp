@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/AthenaPropertiesOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/AthenaPropertiesOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-AthenaPropertiesOutput::AthenaPropertiesOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AthenaPropertiesOutput::AthenaPropertiesOutput(JsonView jsonValue) { *this = jsonValue; }
 
-AthenaPropertiesOutput& AthenaPropertiesOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workgroupName"))
-  {
+AthenaPropertiesOutput& AthenaPropertiesOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workgroupName")) {
     m_workgroupName = jsonValue.GetString("workgroupName");
     m_workgroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AthenaPropertiesOutput::Jsonize() const
-{
+JsonValue AthenaPropertiesOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_workgroupNameHasBeenSet)
-  {
-   payload.WithString("workgroupName", m_workgroupName);
-
+  if (m_workgroupNameHasBeenSet) {
+    payload.WithString("workgroupName", m_workgroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

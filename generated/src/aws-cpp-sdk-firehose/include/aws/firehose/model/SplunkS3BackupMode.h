@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class SplunkS3BackupMode
-  {
-    NOT_SET,
-    FailedEventsOnly,
-    AllEvents
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class SplunkS3BackupMode { NOT_SET, FailedEventsOnly, AllEvents };
 
-namespace SplunkS3BackupModeMapper
-{
+namespace SplunkS3BackupModeMapper {
 AWS_FIREHOSE_API SplunkS3BackupMode GetSplunkS3BackupModeForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForSplunkS3BackupMode(SplunkS3BackupMode value);
-} // namespace SplunkS3BackupModeMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace SplunkS3BackupModeMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

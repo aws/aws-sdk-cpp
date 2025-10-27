@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/DnssecKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/DnssecKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
 
-DnssecKey::DnssecKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DnssecKey::DnssecKey(JsonView jsonValue) { *this = jsonValue; }
 
-DnssecKey& DnssecKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Algorithm"))
-  {
+DnssecKey& DnssecKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Algorithm")) {
     m_algorithm = jsonValue.GetInteger("Algorithm");
     m_algorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Flags"))
-  {
+  if (jsonValue.ValueExists("Flags")) {
     m_flags = jsonValue.GetInteger("Flags");
     m_flagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PublicKey"))
-  {
+  if (jsonValue.ValueExists("PublicKey")) {
     m_publicKey = jsonValue.GetString("PublicKey");
     m_publicKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DigestType"))
-  {
+  if (jsonValue.ValueExists("DigestType")) {
     m_digestType = jsonValue.GetInteger("DigestType");
     m_digestTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Digest"))
-  {
+  if (jsonValue.ValueExists("Digest")) {
     m_digest = jsonValue.GetString("Digest");
     m_digestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyTag"))
-  {
+  if (jsonValue.ValueExists("KeyTag")) {
     m_keyTag = jsonValue.GetInteger("KeyTag");
     m_keyTagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DnssecKey::Jsonize() const
-{
+JsonValue DnssecKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_algorithmHasBeenSet)
-  {
-   payload.WithInteger("Algorithm", m_algorithm);
-
+  if (m_algorithmHasBeenSet) {
+    payload.WithInteger("Algorithm", m_algorithm);
   }
 
-  if(m_flagsHasBeenSet)
-  {
-   payload.WithInteger("Flags", m_flags);
-
+  if (m_flagsHasBeenSet) {
+    payload.WithInteger("Flags", m_flags);
   }
 
-  if(m_publicKeyHasBeenSet)
-  {
-   payload.WithString("PublicKey", m_publicKey);
-
+  if (m_publicKeyHasBeenSet) {
+    payload.WithString("PublicKey", m_publicKey);
   }
 
-  if(m_digestTypeHasBeenSet)
-  {
-   payload.WithInteger("DigestType", m_digestType);
-
+  if (m_digestTypeHasBeenSet) {
+    payload.WithInteger("DigestType", m_digestType);
   }
 
-  if(m_digestHasBeenSet)
-  {
-   payload.WithString("Digest", m_digest);
-
+  if (m_digestHasBeenSet) {
+    payload.WithString("Digest", m_digest);
   }
 
-  if(m_keyTagHasBeenSet)
-  {
-   payload.WithInteger("KeyTag", m_keyTag);
-
+  if (m_keyTagHasBeenSet) {
+    payload.WithInteger("KeyTag", m_keyTag);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

@@ -3,44 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/TargetGroupStickinessConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/TargetGroupStickinessConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-TargetGroupStickinessConfig::TargetGroupStickinessConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TargetGroupStickinessConfig::TargetGroupStickinessConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TargetGroupStickinessConfig& TargetGroupStickinessConfig::operator =(const XmlNode& xmlNode)
-{
+TargetGroupStickinessConfig& TargetGroupStickinessConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode durationSecondsNode = resultNode.FirstChild("DurationSeconds");
-    if(!durationSecondsNode.IsNull())
-    {
-      m_durationSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationSecondsNode.GetText()).c_str()).c_str());
+    if (!durationSecondsNode.IsNull()) {
+      m_durationSeconds = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationSecondsNode.GetText()).c_str()).c_str());
       m_durationSecondsHasBeenSet = true;
     }
   }
@@ -48,32 +40,26 @@ TargetGroupStickinessConfig& TargetGroupStickinessConfig::operator =(const XmlNo
   return *this;
 }
 
-void TargetGroupStickinessConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_enabledHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
+void TargetGroupStickinessConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_enabledHasBeenSet) {
+    oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DurationSeconds=" << m_durationSeconds << "&";
-  }
-
-}
-
-void TargetGroupStickinessConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_enabledHasBeenSet)
-  {
-      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
-  }
-  if(m_durationSecondsHasBeenSet)
-  {
-      oStream << location << ".DurationSeconds=" << m_durationSeconds << "&";
+  if (m_durationSecondsHasBeenSet) {
+    oStream << location << index << locationValue << ".DurationSeconds=" << m_durationSeconds << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void TargetGroupStickinessConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_enabledHasBeenSet) {
+    oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
+  }
+  if (m_durationSecondsHasBeenSet) {
+    oStream << location << ".DurationSeconds=" << m_durationSeconds << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

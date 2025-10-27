@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class AssistantCapabilityType
-  {
-    NOT_SET,
-    V1,
-    V2
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class AssistantCapabilityType { NOT_SET, V1, V2 };
 
-namespace AssistantCapabilityTypeMapper
-{
+namespace AssistantCapabilityTypeMapper {
 AWS_QCONNECT_API AssistantCapabilityType GetAssistantCapabilityTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForAssistantCapabilityType(AssistantCapabilityType value);
-} // namespace AssistantCapabilityTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace AssistantCapabilityTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

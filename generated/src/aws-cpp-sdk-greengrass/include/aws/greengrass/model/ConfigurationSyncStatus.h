@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/Greengrass_EXPORTS.h>
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
-  enum class ConfigurationSyncStatus
-  {
-    NOT_SET,
-    InSync,
-    OutOfSync
-  };
+namespace Aws {
+namespace Greengrass {
+namespace Model {
+enum class ConfigurationSyncStatus { NOT_SET, InSync, OutOfSync };
 
-namespace ConfigurationSyncStatusMapper
-{
+namespace ConfigurationSyncStatusMapper {
 AWS_GREENGRASS_API ConfigurationSyncStatus GetConfigurationSyncStatusForName(const Aws::String& name);
 
 AWS_GREENGRASS_API Aws::String GetNameForConfigurationSyncStatus(ConfigurationSyncStatus value);
-} // namespace ConfigurationSyncStatusMapper
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace ConfigurationSyncStatusMapper
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

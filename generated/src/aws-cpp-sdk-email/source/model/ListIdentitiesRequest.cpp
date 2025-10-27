@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/ListIdentitiesRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String ListIdentitiesRequest::SerializePayload() const
-{
+Aws::String ListIdentitiesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListIdentities&";
-  if(m_identityTypeHasBeenSet)
-  {
+  if (m_identityTypeHasBeenSet) {
     ss << "IdentityType=" << StringUtils::URLEncode(IdentityTypeMapper::GetNameForIdentityType(m_identityType)) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListIdentitiesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListIdentitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListIdentitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

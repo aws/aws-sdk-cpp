@@ -12,24 +12,17 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetFindingsRequest::SerializePayload() const
-{
+Aws::String BatchGetFindingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_findingIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> findingIdentifiersJsonList(m_findingIdentifiers.size());
-   for(unsigned findingIdentifiersIndex = 0; findingIdentifiersIndex < findingIdentifiersJsonList.GetLength(); ++findingIdentifiersIndex)
-   {
-     findingIdentifiersJsonList[findingIdentifiersIndex].AsObject(m_findingIdentifiers[findingIdentifiersIndex].Jsonize());
-   }
-   payload.WithArray("findingIdentifiers", std::move(findingIdentifiersJsonList));
-
+  if (m_findingIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> findingIdentifiersJsonList(m_findingIdentifiers.size());
+    for (unsigned findingIdentifiersIndex = 0; findingIdentifiersIndex < findingIdentifiersJsonList.GetLength();
+         ++findingIdentifiersIndex) {
+      findingIdentifiersJsonList[findingIdentifiersIndex].AsObject(m_findingIdentifiers[findingIdentifiersIndex].Jsonize());
+    }
+    payload.WithArray("findingIdentifiers", std::move(findingIdentifiersJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

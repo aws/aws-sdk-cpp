@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/ModelVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/ModelVersion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-ModelVersion::ModelVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelVersion::ModelVersion(JsonView jsonValue) { *this = jsonValue; }
 
-ModelVersion& ModelVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("modelId"))
-  {
+ModelVersion& ModelVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("modelId")) {
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelType"))
-  {
+  if (jsonValue.ValueExists("modelType")) {
     m_modelType = ModelTypeEnumMapper::GetModelTypeEnumForName(jsonValue.GetString("modelType"));
     m_modelTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelVersionNumber"))
-  {
+  if (jsonValue.ValueExists("modelVersionNumber")) {
     m_modelVersionNumber = jsonValue.GetString("modelVersionNumber");
     m_modelVersionNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelVersion::Jsonize() const
-{
+JsonValue ModelVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
+  if (m_modelIdHasBeenSet) {
+    payload.WithString("modelId", m_modelId);
   }
 
-  if(m_modelTypeHasBeenSet)
-  {
-   payload.WithString("modelType", ModelTypeEnumMapper::GetNameForModelTypeEnum(m_modelType));
+  if (m_modelTypeHasBeenSet) {
+    payload.WithString("modelType", ModelTypeEnumMapper::GetNameForModelTypeEnum(m_modelType));
   }
 
-  if(m_modelVersionNumberHasBeenSet)
-  {
-   payload.WithString("modelVersionNumber", m_modelVersionNumber);
-
+  if (m_modelVersionNumberHasBeenSet) {
+    payload.WithString("modelVersionNumber", m_modelVersionNumber);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

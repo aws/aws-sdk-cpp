@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
 
 #include <utility>
 
@@ -16,25 +16,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutImageRecipePolicyResult::PutImageRecipePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutImageRecipePolicyResult::PutImageRecipePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutImageRecipePolicyResult& PutImageRecipePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutImageRecipePolicyResult& PutImageRecipePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("requestId"))
-  {
+  if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imageRecipeArn"))
-  {
+  if (jsonValue.ValueExists("imageRecipeArn")) {
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
     m_imageRecipeArnHasBeenSet = true;
   }
-
 
   return *this;
 }

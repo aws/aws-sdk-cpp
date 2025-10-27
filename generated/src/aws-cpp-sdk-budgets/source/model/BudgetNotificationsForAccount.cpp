@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-BudgetNotificationsForAccount::BudgetNotificationsForAccount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BudgetNotificationsForAccount::BudgetNotificationsForAccount(JsonView jsonValue) { *this = jsonValue; }
 
-BudgetNotificationsForAccount& BudgetNotificationsForAccount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Notifications"))
-  {
+BudgetNotificationsForAccount& BudgetNotificationsForAccount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Notifications")) {
     Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
-    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
-    {
+    for (unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex) {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
     }
     m_notificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BudgetName"))
-  {
+  if (jsonValue.ValueExists("BudgetName")) {
     m_budgetName = jsonValue.GetString("BudgetName");
     m_budgetNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BudgetNotificationsForAccount::Jsonize() const
-{
+JsonValue BudgetNotificationsForAccount::Jsonize() const {
   JsonValue payload;
 
-  if(m_notificationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
-   for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
-   {
-     notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
-   }
-   payload.WithArray("Notifications", std::move(notificationsJsonList));
-
+  if (m_notificationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
+    for (unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex) {
+      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
+    }
+    payload.WithArray("Notifications", std::move(notificationsJsonList));
   }
 
-  if(m_budgetNameHasBeenSet)
-  {
-   payload.WithString("BudgetName", m_budgetName);
-
+  if (m_budgetNameHasBeenSet) {
+    payload.WithString("BudgetName", m_budgetName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

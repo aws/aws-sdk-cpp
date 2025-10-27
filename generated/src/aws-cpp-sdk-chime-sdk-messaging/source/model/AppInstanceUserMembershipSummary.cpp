@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AppInstanceUserMembershipSummary& AppInstanceUserMembershipSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+AppInstanceUserMembershipSummary& AppInstanceUserMembershipSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ChannelMembershipTypeMapper::GetChannelMembershipTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReadMarkerTimestamp"))
-  {
+  if (jsonValue.ValueExists("ReadMarkerTimestamp")) {
     m_readMarkerTimestamp = jsonValue.GetDouble("ReadMarkerTimestamp");
     m_readMarkerTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubChannelId"))
-  {
+  if (jsonValue.ValueExists("SubChannelId")) {
     m_subChannelId = jsonValue.GetString("SubChannelId");
     m_subChannelIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppInstanceUserMembershipSummary::Jsonize() const
-{
+JsonValue AppInstanceUserMembershipSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChannelMembershipTypeMapper::GetNameForChannelMembershipType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChannelMembershipTypeMapper::GetNameForChannelMembershipType(m_type));
   }
 
-  if(m_readMarkerTimestampHasBeenSet)
-  {
-   payload.WithDouble("ReadMarkerTimestamp", m_readMarkerTimestamp.SecondsWithMSPrecision());
+  if (m_readMarkerTimestampHasBeenSet) {
+    payload.WithDouble("ReadMarkerTimestamp", m_readMarkerTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_subChannelIdHasBeenSet)
-  {
-   payload.WithString("SubChannelId", m_subChannelId);
-
+  if (m_subChannelIdHasBeenSet) {
+    payload.WithString("SubChannelId", m_subChannelId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

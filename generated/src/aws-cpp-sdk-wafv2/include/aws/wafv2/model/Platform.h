@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
-  enum class Platform
-  {
-    NOT_SET,
-    IOS,
-    ANDROID_
-  };
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
+enum class Platform { NOT_SET, IOS, ANDROID_ };
 
-namespace PlatformMapper
-{
+namespace PlatformMapper {
 AWS_WAFV2_API Platform GetPlatformForName(const Aws::String& name);
 
 AWS_WAFV2_API Aws::String GetNameForPlatform(Platform value);
-} // namespace PlatformMapper
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace PlatformMapper
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

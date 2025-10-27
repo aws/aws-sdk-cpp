@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
-  enum class DeploymentFailureHandlingPolicy
-  {
-    NOT_SET,
-    ROLLBACK,
-    DO_NOTHING
-  };
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
+enum class DeploymentFailureHandlingPolicy { NOT_SET, ROLLBACK, DO_NOTHING };
 
-namespace DeploymentFailureHandlingPolicyMapper
-{
+namespace DeploymentFailureHandlingPolicyMapper {
 AWS_GREENGRASSV2_API DeploymentFailureHandlingPolicy GetDeploymentFailureHandlingPolicyForName(const Aws::String& name);
 
 AWS_GREENGRASSV2_API Aws::String GetNameForDeploymentFailureHandlingPolicy(DeploymentFailureHandlingPolicy value);
-} // namespace DeploymentFailureHandlingPolicyMapper
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace DeploymentFailureHandlingPolicyMapper
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

@@ -11,151 +11,110 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-CostTypes::CostTypes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CostTypes::CostTypes(JsonView jsonValue) { *this = jsonValue; }
 
-CostTypes& CostTypes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IncludeTax"))
-  {
+CostTypes& CostTypes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IncludeTax")) {
     m_includeTax = jsonValue.GetBool("IncludeTax");
     m_includeTaxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeSubscription"))
-  {
+  if (jsonValue.ValueExists("IncludeSubscription")) {
     m_includeSubscription = jsonValue.GetBool("IncludeSubscription");
     m_includeSubscriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UseBlended"))
-  {
+  if (jsonValue.ValueExists("UseBlended")) {
     m_useBlended = jsonValue.GetBool("UseBlended");
     m_useBlendedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeRefund"))
-  {
+  if (jsonValue.ValueExists("IncludeRefund")) {
     m_includeRefund = jsonValue.GetBool("IncludeRefund");
     m_includeRefundHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeCredit"))
-  {
+  if (jsonValue.ValueExists("IncludeCredit")) {
     m_includeCredit = jsonValue.GetBool("IncludeCredit");
     m_includeCreditHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeUpfront"))
-  {
+  if (jsonValue.ValueExists("IncludeUpfront")) {
     m_includeUpfront = jsonValue.GetBool("IncludeUpfront");
     m_includeUpfrontHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeRecurring"))
-  {
+  if (jsonValue.ValueExists("IncludeRecurring")) {
     m_includeRecurring = jsonValue.GetBool("IncludeRecurring");
     m_includeRecurringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeOtherSubscription"))
-  {
+  if (jsonValue.ValueExists("IncludeOtherSubscription")) {
     m_includeOtherSubscription = jsonValue.GetBool("IncludeOtherSubscription");
     m_includeOtherSubscriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeSupport"))
-  {
+  if (jsonValue.ValueExists("IncludeSupport")) {
     m_includeSupport = jsonValue.GetBool("IncludeSupport");
     m_includeSupportHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IncludeDiscount"))
-  {
+  if (jsonValue.ValueExists("IncludeDiscount")) {
     m_includeDiscount = jsonValue.GetBool("IncludeDiscount");
     m_includeDiscountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UseAmortized"))
-  {
+  if (jsonValue.ValueExists("UseAmortized")) {
     m_useAmortized = jsonValue.GetBool("UseAmortized");
     m_useAmortizedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CostTypes::Jsonize() const
-{
+JsonValue CostTypes::Jsonize() const {
   JsonValue payload;
 
-  if(m_includeTaxHasBeenSet)
-  {
-   payload.WithBool("IncludeTax", m_includeTax);
-
+  if (m_includeTaxHasBeenSet) {
+    payload.WithBool("IncludeTax", m_includeTax);
   }
 
-  if(m_includeSubscriptionHasBeenSet)
-  {
-   payload.WithBool("IncludeSubscription", m_includeSubscription);
-
+  if (m_includeSubscriptionHasBeenSet) {
+    payload.WithBool("IncludeSubscription", m_includeSubscription);
   }
 
-  if(m_useBlendedHasBeenSet)
-  {
-   payload.WithBool("UseBlended", m_useBlended);
-
+  if (m_useBlendedHasBeenSet) {
+    payload.WithBool("UseBlended", m_useBlended);
   }
 
-  if(m_includeRefundHasBeenSet)
-  {
-   payload.WithBool("IncludeRefund", m_includeRefund);
-
+  if (m_includeRefundHasBeenSet) {
+    payload.WithBool("IncludeRefund", m_includeRefund);
   }
 
-  if(m_includeCreditHasBeenSet)
-  {
-   payload.WithBool("IncludeCredit", m_includeCredit);
-
+  if (m_includeCreditHasBeenSet) {
+    payload.WithBool("IncludeCredit", m_includeCredit);
   }
 
-  if(m_includeUpfrontHasBeenSet)
-  {
-   payload.WithBool("IncludeUpfront", m_includeUpfront);
-
+  if (m_includeUpfrontHasBeenSet) {
+    payload.WithBool("IncludeUpfront", m_includeUpfront);
   }
 
-  if(m_includeRecurringHasBeenSet)
-  {
-   payload.WithBool("IncludeRecurring", m_includeRecurring);
-
+  if (m_includeRecurringHasBeenSet) {
+    payload.WithBool("IncludeRecurring", m_includeRecurring);
   }
 
-  if(m_includeOtherSubscriptionHasBeenSet)
-  {
-   payload.WithBool("IncludeOtherSubscription", m_includeOtherSubscription);
-
+  if (m_includeOtherSubscriptionHasBeenSet) {
+    payload.WithBool("IncludeOtherSubscription", m_includeOtherSubscription);
   }
 
-  if(m_includeSupportHasBeenSet)
-  {
-   payload.WithBool("IncludeSupport", m_includeSupport);
-
+  if (m_includeSupportHasBeenSet) {
+    payload.WithBool("IncludeSupport", m_includeSupport);
   }
 
-  if(m_includeDiscountHasBeenSet)
-  {
-   payload.WithBool("IncludeDiscount", m_includeDiscount);
-
+  if (m_includeDiscountHasBeenSet) {
+    payload.WithBool("IncludeDiscount", m_includeDiscount);
   }
 
-  if(m_useAmortizedHasBeenSet)
-  {
-   payload.WithBool("UseAmortized", m_useAmortized);
-
+  if (m_useAmortizedHasBeenSet) {
+    payload.WithBool("UseAmortized", m_useAmortized);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

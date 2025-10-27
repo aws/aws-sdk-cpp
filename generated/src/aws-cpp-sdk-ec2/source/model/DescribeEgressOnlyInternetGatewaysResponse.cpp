@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEgressOnlyInternetGatewaysResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEgressOnlyInternetGatewaysResponse")) {
     resultNode = rootNode.FirstChild("DescribeEgressOnlyInternetGatewaysResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode egressOnlyInternetGatewaysNode = resultNode.FirstChild("egressOnlyInternetGatewaySet");
-    if(!egressOnlyInternetGatewaysNode.IsNull())
-    {
+    if (!egressOnlyInternetGatewaysNode.IsNull()) {
       XmlNode egressOnlyInternetGatewaysMember = egressOnlyInternetGatewaysNode.FirstChild("item");
       m_egressOnlyInternetGatewaysHasBeenSet = !egressOnlyInternetGatewaysMember.IsNull();
-      while(!egressOnlyInternetGatewaysMember.IsNull())
-      {
+      while (!egressOnlyInternetGatewaysMember.IsNull()) {
         m_egressOnlyInternetGateways.push_back(egressOnlyInternetGatewaysMember);
         egressOnlyInternetGatewaysMember = egressOnlyInternetGatewaysMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysRe
       m_egressOnlyInternetGatewaysHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysRe
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeEgressOnlyInternetGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeEgressOnlyInternetGatewaysResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

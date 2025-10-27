@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteCacheSecurityGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteCacheSecurityGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
-{
+Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteCacheSecurityGroup&";
-  if(m_cacheSecurityGroupNameHasBeenSet)
-  {
+  if (m_cacheSecurityGroupNameHasBeenSet) {
     ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteCacheSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteCacheSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

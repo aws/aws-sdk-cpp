@@ -11,105 +11,77 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-NodePropertyOverride::NodePropertyOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodePropertyOverride::NodePropertyOverride(JsonView jsonValue) { *this = jsonValue; }
 
-NodePropertyOverride& NodePropertyOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("targetNodes"))
-  {
+NodePropertyOverride& NodePropertyOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetNodes")) {
     m_targetNodes = jsonValue.GetString("targetNodes");
     m_targetNodesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containerOverrides"))
-  {
+  if (jsonValue.ValueExists("containerOverrides")) {
     m_containerOverrides = jsonValue.GetObject("containerOverrides");
     m_containerOverridesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecsPropertiesOverride"))
-  {
+  if (jsonValue.ValueExists("ecsPropertiesOverride")) {
     m_ecsPropertiesOverride = jsonValue.GetObject("ecsPropertiesOverride");
     m_ecsPropertiesOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceTypes"))
-  {
+  if (jsonValue.ValueExists("instanceTypes")) {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
-    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
-    {
+    for (unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex) {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
     }
     m_instanceTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eksPropertiesOverride"))
-  {
+  if (jsonValue.ValueExists("eksPropertiesOverride")) {
     m_eksPropertiesOverride = jsonValue.GetObject("eksPropertiesOverride");
     m_eksPropertiesOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("consumableResourcePropertiesOverride"))
-  {
+  if (jsonValue.ValueExists("consumableResourcePropertiesOverride")) {
     m_consumableResourcePropertiesOverride = jsonValue.GetObject("consumableResourcePropertiesOverride");
     m_consumableResourcePropertiesOverrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NodePropertyOverride::Jsonize() const
-{
+JsonValue NodePropertyOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetNodesHasBeenSet)
-  {
-   payload.WithString("targetNodes", m_targetNodes);
-
+  if (m_targetNodesHasBeenSet) {
+    payload.WithString("targetNodes", m_targetNodes);
   }
 
-  if(m_containerOverridesHasBeenSet)
-  {
-   payload.WithObject("containerOverrides", m_containerOverrides.Jsonize());
-
+  if (m_containerOverridesHasBeenSet) {
+    payload.WithObject("containerOverrides", m_containerOverrides.Jsonize());
   }
 
-  if(m_ecsPropertiesOverrideHasBeenSet)
-  {
-   payload.WithObject("ecsPropertiesOverride", m_ecsPropertiesOverride.Jsonize());
-
+  if (m_ecsPropertiesOverrideHasBeenSet) {
+    payload.WithObject("ecsPropertiesOverride", m_ecsPropertiesOverride.Jsonize());
   }
 
-  if(m_instanceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
-   for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
-   {
-     instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
-   }
-   payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
-
+  if (m_instanceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+    for (unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex) {
+      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
+    }
+    payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
   }
 
-  if(m_eksPropertiesOverrideHasBeenSet)
-  {
-   payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
-
+  if (m_eksPropertiesOverrideHasBeenSet) {
+    payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
   }
 
-  if(m_consumableResourcePropertiesOverrideHasBeenSet)
-  {
-   payload.WithObject("consumableResourcePropertiesOverride", m_consumableResourcePropertiesOverride.Jsonize());
-
+  if (m_consumableResourcePropertiesOverrideHasBeenSet) {
+    payload.WithObject("consumableResourcePropertiesOverride", m_consumableResourcePropertiesOverride.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

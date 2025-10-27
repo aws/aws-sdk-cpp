@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class TargetTypeEnum
-  {
-    NOT_SET,
-    instance,
-    ip,
-    lambda,
-    alb
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class TargetTypeEnum { NOT_SET, instance, ip, lambda, alb };
 
-namespace TargetTypeEnumMapper
-{
+namespace TargetTypeEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API TargetTypeEnum GetTargetTypeEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForTargetTypeEnum(TargetTypeEnum value);
-} // namespace TargetTypeEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace TargetTypeEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

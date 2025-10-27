@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-ResourceTypeDetails::ResourceTypeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceTypeDetails::ResourceTypeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceTypeDetails& ResourceTypeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("totalActivePublic"))
-  {
+ResourceTypeDetails& ResourceTypeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("totalActivePublic")) {
     m_totalActivePublic = jsonValue.GetInteger("totalActivePublic");
     m_totalActivePublicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalActiveCrossAccount"))
-  {
+  if (jsonValue.ValueExists("totalActiveCrossAccount")) {
     m_totalActiveCrossAccount = jsonValue.GetInteger("totalActiveCrossAccount");
     m_totalActiveCrossAccountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceTypeDetails::Jsonize() const
-{
+JsonValue ResourceTypeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalActivePublicHasBeenSet)
-  {
-   payload.WithInteger("totalActivePublic", m_totalActivePublic);
-
+  if (m_totalActivePublicHasBeenSet) {
+    payload.WithInteger("totalActivePublic", m_totalActivePublic);
   }
 
-  if(m_totalActiveCrossAccountHasBeenSet)
-  {
-   payload.WithInteger("totalActiveCrossAccount", m_totalActiveCrossAccount);
-
+  if (m_totalActiveCrossAccountHasBeenSet) {
+    payload.WithInteger("totalActiveCrossAccount", m_totalActiveCrossAccount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

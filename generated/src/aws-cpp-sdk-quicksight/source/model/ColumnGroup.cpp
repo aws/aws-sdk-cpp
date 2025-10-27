@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ColumnGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ColumnGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ColumnGroup::ColumnGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnGroup::ColumnGroup(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnGroup& ColumnGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GeoSpatialColumnGroup"))
-  {
+ColumnGroup& ColumnGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GeoSpatialColumnGroup")) {
     m_geoSpatialColumnGroup = jsonValue.GetObject("GeoSpatialColumnGroup");
     m_geoSpatialColumnGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnGroup::Jsonize() const
-{
+JsonValue ColumnGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_geoSpatialColumnGroupHasBeenSet)
-  {
-   payload.WithObject("GeoSpatialColumnGroup", m_geoSpatialColumnGroup.Jsonize());
-
+  if (m_geoSpatialColumnGroupHasBeenSet) {
+    payload.WithObject("GeoSpatialColumnGroup", m_geoSpatialColumnGroup.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

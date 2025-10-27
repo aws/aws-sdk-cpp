@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-BackendAPIConflictResolution::BackendAPIConflictResolution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackendAPIConflictResolution::BackendAPIConflictResolution(JsonView jsonValue) { *this = jsonValue; }
 
-BackendAPIConflictResolution& BackendAPIConflictResolution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resolutionStrategy"))
-  {
+BackendAPIConflictResolution& BackendAPIConflictResolution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resolutionStrategy")) {
     m_resolutionStrategy = ResolutionStrategyMapper::GetResolutionStrategyForName(jsonValue.GetString("resolutionStrategy"));
     m_resolutionStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackendAPIConflictResolution::Jsonize() const
-{
+JsonValue BackendAPIConflictResolution::Jsonize() const {
   JsonValue payload;
 
-  if(m_resolutionStrategyHasBeenSet)
-  {
-   payload.WithString("resolutionStrategy", ResolutionStrategyMapper::GetNameForResolutionStrategy(m_resolutionStrategy));
+  if (m_resolutionStrategyHasBeenSet) {
+    payload.WithString("resolutionStrategy", ResolutionStrategyMapper::GetNameForResolutionStrategy(m_resolutionStrategy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

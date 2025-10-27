@@ -12,71 +12,48 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateStageRequest::SerializePayload() const
-{
+Aws::String UpdateStageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessLogSettingsHasBeenSet)
-  {
-   payload.WithObject("accessLogSettings", m_accessLogSettings.Jsonize());
-
+  if (m_accessLogSettingsHasBeenSet) {
+    payload.WithObject("accessLogSettings", m_accessLogSettings.Jsonize());
   }
 
-  if(m_autoDeployHasBeenSet)
-  {
-   payload.WithBool("autoDeploy", m_autoDeploy);
-
+  if (m_autoDeployHasBeenSet) {
+    payload.WithBool("autoDeploy", m_autoDeploy);
   }
 
-  if(m_clientCertificateIdHasBeenSet)
-  {
-   payload.WithString("clientCertificateId", m_clientCertificateId);
-
+  if (m_clientCertificateIdHasBeenSet) {
+    payload.WithString("clientCertificateId", m_clientCertificateId);
   }
 
-  if(m_defaultRouteSettingsHasBeenSet)
-  {
-   payload.WithObject("defaultRouteSettings", m_defaultRouteSettings.Jsonize());
-
+  if (m_defaultRouteSettingsHasBeenSet) {
+    payload.WithObject("defaultRouteSettings", m_defaultRouteSettings.Jsonize());
   }
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_routeSettingsHasBeenSet)
-  {
-   JsonValue routeSettingsJsonMap;
-   for(auto& routeSettingsItem : m_routeSettings)
-   {
-     routeSettingsJsonMap.WithObject(routeSettingsItem.first, routeSettingsItem.second.Jsonize());
-   }
-   payload.WithObject("routeSettings", std::move(routeSettingsJsonMap));
-
+  if (m_routeSettingsHasBeenSet) {
+    JsonValue routeSettingsJsonMap;
+    for (auto& routeSettingsItem : m_routeSettings) {
+      routeSettingsJsonMap.WithObject(routeSettingsItem.first, routeSettingsItem.second.Jsonize());
+    }
+    payload.WithObject("routeSettings", std::move(routeSettingsJsonMap));
   }
 
-  if(m_stageVariablesHasBeenSet)
-  {
-   JsonValue stageVariablesJsonMap;
-   for(auto& stageVariablesItem : m_stageVariables)
-   {
-     stageVariablesJsonMap.WithString(stageVariablesItem.first, stageVariablesItem.second);
-   }
-   payload.WithObject("stageVariables", std::move(stageVariablesJsonMap));
-
+  if (m_stageVariablesHasBeenSet) {
+    JsonValue stageVariablesJsonMap;
+    for (auto& stageVariablesItem : m_stageVariables) {
+      stageVariablesJsonMap.WithString(stageVariablesItem.first, stageVariablesItem.second);
+    }
+    payload.WithObject("stageVariables", std::move(stageVariablesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

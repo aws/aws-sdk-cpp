@@ -4,8 +4,8 @@
  */
 
 #include <aws/bedrock/model/ListFoundationModelsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,43 +15,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListFoundationModelsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListFoundationModelsRequest::SerializePayload() const { return {}; }
+
+void ListFoundationModelsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_byProviderHasBeenSet) {
+    ss << m_byProvider;
+    uri.AddQueryStringParameter("byProvider", ss.str());
+    ss.str("");
+  }
+
+  if (m_byCustomizationTypeHasBeenSet) {
+    ss << ModelCustomizationMapper::GetNameForModelCustomization(m_byCustomizationType);
+    uri.AddQueryStringParameter("byCustomizationType", ss.str());
+    ss.str("");
+  }
+
+  if (m_byOutputModalityHasBeenSet) {
+    ss << ModelModalityMapper::GetNameForModelModality(m_byOutputModality);
+    uri.AddQueryStringParameter("byOutputModality", ss.str());
+    ss.str("");
+  }
+
+  if (m_byInferenceTypeHasBeenSet) {
+    ss << InferenceTypeMapper::GetNameForInferenceType(m_byInferenceType);
+    uri.AddQueryStringParameter("byInferenceType", ss.str());
+    ss.str("");
+  }
 }
-
-void ListFoundationModelsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_byProviderHasBeenSet)
-    {
-      ss << m_byProvider;
-      uri.AddQueryStringParameter("byProvider", ss.str());
-      ss.str("");
-    }
-
-    if(m_byCustomizationTypeHasBeenSet)
-    {
-      ss << ModelCustomizationMapper::GetNameForModelCustomization(m_byCustomizationType);
-      uri.AddQueryStringParameter("byCustomizationType", ss.str());
-      ss.str("");
-    }
-
-    if(m_byOutputModalityHasBeenSet)
-    {
-      ss << ModelModalityMapper::GetNameForModelModality(m_byOutputModality);
-      uri.AddQueryStringParameter("byOutputModality", ss.str());
-      ss.str("");
-    }
-
-    if(m_byInferenceTypeHasBeenSet)
-    {
-      ss << InferenceTypeMapper::GetNameForInferenceType(m_byInferenceType);
-      uri.AddQueryStringParameter("byInferenceType", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

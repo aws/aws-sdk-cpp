@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRoutingProfileDefaultOutboundQueueRequest::SerializePayload() const
-{
+Aws::String UpdateRoutingProfileDefaultOutboundQueueRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_defaultOutboundQueueIdHasBeenSet)
-  {
-   payload.WithString("DefaultOutboundQueueId", m_defaultOutboundQueueId);
-
+  if (m_defaultOutboundQueueIdHasBeenSet) {
+    payload.WithString("DefaultOutboundQueueId", m_defaultOutboundQueueId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -7,25 +7,16 @@
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
-  enum class CertificateType
-  {
-    NOT_SET,
-    AMPLIFY_MANAGED,
-    CUSTOM
-  };
+namespace Aws {
+namespace Amplify {
+namespace Model {
+enum class CertificateType { NOT_SET, AMPLIFY_MANAGED, CUSTOM };
 
-namespace CertificateTypeMapper
-{
+namespace CertificateTypeMapper {
 AWS_AMPLIFY_API CertificateType GetCertificateTypeForName(const Aws::String& name);
 
 AWS_AMPLIFY_API Aws::String GetNameForCertificateType(CertificateType value);
-} // namespace CertificateTypeMapper
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace CertificateTypeMapper
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ClusterInstanceStatusDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ClusterInstanceStatusDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ClusterInstanceStatusDetails::ClusterInstanceStatusDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterInstanceStatusDetails::ClusterInstanceStatusDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterInstanceStatusDetails& ClusterInstanceStatusDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+ClusterInstanceStatusDetails& ClusterInstanceStatusDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ClusterInstanceStatusMapper::GetClusterInstanceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterInstanceStatusDetails::Jsonize() const
-{
+JsonValue ClusterInstanceStatusDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ClusterInstanceStatusMapper::GetNameForClusterInstanceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ClusterInstanceStatusMapper::GetNameForClusterInstanceStatus(m_status));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

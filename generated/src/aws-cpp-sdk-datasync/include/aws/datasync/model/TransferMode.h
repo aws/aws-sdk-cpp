@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class TransferMode
-  {
-    NOT_SET,
-    CHANGED,
-    ALL
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class TransferMode { NOT_SET, CHANGED, ALL };
 
-namespace TransferModeMapper
-{
+namespace TransferModeMapper {
 AWS_DATASYNC_API TransferMode GetTransferModeForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForTransferMode(TransferMode value);
-} // namespace TransferModeMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace TransferModeMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

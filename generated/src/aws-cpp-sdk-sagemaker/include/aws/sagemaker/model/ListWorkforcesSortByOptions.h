@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ListWorkforcesSortByOptions
-  {
-    NOT_SET,
-    Name,
-    CreateDate
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ListWorkforcesSortByOptions { NOT_SET, Name, CreateDate };
 
-namespace ListWorkforcesSortByOptionsMapper
-{
+namespace ListWorkforcesSortByOptionsMapper {
 AWS_SAGEMAKER_API ListWorkforcesSortByOptions GetListWorkforcesSortByOptionsForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForListWorkforcesSortByOptions(ListWorkforcesSortByOptions value);
-} // namespace ListWorkforcesSortByOptionsMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ListWorkforcesSortByOptionsMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

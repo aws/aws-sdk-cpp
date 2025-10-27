@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/ListTLSInspectionConfigurationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/network-firewall/model/ListTLSInspectionConfigurationsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTLSInspectionConfigurationsResult::ListTLSInspectionConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTLSInspectionConfigurationsResult::ListTLSInspectionConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListTLSInspectionConfigurationsResult& ListTLSInspectionConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTLSInspectionConfigurationsResult& ListTLSInspectionConfigurationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TLSInspectionConfigurations"))
-  {
+  if (jsonValue.ValueExists("TLSInspectionConfigurations")) {
     Aws::Utils::Array<JsonView> tLSInspectionConfigurationsJsonList = jsonValue.GetArray("TLSInspectionConfigurations");
-    for(unsigned tLSInspectionConfigurationsIndex = 0; tLSInspectionConfigurationsIndex < tLSInspectionConfigurationsJsonList.GetLength(); ++tLSInspectionConfigurationsIndex)
-    {
+    for (unsigned tLSInspectionConfigurationsIndex = 0; tLSInspectionConfigurationsIndex < tLSInspectionConfigurationsJsonList.GetLength();
+         ++tLSInspectionConfigurationsIndex) {
       m_tLSInspectionConfigurations.push_back(tLSInspectionConfigurationsJsonList[tLSInspectionConfigurationsIndex].AsObject());
     }
     m_tLSInspectionConfigurationsHasBeenSet = true;
@@ -42,12 +39,10 @@ ListTLSInspectionConfigurationsResult& ListTLSInspectionConfigurationsResult::op
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-class CloudFormationEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudFormation {
+class CloudFormationEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace CloudFormation
+}  // namespace Aws

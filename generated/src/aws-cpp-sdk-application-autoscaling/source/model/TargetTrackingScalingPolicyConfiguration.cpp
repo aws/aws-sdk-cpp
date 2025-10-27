@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetValue"))
-  {
+TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetValue")) {
     m_targetValue = jsonValue.GetDouble("TargetValue");
     m_targetValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PredefinedMetricSpecification"))
-  {
+  if (jsonValue.ValueExists("PredefinedMetricSpecification")) {
     m_predefinedMetricSpecification = jsonValue.GetObject("PredefinedMetricSpecification");
     m_predefinedMetricSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomizedMetricSpecification"))
-  {
+  if (jsonValue.ValueExists("CustomizedMetricSpecification")) {
     m_customizedMetricSpecification = jsonValue.GetObject("CustomizedMetricSpecification");
     m_customizedMetricSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScaleOutCooldown"))
-  {
+  if (jsonValue.ValueExists("ScaleOutCooldown")) {
     m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
     m_scaleOutCooldownHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScaleInCooldown"))
-  {
+  if (jsonValue.ValueExists("ScaleInCooldown")) {
     m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
     m_scaleInCooldownHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisableScaleIn"))
-  {
+  if (jsonValue.ValueExists("DisableScaleIn")) {
     m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
     m_disableScaleInHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetTrackingScalingPolicyConfiguration::Jsonize() const
-{
+JsonValue TargetTrackingScalingPolicyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetValueHasBeenSet)
-  {
-   payload.WithDouble("TargetValue", m_targetValue);
-
+  if (m_targetValueHasBeenSet) {
+    payload.WithDouble("TargetValue", m_targetValue);
   }
 
-  if(m_predefinedMetricSpecificationHasBeenSet)
-  {
-   payload.WithObject("PredefinedMetricSpecification", m_predefinedMetricSpecification.Jsonize());
-
+  if (m_predefinedMetricSpecificationHasBeenSet) {
+    payload.WithObject("PredefinedMetricSpecification", m_predefinedMetricSpecification.Jsonize());
   }
 
-  if(m_customizedMetricSpecificationHasBeenSet)
-  {
-   payload.WithObject("CustomizedMetricSpecification", m_customizedMetricSpecification.Jsonize());
-
+  if (m_customizedMetricSpecificationHasBeenSet) {
+    payload.WithObject("CustomizedMetricSpecification", m_customizedMetricSpecification.Jsonize());
   }
 
-  if(m_scaleOutCooldownHasBeenSet)
-  {
-   payload.WithInteger("ScaleOutCooldown", m_scaleOutCooldown);
-
+  if (m_scaleOutCooldownHasBeenSet) {
+    payload.WithInteger("ScaleOutCooldown", m_scaleOutCooldown);
   }
 
-  if(m_scaleInCooldownHasBeenSet)
-  {
-   payload.WithInteger("ScaleInCooldown", m_scaleInCooldown);
-
+  if (m_scaleInCooldownHasBeenSet) {
+    payload.WithInteger("ScaleInCooldown", m_scaleInCooldown);
   }
 
-  if(m_disableScaleInHasBeenSet)
-  {
-   payload.WithBool("DisableScaleIn", m_disableScaleIn);
-
+  if (m_disableScaleInHasBeenSet) {
+    payload.WithBool("DisableScaleIn", m_disableScaleIn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

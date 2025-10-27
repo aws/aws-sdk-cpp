@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/ListScheduledQueriesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/timestream-query/model/ListScheduledQueriesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListScheduledQueriesResult::ListScheduledQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListScheduledQueriesResult::ListScheduledQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListScheduledQueriesResult& ListScheduledQueriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListScheduledQueriesResult& ListScheduledQueriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ScheduledQueries"))
-  {
+  if (jsonValue.ValueExists("ScheduledQueries")) {
     Aws::Utils::Array<JsonView> scheduledQueriesJsonList = jsonValue.GetArray("ScheduledQueries");
-    for(unsigned scheduledQueriesIndex = 0; scheduledQueriesIndex < scheduledQueriesJsonList.GetLength(); ++scheduledQueriesIndex)
-    {
+    for (unsigned scheduledQueriesIndex = 0; scheduledQueriesIndex < scheduledQueriesJsonList.GetLength(); ++scheduledQueriesIndex) {
       m_scheduledQueries.push_back(scheduledQueriesJsonList[scheduledQueriesIndex].AsObject());
     }
     m_scheduledQueriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

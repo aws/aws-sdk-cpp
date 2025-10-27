@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
-  enum class DeliverabilityTestStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETED
-  };
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
+enum class DeliverabilityTestStatus { NOT_SET, IN_PROGRESS, COMPLETED };
 
-namespace DeliverabilityTestStatusMapper
-{
+namespace DeliverabilityTestStatusMapper {
 AWS_PINPOINTEMAIL_API DeliverabilityTestStatus GetDeliverabilityTestStatusForName(const Aws::String& name);
 
 AWS_PINPOINTEMAIL_API Aws::String GetNameForDeliverabilityTestStatus(DeliverabilityTestStatus value);
-} // namespace DeliverabilityTestStatusMapper
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace DeliverabilityTestStatusMapper
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

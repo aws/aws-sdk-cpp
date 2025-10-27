@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-AuthorizerConfiguration::AuthorizerConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthorizerConfiguration::AuthorizerConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AuthorizerConfiguration& AuthorizerConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customJWTAuthorizer"))
-  {
+AuthorizerConfiguration& AuthorizerConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customJWTAuthorizer")) {
     m_customJWTAuthorizer = jsonValue.GetObject("customJWTAuthorizer");
     m_customJWTAuthorizerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthorizerConfiguration::Jsonize() const
-{
+JsonValue AuthorizerConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_customJWTAuthorizerHasBeenSet)
-  {
-   payload.WithObject("customJWTAuthorizer", m_customJWTAuthorizer.Jsonize());
-
+  if (m_customJWTAuthorizerHasBeenSet) {
+    payload.WithObject("customJWTAuthorizer", m_customJWTAuthorizer.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

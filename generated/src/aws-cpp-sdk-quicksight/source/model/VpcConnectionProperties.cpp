@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/VpcConnectionProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/VpcConnectionProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-VpcConnectionProperties::VpcConnectionProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConnectionProperties::VpcConnectionProperties(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConnectionProperties& VpcConnectionProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcConnectionArn"))
-  {
+VpcConnectionProperties& VpcConnectionProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcConnectionArn")) {
     m_vpcConnectionArn = jsonValue.GetString("VpcConnectionArn");
     m_vpcConnectionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcConnectionProperties::Jsonize() const
-{
+JsonValue VpcConnectionProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcConnectionArnHasBeenSet)
-  {
-   payload.WithString("VpcConnectionArn", m_vpcConnectionArn);
-
+  if (m_vpcConnectionArnHasBeenSet) {
+    payload.WithString("VpcConnectionArn", m_vpcConnectionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

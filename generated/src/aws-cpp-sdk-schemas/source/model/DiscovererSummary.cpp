@@ -3,58 +3,44 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/schemas/model/DiscovererSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/schemas/model/DiscovererSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Schemas
-{
-namespace Model
-{
+namespace Aws {
+namespace Schemas {
+namespace Model {
 
-DiscovererSummary::DiscovererSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DiscovererSummary::DiscovererSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DiscovererSummary& DiscovererSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DiscovererArn"))
-  {
+DiscovererSummary& DiscovererSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DiscovererArn")) {
     m_discovererArn = jsonValue.GetString("DiscovererArn");
     m_discovererArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DiscovererId"))
-  {
+  if (jsonValue.ValueExists("DiscovererId")) {
     m_discovererId = jsonValue.GetString("DiscovererId");
     m_discovererIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CrossAccount"))
-  {
+  if (jsonValue.ValueExists("CrossAccount")) {
     m_crossAccount = jsonValue.GetBool("CrossAccount");
     m_crossAccountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -62,53 +48,40 @@ DiscovererSummary& DiscovererSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DiscovererSummary::Jsonize() const
-{
+JsonValue DiscovererSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_discovererArnHasBeenSet)
-  {
-   payload.WithString("DiscovererArn", m_discovererArn);
-
+  if (m_discovererArnHasBeenSet) {
+    payload.WithString("DiscovererArn", m_discovererArn);
   }
 
-  if(m_discovererIdHasBeenSet)
-  {
-   payload.WithString("DiscovererId", m_discovererId);
-
+  if (m_discovererIdHasBeenSet) {
+    payload.WithString("DiscovererId", m_discovererId);
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", DiscovererStateMapper::GetNameForDiscovererState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", DiscovererStateMapper::GetNameForDiscovererState(m_state));
   }
 
-  if(m_crossAccountHasBeenSet)
-  {
-   payload.WithBool("CrossAccount", m_crossAccount);
-
+  if (m_crossAccountHasBeenSet) {
+    payload.WithBool("CrossAccount", m_crossAccount);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Schemas
-} // namespace Aws
+}  // namespace Model
+}  // namespace Schemas
+}  // namespace Aws

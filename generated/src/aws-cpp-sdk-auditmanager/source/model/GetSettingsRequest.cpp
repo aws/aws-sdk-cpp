@@ -12,11 +12,4 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetSettingsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetSettingsRequest::SerializePayload() const { return {}; }

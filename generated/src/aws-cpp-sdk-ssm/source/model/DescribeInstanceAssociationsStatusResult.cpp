@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/DescribeInstanceAssociationsStatusResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm/model/DescribeInstanceAssociationsStatusResult.h>
 
 #include <utility>
 
@@ -17,37 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("InstanceAssociationStatusInfos"))
-  {
+  if (jsonValue.ValueExists("InstanceAssociationStatusInfos")) {
     Aws::Utils::Array<JsonView> instanceAssociationStatusInfosJsonList = jsonValue.GetArray("InstanceAssociationStatusInfos");
-    for(unsigned instanceAssociationStatusInfosIndex = 0; instanceAssociationStatusInfosIndex < instanceAssociationStatusInfosJsonList.GetLength(); ++instanceAssociationStatusInfosIndex)
-    {
+    for (unsigned instanceAssociationStatusInfosIndex = 0;
+         instanceAssociationStatusInfosIndex < instanceAssociationStatusInfosJsonList.GetLength(); ++instanceAssociationStatusInfosIndex) {
       m_instanceAssociationStatusInfos.push_back(instanceAssociationStatusInfosJsonList[instanceAssociationStatusInfosIndex].AsObject());
     }
     m_instanceAssociationStatusInfosHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

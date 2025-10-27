@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class DataSource
-  {
-    NOT_SET,
-    FLOW_LOGS,
-    CLOUD_TRAIL,
-    DNS_LOGS,
-    S3_LOGS,
-    KUBERNETES_AUDIT_LOGS,
-    EC2_MALWARE_SCAN
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class DataSource { NOT_SET, FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS, KUBERNETES_AUDIT_LOGS, EC2_MALWARE_SCAN };
 
-namespace DataSourceMapper
-{
+namespace DataSourceMapper {
 AWS_GUARDDUTY_API DataSource GetDataSourceForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForDataSource(DataSource value);
-} // namespace DataSourceMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace DataSourceMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

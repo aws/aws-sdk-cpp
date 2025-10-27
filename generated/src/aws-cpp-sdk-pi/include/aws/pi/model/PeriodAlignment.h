@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pi/PI_EXPORTS.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
-  enum class PeriodAlignment
-  {
-    NOT_SET,
-    END_TIME,
-    START_TIME
-  };
+namespace Aws {
+namespace PI {
+namespace Model {
+enum class PeriodAlignment { NOT_SET, END_TIME, START_TIME };
 
-namespace PeriodAlignmentMapper
-{
+namespace PeriodAlignmentMapper {
 AWS_PI_API PeriodAlignment GetPeriodAlignmentForName(const Aws::String& name);
 
 AWS_PI_API Aws::String GetNameForPeriodAlignment(PeriodAlignment value);
-} // namespace PeriodAlignmentMapper
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace PeriodAlignmentMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

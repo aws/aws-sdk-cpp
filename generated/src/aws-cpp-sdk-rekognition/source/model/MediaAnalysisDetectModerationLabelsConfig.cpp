@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/MediaAnalysisDetectModerationLabelsConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/MediaAnalysisDetectModerationLabelsConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig(JsonView jsonValue) { *this = jsonValue; }
 
-MediaAnalysisDetectModerationLabelsConfig& MediaAnalysisDetectModerationLabelsConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinConfidence"))
-  {
+MediaAnalysisDetectModerationLabelsConfig& MediaAnalysisDetectModerationLabelsConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinConfidence")) {
     m_minConfidence = jsonValue.GetDouble("MinConfidence");
     m_minConfidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProjectVersion"))
-  {
+  if (jsonValue.ValueExists("ProjectVersion")) {
     m_projectVersion = jsonValue.GetString("ProjectVersion");
     m_projectVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaAnalysisDetectModerationLabelsConfig::Jsonize() const
-{
+JsonValue MediaAnalysisDetectModerationLabelsConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_minConfidenceHasBeenSet)
-  {
-   payload.WithDouble("MinConfidence", m_minConfidence);
-
+  if (m_minConfidenceHasBeenSet) {
+    payload.WithDouble("MinConfidence", m_minConfidence);
   }
 
-  if(m_projectVersionHasBeenSet)
-  {
-   payload.WithString("ProjectVersion", m_projectVersion);
-
+  if (m_projectVersionHasBeenSet) {
+    payload.WithString("ProjectVersion", m_projectVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

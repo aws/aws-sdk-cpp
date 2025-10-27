@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/AvailabilityZoneInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/AvailabilityZoneInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-AvailabilityZoneInfo::AvailabilityZoneInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AvailabilityZoneInfo::AvailabilityZoneInfo(JsonView jsonValue) { *this = jsonValue; }
 
-AvailabilityZoneInfo& AvailabilityZoneInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityZoneName"))
-  {
+AvailabilityZoneInfo& AvailabilityZoneInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityZoneName")) {
     m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
     m_availabilityZoneNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ZoneStatus"))
-  {
+  if (jsonValue.ValueExists("ZoneStatus")) {
     m_zoneStatus = ZoneStatusMapper::GetZoneStatusForName(jsonValue.GetString("ZoneStatus"));
     m_zoneStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConfiguredDataNodeCount"))
-  {
+  if (jsonValue.ValueExists("ConfiguredDataNodeCount")) {
     m_configuredDataNodeCount = jsonValue.GetString("ConfiguredDataNodeCount");
     m_configuredDataNodeCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvailableDataNodeCount"))
-  {
+  if (jsonValue.ValueExists("AvailableDataNodeCount")) {
     m_availableDataNodeCount = jsonValue.GetString("AvailableDataNodeCount");
     m_availableDataNodeCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalShards"))
-  {
+  if (jsonValue.ValueExists("TotalShards")) {
     m_totalShards = jsonValue.GetString("TotalShards");
     m_totalShardsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalUnAssignedShards"))
-  {
+  if (jsonValue.ValueExists("TotalUnAssignedShards")) {
     m_totalUnAssignedShards = jsonValue.GetString("TotalUnAssignedShards");
     m_totalUnAssignedShardsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AvailabilityZoneInfo::Jsonize() const
-{
+JsonValue AvailabilityZoneInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneNameHasBeenSet)
-  {
-   payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
-
+  if (m_availabilityZoneNameHasBeenSet) {
+    payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
   }
 
-  if(m_zoneStatusHasBeenSet)
-  {
-   payload.WithString("ZoneStatus", ZoneStatusMapper::GetNameForZoneStatus(m_zoneStatus));
+  if (m_zoneStatusHasBeenSet) {
+    payload.WithString("ZoneStatus", ZoneStatusMapper::GetNameForZoneStatus(m_zoneStatus));
   }
 
-  if(m_configuredDataNodeCountHasBeenSet)
-  {
-   payload.WithString("ConfiguredDataNodeCount", m_configuredDataNodeCount);
-
+  if (m_configuredDataNodeCountHasBeenSet) {
+    payload.WithString("ConfiguredDataNodeCount", m_configuredDataNodeCount);
   }
 
-  if(m_availableDataNodeCountHasBeenSet)
-  {
-   payload.WithString("AvailableDataNodeCount", m_availableDataNodeCount);
-
+  if (m_availableDataNodeCountHasBeenSet) {
+    payload.WithString("AvailableDataNodeCount", m_availableDataNodeCount);
   }
 
-  if(m_totalShardsHasBeenSet)
-  {
-   payload.WithString("TotalShards", m_totalShards);
-
+  if (m_totalShardsHasBeenSet) {
+    payload.WithString("TotalShards", m_totalShards);
   }
 
-  if(m_totalUnAssignedShardsHasBeenSet)
-  {
-   payload.WithString("TotalUnAssignedShards", m_totalUnAssignedShards);
-
+  if (m_totalUnAssignedShardsHasBeenSet) {
+    payload.WithString("TotalUnAssignedShards", m_totalUnAssignedShards);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

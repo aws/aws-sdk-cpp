@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/DescribeMetricSetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/DescribeMetricSetRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeMetricSetRequest::SerializePayload() const
-{
+Aws::String DescribeMetricSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_metricSetArnHasBeenSet)
-  {
-   payload.WithString("MetricSetArn", m_metricSetArn);
-
+  if (m_metricSetArnHasBeenSet) {
+    payload.WithString("MetricSetArn", m_metricSetArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

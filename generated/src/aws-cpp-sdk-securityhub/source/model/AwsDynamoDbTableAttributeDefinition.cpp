@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsDynamoDbTableAttributeDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsDynamoDbTableAttributeDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsDynamoDbTableAttributeDefinition::AwsDynamoDbTableAttributeDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsDynamoDbTableAttributeDefinition::AwsDynamoDbTableAttributeDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-AwsDynamoDbTableAttributeDefinition& AwsDynamoDbTableAttributeDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+AwsDynamoDbTableAttributeDefinition& AwsDynamoDbTableAttributeDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeType"))
-  {
+  if (jsonValue.ValueExists("AttributeType")) {
     m_attributeType = jsonValue.GetString("AttributeType");
     m_attributeTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsDynamoDbTableAttributeDefinition::Jsonize() const
-{
+JsonValue AwsDynamoDbTableAttributeDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_attributeTypeHasBeenSet)
-  {
-   payload.WithString("AttributeType", m_attributeType);
-
+  if (m_attributeTypeHasBeenSet) {
+    payload.WithString("AttributeType", m_attributeType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

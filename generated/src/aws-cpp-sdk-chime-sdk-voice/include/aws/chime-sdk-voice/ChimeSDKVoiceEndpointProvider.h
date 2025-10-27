@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointRules.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ChimeSDKVoiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ChimeSDKVoiceDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CHIMESDKVOICE_API ChimeSDKVoiceEndpointProvider : public ChimeSDKVoiceDefaultEpProviderBase
-{
-public:
-    using ChimeSDKVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CHIMESDKVOICE_API ChimeSDKVoiceEndpointProvider : public ChimeSDKVoiceDefaultEpProviderBase {
+ public:
+  using ChimeSDKVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ChimeSDKVoiceEndpointProvider()
-      : ChimeSDKVoiceDefaultEpProviderBase(Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::GetRulesBlob(), Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::RulesBlobSize)
-    {}
+  ChimeSDKVoiceEndpointProvider()
+      : ChimeSDKVoiceDefaultEpProviderBase(Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::GetRulesBlob(),
+                                           Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::RulesBlobSize) {}
 
-    ~ChimeSDKVoiceEndpointProvider()
-    {
-    }
+  ~ChimeSDKVoiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

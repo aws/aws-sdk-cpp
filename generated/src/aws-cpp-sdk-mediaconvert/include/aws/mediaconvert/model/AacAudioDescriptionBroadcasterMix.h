@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AacAudioDescriptionBroadcasterMix
-  {
-    NOT_SET,
-    BROADCASTER_MIXED_AD,
-    NORMAL
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AacAudioDescriptionBroadcasterMix { NOT_SET, BROADCASTER_MIXED_AD, NORMAL };
 
-namespace AacAudioDescriptionBroadcasterMixMapper
-{
+namespace AacAudioDescriptionBroadcasterMixMapper {
 AWS_MEDIACONVERT_API AacAudioDescriptionBroadcasterMix GetAacAudioDescriptionBroadcasterMixForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAacAudioDescriptionBroadcasterMix(AacAudioDescriptionBroadcasterMix value);
-} // namespace AacAudioDescriptionBroadcasterMixMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AacAudioDescriptionBroadcasterMixMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

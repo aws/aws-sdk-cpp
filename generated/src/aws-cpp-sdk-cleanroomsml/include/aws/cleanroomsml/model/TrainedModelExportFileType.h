@@ -7,25 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class TrainedModelExportFileType
-  {
-    NOT_SET,
-    MODEL,
-    OUTPUT
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class TrainedModelExportFileType { NOT_SET, MODEL, OUTPUT };
 
-namespace TrainedModelExportFileTypeMapper
-{
+namespace TrainedModelExportFileTypeMapper {
 AWS_CLEANROOMSML_API TrainedModelExportFileType GetTrainedModelExportFileTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForTrainedModelExportFileType(TrainedModelExportFileType value);
-} // namespace TrainedModelExportFileTypeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace TrainedModelExportFileTypeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

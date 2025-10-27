@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/InvalidChangeBatch.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/InvalidChangeBatch.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-InvalidChangeBatch::InvalidChangeBatch(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InvalidChangeBatch::InvalidChangeBatch(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InvalidChangeBatch& InvalidChangeBatch::operator =(const XmlNode& xmlNode)
-{
+InvalidChangeBatch& InvalidChangeBatch::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode messagesNode = resultNode.FirstChild("messages");
-    if(!messagesNode.IsNull())
-    {
+    if (!messagesNode.IsNull()) {
       XmlNode messagesMember = messagesNode.FirstChild("Message");
       m_messagesHasBeenSet = !messagesMember.IsNull();
-      while(!messagesMember.IsNull())
-      {
+      while (!messagesMember.IsNull()) {
         m_messages.push_back(messagesMember.GetText());
         messagesMember = messagesMember.NextNode("Message");
       }
@@ -45,8 +35,7 @@ InvalidChangeBatch& InvalidChangeBatch::operator =(const XmlNode& xmlNode)
       m_messagesHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
-    if(!messageNode.IsNull())
-    {
+    if (!messageNode.IsNull()) {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
@@ -55,27 +44,22 @@ InvalidChangeBatch& InvalidChangeBatch::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void InvalidChangeBatch::AddToNode(XmlNode& parentNode) const
-{
+void InvalidChangeBatch::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_messagesHasBeenSet)
-  {
-   XmlNode messagesParentNode = parentNode.CreateChildElement("messages");
-   for(const auto& item : m_messages)
-   {
-     XmlNode messagesNode = messagesParentNode.CreateChildElement("Message");
-     messagesNode.SetText(item);
-   }
+  if (m_messagesHasBeenSet) {
+    XmlNode messagesParentNode = parentNode.CreateChildElement("messages");
+    for (const auto& item : m_messages) {
+      XmlNode messagesNode = messagesParentNode.CreateChildElement("Message");
+      messagesNode.SetText(item);
+    }
   }
 
-  if(m_messageHasBeenSet)
-  {
-   XmlNode messageNode = parentNode.CreateChildElement("message");
-   messageNode.SetText(m_message);
+  if (m_messageHasBeenSet) {
+    XmlNode messageNode = parentNode.CreateChildElement("message");
+    messageNode.SetText(m_message);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

@@ -4,81 +4,94 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
-#include <aws/fsx/FSxRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSxRequest.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+#include <utility>
 
+namespace Aws {
+namespace FSx {
+namespace Model {
+
+/**
+ */
+class DeleteDataRepositoryAssociationRequest : public FSxRequest {
+ public:
+  AWS_FSX_API DeleteDataRepositoryAssociationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteDataRepositoryAssociation"; }
+
+  AWS_FSX_API Aws::String SerializePayload() const override;
+
+  AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the data repository association that you want to delete.</p>
    */
-  class DeleteDataRepositoryAssociationRequest : public FSxRequest
-  {
-  public:
-    AWS_FSX_API DeleteDataRepositoryAssociationRequest() = default;
+  inline const Aws::String& GetAssociationId() const { return m_associationId; }
+  inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+  template <typename AssociationIdT = Aws::String>
+  void SetAssociationId(AssociationIdT&& value) {
+    m_associationIdHasBeenSet = true;
+    m_associationId = std::forward<AssociationIdT>(value);
+  }
+  template <typename AssociationIdT = Aws::String>
+  DeleteDataRepositoryAssociationRequest& WithAssociationId(AssociationIdT&& value) {
+    SetAssociationId(std::forward<AssociationIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteDataRepositoryAssociation"; }
+  ///@{
 
-    AWS_FSX_API Aws::String SerializePayload() const override;
+  inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
+  inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+  template <typename ClientRequestTokenT = Aws::String>
+  void SetClientRequestToken(ClientRequestTokenT&& value) {
+    m_clientRequestTokenHasBeenSet = true;
+    m_clientRequestToken = std::forward<ClientRequestTokenT>(value);
+  }
+  template <typename ClientRequestTokenT = Aws::String>
+  DeleteDataRepositoryAssociationRequest& WithClientRequestToken(ClientRequestTokenT&& value) {
+    SetClientRequestToken(std::forward<ClientRequestTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>Set to <code>true</code> to delete the data in the file system that
+   * corresponds to the data repository association.</p>
+   */
+  inline bool GetDeleteDataInFileSystem() const { return m_deleteDataInFileSystem; }
+  inline bool DeleteDataInFileSystemHasBeenSet() const { return m_deleteDataInFileSystemHasBeenSet; }
+  inline void SetDeleteDataInFileSystem(bool value) {
+    m_deleteDataInFileSystemHasBeenSet = true;
+    m_deleteDataInFileSystem = value;
+  }
+  inline DeleteDataRepositoryAssociationRequest& WithDeleteDataInFileSystem(bool value) {
+    SetDeleteDataInFileSystem(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_associationId;
+  bool m_associationIdHasBeenSet = false;
 
+  Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientRequestTokenHasBeenSet = true;
 
-    ///@{
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
-    inline const Aws::String& GetAssociationId() const { return m_associationId; }
-    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    template<typename AssociationIdT = Aws::String>
-    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
-    template<typename AssociationIdT = Aws::String>
-    DeleteDataRepositoryAssociationRequest& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
-    ///@}
+  bool m_deleteDataInFileSystem{false};
+  bool m_deleteDataInFileSystemHasBeenSet = false;
+};
 
-    ///@{
-    
-    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
-    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    template<typename ClientRequestTokenT = Aws::String>
-    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
-    template<typename ClientRequestTokenT = Aws::String>
-    DeleteDataRepositoryAssociationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Set to <code>true</code> to delete the data in the file system that
-     * corresponds to the data repository association.</p>
-     */
-    inline bool GetDeleteDataInFileSystem() const { return m_deleteDataInFileSystem; }
-    inline bool DeleteDataInFileSystemHasBeenSet() const { return m_deleteDataInFileSystemHasBeenSet; }
-    inline void SetDeleteDataInFileSystem(bool value) { m_deleteDataInFileSystemHasBeenSet = true; m_deleteDataInFileSystem = value; }
-    inline DeleteDataRepositoryAssociationRequest& WithDeleteDataInFileSystem(bool value) { SetDeleteDataInFileSystem(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_associationId;
-    bool m_associationIdHasBeenSet = false;
-
-    Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientRequestTokenHasBeenSet = true;
-
-    bool m_deleteDataInFileSystem{false};
-    bool m_deleteDataInFileSystemHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

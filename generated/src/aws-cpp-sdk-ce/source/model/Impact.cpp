@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-Impact::Impact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Impact::Impact(JsonView jsonValue) { *this = jsonValue; }
 
-Impact& Impact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxImpact"))
-  {
+Impact& Impact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxImpact")) {
     m_maxImpact = jsonValue.GetDouble("MaxImpact");
     m_maxImpactHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalImpact"))
-  {
+  if (jsonValue.ValueExists("TotalImpact")) {
     m_totalImpact = jsonValue.GetDouble("TotalImpact");
     m_totalImpactHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalActualSpend"))
-  {
+  if (jsonValue.ValueExists("TotalActualSpend")) {
     m_totalActualSpend = jsonValue.GetDouble("TotalActualSpend");
     m_totalActualSpendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalExpectedSpend"))
-  {
+  if (jsonValue.ValueExists("TotalExpectedSpend")) {
     m_totalExpectedSpend = jsonValue.GetDouble("TotalExpectedSpend");
     m_totalExpectedSpendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalImpactPercentage"))
-  {
+  if (jsonValue.ValueExists("TotalImpactPercentage")) {
     m_totalImpactPercentage = jsonValue.GetDouble("TotalImpactPercentage");
     m_totalImpactPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Impact::Jsonize() const
-{
+JsonValue Impact::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxImpactHasBeenSet)
-  {
-   payload.WithDouble("MaxImpact", m_maxImpact);
-
+  if (m_maxImpactHasBeenSet) {
+    payload.WithDouble("MaxImpact", m_maxImpact);
   }
 
-  if(m_totalImpactHasBeenSet)
-  {
-   payload.WithDouble("TotalImpact", m_totalImpact);
-
+  if (m_totalImpactHasBeenSet) {
+    payload.WithDouble("TotalImpact", m_totalImpact);
   }
 
-  if(m_totalActualSpendHasBeenSet)
-  {
-   payload.WithDouble("TotalActualSpend", m_totalActualSpend);
-
+  if (m_totalActualSpendHasBeenSet) {
+    payload.WithDouble("TotalActualSpend", m_totalActualSpend);
   }
 
-  if(m_totalExpectedSpendHasBeenSet)
-  {
-   payload.WithDouble("TotalExpectedSpend", m_totalExpectedSpend);
-
+  if (m_totalExpectedSpendHasBeenSet) {
+    payload.WithDouble("TotalExpectedSpend", m_totalExpectedSpend);
   }
 
-  if(m_totalImpactPercentageHasBeenSet)
-  {
-   payload.WithDouble("TotalImpactPercentage", m_totalImpactPercentage);
-
+  if (m_totalImpactPercentageHasBeenSet) {
+    payload.WithDouble("TotalImpactPercentage", m_totalImpactPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

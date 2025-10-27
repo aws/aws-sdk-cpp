@@ -3,147 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/firehose/model/HttpEndpointDestinationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/model/HttpEndpointDestinationDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Firehose {
+namespace Model {
 
-HttpEndpointDestinationDescription::HttpEndpointDestinationDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpEndpointDestinationDescription::HttpEndpointDestinationDescription(JsonView jsonValue) { *this = jsonValue; }
 
-HttpEndpointDestinationDescription& HttpEndpointDestinationDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointConfiguration"))
-  {
+HttpEndpointDestinationDescription& HttpEndpointDestinationDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointConfiguration")) {
     m_endpointConfiguration = jsonValue.GetObject("EndpointConfiguration");
     m_endpointConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BufferingHints"))
-  {
+  if (jsonValue.ValueExists("BufferingHints")) {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
     m_bufferingHintsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
-  {
+  if (jsonValue.ValueExists("CloudWatchLoggingOptions")) {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestConfiguration"))
-  {
+  if (jsonValue.ValueExists("RequestConfiguration")) {
     m_requestConfiguration = jsonValue.GetObject("RequestConfiguration");
     m_requestConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProcessingConfiguration"))
-  {
+  if (jsonValue.ValueExists("ProcessingConfiguration")) {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
     m_processingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleARN"))
-  {
+  if (jsonValue.ValueExists("RoleARN")) {
     m_roleARN = jsonValue.GetString("RoleARN");
     m_roleARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetryOptions"))
-  {
+  if (jsonValue.ValueExists("RetryOptions")) {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
     m_retryOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BackupMode"))
-  {
+  if (jsonValue.ValueExists("S3BackupMode")) {
     m_s3BackupMode = HttpEndpointS3BackupModeMapper::GetHttpEndpointS3BackupModeForName(jsonValue.GetString("S3BackupMode"));
     m_s3BackupModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3DestinationDescription"))
-  {
+  if (jsonValue.ValueExists("S3DestinationDescription")) {
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
     m_s3DestinationDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
-  {
+  if (jsonValue.ValueExists("SecretsManagerConfiguration")) {
     m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
     m_secretsManagerConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpEndpointDestinationDescription::Jsonize() const
-{
+JsonValue HttpEndpointDestinationDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointConfigurationHasBeenSet)
-  {
-   payload.WithObject("EndpointConfiguration", m_endpointConfiguration.Jsonize());
-
+  if (m_endpointConfigurationHasBeenSet) {
+    payload.WithObject("EndpointConfiguration", m_endpointConfiguration.Jsonize());
   }
 
-  if(m_bufferingHintsHasBeenSet)
-  {
-   payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
-
+  if (m_bufferingHintsHasBeenSet) {
+    payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
   }
 
-  if(m_cloudWatchLoggingOptionsHasBeenSet)
-  {
-   payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
-
+  if (m_cloudWatchLoggingOptionsHasBeenSet) {
+    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
   }
 
-  if(m_requestConfigurationHasBeenSet)
-  {
-   payload.WithObject("RequestConfiguration", m_requestConfiguration.Jsonize());
-
+  if (m_requestConfigurationHasBeenSet) {
+    payload.WithObject("RequestConfiguration", m_requestConfiguration.Jsonize());
   }
 
-  if(m_processingConfigurationHasBeenSet)
-  {
-   payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
-
+  if (m_processingConfigurationHasBeenSet) {
+    payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
   }
 
-  if(m_roleARNHasBeenSet)
-  {
-   payload.WithString("RoleARN", m_roleARN);
-
+  if (m_roleARNHasBeenSet) {
+    payload.WithString("RoleARN", m_roleARN);
   }
 
-  if(m_retryOptionsHasBeenSet)
-  {
-   payload.WithObject("RetryOptions", m_retryOptions.Jsonize());
-
+  if (m_retryOptionsHasBeenSet) {
+    payload.WithObject("RetryOptions", m_retryOptions.Jsonize());
   }
 
-  if(m_s3BackupModeHasBeenSet)
-  {
-   payload.WithString("S3BackupMode", HttpEndpointS3BackupModeMapper::GetNameForHttpEndpointS3BackupMode(m_s3BackupMode));
+  if (m_s3BackupModeHasBeenSet) {
+    payload.WithString("S3BackupMode", HttpEndpointS3BackupModeMapper::GetNameForHttpEndpointS3BackupMode(m_s3BackupMode));
   }
 
-  if(m_s3DestinationDescriptionHasBeenSet)
-  {
-   payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
-
+  if (m_s3DestinationDescriptionHasBeenSet) {
+    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
   }
 
-  if(m_secretsManagerConfigurationHasBeenSet)
-  {
-   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
-
+  if (m_secretsManagerConfigurationHasBeenSet) {
+    payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

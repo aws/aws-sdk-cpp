@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-LinkAttributeAction::LinkAttributeAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LinkAttributeAction::LinkAttributeAction(JsonView jsonValue) { *this = jsonValue; }
 
-LinkAttributeAction& LinkAttributeAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeActionType"))
-  {
+LinkAttributeAction& LinkAttributeAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeActionType")) {
     m_attributeActionType = UpdateActionTypeMapper::GetUpdateActionTypeForName(jsonValue.GetString("AttributeActionType"));
     m_attributeActionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeUpdateValue"))
-  {
+  if (jsonValue.ValueExists("AttributeUpdateValue")) {
     m_attributeUpdateValue = jsonValue.GetObject("AttributeUpdateValue");
     m_attributeUpdateValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LinkAttributeAction::Jsonize() const
-{
+JsonValue LinkAttributeAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeActionTypeHasBeenSet)
-  {
-   payload.WithString("AttributeActionType", UpdateActionTypeMapper::GetNameForUpdateActionType(m_attributeActionType));
+  if (m_attributeActionTypeHasBeenSet) {
+    payload.WithString("AttributeActionType", UpdateActionTypeMapper::GetNameForUpdateActionType(m_attributeActionType));
   }
 
-  if(m_attributeUpdateValueHasBeenSet)
-  {
-   payload.WithObject("AttributeUpdateValue", m_attributeUpdateValue.Jsonize());
-
+  if (m_attributeUpdateValueHasBeenSet) {
+    payload.WithObject("AttributeUpdateValue", m_attributeUpdateValue.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

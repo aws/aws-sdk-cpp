@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class SetupStatus
-  {
-    NOT_SET,
-    succeeded,
-    failed,
-    inProgress
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class SetupStatus { NOT_SET, succeeded, failed, inProgress };
 
-namespace SetupStatusMapper
-{
+namespace SetupStatusMapper {
 AWS_LIGHTSAIL_API SetupStatus GetSetupStatusForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForSetupStatus(SetupStatus value);
-} // namespace SetupStatusMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace SetupStatusMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class BotVersionReplicaSortAttribute
-  {
-    NOT_SET,
-    BotVersion
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class BotVersionReplicaSortAttribute { NOT_SET, BotVersion };
 
-namespace BotVersionReplicaSortAttributeMapper
-{
+namespace BotVersionReplicaSortAttributeMapper {
 AWS_LEXMODELSV2_API BotVersionReplicaSortAttribute GetBotVersionReplicaSortAttributeForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForBotVersionReplicaSortAttribute(BotVersionReplicaSortAttribute value);
-} // namespace BotVersionReplicaSortAttributeMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BotVersionReplicaSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

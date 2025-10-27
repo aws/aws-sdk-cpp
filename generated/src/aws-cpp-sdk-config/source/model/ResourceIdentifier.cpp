@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceIdentifier::ResourceIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceType"))
-  {
+ResourceIdentifier& ResourceIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
-  {
+  if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceName"))
-  {
+  if (jsonValue.ValueExists("resourceName")) {
     m_resourceName = jsonValue.GetString("resourceName");
     m_resourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceDeletionTime"))
-  {
+  if (jsonValue.ValueExists("resourceDeletionTime")) {
     m_resourceDeletionTime = jsonValue.GetDouble("resourceDeletionTime");
     m_resourceDeletionTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceIdentifier::Jsonize() const
-{
+JsonValue ResourceIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("resourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
-  if(m_resourceDeletionTimeHasBeenSet)
-  {
-   payload.WithDouble("resourceDeletionTime", m_resourceDeletionTime.SecondsWithMSPrecision());
+  if (m_resourceDeletionTimeHasBeenSet) {
+    payload.WithDouble("resourceDeletionTime", m_resourceDeletionTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

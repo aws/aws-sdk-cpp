@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
-  enum class ConfigurationItemType
-  {
-    NOT_SET,
-    SERVER,
-    PROCESS,
-    CONNECTION,
-    APPLICATION
-  };
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
+enum class ConfigurationItemType { NOT_SET, SERVER, PROCESS, CONNECTION, APPLICATION };
 
-namespace ConfigurationItemTypeMapper
-{
+namespace ConfigurationItemTypeMapper {
 AWS_APPLICATIONDISCOVERYSERVICE_API ConfigurationItemType GetConfigurationItemTypeForName(const Aws::String& name);
 
 AWS_APPLICATIONDISCOVERYSERVICE_API Aws::String GetNameForConfigurationItemType(ConfigurationItemType value);
-} // namespace ConfigurationItemTypeMapper
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace ConfigurationItemTypeMapper
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

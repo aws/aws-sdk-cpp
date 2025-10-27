@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SagemakerEdgeManager
-{
-enum class SagemakerEdgeManagerErrors
-{
-  //From Core//
+namespace Aws {
+namespace SagemakerEdgeManager {
+enum class SagemakerEdgeManagerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SagemakerEdgeManagerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,26 +44,28 @@ enum class SagemakerEdgeManagerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INTERNAL_SERVICE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
-class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerError : public Aws::Client::AWSError<SagemakerEdgeManagerErrors>
-{
-public:
+class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerError : public Aws::Client::AWSError<SagemakerEdgeManagerErrors> {
+ public:
   SagemakerEdgeManagerError() {}
-  SagemakerEdgeManagerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
-  SagemakerEdgeManagerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
-  SagemakerEdgeManagerError(const Aws::Client::AWSError<SagemakerEdgeManagerErrors>& rhs) : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
-  SagemakerEdgeManagerError(Aws::Client::AWSError<SagemakerEdgeManagerErrors>&& rhs) : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
+  SagemakerEdgeManagerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
+  SagemakerEdgeManagerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
+  SagemakerEdgeManagerError(const Aws::Client::AWSError<SagemakerEdgeManagerErrors>& rhs)
+      : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
+  SagemakerEdgeManagerError(Aws::Client::AWSError<SagemakerEdgeManagerErrors>&& rhs)
+      : Aws::Client::AWSError<SagemakerEdgeManagerErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace SagemakerEdgeManagerErrorMapper
-{
-  AWS_SAGEMAKEREDGEMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SagemakerEdgeManagerErrorMapper {
+AWS_SAGEMAKEREDGEMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SagemakerEdgeManager
-} // namespace Aws
+}  // namespace SagemakerEdgeManager
+}  // namespace Aws

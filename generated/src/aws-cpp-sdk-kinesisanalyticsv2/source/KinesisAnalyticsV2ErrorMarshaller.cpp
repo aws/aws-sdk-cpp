@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::KinesisAnalyticsV2;
 
-AWSError<CoreErrors> KinesisAnalyticsV2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KinesisAnalyticsV2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KinesisAnalyticsV2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

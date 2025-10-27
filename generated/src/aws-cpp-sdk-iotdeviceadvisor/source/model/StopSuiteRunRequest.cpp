@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/StopSuiteRunRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/model/StopSuiteRunRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::IoTDeviceAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopSuiteRunRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StopSuiteRunRequest::SerializePayload() const { return {}; }

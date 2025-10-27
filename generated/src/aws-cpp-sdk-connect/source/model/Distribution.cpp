@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Distribution::Distribution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Distribution::Distribution(JsonView jsonValue) { *this = jsonValue; }
 
-Distribution& Distribution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Region"))
-  {
+Distribution& Distribution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Percentage"))
-  {
+  if (jsonValue.ValueExists("Percentage")) {
     m_percentage = jsonValue.GetInteger("Percentage");
     m_percentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Distribution::Jsonize() const
-{
+JsonValue Distribution::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_percentageHasBeenSet)
-  {
-   payload.WithInteger("Percentage", m_percentage);
-
+  if (m_percentageHasBeenSet) {
+    payload.WithInteger("Percentage", m_percentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

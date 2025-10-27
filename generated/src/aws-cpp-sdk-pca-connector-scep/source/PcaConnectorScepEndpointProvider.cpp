@@ -5,12 +5,8 @@
 
 #include <aws/pca-connector-scep/PcaConnectorScepEndpointProvider.h>
 
-namespace Aws
-{
-namespace PcaConnectorScep
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PcaConnectorScep
-} // namespace Aws
+namespace Aws {
+namespace PcaConnectorScep {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PcaConnectorScep
+}  // namespace Aws

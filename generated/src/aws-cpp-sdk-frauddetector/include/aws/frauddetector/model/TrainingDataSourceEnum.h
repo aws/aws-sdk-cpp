@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class TrainingDataSourceEnum
-  {
-    NOT_SET,
-    EXTERNAL_EVENTS,
-    INGESTED_EVENTS
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class TrainingDataSourceEnum { NOT_SET, EXTERNAL_EVENTS, INGESTED_EVENTS };
 
-namespace TrainingDataSourceEnumMapper
-{
+namespace TrainingDataSourceEnumMapper {
 AWS_FRAUDDETECTOR_API TrainingDataSourceEnum GetTrainingDataSourceEnumForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForTrainingDataSourceEnum(TrainingDataSourceEnum value);
-} // namespace TrainingDataSourceEnumMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace TrainingDataSourceEnumMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

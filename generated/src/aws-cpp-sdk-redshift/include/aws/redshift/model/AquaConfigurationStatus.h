@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class AquaConfigurationStatus
-  {
-    NOT_SET,
-    enabled,
-    disabled,
-    auto_
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class AquaConfigurationStatus { NOT_SET, enabled, disabled, auto_ };
 
-namespace AquaConfigurationStatusMapper
-{
+namespace AquaConfigurationStatusMapper {
 AWS_REDSHIFT_API AquaConfigurationStatus GetAquaConfigurationStatusForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForAquaConfigurationStatus(AquaConfigurationStatus value);
-} // namespace AquaConfigurationStatusMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace AquaConfigurationStatusMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

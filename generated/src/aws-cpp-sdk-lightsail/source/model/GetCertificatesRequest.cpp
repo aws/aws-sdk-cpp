@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetCertificatesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/GetCertificatesRequest.h>
 
 #include <utility>
 
@@ -12,50 +12,36 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCertificatesRequest::SerializePayload() const
-{
+Aws::String GetCertificatesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateStatusesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
-   for(unsigned certificateStatusesIndex = 0; certificateStatusesIndex < certificateStatusesJsonList.GetLength(); ++certificateStatusesIndex)
-   {
-     certificateStatusesJsonList[certificateStatusesIndex].AsString(CertificateStatusMapper::GetNameForCertificateStatus(m_certificateStatuses[certificateStatusesIndex]));
-   }
-   payload.WithArray("certificateStatuses", std::move(certificateStatusesJsonList));
-
+  if (m_certificateStatusesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
+    for (unsigned certificateStatusesIndex = 0; certificateStatusesIndex < certificateStatusesJsonList.GetLength();
+         ++certificateStatusesIndex) {
+      certificateStatusesJsonList[certificateStatusesIndex].AsString(
+          CertificateStatusMapper::GetNameForCertificateStatus(m_certificateStatuses[certificateStatusesIndex]));
+    }
+    payload.WithArray("certificateStatuses", std::move(certificateStatusesJsonList));
   }
 
-  if(m_includeCertificateDetailsHasBeenSet)
-  {
-   payload.WithBool("includeCertificateDetails", m_includeCertificateDetails);
-
+  if (m_includeCertificateDetailsHasBeenSet) {
+    payload.WithBool("includeCertificateDetails", m_includeCertificateDetails);
   }
 
-  if(m_certificateNameHasBeenSet)
-  {
-   payload.WithString("certificateName", m_certificateName);
-
+  if (m_certificateNameHasBeenSet) {
+    payload.WithString("certificateName", m_certificateName);
   }
 
-  if(m_pageTokenHasBeenSet)
-  {
-   payload.WithString("pageToken", m_pageToken);
-
+  if (m_pageTokenHasBeenSet) {
+    payload.WithString("pageToken", m_pageToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCertificatesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCertificatesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.GetCertificates"));
   return headers;
-
 }
-
-
-
-

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/UnsupportedAvailabilityZone.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/UnsupportedAvailabilityZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
+namespace Aws {
+namespace EFS {
+namespace Model {
 
-UnsupportedAvailabilityZone::UnsupportedAvailabilityZone(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnsupportedAvailabilityZone::UnsupportedAvailabilityZone(JsonView jsonValue) { *this = jsonValue; }
 
-UnsupportedAvailabilityZone& UnsupportedAvailabilityZone::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+UnsupportedAvailabilityZone& UnsupportedAvailabilityZone::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnsupportedAvailabilityZone::Jsonize() const
-{
+JsonValue UnsupportedAvailabilityZone::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

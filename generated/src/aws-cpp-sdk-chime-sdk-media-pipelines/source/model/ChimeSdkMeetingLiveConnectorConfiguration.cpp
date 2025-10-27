@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ChimeSdkMeetingLiveConnectorConfiguration& ChimeSdkMeetingLiveConnectorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+ChimeSdkMeetingLiveConnectorConfiguration& ChimeSdkMeetingLiveConnectorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MuxType"))
-  {
+  if (jsonValue.ValueExists("MuxType")) {
     m_muxType = LiveConnectorMuxTypeMapper::GetLiveConnectorMuxTypeForName(jsonValue.GetString("MuxType"));
     m_muxTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompositedVideo"))
-  {
+  if (jsonValue.ValueExists("CompositedVideo")) {
     m_compositedVideo = jsonValue.GetObject("CompositedVideo");
     m_compositedVideoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceConfiguration"))
-  {
+  if (jsonValue.ValueExists("SourceConfiguration")) {
     m_sourceConfiguration = jsonValue.GetObject("SourceConfiguration");
     m_sourceConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChimeSdkMeetingLiveConnectorConfiguration::Jsonize() const
-{
+JsonValue ChimeSdkMeetingLiveConnectorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_muxTypeHasBeenSet)
-  {
-   payload.WithString("MuxType", LiveConnectorMuxTypeMapper::GetNameForLiveConnectorMuxType(m_muxType));
+  if (m_muxTypeHasBeenSet) {
+    payload.WithString("MuxType", LiveConnectorMuxTypeMapper::GetNameForLiveConnectorMuxType(m_muxType));
   }
 
-  if(m_compositedVideoHasBeenSet)
-  {
-   payload.WithObject("CompositedVideo", m_compositedVideo.Jsonize());
-
+  if (m_compositedVideoHasBeenSet) {
+    payload.WithObject("CompositedVideo", m_compositedVideo.Jsonize());
   }
 
-  if(m_sourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("SourceConfiguration", m_sourceConfiguration.Jsonize());
-
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("SourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

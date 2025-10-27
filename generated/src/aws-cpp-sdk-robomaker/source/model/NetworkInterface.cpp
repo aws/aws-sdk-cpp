@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/NetworkInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/NetworkInterface.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-NetworkInterface::NetworkInterface(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkInterface::NetworkInterface(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("networkInterfaceId"))
-  {
+NetworkInterface& NetworkInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("networkInterfaceId")) {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
     m_networkInterfaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateIpAddress"))
-  {
+  if (jsonValue.ValueExists("privateIpAddress")) {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
     m_privateIpAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("publicIpAddress"))
-  {
+  if (jsonValue.ValueExists("publicIpAddress")) {
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
     m_publicIpAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkInterface::Jsonize() const
-{
+JsonValue NetworkInterface::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-   payload.WithString("networkInterfaceId", m_networkInterfaceId);
-
+  if (m_networkInterfaceIdHasBeenSet) {
+    payload.WithString("networkInterfaceId", m_networkInterfaceId);
   }
 
-  if(m_privateIpAddressHasBeenSet)
-  {
-   payload.WithString("privateIpAddress", m_privateIpAddress);
-
+  if (m_privateIpAddressHasBeenSet) {
+    payload.WithString("privateIpAddress", m_privateIpAddress);
   }
 
-  if(m_publicIpAddressHasBeenSet)
-  {
-   payload.WithString("publicIpAddress", m_publicIpAddress);
-
+  if (m_publicIpAddressHasBeenSet) {
+    payload.WithString("publicIpAddress", m_publicIpAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

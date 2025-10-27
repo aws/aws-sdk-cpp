@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Bedrock {
+namespace Model {
 
+/**
+ * <p>The metric for the validator.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ValidatorMetric">AWS
+ * API Reference</a></p>
+ */
+class ValidatorMetric {
+ public:
+  AWS_BEDROCK_API ValidatorMetric() = default;
+  AWS_BEDROCK_API ValidatorMetric(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API ValidatorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The metric for the validator.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ValidatorMetric">AWS
-   * API Reference</a></p>
+   * <p>The validation loss associated with this validator.</p>
    */
-  class ValidatorMetric
-  {
-  public:
-    AWS_BEDROCK_API ValidatorMetric() = default;
-    AWS_BEDROCK_API ValidatorMetric(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API ValidatorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline double GetValidationLoss() const { return m_validationLoss; }
+  inline bool ValidationLossHasBeenSet() const { return m_validationLossHasBeenSet; }
+  inline void SetValidationLoss(double value) {
+    m_validationLossHasBeenSet = true;
+    m_validationLoss = value;
+  }
+  inline ValidatorMetric& WithValidationLoss(double value) {
+    SetValidationLoss(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_validationLoss{0.0};
+  bool m_validationLossHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The validation loss associated with this validator.</p>
-     */
-    inline double GetValidationLoss() const { return m_validationLoss; }
-    inline bool ValidationLossHasBeenSet() const { return m_validationLossHasBeenSet; }
-    inline void SetValidationLoss(double value) { m_validationLossHasBeenSet = true; m_validationLoss = value; }
-    inline ValidatorMetric& WithValidationLoss(double value) { SetValidationLoss(value); return *this;}
-    ///@}
-  private:
-
-    double m_validationLoss{0.0};
-    bool m_validationLossHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

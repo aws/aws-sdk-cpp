@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/ActionRequired.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/model/ActionRequired.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
+namespace Aws {
+namespace MQ {
+namespace Model {
 
-ActionRequired::ActionRequired(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionRequired::ActionRequired(JsonView jsonValue) { *this = jsonValue; }
 
-ActionRequired& ActionRequired::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actionRequiredCode"))
-  {
+ActionRequired& ActionRequired::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionRequiredCode")) {
     m_actionRequiredCode = jsonValue.GetString("actionRequiredCode");
     m_actionRequiredCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actionRequiredInfo"))
-  {
+  if (jsonValue.ValueExists("actionRequiredInfo")) {
     m_actionRequiredInfo = jsonValue.GetString("actionRequiredInfo");
     m_actionRequiredInfoHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionRequired::Jsonize() const
-{
+JsonValue ActionRequired::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionRequiredCodeHasBeenSet)
-  {
-   payload.WithString("actionRequiredCode", m_actionRequiredCode);
-
+  if (m_actionRequiredCodeHasBeenSet) {
+    payload.WithString("actionRequiredCode", m_actionRequiredCode);
   }
 
-  if(m_actionRequiredInfoHasBeenSet)
-  {
-   payload.WithString("actionRequiredInfo", m_actionRequiredInfo);
-
+  if (m_actionRequiredInfoHasBeenSet) {
+    payload.WithString("actionRequiredInfo", m_actionRequiredInfo);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

@@ -12,31 +12,20 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListAccountAssociationsRequest::SerializePayload() const
-{
+Aws::String ListAccountAssociationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_billingPeriodHasBeenSet)
-  {
-   payload.WithString("BillingPeriod", m_billingPeriod);
-
+  if (m_billingPeriodHasBeenSet) {
+    payload.WithString("BillingPeriod", m_billingPeriod);
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   payload.WithObject("Filters", m_filters.Jsonize());
-
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("Filters", m_filters.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/ListTextTranslationJobsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/translate/model/ListTextTranslationJobsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTextTranslationJobsResult::ListTextTranslationJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListTextTranslationJobsResult::ListTextTranslationJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListTextTranslationJobsResult& ListTextTranslationJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTextTranslationJobsResult& ListTextTranslationJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TextTranslationJobPropertiesList"))
-  {
+  if (jsonValue.ValueExists("TextTranslationJobPropertiesList")) {
     Aws::Utils::Array<JsonView> textTranslationJobPropertiesListJsonList = jsonValue.GetArray("TextTranslationJobPropertiesList");
-    for(unsigned textTranslationJobPropertiesListIndex = 0; textTranslationJobPropertiesListIndex < textTranslationJobPropertiesListJsonList.GetLength(); ++textTranslationJobPropertiesListIndex)
-    {
-      m_textTranslationJobPropertiesList.push_back(textTranslationJobPropertiesListJsonList[textTranslationJobPropertiesListIndex].AsObject());
+    for (unsigned textTranslationJobPropertiesListIndex = 0;
+         textTranslationJobPropertiesListIndex < textTranslationJobPropertiesListJsonList.GetLength();
+         ++textTranslationJobPropertiesListIndex) {
+      m_textTranslationJobPropertiesList.push_back(
+          textTranslationJobPropertiesListJsonList[textTranslationJobPropertiesListIndex].AsObject());
     }
     m_textTranslationJobPropertiesListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

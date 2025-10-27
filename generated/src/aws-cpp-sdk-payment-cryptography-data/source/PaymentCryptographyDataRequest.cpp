@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-} // namespace PaymentCryptographyData
-} // namespace Aws
+namespace Aws {
+namespace PaymentCryptographyData {}  // namespace PaymentCryptographyData
+}  // namespace Aws

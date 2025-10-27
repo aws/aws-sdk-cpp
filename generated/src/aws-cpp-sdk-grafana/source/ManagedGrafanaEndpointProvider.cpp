@@ -5,12 +5,8 @@
 
 #include <aws/grafana/ManagedGrafanaEndpointProvider.h>
 
-namespace Aws
-{
-namespace ManagedGrafana
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ManagedGrafana
-} // namespace Aws
+namespace Aws {
+namespace ManagedGrafana {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ManagedGrafana
+}  // namespace Aws

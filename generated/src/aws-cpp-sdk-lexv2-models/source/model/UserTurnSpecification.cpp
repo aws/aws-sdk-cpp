@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/UserTurnSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/UserTurnSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-UserTurnSpecification::UserTurnSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserTurnSpecification::UserTurnSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-UserTurnSpecification& UserTurnSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("input"))
-  {
+UserTurnSpecification& UserTurnSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("input")) {
     m_input = jsonValue.GetObject("input");
     m_inputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expected"))
-  {
+  if (jsonValue.ValueExists("expected")) {
     m_expected = jsonValue.GetObject("expected");
     m_expectedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserTurnSpecification::Jsonize() const
-{
+JsonValue UserTurnSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithObject("input", m_input.Jsonize());
-
+  if (m_inputHasBeenSet) {
+    payload.WithObject("input", m_input.Jsonize());
   }
 
-  if(m_expectedHasBeenSet)
-  {
-   payload.WithObject("expected", m_expected.Jsonize());
-
+  if (m_expectedHasBeenSet) {
+    payload.WithObject("expected", m_expected.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

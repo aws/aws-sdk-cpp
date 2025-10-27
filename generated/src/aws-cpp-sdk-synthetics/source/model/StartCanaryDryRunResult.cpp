@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/StartCanaryDryRunResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/synthetics/model/StartCanaryDryRunResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartCanaryDryRunResult::StartCanaryDryRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+StartCanaryDryRunResult::StartCanaryDryRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-StartCanaryDryRunResult& StartCanaryDryRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+StartCanaryDryRunResult& StartCanaryDryRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DryRunConfig"))
-  {
+  if (jsonValue.ValueExists("DryRunConfig")) {
     m_dryRunConfig = jsonValue.GetObject("DryRunConfig");
     m_dryRunConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

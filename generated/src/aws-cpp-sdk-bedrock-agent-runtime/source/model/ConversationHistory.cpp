@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-ConversationHistory::ConversationHistory(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConversationHistory::ConversationHistory(JsonView jsonValue) { *this = jsonValue; }
 
-ConversationHistory& ConversationHistory::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messages"))
-  {
+ConversationHistory& ConversationHistory::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messages")) {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
-    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
-    {
+    for (unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex) {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
     m_messagesHasBeenSet = true;
@@ -37,24 +28,20 @@ ConversationHistory& ConversationHistory::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ConversationHistory::Jsonize() const
-{
+JsonValue ConversationHistory::Jsonize() const {
   JsonValue payload;
 
-  if(m_messagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
-   for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
-   {
-     messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
-   }
-   payload.WithArray("messages", std::move(messagesJsonList));
-
+  if (m_messagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
+    for (unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex) {
+      messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());
+    }
+    payload.WithArray("messages", std::move(messagesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

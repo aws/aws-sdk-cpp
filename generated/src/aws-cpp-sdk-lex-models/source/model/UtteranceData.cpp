@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/UtteranceData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/model/UtteranceData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
 
-UtteranceData::UtteranceData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UtteranceData::UtteranceData(JsonView jsonValue) { *this = jsonValue; }
 
-UtteranceData& UtteranceData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("utteranceString"))
-  {
+UtteranceData& UtteranceData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("utteranceString")) {
     m_utteranceString = jsonValue.GetString("utteranceString");
     m_utteranceStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("distinctUsers"))
-  {
+  if (jsonValue.ValueExists("distinctUsers")) {
     m_distinctUsers = jsonValue.GetInteger("distinctUsers");
     m_distinctUsersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("firstUtteredDate"))
-  {
+  if (jsonValue.ValueExists("firstUtteredDate")) {
     m_firstUtteredDate = jsonValue.GetDouble("firstUtteredDate");
     m_firstUtteredDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUtteredDate"))
-  {
+  if (jsonValue.ValueExists("lastUtteredDate")) {
     m_lastUtteredDate = jsonValue.GetDouble("lastUtteredDate");
     m_lastUtteredDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UtteranceData::Jsonize() const
-{
+JsonValue UtteranceData::Jsonize() const {
   JsonValue payload;
 
-  if(m_utteranceStringHasBeenSet)
-  {
-   payload.WithString("utteranceString", m_utteranceString);
-
+  if (m_utteranceStringHasBeenSet) {
+    payload.WithString("utteranceString", m_utteranceString);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("count", m_count);
   }
 
-  if(m_distinctUsersHasBeenSet)
-  {
-   payload.WithInteger("distinctUsers", m_distinctUsers);
-
+  if (m_distinctUsersHasBeenSet) {
+    payload.WithInteger("distinctUsers", m_distinctUsers);
   }
 
-  if(m_firstUtteredDateHasBeenSet)
-  {
-   payload.WithDouble("firstUtteredDate", m_firstUtteredDate.SecondsWithMSPrecision());
+  if (m_firstUtteredDateHasBeenSet) {
+    payload.WithDouble("firstUtteredDate", m_firstUtteredDate.SecondsWithMSPrecision());
   }
 
-  if(m_lastUtteredDateHasBeenSet)
-  {
-   payload.WithDouble("lastUtteredDate", m_lastUtteredDate.SecondsWithMSPrecision());
+  if (m_lastUtteredDateHasBeenSet) {
+    payload.WithDouble("lastUtteredDate", m_lastUtteredDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

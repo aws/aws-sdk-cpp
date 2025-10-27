@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
 
 #include <utility>
 
@@ -17,28 +17,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTableReplicaAutoScalingResult::DescribeTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeTableReplicaAutoScalingResult::DescribeTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeTableReplicaAutoScalingResult& DescribeTableReplicaAutoScalingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeTableReplicaAutoScalingResult& DescribeTableReplicaAutoScalingResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TableAutoScalingDescription"))
-  {
+  if (jsonValue.ValueExists("TableAutoScalingDescription")) {
     m_tableAutoScalingDescription = jsonValue.GetObject("TableAutoScalingDescription");
     m_tableAutoScalingDescriptionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

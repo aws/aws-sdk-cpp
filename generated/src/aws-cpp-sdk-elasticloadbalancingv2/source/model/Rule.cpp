@@ -3,53 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/Rule.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/Rule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-Rule::Rule(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Rule::Rule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Rule& Rule::operator =(const XmlNode& xmlNode)
-{
+Rule& Rule::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ruleArnNode = resultNode.FirstChild("RuleArn");
-    if(!ruleArnNode.IsNull())
-    {
+    if (!ruleArnNode.IsNull()) {
       m_ruleArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleArnNode.GetText());
       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
-    if(!priorityNode.IsNull())
-    {
+    if (!priorityNode.IsNull()) {
       m_priority = Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText());
       m_priorityHasBeenSet = true;
     }
     XmlNode conditionsNode = resultNode.FirstChild("Conditions");
-    if(!conditionsNode.IsNull())
-    {
+    if (!conditionsNode.IsNull()) {
       XmlNode conditionsMember = conditionsNode.FirstChild("member");
       m_conditionsHasBeenSet = !conditionsMember.IsNull();
-      while(!conditionsMember.IsNull())
-      {
+      while (!conditionsMember.IsNull()) {
         m_conditions.push_back(conditionsMember);
         conditionsMember = conditionsMember.NextNode("member");
       }
@@ -57,12 +45,10 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
       m_conditionsHasBeenSet = true;
     }
     XmlNode actionsNode = resultNode.FirstChild("Actions");
-    if(!actionsNode.IsNull())
-    {
+    if (!actionsNode.IsNull()) {
       XmlNode actionsMember = actionsNode.FirstChild("member");
       m_actionsHasBeenSet = !actionsMember.IsNull();
-      while(!actionsMember.IsNull())
-      {
+      while (!actionsMember.IsNull()) {
         m_actions.push_back(actionsMember);
         actionsMember = actionsMember.NextNode("member");
       }
@@ -70,18 +56,16 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
       m_actionsHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
-    if(!isDefaultNode.IsNull())
-    {
-      m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
+    if (!isDefaultNode.IsNull()) {
+      m_isDefault =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
     XmlNode transformsNode = resultNode.FirstChild("Transforms");
-    if(!transformsNode.IsNull())
-    {
+    if (!transformsNode.IsNull()) {
       XmlNode transformsMember = transformsNode.FirstChild("member");
       m_transformsHasBeenSet = !transformsMember.IsNull();
-      while(!transformsMember.IsNull())
-      {
+      while (!transformsMember.IsNull()) {
         m_transforms.push_back(transformsMember);
         transformsMember = transformsMember.NextNode("member");
       }
@@ -93,104 +77,83 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Rule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_ruleArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RuleArn=" << StringUtils::URLEncode(m_ruleArn.c_str()) << "&";
+void Rule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_ruleArnHasBeenSet) {
+    oStream << location << index << locationValue << ".RuleArn=" << StringUtils::URLEncode(m_ruleArn.c_str()) << "&";
   }
 
-  if(m_priorityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Priority=" << StringUtils::URLEncode(m_priority.c_str()) << "&";
+  if (m_priorityHasBeenSet) {
+    oStream << location << index << locationValue << ".Priority=" << StringUtils::URLEncode(m_priority.c_str()) << "&";
   }
 
-  if(m_conditionsHasBeenSet)
-  {
-      unsigned conditionsIdx = 1;
-      for(auto& item : m_conditions)
-      {
-        Aws::StringStream conditionsSs;
-        conditionsSs << location << index << locationValue << ".Conditions.member." << conditionsIdx++;
-        item.OutputToStream(oStream, conditionsSs.str().c_str());
-      }
+  if (m_conditionsHasBeenSet) {
+    unsigned conditionsIdx = 1;
+    for (auto& item : m_conditions) {
+      Aws::StringStream conditionsSs;
+      conditionsSs << location << index << locationValue << ".Conditions.member." << conditionsIdx++;
+      item.OutputToStream(oStream, conditionsSs.str().c_str());
+    }
   }
 
-  if(m_actionsHasBeenSet)
-  {
-      unsigned actionsIdx = 1;
-      for(auto& item : m_actions)
-      {
-        Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".Actions.member." << actionsIdx++;
-        item.OutputToStream(oStream, actionsSs.str().c_str());
-      }
+  if (m_actionsHasBeenSet) {
+    unsigned actionsIdx = 1;
+    for (auto& item : m_actions) {
+      Aws::StringStream actionsSs;
+      actionsSs << location << index << locationValue << ".Actions.member." << actionsIdx++;
+      item.OutputToStream(oStream, actionsSs.str().c_str());
+    }
   }
 
-  if(m_isDefaultHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  if (m_isDefaultHasBeenSet) {
+    oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
-  if(m_transformsHasBeenSet)
-  {
-      unsigned transformsIdx = 1;
-      for(auto& item : m_transforms)
-      {
-        Aws::StringStream transformsSs;
-        transformsSs << location << index << locationValue << ".Transforms.member." << transformsIdx++;
-        item.OutputToStream(oStream, transformsSs.str().c_str());
-      }
-  }
-
-}
-
-void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_ruleArnHasBeenSet)
-  {
-      oStream << location << ".RuleArn=" << StringUtils::URLEncode(m_ruleArn.c_str()) << "&";
-  }
-  if(m_priorityHasBeenSet)
-  {
-      oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority.c_str()) << "&";
-  }
-  if(m_conditionsHasBeenSet)
-  {
-      unsigned conditionsIdx = 1;
-      for(auto& item : m_conditions)
-      {
-        Aws::StringStream conditionsSs;
-        conditionsSs << location << ".Conditions.member." << conditionsIdx++;
-        item.OutputToStream(oStream, conditionsSs.str().c_str());
-      }
-  }
-  if(m_actionsHasBeenSet)
-  {
-      unsigned actionsIdx = 1;
-      for(auto& item : m_actions)
-      {
-        Aws::StringStream actionsSs;
-        actionsSs << location << ".Actions.member." << actionsIdx++;
-        item.OutputToStream(oStream, actionsSs.str().c_str());
-      }
-  }
-  if(m_isDefaultHasBeenSet)
-  {
-      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
-  }
-  if(m_transformsHasBeenSet)
-  {
-      unsigned transformsIdx = 1;
-      for(auto& item : m_transforms)
-      {
-        Aws::StringStream transformsSs;
-        transformsSs << location << ".Transforms.member." << transformsIdx++;
-        item.OutputToStream(oStream, transformsSs.str().c_str());
-      }
+  if (m_transformsHasBeenSet) {
+    unsigned transformsIdx = 1;
+    for (auto& item : m_transforms) {
+      Aws::StringStream transformsSs;
+      transformsSs << location << index << locationValue << ".Transforms.member." << transformsIdx++;
+      item.OutputToStream(oStream, transformsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_ruleArnHasBeenSet) {
+    oStream << location << ".RuleArn=" << StringUtils::URLEncode(m_ruleArn.c_str()) << "&";
+  }
+  if (m_priorityHasBeenSet) {
+    oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority.c_str()) << "&";
+  }
+  if (m_conditionsHasBeenSet) {
+    unsigned conditionsIdx = 1;
+    for (auto& item : m_conditions) {
+      Aws::StringStream conditionsSs;
+      conditionsSs << location << ".Conditions.member." << conditionsIdx++;
+      item.OutputToStream(oStream, conditionsSs.str().c_str());
+    }
+  }
+  if (m_actionsHasBeenSet) {
+    unsigned actionsIdx = 1;
+    for (auto& item : m_actions) {
+      Aws::StringStream actionsSs;
+      actionsSs << location << ".Actions.member." << actionsIdx++;
+      item.OutputToStream(oStream, actionsSs.str().c_str());
+    }
+  }
+  if (m_isDefaultHasBeenSet) {
+    oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if (m_transformsHasBeenSet) {
+    unsigned transformsIdx = 1;
+    for (auto& item : m_transforms) {
+      Aws::StringStream transformsSs;
+      transformsSs << location << ".Transforms.member." << transformsIdx++;
+      item.OutputToStream(oStream, transformsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

@@ -3,58 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/ExperimentTemplateExperimentOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/ExperimentTemplateExperimentOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
+namespace Aws {
+namespace FIS {
+namespace Model {
 
-ExperimentTemplateExperimentOptions::ExperimentTemplateExperimentOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentTemplateExperimentOptions::ExperimentTemplateExperimentOptions(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentTemplateExperimentOptions& ExperimentTemplateExperimentOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountTargeting"))
-  {
+ExperimentTemplateExperimentOptions& ExperimentTemplateExperimentOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountTargeting")) {
     m_accountTargeting = AccountTargetingMapper::GetAccountTargetingForName(jsonValue.GetString("accountTargeting"));
     m_accountTargetingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("emptyTargetResolutionMode"))
-  {
-    m_emptyTargetResolutionMode = EmptyTargetResolutionModeMapper::GetEmptyTargetResolutionModeForName(jsonValue.GetString("emptyTargetResolutionMode"));
+  if (jsonValue.ValueExists("emptyTargetResolutionMode")) {
+    m_emptyTargetResolutionMode =
+        EmptyTargetResolutionModeMapper::GetEmptyTargetResolutionModeForName(jsonValue.GetString("emptyTargetResolutionMode"));
     m_emptyTargetResolutionModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentTemplateExperimentOptions::Jsonize() const
-{
+JsonValue ExperimentTemplateExperimentOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountTargetingHasBeenSet)
-  {
-   payload.WithString("accountTargeting", AccountTargetingMapper::GetNameForAccountTargeting(m_accountTargeting));
+  if (m_accountTargetingHasBeenSet) {
+    payload.WithString("accountTargeting", AccountTargetingMapper::GetNameForAccountTargeting(m_accountTargeting));
   }
 
-  if(m_emptyTargetResolutionModeHasBeenSet)
-  {
-   payload.WithString("emptyTargetResolutionMode", EmptyTargetResolutionModeMapper::GetNameForEmptyTargetResolutionMode(m_emptyTargetResolutionMode));
+  if (m_emptyTargetResolutionModeHasBeenSet) {
+    payload.WithString("emptyTargetResolutionMode",
+                       EmptyTargetResolutionModeMapper::GetNameForEmptyTargetResolutionMode(m_emptyTargetResolutionMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

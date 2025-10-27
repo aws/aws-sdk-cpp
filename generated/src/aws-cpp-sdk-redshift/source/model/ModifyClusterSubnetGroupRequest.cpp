@@ -3,40 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterSubnetGroupRequest::SerializePayload() const
-{
+Aws::String ModifyClusterSubnetGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterSubnetGroup&";
-  if(m_clusterSubnetGroupNameHasBeenSet)
-  {
+  if (m_clusterSubnetGroupNameHasBeenSet) {
     ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-    if (m_subnetIds.empty())
-    {
+  if (m_subnetIdsHasBeenSet) {
+    if (m_subnetIds.empty()) {
       ss << "SubnetIds=&";
-    }
-    else
-    {
+    } else {
       unsigned subnetIdsCount = 1;
-      for(auto& item : m_subnetIds)
-      {
-        ss << "SubnetIds.SubnetIdentifier." << subnetIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_subnetIds) {
+        ss << "SubnetIds.SubnetIdentifier." << subnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         subnetIdsCount++;
       }
     }
@@ -46,8 +37,4 @@ Aws::String ModifyClusterSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyClusterSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyClusterSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

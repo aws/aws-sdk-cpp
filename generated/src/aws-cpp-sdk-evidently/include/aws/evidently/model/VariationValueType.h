@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
-  enum class VariationValueType
-  {
-    NOT_SET,
-    STRING,
-    LONG,
-    DOUBLE,
-    BOOLEAN
-  };
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
+enum class VariationValueType { NOT_SET, STRING, LONG, DOUBLE, BOOLEAN };
 
-namespace VariationValueTypeMapper
-{
+namespace VariationValueTypeMapper {
 AWS_CLOUDWATCHEVIDENTLY_API VariationValueType GetVariationValueTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHEVIDENTLY_API Aws::String GetNameForVariationValueType(VariationValueType value);
-} // namespace VariationValueTypeMapper
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace VariationValueTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

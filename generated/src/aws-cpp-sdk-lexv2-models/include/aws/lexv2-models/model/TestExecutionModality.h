@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class TestExecutionModality
-  {
-    NOT_SET,
-    Text,
-    Audio
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class TestExecutionModality { NOT_SET, Text, Audio };
 
-namespace TestExecutionModalityMapper
-{
+namespace TestExecutionModalityMapper {
 AWS_LEXMODELSV2_API TestExecutionModality GetTestExecutionModalityForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForTestExecutionModality(TestExecutionModality value);
-} // namespace TestExecutionModalityMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace TestExecutionModalityMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

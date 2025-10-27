@@ -7,26 +7,16 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    GPU,
-    VCPU,
-    MEMORY
-  };
+namespace Aws {
+namespace Batch {
+namespace Model {
+enum class ResourceType { NOT_SET, GPU, VCPU, MEMORY };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_BATCH_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_BATCH_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/FieldsForThemeGeneration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/FieldsForThemeGeneration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-FieldsForThemeGeneration::FieldsForThemeGeneration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldsForThemeGeneration::FieldsForThemeGeneration(JsonView jsonValue) { *this = jsonValue; }
 
-FieldsForThemeGeneration& FieldsForThemeGeneration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("itemName"))
-  {
+FieldsForThemeGeneration& FieldsForThemeGeneration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("itemName")) {
     m_itemName = jsonValue.GetString("itemName");
     m_itemNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldsForThemeGeneration::Jsonize() const
-{
+JsonValue FieldsForThemeGeneration::Jsonize() const {
   JsonValue payload;
 
-  if(m_itemNameHasBeenSet)
-  {
-   payload.WithString("itemName", m_itemName);
-
+  if (m_itemNameHasBeenSet) {
+    payload.WithString("itemName", m_itemName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

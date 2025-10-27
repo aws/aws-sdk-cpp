@@ -3,330 +3,244 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/RuntimeContext.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/RuntimeContext.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-RuntimeContext::RuntimeContext(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuntimeContext::RuntimeContext(JsonView jsonValue) { *this = jsonValue; }
 
-RuntimeContext& RuntimeContext::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("modifyingProcess"))
-  {
+RuntimeContext& RuntimeContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("modifyingProcess")) {
     m_modifyingProcess = jsonValue.GetObject("modifyingProcess");
     m_modifyingProcessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
+  if (jsonValue.ValueExists("modifiedAt")) {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scriptPath"))
-  {
+  if (jsonValue.ValueExists("scriptPath")) {
     m_scriptPath = jsonValue.GetString("scriptPath");
     m_scriptPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("libraryPath"))
-  {
+  if (jsonValue.ValueExists("libraryPath")) {
     m_libraryPath = jsonValue.GetString("libraryPath");
     m_libraryPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ldPreloadValue"))
-  {
+  if (jsonValue.ValueExists("ldPreloadValue")) {
     m_ldPreloadValue = jsonValue.GetString("ldPreloadValue");
     m_ldPreloadValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("socketPath"))
-  {
+  if (jsonValue.ValueExists("socketPath")) {
     m_socketPath = jsonValue.GetString("socketPath");
     m_socketPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("runcBinaryPath"))
-  {
+  if (jsonValue.ValueExists("runcBinaryPath")) {
     m_runcBinaryPath = jsonValue.GetString("runcBinaryPath");
     m_runcBinaryPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("releaseAgentPath"))
-  {
+  if (jsonValue.ValueExists("releaseAgentPath")) {
     m_releaseAgentPath = jsonValue.GetString("releaseAgentPath");
     m_releaseAgentPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mountSource"))
-  {
+  if (jsonValue.ValueExists("mountSource")) {
     m_mountSource = jsonValue.GetString("mountSource");
     m_mountSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mountTarget"))
-  {
+  if (jsonValue.ValueExists("mountTarget")) {
     m_mountTarget = jsonValue.GetString("mountTarget");
     m_mountTargetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileSystemType"))
-  {
+  if (jsonValue.ValueExists("fileSystemType")) {
     m_fileSystemType = jsonValue.GetString("fileSystemType");
     m_fileSystemTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flags"))
-  {
+  if (jsonValue.ValueExists("flags")) {
     Aws::Utils::Array<JsonView> flagsJsonList = jsonValue.GetArray("flags");
-    for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
-    {
+    for (unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex) {
       m_flags.push_back(flagsJsonList[flagsIndex].AsString());
     }
     m_flagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("moduleName"))
-  {
+  if (jsonValue.ValueExists("moduleName")) {
     m_moduleName = jsonValue.GetString("moduleName");
     m_moduleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("moduleFilePath"))
-  {
+  if (jsonValue.ValueExists("moduleFilePath")) {
     m_moduleFilePath = jsonValue.GetString("moduleFilePath");
     m_moduleFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("moduleSha256"))
-  {
+  if (jsonValue.ValueExists("moduleSha256")) {
     m_moduleSha256 = jsonValue.GetString("moduleSha256");
     m_moduleSha256HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shellHistoryFilePath"))
-  {
+  if (jsonValue.ValueExists("shellHistoryFilePath")) {
     m_shellHistoryFilePath = jsonValue.GetString("shellHistoryFilePath");
     m_shellHistoryFilePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetProcess"))
-  {
+  if (jsonValue.ValueExists("targetProcess")) {
     m_targetProcess = jsonValue.GetObject("targetProcess");
     m_targetProcessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("addressFamily"))
-  {
+  if (jsonValue.ValueExists("addressFamily")) {
     m_addressFamily = jsonValue.GetString("addressFamily");
     m_addressFamilyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ianaProtocolNumber"))
-  {
+  if (jsonValue.ValueExists("ianaProtocolNumber")) {
     m_ianaProtocolNumber = jsonValue.GetInteger("ianaProtocolNumber");
     m_ianaProtocolNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memoryRegions"))
-  {
+  if (jsonValue.ValueExists("memoryRegions")) {
     Aws::Utils::Array<JsonView> memoryRegionsJsonList = jsonValue.GetArray("memoryRegions");
-    for(unsigned memoryRegionsIndex = 0; memoryRegionsIndex < memoryRegionsJsonList.GetLength(); ++memoryRegionsIndex)
-    {
+    for (unsigned memoryRegionsIndex = 0; memoryRegionsIndex < memoryRegionsJsonList.GetLength(); ++memoryRegionsIndex) {
       m_memoryRegions.push_back(memoryRegionsJsonList[memoryRegionsIndex].AsString());
     }
     m_memoryRegionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("toolName"))
-  {
+  if (jsonValue.ValueExists("toolName")) {
     m_toolName = jsonValue.GetString("toolName");
     m_toolNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("toolCategory"))
-  {
+  if (jsonValue.ValueExists("toolCategory")) {
     m_toolCategory = jsonValue.GetString("toolCategory");
     m_toolCategoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceName"))
-  {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commandLineExample"))
-  {
+  if (jsonValue.ValueExists("commandLineExample")) {
     m_commandLineExample = jsonValue.GetString("commandLineExample");
     m_commandLineExampleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("threatFilePath"))
-  {
+  if (jsonValue.ValueExists("threatFilePath")) {
     m_threatFilePath = jsonValue.GetString("threatFilePath");
     m_threatFilePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuntimeContext::Jsonize() const
-{
+JsonValue RuntimeContext::Jsonize() const {
   JsonValue payload;
 
-  if(m_modifyingProcessHasBeenSet)
-  {
-   payload.WithObject("modifyingProcess", m_modifyingProcess.Jsonize());
-
+  if (m_modifyingProcessHasBeenSet) {
+    payload.WithObject("modifyingProcess", m_modifyingProcess.Jsonize());
   }
 
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
+  if (m_modifiedAtHasBeenSet) {
+    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
-  if(m_scriptPathHasBeenSet)
-  {
-   payload.WithString("scriptPath", m_scriptPath);
-
+  if (m_scriptPathHasBeenSet) {
+    payload.WithString("scriptPath", m_scriptPath);
   }
 
-  if(m_libraryPathHasBeenSet)
-  {
-   payload.WithString("libraryPath", m_libraryPath);
-
+  if (m_libraryPathHasBeenSet) {
+    payload.WithString("libraryPath", m_libraryPath);
   }
 
-  if(m_ldPreloadValueHasBeenSet)
-  {
-   payload.WithString("ldPreloadValue", m_ldPreloadValue);
-
+  if (m_ldPreloadValueHasBeenSet) {
+    payload.WithString("ldPreloadValue", m_ldPreloadValue);
   }
 
-  if(m_socketPathHasBeenSet)
-  {
-   payload.WithString("socketPath", m_socketPath);
-
+  if (m_socketPathHasBeenSet) {
+    payload.WithString("socketPath", m_socketPath);
   }
 
-  if(m_runcBinaryPathHasBeenSet)
-  {
-   payload.WithString("runcBinaryPath", m_runcBinaryPath);
-
+  if (m_runcBinaryPathHasBeenSet) {
+    payload.WithString("runcBinaryPath", m_runcBinaryPath);
   }
 
-  if(m_releaseAgentPathHasBeenSet)
-  {
-   payload.WithString("releaseAgentPath", m_releaseAgentPath);
-
+  if (m_releaseAgentPathHasBeenSet) {
+    payload.WithString("releaseAgentPath", m_releaseAgentPath);
   }
 
-  if(m_mountSourceHasBeenSet)
-  {
-   payload.WithString("mountSource", m_mountSource);
-
+  if (m_mountSourceHasBeenSet) {
+    payload.WithString("mountSource", m_mountSource);
   }
 
-  if(m_mountTargetHasBeenSet)
-  {
-   payload.WithString("mountTarget", m_mountTarget);
-
+  if (m_mountTargetHasBeenSet) {
+    payload.WithString("mountTarget", m_mountTarget);
   }
 
-  if(m_fileSystemTypeHasBeenSet)
-  {
-   payload.WithString("fileSystemType", m_fileSystemType);
-
+  if (m_fileSystemTypeHasBeenSet) {
+    payload.WithString("fileSystemType", m_fileSystemType);
   }
 
-  if(m_flagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> flagsJsonList(m_flags.size());
-   for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
-   {
-     flagsJsonList[flagsIndex].AsString(m_flags[flagsIndex]);
-   }
-   payload.WithArray("flags", std::move(flagsJsonList));
-
+  if (m_flagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> flagsJsonList(m_flags.size());
+    for (unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex) {
+      flagsJsonList[flagsIndex].AsString(m_flags[flagsIndex]);
+    }
+    payload.WithArray("flags", std::move(flagsJsonList));
   }
 
-  if(m_moduleNameHasBeenSet)
-  {
-   payload.WithString("moduleName", m_moduleName);
-
+  if (m_moduleNameHasBeenSet) {
+    payload.WithString("moduleName", m_moduleName);
   }
 
-  if(m_moduleFilePathHasBeenSet)
-  {
-   payload.WithString("moduleFilePath", m_moduleFilePath);
-
+  if (m_moduleFilePathHasBeenSet) {
+    payload.WithString("moduleFilePath", m_moduleFilePath);
   }
 
-  if(m_moduleSha256HasBeenSet)
-  {
-   payload.WithString("moduleSha256", m_moduleSha256);
-
+  if (m_moduleSha256HasBeenSet) {
+    payload.WithString("moduleSha256", m_moduleSha256);
   }
 
-  if(m_shellHistoryFilePathHasBeenSet)
-  {
-   payload.WithString("shellHistoryFilePath", m_shellHistoryFilePath);
-
+  if (m_shellHistoryFilePathHasBeenSet) {
+    payload.WithString("shellHistoryFilePath", m_shellHistoryFilePath);
   }
 
-  if(m_targetProcessHasBeenSet)
-  {
-   payload.WithObject("targetProcess", m_targetProcess.Jsonize());
-
+  if (m_targetProcessHasBeenSet) {
+    payload.WithObject("targetProcess", m_targetProcess.Jsonize());
   }
 
-  if(m_addressFamilyHasBeenSet)
-  {
-   payload.WithString("addressFamily", m_addressFamily);
-
+  if (m_addressFamilyHasBeenSet) {
+    payload.WithString("addressFamily", m_addressFamily);
   }
 
-  if(m_ianaProtocolNumberHasBeenSet)
-  {
-   payload.WithInteger("ianaProtocolNumber", m_ianaProtocolNumber);
-
+  if (m_ianaProtocolNumberHasBeenSet) {
+    payload.WithInteger("ianaProtocolNumber", m_ianaProtocolNumber);
   }
 
-  if(m_memoryRegionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memoryRegionsJsonList(m_memoryRegions.size());
-   for(unsigned memoryRegionsIndex = 0; memoryRegionsIndex < memoryRegionsJsonList.GetLength(); ++memoryRegionsIndex)
-   {
-     memoryRegionsJsonList[memoryRegionsIndex].AsString(m_memoryRegions[memoryRegionsIndex]);
-   }
-   payload.WithArray("memoryRegions", std::move(memoryRegionsJsonList));
-
+  if (m_memoryRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memoryRegionsJsonList(m_memoryRegions.size());
+    for (unsigned memoryRegionsIndex = 0; memoryRegionsIndex < memoryRegionsJsonList.GetLength(); ++memoryRegionsIndex) {
+      memoryRegionsJsonList[memoryRegionsIndex].AsString(m_memoryRegions[memoryRegionsIndex]);
+    }
+    payload.WithArray("memoryRegions", std::move(memoryRegionsJsonList));
   }
 
-  if(m_toolNameHasBeenSet)
-  {
-   payload.WithString("toolName", m_toolName);
-
+  if (m_toolNameHasBeenSet) {
+    payload.WithString("toolName", m_toolName);
   }
 
-  if(m_toolCategoryHasBeenSet)
-  {
-   payload.WithString("toolCategory", m_toolCategory);
-
+  if (m_toolCategoryHasBeenSet) {
+    payload.WithString("toolCategory", m_toolCategory);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
   }
 
-  if(m_commandLineExampleHasBeenSet)
-  {
-   payload.WithString("commandLineExample", m_commandLineExample);
-
+  if (m_commandLineExampleHasBeenSet) {
+    payload.WithString("commandLineExample", m_commandLineExample);
   }
 
-  if(m_threatFilePathHasBeenSet)
-  {
-   payload.WithString("threatFilePath", m_threatFilePath);
-
+  if (m_threatFilePathHasBeenSet) {
+    payload.WithString("threatFilePath", m_threatFilePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

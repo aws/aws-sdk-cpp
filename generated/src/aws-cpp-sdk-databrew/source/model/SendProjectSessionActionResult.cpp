@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/SendProjectSessionActionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/databrew/model/SendProjectSessionActionResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-SendProjectSessionActionResult& SendProjectSessionActionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+SendProjectSessionActionResult& SendProjectSessionActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Result"))
-  {
+  if (jsonValue.ValueExists("Result")) {
     m_result = jsonValue.GetString("Result");
     m_resultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionId"))
-  {
+  if (jsonValue.ValueExists("ActionId")) {
     m_actionId = jsonValue.GetInteger("ActionId");
     m_actionIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

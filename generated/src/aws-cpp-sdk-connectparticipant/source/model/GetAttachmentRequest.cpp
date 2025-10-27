@@ -13,40 +13,28 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAttachmentRequest::SerializePayload() const
-{
+Aws::String GetAttachmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_attachmentIdHasBeenSet)
-  {
-   payload.WithString("AttachmentId", m_attachmentId);
-
+  if (m_attachmentIdHasBeenSet) {
+    payload.WithString("AttachmentId", m_attachmentId);
   }
 
-  if(m_urlExpiryInSecondsHasBeenSet)
-  {
-   payload.WithInteger("UrlExpiryInSeconds", m_urlExpiryInSeconds);
-
+  if (m_urlExpiryInSecondsHasBeenSet) {
+    payload.WithInteger("UrlExpiryInSeconds", m_urlExpiryInSeconds);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAttachmentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAttachmentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_connectionTokenHasBeenSet)
-  {
+  if (m_connectionTokenHasBeenSet) {
     ss << m_connectionToken;
-    headers.emplace("x-amz-bearer",  ss.str());
+    headers.emplace("x-amz-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

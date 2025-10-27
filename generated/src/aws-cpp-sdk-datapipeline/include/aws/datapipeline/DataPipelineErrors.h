@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataPipeline
-{
-enum class DataPipelineErrors
-{
-  //From Core//
+namespace Aws {
+namespace DataPipeline {
+enum class DataPipelineErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DataPipelineErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class DataPipelineErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVICE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
   PIPELINE_DELETED,
   PIPELINE_NOT_FOUND,
   TASK_NOT_FOUND
 };
 
-class AWS_DATAPIPELINE_API DataPipelineError : public Aws::Client::AWSError<DataPipelineErrors>
-{
-public:
+class AWS_DATAPIPELINE_API DataPipelineError : public Aws::Client::AWSError<DataPipelineErrors> {
+ public:
   DataPipelineError() {}
   DataPipelineError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DataPipelineErrors>(rhs) {}
   DataPipelineError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DataPipelineErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace DataPipelineErrorMapper
-{
-  AWS_DATAPIPELINE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DataPipelineErrorMapper {
+AWS_DATAPIPELINE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DataPipeline
-} // namespace Aws
+}  // namespace DataPipeline
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class GeocodeIntendedUse
-  {
-    NOT_SET,
-    SingleUse,
-    Storage
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class GeocodeIntendedUse { NOT_SET, SingleUse, Storage };
 
-namespace GeocodeIntendedUseMapper
-{
+namespace GeocodeIntendedUseMapper {
 AWS_GEOPLACES_API GeocodeIntendedUse GetGeocodeIntendedUseForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForGeocodeIntendedUse(GeocodeIntendedUse value);
-} // namespace GeocodeIntendedUseMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace GeocodeIntendedUseMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/CreateImportJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/CreateImportJobRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateImportJobRequest::SerializePayload() const
-{
+Aws::String CreateImportJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_importDestinationHasBeenSet)
-  {
-   payload.WithObject("ImportDestination", m_importDestination.Jsonize());
-
+  if (m_importDestinationHasBeenSet) {
+    payload.WithObject("ImportDestination", m_importDestination.Jsonize());
   }
 
-  if(m_importDataSourceHasBeenSet)
-  {
-   payload.WithObject("ImportDataSource", m_importDataSource.Jsonize());
-
+  if (m_importDataSourceHasBeenSet) {
+    payload.WithObject("ImportDataSource", m_importDataSource.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

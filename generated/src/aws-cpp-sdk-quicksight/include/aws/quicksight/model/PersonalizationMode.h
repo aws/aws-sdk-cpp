@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class PersonalizationMode
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class PersonalizationMode { NOT_SET, ENABLED, DISABLED };
 
-namespace PersonalizationModeMapper
-{
+namespace PersonalizationModeMapper {
 AWS_QUICKSIGHT_API PersonalizationMode GetPersonalizationModeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForPersonalizationMode(PersonalizationMode value);
-} // namespace PersonalizationModeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace PersonalizationModeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

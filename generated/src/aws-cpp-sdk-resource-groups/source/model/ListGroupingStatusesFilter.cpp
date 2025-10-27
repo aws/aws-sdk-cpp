@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resource-groups/model/ListGroupingStatusesFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resource-groups/model/ListGroupingStatusesFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Model
-{
+namespace Aws {
+namespace ResourceGroups {
+namespace Model {
 
-ListGroupingStatusesFilter::ListGroupingStatusesFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListGroupingStatusesFilter::ListGroupingStatusesFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListGroupingStatusesFilter& ListGroupingStatusesFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ListGroupingStatusesFilter& ListGroupingStatusesFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = ListGroupingStatusesFilterNameMapper::GetListGroupingStatusesFilterNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ ListGroupingStatusesFilter& ListGroupingStatusesFilter::operator =(JsonView json
   return *this;
 }
 
-JsonValue ListGroupingStatusesFilter::Jsonize() const
-{
+JsonValue ListGroupingStatusesFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", ListGroupingStatusesFilterNameMapper::GetNameForListGroupingStatusesFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", ListGroupingStatusesFilterNameMapper::GetNameForListGroupingStatusesFilterName(m_name));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

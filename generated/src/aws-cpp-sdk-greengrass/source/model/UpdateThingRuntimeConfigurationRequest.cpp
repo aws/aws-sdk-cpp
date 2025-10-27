@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/UpdateThingRuntimeConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/UpdateThingRuntimeConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateThingRuntimeConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateThingRuntimeConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_telemetryConfigurationHasBeenSet)
-  {
-   payload.WithObject("TelemetryConfiguration", m_telemetryConfiguration.Jsonize());
-
+  if (m_telemetryConfigurationHasBeenSet) {
+    payload.WithObject("TelemetryConfiguration", m_telemetryConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

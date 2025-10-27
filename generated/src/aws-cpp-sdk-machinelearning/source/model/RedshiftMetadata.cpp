@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/machinelearning/model/RedshiftMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/machinelearning/model/RedshiftMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Model
-{
+namespace Aws {
+namespace MachineLearning {
+namespace Model {
 
-RedshiftMetadata::RedshiftMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftMetadata::RedshiftMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftMetadata& RedshiftMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RedshiftDatabase"))
-  {
+RedshiftMetadata& RedshiftMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RedshiftDatabase")) {
     m_redshiftDatabase = jsonValue.GetObject("RedshiftDatabase");
     m_redshiftDatabaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatabaseUserName"))
-  {
+  if (jsonValue.ValueExists("DatabaseUserName")) {
     m_databaseUserName = jsonValue.GetString("DatabaseUserName");
     m_databaseUserNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectSqlQuery"))
-  {
+  if (jsonValue.ValueExists("SelectSqlQuery")) {
     m_selectSqlQuery = jsonValue.GetString("SelectSqlQuery");
     m_selectSqlQueryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftMetadata::Jsonize() const
-{
+JsonValue RedshiftMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_redshiftDatabaseHasBeenSet)
-  {
-   payload.WithObject("RedshiftDatabase", m_redshiftDatabase.Jsonize());
-
+  if (m_redshiftDatabaseHasBeenSet) {
+    payload.WithObject("RedshiftDatabase", m_redshiftDatabase.Jsonize());
   }
 
-  if(m_databaseUserNameHasBeenSet)
-  {
-   payload.WithString("DatabaseUserName", m_databaseUserName);
-
+  if (m_databaseUserNameHasBeenSet) {
+    payload.WithString("DatabaseUserName", m_databaseUserName);
   }
 
-  if(m_selectSqlQueryHasBeenSet)
-  {
-   payload.WithString("SelectSqlQuery", m_selectSqlQuery);
-
+  if (m_selectSqlQueryHasBeenSet) {
+    payload.WithString("SelectSqlQuery", m_selectSqlQuery);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MachineLearning
-} // namespace Aws
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

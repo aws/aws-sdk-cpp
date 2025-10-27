@@ -7,26 +7,16 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
-  enum class ReadWriteType
-  {
-    NOT_SET,
-    ReadOnly,
-    WriteOnly,
-    All
-  };
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
+enum class ReadWriteType { NOT_SET, ReadOnly, WriteOnly, All };
 
-namespace ReadWriteTypeMapper
-{
+namespace ReadWriteTypeMapper {
 AWS_CLOUDTRAIL_API ReadWriteType GetReadWriteTypeForName(const Aws::String& name);
 
 AWS_CLOUDTRAIL_API Aws::String GetNameForReadWriteType(ReadWriteType value);
-} // namespace ReadWriteTypeMapper
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace ReadWriteTypeMapper
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

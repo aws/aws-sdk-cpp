@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoSignalingChannels
-{
-enum class KinesisVideoSignalingChannelsErrors
-{
-  //From Core//
+namespace Aws {
+namespace KinesisVideoSignalingChannels {
+enum class KinesisVideoSignalingChannelsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KinesisVideoSignalingChannelsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,30 +44,33 @@ enum class KinesisVideoSignalingChannelsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLIENT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLIENT_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ARGUMENT,
   INVALID_CLIENT,
   NOT_AUTHORIZED,
   SESSION_EXPIRED
 };
 
-class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsError : public Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>
-{
-public:
+class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsError
+    : public Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors> {
+ public:
   KinesisVideoSignalingChannelsError() {}
-  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
-  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
-  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
-  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>& rhs)
+      : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>&& rhs)
+      : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace KinesisVideoSignalingChannelsErrorMapper
-{
-  AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KinesisVideoSignalingChannelsErrorMapper {
+AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace KinesisVideoSignalingChannels
-} // namespace Aws
+}  // namespace KinesisVideoSignalingChannels
+}  // namespace Aws

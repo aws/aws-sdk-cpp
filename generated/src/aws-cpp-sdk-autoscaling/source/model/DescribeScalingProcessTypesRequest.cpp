@@ -10,16 +10,11 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeScalingProcessTypesRequest::SerializePayload() const
-{
+Aws::String DescribeScalingProcessTypesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeScalingProcessTypes&";
   ss << "Version=2011-01-01";
   return ss.str();
 }
 
-
-void  DescribeScalingProcessTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeScalingProcessTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

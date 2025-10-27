@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-CustomOutputConfiguration::CustomOutputConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomOutputConfiguration::CustomOutputConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CustomOutputConfiguration& CustomOutputConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("blueprints"))
-  {
+CustomOutputConfiguration& CustomOutputConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("blueprints")) {
     Aws::Utils::Array<JsonView> blueprintsJsonList = jsonValue.GetArray("blueprints");
-    for(unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex)
-    {
+    for (unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex) {
       m_blueprints.push_back(blueprintsJsonList[blueprintsIndex].AsObject());
     }
     m_blueprintsHasBeenSet = true;
@@ -37,24 +28,20 @@ CustomOutputConfiguration& CustomOutputConfiguration::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue CustomOutputConfiguration::Jsonize() const
-{
+JsonValue CustomOutputConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_blueprintsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blueprintsJsonList(m_blueprints.size());
-   for(unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex)
-   {
-     blueprintsJsonList[blueprintsIndex].AsObject(m_blueprints[blueprintsIndex].Jsonize());
-   }
-   payload.WithArray("blueprints", std::move(blueprintsJsonList));
-
+  if (m_blueprintsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> blueprintsJsonList(m_blueprints.size());
+    for (unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex) {
+      blueprintsJsonList[blueprintsIndex].AsObject(m_blueprints[blueprintsIndex].Jsonize());
+    }
+    payload.WithArray("blueprints", std::move(blueprintsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

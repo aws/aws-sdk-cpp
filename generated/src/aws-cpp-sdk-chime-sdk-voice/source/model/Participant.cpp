@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-Participant::Participant(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Participant::Participant(JsonView jsonValue) { *this = jsonValue; }
 
-Participant& Participant::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PhoneNumber"))
-  {
+Participant& Participant::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PhoneNumber")) {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
     m_phoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProxyPhoneNumber"))
-  {
+  if (jsonValue.ValueExists("ProxyPhoneNumber")) {
     m_proxyPhoneNumber = jsonValue.GetString("ProxyPhoneNumber");
     m_proxyPhoneNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Participant::Jsonize() const
-{
+JsonValue Participant::Jsonize() const {
   JsonValue payload;
 
-  if(m_phoneNumberHasBeenSet)
-  {
-   payload.WithString("PhoneNumber", m_phoneNumber);
-
+  if (m_phoneNumberHasBeenSet) {
+    payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
-  if(m_proxyPhoneNumberHasBeenSet)
-  {
-   payload.WithString("ProxyPhoneNumber", m_proxyPhoneNumber);
-
+  if (m_proxyPhoneNumberHasBeenSet) {
+    payload.WithString("ProxyPhoneNumber", m_proxyPhoneNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

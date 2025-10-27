@@ -11,103 +11,77 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValue) { *this = jsonValue; }
 
-SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("relatedItemId"))
-  {
+SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("relatedItemId")) {
     m_relatedItemId = jsonValue.GetString("relatedItemId");
     m_relatedItemIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationTime"))
-  {
+  if (jsonValue.ValueExists("associationTime")) {
     m_associationTime = jsonValue.GetString("associationTime");
     m_associationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("content"))
-  {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("performedBy"))
-  {
+  if (jsonValue.ValueExists("performedBy")) {
     m_performedBy = jsonValue.GetObject("performedBy");
     m_performedByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SearchRelatedItemsResponseItem::Jsonize() const
-{
+JsonValue SearchRelatedItemsResponseItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_relatedItemIdHasBeenSet)
-  {
-   payload.WithString("relatedItemId", m_relatedItemId);
-
+  if (m_relatedItemIdHasBeenSet) {
+    payload.WithString("relatedItemId", m_relatedItemId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
   }
 
-  if(m_associationTimeHasBeenSet)
-  {
-   payload.WithString("associationTime", m_associationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_associationTimeHasBeenSet) {
+    payload.WithString("associationTime", m_associationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_performedByHasBeenSet)
-  {
-   payload.WithObject("performedBy", m_performedBy.Jsonize());
-
+  if (m_performedByHasBeenSet) {
+    payload.WithObject("performedBy", m_performedBy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

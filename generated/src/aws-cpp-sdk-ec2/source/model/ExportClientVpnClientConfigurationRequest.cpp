@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ExportClientVpnClientConfigurationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ExportClientVpnClientConfigurationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ExportClientVpnClientConfigurationRequest::SerializePayload() const
-{
+Aws::String ExportClientVpnClientConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ExportClientVpnClientConfiguration&";
-  if(m_clientVpnEndpointIdHasBeenSet)
-  {
+  if (m_clientVpnEndpointIdHasBeenSet) {
     ss << "ClientVpnEndpointId=" << StringUtils::URLEncode(m_clientVpnEndpointId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ExportClientVpnClientConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ExportClientVpnClientConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ExportClientVpnClientConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/CreateTransitGatewayRouteTableAttachmentResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/networkmanager/model/CreateTransitGatewayRouteTableAttachmentResult.h>
 
 #include <utility>
 
@@ -17,28 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayRouteTableAttachmentResult::CreateTransitGatewayRouteTableAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateTransitGatewayRouteTableAttachmentResult::CreateTransitGatewayRouteTableAttachmentResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-CreateTransitGatewayRouteTableAttachmentResult& CreateTransitGatewayRouteTableAttachmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateTransitGatewayRouteTableAttachmentResult& CreateTransitGatewayRouteTableAttachmentResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TransitGatewayRouteTableAttachment"))
-  {
+  if (jsonValue.ValueExists("TransitGatewayRouteTableAttachment")) {
     m_transitGatewayRouteTableAttachment = jsonValue.GetObject("TransitGatewayRouteTableAttachment");
     m_transitGatewayRouteTableAttachmentHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

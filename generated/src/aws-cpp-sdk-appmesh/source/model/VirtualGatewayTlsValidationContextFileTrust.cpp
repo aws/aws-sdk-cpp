@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayTlsValidationContextFileTrust& VirtualGatewayTlsValidationContextFileTrust::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("certificateChain"))
-  {
+VirtualGatewayTlsValidationContextFileTrust& VirtualGatewayTlsValidationContextFileTrust::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("certificateChain")) {
     m_certificateChain = jsonValue.GetString("certificateChain");
     m_certificateChainHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayTlsValidationContextFileTrust::Jsonize() const
-{
+JsonValue VirtualGatewayTlsValidationContextFileTrust::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateChainHasBeenSet)
-  {
-   payload.WithString("certificateChain", m_certificateChain);
-
+  if (m_certificateChainHasBeenSet) {
+    payload.WithString("certificateChain", m_certificateChain);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

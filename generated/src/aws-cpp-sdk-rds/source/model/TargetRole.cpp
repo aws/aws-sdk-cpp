@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/TargetRole.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/rds/model/TargetRole.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RDS {
+namespace Model {
+namespace TargetRoleMapper {
 
-namespace Aws
-{
-  namespace RDS
-  {
-    namespace Model
-    {
-      namespace TargetRoleMapper
-      {
+static const int READ_WRITE_HASH = HashingUtils::HashString("READ_WRITE");
+static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
+static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
-        static const int READ_WRITE_HASH = HashingUtils::HashString("READ_WRITE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
-        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+TargetRole GetTargetRoleForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == READ_WRITE_HASH) {
+    return TargetRole::READ_WRITE;
+  } else if (hashCode == READ_ONLY_HASH) {
+    return TargetRole::READ_ONLY;
+  } else if (hashCode == UNKNOWN_HASH) {
+    return TargetRole::UNKNOWN;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TargetRole>(hashCode);
+  }
 
+  return TargetRole::NOT_SET;
+}
 
-        TargetRole GetTargetRoleForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == READ_WRITE_HASH)
-          {
-            return TargetRole::READ_WRITE;
-          }
-          else if (hashCode == READ_ONLY_HASH)
-          {
-            return TargetRole::READ_ONLY;
-          }
-          else if (hashCode == UNKNOWN_HASH)
-          {
-            return TargetRole::UNKNOWN;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TargetRole>(hashCode);
-          }
+Aws::String GetNameForTargetRole(TargetRole enumValue) {
+  switch (enumValue) {
+    case TargetRole::NOT_SET:
+      return {};
+    case TargetRole::READ_WRITE:
+      return "READ_WRITE";
+    case TargetRole::READ_ONLY:
+      return "READ_ONLY";
+    case TargetRole::UNKNOWN:
+      return "UNKNOWN";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TargetRole::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTargetRole(TargetRole enumValue)
-        {
-          switch(enumValue)
-          {
-          case TargetRole::NOT_SET:
-            return {};
-          case TargetRole::READ_WRITE:
-            return "READ_WRITE";
-          case TargetRole::READ_ONLY:
-            return "READ_ONLY";
-          case TargetRole::UNKNOWN:
-            return "UNKNOWN";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TargetRoleMapper
-    } // namespace Model
-  } // namespace RDS
-} // namespace Aws
+}  // namespace TargetRoleMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

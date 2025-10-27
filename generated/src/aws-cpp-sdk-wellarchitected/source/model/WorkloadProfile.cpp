@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/WorkloadProfile.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/WorkloadProfile.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-WorkloadProfile::WorkloadProfile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkloadProfile::WorkloadProfile(JsonView jsonValue) { *this = jsonValue; }
 
-WorkloadProfile& WorkloadProfile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProfileArn"))
-  {
+WorkloadProfile& WorkloadProfile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProfileArn")) {
     m_profileArn = jsonValue.GetString("ProfileArn");
     m_profileArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProfileVersion"))
-  {
+  if (jsonValue.ValueExists("ProfileVersion")) {
     m_profileVersion = jsonValue.GetString("ProfileVersion");
     m_profileVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkloadProfile::Jsonize() const
-{
+JsonValue WorkloadProfile::Jsonize() const {
   JsonValue payload;
 
-  if(m_profileArnHasBeenSet)
-  {
-   payload.WithString("ProfileArn", m_profileArn);
-
+  if (m_profileArnHasBeenSet) {
+    payload.WithString("ProfileArn", m_profileArn);
   }
 
-  if(m_profileVersionHasBeenSet)
-  {
-   payload.WithString("ProfileVersion", m_profileVersion);
-
+  if (m_profileVersionHasBeenSet) {
+    payload.WithString("ProfileVersion", m_profileVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

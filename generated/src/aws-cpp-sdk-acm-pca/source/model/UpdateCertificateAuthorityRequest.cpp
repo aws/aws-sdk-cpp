@@ -12,38 +12,26 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCertificateAuthorityRequest::SerializePayload() const
-{
+Aws::String UpdateCertificateAuthorityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_revocationConfigurationHasBeenSet)
-  {
-   payload.WithObject("RevocationConfiguration", m_revocationConfiguration.Jsonize());
-
+  if (m_revocationConfigurationHasBeenSet) {
+    payload.WithObject("RevocationConfiguration", m_revocationConfiguration.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", CertificateAuthorityStatusMapper::GetNameForCertificateAuthorityStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", CertificateAuthorityStatusMapper::GetNameForCertificateAuthorityStatus(m_status));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateCertificateAuthorityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateCertificateAuthorityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.UpdateCertificateAuthority"));
   return headers;
-
 }
-
-
-
-

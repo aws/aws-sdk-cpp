@@ -7,25 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class SortOrderType
-  {
-    NOT_SET,
-    ASCENDING,
-    DESCENDING
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class SortOrderType { NOT_SET, ASCENDING, DESCENDING };
 
-namespace SortOrderTypeMapper
-{
+namespace SortOrderTypeMapper {
 AWS_CODEBUILD_API SortOrderType GetSortOrderTypeForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForSortOrderType(SortOrderType value);
-} // namespace SortOrderTypeMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace SortOrderTypeMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace MarketplaceEntitlementService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MarketplaceEntitlementService
-} // namespace Aws
+namespace Aws {
+namespace MarketplaceEntitlementService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MarketplaceEntitlementService
+}  // namespace Aws

@@ -12,50 +12,34 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetPrincipalTagAttributeMapRequest::SerializePayload() const
-{
+Aws::String SetPrincipalTagAttributeMapRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_identityProviderNameHasBeenSet)
-  {
-   payload.WithString("IdentityProviderName", m_identityProviderName);
-
+  if (m_identityProviderNameHasBeenSet) {
+    payload.WithString("IdentityProviderName", m_identityProviderName);
   }
 
-  if(m_useDefaultsHasBeenSet)
-  {
-   payload.WithBool("UseDefaults", m_useDefaults);
-
+  if (m_useDefaultsHasBeenSet) {
+    payload.WithBool("UseDefaults", m_useDefaults);
   }
 
-  if(m_principalTagsHasBeenSet)
-  {
-   JsonValue principalTagsJsonMap;
-   for(auto& principalTagsItem : m_principalTags)
-   {
-     principalTagsJsonMap.WithString(principalTagsItem.first, principalTagsItem.second);
-   }
-   payload.WithObject("PrincipalTags", std::move(principalTagsJsonMap));
-
+  if (m_principalTagsHasBeenSet) {
+    JsonValue principalTagsJsonMap;
+    for (auto& principalTagsItem : m_principalTags) {
+      principalTagsJsonMap.WithString(principalTagsItem.first, principalTagsItem.second);
+    }
+    payload.WithObject("PrincipalTags", std::move(principalTagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SetPrincipalTagAttributeMapRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SetPrincipalTagAttributeMapRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.SetPrincipalTagAttributeMap"));
   return headers;
-
 }
-
-
-
-

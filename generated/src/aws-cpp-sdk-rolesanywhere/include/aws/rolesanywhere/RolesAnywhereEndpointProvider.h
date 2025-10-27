@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/rolesanywhere/RolesAnywhereEndpointRules.h>
+#include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace RolesAnywhere
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace RolesAnywhere {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using RolesAnywhereClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using RolesAnywhereDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ROLESANYWHERE_API RolesAnywhereEndpointProvider : public RolesAnywhereDefaultEpProviderBase
-{
-public:
-    using RolesAnywhereResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ROLESANYWHERE_API RolesAnywhereEndpointProvider : public RolesAnywhereDefaultEpProviderBase {
+ public:
+  using RolesAnywhereResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    RolesAnywhereEndpointProvider()
-      : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::GetRulesBlob(), Aws::RolesAnywhere::RolesAnywhereEndpointRules::RulesBlobSize)
-    {}
+  RolesAnywhereEndpointProvider()
+      : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::GetRulesBlob(),
+                                           Aws::RolesAnywhere::RolesAnywhereEndpointRules::RulesBlobSize) {}
 
-    ~RolesAnywhereEndpointProvider()
-    {
-    }
+  ~RolesAnywhereEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace RolesAnywhere
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace RolesAnywhere
+}  // namespace Aws

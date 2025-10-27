@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
+/**
+ * <p>A static structure that contains the configuration data for a
+ * <code>VoiceEnhancementSinkConfiguration</code> element.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/VoiceEnhancementSinkConfiguration">AWS
+ * API Reference</a></p>
+ */
+class VoiceEnhancementSinkConfiguration {
+ public:
+  AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration() = default;
+  AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A static structure that contains the configuration data for a
-   * <code>VoiceEnhancementSinkConfiguration</code> element.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/VoiceEnhancementSinkConfiguration">AWS
-   * API Reference</a></p>
+   * <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
    */
-  class VoiceEnhancementSinkConfiguration
-  {
-  public:
-    AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration() = default;
-    AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetDisabled() const { return m_disabled; }
+  inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
+  inline void SetDisabled(bool value) {
+    m_disabledHasBeenSet = true;
+    m_disabled = value;
+  }
+  inline VoiceEnhancementSinkConfiguration& WithDisabled(bool value) {
+    SetDisabled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_disabled{false};
+  bool m_disabledHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
-     */
-    inline bool GetDisabled() const { return m_disabled; }
-    inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
-    inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
-    inline VoiceEnhancementSinkConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
-    ///@}
-  private:
-
-    bool m_disabled{false};
-    bool m_disabledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

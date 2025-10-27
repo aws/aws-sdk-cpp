@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/WorkflowEngine.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/omics/model/WorkflowEngine.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Omics {
+namespace Model {
+namespace WorkflowEngineMapper {
 
-namespace Aws
-{
-  namespace Omics
-  {
-    namespace Model
-    {
-      namespace WorkflowEngineMapper
-      {
+static const int WDL_HASH = HashingUtils::HashString("WDL");
+static const int NEXTFLOW_HASH = HashingUtils::HashString("NEXTFLOW");
+static const int CWL_HASH = HashingUtils::HashString("CWL");
 
-        static const int WDL_HASH = HashingUtils::HashString("WDL");
-        static const int NEXTFLOW_HASH = HashingUtils::HashString("NEXTFLOW");
-        static const int CWL_HASH = HashingUtils::HashString("CWL");
+WorkflowEngine GetWorkflowEngineForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == WDL_HASH) {
+    return WorkflowEngine::WDL;
+  } else if (hashCode == NEXTFLOW_HASH) {
+    return WorkflowEngine::NEXTFLOW;
+  } else if (hashCode == CWL_HASH) {
+    return WorkflowEngine::CWL;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<WorkflowEngine>(hashCode);
+  }
 
+  return WorkflowEngine::NOT_SET;
+}
 
-        WorkflowEngine GetWorkflowEngineForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == WDL_HASH)
-          {
-            return WorkflowEngine::WDL;
-          }
-          else if (hashCode == NEXTFLOW_HASH)
-          {
-            return WorkflowEngine::NEXTFLOW;
-          }
-          else if (hashCode == CWL_HASH)
-          {
-            return WorkflowEngine::CWL;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<WorkflowEngine>(hashCode);
-          }
+Aws::String GetNameForWorkflowEngine(WorkflowEngine enumValue) {
+  switch (enumValue) {
+    case WorkflowEngine::NOT_SET:
+      return {};
+    case WorkflowEngine::WDL:
+      return "WDL";
+    case WorkflowEngine::NEXTFLOW:
+      return "NEXTFLOW";
+    case WorkflowEngine::CWL:
+      return "CWL";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return WorkflowEngine::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForWorkflowEngine(WorkflowEngine enumValue)
-        {
-          switch(enumValue)
-          {
-          case WorkflowEngine::NOT_SET:
-            return {};
-          case WorkflowEngine::WDL:
-            return "WDL";
-          case WorkflowEngine::NEXTFLOW:
-            return "NEXTFLOW";
-          case WorkflowEngine::CWL:
-            return "CWL";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace WorkflowEngineMapper
-    } // namespace Model
-  } // namespace Omics
-} // namespace Aws
+}  // namespace WorkflowEngineMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

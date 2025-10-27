@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteTravelStepType
-  {
-    NOT_SET,
-    Default,
-    TurnByTurn
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteTravelStepType { NOT_SET, Default, TurnByTurn };
 
-namespace RouteTravelStepTypeMapper
-{
+namespace RouteTravelStepTypeMapper {
 AWS_GEOROUTES_API RouteTravelStepType GetRouteTravelStepTypeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteTravelStepType(RouteTravelStepType value);
-} // namespace RouteTravelStepTypeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteTravelStepTypeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

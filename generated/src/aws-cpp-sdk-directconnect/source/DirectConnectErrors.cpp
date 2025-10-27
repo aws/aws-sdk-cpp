@@ -11,42 +11,30 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::DirectConnect;
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace DirectConnectErrorMapper
-{
+namespace Aws {
+namespace DirectConnect {
+namespace DirectConnectErrorMapper {
 
 static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeysException");
 static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DUPLICATE_TAG_KEYS_HASH)
-  {
+  if (hashCode == DUPLICATE_TAG_KEYS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DUPLICATE_TAG_KEYS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DIRECT_CONNECT_CLIENT_HASH)
-  {
+  } else if (hashCode == DIRECT_CONNECT_CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_CLIENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DIRECT_CONNECT_SERVER_HASH)
-  {
+  } else if (hashCode == DIRECT_CONNECT_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectConnectErrors::DIRECT_CONNECT_SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace DirectConnectErrorMapper
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace DirectConnectErrorMapper
+}  // namespace DirectConnect
+}  // namespace Aws

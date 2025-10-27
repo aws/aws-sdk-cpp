@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class ParquetWriterVersion
-  {
-    NOT_SET,
-    V1,
-    V2
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class ParquetWriterVersion { NOT_SET, V1, V2 };
 
-namespace ParquetWriterVersionMapper
-{
+namespace ParquetWriterVersionMapper {
 AWS_FIREHOSE_API ParquetWriterVersion GetParquetWriterVersionForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForParquetWriterVersion(ParquetWriterVersion value);
-} // namespace ParquetWriterVersionMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace ParquetWriterVersionMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

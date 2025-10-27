@@ -4,146 +4,188 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/GlueRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/glue/model/CatalogEntry.h>
-#include <aws/glue/model/Location.h>
-#include <aws/glue/model/Language.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/glue/model/MappingEntry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/GlueRequest.h>
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/CatalogEntry.h>
+#include <aws/glue/model/Language.h>
+#include <aws/glue/model/Location.h>
+#include <aws/glue/model/MappingEntry.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
+/**
+ */
+class GetPlanRequest : public GlueRequest {
+ public:
+  AWS_GLUE_API GetPlanRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetPlan"; }
+
+  AWS_GLUE_API Aws::String SerializePayload() const override;
+
+  AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The list of mappings from a source table to target tables.</p>
    */
-  class GetPlanRequest : public GlueRequest
-  {
-  public:
-    AWS_GLUE_API GetPlanRequest() = default;
+  inline const Aws::Vector<MappingEntry>& GetMapping() const { return m_mapping; }
+  inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
+  template <typename MappingT = Aws::Vector<MappingEntry>>
+  void SetMapping(MappingT&& value) {
+    m_mappingHasBeenSet = true;
+    m_mapping = std::forward<MappingT>(value);
+  }
+  template <typename MappingT = Aws::Vector<MappingEntry>>
+  GetPlanRequest& WithMapping(MappingT&& value) {
+    SetMapping(std::forward<MappingT>(value));
+    return *this;
+  }
+  template <typename MappingT = MappingEntry>
+  GetPlanRequest& AddMapping(MappingT&& value) {
+    m_mappingHasBeenSet = true;
+    m_mapping.emplace_back(std::forward<MappingT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetPlan"; }
+  ///@{
+  /**
+   * <p>The source table.</p>
+   */
+  inline const CatalogEntry& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = CatalogEntry>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = CatalogEntry>
+  GetPlanRequest& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_GLUE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The target tables.</p>
+   */
+  inline const Aws::Vector<CatalogEntry>& GetSinks() const { return m_sinks; }
+  inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
+  template <typename SinksT = Aws::Vector<CatalogEntry>>
+  void SetSinks(SinksT&& value) {
+    m_sinksHasBeenSet = true;
+    m_sinks = std::forward<SinksT>(value);
+  }
+  template <typename SinksT = Aws::Vector<CatalogEntry>>
+  GetPlanRequest& WithSinks(SinksT&& value) {
+    SetSinks(std::forward<SinksT>(value));
+    return *this;
+  }
+  template <typename SinksT = CatalogEntry>
+  GetPlanRequest& AddSinks(SinksT&& value) {
+    m_sinksHasBeenSet = true;
+    m_sinks.emplace_back(std::forward<SinksT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The parameters for the mapping.</p>
+   */
+  inline const Location& GetLocation() const { return m_location; }
+  inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+  template <typename LocationT = Location>
+  void SetLocation(LocationT&& value) {
+    m_locationHasBeenSet = true;
+    m_location = std::forward<LocationT>(value);
+  }
+  template <typename LocationT = Location>
+  GetPlanRequest& WithLocation(LocationT&& value) {
+    SetLocation(std::forward<LocationT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The programming language of the code to perform the mapping.</p>
+   */
+  inline Language GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  inline void SetLanguage(Language value) {
+    m_languageHasBeenSet = true;
+    m_language = value;
+  }
+  inline GetPlanRequest& WithLanguage(Language value) {
+    SetLanguage(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The list of mappings from a source table to target tables.</p>
-     */
-    inline const Aws::Vector<MappingEntry>& GetMapping() const { return m_mapping; }
-    inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
-    template<typename MappingT = Aws::Vector<MappingEntry>>
-    void SetMapping(MappingT&& value) { m_mappingHasBeenSet = true; m_mapping = std::forward<MappingT>(value); }
-    template<typename MappingT = Aws::Vector<MappingEntry>>
-    GetPlanRequest& WithMapping(MappingT&& value) { SetMapping(std::forward<MappingT>(value)); return *this;}
-    template<typename MappingT = MappingEntry>
-    GetPlanRequest& AddMapping(MappingT&& value) { m_mappingHasBeenSet = true; m_mapping.emplace_back(std::forward<MappingT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A map to hold additional optional key-value parameters.</p> <p>Currently,
+   * these key-value pairs are supported:</p> <ul> <li> <p>
+   * <code>inferSchema</code>�� —  Specifies whether to set <code>inferSchema</code>
+   * to true or false for the default script generated by an Glue job. For example,
+   * to set <code>inferSchema</code> to true, pass the following key value pair:</p>
+   * <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p>
+   * </li> </ul>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalPlanOptionsMap() const { return m_additionalPlanOptionsMap; }
+  inline bool AdditionalPlanOptionsMapHasBeenSet() const { return m_additionalPlanOptionsMapHasBeenSet; }
+  template <typename AdditionalPlanOptionsMapT = Aws::Map<Aws::String, Aws::String>>
+  void SetAdditionalPlanOptionsMap(AdditionalPlanOptionsMapT&& value) {
+    m_additionalPlanOptionsMapHasBeenSet = true;
+    m_additionalPlanOptionsMap = std::forward<AdditionalPlanOptionsMapT>(value);
+  }
+  template <typename AdditionalPlanOptionsMapT = Aws::Map<Aws::String, Aws::String>>
+  GetPlanRequest& WithAdditionalPlanOptionsMap(AdditionalPlanOptionsMapT&& value) {
+    SetAdditionalPlanOptionsMap(std::forward<AdditionalPlanOptionsMapT>(value));
+    return *this;
+  }
+  template <typename AdditionalPlanOptionsMapKeyT = Aws::String, typename AdditionalPlanOptionsMapValueT = Aws::String>
+  GetPlanRequest& AddAdditionalPlanOptionsMap(AdditionalPlanOptionsMapKeyT&& key, AdditionalPlanOptionsMapValueT&& value) {
+    m_additionalPlanOptionsMapHasBeenSet = true;
+    m_additionalPlanOptionsMap.emplace(std::forward<AdditionalPlanOptionsMapKeyT>(key),
+                                       std::forward<AdditionalPlanOptionsMapValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<MappingEntry> m_mapping;
+  bool m_mappingHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The source table.</p>
-     */
-    inline const CatalogEntry& GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    template<typename SourceT = CatalogEntry>
-    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
-    template<typename SourceT = CatalogEntry>
-    GetPlanRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
-    ///@}
+  CatalogEntry m_source;
+  bool m_sourceHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The target tables.</p>
-     */
-    inline const Aws::Vector<CatalogEntry>& GetSinks() const { return m_sinks; }
-    inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
-    template<typename SinksT = Aws::Vector<CatalogEntry>>
-    void SetSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks = std::forward<SinksT>(value); }
-    template<typename SinksT = Aws::Vector<CatalogEntry>>
-    GetPlanRequest& WithSinks(SinksT&& value) { SetSinks(std::forward<SinksT>(value)); return *this;}
-    template<typename SinksT = CatalogEntry>
-    GetPlanRequest& AddSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks.emplace_back(std::forward<SinksT>(value)); return *this; }
-    ///@}
+  Aws::Vector<CatalogEntry> m_sinks;
+  bool m_sinksHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The parameters for the mapping.</p>
-     */
-    inline const Location& GetLocation() const { return m_location; }
-    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    template<typename LocationT = Location>
-    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
-    template<typename LocationT = Location>
-    GetPlanRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
-    ///@}
+  Location m_location;
+  bool m_locationHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The programming language of the code to perform the mapping.</p>
-     */
-    inline Language GetLanguage() const { return m_language; }
-    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(Language value) { m_languageHasBeenSet = true; m_language = value; }
-    inline GetPlanRequest& WithLanguage(Language value) { SetLanguage(value); return *this;}
-    ///@}
+  Language m_language{Language::NOT_SET};
+  bool m_languageHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A map to hold additional optional key-value parameters.</p> <p>Currently,
-     * these key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>inferSchema</code>�� —  Specifies whether to set <code>inferSchema</code>
-     * to true or false for the default script generated by an Glue job. For example,
-     * to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-     * <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p>
-     * </li> </ul>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalPlanOptionsMap() const { return m_additionalPlanOptionsMap; }
-    inline bool AdditionalPlanOptionsMapHasBeenSet() const { return m_additionalPlanOptionsMapHasBeenSet; }
-    template<typename AdditionalPlanOptionsMapT = Aws::Map<Aws::String, Aws::String>>
-    void SetAdditionalPlanOptionsMap(AdditionalPlanOptionsMapT&& value) { m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap = std::forward<AdditionalPlanOptionsMapT>(value); }
-    template<typename AdditionalPlanOptionsMapT = Aws::Map<Aws::String, Aws::String>>
-    GetPlanRequest& WithAdditionalPlanOptionsMap(AdditionalPlanOptionsMapT&& value) { SetAdditionalPlanOptionsMap(std::forward<AdditionalPlanOptionsMapT>(value)); return *this;}
-    template<typename AdditionalPlanOptionsMapKeyT = Aws::String, typename AdditionalPlanOptionsMapValueT = Aws::String>
-    GetPlanRequest& AddAdditionalPlanOptionsMap(AdditionalPlanOptionsMapKeyT&& key, AdditionalPlanOptionsMapValueT&& value) {
-      m_additionalPlanOptionsMapHasBeenSet = true; m_additionalPlanOptionsMap.emplace(std::forward<AdditionalPlanOptionsMapKeyT>(key), std::forward<AdditionalPlanOptionsMapValueT>(value)); return *this;
-    }
-    ///@}
-  private:
+  Aws::Map<Aws::String, Aws::String> m_additionalPlanOptionsMap;
+  bool m_additionalPlanOptionsMapHasBeenSet = false;
+};
 
-    Aws::Vector<MappingEntry> m_mapping;
-    bool m_mappingHasBeenSet = false;
-
-    CatalogEntry m_source;
-    bool m_sourceHasBeenSet = false;
-
-    Aws::Vector<CatalogEntry> m_sinks;
-    bool m_sinksHasBeenSet = false;
-
-    Location m_location;
-    bool m_locationHasBeenSet = false;
-
-    Language m_language{Language::NOT_SET};
-    bool m_languageHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_additionalPlanOptionsMap;
-    bool m_additionalPlanOptionsMapHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

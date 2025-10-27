@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TooltipOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TooltipOptions::TooltipOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TooltipOptions::TooltipOptions(JsonView jsonValue) { *this = jsonValue; }
 
-TooltipOptions& TooltipOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TooltipVisibility"))
-  {
+TooltipOptions& TooltipOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TooltipVisibility")) {
     m_tooltipVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("TooltipVisibility"));
     m_tooltipVisibilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectedTooltipType"))
-  {
+  if (jsonValue.ValueExists("SelectedTooltipType")) {
     m_selectedTooltipType = SelectedTooltipTypeMapper::GetSelectedTooltipTypeForName(jsonValue.GetString("SelectedTooltipType"));
     m_selectedTooltipTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FieldBasedTooltip"))
-  {
+  if (jsonValue.ValueExists("FieldBasedTooltip")) {
     m_fieldBasedTooltip = jsonValue.GetObject("FieldBasedTooltip");
     m_fieldBasedTooltipHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TooltipOptions::Jsonize() const
-{
+JsonValue TooltipOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_tooltipVisibilityHasBeenSet)
-  {
-   payload.WithString("TooltipVisibility", VisibilityMapper::GetNameForVisibility(m_tooltipVisibility));
+  if (m_tooltipVisibilityHasBeenSet) {
+    payload.WithString("TooltipVisibility", VisibilityMapper::GetNameForVisibility(m_tooltipVisibility));
   }
 
-  if(m_selectedTooltipTypeHasBeenSet)
-  {
-   payload.WithString("SelectedTooltipType", SelectedTooltipTypeMapper::GetNameForSelectedTooltipType(m_selectedTooltipType));
+  if (m_selectedTooltipTypeHasBeenSet) {
+    payload.WithString("SelectedTooltipType", SelectedTooltipTypeMapper::GetNameForSelectedTooltipType(m_selectedTooltipType));
   }
 
-  if(m_fieldBasedTooltipHasBeenSet)
-  {
-   payload.WithObject("FieldBasedTooltip", m_fieldBasedTooltip.Jsonize());
-
+  if (m_fieldBasedTooltipHasBeenSet) {
+    payload.WithObject("FieldBasedTooltip", m_fieldBasedTooltip.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class DBProxyEndpointStatus
-  {
-    NOT_SET,
-    available,
-    modifying,
-    incompatible_network,
-    insufficient_resource_limits,
-    creating,
-    deleting
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class DBProxyEndpointStatus { NOT_SET, available, modifying, incompatible_network, insufficient_resource_limits, creating, deleting };
 
-namespace DBProxyEndpointStatusMapper
-{
+namespace DBProxyEndpointStatusMapper {
 AWS_RDS_API DBProxyEndpointStatus GetDBProxyEndpointStatusForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForDBProxyEndpointStatus(DBProxyEndpointStatus value);
-} // namespace DBProxyEndpointStatusMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace DBProxyEndpointStatusMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

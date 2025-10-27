@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-InvocationStepPayload::InvocationStepPayload(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvocationStepPayload::InvocationStepPayload(JsonView jsonValue) { *this = jsonValue; }
 
-InvocationStepPayload& InvocationStepPayload::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentBlocks"))
-  {
+InvocationStepPayload& InvocationStepPayload::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentBlocks")) {
     Aws::Utils::Array<JsonView> contentBlocksJsonList = jsonValue.GetArray("contentBlocks");
-    for(unsigned contentBlocksIndex = 0; contentBlocksIndex < contentBlocksJsonList.GetLength(); ++contentBlocksIndex)
-    {
+    for (unsigned contentBlocksIndex = 0; contentBlocksIndex < contentBlocksJsonList.GetLength(); ++contentBlocksIndex) {
       m_contentBlocks.push_back(contentBlocksJsonList[contentBlocksIndex].AsObject());
     }
     m_contentBlocksHasBeenSet = true;
@@ -37,24 +28,20 @@ InvocationStepPayload& InvocationStepPayload::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue InvocationStepPayload::Jsonize() const
-{
+JsonValue InvocationStepPayload::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentBlocksHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> contentBlocksJsonList(m_contentBlocks.size());
-   for(unsigned contentBlocksIndex = 0; contentBlocksIndex < contentBlocksJsonList.GetLength(); ++contentBlocksIndex)
-   {
-     contentBlocksJsonList[contentBlocksIndex].AsObject(m_contentBlocks[contentBlocksIndex].Jsonize());
-   }
-   payload.WithArray("contentBlocks", std::move(contentBlocksJsonList));
-
+  if (m_contentBlocksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contentBlocksJsonList(m_contentBlocks.size());
+    for (unsigned contentBlocksIndex = 0; contentBlocksIndex < contentBlocksJsonList.GetLength(); ++contentBlocksIndex) {
+      contentBlocksJsonList[contentBlocksIndex].AsObject(m_contentBlocks[contentBlocksIndex].Jsonize());
+    }
+    payload.WithArray("contentBlocks", std::move(contentBlocksJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

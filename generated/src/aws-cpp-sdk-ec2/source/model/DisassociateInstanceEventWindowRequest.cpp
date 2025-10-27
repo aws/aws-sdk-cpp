@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisassociateInstanceEventWindowRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisassociateInstanceEventWindowRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateInstanceEventWindowRequest::SerializePayload() const
-{
+Aws::String DisassociateInstanceEventWindowRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateInstanceEventWindow&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instanceEventWindowIdHasBeenSet)
-  {
+  if (m_instanceEventWindowIdHasBeenSet) {
     ss << "InstanceEventWindowId=" << StringUtils::URLEncode(m_instanceEventWindowId.c_str()) << "&";
   }
 
-  if(m_associationTargetHasBeenSet)
-  {
+  if (m_associationTargetHasBeenSet) {
     m_associationTarget.OutputToStream(ss, "AssociationTarget");
   }
 
@@ -33,8 +29,4 @@ Aws::String DisassociateInstanceEventWindowRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

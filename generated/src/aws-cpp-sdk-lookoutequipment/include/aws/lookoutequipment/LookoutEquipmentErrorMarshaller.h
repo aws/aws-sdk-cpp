@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

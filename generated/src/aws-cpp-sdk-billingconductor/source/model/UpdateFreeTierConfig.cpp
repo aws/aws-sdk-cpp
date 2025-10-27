@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-UpdateFreeTierConfig::UpdateFreeTierConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateFreeTierConfig::UpdateFreeTierConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateFreeTierConfig& UpdateFreeTierConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Activated"))
-  {
+UpdateFreeTierConfig& UpdateFreeTierConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Activated")) {
     m_activated = jsonValue.GetBool("Activated");
     m_activatedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateFreeTierConfig::Jsonize() const
-{
+JsonValue UpdateFreeTierConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_activatedHasBeenSet)
-  {
-   payload.WithBool("Activated", m_activated);
-
+  if (m_activatedHasBeenSet) {
+    payload.WithBool("Activated", m_activated);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

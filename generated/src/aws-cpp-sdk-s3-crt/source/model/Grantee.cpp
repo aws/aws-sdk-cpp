@@ -3,61 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/Grantee.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/Grantee.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-Grantee::Grantee(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Grantee::Grantee(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Grantee& Grantee::operator =(const XmlNode& xmlNode)
-{
+Grantee& Grantee::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
-    if(!displayNameNode.IsNull())
-    {
+    if (!displayNameNode.IsNull()) {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
     }
     XmlNode emailAddressNode = resultNode.FirstChild("EmailAddress");
-    if(!emailAddressNode.IsNull())
-    {
+    if (!emailAddressNode.IsNull()) {
       m_emailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(emailAddressNode.GetText());
       m_emailAddressHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
-    if(!iDNode.IsNull())
-    {
+    if (!iDNode.IsNull()) {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
     }
     auto type = resultNode.GetAttributeValue("xsi:type");
-    if(!type.empty())
-    {
+    if (!type.empty()) {
       m_type = TypeMapper::GetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(type).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode uRINode = resultNode.FirstChild("URI");
-    if(!uRINode.IsNull())
-    {
+    if (!uRINode.IsNull()) {
       m_uRI = Aws::Utils::Xml::DecodeEscapedXmlText(uRINode.GetText());
       m_uRIHasBeenSet = true;
     }
@@ -66,41 +53,34 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Grantee::AddToNode(XmlNode& parentNode) const
-{
+void Grantee::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
   parentNode.SetAttributeValue("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-  if(m_displayNameHasBeenSet)
-  {
-   XmlNode displayNameNode = parentNode.CreateChildElement("DisplayName");
-   displayNameNode.SetText(m_displayName);
+  if (m_displayNameHasBeenSet) {
+    XmlNode displayNameNode = parentNode.CreateChildElement("DisplayName");
+    displayNameNode.SetText(m_displayName);
   }
 
-  if(m_emailAddressHasBeenSet)
-  {
-   XmlNode emailAddressNode = parentNode.CreateChildElement("EmailAddress");
-   emailAddressNode.SetText(m_emailAddress);
+  if (m_emailAddressHasBeenSet) {
+    XmlNode emailAddressNode = parentNode.CreateChildElement("EmailAddress");
+    emailAddressNode.SetText(m_emailAddress);
   }
 
-  if(m_iDHasBeenSet)
-  {
-   XmlNode iDNode = parentNode.CreateChildElement("ID");
-   iDNode.SetText(m_iD);
+  if (m_iDHasBeenSet) {
+    XmlNode iDNode = parentNode.CreateChildElement("ID");
+    iDNode.SetText(m_iD);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   parentNode.SetAttributeValue("xsi:type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    parentNode.SetAttributeValue("xsi:type", TypeMapper::GetNameForType(m_type));
   }
 
-  if(m_uRIHasBeenSet)
-  {
-   XmlNode uRINode = parentNode.CreateChildElement("URI");
-   uRINode.SetText(m_uRI);
+  if (m_uRIHasBeenSet) {
+    XmlNode uRINode = parentNode.CreateChildElement("URI");
+    uRINode.SetText(m_uRI);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

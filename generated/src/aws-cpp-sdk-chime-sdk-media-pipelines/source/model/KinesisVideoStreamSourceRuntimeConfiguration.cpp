@@ -11,71 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamSourceRuntimeConfiguration& KinesisVideoStreamSourceRuntimeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Streams"))
-  {
+KinesisVideoStreamSourceRuntimeConfiguration& KinesisVideoStreamSourceRuntimeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Streams")) {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("Streams");
-    for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-    {
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
       m_streams.push_back(streamsJsonList[streamsIndex].AsObject());
     }
     m_streamsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaEncoding"))
-  {
+  if (jsonValue.ValueExists("MediaEncoding")) {
     m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(jsonValue.GetString("MediaEncoding"));
     m_mediaEncodingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaSampleRate"))
-  {
+  if (jsonValue.ValueExists("MediaSampleRate")) {
     m_mediaSampleRate = jsonValue.GetInteger("MediaSampleRate");
     m_mediaSampleRateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamSourceRuntimeConfiguration::Jsonize() const
-{
+JsonValue KinesisVideoStreamSourceRuntimeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
-   for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-   {
-     streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
-   }
-   payload.WithArray("Streams", std::move(streamsJsonList));
-
+  if (m_streamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
+      streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
+    }
+    payload.WithArray("Streams", std::move(streamsJsonList));
   }
 
-  if(m_mediaEncodingHasBeenSet)
-  {
-   payload.WithString("MediaEncoding", MediaEncodingMapper::GetNameForMediaEncoding(m_mediaEncoding));
+  if (m_mediaEncodingHasBeenSet) {
+    payload.WithString("MediaEncoding", MediaEncodingMapper::GetNameForMediaEncoding(m_mediaEncoding));
   }
 
-  if(m_mediaSampleRateHasBeenSet)
-  {
-   payload.WithInteger("MediaSampleRate", m_mediaSampleRate);
-
+  if (m_mediaSampleRateHasBeenSet) {
+    payload.WithInteger("MediaSampleRate", m_mediaSampleRate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/network-firewall/NetworkFirewallEndpointRules.h>
+#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using NetworkFirewallClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using NetworkFirewallDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_NETWORKFIREWALL_API NetworkFirewallEndpointProvider : public NetworkFirewallDefaultEpProviderBase
-{
-public:
-    using NetworkFirewallResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_NETWORKFIREWALL_API NetworkFirewallEndpointProvider : public NetworkFirewallDefaultEpProviderBase {
+ public:
+  using NetworkFirewallResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    NetworkFirewallEndpointProvider()
-      : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::GetRulesBlob(), Aws::NetworkFirewall::NetworkFirewallEndpointRules::RulesBlobSize)
-    {}
+  NetworkFirewallEndpointProvider()
+      : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::GetRulesBlob(),
+                                             Aws::NetworkFirewall::NetworkFirewallEndpointRules::RulesBlobSize) {}
 
-    ~NetworkFirewallEndpointProvider()
-    {
-    }
+  ~NetworkFirewallEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace NetworkFirewall
+}  // namespace Aws

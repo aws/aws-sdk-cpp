@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceDataSyncAlreadyExistsException& ResourceDataSyncAlreadyExistsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SyncName"))
-  {
+ResourceDataSyncAlreadyExistsException& ResourceDataSyncAlreadyExistsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SyncName")) {
     m_syncName = jsonValue.GetString("SyncName");
     m_syncNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceDataSyncAlreadyExistsException::Jsonize() const
-{
+JsonValue ResourceDataSyncAlreadyExistsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_syncNameHasBeenSet)
-  {
-   payload.WithString("SyncName", m_syncName);
-
+  if (m_syncNameHasBeenSet) {
+    payload.WithString("SyncName", m_syncName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

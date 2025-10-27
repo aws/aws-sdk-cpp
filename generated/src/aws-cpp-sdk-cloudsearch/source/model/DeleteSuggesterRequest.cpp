@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteSuggesterRequest::SerializePayload() const
-{
+Aws::String DeleteSuggesterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteSuggester&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_suggesterNameHasBeenSet)
-  {
+  if (m_suggesterNameHasBeenSet) {
     ss << "SuggesterName=" << StringUtils::URLEncode(m_suggesterName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteSuggesterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteSuggesterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteSuggesterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

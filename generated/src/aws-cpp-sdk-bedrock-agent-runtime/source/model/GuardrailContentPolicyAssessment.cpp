@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-GuardrailContentPolicyAssessment::GuardrailContentPolicyAssessment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailContentPolicyAssessment::GuardrailContentPolicyAssessment(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailContentPolicyAssessment& GuardrailContentPolicyAssessment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filters"))
-  {
+GuardrailContentPolicyAssessment& GuardrailContentPolicyAssessment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filters")) {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
-    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-    {
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
     }
     m_filtersHasBeenSet = true;
@@ -37,24 +28,20 @@ GuardrailContentPolicyAssessment& GuardrailContentPolicyAssessment::operator =(J
   return *this;
 }
 
-JsonValue GuardrailContentPolicyAssessment::Jsonize() const
-{
+JsonValue GuardrailContentPolicyAssessment::Jsonize() const {
   JsonValue payload;
 
-  if(m_filtersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
-
+  if (m_filtersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
+      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    }
+    payload.WithArray("filters", std::move(filtersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

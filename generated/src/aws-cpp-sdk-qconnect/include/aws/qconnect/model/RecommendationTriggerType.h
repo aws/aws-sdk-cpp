@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class RecommendationTriggerType
-  {
-    NOT_SET,
-    QUERY,
-    GENERATIVE
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class RecommendationTriggerType { NOT_SET, QUERY, GENERATIVE };
 
-namespace RecommendationTriggerTypeMapper
-{
+namespace RecommendationTriggerTypeMapper {
 AWS_QCONNECT_API RecommendationTriggerType GetRecommendationTriggerTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForRecommendationTriggerType(RecommendationTriggerType value);
-} // namespace RecommendationTriggerTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace RecommendationTriggerTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

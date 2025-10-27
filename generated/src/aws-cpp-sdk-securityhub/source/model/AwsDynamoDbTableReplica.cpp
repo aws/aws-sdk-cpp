@@ -3,113 +3,87 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsDynamoDbTableReplica.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsDynamoDbTableReplica.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsDynamoDbTableReplica::AwsDynamoDbTableReplica(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsDynamoDbTableReplica::AwsDynamoDbTableReplica(JsonView jsonValue) { *this = jsonValue; }
 
-AwsDynamoDbTableReplica& AwsDynamoDbTableReplica::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
-  {
+AwsDynamoDbTableReplica& AwsDynamoDbTableReplica::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GlobalSecondaryIndexes")) {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
-    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
-    {
+    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
+         ++globalSecondaryIndexesIndex) {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsMasterKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsMasterKeyId")) {
     m_kmsMasterKeyId = jsonValue.GetString("KmsMasterKeyId");
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
-  {
+  if (jsonValue.ValueExists("ProvisionedThroughputOverride")) {
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
     m_provisionedThroughputOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegionName"))
-  {
+  if (jsonValue.ValueExists("RegionName")) {
     m_regionName = jsonValue.GetString("RegionName");
     m_regionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicaStatus"))
-  {
+  if (jsonValue.ValueExists("ReplicaStatus")) {
     m_replicaStatus = jsonValue.GetString("ReplicaStatus");
     m_replicaStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicaStatusDescription"))
-  {
+  if (jsonValue.ValueExists("ReplicaStatusDescription")) {
     m_replicaStatusDescription = jsonValue.GetString("ReplicaStatusDescription");
     m_replicaStatusDescriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsDynamoDbTableReplica::Jsonize() const
-{
+JsonValue AwsDynamoDbTableReplica::Jsonize() const {
   JsonValue payload;
 
-  if(m_globalSecondaryIndexesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
-   for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
-   {
-     globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
-   }
-   payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
-
+  if (m_globalSecondaryIndexesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
+         ++globalSecondaryIndexesIndex) {
+      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
+    }
+    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
   }
 
-  if(m_kmsMasterKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsMasterKeyId", m_kmsMasterKeyId);
-
+  if (m_kmsMasterKeyIdHasBeenSet) {
+    payload.WithString("KmsMasterKeyId", m_kmsMasterKeyId);
   }
 
-  if(m_provisionedThroughputOverrideHasBeenSet)
-  {
-   payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
-
+  if (m_provisionedThroughputOverrideHasBeenSet) {
+    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
   }
 
-  if(m_regionNameHasBeenSet)
-  {
-   payload.WithString("RegionName", m_regionName);
-
+  if (m_regionNameHasBeenSet) {
+    payload.WithString("RegionName", m_regionName);
   }
 
-  if(m_replicaStatusHasBeenSet)
-  {
-   payload.WithString("ReplicaStatus", m_replicaStatus);
-
+  if (m_replicaStatusHasBeenSet) {
+    payload.WithString("ReplicaStatus", m_replicaStatus);
   }
 
-  if(m_replicaStatusDescriptionHasBeenSet)
-  {
-   payload.WithString("ReplicaStatusDescription", m_replicaStatusDescription);
-
+  if (m_replicaStatusDescriptionHasBeenSet) {
+    payload.WithString("ReplicaStatusDescription", m_replicaStatusDescription);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

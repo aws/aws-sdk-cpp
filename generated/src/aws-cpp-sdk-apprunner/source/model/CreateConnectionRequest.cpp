@@ -12,43 +12,30 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConnectionRequest::SerializePayload() const
-{
+Aws::String CreateConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectionNameHasBeenSet)
-  {
-   payload.WithString("ConnectionName", m_connectionName);
-
+  if (m_connectionNameHasBeenSet) {
+    payload.WithString("ConnectionName", m_connectionName);
   }
 
-  if(m_providerTypeHasBeenSet)
-  {
-   payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
+  if (m_providerTypeHasBeenSet) {
+    payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateConnectionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateConnectionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.CreateConnection"));
   return headers;
-
 }
-
-
-
-

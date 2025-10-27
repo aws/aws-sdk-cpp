@@ -11,93 +11,74 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ServiceConfiguration::ServiceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceConfiguration::ServiceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceConfiguration& ServiceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("memory"))
-  {
+ServiceConfiguration& ServiceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("memory")) {
     m_memory = jsonValue.GetInteger("memory");
     m_memoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cpu"))
-  {
+  if (jsonValue.ValueExists("cpu")) {
     m_cpu = jsonValue.GetInteger("cpu");
     m_cpuHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containerConfigurations"))
-  {
+  if (jsonValue.ValueExists("containerConfigurations")) {
     Aws::Utils::Array<JsonView> containerConfigurationsJsonList = jsonValue.GetArray("containerConfigurations");
-    for(unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength(); ++containerConfigurationsIndex)
-    {
+    for (unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength();
+         ++containerConfigurationsIndex) {
       m_containerConfigurations.push_back(containerConfigurationsJsonList[containerConfigurationsIndex].AsObject());
     }
     m_containerConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoScalingConfiguration"))
-  {
-    m_autoScalingConfiguration = AutoScalingConfigurationMapper::GetAutoScalingConfigurationForName(jsonValue.GetString("autoScalingConfiguration"));
+  if (jsonValue.ValueExists("autoScalingConfiguration")) {
+    m_autoScalingConfiguration =
+        AutoScalingConfigurationMapper::GetAutoScalingConfigurationForName(jsonValue.GetString("autoScalingConfiguration"));
     m_autoScalingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskDefinitionArn"))
-  {
+  if (jsonValue.ValueExists("taskDefinitionArn")) {
     m_taskDefinitionArn = jsonValue.GetString("taskDefinitionArn");
     m_taskDefinitionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceConfiguration::Jsonize() const
-{
+JsonValue ServiceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
-
+  if (m_memoryHasBeenSet) {
+    payload.WithInteger("memory", m_memory);
   }
 
-  if(m_cpuHasBeenSet)
-  {
-   payload.WithInteger("cpu", m_cpu);
-
+  if (m_cpuHasBeenSet) {
+    payload.WithInteger("cpu", m_cpu);
   }
 
-  if(m_containerConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> containerConfigurationsJsonList(m_containerConfigurations.size());
-   for(unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength(); ++containerConfigurationsIndex)
-   {
-     containerConfigurationsJsonList[containerConfigurationsIndex].AsObject(m_containerConfigurations[containerConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("containerConfigurations", std::move(containerConfigurationsJsonList));
-
+  if (m_containerConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> containerConfigurationsJsonList(m_containerConfigurations.size());
+    for (unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength();
+         ++containerConfigurationsIndex) {
+      containerConfigurationsJsonList[containerConfigurationsIndex].AsObject(
+          m_containerConfigurations[containerConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("containerConfigurations", std::move(containerConfigurationsJsonList));
   }
 
-  if(m_autoScalingConfigurationHasBeenSet)
-  {
-   payload.WithString("autoScalingConfiguration", AutoScalingConfigurationMapper::GetNameForAutoScalingConfiguration(m_autoScalingConfiguration));
+  if (m_autoScalingConfigurationHasBeenSet) {
+    payload.WithString("autoScalingConfiguration",
+                       AutoScalingConfigurationMapper::GetNameForAutoScalingConfiguration(m_autoScalingConfiguration));
   }
 
-  if(m_taskDefinitionArnHasBeenSet)
-  {
-   payload.WithString("taskDefinitionArn", m_taskDefinitionArn);
-
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("taskDefinitionArn", m_taskDefinitionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

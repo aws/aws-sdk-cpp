@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-enum class RedshiftServerlessErrors
-{
-  //From Core//
+namespace Aws {
+namespace RedshiftServerless {
+enum class RedshiftServerlessErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RedshiftServerlessErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class RedshiftServerlessErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INSUFFICIENT_CAPACITY,
   INTERNAL_SERVER,
   INVALID_PAGINATION,
@@ -56,23 +53,23 @@ enum class RedshiftServerlessErrors
   TOO_MANY_TAGS
 };
 
-class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessError : public Aws::Client::AWSError<RedshiftServerlessErrors>
-{
-public:
+class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessError : public Aws::Client::AWSError<RedshiftServerlessErrors> {
+ public:
   RedshiftServerlessError() {}
-  RedshiftServerlessError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
+  RedshiftServerlessError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
   RedshiftServerlessError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
-  RedshiftServerlessError(const Aws::Client::AWSError<RedshiftServerlessErrors>& rhs) : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
+  RedshiftServerlessError(const Aws::Client::AWSError<RedshiftServerlessErrors>& rhs)
+      : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
   RedshiftServerlessError(Aws::Client::AWSError<RedshiftServerlessErrors>&& rhs) : Aws::Client::AWSError<RedshiftServerlessErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace RedshiftServerlessErrorMapper
-{
-  AWS_REDSHIFTSERVERLESS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RedshiftServerlessErrorMapper {
+AWS_REDSHIFTSERVERLESS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace RedshiftServerless
+}  // namespace Aws

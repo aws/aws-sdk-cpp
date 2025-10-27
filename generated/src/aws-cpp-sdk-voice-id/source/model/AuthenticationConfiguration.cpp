@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/AuthenticationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/AuthenticationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
+namespace Aws {
+namespace VoiceID {
+namespace Model {
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AcceptanceThreshold"))
-  {
+AuthenticationConfiguration& AuthenticationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AcceptanceThreshold")) {
     m_acceptanceThreshold = jsonValue.GetInteger("AcceptanceThreshold");
     m_acceptanceThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthenticationConfiguration::Jsonize() const
-{
+JsonValue AuthenticationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_acceptanceThresholdHasBeenSet)
-  {
-   payload.WithInteger("AcceptanceThreshold", m_acceptanceThreshold);
-
+  if (m_acceptanceThresholdHasBeenSet) {
+    payload.WithInteger("AcceptanceThreshold", m_acceptanceThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

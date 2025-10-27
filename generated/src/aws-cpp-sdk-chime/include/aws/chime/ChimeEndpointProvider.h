@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime/ChimeEndpointRules.h>
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/chime/ChimeEndpointRules.h>
-
-
-namespace Aws
-{
-namespace Chime
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Chime {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ChimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,22 @@ using ChimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using ChimeEndpointProviderBase =
-    EndpointProviderBase<ChimeClientConfiguration, ChimeBuiltInParameters, ChimeClientContextParameters>;
+using ChimeEndpointProviderBase = EndpointProviderBase<ChimeClientConfiguration, ChimeBuiltInParameters, ChimeClientContextParameters>;
 
-using ChimeDefaultEpProviderBase =
-    DefaultEndpointProvider<ChimeClientConfiguration, ChimeBuiltInParameters, ChimeClientContextParameters>;
+using ChimeDefaultEpProviderBase = DefaultEndpointProvider<ChimeClientConfiguration, ChimeBuiltInParameters, ChimeClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CHIME_API ChimeEndpointProvider : public ChimeDefaultEpProviderBase
-{
-public:
-    using ChimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CHIME_API ChimeEndpointProvider : public ChimeDefaultEpProviderBase {
+ public:
+  using ChimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ChimeEndpointProvider()
-      : ChimeDefaultEpProviderBase(Aws::Chime::ChimeEndpointRules::GetRulesBlob(), Aws::Chime::ChimeEndpointRules::RulesBlobSize)
-    {}
+  ChimeEndpointProvider()
+      : ChimeDefaultEpProviderBase(Aws::Chime::ChimeEndpointRules::GetRulesBlob(), Aws::Chime::ChimeEndpointRules::RulesBlobSize) {}
 
-    ~ChimeEndpointProvider()
-    {
-    }
+  ~ChimeEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Chime
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Chime
+}  // namespace Aws

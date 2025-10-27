@@ -12,71 +12,53 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSyncConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateSyncConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithString("Branch", m_branch);
-
+  if (m_branchHasBeenSet) {
+    payload.WithString("Branch", m_branch);
   }
 
-  if(m_configFileHasBeenSet)
-  {
-   payload.WithString("ConfigFile", m_configFile);
-
+  if (m_configFileHasBeenSet) {
+    payload.WithString("ConfigFile", m_configFile);
   }
 
-  if(m_repositoryLinkIdHasBeenSet)
-  {
-   payload.WithString("RepositoryLinkId", m_repositoryLinkId);
-
+  if (m_repositoryLinkIdHasBeenSet) {
+    payload.WithString("RepositoryLinkId", m_repositoryLinkId);
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("ResourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("ResourceName", m_resourceName);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_syncTypeHasBeenSet)
-  {
-   payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
+  if (m_syncTypeHasBeenSet) {
+    payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
   }
 
-  if(m_publishDeploymentStatusHasBeenSet)
-  {
-   payload.WithString("PublishDeploymentStatus", PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus));
+  if (m_publishDeploymentStatusHasBeenSet) {
+    payload.WithString("PublishDeploymentStatus",
+                       PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus));
   }
 
-  if(m_triggerResourceUpdateOnHasBeenSet)
-  {
-   payload.WithString("TriggerResourceUpdateOn", TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
+  if (m_triggerResourceUpdateOnHasBeenSet) {
+    payload.WithString("TriggerResourceUpdateOn",
+                       TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
   }
 
-  if(m_pullRequestCommentHasBeenSet)
-  {
-   payload.WithString("PullRequestComment", PullRequestCommentMapper::GetNameForPullRequestComment(m_pullRequestComment));
+  if (m_pullRequestCommentHasBeenSet) {
+    payload.WithString("PullRequestComment", PullRequestCommentMapper::GetNameForPullRequestComment(m_pullRequestComment));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateSyncConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateSyncConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.UpdateSyncConfiguration"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.UpdateSyncConfiguration"));
   return headers;
-
 }
-
-
-
-

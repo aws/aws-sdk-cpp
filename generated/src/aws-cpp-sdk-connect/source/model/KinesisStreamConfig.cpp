@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-KinesisStreamConfig::KinesisStreamConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisStreamConfig::KinesisStreamConfig(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisStreamConfig& KinesisStreamConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamArn"))
-  {
+KinesisStreamConfig& KinesisStreamConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamArn")) {
     m_streamArn = jsonValue.GetString("StreamArn");
     m_streamArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisStreamConfig::Jsonize() const
-{
+JsonValue KinesisStreamConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamArnHasBeenSet)
-  {
-   payload.WithString("StreamArn", m_streamArn);
-
+  if (m_streamArnHasBeenSet) {
+    payload.WithString("StreamArn", m_streamArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

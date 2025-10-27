@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resourcegroupstaggingapi/model/StartReportCreationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resourcegroupstaggingapi/model/StartReportCreationRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartReportCreationRequest::SerializePayload() const
-{
+Aws::String StartReportCreationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithString("S3Bucket", m_s3Bucket);
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithString("S3Bucket", m_s3Bucket);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartReportCreationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartReportCreationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.StartReportCreation"));
   return headers;
-
 }
-
-
-
-

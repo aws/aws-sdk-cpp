@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/ServerlessClientAuthentication.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/ServerlessClientAuthentication.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-ServerlessClientAuthentication::ServerlessClientAuthentication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerlessClientAuthentication::ServerlessClientAuthentication(JsonView jsonValue) { *this = jsonValue; }
 
-ServerlessClientAuthentication& ServerlessClientAuthentication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sasl"))
-  {
+ServerlessClientAuthentication& ServerlessClientAuthentication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sasl")) {
     m_sasl = jsonValue.GetObject("sasl");
     m_saslHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerlessClientAuthentication::Jsonize() const
-{
+JsonValue ServerlessClientAuthentication::Jsonize() const {
   JsonValue payload;
 
-  if(m_saslHasBeenSet)
-  {
-   payload.WithObject("sasl", m_sasl.Jsonize());
-
+  if (m_saslHasBeenSet) {
+    payload.WithObject("sasl", m_sasl.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

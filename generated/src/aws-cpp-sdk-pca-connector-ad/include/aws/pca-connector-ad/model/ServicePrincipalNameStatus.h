@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Model
-{
-  enum class ServicePrincipalNameStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    DELETING,
-    FAILED
-  };
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Model {
+enum class ServicePrincipalNameStatus { NOT_SET, CREATING, ACTIVE, DELETING, FAILED };
 
-namespace ServicePrincipalNameStatusMapper
-{
+namespace ServicePrincipalNameStatusMapper {
 AWS_PCACONNECTORAD_API ServicePrincipalNameStatus GetServicePrincipalNameStatusForName(const Aws::String& name);
 
 AWS_PCACONNECTORAD_API Aws::String GetNameForServicePrincipalNameStatus(ServicePrincipalNameStatus value);
-} // namespace ServicePrincipalNameStatusMapper
-} // namespace Model
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace ServicePrincipalNameStatusMapper
+}  // namespace Model
+}  // namespace PcaConnectorAd
+}  // namespace Aws

@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
-{
+Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=TerminateInstanceInAutoScalingGroup&";
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_shouldDecrementDesiredCapacityHasBeenSet)
-  {
+  if (m_shouldDecrementDesiredCapacityHasBeenSet) {
     ss << "ShouldDecrementDesiredCapacity=" << std::boolalpha << m_shouldDecrementDesiredCapacity << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  TerminateInstanceInAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void TerminateInstanceInAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,10 +4,10 @@
  */
 
 #include <aws/connect/model/ListAgentStatusesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAgentStatusesResult::ListAgentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAgentStatusesResult::ListAgentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAgentStatusesResult& ListAgentStatusesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAgentStatusesResult& ListAgentStatusesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AgentStatusSummaryList"))
-  {
+  if (jsonValue.ValueExists("AgentStatusSummaryList")) {
     Aws::Utils::Array<JsonView> agentStatusSummaryListJsonList = jsonValue.GetArray("AgentStatusSummaryList");
-    for(unsigned agentStatusSummaryListIndex = 0; agentStatusSummaryListIndex < agentStatusSummaryListJsonList.GetLength(); ++agentStatusSummaryListIndex)
-    {
+    for (unsigned agentStatusSummaryListIndex = 0; agentStatusSummaryListIndex < agentStatusSummaryListJsonList.GetLength();
+         ++agentStatusSummaryListIndex) {
       m_agentStatusSummaryList.push_back(agentStatusSummaryListJsonList[agentStatusSummaryListIndex].AsObject());
     }
     m_agentStatusSummaryListHasBeenSet = true;
@@ -42,12 +36,10 @@ ListAgentStatusesResult& ListAgentStatusesResult::operator =(const Aws::AmazonWe
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

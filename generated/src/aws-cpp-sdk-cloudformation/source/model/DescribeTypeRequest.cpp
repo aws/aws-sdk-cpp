@@ -10,37 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTypeRequest::SerializePayload() const
-{
+Aws::String DescribeTypeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeType&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_arnHasBeenSet)
-  {
+  if (m_arnHasBeenSet) {
     ss << "Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 
-  if(m_versionIdHasBeenSet)
-  {
+  if (m_versionIdHasBeenSet) {
     ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
   }
 
-  if(m_publisherIdHasBeenSet)
-  {
+  if (m_publisherIdHasBeenSet) {
     ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
   }
 
-  if(m_publicVersionNumberHasBeenSet)
-  {
+  if (m_publicVersionNumberHasBeenSet) {
     ss << "PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String DescribeTypeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/ConnectivityResourceConfigurationArn.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/ConnectivityResourceConfigurationArn.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-ConnectivityResourceConfigurationArn::ConnectivityResourceConfigurationArn(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectivityResourceConfigurationArn::ConnectivityResourceConfigurationArn(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectivityResourceConfigurationArn& ConnectivityResourceConfigurationArn::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceConfigurationArn"))
-  {
+ConnectivityResourceConfigurationArn& ConnectivityResourceConfigurationArn::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceConfigurationArn")) {
     m_resourceConfigurationArn = jsonValue.GetString("ResourceConfigurationArn");
     m_resourceConfigurationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectivityResourceConfigurationArn::Jsonize() const
-{
+JsonValue ConnectivityResourceConfigurationArn::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ResourceConfigurationArn", m_resourceConfigurationArn);
-
+  if (m_resourceConfigurationArnHasBeenSet) {
+    payload.WithString("ResourceConfigurationArn", m_resourceConfigurationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

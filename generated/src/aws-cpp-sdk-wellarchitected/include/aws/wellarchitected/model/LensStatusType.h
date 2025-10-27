@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
-  enum class LensStatusType
-  {
-    NOT_SET,
-    ALL,
-    DRAFT,
-    PUBLISHED
-  };
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
+enum class LensStatusType { NOT_SET, ALL, DRAFT, PUBLISHED };
 
-namespace LensStatusTypeMapper
-{
+namespace LensStatusTypeMapper {
 AWS_WELLARCHITECTED_API LensStatusType GetLensStatusTypeForName(const Aws::String& name);
 
 AWS_WELLARCHITECTED_API Aws::String GetNameForLensStatusType(LensStatusType value);
-} // namespace LensStatusTypeMapper
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace LensStatusTypeMapper
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

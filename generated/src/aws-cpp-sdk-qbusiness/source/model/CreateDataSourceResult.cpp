@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/CreateDataSourceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/qbusiness/model/CreateDataSourceResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDataSourceResult::CreateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateDataSourceResult::CreateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateDataSourceResult& CreateDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateDataSourceResult& CreateDataSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
+  if (jsonValue.ValueExists("dataSourceId")) {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
     m_dataSourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSourceArn"))
-  {
+  if (jsonValue.ValueExists("dataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("dataSourceArn");
     m_dataSourceArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

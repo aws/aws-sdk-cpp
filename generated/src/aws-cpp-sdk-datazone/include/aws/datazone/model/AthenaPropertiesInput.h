@@ -4,56 +4,55 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
 
+/**
+ * <p>The Amazon Athena properties of a connection.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AthenaPropertiesInput">AWS
+ * API Reference</a></p>
+ */
+class AthenaPropertiesInput {
+ public:
+  AWS_DATAZONE_API AthenaPropertiesInput() = default;
+  AWS_DATAZONE_API AthenaPropertiesInput(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATAZONE_API AthenaPropertiesInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The Amazon Athena properties of a connection.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AthenaPropertiesInput">AWS
-   * API Reference</a></p>
+   * <p>The Amazon Athena workgroup name of a connection.</p>
    */
-  class AthenaPropertiesInput
-  {
-  public:
-    AWS_DATAZONE_API AthenaPropertiesInput() = default;
-    AWS_DATAZONE_API AthenaPropertiesInput(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATAZONE_API AthenaPropertiesInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
+  inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
+  template <typename WorkgroupNameT = Aws::String>
+  void SetWorkgroupName(WorkgroupNameT&& value) {
+    m_workgroupNameHasBeenSet = true;
+    m_workgroupName = std::forward<WorkgroupNameT>(value);
+  }
+  template <typename WorkgroupNameT = Aws::String>
+  AthenaPropertiesInput& WithWorkgroupName(WorkgroupNameT&& value) {
+    SetWorkgroupName(std::forward<WorkgroupNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_workgroupName;
+  bool m_workgroupNameHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The Amazon Athena workgroup name of a connection.</p>
-     */
-    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
-    inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    template<typename WorkgroupNameT = Aws::String>
-    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
-    template<typename WorkgroupNameT = Aws::String>
-    AthenaPropertiesInput& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

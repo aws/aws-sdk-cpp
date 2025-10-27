@@ -3,144 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/DomainSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/DomainSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-DomainSummary::DomainSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainSummary::DomainSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DomainSummary& DomainSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+DomainSummary& DomainSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainVersion"))
-  {
+  if (jsonValue.ValueExists("domainVersion")) {
     m_domainVersion = DomainVersionMapper::GetDomainVersionForName(jsonValue.GetString("domainVersion"));
     m_domainVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("managedAccountId"))
-  {
+  if (jsonValue.ValueExists("managedAccountId")) {
     m_managedAccountId = jsonValue.GetString("managedAccountId");
     m_managedAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("portalUrl"))
-  {
+  if (jsonValue.ValueExists("portalUrl")) {
     m_portalUrl = jsonValue.GetString("portalUrl");
     m_portalUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainSummary::Jsonize() const
-{
+JsonValue DomainSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_domainVersionHasBeenSet)
-  {
-   payload.WithString("domainVersion", DomainVersionMapper::GetNameForDomainVersion(m_domainVersion));
+  if (m_domainVersionHasBeenSet) {
+    payload.WithString("domainVersion", DomainVersionMapper::GetNameForDomainVersion(m_domainVersion));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_managedAccountIdHasBeenSet)
-  {
-   payload.WithString("managedAccountId", m_managedAccountId);
-
+  if (m_managedAccountIdHasBeenSet) {
+    payload.WithString("managedAccountId", m_managedAccountId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_portalUrlHasBeenSet)
-  {
-   payload.WithString("portalUrl", m_portalUrl);
-
+  if (m_portalUrlHasBeenSet) {
+    payload.WithString("portalUrl", m_portalUrl);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DomainStatusMapper::GetNameForDomainStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DomainStatusMapper::GetNameForDomainStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/RegisterThingResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/RegisterThingResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterThingResult::RegisterThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RegisterThingResult::RegisterThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RegisterThingResult& RegisterThingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RegisterThingResult& RegisterThingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("certificatePem"))
-  {
+  if (jsonValue.ValueExists("certificatePem")) {
     m_certificatePem = jsonValue.GetString("certificatePem");
     m_certificatePemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceArns"))
-  {
+  if (jsonValue.ValueExists("resourceArns")) {
     Aws::Map<Aws::String, JsonView> resourceArnsJsonMap = jsonValue.GetObject("resourceArns").GetAllObjects();
-    for(auto& resourceArnsItem : resourceArnsJsonMap)
-    {
+    for (auto& resourceArnsItem : resourceArnsJsonMap) {
       m_resourceArns[resourceArnsItem.first] = resourceArnsItem.second.AsString();
     }
     m_resourceArnsHasBeenSet = true;
@@ -42,12 +35,10 @@ RegisterThingResult& RegisterThingResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

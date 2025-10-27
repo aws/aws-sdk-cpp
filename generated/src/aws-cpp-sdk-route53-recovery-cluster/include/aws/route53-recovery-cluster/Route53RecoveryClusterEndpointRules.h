@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53RecoveryCluster
-{
-class Route53RecoveryClusterEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Route53RecoveryCluster {
+class Route53RecoveryClusterEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Route53RecoveryCluster
-} // namespace Aws
+}  // namespace Route53RecoveryCluster
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/osis/model/GetPipelineRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/GetPipelineRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPipelineRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetPipelineRequest::SerializePayload() const { return {}; }

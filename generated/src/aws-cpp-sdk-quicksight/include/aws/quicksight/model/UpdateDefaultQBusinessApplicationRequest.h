@@ -4,90 +4,102 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
-#include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSightRequest.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace QuickSight {
+namespace Model {
 
+/**
+ */
+class UpdateDefaultQBusinessApplicationRequest : public QuickSightRequest {
+ public:
+  AWS_QUICKSIGHT_API UpdateDefaultQBusinessApplicationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateDefaultQBusinessApplication"; }
+
+  AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
+
+  AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The ID of the Quick Sight account that is connected to the Amazon Q Business
+   * application that you want to update.</p>
    */
-  class UpdateDefaultQBusinessApplicationRequest : public QuickSightRequest
-  {
-  public:
-    AWS_QUICKSIGHT_API UpdateDefaultQBusinessApplicationRequest() = default;
+  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+  template <typename AwsAccountIdT = Aws::String>
+  void SetAwsAccountId(AwsAccountIdT&& value) {
+    m_awsAccountIdHasBeenSet = true;
+    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  }
+  template <typename AwsAccountIdT = Aws::String>
+  UpdateDefaultQBusinessApplicationRequest& WithAwsAccountId(AwsAccountIdT&& value) {
+    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateDefaultQBusinessApplication"; }
+  ///@{
+  /**
+   * <p>The Quick Sight namespace that contains the linked Amazon Q Business
+   * application. If this field is left blank, the default namespace is used.
+   * Currently, the default namespace is the only valid value for this parameter.</p>
+   */
+  inline const Aws::String& GetNamespace() const { return m_namespace; }
+  inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+  template <typename NamespaceT = Aws::String>
+  void SetNamespace(NamespaceT&& value) {
+    m_namespaceHasBeenSet = true;
+    m_namespace = std::forward<NamespaceT>(value);
+  }
+  template <typename NamespaceT = Aws::String>
+  UpdateDefaultQBusinessApplicationRequest& WithNamespace(NamespaceT&& value) {
+    SetNamespace(std::forward<NamespaceT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The ID of the Amazon Q Business application that you want to update.</p>
+   */
+  inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+  inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+  template <typename ApplicationIdT = Aws::String>
+  void SetApplicationId(ApplicationIdT&& value) {
+    m_applicationIdHasBeenSet = true;
+    m_applicationId = std::forward<ApplicationIdT>(value);
+  }
+  template <typename ApplicationIdT = Aws::String>
+  UpdateDefaultQBusinessApplicationRequest& WithApplicationId(ApplicationIdT&& value) {
+    SetApplicationId(std::forward<ApplicationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_awsAccountId;
+  bool m_awsAccountIdHasBeenSet = false;
 
-    AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  Aws::String m_namespace;
+  bool m_namespaceHasBeenSet = false;
 
+  Aws::String m_applicationId;
+  bool m_applicationIdHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ID of the Quick Sight account that is connected to the Amazon Q Business
-     * application that you want to update.</p>
-     */
-    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
-    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    template<typename AwsAccountIdT = Aws::String>
-    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
-    template<typename AwsAccountIdT = Aws::String>
-    UpdateDefaultQBusinessApplicationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Quick Sight namespace that contains the linked Amazon Q Business
-     * application. If this field is left blank, the default namespace is used.
-     * Currently, the default namespace is the only valid value for this parameter.</p>
-     */
-    inline const Aws::String& GetNamespace() const { return m_namespace; }
-    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    template<typename NamespaceT = Aws::String>
-    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
-    template<typename NamespaceT = Aws::String>
-    UpdateDefaultQBusinessApplicationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the Amazon Q Business application that you want to update.</p>
-     */
-    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
-    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    template<typename ApplicationIdT = Aws::String>
-    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
-    template<typename ApplicationIdT = Aws::String>
-    UpdateDefaultQBusinessApplicationRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet = false;
-
-    Aws::String m_namespace;
-    bool m_namespaceHasBeenSet = false;
-
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

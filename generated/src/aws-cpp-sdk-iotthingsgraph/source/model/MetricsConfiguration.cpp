@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotthingsgraph/model/MetricsConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotthingsgraph/model/MetricsConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Model {
 
-MetricsConfiguration::MetricsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricsConfiguration::MetricsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MetricsConfiguration& MetricsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cloudMetricEnabled"))
-  {
+MetricsConfiguration& MetricsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cloudMetricEnabled")) {
     m_cloudMetricEnabled = jsonValue.GetBool("cloudMetricEnabled");
     m_cloudMetricEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricRuleRoleArn"))
-  {
+  if (jsonValue.ValueExists("metricRuleRoleArn")) {
     m_metricRuleRoleArn = jsonValue.GetString("metricRuleRoleArn");
     m_metricRuleRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricsConfiguration::Jsonize() const
-{
+JsonValue MetricsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudMetricEnabledHasBeenSet)
-  {
-   payload.WithBool("cloudMetricEnabled", m_cloudMetricEnabled);
-
+  if (m_cloudMetricEnabledHasBeenSet) {
+    payload.WithBool("cloudMetricEnabled", m_cloudMetricEnabled);
   }
 
-  if(m_metricRuleRoleArnHasBeenSet)
-  {
-   payload.WithString("metricRuleRoleArn", m_metricRuleRoleArn);
-
+  if (m_metricRuleRoleArnHasBeenSet) {
+    payload.WithString("metricRuleRoleArn", m_metricRuleRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTThingsGraph
+}  // namespace Aws

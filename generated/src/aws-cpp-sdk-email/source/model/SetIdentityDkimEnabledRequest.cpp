@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/SetIdentityDkimEnabledRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/SetIdentityDkimEnabledRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const
-{
+Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetIdentityDkimEnabled&";
-  if(m_identityHasBeenSet)
-  {
+  if (m_identityHasBeenSet) {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
 
-  if(m_dkimEnabledHasBeenSet)
-  {
+  if (m_dkimEnabledHasBeenSet) {
     ss << "DkimEnabled=" << std::boolalpha << m_dkimEnabled << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetIdentityDkimEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetIdentityDkimEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

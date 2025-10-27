@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/CreateGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/CreateGroupRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateGroupRequest::SerializePayload() const
-{
+Aws::String CreateGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateGroup&";
-  if(m_pathHasBeenSet)
-  {
+  if (m_pathHasBeenSet) {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
 
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String CreateGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

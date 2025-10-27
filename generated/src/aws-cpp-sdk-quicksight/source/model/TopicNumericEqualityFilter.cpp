@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TopicNumericEqualityFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TopicNumericEqualityFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TopicNumericEqualityFilter::TopicNumericEqualityFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TopicNumericEqualityFilter::TopicNumericEqualityFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TopicNumericEqualityFilter& TopicNumericEqualityFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Constant"))
-  {
+TopicNumericEqualityFilter& TopicNumericEqualityFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Constant")) {
     m_constant = jsonValue.GetObject("Constant");
     m_constantHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Aggregation"))
-  {
+  if (jsonValue.ValueExists("Aggregation")) {
     m_aggregation = NamedFilterAggTypeMapper::GetNamedFilterAggTypeForName(jsonValue.GetString("Aggregation"));
     m_aggregationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TopicNumericEqualityFilter::Jsonize() const
-{
+JsonValue TopicNumericEqualityFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_constantHasBeenSet)
-  {
-   payload.WithObject("Constant", m_constant.Jsonize());
-
+  if (m_constantHasBeenSet) {
+    payload.WithObject("Constant", m_constant.Jsonize());
   }
 
-  if(m_aggregationHasBeenSet)
-  {
-   payload.WithString("Aggregation", NamedFilterAggTypeMapper::GetNameForNamedFilterAggType(m_aggregation));
+  if (m_aggregationHasBeenSet) {
+    payload.WithString("Aggregation", NamedFilterAggTypeMapper::GetNameForNamedFilterAggType(m_aggregation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

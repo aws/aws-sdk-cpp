@@ -11,51 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-PackageGroupAllowedRepository::PackageGroupAllowedRepository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageGroupAllowedRepository::PackageGroupAllowedRepository(JsonView jsonValue) { *this = jsonValue; }
 
-PackageGroupAllowedRepository& PackageGroupAllowedRepository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+PackageGroupAllowedRepository& PackageGroupAllowedRepository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("originRestrictionType"))
-  {
-    m_originRestrictionType = PackageGroupOriginRestrictionTypeMapper::GetPackageGroupOriginRestrictionTypeForName(jsonValue.GetString("originRestrictionType"));
+  if (jsonValue.ValueExists("originRestrictionType")) {
+    m_originRestrictionType =
+        PackageGroupOriginRestrictionTypeMapper::GetPackageGroupOriginRestrictionTypeForName(jsonValue.GetString("originRestrictionType"));
     m_originRestrictionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageGroupAllowedRepository::Jsonize() const
-{
+JsonValue PackageGroupAllowedRepository::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_originRestrictionTypeHasBeenSet)
-  {
-   payload.WithString("originRestrictionType", PackageGroupOriginRestrictionTypeMapper::GetNameForPackageGroupOriginRestrictionType(m_originRestrictionType));
+  if (m_originRestrictionTypeHasBeenSet) {
+    payload.WithString("originRestrictionType",
+                       PackageGroupOriginRestrictionTypeMapper::GetNameForPackageGroupOriginRestrictionType(m_originRestrictionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

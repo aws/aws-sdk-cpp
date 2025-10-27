@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-class WorkspacesInstancesEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace WorkspacesInstances {
+class WorkspacesInstancesEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace WorkspacesInstances
+}  // namespace Aws

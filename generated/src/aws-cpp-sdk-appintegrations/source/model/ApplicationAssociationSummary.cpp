@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-ApplicationAssociationSummary::ApplicationAssociationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationAssociationSummary::ApplicationAssociationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationAssociationSummary& ApplicationAssociationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationAssociationArn"))
-  {
+ApplicationAssociationSummary& ApplicationAssociationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationAssociationArn")) {
     m_applicationAssociationArn = jsonValue.GetString("ApplicationAssociationArn");
     m_applicationAssociationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApplicationArn"))
-  {
+  if (jsonValue.ValueExists("ApplicationArn")) {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
     m_applicationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientId"))
-  {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationAssociationSummary::Jsonize() const
-{
+JsonValue ApplicationAssociationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationAssociationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationAssociationArn", m_applicationAssociationArn);
-
+  if (m_applicationAssociationArnHasBeenSet) {
+    payload.WithString("ApplicationAssociationArn", m_applicationAssociationArn);
   }
 
-  if(m_applicationArnHasBeenSet)
-  {
-   payload.WithString("ApplicationArn", m_applicationArn);
-
+  if (m_applicationArnHasBeenSet) {
+    payload.WithString("ApplicationArn", m_applicationArn);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

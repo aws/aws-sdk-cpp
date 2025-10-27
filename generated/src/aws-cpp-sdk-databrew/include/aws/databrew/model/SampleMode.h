@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
-  enum class SampleMode
-  {
-    NOT_SET,
-    FULL_DATASET,
-    CUSTOM_ROWS
-  };
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
+enum class SampleMode { NOT_SET, FULL_DATASET, CUSTOM_ROWS };
 
-namespace SampleModeMapper
-{
+namespace SampleModeMapper {
 AWS_GLUEDATABREW_API SampleMode GetSampleModeForName(const Aws::String& name);
 
 AWS_GLUEDATABREW_API Aws::String GetNameForSampleMode(SampleMode value);
-} // namespace SampleModeMapper
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace SampleModeMapper
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

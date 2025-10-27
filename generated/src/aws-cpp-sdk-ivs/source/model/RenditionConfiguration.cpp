@@ -3,68 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs/model/RenditionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs/model/RenditionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
+namespace Aws {
+namespace IVS {
+namespace Model {
 
-RenditionConfiguration::RenditionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RenditionConfiguration::RenditionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RenditionConfiguration& RenditionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("renditionSelection"))
-  {
-    m_renditionSelection = RenditionConfigurationRenditionSelectionMapper::GetRenditionConfigurationRenditionSelectionForName(jsonValue.GetString("renditionSelection"));
+RenditionConfiguration& RenditionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("renditionSelection")) {
+    m_renditionSelection = RenditionConfigurationRenditionSelectionMapper::GetRenditionConfigurationRenditionSelectionForName(
+        jsonValue.GetString("renditionSelection"));
     m_renditionSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("renditions"))
-  {
+  if (jsonValue.ValueExists("renditions")) {
     Aws::Utils::Array<JsonView> renditionsJsonList = jsonValue.GetArray("renditions");
-    for(unsigned renditionsIndex = 0; renditionsIndex < renditionsJsonList.GetLength(); ++renditionsIndex)
-    {
-      m_renditions.push_back(RenditionConfigurationRenditionMapper::GetRenditionConfigurationRenditionForName(renditionsJsonList[renditionsIndex].AsString()));
+    for (unsigned renditionsIndex = 0; renditionsIndex < renditionsJsonList.GetLength(); ++renditionsIndex) {
+      m_renditions.push_back(
+          RenditionConfigurationRenditionMapper::GetRenditionConfigurationRenditionForName(renditionsJsonList[renditionsIndex].AsString()));
     }
     m_renditionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RenditionConfiguration::Jsonize() const
-{
+JsonValue RenditionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_renditionSelectionHasBeenSet)
-  {
-   payload.WithString("renditionSelection", RenditionConfigurationRenditionSelectionMapper::GetNameForRenditionConfigurationRenditionSelection(m_renditionSelection));
+  if (m_renditionSelectionHasBeenSet) {
+    payload.WithString(
+        "renditionSelection",
+        RenditionConfigurationRenditionSelectionMapper::GetNameForRenditionConfigurationRenditionSelection(m_renditionSelection));
   }
 
-  if(m_renditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> renditionsJsonList(m_renditions.size());
-   for(unsigned renditionsIndex = 0; renditionsIndex < renditionsJsonList.GetLength(); ++renditionsIndex)
-   {
-     renditionsJsonList[renditionsIndex].AsString(RenditionConfigurationRenditionMapper::GetNameForRenditionConfigurationRendition(m_renditions[renditionsIndex]));
-   }
-   payload.WithArray("renditions", std::move(renditionsJsonList));
-
+  if (m_renditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> renditionsJsonList(m_renditions.size());
+    for (unsigned renditionsIndex = 0; renditionsIndex < renditionsJsonList.GetLength(); ++renditionsIndex) {
+      renditionsJsonList[renditionsIndex].AsString(
+          RenditionConfigurationRenditionMapper::GetNameForRenditionConfigurationRendition(m_renditions[renditionsIndex]));
+    }
+    payload.WithArray("renditions", std::move(renditionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

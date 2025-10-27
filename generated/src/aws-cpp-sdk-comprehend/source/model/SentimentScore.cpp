@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-SentimentScore::SentimentScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SentimentScore::SentimentScore(JsonView jsonValue) { *this = jsonValue; }
 
-SentimentScore& SentimentScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Positive"))
-  {
+SentimentScore& SentimentScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Positive")) {
     m_positive = jsonValue.GetDouble("Positive");
     m_positiveHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Negative"))
-  {
+  if (jsonValue.ValueExists("Negative")) {
     m_negative = jsonValue.GetDouble("Negative");
     m_negativeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Neutral"))
-  {
+  if (jsonValue.ValueExists("Neutral")) {
     m_neutral = jsonValue.GetDouble("Neutral");
     m_neutralHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mixed"))
-  {
+  if (jsonValue.ValueExists("Mixed")) {
     m_mixed = jsonValue.GetDouble("Mixed");
     m_mixedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SentimentScore::Jsonize() const
-{
+JsonValue SentimentScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_positiveHasBeenSet)
-  {
-   payload.WithDouble("Positive", m_positive);
-
+  if (m_positiveHasBeenSet) {
+    payload.WithDouble("Positive", m_positive);
   }
 
-  if(m_negativeHasBeenSet)
-  {
-   payload.WithDouble("Negative", m_negative);
-
+  if (m_negativeHasBeenSet) {
+    payload.WithDouble("Negative", m_negative);
   }
 
-  if(m_neutralHasBeenSet)
-  {
-   payload.WithDouble("Neutral", m_neutral);
-
+  if (m_neutralHasBeenSet) {
+    payload.WithDouble("Neutral", m_neutral);
   }
 
-  if(m_mixedHasBeenSet)
-  {
-   payload.WithDouble("Mixed", m_mixed);
-
+  if (m_mixedHasBeenSet) {
+    payload.WithDouble("Mixed", m_mixed);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

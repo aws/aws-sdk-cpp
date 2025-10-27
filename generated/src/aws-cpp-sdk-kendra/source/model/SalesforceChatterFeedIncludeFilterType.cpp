@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/SalesforceChatterFeedIncludeFilterType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/kendra/model/SalesforceChatterFeedIncludeFilterType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace kendra {
+namespace Model {
+namespace SalesforceChatterFeedIncludeFilterTypeMapper {
 
-namespace Aws
-{
-  namespace kendra
-  {
-    namespace Model
-    {
-      namespace SalesforceChatterFeedIncludeFilterTypeMapper
-      {
+static const int ACTIVE_USER_HASH = HashingUtils::HashString("ACTIVE_USER");
+static const int STANDARD_USER_HASH = HashingUtils::HashString("STANDARD_USER");
 
-        static const int ACTIVE_USER_HASH = HashingUtils::HashString("ACTIVE_USER");
-        static const int STANDARD_USER_HASH = HashingUtils::HashString("STANDARD_USER");
+SalesforceChatterFeedIncludeFilterType GetSalesforceChatterFeedIncludeFilterTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ACTIVE_USER_HASH) {
+    return SalesforceChatterFeedIncludeFilterType::ACTIVE_USER;
+  } else if (hashCode == STANDARD_USER_HASH) {
+    return SalesforceChatterFeedIncludeFilterType::STANDARD_USER;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SalesforceChatterFeedIncludeFilterType>(hashCode);
+  }
 
+  return SalesforceChatterFeedIncludeFilterType::NOT_SET;
+}
 
-        SalesforceChatterFeedIncludeFilterType GetSalesforceChatterFeedIncludeFilterTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_USER_HASH)
-          {
-            return SalesforceChatterFeedIncludeFilterType::ACTIVE_USER;
-          }
-          else if (hashCode == STANDARD_USER_HASH)
-          {
-            return SalesforceChatterFeedIncludeFilterType::STANDARD_USER;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SalesforceChatterFeedIncludeFilterType>(hashCode);
-          }
+Aws::String GetNameForSalesforceChatterFeedIncludeFilterType(SalesforceChatterFeedIncludeFilterType enumValue) {
+  switch (enumValue) {
+    case SalesforceChatterFeedIncludeFilterType::NOT_SET:
+      return {};
+    case SalesforceChatterFeedIncludeFilterType::ACTIVE_USER:
+      return "ACTIVE_USER";
+    case SalesforceChatterFeedIncludeFilterType::STANDARD_USER:
+      return "STANDARD_USER";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SalesforceChatterFeedIncludeFilterType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSalesforceChatterFeedIncludeFilterType(SalesforceChatterFeedIncludeFilterType enumValue)
-        {
-          switch(enumValue)
-          {
-          case SalesforceChatterFeedIncludeFilterType::NOT_SET:
-            return {};
-          case SalesforceChatterFeedIncludeFilterType::ACTIVE_USER:
-            return "ACTIVE_USER";
-          case SalesforceChatterFeedIncludeFilterType::STANDARD_USER:
-            return "STANDARD_USER";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SalesforceChatterFeedIncludeFilterTypeMapper
-    } // namespace Model
-  } // namespace kendra
-} // namespace Aws
+}  // namespace SalesforceChatterFeedIncludeFilterTypeMapper
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/VerificationResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/VerificationResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-VerificationResponse::VerificationResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VerificationResponse::VerificationResponse(JsonView jsonValue) { *this = jsonValue; }
 
-VerificationResponse& VerificationResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Valid"))
-  {
+VerificationResponse& VerificationResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Valid")) {
     m_valid = jsonValue.GetBool("Valid");
     m_validHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VerificationResponse::Jsonize() const
-{
+JsonValue VerificationResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_validHasBeenSet)
-  {
-   payload.WithBool("Valid", m_valid);
-
+  if (m_validHasBeenSet) {
+    payload.WithBool("Valid", m_valid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

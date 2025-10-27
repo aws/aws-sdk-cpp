@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class FindingActionType
-  {
-    NOT_SET,
-    AWS_API_CALL
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class FindingActionType { NOT_SET, AWS_API_CALL };
 
-namespace FindingActionTypeMapper
-{
+namespace FindingActionTypeMapper {
 AWS_MACIE2_API FindingActionType GetFindingActionTypeForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForFindingActionType(FindingActionType value);
-} // namespace FindingActionTypeMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace FindingActionTypeMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

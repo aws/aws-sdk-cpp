@@ -4,208 +4,267 @@
  */
 
 #pragma once
-#include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/redshift-data/model/StatementStatusString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace RedshiftDataAPIService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace RedshiftDataAPIService {
+namespace Model {
 
+/**
+ * <p>Information about an SQL statement.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SubStatementData">AWS
+ * API Reference</a></p>
+ */
+class SubStatementData {
+ public:
+  AWS_REDSHIFTDATAAPISERVICE_API SubStatementData() = default;
+  AWS_REDSHIFTDATAAPISERVICE_API SubStatementData(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REDSHIFTDATAAPISERVICE_API SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Information about an SQL statement.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SubStatementData">AWS
-   * API Reference</a></p>
+   * <p>The date and time (UTC) the statement was created. </p>
    */
-  class SubStatementData
-  {
-  public:
-    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData() = default;
-    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  SubStatementData& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The amount of time in nanoseconds that the statement ran.</p>
+   */
+  inline long long GetDuration() const { return m_duration; }
+  inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+  inline void SetDuration(long long value) {
+    m_durationHasBeenSet = true;
+    m_duration = value;
+  }
+  inline SubStatementData& WithDuration(long long value) {
+    SetDuration(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time (UTC) the statement was created. </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    SubStatementData& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The error message from the cluster if the SQL statement encountered an error
+   * while running.</p>
+   */
+  inline const Aws::String& GetError() const { return m_error; }
+  inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+  template <typename ErrorT = Aws::String>
+  void SetError(ErrorT&& value) {
+    m_errorHasBeenSet = true;
+    m_error = std::forward<ErrorT>(value);
+  }
+  template <typename ErrorT = Aws::String>
+  SubStatementData& WithError(ErrorT&& value) {
+    SetError(std::forward<ErrorT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The amount of time in nanoseconds that the statement ran.</p>
-     */
-    inline long long GetDuration() const { return m_duration; }
-    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline SubStatementData& WithDuration(long long value) { SetDuration(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A value that indicates whether the statement has a result set. The result set
+   * can be empty. The value is true for an empty result set.</p>
+   */
+  inline bool GetHasResultSet() const { return m_hasResultSet; }
+  inline bool HasResultSetHasBeenSet() const { return m_hasResultSetHasBeenSet; }
+  inline void SetHasResultSet(bool value) {
+    m_hasResultSetHasBeenSet = true;
+    m_hasResultSet = value;
+  }
+  inline SubStatementData& WithHasResultSet(bool value) {
+    SetHasResultSet(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The error message from the cluster if the SQL statement encountered an error
-     * while running.</p>
-     */
-    inline const Aws::String& GetError() const { return m_error; }
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    template<typename ErrorT = Aws::String>
-    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
-    template<typename ErrorT = Aws::String>
-    SubStatementData& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier of the SQL statement. This value is a universally unique
+   * identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the
+   * number of the SQL statement. For example,
+   * <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of
+   * <code>:2</code> that indicates the second SQL statement of a batch query.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  SubStatementData& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A value that indicates whether the statement has a result set. The result set
-     * can be empty. The value is true for an empty result set.</p>
-     */
-    inline bool GetHasResultSet() const { return m_hasResultSet; }
-    inline bool HasResultSetHasBeenSet() const { return m_hasResultSetHasBeenSet; }
-    inline void SetHasResultSet(bool value) { m_hasResultSetHasBeenSet = true; m_hasResultSet = value; }
-    inline SubStatementData& WithHasResultSet(bool value) { SetHasResultSet(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The SQL statement text.</p>
+   */
+  inline const Aws::String& GetQueryString() const { return m_queryString; }
+  inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+  template <typename QueryStringT = Aws::String>
+  void SetQueryString(QueryStringT&& value) {
+    m_queryStringHasBeenSet = true;
+    m_queryString = std::forward<QueryStringT>(value);
+  }
+  template <typename QueryStringT = Aws::String>
+  SubStatementData& WithQueryString(QueryStringT&& value) {
+    SetQueryString(std::forward<QueryStringT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the SQL statement. This value is a universally unique
-     * identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the
-     * number of the SQL statement. For example,
-     * <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of
-     * <code>:2</code> that indicates the second SQL statement of a batch query.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    SubStatementData& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The SQL statement identifier. This value is a universally unique identifier
+   * (UUID) generated by Amazon Redshift Data API. </p>
+   */
+  inline long long GetRedshiftQueryId() const { return m_redshiftQueryId; }
+  inline bool RedshiftQueryIdHasBeenSet() const { return m_redshiftQueryIdHasBeenSet; }
+  inline void SetRedshiftQueryId(long long value) {
+    m_redshiftQueryIdHasBeenSet = true;
+    m_redshiftQueryId = value;
+  }
+  inline SubStatementData& WithRedshiftQueryId(long long value) {
+    SetRedshiftQueryId(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The SQL statement text.</p>
-     */
-    inline const Aws::String& GetQueryString() const { return m_queryString; }
-    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    template<typename QueryStringT = Aws::String>
-    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
-    template<typename QueryStringT = Aws::String>
-    SubStatementData& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Either the number of rows returned from the SQL statement or the number of
+   * rows affected. If result size is greater than zero, the result rows can be the
+   * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
+   * and others. A <code>-1</code> indicates the value is null.</p>
+   */
+  inline long long GetResultRows() const { return m_resultRows; }
+  inline bool ResultRowsHasBeenSet() const { return m_resultRowsHasBeenSet; }
+  inline void SetResultRows(long long value) {
+    m_resultRowsHasBeenSet = true;
+    m_resultRows = value;
+  }
+  inline SubStatementData& WithResultRows(long long value) {
+    SetResultRows(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The SQL statement identifier. This value is a universally unique identifier
-     * (UUID) generated by Amazon Redshift Data API. </p>
-     */
-    inline long long GetRedshiftQueryId() const { return m_redshiftQueryId; }
-    inline bool RedshiftQueryIdHasBeenSet() const { return m_redshiftQueryIdHasBeenSet; }
-    inline void SetRedshiftQueryId(long long value) { m_redshiftQueryIdHasBeenSet = true; m_redshiftQueryId = value; }
-    inline SubStatementData& WithRedshiftQueryId(long long value) { SetRedshiftQueryId(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The size in bytes of the returned results. A <code>-1</code> indicates the
+   * value is null.</p>
+   */
+  inline long long GetResultSize() const { return m_resultSize; }
+  inline bool ResultSizeHasBeenSet() const { return m_resultSizeHasBeenSet; }
+  inline void SetResultSize(long long value) {
+    m_resultSizeHasBeenSet = true;
+    m_resultSize = value;
+  }
+  inline SubStatementData& WithResultSize(long long value) {
+    SetResultSize(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Either the number of rows returned from the SQL statement or the number of
-     * rows affected. If result size is greater than zero, the result rows can be the
-     * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
-     * and others. A <code>-1</code> indicates the value is null.</p>
-     */
-    inline long long GetResultRows() const { return m_resultRows; }
-    inline bool ResultRowsHasBeenSet() const { return m_resultRowsHasBeenSet; }
-    inline void SetResultRows(long long value) { m_resultRowsHasBeenSet = true; m_resultRows = value; }
-    inline SubStatementData& WithResultRows(long long value) { SetResultRows(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the SQL statement. An example is the that the SQL statement
+   * finished. </p>
+   */
+  inline StatementStatusString GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(StatementStatusString value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline SubStatementData& WithStatus(StatementStatusString value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The size in bytes of the returned results. A <code>-1</code> indicates the
-     * value is null.</p>
-     */
-    inline long long GetResultSize() const { return m_resultSize; }
-    inline bool ResultSizeHasBeenSet() const { return m_resultSizeHasBeenSet; }
-    inline void SetResultSize(long long value) { m_resultSizeHasBeenSet = true; m_resultSize = value; }
-    inline SubStatementData& WithResultSize(long long value) { SetResultSize(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The date and time (UTC) that the statement metadata was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  SubStatementData& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_createdAt{};
+  bool m_createdAtHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The status of the SQL statement. An example is the that the SQL statement
-     * finished. </p>
-     */
-    inline StatementStatusString GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StatementStatusString value) { m_statusHasBeenSet = true; m_status = value; }
-    inline SubStatementData& WithStatus(StatementStatusString value) { SetStatus(value); return *this;}
-    ///@}
+  long long m_duration{0};
+  bool m_durationHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The date and time (UTC) that the statement metadata was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    SubStatementData& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_error;
+  bool m_errorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+  bool m_hasResultSet{false};
+  bool m_hasResultSetHasBeenSet = false;
 
-    long long m_duration{0};
-    bool m_durationHasBeenSet = false;
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    Aws::String m_error;
-    bool m_errorHasBeenSet = false;
+  Aws::String m_queryString;
+  bool m_queryStringHasBeenSet = false;
 
-    bool m_hasResultSet{false};
-    bool m_hasResultSetHasBeenSet = false;
+  long long m_redshiftQueryId{0};
+  bool m_redshiftQueryIdHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+  long long m_resultRows{0};
+  bool m_resultRowsHasBeenSet = false;
 
-    Aws::String m_queryString;
-    bool m_queryStringHasBeenSet = false;
+  long long m_resultSize{0};
+  bool m_resultSizeHasBeenSet = false;
 
-    long long m_redshiftQueryId{0};
-    bool m_redshiftQueryIdHasBeenSet = false;
+  StatementStatusString m_status{StatementStatusString::NOT_SET};
+  bool m_statusHasBeenSet = false;
 
-    long long m_resultRows{0};
-    bool m_resultRowsHasBeenSet = false;
+  Aws::Utils::DateTime m_updatedAt{};
+  bool m_updatedAtHasBeenSet = false;
+};
 
-    long long m_resultSize{0};
-    bool m_resultSizeHasBeenSet = false;
-
-    StatementStatusString m_status{StatementStatusString::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt{};
-    bool m_updatedAtHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RedshiftDataAPIService
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftDataAPIService
+}  // namespace Aws

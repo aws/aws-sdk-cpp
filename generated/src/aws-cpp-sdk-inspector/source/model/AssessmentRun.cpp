@@ -3,119 +3,93 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/AssessmentRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/AssessmentRun.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector {
+namespace Model {
 
-AssessmentRun::AssessmentRun(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssessmentRun::AssessmentRun(JsonView jsonValue) { *this = jsonValue; }
 
-AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+AssessmentRun& AssessmentRun::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assessmentTemplateArn"))
-  {
+  if (jsonValue.ValueExists("assessmentTemplateArn")) {
     m_assessmentTemplateArn = jsonValue.GetString("assessmentTemplateArn");
     m_assessmentTemplateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = AssessmentRunStateMapper::GetAssessmentRunStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("durationInSeconds"))
-  {
+  if (jsonValue.ValueExists("durationInSeconds")) {
     m_durationInSeconds = jsonValue.GetInteger("durationInSeconds");
     m_durationInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rulesPackageArns"))
-  {
+  if (jsonValue.ValueExists("rulesPackageArns")) {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
-    for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
-    {
+    for (unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex) {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
     }
     m_rulesPackageArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userAttributesForFindings"))
-  {
+  if (jsonValue.ValueExists("userAttributesForFindings")) {
     Aws::Utils::Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
-    for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
-    {
+    for (unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength();
+         ++userAttributesForFindingsIndex) {
       m_userAttributesForFindings.push_back(userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject());
     }
     m_userAttributesForFindingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetDouble("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("completedAt"))
-  {
+  if (jsonValue.ValueExists("completedAt")) {
     m_completedAt = jsonValue.GetDouble("completedAt");
     m_completedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stateChangedAt"))
-  {
+  if (jsonValue.ValueExists("stateChangedAt")) {
     m_stateChangedAt = jsonValue.GetDouble("stateChangedAt");
     m_stateChangedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataCollected"))
-  {
+  if (jsonValue.ValueExists("dataCollected")) {
     m_dataCollected = jsonValue.GetBool("dataCollected");
     m_dataCollectedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stateChanges"))
-  {
+  if (jsonValue.ValueExists("stateChanges")) {
     Aws::Utils::Array<JsonView> stateChangesJsonList = jsonValue.GetArray("stateChanges");
-    for(unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex)
-    {
+    for (unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex) {
       m_stateChanges.push_back(stateChangesJsonList[stateChangesIndex].AsObject());
     }
     m_stateChangesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("notifications"))
-  {
+  if (jsonValue.ValueExists("notifications")) {
     Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
-    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
-    {
+    for (unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex) {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
     }
     m_notificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingCounts"))
-  {
+  if (jsonValue.ValueExists("findingCounts")) {
     Aws::Map<Aws::String, JsonView> findingCountsJsonMap = jsonValue.GetObject("findingCounts").GetAllObjects();
-    for(auto& findingCountsItem : findingCountsJsonMap)
-    {
+    for (auto& findingCountsItem : findingCountsJsonMap) {
       m_findingCounts[SeverityMapper::GetSeverityForName(findingCountsItem.first)] = findingCountsItem.second.AsInteger();
     }
     m_findingCountsHasBeenSet = true;
@@ -123,123 +97,94 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AssessmentRun::Jsonize() const
-{
+JsonValue AssessmentRun::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_assessmentTemplateArnHasBeenSet)
-  {
-   payload.WithString("assessmentTemplateArn", m_assessmentTemplateArn);
-
+  if (m_assessmentTemplateArnHasBeenSet) {
+    payload.WithString("assessmentTemplateArn", m_assessmentTemplateArn);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", AssessmentRunStateMapper::GetNameForAssessmentRunState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", AssessmentRunStateMapper::GetNameForAssessmentRunState(m_state));
   }
 
-  if(m_durationInSecondsHasBeenSet)
-  {
-   payload.WithInteger("durationInSeconds", m_durationInSeconds);
-
+  if (m_durationInSecondsHasBeenSet) {
+    payload.WithInteger("durationInSeconds", m_durationInSeconds);
   }
 
-  if(m_rulesPackageArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
-   for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
-   {
-     rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);
-   }
-   payload.WithArray("rulesPackageArns", std::move(rulesPackageArnsJsonList));
-
+  if (m_rulesPackageArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesPackageArnsJsonList(m_rulesPackageArns.size());
+    for (unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex) {
+      rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString(m_rulesPackageArns[rulesPackageArnsIndex]);
+    }
+    payload.WithArray("rulesPackageArns", std::move(rulesPackageArnsJsonList));
   }
 
-  if(m_userAttributesForFindingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
-   for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
-   {
-     userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());
-   }
-   payload.WithArray("userAttributesForFindings", std::move(userAttributesForFindingsJsonList));
-
+  if (m_userAttributesForFindingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userAttributesForFindingsJsonList(m_userAttributesForFindings.size());
+    for (unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength();
+         ++userAttributesForFindingsIndex) {
+      userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject(
+          m_userAttributesForFindings[userAttributesForFindingsIndex].Jsonize());
+    }
+    payload.WithArray("userAttributesForFindings", std::move(userAttributesForFindingsJsonList));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
+  if (m_startedAtHasBeenSet) {
+    payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
-  if(m_completedAtHasBeenSet)
-  {
-   payload.WithDouble("completedAt", m_completedAt.SecondsWithMSPrecision());
+  if (m_completedAtHasBeenSet) {
+    payload.WithDouble("completedAt", m_completedAt.SecondsWithMSPrecision());
   }
 
-  if(m_stateChangedAtHasBeenSet)
-  {
-   payload.WithDouble("stateChangedAt", m_stateChangedAt.SecondsWithMSPrecision());
+  if (m_stateChangedAtHasBeenSet) {
+    payload.WithDouble("stateChangedAt", m_stateChangedAt.SecondsWithMSPrecision());
   }
 
-  if(m_dataCollectedHasBeenSet)
-  {
-   payload.WithBool("dataCollected", m_dataCollected);
-
+  if (m_dataCollectedHasBeenSet) {
+    payload.WithBool("dataCollected", m_dataCollected);
   }
 
-  if(m_stateChangesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stateChangesJsonList(m_stateChanges.size());
-   for(unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex)
-   {
-     stateChangesJsonList[stateChangesIndex].AsObject(m_stateChanges[stateChangesIndex].Jsonize());
-   }
-   payload.WithArray("stateChanges", std::move(stateChangesJsonList));
-
+  if (m_stateChangesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stateChangesJsonList(m_stateChanges.size());
+    for (unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex) {
+      stateChangesJsonList[stateChangesIndex].AsObject(m_stateChanges[stateChangesIndex].Jsonize());
+    }
+    payload.WithArray("stateChanges", std::move(stateChangesJsonList));
   }
 
-  if(m_notificationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
-   for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
-   {
-     notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
-   }
-   payload.WithArray("notifications", std::move(notificationsJsonList));
-
+  if (m_notificationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
+    for (unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex) {
+      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
+    }
+    payload.WithArray("notifications", std::move(notificationsJsonList));
   }
 
-  if(m_findingCountsHasBeenSet)
-  {
-   JsonValue findingCountsJsonMap;
-   for(auto& findingCountsItem : m_findingCounts)
-   {
-     findingCountsJsonMap.WithInteger(SeverityMapper::GetNameForSeverity(findingCountsItem.first), findingCountsItem.second);
-   }
-   payload.WithObject("findingCounts", std::move(findingCountsJsonMap));
-
+  if (m_findingCountsHasBeenSet) {
+    JsonValue findingCountsJsonMap;
+    for (auto& findingCountsItem : m_findingCounts) {
+      findingCountsJsonMap.WithInteger(SeverityMapper::GetNameForSeverity(findingCountsItem.first), findingCountsItem.second);
+    }
+    payload.WithObject("findingCounts", std::move(findingCountsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

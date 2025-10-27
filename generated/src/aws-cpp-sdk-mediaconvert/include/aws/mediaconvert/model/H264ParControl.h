@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class H264ParControl
-  {
-    NOT_SET,
-    INITIALIZE_FROM_SOURCE,
-    SPECIFIED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class H264ParControl { NOT_SET, INITIALIZE_FROM_SOURCE, SPECIFIED };
 
-namespace H264ParControlMapper
-{
+namespace H264ParControlMapper {
 AWS_MEDIACONVERT_API H264ParControl GetH264ParControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForH264ParControl(H264ParControl value);
-} // namespace H264ParControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace H264ParControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

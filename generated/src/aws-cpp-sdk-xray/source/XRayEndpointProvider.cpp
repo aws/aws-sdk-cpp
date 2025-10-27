@@ -5,12 +5,8 @@
 
 #include <aws/xray/XRayEndpointProvider.h>
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace XRay
-} // namespace Aws
+namespace Aws {
+namespace XRay {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace XRay
+}  // namespace Aws

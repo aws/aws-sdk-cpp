@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-enum class AmplifyBackendErrors
-{
-  //From Core//
+namespace Aws {
+namespace AmplifyBackend {
+enum class AmplifyBackendErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AmplifyBackendErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class AmplifyBackendErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   GATEWAY_TIMEOUT,
   NOT_FOUND,
   TOO_MANY_REQUESTS
 };
 
-class AWS_AMPLIFYBACKEND_API AmplifyBackendError : public Aws::Client::AWSError<AmplifyBackendErrors>
-{
-public:
+class AWS_AMPLIFYBACKEND_API AmplifyBackendError : public Aws::Client::AWSError<AmplifyBackendErrors> {
+ public:
   AmplifyBackendError() {}
   AmplifyBackendError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AmplifyBackendErrors>(rhs) {}
   AmplifyBackendError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AmplifyBackendErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace AmplifyBackendErrorMapper
-{
-  AWS_AMPLIFYBACKEND_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AmplifyBackendErrorMapper {
+AWS_AMPLIFYBACKEND_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace AmplifyBackend
+}  // namespace Aws

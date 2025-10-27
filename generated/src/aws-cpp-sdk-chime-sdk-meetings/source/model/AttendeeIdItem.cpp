@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-AttendeeIdItem::AttendeeIdItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttendeeIdItem::AttendeeIdItem(JsonView jsonValue) { *this = jsonValue; }
 
-AttendeeIdItem& AttendeeIdItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttendeeId"))
-  {
+AttendeeIdItem& AttendeeIdItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttendeeId")) {
     m_attendeeId = jsonValue.GetString("AttendeeId");
     m_attendeeIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttendeeIdItem::Jsonize() const
-{
+JsonValue AttendeeIdItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_attendeeIdHasBeenSet)
-  {
-   payload.WithString("AttendeeId", m_attendeeId);
-
+  if (m_attendeeIdHasBeenSet) {
+    payload.WithString("AttendeeId", m_attendeeId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

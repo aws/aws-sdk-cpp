@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class KnowledgeBaseType
-  {
-    NOT_SET,
-    EXTERNAL,
-    CUSTOM,
-    QUICK_RESPONSES,
-    MESSAGE_TEMPLATES,
-    MANAGED
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class KnowledgeBaseType { NOT_SET, EXTERNAL, CUSTOM, QUICK_RESPONSES, MESSAGE_TEMPLATES, MANAGED };
 
-namespace KnowledgeBaseTypeMapper
-{
+namespace KnowledgeBaseTypeMapper {
 AWS_QCONNECT_API KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForKnowledgeBaseType(KnowledgeBaseType value);
-} // namespace KnowledgeBaseTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace KnowledgeBaseTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

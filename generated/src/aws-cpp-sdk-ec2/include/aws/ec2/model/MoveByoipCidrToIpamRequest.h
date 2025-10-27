@@ -4,101 +4,120 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class MoveByoipCidrToIpamRequest : public EC2Request {
+ public:
+  AWS_EC2_API MoveByoipCidrToIpamRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "MoveByoipCidrToIpam"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>A check for whether you have the required permissions for the action without
+   * actually making the request and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
    */
-  class MoveByoipCidrToIpamRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API MoveByoipCidrToIpamRequest() = default;
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline MoveByoipCidrToIpamRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "MoveByoipCidrToIpam"; }
+  ///@{
+  /**
+   * <p>The BYOIP CIDR.</p>
+   */
+  inline const Aws::String& GetCidr() const { return m_cidr; }
+  inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+  template <typename CidrT = Aws::String>
+  void SetCidr(CidrT&& value) {
+    m_cidrHasBeenSet = true;
+    m_cidr = std::forward<CidrT>(value);
+  }
+  template <typename CidrT = Aws::String>
+  MoveByoipCidrToIpamRequest& WithCidr(CidrT&& value) {
+    SetCidr(std::forward<CidrT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The IPAM pool ID.</p>
+   */
+  inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
+  inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
+  template <typename IpamPoolIdT = Aws::String>
+  void SetIpamPoolId(IpamPoolIdT&& value) {
+    m_ipamPoolIdHasBeenSet = true;
+    m_ipamPoolId = std::forward<IpamPoolIdT>(value);
+  }
+  template <typename IpamPoolIdT = Aws::String>
+  MoveByoipCidrToIpamRequest& WithIpamPoolId(IpamPoolIdT&& value) {
+    SetIpamPoolId(std::forward<IpamPoolIdT>(value));
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+   */
+  inline const Aws::String& GetIpamPoolOwner() const { return m_ipamPoolOwner; }
+  inline bool IpamPoolOwnerHasBeenSet() const { return m_ipamPoolOwnerHasBeenSet; }
+  template <typename IpamPoolOwnerT = Aws::String>
+  void SetIpamPoolOwner(IpamPoolOwnerT&& value) {
+    m_ipamPoolOwnerHasBeenSet = true;
+    m_ipamPoolOwner = std::forward<IpamPoolOwnerT>(value);
+  }
+  template <typename IpamPoolOwnerT = Aws::String>
+  MoveByoipCidrToIpamRequest& WithIpamPoolOwner(IpamPoolOwnerT&& value) {
+    SetIpamPoolOwner(std::forward<IpamPoolOwnerT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-  public:
+  Aws::String m_cidr;
+  bool m_cidrHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline MoveByoipCidrToIpamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
+  Aws::String m_ipamPoolId;
+  bool m_ipamPoolIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The BYOIP CIDR.</p>
-     */
-    inline const Aws::String& GetCidr() const { return m_cidr; }
-    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    template<typename CidrT = Aws::String>
-    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
-    template<typename CidrT = Aws::String>
-    MoveByoipCidrToIpamRequest& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
-    ///@}
+  Aws::String m_ipamPoolOwner;
+  bool m_ipamPoolOwnerHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The IPAM pool ID.</p>
-     */
-    inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
-    inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-    template<typename IpamPoolIdT = Aws::String>
-    void SetIpamPoolId(IpamPoolIdT&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::forward<IpamPoolIdT>(value); }
-    template<typename IpamPoolIdT = Aws::String>
-    MoveByoipCidrToIpamRequest& WithIpamPoolId(IpamPoolIdT&& value) { SetIpamPoolId(std::forward<IpamPoolIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-     */
-    inline const Aws::String& GetIpamPoolOwner() const { return m_ipamPoolOwner; }
-    inline bool IpamPoolOwnerHasBeenSet() const { return m_ipamPoolOwnerHasBeenSet; }
-    template<typename IpamPoolOwnerT = Aws::String>
-    void SetIpamPoolOwner(IpamPoolOwnerT&& value) { m_ipamPoolOwnerHasBeenSet = true; m_ipamPoolOwner = std::forward<IpamPoolOwnerT>(value); }
-    template<typename IpamPoolOwnerT = Aws::String>
-    MoveByoipCidrToIpamRequest& WithIpamPoolOwner(IpamPoolOwnerT&& value) { SetIpamPoolOwner(std::forward<IpamPoolOwnerT>(value)); return *this;}
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::String m_cidr;
-    bool m_cidrHasBeenSet = false;
-
-    Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet = false;
-
-    Aws::String m_ipamPoolOwner;
-    bool m_ipamPoolOwnerHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

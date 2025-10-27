@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/FreeFormLayoutCanvasSizeOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/FreeFormLayoutCanvasSizeOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions(JsonView jsonValue) { *this = jsonValue; }
 
-FreeFormLayoutCanvasSizeOptions& FreeFormLayoutCanvasSizeOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScreenCanvasSizeOptions"))
-  {
+FreeFormLayoutCanvasSizeOptions& FreeFormLayoutCanvasSizeOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScreenCanvasSizeOptions")) {
     m_screenCanvasSizeOptions = jsonValue.GetObject("ScreenCanvasSizeOptions");
     m_screenCanvasSizeOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FreeFormLayoutCanvasSizeOptions::Jsonize() const
-{
+JsonValue FreeFormLayoutCanvasSizeOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_screenCanvasSizeOptionsHasBeenSet)
-  {
-   payload.WithObject("ScreenCanvasSizeOptions", m_screenCanvasSizeOptions.Jsonize());
-
+  if (m_screenCanvasSizeOptionsHasBeenSet) {
+    payload.WithObject("ScreenCanvasSizeOptions", m_screenCanvasSizeOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

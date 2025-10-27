@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/ConnectionApiKeyAuthResponseParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/ConnectionApiKeyAuthResponseParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-ConnectionApiKeyAuthResponseParameters::ConnectionApiKeyAuthResponseParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionApiKeyAuthResponseParameters::ConnectionApiKeyAuthResponseParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionApiKeyAuthResponseParameters& ConnectionApiKeyAuthResponseParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApiKeyName"))
-  {
+ConnectionApiKeyAuthResponseParameters& ConnectionApiKeyAuthResponseParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApiKeyName")) {
     m_apiKeyName = jsonValue.GetString("ApiKeyName");
     m_apiKeyNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectionApiKeyAuthResponseParameters::Jsonize() const
-{
+JsonValue ConnectionApiKeyAuthResponseParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyNameHasBeenSet)
-  {
-   payload.WithString("ApiKeyName", m_apiKeyName);
-
+  if (m_apiKeyNameHasBeenSet) {
+    payload.WithString("ApiKeyName", m_apiKeyName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

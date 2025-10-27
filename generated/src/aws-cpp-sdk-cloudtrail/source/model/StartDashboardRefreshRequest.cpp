@@ -12,38 +12,27 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartDashboardRefreshRequest::SerializePayload() const
-{
+Aws::String StartDashboardRefreshRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dashboardIdHasBeenSet)
-  {
-   payload.WithString("DashboardId", m_dashboardId);
-
+  if (m_dashboardIdHasBeenSet) {
+    payload.WithString("DashboardId", m_dashboardId);
   }
 
-  if(m_queryParameterValuesHasBeenSet)
-  {
-   JsonValue queryParameterValuesJsonMap;
-   for(auto& queryParameterValuesItem : m_queryParameterValues)
-   {
-     queryParameterValuesJsonMap.WithString(queryParameterValuesItem.first, queryParameterValuesItem.second);
-   }
-   payload.WithObject("QueryParameterValues", std::move(queryParameterValuesJsonMap));
-
+  if (m_queryParameterValuesHasBeenSet) {
+    JsonValue queryParameterValuesJsonMap;
+    for (auto& queryParameterValuesItem : m_queryParameterValues) {
+      queryParameterValuesJsonMap.WithString(queryParameterValuesItem.first, queryParameterValuesItem.second);
+    }
+    payload.WithObject("QueryParameterValues", std::move(queryParameterValuesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartDashboardRefreshRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartDashboardRefreshRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartDashboardRefresh"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartDashboardRefresh"));
   return headers;
-
 }
-
-
-
-

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-enum class MigrationHubOrchestratorErrors
-{
-  //From Core//
+namespace Aws {
+namespace MigrationHubOrchestrator {
+enum class MigrationHubOrchestratorErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MigrationHubOrchestratorErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class MigrationHubOrchestratorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
 
-class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorError : public Aws::Client::AWSError<MigrationHubOrchestratorErrors>
-{
-public:
+class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorError : public Aws::Client::AWSError<MigrationHubOrchestratorErrors> {
+ public:
   MigrationHubOrchestratorError() {}
-  MigrationHubOrchestratorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
-  MigrationHubOrchestratorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
-  MigrationHubOrchestratorError(const Aws::Client::AWSError<MigrationHubOrchestratorErrors>& rhs) : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
-  MigrationHubOrchestratorError(Aws::Client::AWSError<MigrationHubOrchestratorErrors>&& rhs) : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
+  MigrationHubOrchestratorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
+  MigrationHubOrchestratorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
+  MigrationHubOrchestratorError(const Aws::Client::AWSError<MigrationHubOrchestratorErrors>& rhs)
+      : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
+  MigrationHubOrchestratorError(Aws::Client::AWSError<MigrationHubOrchestratorErrors>&& rhs)
+      : Aws::Client::AWSError<MigrationHubOrchestratorErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace MigrationHubOrchestratorErrorMapper
-{
-  AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MigrationHubOrchestratorErrorMapper {
+AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

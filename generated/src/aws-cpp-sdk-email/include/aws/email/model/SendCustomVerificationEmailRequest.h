@@ -4,90 +4,103 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
-#include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SESRequest.h>
+#include <aws/email/SES_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
+/**
+ * <p>Represents a request to send a custom verification email to a specified
+ * recipient.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmailRequest">AWS
+ * API Reference</a></p>
+ */
+class SendCustomVerificationEmailRequest : public SESRequest {
+ public:
+  AWS_SES_API SendCustomVerificationEmailRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "SendCustomVerificationEmail"; }
+
+  AWS_SES_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents a request to send a custom verification email to a specified
-   * recipient.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmailRequest">AWS
-   * API Reference</a></p>
+   * <p>The email address to verify.</p>
    */
-  class SendCustomVerificationEmailRequest : public SESRequest
-  {
-  public:
-    AWS_SES_API SendCustomVerificationEmailRequest() = default;
+  inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
+  inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+  template <typename EmailAddressT = Aws::String>
+  void SetEmailAddress(EmailAddressT&& value) {
+    m_emailAddressHasBeenSet = true;
+    m_emailAddress = std::forward<EmailAddressT>(value);
+  }
+  template <typename EmailAddressT = Aws::String>
+  SendCustomVerificationEmailRequest& WithEmailAddress(EmailAddressT&& value) {
+    SetEmailAddress(std::forward<EmailAddressT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "SendCustomVerificationEmail"; }
+  ///@{
+  /**
+   * <p>The name of the custom verification email template to use when sending the
+   * verification email.</p>
+   */
+  inline const Aws::String& GetTemplateName() const { return m_templateName; }
+  inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+  template <typename TemplateNameT = Aws::String>
+  void SetTemplateName(TemplateNameT&& value) {
+    m_templateNameHasBeenSet = true;
+    m_templateName = std::forward<TemplateNameT>(value);
+  }
+  template <typename TemplateNameT = Aws::String>
+  SendCustomVerificationEmailRequest& WithTemplateName(TemplateNameT&& value) {
+    SetTemplateName(std::forward<TemplateNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_SES_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Name of a configuration set to use when sending the verification email.</p>
+   */
+  inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
+  inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+  template <typename ConfigurationSetNameT = Aws::String>
+  void SetConfigurationSetName(ConfigurationSetNameT&& value) {
+    m_configurationSetNameHasBeenSet = true;
+    m_configurationSetName = std::forward<ConfigurationSetNameT>(value);
+  }
+  template <typename ConfigurationSetNameT = Aws::String>
+  SendCustomVerificationEmailRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) {
+    SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_emailAddress;
+  bool m_emailAddressHasBeenSet = false;
 
-  protected:
-    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  Aws::String m_templateName;
+  bool m_templateNameHasBeenSet = false;
 
-  public:
+  Aws::String m_configurationSetName;
+  bool m_configurationSetNameHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The email address to verify.</p>
-     */
-    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
-    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    template<typename EmailAddressT = Aws::String>
-    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
-    template<typename EmailAddressT = Aws::String>
-    SendCustomVerificationEmailRequest& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the custom verification email template to use when sending the
-     * verification email.</p>
-     */
-    inline const Aws::String& GetTemplateName() const { return m_templateName; }
-    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    template<typename TemplateNameT = Aws::String>
-    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
-    template<typename TemplateNameT = Aws::String>
-    SendCustomVerificationEmailRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Name of a configuration set to use when sending the verification email.</p>
-     */
-    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
-    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    template<typename ConfigurationSetNameT = Aws::String>
-    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
-    template<typename ConfigurationSetNameT = Aws::String>
-    SendCustomVerificationEmailRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet = false;
-
-    Aws::String m_templateName;
-    bool m_templateNameHasBeenSet = false;
-
-    Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

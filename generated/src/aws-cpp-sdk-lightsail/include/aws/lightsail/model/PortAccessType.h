@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class PortAccessType
-  {
-    NOT_SET,
-    Public,
-    Private
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class PortAccessType { NOT_SET, Public, Private };
 
-namespace PortAccessTypeMapper
-{
+namespace PortAccessTypeMapper {
 AWS_LIGHTSAIL_API PortAccessType GetPortAccessTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForPortAccessType(PortAccessType value);
-} // namespace PortAccessTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace PortAccessTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

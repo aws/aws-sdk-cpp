@@ -5,12 +5,8 @@
 
 #include <aws/scheduler/SchedulerEndpointProvider.h>
 
-namespace Aws
-{
-namespace Scheduler
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Scheduler
-} // namespace Aws
+namespace Aws {
+namespace Scheduler {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Scheduler
+}  // namespace Aws

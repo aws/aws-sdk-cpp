@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/GetCanaryRunsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/synthetics/model/GetCanaryRunsRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCanaryRunsRequest::SerializePayload() const
-{
+Aws::String GetCanaryRunsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_dryRunIdHasBeenSet)
-  {
-   payload.WithString("DryRunId", m_dryRunId);
-
+  if (m_dryRunIdHasBeenSet) {
+    payload.WithString("DryRunId", m_dryRunId);
   }
 
-  if(m_runTypeHasBeenSet)
-  {
-   payload.WithString("RunType", RunTypeMapper::GetNameForRunType(m_runType));
+  if (m_runTypeHasBeenSet) {
+    payload.WithString("RunType", RunTypeMapper::GetNameForRunType(m_runType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

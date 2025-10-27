@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCampaignChannelSubtypeConfigRequest::SerializePayload() const
-{
+Aws::String UpdateCampaignChannelSubtypeConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_channelSubtypeConfigHasBeenSet)
-  {
-   payload.WithObject("channelSubtypeConfig", m_channelSubtypeConfig.Jsonize());
-
+  if (m_channelSubtypeConfigHasBeenSet) {
+    payload.WithObject("channelSubtypeConfig", m_channelSubtypeConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/GlueRequest.h>
+#include <aws/glue/Glue_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
+/**
+ */
+class DeleteIntegrationTablePropertiesRequest : public GlueRequest {
+ public:
+  AWS_GLUE_API DeleteIntegrationTablePropertiesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteIntegrationTableProperties"; }
+
+  AWS_GLUE_API Aws::String SerializePayload() const override;
+
+  AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The connection ARN of the source, or the database ARN of the target.</p>
    */
-  class DeleteIntegrationTablePropertiesRequest : public GlueRequest
-  {
-  public:
-    AWS_GLUE_API DeleteIntegrationTablePropertiesRequest() = default;
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  DeleteIntegrationTablePropertiesRequest& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteIntegrationTableProperties"; }
+  ///@{
+  /**
+   * <p>The name of the table to be replicated.</p>
+   */
+  inline const Aws::String& GetTableName() const { return m_tableName; }
+  inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+  template <typename TableNameT = Aws::String>
+  void SetTableName(TableNameT&& value) {
+    m_tableNameHasBeenSet = true;
+    m_tableName = std::forward<TableNameT>(value);
+  }
+  template <typename TableNameT = Aws::String>
+  DeleteIntegrationTablePropertiesRequest& WithTableName(TableNameT&& value) {
+    SetTableName(std::forward<TableNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
 
-    AWS_GLUE_API Aws::String SerializePayload() const override;
+  Aws::String m_tableName;
+  bool m_tableNameHasBeenSet = false;
+};
 
-    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The connection ARN of the source, or the database ARN of the target.</p>
-     */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    DeleteIntegrationTablePropertiesRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the table to be replicated.</p>
-     */
-    inline const Aws::String& GetTableName() const { return m_tableName; }
-    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    template<typename TableNameT = Aws::String>
-    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
-    template<typename TableNameT = Aws::String>
-    DeleteIntegrationTablePropertiesRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-
-    Aws::String m_tableName;
-    bool m_tableNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

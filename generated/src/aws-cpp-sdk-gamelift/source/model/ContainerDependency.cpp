@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/ContainerDependency.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/ContainerDependency.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-ContainerDependency::ContainerDependency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerDependency::ContainerDependency(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerDependency& ContainerDependency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContainerName"))
-  {
+ContainerDependency& ContainerDependency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContainerName")) {
     m_containerName = jsonValue.GetString("ContainerName");
     m_containerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Condition"))
-  {
+  if (jsonValue.ValueExists("Condition")) {
     m_condition = ContainerDependencyConditionMapper::GetContainerDependencyConditionForName(jsonValue.GetString("Condition"));
     m_conditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerDependency::Jsonize() const
-{
+JsonValue ContainerDependency::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
-  {
-   payload.WithString("ContainerName", m_containerName);
-
+  if (m_containerNameHasBeenSet) {
+    payload.WithString("ContainerName", m_containerName);
   }
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("Condition", ContainerDependencyConditionMapper::GetNameForContainerDependencyCondition(m_condition));
+  if (m_conditionHasBeenSet) {
+    payload.WithString("Condition", ContainerDependencyConditionMapper::GetNameForContainerDependencyCondition(m_condition));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

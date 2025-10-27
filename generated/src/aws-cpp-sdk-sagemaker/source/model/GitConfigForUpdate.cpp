@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/GitConfigForUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/GitConfigForUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-GitConfigForUpdate::GitConfigForUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GitConfigForUpdate::GitConfigForUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-GitConfigForUpdate& GitConfigForUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SecretArn"))
-  {
+GitConfigForUpdate& GitConfigForUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SecretArn")) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GitConfigForUpdate::Jsonize() const
-{
+JsonValue GitConfigForUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_secretArnHasBeenSet)
-  {
-   payload.WithString("SecretArn", m_secretArn);
-
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

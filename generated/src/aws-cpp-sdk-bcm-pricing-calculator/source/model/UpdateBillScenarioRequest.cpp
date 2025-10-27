@@ -12,38 +12,26 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateBillScenarioRequest::SerializePayload() const
-{
+Aws::String UpdateBillScenarioRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_expiresAtHasBeenSet)
-  {
-   payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
+  if (m_expiresAtHasBeenSet) {
+    payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateBillScenarioRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateBillScenarioRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.UpdateBillScenario"));
   return headers;
-
 }
-
-
-
-

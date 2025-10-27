@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-CampaignFilters::CampaignFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CampaignFilters::CampaignFilters(JsonView jsonValue) { *this = jsonValue; }
 
-CampaignFilters& CampaignFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceIdFilter"))
-  {
+CampaignFilters& CampaignFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceIdFilter")) {
     m_instanceIdFilter = jsonValue.GetObject("instanceIdFilter");
     m_instanceIdFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CampaignFilters::Jsonize() const
-{
+JsonValue CampaignFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceIdFilterHasBeenSet)
-  {
-   payload.WithObject("instanceIdFilter", m_instanceIdFilter.Jsonize());
-
+  if (m_instanceIdFilterHasBeenSet) {
+    payload.WithObject("instanceIdFilter", m_instanceIdFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

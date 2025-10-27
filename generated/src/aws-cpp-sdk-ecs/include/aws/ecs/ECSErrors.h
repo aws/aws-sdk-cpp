@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-enum class ECSErrors
-{
-  //From Core//
+namespace Aws {
+namespace ECS {
+enum class ECSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ECSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ECSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ATTRIBUTE_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTRIBUTE_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BLOCKED,
   CLIENT,
   CLUSTER_CONTAINS_CAPACITY_PROVIDER,
@@ -75,9 +72,8 @@ enum class ECSErrors
   UPDATE_IN_PROGRESS
 };
 
-class AWS_ECS_API ECSError : public Aws::Client::AWSError<ECSErrors>
-{
-public:
+class AWS_ECS_API ECSError : public Aws::Client::AWSError<ECSErrors> {
+ public:
   ECSError() {}
   ECSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
   ECSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
@@ -88,10 +84,9 @@ public:
   T GetModeledError();
 };
 
-namespace ECSErrorMapper
-{
-  AWS_ECS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ECSErrorMapper {
+AWS_ECS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ECS
-} // namespace Aws
+}  // namespace ECS
+}  // namespace Aws

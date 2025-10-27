@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/ExportMetric.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ExportMetric.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-ExportMetric::ExportMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportMetric::ExportMetric(JsonView jsonValue) { *this = jsonValue; }
 
-ExportMetric& ExportMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ExportMetric& ExportMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = MetricMapper::GetMetricForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Aggregation"))
-  {
+  if (jsonValue.ValueExists("Aggregation")) {
     m_aggregation = MetricAggregationMapper::GetMetricAggregationForName(jsonValue.GetString("Aggregation"));
     m_aggregationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportMetric::Jsonize() const
-{
+JsonValue ExportMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", MetricMapper::GetNameForMetric(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", MetricMapper::GetNameForMetric(m_name));
   }
 
-  if(m_aggregationHasBeenSet)
-  {
-   payload.WithString("Aggregation", MetricAggregationMapper::GetNameForMetricAggregation(m_aggregation));
+  if (m_aggregationHasBeenSet) {
+    payload.WithString("Aggregation", MetricAggregationMapper::GetNameForMetricAggregation(m_aggregation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

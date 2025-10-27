@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDBStreams
-{
-class DynamoDBStreamsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DynamoDBStreams {
+class DynamoDBStreamsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DynamoDBStreams
-} // namespace Aws
+}  // namespace DynamoDBStreams
+}  // namespace Aws

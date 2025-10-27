@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/BucketServerSideEncryption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/BucketServerSideEncryption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-BucketServerSideEncryption::BucketServerSideEncryption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BucketServerSideEncryption::BucketServerSideEncryption(JsonView jsonValue) { *this = jsonValue; }
 
-BucketServerSideEncryption& BucketServerSideEncryption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsMasterKeyId"))
-  {
+BucketServerSideEncryption& BucketServerSideEncryption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsMasterKeyId")) {
     m_kmsMasterKeyId = jsonValue.GetString("kmsMasterKeyId");
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BucketServerSideEncryption::Jsonize() const
-{
+JsonValue BucketServerSideEncryption::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsMasterKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsMasterKeyId", m_kmsMasterKeyId);
-
+  if (m_kmsMasterKeyIdHasBeenSet) {
+    payload.WithString("kmsMasterKeyId", m_kmsMasterKeyId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TypeMapper::GetNameForType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

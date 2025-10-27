@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeStarconnections
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeStarconnections {
+namespace Model {
 
-RepositorySyncDefinition::RepositorySyncDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositorySyncDefinition::RepositorySyncDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-RepositorySyncDefinition& RepositorySyncDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Branch"))
-  {
+RepositorySyncDefinition& RepositorySyncDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Branch")) {
     m_branch = jsonValue.GetString("Branch");
     m_branchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Directory"))
-  {
+  if (jsonValue.ValueExists("Directory")) {
     m_directory = jsonValue.GetString("Directory");
     m_directoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parent"))
-  {
+  if (jsonValue.ValueExists("Parent")) {
     m_parent = jsonValue.GetString("Parent");
     m_parentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Target"))
-  {
+  if (jsonValue.ValueExists("Target")) {
     m_target = jsonValue.GetString("Target");
     m_targetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositorySyncDefinition::Jsonize() const
-{
+JsonValue RepositorySyncDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithString("Branch", m_branch);
-
+  if (m_branchHasBeenSet) {
+    payload.WithString("Branch", m_branch);
   }
 
-  if(m_directoryHasBeenSet)
-  {
-   payload.WithString("Directory", m_directory);
-
+  if (m_directoryHasBeenSet) {
+    payload.WithString("Directory", m_directory);
   }
 
-  if(m_parentHasBeenSet)
-  {
-   payload.WithString("Parent", m_parent);
-
+  if (m_parentHasBeenSet) {
+    payload.WithString("Parent", m_parent);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("Target", m_target);
-
+  if (m_targetHasBeenSet) {
+    payload.WithString("Target", m_target);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeStarconnections
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeStarconnections
+}  // namespace Aws

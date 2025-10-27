@@ -3,69 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PanelTitleOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PanelTitleOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-PanelTitleOptions::PanelTitleOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PanelTitleOptions::PanelTitleOptions(JsonView jsonValue) { *this = jsonValue; }
 
-PanelTitleOptions& PanelTitleOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Visibility"))
-  {
+PanelTitleOptions& PanelTitleOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Visibility")) {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
     m_visibilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FontConfiguration"))
-  {
+  if (jsonValue.ValueExists("FontConfiguration")) {
     m_fontConfiguration = jsonValue.GetObject("FontConfiguration");
     m_fontConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HorizontalTextAlignment"))
-  {
-    m_horizontalTextAlignment = HorizontalTextAlignmentMapper::GetHorizontalTextAlignmentForName(jsonValue.GetString("HorizontalTextAlignment"));
+  if (jsonValue.ValueExists("HorizontalTextAlignment")) {
+    m_horizontalTextAlignment =
+        HorizontalTextAlignmentMapper::GetHorizontalTextAlignmentForName(jsonValue.GetString("HorizontalTextAlignment"));
     m_horizontalTextAlignmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PanelTitleOptions::Jsonize() const
-{
+JsonValue PanelTitleOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
   }
 
-  if(m_fontConfigurationHasBeenSet)
-  {
-   payload.WithObject("FontConfiguration", m_fontConfiguration.Jsonize());
-
+  if (m_fontConfigurationHasBeenSet) {
+    payload.WithObject("FontConfiguration", m_fontConfiguration.Jsonize());
   }
 
-  if(m_horizontalTextAlignmentHasBeenSet)
-  {
-   payload.WithString("HorizontalTextAlignment", HorizontalTextAlignmentMapper::GetNameForHorizontalTextAlignment(m_horizontalTextAlignment));
+  if (m_horizontalTextAlignmentHasBeenSet) {
+    payload.WithString("HorizontalTextAlignment",
+                       HorizontalTextAlignmentMapper::GetNameForHorizontalTextAlignment(m_horizontalTextAlignment));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

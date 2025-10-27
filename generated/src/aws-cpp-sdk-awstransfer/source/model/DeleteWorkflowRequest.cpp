@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteWorkflowRequest::SerializePayload() const
-{
+Aws::String DeleteWorkflowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("WorkflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("WorkflowId", m_workflowId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteWorkflowRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteWorkflowRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DeleteWorkflow"));
   return headers;
-
 }
-
-
-
-

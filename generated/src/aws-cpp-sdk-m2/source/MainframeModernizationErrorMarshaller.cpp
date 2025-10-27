@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MainframeModernization;
 
-AWSError<CoreErrors> MainframeModernizationErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MainframeModernizationErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MainframeModernizationErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

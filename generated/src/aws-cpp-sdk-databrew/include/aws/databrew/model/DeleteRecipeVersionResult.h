@@ -4,76 +4,87 @@
  */
 
 #pragma once
-#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/databrew/GlueDataBrew_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace GlueDataBrew
-{
-namespace Model
-{
-  class DeleteRecipeVersionResult
-  {
-  public:
-    AWS_GLUEDATABREW_API DeleteRecipeVersionResult() = default;
-    AWS_GLUEDATABREW_API DeleteRecipeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_GLUEDATABREW_API DeleteRecipeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace GlueDataBrew {
+namespace Model {
+class DeleteRecipeVersionResult {
+ public:
+  AWS_GLUEDATABREW_API DeleteRecipeVersionResult() = default;
+  AWS_GLUEDATABREW_API DeleteRecipeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUEDATABREW_API DeleteRecipeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The name of the recipe that was deleted.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DeleteRecipeVersionResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the recipe that was deleted.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DeleteRecipeVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The version of the recipe that was deleted.</p>
+   */
+  inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
+  template <typename RecipeVersionT = Aws::String>
+  void SetRecipeVersion(RecipeVersionT&& value) {
+    m_recipeVersionHasBeenSet = true;
+    m_recipeVersion = std::forward<RecipeVersionT>(value);
+  }
+  template <typename RecipeVersionT = Aws::String>
+  DeleteRecipeVersionResult& WithRecipeVersion(RecipeVersionT&& value) {
+    SetRecipeVersion(std::forward<RecipeVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The version of the recipe that was deleted.</p>
-     */
-    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
-    template<typename RecipeVersionT = Aws::String>
-    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
-    template<typename RecipeVersionT = Aws::String>
-    DeleteRecipeVersionResult& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DeleteRecipeVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteRecipeVersionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  Aws::String m_recipeVersion;
+  bool m_recipeVersionHasBeenSet = false;
 
-    Aws::String m_recipeVersion;
-    bool m_recipeVersionHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

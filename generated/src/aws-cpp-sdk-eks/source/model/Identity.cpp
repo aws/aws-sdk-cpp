@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/Identity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/Identity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-Identity::Identity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Identity::Identity(JsonView jsonValue) { *this = jsonValue; }
 
-Identity& Identity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oidc"))
-  {
+Identity& Identity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oidc")) {
     m_oidc = jsonValue.GetObject("oidc");
     m_oidcHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Identity::Jsonize() const
-{
+JsonValue Identity::Jsonize() const {
   JsonValue payload;
 
-  if(m_oidcHasBeenSet)
-  {
-   payload.WithObject("oidc", m_oidc.Jsonize());
-
+  if (m_oidcHasBeenSet) {
+    payload.WithObject("oidc", m_oidc.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

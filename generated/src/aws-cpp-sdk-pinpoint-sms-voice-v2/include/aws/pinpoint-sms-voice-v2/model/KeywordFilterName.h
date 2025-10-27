@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class KeywordFilterName
-  {
-    NOT_SET,
-    keyword_action
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class KeywordFilterName { NOT_SET, keyword_action };
 
-namespace KeywordFilterNameMapper
-{
+namespace KeywordFilterNameMapper {
 AWS_PINPOINTSMSVOICEV2_API KeywordFilterName GetKeywordFilterNameForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForKeywordFilterName(KeywordFilterName value);
-} // namespace KeywordFilterNameMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace KeywordFilterNameMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

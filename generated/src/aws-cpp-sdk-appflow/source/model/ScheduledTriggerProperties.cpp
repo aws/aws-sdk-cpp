@@ -11,114 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduledTriggerProperties& ScheduledTriggerProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scheduleExpression"))
-  {
+ScheduledTriggerProperties& ScheduledTriggerProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("scheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataPullMode"))
-  {
+  if (jsonValue.ValueExists("dataPullMode")) {
     m_dataPullMode = DataPullModeMapper::GetDataPullModeForName(jsonValue.GetString("dataPullMode"));
     m_dataPullModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduleStartTime"))
-  {
+  if (jsonValue.ValueExists("scheduleStartTime")) {
     m_scheduleStartTime = jsonValue.GetDouble("scheduleStartTime");
     m_scheduleStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduleEndTime"))
-  {
+  if (jsonValue.ValueExists("scheduleEndTime")) {
     m_scheduleEndTime = jsonValue.GetDouble("scheduleEndTime");
     m_scheduleEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timezone"))
-  {
+  if (jsonValue.ValueExists("timezone")) {
     m_timezone = jsonValue.GetString("timezone");
     m_timezoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduleOffset"))
-  {
+  if (jsonValue.ValueExists("scheduleOffset")) {
     m_scheduleOffset = jsonValue.GetInt64("scheduleOffset");
     m_scheduleOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("firstExecutionFrom"))
-  {
+  if (jsonValue.ValueExists("firstExecutionFrom")) {
     m_firstExecutionFrom = jsonValue.GetDouble("firstExecutionFrom");
     m_firstExecutionFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flowErrorDeactivationThreshold"))
-  {
+  if (jsonValue.ValueExists("flowErrorDeactivationThreshold")) {
     m_flowErrorDeactivationThreshold = jsonValue.GetInteger("flowErrorDeactivationThreshold");
     m_flowErrorDeactivationThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduledTriggerProperties::Jsonize() const
-{
+JsonValue ScheduledTriggerProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_scheduleExpressionHasBeenSet)
-  {
-   payload.WithString("scheduleExpression", m_scheduleExpression);
-
+  if (m_scheduleExpressionHasBeenSet) {
+    payload.WithString("scheduleExpression", m_scheduleExpression);
   }
 
-  if(m_dataPullModeHasBeenSet)
-  {
-   payload.WithString("dataPullMode", DataPullModeMapper::GetNameForDataPullMode(m_dataPullMode));
+  if (m_dataPullModeHasBeenSet) {
+    payload.WithString("dataPullMode", DataPullModeMapper::GetNameForDataPullMode(m_dataPullMode));
   }
 
-  if(m_scheduleStartTimeHasBeenSet)
-  {
-   payload.WithDouble("scheduleStartTime", m_scheduleStartTime.SecondsWithMSPrecision());
+  if (m_scheduleStartTimeHasBeenSet) {
+    payload.WithDouble("scheduleStartTime", m_scheduleStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_scheduleEndTimeHasBeenSet)
-  {
-   payload.WithDouble("scheduleEndTime", m_scheduleEndTime.SecondsWithMSPrecision());
+  if (m_scheduleEndTimeHasBeenSet) {
+    payload.WithDouble("scheduleEndTime", m_scheduleEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_timezoneHasBeenSet)
-  {
-   payload.WithString("timezone", m_timezone);
-
+  if (m_timezoneHasBeenSet) {
+    payload.WithString("timezone", m_timezone);
   }
 
-  if(m_scheduleOffsetHasBeenSet)
-  {
-   payload.WithInt64("scheduleOffset", m_scheduleOffset);
-
+  if (m_scheduleOffsetHasBeenSet) {
+    payload.WithInt64("scheduleOffset", m_scheduleOffset);
   }
 
-  if(m_firstExecutionFromHasBeenSet)
-  {
-   payload.WithDouble("firstExecutionFrom", m_firstExecutionFrom.SecondsWithMSPrecision());
+  if (m_firstExecutionFromHasBeenSet) {
+    payload.WithDouble("firstExecutionFrom", m_firstExecutionFrom.SecondsWithMSPrecision());
   }
 
-  if(m_flowErrorDeactivationThresholdHasBeenSet)
-  {
-   payload.WithInteger("flowErrorDeactivationThreshold", m_flowErrorDeactivationThreshold);
-
+  if (m_flowErrorDeactivationThresholdHasBeenSet) {
+    payload.WithInteger("flowErrorDeactivationThreshold", m_flowErrorDeactivationThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

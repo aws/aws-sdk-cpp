@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-FieldFilter::FieldFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldFilter::FieldFilter(JsonView jsonValue) { *this = jsonValue; }
 
-FieldFilter& FieldFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("equalTo"))
-  {
+FieldFilter& FieldFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("equalTo")) {
     m_equalTo = jsonValue.GetObject("equalTo");
     m_equalToHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contains"))
-  {
+  if (jsonValue.ValueExists("contains")) {
     m_contains = jsonValue.GetObject("contains");
     m_containsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greaterThan"))
-  {
+  if (jsonValue.ValueExists("greaterThan")) {
     m_greaterThan = jsonValue.GetObject("greaterThan");
     m_greaterThanHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greaterThanOrEqualTo"))
-  {
+  if (jsonValue.ValueExists("greaterThanOrEqualTo")) {
     m_greaterThanOrEqualTo = jsonValue.GetObject("greaterThanOrEqualTo");
     m_greaterThanOrEqualToHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lessThan"))
-  {
+  if (jsonValue.ValueExists("lessThan")) {
     m_lessThan = jsonValue.GetObject("lessThan");
     m_lessThanHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lessThanOrEqualTo"))
-  {
+  if (jsonValue.ValueExists("lessThanOrEqualTo")) {
     m_lessThanOrEqualTo = jsonValue.GetObject("lessThanOrEqualTo");
     m_lessThanOrEqualToHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldFilter::Jsonize() const
-{
+JsonValue FieldFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_equalToHasBeenSet)
-  {
-   payload.WithObject("equalTo", m_equalTo.Jsonize());
-
+  if (m_equalToHasBeenSet) {
+    payload.WithObject("equalTo", m_equalTo.Jsonize());
   }
 
-  if(m_containsHasBeenSet)
-  {
-   payload.WithObject("contains", m_contains.Jsonize());
-
+  if (m_containsHasBeenSet) {
+    payload.WithObject("contains", m_contains.Jsonize());
   }
 
-  if(m_greaterThanHasBeenSet)
-  {
-   payload.WithObject("greaterThan", m_greaterThan.Jsonize());
-
+  if (m_greaterThanHasBeenSet) {
+    payload.WithObject("greaterThan", m_greaterThan.Jsonize());
   }
 
-  if(m_greaterThanOrEqualToHasBeenSet)
-  {
-   payload.WithObject("greaterThanOrEqualTo", m_greaterThanOrEqualTo.Jsonize());
-
+  if (m_greaterThanOrEqualToHasBeenSet) {
+    payload.WithObject("greaterThanOrEqualTo", m_greaterThanOrEqualTo.Jsonize());
   }
 
-  if(m_lessThanHasBeenSet)
-  {
-   payload.WithObject("lessThan", m_lessThan.Jsonize());
-
+  if (m_lessThanHasBeenSet) {
+    payload.WithObject("lessThan", m_lessThan.Jsonize());
   }
 
-  if(m_lessThanOrEqualToHasBeenSet)
-  {
-   payload.WithObject("lessThanOrEqualTo", m_lessThanOrEqualTo.Jsonize());
-
+  if (m_lessThanOrEqualToHasBeenSet) {
+    payload.WithObject("lessThanOrEqualTo", m_lessThanOrEqualTo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

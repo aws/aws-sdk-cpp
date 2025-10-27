@@ -5,12 +5,8 @@
 
 #include <aws/codepipeline/CodePipelineEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodePipeline
-} // namespace Aws
+namespace Aws {
+namespace CodePipeline {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodePipeline
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/EngineWorkflowResourceIdentifier.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/EngineWorkflowResourceIdentifier.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-EngineWorkflowResourceIdentifier& EngineWorkflowResourceIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UniqueTag"))
-  {
+EngineWorkflowResourceIdentifier& EngineWorkflowResourceIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UniqueTag")) {
     m_uniqueTag = jsonValue.GetObject("UniqueTag");
     m_uniqueTagHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EngineWorkflowResourceIdentifier::Jsonize() const
-{
+JsonValue EngineWorkflowResourceIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_uniqueTagHasBeenSet)
-  {
-   payload.WithObject("UniqueTag", m_uniqueTag.Jsonize());
-
+  if (m_uniqueTagHasBeenSet) {
+    payload.WithObject("UniqueTag", m_uniqueTag.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

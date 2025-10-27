@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-EvaluationModeConfiguration::EvaluationModeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationModeConfiguration::EvaluationModeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationModeConfiguration& EvaluationModeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Mode"))
-  {
+EvaluationModeConfiguration& EvaluationModeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationModeConfiguration::Jsonize() const
-{
+JsonValue EvaluationModeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", EvaluationModeMapper::GetNameForEvaluationMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", EvaluationModeMapper::GetNameForEvaluationMode(m_mode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

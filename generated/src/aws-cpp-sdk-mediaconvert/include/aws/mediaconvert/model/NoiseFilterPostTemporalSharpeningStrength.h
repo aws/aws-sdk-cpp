@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class NoiseFilterPostTemporalSharpeningStrength
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class NoiseFilterPostTemporalSharpeningStrength { NOT_SET, LOW, MEDIUM, HIGH };
 
-namespace NoiseFilterPostTemporalSharpeningStrengthMapper
-{
+namespace NoiseFilterPostTemporalSharpeningStrengthMapper {
 AWS_MEDIACONVERT_API NoiseFilterPostTemporalSharpeningStrength GetNoiseFilterPostTemporalSharpeningStrengthForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForNoiseFilterPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength value);
-} // namespace NoiseFilterPostTemporalSharpeningStrengthMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace NoiseFilterPostTemporalSharpeningStrengthMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class AacVbrQuality
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM_LOW,
-    MEDIUM_HIGH,
-    HIGH
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class AacVbrQuality { NOT_SET, LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH };
 
-namespace AacVbrQualityMapper
-{
+namespace AacVbrQualityMapper {
 AWS_MEDIACONVERT_API AacVbrQuality GetAacVbrQualityForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForAacVbrQuality(AacVbrQuality value);
-} // namespace AacVbrQualityMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace AacVbrQualityMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

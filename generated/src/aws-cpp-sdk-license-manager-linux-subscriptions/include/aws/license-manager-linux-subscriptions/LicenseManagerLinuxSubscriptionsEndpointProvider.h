@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsEndpointRules.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace LicenseManagerLinuxSubscriptions
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace LicenseManagerLinuxSubscriptions {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LicenseManagerLinuxSubscriptionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,28 @@ using LicenseManagerLinuxSubscriptionsBuiltInParameters = Aws::Endpoint::BuiltIn
  * The SDK must use service-specific type for each service per specification.
  */
 using LicenseManagerLinuxSubscriptionsEndpointProviderBase =
-    EndpointProviderBase<LicenseManagerLinuxSubscriptionsClientConfiguration, LicenseManagerLinuxSubscriptionsBuiltInParameters, LicenseManagerLinuxSubscriptionsClientContextParameters>;
+    EndpointProviderBase<LicenseManagerLinuxSubscriptionsClientConfiguration, LicenseManagerLinuxSubscriptionsBuiltInParameters,
+                         LicenseManagerLinuxSubscriptionsClientContextParameters>;
 
 using LicenseManagerLinuxSubscriptionsDefaultEpProviderBase =
-    DefaultEndpointProvider<LicenseManagerLinuxSubscriptionsClientConfiguration, LicenseManagerLinuxSubscriptionsBuiltInParameters, LicenseManagerLinuxSubscriptionsClientContextParameters>;
+    DefaultEndpointProvider<LicenseManagerLinuxSubscriptionsClientConfiguration, LicenseManagerLinuxSubscriptionsBuiltInParameters,
+                            LicenseManagerLinuxSubscriptionsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsEndpointProvider : public LicenseManagerLinuxSubscriptionsDefaultEpProviderBase
-{
-public:
-    using LicenseManagerLinuxSubscriptionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsEndpointProvider
+    : public LicenseManagerLinuxSubscriptionsDefaultEpProviderBase {
+ public:
+  using LicenseManagerLinuxSubscriptionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LicenseManagerLinuxSubscriptionsEndpointProvider()
-      : LicenseManagerLinuxSubscriptionsDefaultEpProviderBase(Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsEndpointRules::GetRulesBlob(), Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsEndpointRules::RulesBlobSize)
-    {}
+  LicenseManagerLinuxSubscriptionsEndpointProvider()
+      : LicenseManagerLinuxSubscriptionsDefaultEpProviderBase(
+            Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsEndpointRules::GetRulesBlob(),
+            Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsEndpointRules::RulesBlobSize) {}
 
-    ~LicenseManagerLinuxSubscriptionsEndpointProvider()
-    {
-    }
+  ~LicenseManagerLinuxSubscriptionsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace LicenseManagerLinuxSubscriptions
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace LicenseManagerLinuxSubscriptions
+}  // namespace Aws

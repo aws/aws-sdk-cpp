@@ -7,26 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class ActionConfigurationPropertyType
-  {
-    NOT_SET,
-    String,
-    Number,
-    Boolean
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class ActionConfigurationPropertyType { NOT_SET, String, Number, Boolean };
 
-namespace ActionConfigurationPropertyTypeMapper
-{
+namespace ActionConfigurationPropertyTypeMapper {
 AWS_CODEPIPELINE_API ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType value);
-} // namespace ActionConfigurationPropertyTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace ActionConfigurationPropertyTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

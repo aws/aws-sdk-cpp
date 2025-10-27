@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BooleanColumnStatisticsData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/BooleanColumnStatisticsData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-BooleanColumnStatisticsData::BooleanColumnStatisticsData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BooleanColumnStatisticsData::BooleanColumnStatisticsData(JsonView jsonValue) { *this = jsonValue; }
 
-BooleanColumnStatisticsData& BooleanColumnStatisticsData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NumberOfTrues"))
-  {
+BooleanColumnStatisticsData& BooleanColumnStatisticsData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NumberOfTrues")) {
     m_numberOfTrues = jsonValue.GetInt64("NumberOfTrues");
     m_numberOfTruesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfFalses"))
-  {
+  if (jsonValue.ValueExists("NumberOfFalses")) {
     m_numberOfFalses = jsonValue.GetInt64("NumberOfFalses");
     m_numberOfFalsesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfNulls"))
-  {
+  if (jsonValue.ValueExists("NumberOfNulls")) {
     m_numberOfNulls = jsonValue.GetInt64("NumberOfNulls");
     m_numberOfNullsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BooleanColumnStatisticsData::Jsonize() const
-{
+JsonValue BooleanColumnStatisticsData::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfTruesHasBeenSet)
-  {
-   payload.WithInt64("NumberOfTrues", m_numberOfTrues);
-
+  if (m_numberOfTruesHasBeenSet) {
+    payload.WithInt64("NumberOfTrues", m_numberOfTrues);
   }
 
-  if(m_numberOfFalsesHasBeenSet)
-  {
-   payload.WithInt64("NumberOfFalses", m_numberOfFalses);
-
+  if (m_numberOfFalsesHasBeenSet) {
+    payload.WithInt64("NumberOfFalses", m_numberOfFalses);
   }
 
-  if(m_numberOfNullsHasBeenSet)
-  {
-   payload.WithInt64("NumberOfNulls", m_numberOfNulls);
-
+  if (m_numberOfNullsHasBeenSet) {
+    payload.WithInt64("NumberOfNulls", m_numberOfNulls);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/BulkDeploymentMetrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/BulkDeploymentMetrics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-BulkDeploymentMetrics::BulkDeploymentMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BulkDeploymentMetrics::BulkDeploymentMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-BulkDeploymentMetrics& BulkDeploymentMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InvalidInputRecords"))
-  {
+BulkDeploymentMetrics& BulkDeploymentMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InvalidInputRecords")) {
     m_invalidInputRecords = jsonValue.GetInteger("InvalidInputRecords");
     m_invalidInputRecordsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecordsProcessed"))
-  {
+  if (jsonValue.ValueExists("RecordsProcessed")) {
     m_recordsProcessed = jsonValue.GetInteger("RecordsProcessed");
     m_recordsProcessedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetryAttempts"))
-  {
+  if (jsonValue.ValueExists("RetryAttempts")) {
     m_retryAttempts = jsonValue.GetInteger("RetryAttempts");
     m_retryAttemptsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BulkDeploymentMetrics::Jsonize() const
-{
+JsonValue BulkDeploymentMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_invalidInputRecordsHasBeenSet)
-  {
-   payload.WithInteger("InvalidInputRecords", m_invalidInputRecords);
-
+  if (m_invalidInputRecordsHasBeenSet) {
+    payload.WithInteger("InvalidInputRecords", m_invalidInputRecords);
   }
 
-  if(m_recordsProcessedHasBeenSet)
-  {
-   payload.WithInteger("RecordsProcessed", m_recordsProcessed);
-
+  if (m_recordsProcessedHasBeenSet) {
+    payload.WithInteger("RecordsProcessed", m_recordsProcessed);
   }
 
-  if(m_retryAttemptsHasBeenSet)
-  {
-   payload.WithInteger("RetryAttempts", m_retryAttempts);
-
+  if (m_retryAttemptsHasBeenSet) {
+    payload.WithInteger("RetryAttempts", m_retryAttempts);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

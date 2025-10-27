@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-UserIdentityInfo::UserIdentityInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserIdentityInfo::UserIdentityInfo(JsonView jsonValue) { *this = jsonValue; }
 
-UserIdentityInfo& UserIdentityInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirstName"))
-  {
+UserIdentityInfo& UserIdentityInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirstName")) {
     m_firstName = jsonValue.GetString("FirstName");
     m_firstNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastName"))
-  {
+  if (jsonValue.ValueExists("LastName")) {
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Email"))
-  {
+  if (jsonValue.ValueExists("Email")) {
     m_email = jsonValue.GetString("Email");
     m_emailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecondaryEmail"))
-  {
+  if (jsonValue.ValueExists("SecondaryEmail")) {
     m_secondaryEmail = jsonValue.GetString("SecondaryEmail");
     m_secondaryEmailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mobile"))
-  {
+  if (jsonValue.ValueExists("Mobile")) {
     m_mobile = jsonValue.GetString("Mobile");
     m_mobileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserIdentityInfo::Jsonize() const
-{
+JsonValue UserIdentityInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("FirstName", m_firstName);
-
+  if (m_firstNameHasBeenSet) {
+    payload.WithString("FirstName", m_firstName);
   }
 
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("LastName", m_lastName);
-
+  if (m_lastNameHasBeenSet) {
+    payload.WithString("LastName", m_lastName);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("Email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("Email", m_email);
   }
 
-  if(m_secondaryEmailHasBeenSet)
-  {
-   payload.WithString("SecondaryEmail", m_secondaryEmail);
-
+  if (m_secondaryEmailHasBeenSet) {
+    payload.WithString("SecondaryEmail", m_secondaryEmail);
   }
 
-  if(m_mobileHasBeenSet)
-  {
-   payload.WithString("Mobile", m_mobile);
-
+  if (m_mobileHasBeenSet) {
+    payload.WithString("Mobile", m_mobile);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -12,45 +12,30 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartTransformerJobRequest::SerializePayload() const
-{
+Aws::String StartTransformerJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inputFileHasBeenSet)
-  {
-   payload.WithObject("inputFile", m_inputFile.Jsonize());
-
+  if (m_inputFileHasBeenSet) {
+    payload.WithObject("inputFile", m_inputFile.Jsonize());
   }
 
-  if(m_outputLocationHasBeenSet)
-  {
-   payload.WithObject("outputLocation", m_outputLocation.Jsonize());
-
+  if (m_outputLocationHasBeenSet) {
+    payload.WithObject("outputLocation", m_outputLocation.Jsonize());
   }
 
-  if(m_transformerIdHasBeenSet)
-  {
-   payload.WithString("transformerId", m_transformerId);
-
+  if (m_transformerIdHasBeenSet) {
+    payload.WithString("transformerId", m_transformerId);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartTransformerJobRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartTransformerJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.StartTransformerJob"));
   return headers;
-
 }
-
-
-
-

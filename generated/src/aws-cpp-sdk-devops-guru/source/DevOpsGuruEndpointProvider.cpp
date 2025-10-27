@@ -5,12 +5,8 @@
 
 #include <aws/devops-guru/DevOpsGuruEndpointProvider.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DevOpsGuru
-} // namespace Aws
+namespace Aws {
+namespace DevOpsGuru {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DevOpsGuru
+}  // namespace Aws

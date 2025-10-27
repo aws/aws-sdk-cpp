@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-AlexaForBusinessMetadata::AlexaForBusinessMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlexaForBusinessMetadata::AlexaForBusinessMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-AlexaForBusinessMetadata& AlexaForBusinessMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IsAlexaForBusinessEnabled"))
-  {
+AlexaForBusinessMetadata& AlexaForBusinessMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IsAlexaForBusinessEnabled")) {
     m_isAlexaForBusinessEnabled = jsonValue.GetBool("IsAlexaForBusinessEnabled");
     m_isAlexaForBusinessEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AlexaForBusinessRoomArn"))
-  {
+  if (jsonValue.ValueExists("AlexaForBusinessRoomArn")) {
     m_alexaForBusinessRoomArn = jsonValue.GetString("AlexaForBusinessRoomArn");
     m_alexaForBusinessRoomArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlexaForBusinessMetadata::Jsonize() const
-{
+JsonValue AlexaForBusinessMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_isAlexaForBusinessEnabledHasBeenSet)
-  {
-   payload.WithBool("IsAlexaForBusinessEnabled", m_isAlexaForBusinessEnabled);
-
+  if (m_isAlexaForBusinessEnabledHasBeenSet) {
+    payload.WithBool("IsAlexaForBusinessEnabled", m_isAlexaForBusinessEnabled);
   }
 
-  if(m_alexaForBusinessRoomArnHasBeenSet)
-  {
-   payload.WithString("AlexaForBusinessRoomArn", m_alexaForBusinessRoomArn);
-
+  if (m_alexaForBusinessRoomArnHasBeenSet) {
+    payload.WithString("AlexaForBusinessRoomArn", m_alexaForBusinessRoomArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

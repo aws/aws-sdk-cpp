@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/GlacierJobParameters.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/GlacierJobParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-GlacierJobParameters::GlacierJobParameters(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+GlacierJobParameters::GlacierJobParameters(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GlacierJobParameters& GlacierJobParameters::operator =(const XmlNode& xmlNode)
-{
+GlacierJobParameters& GlacierJobParameters::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode tierNode = resultNode.FirstChild("Tier");
-    if(!tierNode.IsNull())
-    {
+    if (!tierNode.IsNull()) {
       m_tier = TierMapper::GetTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()));
       m_tierHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ GlacierJobParameters& GlacierJobParameters::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void GlacierJobParameters::AddToNode(XmlNode& parentNode) const
-{
+void GlacierJobParameters::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_tierHasBeenSet)
-  {
-   XmlNode tierNode = parentNode.CreateChildElement("Tier");
-   tierNode.SetText(TierMapper::GetNameForTier(m_tier));
+  if (m_tierHasBeenSet) {
+    XmlNode tierNode = parentNode.CreateChildElement("Tier");
+    tierNode.SetText(TierMapper::GetNameForTier(m_tier));
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

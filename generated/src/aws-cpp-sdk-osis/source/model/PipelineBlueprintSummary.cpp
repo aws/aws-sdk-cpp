@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/osis/model/PipelineBlueprintSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/PipelineBlueprintSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OSIS
-{
-namespace Model
-{
+namespace Aws {
+namespace OSIS {
+namespace Model {
 
-PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue) { *this = jsonValue; }
 
-PipelineBlueprintSummary& PipelineBlueprintSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BlueprintName"))
-  {
+PipelineBlueprintSummary& PipelineBlueprintSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BlueprintName")) {
     m_blueprintName = jsonValue.GetString("BlueprintName");
     m_blueprintNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayDescription"))
-  {
+  if (jsonValue.ValueExists("DisplayDescription")) {
     m_displayDescription = jsonValue.GetString("DisplayDescription");
     m_displayDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Service"))
-  {
+  if (jsonValue.ValueExists("Service")) {
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UseCase"))
-  {
+  if (jsonValue.ValueExists("UseCase")) {
     m_useCase = jsonValue.GetString("UseCase");
     m_useCaseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PipelineBlueprintSummary::Jsonize() const
-{
+JsonValue PipelineBlueprintSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_blueprintNameHasBeenSet)
-  {
-   payload.WithString("BlueprintName", m_blueprintName);
-
+  if (m_blueprintNameHasBeenSet) {
+    payload.WithString("BlueprintName", m_blueprintName);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_displayDescriptionHasBeenSet)
-  {
-   payload.WithString("DisplayDescription", m_displayDescription);
-
+  if (m_displayDescriptionHasBeenSet) {
+    payload.WithString("DisplayDescription", m_displayDescription);
   }
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("Service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("Service", m_service);
   }
 
-  if(m_useCaseHasBeenSet)
-  {
-   payload.WithString("UseCase", m_useCase);
-
+  if (m_useCaseHasBeenSet) {
+    payload.WithString("UseCase", m_useCase);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OSIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/StorageClassAnalysisDataExport.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/StorageClassAnalysisDataExport.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StorageClassAnalysisDataExport& StorageClassAnalysisDataExport::operator =(const XmlNode& xmlNode)
-{
+StorageClassAnalysisDataExport& StorageClassAnalysisDataExport::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode outputSchemaVersionNode = resultNode.FirstChild("OutputSchemaVersion");
-    if(!outputSchemaVersionNode.IsNull())
-    {
-      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()));
+    if (!outputSchemaVersionNode.IsNull()) {
+      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()));
       m_outputSchemaVersionHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
-    if(!destinationNode.IsNull())
-    {
+    if (!destinationNode.IsNull()) {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
     }
@@ -48,23 +39,20 @@ StorageClassAnalysisDataExport& StorageClassAnalysisDataExport::operator =(const
   return *this;
 }
 
-void StorageClassAnalysisDataExport::AddToNode(XmlNode& parentNode) const
-{
+void StorageClassAnalysisDataExport::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_outputSchemaVersionHasBeenSet)
-  {
-   XmlNode outputSchemaVersionNode = parentNode.CreateChildElement("OutputSchemaVersion");
-   outputSchemaVersionNode.SetText(StorageClassAnalysisSchemaVersionMapper::GetNameForStorageClassAnalysisSchemaVersion(m_outputSchemaVersion));
+  if (m_outputSchemaVersionHasBeenSet) {
+    XmlNode outputSchemaVersionNode = parentNode.CreateChildElement("OutputSchemaVersion");
+    outputSchemaVersionNode.SetText(
+        StorageClassAnalysisSchemaVersionMapper::GetNameForStorageClassAnalysisSchemaVersion(m_outputSchemaVersion));
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   XmlNode destinationNode = parentNode.CreateChildElement("Destination");
-   m_destination.AddToNode(destinationNode);
+  if (m_destinationHasBeenSet) {
+    XmlNode destinationNode = parentNode.CreateChildElement("Destination");
+    m_destination.AddToNode(destinationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

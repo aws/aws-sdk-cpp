@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
-  enum class OperationTargetType
-  {
-    NOT_SET,
-    NAMESPACE,
-    SERVICE,
-    INSTANCE
-  };
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
+enum class OperationTargetType { NOT_SET, NAMESPACE, SERVICE, INSTANCE };
 
-namespace OperationTargetTypeMapper
-{
+namespace OperationTargetTypeMapper {
 AWS_SERVICEDISCOVERY_API OperationTargetType GetOperationTargetTypeForName(const Aws::String& name);
 
 AWS_SERVICEDISCOVERY_API Aws::String GetNameForOperationTargetType(OperationTargetType value);
-} // namespace OperationTargetTypeMapper
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace OperationTargetTypeMapper
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2VpcEndpointServiceServiceTypeDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2VpcEndpointServiceServiceTypeDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEc2VpcEndpointServiceServiceTypeDetails::AwsEc2VpcEndpointServiceServiceTypeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEc2VpcEndpointServiceServiceTypeDetails& AwsEc2VpcEndpointServiceServiceTypeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceType"))
-  {
+AwsEc2VpcEndpointServiceServiceTypeDetails& AwsEc2VpcEndpointServiceServiceTypeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceType")) {
     m_serviceType = jsonValue.GetString("ServiceType");
     m_serviceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2VpcEndpointServiceServiceTypeDetails::Jsonize() const
-{
+JsonValue AwsEc2VpcEndpointServiceServiceTypeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceTypeHasBeenSet)
-  {
-   payload.WithString("ServiceType", m_serviceType);
-
+  if (m_serviceTypeHasBeenSet) {
+    payload.WithString("ServiceType", m_serviceType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

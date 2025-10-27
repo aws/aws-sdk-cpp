@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/ExportStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ExportStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-ExportStatistics::ExportStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportStatistics::ExportStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-ExportStatistics& ExportStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProcessedRecordsCount"))
-  {
+ExportStatistics& ExportStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProcessedRecordsCount")) {
     m_processedRecordsCount = jsonValue.GetInteger("ProcessedRecordsCount");
     m_processedRecordsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportedRecordsCount"))
-  {
+  if (jsonValue.ValueExists("ExportedRecordsCount")) {
     m_exportedRecordsCount = jsonValue.GetInteger("ExportedRecordsCount");
     m_exportedRecordsCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportStatistics::Jsonize() const
-{
+JsonValue ExportStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_processedRecordsCountHasBeenSet)
-  {
-   payload.WithInteger("ProcessedRecordsCount", m_processedRecordsCount);
-
+  if (m_processedRecordsCountHasBeenSet) {
+    payload.WithInteger("ProcessedRecordsCount", m_processedRecordsCount);
   }
 
-  if(m_exportedRecordsCountHasBeenSet)
-  {
-   payload.WithInteger("ExportedRecordsCount", m_exportedRecordsCount);
-
+  if (m_exportedRecordsCountHasBeenSet) {
+    payload.WithInteger("ExportedRecordsCount", m_exportedRecordsCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

@@ -4,186 +4,241 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoTRequest.h>
+#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/AggregationType.h>
 #include <aws/iot/model/FleetMetricUnit.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
+/**
+ */
+class UpdateFleetMetricRequest : public IoTRequest {
+ public:
+  AWS_IOT_API UpdateFleetMetricRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateFleetMetric"; }
+
+  AWS_IOT_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the fleet metric to update.</p>
    */
-  class UpdateFleetMetricRequest : public IoTRequest
-  {
-  public:
-    AWS_IOT_API UpdateFleetMetricRequest() = default;
+  inline const Aws::String& GetMetricName() const { return m_metricName; }
+  inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+  template <typename MetricNameT = Aws::String>
+  void SetMetricName(MetricNameT&& value) {
+    m_metricNameHasBeenSet = true;
+    m_metricName = std::forward<MetricNameT>(value);
+  }
+  template <typename MetricNameT = Aws::String>
+  UpdateFleetMetricRequest& WithMetricName(MetricNameT&& value) {
+    SetMetricName(std::forward<MetricNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateFleetMetric"; }
+  ///@{
+  /**
+   * <p>The search query string.</p>
+   */
+  inline const Aws::String& GetQueryString() const { return m_queryString; }
+  inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+  template <typename QueryStringT = Aws::String>
+  void SetQueryString(QueryStringT&& value) {
+    m_queryStringHasBeenSet = true;
+    m_queryString = std::forward<QueryStringT>(value);
+  }
+  template <typename QueryStringT = Aws::String>
+  UpdateFleetMetricRequest& WithQueryString(QueryStringT&& value) {
+    SetQueryString(std::forward<QueryStringT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_IOT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The type of the aggregation query.</p>
+   */
+  inline const AggregationType& GetAggregationType() const { return m_aggregationType; }
+  inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
+  template <typename AggregationTypeT = AggregationType>
+  void SetAggregationType(AggregationTypeT&& value) {
+    m_aggregationTypeHasBeenSet = true;
+    m_aggregationType = std::forward<AggregationTypeT>(value);
+  }
+  template <typename AggregationTypeT = AggregationType>
+  UpdateFleetMetricRequest& WithAggregationType(AggregationTypeT&& value) {
+    SetAggregationType(std::forward<AggregationTypeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1
+   * day)] and must be multiple of 60.</p>
+   */
+  inline int GetPeriod() const { return m_period; }
+  inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+  inline void SetPeriod(int value) {
+    m_periodHasBeenSet = true;
+    m_period = value;
+  }
+  inline UpdateFleetMetricRequest& WithPeriod(int value) {
+    SetPeriod(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the fleet metric to update.</p>
-     */
-    inline const Aws::String& GetMetricName() const { return m_metricName; }
-    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    template<typename MetricNameT = Aws::String>
-    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
-    template<typename MetricNameT = Aws::String>
-    UpdateFleetMetricRequest& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The field to aggregate.</p>
+   */
+  inline const Aws::String& GetAggregationField() const { return m_aggregationField; }
+  inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
+  template <typename AggregationFieldT = Aws::String>
+  void SetAggregationField(AggregationFieldT&& value) {
+    m_aggregationFieldHasBeenSet = true;
+    m_aggregationField = std::forward<AggregationFieldT>(value);
+  }
+  template <typename AggregationFieldT = Aws::String>
+  UpdateFleetMetricRequest& WithAggregationField(AggregationFieldT&& value) {
+    SetAggregationField(std::forward<AggregationFieldT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The search query string.</p>
-     */
-    inline const Aws::String& GetQueryString() const { return m_queryString; }
-    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    template<typename QueryStringT = Aws::String>
-    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
-    template<typename QueryStringT = Aws::String>
-    UpdateFleetMetricRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The description of the fleet metric.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateFleetMetricRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of the aggregation query.</p>
-     */
-    inline const AggregationType& GetAggregationType() const { return m_aggregationType; }
-    inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
-    template<typename AggregationTypeT = AggregationType>
-    void SetAggregationType(AggregationTypeT&& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = std::forward<AggregationTypeT>(value); }
-    template<typename AggregationTypeT = AggregationType>
-    UpdateFleetMetricRequest& WithAggregationType(AggregationTypeT&& value) { SetAggregationType(std::forward<AggregationTypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The version of the query.</p>
+   */
+  inline const Aws::String& GetQueryVersion() const { return m_queryVersion; }
+  inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
+  template <typename QueryVersionT = Aws::String>
+  void SetQueryVersion(QueryVersionT&& value) {
+    m_queryVersionHasBeenSet = true;
+    m_queryVersion = std::forward<QueryVersionT>(value);
+  }
+  template <typename QueryVersionT = Aws::String>
+  UpdateFleetMetricRequest& WithQueryVersion(QueryVersionT&& value) {
+    SetQueryVersion(std::forward<QueryVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1
-     * day)] and must be multiple of 60.</p>
-     */
-    inline int GetPeriod() const { return m_period; }
-    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
-    inline UpdateFleetMetricRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the index to search.</p>
+   */
+  inline const Aws::String& GetIndexName() const { return m_indexName; }
+  inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+  template <typename IndexNameT = Aws::String>
+  void SetIndexName(IndexNameT&& value) {
+    m_indexNameHasBeenSet = true;
+    m_indexName = std::forward<IndexNameT>(value);
+  }
+  template <typename IndexNameT = Aws::String>
+  UpdateFleetMetricRequest& WithIndexName(IndexNameT&& value) {
+    SetIndexName(std::forward<IndexNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The field to aggregate.</p>
-     */
-    inline const Aws::String& GetAggregationField() const { return m_aggregationField; }
-    inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
-    template<typename AggregationFieldT = Aws::String>
-    void SetAggregationField(AggregationFieldT&& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = std::forward<AggregationFieldT>(value); }
-    template<typename AggregationFieldT = Aws::String>
-    UpdateFleetMetricRequest& WithAggregationField(AggregationFieldT&& value) { SetAggregationField(std::forward<AggregationFieldT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Used to support unit transformation such as milliseconds to seconds. The unit
+   * must be supported by <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+   * metric</a>.</p>
+   */
+  inline FleetMetricUnit GetUnit() const { return m_unit; }
+  inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+  inline void SetUnit(FleetMetricUnit value) {
+    m_unitHasBeenSet = true;
+    m_unit = value;
+  }
+  inline UpdateFleetMetricRequest& WithUnit(FleetMetricUnit value) {
+    SetUnit(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The description of the fleet metric.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateFleetMetricRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The expected version of the fleet metric record in the registry.</p>
+   */
+  inline long long GetExpectedVersion() const { return m_expectedVersion; }
+  inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
+  inline void SetExpectedVersion(long long value) {
+    m_expectedVersionHasBeenSet = true;
+    m_expectedVersion = value;
+  }
+  inline UpdateFleetMetricRequest& WithExpectedVersion(long long value) {
+    SetExpectedVersion(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_metricName;
+  bool m_metricNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The version of the query.</p>
-     */
-    inline const Aws::String& GetQueryVersion() const { return m_queryVersion; }
-    inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
-    template<typename QueryVersionT = Aws::String>
-    void SetQueryVersion(QueryVersionT&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::forward<QueryVersionT>(value); }
-    template<typename QueryVersionT = Aws::String>
-    UpdateFleetMetricRequest& WithQueryVersion(QueryVersionT&& value) { SetQueryVersion(std::forward<QueryVersionT>(value)); return *this;}
-    ///@}
+  Aws::String m_queryString;
+  bool m_queryStringHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the index to search.</p>
-     */
-    inline const Aws::String& GetIndexName() const { return m_indexName; }
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    template<typename IndexNameT = Aws::String>
-    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
-    template<typename IndexNameT = Aws::String>
-    UpdateFleetMetricRequest& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
-    ///@}
+  AggregationType m_aggregationType;
+  bool m_aggregationTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Used to support unit transformation such as milliseconds to seconds. The unit
-     * must be supported by <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
-     * metric</a>.</p>
-     */
-    inline FleetMetricUnit GetUnit() const { return m_unit; }
-    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(FleetMetricUnit value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline UpdateFleetMetricRequest& WithUnit(FleetMetricUnit value) { SetUnit(value); return *this;}
-    ///@}
+  int m_period{0};
+  bool m_periodHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The expected version of the fleet metric record in the registry.</p>
-     */
-    inline long long GetExpectedVersion() const { return m_expectedVersion; }
-    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
-    inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
-    inline UpdateFleetMetricRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
-    ///@}
-  private:
+  Aws::String m_aggregationField;
+  bool m_aggregationFieldHasBeenSet = false;
 
-    Aws::String m_metricName;
-    bool m_metricNameHasBeenSet = false;
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_queryString;
-    bool m_queryStringHasBeenSet = false;
+  Aws::String m_queryVersion;
+  bool m_queryVersionHasBeenSet = false;
 
-    AggregationType m_aggregationType;
-    bool m_aggregationTypeHasBeenSet = false;
+  Aws::String m_indexName;
+  bool m_indexNameHasBeenSet = false;
 
-    int m_period{0};
-    bool m_periodHasBeenSet = false;
+  FleetMetricUnit m_unit{FleetMetricUnit::NOT_SET};
+  bool m_unitHasBeenSet = false;
 
-    Aws::String m_aggregationField;
-    bool m_aggregationFieldHasBeenSet = false;
+  long long m_expectedVersion{0};
+  bool m_expectedVersionHasBeenSet = false;
+};
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_queryVersion;
-    bool m_queryVersionHasBeenSet = false;
-
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
-
-    FleetMetricUnit m_unit{FleetMetricUnit::NOT_SET};
-    bool m_unitHasBeenSet = false;
-
-    long long m_expectedVersion{0};
-    bool m_expectedVersionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

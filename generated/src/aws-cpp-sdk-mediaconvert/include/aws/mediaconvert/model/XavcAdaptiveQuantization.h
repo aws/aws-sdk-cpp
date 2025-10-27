@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class XavcAdaptiveQuantization
-  {
-    NOT_SET,
-    OFF,
-    AUTO,
-    LOW,
-    MEDIUM,
-    HIGH,
-    HIGHER,
-    MAX
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class XavcAdaptiveQuantization { NOT_SET, OFF, AUTO, LOW, MEDIUM, HIGH, HIGHER, MAX };
 
-namespace XavcAdaptiveQuantizationMapper
-{
+namespace XavcAdaptiveQuantizationMapper {
 AWS_MEDIACONVERT_API XavcAdaptiveQuantization GetXavcAdaptiveQuantizationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForXavcAdaptiveQuantization(XavcAdaptiveQuantization value);
-} // namespace XavcAdaptiveQuantizationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace XavcAdaptiveQuantizationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

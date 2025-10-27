@@ -5,28 +5,22 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/finspace-data/FinSpaceDataErrors.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/finspace-data/FinSpaceDataErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::FinSpaceData;
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace FinSpaceDataErrorMapper
-{
+namespace Aws {
+namespace FinSpaceData {
+namespace FinSpaceDataErrorMapper {
 
-
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   AWS_UNREFERENCED_PARAM(errorName);
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace FinSpaceDataErrorMapper
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace FinSpaceDataErrorMapper
+}  // namespace FinSpaceData
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/Kendra_EXPORTS.h>
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
-  enum class SalesforceKnowledgeArticleState
-  {
-    NOT_SET,
-    DRAFT,
-    PUBLISHED,
-    ARCHIVED
-  };
+namespace Aws {
+namespace kendra {
+namespace Model {
+enum class SalesforceKnowledgeArticleState { NOT_SET, DRAFT, PUBLISHED, ARCHIVED };
 
-namespace SalesforceKnowledgeArticleStateMapper
-{
+namespace SalesforceKnowledgeArticleStateMapper {
 AWS_KENDRA_API SalesforceKnowledgeArticleState GetSalesforceKnowledgeArticleStateForName(const Aws::String& name);
 
 AWS_KENDRA_API Aws::String GetNameForSalesforceKnowledgeArticleState(SalesforceKnowledgeArticleState value);
-} // namespace SalesforceKnowledgeArticleStateMapper
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace SalesforceKnowledgeArticleStateMapper
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

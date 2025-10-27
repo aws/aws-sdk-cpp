@@ -4,80 +4,91 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
-#include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/IAMRequest.h>
+#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/Tag.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
+namespace Aws {
+namespace IAM {
+namespace Model {
 
+/**
+ */
+class TagMFADeviceRequest : public IAMRequest {
+ public:
+  AWS_IAM_API TagMFADeviceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "TagMFADevice"; }
+
+  AWS_IAM_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The unique identifier for the IAM virtual MFA device to which you want to add
+   * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
+   * <p>This parameter allows (through its <a
+   * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+   * consisting of upper and lowercase alphanumeric characters with no spaces. You
+   * can also include any of the following characters: _+=,.@-</p>
    */
-  class TagMFADeviceRequest : public IAMRequest
-  {
-  public:
-    AWS_IAM_API TagMFADeviceRequest() = default;
+  inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
+  inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
+  template <typename SerialNumberT = Aws::String>
+  void SetSerialNumber(SerialNumberT&& value) {
+    m_serialNumberHasBeenSet = true;
+    m_serialNumber = std::forward<SerialNumberT>(value);
+  }
+  template <typename SerialNumberT = Aws::String>
+  TagMFADeviceRequest& WithSerialNumber(SerialNumberT&& value) {
+    SetSerialNumber(std::forward<SerialNumberT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "TagMFADevice"; }
+  ///@{
+  /**
+   * <p>The list of tags that you want to attach to the IAM virtual MFA device. Each
+   * tag consists of a key name and an associated value.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  TagMFADeviceRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  TagMFADeviceRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_serialNumber;
+  bool m_serialNumberHasBeenSet = false;
 
-    AWS_IAM_API Aws::String SerializePayload() const override;
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
+};
 
-  protected:
-    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>The unique identifier for the IAM virtual MFA device to which you want to add
-     * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
-    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
-    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    template<typename SerialNumberT = Aws::String>
-    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
-    template<typename SerialNumberT = Aws::String>
-    TagMFADeviceRequest& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of tags that you want to attach to the IAM virtual MFA device. Each
-     * tag consists of a key name and an associated value.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Vector<Tag>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Vector<Tag>>
-    TagMFADeviceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsT = Tag>
-    TagMFADeviceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

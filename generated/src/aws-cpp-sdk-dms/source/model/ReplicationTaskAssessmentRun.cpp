@@ -3,191 +3,142 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/ReplicationTaskAssessmentRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/ReplicationTaskAssessmentRun.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicationTaskAssessmentRun& ReplicationTaskAssessmentRun::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReplicationTaskAssessmentRunArn"))
-  {
+ReplicationTaskAssessmentRun& ReplicationTaskAssessmentRun::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReplicationTaskAssessmentRunArn")) {
     m_replicationTaskAssessmentRunArn = jsonValue.GetString("ReplicationTaskAssessmentRunArn");
     m_replicationTaskAssessmentRunArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicationTaskArn"))
-  {
+  if (jsonValue.ValueExists("ReplicationTaskArn")) {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
     m_replicationTaskArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicationTaskAssessmentRunCreationDate"))
-  {
+  if (jsonValue.ValueExists("ReplicationTaskAssessmentRunCreationDate")) {
     m_replicationTaskAssessmentRunCreationDate = jsonValue.GetDouble("ReplicationTaskAssessmentRunCreationDate");
     m_replicationTaskAssessmentRunCreationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssessmentProgress"))
-  {
+  if (jsonValue.ValueExists("AssessmentProgress")) {
     m_assessmentProgress = jsonValue.GetObject("AssessmentProgress");
     m_assessmentProgressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastFailureMessage"))
-  {
+  if (jsonValue.ValueExists("LastFailureMessage")) {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
     m_lastFailureMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("ServiceAccessRoleArn")) {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultLocationBucket"))
-  {
+  if (jsonValue.ValueExists("ResultLocationBucket")) {
     m_resultLocationBucket = jsonValue.GetString("ResultLocationBucket");
     m_resultLocationBucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultLocationFolder"))
-  {
+  if (jsonValue.ValueExists("ResultLocationFolder")) {
     m_resultLocationFolder = jsonValue.GetString("ResultLocationFolder");
     m_resultLocationFolderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultEncryptionMode"))
-  {
+  if (jsonValue.ValueExists("ResultEncryptionMode")) {
     m_resultEncryptionMode = jsonValue.GetString("ResultEncryptionMode");
     m_resultEncryptionModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultKmsKeyArn"))
-  {
+  if (jsonValue.ValueExists("ResultKmsKeyArn")) {
     m_resultKmsKeyArn = jsonValue.GetString("ResultKmsKeyArn");
     m_resultKmsKeyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssessmentRunName"))
-  {
+  if (jsonValue.ValueExists("AssessmentRunName")) {
     m_assessmentRunName = jsonValue.GetString("AssessmentRunName");
     m_assessmentRunNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsLatestTaskAssessmentRun"))
-  {
+  if (jsonValue.ValueExists("IsLatestTaskAssessmentRun")) {
     m_isLatestTaskAssessmentRun = jsonValue.GetBool("IsLatestTaskAssessmentRun");
     m_isLatestTaskAssessmentRunHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResultStatistic"))
-  {
+  if (jsonValue.ValueExists("ResultStatistic")) {
     m_resultStatistic = jsonValue.GetObject("ResultStatistic");
     m_resultStatisticHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicationTaskAssessmentRun::Jsonize() const
-{
+JsonValue ReplicationTaskAssessmentRun::Jsonize() const {
   JsonValue payload;
 
-  if(m_replicationTaskAssessmentRunArnHasBeenSet)
-  {
-   payload.WithString("ReplicationTaskAssessmentRunArn", m_replicationTaskAssessmentRunArn);
-
+  if (m_replicationTaskAssessmentRunArnHasBeenSet) {
+    payload.WithString("ReplicationTaskAssessmentRunArn", m_replicationTaskAssessmentRunArn);
   }
 
-  if(m_replicationTaskArnHasBeenSet)
-  {
-   payload.WithString("ReplicationTaskArn", m_replicationTaskArn);
-
+  if (m_replicationTaskArnHasBeenSet) {
+    payload.WithString("ReplicationTaskArn", m_replicationTaskArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_replicationTaskAssessmentRunCreationDateHasBeenSet)
-  {
-   payload.WithDouble("ReplicationTaskAssessmentRunCreationDate", m_replicationTaskAssessmentRunCreationDate.SecondsWithMSPrecision());
+  if (m_replicationTaskAssessmentRunCreationDateHasBeenSet) {
+    payload.WithDouble("ReplicationTaskAssessmentRunCreationDate", m_replicationTaskAssessmentRunCreationDate.SecondsWithMSPrecision());
   }
 
-  if(m_assessmentProgressHasBeenSet)
-  {
-   payload.WithObject("AssessmentProgress", m_assessmentProgress.Jsonize());
-
+  if (m_assessmentProgressHasBeenSet) {
+    payload.WithObject("AssessmentProgress", m_assessmentProgress.Jsonize());
   }
 
-  if(m_lastFailureMessageHasBeenSet)
-  {
-   payload.WithString("LastFailureMessage", m_lastFailureMessage);
-
+  if (m_lastFailureMessageHasBeenSet) {
+    payload.WithString("LastFailureMessage", m_lastFailureMessage);
   }
 
-  if(m_serviceAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
-
+  if (m_serviceAccessRoleArnHasBeenSet) {
+    payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
   }
 
-  if(m_resultLocationBucketHasBeenSet)
-  {
-   payload.WithString("ResultLocationBucket", m_resultLocationBucket);
-
+  if (m_resultLocationBucketHasBeenSet) {
+    payload.WithString("ResultLocationBucket", m_resultLocationBucket);
   }
 
-  if(m_resultLocationFolderHasBeenSet)
-  {
-   payload.WithString("ResultLocationFolder", m_resultLocationFolder);
-
+  if (m_resultLocationFolderHasBeenSet) {
+    payload.WithString("ResultLocationFolder", m_resultLocationFolder);
   }
 
-  if(m_resultEncryptionModeHasBeenSet)
-  {
-   payload.WithString("ResultEncryptionMode", m_resultEncryptionMode);
-
+  if (m_resultEncryptionModeHasBeenSet) {
+    payload.WithString("ResultEncryptionMode", m_resultEncryptionMode);
   }
 
-  if(m_resultKmsKeyArnHasBeenSet)
-  {
-   payload.WithString("ResultKmsKeyArn", m_resultKmsKeyArn);
-
+  if (m_resultKmsKeyArnHasBeenSet) {
+    payload.WithString("ResultKmsKeyArn", m_resultKmsKeyArn);
   }
 
-  if(m_assessmentRunNameHasBeenSet)
-  {
-   payload.WithString("AssessmentRunName", m_assessmentRunName);
-
+  if (m_assessmentRunNameHasBeenSet) {
+    payload.WithString("AssessmentRunName", m_assessmentRunName);
   }
 
-  if(m_isLatestTaskAssessmentRunHasBeenSet)
-  {
-   payload.WithBool("IsLatestTaskAssessmentRun", m_isLatestTaskAssessmentRun);
-
+  if (m_isLatestTaskAssessmentRunHasBeenSet) {
+    payload.WithBool("IsLatestTaskAssessmentRun", m_isLatestTaskAssessmentRun);
   }
 
-  if(m_resultStatisticHasBeenSet)
-  {
-   payload.WithObject("ResultStatistic", m_resultStatistic.Jsonize());
-
+  if (m_resultStatisticHasBeenSet) {
+    payload.WithObject("ResultStatistic", m_resultStatistic.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

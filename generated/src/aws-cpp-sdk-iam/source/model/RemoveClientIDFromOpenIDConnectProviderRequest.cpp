@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String RemoveClientIDFromOpenIDConnectProviderRequest::SerializePayload() const
-{
+Aws::String RemoveClientIDFromOpenIDConnectProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RemoveClientIDFromOpenIDConnectProvider&";
-  if(m_openIDConnectProviderArnHasBeenSet)
-  {
+  if (m_openIDConnectProviderArnHasBeenSet) {
     ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
   }
 
-  if(m_clientIDHasBeenSet)
-  {
+  if (m_clientIDHasBeenSet) {
     ss << "ClientID=" << StringUtils::URLEncode(m_clientID.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RemoveClientIDFromOpenIDConnectProviderRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  RemoveClientIDFromOpenIDConnectProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RemoveClientIDFromOpenIDConnectProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

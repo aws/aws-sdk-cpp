@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/UserJobsFirst.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/deadline/model/UserJobsFirst.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
+namespace Aws {
+namespace deadline {
+namespace Model {
 
-UserJobsFirst::UserJobsFirst(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserJobsFirst::UserJobsFirst(JsonView jsonValue) { *this = jsonValue; }
 
-UserJobsFirst& UserJobsFirst::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userIdentityId"))
-  {
+UserJobsFirst& UserJobsFirst::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userIdentityId")) {
     m_userIdentityId = jsonValue.GetString("userIdentityId");
     m_userIdentityIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserJobsFirst::Jsonize() const
-{
+JsonValue UserJobsFirst::Jsonize() const {
   JsonValue payload;
 
-  if(m_userIdentityIdHasBeenSet)
-  {
-   payload.WithString("userIdentityId", m_userIdentityId);
-
+  if (m_userIdentityIdHasBeenSet) {
+    payload.WithString("userIdentityId", m_userIdentityId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-EksProperties::EksProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EksProperties::EksProperties(JsonView jsonValue) { *this = jsonValue; }
 
-EksProperties& EksProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("podProperties"))
-  {
+EksProperties& EksProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("podProperties")) {
     m_podProperties = jsonValue.GetObject("podProperties");
     m_podPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EksProperties::Jsonize() const
-{
+JsonValue EksProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_podPropertiesHasBeenSet)
-  {
-   payload.WithObject("podProperties", m_podProperties.Jsonize());
-
+  if (m_podPropertiesHasBeenSet) {
+    payload.WithObject("podProperties", m_podProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

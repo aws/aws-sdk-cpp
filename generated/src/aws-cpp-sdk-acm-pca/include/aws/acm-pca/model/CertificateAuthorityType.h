@@ -7,25 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class CertificateAuthorityType
-  {
-    NOT_SET,
-    ROOT,
-    SUBORDINATE
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class CertificateAuthorityType { NOT_SET, ROOT, SUBORDINATE };
 
-namespace CertificateAuthorityTypeMapper
-{
+namespace CertificateAuthorityTypeMapper {
 AWS_ACMPCA_API CertificateAuthorityType GetCertificateAuthorityTypeForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForCertificateAuthorityType(CertificateAuthorityType value);
-} // namespace CertificateAuthorityTypeMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace CertificateAuthorityTypeMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

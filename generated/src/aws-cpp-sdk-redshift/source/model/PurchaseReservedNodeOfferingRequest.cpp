@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/PurchaseReservedNodeOfferingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/PurchaseReservedNodeOfferingRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseReservedNodeOfferingRequest::SerializePayload() const
-{
+Aws::String PurchaseReservedNodeOfferingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedNodeOffering&";
-  if(m_reservedNodeOfferingIdHasBeenSet)
-  {
+  if (m_reservedNodeOfferingIdHasBeenSet) {
     ss << "ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
   }
 
-  if(m_nodeCountHasBeenSet)
-  {
+  if (m_nodeCountHasBeenSet) {
     ss << "NodeCount=" << m_nodeCount << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String PurchaseReservedNodeOfferingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PurchaseReservedNodeOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseReservedNodeOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class RecordStatus
-  {
-    NOT_SET,
-    CREATED,
-    IN_PROGRESS,
-    IN_PROGRESS_IN_ERROR,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class RecordStatus { NOT_SET, CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED };
 
-namespace RecordStatusMapper
-{
+namespace RecordStatusMapper {
 AWS_SERVICECATALOG_API RecordStatus GetRecordStatusForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForRecordStatus(RecordStatus value);
-} // namespace RecordStatusMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace RecordStatusMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

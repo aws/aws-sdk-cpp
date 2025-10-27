@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhuborchestrator/model/ListWorkflowsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/migrationhuborchestrator/model/ListWorkflowsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkflowsResult::ListWorkflowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListWorkflowsResult::ListWorkflowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListWorkflowsResult& ListWorkflowsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListWorkflowsResult& ListWorkflowsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("migrationWorkflowSummary"))
-  {
+  if (jsonValue.ValueExists("migrationWorkflowSummary")) {
     Aws::Utils::Array<JsonView> migrationWorkflowSummaryJsonList = jsonValue.GetArray("migrationWorkflowSummary");
-    for(unsigned migrationWorkflowSummaryIndex = 0; migrationWorkflowSummaryIndex < migrationWorkflowSummaryJsonList.GetLength(); ++migrationWorkflowSummaryIndex)
-    {
+    for (unsigned migrationWorkflowSummaryIndex = 0; migrationWorkflowSummaryIndex < migrationWorkflowSummaryJsonList.GetLength();
+         ++migrationWorkflowSummaryIndex) {
       m_migrationWorkflowSummary.push_back(migrationWorkflowSummaryJsonList[migrationWorkflowSummaryIndex].AsObject());
     }
     m_migrationWorkflowSummaryHasBeenSet = true;
@@ -42,12 +36,10 @@ ListWorkflowsResult& ListWorkflowsResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

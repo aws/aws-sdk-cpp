@@ -3,124 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/Filter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/Filter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Personalize {
+namespace Model {
 
-Filter::Filter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Filter::Filter(JsonView jsonValue) { *this = jsonValue; }
 
-Filter& Filter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Filter& Filter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterArn"))
-  {
+  if (jsonValue.ValueExists("filterArn")) {
     m_filterArn = jsonValue.GetString("filterArn");
     m_filterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedDateTime")) {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datasetGroupArn"))
-  {
+  if (jsonValue.ValueExists("datasetGroupArn")) {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
     m_datasetGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureReason"))
-  {
+  if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterExpression"))
-  {
+  if (jsonValue.ValueExists("filterExpression")) {
     m_filterExpression = jsonValue.GetString("filterExpression");
     m_filterExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Filter::Jsonize() const
-{
+JsonValue Filter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_filterArnHasBeenSet)
-  {
-   payload.WithString("filterArn", m_filterArn);
-
+  if (m_filterArnHasBeenSet) {
+    payload.WithString("filterArn", m_filterArn);
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_datasetGroupArnHasBeenSet)
-  {
-   payload.WithString("datasetGroupArn", m_datasetGroupArn);
-
+  if (m_datasetGroupArnHasBeenSet) {
+    payload.WithString("datasetGroupArn", m_datasetGroupArn);
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("failureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("failureReason", m_failureReason);
   }
 
-  if(m_filterExpressionHasBeenSet)
-  {
-   payload.WithString("filterExpression", m_filterExpression);
-
+  if (m_filterExpressionHasBeenSet) {
+    payload.WithString("filterExpression", m_filterExpression);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

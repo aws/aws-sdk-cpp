@@ -4,94 +4,108 @@
  */
 
 #pragma once
-#include <aws/s3control/S3Control_EXPORTS.h>
-#include <aws/s3control/S3ControlRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/s3control/model/PutMultiRegionAccessPointPolicyInput.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/S3ControlRequest.h>
+#include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/PutMultiRegionAccessPointPolicyInput.h>
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+#include <utility>
+
+namespace Aws {
+namespace S3Control {
+namespace Model {
+
+/**
+ */
+class PutMultiRegionAccessPointPolicyRequest : public S3ControlRequest {
+ public:
+  AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutMultiRegionAccessPointPolicy"; }
+
+  AWS_S3CONTROL_API Aws::String SerializePayload() const override;
+
+  AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
   /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
-  class PutMultiRegionAccessPointPolicyRequest : public S3ControlRequest
-  {
-  public:
-    AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyRequest() = default;
+  AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutMultiRegionAccessPointPolicy"; }
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
+   * Point.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  PutMultiRegionAccessPointPolicyRequest& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>An idempotency token used to identify the request and guarantee that requests
+   * are unique.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  PutMultiRegionAccessPointPolicyRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>A container element containing the details of the policy for the Multi-Region
+   * Access Point.</p>
+   */
+  inline const PutMultiRegionAccessPointPolicyInput& GetDetails() const { return m_details; }
+  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+  template <typename DetailsT = PutMultiRegionAccessPointPolicyInput>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
+  }
+  template <typename DetailsT = PutMultiRegionAccessPointPolicyInput>
+  PutMultiRegionAccessPointPolicyRequest& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_accountId;
+  bool m_accountIdHasBeenSet = false;
 
-    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
 
-    /**
-     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
-     */
-    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
+  PutMultiRegionAccessPointPolicyInput m_details;
+  bool m_detailsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    PutMultiRegionAccessPointPolicyRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An idempotency token used to identify the request and guarantee that requests
-     * are unique.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    PutMultiRegionAccessPointPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A container element containing the details of the policy for the Multi-Region
-     * Access Point.</p>
-     */
-    inline const PutMultiRegionAccessPointPolicyInput& GetDetails() const { return m_details; }
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    template<typename DetailsT = PutMultiRegionAccessPointPolicyInput>
-    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
-    template<typename DetailsT = PutMultiRegionAccessPointPolicyInput>
-    PutMultiRegionAccessPointPolicyRequest& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
-    PutMultiRegionAccessPointPolicyInput m_details;
-    bool m_detailsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

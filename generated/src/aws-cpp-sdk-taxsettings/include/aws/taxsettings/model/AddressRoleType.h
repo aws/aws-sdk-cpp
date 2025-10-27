@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class AddressRoleType
-  {
-    NOT_SET,
-    TaxAddress,
-    BillingAddress,
-    ContactAddress
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class AddressRoleType { NOT_SET, TaxAddress, BillingAddress, ContactAddress };
 
-namespace AddressRoleTypeMapper
-{
+namespace AddressRoleTypeMapper {
 AWS_TAXSETTINGS_API AddressRoleType GetAddressRoleTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForAddressRoleType(AddressRoleType value);
-} // namespace AddressRoleTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace AddressRoleTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

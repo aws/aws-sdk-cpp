@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class ErrorCode
-  {
-    NOT_SET,
-    InternalError,
-    InvalidRequest,
-    ResourceInactive,
-    ResourceNotFound
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class ErrorCode { NOT_SET, InternalError, InvalidRequest, ResourceInactive, ResourceNotFound };
 
-namespace ErrorCodeMapper
-{
+namespace ErrorCodeMapper {
 AWS_QBUSINESS_API ErrorCode GetErrorCodeForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForErrorCode(ErrorCode value);
-} // namespace ErrorCodeMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace ErrorCodeMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

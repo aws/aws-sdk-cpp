@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/Condition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/Condition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-Condition::Condition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
 
-Condition& Condition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("expressionString"))
-  {
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expressionString")) {
     m_expressionString = jsonValue.GetString("expressionString");
     m_expressionStringHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Condition::Jsonize() const
-{
+JsonValue Condition::Jsonize() const {
   JsonValue payload;
 
-  if(m_expressionStringHasBeenSet)
-  {
-   payload.WithString("expressionString", m_expressionString);
-
+  if (m_expressionStringHasBeenSet) {
+    payload.WithString("expressionString", m_expressionString);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

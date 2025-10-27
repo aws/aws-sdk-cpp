@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/CreateColumnStatisticsTaskSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/CreateColumnStatisticsTaskSettingsRequest.h>
 
 #include <utility>
 
@@ -12,85 +12,58 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateColumnStatisticsTaskSettingsRequest::SerializePayload() const
-{
+Aws::String CreateColumnStatisticsTaskSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithString("Schedule", m_schedule);
-
+  if (m_scheduleHasBeenSet) {
+    payload.WithString("Schedule", m_schedule);
   }
 
-  if(m_columnNameListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> columnNameListJsonList(m_columnNameList.size());
-   for(unsigned columnNameListIndex = 0; columnNameListIndex < columnNameListJsonList.GetLength(); ++columnNameListIndex)
-   {
-     columnNameListJsonList[columnNameListIndex].AsString(m_columnNameList[columnNameListIndex]);
-   }
-   payload.WithArray("ColumnNameList", std::move(columnNameListJsonList));
-
+  if (m_columnNameListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> columnNameListJsonList(m_columnNameList.size());
+    for (unsigned columnNameListIndex = 0; columnNameListIndex < columnNameListJsonList.GetLength(); ++columnNameListIndex) {
+      columnNameListJsonList[columnNameListIndex].AsString(m_columnNameList[columnNameListIndex]);
+    }
+    payload.WithArray("ColumnNameList", std::move(columnNameListJsonList));
   }
 
-  if(m_sampleSizeHasBeenSet)
-  {
-   payload.WithDouble("SampleSize", m_sampleSize);
-
+  if (m_sampleSizeHasBeenSet) {
+    payload.WithDouble("SampleSize", m_sampleSize);
   }
 
-  if(m_catalogIDHasBeenSet)
-  {
-   payload.WithString("CatalogID", m_catalogID);
-
+  if (m_catalogIDHasBeenSet) {
+    payload.WithString("CatalogID", m_catalogID);
   }
 
-  if(m_securityConfigurationHasBeenSet)
-  {
-   payload.WithString("SecurityConfiguration", m_securityConfiguration);
-
+  if (m_securityConfigurationHasBeenSet) {
+    payload.WithString("SecurityConfiguration", m_securityConfiguration);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateColumnStatisticsTaskSettingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateColumnStatisticsTaskSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.CreateColumnStatisticsTaskSettings"));
   return headers;
-
 }
-
-
-
-

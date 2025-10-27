@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/controltower/ControlTowerEndpointRules.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/controltower/ControlTowerEndpointRules.h>
-
-
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ControlTower {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ControlTowerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ControlTowerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_CONTROLTOWER_API ControlTowerEndpointProvider : public ControlTowerDefaultEpProviderBase
-{
-public:
-    using ControlTowerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_CONTROLTOWER_API ControlTowerEndpointProvider : public ControlTowerDefaultEpProviderBase {
+ public:
+  using ControlTowerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ControlTowerEndpointProvider()
-      : ControlTowerDefaultEpProviderBase(Aws::ControlTower::ControlTowerEndpointRules::GetRulesBlob(), Aws::ControlTower::ControlTowerEndpointRules::RulesBlobSize)
-    {}
+  ControlTowerEndpointProvider()
+      : ControlTowerDefaultEpProviderBase(Aws::ControlTower::ControlTowerEndpointRules::GetRulesBlob(),
+                                          Aws::ControlTower::ControlTowerEndpointRules::RulesBlobSize) {}
 
-    ~ControlTowerEndpointProvider()
-    {
-    }
+  ~ControlTowerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ControlTower
+}  // namespace Aws

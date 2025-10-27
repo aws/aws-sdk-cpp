@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DescribeDashboardDefinitionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/quicksight/model/DescribeDashboardDefinitionRequest.h>
 
 #include <utility>
 
@@ -15,29 +15,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DescribeDashboardDefinitionRequest::SerializePayload() const
-{
-  return {};
+Aws::String DescribeDashboardDefinitionRequest::SerializePayload() const { return {}; }
+
+void DescribeDashboardDefinitionRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_versionNumberHasBeenSet) {
+    ss << m_versionNumber;
+    uri.AddQueryStringParameter("version-number", ss.str());
+    ss.str("");
+  }
+
+  if (m_aliasNameHasBeenSet) {
+    ss << m_aliasName;
+    uri.AddQueryStringParameter("alias-name", ss.str());
+    ss.str("");
+  }
 }
-
-void DescribeDashboardDefinitionRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_versionNumberHasBeenSet)
-    {
-      ss << m_versionNumber;
-      uri.AddQueryStringParameter("version-number", ss.str());
-      ss.str("");
-    }
-
-    if(m_aliasNameHasBeenSet)
-    {
-      ss << m_aliasName;
-      uri.AddQueryStringParameter("alias-name", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

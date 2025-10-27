@@ -5,12 +5,8 @@
 
 #include <aws/freetier/FreeTierEndpointProvider.h>
 
-namespace Aws
-{
-namespace FreeTier
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace FreeTier
-} // namespace Aws
+namespace Aws {
+namespace FreeTier {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace FreeTier
+}  // namespace Aws

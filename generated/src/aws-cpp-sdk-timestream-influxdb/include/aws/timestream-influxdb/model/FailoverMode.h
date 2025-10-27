@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamInfluxDB
-{
-namespace Model
-{
-  enum class FailoverMode
-  {
-    NOT_SET,
-    AUTOMATIC,
-    NO_FAILOVER
-  };
+namespace Aws {
+namespace TimestreamInfluxDB {
+namespace Model {
+enum class FailoverMode { NOT_SET, AUTOMATIC, NO_FAILOVER };
 
-namespace FailoverModeMapper
-{
+namespace FailoverModeMapper {
 AWS_TIMESTREAMINFLUXDB_API FailoverMode GetFailoverModeForName(const Aws::String& name);
 
 AWS_TIMESTREAMINFLUXDB_API Aws::String GetNameForFailoverMode(FailoverMode value);
-} // namespace FailoverModeMapper
-} // namespace Model
-} // namespace TimestreamInfluxDB
-} // namespace Aws
+}  // namespace FailoverModeMapper
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

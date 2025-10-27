@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DescribeTagsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DescribeTagsRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTagsRequest::SerializePayload() const
-{
+Aws::String DescribeTagsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTags&";
-  if(m_loadBalancerNamesHasBeenSet)
-  {
-    if (m_loadBalancerNames.empty())
-    {
+  if (m_loadBalancerNamesHasBeenSet) {
+    if (m_loadBalancerNames.empty()) {
       ss << "LoadBalancerNames=&";
-    }
-    else
-    {
+    } else {
       unsigned loadBalancerNamesCount = 1;
-      for(auto& item : m_loadBalancerNames)
-      {
-        ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_loadBalancerNames) {
+        ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         loadBalancerNamesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

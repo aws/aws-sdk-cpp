@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
-  enum class InputFormat
-  {
-    NOT_SET,
-    CSV,
-    JSON,
-    PARQUET,
-    EXCEL,
-    ORC
-  };
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
+enum class InputFormat { NOT_SET, CSV, JSON, PARQUET, EXCEL, ORC };
 
-namespace InputFormatMapper
-{
+namespace InputFormatMapper {
 AWS_GLUEDATABREW_API InputFormat GetInputFormatForName(const Aws::String& name);
 
 AWS_GLUEDATABREW_API Aws::String GetNameForInputFormat(InputFormat value);
-} // namespace InputFormatMapper
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace InputFormatMapper
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

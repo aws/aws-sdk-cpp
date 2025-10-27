@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
-  enum class ExportErrorType
-  {
-    NOT_SET,
-    CLIENT_ERROR,
-    SERVER_ERROR
-  };
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
+enum class ExportErrorType { NOT_SET, CLIENT_ERROR, SERVER_ERROR };
 
-namespace ExportErrorTypeMapper
-{
+namespace ExportErrorTypeMapper {
 AWS_SAGEMAKERGEOSPATIAL_API ExportErrorType GetExportErrorTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKERGEOSPATIAL_API Aws::String GetNameForExportErrorType(ExportErrorType value);
-} // namespace ExportErrorTypeMapper
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace ExportErrorTypeMapper
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

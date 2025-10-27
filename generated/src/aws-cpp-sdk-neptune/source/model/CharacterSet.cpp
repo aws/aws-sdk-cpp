@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/CharacterSet.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/neptune/model/CharacterSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Neptune
-{
-namespace Model
-{
+namespace Aws {
+namespace Neptune {
+namespace Model {
 
-CharacterSet::CharacterSet(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CharacterSet::CharacterSet(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CharacterSet& CharacterSet::operator =(const XmlNode& xmlNode)
-{
+CharacterSet& CharacterSet::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
-    if(!characterSetNameNode.IsNull())
-    {
+    if (!characterSetNameNode.IsNull()) {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
     }
     XmlNode characterSetDescriptionNode = resultNode.FirstChild("CharacterSetDescription");
-    if(!characterSetDescriptionNode.IsNull())
-    {
+    if (!characterSetDescriptionNode.IsNull()) {
       m_characterSetDescription = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetDescriptionNode.GetText());
       m_characterSetDescriptionHasBeenSet = true;
     }
@@ -48,32 +38,26 @@ CharacterSet& CharacterSet::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_characterSetNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_characterSetNameHasBeenSet) {
+    oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
 
-  if(m_characterSetDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
-  }
-
-}
-
-void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_characterSetNameHasBeenSet)
-  {
-      oStream << location << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
-  }
-  if(m_characterSetDescriptionHasBeenSet)
-  {
-      oStream << location << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
+  if (m_characterSetDescriptionHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Neptune
-} // namespace Aws
+void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_characterSetNameHasBeenSet) {
+    oStream << location << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+  if (m_characterSetDescriptionHasBeenSet) {
+    oStream << location << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

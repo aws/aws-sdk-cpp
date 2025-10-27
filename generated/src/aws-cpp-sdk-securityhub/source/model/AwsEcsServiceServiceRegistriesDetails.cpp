@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsServiceServiceRegistriesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsServiceServiceRegistriesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEcsServiceServiceRegistriesDetails& AwsEcsServiceServiceRegistriesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContainerName"))
-  {
+AwsEcsServiceServiceRegistriesDetails& AwsEcsServiceServiceRegistriesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContainerName")) {
     m_containerName = jsonValue.GetString("ContainerName");
     m_containerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainerPort"))
-  {
+  if (jsonValue.ValueExists("ContainerPort")) {
     m_containerPort = jsonValue.GetInteger("ContainerPort");
     m_containerPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegistryArn"))
-  {
+  if (jsonValue.ValueExists("RegistryArn")) {
     m_registryArn = jsonValue.GetString("RegistryArn");
     m_registryArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsServiceServiceRegistriesDetails::Jsonize() const
-{
+JsonValue AwsEcsServiceServiceRegistriesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
-  {
-   payload.WithString("ContainerName", m_containerName);
-
+  if (m_containerNameHasBeenSet) {
+    payload.WithString("ContainerName", m_containerName);
   }
 
-  if(m_containerPortHasBeenSet)
-  {
-   payload.WithInteger("ContainerPort", m_containerPort);
-
+  if (m_containerPortHasBeenSet) {
+    payload.WithInteger("ContainerPort", m_containerPort);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_registryArnHasBeenSet)
-  {
-   payload.WithString("RegistryArn", m_registryArn);
-
+  if (m_registryArnHasBeenSet) {
+    payload.WithString("RegistryArn", m_registryArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

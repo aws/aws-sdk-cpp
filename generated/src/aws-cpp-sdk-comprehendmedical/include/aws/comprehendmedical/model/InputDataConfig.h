@@ -6,72 +6,77 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ComprehendMedical {
+namespace Model {
 
+/**
+ * <p>The input properties for an entities detection job. This includes the name of
+ * the S3 bucket and the path to the files to be analyzed. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InputDataConfig">AWS
+ * API Reference</a></p>
+ */
+class InputDataConfig {
+ public:
+  AWS_COMPREHENDMEDICAL_API InputDataConfig() = default;
+  AWS_COMPREHENDMEDICAL_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COMPREHENDMEDICAL_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The input properties for an entities detection job. This includes the name of
-   * the S3 bucket and the path to the files to be analyzed. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InputDataConfig">AWS
-   * API Reference</a></p>
+   * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
+   * the same region as the API endpoint that you are calling.</p>
    */
-  class InputDataConfig
-  {
-  public:
-    AWS_COMPREHENDMEDICAL_API InputDataConfig() = default;
-    AWS_COMPREHENDMEDICAL_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_COMPREHENDMEDICAL_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
+  inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+  template <typename S3BucketT = Aws::String>
+  void SetS3Bucket(S3BucketT&& value) {
+    m_s3BucketHasBeenSet = true;
+    m_s3Bucket = std::forward<S3BucketT>(value);
+  }
+  template <typename S3BucketT = Aws::String>
+  InputDataConfig& WithS3Bucket(S3BucketT&& value) {
+    SetS3Bucket(std::forward<S3BucketT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The path to the input data files in the S3 bucket.</p>
+   */
+  inline const Aws::String& GetS3Key() const { return m_s3Key; }
+  inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+  template <typename S3KeyT = Aws::String>
+  void SetS3Key(S3KeyT&& value) {
+    m_s3KeyHasBeenSet = true;
+    m_s3Key = std::forward<S3KeyT>(value);
+  }
+  template <typename S3KeyT = Aws::String>
+  InputDataConfig& WithS3Key(S3KeyT&& value) {
+    SetS3Key(std::forward<S3KeyT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_s3Bucket;
+  bool m_s3BucketHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p>
-     */
-    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
-    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    template<typename S3BucketT = Aws::String>
-    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
-    template<typename S3BucketT = Aws::String>
-    InputDataConfig& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
-    ///@}
+  Aws::String m_s3Key;
+  bool m_s3KeyHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The path to the input data files in the S3 bucket.</p>
-     */
-    inline const Aws::String& GetS3Key() const { return m_s3Key; }
-    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    template<typename S3KeyT = Aws::String>
-    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
-    template<typename S3KeyT = Aws::String>
-    InputDataConfig& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet = false;
-
-    Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

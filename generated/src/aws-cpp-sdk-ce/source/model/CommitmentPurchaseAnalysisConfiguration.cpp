@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CommitmentPurchaseAnalysisConfiguration::CommitmentPurchaseAnalysisConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CommitmentPurchaseAnalysisConfiguration::CommitmentPurchaseAnalysisConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CommitmentPurchaseAnalysisConfiguration& CommitmentPurchaseAnalysisConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SavingsPlansPurchaseAnalysisConfiguration"))
-  {
+CommitmentPurchaseAnalysisConfiguration& CommitmentPurchaseAnalysisConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SavingsPlansPurchaseAnalysisConfiguration")) {
     m_savingsPlansPurchaseAnalysisConfiguration = jsonValue.GetObject("SavingsPlansPurchaseAnalysisConfiguration");
     m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CommitmentPurchaseAnalysisConfiguration::Jsonize() const
-{
+JsonValue CommitmentPurchaseAnalysisConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet)
-  {
-   payload.WithObject("SavingsPlansPurchaseAnalysisConfiguration", m_savingsPlansPurchaseAnalysisConfiguration.Jsonize());
-
+  if (m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet) {
+    payload.WithObject("SavingsPlansPurchaseAnalysisConfiguration", m_savingsPlansPurchaseAnalysisConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

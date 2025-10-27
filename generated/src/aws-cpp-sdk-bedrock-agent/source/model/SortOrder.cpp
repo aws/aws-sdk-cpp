@@ -4,69 +4,55 @@
  */
 
 #include <aws/bedrock-agent/model/SortOrder.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+namespace SortOrderMapper {
 
-namespace Aws
-{
-  namespace BedrockAgent
-  {
-    namespace Model
-    {
-      namespace SortOrderMapper
-      {
+static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
+static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
 
-        static const int ASCENDING_HASH = HashingUtils::HashString("ASCENDING");
-        static const int DESCENDING_HASH = HashingUtils::HashString("DESCENDING");
+SortOrder GetSortOrderForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASCENDING_HASH) {
+    return SortOrder::ASCENDING;
+  } else if (hashCode == DESCENDING_HASH) {
+    return SortOrder::DESCENDING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SortOrder>(hashCode);
+  }
 
+  return SortOrder::NOT_SET;
+}
 
-        SortOrder GetSortOrderForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ASCENDING_HASH)
-          {
-            return SortOrder::ASCENDING;
-          }
-          else if (hashCode == DESCENDING_HASH)
-          {
-            return SortOrder::DESCENDING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SortOrder>(hashCode);
-          }
+Aws::String GetNameForSortOrder(SortOrder enumValue) {
+  switch (enumValue) {
+    case SortOrder::NOT_SET:
+      return {};
+    case SortOrder::ASCENDING:
+      return "ASCENDING";
+    case SortOrder::DESCENDING:
+      return "DESCENDING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SortOrder::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSortOrder(SortOrder enumValue)
-        {
-          switch(enumValue)
-          {
-          case SortOrder::NOT_SET:
-            return {};
-          case SortOrder::ASCENDING:
-            return "ASCENDING";
-          case SortOrder::DESCENDING:
-            return "DESCENDING";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SortOrderMapper
-    } // namespace Model
-  } // namespace BedrockAgent
-} // namespace Aws
+}  // namespace SortOrderMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

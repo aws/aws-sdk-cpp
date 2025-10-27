@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 
-namespace Aws
-{
-namespace SimSpaceWeaver
-{
-class SimSpaceWeaverEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SimSpaceWeaver {
+class SimSpaceWeaverEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SimSpaceWeaver
-} // namespace Aws
+}  // namespace SimSpaceWeaver
+}  // namespace Aws

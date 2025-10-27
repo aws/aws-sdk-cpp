@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/UpdateApplicationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/opensearch/model/UpdateApplicationResult.h>
 
 #include <utility>
 
@@ -17,71 +17,55 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateApplicationResult::UpdateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateApplicationResult::UpdateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateApplicationResult& UpdateApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateApplicationResult& UpdateApplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSources"))
-  {
+  if (jsonValue.ValueExists("dataSources")) {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
-    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
-    {
+    for (unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex) {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
     }
     m_dataSourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("iamIdentityCenterOptions"))
-  {
+  if (jsonValue.ValueExists("iamIdentityCenterOptions")) {
     m_iamIdentityCenterOptions = jsonValue.GetObject("iamIdentityCenterOptions");
     m_iamIdentityCenterOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("appConfigs"))
-  {
+  if (jsonValue.ValueExists("appConfigs")) {
     Aws::Utils::Array<JsonView> appConfigsJsonList = jsonValue.GetArray("appConfigs");
-    for(unsigned appConfigsIndex = 0; appConfigsIndex < appConfigsJsonList.GetLength(); ++appConfigsIndex)
-    {
+    for (unsigned appConfigsIndex = 0; appConfigsIndex < appConfigsJsonList.GetLength(); ++appConfigsIndex) {
       m_appConfigs.push_back(appConfigsJsonList[appConfigsIndex].AsObject());
     }
     m_appConfigsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

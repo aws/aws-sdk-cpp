@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-InstanceConfig::InstanceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceConfig::InstanceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceType"))
-  {
+InstanceConfig& InstanceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceType")) {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeSizeInGb"))
-  {
+  if (jsonValue.ValueExists("volumeSizeInGb")) {
     m_volumeSizeInGb = jsonValue.GetInteger("volumeSizeInGb");
     m_volumeSizeInGbHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceCount"))
-  {
+  if (jsonValue.ValueExists("instanceCount")) {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
     m_instanceCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceConfig::Jsonize() const
-{
+JsonValue InstanceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
   }
 
-  if(m_volumeSizeInGbHasBeenSet)
-  {
-   payload.WithInteger("volumeSizeInGb", m_volumeSizeInGb);
-
+  if (m_volumeSizeInGbHasBeenSet) {
+    payload.WithInteger("volumeSizeInGb", m_volumeSizeInGb);
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
-   payload.WithInteger("instanceCount", m_instanceCount);
-
+  if (m_instanceCountHasBeenSet) {
+    payload.WithInteger("instanceCount", m_instanceCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

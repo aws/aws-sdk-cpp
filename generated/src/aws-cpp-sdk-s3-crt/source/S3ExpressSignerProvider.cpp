@@ -3,30 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
-#include <aws/s3-crt/S3ExpressSignerProvider.h>
 #include <aws/s3-crt/S3ExpressSigner.h>
+#include <aws/s3-crt/S3ExpressSignerProvider.h>
 
 static const char *CLASS_TAG = "S3ExpressSignerProvider";
 
 Aws::Auth::S3ExpressSignerProvider::S3ExpressSignerProvider(
     const std::shared_ptr<AWSCredentialsProvider> &credentialsProvider,
-    const std::shared_ptr<S3Crt::S3ExpressIdentityProvider> &S3ExpressIdentityProvider,
-    const Aws::String &serviceName,
-    const Aws::String &region,
-    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy,
-    bool urlEscapePath) :
-    DefaultAuthSignerProvider(credentialsProvider,
-        serviceName,
-        region,
-        signingPolicy,
-        urlEscapePath) {
-    m_signers.emplace_back(Aws::MakeShared<Aws::S3Crt::S3ExpressSigner>(CLASS_TAG,
-        S3ExpressIdentityProvider,
-        credentialsProvider,
-        serviceName.c_str(),
-        region,
-        signingPolicy,
-        urlEscapePath,
-        AWSSigningAlgorithm::SIGV4));
+    const std::shared_ptr<S3Crt::S3ExpressIdentityProvider> &S3ExpressIdentityProvider, const Aws::String &serviceName,
+    const Aws::String &region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy, bool urlEscapePath)
+    : DefaultAuthSignerProvider(credentialsProvider, serviceName, region, signingPolicy, urlEscapePath) {
+  m_signers.emplace_back(Aws::MakeShared<Aws::S3Crt::S3ExpressSigner>(CLASS_TAG, S3ExpressIdentityProvider, credentialsProvider,
+                                                                      serviceName.c_str(), region, signingPolicy, urlEscapePath,
+                                                                      AWSSigningAlgorithm::SIGV4));
 }

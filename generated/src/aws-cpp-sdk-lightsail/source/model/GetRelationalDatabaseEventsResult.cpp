@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetRelationalDatabaseEventsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lightsail/model/GetRelationalDatabaseEventsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRelationalDatabaseEventsResult::GetRelationalDatabaseEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetRelationalDatabaseEventsResult::GetRelationalDatabaseEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetRelationalDatabaseEventsResult& GetRelationalDatabaseEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetRelationalDatabaseEventsResult& GetRelationalDatabaseEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("relationalDatabaseEvents"))
-  {
+  if (jsonValue.ValueExists("relationalDatabaseEvents")) {
     Aws::Utils::Array<JsonView> relationalDatabaseEventsJsonList = jsonValue.GetArray("relationalDatabaseEvents");
-    for(unsigned relationalDatabaseEventsIndex = 0; relationalDatabaseEventsIndex < relationalDatabaseEventsJsonList.GetLength(); ++relationalDatabaseEventsIndex)
-    {
+    for (unsigned relationalDatabaseEventsIndex = 0; relationalDatabaseEventsIndex < relationalDatabaseEventsJsonList.GetLength();
+         ++relationalDatabaseEventsIndex) {
       m_relationalDatabaseEvents.push_back(relationalDatabaseEventsJsonList[relationalDatabaseEventsIndex].AsObject());
     }
     m_relationalDatabaseEventsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextPageToken"))
-  {
+  if (jsonValue.ValueExists("nextPageToken")) {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

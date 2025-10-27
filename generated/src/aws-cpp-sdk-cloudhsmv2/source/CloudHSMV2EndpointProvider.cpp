@@ -5,12 +5,8 @@
 
 #include <aws/cloudhsmv2/CloudHSMV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudHSMV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudHSMV2
-} // namespace Aws
+namespace Aws {
+namespace CloudHSMV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudHSMV2
+}  // namespace Aws

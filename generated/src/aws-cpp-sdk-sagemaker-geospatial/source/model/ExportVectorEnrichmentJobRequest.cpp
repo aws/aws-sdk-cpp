@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,24 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExportVectorEnrichmentJobRequest::SerializePayload() const
-{
+Aws::String ExportVectorEnrichmentJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
-   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
-
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("ExecutionRoleArn", m_executionRoleArn);
   }
 
-  if(m_outputConfigHasBeenSet)
-  {
-   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
-
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

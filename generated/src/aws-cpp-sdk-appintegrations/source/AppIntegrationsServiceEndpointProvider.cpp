@@ -5,12 +5,8 @@
 
 #include <aws/appintegrations/AppIntegrationsServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppIntegrationsService
-} // namespace Aws
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppIntegrationsService
+}  // namespace Aws

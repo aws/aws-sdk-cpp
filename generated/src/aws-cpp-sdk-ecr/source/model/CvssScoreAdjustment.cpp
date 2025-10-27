@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/CvssScoreAdjustment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/model/CvssScoreAdjustment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace ECR {
+namespace Model {
 
-CvssScoreAdjustment::CvssScoreAdjustment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CvssScoreAdjustment::CvssScoreAdjustment(JsonView jsonValue) { *this = jsonValue; }
 
-CvssScoreAdjustment& CvssScoreAdjustment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("metric"))
-  {
+CvssScoreAdjustment& CvssScoreAdjustment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("metric")) {
     m_metric = jsonValue.GetString("metric");
     m_metricHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CvssScoreAdjustment::Jsonize() const
-{
+JsonValue CvssScoreAdjustment::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricHasBeenSet)
-  {
-   payload.WithString("metric", m_metric);
-
+  if (m_metricHasBeenSet) {
+    payload.WithString("metric", m_metric);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

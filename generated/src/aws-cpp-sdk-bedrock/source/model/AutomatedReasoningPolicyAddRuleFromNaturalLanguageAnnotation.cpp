@@ -11,41 +11,34 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation(JsonView jsonValue)
-{
+AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation& AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("naturalLanguage"))
-  {
+AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation& AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("naturalLanguage")) {
     m_naturalLanguage = jsonValue.GetString("naturalLanguage");
     m_naturalLanguageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation::Jsonize() const {
   JsonValue payload;
 
-  if(m_naturalLanguageHasBeenSet)
-  {
-   payload.WithString("naturalLanguage", m_naturalLanguage);
-
+  if (m_naturalLanguageHasBeenSet) {
+    payload.WithString("naturalLanguage", m_naturalLanguage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

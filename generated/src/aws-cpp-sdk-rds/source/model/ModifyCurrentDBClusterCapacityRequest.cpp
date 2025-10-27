@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyCurrentDBClusterCapacityRequest::SerializePayload() const
-{
+Aws::String ModifyCurrentDBClusterCapacityRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyCurrentDBClusterCapacity&";
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
+  if (m_dBClusterIdentifierHasBeenSet) {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_capacityHasBeenSet)
-  {
+  if (m_capacityHasBeenSet) {
     ss << "Capacity=" << m_capacity << "&";
   }
 
-  if(m_secondsBeforeTimeoutHasBeenSet)
-  {
+  if (m_secondsBeforeTimeoutHasBeenSet) {
     ss << "SecondsBeforeTimeout=" << m_secondsBeforeTimeout << "&";
   }
 
-  if(m_timeoutActionHasBeenSet)
-  {
+  if (m_timeoutActionHasBeenSet) {
     ss << "TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ModifyCurrentDBClusterCapacityRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyCurrentDBClusterCapacityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyCurrentDBClusterCapacityRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

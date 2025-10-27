@@ -3,82 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-runtime/model/AudioInputEvent.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-runtime/model/AudioInputEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexRuntimeV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace Model {
 
-AudioInputEvent::AudioInputEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioInputEvent::AudioInputEvent(JsonView jsonValue) { *this = jsonValue; }
 
-AudioInputEvent& AudioInputEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audioChunk"))
-  {
+AudioInputEvent& AudioInputEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioChunk")) {
     m_audioChunk = HashingUtils::Base64Decode(jsonValue.GetString("audioChunk"));
     m_audioChunkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = jsonValue.GetString("contentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventId"))
-  {
+  if (jsonValue.ValueExists("eventId")) {
     m_eventId = jsonValue.GetString("eventId");
     m_eventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientTimestampMillis"))
-  {
+  if (jsonValue.ValueExists("clientTimestampMillis")) {
     m_clientTimestampMillis = jsonValue.GetInt64("clientTimestampMillis");
     m_clientTimestampMillisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioInputEvent::Jsonize() const
-{
+JsonValue AudioInputEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioChunkHasBeenSet)
-  {
-   payload.WithString("audioChunk", HashingUtils::Base64Encode(m_audioChunk));
+  if (m_audioChunkHasBeenSet) {
+    payload.WithString("audioChunk", HashingUtils::Base64Encode(m_audioChunk));
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_eventIdHasBeenSet)
-  {
-   payload.WithString("eventId", m_eventId);
-
+  if (m_eventIdHasBeenSet) {
+    payload.WithString("eventId", m_eventId);
   }
 
-  if(m_clientTimestampMillisHasBeenSet)
-  {
-   payload.WithInt64("clientTimestampMillis", m_clientTimestampMillis);
-
+  if (m_clientTimestampMillisHasBeenSet) {
+    payload.WithInt64("clientTimestampMillis", m_clientTimestampMillis);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexRuntimeV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

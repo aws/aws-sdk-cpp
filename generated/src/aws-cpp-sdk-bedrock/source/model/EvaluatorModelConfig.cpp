@@ -11,25 +11,17 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-EvaluatorModelConfig::EvaluatorModelConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluatorModelConfig::EvaluatorModelConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluatorModelConfig& EvaluatorModelConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bedrockEvaluatorModels"))
-  {
+EvaluatorModelConfig& EvaluatorModelConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bedrockEvaluatorModels")) {
     Aws::Utils::Array<JsonView> bedrockEvaluatorModelsJsonList = jsonValue.GetArray("bedrockEvaluatorModels");
-    for(unsigned bedrockEvaluatorModelsIndex = 0; bedrockEvaluatorModelsIndex < bedrockEvaluatorModelsJsonList.GetLength(); ++bedrockEvaluatorModelsIndex)
-    {
+    for (unsigned bedrockEvaluatorModelsIndex = 0; bedrockEvaluatorModelsIndex < bedrockEvaluatorModelsJsonList.GetLength();
+         ++bedrockEvaluatorModelsIndex) {
       m_bedrockEvaluatorModels.push_back(bedrockEvaluatorModelsJsonList[bedrockEvaluatorModelsIndex].AsObject());
     }
     m_bedrockEvaluatorModelsHasBeenSet = true;
@@ -37,24 +29,21 @@ EvaluatorModelConfig& EvaluatorModelConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EvaluatorModelConfig::Jsonize() const
-{
+JsonValue EvaluatorModelConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_bedrockEvaluatorModelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> bedrockEvaluatorModelsJsonList(m_bedrockEvaluatorModels.size());
-   for(unsigned bedrockEvaluatorModelsIndex = 0; bedrockEvaluatorModelsIndex < bedrockEvaluatorModelsJsonList.GetLength(); ++bedrockEvaluatorModelsIndex)
-   {
-     bedrockEvaluatorModelsJsonList[bedrockEvaluatorModelsIndex].AsObject(m_bedrockEvaluatorModels[bedrockEvaluatorModelsIndex].Jsonize());
-   }
-   payload.WithArray("bedrockEvaluatorModels", std::move(bedrockEvaluatorModelsJsonList));
-
+  if (m_bedrockEvaluatorModelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> bedrockEvaluatorModelsJsonList(m_bedrockEvaluatorModels.size());
+    for (unsigned bedrockEvaluatorModelsIndex = 0; bedrockEvaluatorModelsIndex < bedrockEvaluatorModelsJsonList.GetLength();
+         ++bedrockEvaluatorModelsIndex) {
+      bedrockEvaluatorModelsJsonList[bedrockEvaluatorModelsIndex].AsObject(m_bedrockEvaluatorModels[bedrockEvaluatorModelsIndex].Jsonize());
+    }
+    payload.WithArray("bedrockEvaluatorModels", std::move(bedrockEvaluatorModelsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

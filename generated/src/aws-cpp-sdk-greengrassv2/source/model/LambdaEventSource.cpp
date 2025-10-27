@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/LambdaEventSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/LambdaEventSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-LambdaEventSource::LambdaEventSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaEventSource::LambdaEventSource(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaEventSource& LambdaEventSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("topic"))
-  {
+LambdaEventSource& LambdaEventSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("topic")) {
     m_topic = jsonValue.GetString("topic");
     m_topicHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = LambdaEventSourceTypeMapper::GetLambdaEventSourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaEventSource::Jsonize() const
-{
+JsonValue LambdaEventSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_topicHasBeenSet)
-  {
-   payload.WithString("topic", m_topic);
-
+  if (m_topicHasBeenSet) {
+    payload.WithString("topic", m_topic);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", LambdaEventSourceTypeMapper::GetNameForLambdaEventSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", LambdaEventSourceTypeMapper::GetNameForLambdaEventSourceType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

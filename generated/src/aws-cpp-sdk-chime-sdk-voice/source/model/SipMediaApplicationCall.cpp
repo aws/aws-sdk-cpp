@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-SipMediaApplicationCall::SipMediaApplicationCall(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SipMediaApplicationCall::SipMediaApplicationCall(JsonView jsonValue) { *this = jsonValue; }
 
-SipMediaApplicationCall& SipMediaApplicationCall::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TransactionId"))
-  {
+SipMediaApplicationCall& SipMediaApplicationCall::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TransactionId")) {
     m_transactionId = jsonValue.GetString("TransactionId");
     m_transactionIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SipMediaApplicationCall::Jsonize() const
-{
+JsonValue SipMediaApplicationCall::Jsonize() const {
   JsonValue payload;
 
-  if(m_transactionIdHasBeenSet)
-  {
-   payload.WithString("TransactionId", m_transactionId);
-
+  if (m_transactionIdHasBeenSet) {
+    payload.WithString("TransactionId", m_transactionId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCampaignFlowAssociationRequest::SerializePayload() const
-{
+Aws::String UpdateCampaignFlowAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectCampaignFlowArnHasBeenSet)
-  {
-   payload.WithString("connectCampaignFlowArn", m_connectCampaignFlowArn);
-
+  if (m_connectCampaignFlowArnHasBeenSet) {
+    payload.WithString("connectCampaignFlowArn", m_connectCampaignFlowArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

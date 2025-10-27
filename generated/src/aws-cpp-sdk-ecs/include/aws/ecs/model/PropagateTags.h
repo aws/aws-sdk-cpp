@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class PropagateTags
-  {
-    NOT_SET,
-    TASK_DEFINITION,
-    SERVICE,
-    NONE
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class PropagateTags { NOT_SET, TASK_DEFINITION, SERVICE, NONE };
 
-namespace PropagateTagsMapper
-{
+namespace PropagateTagsMapper {
 AWS_ECS_API PropagateTags GetPropagateTagsForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForPropagateTags(PropagateTags value);
-} // namespace PropagateTagsMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace PropagateTagsMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

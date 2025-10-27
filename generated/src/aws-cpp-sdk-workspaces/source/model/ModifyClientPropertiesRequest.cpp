@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/ModifyClientPropertiesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/ModifyClientPropertiesRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ModifyClientPropertiesRequest::SerializePayload() const
-{
+Aws::String ModifyClientPropertiesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_clientPropertiesHasBeenSet)
-  {
-   payload.WithObject("ClientProperties", m_clientProperties.Jsonize());
-
+  if (m_clientPropertiesHasBeenSet) {
+    payload.WithObject("ClientProperties", m_clientProperties.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ModifyClientPropertiesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ModifyClientPropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.ModifyClientProperties"));
   return headers;
-
 }
-
-
-
-

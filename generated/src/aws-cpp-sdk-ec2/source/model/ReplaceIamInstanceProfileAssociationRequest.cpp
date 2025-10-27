@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReplaceIamInstanceProfileAssociationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReplaceIamInstanceProfileAssociationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReplaceIamInstanceProfileAssociationRequest::SerializePayload() const
-{
+Aws::String ReplaceIamInstanceProfileAssociationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReplaceIamInstanceProfileAssociation&";
-  if(m_iamInstanceProfileHasBeenSet)
-  {
+  if (m_iamInstanceProfileHasBeenSet) {
     m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
   }
 
-  if(m_associationIdHasBeenSet)
-  {
+  if (m_associationIdHasBeenSet) {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ReplaceIamInstanceProfileAssociationRequest::SerializePayload() cons
   return ss.str();
 }
 
-
-void  ReplaceIamInstanceProfileAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReplaceIamInstanceProfileAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

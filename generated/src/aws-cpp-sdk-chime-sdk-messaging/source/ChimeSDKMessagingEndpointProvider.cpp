@@ -5,12 +5,8 @@
 
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

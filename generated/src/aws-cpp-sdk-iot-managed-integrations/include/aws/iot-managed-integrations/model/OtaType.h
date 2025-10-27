@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class OtaType
-  {
-    NOT_SET,
-    ONE_TIME,
-    CONTINUOUS
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class OtaType { NOT_SET, ONE_TIME, CONTINUOUS };
 
-namespace OtaTypeMapper
-{
+namespace OtaTypeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API OtaType GetOtaTypeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForOtaType(OtaType value);
-} // namespace OtaTypeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace OtaTypeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

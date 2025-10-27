@@ -3,85 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/BatchDeleteConfigurationTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/model/BatchDeleteConfigurationTask.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
 
-BatchDeleteConfigurationTask::BatchDeleteConfigurationTask(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDeleteConfigurationTask::BatchDeleteConfigurationTask(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("taskId"))
-  {
+BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");
     m_taskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = BatchDeleteConfigurationTaskStatusMapper::GetBatchDeleteConfigurationTaskStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTime"))
-  {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configurationType"))
-  {
-    m_configurationType = DeletionConfigurationItemTypeMapper::GetDeletionConfigurationItemTypeForName(jsonValue.GetString("configurationType"));
+  if (jsonValue.ValueExists("configurationType")) {
+    m_configurationType =
+        DeletionConfigurationItemTypeMapper::GetDeletionConfigurationItemTypeForName(jsonValue.GetString("configurationType"));
     m_configurationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("requestedConfigurations"))
-  {
+  if (jsonValue.ValueExists("requestedConfigurations")) {
     Aws::Utils::Array<JsonView> requestedConfigurationsJsonList = jsonValue.GetArray("requestedConfigurations");
-    for(unsigned requestedConfigurationsIndex = 0; requestedConfigurationsIndex < requestedConfigurationsJsonList.GetLength(); ++requestedConfigurationsIndex)
-    {
+    for (unsigned requestedConfigurationsIndex = 0; requestedConfigurationsIndex < requestedConfigurationsJsonList.GetLength();
+         ++requestedConfigurationsIndex) {
       m_requestedConfigurations.push_back(requestedConfigurationsJsonList[requestedConfigurationsIndex].AsString());
     }
     m_requestedConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletedConfigurations"))
-  {
+  if (jsonValue.ValueExists("deletedConfigurations")) {
     Aws::Utils::Array<JsonView> deletedConfigurationsJsonList = jsonValue.GetArray("deletedConfigurations");
-    for(unsigned deletedConfigurationsIndex = 0; deletedConfigurationsIndex < deletedConfigurationsJsonList.GetLength(); ++deletedConfigurationsIndex)
-    {
+    for (unsigned deletedConfigurationsIndex = 0; deletedConfigurationsIndex < deletedConfigurationsJsonList.GetLength();
+         ++deletedConfigurationsIndex) {
       m_deletedConfigurations.push_back(deletedConfigurationsJsonList[deletedConfigurationsIndex].AsString());
     }
     m_deletedConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failedConfigurations"))
-  {
+  if (jsonValue.ValueExists("failedConfigurations")) {
     Aws::Utils::Array<JsonView> failedConfigurationsJsonList = jsonValue.GetArray("failedConfigurations");
-    for(unsigned failedConfigurationsIndex = 0; failedConfigurationsIndex < failedConfigurationsJsonList.GetLength(); ++failedConfigurationsIndex)
-    {
+    for (unsigned failedConfigurationsIndex = 0; failedConfigurationsIndex < failedConfigurationsJsonList.GetLength();
+         ++failedConfigurationsIndex) {
       m_failedConfigurations.push_back(failedConfigurationsJsonList[failedConfigurationsIndex].AsObject());
     }
     m_failedConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletionWarnings"))
-  {
+  if (jsonValue.ValueExists("deletionWarnings")) {
     Aws::Utils::Array<JsonView> deletionWarningsJsonList = jsonValue.GetArray("deletionWarnings");
-    for(unsigned deletionWarningsIndex = 0; deletionWarningsIndex < deletionWarningsJsonList.GetLength(); ++deletionWarningsIndex)
-    {
+    for (unsigned deletionWarningsIndex = 0; deletionWarningsIndex < deletionWarningsJsonList.GetLength(); ++deletionWarningsIndex) {
       m_deletionWarnings.push_back(deletionWarningsJsonList[deletionWarningsIndex].AsObject());
     }
     m_deletionWarningsHasBeenSet = true;
@@ -89,83 +73,68 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
   return *this;
 }
 
-JsonValue BatchDeleteConfigurationTask::Jsonize() const
-{
+JsonValue BatchDeleteConfigurationTask::Jsonize() const {
   JsonValue payload;
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("taskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("taskId", m_taskId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", BatchDeleteConfigurationTaskStatusMapper::GetNameForBatchDeleteConfigurationTaskStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", BatchDeleteConfigurationTaskStatusMapper::GetNameForBatchDeleteConfigurationTaskStatus(m_status));
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_configurationTypeHasBeenSet)
-  {
-   payload.WithString("configurationType", DeletionConfigurationItemTypeMapper::GetNameForDeletionConfigurationItemType(m_configurationType));
+  if (m_configurationTypeHasBeenSet) {
+    payload.WithString("configurationType",
+                       DeletionConfigurationItemTypeMapper::GetNameForDeletionConfigurationItemType(m_configurationType));
   }
 
-  if(m_requestedConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> requestedConfigurationsJsonList(m_requestedConfigurations.size());
-   for(unsigned requestedConfigurationsIndex = 0; requestedConfigurationsIndex < requestedConfigurationsJsonList.GetLength(); ++requestedConfigurationsIndex)
-   {
-     requestedConfigurationsJsonList[requestedConfigurationsIndex].AsString(m_requestedConfigurations[requestedConfigurationsIndex]);
-   }
-   payload.WithArray("requestedConfigurations", std::move(requestedConfigurationsJsonList));
-
+  if (m_requestedConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> requestedConfigurationsJsonList(m_requestedConfigurations.size());
+    for (unsigned requestedConfigurationsIndex = 0; requestedConfigurationsIndex < requestedConfigurationsJsonList.GetLength();
+         ++requestedConfigurationsIndex) {
+      requestedConfigurationsJsonList[requestedConfigurationsIndex].AsString(m_requestedConfigurations[requestedConfigurationsIndex]);
+    }
+    payload.WithArray("requestedConfigurations", std::move(requestedConfigurationsJsonList));
   }
 
-  if(m_deletedConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> deletedConfigurationsJsonList(m_deletedConfigurations.size());
-   for(unsigned deletedConfigurationsIndex = 0; deletedConfigurationsIndex < deletedConfigurationsJsonList.GetLength(); ++deletedConfigurationsIndex)
-   {
-     deletedConfigurationsJsonList[deletedConfigurationsIndex].AsString(m_deletedConfigurations[deletedConfigurationsIndex]);
-   }
-   payload.WithArray("deletedConfigurations", std::move(deletedConfigurationsJsonList));
-
+  if (m_deletedConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deletedConfigurationsJsonList(m_deletedConfigurations.size());
+    for (unsigned deletedConfigurationsIndex = 0; deletedConfigurationsIndex < deletedConfigurationsJsonList.GetLength();
+         ++deletedConfigurationsIndex) {
+      deletedConfigurationsJsonList[deletedConfigurationsIndex].AsString(m_deletedConfigurations[deletedConfigurationsIndex]);
+    }
+    payload.WithArray("deletedConfigurations", std::move(deletedConfigurationsJsonList));
   }
 
-  if(m_failedConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> failedConfigurationsJsonList(m_failedConfigurations.size());
-   for(unsigned failedConfigurationsIndex = 0; failedConfigurationsIndex < failedConfigurationsJsonList.GetLength(); ++failedConfigurationsIndex)
-   {
-     failedConfigurationsJsonList[failedConfigurationsIndex].AsObject(m_failedConfigurations[failedConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("failedConfigurations", std::move(failedConfigurationsJsonList));
-
+  if (m_failedConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> failedConfigurationsJsonList(m_failedConfigurations.size());
+    for (unsigned failedConfigurationsIndex = 0; failedConfigurationsIndex < failedConfigurationsJsonList.GetLength();
+         ++failedConfigurationsIndex) {
+      failedConfigurationsJsonList[failedConfigurationsIndex].AsObject(m_failedConfigurations[failedConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("failedConfigurations", std::move(failedConfigurationsJsonList));
   }
 
-  if(m_deletionWarningsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> deletionWarningsJsonList(m_deletionWarnings.size());
-   for(unsigned deletionWarningsIndex = 0; deletionWarningsIndex < deletionWarningsJsonList.GetLength(); ++deletionWarningsIndex)
-   {
-     deletionWarningsJsonList[deletionWarningsIndex].AsObject(m_deletionWarnings[deletionWarningsIndex].Jsonize());
-   }
-   payload.WithArray("deletionWarnings", std::move(deletionWarningsJsonList));
-
+  if (m_deletionWarningsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deletionWarningsJsonList(m_deletionWarnings.size());
+    for (unsigned deletionWarningsIndex = 0; deletionWarningsIndex < deletionWarningsJsonList.GetLength(); ++deletionWarningsIndex) {
+      deletionWarningsJsonList[deletionWarningsIndex].AsObject(m_deletionWarnings[deletionWarningsIndex].Jsonize());
+    }
+    payload.WithArray("deletionWarnings", std::move(deletionWarningsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

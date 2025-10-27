@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-TrafficRoute::TrafficRoute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrafficRoute::TrafficRoute(JsonView jsonValue) { *this = jsonValue; }
 
-TrafficRoute& TrafficRoute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("listenerArns"))
-  {
+TrafficRoute& TrafficRoute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("listenerArns")) {
     Aws::Utils::Array<JsonView> listenerArnsJsonList = jsonValue.GetArray("listenerArns");
-    for(unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex)
-    {
+    for (unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex) {
       m_listenerArns.push_back(listenerArnsJsonList[listenerArnsIndex].AsString());
     }
     m_listenerArnsHasBeenSet = true;
@@ -37,24 +28,20 @@ TrafficRoute& TrafficRoute::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TrafficRoute::Jsonize() const
-{
+JsonValue TrafficRoute::Jsonize() const {
   JsonValue payload;
 
-  if(m_listenerArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> listenerArnsJsonList(m_listenerArns.size());
-   for(unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex)
-   {
-     listenerArnsJsonList[listenerArnsIndex].AsString(m_listenerArns[listenerArnsIndex]);
-   }
-   payload.WithArray("listenerArns", std::move(listenerArnsJsonList));
-
+  if (m_listenerArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> listenerArnsJsonList(m_listenerArns.size());
+    for (unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex) {
+      listenerArnsJsonList[listenerArnsIndex].AsString(m_listenerArns[listenerArnsIndex]);
+    }
+    payload.WithArray("listenerArns", std::move(listenerArnsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

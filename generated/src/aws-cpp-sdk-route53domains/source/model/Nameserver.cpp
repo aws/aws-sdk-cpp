@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/Nameserver.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/Nameserver.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
 
-Nameserver::Nameserver(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Nameserver::Nameserver(JsonView jsonValue) { *this = jsonValue; }
 
-Nameserver& Nameserver::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Nameserver& Nameserver::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlueIps"))
-  {
+  if (jsonValue.ValueExists("GlueIps")) {
     Aws::Utils::Array<JsonView> glueIpsJsonList = jsonValue.GetArray("GlueIps");
-    for(unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex)
-    {
+    for (unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex) {
       m_glueIps.push_back(glueIpsJsonList[glueIpsIndex].AsString());
     }
     m_glueIpsHasBeenSet = true;
@@ -42,30 +32,24 @@ Nameserver& Nameserver::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Nameserver::Jsonize() const
-{
+JsonValue Nameserver::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_glueIpsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> glueIpsJsonList(m_glueIps.size());
-   for(unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex)
-   {
-     glueIpsJsonList[glueIpsIndex].AsString(m_glueIps[glueIpsIndex]);
-   }
-   payload.WithArray("GlueIps", std::move(glueIpsJsonList));
-
+  if (m_glueIpsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> glueIpsJsonList(m_glueIps.size());
+    for (unsigned glueIpsIndex = 0; glueIpsIndex < glueIpsJsonList.GetLength(); ++glueIpsIndex) {
+      glueIpsJsonList[glueIpsIndex].AsString(m_glueIps[glueIpsIndex]);
+    }
+    payload.WithArray("GlueIps", std::move(glueIpsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

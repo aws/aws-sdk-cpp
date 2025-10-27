@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/MoveCapacityReservationInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/MoveCapacityReservationInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String MoveCapacityReservationInstancesRequest::SerializePayload() const
-{
+Aws::String MoveCapacityReservationInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=MoveCapacityReservationInstances&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_sourceCapacityReservationIdHasBeenSet)
-  {
+  if (m_sourceCapacityReservationIdHasBeenSet) {
     ss << "SourceCapacityReservationId=" << StringUtils::URLEncode(m_sourceCapacityReservationId.c_str()) << "&";
   }
 
-  if(m_destinationCapacityReservationIdHasBeenSet)
-  {
+  if (m_destinationCapacityReservationIdHasBeenSet) {
     ss << "DestinationCapacityReservationId=" << StringUtils::URLEncode(m_destinationCapacityReservationId.c_str()) << "&";
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
+  if (m_instanceCountHasBeenSet) {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String MoveCapacityReservationInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  MoveCapacityReservationInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void MoveCapacityReservationInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

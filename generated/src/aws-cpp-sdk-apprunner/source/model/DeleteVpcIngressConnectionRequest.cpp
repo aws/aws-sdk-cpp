@@ -12,27 +12,18 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteVpcIngressConnectionRequest::SerializePayload() const
-{
+Aws::String DeleteVpcIngressConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vpcIngressConnectionArnHasBeenSet)
-  {
-   payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
-
+  if (m_vpcIngressConnectionArnHasBeenSet) {
+    payload.WithString("VpcIngressConnectionArn", m_vpcIngressConnectionArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteVpcIngressConnectionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteVpcIngressConnectionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.DeleteVpcIngressConnection"));
   return headers;
-
 }
-
-
-
-

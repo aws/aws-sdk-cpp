@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-RoomRetentionSettings::RoomRetentionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoomRetentionSettings::RoomRetentionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-RoomRetentionSettings& RoomRetentionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RetentionDays"))
-  {
+RoomRetentionSettings& RoomRetentionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RetentionDays")) {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");
     m_retentionDaysHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoomRetentionSettings::Jsonize() const
-{
+JsonValue RoomRetentionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_retentionDaysHasBeenSet)
-  {
-   payload.WithInteger("RetentionDays", m_retentionDays);
-
+  if (m_retentionDaysHasBeenSet) {
+    payload.WithInteger("RetentionDays", m_retentionDays);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

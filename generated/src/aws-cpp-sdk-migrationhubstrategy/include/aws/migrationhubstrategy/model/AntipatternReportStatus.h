@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class AntipatternReportStatus
-  {
-    NOT_SET,
-    FAILED,
-    IN_PROGRESS,
-    SUCCESS
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class AntipatternReportStatus { NOT_SET, FAILED, IN_PROGRESS, SUCCESS };
 
-namespace AntipatternReportStatusMapper
-{
+namespace AntipatternReportStatusMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternReportStatus GetAntipatternReportStatusForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForAntipatternReportStatus(AntipatternReportStatus value);
-} // namespace AntipatternReportStatusMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace AntipatternReportStatusMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

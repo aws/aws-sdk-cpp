@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchLoggingOptionUpdate& CloudWatchLoggingOptionUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CloudWatchLoggingOptionId"))
-  {
+CloudWatchLoggingOptionUpdate& CloudWatchLoggingOptionUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CloudWatchLoggingOptionId")) {
     m_cloudWatchLoggingOptionId = jsonValue.GetString("CloudWatchLoggingOptionId");
     m_cloudWatchLoggingOptionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogStreamARNUpdate"))
-  {
+  if (jsonValue.ValueExists("LogStreamARNUpdate")) {
     m_logStreamARNUpdate = jsonValue.GetString("LogStreamARNUpdate");
     m_logStreamARNUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchLoggingOptionUpdate::Jsonize() const
-{
+JsonValue CloudWatchLoggingOptionUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudWatchLoggingOptionIdHasBeenSet)
-  {
-   payload.WithString("CloudWatchLoggingOptionId", m_cloudWatchLoggingOptionId);
-
+  if (m_cloudWatchLoggingOptionIdHasBeenSet) {
+    payload.WithString("CloudWatchLoggingOptionId", m_cloudWatchLoggingOptionId);
   }
 
-  if(m_logStreamARNUpdateHasBeenSet)
-  {
-   payload.WithString("LogStreamARNUpdate", m_logStreamARNUpdate);
-
+  if (m_logStreamARNUpdateHasBeenSet) {
+    payload.WithString("LogStreamARNUpdate", m_logStreamARNUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

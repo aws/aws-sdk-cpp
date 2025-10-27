@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInstanceEventWindowResponse::DeleteInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteInstanceEventWindowResponse::DeleteInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DeleteInstanceEventWindowResponse& DeleteInstanceEventWindowResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteInstanceEventWindowResponse& DeleteInstanceEventWindowResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteInstanceEventWindowResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteInstanceEventWindowResponse")) {
     resultNode = rootNode.FirstChild("DeleteInstanceEventWindowResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceEventWindowStateNode = resultNode.FirstChild("instanceEventWindowState");
-    if(!instanceEventWindowStateNode.IsNull())
-    {
+    if (!instanceEventWindowStateNode.IsNull()) {
       m_instanceEventWindowState = instanceEventWindowStateNode;
       m_instanceEventWindowStateHasBeenSet = true;
     }
@@ -44,12 +39,11 @@ DeleteInstanceEventWindowResponse& DeleteInstanceEventWindowResponse::operator =
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteInstanceEventWindowResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteInstanceEventWindowResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

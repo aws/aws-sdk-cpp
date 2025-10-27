@@ -4,69 +4,76 @@
  */
 
 #pragma once
-#include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
+#include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
+/**
+ */
+class DeleteHostKeyRequest : public TransferRequest {
+ public:
+  AWS_TRANSFER_API DeleteHostKeyRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteHostKey"; }
+
+  AWS_TRANSFER_API Aws::String SerializePayload() const override;
+
+  AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The identifier of the server that contains the host key that you are
+   * deleting.</p>
    */
-  class DeleteHostKeyRequest : public TransferRequest
-  {
-  public:
-    AWS_TRANSFER_API DeleteHostKeyRequest() = default;
+  inline const Aws::String& GetServerId() const { return m_serverId; }
+  inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+  template <typename ServerIdT = Aws::String>
+  void SetServerId(ServerIdT&& value) {
+    m_serverIdHasBeenSet = true;
+    m_serverId = std::forward<ServerIdT>(value);
+  }
+  template <typename ServerIdT = Aws::String>
+  DeleteHostKeyRequest& WithServerId(ServerIdT&& value) {
+    SetServerId(std::forward<ServerIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteHostKey"; }
+  ///@{
+  /**
+   * <p>The identifier of the host key that you are deleting.</p>
+   */
+  inline const Aws::String& GetHostKeyId() const { return m_hostKeyId; }
+  inline bool HostKeyIdHasBeenSet() const { return m_hostKeyIdHasBeenSet; }
+  template <typename HostKeyIdT = Aws::String>
+  void SetHostKeyId(HostKeyIdT&& value) {
+    m_hostKeyIdHasBeenSet = true;
+    m_hostKeyId = std::forward<HostKeyIdT>(value);
+  }
+  template <typename HostKeyIdT = Aws::String>
+  DeleteHostKeyRequest& WithHostKeyId(HostKeyIdT&& value) {
+    SetHostKeyId(std::forward<HostKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_serverId;
+  bool m_serverIdHasBeenSet = false;
 
-    AWS_TRANSFER_API Aws::String SerializePayload() const override;
+  Aws::String m_hostKeyId;
+  bool m_hostKeyIdHasBeenSet = false;
+};
 
-    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The identifier of the server that contains the host key that you are
-     * deleting.</p>
-     */
-    inline const Aws::String& GetServerId() const { return m_serverId; }
-    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    template<typename ServerIdT = Aws::String>
-    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
-    template<typename ServerIdT = Aws::String>
-    DeleteHostKeyRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the host key that you are deleting.</p>
-     */
-    inline const Aws::String& GetHostKeyId() const { return m_hostKeyId; }
-    inline bool HostKeyIdHasBeenSet() const { return m_hostKeyIdHasBeenSet; }
-    template<typename HostKeyIdT = Aws::String>
-    void SetHostKeyId(HostKeyIdT&& value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId = std::forward<HostKeyIdT>(value); }
-    template<typename HostKeyIdT = Aws::String>
-    DeleteHostKeyRequest& WithHostKeyId(HostKeyIdT&& value) { SetHostKeyId(std::forward<HostKeyIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_serverId;
-    bool m_serverIdHasBeenSet = false;
-
-    Aws::String m_hostKeyId;
-    bool m_hostKeyIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

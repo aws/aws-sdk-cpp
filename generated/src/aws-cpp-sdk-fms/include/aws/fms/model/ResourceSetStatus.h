@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class ResourceSetStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    OUT_OF_ADMIN_SCOPE
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class ResourceSetStatus { NOT_SET, ACTIVE, OUT_OF_ADMIN_SCOPE };
 
-namespace ResourceSetStatusMapper
-{
+namespace ResourceSetStatusMapper {
 AWS_FMS_API ResourceSetStatus GetResourceSetStatusForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForResourceSetStatus(ResourceSetStatus value);
-} // namespace ResourceSetStatusMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace ResourceSetStatusMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

@@ -7,28 +7,23 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class WarningType
-  {
-    NOT_SET,
-    MUTUALLY_EXCLUSIVE_PROPERTIES,
-    UNSUPPORTED_PROPERTIES,
-    MUTUALLY_EXCLUSIVE_TYPES,
-    EXCLUDED_PROPERTIES,
-    EXCLUDED_RESOURCES
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class WarningType {
+  NOT_SET,
+  MUTUALLY_EXCLUSIVE_PROPERTIES,
+  UNSUPPORTED_PROPERTIES,
+  MUTUALLY_EXCLUSIVE_TYPES,
+  EXCLUDED_PROPERTIES,
+  EXCLUDED_RESOURCES
+};
 
-namespace WarningTypeMapper
-{
+namespace WarningTypeMapper {
 AWS_CLOUDFORMATION_API WarningType GetWarningTypeForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForWarningType(WarningType value);
-} // namespace WarningTypeMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace WarningTypeMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

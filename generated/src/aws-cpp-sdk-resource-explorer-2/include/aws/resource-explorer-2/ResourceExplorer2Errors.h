@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceExplorer2
-{
-enum class ResourceExplorer2Errors
-{
-  //From Core//
+namespace Aws {
+namespace ResourceExplorer2 {
+enum class ResourceExplorer2Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ResourceExplorer2Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class ResourceExplorer2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED,
   UNAUTHORIZED
 };
 
-class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Error : public Aws::Client::AWSError<ResourceExplorer2Errors>
-{
-public:
+class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Error : public Aws::Client::AWSError<ResourceExplorer2Errors> {
+ public:
   ResourceExplorer2Error() {}
   ResourceExplorer2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ResourceExplorer2Errors>(rhs) {}
   ResourceExplorer2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ResourceExplorer2Errors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace ResourceExplorer2ErrorMapper
-{
-  AWS_RESOURCEEXPLORER2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ResourceExplorer2ErrorMapper {
+AWS_RESOURCEEXPLORER2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ResourceExplorer2
-} // namespace Aws
+}  // namespace ResourceExplorer2
+}  // namespace Aws

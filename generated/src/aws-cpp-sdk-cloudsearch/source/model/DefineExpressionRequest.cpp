@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DefineExpressionRequest::SerializePayload() const
-{
+Aws::String DefineExpressionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DefineExpression&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_expressionHasBeenSet)
-  {
+  if (m_expressionHasBeenSet) {
     m_expression.OutputToStream(ss, "Expression");
   }
 
@@ -28,8 +25,4 @@ Aws::String DefineExpressionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DefineExpressionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DefineExpressionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

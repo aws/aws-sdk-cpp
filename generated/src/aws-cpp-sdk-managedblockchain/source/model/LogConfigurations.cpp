@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/LogConfigurations.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/LogConfigurations.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
 
-LogConfigurations::LogConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogConfigurations::LogConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-LogConfigurations& LogConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Cloudwatch"))
-  {
+LogConfigurations& LogConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Cloudwatch")) {
     m_cloudwatch = jsonValue.GetObject("Cloudwatch");
     m_cloudwatchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LogConfigurations::Jsonize() const
-{
+JsonValue LogConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudwatchHasBeenSet)
-  {
-   payload.WithObject("Cloudwatch", m_cloudwatch.Jsonize());
-
+  if (m_cloudwatchHasBeenSet) {
+    payload.WithObject("Cloudwatch", m_cloudwatch.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

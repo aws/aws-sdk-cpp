@@ -12,27 +12,18 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteGatewayRequest::SerializePayload() const
-{
+Aws::String DeleteGatewayRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gatewayArnHasBeenSet)
-  {
-   payload.WithString("GatewayArn", m_gatewayArn);
-
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteGatewayRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteGatewayRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.DeleteGateway"));
   return headers;
-
 }
-
-
-
-

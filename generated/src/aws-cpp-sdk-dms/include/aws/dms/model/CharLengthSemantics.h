@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class CharLengthSemantics
-  {
-    NOT_SET,
-    default_,
-    char_,
-    byte
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class CharLengthSemantics { NOT_SET, default_, char_, byte };
 
-namespace CharLengthSemanticsMapper
-{
+namespace CharLengthSemanticsMapper {
 AWS_DATABASEMIGRATIONSERVICE_API CharLengthSemantics GetCharLengthSemanticsForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForCharLengthSemantics(CharLengthSemantics value);
-} // namespace CharLengthSemanticsMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace CharLengthSemanticsMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

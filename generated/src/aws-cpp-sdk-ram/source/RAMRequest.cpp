@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/ram/RAMRequest.h>
 
-namespace Aws
-{
-namespace RAM
-{
-} // namespace RAM
-} // namespace Aws
+namespace Aws {
+namespace RAM {}  // namespace RAM
+}  // namespace Aws

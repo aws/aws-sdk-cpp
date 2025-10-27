@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("assignPublicIp"))
-  {
+NetworkConfiguration& NetworkConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("assignPublicIp")) {
     m_assignPublicIp = AssignPublicIpMapper::GetAssignPublicIpForName(jsonValue.GetString("assignPublicIp"));
     m_assignPublicIpHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkConfiguration::Jsonize() const
-{
+JsonValue NetworkConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_assignPublicIpHasBeenSet)
-  {
-   payload.WithString("assignPublicIp", AssignPublicIpMapper::GetNameForAssignPublicIp(m_assignPublicIp));
+  if (m_assignPublicIpHasBeenSet) {
+    payload.WithString("assignPublicIp", AssignPublicIpMapper::GetNameForAssignPublicIp(m_assignPublicIp));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

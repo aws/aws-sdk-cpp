@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTThingsGraph;
 
-AWSError<CoreErrors> IoTThingsGraphErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTThingsGraphErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTThingsGraphErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,79 +4,91 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace imagebuilder
-{
-namespace Model
-{
-  class CreateInfrastructureConfigurationResult
-  {
-  public:
-    AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult() = default;
-    AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
+class CreateInfrastructureConfigurationResult {
+ public:
+  AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult() = default;
+  AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IMAGEBUILDER_API CreateInfrastructureConfigurationResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The request ID that uniquely identifies this request.</p>
+   */
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateInfrastructureConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateInfrastructureConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The client token that uniquely identifies the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateInfrastructureConfigurationResult& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateInfrastructureConfigurationResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was
+   * created by this request.</p>
+   */
+  inline const Aws::String& GetInfrastructureConfigurationArn() const { return m_infrastructureConfigurationArn; }
+  template <typename InfrastructureConfigurationArnT = Aws::String>
+  void SetInfrastructureConfigurationArn(InfrastructureConfigurationArnT&& value) {
+    m_infrastructureConfigurationArnHasBeenSet = true;
+    m_infrastructureConfigurationArn = std::forward<InfrastructureConfigurationArnT>(value);
+  }
+  template <typename InfrastructureConfigurationArnT = Aws::String>
+  CreateInfrastructureConfigurationResult& WithInfrastructureConfigurationArn(InfrastructureConfigurationArnT&& value) {
+    SetInfrastructureConfigurationArn(std::forward<InfrastructureConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was
-     * created by this request.</p>
-     */
-    inline const Aws::String& GetInfrastructureConfigurationArn() const { return m_infrastructureConfigurationArn; }
-    template<typename InfrastructureConfigurationArnT = Aws::String>
-    void SetInfrastructureConfigurationArn(InfrastructureConfigurationArnT&& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = std::forward<InfrastructureConfigurationArnT>(value); }
-    template<typename InfrastructureConfigurationArnT = Aws::String>
-    CreateInfrastructureConfigurationResult& WithInfrastructureConfigurationArn(InfrastructureConfigurationArnT&& value) { SetInfrastructureConfigurationArn(std::forward<InfrastructureConfigurationArnT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_clientToken;
+  bool m_clientTokenHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
+  Aws::String m_infrastructureConfigurationArn;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+};
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

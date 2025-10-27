@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
-  enum class Format
-  {
-    NOT_SET,
-    CSV,
-    JSON
-  };
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
+enum class Format { NOT_SET, CSV, JSON };
 
-namespace FormatMapper
-{
+namespace FormatMapper {
 AWS_PINPOINT_API Format GetFormatForName(const Aws::String& name);
 
 AWS_PINPOINT_API Aws::String GetNameForFormat(Format value);
-} // namespace FormatMapper
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace FormatMapper
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

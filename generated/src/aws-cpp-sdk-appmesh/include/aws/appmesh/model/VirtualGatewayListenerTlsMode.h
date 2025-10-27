@@ -7,26 +7,16 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
-  enum class VirtualGatewayListenerTlsMode
-  {
-    NOT_SET,
-    STRICT,
-    PERMISSIVE,
-    DISABLED
-  };
+namespace Aws {
+namespace AppMesh {
+namespace Model {
+enum class VirtualGatewayListenerTlsMode { NOT_SET, STRICT, PERMISSIVE, DISABLED };
 
-namespace VirtualGatewayListenerTlsModeMapper
-{
+namespace VirtualGatewayListenerTlsModeMapper {
 AWS_APPMESH_API VirtualGatewayListenerTlsMode GetVirtualGatewayListenerTlsModeForName(const Aws::String& name);
 
 AWS_APPMESH_API Aws::String GetNameForVirtualGatewayListenerTlsMode(VirtualGatewayListenerTlsMode value);
-} // namespace VirtualGatewayListenerTlsModeMapper
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace VirtualGatewayListenerTlsModeMapper
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

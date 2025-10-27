@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-StreamingNotificationTarget::StreamingNotificationTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamingNotificationTarget::StreamingNotificationTarget(JsonView jsonValue) { *this = jsonValue; }
 
-StreamingNotificationTarget& StreamingNotificationTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NotificationTarget"))
-  {
+StreamingNotificationTarget& StreamingNotificationTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NotificationTarget")) {
     m_notificationTarget = NotificationTargetMapper::GetNotificationTargetForName(jsonValue.GetString("NotificationTarget"));
     m_notificationTargetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamingNotificationTarget::Jsonize() const
-{
+JsonValue StreamingNotificationTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_notificationTargetHasBeenSet)
-  {
-   payload.WithString("NotificationTarget", NotificationTargetMapper::GetNameForNotificationTarget(m_notificationTarget));
+  if (m_notificationTargetHasBeenSet) {
+    payload.WithString("NotificationTarget", NotificationTargetMapper::GetNameForNotificationTarget(m_notificationTarget));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

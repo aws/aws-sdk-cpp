@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-ICD10CMTrait::ICD10CMTrait(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ICD10CMTrait::ICD10CMTrait(JsonView jsonValue) { *this = jsonValue; }
 
-ICD10CMTrait& ICD10CMTrait::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ICD10CMTrait& ICD10CMTrait::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = ICD10CMTraitNameMapper::GetICD10CMTraitNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ICD10CMTrait::Jsonize() const
-{
+JsonValue ICD10CMTrait::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", ICD10CMTraitNameMapper::GetNameForICD10CMTraitName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", ICD10CMTraitNameMapper::GetNameForICD10CMTraitName(m_name));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

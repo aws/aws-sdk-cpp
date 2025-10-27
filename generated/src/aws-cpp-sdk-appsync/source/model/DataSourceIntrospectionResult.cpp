@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-DataSourceIntrospectionResult::DataSourceIntrospectionResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceIntrospectionResult::DataSourceIntrospectionResult(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceIntrospectionResult& DataSourceIntrospectionResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("models"))
-  {
+DataSourceIntrospectionResult& DataSourceIntrospectionResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("models")) {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
-    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-    {
+    for (unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex) {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());
     }
     m_modelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceIntrospectionResult::Jsonize() const
-{
+JsonValue DataSourceIntrospectionResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
-   for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-   {
-     modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());
-   }
-   payload.WithArray("models", std::move(modelsJsonList));
-
+  if (m_modelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
+    for (unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex) {
+      modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());
+    }
+    payload.WithArray("models", std::move(modelsJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

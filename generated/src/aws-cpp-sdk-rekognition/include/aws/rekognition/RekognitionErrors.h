@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
-namespace Aws
-{
-namespace Rekognition
-{
-enum class RekognitionErrors
-{
-  //From Core//
+namespace Aws {
+namespace Rekognition {
+enum class RekognitionErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RekognitionErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class RekognitionErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   HUMAN_LOOP_QUOTA_EXCEEDED,
   IDEMPOTENT_PARAMETER_MISMATCH,
   IMAGE_TOO_LARGE,
@@ -68,9 +65,8 @@ enum class RekognitionErrors
   VIDEO_TOO_LARGE
 };
 
-class AWS_REKOGNITION_API RekognitionError : public Aws::Client::AWSError<RekognitionErrors>
-{
-public:
+class AWS_REKOGNITION_API RekognitionError : public Aws::Client::AWSError<RekognitionErrors> {
+ public:
   RekognitionError() {}
   RekognitionError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
   RekognitionError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
@@ -81,10 +77,9 @@ public:
   T GetModeledError();
 };
 
-namespace RekognitionErrorMapper
-{
-  AWS_REKOGNITION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RekognitionErrorMapper {
+AWS_REKOGNITION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Rekognition
+}  // namespace Aws

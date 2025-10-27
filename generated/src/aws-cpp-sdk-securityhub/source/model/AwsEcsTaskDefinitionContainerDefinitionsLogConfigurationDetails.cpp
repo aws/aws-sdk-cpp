@@ -3,47 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LogDriver"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("LogDriver")) {
     m_logDriver = jsonValue.GetString("LogDriver");
     m_logDriverHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Options"))
-  {
+  if (jsonValue.ValueExists("Options")) {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
-    for(auto& optionsItem : optionsJsonMap)
-    {
+    for (auto& optionsItem : optionsJsonMap) {
       m_options[optionsItem.first] = optionsItem.second.AsString();
     }
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecretOptions"))
-  {
+  if (jsonValue.ValueExists("SecretOptions")) {
     Aws::Utils::Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("SecretOptions");
-    for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
-    {
+    for (unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex) {
       m_secretOptions.push_back(secretOptionsJsonList[secretOptionsIndex].AsObject());
     }
     m_secretOptionsHasBeenSet = true;
@@ -51,41 +43,32 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefin
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_logDriverHasBeenSet)
-  {
-   payload.WithString("LogDriver", m_logDriver);
-
+  if (m_logDriverHasBeenSet) {
+    payload.WithString("LogDriver", m_logDriver);
   }
 
-  if(m_optionsHasBeenSet)
-  {
-   JsonValue optionsJsonMap;
-   for(auto& optionsItem : m_options)
-   {
-     optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
-   }
-   payload.WithObject("Options", std::move(optionsJsonMap));
-
+  if (m_optionsHasBeenSet) {
+    JsonValue optionsJsonMap;
+    for (auto& optionsItem : m_options) {
+      optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
+    }
+    payload.WithObject("Options", std::move(optionsJsonMap));
   }
 
-  if(m_secretOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> secretOptionsJsonList(m_secretOptions.size());
-   for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
-   {
-     secretOptionsJsonList[secretOptionsIndex].AsObject(m_secretOptions[secretOptionsIndex].Jsonize());
-   }
-   payload.WithArray("SecretOptions", std::move(secretOptionsJsonList));
-
+  if (m_secretOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> secretOptionsJsonList(m_secretOptions.size());
+    for (unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex) {
+      secretOptionsJsonList[secretOptionsIndex].AsObject(m_secretOptions[secretOptionsIndex].Jsonize());
+    }
+    payload.WithArray("SecretOptions", std::move(secretOptionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/evs/EVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evs/EVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EVS
-{
-namespace Model
-{
-  enum class HostState
-  {
-    NOT_SET,
-    CREATING,
-    CREATED,
-    UPDATING,
-    DELETING,
-    DELETED,
-    CREATE_FAILED,
-    UPDATE_FAILED
-  };
+namespace Aws {
+namespace EVS {
+namespace Model {
+enum class HostState { NOT_SET, CREATING, CREATED, UPDATING, DELETING, DELETED, CREATE_FAILED, UPDATE_FAILED };
 
-namespace HostStateMapper
-{
+namespace HostStateMapper {
 AWS_EVS_API HostState GetHostStateForName(const Aws::String& name);
 
 AWS_EVS_API Aws::String GetNameForHostState(HostState value);
-} // namespace HostStateMapper
-} // namespace Model
-} // namespace EVS
-} // namespace Aws
+}  // namespace HostStateMapper
+}  // namespace Model
+}  // namespace EVS
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointProvider.h>
 
-namespace Aws
-{
-namespace Route53RecoveryControlConfig
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Route53RecoveryControlConfig
-} // namespace Aws
+namespace Aws {
+namespace Route53RecoveryControlConfig {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Route53RecoveryControlConfig
+}  // namespace Aws

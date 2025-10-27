@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/LabelOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/LabelOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-LabelOptions::LabelOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LabelOptions::LabelOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LabelOptions& LabelOptions::operator =(const XmlNode& xmlNode)
-{
+LabelOptions& LabelOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode timezoneNode = resultNode.FirstChild("Timezone");
-    if(!timezoneNode.IsNull())
-    {
+    if (!timezoneNode.IsNull()) {
       m_timezone = Aws::Utils::Xml::DecodeEscapedXmlText(timezoneNode.GetText());
       m_timezoneHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ LabelOptions& LabelOptions::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LabelOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_timezoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
-  }
-
-}
-
-void LabelOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_timezoneHasBeenSet)
-  {
-      oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+void LabelOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_timezoneHasBeenSet) {
+    oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void LabelOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_timezoneHasBeenSet) {
+    oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

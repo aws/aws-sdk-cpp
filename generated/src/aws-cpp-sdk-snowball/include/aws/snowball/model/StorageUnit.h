@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/snowball/Snowball_EXPORTS.h>
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Model
-{
-  enum class StorageUnit
-  {
-    NOT_SET,
-    TB
-  };
+namespace Aws {
+namespace Snowball {
+namespace Model {
+enum class StorageUnit { NOT_SET, TB };
 
-namespace StorageUnitMapper
-{
+namespace StorageUnitMapper {
 AWS_SNOWBALL_API StorageUnit GetStorageUnitForName(const Aws::String& name);
 
 AWS_SNOWBALL_API Aws::String GetNameForStorageUnit(StorageUnit value);
-} // namespace StorageUnitMapper
-} // namespace Model
-} // namespace Snowball
-} // namespace Aws
+}  // namespace StorageUnitMapper
+}  // namespace Model
+}  // namespace Snowball
+}  // namespace Aws

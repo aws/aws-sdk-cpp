@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/EsamSignalProcessingNotification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/EsamSignalProcessingNotification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-EsamSignalProcessingNotification::EsamSignalProcessingNotification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EsamSignalProcessingNotification::EsamSignalProcessingNotification(JsonView jsonValue) { *this = jsonValue; }
 
-EsamSignalProcessingNotification& EsamSignalProcessingNotification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sccXml"))
-  {
+EsamSignalProcessingNotification& EsamSignalProcessingNotification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sccXml")) {
     m_sccXml = jsonValue.GetString("sccXml");
     m_sccXmlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EsamSignalProcessingNotification::Jsonize() const
-{
+JsonValue EsamSignalProcessingNotification::Jsonize() const {
   JsonValue payload;
 
-  if(m_sccXmlHasBeenSet)
-  {
-   payload.WithString("sccXml", m_sccXml);
-
+  if (m_sccXmlHasBeenSet) {
+    payload.WithString("sccXml", m_sccXml);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

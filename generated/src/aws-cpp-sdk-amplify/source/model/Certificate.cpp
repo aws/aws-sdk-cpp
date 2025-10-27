@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-Certificate::Certificate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Certificate::Certificate(JsonView jsonValue) { *this = jsonValue; }
 
-Certificate& Certificate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+Certificate& Certificate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customCertificateArn"))
-  {
+  if (jsonValue.ValueExists("customCertificateArn")) {
     m_customCertificateArn = jsonValue.GetString("customCertificateArn");
     m_customCertificateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificateVerificationDNSRecord"))
-  {
+  if (jsonValue.ValueExists("certificateVerificationDNSRecord")) {
     m_certificateVerificationDNSRecord = jsonValue.GetString("certificateVerificationDNSRecord");
     m_certificateVerificationDNSRecordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Certificate::Jsonize() const
-{
+JsonValue Certificate::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CertificateTypeMapper::GetNameForCertificateType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CertificateTypeMapper::GetNameForCertificateType(m_type));
   }
 
-  if(m_customCertificateArnHasBeenSet)
-  {
-   payload.WithString("customCertificateArn", m_customCertificateArn);
-
+  if (m_customCertificateArnHasBeenSet) {
+    payload.WithString("customCertificateArn", m_customCertificateArn);
   }
 
-  if(m_certificateVerificationDNSRecordHasBeenSet)
-  {
-   payload.WithString("certificateVerificationDNSRecord", m_certificateVerificationDNSRecord);
-
+  if (m_certificateVerificationDNSRecordHasBeenSet) {
+    payload.WithString("certificateVerificationDNSRecord", m_certificateVerificationDNSRecord);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

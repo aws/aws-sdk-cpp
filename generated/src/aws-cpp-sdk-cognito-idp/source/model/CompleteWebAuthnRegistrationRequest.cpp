@@ -12,35 +12,24 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CompleteWebAuthnRegistrationRequest::SerializePayload() const
-{
+Aws::String CompleteWebAuthnRegistrationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
-  if(m_credentialHasBeenSet)
-  {
-    if(!m_credential.View().IsNull())
-    {
-       payload.WithObject("Credential", JsonValue(m_credential.View()));
+  if (m_credentialHasBeenSet) {
+    if (!m_credential.View().IsNull()) {
+      payload.WithObject("Credential", JsonValue(m_credential.View()));
     }
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CompleteWebAuthnRegistrationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CompleteWebAuthnRegistrationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.CompleteWebAuthnRegistration"));
   return headers;
-
 }
-
-
-
-

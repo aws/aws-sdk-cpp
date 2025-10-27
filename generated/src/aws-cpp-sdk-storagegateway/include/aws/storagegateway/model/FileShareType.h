@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class FileShareType
-  {
-    NOT_SET,
-    NFS,
-    SMB
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class FileShareType { NOT_SET, NFS, SMB };
 
-namespace FileShareTypeMapper
-{
+namespace FileShareTypeMapper {
 AWS_STORAGEGATEWAY_API FileShareType GetFileShareTypeForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForFileShareType(FileShareType value);
-} // namespace FileShareTypeMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace FileShareTypeMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

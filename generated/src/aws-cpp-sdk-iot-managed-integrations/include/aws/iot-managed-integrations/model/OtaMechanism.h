@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class OtaMechanism
-  {
-    NOT_SET,
-    PUSH
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class OtaMechanism { NOT_SET, PUSH };
 
-namespace OtaMechanismMapper
-{
+namespace OtaMechanismMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API OtaMechanism GetOtaMechanismForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForOtaMechanism(OtaMechanism value);
-} // namespace OtaMechanismMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace OtaMechanismMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

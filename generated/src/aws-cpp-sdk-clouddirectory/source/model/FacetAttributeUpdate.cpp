@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-FacetAttributeUpdate::FacetAttributeUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FacetAttributeUpdate::FacetAttributeUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-FacetAttributeUpdate& FacetAttributeUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attribute"))
-  {
+FacetAttributeUpdate& FacetAttributeUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attribute")) {
     m_attribute = jsonValue.GetObject("Attribute");
     m_attributeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Action"))
-  {
+  if (jsonValue.ValueExists("Action")) {
     m_action = UpdateActionTypeMapper::GetUpdateActionTypeForName(jsonValue.GetString("Action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FacetAttributeUpdate::Jsonize() const
-{
+JsonValue FacetAttributeUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithObject("Attribute", m_attribute.Jsonize());
-
+  if (m_attributeHasBeenSet) {
+    payload.WithObject("Attribute", m_attribute.Jsonize());
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("Action", UpdateActionTypeMapper::GetNameForUpdateActionType(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("Action", UpdateActionTypeMapper::GetNameForUpdateActionType(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

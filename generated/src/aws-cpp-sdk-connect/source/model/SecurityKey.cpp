@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SecurityKey::SecurityKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecurityKey::SecurityKey(JsonView jsonValue) { *this = jsonValue; }
 
-SecurityKey& SecurityKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AssociationId"))
-  {
+SecurityKey& SecurityKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AssociationId")) {
     m_associationId = jsonValue.GetString("AssociationId");
     m_associationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecurityKey::Jsonize() const
-{
+JsonValue SecurityKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_associationIdHasBeenSet)
-  {
-   payload.WithString("AssociationId", m_associationId);
-
+  if (m_associationIdHasBeenSet) {
+    payload.WithString("AssociationId", m_associationId);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

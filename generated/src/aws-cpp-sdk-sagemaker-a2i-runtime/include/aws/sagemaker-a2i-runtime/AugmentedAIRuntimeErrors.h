@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace AugmentedAIRuntime
-{
-enum class AugmentedAIRuntimeErrors
-{
-  //From Core//
+namespace Aws {
+namespace AugmentedAIRuntime {
+enum class AugmentedAIRuntimeErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AugmentedAIRuntimeErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,28 +44,28 @@ enum class AugmentedAIRuntimeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeError : public Aws::Client::AWSError<AugmentedAIRuntimeErrors>
-{
-public:
+class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeError : public Aws::Client::AWSError<AugmentedAIRuntimeErrors> {
+ public:
   AugmentedAIRuntimeError() {}
-  AugmentedAIRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+  AugmentedAIRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
   AugmentedAIRuntimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
-  AugmentedAIRuntimeError(const Aws::Client::AWSError<AugmentedAIRuntimeErrors>& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+  AugmentedAIRuntimeError(const Aws::Client::AWSError<AugmentedAIRuntimeErrors>& rhs)
+      : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
   AugmentedAIRuntimeError(Aws::Client::AWSError<AugmentedAIRuntimeErrors>&& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace AugmentedAIRuntimeErrorMapper
-{
-  AWS_AUGMENTEDAIRUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AugmentedAIRuntimeErrorMapper {
+AWS_AUGMENTEDAIRUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AugmentedAIRuntime
-} // namespace Aws
+}  // namespace AugmentedAIRuntime
+}  // namespace Aws

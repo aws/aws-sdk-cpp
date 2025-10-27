@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class PositionSolverType
-  {
-    NOT_SET,
-    GNSS
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class PositionSolverType { NOT_SET, GNSS };
 
-namespace PositionSolverTypeMapper
-{
+namespace PositionSolverTypeMapper {
 AWS_IOTWIRELESS_API PositionSolverType GetPositionSolverTypeForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForPositionSolverType(PositionSolverType value);
-} // namespace PositionSolverTypeMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace PositionSolverTypeMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

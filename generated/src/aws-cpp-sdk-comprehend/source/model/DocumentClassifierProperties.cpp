@@ -11,232 +11,174 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DocumentClassifierArn"))
-  {
+DocumentClassifierProperties& DocumentClassifierProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentClassifierArn")) {
     m_documentClassifierArn = jsonValue.GetString("DocumentClassifierArn");
     m_documentClassifierArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTime"))
-  {
+  if (jsonValue.ValueExists("SubmitTime")) {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
     m_submitTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainingStartTime"))
-  {
+  if (jsonValue.ValueExists("TrainingStartTime")) {
     m_trainingStartTime = jsonValue.GetDouble("TrainingStartTime");
     m_trainingStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainingEndTime"))
-  {
+  if (jsonValue.ValueExists("TrainingEndTime")) {
     m_trainingEndTime = jsonValue.GetDouble("TrainingEndTime");
     m_trainingEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputDataConfig"))
-  {
+  if (jsonValue.ValueExists("InputDataConfig")) {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
     m_inputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputDataConfig"))
-  {
+  if (jsonValue.ValueExists("OutputDataConfig")) {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
     m_outputDataConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClassifierMetadata"))
-  {
+  if (jsonValue.ValueExists("ClassifierMetadata")) {
     m_classifierMetadata = jsonValue.GetObject("ClassifierMetadata");
     m_classifierMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("DataAccessRoleArn")) {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
     m_dataAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VolumeKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("VolumeKmsKeyId")) {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcConfig"))
-  {
+  if (jsonValue.ValueExists("VpcConfig")) {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mode"))
-  {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = DocumentClassifierModeMapper::GetDocumentClassifierModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("ModelKmsKeyId")) {
     m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
     m_modelKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionName"))
-  {
+  if (jsonValue.ValueExists("VersionName")) {
     m_versionName = jsonValue.GetString("VersionName");
     m_versionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceModelArn"))
-  {
+  if (jsonValue.ValueExists("SourceModelArn")) {
     m_sourceModelArn = jsonValue.GetString("SourceModelArn");
     m_sourceModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FlywheelArn"))
-  {
+  if (jsonValue.ValueExists("FlywheelArn")) {
     m_flywheelArn = jsonValue.GetString("FlywheelArn");
     m_flywheelArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentClassifierProperties::Jsonize() const
-{
+JsonValue DocumentClassifierProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentClassifierArnHasBeenSet)
-  {
-   payload.WithString("DocumentClassifierArn", m_documentClassifierArn);
-
+  if (m_documentClassifierArnHasBeenSet) {
+    payload.WithString("DocumentClassifierArn", m_documentClassifierArn);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ModelStatusMapper::GetNameForModelStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ModelStatusMapper::GetNameForModelStatus(m_status));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_submitTimeHasBeenSet)
-  {
-   payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
+  if (m_submitTimeHasBeenSet) {
+    payload.WithDouble("SubmitTime", m_submitTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_trainingStartTimeHasBeenSet)
-  {
-   payload.WithDouble("TrainingStartTime", m_trainingStartTime.SecondsWithMSPrecision());
+  if (m_trainingStartTimeHasBeenSet) {
+    payload.WithDouble("TrainingStartTime", m_trainingStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_trainingEndTimeHasBeenSet)
-  {
-   payload.WithDouble("TrainingEndTime", m_trainingEndTime.SecondsWithMSPrecision());
+  if (m_trainingEndTimeHasBeenSet) {
+    payload.WithDouble("TrainingEndTime", m_trainingEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_inputDataConfigHasBeenSet)
-  {
-   payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
-
+  if (m_inputDataConfigHasBeenSet) {
+    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
   }
 
-  if(m_outputDataConfigHasBeenSet)
-  {
-   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
-
+  if (m_outputDataConfigHasBeenSet) {
+    payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
   }
 
-  if(m_classifierMetadataHasBeenSet)
-  {
-   payload.WithObject("ClassifierMetadata", m_classifierMetadata.Jsonize());
-
+  if (m_classifierMetadataHasBeenSet) {
+    payload.WithObject("ClassifierMetadata", m_classifierMetadata.Jsonize());
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_volumeKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
-
+  if (m_volumeKmsKeyIdHasBeenSet) {
+    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
   }
 
-  if(m_modelKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
-
+  if (m_modelKmsKeyIdHasBeenSet) {
+    payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
   }
 
-  if(m_versionNameHasBeenSet)
-  {
-   payload.WithString("VersionName", m_versionName);
-
+  if (m_versionNameHasBeenSet) {
+    payload.WithString("VersionName", m_versionName);
   }
 
-  if(m_sourceModelArnHasBeenSet)
-  {
-   payload.WithString("SourceModelArn", m_sourceModelArn);
-
+  if (m_sourceModelArnHasBeenSet) {
+    payload.WithString("SourceModelArn", m_sourceModelArn);
   }
 
-  if(m_flywheelArnHasBeenSet)
-  {
-   payload.WithString("FlywheelArn", m_flywheelArn);
-
+  if (m_flywheelArnHasBeenSet) {
+    payload.WithString("FlywheelArn", m_flywheelArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/ObdInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/ObdInterface.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-ObdInterface::ObdInterface(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ObdInterface::ObdInterface(JsonView jsonValue) { *this = jsonValue; }
 
-ObdInterface& ObdInterface::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ObdInterface& ObdInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("requestMessageId"))
-  {
+  if (jsonValue.ValueExists("requestMessageId")) {
     m_requestMessageId = jsonValue.GetInteger("requestMessageId");
     m_requestMessageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("obdStandard"))
-  {
+  if (jsonValue.ValueExists("obdStandard")) {
     m_obdStandard = jsonValue.GetString("obdStandard");
     m_obdStandardHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pidRequestIntervalSeconds"))
-  {
+  if (jsonValue.ValueExists("pidRequestIntervalSeconds")) {
     m_pidRequestIntervalSeconds = jsonValue.GetInteger("pidRequestIntervalSeconds");
     m_pidRequestIntervalSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dtcRequestIntervalSeconds"))
-  {
+  if (jsonValue.ValueExists("dtcRequestIntervalSeconds")) {
     m_dtcRequestIntervalSeconds = jsonValue.GetInteger("dtcRequestIntervalSeconds");
     m_dtcRequestIntervalSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("useExtendedIds"))
-  {
+  if (jsonValue.ValueExists("useExtendedIds")) {
     m_useExtendedIds = jsonValue.GetBool("useExtendedIds");
     m_useExtendedIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hasTransmissionEcu"))
-  {
+  if (jsonValue.ValueExists("hasTransmissionEcu")) {
     m_hasTransmissionEcu = jsonValue.GetBool("hasTransmissionEcu");
     m_hasTransmissionEcuHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ObdInterface::Jsonize() const
-{
+JsonValue ObdInterface::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_requestMessageIdHasBeenSet)
-  {
-   payload.WithInteger("requestMessageId", m_requestMessageId);
-
+  if (m_requestMessageIdHasBeenSet) {
+    payload.WithInteger("requestMessageId", m_requestMessageId);
   }
 
-  if(m_obdStandardHasBeenSet)
-  {
-   payload.WithString("obdStandard", m_obdStandard);
-
+  if (m_obdStandardHasBeenSet) {
+    payload.WithString("obdStandard", m_obdStandard);
   }
 
-  if(m_pidRequestIntervalSecondsHasBeenSet)
-  {
-   payload.WithInteger("pidRequestIntervalSeconds", m_pidRequestIntervalSeconds);
-
+  if (m_pidRequestIntervalSecondsHasBeenSet) {
+    payload.WithInteger("pidRequestIntervalSeconds", m_pidRequestIntervalSeconds);
   }
 
-  if(m_dtcRequestIntervalSecondsHasBeenSet)
-  {
-   payload.WithInteger("dtcRequestIntervalSeconds", m_dtcRequestIntervalSeconds);
-
+  if (m_dtcRequestIntervalSecondsHasBeenSet) {
+    payload.WithInteger("dtcRequestIntervalSeconds", m_dtcRequestIntervalSeconds);
   }
 
-  if(m_useExtendedIdsHasBeenSet)
-  {
-   payload.WithBool("useExtendedIds", m_useExtendedIds);
-
+  if (m_useExtendedIdsHasBeenSet) {
+    payload.WithBool("useExtendedIds", m_useExtendedIds);
   }
 
-  if(m_hasTransmissionEcuHasBeenSet)
-  {
-   payload.WithBool("hasTransmissionEcu", m_hasTransmissionEcu);
-
+  if (m_hasTransmissionEcuHasBeenSet) {
+    payload.WithBool("hasTransmissionEcu", m_hasTransmissionEcu);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/artifact/ArtifactEndpointProvider.h>
 
-namespace Aws
-{
-namespace Artifact
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Artifact
-} // namespace Aws
+namespace Aws {
+namespace Artifact {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Artifact
+}  // namespace Aws

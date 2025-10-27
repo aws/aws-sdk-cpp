@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-FindingsStatistics::FindingsStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FindingsStatistics::FindingsStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-FindingsStatistics& FindingsStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("externalAccessFindingsStatistics"))
-  {
+FindingsStatistics& FindingsStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("externalAccessFindingsStatistics")) {
     m_externalAccessFindingsStatistics = jsonValue.GetObject("externalAccessFindingsStatistics");
     m_externalAccessFindingsStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("internalAccessFindingsStatistics"))
-  {
+  if (jsonValue.ValueExists("internalAccessFindingsStatistics")) {
     m_internalAccessFindingsStatistics = jsonValue.GetObject("internalAccessFindingsStatistics");
     m_internalAccessFindingsStatisticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unusedAccessFindingsStatistics"))
-  {
+  if (jsonValue.ValueExists("unusedAccessFindingsStatistics")) {
     m_unusedAccessFindingsStatistics = jsonValue.GetObject("unusedAccessFindingsStatistics");
     m_unusedAccessFindingsStatisticsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FindingsStatistics::Jsonize() const
-{
+JsonValue FindingsStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_externalAccessFindingsStatisticsHasBeenSet)
-  {
-   payload.WithObject("externalAccessFindingsStatistics", m_externalAccessFindingsStatistics.Jsonize());
-
+  if (m_externalAccessFindingsStatisticsHasBeenSet) {
+    payload.WithObject("externalAccessFindingsStatistics", m_externalAccessFindingsStatistics.Jsonize());
   }
 
-  if(m_internalAccessFindingsStatisticsHasBeenSet)
-  {
-   payload.WithObject("internalAccessFindingsStatistics", m_internalAccessFindingsStatistics.Jsonize());
-
+  if (m_internalAccessFindingsStatisticsHasBeenSet) {
+    payload.WithObject("internalAccessFindingsStatistics", m_internalAccessFindingsStatistics.Jsonize());
   }
 
-  if(m_unusedAccessFindingsStatisticsHasBeenSet)
-  {
-   payload.WithObject("unusedAccessFindingsStatistics", m_unusedAccessFindingsStatistics.Jsonize());
-
+  if (m_unusedAccessFindingsStatisticsHasBeenSet) {
+    payload.WithObject("unusedAccessFindingsStatistics", m_unusedAccessFindingsStatistics.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

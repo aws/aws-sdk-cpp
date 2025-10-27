@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snowball/model/WirelessConnection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/model/WirelessConnection.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Model
-{
+namespace Aws {
+namespace Snowball {
+namespace Model {
 
-WirelessConnection::WirelessConnection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WirelessConnection::WirelessConnection(JsonView jsonValue) { *this = jsonValue; }
 
-WirelessConnection& WirelessConnection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IsWifiEnabled"))
-  {
+WirelessConnection& WirelessConnection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IsWifiEnabled")) {
     m_isWifiEnabled = jsonValue.GetBool("IsWifiEnabled");
     m_isWifiEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WirelessConnection::Jsonize() const
-{
+JsonValue WirelessConnection::Jsonize() const {
   JsonValue payload;
 
-  if(m_isWifiEnabledHasBeenSet)
-  {
-   payload.WithBool("IsWifiEnabled", m_isWifiEnabled);
-
+  if (m_isWifiEnabledHasBeenSet) {
+    payload.WithBool("IsWifiEnabled", m_isWifiEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Model
+}  // namespace Snowball
+}  // namespace Aws

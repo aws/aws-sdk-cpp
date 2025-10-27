@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/GPSPointDimension.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/GPSPointDimension.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-GPSPointDimension::GPSPointDimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GPSPointDimension::GPSPointDimension(JsonView jsonValue) { *this = jsonValue; }
 
-GPSPointDimension& GPSPointDimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Coordinates"))
-  {
+GPSPointDimension& GPSPointDimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Coordinates")) {
     m_coordinates = jsonValue.GetObject("Coordinates");
     m_coordinatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RangeInKilometers"))
-  {
+  if (jsonValue.ValueExists("RangeInKilometers")) {
     m_rangeInKilometers = jsonValue.GetDouble("RangeInKilometers");
     m_rangeInKilometersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GPSPointDimension::Jsonize() const
-{
+JsonValue GPSPointDimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_coordinatesHasBeenSet)
-  {
-   payload.WithObject("Coordinates", m_coordinates.Jsonize());
-
+  if (m_coordinatesHasBeenSet) {
+    payload.WithObject("Coordinates", m_coordinates.Jsonize());
   }
 
-  if(m_rangeInKilometersHasBeenSet)
-  {
-   payload.WithDouble("RangeInKilometers", m_rangeInKilometers);
-
+  if (m_rangeInKilometersHasBeenSet) {
+    payload.WithDouble("RangeInKilometers", m_rangeInKilometers);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

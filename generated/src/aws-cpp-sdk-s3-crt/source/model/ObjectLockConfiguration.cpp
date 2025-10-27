@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/ObjectLockConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/ObjectLockConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-ObjectLockConfiguration::ObjectLockConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ObjectLockConfiguration::ObjectLockConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ObjectLockConfiguration& ObjectLockConfiguration::operator =(const XmlNode& xmlNode)
-{
+ObjectLockConfiguration& ObjectLockConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode objectLockEnabledNode = resultNode.FirstChild("ObjectLockEnabled");
-    if(!objectLockEnabledNode.IsNull())
-    {
-      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEnabledNode.GetText()).c_str()));
+    if (!objectLockEnabledNode.IsNull()) {
+      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEnabledNode.GetText()).c_str()));
       m_objectLockEnabledHasBeenSet = true;
     }
     XmlNode ruleNode = resultNode.FirstChild("Rule");
-    if(!ruleNode.IsNull())
-    {
+    if (!ruleNode.IsNull()) {
       m_rule = ruleNode;
       m_ruleHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ ObjectLockConfiguration& ObjectLockConfiguration::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void ObjectLockConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void ObjectLockConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_objectLockEnabledHasBeenSet)
-  {
-   XmlNode objectLockEnabledNode = parentNode.CreateChildElement("ObjectLockEnabled");
-   objectLockEnabledNode.SetText(ObjectLockEnabledMapper::GetNameForObjectLockEnabled(m_objectLockEnabled));
+  if (m_objectLockEnabledHasBeenSet) {
+    XmlNode objectLockEnabledNode = parentNode.CreateChildElement("ObjectLockEnabled");
+    objectLockEnabledNode.SetText(ObjectLockEnabledMapper::GetNameForObjectLockEnabled(m_objectLockEnabled));
   }
 
-  if(m_ruleHasBeenSet)
-  {
-   XmlNode ruleNode = parentNode.CreateChildElement("Rule");
-   m_rule.AddToNode(ruleNode);
+  if (m_ruleHasBeenSet) {
+    XmlNode ruleNode = parentNode.CreateChildElement("Rule");
+    m_rule.AddToNode(ruleNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/shield/model/ResponseAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/ResponseAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
+namespace Aws {
+namespace Shield {
+namespace Model {
 
-ResponseAction::ResponseAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResponseAction::ResponseAction(JsonView jsonValue) { *this = jsonValue; }
 
-ResponseAction& ResponseAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Block"))
-  {
+ResponseAction& ResponseAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Block")) {
     m_block = jsonValue.GetObject("Block");
     m_blockHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetObject("Count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResponseAction::Jsonize() const
-{
+JsonValue ResponseAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_blockHasBeenSet)
-  {
-   payload.WithObject("Block", m_block.Jsonize());
-
+  if (m_blockHasBeenSet) {
+    payload.WithObject("Block", m_block.Jsonize());
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithObject("Count", m_count.Jsonize());
-
+  if (m_countHasBeenSet) {
+    payload.WithObject("Count", m_count.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

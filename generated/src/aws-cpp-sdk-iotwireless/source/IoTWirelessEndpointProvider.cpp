@@ -5,12 +5,8 @@
 
 #include <aws/iotwireless/IoTWirelessEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTWireless
-} // namespace Aws
+namespace Aws {
+namespace IoTWireless {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTWireless
+}  // namespace Aws

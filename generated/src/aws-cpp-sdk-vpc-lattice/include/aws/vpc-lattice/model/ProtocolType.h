@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
-  enum class ProtocolType
-  {
-    NOT_SET,
-    TCP
-  };
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
+enum class ProtocolType { NOT_SET, TCP };
 
-namespace ProtocolTypeMapper
-{
+namespace ProtocolTypeMapper {
 AWS_VPCLATTICE_API ProtocolType GetProtocolTypeForName(const Aws::String& name);
 
 AWS_VPCLATTICE_API Aws::String GetNameForProtocolType(ProtocolType value);
-} // namespace ProtocolTypeMapper
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace ProtocolTypeMapper
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

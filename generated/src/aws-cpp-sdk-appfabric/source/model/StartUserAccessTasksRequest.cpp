@@ -12,25 +12,16 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartUserAccessTasksRequest::SerializePayload() const
-{
+Aws::String StartUserAccessTasksRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appBundleIdentifierHasBeenSet)
-  {
-   payload.WithString("appBundleIdentifier", m_appBundleIdentifier);
-
+  if (m_appBundleIdentifierHasBeenSet) {
+    payload.WithString("appBundleIdentifier", m_appBundleIdentifier);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("email", m_email);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

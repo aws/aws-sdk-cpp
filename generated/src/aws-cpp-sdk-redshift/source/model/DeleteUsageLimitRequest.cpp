@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteUsageLimitRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteUsageLimitRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteUsageLimitRequest::SerializePayload() const
-{
+Aws::String DeleteUsageLimitRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteUsageLimit&";
-  if(m_usageLimitIdHasBeenSet)
-  {
+  if (m_usageLimitIdHasBeenSet) {
     ss << "UsageLimitId=" << StringUtils::URLEncode(m_usageLimitId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteUsageLimitRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteUsageLimitRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteUsageLimitRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-ReasonSummary::ReasonSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReasonSummary::ReasonSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ReasonSummary& ReasonSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+ReasonSummary& ReasonSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statementIndex"))
-  {
+  if (jsonValue.ValueExists("statementIndex")) {
     m_statementIndex = jsonValue.GetInteger("statementIndex");
     m_statementIndexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statementId"))
-  {
+  if (jsonValue.ValueExists("statementId")) {
     m_statementId = jsonValue.GetString("statementId");
     m_statementIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReasonSummary::Jsonize() const
-{
+JsonValue ReasonSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_statementIndexHasBeenSet)
-  {
-   payload.WithInteger("statementIndex", m_statementIndex);
-
+  if (m_statementIndexHasBeenSet) {
+    payload.WithInteger("statementIndex", m_statementIndex);
   }
 
-  if(m_statementIdHasBeenSet)
-  {
-   payload.WithString("statementId", m_statementId);
-
+  if (m_statementIdHasBeenSet) {
+    payload.WithString("statementId", m_statementId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

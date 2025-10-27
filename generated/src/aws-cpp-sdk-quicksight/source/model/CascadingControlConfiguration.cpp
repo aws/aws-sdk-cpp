@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/CascadingControlConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/CascadingControlConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-CascadingControlConfiguration::CascadingControlConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CascadingControlConfiguration::CascadingControlConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CascadingControlConfiguration& CascadingControlConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceControls"))
-  {
+CascadingControlConfiguration& CascadingControlConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceControls")) {
     Aws::Utils::Array<JsonView> sourceControlsJsonList = jsonValue.GetArray("SourceControls");
-    for(unsigned sourceControlsIndex = 0; sourceControlsIndex < sourceControlsJsonList.GetLength(); ++sourceControlsIndex)
-    {
+    for (unsigned sourceControlsIndex = 0; sourceControlsIndex < sourceControlsJsonList.GetLength(); ++sourceControlsIndex) {
       m_sourceControls.push_back(sourceControlsJsonList[sourceControlsIndex].AsObject());
     }
     m_sourceControlsHasBeenSet = true;
@@ -37,24 +28,20 @@ CascadingControlConfiguration& CascadingControlConfiguration::operator =(JsonVie
   return *this;
 }
 
-JsonValue CascadingControlConfiguration::Jsonize() const
-{
+JsonValue CascadingControlConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceControlsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourceControlsJsonList(m_sourceControls.size());
-   for(unsigned sourceControlsIndex = 0; sourceControlsIndex < sourceControlsJsonList.GetLength(); ++sourceControlsIndex)
-   {
-     sourceControlsJsonList[sourceControlsIndex].AsObject(m_sourceControls[sourceControlsIndex].Jsonize());
-   }
-   payload.WithArray("SourceControls", std::move(sourceControlsJsonList));
-
+  if (m_sourceControlsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceControlsJsonList(m_sourceControls.size());
+    for (unsigned sourceControlsIndex = 0; sourceControlsIndex < sourceControlsJsonList.GetLength(); ++sourceControlsIndex) {
+      sourceControlsJsonList[sourceControlsIndex].AsObject(m_sourceControls[sourceControlsIndex].Jsonize());
+    }
+    payload.WithArray("SourceControls", std::move(sourceControlsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

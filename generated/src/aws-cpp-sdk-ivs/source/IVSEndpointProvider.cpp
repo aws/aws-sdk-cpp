@@ -5,12 +5,8 @@
 
 #include <aws/ivs/IVSEndpointProvider.h>
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IVS
-} // namespace Aws
+namespace Aws {
+namespace IVS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IVS
+}  // namespace Aws

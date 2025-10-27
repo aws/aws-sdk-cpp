@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConnectContactLens
-{
-class ConnectContactLensEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ConnectContactLens {
+class ConnectContactLensEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ConnectContactLens
-} // namespace Aws
+}  // namespace ConnectContactLens
+}  // namespace Aws

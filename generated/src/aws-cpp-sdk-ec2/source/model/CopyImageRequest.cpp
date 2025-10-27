@@ -3,89 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CopyImageRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CopyImageRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CopyImageRequest::SerializePayload() const
-{
+Aws::String CopyImageRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CopyImage&";
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_encryptedHasBeenSet)
-  {
+  if (m_encryptedHasBeenSet) {
     ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_sourceImageIdHasBeenSet)
-  {
+  if (m_sourceImageIdHasBeenSet) {
     ss << "SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
   }
 
-  if(m_sourceRegionHasBeenSet)
-  {
+  if (m_sourceRegionHasBeenSet) {
     ss << "SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
   }
 
-  if(m_destinationOutpostArnHasBeenSet)
-  {
+  if (m_destinationOutpostArnHasBeenSet) {
     ss << "DestinationOutpostArn=" << StringUtils::URLEncode(m_destinationOutpostArn.c_str()) << "&";
   }
 
-  if(m_copyImageTagsHasBeenSet)
-  {
+  if (m_copyImageTagsHasBeenSet) {
     ss << "CopyImageTags=" << std::boolalpha << m_copyImageTags << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_snapshotCopyCompletionDurationMinutesHasBeenSet)
-  {
+  if (m_snapshotCopyCompletionDurationMinutesHasBeenSet) {
     ss << "SnapshotCopyCompletionDurationMinutes=" << m_snapshotCopyCompletionDurationMinutes << "&";
   }
 
-  if(m_destinationAvailabilityZoneHasBeenSet)
-  {
+  if (m_destinationAvailabilityZoneHasBeenSet) {
     ss << "DestinationAvailabilityZone=" << StringUtils::URLEncode(m_destinationAvailabilityZone.c_str()) << "&";
   }
 
-  if(m_destinationAvailabilityZoneIdHasBeenSet)
-  {
+  if (m_destinationAvailabilityZoneIdHasBeenSet) {
     ss << "DestinationAvailabilityZoneId=" << StringUtils::URLEncode(m_destinationAvailabilityZoneId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -93,8 +77,4 @@ Aws::String CopyImageRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CopyImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CopyImageRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

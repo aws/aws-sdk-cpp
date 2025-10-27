@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/ResourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/ResourceConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-ResourceConfiguration::ResourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceConfiguration::ResourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceConfiguration& ResourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("computeType"))
-  {
+ResourceConfiguration& ResourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("computeType")) {
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
     m_computeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeSizeInGB"))
-  {
+  if (jsonValue.ValueExists("volumeSizeInGB")) {
     m_volumeSizeInGB = jsonValue.GetInteger("volumeSizeInGB");
     m_volumeSizeInGBHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceConfiguration::Jsonize() const
-{
+JsonValue ResourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_computeTypeHasBeenSet)
-  {
-   payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  if (m_computeTypeHasBeenSet) {
+    payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
   }
 
-  if(m_volumeSizeInGBHasBeenSet)
-  {
-   payload.WithInteger("volumeSizeInGB", m_volumeSizeInGB);
-
+  if (m_volumeSizeInGBHasBeenSet) {
+    payload.WithInteger("volumeSizeInGB", m_volumeSizeInGB);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

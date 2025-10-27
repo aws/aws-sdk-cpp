@@ -3,80 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/proton/model/ServiceSyncBlockerSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/proton/model/ServiceSyncBlockerSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
+namespace Aws {
+namespace Proton {
+namespace Model {
 
-ServiceSyncBlockerSummary::ServiceSyncBlockerSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceSyncBlockerSummary::ServiceSyncBlockerSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceSyncBlockerSummary& ServiceSyncBlockerSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("latestBlockers"))
-  {
+ServiceSyncBlockerSummary& ServiceSyncBlockerSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("latestBlockers")) {
     Aws::Utils::Array<JsonView> latestBlockersJsonList = jsonValue.GetArray("latestBlockers");
-    for(unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex)
-    {
+    for (unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex) {
       m_latestBlockers.push_back(latestBlockersJsonList[latestBlockersIndex].AsObject());
     }
     m_latestBlockersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceInstanceName"))
-  {
+  if (jsonValue.ValueExists("serviceInstanceName")) {
     m_serviceInstanceName = jsonValue.GetString("serviceInstanceName");
     m_serviceInstanceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceName"))
-  {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceSyncBlockerSummary::Jsonize() const
-{
+JsonValue ServiceSyncBlockerSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_latestBlockersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> latestBlockersJsonList(m_latestBlockers.size());
-   for(unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex)
-   {
-     latestBlockersJsonList[latestBlockersIndex].AsObject(m_latestBlockers[latestBlockersIndex].Jsonize());
-   }
-   payload.WithArray("latestBlockers", std::move(latestBlockersJsonList));
-
+  if (m_latestBlockersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> latestBlockersJsonList(m_latestBlockers.size());
+    for (unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex) {
+      latestBlockersJsonList[latestBlockersIndex].AsObject(m_latestBlockers[latestBlockersIndex].Jsonize());
+    }
+    payload.WithArray("latestBlockers", std::move(latestBlockersJsonList));
   }
 
-  if(m_serviceInstanceNameHasBeenSet)
-  {
-   payload.WithString("serviceInstanceName", m_serviceInstanceName);
-
+  if (m_serviceInstanceNameHasBeenSet) {
+    payload.WithString("serviceInstanceName", m_serviceInstanceName);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

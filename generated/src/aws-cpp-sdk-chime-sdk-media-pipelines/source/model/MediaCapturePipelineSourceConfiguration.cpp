@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MediaCapturePipelineSourceConfiguration& MediaCapturePipelineSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MediaPipelineArn"))
-  {
+MediaCapturePipelineSourceConfiguration& MediaCapturePipelineSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MediaPipelineArn")) {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
     m_mediaPipelineArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChimeSdkMeetingConfiguration"))
-  {
+  if (jsonValue.ValueExists("ChimeSdkMeetingConfiguration")) {
     m_chimeSdkMeetingConfiguration = jsonValue.GetObject("ChimeSdkMeetingConfiguration");
     m_chimeSdkMeetingConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaCapturePipelineSourceConfiguration::Jsonize() const
-{
+JsonValue MediaCapturePipelineSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaPipelineArnHasBeenSet)
-  {
-   payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
-
+  if (m_mediaPipelineArnHasBeenSet) {
+    payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
   }
 
-  if(m_chimeSdkMeetingConfigurationHasBeenSet)
-  {
-   payload.WithObject("ChimeSdkMeetingConfiguration", m_chimeSdkMeetingConfiguration.Jsonize());
-
+  if (m_chimeSdkMeetingConfigurationHasBeenSet) {
+    payload.WithObject("ChimeSdkMeetingConfiguration", m_chimeSdkMeetingConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

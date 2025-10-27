@@ -5,12 +5,8 @@
 
 #include <aws/iot-data/IoTDataPlaneEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTDataPlane
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTDataPlane
-} // namespace Aws
+namespace Aws {
+namespace IoTDataPlane {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTDataPlane
+}  // namespace Aws

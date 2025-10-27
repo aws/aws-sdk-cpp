@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/states/model/DescribeStateMachineForExecutionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/states/model/DescribeStateMachineForExecutionResult.h>
 
 #include <utility>
 
@@ -17,79 +17,64 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStateMachineForExecutionResult::DescribeStateMachineForExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeStateMachineForExecutionResult::DescribeStateMachineForExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("stateMachineArn"))
-  {
+  if (jsonValue.ValueExists("stateMachineArn")) {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");
     m_stateMachineArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("definition"))
-  {
+  if (jsonValue.ValueExists("definition")) {
     m_definition = jsonValue.GetString("definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateDate"))
-  {
+  if (jsonValue.ValueExists("updateDate")) {
     m_updateDate = jsonValue.GetDouble("updateDate");
     m_updateDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("loggingConfiguration"))
-  {
+  if (jsonValue.ValueExists("loggingConfiguration")) {
     m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");
     m_loggingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tracingConfiguration"))
-  {
+  if (jsonValue.ValueExists("tracingConfiguration")) {
     m_tracingConfiguration = jsonValue.GetObject("tracingConfiguration");
     m_tracingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mapRunArn"))
-  {
+  if (jsonValue.ValueExists("mapRunArn")) {
     m_mapRunArn = jsonValue.GetString("mapRunArn");
     m_mapRunArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("label"))
-  {
+  if (jsonValue.ValueExists("label")) {
     m_label = jsonValue.GetString("label");
     m_labelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionId"))
-  {
+  if (jsonValue.ValueExists("revisionId")) {
     m_revisionId = jsonValue.GetString("revisionId");
     m_revisionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionConfiguration"))
-  {
+  if (jsonValue.ValueExists("encryptionConfiguration")) {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("variableReferences"))
-  {
+  if (jsonValue.ValueExists("variableReferences")) {
     Aws::Map<Aws::String, JsonView> variableReferencesJsonMap = jsonValue.GetObject("variableReferences").GetAllObjects();
-    for(auto& variableReferencesItem : variableReferencesJsonMap)
-    {
+    for (auto& variableReferencesItem : variableReferencesJsonMap) {
       Aws::Utils::Array<JsonView> variableNameListJsonList = variableReferencesItem.second.AsArray();
       Aws::Vector<Aws::String> variableNameListList;
       variableNameListList.reserve((size_t)variableNameListJsonList.GetLength());
-      for(unsigned variableNameListIndex = 0; variableNameListIndex < variableNameListJsonList.GetLength(); ++variableNameListIndex)
-      {
+      for (unsigned variableNameListIndex = 0; variableNameListIndex < variableNameListJsonList.GetLength(); ++variableNameListIndex) {
         variableNameListList.push_back(variableNameListJsonList[variableNameListIndex].AsString());
       }
       m_variableReferences[variableReferencesItem.first] = std::move(variableNameListList);
@@ -99,12 +84,10 @@ DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

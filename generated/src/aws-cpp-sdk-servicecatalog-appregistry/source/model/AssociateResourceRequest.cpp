@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/AssociateResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog-appregistry/model/AssociateResourceRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateResourceRequest::SerializePayload() const
-{
+Aws::String AssociateResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_optionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
-   for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
-   {
-     optionsJsonList[optionsIndex].AsString(AssociationOptionMapper::GetNameForAssociationOption(m_options[optionsIndex]));
-   }
-   payload.WithArray("options", std::move(optionsJsonList));
-
+  if (m_optionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
+    for (unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex) {
+      optionsJsonList[optionsIndex].AsString(AssociationOptionMapper::GetNameForAssociationOption(m_options[optionsIndex]));
+    }
+    payload.WithArray("options", std::move(optionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

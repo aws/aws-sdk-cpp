@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/CaptureMode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker/model/CaptureMode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+namespace CaptureModeMapper {
 
-namespace Aws
-{
-  namespace SageMaker
-  {
-    namespace Model
-    {
-      namespace CaptureModeMapper
-      {
+static const int Input_HASH = HashingUtils::HashString("Input");
+static const int Output_HASH = HashingUtils::HashString("Output");
+static const int InputAndOutput_HASH = HashingUtils::HashString("InputAndOutput");
 
-        static const int Input_HASH = HashingUtils::HashString("Input");
-        static const int Output_HASH = HashingUtils::HashString("Output");
-        static const int InputAndOutput_HASH = HashingUtils::HashString("InputAndOutput");
+CaptureMode GetCaptureModeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Input_HASH) {
+    return CaptureMode::Input;
+  } else if (hashCode == Output_HASH) {
+    return CaptureMode::Output;
+  } else if (hashCode == InputAndOutput_HASH) {
+    return CaptureMode::InputAndOutput;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CaptureMode>(hashCode);
+  }
 
+  return CaptureMode::NOT_SET;
+}
 
-        CaptureMode GetCaptureModeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Input_HASH)
-          {
-            return CaptureMode::Input;
-          }
-          else if (hashCode == Output_HASH)
-          {
-            return CaptureMode::Output;
-          }
-          else if (hashCode == InputAndOutput_HASH)
-          {
-            return CaptureMode::InputAndOutput;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CaptureMode>(hashCode);
-          }
+Aws::String GetNameForCaptureMode(CaptureMode enumValue) {
+  switch (enumValue) {
+    case CaptureMode::NOT_SET:
+      return {};
+    case CaptureMode::Input:
+      return "Input";
+    case CaptureMode::Output:
+      return "Output";
+    case CaptureMode::InputAndOutput:
+      return "InputAndOutput";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CaptureMode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCaptureMode(CaptureMode enumValue)
-        {
-          switch(enumValue)
-          {
-          case CaptureMode::NOT_SET:
-            return {};
-          case CaptureMode::Input:
-            return "Input";
-          case CaptureMode::Output:
-            return "Output";
-          case CaptureMode::InputAndOutput:
-            return "InputAndOutput";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CaptureModeMapper
-    } // namespace Model
-  } // namespace SageMaker
-} // namespace Aws
+}  // namespace CaptureModeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

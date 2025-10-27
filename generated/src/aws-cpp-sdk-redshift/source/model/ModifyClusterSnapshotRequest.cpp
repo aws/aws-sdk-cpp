@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/ModifyClusterSnapshotRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterSnapshotRequest::SerializePayload() const
-{
+Aws::String ModifyClusterSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterSnapshot&";
-  if(m_snapshotIdentifierHasBeenSet)
-  {
+  if (m_snapshotIdentifierHasBeenSet) {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_manualSnapshotRetentionPeriodHasBeenSet)
-  {
+  if (m_manualSnapshotRetentionPeriodHasBeenSet) {
     ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
-  if(m_forceHasBeenSet)
-  {
+  if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ModifyClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize-events/model/PutItemsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize-events/model/PutItemsRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::PersonalizeEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutItemsRequest::SerializePayload() const
-{
+Aws::String PutItemsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_datasetArnHasBeenSet)
-  {
-   payload.WithString("datasetArn", m_datasetArn);
-
+  if (m_datasetArnHasBeenSet) {
+    payload.WithString("datasetArn", m_datasetArn);
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
-   for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-   {
-     itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
-   }
-   payload.WithArray("items", std::move(itemsJsonList));
-
+  if (m_itemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
+      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
+    }
+    payload.WithArray("items", std::move(itemsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

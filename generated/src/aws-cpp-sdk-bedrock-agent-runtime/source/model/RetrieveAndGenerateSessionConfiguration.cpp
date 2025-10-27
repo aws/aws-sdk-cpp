@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RetrieveAndGenerateSessionConfiguration& RetrieveAndGenerateSessionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+RetrieveAndGenerateSessionConfiguration& RetrieveAndGenerateSessionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetrieveAndGenerateSessionConfiguration::Jsonize() const
-{
+JsonValue RetrieveAndGenerateSessionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

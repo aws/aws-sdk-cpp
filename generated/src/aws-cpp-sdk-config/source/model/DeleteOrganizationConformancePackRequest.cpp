@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteOrganizationConformancePackRequest::SerializePayload() const
-{
+Aws::String DeleteOrganizationConformancePackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationConformancePackNameHasBeenSet)
-  {
-   payload.WithString("OrganizationConformancePackName", m_organizationConformancePackName);
-
+  if (m_organizationConformancePackNameHasBeenSet) {
+    payload.WithString("OrganizationConformancePackName", m_organizationConformancePackName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteOrganizationConformancePackRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteOrganizationConformancePackRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteOrganizationConformancePack"));
   return headers;
-
 }
-
-
-
-

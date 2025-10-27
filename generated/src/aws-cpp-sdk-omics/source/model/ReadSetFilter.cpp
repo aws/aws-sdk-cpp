@@ -3,133 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/ReadSetFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/ReadSetFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-ReadSetFilter::ReadSetFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReadSetFilter::ReadSetFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ReadSetFilter& ReadSetFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ReadSetFilter& ReadSetFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ReadSetStatusMapper::GetReadSetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("referenceArn"))
-  {
+  if (jsonValue.ValueExists("referenceArn")) {
     m_referenceArn = jsonValue.GetString("referenceArn");
     m_referenceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAfter"))
-  {
+  if (jsonValue.ValueExists("createdAfter")) {
     m_createdAfter = jsonValue.GetString("createdAfter");
     m_createdAfterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBefore"))
-  {
+  if (jsonValue.ValueExists("createdBefore")) {
     m_createdBefore = jsonValue.GetString("createdBefore");
     m_createdBeforeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sampleId"))
-  {
+  if (jsonValue.ValueExists("sampleId")) {
     m_sampleId = jsonValue.GetString("sampleId");
     m_sampleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subjectId"))
-  {
+  if (jsonValue.ValueExists("subjectId")) {
     m_subjectId = jsonValue.GetString("subjectId");
     m_subjectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("generatedFrom"))
-  {
+  if (jsonValue.ValueExists("generatedFrom")) {
     m_generatedFrom = jsonValue.GetString("generatedFrom");
     m_generatedFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationType"))
-  {
+  if (jsonValue.ValueExists("creationType")) {
     m_creationType = CreationTypeMapper::GetCreationTypeForName(jsonValue.GetString("creationType"));
     m_creationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReadSetFilter::Jsonize() const
-{
+JsonValue ReadSetFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ReadSetStatusMapper::GetNameForReadSetStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ReadSetStatusMapper::GetNameForReadSetStatus(m_status));
   }
 
-  if(m_referenceArnHasBeenSet)
-  {
-   payload.WithString("referenceArn", m_referenceArn);
-
+  if (m_referenceArnHasBeenSet) {
+    payload.WithString("referenceArn", m_referenceArn);
   }
 
-  if(m_createdAfterHasBeenSet)
-  {
-   payload.WithString("createdAfter", m_createdAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAfterHasBeenSet) {
+    payload.WithString("createdAfter", m_createdAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_createdBeforeHasBeenSet)
-  {
-   payload.WithString("createdBefore", m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdBeforeHasBeenSet) {
+    payload.WithString("createdBefore", m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_sampleIdHasBeenSet)
-  {
-   payload.WithString("sampleId", m_sampleId);
-
+  if (m_sampleIdHasBeenSet) {
+    payload.WithString("sampleId", m_sampleId);
   }
 
-  if(m_subjectIdHasBeenSet)
-  {
-   payload.WithString("subjectId", m_subjectId);
-
+  if (m_subjectIdHasBeenSet) {
+    payload.WithString("subjectId", m_subjectId);
   }
 
-  if(m_generatedFromHasBeenSet)
-  {
-   payload.WithString("generatedFrom", m_generatedFrom);
-
+  if (m_generatedFromHasBeenSet) {
+    payload.WithString("generatedFrom", m_generatedFrom);
   }
 
-  if(m_creationTypeHasBeenSet)
-  {
-   payload.WithString("creationType", CreationTypeMapper::GetNameForCreationType(m_creationType));
+  if (m_creationTypeHasBeenSet) {
+    payload.WithString("creationType", CreationTypeMapper::GetNameForCreationType(m_creationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

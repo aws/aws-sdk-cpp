@@ -11,171 +11,126 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue) { *this = jsonValue; }
 
-CustomLineItemListElement& CustomLineItemListElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+CustomLineItemListElement& CustomLineItemListElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChargeDetails"))
-  {
+  if (jsonValue.ValueExists("ChargeDetails")) {
     m_chargeDetails = jsonValue.GetObject("ChargeDetails");
     m_chargeDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrencyCode"))
-  {
+  if (jsonValue.ValueExists("CurrencyCode")) {
     m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("CurrencyCode"));
     m_currencyCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductCode"))
-  {
+  if (jsonValue.ValueExists("ProductCode")) {
     m_productCode = jsonValue.GetString("ProductCode");
     m_productCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillingGroupArn"))
-  {
+  if (jsonValue.ValueExists("BillingGroupArn")) {
     m_billingGroupArn = jsonValue.GetString("BillingGroupArn");
     m_billingGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetInt64("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetInt64("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociationSize"))
-  {
+  if (jsonValue.ValueExists("AssociationSize")) {
     m_associationSize = jsonValue.GetInt64("AssociationSize");
     m_associationSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComputationRule"))
-  {
+  if (jsonValue.ValueExists("ComputationRule")) {
     m_computationRule = ComputationRuleEnumMapper::GetComputationRuleEnumForName(jsonValue.GetString("ComputationRule"));
     m_computationRuleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PresentationDetails"))
-  {
+  if (jsonValue.ValueExists("PresentationDetails")) {
     m_presentationDetails = jsonValue.GetObject("PresentationDetails");
     m_presentationDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomLineItemListElement::Jsonize() const
-{
+JsonValue CustomLineItemListElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_chargeDetailsHasBeenSet)
-  {
-   payload.WithObject("ChargeDetails", m_chargeDetails.Jsonize());
-
+  if (m_chargeDetailsHasBeenSet) {
+    payload.WithObject("ChargeDetails", m_chargeDetails.Jsonize());
   }
 
-  if(m_currencyCodeHasBeenSet)
-  {
-   payload.WithString("CurrencyCode", CurrencyCodeMapper::GetNameForCurrencyCode(m_currencyCode));
+  if (m_currencyCodeHasBeenSet) {
+    payload.WithString("CurrencyCode", CurrencyCodeMapper::GetNameForCurrencyCode(m_currencyCode));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_productCodeHasBeenSet)
-  {
-   payload.WithString("ProductCode", m_productCode);
-
+  if (m_productCodeHasBeenSet) {
+    payload.WithString("ProductCode", m_productCode);
   }
 
-  if(m_billingGroupArnHasBeenSet)
-  {
-   payload.WithString("BillingGroupArn", m_billingGroupArn);
-
+  if (m_billingGroupArnHasBeenSet) {
+    payload.WithString("BillingGroupArn", m_billingGroupArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithInt64("CreationTime", m_creationTime);
-
+  if (m_creationTimeHasBeenSet) {
+    payload.WithInt64("CreationTime", m_creationTime);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithInt64("LastModifiedTime", m_lastModifiedTime);
-
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithInt64("LastModifiedTime", m_lastModifiedTime);
   }
 
-  if(m_associationSizeHasBeenSet)
-  {
-   payload.WithInt64("AssociationSize", m_associationSize);
-
+  if (m_associationSizeHasBeenSet) {
+    payload.WithInt64("AssociationSize", m_associationSize);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_computationRuleHasBeenSet)
-  {
-   payload.WithString("ComputationRule", ComputationRuleEnumMapper::GetNameForComputationRuleEnum(m_computationRule));
+  if (m_computationRuleHasBeenSet) {
+    payload.WithString("ComputationRule", ComputationRuleEnumMapper::GetNameForComputationRuleEnum(m_computationRule));
   }
 
-  if(m_presentationDetailsHasBeenSet)
-  {
-   payload.WithObject("PresentationDetails", m_presentationDetails.Jsonize());
-
+  if (m_presentationDetailsHasBeenSet) {
+    payload.WithObject("PresentationDetails", m_presentationDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/auditmanager/AuditManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace AuditManager
-{
-enum class AuditManagerErrors
-{
-  //From Core//
+namespace Aws {
+namespace AuditManager {
+enum class AuditManagerErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AuditManagerErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class AuditManagerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_AUDITMANAGER_API AuditManagerError : public Aws::Client::AWSError<AuditManagerErrors>
-{
-public:
+class AWS_AUDITMANAGER_API AuditManagerError : public Aws::Client::AWSError<AuditManagerErrors> {
+ public:
   AuditManagerError() {}
   AuditManagerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AuditManagerErrors>(rhs) {}
   AuditManagerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AuditManagerErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace AuditManagerErrorMapper
-{
-  AWS_AUDITMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AuditManagerErrorMapper {
+AWS_AUDITMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace AuditManager
+}  // namespace Aws

@@ -4,66 +4,65 @@
  */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/Route53_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace Route53 {
+namespace Model {
 
+/**
+ * <p>Information specific to the resource record.</p>  <p>If you're creating
+ * an alias resource record set, omit <code>ResourceRecord</code>.</p>
+ * <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord">AWS
+ * API Reference</a></p>
+ */
+class ResourceRecord {
+ public:
+  AWS_ROUTE53_API ResourceRecord() = default;
+  AWS_ROUTE53_API ResourceRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_ROUTE53_API ResourceRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>Information specific to the resource record.</p>  <p>If you're creating
-   * an alias resource record set, omit <code>ResourceRecord</code>.</p>
-   * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord">AWS
-   * API Reference</a></p>
+   * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
+   * case of a <code>DELETE</code> action, if the current value does not match the
+   * actual value, an error is returned. For descriptions about how to format
+   * <code>Value</code> for different record types, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+   * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+   * <p>You can specify more than one value for all record types except
+   * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+   * alias resource record set, omit <code>Value</code>.</p>
    */
-  class ResourceRecord
-  {
-  public:
-    AWS_ROUTE53_API ResourceRecord() = default;
-    AWS_ROUTE53_API ResourceRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_ROUTE53_API ResourceRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  ResourceRecord& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
-
-
-    ///@{
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
-    inline const Aws::String& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::String>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::String>
-    ResourceRecord& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

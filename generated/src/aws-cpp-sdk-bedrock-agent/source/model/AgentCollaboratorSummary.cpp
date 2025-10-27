@@ -11,126 +11,96 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-AgentCollaboratorSummary::AgentCollaboratorSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentCollaboratorSummary::AgentCollaboratorSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AgentCollaboratorSummary& AgentCollaboratorSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentId"))
-  {
+AgentCollaboratorSummary& AgentCollaboratorSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentId")) {
     m_agentId = jsonValue.GetString("agentId");
     m_agentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentVersion"))
-  {
+  if (jsonValue.ValueExists("agentVersion")) {
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaboratorId"))
-  {
+  if (jsonValue.ValueExists("collaboratorId")) {
     m_collaboratorId = jsonValue.GetString("collaboratorId");
     m_collaboratorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentDescriptor"))
-  {
+  if (jsonValue.ValueExists("agentDescriptor")) {
     m_agentDescriptor = jsonValue.GetObject("agentDescriptor");
     m_agentDescriptorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationInstruction"))
-  {
+  if (jsonValue.ValueExists("collaborationInstruction")) {
     m_collaborationInstruction = jsonValue.GetString("collaborationInstruction");
     m_collaborationInstructionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relayConversationHistory"))
-  {
-    m_relayConversationHistory = RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
+  if (jsonValue.ValueExists("relayConversationHistory")) {
+    m_relayConversationHistory =
+        RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
     m_relayConversationHistoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaboratorName"))
-  {
+  if (jsonValue.ValueExists("collaboratorName")) {
     m_collaboratorName = jsonValue.GetString("collaboratorName");
     m_collaboratorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentCollaboratorSummary::Jsonize() const
-{
+JsonValue AgentCollaboratorSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentIdHasBeenSet)
-  {
-   payload.WithString("agentId", m_agentId);
-
+  if (m_agentIdHasBeenSet) {
+    payload.WithString("agentId", m_agentId);
   }
 
-  if(m_agentVersionHasBeenSet)
-  {
-   payload.WithString("agentVersion", m_agentVersion);
-
+  if (m_agentVersionHasBeenSet) {
+    payload.WithString("agentVersion", m_agentVersion);
   }
 
-  if(m_collaboratorIdHasBeenSet)
-  {
-   payload.WithString("collaboratorId", m_collaboratorId);
-
+  if (m_collaboratorIdHasBeenSet) {
+    payload.WithString("collaboratorId", m_collaboratorId);
   }
 
-  if(m_agentDescriptorHasBeenSet)
-  {
-   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
-
+  if (m_agentDescriptorHasBeenSet) {
+    payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
   }
 
-  if(m_collaborationInstructionHasBeenSet)
-  {
-   payload.WithString("collaborationInstruction", m_collaborationInstruction);
-
+  if (m_collaborationInstructionHasBeenSet) {
+    payload.WithString("collaborationInstruction", m_collaborationInstruction);
   }
 
-  if(m_relayConversationHistoryHasBeenSet)
-  {
-   payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
+  if (m_relayConversationHistoryHasBeenSet) {
+    payload.WithString("relayConversationHistory",
+                       RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
   }
 
-  if(m_collaboratorNameHasBeenSet)
-  {
-   payload.WithString("collaboratorName", m_collaboratorName);
-
+  if (m_collaboratorNameHasBeenSet) {
+    payload.WithString("collaboratorName", m_collaboratorName);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

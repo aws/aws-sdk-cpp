@@ -4,57 +4,57 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
-#include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/ImagebuilderRequest.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace imagebuilder {
+namespace Model {
 
+/**
+ */
+class DeleteComponentRequest : public ImagebuilderRequest {
+ public:
+  AWS_IMAGEBUILDER_API DeleteComponentRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteComponent"; }
+
+  AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
+
+  AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
    */
-  class DeleteComponentRequest : public ImagebuilderRequest
-  {
-  public:
-    AWS_IMAGEBUILDER_API DeleteComponentRequest() = default;
+  inline const Aws::String& GetComponentBuildVersionArn() const { return m_componentBuildVersionArn; }
+  inline bool ComponentBuildVersionArnHasBeenSet() const { return m_componentBuildVersionArnHasBeenSet; }
+  template <typename ComponentBuildVersionArnT = Aws::String>
+  void SetComponentBuildVersionArn(ComponentBuildVersionArnT&& value) {
+    m_componentBuildVersionArnHasBeenSet = true;
+    m_componentBuildVersionArn = std::forward<ComponentBuildVersionArnT>(value);
+  }
+  template <typename ComponentBuildVersionArnT = Aws::String>
+  DeleteComponentRequest& WithComponentBuildVersionArn(ComponentBuildVersionArnT&& value) {
+    SetComponentBuildVersionArn(std::forward<ComponentBuildVersionArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_componentBuildVersionArn;
+  bool m_componentBuildVersionArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteComponent"; }
-
-    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
-
-    AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-     */
-    inline const Aws::String& GetComponentBuildVersionArn() const { return m_componentBuildVersionArn; }
-    inline bool ComponentBuildVersionArnHasBeenSet() const { return m_componentBuildVersionArnHasBeenSet; }
-    template<typename ComponentBuildVersionArnT = Aws::String>
-    void SetComponentBuildVersionArn(ComponentBuildVersionArnT&& value) { m_componentBuildVersionArnHasBeenSet = true; m_componentBuildVersionArn = std::forward<ComponentBuildVersionArnT>(value); }
-    template<typename ComponentBuildVersionArnT = Aws::String>
-    DeleteComponentRequest& WithComponentBuildVersionArn(ComponentBuildVersionArnT&& value) { SetComponentBuildVersionArn(std::forward<ComponentBuildVersionArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_componentBuildVersionArn;
-    bool m_componentBuildVersionArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMRecommendedActions
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMRecommendedActions {
+namespace Model {
 
-ActionFilter::ActionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionFilter::ActionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ActionFilter& ActionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+ActionFilter& ActionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = FilterNameMapper::GetFilterNameForName(jsonValue.GetString("key"));
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("matchOption"))
-  {
+  if (jsonValue.ValueExists("matchOption")) {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("matchOption"));
     m_matchOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -47,34 +36,28 @@ ActionFilter& ActionFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ActionFilter::Jsonize() const
-{
+JsonValue ActionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", FilterNameMapper::GetNameForFilterName(m_key));
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", FilterNameMapper::GetNameForFilterName(m_key));
   }
 
-  if(m_matchOptionHasBeenSet)
-  {
-   payload.WithString("matchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
+  if (m_matchOptionHasBeenSet) {
+    payload.WithString("matchOption", MatchOptionMapper::GetNameForMatchOption(m_matchOption));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMRecommendedActions
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMRecommendedActions
+}  // namespace Aws

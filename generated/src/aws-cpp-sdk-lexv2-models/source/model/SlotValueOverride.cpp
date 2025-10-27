@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/SlotValueOverride.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/SlotValueOverride.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-SlotValueOverride::SlotValueOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlotValueOverride::SlotValueOverride(JsonView jsonValue) { *this = jsonValue; }
 
-SlotValueOverride& SlotValueOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("shape"))
-  {
+SlotValueOverride& SlotValueOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("shape")) {
     m_shape = SlotShapeMapper::GetSlotShapeForName(jsonValue.GetString("shape"));
     m_shapeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
@@ -47,35 +36,28 @@ SlotValueOverride& SlotValueOverride::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SlotValueOverride::Jsonize() const
-{
+JsonValue SlotValueOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_shapeHasBeenSet)
-  {
-   payload.WithString("shape", SlotShapeMapper::GetNameForSlotShape(m_shape));
+  if (m_shapeHasBeenSet) {
+    payload.WithString("shape", SlotShapeMapper::GetNameForSlotShape(m_shape));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("value", m_value.Jsonize());
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

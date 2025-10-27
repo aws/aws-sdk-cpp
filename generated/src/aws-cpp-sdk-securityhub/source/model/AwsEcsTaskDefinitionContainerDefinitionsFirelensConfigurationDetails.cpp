@@ -3,69 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Options"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails&
+AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Options")) {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
-    for(auto& optionsItem : optionsJsonMap)
-    {
+    for (auto& optionsItem : optionsJsonMap) {
       m_options[optionsItem.first] = optionsItem.second.AsString();
     }
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_optionsHasBeenSet)
-  {
-   JsonValue optionsJsonMap;
-   for(auto& optionsItem : m_options)
-   {
-     optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
-   }
-   payload.WithObject("Options", std::move(optionsJsonMap));
-
+  if (m_optionsHasBeenSet) {
+    JsonValue optionsJsonMap;
+    for (auto& optionsItem : m_options) {
+      optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
+    }
+    payload.WithObject("Options", std::move(optionsJsonMap));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

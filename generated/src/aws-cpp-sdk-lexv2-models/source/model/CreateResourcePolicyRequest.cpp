@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/CreateResourcePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/CreateResourcePolicyRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateResourcePolicyRequest::SerializePayload() const
-{
+Aws::String CreateResourcePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

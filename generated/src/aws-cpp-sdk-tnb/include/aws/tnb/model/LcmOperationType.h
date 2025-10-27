@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/tnb/Tnb_EXPORTS.h>
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
-  enum class LcmOperationType
-  {
-    NOT_SET,
-    INSTANTIATE,
-    UPDATE,
-    TERMINATE
-  };
+namespace Aws {
+namespace tnb {
+namespace Model {
+enum class LcmOperationType { NOT_SET, INSTANTIATE, UPDATE, TERMINATE };
 
-namespace LcmOperationTypeMapper
-{
+namespace LcmOperationTypeMapper {
 AWS_TNB_API LcmOperationType GetLcmOperationTypeForName(const Aws::String& name);
 
 AWS_TNB_API Aws::String GetNameForLcmOperationType(LcmOperationType value);
-} // namespace LcmOperationTypeMapper
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace LcmOperationTypeMapper
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

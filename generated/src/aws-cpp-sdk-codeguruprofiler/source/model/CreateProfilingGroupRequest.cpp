@@ -4,8 +4,8 @@
  */
 
 #include <aws/codeguruprofiler/model/CreateProfilingGroupRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,52 +15,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String CreateProfilingGroupRequest::SerializePayload() const
-{
+Aws::String CreateProfilingGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_agentOrchestrationConfigHasBeenSet)
-  {
-   payload.WithObject("agentOrchestrationConfig", m_agentOrchestrationConfig.Jsonize());
-
+  if (m_agentOrchestrationConfigHasBeenSet) {
+    payload.WithObject("agentOrchestrationConfig", m_agentOrchestrationConfig.Jsonize());
   }
 
-  if(m_computePlatformHasBeenSet)
-  {
-   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  if (m_computePlatformHasBeenSet) {
+    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
-  if(m_profilingGroupNameHasBeenSet)
-  {
-   payload.WithString("profilingGroupName", m_profilingGroupName);
-
+  if (m_profilingGroupNameHasBeenSet) {
+    payload.WithString("profilingGroupName", m_profilingGroupName);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-void CreateProfilingGroupRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_clientTokenHasBeenSet)
-    {
-      ss << m_clientToken;
-      uri.AddQueryStringParameter("clientToken", ss.str());
-      ss.str("");
-    }
-
+void CreateProfilingGroupRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
+    ss.str("");
+  }
 }
-
-
-

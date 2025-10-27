@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Attribute::Attribute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attribute::Attribute(JsonView jsonValue) { *this = jsonValue; }
 
-Attribute& Attribute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeType"))
-  {
+Attribute& Attribute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeType")) {
     m_attributeType = InstanceAttributeTypeMapper::GetInstanceAttributeTypeForName(jsonValue.GetString("AttributeType"));
     m_attributeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Attribute::Jsonize() const
-{
+JsonValue Attribute::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeTypeHasBeenSet)
-  {
-   payload.WithString("AttributeType", InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(m_attributeType));
+  if (m_attributeTypeHasBeenSet) {
+    payload.WithString("AttributeType", InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(m_attributeType));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

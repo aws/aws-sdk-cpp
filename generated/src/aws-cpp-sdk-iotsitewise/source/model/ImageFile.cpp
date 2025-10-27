@@ -3,59 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/ImageFile.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/ImageFile.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-ImageFile::ImageFile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageFile::ImageFile(JsonView jsonValue) { *this = jsonValue; }
 
-ImageFile& ImageFile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("data"))
-  {
+ImageFile& ImageFile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("data")) {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = ImageFileTypeMapper::GetImageFileTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageFile::Jsonize() const
-{
+JsonValue ImageFile::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+  if (m_dataHasBeenSet) {
+    payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ImageFileTypeMapper::GetNameForImageFileType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ImageFileTypeMapper::GetNameForImageFileType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

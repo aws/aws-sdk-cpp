@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue) { *this = jsonValue; }
 
-MigrationTaskSummary& MigrationTaskSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProgressUpdateStream"))
-  {
+MigrationTaskSummary& MigrationTaskSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProgressUpdateStream")) {
     m_progressUpdateStream = jsonValue.GetString("ProgressUpdateStream");
     m_progressUpdateStreamHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MigrationTaskName"))
-  {
+  if (jsonValue.ValueExists("MigrationTaskName")) {
     m_migrationTaskName = jsonValue.GetString("MigrationTaskName");
     m_migrationTaskNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProgressPercent"))
-  {
+  if (jsonValue.ValueExists("ProgressPercent")) {
     m_progressPercent = jsonValue.GetInteger("ProgressPercent");
     m_progressPercentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusDetail"))
-  {
+  if (jsonValue.ValueExists("StatusDetail")) {
     m_statusDetail = jsonValue.GetString("StatusDetail");
     m_statusDetailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateDateTime"))
-  {
+  if (jsonValue.ValueExists("UpdateDateTime")) {
     m_updateDateTime = jsonValue.GetDouble("UpdateDateTime");
     m_updateDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MigrationTaskSummary::Jsonize() const
-{
+JsonValue MigrationTaskSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
-
+  if (m_progressUpdateStreamHasBeenSet) {
+    payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
   }
 
-  if(m_migrationTaskNameHasBeenSet)
-  {
-   payload.WithString("MigrationTaskName", m_migrationTaskName);
-
+  if (m_migrationTaskNameHasBeenSet) {
+    payload.WithString("MigrationTaskName", m_migrationTaskName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_progressPercentHasBeenSet)
-  {
-   payload.WithInteger("ProgressPercent", m_progressPercent);
-
+  if (m_progressPercentHasBeenSet) {
+    payload.WithInteger("ProgressPercent", m_progressPercent);
   }
 
-  if(m_statusDetailHasBeenSet)
-  {
-   payload.WithString("StatusDetail", m_statusDetail);
-
+  if (m_statusDetailHasBeenSet) {
+    payload.WithString("StatusDetail", m_statusDetail);
   }
 
-  if(m_updateDateTimeHasBeenSet)
-  {
-   payload.WithDouble("UpdateDateTime", m_updateDateTime.SecondsWithMSPrecision());
+  if (m_updateDateTimeHasBeenSet) {
+    payload.WithDouble("UpdateDateTime", m_updateDateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

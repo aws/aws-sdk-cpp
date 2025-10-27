@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-namespace Model
-{
-  enum class KeyDerivationHashAlgorithm
-  {
-    NOT_SET,
-    SHA_256,
-    SHA_384,
-    SHA_512
-  };
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
+enum class KeyDerivationHashAlgorithm { NOT_SET, SHA_256, SHA_384, SHA_512 };
 
-namespace KeyDerivationHashAlgorithmMapper
-{
+namespace KeyDerivationHashAlgorithmMapper {
 AWS_PAYMENTCRYPTOGRAPHY_API KeyDerivationHashAlgorithm GetKeyDerivationHashAlgorithmForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHY_API Aws::String GetNameForKeyDerivationHashAlgorithm(KeyDerivationHashAlgorithm value);
-} // namespace KeyDerivationHashAlgorithmMapper
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace KeyDerivationHashAlgorithmMapper
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

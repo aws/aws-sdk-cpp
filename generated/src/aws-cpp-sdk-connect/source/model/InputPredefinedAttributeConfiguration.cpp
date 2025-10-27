@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-InputPredefinedAttributeConfiguration::InputPredefinedAttributeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputPredefinedAttributeConfiguration::InputPredefinedAttributeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InputPredefinedAttributeConfiguration& InputPredefinedAttributeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableValueValidationOnAssociation"))
-  {
+InputPredefinedAttributeConfiguration& InputPredefinedAttributeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableValueValidationOnAssociation")) {
     m_enableValueValidationOnAssociation = jsonValue.GetBool("EnableValueValidationOnAssociation");
     m_enableValueValidationOnAssociationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputPredefinedAttributeConfiguration::Jsonize() const
-{
+JsonValue InputPredefinedAttributeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableValueValidationOnAssociationHasBeenSet)
-  {
-   payload.WithBool("EnableValueValidationOnAssociation", m_enableValueValidationOnAssociation);
-
+  if (m_enableValueValidationOnAssociationHasBeenSet) {
+    payload.WithBool("EnableValueValidationOnAssociation", m_enableValueValidationOnAssociation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

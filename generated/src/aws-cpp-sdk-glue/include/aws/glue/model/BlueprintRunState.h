@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class BlueprintRunState
-  {
-    NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    ROLLING_BACK
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class BlueprintRunState { NOT_SET, RUNNING, SUCCEEDED, FAILED, ROLLING_BACK };
 
-namespace BlueprintRunStateMapper
-{
+namespace BlueprintRunStateMapper {
 AWS_GLUE_API BlueprintRunState GetBlueprintRunStateForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForBlueprintRunState(BlueprintRunState value);
-} // namespace BlueprintRunStateMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace BlueprintRunStateMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

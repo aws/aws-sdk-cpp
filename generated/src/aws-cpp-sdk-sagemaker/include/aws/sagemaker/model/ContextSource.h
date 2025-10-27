@@ -4,86 +4,97 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>A structure describing the source of a context.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContextSource">AWS
+ * API Reference</a></p>
+ */
+class ContextSource {
+ public:
+  AWS_SAGEMAKER_API ContextSource() = default;
+  AWS_SAGEMAKER_API ContextSource(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API ContextSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A structure describing the source of a context.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContextSource">AWS
-   * API Reference</a></p>
+   * <p>The URI of the source.</p>
    */
-  class ContextSource
-  {
-  public:
-    AWS_SAGEMAKER_API ContextSource() = default;
-    AWS_SAGEMAKER_API ContextSource(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API ContextSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetSourceUri() const { return m_sourceUri; }
+  inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
+  template <typename SourceUriT = Aws::String>
+  void SetSourceUri(SourceUriT&& value) {
+    m_sourceUriHasBeenSet = true;
+    m_sourceUri = std::forward<SourceUriT>(value);
+  }
+  template <typename SourceUriT = Aws::String>
+  ContextSource& WithSourceUri(SourceUriT&& value) {
+    SetSourceUri(std::forward<SourceUriT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The type of the source.</p>
+   */
+  inline const Aws::String& GetSourceType() const { return m_sourceType; }
+  inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+  template <typename SourceTypeT = Aws::String>
+  void SetSourceType(SourceTypeT&& value) {
+    m_sourceTypeHasBeenSet = true;
+    m_sourceType = std::forward<SourceTypeT>(value);
+  }
+  template <typename SourceTypeT = Aws::String>
+  ContextSource& WithSourceType(SourceTypeT&& value) {
+    SetSourceType(std::forward<SourceTypeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The URI of the source.</p>
-     */
-    inline const Aws::String& GetSourceUri() const { return m_sourceUri; }
-    inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
-    template<typename SourceUriT = Aws::String>
-    void SetSourceUri(SourceUriT&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::forward<SourceUriT>(value); }
-    template<typename SourceUriT = Aws::String>
-    ContextSource& WithSourceUri(SourceUriT&& value) { SetSourceUri(std::forward<SourceUriT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The ID of the source.</p>
+   */
+  inline const Aws::String& GetSourceId() const { return m_sourceId; }
+  inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
+  template <typename SourceIdT = Aws::String>
+  void SetSourceId(SourceIdT&& value) {
+    m_sourceIdHasBeenSet = true;
+    m_sourceId = std::forward<SourceIdT>(value);
+  }
+  template <typename SourceIdT = Aws::String>
+  ContextSource& WithSourceId(SourceIdT&& value) {
+    SetSourceId(std::forward<SourceIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_sourceUri;
+  bool m_sourceUriHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The type of the source.</p>
-     */
-    inline const Aws::String& GetSourceType() const { return m_sourceType; }
-    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    template<typename SourceTypeT = Aws::String>
-    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
-    template<typename SourceTypeT = Aws::String>
-    ContextSource& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
-    ///@}
+  Aws::String m_sourceType;
+  bool m_sourceTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The ID of the source.</p>
-     */
-    inline const Aws::String& GetSourceId() const { return m_sourceId; }
-    inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
-    template<typename SourceIdT = Aws::String>
-    void SetSourceId(SourceIdT&& value) { m_sourceIdHasBeenSet = true; m_sourceId = std::forward<SourceIdT>(value); }
-    template<typename SourceIdT = Aws::String>
-    ContextSource& WithSourceId(SourceIdT&& value) { SetSourceId(std::forward<SourceIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_sourceId;
+  bool m_sourceIdHasBeenSet = false;
+};
 
-    Aws::String m_sourceUri;
-    bool m_sourceUriHasBeenSet = false;
-
-    Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet = false;
-
-    Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

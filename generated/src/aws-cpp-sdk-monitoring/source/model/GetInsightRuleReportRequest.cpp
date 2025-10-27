@@ -3,62 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String GetInsightRuleReportRequest::SerializePayload() const
-{
+Aws::String GetInsightRuleReportRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetInsightRuleReport&";
-  if(m_ruleNameHasBeenSet)
-  {
+  if (m_ruleNameHasBeenSet) {
     ss << "RuleName=" << StringUtils::URLEncode(m_ruleName.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_periodHasBeenSet)
-  {
+  if (m_periodHasBeenSet) {
     ss << "Period=" << m_period << "&";
   }
 
-  if(m_maxContributorCountHasBeenSet)
-  {
+  if (m_maxContributorCountHasBeenSet) {
     ss << "MaxContributorCount=" << m_maxContributorCount << "&";
   }
 
-  if(m_metricsHasBeenSet)
-  {
-    if (m_metrics.empty())
-    {
+  if (m_metricsHasBeenSet) {
+    if (m_metrics.empty()) {
       ss << "Metrics=&";
-    }
-    else
-    {
+    } else {
       unsigned metricsCount = 1;
-      for(auto& item : m_metrics)
-      {
-        ss << "Metrics.member." << metricsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_metrics) {
+        ss << "Metrics.member." << metricsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         metricsCount++;
       }
     }
   }
 
-  if(m_orderByHasBeenSet)
-  {
+  if (m_orderByHasBeenSet) {
     ss << "OrderBy=" << StringUtils::URLEncode(m_orderBy.c_str()) << "&";
   }
 
@@ -66,8 +53,4 @@ Aws::String GetInsightRuleReportRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetInsightRuleReportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetInsightRuleReportRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

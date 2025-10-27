@@ -4,81 +4,96 @@
  */
 
 #pragma once
-#include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/ChannelSummary.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace IVS
-{
-namespace Model
-{
-  class ListChannelsResult
-  {
-  public:
-    AWS_IVS_API ListChannelsResult() = default;
-    AWS_IVS_API ListChannelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_IVS_API ListChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace IVS {
+namespace Model {
+class ListChannelsResult {
+ public:
+  AWS_IVS_API ListChannelsResult() = default;
+  AWS_IVS_API ListChannelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IVS_API ListChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>List of the matching channels.</p>
+   */
+  inline const Aws::Vector<ChannelSummary>& GetChannels() const { return m_channels; }
+  template <typename ChannelsT = Aws::Vector<ChannelSummary>>
+  void SetChannels(ChannelsT&& value) {
+    m_channelsHasBeenSet = true;
+    m_channels = std::forward<ChannelsT>(value);
+  }
+  template <typename ChannelsT = Aws::Vector<ChannelSummary>>
+  ListChannelsResult& WithChannels(ChannelsT&& value) {
+    SetChannels(std::forward<ChannelsT>(value));
+    return *this;
+  }
+  template <typename ChannelsT = ChannelSummary>
+  ListChannelsResult& AddChannels(ChannelsT&& value) {
+    m_channelsHasBeenSet = true;
+    m_channels.emplace_back(std::forward<ChannelsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>List of the matching channels.</p>
-     */
-    inline const Aws::Vector<ChannelSummary>& GetChannels() const { return m_channels; }
-    template<typename ChannelsT = Aws::Vector<ChannelSummary>>
-    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
-    template<typename ChannelsT = Aws::Vector<ChannelSummary>>
-    ListChannelsResult& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
-    template<typename ChannelsT = ChannelSummary>
-    ListChannelsResult& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>If there are more channels than <code>maxResults</code>, use
+   * <code>nextToken</code> in the request to get the next set.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListChannelsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If there are more channels than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListChannelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListChannelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListChannelsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<ChannelSummary> m_channels;
+  bool m_channelsHasBeenSet = false;
 
-    Aws::Vector<ChannelSummary> m_channels;
-    bool m_channelsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

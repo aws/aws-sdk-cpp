@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-HierarchyPathReference::HierarchyPathReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HierarchyPathReference::HierarchyPathReference(JsonView jsonValue) { *this = jsonValue; }
 
-HierarchyPathReference& HierarchyPathReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LevelOne"))
-  {
+HierarchyPathReference& HierarchyPathReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LevelOne")) {
     m_levelOne = jsonValue.GetObject("LevelOne");
     m_levelOneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LevelTwo"))
-  {
+  if (jsonValue.ValueExists("LevelTwo")) {
     m_levelTwo = jsonValue.GetObject("LevelTwo");
     m_levelTwoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LevelThree"))
-  {
+  if (jsonValue.ValueExists("LevelThree")) {
     m_levelThree = jsonValue.GetObject("LevelThree");
     m_levelThreeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LevelFour"))
-  {
+  if (jsonValue.ValueExists("LevelFour")) {
     m_levelFour = jsonValue.GetObject("LevelFour");
     m_levelFourHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LevelFive"))
-  {
+  if (jsonValue.ValueExists("LevelFive")) {
     m_levelFive = jsonValue.GetObject("LevelFive");
     m_levelFiveHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HierarchyPathReference::Jsonize() const
-{
+JsonValue HierarchyPathReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_levelOneHasBeenSet)
-  {
-   payload.WithObject("LevelOne", m_levelOne.Jsonize());
-
+  if (m_levelOneHasBeenSet) {
+    payload.WithObject("LevelOne", m_levelOne.Jsonize());
   }
 
-  if(m_levelTwoHasBeenSet)
-  {
-   payload.WithObject("LevelTwo", m_levelTwo.Jsonize());
-
+  if (m_levelTwoHasBeenSet) {
+    payload.WithObject("LevelTwo", m_levelTwo.Jsonize());
   }
 
-  if(m_levelThreeHasBeenSet)
-  {
-   payload.WithObject("LevelThree", m_levelThree.Jsonize());
-
+  if (m_levelThreeHasBeenSet) {
+    payload.WithObject("LevelThree", m_levelThree.Jsonize());
   }
 
-  if(m_levelFourHasBeenSet)
-  {
-   payload.WithObject("LevelFour", m_levelFour.Jsonize());
-
+  if (m_levelFourHasBeenSet) {
+    payload.WithObject("LevelFour", m_levelFour.Jsonize());
   }
 
-  if(m_levelFiveHasBeenSet)
-  {
-   payload.WithObject("LevelFive", m_levelFive.Jsonize());
-
+  if (m_levelFiveHasBeenSet) {
+    payload.WithObject("LevelFive", m_levelFive.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

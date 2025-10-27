@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutAppInstanceRetentionSettingsRequest::SerializePayload() const
-{
+Aws::String PutAppInstanceRetentionSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appInstanceRetentionSettingsHasBeenSet)
-  {
-   payload.WithObject("AppInstanceRetentionSettings", m_appInstanceRetentionSettings.Jsonize());
-
+  if (m_appInstanceRetentionSettingsHasBeenSet) {
+    payload.WithObject("AppInstanceRetentionSettings", m_appInstanceRetentionSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

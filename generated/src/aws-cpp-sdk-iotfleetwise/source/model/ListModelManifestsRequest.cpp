@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/ListModelManifestsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/ListModelManifestsRequest.h>
 
 #include <utility>
 
@@ -12,44 +12,30 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListModelManifestsRequest::SerializePayload() const
-{
+Aws::String ListModelManifestsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_signalCatalogArnHasBeenSet)
-  {
-   payload.WithString("signalCatalogArn", m_signalCatalogArn);
-
+  if (m_signalCatalogArnHasBeenSet) {
+    payload.WithString("signalCatalogArn", m_signalCatalogArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_listResponseScopeHasBeenSet)
-  {
-   payload.WithString("listResponseScope", ListResponseScopeMapper::GetNameForListResponseScope(m_listResponseScope));
+  if (m_listResponseScopeHasBeenSet) {
+    payload.WithString("listResponseScope", ListResponseScopeMapper::GetNameForListResponseScope(m_listResponseScope));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListModelManifestsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListModelManifestsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "IoTAutobahnControlPlane.ListModelManifests"));
   return headers;
-
 }
-
-
-
-

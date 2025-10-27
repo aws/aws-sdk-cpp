@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DeleteInsightRulesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/DeleteInsightRulesRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteInsightRulesRequest::SerializePayload() const
-{
+Aws::String DeleteInsightRulesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteInsightRules&";
-  if(m_ruleNamesHasBeenSet)
-  {
-    if (m_ruleNames.empty())
-    {
+  if (m_ruleNamesHasBeenSet) {
+    if (m_ruleNames.empty()) {
       ss << "RuleNames=&";
-    }
-    else
-    {
+    } else {
       unsigned ruleNamesCount = 1;
-      for(auto& item : m_ruleNames)
-      {
-        ss << "RuleNames.member." << ruleNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_ruleNames) {
+        ss << "RuleNames.member." << ruleNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         ruleNamesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String DeleteInsightRulesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

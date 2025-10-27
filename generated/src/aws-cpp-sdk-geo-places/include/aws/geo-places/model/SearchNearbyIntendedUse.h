@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class SearchNearbyIntendedUse
-  {
-    NOT_SET,
-    SingleUse,
-    Storage
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class SearchNearbyIntendedUse { NOT_SET, SingleUse, Storage };
 
-namespace SearchNearbyIntendedUseMapper
-{
+namespace SearchNearbyIntendedUseMapper {
 AWS_GEOPLACES_API SearchNearbyIntendedUse GetSearchNearbyIntendedUseForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForSearchNearbyIntendedUse(SearchNearbyIntendedUse value);
-} // namespace SearchNearbyIntendedUseMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace SearchNearbyIntendedUseMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

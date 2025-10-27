@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/CreateKnowledgeBaseRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/CreateKnowledgeBaseRequest.h>
 
 #include <utility>
 
@@ -12,71 +12,48 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
-{
+Aws::String CreateKnowledgeBaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_knowledgeBaseTypeHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseType", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_knowledgeBaseType));
+  if (m_knowledgeBaseTypeHasBeenSet) {
+    payload.WithString("knowledgeBaseType", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_knowledgeBaseType));
   }
 
-  if(m_sourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
-
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
-  if(m_renderingConfigurationHasBeenSet)
-  {
-   payload.WithObject("renderingConfiguration", m_renderingConfiguration.Jsonize());
-
+  if (m_renderingConfigurationHasBeenSet) {
+    payload.WithObject("renderingConfiguration", m_renderingConfiguration.Jsonize());
   }
 
-  if(m_vectorIngestionConfigurationHasBeenSet)
-  {
-   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
-
+  if (m_vectorIngestionConfigurationHasBeenSet) {
+    payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
   }
 
-  if(m_serverSideEncryptionConfigurationHasBeenSet)
-  {
-   payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
-
+  if (m_serverSideEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("serverSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

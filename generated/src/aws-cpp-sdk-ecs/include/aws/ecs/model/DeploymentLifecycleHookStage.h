@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class DeploymentLifecycleHookStage
-  {
-    NOT_SET,
-    RECONCILE_SERVICE,
-    PRE_SCALE_UP,
-    POST_SCALE_UP,
-    TEST_TRAFFIC_SHIFT,
-    POST_TEST_TRAFFIC_SHIFT,
-    PRODUCTION_TRAFFIC_SHIFT,
-    POST_PRODUCTION_TRAFFIC_SHIFT
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class DeploymentLifecycleHookStage {
+  NOT_SET,
+  RECONCILE_SERVICE,
+  PRE_SCALE_UP,
+  POST_SCALE_UP,
+  TEST_TRAFFIC_SHIFT,
+  POST_TEST_TRAFFIC_SHIFT,
+  PRODUCTION_TRAFFIC_SHIFT,
+  POST_PRODUCTION_TRAFFIC_SHIFT
+};
 
-namespace DeploymentLifecycleHookStageMapper
-{
+namespace DeploymentLifecycleHookStageMapper {
 AWS_ECS_API DeploymentLifecycleHookStage GetDeploymentLifecycleHookStageForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForDeploymentLifecycleHookStage(DeploymentLifecycleHookStage value);
-} // namespace DeploymentLifecycleHookStageMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace DeploymentLifecycleHookStageMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

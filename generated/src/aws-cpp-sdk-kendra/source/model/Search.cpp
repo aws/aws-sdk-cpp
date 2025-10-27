@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/Search.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/Search.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-Search::Search(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Search::Search(JsonView jsonValue) { *this = jsonValue; }
 
-Search& Search::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Facetable"))
-  {
+Search& Search::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Facetable")) {
     m_facetable = jsonValue.GetBool("Facetable");
     m_facetableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Searchable"))
-  {
+  if (jsonValue.ValueExists("Searchable")) {
     m_searchable = jsonValue.GetBool("Searchable");
     m_searchableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Displayable"))
-  {
+  if (jsonValue.ValueExists("Displayable")) {
     m_displayable = jsonValue.GetBool("Displayable");
     m_displayableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sortable"))
-  {
+  if (jsonValue.ValueExists("Sortable")) {
     m_sortable = jsonValue.GetBool("Sortable");
     m_sortableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Search::Jsonize() const
-{
+JsonValue Search::Jsonize() const {
   JsonValue payload;
 
-  if(m_facetableHasBeenSet)
-  {
-   payload.WithBool("Facetable", m_facetable);
-
+  if (m_facetableHasBeenSet) {
+    payload.WithBool("Facetable", m_facetable);
   }
 
-  if(m_searchableHasBeenSet)
-  {
-   payload.WithBool("Searchable", m_searchable);
-
+  if (m_searchableHasBeenSet) {
+    payload.WithBool("Searchable", m_searchable);
   }
 
-  if(m_displayableHasBeenSet)
-  {
-   payload.WithBool("Displayable", m_displayable);
-
+  if (m_displayableHasBeenSet) {
+    payload.WithBool("Displayable", m_displayable);
   }
 
-  if(m_sortableHasBeenSet)
-  {
-   payload.WithBool("Sortable", m_sortable);
-
+  if (m_sortableHasBeenSet) {
+    payload.WithBool("Sortable", m_sortable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

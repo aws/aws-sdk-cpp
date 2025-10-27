@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/CoreNetworkPolicyError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/CoreNetworkPolicyError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
 
-CoreNetworkPolicyError::CoreNetworkPolicyError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoreNetworkPolicyError::CoreNetworkPolicyError(JsonView jsonValue) { *this = jsonValue; }
 
-CoreNetworkPolicyError& CoreNetworkPolicyError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+CoreNetworkPolicyError& CoreNetworkPolicyError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoreNetworkPolicyError::Jsonize() const
-{
+JsonValue CoreNetworkPolicyError::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

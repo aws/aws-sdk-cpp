@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/KinesisParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/KinesisParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-KinesisParameters::KinesisParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisParameters::KinesisParameters(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisParameters& KinesisParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PartitionKeyPath"))
-  {
+KinesisParameters& KinesisParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PartitionKeyPath")) {
     m_partitionKeyPath = jsonValue.GetString("PartitionKeyPath");
     m_partitionKeyPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisParameters::Jsonize() const
-{
+JsonValue KinesisParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_partitionKeyPathHasBeenSet)
-  {
-   payload.WithString("PartitionKeyPath", m_partitionKeyPath);
-
+  if (m_partitionKeyPathHasBeenSet) {
+    payload.WithString("PartitionKeyPath", m_partitionKeyPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class DirectorySize
-  {
-    NOT_SET,
-    Small,
-    Large
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class DirectorySize { NOT_SET, Small, Large };
 
-namespace DirectorySizeMapper
-{
+namespace DirectorySizeMapper {
 AWS_DIRECTORYSERVICE_API DirectorySize GetDirectorySizeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForDirectorySize(DirectorySize value);
-} // namespace DirectorySizeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace DirectorySizeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

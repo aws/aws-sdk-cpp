@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/dax/DAX_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dax/DAX_EXPORTS.h>
 
-namespace Aws
-{
-namespace DAX
-{
-namespace Model
-{
-  enum class SSEStatus
-  {
-    NOT_SET,
-    ENABLING,
-    ENABLED,
-    DISABLING,
-    DISABLED
-  };
+namespace Aws {
+namespace DAX {
+namespace Model {
+enum class SSEStatus { NOT_SET, ENABLING, ENABLED, DISABLING, DISABLED };
 
-namespace SSEStatusMapper
-{
+namespace SSEStatusMapper {
 AWS_DAX_API SSEStatus GetSSEStatusForName(const Aws::String& name);
 
 AWS_DAX_API Aws::String GetNameForSSEStatus(SSEStatus value);
-} // namespace SSEStatusMapper
-} // namespace Model
-} // namespace DAX
-} // namespace Aws
+}  // namespace SSEStatusMapper
+}  // namespace Model
+}  // namespace DAX
+}  // namespace Aws

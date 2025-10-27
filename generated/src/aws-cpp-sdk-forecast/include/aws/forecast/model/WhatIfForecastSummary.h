@@ -4,165 +4,200 @@
  */
 
 #pragma once
-#include <aws/forecast/ForecastService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/forecast/ForecastService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ForecastService {
+namespace Model {
 
+/**
+ * <p>Provides a summary of the what-if forecast properties used in the
+ * <a>ListWhatIfForecasts</a> operation. To get the complete set of properties,
+ * call the <a>DescribeWhatIfForecast</a> operation, and provide the
+ * <code>WhatIfForecastArn</code> that is listed in the summary.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WhatIfForecastSummary">AWS
+ * API Reference</a></p>
+ */
+class WhatIfForecastSummary {
+ public:
+  AWS_FORECASTSERVICE_API WhatIfForecastSummary() = default;
+  AWS_FORECASTSERVICE_API WhatIfForecastSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FORECASTSERVICE_API WhatIfForecastSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides a summary of the what-if forecast properties used in the
-   * <a>ListWhatIfForecasts</a> operation. To get the complete set of properties,
-   * call the <a>DescribeWhatIfForecast</a> operation, and provide the
-   * <code>WhatIfForecastArn</code> that is listed in the summary.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WhatIfForecastSummary">AWS
-   * API Reference</a></p>
+   * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
    */
-  class WhatIfForecastSummary
-  {
-  public:
-    AWS_FORECASTSERVICE_API WhatIfForecastSummary() = default;
-    AWS_FORECASTSERVICE_API WhatIfForecastSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FORECASTSERVICE_API WhatIfForecastSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetWhatIfForecastArn() const { return m_whatIfForecastArn; }
+  inline bool WhatIfForecastArnHasBeenSet() const { return m_whatIfForecastArnHasBeenSet; }
+  template <typename WhatIfForecastArnT = Aws::String>
+  void SetWhatIfForecastArn(WhatIfForecastArnT&& value) {
+    m_whatIfForecastArnHasBeenSet = true;
+    m_whatIfForecastArn = std::forward<WhatIfForecastArnT>(value);
+  }
+  template <typename WhatIfForecastArnT = Aws::String>
+  WhatIfForecastSummary& WithWhatIfForecastArn(WhatIfForecastArnT&& value) {
+    SetWhatIfForecastArn(std::forward<WhatIfForecastArnT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The name of the what-if forecast.</p>
+   */
+  inline const Aws::String& GetWhatIfForecastName() const { return m_whatIfForecastName; }
+  inline bool WhatIfForecastNameHasBeenSet() const { return m_whatIfForecastNameHasBeenSet; }
+  template <typename WhatIfForecastNameT = Aws::String>
+  void SetWhatIfForecastName(WhatIfForecastNameT&& value) {
+    m_whatIfForecastNameHasBeenSet = true;
+    m_whatIfForecastName = std::forward<WhatIfForecastNameT>(value);
+  }
+  template <typename WhatIfForecastNameT = Aws::String>
+  WhatIfForecastSummary& WithWhatIfForecastName(WhatIfForecastNameT&& value) {
+    SetWhatIfForecastName(std::forward<WhatIfForecastNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
-    inline const Aws::String& GetWhatIfForecastArn() const { return m_whatIfForecastArn; }
-    inline bool WhatIfForecastArnHasBeenSet() const { return m_whatIfForecastArnHasBeenSet; }
-    template<typename WhatIfForecastArnT = Aws::String>
-    void SetWhatIfForecastArn(WhatIfForecastArnT&& value) { m_whatIfForecastArnHasBeenSet = true; m_whatIfForecastArn = std::forward<WhatIfForecastArnT>(value); }
-    template<typename WhatIfForecastArnT = Aws::String>
-    WhatIfForecastSummary& WithWhatIfForecastArn(WhatIfForecastArnT&& value) { SetWhatIfForecastArn(std::forward<WhatIfForecastArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this
+   * what-if forecast.</p>
+   */
+  inline const Aws::String& GetWhatIfAnalysisArn() const { return m_whatIfAnalysisArn; }
+  inline bool WhatIfAnalysisArnHasBeenSet() const { return m_whatIfAnalysisArnHasBeenSet; }
+  template <typename WhatIfAnalysisArnT = Aws::String>
+  void SetWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) {
+    m_whatIfAnalysisArnHasBeenSet = true;
+    m_whatIfAnalysisArn = std::forward<WhatIfAnalysisArnT>(value);
+  }
+  template <typename WhatIfAnalysisArnT = Aws::String>
+  WhatIfForecastSummary& WithWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) {
+    SetWhatIfAnalysisArn(std::forward<WhatIfAnalysisArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the what-if forecast.</p>
-     */
-    inline const Aws::String& GetWhatIfForecastName() const { return m_whatIfForecastName; }
-    inline bool WhatIfForecastNameHasBeenSet() const { return m_whatIfForecastNameHasBeenSet; }
-    template<typename WhatIfForecastNameT = Aws::String>
-    void SetWhatIfForecastName(WhatIfForecastNameT&& value) { m_whatIfForecastNameHasBeenSet = true; m_whatIfForecastName = std::forward<WhatIfForecastNameT>(value); }
-    template<typename WhatIfForecastNameT = Aws::String>
-    WhatIfForecastSummary& WithWhatIfForecastName(WhatIfForecastNameT&& value) { SetWhatIfForecastName(std::forward<WhatIfForecastNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the what-if forecast. States include:</p> <ul> <li> <p>
+   * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+   * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+   * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+   * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+   * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
+   * the what-if analysis must be <code>ACTIVE</code> before you can access the
+   * analysis.</p>
+   */
+  inline const Aws::String& GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  template <typename StatusT = Aws::String>
+  void SetStatus(StatusT&& value) {
+    m_statusHasBeenSet = true;
+    m_status = std::forward<StatusT>(value);
+  }
+  template <typename StatusT = Aws::String>
+  WhatIfForecastSummary& WithStatus(StatusT&& value) {
+    SetStatus(std::forward<StatusT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this
-     * what-if forecast.</p>
-     */
-    inline const Aws::String& GetWhatIfAnalysisArn() const { return m_whatIfAnalysisArn; }
-    inline bool WhatIfAnalysisArnHasBeenSet() const { return m_whatIfAnalysisArnHasBeenSet; }
-    template<typename WhatIfAnalysisArnT = Aws::String>
-    void SetWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = std::forward<WhatIfAnalysisArnT>(value); }
-    template<typename WhatIfAnalysisArnT = Aws::String>
-    WhatIfForecastSummary& WithWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { SetWhatIfAnalysisArn(std::forward<WhatIfAnalysisArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>If an error occurred, an informational message about the error.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  WhatIfForecastSummary& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The status of the what-if forecast. States include:</p> <ul> <li> <p>
-     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
-     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
-     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
-     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
-     * the what-if analysis must be <code>ACTIVE</code> before you can access the
-     * analysis.</p> 
-     */
-    inline const Aws::String& GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    template<typename StatusT = Aws::String>
-    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
-    template<typename StatusT = Aws::String>
-    WhatIfForecastSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>When the what-if forecast was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  WhatIfForecastSummary& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If an error occurred, an informational message about the error.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    WhatIfForecastSummary& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The last time the resource was modified. The timestamp depends on the status
+   * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+   * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+   * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+   * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+   * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+   * When the job finished or failed.</p> </li> </ul>
+   */
+  inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+  inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
+  template <typename LastModificationTimeT = Aws::Utils::DateTime>
+  void SetLastModificationTime(LastModificationTimeT&& value) {
+    m_lastModificationTimeHasBeenSet = true;
+    m_lastModificationTime = std::forward<LastModificationTimeT>(value);
+  }
+  template <typename LastModificationTimeT = Aws::Utils::DateTime>
+  WhatIfForecastSummary& WithLastModificationTime(LastModificationTimeT&& value) {
+    SetLastModificationTime(std::forward<LastModificationTimeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_whatIfForecastArn;
+  bool m_whatIfForecastArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>When the what-if forecast was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    WhatIfForecastSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
-    ///@}
+  Aws::String m_whatIfForecastName;
+  bool m_whatIfForecastNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The last time the resource was modified. The timestamp depends on the status
-     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
-     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
-     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
-     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
-     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
-     * When the job finished or failed.</p> </li> </ul>
-     */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
-    inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
-    template<typename LastModificationTimeT = Aws::Utils::DateTime>
-    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
-    template<typename LastModificationTimeT = Aws::Utils::DateTime>
-    WhatIfForecastSummary& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_whatIfAnalysisArn;
+  bool m_whatIfAnalysisArnHasBeenSet = false;
 
-    Aws::String m_whatIfForecastArn;
-    bool m_whatIfForecastArnHasBeenSet = false;
+  Aws::String m_status;
+  bool m_statusHasBeenSet = false;
 
-    Aws::String m_whatIfForecastName;
-    bool m_whatIfForecastNameHasBeenSet = false;
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
 
-    Aws::String m_whatIfAnalysisArn;
-    bool m_whatIfAnalysisArnHasBeenSet = false;
+  Aws::Utils::DateTime m_creationTime{};
+  bool m_creationTimeHasBeenSet = false;
 
-    Aws::String m_status;
-    bool m_statusHasBeenSet = false;
+  Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_lastModificationTimeHasBeenSet = false;
+};
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime{};
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModificationTime{};
-    bool m_lastModificationTimeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

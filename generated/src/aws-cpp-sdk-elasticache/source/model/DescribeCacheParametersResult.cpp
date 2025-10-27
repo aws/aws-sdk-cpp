@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeCacheParametersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DescribeCacheParametersResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCacheParametersResult::DescribeCacheParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeCacheParametersResult::DescribeCacheParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeCacheParametersResult& DescribeCacheParametersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCacheParametersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeCacheParametersResult")) {
     resultNode = rootNode.FirstChild("DescribeCacheParametersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
-    if(!parametersNode.IsNull())
-    {
+    if (!parametersNode.IsNull()) {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
       m_parametersHasBeenSet = !parametersMember.IsNull();
-      while(!parametersMember.IsNull())
-      {
+      while (!parametersMember.IsNull()) {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("Parameter");
       }
@@ -54,12 +45,10 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
       m_parametersHasBeenSet = true;
     }
     XmlNode cacheNodeTypeSpecificParametersNode = resultNode.FirstChild("CacheNodeTypeSpecificParameters");
-    if(!cacheNodeTypeSpecificParametersNode.IsNull())
-    {
+    if (!cacheNodeTypeSpecificParametersNode.IsNull()) {
       XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
       m_cacheNodeTypeSpecificParametersHasBeenSet = !cacheNodeTypeSpecificParametersMember.IsNull();
-      while(!cacheNodeTypeSpecificParametersMember.IsNull())
-      {
+      while (!cacheNodeTypeSpecificParametersMember.IsNull()) {
         m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);
         cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersMember.NextNode("CacheNodeTypeSpecificParameter");
       }
@@ -72,7 +61,8 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheParametersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheParametersResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

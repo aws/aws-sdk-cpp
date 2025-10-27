@@ -5,12 +5,8 @@
 
 #include <aws/directconnect/DirectConnectEndpointProvider.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DirectConnect
-} // namespace Aws
+namespace Aws {
+namespace DirectConnect {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DirectConnect
+}  // namespace Aws

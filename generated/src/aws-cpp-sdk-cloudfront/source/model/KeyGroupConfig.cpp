@@ -4,46 +4,35 @@
  */
 
 #include <aws/cloudfront/model/KeyGroupConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-KeyGroupConfig::KeyGroupConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+KeyGroupConfig::KeyGroupConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-KeyGroupConfig& KeyGroupConfig::operator =(const XmlNode& xmlNode)
-{
+KeyGroupConfig& KeyGroupConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
-    if(!itemsNode.IsNull())
-    {
+    if (!itemsNode.IsNull()) {
       XmlNode itemsMember = itemsNode.FirstChild("PublicKey");
       m_itemsHasBeenSet = !itemsMember.IsNull();
-      while(!itemsMember.IsNull())
-      {
+      while (!itemsMember.IsNull()) {
         m_items.push_back(itemsMember.GetText());
         itemsMember = itemsMember.NextNode("PublicKey");
       }
@@ -51,8 +40,7 @@ KeyGroupConfig& KeyGroupConfig::operator =(const XmlNode& xmlNode)
       m_itemsHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(!commentNode.IsNull())
-    {
+    if (!commentNode.IsNull()) {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
@@ -61,33 +49,27 @@ KeyGroupConfig& KeyGroupConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void KeyGroupConfig::AddToNode(XmlNode& parentNode) const
-{
+void KeyGroupConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
-   for(const auto& item : m_items)
-   {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("PublicKey");
-     itemsNode.SetText(item);
-   }
+  if (m_itemsHasBeenSet) {
+    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
+    for (const auto& item : m_items) {
+      XmlNode itemsNode = itemsParentNode.CreateChildElement("PublicKey");
+      itemsNode.SetText(item);
+    }
   }
 
-  if(m_commentHasBeenSet)
-  {
-   XmlNode commentNode = parentNode.CreateChildElement("Comment");
-   commentNode.SetText(m_comment);
+  if (m_commentHasBeenSet) {
+    XmlNode commentNode = parentNode.CreateChildElement("Comment");
+    commentNode.SetText(m_comment);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

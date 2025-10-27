@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/ValidationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-ValidationConfiguration::ValidationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationConfiguration::ValidationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationConfiguration& ValidationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RulesetArn"))
-  {
+ValidationConfiguration& ValidationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RulesetArn")) {
     m_rulesetArn = jsonValue.GetString("RulesetArn");
     m_rulesetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationMode"))
-  {
+  if (jsonValue.ValueExists("ValidationMode")) {
     m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("ValidationMode"));
     m_validationModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationConfiguration::Jsonize() const
-{
+JsonValue ValidationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_rulesetArnHasBeenSet)
-  {
-   payload.WithString("RulesetArn", m_rulesetArn);
-
+  if (m_rulesetArnHasBeenSet) {
+    payload.WithString("RulesetArn", m_rulesetArn);
   }
 
-  if(m_validationModeHasBeenSet)
-  {
-   payload.WithString("ValidationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
+  if (m_validationModeHasBeenSet) {
+    payload.WithString("ValidationMode", ValidationModeMapper::GetNameForValidationMode(m_validationMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

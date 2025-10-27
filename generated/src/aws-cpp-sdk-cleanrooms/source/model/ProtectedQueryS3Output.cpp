@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedQueryS3Output::ProtectedQueryS3Output(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedQueryS3Output::ProtectedQueryS3Output(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedQueryS3Output& ProtectedQueryS3Output::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("location"))
-  {
+ProtectedQueryS3Output& ProtectedQueryS3Output::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetString("location");
     m_locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedQueryS3Output::Jsonize() const
-{
+JsonValue ProtectedQueryS3Output::Jsonize() const {
   JsonValue payload;
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("location", m_location);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

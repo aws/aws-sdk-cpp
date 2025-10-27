@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class BotRecommendationStatus
-  {
-    NOT_SET,
-    Processing,
-    Deleting,
-    Deleted,
-    Downloading,
-    Updating,
-    Available,
-    Failed,
-    Stopping,
-    Stopped
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class BotRecommendationStatus { NOT_SET, Processing, Deleting, Deleted, Downloading, Updating, Available, Failed, Stopping, Stopped };
 
-namespace BotRecommendationStatusMapper
-{
+namespace BotRecommendationStatusMapper {
 AWS_LEXMODELSV2_API BotRecommendationStatus GetBotRecommendationStatusForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForBotRecommendationStatus(BotRecommendationStatus value);
-} // namespace BotRecommendationStatusMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BotRecommendationStatusMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

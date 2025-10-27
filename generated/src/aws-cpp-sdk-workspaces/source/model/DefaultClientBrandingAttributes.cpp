@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/DefaultClientBrandingAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/DefaultClientBrandingAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-DefaultClientBrandingAttributes::DefaultClientBrandingAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultClientBrandingAttributes::DefaultClientBrandingAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultClientBrandingAttributes& DefaultClientBrandingAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LogoUrl"))
-  {
+DefaultClientBrandingAttributes& DefaultClientBrandingAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LogoUrl")) {
     m_logoUrl = jsonValue.GetString("LogoUrl");
     m_logoUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SupportEmail"))
-  {
+  if (jsonValue.ValueExists("SupportEmail")) {
     m_supportEmail = jsonValue.GetString("SupportEmail");
     m_supportEmailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SupportLink"))
-  {
+  if (jsonValue.ValueExists("SupportLink")) {
     m_supportLink = jsonValue.GetString("SupportLink");
     m_supportLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ForgotPasswordLink"))
-  {
+  if (jsonValue.ValueExists("ForgotPasswordLink")) {
     m_forgotPasswordLink = jsonValue.GetString("ForgotPasswordLink");
     m_forgotPasswordLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LoginMessage"))
-  {
+  if (jsonValue.ValueExists("LoginMessage")) {
     Aws::Map<Aws::String, JsonView> loginMessageJsonMap = jsonValue.GetObject("LoginMessage").GetAllObjects();
-    for(auto& loginMessageItem : loginMessageJsonMap)
-    {
+    for (auto& loginMessageItem : loginMessageJsonMap) {
       m_loginMessage[loginMessageItem.first] = loginMessageItem.second.AsString();
     }
     m_loginMessageHasBeenSet = true;
@@ -57,48 +44,36 @@ DefaultClientBrandingAttributes& DefaultClientBrandingAttributes::operator =(Jso
   return *this;
 }
 
-JsonValue DefaultClientBrandingAttributes::Jsonize() const
-{
+JsonValue DefaultClientBrandingAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_logoUrlHasBeenSet)
-  {
-   payload.WithString("LogoUrl", m_logoUrl);
-
+  if (m_logoUrlHasBeenSet) {
+    payload.WithString("LogoUrl", m_logoUrl);
   }
 
-  if(m_supportEmailHasBeenSet)
-  {
-   payload.WithString("SupportEmail", m_supportEmail);
-
+  if (m_supportEmailHasBeenSet) {
+    payload.WithString("SupportEmail", m_supportEmail);
   }
 
-  if(m_supportLinkHasBeenSet)
-  {
-   payload.WithString("SupportLink", m_supportLink);
-
+  if (m_supportLinkHasBeenSet) {
+    payload.WithString("SupportLink", m_supportLink);
   }
 
-  if(m_forgotPasswordLinkHasBeenSet)
-  {
-   payload.WithString("ForgotPasswordLink", m_forgotPasswordLink);
-
+  if (m_forgotPasswordLinkHasBeenSet) {
+    payload.WithString("ForgotPasswordLink", m_forgotPasswordLink);
   }
 
-  if(m_loginMessageHasBeenSet)
-  {
-   JsonValue loginMessageJsonMap;
-   for(auto& loginMessageItem : m_loginMessage)
-   {
-     loginMessageJsonMap.WithString(loginMessageItem.first, loginMessageItem.second);
-   }
-   payload.WithObject("LoginMessage", std::move(loginMessageJsonMap));
-
+  if (m_loginMessageHasBeenSet) {
+    JsonValue loginMessageJsonMap;
+    for (auto& loginMessageItem : m_loginMessage) {
+      loginMessageJsonMap.WithString(loginMessageItem.first, loginMessageItem.second);
+    }
+    payload.WithObject("LoginMessage", std::move(loginMessageJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

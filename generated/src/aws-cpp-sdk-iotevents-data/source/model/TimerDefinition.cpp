@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/TimerDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/TimerDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-TimerDefinition::TimerDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimerDefinition::TimerDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-TimerDefinition& TimerDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+TimerDefinition& TimerDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("seconds"))
-  {
+  if (jsonValue.ValueExists("seconds")) {
     m_seconds = jsonValue.GetInteger("seconds");
     m_secondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimerDefinition::Jsonize() const
-{
+JsonValue TimerDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_secondsHasBeenSet)
-  {
-   payload.WithInteger("seconds", m_seconds);
-
+  if (m_secondsHasBeenSet) {
+    payload.WithInteger("seconds", m_seconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

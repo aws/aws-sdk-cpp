@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/AssociateEnvironmentOperationsRoleRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/AssociateEnvironmentOperationsRoleRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String AssociateEnvironmentOperationsRoleRequest::SerializePayload() const
-{
+Aws::String AssociateEnvironmentOperationsRoleRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssociateEnvironmentOperationsRole&";
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_operationsRoleHasBeenSet)
-  {
+  if (m_operationsRoleHasBeenSet) {
     ss << "OperationsRole=" << StringUtils::URLEncode(m_operationsRole.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AssociateEnvironmentOperationsRoleRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AssociateEnvironmentOperationsRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssociateEnvironmentOperationsRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

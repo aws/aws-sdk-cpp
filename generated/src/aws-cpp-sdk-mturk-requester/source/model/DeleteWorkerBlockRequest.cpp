@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/DeleteWorkerBlockRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/DeleteWorkerBlockRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteWorkerBlockRequest::SerializePayload() const
-{
+Aws::String DeleteWorkerBlockRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workerIdHasBeenSet)
-  {
-   payload.WithString("WorkerId", m_workerId);
-
+  if (m_workerIdHasBeenSet) {
+    payload.WithString("WorkerId", m_workerId);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", m_reason);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteWorkerBlockRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteWorkerBlockRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MTurkRequesterServiceV20170117.DeleteWorkerBlock"));
   return headers;
-
 }
-
-
-
-

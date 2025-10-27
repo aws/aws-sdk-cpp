@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ExportStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ExportStatus { NOT_SET, IN_PROGRESS, COMPLETED, FAILED };
 
-namespace ExportStatusMapper
-{
+namespace ExportStatusMapper {
 AWS_DYNAMODB_API ExportStatus GetExportStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForExportStatus(ExportStatus value);
-} // namespace ExportStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ExportStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

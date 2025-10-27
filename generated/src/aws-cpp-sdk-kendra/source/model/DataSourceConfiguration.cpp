@@ -3,225 +3,166 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/DataSourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/DataSourceConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Configuration"))
-  {
+DataSourceConfiguration& DataSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Configuration")) {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
     m_s3ConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SharePointConfiguration"))
-  {
+  if (jsonValue.ValueExists("SharePointConfiguration")) {
     m_sharePointConfiguration = jsonValue.GetObject("SharePointConfiguration");
     m_sharePointConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatabaseConfiguration"))
-  {
+  if (jsonValue.ValueExists("DatabaseConfiguration")) {
     m_databaseConfiguration = jsonValue.GetObject("DatabaseConfiguration");
     m_databaseConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SalesforceConfiguration"))
-  {
+  if (jsonValue.ValueExists("SalesforceConfiguration")) {
     m_salesforceConfiguration = jsonValue.GetObject("SalesforceConfiguration");
     m_salesforceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OneDriveConfiguration"))
-  {
+  if (jsonValue.ValueExists("OneDriveConfiguration")) {
     m_oneDriveConfiguration = jsonValue.GetObject("OneDriveConfiguration");
     m_oneDriveConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceNowConfiguration"))
-  {
+  if (jsonValue.ValueExists("ServiceNowConfiguration")) {
     m_serviceNowConfiguration = jsonValue.GetObject("ServiceNowConfiguration");
     m_serviceNowConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConfluenceConfiguration"))
-  {
+  if (jsonValue.ValueExists("ConfluenceConfiguration")) {
     m_confluenceConfiguration = jsonValue.GetObject("ConfluenceConfiguration");
     m_confluenceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GoogleDriveConfiguration"))
-  {
+  if (jsonValue.ValueExists("GoogleDriveConfiguration")) {
     m_googleDriveConfiguration = jsonValue.GetObject("GoogleDriveConfiguration");
     m_googleDriveConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebCrawlerConfiguration"))
-  {
+  if (jsonValue.ValueExists("WebCrawlerConfiguration")) {
     m_webCrawlerConfiguration = jsonValue.GetObject("WebCrawlerConfiguration");
     m_webCrawlerConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkDocsConfiguration"))
-  {
+  if (jsonValue.ValueExists("WorkDocsConfiguration")) {
     m_workDocsConfiguration = jsonValue.GetObject("WorkDocsConfiguration");
     m_workDocsConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FsxConfiguration"))
-  {
+  if (jsonValue.ValueExists("FsxConfiguration")) {
     m_fsxConfiguration = jsonValue.GetObject("FsxConfiguration");
     m_fsxConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SlackConfiguration"))
-  {
+  if (jsonValue.ValueExists("SlackConfiguration")) {
     m_slackConfiguration = jsonValue.GetObject("SlackConfiguration");
     m_slackConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BoxConfiguration"))
-  {
+  if (jsonValue.ValueExists("BoxConfiguration")) {
     m_boxConfiguration = jsonValue.GetObject("BoxConfiguration");
     m_boxConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuipConfiguration"))
-  {
+  if (jsonValue.ValueExists("QuipConfiguration")) {
     m_quipConfiguration = jsonValue.GetObject("QuipConfiguration");
     m_quipConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JiraConfiguration"))
-  {
+  if (jsonValue.ValueExists("JiraConfiguration")) {
     m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
     m_jiraConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GitHubConfiguration"))
-  {
+  if (jsonValue.ValueExists("GitHubConfiguration")) {
     m_gitHubConfiguration = jsonValue.GetObject("GitHubConfiguration");
     m_gitHubConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateConfiguration"))
-  {
+  if (jsonValue.ValueExists("TemplateConfiguration")) {
     m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
     m_templateConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceConfiguration::Jsonize() const
-{
+JsonValue DataSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
-
+  if (m_s3ConfigurationHasBeenSet) {
+    payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
   }
 
-  if(m_sharePointConfigurationHasBeenSet)
-  {
-   payload.WithObject("SharePointConfiguration", m_sharePointConfiguration.Jsonize());
-
+  if (m_sharePointConfigurationHasBeenSet) {
+    payload.WithObject("SharePointConfiguration", m_sharePointConfiguration.Jsonize());
   }
 
-  if(m_databaseConfigurationHasBeenSet)
-  {
-   payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
-
+  if (m_databaseConfigurationHasBeenSet) {
+    payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
   }
 
-  if(m_salesforceConfigurationHasBeenSet)
-  {
-   payload.WithObject("SalesforceConfiguration", m_salesforceConfiguration.Jsonize());
-
+  if (m_salesforceConfigurationHasBeenSet) {
+    payload.WithObject("SalesforceConfiguration", m_salesforceConfiguration.Jsonize());
   }
 
-  if(m_oneDriveConfigurationHasBeenSet)
-  {
-   payload.WithObject("OneDriveConfiguration", m_oneDriveConfiguration.Jsonize());
-
+  if (m_oneDriveConfigurationHasBeenSet) {
+    payload.WithObject("OneDriveConfiguration", m_oneDriveConfiguration.Jsonize());
   }
 
-  if(m_serviceNowConfigurationHasBeenSet)
-  {
-   payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
-
+  if (m_serviceNowConfigurationHasBeenSet) {
+    payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
   }
 
-  if(m_confluenceConfigurationHasBeenSet)
-  {
-   payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
-
+  if (m_confluenceConfigurationHasBeenSet) {
+    payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
   }
 
-  if(m_googleDriveConfigurationHasBeenSet)
-  {
-   payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
-
+  if (m_googleDriveConfigurationHasBeenSet) {
+    payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
   }
 
-  if(m_webCrawlerConfigurationHasBeenSet)
-  {
-   payload.WithObject("WebCrawlerConfiguration", m_webCrawlerConfiguration.Jsonize());
-
+  if (m_webCrawlerConfigurationHasBeenSet) {
+    payload.WithObject("WebCrawlerConfiguration", m_webCrawlerConfiguration.Jsonize());
   }
 
-  if(m_workDocsConfigurationHasBeenSet)
-  {
-   payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
-
+  if (m_workDocsConfigurationHasBeenSet) {
+    payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
   }
 
-  if(m_fsxConfigurationHasBeenSet)
-  {
-   payload.WithObject("FsxConfiguration", m_fsxConfiguration.Jsonize());
-
+  if (m_fsxConfigurationHasBeenSet) {
+    payload.WithObject("FsxConfiguration", m_fsxConfiguration.Jsonize());
   }
 
-  if(m_slackConfigurationHasBeenSet)
-  {
-   payload.WithObject("SlackConfiguration", m_slackConfiguration.Jsonize());
-
+  if (m_slackConfigurationHasBeenSet) {
+    payload.WithObject("SlackConfiguration", m_slackConfiguration.Jsonize());
   }
 
-  if(m_boxConfigurationHasBeenSet)
-  {
-   payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
-
+  if (m_boxConfigurationHasBeenSet) {
+    payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
   }
 
-  if(m_quipConfigurationHasBeenSet)
-  {
-   payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
-
+  if (m_quipConfigurationHasBeenSet) {
+    payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
   }
 
-  if(m_jiraConfigurationHasBeenSet)
-  {
-   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
-
+  if (m_jiraConfigurationHasBeenSet) {
+    payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
   }
 
-  if(m_gitHubConfigurationHasBeenSet)
-  {
-   payload.WithObject("GitHubConfiguration", m_gitHubConfiguration.Jsonize());
-
+  if (m_gitHubConfigurationHasBeenSet) {
+    payload.WithObject("GitHubConfiguration", m_gitHubConfiguration.Jsonize());
   }
 
-  if(m_templateConfigurationHasBeenSet)
-  {
-   payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
-
+  if (m_templateConfigurationHasBeenSet) {
+    payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

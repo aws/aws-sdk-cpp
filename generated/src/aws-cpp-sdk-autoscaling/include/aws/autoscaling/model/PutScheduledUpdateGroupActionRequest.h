@@ -4,207 +4,262 @@
  */
 
 #pragma once
-#include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
+/**
+ */
+class PutScheduledUpdateGroupActionRequest : public AutoScalingRequest {
+ public:
+  AWS_AUTOSCALING_API PutScheduledUpdateGroupActionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutScheduledUpdateGroupAction"; }
+
+  AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The name of the Auto Scaling group.</p>
    */
-  class PutScheduledUpdateGroupActionRequest : public AutoScalingRequest
-  {
-  public:
-    AWS_AUTOSCALING_API PutScheduledUpdateGroupActionRequest() = default;
+  inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
+  inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+  template <typename AutoScalingGroupNameT = Aws::String>
+  void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) {
+    m_autoScalingGroupNameHasBeenSet = true;
+    m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value);
+  }
+  template <typename AutoScalingGroupNameT = Aws::String>
+  PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) {
+    SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutScheduledUpdateGroupAction"; }
+  ///@{
+  /**
+   * <p>The name of this scaling action.</p>
+   */
+  inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
+  inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
+  template <typename ScheduledActionNameT = Aws::String>
+  void SetScheduledActionName(ScheduledActionNameT&& value) {
+    m_scheduledActionNameHasBeenSet = true;
+    m_scheduledActionName = std::forward<ScheduledActionNameT>(value);
+  }
+  template <typename ScheduledActionNameT = Aws::String>
+  PutScheduledUpdateGroupActionRequest& WithScheduledActionName(ScheduledActionNameT&& value) {
+    SetScheduledActionName(std::forward<ScheduledActionNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>This property is no longer used.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
+  inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
+  template <typename TimeT = Aws::Utils::DateTime>
+  void SetTime(TimeT&& value) {
+    m_timeHasBeenSet = true;
+    m_time = std::forward<TimeT>(value);
+  }
+  template <typename TimeT = Aws::Utils::DateTime>
+  PutScheduledUpdateGroupActionRequest& WithTime(TimeT&& value) {
+    SetTime(std::forward<TimeT>(value));
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+   * UTC/GMT only and in quotes (for example,
+   * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
+   * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+   * performs the action at this time, and then performs the action based on the
+   * specified recurrence.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  PutScheduledUpdateGroupActionRequest& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-  public:
+  ///@{
+  /**
+   * <p>The date and time for the recurring schedule to end, in UTC. For example,
+   * <code>"2021-06-01T00:00:00Z"</code>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  PutScheduledUpdateGroupActionRequest& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
-    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
-    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    template<typename AutoScalingGroupNameT = Aws::String>
-    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
-    template<typename AutoScalingGroupNameT = Aws::String>
-    PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The recurring schedule for this action. This format consists of five fields
+   * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+   * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+   * *"</code>). For more information about this format, see <a
+   * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+   * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+   * boundaries of when the recurring action starts and stops.</p> <p>Cron
+   * expressions use Universal Coordinated Time (UTC) by default.</p>
+   */
+  inline const Aws::String& GetRecurrence() const { return m_recurrence; }
+  inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
+  template <typename RecurrenceT = Aws::String>
+  void SetRecurrence(RecurrenceT&& value) {
+    m_recurrenceHasBeenSet = true;
+    m_recurrence = std::forward<RecurrenceT>(value);
+  }
+  template <typename RecurrenceT = Aws::String>
+  PutScheduledUpdateGroupActionRequest& WithRecurrence(RecurrenceT&& value) {
+    SetRecurrence(std::forward<RecurrenceT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of this scaling action.</p>
-     */
-    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
-    inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    template<typename ScheduledActionNameT = Aws::String>
-    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
-    template<typename ScheduledActionNameT = Aws::String>
-    PutScheduledUpdateGroupActionRequest& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The minimum size of the Auto Scaling group.</p>
+   */
+  inline int GetMinSize() const { return m_minSize; }
+  inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
+  inline void SetMinSize(int value) {
+    m_minSizeHasBeenSet = true;
+    m_minSize = value;
+  }
+  inline PutScheduledUpdateGroupActionRequest& WithMinSize(int value) {
+    SetMinSize(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>This property is no longer used.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
-    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    template<typename TimeT = Aws::Utils::DateTime>
-    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
-    template<typename TimeT = Aws::Utils::DateTime>
-    PutScheduledUpdateGroupActionRequest& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The maximum size of the Auto Scaling group.</p>
+   */
+  inline int GetMaxSize() const { return m_maxSize; }
+  inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
+  inline void SetMaxSize(int value) {
+    m_maxSizeHasBeenSet = true;
+    m_maxSize = value;
+  }
+  inline PutScheduledUpdateGroupActionRequest& WithMaxSize(int value) {
+    SetMaxSize(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
-     * UTC/GMT only and in quotes (for example,
-     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
-     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
-     * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    PutScheduledUpdateGroupActionRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+   * the scheduled action runs and the capacity it attempts to maintain. It can scale
+   * beyond this capacity if you add more scaling conditions. </p>  <p>You must
+   * specify at least one of the following properties: <code>MaxSize</code>,
+   * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p>
+   */
+  inline int GetDesiredCapacity() const { return m_desiredCapacity; }
+  inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
+  inline void SetDesiredCapacity(int value) {
+    m_desiredCapacityHasBeenSet = true;
+    m_desiredCapacity = value;
+  }
+  inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) {
+    SetDesiredCapacity(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time for the recurring schedule to end, in UTC. For example,
-     * <code>"2021-06-01T00:00:00Z"</code>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
-    template<typename EndTimeT = Aws::Utils::DateTime>
-    PutScheduledUpdateGroupActionRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the time zone for a cron expression. If a time zone is not
+   * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+   * of the IANA time zones, derived from the IANA Time Zone Database (such as
+   * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+   * see <a
+   * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+   */
+  inline const Aws::String& GetTimeZone() const { return m_timeZone; }
+  inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+  template <typename TimeZoneT = Aws::String>
+  void SetTimeZone(TimeZoneT&& value) {
+    m_timeZoneHasBeenSet = true;
+    m_timeZone = std::forward<TimeZoneT>(value);
+  }
+  template <typename TimeZoneT = Aws::String>
+  PutScheduledUpdateGroupActionRequest& WithTimeZone(TimeZoneT&& value) {
+    SetTimeZone(std::forward<TimeZoneT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_autoScalingGroupName;
+  bool m_autoScalingGroupNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The recurring schedule for this action. This format consists of five fields
-     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
-     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
-     * *"</code>). For more information about this format, see <a
-     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p> <p>Cron
-     * expressions use Universal Coordinated Time (UTC) by default.</p>
-     */
-    inline const Aws::String& GetRecurrence() const { return m_recurrence; }
-    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
-    template<typename RecurrenceT = Aws::String>
-    void SetRecurrence(RecurrenceT&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::forward<RecurrenceT>(value); }
-    template<typename RecurrenceT = Aws::String>
-    PutScheduledUpdateGroupActionRequest& WithRecurrence(RecurrenceT&& value) { SetRecurrence(std::forward<RecurrenceT>(value)); return *this;}
-    ///@}
+  Aws::String m_scheduledActionName;
+  bool m_scheduledActionNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The minimum size of the Auto Scaling group.</p>
-     */
-    inline int GetMinSize() const { return m_minSize; }
-    inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
-    inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
-    inline PutScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_time{};
+  bool m_timeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum size of the Auto Scaling group.</p>
-     */
-    inline int GetMaxSize() const { return m_maxSize; }
-    inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
-    inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
-    inline PutScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
-     * the scheduled action runs and the capacity it attempts to maintain. It can scale
-     * beyond this capacity if you add more scaling conditions. </p>  <p>You must
-     * specify at least one of the following properties: <code>MaxSize</code>,
-     * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p> 
-     */
-    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
-    inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
-    inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
-    inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the time zone for a cron expression. If a time zone is not
-     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
-     * of the IANA time zones, derived from the IANA Time Zone Database (such as
-     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
-     * see <a
-     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
-     */
-    inline const Aws::String& GetTimeZone() const { return m_timeZone; }
-    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    template<typename TimeZoneT = Aws::String>
-    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
-    template<typename TimeZoneT = Aws::String>
-    PutScheduledUpdateGroupActionRequest& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_recurrence;
+  bool m_recurrenceHasBeenSet = false;
 
-    Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet = false;
+  int m_minSize{0};
+  bool m_minSizeHasBeenSet = false;
 
-    Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet = false;
+  int m_maxSize{0};
+  bool m_maxSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_time{};
-    bool m_timeHasBeenSet = false;
+  int m_desiredCapacity{0};
+  bool m_desiredCapacityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime{};
-    bool m_startTimeHasBeenSet = false;
+  Aws::String m_timeZone;
+  bool m_timeZoneHasBeenSet = false;
+};
 
-    Aws::Utils::DateTime m_endTime{};
-    bool m_endTimeHasBeenSet = false;
-
-    Aws::String m_recurrence;
-    bool m_recurrenceHasBeenSet = false;
-
-    int m_minSize{0};
-    bool m_minSizeHasBeenSet = false;
-
-    int m_maxSize{0};
-    bool m_maxSizeHasBeenSet = false;
-
-    int m_desiredCapacity{0};
-    bool m_desiredCapacityHasBeenSet = false;
-
-    Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

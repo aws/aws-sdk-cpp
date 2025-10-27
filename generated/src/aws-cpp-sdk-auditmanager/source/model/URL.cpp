@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-URL::URL(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+URL::URL(JsonView jsonValue) { *this = jsonValue; }
 
-URL& URL::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hyperlinkName"))
-  {
+URL& URL::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hyperlinkName")) {
     m_hyperlinkName = jsonValue.GetString("hyperlinkName");
     m_hyperlinkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("link"))
-  {
+  if (jsonValue.ValueExists("link")) {
     m_link = jsonValue.GetString("link");
     m_linkHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue URL::Jsonize() const
-{
+JsonValue URL::Jsonize() const {
   JsonValue payload;
 
-  if(m_hyperlinkNameHasBeenSet)
-  {
-   payload.WithString("hyperlinkName", m_hyperlinkName);
-
+  if (m_hyperlinkNameHasBeenSet) {
+    payload.WithString("hyperlinkName", m_hyperlinkName);
   }
 
-  if(m_linkHasBeenSet)
-  {
-   payload.WithString("link", m_link);
-
+  if (m_linkHasBeenSet) {
+    payload.WithString("link", m_link);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

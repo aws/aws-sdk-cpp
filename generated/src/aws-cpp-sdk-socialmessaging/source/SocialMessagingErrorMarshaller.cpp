@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SocialMessaging;
 
-AWSError<CoreErrors> SocialMessagingErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SocialMessagingErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SocialMessagingErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class FileSystemType
-  {
-    NOT_SET,
-    WINDOWS,
-    LUSTRE,
-    ONTAP,
-    OPENZFS
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class FileSystemType { NOT_SET, WINDOWS, LUSTRE, ONTAP, OPENZFS };
 
-namespace FileSystemTypeMapper
-{
+namespace FileSystemTypeMapper {
 AWS_FSX_API FileSystemType GetFileSystemTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForFileSystemType(FileSystemType value);
-} // namespace FileSystemTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace FileSystemTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

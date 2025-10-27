@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Panorama;
 
-AWSError<CoreErrors> PanoramaErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PanoramaErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PanoramaErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

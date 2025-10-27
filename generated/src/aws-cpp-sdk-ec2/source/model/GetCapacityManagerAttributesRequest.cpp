@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetCapacityManagerAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetCapacityManagerAttributesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetCapacityManagerAttributesRequest::SerializePayload() const
-{
+Aws::String GetCapacityManagerAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetCapacityManagerAttributes&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetCapacityManagerAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetCapacityManagerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetCapacityManagerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

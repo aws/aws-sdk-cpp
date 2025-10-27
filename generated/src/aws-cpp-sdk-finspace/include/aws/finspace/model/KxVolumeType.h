@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
-  enum class KxVolumeType
-  {
-    NOT_SET,
-    NAS_1
-  };
+namespace Aws {
+namespace finspace {
+namespace Model {
+enum class KxVolumeType { NOT_SET, NAS_1 };
 
-namespace KxVolumeTypeMapper
-{
+namespace KxVolumeTypeMapper {
 AWS_FINSPACE_API KxVolumeType GetKxVolumeTypeForName(const Aws::String& name);
 
 AWS_FINSPACE_API Aws::String GetNameForKxVolumeType(KxVolumeType value);
-} // namespace KxVolumeTypeMapper
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace KxVolumeTypeMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

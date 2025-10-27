@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class NetworkInterfaceType
-  {
-    NOT_SET,
-    CAN_INTERFACE,
-    OBD_INTERFACE,
-    VEHICLE_MIDDLEWARE,
-    CUSTOM_DECODING_INTERFACE
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class NetworkInterfaceType { NOT_SET, CAN_INTERFACE, OBD_INTERFACE, VEHICLE_MIDDLEWARE, CUSTOM_DECODING_INTERFACE };
 
-namespace NetworkInterfaceTypeMapper
-{
+namespace NetworkInterfaceTypeMapper {
 AWS_IOTFLEETWISE_API NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType value);
-} // namespace NetworkInterfaceTypeMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace NetworkInterfaceTypeMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

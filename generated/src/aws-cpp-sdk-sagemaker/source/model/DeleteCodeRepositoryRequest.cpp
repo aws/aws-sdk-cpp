@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCodeRepositoryRequest::SerializePayload() const
-{
+Aws::String DeleteCodeRepositoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_codeRepositoryNameHasBeenSet)
-  {
-   payload.WithString("CodeRepositoryName", m_codeRepositoryName);
-
+  if (m_codeRepositoryNameHasBeenSet) {
+    payload.WithString("CodeRepositoryName", m_codeRepositoryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCodeRepositoryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCodeRepositoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SageMaker.DeleteCodeRepository"));
   return headers;
-
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class NullFilterType
-  {
-    NOT_SET,
-    ALL_VALUES,
-    NON_NULLS_ONLY,
-    NULLS_ONLY
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class NullFilterType { NOT_SET, ALL_VALUES, NON_NULLS_ONLY, NULLS_ONLY };
 
-namespace NullFilterTypeMapper
-{
+namespace NullFilterTypeMapper {
 AWS_QUICKSIGHT_API NullFilterType GetNullFilterTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForNullFilterType(NullFilterType value);
-} // namespace NullFilterTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace NullFilterTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

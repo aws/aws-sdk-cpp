@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class DkimStatus
-  {
-    NOT_SET,
-    PENDING,
-    SUCCESS,
-    FAILED,
-    TEMPORARY_FAILURE,
-    NOT_STARTED
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class DkimStatus { NOT_SET, PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED };
 
-namespace DkimStatusMapper
-{
+namespace DkimStatusMapper {
 AWS_SESV2_API DkimStatus GetDkimStatusForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForDkimStatus(DkimStatus value);
-} // namespace DkimStatusMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace DkimStatusMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

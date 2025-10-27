@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Model
-{
-  enum class UploadStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Model {
+enum class UploadStatus { NOT_SET, IN_PROGRESS, SUCCEEDED, FAILED };
 
-namespace UploadStatusMapper
-{
+namespace UploadStatusMapper {
 AWS_IOTTHINGSGRAPH_API UploadStatus GetUploadStatusForName(const Aws::String& name);
 
 AWS_IOTTHINGSGRAPH_API Aws::String GetNameForUploadStatus(UploadStatus value);
-} // namespace UploadStatusMapper
-} // namespace Model
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace UploadStatusMapper
+}  // namespace Model
+}  // namespace IoTThingsGraph
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ExperienceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ExperienceConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ExperienceConfiguration::ExperienceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperienceConfiguration::ExperienceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExperienceConfiguration& ExperienceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContentSourceConfiguration"))
-  {
+ExperienceConfiguration& ExperienceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContentSourceConfiguration")) {
     m_contentSourceConfiguration = jsonValue.GetObject("ContentSourceConfiguration");
     m_contentSourceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserIdentityConfiguration"))
-  {
+  if (jsonValue.ValueExists("UserIdentityConfiguration")) {
     m_userIdentityConfiguration = jsonValue.GetObject("UserIdentityConfiguration");
     m_userIdentityConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperienceConfiguration::Jsonize() const
-{
+JsonValue ExperienceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentSourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("ContentSourceConfiguration", m_contentSourceConfiguration.Jsonize());
-
+  if (m_contentSourceConfigurationHasBeenSet) {
+    payload.WithObject("ContentSourceConfiguration", m_contentSourceConfiguration.Jsonize());
   }
 
-  if(m_userIdentityConfigurationHasBeenSet)
-  {
-   payload.WithObject("UserIdentityConfiguration", m_userIdentityConfiguration.Jsonize());
-
+  if (m_userIdentityConfigurationHasBeenSet) {
+    payload.WithObject("UserIdentityConfiguration", m_userIdentityConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

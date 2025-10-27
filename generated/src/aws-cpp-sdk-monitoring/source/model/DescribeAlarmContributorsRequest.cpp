@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DescribeAlarmContributorsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/DescribeAlarmContributorsRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAlarmContributorsRequest::SerializePayload() const
-{
+Aws::String DescribeAlarmContributorsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAlarmContributors&";
-  if(m_alarmNameHasBeenSet)
-  {
+  if (m_alarmNameHasBeenSet) {
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DescribeAlarmContributorsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAlarmContributorsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAlarmContributorsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

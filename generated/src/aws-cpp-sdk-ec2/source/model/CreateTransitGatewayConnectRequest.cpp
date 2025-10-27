@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateTransitGatewayConnectRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateTransitGatewayConnectRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateTransitGatewayConnectRequest::SerializePayload() const
-{
+Aws::String CreateTransitGatewayConnectRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateTransitGatewayConnect&";
-  if(m_transportTransitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transportTransitGatewayAttachmentIdHasBeenSet) {
     ss << "TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_optionsHasBeenSet)
-  {
+  if (m_optionsHasBeenSet) {
     m_options.OutputToStream(ss, "Options");
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateTransitGatewayConnectRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateTransitGatewayConnectRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateTransitGatewayConnectRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

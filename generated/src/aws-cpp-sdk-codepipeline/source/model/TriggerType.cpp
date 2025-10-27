@@ -4,118 +4,90 @@
  */
 
 #include <aws/codepipeline/model/TriggerType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+namespace TriggerTypeMapper {
 
-namespace Aws
-{
-  namespace CodePipeline
-  {
-    namespace Model
-    {
-      namespace TriggerTypeMapper
-      {
+static const int CreatePipeline_HASH = HashingUtils::HashString("CreatePipeline");
+static const int StartPipelineExecution_HASH = HashingUtils::HashString("StartPipelineExecution");
+static const int PollForSourceChanges_HASH = HashingUtils::HashString("PollForSourceChanges");
+static const int Webhook_HASH = HashingUtils::HashString("Webhook");
+static const int CloudWatchEvent_HASH = HashingUtils::HashString("CloudWatchEvent");
+static const int PutActionRevision_HASH = HashingUtils::HashString("PutActionRevision");
+static const int WebhookV2_HASH = HashingUtils::HashString("WebhookV2");
+static const int ManualRollback_HASH = HashingUtils::HashString("ManualRollback");
+static const int AutomatedRollback_HASH = HashingUtils::HashString("AutomatedRollback");
 
-        static const int CreatePipeline_HASH = HashingUtils::HashString("CreatePipeline");
-        static const int StartPipelineExecution_HASH = HashingUtils::HashString("StartPipelineExecution");
-        static const int PollForSourceChanges_HASH = HashingUtils::HashString("PollForSourceChanges");
-        static const int Webhook_HASH = HashingUtils::HashString("Webhook");
-        static const int CloudWatchEvent_HASH = HashingUtils::HashString("CloudWatchEvent");
-        static const int PutActionRevision_HASH = HashingUtils::HashString("PutActionRevision");
-        static const int WebhookV2_HASH = HashingUtils::HashString("WebhookV2");
-        static const int ManualRollback_HASH = HashingUtils::HashString("ManualRollback");
-        static const int AutomatedRollback_HASH = HashingUtils::HashString("AutomatedRollback");
+TriggerType GetTriggerTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CreatePipeline_HASH) {
+    return TriggerType::CreatePipeline;
+  } else if (hashCode == StartPipelineExecution_HASH) {
+    return TriggerType::StartPipelineExecution;
+  } else if (hashCode == PollForSourceChanges_HASH) {
+    return TriggerType::PollForSourceChanges;
+  } else if (hashCode == Webhook_HASH) {
+    return TriggerType::Webhook;
+  } else if (hashCode == CloudWatchEvent_HASH) {
+    return TriggerType::CloudWatchEvent;
+  } else if (hashCode == PutActionRevision_HASH) {
+    return TriggerType::PutActionRevision;
+  } else if (hashCode == WebhookV2_HASH) {
+    return TriggerType::WebhookV2;
+  } else if (hashCode == ManualRollback_HASH) {
+    return TriggerType::ManualRollback;
+  } else if (hashCode == AutomatedRollback_HASH) {
+    return TriggerType::AutomatedRollback;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TriggerType>(hashCode);
+  }
 
+  return TriggerType::NOT_SET;
+}
 
-        TriggerType GetTriggerTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CreatePipeline_HASH)
-          {
-            return TriggerType::CreatePipeline;
-          }
-          else if (hashCode == StartPipelineExecution_HASH)
-          {
-            return TriggerType::StartPipelineExecution;
-          }
-          else if (hashCode == PollForSourceChanges_HASH)
-          {
-            return TriggerType::PollForSourceChanges;
-          }
-          else if (hashCode == Webhook_HASH)
-          {
-            return TriggerType::Webhook;
-          }
-          else if (hashCode == CloudWatchEvent_HASH)
-          {
-            return TriggerType::CloudWatchEvent;
-          }
-          else if (hashCode == PutActionRevision_HASH)
-          {
-            return TriggerType::PutActionRevision;
-          }
-          else if (hashCode == WebhookV2_HASH)
-          {
-            return TriggerType::WebhookV2;
-          }
-          else if (hashCode == ManualRollback_HASH)
-          {
-            return TriggerType::ManualRollback;
-          }
-          else if (hashCode == AutomatedRollback_HASH)
-          {
-            return TriggerType::AutomatedRollback;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TriggerType>(hashCode);
-          }
+Aws::String GetNameForTriggerType(TriggerType enumValue) {
+  switch (enumValue) {
+    case TriggerType::NOT_SET:
+      return {};
+    case TriggerType::CreatePipeline:
+      return "CreatePipeline";
+    case TriggerType::StartPipelineExecution:
+      return "StartPipelineExecution";
+    case TriggerType::PollForSourceChanges:
+      return "PollForSourceChanges";
+    case TriggerType::Webhook:
+      return "Webhook";
+    case TriggerType::CloudWatchEvent:
+      return "CloudWatchEvent";
+    case TriggerType::PutActionRevision:
+      return "PutActionRevision";
+    case TriggerType::WebhookV2:
+      return "WebhookV2";
+    case TriggerType::ManualRollback:
+      return "ManualRollback";
+    case TriggerType::AutomatedRollback:
+      return "AutomatedRollback";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TriggerType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTriggerType(TriggerType enumValue)
-        {
-          switch(enumValue)
-          {
-          case TriggerType::NOT_SET:
-            return {};
-          case TriggerType::CreatePipeline:
-            return "CreatePipeline";
-          case TriggerType::StartPipelineExecution:
-            return "StartPipelineExecution";
-          case TriggerType::PollForSourceChanges:
-            return "PollForSourceChanges";
-          case TriggerType::Webhook:
-            return "Webhook";
-          case TriggerType::CloudWatchEvent:
-            return "CloudWatchEvent";
-          case TriggerType::PutActionRevision:
-            return "PutActionRevision";
-          case TriggerType::WebhookV2:
-            return "WebhookV2";
-          case TriggerType::ManualRollback:
-            return "ManualRollback";
-          case TriggerType::AutomatedRollback:
-            return "AutomatedRollback";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TriggerTypeMapper
-    } // namespace Model
-  } // namespace CodePipeline
-} // namespace Aws
+}  // namespace TriggerTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

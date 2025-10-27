@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/BulkEmailDestinationStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/BulkEmailDestinationStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
-BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode& xmlNode)
-{
+BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
-    if(!errorNode.IsNull())
-    {
+    if (!errorNode.IsNull()) {
       m_error = Aws::Utils::Xml::DecodeEscapedXmlText(errorNode.GetText());
       m_errorHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    if(!messageIdNode.IsNull())
-    {
+    if (!messageIdNode.IsNull()) {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
     }
@@ -54,41 +44,34 @@ BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode
   return *this;
 }
 
-void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
+void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                const char* locationValue) const {
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
   }
 
-  if(m_errorHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Error=" << StringUtils::URLEncode(m_error.c_str()) << "&";
+  if (m_errorHasBeenSet) {
+    oStream << location << index << locationValue << ".Error=" << StringUtils::URLEncode(m_error.c_str()) << "&";
   }
 
-  if(m_messageIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
-  }
-
-}
-
-void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
-  }
-  if(m_errorHasBeenSet)
-  {
-      oStream << location << ".Error=" << StringUtils::URLEncode(m_error.c_str()) << "&";
-  }
-  if(m_messageIdHasBeenSet)
-  {
-      oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+  if (m_messageIdHasBeenSet) {
+    oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
+  }
+  if (m_errorHasBeenSet) {
+    oStream << location << ".Error=" << StringUtils::URLEncode(m_error.c_str()) << "&";
+  }
+  if (m_messageIdHasBeenSet) {
+    oStream << location << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

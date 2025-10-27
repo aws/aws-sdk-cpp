@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafRegionalRulePredicateListDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafRegionalRulePredicateListDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafRegionalRulePredicateListDetails::AwsWafRegionalRulePredicateListDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafRegionalRulePredicateListDetails::AwsWafRegionalRulePredicateListDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafRegionalRulePredicateListDetails& AwsWafRegionalRulePredicateListDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataId"))
-  {
+AwsWafRegionalRulePredicateListDetails& AwsWafRegionalRulePredicateListDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataId")) {
     m_dataId = jsonValue.GetString("DataId");
     m_dataIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Negated"))
-  {
+  if (jsonValue.ValueExists("Negated")) {
     m_negated = jsonValue.GetBool("Negated");
     m_negatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafRegionalRulePredicateListDetails::Jsonize() const
-{
+JsonValue AwsWafRegionalRulePredicateListDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataIdHasBeenSet)
-  {
-   payload.WithString("DataId", m_dataId);
-
+  if (m_dataIdHasBeenSet) {
+    payload.WithString("DataId", m_dataId);
   }
 
-  if(m_negatedHasBeenSet)
-  {
-   payload.WithBool("Negated", m_negated);
-
+  if (m_negatedHasBeenSet) {
+    payload.WithBool("Negated", m_negated);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -3,68 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/IpSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/IpSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
 
-IpSet::IpSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IpSet::IpSet(JsonView jsonValue) { *this = jsonValue; }
 
-IpSet& IpSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpAddresses"))
-  {
+IpSet& IpSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpAddresses")) {
     Aws::Utils::Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
-    for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
-    {
+    for (unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex) {
       m_ipAddresses.push_back(ipAddressesJsonList[ipAddressesIndex].AsString());
     }
     m_ipAddressesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpAddressFamily"))
-  {
+  if (jsonValue.ValueExists("IpAddressFamily")) {
     m_ipAddressFamily = IpAddressFamilyMapper::GetIpAddressFamilyForName(jsonValue.GetString("IpAddressFamily"));
     m_ipAddressFamilyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IpSet::Jsonize() const
-{
+JsonValue IpSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ipAddressesJsonList(m_ipAddresses.size());
-   for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
-   {
-     ipAddressesJsonList[ipAddressesIndex].AsString(m_ipAddresses[ipAddressesIndex]);
-   }
-   payload.WithArray("IpAddresses", std::move(ipAddressesJsonList));
-
+  if (m_ipAddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ipAddressesJsonList(m_ipAddresses.size());
+    for (unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex) {
+      ipAddressesJsonList[ipAddressesIndex].AsString(m_ipAddresses[ipAddressesIndex]);
+    }
+    payload.WithArray("IpAddresses", std::move(ipAddressesJsonList));
   }
 
-  if(m_ipAddressFamilyHasBeenSet)
-  {
-   payload.WithString("IpAddressFamily", IpAddressFamilyMapper::GetNameForIpAddressFamily(m_ipAddressFamily));
+  if (m_ipAddressFamilyHasBeenSet) {
+    payload.WithString("IpAddressFamily", IpAddressFamilyMapper::GetNameForIpAddressFamily(m_ipAddressFamily));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

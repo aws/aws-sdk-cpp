@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pipes/Pipes_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
-  enum class MSKStartPosition
-  {
-    NOT_SET,
-    TRIM_HORIZON,
-    LATEST
-  };
+namespace Aws {
+namespace Pipes {
+namespace Model {
+enum class MSKStartPosition { NOT_SET, TRIM_HORIZON, LATEST };
 
-namespace MSKStartPositionMapper
-{
+namespace MSKStartPositionMapper {
 AWS_PIPES_API MSKStartPosition GetMSKStartPositionForName(const Aws::String& name);
 
 AWS_PIPES_API Aws::String GetNameForMSKStartPosition(MSKStartPosition value);
-} // namespace MSKStartPositionMapper
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace MSKStartPositionMapper
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

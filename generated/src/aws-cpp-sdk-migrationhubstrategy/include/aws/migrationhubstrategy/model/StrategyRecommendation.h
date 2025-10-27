@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class StrategyRecommendation
-  {
-    NOT_SET,
-    recommended,
-    viableOption,
-    notRecommended,
-    potential
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class StrategyRecommendation { NOT_SET, recommended, viableOption, notRecommended, potential };
 
-namespace StrategyRecommendationMapper
-{
+namespace StrategyRecommendationMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategyRecommendation GetStrategyRecommendationForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForStrategyRecommendation(StrategyRecommendation value);
-} // namespace StrategyRecommendationMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace StrategyRecommendationMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

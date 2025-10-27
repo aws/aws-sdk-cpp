@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/GetAccountRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/GetAccountRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccountRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetAccountRequest::SerializePayload() const { return {}; }

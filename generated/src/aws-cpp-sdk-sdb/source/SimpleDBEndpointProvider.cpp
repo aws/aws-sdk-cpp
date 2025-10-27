@@ -5,12 +5,8 @@
 
 #include <aws/sdb/SimpleDBEndpointProvider.h>
 
-namespace Aws
-{
-namespace SimpleDB
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SimpleDB
-} // namespace Aws
+namespace Aws {
+namespace SimpleDB {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SimpleDB
+}  // namespace Aws

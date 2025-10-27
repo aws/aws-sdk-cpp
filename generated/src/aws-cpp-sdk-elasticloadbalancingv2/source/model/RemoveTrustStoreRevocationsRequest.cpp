@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/RemoveTrustStoreRevocationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/RemoveTrustStoreRevocationsRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String RemoveTrustStoreRevocationsRequest::SerializePayload() const
-{
+Aws::String RemoveTrustStoreRevocationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RemoveTrustStoreRevocations&";
-  if(m_trustStoreArnHasBeenSet)
-  {
+  if (m_trustStoreArnHasBeenSet) {
     ss << "TrustStoreArn=" << StringUtils::URLEncode(m_trustStoreArn.c_str()) << "&";
   }
 
-  if(m_revocationIdsHasBeenSet)
-  {
-    if (m_revocationIds.empty())
-    {
+  if (m_revocationIdsHasBeenSet) {
+    if (m_revocationIds.empty()) {
       ss << "RevocationIds=&";
-    }
-    else
-    {
+    } else {
       unsigned revocationIdsCount = 1;
-      for(auto& item : m_revocationIds)
-      {
-        ss << "RevocationIds.member." << revocationIdsCount << "="
-            << item << "&";
+      for (auto& item : m_revocationIds) {
+        ss << "RevocationIds.member." << revocationIdsCount << "=" << item << "&";
         revocationIdsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String RemoveTrustStoreRevocationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RemoveTrustStoreRevocationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RemoveTrustStoreRevocationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

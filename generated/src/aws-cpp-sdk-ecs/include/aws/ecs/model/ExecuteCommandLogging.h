@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class ExecuteCommandLogging
-  {
-    NOT_SET,
-    NONE,
-    DEFAULT,
-    OVERRIDE
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class ExecuteCommandLogging { NOT_SET, NONE, DEFAULT, OVERRIDE };
 
-namespace ExecuteCommandLoggingMapper
-{
+namespace ExecuteCommandLoggingMapper {
 AWS_ECS_API ExecuteCommandLogging GetExecuteCommandLoggingForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForExecuteCommandLogging(ExecuteCommandLogging value);
-} // namespace ExecuteCommandLoggingMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace ExecuteCommandLoggingMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

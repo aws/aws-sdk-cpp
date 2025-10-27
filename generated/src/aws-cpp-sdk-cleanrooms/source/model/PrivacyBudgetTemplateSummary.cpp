@@ -11,126 +11,94 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-PrivacyBudgetTemplateSummary::PrivacyBudgetTemplateSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrivacyBudgetTemplateSummary::PrivacyBudgetTemplateSummary(JsonView jsonValue) { *this = jsonValue; }
 
-PrivacyBudgetTemplateSummary& PrivacyBudgetTemplateSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+PrivacyBudgetTemplateSummary& PrivacyBudgetTemplateSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("membershipId"))
-  {
+  if (jsonValue.ValueExists("membershipId")) {
     m_membershipId = jsonValue.GetString("membershipId");
     m_membershipIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("membershipArn"))
-  {
+  if (jsonValue.ValueExists("membershipArn")) {
     m_membershipArn = jsonValue.GetString("membershipArn");
     m_membershipArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationId"))
-  {
+  if (jsonValue.ValueExists("collaborationId")) {
     m_collaborationId = jsonValue.GetString("collaborationId");
     m_collaborationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationArn"))
-  {
+  if (jsonValue.ValueExists("collaborationArn")) {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
     m_collaborationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privacyBudgetType"))
-  {
+  if (jsonValue.ValueExists("privacyBudgetType")) {
     m_privacyBudgetType = PrivacyBudgetTypeMapper::GetPrivacyBudgetTypeForName(jsonValue.GetString("privacyBudgetType"));
     m_privacyBudgetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetDouble("updateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrivacyBudgetTemplateSummary::Jsonize() const
-{
+JsonValue PrivacyBudgetTemplateSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_membershipIdHasBeenSet)
-  {
-   payload.WithString("membershipId", m_membershipId);
-
+  if (m_membershipIdHasBeenSet) {
+    payload.WithString("membershipId", m_membershipId);
   }
 
-  if(m_membershipArnHasBeenSet)
-  {
-   payload.WithString("membershipArn", m_membershipArn);
-
+  if (m_membershipArnHasBeenSet) {
+    payload.WithString("membershipArn", m_membershipArn);
   }
 
-  if(m_collaborationIdHasBeenSet)
-  {
-   payload.WithString("collaborationId", m_collaborationId);
-
+  if (m_collaborationIdHasBeenSet) {
+    payload.WithString("collaborationId", m_collaborationId);
   }
 
-  if(m_collaborationArnHasBeenSet)
-  {
-   payload.WithString("collaborationArn", m_collaborationArn);
-
+  if (m_collaborationArnHasBeenSet) {
+    payload.WithString("collaborationArn", m_collaborationArn);
   }
 
-  if(m_privacyBudgetTypeHasBeenSet)
-  {
-   payload.WithString("privacyBudgetType", PrivacyBudgetTypeMapper::GetNameForPrivacyBudgetType(m_privacyBudgetType));
+  if (m_privacyBudgetTypeHasBeenSet) {
+    payload.WithString("privacyBudgetType", PrivacyBudgetTypeMapper::GetNameForPrivacyBudgetType(m_privacyBudgetType));
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

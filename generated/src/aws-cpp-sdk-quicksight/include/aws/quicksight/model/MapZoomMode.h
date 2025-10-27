@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class MapZoomMode
-  {
-    NOT_SET,
-    AUTO,
-    MANUAL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class MapZoomMode { NOT_SET, AUTO, MANUAL };
 
-namespace MapZoomModeMapper
-{
+namespace MapZoomModeMapper {
 AWS_QUICKSIGHT_API MapZoomMode GetMapZoomModeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForMapZoomMode(MapZoomMode value);
-} // namespace MapZoomModeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace MapZoomModeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

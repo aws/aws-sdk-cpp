@@ -3,49 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CredentialsParameter"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails&
+AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CredentialsParameter")) {
     m_credentialsParameter = jsonValue.GetString("CredentialsParameter");
     m_credentialsParameterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_credentialsParameterHasBeenSet)
-  {
-   payload.WithString("CredentialsParameter", m_credentialsParameter);
-
+  if (m_credentialsParameterHasBeenSet) {
+    payload.WithString("CredentialsParameter", m_credentialsParameter);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

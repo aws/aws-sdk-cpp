@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/StreamSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/StreamSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-StreamSummary::StreamSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamSummary::StreamSummary(JsonView jsonValue) { *this = jsonValue; }
 
-StreamSummary& StreamSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamId"))
-  {
+StreamSummary& StreamSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamId")) {
     m_streamId = jsonValue.GetString("streamId");
     m_streamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamArn"))
-  {
+  if (jsonValue.ValueExists("streamArn")) {
     m_streamArn = jsonValue.GetString("streamArn");
     m_streamArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamVersion"))
-  {
+  if (jsonValue.ValueExists("streamVersion")) {
     m_streamVersion = jsonValue.GetInteger("streamVersion");
     m_streamVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamSummary::Jsonize() const
-{
+JsonValue StreamSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamIdHasBeenSet)
-  {
-   payload.WithString("streamId", m_streamId);
-
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("streamId", m_streamId);
   }
 
-  if(m_streamArnHasBeenSet)
-  {
-   payload.WithString("streamArn", m_streamArn);
-
+  if (m_streamArnHasBeenSet) {
+    payload.WithString("streamArn", m_streamArn);
   }
 
-  if(m_streamVersionHasBeenSet)
-  {
-   payload.WithInteger("streamVersion", m_streamVersion);
-
+  if (m_streamVersionHasBeenSet) {
+    payload.WithInteger("streamVersion", m_streamVersion);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

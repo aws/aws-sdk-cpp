@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/MetricsSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/MetricsSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-MetricsSource::MetricsSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricsSource::MetricsSource(JsonView jsonValue) { *this = jsonValue; }
 
-MetricsSource& MetricsSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContentType"))
-  {
+MetricsSource& MetricsSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContentType")) {
     m_contentType = jsonValue.GetString("ContentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentDigest"))
-  {
+  if (jsonValue.ValueExists("ContentDigest")) {
     m_contentDigest = jsonValue.GetString("ContentDigest");
     m_contentDigestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricsSource::Jsonize() const
-{
+JsonValue MetricsSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_contentDigestHasBeenSet)
-  {
-   payload.WithString("ContentDigest", m_contentDigest);
-
+  if (m_contentDigestHasBeenSet) {
+    payload.WithString("ContentDigest", m_contentDigest);
   }
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

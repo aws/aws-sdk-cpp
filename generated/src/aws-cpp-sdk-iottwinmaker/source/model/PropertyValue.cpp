@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/PropertyValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/PropertyValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-PropertyValue::PropertyValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PropertyValue::PropertyValue(JsonView jsonValue) { *this = jsonValue; }
 
-PropertyValue& PropertyValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+PropertyValue& PropertyValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("time"))
-  {
+  if (jsonValue.ValueExists("time")) {
     m_time = jsonValue.GetString("time");
     m_timeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PropertyValue::Jsonize() const
-{
+JsonValue PropertyValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("value", m_value.Jsonize());
   }
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithString("time", m_time);
-
+  if (m_timeHasBeenSet) {
+    payload.WithString("time", m_time);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_REDSHIFT_API RedshiftErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_REDSHIFT_API RedshiftErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

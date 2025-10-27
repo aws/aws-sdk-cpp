@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class SideOfStreetMatchingStrategy
-  {
-    NOT_SET,
-    AnyStreet,
-    DividedStreetOnly
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class SideOfStreetMatchingStrategy { NOT_SET, AnyStreet, DividedStreetOnly };
 
-namespace SideOfStreetMatchingStrategyMapper
-{
+namespace SideOfStreetMatchingStrategyMapper {
 AWS_GEOROUTES_API SideOfStreetMatchingStrategy GetSideOfStreetMatchingStrategyForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForSideOfStreetMatchingStrategy(SideOfStreetMatchingStrategy value);
-} // namespace SideOfStreetMatchingStrategyMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace SideOfStreetMatchingStrategyMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

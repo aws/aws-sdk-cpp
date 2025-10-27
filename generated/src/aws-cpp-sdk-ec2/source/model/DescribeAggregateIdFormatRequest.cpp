@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAggregateIdFormatRequest::SerializePayload() const
-{
+Aws::String DescribeAggregateIdFormatRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAggregateIdFormat&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeAggregateIdFormatRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAggregateIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAggregateIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

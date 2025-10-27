@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/CapacitySizeConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/CapacitySizeConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-CapacitySizeConfig::CapacitySizeConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapacitySizeConfig::CapacitySizeConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CapacitySizeConfig& CapacitySizeConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+CapacitySizeConfig& CapacitySizeConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = NodeUnavailabilityTypeMapper::GetNodeUnavailabilityTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetInteger("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapacitySizeConfig::Jsonize() const
-{
+JsonValue CapacitySizeConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", NodeUnavailabilityTypeMapper::GetNameForNodeUnavailabilityType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", NodeUnavailabilityTypeMapper::GetNameForNodeUnavailabilityType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithInteger("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithInteger("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

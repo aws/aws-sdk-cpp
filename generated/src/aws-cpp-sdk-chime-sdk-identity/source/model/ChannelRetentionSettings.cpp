@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-ChannelRetentionSettings::ChannelRetentionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelRetentionSettings::ChannelRetentionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelRetentionSettings& ChannelRetentionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RetentionDays"))
-  {
+ChannelRetentionSettings& ChannelRetentionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RetentionDays")) {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");
     m_retentionDaysHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelRetentionSettings::Jsonize() const
-{
+JsonValue ChannelRetentionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_retentionDaysHasBeenSet)
-  {
-   payload.WithInteger("RetentionDays", m_retentionDays);
-
+  if (m_retentionDaysHasBeenSet) {
+    payload.WithInteger("RetentionDays", m_retentionDays);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

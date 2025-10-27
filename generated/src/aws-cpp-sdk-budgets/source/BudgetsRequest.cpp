@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/budgets/BudgetsRequest.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-} // namespace Budgets
-} // namespace Aws
+namespace Aws {
+namespace Budgets {}  // namespace Budgets
+}  // namespace Aws

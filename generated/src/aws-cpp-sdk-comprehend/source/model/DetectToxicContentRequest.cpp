@@ -12,37 +12,26 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DetectToxicContentRequest::SerializePayload() const
-{
+Aws::String DetectToxicContentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_textSegmentsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> textSegmentsJsonList(m_textSegments.size());
-   for(unsigned textSegmentsIndex = 0; textSegmentsIndex < textSegmentsJsonList.GetLength(); ++textSegmentsIndex)
-   {
-     textSegmentsJsonList[textSegmentsIndex].AsObject(m_textSegments[textSegmentsIndex].Jsonize());
-   }
-   payload.WithArray("TextSegments", std::move(textSegmentsJsonList));
-
+  if (m_textSegmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> textSegmentsJsonList(m_textSegments.size());
+    for (unsigned textSegmentsIndex = 0; textSegmentsIndex < textSegmentsJsonList.GetLength(); ++textSegmentsIndex) {
+      textSegmentsJsonList[textSegmentsIndex].AsObject(m_textSegments[textSegmentsIndex].Jsonize());
+    }
+    payload.WithArray("TextSegments", std::move(textSegmentsJsonList));
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectToxicContentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DetectToxicContentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DetectToxicContent"));
   return headers;
-
 }
-
-
-
-

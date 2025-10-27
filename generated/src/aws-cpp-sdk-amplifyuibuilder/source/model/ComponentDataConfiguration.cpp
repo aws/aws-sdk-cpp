@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ComponentDataConfiguration::ComponentDataConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComponentDataConfiguration::ComponentDataConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("model"))
-  {
+ComponentDataConfiguration& ComponentDataConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("model")) {
     m_model = jsonValue.GetString("model");
     m_modelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sort"))
-  {
+  if (jsonValue.ValueExists("sort")) {
     Aws::Utils::Array<JsonView> sortJsonList = jsonValue.GetArray("sort");
-    for(unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex)
-    {
+    for (unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex) {
       m_sort.push_back(sortJsonList[sortIndex].AsObject());
     }
     m_sortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("predicate"))
-  {
+  if (jsonValue.ValueExists("predicate")) {
     m_predicate = jsonValue.GetObject("predicate");
     m_predicateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identifiers"))
-  {
+  if (jsonValue.ValueExists("identifiers")) {
     Aws::Utils::Array<JsonView> identifiersJsonList = jsonValue.GetArray("identifiers");
-    for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
-    {
+    for (unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex) {
       m_identifiers.push_back(identifiersJsonList[identifiersIndex].AsString());
     }
     m_identifiersHasBeenSet = true;
@@ -56,47 +43,36 @@ ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView json
   return *this;
 }
 
-JsonValue ComponentDataConfiguration::Jsonize() const
-{
+JsonValue ComponentDataConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelHasBeenSet)
-  {
-   payload.WithString("model", m_model);
-
+  if (m_modelHasBeenSet) {
+    payload.WithString("model", m_model);
   }
 
-  if(m_sortHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sortJsonList(m_sort.size());
-   for(unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex)
-   {
-     sortJsonList[sortIndex].AsObject(m_sort[sortIndex].Jsonize());
-   }
-   payload.WithArray("sort", std::move(sortJsonList));
-
+  if (m_sortHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sortJsonList(m_sort.size());
+    for (unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex) {
+      sortJsonList[sortIndex].AsObject(m_sort[sortIndex].Jsonize());
+    }
+    payload.WithArray("sort", std::move(sortJsonList));
   }
 
-  if(m_predicateHasBeenSet)
-  {
-   payload.WithObject("predicate", m_predicate.Jsonize());
-
+  if (m_predicateHasBeenSet) {
+    payload.WithObject("predicate", m_predicate.Jsonize());
   }
 
-  if(m_identifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
-   for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
-   {
-     identifiersJsonList[identifiersIndex].AsString(m_identifiers[identifiersIndex]);
-   }
-   payload.WithArray("identifiers", std::move(identifiersJsonList));
-
+  if (m_identifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
+    for (unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex) {
+      identifiersJsonList[identifiersIndex].AsString(m_identifiers[identifiersIndex]);
+    }
+    payload.WithArray("identifiers", std::move(identifiersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

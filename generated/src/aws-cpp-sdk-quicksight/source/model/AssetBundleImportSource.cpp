@@ -3,60 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AssetBundleImportSource.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AssetBundleImportSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AssetBundleImportSource::AssetBundleImportSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetBundleImportSource::AssetBundleImportSource(JsonView jsonValue) { *this = jsonValue; }
 
-AssetBundleImportSource& AssetBundleImportSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Body"))
-  {
+AssetBundleImportSource& AssetBundleImportSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Body")) {
     m_body = HashingUtils::Base64Decode(jsonValue.GetString("Body"));
     m_bodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetBundleImportSource::Jsonize() const
-{
+JsonValue AssetBundleImportSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_bodyHasBeenSet)
-  {
-   payload.WithString("Body", HashingUtils::Base64Encode(m_body));
+  if (m_bodyHasBeenSet) {
+    payload.WithString("Body", HashingUtils::Base64Encode(m_body));
   }
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

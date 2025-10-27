@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-Validator::Validator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Validator::Validator(JsonView jsonValue) { *this = jsonValue; }
 
-Validator& Validator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Validator& Validator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ValidatorTypeMapper::GetValidatorTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetString("Content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Validator::Jsonize() const
-{
+JsonValue Validator::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ValidatorTypeMapper::GetNameForValidatorType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ValidatorTypeMapper::GetNameForValidatorType(m_type));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

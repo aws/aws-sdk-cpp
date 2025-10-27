@@ -4,42 +4,37 @@
  */
 
 #pragma once
-#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
-  enum class Permission
-  {
-    NOT_SET,
-    ALL,
-    SELECT,
-    ALTER,
-    DROP,
-    DELETE_,
-    INSERT,
-    DESCRIBE,
-    CREATE_DATABASE,
-    CREATE_TABLE,
-    DATA_LOCATION_ACCESS,
-    CREATE_LF_TAG,
-    ASSOCIATE,
-    GRANT_WITH_LF_TAG_EXPRESSION,
-    CREATE_LF_TAG_EXPRESSION,
-    CREATE_CATALOG,
-    SUPER_USER
-  };
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
+enum class Permission {
+  NOT_SET,
+  ALL,
+  SELECT,
+  ALTER,
+  DROP,
+  DELETE_,
+  INSERT,
+  DESCRIBE,
+  CREATE_DATABASE,
+  CREATE_TABLE,
+  DATA_LOCATION_ACCESS,
+  CREATE_LF_TAG,
+  ASSOCIATE,
+  GRANT_WITH_LF_TAG_EXPRESSION,
+  CREATE_LF_TAG_EXPRESSION,
+  CREATE_CATALOG,
+  SUPER_USER
+};
 
-namespace PermissionMapper
-{
+namespace PermissionMapper {
 AWS_LAKEFORMATION_API Permission GetPermissionForName(const Aws::String& name);
 
 AWS_LAKEFORMATION_API Aws::String GetNameForPermission(Permission value);
-} // namespace PermissionMapper
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace PermissionMapper
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

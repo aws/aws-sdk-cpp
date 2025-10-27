@@ -5,12 +5,8 @@
 
 #include <aws/emr-containers/EMRContainersEndpointProvider.h>
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EMRContainers
-} // namespace Aws
+namespace Aws {
+namespace EMRContainers {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EMRContainers
+}  // namespace Aws

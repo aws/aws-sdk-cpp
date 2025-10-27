@@ -4,90 +4,105 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
-#include <aws/geo-routes/model/RouteVehicleNoticeCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/geo-routes/model/RouteNoticeImpact.h>
+#include <aws/geo-routes/model/RouteVehicleNoticeCode.h>
 #include <aws/geo-routes/model/RouteVehicleNoticeDetail.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GeoRoutes {
+namespace Model {
 
+/**
+ * <p>Notices are additional information returned that indicate issues that
+ * occurred during route calculation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteVehicleNotice">AWS
+ * API Reference</a></p>
+ */
+class RouteVehicleNotice {
+ public:
+  AWS_GEOROUTES_API RouteVehicleNotice() = default;
+  AWS_GEOROUTES_API RouteVehicleNotice(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API RouteVehicleNotice& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Notices are additional information returned that indicate issues that
-   * occurred during route calculation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteVehicleNotice">AWS
-   * API Reference</a></p>
+   * <p>Code corresponding to the issue.</p>
    */
-  class RouteVehicleNotice
-  {
-  public:
-    AWS_GEOROUTES_API RouteVehicleNotice() = default;
-    AWS_GEOROUTES_API RouteVehicleNotice(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOROUTES_API RouteVehicleNotice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline RouteVehicleNoticeCode GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  inline void SetCode(RouteVehicleNoticeCode value) {
+    m_codeHasBeenSet = true;
+    m_code = value;
+  }
+  inline RouteVehicleNotice& WithCode(RouteVehicleNoticeCode value) {
+    SetCode(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Additional details of the notice.</p>
+   */
+  inline const Aws::Vector<RouteVehicleNoticeDetail>& GetDetails() const { return m_details; }
+  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+  template <typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
+  }
+  template <typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
+  RouteVehicleNotice& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
+    return *this;
+  }
+  template <typename DetailsT = RouteVehicleNoticeDetail>
+  RouteVehicleNotice& AddDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details.emplace_back(std::forward<DetailsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Code corresponding to the issue.</p>
-     */
-    inline RouteVehicleNoticeCode GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(RouteVehicleNoticeCode value) { m_codeHasBeenSet = true; m_code = value; }
-    inline RouteVehicleNotice& WithCode(RouteVehicleNoticeCode value) { SetCode(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Impact corresponding to the issue. While Low impact notices can be safely
+   * ignored, High impact notices must be evaluated further to determine the
+   * impact.</p>
+   */
+  inline RouteNoticeImpact GetImpact() const { return m_impact; }
+  inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
+  inline void SetImpact(RouteNoticeImpact value) {
+    m_impactHasBeenSet = true;
+    m_impact = value;
+  }
+  inline RouteVehicleNotice& WithImpact(RouteNoticeImpact value) {
+    SetImpact(value);
+    return *this;
+  }
+  ///@}
+ private:
+  RouteVehicleNoticeCode m_code{RouteVehicleNoticeCode::NOT_SET};
+  bool m_codeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Additional details of the notice.</p>
-     */
-    inline const Aws::Vector<RouteVehicleNoticeDetail>& GetDetails() const { return m_details; }
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    template<typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
-    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
-    template<typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
-    RouteVehicleNotice& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
-    template<typename DetailsT = RouteVehicleNoticeDetail>
-    RouteVehicleNotice& AddDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details.emplace_back(std::forward<DetailsT>(value)); return *this; }
-    ///@}
+  Aws::Vector<RouteVehicleNoticeDetail> m_details;
+  bool m_detailsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Impact corresponding to the issue. While Low impact notices can be safely
-     * ignored, High impact notices must be evaluated further to determine the
-     * impact.</p>
-     */
-    inline RouteNoticeImpact GetImpact() const { return m_impact; }
-    inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-    inline void SetImpact(RouteNoticeImpact value) { m_impactHasBeenSet = true; m_impact = value; }
-    inline RouteVehicleNotice& WithImpact(RouteNoticeImpact value) { SetImpact(value); return *this;}
-    ///@}
-  private:
+  RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
+  bool m_impactHasBeenSet = false;
+};
 
-    RouteVehicleNoticeCode m_code{RouteVehicleNoticeCode::NOT_SET};
-    bool m_codeHasBeenSet = false;
-
-    Aws::Vector<RouteVehicleNoticeDetail> m_details;
-    bool m_detailsHasBeenSet = false;
-
-    RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
-    bool m_impactHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

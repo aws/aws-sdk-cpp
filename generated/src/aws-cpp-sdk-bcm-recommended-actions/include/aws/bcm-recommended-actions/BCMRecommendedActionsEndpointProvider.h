@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointRules.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BCMRecommendedActions
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BCMRecommendedActions {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BCMRecommendedActionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using BCMRecommendedActionsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using BCMRecommendedActionsEndpointProviderBase =
-    EndpointProviderBase<BCMRecommendedActionsClientConfiguration, BCMRecommendedActionsBuiltInParameters, BCMRecommendedActionsClientContextParameters>;
+    EndpointProviderBase<BCMRecommendedActionsClientConfiguration, BCMRecommendedActionsBuiltInParameters,
+                         BCMRecommendedActionsClientContextParameters>;
 
 using BCMRecommendedActionsDefaultEpProviderBase =
-    DefaultEndpointProvider<BCMRecommendedActionsClientConfiguration, BCMRecommendedActionsBuiltInParameters, BCMRecommendedActionsClientContextParameters>;
+    DefaultEndpointProvider<BCMRecommendedActionsClientConfiguration, BCMRecommendedActionsBuiltInParameters,
+                            BCMRecommendedActionsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsEndpointProvider : public BCMRecommendedActionsDefaultEpProviderBase
-{
-public:
-    using BCMRecommendedActionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsEndpointProvider : public BCMRecommendedActionsDefaultEpProviderBase {
+ public:
+  using BCMRecommendedActionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BCMRecommendedActionsEndpointProvider()
-      : BCMRecommendedActionsDefaultEpProviderBase(Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::GetRulesBlob(), Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::RulesBlobSize)
-    {}
+  BCMRecommendedActionsEndpointProvider()
+      : BCMRecommendedActionsDefaultEpProviderBase(Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::GetRulesBlob(),
+                                                   Aws::BCMRecommendedActions::BCMRecommendedActionsEndpointRules::RulesBlobSize) {}
 
-    ~BCMRecommendedActionsEndpointProvider()
-    {
-    }
+  ~BCMRecommendedActionsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BCMRecommendedActions
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BCMRecommendedActions
+}  // namespace Aws

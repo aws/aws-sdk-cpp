@@ -12,33 +12,22 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateCustomDomainRequest::SerializePayload() const
-{
+Aws::String DisassociateCustomDomainRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("ServiceArn", m_serviceArn);
-
+  if (m_serviceArnHasBeenSet) {
+    payload.WithString("ServiceArn", m_serviceArn);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DisassociateCustomDomainRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DisassociateCustomDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.DisassociateCustomDomain"));
   return headers;
-
 }
-
-
-
-

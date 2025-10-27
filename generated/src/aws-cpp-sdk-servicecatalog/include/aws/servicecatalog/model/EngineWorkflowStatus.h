@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class EngineWorkflowStatus
-  {
-    NOT_SET,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class EngineWorkflowStatus { NOT_SET, SUCCEEDED, FAILED };
 
-namespace EngineWorkflowStatusMapper
-{
+namespace EngineWorkflowStatusMapper {
 AWS_SERVICECATALOG_API EngineWorkflowStatus GetEngineWorkflowStatusForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForEngineWorkflowStatus(EngineWorkflowStatus value);
-} // namespace EngineWorkflowStatusMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace EngineWorkflowStatusMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

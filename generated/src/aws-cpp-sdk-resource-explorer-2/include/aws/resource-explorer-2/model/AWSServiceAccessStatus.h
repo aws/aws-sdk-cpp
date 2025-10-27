@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceExplorer2
-{
-namespace Model
-{
-  enum class AWSServiceAccessStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace ResourceExplorer2 {
+namespace Model {
+enum class AWSServiceAccessStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace AWSServiceAccessStatusMapper
-{
+namespace AWSServiceAccessStatusMapper {
 AWS_RESOURCEEXPLORER2_API AWSServiceAccessStatus GetAWSServiceAccessStatusForName(const Aws::String& name);
 
 AWS_RESOURCEEXPLORER2_API Aws::String GetNameForAWSServiceAccessStatus(AWSServiceAccessStatus value);
-} // namespace AWSServiceAccessStatusMapper
-} // namespace Model
-} // namespace ResourceExplorer2
-} // namespace Aws
+}  // namespace AWSServiceAccessStatusMapper
+}  // namespace Model
+}  // namespace ResourceExplorer2
+}  // namespace Aws

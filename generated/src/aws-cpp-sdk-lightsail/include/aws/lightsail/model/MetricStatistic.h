@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class MetricStatistic
-  {
-    NOT_SET,
-    Minimum,
-    Maximum,
-    Sum,
-    Average,
-    SampleCount
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class MetricStatistic { NOT_SET, Minimum, Maximum, Sum, Average, SampleCount };
 
-namespace MetricStatisticMapper
-{
+namespace MetricStatisticMapper {
 AWS_LIGHTSAIL_API MetricStatistic GetMetricStatisticForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForMetricStatistic(MetricStatistic value);
-} // namespace MetricStatisticMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace MetricStatisticMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

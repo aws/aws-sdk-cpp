@@ -12,11 +12,4 @@ using namespace Aws::AppMesh::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMeshRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteMeshRequest::SerializePayload() const { return {}; }

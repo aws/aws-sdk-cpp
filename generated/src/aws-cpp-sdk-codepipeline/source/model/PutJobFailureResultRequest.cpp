@@ -12,33 +12,22 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutJobFailureResultRequest::SerializePayload() const
-{
+Aws::String PutJobFailureResultRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_failureDetailsHasBeenSet)
-  {
-   payload.WithObject("failureDetails", m_failureDetails.Jsonize());
-
+  if (m_failureDetailsHasBeenSet) {
+    payload.WithObject("failureDetails", m_failureDetails.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutJobFailureResultRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutJobFailureResultRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutJobFailureResult"));
   return headers;
-
 }
-
-
-
-

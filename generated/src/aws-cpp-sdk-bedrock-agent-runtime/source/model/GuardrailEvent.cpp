@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-GuardrailEvent::GuardrailEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailEvent::GuardrailEvent(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailEvent& GuardrailEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("action"))
-  {
+GuardrailEvent& GuardrailEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("action")) {
     m_action = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailEvent::Jsonize() const
-{
+JsonValue GuardrailEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuadrailActionMapper::GetNameForGuadrailAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GuadrailActionMapper::GetNameForGuadrailAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

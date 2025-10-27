@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue(JsonView jsonValue) { *this = jsonValue; }
 
-RdsDbClusterSnapshotAttributeValue& RdsDbClusterSnapshotAttributeValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountIds"))
-  {
+RdsDbClusterSnapshotAttributeValue& RdsDbClusterSnapshotAttributeValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountIds")) {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
-    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-    {
+    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
     }
     m_accountIdsHasBeenSet = true;
@@ -37,24 +28,20 @@ RdsDbClusterSnapshotAttributeValue& RdsDbClusterSnapshotAttributeValue::operator
   return *this;
 }
 
-JsonValue RdsDbClusterSnapshotAttributeValue::Jsonize() const
-{
+JsonValue RdsDbClusterSnapshotAttributeValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-   {
-     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
-   }
-   payload.WithArray("accountIds", std::move(accountIdsJsonList));
-
+  if (m_accountIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+    for (unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex) {
+      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
+    }
+    payload.WithArray("accountIds", std::move(accountIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bedrock-agent/BedrockAgentEndpointRules.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/bedrock-agent/BedrockAgentEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockAgentClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using BedrockAgentDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BEDROCKAGENT_API BedrockAgentEndpointProvider : public BedrockAgentDefaultEpProviderBase
-{
-public:
-    using BedrockAgentResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BEDROCKAGENT_API BedrockAgentEndpointProvider : public BedrockAgentDefaultEpProviderBase {
+ public:
+  using BedrockAgentResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BedrockAgentEndpointProvider()
-      : BedrockAgentDefaultEpProviderBase(Aws::BedrockAgent::BedrockAgentEndpointRules::GetRulesBlob(), Aws::BedrockAgent::BedrockAgentEndpointRules::RulesBlobSize)
-    {}
+  BedrockAgentEndpointProvider()
+      : BedrockAgentDefaultEpProviderBase(Aws::BedrockAgent::BedrockAgentEndpointRules::GetRulesBlob(),
+                                          Aws::BedrockAgent::BedrockAgentEndpointRules::RulesBlobSize) {}
 
-    ~BedrockAgentEndpointProvider()
-    {
-    }
+  ~BedrockAgentEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -11,92 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-AccessBudgetDetails::AccessBudgetDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccessBudgetDetails::AccessBudgetDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AccessBudgetDetails& AccessBudgetDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startTime"))
-  {
+AccessBudgetDetails& AccessBudgetDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTime"))
-  {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remainingBudget"))
-  {
+  if (jsonValue.ValueExists("remainingBudget")) {
     m_remainingBudget = jsonValue.GetInteger("remainingBudget");
     m_remainingBudgetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("budget"))
-  {
+  if (jsonValue.ValueExists("budget")) {
     m_budget = jsonValue.GetInteger("budget");
     m_budgetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("budgetType"))
-  {
+  if (jsonValue.ValueExists("budgetType")) {
     m_budgetType = AccessBudgetTypeMapper::GetAccessBudgetTypeForName(jsonValue.GetString("budgetType"));
     m_budgetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoRefresh"))
-  {
+  if (jsonValue.ValueExists("autoRefresh")) {
     m_autoRefresh = AutoRefreshModeMapper::GetAutoRefreshModeForName(jsonValue.GetString("autoRefresh"));
     m_autoRefreshHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccessBudgetDetails::Jsonize() const
-{
+JsonValue AccessBudgetDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_remainingBudgetHasBeenSet)
-  {
-   payload.WithInteger("remainingBudget", m_remainingBudget);
-
+  if (m_remainingBudgetHasBeenSet) {
+    payload.WithInteger("remainingBudget", m_remainingBudget);
   }
 
-  if(m_budgetHasBeenSet)
-  {
-   payload.WithInteger("budget", m_budget);
-
+  if (m_budgetHasBeenSet) {
+    payload.WithInteger("budget", m_budget);
   }
 
-  if(m_budgetTypeHasBeenSet)
-  {
-   payload.WithString("budgetType", AccessBudgetTypeMapper::GetNameForAccessBudgetType(m_budgetType));
+  if (m_budgetTypeHasBeenSet) {
+    payload.WithString("budgetType", AccessBudgetTypeMapper::GetNameForAccessBudgetType(m_budgetType));
   }
 
-  if(m_autoRefreshHasBeenSet)
-  {
-   payload.WithString("autoRefresh", AutoRefreshModeMapper::GetNameForAutoRefreshMode(m_autoRefresh));
+  if (m_autoRefreshHasBeenSet) {
+    payload.WithString("autoRefresh", AutoRefreshModeMapper::GetNameForAutoRefreshMode(m_autoRefresh));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

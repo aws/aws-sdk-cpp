@@ -7,26 +7,16 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
-  enum class ConfigFileState
-  {
-    NOT_SET,
-    Present,
-    Absent,
-    PresentWithErrors
-  };
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
+enum class ConfigFileState { NOT_SET, Present, Absent, PresentWithErrors };
 
-namespace ConfigFileStateMapper
-{
+namespace ConfigFileStateMapper {
 AWS_CODEGURUREVIEWER_API ConfigFileState GetConfigFileStateForName(const Aws::String& name);
 
 AWS_CODEGURUREVIEWER_API Aws::String GetNameForConfigFileState(ConfigFileState value);
-} // namespace ConfigFileStateMapper
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace ConfigFileStateMapper
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

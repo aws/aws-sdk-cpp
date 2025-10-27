@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Type
-  {
-    NOT_SET,
-    SYSTEM,
-    CUSTOM
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Type { NOT_SET, SYSTEM, CUSTOM };
 
-namespace TypeMapper
-{
+namespace TypeMapper {
 AWS_MEDIACONVERT_API Type GetTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace TypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

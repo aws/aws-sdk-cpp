@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-UserFeedback::UserFeedback(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserFeedback::UserFeedback(JsonView jsonValue) { *this = jsonValue; }
 
-UserFeedback& UserFeedback::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+UserFeedback& UserFeedback::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = FeedbackTypeMapper::GetFeedbackTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserFeedback::Jsonize() const
-{
+JsonValue UserFeedback::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FeedbackTypeMapper::GetNameForFeedbackType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", FeedbackTypeMapper::GetNameForFeedbackType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

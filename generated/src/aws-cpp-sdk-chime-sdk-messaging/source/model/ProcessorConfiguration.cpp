@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-ProcessorConfiguration::ProcessorConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProcessorConfiguration::ProcessorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ProcessorConfiguration& ProcessorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Lambda"))
-  {
+ProcessorConfiguration& ProcessorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Lambda")) {
     m_lambda = jsonValue.GetObject("Lambda");
     m_lambdaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProcessorConfiguration::Jsonize() const
-{
+JsonValue ProcessorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaHasBeenSet)
-  {
-   payload.WithObject("Lambda", m_lambda.Jsonize());
-
+  if (m_lambdaHasBeenSet) {
+    payload.WithObject("Lambda", m_lambda.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

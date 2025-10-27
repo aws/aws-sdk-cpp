@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-enum class MediaConnectErrors
-{
-  //From Core//
+namespace Aws {
+namespace MediaConnect {
+enum class MediaConnectErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MediaConnectErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class MediaConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ADD_FLOW_OUTPUTS420= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ADD_FLOW_OUTPUTS420 = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BAD_REQUEST,
   CONFLICT,
   CREATE_BRIDGE420,
@@ -60,9 +57,8 @@ enum class MediaConnectErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_MEDIACONNECT_API MediaConnectError : public Aws::Client::AWSError<MediaConnectErrors>
-{
-public:
+class AWS_MEDIACONNECT_API MediaConnectError : public Aws::Client::AWSError<MediaConnectErrors> {
+ public:
   MediaConnectError() {}
   MediaConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaConnectErrors>(rhs) {}
   MediaConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaConnectErrors>(rhs) {}
@@ -73,10 +69,9 @@ public:
   T GetModeledError();
 };
 
-namespace MediaConnectErrorMapper
-{
-  AWS_MEDIACONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MediaConnectErrorMapper {
+AWS_MEDIACONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace MediaConnect
+}  // namespace Aws

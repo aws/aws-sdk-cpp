@@ -12,11 +12,4 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetThemeRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetThemeRequest::SerializePayload() const { return {}; }

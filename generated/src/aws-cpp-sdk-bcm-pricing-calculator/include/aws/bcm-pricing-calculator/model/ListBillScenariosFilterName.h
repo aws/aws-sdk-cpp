@@ -7,25 +7,16 @@
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
-  enum class ListBillScenariosFilterName
-  {
-    NOT_SET,
-    STATUS,
-    NAME
-  };
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
+enum class ListBillScenariosFilterName { NOT_SET, STATUS, NAME };
 
-namespace ListBillScenariosFilterNameMapper
-{
+namespace ListBillScenariosFilterNameMapper {
 AWS_BCMPRICINGCALCULATOR_API ListBillScenariosFilterName GetListBillScenariosFilterNameForName(const Aws::String& name);
 
 AWS_BCMPRICINGCALCULATOR_API Aws::String GetNameForListBillScenariosFilterName(ListBillScenariosFilterName value);
-} // namespace ListBillScenariosFilterNameMapper
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace ListBillScenariosFilterNameMapper
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

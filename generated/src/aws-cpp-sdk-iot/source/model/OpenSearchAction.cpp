@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/OpenSearchAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/OpenSearchAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-OpenSearchAction::OpenSearchAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenSearchAction::OpenSearchAction(JsonView jsonValue) { *this = jsonValue; }
 
-OpenSearchAction& OpenSearchAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleArn"))
-  {
+OpenSearchAction& OpenSearchAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpoint"))
-  {
+  if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("index"))
-  {
+  if (jsonValue.ValueExists("index")) {
     m_index = jsonValue.GetString("index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenSearchAction::Jsonize() const
-{
+JsonValue OpenSearchAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
   }
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithString("index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithString("index", m_index);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

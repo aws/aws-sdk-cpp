@@ -5,12 +5,8 @@
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointProvider.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ElasticBeanstalk
-} // namespace Aws
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

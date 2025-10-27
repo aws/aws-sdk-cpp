@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class VerifyMode
-  {
-    NOT_SET,
-    POINT_IN_TIME_CONSISTENT,
-    ONLY_FILES_TRANSFERRED,
-    NONE
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class VerifyMode { NOT_SET, POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE };
 
-namespace VerifyModeMapper
-{
+namespace VerifyModeMapper {
 AWS_DATASYNC_API VerifyMode GetVerifyModeForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForVerifyMode(VerifyMode value);
-} // namespace VerifyModeMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace VerifyModeMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

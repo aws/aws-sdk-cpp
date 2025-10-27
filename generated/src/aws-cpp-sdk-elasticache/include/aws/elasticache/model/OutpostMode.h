@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class OutpostMode
-  {
-    NOT_SET,
-    single_outpost,
-    cross_outpost
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class OutpostMode { NOT_SET, single_outpost, cross_outpost };
 
-namespace OutpostModeMapper
-{
+namespace OutpostModeMapper {
 AWS_ELASTICACHE_API OutpostMode GetOutpostModeForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForOutpostMode(OutpostMode value);
-} // namespace OutpostModeMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace OutpostModeMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

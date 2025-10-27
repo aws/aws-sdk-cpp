@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/SidewalkUpdateImportInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/SidewalkUpdateImportInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-SidewalkUpdateImportInfo::SidewalkUpdateImportInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SidewalkUpdateImportInfo::SidewalkUpdateImportInfo(JsonView jsonValue) { *this = jsonValue; }
 
-SidewalkUpdateImportInfo& SidewalkUpdateImportInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeviceCreationFile"))
-  {
+SidewalkUpdateImportInfo& SidewalkUpdateImportInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeviceCreationFile")) {
     m_deviceCreationFile = jsonValue.GetString("DeviceCreationFile");
     m_deviceCreationFileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SidewalkUpdateImportInfo::Jsonize() const
-{
+JsonValue SidewalkUpdateImportInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_deviceCreationFileHasBeenSet)
-  {
-   payload.WithString("DeviceCreationFile", m_deviceCreationFile);
-
+  if (m_deviceCreationFileHasBeenSet) {
+    payload.WithString("DeviceCreationFile", m_deviceCreationFile);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

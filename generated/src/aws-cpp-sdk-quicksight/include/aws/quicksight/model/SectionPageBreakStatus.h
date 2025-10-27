@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class SectionPageBreakStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class SectionPageBreakStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace SectionPageBreakStatusMapper
-{
+namespace SectionPageBreakStatusMapper {
 AWS_QUICKSIGHT_API SectionPageBreakStatus GetSectionPageBreakStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForSectionPageBreakStatus(SectionPageBreakStatus value);
-} // namespace SectionPageBreakStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace SectionPageBreakStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StartShotDetectionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StartShotDetectionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StartShotDetectionFilter::StartShotDetectionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartShotDetectionFilter::StartShotDetectionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-StartShotDetectionFilter& StartShotDetectionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinSegmentConfidence"))
-  {
+StartShotDetectionFilter& StartShotDetectionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinSegmentConfidence")) {
     m_minSegmentConfidence = jsonValue.GetDouble("MinSegmentConfidence");
     m_minSegmentConfidenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartShotDetectionFilter::Jsonize() const
-{
+JsonValue StartShotDetectionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_minSegmentConfidenceHasBeenSet)
-  {
-   payload.WithDouble("MinSegmentConfidence", m_minSegmentConfidence);
-
+  if (m_minSegmentConfidenceHasBeenSet) {
+    payload.WithDouble("MinSegmentConfidence", m_minSegmentConfidence);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class ScanningRepositoryFilterType
-  {
-    NOT_SET,
-    WILDCARD
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class ScanningRepositoryFilterType { NOT_SET, WILDCARD };
 
-namespace ScanningRepositoryFilterTypeMapper
-{
+namespace ScanningRepositoryFilterTypeMapper {
 AWS_ECR_API ScanningRepositoryFilterType GetScanningRepositoryFilterTypeForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForScanningRepositoryFilterType(ScanningRepositoryFilterType value);
-} // namespace ScanningRepositoryFilterTypeMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace ScanningRepositoryFilterTypeMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

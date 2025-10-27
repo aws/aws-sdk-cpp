@@ -7,28 +7,23 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class ActionGroupSignature
-  {
-    NOT_SET,
-    AMAZON_UserInput,
-    AMAZON_CodeInterpreter,
-    ANTHROPIC_Computer,
-    ANTHROPIC_Bash,
-    ANTHROPIC_TextEditor
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class ActionGroupSignature {
+  NOT_SET,
+  AMAZON_UserInput,
+  AMAZON_CodeInterpreter,
+  ANTHROPIC_Computer,
+  ANTHROPIC_Bash,
+  ANTHROPIC_TextEditor
+};
 
-namespace ActionGroupSignatureMapper
-{
+namespace ActionGroupSignatureMapper {
 AWS_BEDROCKAGENT_API ActionGroupSignature GetActionGroupSignatureForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForActionGroupSignature(ActionGroupSignature value);
-} // namespace ActionGroupSignatureMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace ActionGroupSignatureMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

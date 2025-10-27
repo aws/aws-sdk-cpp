@@ -3,105 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/QueryStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/logs/model/QueryStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+namespace QueryStatusMapper {
 
-namespace Aws
-{
-  namespace CloudWatchLogs
-  {
-    namespace Model
-    {
-      namespace QueryStatusMapper
-      {
+static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
+static const int Running_HASH = HashingUtils::HashString("Running");
+static const int Complete_HASH = HashingUtils::HashString("Complete");
+static const int Failed_HASH = HashingUtils::HashString("Failed");
+static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+static const int Timeout_HASH = HashingUtils::HashString("Timeout");
+static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
-        static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
-        static const int Running_HASH = HashingUtils::HashString("Running");
-        static const int Complete_HASH = HashingUtils::HashString("Complete");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int Timeout_HASH = HashingUtils::HashString("Timeout");
-        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+QueryStatus GetQueryStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Scheduled_HASH) {
+    return QueryStatus::Scheduled;
+  } else if (hashCode == Running_HASH) {
+    return QueryStatus::Running;
+  } else if (hashCode == Complete_HASH) {
+    return QueryStatus::Complete;
+  } else if (hashCode == Failed_HASH) {
+    return QueryStatus::Failed;
+  } else if (hashCode == Cancelled_HASH) {
+    return QueryStatus::Cancelled;
+  } else if (hashCode == Timeout_HASH) {
+    return QueryStatus::Timeout;
+  } else if (hashCode == Unknown_HASH) {
+    return QueryStatus::Unknown;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<QueryStatus>(hashCode);
+  }
 
+  return QueryStatus::NOT_SET;
+}
 
-        QueryStatus GetQueryStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Scheduled_HASH)
-          {
-            return QueryStatus::Scheduled;
-          }
-          else if (hashCode == Running_HASH)
-          {
-            return QueryStatus::Running;
-          }
-          else if (hashCode == Complete_HASH)
-          {
-            return QueryStatus::Complete;
-          }
-          else if (hashCode == Failed_HASH)
-          {
-            return QueryStatus::Failed;
-          }
-          else if (hashCode == Cancelled_HASH)
-          {
-            return QueryStatus::Cancelled;
-          }
-          else if (hashCode == Timeout_HASH)
-          {
-            return QueryStatus::Timeout;
-          }
-          else if (hashCode == Unknown_HASH)
-          {
-            return QueryStatus::Unknown;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<QueryStatus>(hashCode);
-          }
+Aws::String GetNameForQueryStatus(QueryStatus enumValue) {
+  switch (enumValue) {
+    case QueryStatus::NOT_SET:
+      return {};
+    case QueryStatus::Scheduled:
+      return "Scheduled";
+    case QueryStatus::Running:
+      return "Running";
+    case QueryStatus::Complete:
+      return "Complete";
+    case QueryStatus::Failed:
+      return "Failed";
+    case QueryStatus::Cancelled:
+      return "Cancelled";
+    case QueryStatus::Timeout:
+      return "Timeout";
+    case QueryStatus::Unknown:
+      return "Unknown";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return QueryStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForQueryStatus(QueryStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case QueryStatus::NOT_SET:
-            return {};
-          case QueryStatus::Scheduled:
-            return "Scheduled";
-          case QueryStatus::Running:
-            return "Running";
-          case QueryStatus::Complete:
-            return "Complete";
-          case QueryStatus::Failed:
-            return "Failed";
-          case QueryStatus::Cancelled:
-            return "Cancelled";
-          case QueryStatus::Timeout:
-            return "Timeout";
-          case QueryStatus::Unknown:
-            return "Unknown";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace QueryStatusMapper
-    } // namespace Model
-  } // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace QueryStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

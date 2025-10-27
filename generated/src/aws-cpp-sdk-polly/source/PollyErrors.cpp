@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Polly;
 
-namespace Aws
-{
-namespace Polly
-{
-namespace PollyErrorMapper
-{
+namespace Aws {
+namespace Polly {
+namespace PollyErrorMapper {
 
 static const int SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH = HashingUtils::HashString("SsmlMarksNotSupportedForTextTypeException");
 static const int LEXICON_NOT_FOUND_HASH = HashingUtils::HashString("LexiconNotFoundException");
@@ -40,98 +37,55 @@ static const int LEXICON_SIZE_EXCEEDED_HASH = HashingUtils::HashString("LexiconS
 static const int MAX_LEXEME_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("MaxLexemeLengthExceededException");
 static const int INVALID_SSML_HASH = HashingUtils::HashString("InvalidSsmlException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH)
-  {
+  if (hashCode == SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::SSML_MARKS_NOT_SUPPORTED_FOR_TEXT_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LEXICON_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == LEXICON_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::LEXICON_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SNS_TOPIC_ARN_HASH)
-  {
+  } else if (hashCode == INVALID_SNS_TOPIC_ARN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_SNS_TOPIC_ARN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MARKS_NOT_SUPPORTED_FOR_FORMAT_HASH)
-  {
+  } else if (hashCode == MARKS_NOT_SUPPORTED_FOR_FORMAT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::MARKS_NOT_SUPPORTED_FOR_FORMAT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TEXT_LENGTH_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TEXT_LENGTH_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::TEXT_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ENGINE_NOT_SUPPORTED_HASH)
-  {
+  } else if (hashCode == ENGINE_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::ENGINE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_PLS_LANGUAGE_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_PLS_LANGUAGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::UNSUPPORTED_PLS_LANGUAGE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_PLS_ALPHABET_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_PLS_ALPHABET_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::UNSUPPORTED_PLS_ALPHABET), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LANGUAGE_NOT_SUPPORTED_HASH)
-  {
+  } else if (hashCode == LANGUAGE_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::LANGUAGE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MAX_LEXICONS_NUMBER_EXCEEDED_HASH)
-  {
+  } else if (hashCode == MAX_LEXICONS_NUMBER_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::MAX_LEXICONS_NUMBER_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_S3_KEY_HASH)
-  {
+  } else if (hashCode == INVALID_S3_KEY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_S3_KEY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_TASK_ID_HASH)
-  {
+  } else if (hashCode == INVALID_TASK_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_TASK_ID), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_FAILURE_HASH)
-  {
+  } else if (hashCode == SERVICE_FAILURE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::SERVICE_FAILURE), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == SYNTHESIS_TASK_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == SYNTHESIS_TASK_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::SYNTHESIS_TASK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SAMPLE_RATE_HASH)
-  {
+  } else if (hashCode == INVALID_SAMPLE_RATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_SAMPLE_RATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_LEXICON_HASH)
-  {
+  } else if (hashCode == INVALID_LEXICON_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_LEXICON), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_S3_BUCKET_HASH)
-  {
+  } else if (hashCode == INVALID_S3_BUCKET_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_S3_BUCKET), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LEXICON_SIZE_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LEXICON_SIZE_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::LEXICON_SIZE_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MAX_LEXEME_LENGTH_EXCEEDED_HASH)
-  {
+  } else if (hashCode == MAX_LEXEME_LENGTH_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::MAX_LEXEME_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SSML_HASH)
-  {
+  } else if (hashCode == INVALID_SSML_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::INVALID_SSML), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace PollyErrorMapper
-} // namespace Polly
-} // namespace Aws
+}  // namespace PollyErrorMapper
+}  // namespace Polly
+}  // namespace Aws

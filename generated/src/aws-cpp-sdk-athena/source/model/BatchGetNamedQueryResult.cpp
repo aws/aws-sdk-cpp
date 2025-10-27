@@ -4,10 +4,10 @@
  */
 
 #include <aws/athena/model/BatchGetNamedQueryResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetNamedQueryResult::BatchGetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetNamedQueryResult::BatchGetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NamedQueries"))
-  {
+  if (jsonValue.ValueExists("NamedQueries")) {
     Aws::Utils::Array<JsonView> namedQueriesJsonList = jsonValue.GetArray("NamedQueries");
-    for(unsigned namedQueriesIndex = 0; namedQueriesIndex < namedQueriesJsonList.GetLength(); ++namedQueriesIndex)
-    {
+    for (unsigned namedQueriesIndex = 0; namedQueriesIndex < namedQueriesJsonList.GetLength(); ++namedQueriesIndex) {
       m_namedQueries.push_back(namedQueriesJsonList[namedQueriesIndex].AsObject());
     }
     m_namedQueriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnprocessedNamedQueryIds"))
-  {
+  if (jsonValue.ValueExists("UnprocessedNamedQueryIds")) {
     Aws::Utils::Array<JsonView> unprocessedNamedQueryIdsJsonList = jsonValue.GetArray("UnprocessedNamedQueryIds");
-    for(unsigned unprocessedNamedQueryIdsIndex = 0; unprocessedNamedQueryIdsIndex < unprocessedNamedQueryIdsJsonList.GetLength(); ++unprocessedNamedQueryIdsIndex)
-    {
+    for (unsigned unprocessedNamedQueryIdsIndex = 0; unprocessedNamedQueryIdsIndex < unprocessedNamedQueryIdsJsonList.GetLength();
+         ++unprocessedNamedQueryIdsIndex) {
       m_unprocessedNamedQueryIds.push_back(unprocessedNamedQueryIdsJsonList[unprocessedNamedQueryIdsIndex].AsObject());
     }
     m_unprocessedNamedQueryIdsHasBeenSet = true;
@@ -46,12 +39,10 @@ BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::Amazon
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

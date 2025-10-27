@@ -7,26 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class RDSDBMetricStatistic
-  {
-    NOT_SET,
-    Maximum,
-    Minimum,
-    Average
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class RDSDBMetricStatistic { NOT_SET, Maximum, Minimum, Average };
 
-namespace RDSDBMetricStatisticMapper
-{
+namespace RDSDBMetricStatisticMapper {
 AWS_COMPUTEOPTIMIZER_API RDSDBMetricStatistic GetRDSDBMetricStatisticForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForRDSDBMetricStatistic(RDSDBMetricStatistic value);
-} // namespace RDSDBMetricStatisticMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace RDSDBMetricStatisticMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

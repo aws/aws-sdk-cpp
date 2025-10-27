@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue) { *this = jsonValue; }
 
-AccountTakeoverActionsType& AccountTakeoverActionsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LowAction"))
-  {
+AccountTakeoverActionsType& AccountTakeoverActionsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LowAction")) {
     m_lowAction = jsonValue.GetObject("LowAction");
     m_lowActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediumAction"))
-  {
+  if (jsonValue.ValueExists("MediumAction")) {
     m_mediumAction = jsonValue.GetObject("MediumAction");
     m_mediumActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HighAction"))
-  {
+  if (jsonValue.ValueExists("HighAction")) {
     m_highAction = jsonValue.GetObject("HighAction");
     m_highActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountTakeoverActionsType::Jsonize() const
-{
+JsonValue AccountTakeoverActionsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_lowActionHasBeenSet)
-  {
-   payload.WithObject("LowAction", m_lowAction.Jsonize());
-
+  if (m_lowActionHasBeenSet) {
+    payload.WithObject("LowAction", m_lowAction.Jsonize());
   }
 
-  if(m_mediumActionHasBeenSet)
-  {
-   payload.WithObject("MediumAction", m_mediumAction.Jsonize());
-
+  if (m_mediumActionHasBeenSet) {
+    payload.WithObject("MediumAction", m_mediumAction.Jsonize());
   }
 
-  if(m_highActionHasBeenSet)
-  {
-   payload.WithObject("HighAction", m_highAction.Jsonize());
-
+  if (m_highActionHasBeenSet) {
+    payload.WithObject("HighAction", m_highAction.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/PutAccountSendingAttributesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/PutAccountSendingAttributesRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutAccountSendingAttributesRequest::SerializePayload() const
-{
+Aws::String PutAccountSendingAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sendingEnabledHasBeenSet)
-  {
-   payload.WithBool("SendingEnabled", m_sendingEnabled);
-
+  if (m_sendingEnabledHasBeenSet) {
+    payload.WithBool("SendingEnabled", m_sendingEnabled);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

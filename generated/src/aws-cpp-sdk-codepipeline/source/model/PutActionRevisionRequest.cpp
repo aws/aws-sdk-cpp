@@ -12,45 +12,30 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutActionRevisionRequest::SerializePayload() const
-{
+Aws::String PutActionRevisionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineNameHasBeenSet)
-  {
-   payload.WithString("pipelineName", m_pipelineName);
-
+  if (m_pipelineNameHasBeenSet) {
+    payload.WithString("pipelineName", m_pipelineName);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("actionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("actionName", m_actionName);
   }
 
-  if(m_actionRevisionHasBeenSet)
-  {
-   payload.WithObject("actionRevision", m_actionRevision.Jsonize());
-
+  if (m_actionRevisionHasBeenSet) {
+    payload.WithObject("actionRevision", m_actionRevision.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutActionRevisionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutActionRevisionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutActionRevision"));
   return headers;
-
 }
-
-
-
-

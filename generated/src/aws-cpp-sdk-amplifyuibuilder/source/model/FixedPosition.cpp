@@ -4,62 +4,50 @@
  */
 
 #include <aws/amplifyuibuilder/model/FixedPosition.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+namespace FixedPositionMapper {
 
-namespace Aws
-{
-  namespace AmplifyUIBuilder
-  {
-    namespace Model
-    {
-      namespace FixedPositionMapper
-      {
+static const int first_HASH = HashingUtils::HashString("first");
 
-        static const int first_HASH = HashingUtils::HashString("first");
+FixedPosition GetFixedPositionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == first_HASH) {
+    return FixedPosition::first;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<FixedPosition>(hashCode);
+  }
 
+  return FixedPosition::NOT_SET;
+}
 
-        FixedPosition GetFixedPositionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == first_HASH)
-          {
-            return FixedPosition::first;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FixedPosition>(hashCode);
-          }
+Aws::String GetNameForFixedPosition(FixedPosition enumValue) {
+  switch (enumValue) {
+    case FixedPosition::NOT_SET:
+      return {};
+    case FixedPosition::first:
+      return "first";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return FixedPosition::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForFixedPosition(FixedPosition enumValue)
-        {
-          switch(enumValue)
-          {
-          case FixedPosition::NOT_SET:
-            return {};
-          case FixedPosition::first:
-            return "first";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace FixedPositionMapper
-    } // namespace Model
-  } // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace FixedPositionMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

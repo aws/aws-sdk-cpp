@@ -5,12 +5,8 @@
 
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
 
-namespace Aws
-{
-namespace ARCZonalShift
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ARCZonalShift
-} // namespace Aws
+namespace Aws {
+namespace ARCZonalShift {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ARCZonalShift
+}  // namespace Aws

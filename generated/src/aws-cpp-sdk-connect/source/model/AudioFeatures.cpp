@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-AudioFeatures::AudioFeatures(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioFeatures::AudioFeatures(JsonView jsonValue) { *this = jsonValue; }
 
-AudioFeatures& AudioFeatures::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EchoReduction"))
-  {
+AudioFeatures& AudioFeatures::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EchoReduction")) {
     m_echoReduction = MeetingFeatureStatusMapper::GetMeetingFeatureStatusForName(jsonValue.GetString("EchoReduction"));
     m_echoReductionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioFeatures::Jsonize() const
-{
+JsonValue AudioFeatures::Jsonize() const {
   JsonValue payload;
 
-  if(m_echoReductionHasBeenSet)
-  {
-   payload.WithString("EchoReduction", MeetingFeatureStatusMapper::GetNameForMeetingFeatureStatus(m_echoReduction));
+  if (m_echoReductionHasBeenSet) {
+    payload.WithString("EchoReduction", MeetingFeatureStatusMapper::GetNameForMeetingFeatureStatus(m_echoReduction));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

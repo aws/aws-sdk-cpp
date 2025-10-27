@@ -5,12 +5,8 @@
 
 #include <aws/route53resolver/Route53ResolverEndpointProvider.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Route53Resolver
-} // namespace Aws
+namespace Aws {
+namespace Route53Resolver {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Route53Resolver
+}  // namespace Aws

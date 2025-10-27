@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/InstanceEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/InstanceEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-InstanceEntry::InstanceEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceEntry::InstanceEntry(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceEntry& InstanceEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceName"))
-  {
+InstanceEntry& InstanceEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceName")) {
     m_sourceName = jsonValue.GetString("sourceName");
     m_sourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceType"))
-  {
+  if (jsonValue.ValueExists("instanceType")) {
     m_instanceType = jsonValue.GetString("instanceType");
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("portInfoSource"))
-  {
+  if (jsonValue.ValueExists("portInfoSource")) {
     m_portInfoSource = PortInfoSourceTypeMapper::GetPortInfoSourceTypeForName(jsonValue.GetString("portInfoSource"));
     m_portInfoSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userData"))
-  {
+  if (jsonValue.ValueExists("userData")) {
     m_userData = jsonValue.GetString("userData");
     m_userDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("availabilityZone"))
-  {
+  if (jsonValue.ValueExists("availabilityZone")) {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceEntry::Jsonize() const
-{
+JsonValue InstanceEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceNameHasBeenSet)
-  {
-   payload.WithString("sourceName", m_sourceName);
-
+  if (m_sourceNameHasBeenSet) {
+    payload.WithString("sourceName", m_sourceName);
   }
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", m_instanceType);
-
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", m_instanceType);
   }
 
-  if(m_portInfoSourceHasBeenSet)
-  {
-   payload.WithString("portInfoSource", PortInfoSourceTypeMapper::GetNameForPortInfoSourceType(m_portInfoSource));
+  if (m_portInfoSourceHasBeenSet) {
+    payload.WithString("portInfoSource", PortInfoSourceTypeMapper::GetNameForPortInfoSourceType(m_portInfoSource));
   }
 
-  if(m_userDataHasBeenSet)
-  {
-   payload.WithString("userData", m_userData);
-
+  if (m_userDataHasBeenSet) {
+    payload.WithString("userData", m_userData);
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("availabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("availabilityZone", m_availabilityZone);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

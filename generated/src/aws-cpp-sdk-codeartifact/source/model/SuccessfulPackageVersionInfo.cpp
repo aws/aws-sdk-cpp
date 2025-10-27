@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-SuccessfulPackageVersionInfo::SuccessfulPackageVersionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuccessfulPackageVersionInfo::SuccessfulPackageVersionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-SuccessfulPackageVersionInfo& SuccessfulPackageVersionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("revision"))
-  {
+SuccessfulPackageVersionInfo& SuccessfulPackageVersionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuccessfulPackageVersionInfo::Jsonize() const
-{
+JsonValue SuccessfulPackageVersionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithString("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", PackageVersionStatusMapper::GetNameForPackageVersionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", PackageVersionStatusMapper::GetNameForPackageVersionStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

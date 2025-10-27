@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-RoomMembership::RoomMembership(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoomMembership::RoomMembership(JsonView jsonValue) { *this = jsonValue; }
 
-RoomMembership& RoomMembership::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RoomId"))
-  {
+RoomMembership& RoomMembership::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RoomId")) {
     m_roomId = jsonValue.GetString("RoomId");
     m_roomIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Member"))
-  {
+  if (jsonValue.ValueExists("Member")) {
     m_member = jsonValue.GetObject("Member");
     m_memberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = RoomMembershipRoleMapper::GetRoomMembershipRoleForName(jsonValue.GetString("Role"));
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvitedBy"))
-  {
+  if (jsonValue.ValueExists("InvitedBy")) {
     m_invitedBy = jsonValue.GetString("InvitedBy");
     m_invitedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoomMembership::Jsonize() const
-{
+JsonValue RoomMembership::Jsonize() const {
   JsonValue payload;
 
-  if(m_roomIdHasBeenSet)
-  {
-   payload.WithString("RoomId", m_roomId);
-
+  if (m_roomIdHasBeenSet) {
+    payload.WithString("RoomId", m_roomId);
   }
 
-  if(m_memberHasBeenSet)
-  {
-   payload.WithObject("Member", m_member.Jsonize());
-
+  if (m_memberHasBeenSet) {
+    payload.WithObject("Member", m_member.Jsonize());
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", RoomMembershipRoleMapper::GetNameForRoomMembershipRole(m_role));
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", RoomMembershipRoleMapper::GetNameForRoomMembershipRole(m_role));
   }
 
-  if(m_invitedByHasBeenSet)
-  {
-   payload.WithString("InvitedBy", m_invitedBy);
-
+  if (m_invitedByHasBeenSet) {
+    payload.WithString("InvitedBy", m_invitedBy);
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

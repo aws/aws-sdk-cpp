@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudfront/model/UpdateDomainAssociation2020_05_31Result.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -16,27 +16,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDomainAssociation2020_05_31Result::UpdateDomainAssociation2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+UpdateDomainAssociation2020_05_31Result::UpdateDomainAssociation2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-UpdateDomainAssociation2020_05_31Result& UpdateDomainAssociation2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+UpdateDomainAssociation2020_05_31Result& UpdateDomainAssociation2020_05_31Result::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode domainNode = resultNode.FirstChild("Domain");
-    if(!domainNode.IsNull())
-    {
+    if (!domainNode.IsNull()) {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
-    if(!resourceIdNode.IsNull())
-    {
+    if (!resourceIdNode.IsNull()) {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
     }
@@ -44,15 +40,13 @@ UpdateDomainAssociation2020_05_31Result& UpdateDomainAssociation2020_05_31Result
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& eTagIter = headers.find("etag");
-  if(eTagIter != headers.end())
-  {
+  if (eTagIter != headers.end()) {
     m_eTag = eTagIter->second;
     m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

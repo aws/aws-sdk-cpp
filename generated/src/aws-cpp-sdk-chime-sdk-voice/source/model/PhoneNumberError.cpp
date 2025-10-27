@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-PhoneNumberError::PhoneNumberError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PhoneNumberError::PhoneNumberError(JsonView jsonValue) { *this = jsonValue; }
 
-PhoneNumberError& PhoneNumberError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PhoneNumberId"))
-  {
+PhoneNumberError& PhoneNumberError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PhoneNumberId")) {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
     m_phoneNumberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PhoneNumberError::Jsonize() const
-{
+JsonValue PhoneNumberError::Jsonize() const {
   JsonValue payload;
 
-  if(m_phoneNumberIdHasBeenSet)
-  {
-   payload.WithString("PhoneNumberId", m_phoneNumberId);
-
+  if (m_phoneNumberIdHasBeenSet) {
+    payload.WithString("PhoneNumberId", m_phoneNumberId);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

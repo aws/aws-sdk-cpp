@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class DocumentStatusType
-  {
-    NOT_SET,
-    INITIALIZED,
-    ACTIVE
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class DocumentStatusType { NOT_SET, INITIALIZED, ACTIVE };
 
-namespace DocumentStatusTypeMapper
-{
+namespace DocumentStatusTypeMapper {
 AWS_WORKDOCS_API DocumentStatusType GetDocumentStatusTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForDocumentStatusType(DocumentStatusType value);
-} // namespace DocumentStatusTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace DocumentStatusTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

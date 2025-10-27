@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/MarkerRecordedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/MarkerRecordedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MarkerRecordedEventAttributes::MarkerRecordedEventAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-MarkerRecordedEventAttributes& MarkerRecordedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("markerName"))
-  {
+MarkerRecordedEventAttributes& MarkerRecordedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("markerName")) {
     m_markerName = jsonValue.GetString("markerName");
     m_markerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("details"))
-  {
+  if (jsonValue.ValueExists("details")) {
     m_details = jsonValue.GetString("details");
     m_detailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MarkerRecordedEventAttributes::Jsonize() const
-{
+JsonValue MarkerRecordedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_markerNameHasBeenSet)
-  {
-   payload.WithString("markerName", m_markerName);
-
+  if (m_markerNameHasBeenSet) {
+    payload.WithString("markerName", m_markerName);
   }
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithString("details", m_details);
-
+  if (m_detailsHasBeenSet) {
+    payload.WithString("details", m_details);
   }
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

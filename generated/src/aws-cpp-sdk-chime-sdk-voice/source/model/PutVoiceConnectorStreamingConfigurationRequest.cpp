@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutVoiceConnectorStreamingConfigurationRequest::SerializePayload() const
-{
+Aws::String PutVoiceConnectorStreamingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_streamingConfigurationHasBeenSet)
-  {
-   payload.WithObject("StreamingConfiguration", m_streamingConfiguration.Jsonize());
-
+  if (m_streamingConfigurationHasBeenSet) {
+    payload.WithObject("StreamingConfiguration", m_streamingConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

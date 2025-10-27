@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivschat/Ivschat_EXPORTS.h>
 
-namespace Aws
-{
-namespace ivschat
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    ROOM
-  };
+namespace Aws {
+namespace ivschat {
+namespace Model {
+enum class ResourceType { NOT_SET, ROOM };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_IVSCHAT_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_IVSCHAT_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace ivschat
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace ivschat
+}  // namespace Aws

@@ -3,137 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCodeBuildProjectArtifactsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectArtifactsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCodeBuildProjectArtifactsDetails& AwsCodeBuildProjectArtifactsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ArtifactIdentifier"))
-  {
+AwsCodeBuildProjectArtifactsDetails& AwsCodeBuildProjectArtifactsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ArtifactIdentifier")) {
     m_artifactIdentifier = jsonValue.GetString("ArtifactIdentifier");
     m_artifactIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionDisabled"))
-  {
+  if (jsonValue.ValueExists("EncryptionDisabled")) {
     m_encryptionDisabled = jsonValue.GetBool("EncryptionDisabled");
     m_encryptionDisabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Location"))
-  {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NamespaceType"))
-  {
+  if (jsonValue.ValueExists("NamespaceType")) {
     m_namespaceType = jsonValue.GetString("NamespaceType");
     m_namespaceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OverrideArtifactName"))
-  {
+  if (jsonValue.ValueExists("OverrideArtifactName")) {
     m_overrideArtifactName = jsonValue.GetBool("OverrideArtifactName");
     m_overrideArtifactNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Packaging"))
-  {
+  if (jsonValue.ValueExists("Packaging")) {
     m_packaging = jsonValue.GetString("Packaging");
     m_packagingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCodeBuildProjectArtifactsDetails::Jsonize() const
-{
+JsonValue AwsCodeBuildProjectArtifactsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_artifactIdentifierHasBeenSet)
-  {
-   payload.WithString("ArtifactIdentifier", m_artifactIdentifier);
-
+  if (m_artifactIdentifierHasBeenSet) {
+    payload.WithString("ArtifactIdentifier", m_artifactIdentifier);
   }
 
-  if(m_encryptionDisabledHasBeenSet)
-  {
-   payload.WithBool("EncryptionDisabled", m_encryptionDisabled);
-
+  if (m_encryptionDisabledHasBeenSet) {
+    payload.WithBool("EncryptionDisabled", m_encryptionDisabled);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_namespaceTypeHasBeenSet)
-  {
-   payload.WithString("NamespaceType", m_namespaceType);
-
+  if (m_namespaceTypeHasBeenSet) {
+    payload.WithString("NamespaceType", m_namespaceType);
   }
 
-  if(m_overrideArtifactNameHasBeenSet)
-  {
-   payload.WithBool("OverrideArtifactName", m_overrideArtifactName);
-
+  if (m_overrideArtifactNameHasBeenSet) {
+    payload.WithBool("OverrideArtifactName", m_overrideArtifactName);
   }
 
-  if(m_packagingHasBeenSet)
-  {
-   payload.WithString("Packaging", m_packaging);
-
+  if (m_packagingHasBeenSet) {
+    payload.WithString("Packaging", m_packaging);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

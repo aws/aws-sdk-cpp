@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/IsolineTrafficOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/IsolineTrafficOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-IsolineTrafficOptions::IsolineTrafficOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IsolineTrafficOptions::IsolineTrafficOptions(JsonView jsonValue) { *this = jsonValue; }
 
-IsolineTrafficOptions& IsolineTrafficOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FlowEventThresholdOverride"))
-  {
+IsolineTrafficOptions& IsolineTrafficOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FlowEventThresholdOverride")) {
     m_flowEventThresholdOverride = jsonValue.GetInt64("FlowEventThresholdOverride");
     m_flowEventThresholdOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Usage"))
-  {
+  if (jsonValue.ValueExists("Usage")) {
     m_usage = TrafficUsageMapper::GetTrafficUsageForName(jsonValue.GetString("Usage"));
     m_usageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IsolineTrafficOptions::Jsonize() const
-{
+JsonValue IsolineTrafficOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowEventThresholdOverrideHasBeenSet)
-  {
-   payload.WithInt64("FlowEventThresholdOverride", m_flowEventThresholdOverride);
-
+  if (m_flowEventThresholdOverrideHasBeenSet) {
+    payload.WithInt64("FlowEventThresholdOverride", m_flowEventThresholdOverride);
   }
 
-  if(m_usageHasBeenSet)
-  {
-   payload.WithString("Usage", TrafficUsageMapper::GetNameForTrafficUsage(m_usage));
+  if (m_usageHasBeenSet) {
+    payload.WithString("Usage", TrafficUsageMapper::GetNameForTrafficUsage(m_usage));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

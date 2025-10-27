@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/InventoryTableConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/InventoryTableConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-InventoryTableConfiguration::InventoryTableConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InventoryTableConfiguration::InventoryTableConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InventoryTableConfiguration& InventoryTableConfiguration::operator =(const XmlNode& xmlNode)
-{
+InventoryTableConfiguration& InventoryTableConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode configurationStateNode = resultNode.FirstChild("ConfigurationState");
-    if(!configurationStateNode.IsNull())
-    {
-      m_configurationState = InventoryConfigurationStateMapper::GetInventoryConfigurationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(configurationStateNode.GetText()).c_str()));
+    if (!configurationStateNode.IsNull()) {
+      m_configurationState = InventoryConfigurationStateMapper::GetInventoryConfigurationStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(configurationStateNode.GetText()).c_str()));
       m_configurationStateHasBeenSet = true;
     }
     XmlNode encryptionConfigurationNode = resultNode.FirstChild("EncryptionConfiguration");
-    if(!encryptionConfigurationNode.IsNull())
-    {
+    if (!encryptionConfigurationNode.IsNull()) {
       m_encryptionConfiguration = encryptionConfigurationNode;
       m_encryptionConfigurationHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ InventoryTableConfiguration& InventoryTableConfiguration::operator =(const XmlNo
   return *this;
 }
 
-void InventoryTableConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void InventoryTableConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_configurationStateHasBeenSet)
-  {
-   XmlNode configurationStateNode = parentNode.CreateChildElement("ConfigurationState");
-   configurationStateNode.SetText(InventoryConfigurationStateMapper::GetNameForInventoryConfigurationState(m_configurationState));
+  if (m_configurationStateHasBeenSet) {
+    XmlNode configurationStateNode = parentNode.CreateChildElement("ConfigurationState");
+    configurationStateNode.SetText(InventoryConfigurationStateMapper::GetNameForInventoryConfigurationState(m_configurationState));
   }
 
-  if(m_encryptionConfigurationHasBeenSet)
-  {
-   XmlNode encryptionConfigurationNode = parentNode.CreateChildElement("EncryptionConfiguration");
-   m_encryptionConfiguration.AddToNode(encryptionConfigurationNode);
+  if (m_encryptionConfigurationHasBeenSet) {
+    XmlNode encryptionConfigurationNode = parentNode.CreateChildElement("EncryptionConfiguration");
+    m_encryptionConfiguration.AddToNode(encryptionConfigurationNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

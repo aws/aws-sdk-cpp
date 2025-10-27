@@ -11,72 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-TargetGroupPairInfo::TargetGroupPairInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetGroupPairInfo::TargetGroupPairInfo(JsonView jsonValue) { *this = jsonValue; }
 
-TargetGroupPairInfo& TargetGroupPairInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("targetGroups"))
-  {
+TargetGroupPairInfo& TargetGroupPairInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetGroups")) {
     Aws::Utils::Array<JsonView> targetGroupsJsonList = jsonValue.GetArray("targetGroups");
-    for(unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex)
-    {
+    for (unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex) {
       m_targetGroups.push_back(targetGroupsJsonList[targetGroupsIndex].AsObject());
     }
     m_targetGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("prodTrafficRoute"))
-  {
+  if (jsonValue.ValueExists("prodTrafficRoute")) {
     m_prodTrafficRoute = jsonValue.GetObject("prodTrafficRoute");
     m_prodTrafficRouteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testTrafficRoute"))
-  {
+  if (jsonValue.ValueExists("testTrafficRoute")) {
     m_testTrafficRoute = jsonValue.GetObject("testTrafficRoute");
     m_testTrafficRouteHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetGroupPairInfo::Jsonize() const
-{
+JsonValue TargetGroupPairInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetGroupsJsonList(m_targetGroups.size());
-   for(unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex)
-   {
-     targetGroupsJsonList[targetGroupsIndex].AsObject(m_targetGroups[targetGroupsIndex].Jsonize());
-   }
-   payload.WithArray("targetGroups", std::move(targetGroupsJsonList));
-
+  if (m_targetGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetGroupsJsonList(m_targetGroups.size());
+    for (unsigned targetGroupsIndex = 0; targetGroupsIndex < targetGroupsJsonList.GetLength(); ++targetGroupsIndex) {
+      targetGroupsJsonList[targetGroupsIndex].AsObject(m_targetGroups[targetGroupsIndex].Jsonize());
+    }
+    payload.WithArray("targetGroups", std::move(targetGroupsJsonList));
   }
 
-  if(m_prodTrafficRouteHasBeenSet)
-  {
-   payload.WithObject("prodTrafficRoute", m_prodTrafficRoute.Jsonize());
-
+  if (m_prodTrafficRouteHasBeenSet) {
+    payload.WithObject("prodTrafficRoute", m_prodTrafficRoute.Jsonize());
   }
 
-  if(m_testTrafficRouteHasBeenSet)
-  {
-   payload.WithObject("testTrafficRoute", m_testTrafficRoute.Jsonize());
-
+  if (m_testTrafficRouteHasBeenSet) {
+    payload.WithObject("testTrafficRoute", m_testTrafficRoute.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

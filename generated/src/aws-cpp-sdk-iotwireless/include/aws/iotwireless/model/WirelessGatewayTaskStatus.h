@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class WirelessGatewayTaskStatus
-  {
-    NOT_SET,
-    PENDING,
-    IN_PROGRESS,
-    FIRST_RETRY,
-    SECOND_RETRY,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class WirelessGatewayTaskStatus { NOT_SET, PENDING, IN_PROGRESS, FIRST_RETRY, SECOND_RETRY, COMPLETED, FAILED };
 
-namespace WirelessGatewayTaskStatusMapper
-{
+namespace WirelessGatewayTaskStatusMapper {
 AWS_IOTWIRELESS_API WirelessGatewayTaskStatus GetWirelessGatewayTaskStatusForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForWirelessGatewayTaskStatus(WirelessGatewayTaskStatus value);
-} // namespace WirelessGatewayTaskStatusMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace WirelessGatewayTaskStatusMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

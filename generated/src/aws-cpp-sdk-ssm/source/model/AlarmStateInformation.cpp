@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/AlarmStateInformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-AlarmStateInformation::AlarmStateInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlarmStateInformation::AlarmStateInformation(JsonView jsonValue) { *this = jsonValue; }
 
-AlarmStateInformation& AlarmStateInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AlarmStateInformation& AlarmStateInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = ExternalAlarmStateMapper::GetExternalAlarmStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlarmStateInformation::Jsonize() const
-{
+JsonValue AlarmStateInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ExternalAlarmStateMapper::GetNameForExternalAlarmState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ExternalAlarmStateMapper::GetNameForExternalAlarmState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAnalysisTemplateRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteAnalysisTemplateRequest::SerializePayload() const { return {}; }

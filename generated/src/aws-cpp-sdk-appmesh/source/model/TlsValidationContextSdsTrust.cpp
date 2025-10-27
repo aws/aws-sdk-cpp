@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-TlsValidationContextSdsTrust::TlsValidationContextSdsTrust(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TlsValidationContextSdsTrust::TlsValidationContextSdsTrust(JsonView jsonValue) { *this = jsonValue; }
 
-TlsValidationContextSdsTrust& TlsValidationContextSdsTrust::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("secretName"))
-  {
+TlsValidationContextSdsTrust& TlsValidationContextSdsTrust::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("secretName")) {
     m_secretName = jsonValue.GetString("secretName");
     m_secretNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TlsValidationContextSdsTrust::Jsonize() const
-{
+JsonValue TlsValidationContextSdsTrust::Jsonize() const {
   JsonValue payload;
 
-  if(m_secretNameHasBeenSet)
-  {
-   payload.WithString("secretName", m_secretName);
-
+  if (m_secretNameHasBeenSet) {
+    payload.WithString("secretName", m_secretName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

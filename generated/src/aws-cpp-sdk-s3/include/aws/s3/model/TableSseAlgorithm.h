@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class TableSseAlgorithm
-  {
-    NOT_SET,
-    aws_kms,
-    AES256
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class TableSseAlgorithm { NOT_SET, aws_kms, AES256 };
 
-namespace TableSseAlgorithmMapper
-{
+namespace TableSseAlgorithmMapper {
 AWS_S3_API TableSseAlgorithm GetTableSseAlgorithmForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForTableSseAlgorithm(TableSseAlgorithm value);
-} // namespace TableSseAlgorithmMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace TableSseAlgorithmMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

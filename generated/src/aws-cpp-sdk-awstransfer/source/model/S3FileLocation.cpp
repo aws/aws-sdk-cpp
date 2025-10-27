@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-S3FileLocation::S3FileLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3FileLocation::S3FileLocation(JsonView jsonValue) { *this = jsonValue; }
 
-S3FileLocation& S3FileLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Bucket"))
-  {
+S3FileLocation& S3FileLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Bucket")) {
     m_bucket = jsonValue.GetString("Bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionId"))
-  {
+  if (jsonValue.ValueExists("VersionId")) {
     m_versionId = jsonValue.GetString("VersionId");
     m_versionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Etag"))
-  {
+  if (jsonValue.ValueExists("Etag")) {
     m_etag = jsonValue.GetString("Etag");
     m_etagHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3FileLocation::Jsonize() const
-{
+JsonValue S3FileLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("Bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("Bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_versionIdHasBeenSet)
-  {
-   payload.WithString("VersionId", m_versionId);
-
+  if (m_versionIdHasBeenSet) {
+    payload.WithString("VersionId", m_versionId);
   }
 
-  if(m_etagHasBeenSet)
-  {
-   payload.WithString("Etag", m_etag);
-
+  if (m_etagHasBeenSet) {
+    payload.WithString("Etag", m_etag);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

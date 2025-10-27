@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/geo-places/GeoPlacesEndpointRules.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GeoPlaces {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GeoPlacesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GeoPlacesDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GEOPLACES_API GeoPlacesEndpointProvider : public GeoPlacesDefaultEpProviderBase
-{
-public:
-    using GeoPlacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GEOPLACES_API GeoPlacesEndpointProvider : public GeoPlacesDefaultEpProviderBase {
+ public:
+  using GeoPlacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GeoPlacesEndpointProvider()
-      : GeoPlacesDefaultEpProviderBase(Aws::GeoPlaces::GeoPlacesEndpointRules::GetRulesBlob(), Aws::GeoPlaces::GeoPlacesEndpointRules::RulesBlobSize)
-    {}
+  GeoPlacesEndpointProvider()
+      : GeoPlacesDefaultEpProviderBase(Aws::GeoPlaces::GeoPlacesEndpointRules::GetRulesBlob(),
+                                       Aws::GeoPlaces::GeoPlacesEndpointRules::RulesBlobSize) {}
 
-    ~GeoPlacesEndpointProvider()
-    {
-    }
+  ~GeoPlacesEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GeoPlaces
+}  // namespace Aws

@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>Runtime settings for a model that is deployed with an inference
+ * component.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceComponentRuntimeConfig">AWS
+ * API Reference</a></p>
+ */
+class InferenceComponentRuntimeConfig {
+ public:
+  AWS_SAGEMAKER_API InferenceComponentRuntimeConfig() = default;
+  AWS_SAGEMAKER_API InferenceComponentRuntimeConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API InferenceComponentRuntimeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Runtime settings for a model that is deployed with an inference
-   * component.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceComponentRuntimeConfig">AWS
-   * API Reference</a></p>
+   * <p>The number of runtime copies of the model container to deploy with the
+   * inference component. Each copy can serve inference requests.</p>
    */
-  class InferenceComponentRuntimeConfig
-  {
-  public:
-    AWS_SAGEMAKER_API InferenceComponentRuntimeConfig() = default;
-    AWS_SAGEMAKER_API InferenceComponentRuntimeConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API InferenceComponentRuntimeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetCopyCount() const { return m_copyCount; }
+  inline bool CopyCountHasBeenSet() const { return m_copyCountHasBeenSet; }
+  inline void SetCopyCount(int value) {
+    m_copyCountHasBeenSet = true;
+    m_copyCount = value;
+  }
+  inline InferenceComponentRuntimeConfig& WithCopyCount(int value) {
+    SetCopyCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_copyCount{0};
+  bool m_copyCountHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The number of runtime copies of the model container to deploy with the
-     * inference component. Each copy can serve inference requests.</p>
-     */
-    inline int GetCopyCount() const { return m_copyCount; }
-    inline bool CopyCountHasBeenSet() const { return m_copyCountHasBeenSet; }
-    inline void SetCopyCount(int value) { m_copyCountHasBeenSet = true; m_copyCount = value; }
-    inline InferenceComponentRuntimeConfig& WithCopyCount(int value) { SetCopyCount(value); return *this;}
-    ///@}
-  private:
-
-    int m_copyCount{0};
-    bool m_copyCountHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

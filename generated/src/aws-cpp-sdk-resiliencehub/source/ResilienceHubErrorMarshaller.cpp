@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ResilienceHub;
 
-AWSError<CoreErrors> ResilienceHubErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ResilienceHubErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ResilienceHubErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

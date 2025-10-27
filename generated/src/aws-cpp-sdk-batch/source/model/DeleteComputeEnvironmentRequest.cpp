@@ -12,19 +12,12 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteComputeEnvironmentRequest::SerializePayload() const
-{
+Aws::String DeleteComputeEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_computeEnvironmentHasBeenSet)
-  {
-   payload.WithString("computeEnvironment", m_computeEnvironment);
-
+  if (m_computeEnvironmentHasBeenSet) {
+    payload.WithString("computeEnvironment", m_computeEnvironment);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -10,21 +10,15 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateOrUpdateTagsRequest::SerializePayload() const
-{
+Aws::String CreateOrUpdateTagsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateOrUpdateTags&";
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
@@ -35,8 +29,4 @@ Aws::String CreateOrUpdateTagsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateOrUpdateTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateOrUpdateTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/MetricResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/MetricResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-MetricResult::MetricResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricResult::MetricResult(JsonView jsonValue) { *this = jsonValue; }
 
-MetricResult& MetricResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricName"))
-  {
+MetricResult& MetricResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricValue"))
-  {
+  if (jsonValue.ValueExists("MetricValue")) {
     m_metricValue = jsonValue.GetDouble("MetricValue");
     m_metricValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricResult::Jsonize() const
-{
+JsonValue MetricResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_metricValueHasBeenSet)
-  {
-   payload.WithDouble("MetricValue", m_metricValue);
-
+  if (m_metricValueHasBeenSet) {
+    payload.WithDouble("MetricValue", m_metricValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

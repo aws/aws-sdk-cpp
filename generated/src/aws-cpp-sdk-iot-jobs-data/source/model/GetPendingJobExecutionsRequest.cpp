@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-jobs-data/model/GetPendingJobExecutionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-jobs-data/model/GetPendingJobExecutionsRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPendingJobExecutionsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetPendingJobExecutionsRequest::SerializePayload() const { return {}; }

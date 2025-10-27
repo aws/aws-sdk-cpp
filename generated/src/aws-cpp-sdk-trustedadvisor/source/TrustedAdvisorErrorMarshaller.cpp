@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::TrustedAdvisor;
 
-AWSError<CoreErrors> TrustedAdvisorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TrustedAdvisorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TrustedAdvisorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

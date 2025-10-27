@@ -12,30 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateFlowRequest::SerializePayload() const
-{
+Aws::String AssociateFlowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_flowIdHasBeenSet)
-  {
-   payload.WithString("FlowId", m_flowId);
-
+  if (m_flowIdHasBeenSet) {
+    payload.WithString("FlowId", m_flowId);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", FlowAssociationResourceTypeMapper::GetNameForFlowAssociationResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", FlowAssociationResourceTypeMapper::GetNameForFlowAssociationResourceType(m_resourceType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

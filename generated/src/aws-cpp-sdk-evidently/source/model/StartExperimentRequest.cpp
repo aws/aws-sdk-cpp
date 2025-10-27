@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/StartExperimentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/StartExperimentRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartExperimentRequest::SerializePayload() const
-{
+Aws::String StartExperimentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_analysisCompleteTimeHasBeenSet)
-  {
-   payload.WithDouble("analysisCompleteTime", m_analysisCompleteTime.SecondsWithMSPrecision());
+  if (m_analysisCompleteTimeHasBeenSet) {
+    payload.WithDouble("analysisCompleteTime", m_analysisCompleteTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

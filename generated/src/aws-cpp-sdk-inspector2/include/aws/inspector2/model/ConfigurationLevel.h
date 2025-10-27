@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class ConfigurationLevel
-  {
-    NOT_SET,
-    ORGANIZATION,
-    ACCOUNT
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class ConfigurationLevel { NOT_SET, ORGANIZATION, ACCOUNT };
 
-namespace ConfigurationLevelMapper
-{
+namespace ConfigurationLevelMapper {
 AWS_INSPECTOR2_API ConfigurationLevel GetConfigurationLevelForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForConfigurationLevel(ConfigurationLevel value);
-} // namespace ConfigurationLevelMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace ConfigurationLevelMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

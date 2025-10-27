@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs-realtime/model/GetStageSessionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs-realtime/model/GetStageSessionRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetStageSessionRequest::SerializePayload() const
-{
+Aws::String GetStageSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stageArnHasBeenSet)
-  {
-   payload.WithString("stageArn", m_stageArn);
-
+  if (m_stageArnHasBeenSet) {
+    payload.WithString("stageArn", m_stageArn);
   }
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

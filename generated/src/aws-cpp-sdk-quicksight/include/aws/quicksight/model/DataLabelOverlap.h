@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class DataLabelOverlap
-  {
-    NOT_SET,
-    DISABLE_OVERLAP,
-    ENABLE_OVERLAP
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class DataLabelOverlap { NOT_SET, DISABLE_OVERLAP, ENABLE_OVERLAP };
 
-namespace DataLabelOverlapMapper
-{
+namespace DataLabelOverlapMapper {
 AWS_QUICKSIGHT_API DataLabelOverlap GetDataLabelOverlapForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForDataLabelOverlap(DataLabelOverlap value);
-} // namespace DataLabelOverlapMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace DataLabelOverlapMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

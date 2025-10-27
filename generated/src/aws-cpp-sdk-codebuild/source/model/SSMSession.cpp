@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-SSMSession::SSMSession(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SSMSession::SSMSession(JsonView jsonValue) { *this = jsonValue; }
 
-SSMSession& SSMSession::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sessionId"))
-  {
+SSMSession& SSMSession::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenValue"))
-  {
+  if (jsonValue.ValueExists("tokenValue")) {
     m_tokenValue = jsonValue.GetString("tokenValue");
     m_tokenValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamUrl"))
-  {
+  if (jsonValue.ValueExists("streamUrl")) {
     m_streamUrl = jsonValue.GetString("streamUrl");
     m_streamUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SSMSession::Jsonize() const
-{
+JsonValue SSMSession::Jsonize() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
-  if(m_tokenValueHasBeenSet)
-  {
-   payload.WithString("tokenValue", m_tokenValue);
-
+  if (m_tokenValueHasBeenSet) {
+    payload.WithString("tokenValue", m_tokenValue);
   }
 
-  if(m_streamUrlHasBeenSet)
-  {
-   payload.WithString("streamUrl", m_streamUrl);
-
+  if (m_streamUrlHasBeenSet) {
+    payload.WithString("streamUrl", m_streamUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

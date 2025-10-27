@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/DatasetChanges.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/DatasetChanges.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-DatasetChanges::DatasetChanges(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetChanges::DatasetChanges(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetChanges& DatasetChanges::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroundTruth"))
-  {
+DatasetChanges& DatasetChanges::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroundTruth")) {
     m_groundTruth = HashingUtils::Base64Decode(jsonValue.GetString("GroundTruth"));
     m_groundTruthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetChanges::Jsonize() const
-{
+JsonValue DatasetChanges::Jsonize() const {
   JsonValue payload;
 
-  if(m_groundTruthHasBeenSet)
-  {
-   payload.WithString("GroundTruth", HashingUtils::Base64Encode(m_groundTruth));
+  if (m_groundTruthHasBeenSet) {
+    payload.WithString("GroundTruth", HashingUtils::Base64Encode(m_groundTruth));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

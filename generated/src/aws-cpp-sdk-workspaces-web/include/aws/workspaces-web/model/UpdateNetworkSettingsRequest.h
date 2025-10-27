@@ -4,125 +4,158 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+
 #include <utility>
-#include <aws/core/utils/UUID.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
 
+/**
+ */
+class UpdateNetworkSettingsRequest : public WorkSpacesWebRequest {
+ public:
+  AWS_WORKSPACESWEB_API UpdateNetworkSettingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateNetworkSettings"; }
+
+  AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ARN of the network settings.</p>
    */
-  class UpdateNetworkSettingsRequest : public WorkSpacesWebRequest
-  {
-  public:
-    AWS_WORKSPACESWEB_API UpdateNetworkSettingsRequest() = default;
+  inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
+  inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
+  template <typename NetworkSettingsArnT = Aws::String>
+  void SetNetworkSettingsArn(NetworkSettingsArnT&& value) {
+    m_networkSettingsArnHasBeenSet = true;
+    m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value);
+  }
+  template <typename NetworkSettingsArnT = Aws::String>
+  UpdateNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) {
+    SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateNetworkSettings"; }
+  ///@{
+  /**
+   * <p>The VPC that streaming instances will connect to.</p>
+   */
+  inline const Aws::String& GetVpcId() const { return m_vpcId; }
+  inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+  template <typename VpcIdT = Aws::String>
+  void SetVpcId(VpcIdT&& value) {
+    m_vpcIdHasBeenSet = true;
+    m_vpcId = std::forward<VpcIdT>(value);
+  }
+  template <typename VpcIdT = Aws::String>
+  UpdateNetworkSettingsRequest& WithVpcId(VpcIdT&& value) {
+    SetVpcId(std::forward<VpcIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The subnets in which network interfaces are created to connect streaming
+   * instances to your VPC. At least two of these subnets must be in different
+   * availability zones.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+  inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  void SetSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds = std::forward<SubnetIdsT>(value);
+  }
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  UpdateNetworkSettingsRequest& WithSubnetIds(SubnetIdsT&& value) {
+    SetSubnetIds(std::forward<SubnetIdsT>(value));
+    return *this;
+  }
+  template <typename SubnetIdsT = Aws::String>
+  UpdateNetworkSettingsRequest& AddSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>One or more security groups used to control access from streaming instances
+   * to your VPC.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+  inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  void SetSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds = std::forward<SecurityGroupIdsT>(value);
+  }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  UpdateNetworkSettingsRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) {
+    SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupIdsT = Aws::String>
+  UpdateNetworkSettingsRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
-    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
-    inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-    template<typename NetworkSettingsArnT = Aws::String>
-    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
-    template<typename NetworkSettingsArnT = Aws::String>
-    UpdateNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request. Idempotency ensures that an API request completes
+   * only once. With an idempotent request, if the original request completes
+   * successfully, subsequent retries with the same client token return the result
+   * from the original successful request. </p> <p>If you do not specify a client
+   * token, one is automatically generated by the Amazon Web Services SDK.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateNetworkSettingsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_networkSettingsArn;
+  bool m_networkSettingsArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The VPC that streaming instances will connect to.</p>
-     */
-    inline const Aws::String& GetVpcId() const { return m_vpcId; }
-    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    template<typename VpcIdT = Aws::String>
-    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
-    template<typename VpcIdT = Aws::String>
-    UpdateNetworkSettingsRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_vpcId;
+  bool m_vpcIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The subnets in which network interfaces are created to connect streaming
-     * instances to your VPC. At least two of these subnets must be in different
-     * availability zones.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
-    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    UpdateNetworkSettingsRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
-    template<typename SubnetIdsT = Aws::String>
-    UpdateNetworkSettingsRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
-    ///@}
+  Aws::Vector<Aws::String> m_subnetIds;
+  bool m_subnetIdsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>One or more security groups used to control access from streaming instances
-     * to your VPC.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
-    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
-    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
-    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
-    UpdateNetworkSettingsRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
-    template<typename SecurityGroupIdsT = Aws::String>
-    UpdateNetworkSettingsRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
-    ///@}
+  Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_securityGroupIdsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. Idempotency ensures that an API request completes
-     * only once. With an idempotent request, if the original request completes
-     * successfully, subsequent retries with the same client token return the result
-     * from the original successful request. </p> <p>If you do not specify a client
-     * token, one is automatically generated by the Amazon Web Services SDK.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateNetworkSettingsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+};
 
-    Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet = false;
-
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

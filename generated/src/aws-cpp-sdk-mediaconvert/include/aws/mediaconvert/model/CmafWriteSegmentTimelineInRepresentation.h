@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafWriteSegmentTimelineInRepresentation
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafWriteSegmentTimelineInRepresentation { NOT_SET, ENABLED, DISABLED };
 
-namespace CmafWriteSegmentTimelineInRepresentationMapper
-{
+namespace CmafWriteSegmentTimelineInRepresentationMapper {
 AWS_MEDIACONVERT_API CmafWriteSegmentTimelineInRepresentation GetCmafWriteSegmentTimelineInRepresentationForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafWriteSegmentTimelineInRepresentation(CmafWriteSegmentTimelineInRepresentation value);
-} // namespace CmafWriteSegmentTimelineInRepresentationMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafWriteSegmentTimelineInRepresentationMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

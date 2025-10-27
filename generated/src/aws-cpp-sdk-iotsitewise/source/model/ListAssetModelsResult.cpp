@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/ListAssetModelsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/ListAssetModelsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAssetModelsResult::ListAssetModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAssetModelsResult::ListAssetModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAssetModelsResult& ListAssetModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAssetModelsResult& ListAssetModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("assetModelSummaries"))
-  {
+  if (jsonValue.ValueExists("assetModelSummaries")) {
     Aws::Utils::Array<JsonView> assetModelSummariesJsonList = jsonValue.GetArray("assetModelSummaries");
-    for(unsigned assetModelSummariesIndex = 0; assetModelSummariesIndex < assetModelSummariesJsonList.GetLength(); ++assetModelSummariesIndex)
-    {
+    for (unsigned assetModelSummariesIndex = 0; assetModelSummariesIndex < assetModelSummariesJsonList.GetLength();
+         ++assetModelSummariesIndex) {
       m_assetModelSummaries.push_back(assetModelSummariesJsonList[assetModelSummariesIndex].AsObject());
     }
     m_assetModelSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

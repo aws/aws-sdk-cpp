@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class DimensionValueOperator
-  {
-    NOT_SET,
-    IN,
-    NOT_IN
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class DimensionValueOperator { NOT_SET, IN, NOT_IN };
 
-namespace DimensionValueOperatorMapper
-{
+namespace DimensionValueOperatorMapper {
 AWS_IOT_API DimensionValueOperator GetDimensionValueOperatorForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForDimensionValueOperator(DimensionValueOperator value);
-} // namespace DimensionValueOperatorMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace DimensionValueOperatorMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf-regional/model/GeoMatchSetSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/model/GeoMatchSetSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue) { *this = jsonValue; }
 
-GeoMatchSetSummary& GeoMatchSetSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GeoMatchSetId"))
-  {
+GeoMatchSetSummary& GeoMatchSetSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GeoMatchSetId")) {
     m_geoMatchSetId = jsonValue.GetString("GeoMatchSetId");
     m_geoMatchSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GeoMatchSetSummary::Jsonize() const
-{
+JsonValue GeoMatchSetSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_geoMatchSetIdHasBeenSet)
-  {
-   payload.WithString("GeoMatchSetId", m_geoMatchSetId);
-
+  if (m_geoMatchSetIdHasBeenSet) {
+    payload.WithString("GeoMatchSetId", m_geoMatchSetId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

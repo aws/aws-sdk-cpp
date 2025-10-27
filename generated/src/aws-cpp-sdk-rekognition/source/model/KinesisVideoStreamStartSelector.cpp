@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/KinesisVideoStreamStartSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/KinesisVideoStreamStartSelector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamStartSelector& KinesisVideoStreamStartSelector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProducerTimestamp"))
-  {
+KinesisVideoStreamStartSelector& KinesisVideoStreamStartSelector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProducerTimestamp")) {
     m_producerTimestamp = jsonValue.GetInt64("ProducerTimestamp");
     m_producerTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FragmentNumber"))
-  {
+  if (jsonValue.ValueExists("FragmentNumber")) {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
     m_fragmentNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamStartSelector::Jsonize() const
-{
+JsonValue KinesisVideoStreamStartSelector::Jsonize() const {
   JsonValue payload;
 
-  if(m_producerTimestampHasBeenSet)
-  {
-   payload.WithInt64("ProducerTimestamp", m_producerTimestamp);
-
+  if (m_producerTimestampHasBeenSet) {
+    payload.WithInt64("ProducerTimestamp", m_producerTimestamp);
   }
 
-  if(m_fragmentNumberHasBeenSet)
-  {
-   payload.WithString("FragmentNumber", m_fragmentNumber);
-
+  if (m_fragmentNumberHasBeenSet) {
+    payload.WithString("FragmentNumber", m_fragmentNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/RequestImpactStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/RequestImpactStatistics.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace XRay {
+namespace Model {
 
-RequestImpactStatistics::RequestImpactStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestImpactStatistics::RequestImpactStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-RequestImpactStatistics& RequestImpactStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FaultCount"))
-  {
+RequestImpactStatistics& RequestImpactStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FaultCount")) {
     m_faultCount = jsonValue.GetInt64("FaultCount");
     m_faultCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OkCount"))
-  {
+  if (jsonValue.ValueExists("OkCount")) {
     m_okCount = jsonValue.GetInt64("OkCount");
     m_okCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalCount"))
-  {
+  if (jsonValue.ValueExists("TotalCount")) {
     m_totalCount = jsonValue.GetInt64("TotalCount");
     m_totalCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestImpactStatistics::Jsonize() const
-{
+JsonValue RequestImpactStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_faultCountHasBeenSet)
-  {
-   payload.WithInt64("FaultCount", m_faultCount);
-
+  if (m_faultCountHasBeenSet) {
+    payload.WithInt64("FaultCount", m_faultCount);
   }
 
-  if(m_okCountHasBeenSet)
-  {
-   payload.WithInt64("OkCount", m_okCount);
-
+  if (m_okCountHasBeenSet) {
+    payload.WithInt64("OkCount", m_okCount);
   }
 
-  if(m_totalCountHasBeenSet)
-  {
-   payload.WithInt64("TotalCount", m_totalCount);
-
+  if (m_totalCountHasBeenSet) {
+    payload.WithInt64("TotalCount", m_totalCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

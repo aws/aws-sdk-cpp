@@ -3,143 +3,109 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/trustedadvisor/model/RecommendationResourceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/trustedadvisor/model/RecommendationResourceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TrustedAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace TrustedAdvisor {
+namespace Model {
 
-RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationResourceSummary& RecommendationResourceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+RecommendationResourceSummary& RecommendationResourceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsResourceId"))
-  {
+  if (jsonValue.ValueExists("awsResourceId")) {
     m_awsResourceId = jsonValue.GetString("awsResourceId");
     m_awsResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exclusionStatus"))
-  {
+  if (jsonValue.ValueExists("exclusionStatus")) {
     m_exclusionStatus = ExclusionStatusMapper::GetExclusionStatusForName(jsonValue.GetString("exclusionStatus"));
     m_exclusionStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadata"))
-  {
+  if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
-    for(auto& metadataItem : metadataJsonMap)
-    {
+    for (auto& metadataItem : metadataJsonMap) {
       m_metadata[metadataItem.first] = metadataItem.second.AsString();
     }
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recommendationArn"))
-  {
+  if (jsonValue.ValueExists("recommendationArn")) {
     m_recommendationArn = jsonValue.GetString("recommendationArn");
     m_recommendationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("regionCode"))
-  {
+  if (jsonValue.ValueExists("regionCode")) {
     m_regionCode = jsonValue.GetString("regionCode");
     m_regionCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationResourceSummary::Jsonize() const
-{
+JsonValue RecommendationResourceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_awsResourceIdHasBeenSet)
-  {
-   payload.WithString("awsResourceId", m_awsResourceId);
-
+  if (m_awsResourceIdHasBeenSet) {
+    payload.WithString("awsResourceId", m_awsResourceId);
   }
 
-  if(m_exclusionStatusHasBeenSet)
-  {
-   payload.WithString("exclusionStatus", ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus));
+  if (m_exclusionStatusHasBeenSet) {
+    payload.WithString("exclusionStatus", ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   JsonValue metadataJsonMap;
-   for(auto& metadataItem : m_metadata)
-   {
-     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
-   }
-   payload.WithObject("metadata", std::move(metadataJsonMap));
-
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
-  if(m_recommendationArnHasBeenSet)
-  {
-   payload.WithString("recommendationArn", m_recommendationArn);
-
+  if (m_recommendationArnHasBeenSet) {
+    payload.WithString("recommendationArn", m_recommendationArn);
   }
 
-  if(m_regionCodeHasBeenSet)
-  {
-   payload.WithString("regionCode", m_regionCode);
-
+  if (m_regionCodeHasBeenSet) {
+    payload.WithString("regionCode", m_regionCode);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TrustedAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace TrustedAdvisor
+}  // namespace Aws

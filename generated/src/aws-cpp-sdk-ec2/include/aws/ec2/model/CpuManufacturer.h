@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CpuManufacturer
-  {
-    NOT_SET,
-    intel,
-    amd,
-    amazon_web_services,
-    apple
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CpuManufacturer { NOT_SET, intel, amd, amazon_web_services, apple };
 
-namespace CpuManufacturerMapper
-{
+namespace CpuManufacturerMapper {
 AWS_EC2_API CpuManufacturer GetCpuManufacturerForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCpuManufacturer(CpuManufacturer value);
-} // namespace CpuManufacturerMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CpuManufacturerMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

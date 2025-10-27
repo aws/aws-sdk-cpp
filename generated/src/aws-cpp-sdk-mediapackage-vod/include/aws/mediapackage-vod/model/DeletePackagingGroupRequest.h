@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
-#include <aws/mediapackage-vod/MediaPackageVodRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage-vod/MediaPackageVodRequest.h>
+#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace MediaPackageVod
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaPackageVod {
+namespace Model {
 
+/**
+ */
+class DeletePackagingGroupRequest : public MediaPackageVodRequest {
+ public:
+  AWS_MEDIAPACKAGEVOD_API DeletePackagingGroupRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeletePackagingGroup"; }
+
+  AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * The ID of the MediaPackage VOD PackagingGroup resource to delete.
    */
-  class DeletePackagingGroupRequest : public MediaPackageVodRequest
-  {
-  public:
-    AWS_MEDIAPACKAGEVOD_API DeletePackagingGroupRequest() = default;
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  DeletePackagingGroupRequest& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeletePackagingGroup"; }
-
-    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * The ID of the MediaPackage VOD PackagingGroup resource to delete.
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    DeletePackagingGroupRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaPackageVod
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaPackageVod
+}  // namespace Aws

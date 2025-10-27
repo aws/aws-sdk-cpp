@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medical-imaging/model/GetDICOMImportJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medical-imaging/model/GetDICOMImportJobRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDICOMImportJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetDICOMImportJobRequest::SerializePayload() const { return {}; }

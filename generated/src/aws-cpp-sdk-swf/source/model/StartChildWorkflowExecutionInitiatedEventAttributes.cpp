@@ -3,178 +3,135 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/StartChildWorkflowExecutionInitiatedEventAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/StartChildWorkflowExecutionInitiatedEventAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-StartChildWorkflowExecutionInitiatedEventAttributes::StartChildWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue)
-{
+StartChildWorkflowExecutionInitiatedEventAttributes::StartChildWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-StartChildWorkflowExecutionInitiatedEventAttributes& StartChildWorkflowExecutionInitiatedEventAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workflowId"))
-  {
+StartChildWorkflowExecutionInitiatedEventAttributes& StartChildWorkflowExecutionInitiatedEventAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowId")) {
     m_workflowId = jsonValue.GetString("workflowId");
     m_workflowIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workflowType"))
-  {
+  if (jsonValue.ValueExists("workflowType")) {
     m_workflowType = jsonValue.GetObject("workflowType");
     m_workflowTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("control"))
-  {
+  if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetString("control");
     m_controlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("input"))
-  {
+  if (jsonValue.ValueExists("input")) {
     m_input = jsonValue.GetString("input");
     m_inputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionStartToCloseTimeout"))
-  {
+  if (jsonValue.ValueExists("executionStartToCloseTimeout")) {
     m_executionStartToCloseTimeout = jsonValue.GetString("executionStartToCloseTimeout");
     m_executionStartToCloseTimeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskList"))
-  {
+  if (jsonValue.ValueExists("taskList")) {
     m_taskList = jsonValue.GetObject("taskList");
     m_taskListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskPriority"))
-  {
+  if (jsonValue.ValueExists("taskPriority")) {
     m_taskPriority = jsonValue.GetString("taskPriority");
     m_taskPriorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
-  {
+  if (jsonValue.ValueExists("decisionTaskCompletedEventId")) {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("childPolicy"))
-  {
+  if (jsonValue.ValueExists("childPolicy")) {
     m_childPolicy = ChildPolicyMapper::GetChildPolicyForName(jsonValue.GetString("childPolicy"));
     m_childPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("taskStartToCloseTimeout"))
-  {
+  if (jsonValue.ValueExists("taskStartToCloseTimeout")) {
     m_taskStartToCloseTimeout = jsonValue.GetString("taskStartToCloseTimeout");
     m_taskStartToCloseTimeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tagList"))
-  {
+  if (jsonValue.ValueExists("tagList")) {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
-    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-    {
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());
     }
     m_tagListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaRole"))
-  {
+  if (jsonValue.ValueExists("lambdaRole")) {
     m_lambdaRole = jsonValue.GetString("lambdaRole");
     m_lambdaRoleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartChildWorkflowExecutionInitiatedEventAttributes::Jsonize() const
-{
+JsonValue StartChildWorkflowExecutionInitiatedEventAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("workflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
   }
 
-  if(m_workflowTypeHasBeenSet)
-  {
-   payload.WithObject("workflowType", m_workflowType.Jsonize());
-
+  if (m_workflowTypeHasBeenSet) {
+    payload.WithObject("workflowType", m_workflowType.Jsonize());
   }
 
-  if(m_controlHasBeenSet)
-  {
-   payload.WithString("control", m_control);
-
+  if (m_controlHasBeenSet) {
+    payload.WithString("control", m_control);
   }
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithString("input", m_input);
-
+  if (m_inputHasBeenSet) {
+    payload.WithString("input", m_input);
   }
 
-  if(m_executionStartToCloseTimeoutHasBeenSet)
-  {
-   payload.WithString("executionStartToCloseTimeout", m_executionStartToCloseTimeout);
-
+  if (m_executionStartToCloseTimeoutHasBeenSet) {
+    payload.WithString("executionStartToCloseTimeout", m_executionStartToCloseTimeout);
   }
 
-  if(m_taskListHasBeenSet)
-  {
-   payload.WithObject("taskList", m_taskList.Jsonize());
-
+  if (m_taskListHasBeenSet) {
+    payload.WithObject("taskList", m_taskList.Jsonize());
   }
 
-  if(m_taskPriorityHasBeenSet)
-  {
-   payload.WithString("taskPriority", m_taskPriority);
-
+  if (m_taskPriorityHasBeenSet) {
+    payload.WithString("taskPriority", m_taskPriority);
   }
 
-  if(m_decisionTaskCompletedEventIdHasBeenSet)
-  {
-   payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
-
+  if (m_decisionTaskCompletedEventIdHasBeenSet) {
+    payload.WithInt64("decisionTaskCompletedEventId", m_decisionTaskCompletedEventId);
   }
 
-  if(m_childPolicyHasBeenSet)
-  {
-   payload.WithString("childPolicy", ChildPolicyMapper::GetNameForChildPolicy(m_childPolicy));
+  if (m_childPolicyHasBeenSet) {
+    payload.WithString("childPolicy", ChildPolicyMapper::GetNameForChildPolicy(m_childPolicy));
   }
 
-  if(m_taskStartToCloseTimeoutHasBeenSet)
-  {
-   payload.WithString("taskStartToCloseTimeout", m_taskStartToCloseTimeout);
-
+  if (m_taskStartToCloseTimeoutHasBeenSet) {
+    payload.WithString("taskStartToCloseTimeout", m_taskStartToCloseTimeout);
   }
 
-  if(m_tagListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
-   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-   {
-     tagListJsonList[tagListIndex].AsString(m_tagList[tagListIndex]);
-   }
-   payload.WithArray("tagList", std::move(tagListJsonList));
-
+  if (m_tagListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
+      tagListJsonList[tagListIndex].AsString(m_tagList[tagListIndex]);
+    }
+    payload.WithArray("tagList", std::move(tagListJsonList));
   }
 
-  if(m_lambdaRoleHasBeenSet)
-  {
-   payload.WithString("lambdaRole", m_lambdaRole);
-
+  if (m_lambdaRoleHasBeenSet) {
+    payload.WithString("lambdaRole", m_lambdaRole);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

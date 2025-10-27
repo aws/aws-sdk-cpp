@@ -3,52 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/BatchIsAuthorizedOutputItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedOutputItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem(JsonView jsonValue) { *this = jsonValue; }
 
-BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("request"))
-  {
+BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("request")) {
     m_request = jsonValue.GetObject("request");
     m_requestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("decision"))
-  {
+  if (jsonValue.ValueExists("decision")) {
     m_decision = DecisionMapper::GetDecisionForName(jsonValue.GetString("decision"));
     m_decisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("determiningPolicies"))
-  {
+  if (jsonValue.ValueExists("determiningPolicies")) {
     Aws::Utils::Array<JsonView> determiningPoliciesJsonList = jsonValue.GetArray("determiningPolicies");
-    for(unsigned determiningPoliciesIndex = 0; determiningPoliciesIndex < determiningPoliciesJsonList.GetLength(); ++determiningPoliciesIndex)
-    {
+    for (unsigned determiningPoliciesIndex = 0; determiningPoliciesIndex < determiningPoliciesJsonList.GetLength();
+         ++determiningPoliciesIndex) {
       m_determiningPolicies.push_back(determiningPoliciesJsonList[determiningPoliciesIndex].AsObject());
     }
     m_determiningPoliciesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errors"))
-  {
+  if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
@@ -56,46 +44,37 @@ BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator =(JsonView js
   return *this;
 }
 
-JsonValue BatchIsAuthorizedOutputItem::Jsonize() const
-{
+JsonValue BatchIsAuthorizedOutputItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestHasBeenSet)
-  {
-   payload.WithObject("request", m_request.Jsonize());
-
+  if (m_requestHasBeenSet) {
+    payload.WithObject("request", m_request.Jsonize());
   }
 
-  if(m_decisionHasBeenSet)
-  {
-   payload.WithString("decision", DecisionMapper::GetNameForDecision(m_decision));
+  if (m_decisionHasBeenSet) {
+    payload.WithString("decision", DecisionMapper::GetNameForDecision(m_decision));
   }
 
-  if(m_determiningPoliciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> determiningPoliciesJsonList(m_determiningPolicies.size());
-   for(unsigned determiningPoliciesIndex = 0; determiningPoliciesIndex < determiningPoliciesJsonList.GetLength(); ++determiningPoliciesIndex)
-   {
-     determiningPoliciesJsonList[determiningPoliciesIndex].AsObject(m_determiningPolicies[determiningPoliciesIndex].Jsonize());
-   }
-   payload.WithArray("determiningPolicies", std::move(determiningPoliciesJsonList));
-
+  if (m_determiningPoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> determiningPoliciesJsonList(m_determiningPolicies.size());
+    for (unsigned determiningPoliciesIndex = 0; determiningPoliciesIndex < determiningPoliciesJsonList.GetLength();
+         ++determiningPoliciesIndex) {
+      determiningPoliciesJsonList[determiningPoliciesIndex].AsObject(m_determiningPolicies[determiningPoliciesIndex].Jsonize());
+    }
+    payload.WithArray("determiningPolicies", std::move(determiningPoliciesJsonList));
   }
 
-  if(m_errorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
-   for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-   {
-     errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
-   }
-   payload.WithArray("errors", std::move(errorsJsonList));
-
+  if (m_errorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
+      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
+    }
+    payload.WithArray("errors", std::move(errorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

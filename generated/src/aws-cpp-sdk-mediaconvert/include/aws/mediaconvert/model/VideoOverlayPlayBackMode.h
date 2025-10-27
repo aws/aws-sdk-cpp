@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class VideoOverlayPlayBackMode
-  {
-    NOT_SET,
-    ONCE,
-    REPEAT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class VideoOverlayPlayBackMode { NOT_SET, ONCE, REPEAT };
 
-namespace VideoOverlayPlayBackModeMapper
-{
+namespace VideoOverlayPlayBackModeMapper {
 AWS_MEDIACONVERT_API VideoOverlayPlayBackMode GetVideoOverlayPlayBackModeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVideoOverlayPlayBackMode(VideoOverlayPlayBackMode value);
-} // namespace VideoOverlayPlayBackModeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace VideoOverlayPlayBackModeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

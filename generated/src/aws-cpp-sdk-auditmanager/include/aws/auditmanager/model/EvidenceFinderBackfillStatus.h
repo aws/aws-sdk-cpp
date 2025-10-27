@@ -7,26 +7,16 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
-  enum class EvidenceFinderBackfillStatus
-  {
-    NOT_SET,
-    NOT_STARTED,
-    IN_PROGRESS,
-    COMPLETED
-  };
+namespace Aws {
+namespace AuditManager {
+namespace Model {
+enum class EvidenceFinderBackfillStatus { NOT_SET, NOT_STARTED, IN_PROGRESS, COMPLETED };
 
-namespace EvidenceFinderBackfillStatusMapper
-{
+namespace EvidenceFinderBackfillStatusMapper {
 AWS_AUDITMANAGER_API EvidenceFinderBackfillStatus GetEvidenceFinderBackfillStatusForName(const Aws::String& name);
 
 AWS_AUDITMANAGER_API Aws::String GetNameForEvidenceFinderBackfillStatus(EvidenceFinderBackfillStatus value);
-} // namespace EvidenceFinderBackfillStatusMapper
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace EvidenceFinderBackfillStatusMapper
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

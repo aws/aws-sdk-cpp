@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
-namespace Aws
-{
-namespace mediapackagev2
-{
-namespace Model
-{
-  enum class CmafEncryptionMethod
-  {
-    NOT_SET,
-    CENC,
-    CBCS
-  };
+namespace Aws {
+namespace mediapackagev2 {
+namespace Model {
+enum class CmafEncryptionMethod { NOT_SET, CENC, CBCS };
 
-namespace CmafEncryptionMethodMapper
-{
+namespace CmafEncryptionMethodMapper {
 AWS_MEDIAPACKAGEV2_API CmafEncryptionMethod GetCmafEncryptionMethodForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGEV2_API Aws::String GetNameForCmafEncryptionMethod(CmafEncryptionMethod value);
-} // namespace CmafEncryptionMethodMapper
-} // namespace Model
-} // namespace mediapackagev2
-} // namespace Aws
+}  // namespace CmafEncryptionMethodMapper
+}  // namespace Model
+}  // namespace mediapackagev2
+}  // namespace Aws

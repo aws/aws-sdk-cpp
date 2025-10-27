@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteTransitGatewayRouteTableAnnouncementRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteTransitGatewayRouteTableAnnouncementRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTransitGatewayRouteTableAnnouncementRequest::SerializePayload() const
-{
+Aws::String DeleteTransitGatewayRouteTableAnnouncementRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTransitGatewayRouteTableAnnouncement&";
-  if(m_transitGatewayRouteTableAnnouncementIdHasBeenSet)
-  {
+  if (m_transitGatewayRouteTableAnnouncementIdHasBeenSet) {
     ss << "TransitGatewayRouteTableAnnouncementId=" << StringUtils::URLEncode(m_transitGatewayRouteTableAnnouncementId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteTransitGatewayRouteTableAnnouncementRequest::SerializePayload(
   return ss.str();
 }
 
-
-void  DeleteTransitGatewayRouteTableAnnouncementRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTransitGatewayRouteTableAnnouncementRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

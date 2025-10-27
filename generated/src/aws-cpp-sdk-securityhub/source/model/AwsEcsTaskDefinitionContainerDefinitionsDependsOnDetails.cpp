@@ -3,60 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Condition"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Condition")) {
     m_condition = jsonValue.GetString("Condition");
     m_conditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainerName"))
-  {
+  if (jsonValue.ValueExists("ContainerName")) {
     m_containerName = jsonValue.GetString("ContainerName");
     m_containerNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionHasBeenSet)
-  {
-   payload.WithString("Condition", m_condition);
-
+  if (m_conditionHasBeenSet) {
+    payload.WithString("Condition", m_condition);
   }
 
-  if(m_containerNameHasBeenSet)
-  {
-   payload.WithString("ContainerName", m_containerName);
-
+  if (m_containerNameHasBeenSet) {
+    payload.WithString("ContainerName", m_containerName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

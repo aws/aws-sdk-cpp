@@ -3,177 +3,133 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/FormTypeData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/FormTypeData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-FormTypeData::FormTypeData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormTypeData::FormTypeData(JsonView jsonValue) { *this = jsonValue; }
 
-FormTypeData& FormTypeData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createdAt"))
-  {
+FormTypeData& FormTypeData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBy"))
-  {
+  if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainId"))
-  {
+  if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imports"))
-  {
+  if (jsonValue.ValueExists("imports")) {
     Aws::Utils::Array<JsonView> importsJsonList = jsonValue.GetArray("imports");
-    for(unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex)
-    {
+    for (unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex) {
       m_imports.push_back(importsJsonList[importsIndex].AsObject());
     }
     m_importsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("model"))
-  {
+  if (jsonValue.ValueExists("model")) {
     m_model = jsonValue.GetObject("model");
     m_modelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("originDomainId"))
-  {
+  if (jsonValue.ValueExists("originDomainId")) {
     m_originDomainId = jsonValue.GetString("originDomainId");
     m_originDomainIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("originProjectId"))
-  {
+  if (jsonValue.ValueExists("originProjectId")) {
     m_originProjectId = jsonValue.GetString("originProjectId");
     m_originProjectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("owningProjectId"))
-  {
+  if (jsonValue.ValueExists("owningProjectId")) {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
     m_owningProjectIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revision"))
-  {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = FormTypeStatusMapper::GetFormTypeStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormTypeData::Jsonize() const
-{
+JsonValue FormTypeData::Jsonize() const {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_domainIdHasBeenSet)
-  {
-   payload.WithString("domainId", m_domainId);
-
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("domainId", m_domainId);
   }
 
-  if(m_importsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> importsJsonList(m_imports.size());
-   for(unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex)
-   {
-     importsJsonList[importsIndex].AsObject(m_imports[importsIndex].Jsonize());
-   }
-   payload.WithArray("imports", std::move(importsJsonList));
-
+  if (m_importsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> importsJsonList(m_imports.size());
+    for (unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex) {
+      importsJsonList[importsIndex].AsObject(m_imports[importsIndex].Jsonize());
+    }
+    payload.WithArray("imports", std::move(importsJsonList));
   }
 
-  if(m_modelHasBeenSet)
-  {
-   payload.WithObject("model", m_model.Jsonize());
-
+  if (m_modelHasBeenSet) {
+    payload.WithObject("model", m_model.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_originDomainIdHasBeenSet)
-  {
-   payload.WithString("originDomainId", m_originDomainId);
-
+  if (m_originDomainIdHasBeenSet) {
+    payload.WithString("originDomainId", m_originDomainId);
   }
 
-  if(m_originProjectIdHasBeenSet)
-  {
-   payload.WithString("originProjectId", m_originProjectId);
-
+  if (m_originProjectIdHasBeenSet) {
+    payload.WithString("originProjectId", m_originProjectId);
   }
 
-  if(m_owningProjectIdHasBeenSet)
-  {
-   payload.WithString("owningProjectId", m_owningProjectId);
-
+  if (m_owningProjectIdHasBeenSet) {
+    payload.WithString("owningProjectId", m_owningProjectId);
   }
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithString("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FormTypeStatusMapper::GetNameForFormTypeStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", FormTypeStatusMapper::GetNameForFormTypeStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

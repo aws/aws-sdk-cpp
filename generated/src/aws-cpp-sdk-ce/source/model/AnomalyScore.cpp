@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-AnomalyScore::AnomalyScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnomalyScore::AnomalyScore(JsonView jsonValue) { *this = jsonValue; }
 
-AnomalyScore& AnomalyScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxScore"))
-  {
+AnomalyScore& AnomalyScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxScore")) {
     m_maxScore = jsonValue.GetDouble("MaxScore");
     m_maxScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrentScore"))
-  {
+  if (jsonValue.ValueExists("CurrentScore")) {
     m_currentScore = jsonValue.GetDouble("CurrentScore");
     m_currentScoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnomalyScore::Jsonize() const
-{
+JsonValue AnomalyScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxScoreHasBeenSet)
-  {
-   payload.WithDouble("MaxScore", m_maxScore);
-
+  if (m_maxScoreHasBeenSet) {
+    payload.WithDouble("MaxScore", m_maxScore);
   }
 
-  if(m_currentScoreHasBeenSet)
-  {
-   payload.WithDouble("CurrentScore", m_currentScore);
-
+  if (m_currentScoreHasBeenSet) {
+    payload.WithDouble("CurrentScore", m_currentScore);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

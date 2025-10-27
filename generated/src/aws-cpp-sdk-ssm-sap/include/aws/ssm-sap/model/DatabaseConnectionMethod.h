@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class DatabaseConnectionMethod
-  {
-    NOT_SET,
-    DIRECT,
-    OVERLAY
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class DatabaseConnectionMethod { NOT_SET, DIRECT, OVERLAY };
 
-namespace DatabaseConnectionMethodMapper
-{
+namespace DatabaseConnectionMethodMapper {
 AWS_SSMSAP_API DatabaseConnectionMethod GetDatabaseConnectionMethodForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForDatabaseConnectionMethod(DatabaseConnectionMethod value);
-} // namespace DatabaseConnectionMethodMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace DatabaseConnectionMethodMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

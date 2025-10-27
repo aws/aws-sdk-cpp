@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/HttpPackageConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/HttpPackageConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-HttpPackageConfiguration::HttpPackageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpPackageConfiguration::HttpPackageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-HttpPackageConfiguration& HttpPackageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Path"))
-  {
+HttpPackageConfiguration& HttpPackageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceGroup"))
-  {
+  if (jsonValue.ValueExists("SourceGroup")) {
     m_sourceGroup = jsonValue.GetString("SourceGroup");
     m_sourceGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpPackageConfiguration::Jsonize() const
-{
+JsonValue HttpPackageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_sourceGroupHasBeenSet)
-  {
-   payload.WithString("SourceGroup", m_sourceGroup);
-
+  if (m_sourceGroupHasBeenSet) {
+    payload.WithString("SourceGroup", m_sourceGroup);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

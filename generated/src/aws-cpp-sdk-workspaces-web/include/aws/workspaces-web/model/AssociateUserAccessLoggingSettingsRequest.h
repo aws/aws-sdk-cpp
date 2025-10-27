@@ -4,72 +4,78 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
-#include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWebRequest.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace WorkSpacesWeb {
+namespace Model {
 
+/**
+ */
+class AssociateUserAccessLoggingSettingsRequest : public WorkSpacesWebRequest {
+ public:
+  AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AssociateUserAccessLoggingSettings"; }
+
+  AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+
+  AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The ARN of the web portal.</p>
    */
-  class AssociateUserAccessLoggingSettingsRequest : public WorkSpacesWebRequest
-  {
-  public:
-    AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsRequest() = default;
+  inline const Aws::String& GetPortalArn() const { return m_portalArn; }
+  inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
+  template <typename PortalArnT = Aws::String>
+  void SetPortalArn(PortalArnT&& value) {
+    m_portalArnHasBeenSet = true;
+    m_portalArn = std::forward<PortalArnT>(value);
+  }
+  template <typename PortalArnT = Aws::String>
+  AssociateUserAccessLoggingSettingsRequest& WithPortalArn(PortalArnT&& value) {
+    SetPortalArn(std::forward<PortalArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AssociateUserAccessLoggingSettings"; }
+  ///@{
+  /**
+   * <p>The ARN of the user access logging settings.</p>
+   */
+  inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
+  inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
+  template <typename UserAccessLoggingSettingsArnT = Aws::String>
+  void SetUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) {
+    m_userAccessLoggingSettingsArnHasBeenSet = true;
+    m_userAccessLoggingSettingsArn = std::forward<UserAccessLoggingSettingsArnT>(value);
+  }
+  template <typename UserAccessLoggingSettingsArnT = Aws::String>
+  AssociateUserAccessLoggingSettingsRequest& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) {
+    SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_portalArn;
+  bool m_portalArnHasBeenSet = false;
 
-    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
+  Aws::String m_userAccessLoggingSettingsArn;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
+};
 
-    AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
-    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
-    inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-    template<typename PortalArnT = Aws::String>
-    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
-    template<typename PortalArnT = Aws::String>
-    AssociateUserAccessLoggingSettingsRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
-    inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
-    inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
-    template<typename UserAccessLoggingSettingsArnT = Aws::String>
-    void SetUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::forward<UserAccessLoggingSettingsArnT>(value); }
-    template<typename UserAccessLoggingSettingsArnT = Aws::String>
-    AssociateUserAccessLoggingSettingsRequest& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet = false;
-
-    Aws::String m_userAccessLoggingSettingsArn;
-    bool m_userAccessLoggingSettingsArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

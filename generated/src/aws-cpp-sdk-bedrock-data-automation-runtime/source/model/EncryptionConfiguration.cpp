@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+namespace Model {
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+EncryptionConfiguration& EncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsEncryptionContext"))
-  {
+  if (jsonValue.ValueExists("kmsEncryptionContext")) {
     Aws::Map<Aws::String, JsonView> kmsEncryptionContextJsonMap = jsonValue.GetObject("kmsEncryptionContext").GetAllObjects();
-    for(auto& kmsEncryptionContextItem : kmsEncryptionContextJsonMap)
-    {
+    for (auto& kmsEncryptionContextItem : kmsEncryptionContextJsonMap) {
       m_kmsEncryptionContext[kmsEncryptionContextItem.first] = kmsEncryptionContextItem.second.AsString();
     }
     m_kmsEncryptionContextHasBeenSet = true;
@@ -42,30 +32,24 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EncryptionConfiguration::Jsonize() const
-{
+JsonValue EncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
-  if(m_kmsEncryptionContextHasBeenSet)
-  {
-   JsonValue kmsEncryptionContextJsonMap;
-   for(auto& kmsEncryptionContextItem : m_kmsEncryptionContext)
-   {
-     kmsEncryptionContextJsonMap.WithString(kmsEncryptionContextItem.first, kmsEncryptionContextItem.second);
-   }
-   payload.WithObject("kmsEncryptionContext", std::move(kmsEncryptionContextJsonMap));
-
+  if (m_kmsEncryptionContextHasBeenSet) {
+    JsonValue kmsEncryptionContextJsonMap;
+    for (auto& kmsEncryptionContextItem : m_kmsEncryptionContext) {
+      kmsEncryptionContextJsonMap.WithString(kmsEncryptionContextItem.first, kmsEncryptionContextItem.second);
+    }
+    payload.WithObject("kmsEncryptionContext", std::move(kmsEncryptionContextJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

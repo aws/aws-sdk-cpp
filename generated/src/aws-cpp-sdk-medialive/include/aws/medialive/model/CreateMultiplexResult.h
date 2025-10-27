@@ -4,68 +4,73 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/Multiplex.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace MediaLive
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaLive {
+namespace Model {
+/**
+ * Placeholder documentation for CreateMultiplexResponse<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexResponse">AWS
+ * API Reference</a></p>
+ */
+class CreateMultiplexResult {
+ public:
+  AWS_MEDIALIVE_API CreateMultiplexResult() = default;
+  AWS_MEDIALIVE_API CreateMultiplexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MEDIALIVE_API CreateMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * Placeholder documentation for CreateMultiplexResponse<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexResponse">AWS
-   * API Reference</a></p>
+   * The newly created multiplex.
    */
-  class CreateMultiplexResult
-  {
-  public:
-    AWS_MEDIALIVE_API CreateMultiplexResult() = default;
-    AWS_MEDIALIVE_API CreateMultiplexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MEDIALIVE_API CreateMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const Multiplex& GetMultiplex() const { return m_multiplex; }
+  template <typename MultiplexT = Multiplex>
+  void SetMultiplex(MultiplexT&& value) {
+    m_multiplexHasBeenSet = true;
+    m_multiplex = std::forward<MultiplexT>(value);
+  }
+  template <typename MultiplexT = Multiplex>
+  CreateMultiplexResult& WithMultiplex(MultiplexT&& value) {
+    SetMultiplex(std::forward<MultiplexT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * The newly created multiplex.
-     */
-    inline const Multiplex& GetMultiplex() const { return m_multiplex; }
-    template<typename MultiplexT = Multiplex>
-    void SetMultiplex(MultiplexT&& value) { m_multiplexHasBeenSet = true; m_multiplex = std::forward<MultiplexT>(value); }
-    template<typename MultiplexT = Multiplex>
-    CreateMultiplexResult& WithMultiplex(MultiplexT&& value) { SetMultiplex(std::forward<MultiplexT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateMultiplexResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Multiplex m_multiplex;
+  bool m_multiplexHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateMultiplexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Multiplex m_multiplex;
-    bool m_multiplexHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

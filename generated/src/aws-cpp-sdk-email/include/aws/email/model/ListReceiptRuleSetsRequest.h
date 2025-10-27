@@ -4,63 +4,64 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
-#include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SESRequest.h>
+#include <aws/email/SES_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
+/**
+ * <p>Represents a request to list the receipt rule sets that exist under your
+ * Amazon Web Services account. You use receipt rule sets to receive email with
+ * Amazon SES. For more information, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon
+ * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSetsRequest">AWS
+ * API Reference</a></p>
+ */
+class ListReceiptRuleSetsRequest : public SESRequest {
+ public:
+  AWS_SES_API ListReceiptRuleSetsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListReceiptRuleSets"; }
+
+  AWS_SES_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents a request to list the receipt rule sets that exist under your
-   * Amazon Web Services account. You use receipt rule sets to receive email with
-   * Amazon SES. For more information, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon
-   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSetsRequest">AWS
-   * API Reference</a></p>
+   * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+   * indicate the position in the receipt rule set list.</p>
    */
-  class ListReceiptRuleSetsRequest : public SESRequest
-  {
-  public:
-    AWS_SES_API ListReceiptRuleSetsRequest() = default;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListReceiptRuleSetsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListReceiptRuleSets"; }
-
-    AWS_SES_API Aws::String SerializePayload() const override;
-
-  protected:
-    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
-     * indicate the position in the receipt rule set list.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListReceiptRuleSetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

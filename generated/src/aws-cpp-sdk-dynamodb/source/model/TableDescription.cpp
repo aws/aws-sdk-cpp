@@ -3,386 +3,297 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/TableDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/TableDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-TableDescription::TableDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableDescription::TableDescription(JsonView jsonValue) { *this = jsonValue; }
 
-TableDescription& TableDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeDefinitions"))
-  {
+TableDescription& TableDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeDefinitions")) {
     Aws::Utils::Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
-    for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
-    {
+    for (unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength();
+         ++attributeDefinitionsIndex) {
       m_attributeDefinitions.push_back(attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject());
     }
     m_attributeDefinitionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableName"))
-  {
+  if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeySchema"))
-  {
+  if (jsonValue.ValueExists("KeySchema")) {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
-    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
-    {
+    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
     }
     m_keySchemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableStatus"))
-  {
+  if (jsonValue.ValueExists("TableStatus")) {
     m_tableStatus = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("TableStatus"));
     m_tableStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDateTime"))
-  {
+  if (jsonValue.ValueExists("CreationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisionedThroughput"))
-  {
+  if (jsonValue.ValueExists("ProvisionedThroughput")) {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
     m_provisionedThroughputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableSizeBytes"))
-  {
+  if (jsonValue.ValueExists("TableSizeBytes")) {
     m_tableSizeBytes = jsonValue.GetInt64("TableSizeBytes");
     m_tableSizeBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ItemCount"))
-  {
+  if (jsonValue.ValueExists("ItemCount")) {
     m_itemCount = jsonValue.GetInt64("ItemCount");
     m_itemCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableArn"))
-  {
+  if (jsonValue.ValueExists("TableArn")) {
     m_tableArn = jsonValue.GetString("TableArn");
     m_tableArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableId"))
-  {
+  if (jsonValue.ValueExists("TableId")) {
     m_tableId = jsonValue.GetString("TableId");
     m_tableIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BillingModeSummary"))
-  {
+  if (jsonValue.ValueExists("BillingModeSummary")) {
     m_billingModeSummary = jsonValue.GetObject("BillingModeSummary");
     m_billingModeSummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocalSecondaryIndexes"))
-  {
+  if (jsonValue.ValueExists("LocalSecondaryIndexes")) {
     Aws::Utils::Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
-    for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
-    {
+    for (unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength();
+         ++localSecondaryIndexesIndex) {
       m_localSecondaryIndexes.push_back(localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject());
     }
     m_localSecondaryIndexesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
-  {
+  if (jsonValue.ValueExists("GlobalSecondaryIndexes")) {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
-    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
-    {
+    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
+         ++globalSecondaryIndexesIndex) {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamSpecification"))
-  {
+  if (jsonValue.ValueExists("StreamSpecification")) {
     m_streamSpecification = jsonValue.GetObject("StreamSpecification");
     m_streamSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestStreamLabel"))
-  {
+  if (jsonValue.ValueExists("LatestStreamLabel")) {
     m_latestStreamLabel = jsonValue.GetString("LatestStreamLabel");
     m_latestStreamLabelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LatestStreamArn"))
-  {
+  if (jsonValue.ValueExists("LatestStreamArn")) {
     m_latestStreamArn = jsonValue.GetString("LatestStreamArn");
     m_latestStreamArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlobalTableVersion"))
-  {
+  if (jsonValue.ValueExists("GlobalTableVersion")) {
     m_globalTableVersion = jsonValue.GetString("GlobalTableVersion");
     m_globalTableVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Replicas"))
-  {
+  if (jsonValue.ValueExists("Replicas")) {
     Aws::Utils::Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
-    for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
-    {
+    for (unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex) {
       m_replicas.push_back(replicasJsonList[replicasIndex].AsObject());
     }
     m_replicasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlobalTableWitnesses"))
-  {
+  if (jsonValue.ValueExists("GlobalTableWitnesses")) {
     Aws::Utils::Array<JsonView> globalTableWitnessesJsonList = jsonValue.GetArray("GlobalTableWitnesses");
-    for(unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength(); ++globalTableWitnessesIndex)
-    {
+    for (unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength();
+         ++globalTableWitnessesIndex) {
       m_globalTableWitnesses.push_back(globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject());
     }
     m_globalTableWitnessesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RestoreSummary"))
-  {
+  if (jsonValue.ValueExists("RestoreSummary")) {
     m_restoreSummary = jsonValue.GetObject("RestoreSummary");
     m_restoreSummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SSEDescription"))
-  {
+  if (jsonValue.ValueExists("SSEDescription")) {
     m_sSEDescription = jsonValue.GetObject("SSEDescription");
     m_sSEDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArchivalSummary"))
-  {
+  if (jsonValue.ValueExists("ArchivalSummary")) {
     m_archivalSummary = jsonValue.GetObject("ArchivalSummary");
     m_archivalSummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableClassSummary"))
-  {
+  if (jsonValue.ValueExists("TableClassSummary")) {
     m_tableClassSummary = jsonValue.GetObject("TableClassSummary");
     m_tableClassSummaryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
-  {
+  if (jsonValue.ValueExists("DeletionProtectionEnabled")) {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandThroughput"))
-  {
+  if (jsonValue.ValueExists("OnDemandThroughput")) {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
     m_onDemandThroughputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WarmThroughput"))
-  {
+  if (jsonValue.ValueExists("WarmThroughput")) {
     m_warmThroughput = jsonValue.GetObject("WarmThroughput");
     m_warmThroughputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiRegionConsistency"))
-  {
-    m_multiRegionConsistency = MultiRegionConsistencyMapper::GetMultiRegionConsistencyForName(jsonValue.GetString("MultiRegionConsistency"));
+  if (jsonValue.ValueExists("MultiRegionConsistency")) {
+    m_multiRegionConsistency =
+        MultiRegionConsistencyMapper::GetMultiRegionConsistencyForName(jsonValue.GetString("MultiRegionConsistency"));
     m_multiRegionConsistencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TableDescription::Jsonize() const
-{
+JsonValue TableDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeDefinitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
-   for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
-   {
-     attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
-   }
-   payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
-
+  if (m_attributeDefinitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
+    for (unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength();
+         ++attributeDefinitionsIndex) {
+      attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
+    }
+    payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_keySchemaHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
-   for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
-   {
-     keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
-   }
-   payload.WithArray("KeySchema", std::move(keySchemaJsonList));
-
+  if (m_keySchemaHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+    for (unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex) {
+      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
+    }
+    payload.WithArray("KeySchema", std::move(keySchemaJsonList));
   }
 
-  if(m_tableStatusHasBeenSet)
-  {
-   payload.WithString("TableStatus", TableStatusMapper::GetNameForTableStatus(m_tableStatus));
+  if (m_tableStatusHasBeenSet) {
+    payload.WithString("TableStatus", TableStatusMapper::GetNameForTableStatus(m_tableStatus));
   }
 
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_provisionedThroughputHasBeenSet)
-  {
-   payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
-
+  if (m_provisionedThroughputHasBeenSet) {
+    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
   }
 
-  if(m_tableSizeBytesHasBeenSet)
-  {
-   payload.WithInt64("TableSizeBytes", m_tableSizeBytes);
-
+  if (m_tableSizeBytesHasBeenSet) {
+    payload.WithInt64("TableSizeBytes", m_tableSizeBytes);
   }
 
-  if(m_itemCountHasBeenSet)
-  {
-   payload.WithInt64("ItemCount", m_itemCount);
-
+  if (m_itemCountHasBeenSet) {
+    payload.WithInt64("ItemCount", m_itemCount);
   }
 
-  if(m_tableArnHasBeenSet)
-  {
-   payload.WithString("TableArn", m_tableArn);
-
+  if (m_tableArnHasBeenSet) {
+    payload.WithString("TableArn", m_tableArn);
   }
 
-  if(m_tableIdHasBeenSet)
-  {
-   payload.WithString("TableId", m_tableId);
-
+  if (m_tableIdHasBeenSet) {
+    payload.WithString("TableId", m_tableId);
   }
 
-  if(m_billingModeSummaryHasBeenSet)
-  {
-   payload.WithObject("BillingModeSummary", m_billingModeSummary.Jsonize());
-
+  if (m_billingModeSummaryHasBeenSet) {
+    payload.WithObject("BillingModeSummary", m_billingModeSummary.Jsonize());
   }
 
-  if(m_localSecondaryIndexesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
-   for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
-   {
-     localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject(m_localSecondaryIndexes[localSecondaryIndexesIndex].Jsonize());
-   }
-   payload.WithArray("LocalSecondaryIndexes", std::move(localSecondaryIndexesJsonList));
-
+  if (m_localSecondaryIndexesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
+    for (unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength();
+         ++localSecondaryIndexesIndex) {
+      localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject(m_localSecondaryIndexes[localSecondaryIndexesIndex].Jsonize());
+    }
+    payload.WithArray("LocalSecondaryIndexes", std::move(localSecondaryIndexesJsonList));
   }
 
-  if(m_globalSecondaryIndexesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
-   for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
-   {
-     globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
-   }
-   payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
-
+  if (m_globalSecondaryIndexesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+    for (unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength();
+         ++globalSecondaryIndexesIndex) {
+      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
+    }
+    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
   }
 
-  if(m_streamSpecificationHasBeenSet)
-  {
-   payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
-
+  if (m_streamSpecificationHasBeenSet) {
+    payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
   }
 
-  if(m_latestStreamLabelHasBeenSet)
-  {
-   payload.WithString("LatestStreamLabel", m_latestStreamLabel);
-
+  if (m_latestStreamLabelHasBeenSet) {
+    payload.WithString("LatestStreamLabel", m_latestStreamLabel);
   }
 
-  if(m_latestStreamArnHasBeenSet)
-  {
-   payload.WithString("LatestStreamArn", m_latestStreamArn);
-
+  if (m_latestStreamArnHasBeenSet) {
+    payload.WithString("LatestStreamArn", m_latestStreamArn);
   }
 
-  if(m_globalTableVersionHasBeenSet)
-  {
-   payload.WithString("GlobalTableVersion", m_globalTableVersion);
-
+  if (m_globalTableVersionHasBeenSet) {
+    payload.WithString("GlobalTableVersion", m_globalTableVersion);
   }
 
-  if(m_replicasHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> replicasJsonList(m_replicas.size());
-   for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
-   {
-     replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());
-   }
-   payload.WithArray("Replicas", std::move(replicasJsonList));
-
+  if (m_replicasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicasJsonList(m_replicas.size());
+    for (unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex) {
+      replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());
+    }
+    payload.WithArray("Replicas", std::move(replicasJsonList));
   }
 
-  if(m_globalTableWitnessesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> globalTableWitnessesJsonList(m_globalTableWitnesses.size());
-   for(unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength(); ++globalTableWitnessesIndex)
-   {
-     globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject(m_globalTableWitnesses[globalTableWitnessesIndex].Jsonize());
-   }
-   payload.WithArray("GlobalTableWitnesses", std::move(globalTableWitnessesJsonList));
-
+  if (m_globalTableWitnessesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> globalTableWitnessesJsonList(m_globalTableWitnesses.size());
+    for (unsigned globalTableWitnessesIndex = 0; globalTableWitnessesIndex < globalTableWitnessesJsonList.GetLength();
+         ++globalTableWitnessesIndex) {
+      globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject(m_globalTableWitnesses[globalTableWitnessesIndex].Jsonize());
+    }
+    payload.WithArray("GlobalTableWitnesses", std::move(globalTableWitnessesJsonList));
   }
 
-  if(m_restoreSummaryHasBeenSet)
-  {
-   payload.WithObject("RestoreSummary", m_restoreSummary.Jsonize());
-
+  if (m_restoreSummaryHasBeenSet) {
+    payload.WithObject("RestoreSummary", m_restoreSummary.Jsonize());
   }
 
-  if(m_sSEDescriptionHasBeenSet)
-  {
-   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
-
+  if (m_sSEDescriptionHasBeenSet) {
+    payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
   }
 
-  if(m_archivalSummaryHasBeenSet)
-  {
-   payload.WithObject("ArchivalSummary", m_archivalSummary.Jsonize());
-
+  if (m_archivalSummaryHasBeenSet) {
+    payload.WithObject("ArchivalSummary", m_archivalSummary.Jsonize());
   }
 
-  if(m_tableClassSummaryHasBeenSet)
-  {
-   payload.WithObject("TableClassSummary", m_tableClassSummary.Jsonize());
-
+  if (m_tableClassSummaryHasBeenSet) {
+    payload.WithObject("TableClassSummary", m_tableClassSummary.Jsonize());
   }
 
-  if(m_deletionProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
-
+  if (m_deletionProtectionEnabledHasBeenSet) {
+    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
   }
 
-  if(m_onDemandThroughputHasBeenSet)
-  {
-   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
-
+  if (m_onDemandThroughputHasBeenSet) {
+    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
   }
 
-  if(m_warmThroughputHasBeenSet)
-  {
-   payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
-
+  if (m_warmThroughputHasBeenSet) {
+    payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
   }
 
-  if(m_multiRegionConsistencyHasBeenSet)
-  {
-   payload.WithString("MultiRegionConsistency", MultiRegionConsistencyMapper::GetNameForMultiRegionConsistency(m_multiRegionConsistency));
+  if (m_multiRegionConsistencyHasBeenSet) {
+    payload.WithString("MultiRegionConsistency", MultiRegionConsistencyMapper::GetNameForMultiRegionConsistency(m_multiRegionConsistency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

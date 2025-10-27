@@ -10,42 +10,34 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListResourceScanResourcesRequest::SerializePayload() const
-{
+Aws::String ListResourceScanResourcesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListResourceScanResources&";
-  if(m_resourceScanIdHasBeenSet)
-  {
+  if (m_resourceScanIdHasBeenSet) {
     ss << "ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
   }
 
-  if(m_resourceIdentifierHasBeenSet)
-  {
+  if (m_resourceIdentifierHasBeenSet) {
     ss << "ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
   }
 
-  if(m_resourceTypePrefixHasBeenSet)
-  {
+  if (m_resourceTypePrefixHasBeenSet) {
     ss << "ResourceTypePrefix=" << StringUtils::URLEncode(m_resourceTypePrefix.c_str()) << "&";
   }
 
-  if(m_tagKeyHasBeenSet)
-  {
+  if (m_tagKeyHasBeenSet) {
     ss << "TagKey=" << StringUtils::URLEncode(m_tagKey.c_str()) << "&";
   }
 
-  if(m_tagValueHasBeenSet)
-  {
+  if (m_tagValueHasBeenSet) {
     ss << "TagValue=" << StringUtils::URLEncode(m_tagValue.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String ListResourceScanResourcesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListResourceScanResourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListResourceScanResourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/InstanceEventWindowAssociationTarget.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/InstanceEventWindowAssociationTarget.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-InstanceEventWindowAssociationTarget::InstanceEventWindowAssociationTarget(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceEventWindowAssociationTarget::InstanceEventWindowAssociationTarget(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceEventWindowAssociationTarget& InstanceEventWindowAssociationTarget::operator =(const XmlNode& xmlNode)
-{
+InstanceEventWindowAssociationTarget& InstanceEventWindowAssociationTarget::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceIdsNode = resultNode.FirstChild("instanceIdSet");
-    if(!instanceIdsNode.IsNull())
-    {
+    if (!instanceIdsNode.IsNull()) {
       XmlNode instanceIdsMember = instanceIdsNode.FirstChild("item");
       m_instanceIdsHasBeenSet = !instanceIdsMember.IsNull();
-      while(!instanceIdsMember.IsNull())
-      {
+      while (!instanceIdsMember.IsNull()) {
         m_instanceIds.push_back(instanceIdsMember.GetText());
         instanceIdsMember = instanceIdsMember.NextNode("item");
       }
@@ -45,12 +35,10 @@ InstanceEventWindowAssociationTarget& InstanceEventWindowAssociationTarget::oper
       m_instanceIdsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -58,12 +46,10 @@ InstanceEventWindowAssociationTarget& InstanceEventWindowAssociationTarget::oper
       m_tagsHasBeenSet = true;
     }
     XmlNode dedicatedHostIdsNode = resultNode.FirstChild("dedicatedHostIdSet");
-    if(!dedicatedHostIdsNode.IsNull())
-    {
+    if (!dedicatedHostIdsNode.IsNull()) {
       XmlNode dedicatedHostIdsMember = dedicatedHostIdsNode.FirstChild("item");
       m_dedicatedHostIdsHasBeenSet = !dedicatedHostIdsMember.IsNull();
-      while(!dedicatedHostIdsMember.IsNull())
-      {
+      while (!dedicatedHostIdsMember.IsNull()) {
         m_dedicatedHostIds.push_back(dedicatedHostIdsMember.GetText());
         dedicatedHostIdsMember = dedicatedHostIdsMember.NextNode("item");
       }
@@ -75,69 +61,57 @@ InstanceEventWindowAssociationTarget& InstanceEventWindowAssociationTarget::oper
   return *this;
 }
 
-void InstanceEventWindowAssociationTarget::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instanceIdsHasBeenSet)
-  {
-      unsigned instanceIdsIdx = 1;
-      for(auto& item : m_instanceIds)
-      {
-        oStream << location << index << locationValue << ".InstanceIdSet." << instanceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+void InstanceEventWindowAssociationTarget::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                          const char* locationValue) const {
+  if (m_instanceIdsHasBeenSet) {
+    unsigned instanceIdsIdx = 1;
+    for (auto& item : m_instanceIds) {
+      oStream << location << index << locationValue << ".InstanceIdSet." << instanceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_dedicatedHostIdsHasBeenSet)
-  {
-      unsigned dedicatedHostIdsIdx = 1;
-      for(auto& item : m_dedicatedHostIds)
-      {
-        oStream << location << index << locationValue << ".DedicatedHostIdSet." << dedicatedHostIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void InstanceEventWindowAssociationTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instanceIdsHasBeenSet)
-  {
-      unsigned instanceIdsIdx = 1;
-      for(auto& item : m_instanceIds)
-      {
-        oStream << location << ".InstanceIdSet." << instanceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_dedicatedHostIdsHasBeenSet)
-  {
-      unsigned dedicatedHostIdsIdx = 1;
-      for(auto& item : m_dedicatedHostIds)
-      {
-        oStream << location << ".DedicatedHostIdSet." << dedicatedHostIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_dedicatedHostIdsHasBeenSet) {
+    unsigned dedicatedHostIdsIdx = 1;
+    for (auto& item : m_dedicatedHostIds) {
+      oStream << location << index << locationValue << ".DedicatedHostIdSet." << dedicatedHostIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void InstanceEventWindowAssociationTarget::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instanceIdsHasBeenSet) {
+    unsigned instanceIdsIdx = 1;
+    for (auto& item : m_instanceIds) {
+      oStream << location << ".InstanceIdSet." << instanceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_dedicatedHostIdsHasBeenSet) {
+    unsigned dedicatedHostIdsIdx = 1;
+    for (auto& item : m_dedicatedHostIds) {
+      oStream << location << ".DedicatedHostIdSet." << dedicatedHostIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

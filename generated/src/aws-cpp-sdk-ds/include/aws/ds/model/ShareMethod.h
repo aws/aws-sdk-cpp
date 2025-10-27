@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class ShareMethod
-  {
-    NOT_SET,
-    ORGANIZATIONS,
-    HANDSHAKE
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class ShareMethod { NOT_SET, ORGANIZATIONS, HANDSHAKE };
 
-namespace ShareMethodMapper
-{
+namespace ShareMethodMapper {
 AWS_DIRECTORYSERVICE_API ShareMethod GetShareMethodForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForShareMethod(ShareMethod value);
-} // namespace ShareMethodMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace ShareMethodMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

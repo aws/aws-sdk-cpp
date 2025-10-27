@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/DeleteFileSystemOpenZFSResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/DeleteFileSystemOpenZFSResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-DeleteFileSystemOpenZFSResponse::DeleteFileSystemOpenZFSResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteFileSystemOpenZFSResponse::DeleteFileSystemOpenZFSResponse(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteFileSystemOpenZFSResponse& DeleteFileSystemOpenZFSResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FinalBackupId"))
-  {
+DeleteFileSystemOpenZFSResponse& DeleteFileSystemOpenZFSResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FinalBackupId")) {
     m_finalBackupId = jsonValue.GetString("FinalBackupId");
     m_finalBackupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FinalBackupTags"))
-  {
+  if (jsonValue.ValueExists("FinalBackupTags")) {
     Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
-    for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
-    {
+    for (unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex) {
       m_finalBackupTags.push_back(finalBackupTagsJsonList[finalBackupTagsIndex].AsObject());
     }
     m_finalBackupTagsHasBeenSet = true;
@@ -42,30 +32,24 @@ DeleteFileSystemOpenZFSResponse& DeleteFileSystemOpenZFSResponse::operator =(Jso
   return *this;
 }
 
-JsonValue DeleteFileSystemOpenZFSResponse::Jsonize() const
-{
+JsonValue DeleteFileSystemOpenZFSResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_finalBackupIdHasBeenSet)
-  {
-   payload.WithString("FinalBackupId", m_finalBackupId);
-
+  if (m_finalBackupIdHasBeenSet) {
+    payload.WithString("FinalBackupId", m_finalBackupId);
   }
 
-  if(m_finalBackupTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
-   for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
-   {
-     finalBackupTagsJsonList[finalBackupTagsIndex].AsObject(m_finalBackupTags[finalBackupTagsIndex].Jsonize());
-   }
-   payload.WithArray("FinalBackupTags", std::move(finalBackupTagsJsonList));
-
+  if (m_finalBackupTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
+    for (unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex) {
+      finalBackupTagsJsonList[finalBackupTagsIndex].AsObject(m_finalBackupTags[finalBackupTagsIndex].Jsonize());
+    }
+    payload.WithArray("FinalBackupTags", std::move(finalBackupTagsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

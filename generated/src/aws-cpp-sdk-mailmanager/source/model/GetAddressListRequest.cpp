@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mailmanager/model/GetAddressListRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mailmanager/model/GetAddressListRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAddressListRequest::SerializePayload() const
-{
+Aws::String GetAddressListRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_addressListIdHasBeenSet)
-  {
-   payload.WithString("AddressListId", m_addressListId);
-
+  if (m_addressListIdHasBeenSet) {
+    payload.WithString("AddressListId", m_addressListId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAddressListRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAddressListRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MailManagerSvc.GetAddressList"));
   return headers;
-
 }
-
-
-
-

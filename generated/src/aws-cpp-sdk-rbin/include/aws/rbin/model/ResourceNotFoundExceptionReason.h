@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rbin/RecycleBin_EXPORTS.h>
 
-namespace Aws
-{
-namespace RecycleBin
-{
-namespace Model
-{
-  enum class ResourceNotFoundExceptionReason
-  {
-    NOT_SET,
-    RULE_NOT_FOUND
-  };
+namespace Aws {
+namespace RecycleBin {
+namespace Model {
+enum class ResourceNotFoundExceptionReason { NOT_SET, RULE_NOT_FOUND };
 
-namespace ResourceNotFoundExceptionReasonMapper
-{
+namespace ResourceNotFoundExceptionReasonMapper {
 AWS_RECYCLEBIN_API ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name);
 
 AWS_RECYCLEBIN_API Aws::String GetNameForResourceNotFoundExceptionReason(ResourceNotFoundExceptionReason value);
-} // namespace ResourceNotFoundExceptionReasonMapper
-} // namespace Model
-} // namespace RecycleBin
-} // namespace Aws
+}  // namespace ResourceNotFoundExceptionReasonMapper
+}  // namespace Model
+}  // namespace RecycleBin
+}  // namespace Aws

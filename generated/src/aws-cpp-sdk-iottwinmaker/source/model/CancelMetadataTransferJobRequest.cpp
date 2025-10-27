@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/CancelMetadataTransferJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/CancelMetadataTransferJobRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelMetadataTransferJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String CancelMetadataTransferJobRequest::SerializePayload() const { return {}; }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/SFN_EXPORTS.h>
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
-  enum class InspectionLevel
-  {
-    NOT_SET,
-    INFO,
-    DEBUG_,
-    TRACE
-  };
+namespace Aws {
+namespace SFN {
+namespace Model {
+enum class InspectionLevel { NOT_SET, INFO, DEBUG_, TRACE };
 
-namespace InspectionLevelMapper
-{
+namespace InspectionLevelMapper {
 AWS_SFN_API InspectionLevel GetInspectionLevelForName(const Aws::String& name);
 
 AWS_SFN_API Aws::String GetNameForInspectionLevel(InspectionLevel value);
-} // namespace InspectionLevelMapper
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace InspectionLevelMapper
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

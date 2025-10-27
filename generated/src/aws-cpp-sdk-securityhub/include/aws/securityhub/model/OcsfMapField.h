@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class OcsfMapField
-  {
-    NOT_SET,
-    resources_tags
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class OcsfMapField { NOT_SET, resources_tags, compliance_control_parameters, databucket_tags, finding_info_tags };
 
-namespace OcsfMapFieldMapper
-{
+namespace OcsfMapFieldMapper {
 AWS_SECURITYHUB_API OcsfMapField GetOcsfMapFieldForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForOcsfMapField(OcsfMapField value);
-} // namespace OcsfMapFieldMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace OcsfMapFieldMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

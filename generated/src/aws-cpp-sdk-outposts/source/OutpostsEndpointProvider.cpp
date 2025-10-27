@@ -5,12 +5,8 @@
 
 #include <aws/outposts/OutpostsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Outposts
-} // namespace Aws
+namespace Aws {
+namespace Outposts {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Outposts
+}  // namespace Aws

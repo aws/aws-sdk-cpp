@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/SnapshotOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-SnapshotOptions::SnapshotOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapshotOptions::SnapshotOptions(JsonView jsonValue) { *this = jsonValue; }
 
-SnapshotOptions& SnapshotOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutomatedSnapshotStartHour"))
-  {
+SnapshotOptions& SnapshotOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutomatedSnapshotStartHour")) {
     m_automatedSnapshotStartHour = jsonValue.GetInteger("AutomatedSnapshotStartHour");
     m_automatedSnapshotStartHourHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnapshotOptions::Jsonize() const
-{
+JsonValue SnapshotOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_automatedSnapshotStartHourHasBeenSet)
-  {
-   payload.WithInteger("AutomatedSnapshotStartHour", m_automatedSnapshotStartHour);
-
+  if (m_automatedSnapshotStartHourHasBeenSet) {
+    payload.WithInteger("AutomatedSnapshotStartHour", m_automatedSnapshotStartHour);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

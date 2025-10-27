@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/CustomResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/CustomResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-CustomResponse::CustomResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomResponse::CustomResponse(JsonView jsonValue) { *this = jsonValue; }
 
-CustomResponse& CustomResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResponseCode"))
-  {
+CustomResponse& CustomResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResponseCode")) {
     m_responseCode = jsonValue.GetInteger("ResponseCode");
     m_responseCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomResponseBodyKey"))
-  {
+  if (jsonValue.ValueExists("CustomResponseBodyKey")) {
     m_customResponseBodyKey = jsonValue.GetString("CustomResponseBodyKey");
     m_customResponseBodyKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResponseHeaders"))
-  {
+  if (jsonValue.ValueExists("ResponseHeaders")) {
     Aws::Utils::Array<JsonView> responseHeadersJsonList = jsonValue.GetArray("ResponseHeaders");
-    for(unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex)
-    {
+    for (unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex) {
       m_responseHeaders.push_back(responseHeadersJsonList[responseHeadersIndex].AsObject());
     }
     m_responseHeadersHasBeenSet = true;
@@ -47,36 +36,28 @@ CustomResponse& CustomResponse::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CustomResponse::Jsonize() const
-{
+JsonValue CustomResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_responseCodeHasBeenSet)
-  {
-   payload.WithInteger("ResponseCode", m_responseCode);
-
+  if (m_responseCodeHasBeenSet) {
+    payload.WithInteger("ResponseCode", m_responseCode);
   }
 
-  if(m_customResponseBodyKeyHasBeenSet)
-  {
-   payload.WithString("CustomResponseBodyKey", m_customResponseBodyKey);
-
+  if (m_customResponseBodyKeyHasBeenSet) {
+    payload.WithString("CustomResponseBodyKey", m_customResponseBodyKey);
   }
 
-  if(m_responseHeadersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> responseHeadersJsonList(m_responseHeaders.size());
-   for(unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex)
-   {
-     responseHeadersJsonList[responseHeadersIndex].AsObject(m_responseHeaders[responseHeadersIndex].Jsonize());
-   }
-   payload.WithArray("ResponseHeaders", std::move(responseHeadersJsonList));
-
+  if (m_responseHeadersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> responseHeadersJsonList(m_responseHeaders.size());
+    for (unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex) {
+      responseHeadersJsonList[responseHeadersIndex].AsObject(m_responseHeaders[responseHeadersIndex].Jsonize());
+    }
+    payload.WithArray("ResponseHeaders", std::move(responseHeadersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

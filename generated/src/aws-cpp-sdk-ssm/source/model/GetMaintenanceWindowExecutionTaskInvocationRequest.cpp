@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/GetMaintenanceWindowExecutionTaskInvocationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/GetMaintenanceWindowExecutionTaskInvocationRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMaintenanceWindowExecutionTaskInvocationRequest::SerializePayload() const
-{
+Aws::String GetMaintenanceWindowExecutionTaskInvocationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_windowExecutionIdHasBeenSet)
-  {
-   payload.WithString("WindowExecutionId", m_windowExecutionId);
-
+  if (m_windowExecutionIdHasBeenSet) {
+    payload.WithString("WindowExecutionId", m_windowExecutionId);
   }
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("TaskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("TaskId", m_taskId);
   }
 
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("InvocationId", m_invocationId);
-
+  if (m_invocationIdHasBeenSet) {
+    payload.WithString("InvocationId", m_invocationId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetMaintenanceWindowExecutionTaskInvocationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetMaintenanceWindowExecutionTaskInvocationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.GetMaintenanceWindowExecutionTaskInvocation"));
   return headers;
-
 }
-
-
-
-

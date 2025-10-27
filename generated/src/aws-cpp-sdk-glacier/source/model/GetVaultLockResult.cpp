@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/GetVaultLockResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glacier/model/GetVaultLockResult.h>
 
 #include <utility>
 
@@ -17,43 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVaultLockResult::GetVaultLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetVaultLockResult::GetVaultLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetVaultLockResult& GetVaultLockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetVaultLockResult& GetVaultLockResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Policy"))
-  {
+  if (jsonValue.ValueExists("Policy")) {
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = jsonValue.GetString("State");
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationDate"))
-  {
+  if (jsonValue.ValueExists("ExpirationDate")) {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
     m_expirationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetString("CreationDate");
     m_creationDateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

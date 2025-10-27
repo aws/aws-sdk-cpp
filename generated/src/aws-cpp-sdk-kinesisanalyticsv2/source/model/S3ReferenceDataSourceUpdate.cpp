@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/S3ReferenceDataSourceUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/S3ReferenceDataSourceUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ReferenceDataSourceUpdate::S3ReferenceDataSourceUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-S3ReferenceDataSourceUpdate& S3ReferenceDataSourceUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketARNUpdate"))
-  {
+S3ReferenceDataSourceUpdate& S3ReferenceDataSourceUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketARNUpdate")) {
     m_bucketARNUpdate = jsonValue.GetString("BucketARNUpdate");
     m_bucketARNUpdateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FileKeyUpdate"))
-  {
+  if (jsonValue.ValueExists("FileKeyUpdate")) {
     m_fileKeyUpdate = jsonValue.GetString("FileKeyUpdate");
     m_fileKeyUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ReferenceDataSourceUpdate::Jsonize() const
-{
+JsonValue S3ReferenceDataSourceUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketARNUpdateHasBeenSet)
-  {
-   payload.WithString("BucketARNUpdate", m_bucketARNUpdate);
-
+  if (m_bucketARNUpdateHasBeenSet) {
+    payload.WithString("BucketARNUpdate", m_bucketARNUpdate);
   }
 
-  if(m_fileKeyUpdateHasBeenSet)
-  {
-   payload.WithString("FileKeyUpdate", m_fileKeyUpdate);
-
+  if (m_fileKeyUpdateHasBeenSet) {
+    payload.WithString("FileKeyUpdate", m_fileKeyUpdate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

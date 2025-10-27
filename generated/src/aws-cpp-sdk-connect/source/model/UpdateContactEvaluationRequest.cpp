@@ -12,35 +12,24 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateContactEvaluationRequest::SerializePayload() const
-{
+Aws::String UpdateContactEvaluationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_answersHasBeenSet)
-  {
-   JsonValue answersJsonMap;
-   for(auto& answersItem : m_answers)
-   {
-     answersJsonMap.WithObject(answersItem.first, answersItem.second.Jsonize());
-   }
-   payload.WithObject("Answers", std::move(answersJsonMap));
-
+  if (m_answersHasBeenSet) {
+    JsonValue answersJsonMap;
+    for (auto& answersItem : m_answers) {
+      answersJsonMap.WithObject(answersItem.first, answersItem.second.Jsonize());
+    }
+    payload.WithObject("Answers", std::move(answersJsonMap));
   }
 
-  if(m_notesHasBeenSet)
-  {
-   JsonValue notesJsonMap;
-   for(auto& notesItem : m_notes)
-   {
-     notesJsonMap.WithObject(notesItem.first, notesItem.second.Jsonize());
-   }
-   payload.WithObject("Notes", std::move(notesJsonMap));
-
+  if (m_notesHasBeenSet) {
+    JsonValue notesJsonMap;
+    for (auto& notesItem : m_notes) {
+      notesJsonMap.WithObject(notesItem.first, notesItem.second.Jsonize());
+    }
+    payload.WithObject("Notes", std::move(notesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

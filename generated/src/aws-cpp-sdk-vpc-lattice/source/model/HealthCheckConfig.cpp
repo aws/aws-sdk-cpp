@@ -3,146 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/HealthCheckConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/HealthCheckConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-HealthCheckConfig::HealthCheckConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HealthCheckConfig::HealthCheckConfig(JsonView jsonValue) { *this = jsonValue; }
 
-HealthCheckConfig& HealthCheckConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+HealthCheckConfig& HealthCheckConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
-  {
+  if (jsonValue.ValueExists("protocol")) {
     m_protocol = TargetGroupProtocolMapper::GetTargetGroupProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocolVersion"))
-  {
+  if (jsonValue.ValueExists("protocolVersion")) {
     m_protocolVersion = HealthCheckProtocolVersionMapper::GetHealthCheckProtocolVersionForName(jsonValue.GetString("protocolVersion"));
     m_protocolVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("port"))
-  {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthCheckIntervalSeconds"))
-  {
+  if (jsonValue.ValueExists("healthCheckIntervalSeconds")) {
     m_healthCheckIntervalSeconds = jsonValue.GetInteger("healthCheckIntervalSeconds");
     m_healthCheckIntervalSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthCheckTimeoutSeconds"))
-  {
+  if (jsonValue.ValueExists("healthCheckTimeoutSeconds")) {
     m_healthCheckTimeoutSeconds = jsonValue.GetInteger("healthCheckTimeoutSeconds");
     m_healthCheckTimeoutSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthyThresholdCount"))
-  {
+  if (jsonValue.ValueExists("healthyThresholdCount")) {
     m_healthyThresholdCount = jsonValue.GetInteger("healthyThresholdCount");
     m_healthyThresholdCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unhealthyThresholdCount"))
-  {
+  if (jsonValue.ValueExists("unhealthyThresholdCount")) {
     m_unhealthyThresholdCount = jsonValue.GetInteger("unhealthyThresholdCount");
     m_unhealthyThresholdCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("matcher"))
-  {
+  if (jsonValue.ValueExists("matcher")) {
     m_matcher = jsonValue.GetObject("matcher");
     m_matcherHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HealthCheckConfig::Jsonize() const
-{
+JsonValue HealthCheckConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", TargetGroupProtocolMapper::GetNameForTargetGroupProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", TargetGroupProtocolMapper::GetNameForTargetGroupProtocol(m_protocol));
   }
 
-  if(m_protocolVersionHasBeenSet)
-  {
-   payload.WithString("protocolVersion", HealthCheckProtocolVersionMapper::GetNameForHealthCheckProtocolVersion(m_protocolVersion));
+  if (m_protocolVersionHasBeenSet) {
+    payload.WithString("protocolVersion", HealthCheckProtocolVersionMapper::GetNameForHealthCheckProtocolVersion(m_protocolVersion));
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_healthCheckIntervalSecondsHasBeenSet)
-  {
-   payload.WithInteger("healthCheckIntervalSeconds", m_healthCheckIntervalSeconds);
-
+  if (m_healthCheckIntervalSecondsHasBeenSet) {
+    payload.WithInteger("healthCheckIntervalSeconds", m_healthCheckIntervalSeconds);
   }
 
-  if(m_healthCheckTimeoutSecondsHasBeenSet)
-  {
-   payload.WithInteger("healthCheckTimeoutSeconds", m_healthCheckTimeoutSeconds);
-
+  if (m_healthCheckTimeoutSecondsHasBeenSet) {
+    payload.WithInteger("healthCheckTimeoutSeconds", m_healthCheckTimeoutSeconds);
   }
 
-  if(m_healthyThresholdCountHasBeenSet)
-  {
-   payload.WithInteger("healthyThresholdCount", m_healthyThresholdCount);
-
+  if (m_healthyThresholdCountHasBeenSet) {
+    payload.WithInteger("healthyThresholdCount", m_healthyThresholdCount);
   }
 
-  if(m_unhealthyThresholdCountHasBeenSet)
-  {
-   payload.WithInteger("unhealthyThresholdCount", m_unhealthyThresholdCount);
-
+  if (m_unhealthyThresholdCountHasBeenSet) {
+    payload.WithInteger("unhealthyThresholdCount", m_unhealthyThresholdCount);
   }
 
-  if(m_matcherHasBeenSet)
-  {
-   payload.WithObject("matcher", m_matcher.Jsonize());
-
+  if (m_matcherHasBeenSet) {
+    payload.WithObject("matcher", m_matcher.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

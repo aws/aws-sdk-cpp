@@ -12,38 +12,26 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UntagResourceRequest::SerializePayload() const
-{
+Aws::String UntagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_tagKeyListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
-   for(unsigned tagKeyListIndex = 0; tagKeyListIndex < tagKeyListJsonList.GetLength(); ++tagKeyListIndex)
-   {
-     tagKeyListJsonList[tagKeyListIndex].AsString(m_tagKeyList[tagKeyListIndex]);
-   }
-   payload.WithArray("TagKeyList", std::move(tagKeyListJsonList));
-
+  if (m_tagKeyListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
+    for (unsigned tagKeyListIndex = 0; tagKeyListIndex < tagKeyListJsonList.GetLength(); ++tagKeyListIndex) {
+      tagKeyListJsonList[tagKeyListIndex].AsString(m_tagKeyList[tagKeyListIndex]);
+    }
+    payload.WithArray("TagKeyList", std::move(tagKeyListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.UntagResource"));
   return headers;
-
 }
-
-
-
-

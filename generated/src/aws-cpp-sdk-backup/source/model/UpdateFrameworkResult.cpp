@@ -4,10 +4,10 @@
  */
 
 #include <aws/backup/model/UpdateFrameworkResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFrameworkResult::UpdateFrameworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateFrameworkResult::UpdateFrameworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateFrameworkResult& UpdateFrameworkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateFrameworkResult& UpdateFrameworkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FrameworkName"))
-  {
+  if (jsonValue.ValueExists("FrameworkName")) {
     m_frameworkName = jsonValue.GetString("FrameworkName");
     m_frameworkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameworkArn"))
-  {
+  if (jsonValue.ValueExists("FrameworkArn")) {
     m_frameworkArn = jsonValue.GetString("FrameworkArn");
     m_frameworkArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -4,59 +4,62 @@
  */
 
 #pragma once
-#include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/wisdom/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ConnectWisdomService {
+namespace Model {
 
+/**
+ * <p>The search expression.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchExpression">AWS
+ * API Reference</a></p>
+ */
+class SearchExpression {
+ public:
+  AWS_CONNECTWISDOMSERVICE_API SearchExpression() = default;
+  AWS_CONNECTWISDOMSERVICE_API SearchExpression(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTWISDOMSERVICE_API SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The search expression.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchExpression">AWS
-   * API Reference</a></p>
+   * <p>The search expression filters.</p>
    */
-  class SearchExpression
-  {
-  public:
-    AWS_CONNECTWISDOMSERVICE_API SearchExpression() = default;
-    AWS_CONNECTWISDOMSERVICE_API SearchExpression(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTWISDOMSERVICE_API SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  SearchExpression& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  SearchExpression& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Filter> m_filters;
+  bool m_filtersHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The search expression filters.</p>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    SearchExpression& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    SearchExpression& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

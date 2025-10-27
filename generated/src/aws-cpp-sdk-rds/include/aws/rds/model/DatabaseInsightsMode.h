@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class DatabaseInsightsMode
-  {
-    NOT_SET,
-    standard,
-    advanced
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class DatabaseInsightsMode { NOT_SET, standard, advanced };
 
-namespace DatabaseInsightsModeMapper
-{
+namespace DatabaseInsightsModeMapper {
 AWS_RDS_API DatabaseInsightsMode GetDatabaseInsightsModeForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForDatabaseInsightsMode(DatabaseInsightsMode value);
-} // namespace DatabaseInsightsModeMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace DatabaseInsightsModeMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/CollectionScheme.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/CollectionScheme.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-CollectionScheme::CollectionScheme(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CollectionScheme::CollectionScheme(JsonView jsonValue) { *this = jsonValue; }
 
-CollectionScheme& CollectionScheme::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timeBasedCollectionScheme"))
-  {
+CollectionScheme& CollectionScheme::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timeBasedCollectionScheme")) {
     m_timeBasedCollectionScheme = jsonValue.GetObject("timeBasedCollectionScheme");
     m_timeBasedCollectionSchemeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conditionBasedCollectionScheme"))
-  {
+  if (jsonValue.ValueExists("conditionBasedCollectionScheme")) {
     m_conditionBasedCollectionScheme = jsonValue.GetObject("conditionBasedCollectionScheme");
     m_conditionBasedCollectionSchemeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CollectionScheme::Jsonize() const
-{
+JsonValue CollectionScheme::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeBasedCollectionSchemeHasBeenSet)
-  {
-   payload.WithObject("timeBasedCollectionScheme", m_timeBasedCollectionScheme.Jsonize());
-
+  if (m_timeBasedCollectionSchemeHasBeenSet) {
+    payload.WithObject("timeBasedCollectionScheme", m_timeBasedCollectionScheme.Jsonize());
   }
 
-  if(m_conditionBasedCollectionSchemeHasBeenSet)
-  {
-   payload.WithObject("conditionBasedCollectionScheme", m_conditionBasedCollectionScheme.Jsonize());
-
+  if (m_conditionBasedCollectionSchemeHasBeenSet) {
+    payload.WithObject("conditionBasedCollectionScheme", m_conditionBasedCollectionScheme.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

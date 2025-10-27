@@ -11,72 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansCoverage::SavingsPlansCoverage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansCoverage::SavingsPlansCoverage(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansCoverage& SavingsPlansCoverage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attributes"))
-  {
+SavingsPlansCoverage& SavingsPlansCoverage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Coverage"))
-  {
+  if (jsonValue.ValueExists("Coverage")) {
     m_coverage = jsonValue.GetObject("Coverage");
     m_coverageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimePeriod"))
-  {
+  if (jsonValue.ValueExists("TimePeriod")) {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
     m_timePeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansCoverage::Jsonize() const
-{
+JsonValue SavingsPlansCoverage::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
-  if(m_coverageHasBeenSet)
-  {
-   payload.WithObject("Coverage", m_coverage.Jsonize());
-
+  if (m_coverageHasBeenSet) {
+    payload.WithObject("Coverage", m_coverage.Jsonize());
   }
 
-  if(m_timePeriodHasBeenSet)
-  {
-   payload.WithObject("TimePeriod", m_timePeriod.Jsonize());
-
+  if (m_timePeriodHasBeenSet) {
+    payload.WithObject("TimePeriod", m_timePeriod.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

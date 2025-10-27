@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DeletePlatformVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DeletePlatformVersionRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DeletePlatformVersionRequest::SerializePayload() const
-{
+Aws::String DeletePlatformVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeletePlatformVersion&";
-  if(m_platformArnHasBeenSet)
-  {
+  if (m_platformArnHasBeenSet) {
     ss << "PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeletePlatformVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeletePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeletePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

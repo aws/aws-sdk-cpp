@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class Payer
-  {
-    NOT_SET,
-    Requester,
-    BucketOwner
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class Payer { NOT_SET, Requester, BucketOwner };
 
-namespace PayerMapper
-{
+namespace PayerMapper {
 AWS_S3CRT_API Payer GetPayerForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForPayer(Payer value);
-} // namespace PayerMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace PayerMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

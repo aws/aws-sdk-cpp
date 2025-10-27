@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
-  enum class KxDeploymentStrategy
-  {
-    NOT_SET,
-    NO_RESTART,
-    ROLLING
-  };
+namespace Aws {
+namespace finspace {
+namespace Model {
+enum class KxDeploymentStrategy { NOT_SET, NO_RESTART, ROLLING };
 
-namespace KxDeploymentStrategyMapper
-{
+namespace KxDeploymentStrategyMapper {
 AWS_FINSPACE_API KxDeploymentStrategy GetKxDeploymentStrategyForName(const Aws::String& name);
 
 AWS_FINSPACE_API Aws::String GetNameForKxDeploymentStrategy(KxDeploymentStrategy value);
-} // namespace KxDeploymentStrategyMapper
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace KxDeploymentStrategyMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

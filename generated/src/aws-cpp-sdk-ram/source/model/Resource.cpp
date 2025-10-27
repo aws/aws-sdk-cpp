@@ -3,133 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/Resource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
+namespace Aws {
+namespace RAM {
+namespace Model {
 
-Resource::Resource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
-Resource& Resource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+Resource& Resource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceShareArn"))
-  {
+  if (jsonValue.ValueExists("resourceShareArn")) {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
     m_resourceShareArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceGroupArn"))
-  {
+  if (jsonValue.ValueExists("resourceGroupArn")) {
     m_resourceGroupArn = jsonValue.GetString("resourceGroupArn");
     m_resourceGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusMessage"))
-  {
+  if (jsonValue.ValueExists("statusMessage")) {
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceRegionScope"))
-  {
+  if (jsonValue.ValueExists("resourceRegionScope")) {
     m_resourceRegionScope = ResourceRegionScopeMapper::GetResourceRegionScopeForName(jsonValue.GetString("resourceRegionScope"));
     m_resourceRegionScopeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Resource::Jsonize() const
-{
+JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_resourceShareArnHasBeenSet)
-  {
-   payload.WithString("resourceShareArn", m_resourceShareArn);
-
+  if (m_resourceShareArnHasBeenSet) {
+    payload.WithString("resourceShareArn", m_resourceShareArn);
   }
 
-  if(m_resourceGroupArnHasBeenSet)
-  {
-   payload.WithString("resourceGroupArn", m_resourceGroupArn);
-
+  if (m_resourceGroupArnHasBeenSet) {
+    payload.WithString("resourceGroupArn", m_resourceGroupArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("statusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("statusMessage", m_statusMessage);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
-  if(m_resourceRegionScopeHasBeenSet)
-  {
-   payload.WithString("resourceRegionScope", ResourceRegionScopeMapper::GetNameForResourceRegionScope(m_resourceRegionScope));
+  if (m_resourceRegionScopeHasBeenSet) {
+    payload.WithString("resourceRegionScope", ResourceRegionScopeMapper::GetNameForResourceRegionScope(m_resourceRegionScope));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

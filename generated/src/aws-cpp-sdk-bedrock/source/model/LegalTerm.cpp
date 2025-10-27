@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-LegalTerm::LegalTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LegalTerm::LegalTerm(JsonView jsonValue) { *this = jsonValue; }
 
-LegalTerm& LegalTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("url"))
-  {
+LegalTerm& LegalTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LegalTerm::Jsonize() const
-{
+JsonValue LegalTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

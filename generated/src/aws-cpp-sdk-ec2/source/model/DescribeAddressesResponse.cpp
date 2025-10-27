@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeAddressesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeAddressesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAddressesResponse::DescribeAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeAddressesResponse::DescribeAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeAddressesResponse& DescribeAddressesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAddressesResponse& DescribeAddressesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAddressesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAddressesResponse")) {
     resultNode = rootNode.FirstChild("DescribeAddressesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode addressesNode = resultNode.FirstChild("addressesSet");
-    if(!addressesNode.IsNull())
-    {
+    if (!addressesNode.IsNull()) {
       XmlNode addressesMember = addressesNode.FirstChild("item");
       m_addressesHasBeenSet = !addressesMember.IsNull();
-      while(!addressesMember.IsNull())
-      {
+      while (!addressesMember.IsNull()) {
         m_addresses.push_back(addressesMember);
         addressesMember = addressesMember.NextNode("item");
       }
@@ -51,12 +43,11 @@ DescribeAddressesResponse& DescribeAddressesResponse::operator =(const Aws::Amaz
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -4,62 +4,50 @@
  */
 
 #include <aws/codeguruprofiler/model/EventPublisher.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
+namespace EventPublisherMapper {
 
-namespace Aws
-{
-  namespace CodeGuruProfiler
-  {
-    namespace Model
-    {
-      namespace EventPublisherMapper
-      {
+static const int AnomalyDetection_HASH = HashingUtils::HashString("AnomalyDetection");
 
-        static const int AnomalyDetection_HASH = HashingUtils::HashString("AnomalyDetection");
+EventPublisher GetEventPublisherForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == AnomalyDetection_HASH) {
+    return EventPublisher::AnomalyDetection;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<EventPublisher>(hashCode);
+  }
 
+  return EventPublisher::NOT_SET;
+}
 
-        EventPublisher GetEventPublisherForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AnomalyDetection_HASH)
-          {
-            return EventPublisher::AnomalyDetection;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EventPublisher>(hashCode);
-          }
+Aws::String GetNameForEventPublisher(EventPublisher enumValue) {
+  switch (enumValue) {
+    case EventPublisher::NOT_SET:
+      return {};
+    case EventPublisher::AnomalyDetection:
+      return "AnomalyDetection";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return EventPublisher::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForEventPublisher(EventPublisher enumValue)
-        {
-          switch(enumValue)
-          {
-          case EventPublisher::NOT_SET:
-            return {};
-          case EventPublisher::AnomalyDetection:
-            return "AnomalyDetection";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace EventPublisherMapper
-    } // namespace Model
-  } // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace EventPublisherMapper
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

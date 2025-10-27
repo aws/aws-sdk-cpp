@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/DescribeEntityRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/DescribeEntityRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeEntityRequest::SerializePayload() const
-{
+Aws::String DescribeEntityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationIdHasBeenSet)
-  {
-   payload.WithString("OrganizationId", m_organizationId);
-
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("Email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("Email", m_email);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeEntityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeEntityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.DescribeEntity"));
   return headers;
-
 }
-
-
-
-

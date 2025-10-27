@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
+#include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
+namespace Aws {
+namespace Shield {
+namespace Model {
 
-  /**
-   */
-  class DisableProactiveEngagementRequest : public ShieldRequest
-  {
-  public:
-    AWS_SHIELD_API DisableProactiveEngagementRequest() = default;
+/**
+ */
+class DisableProactiveEngagementRequest : public ShieldRequest {
+ public:
+  AWS_SHIELD_API DisableProactiveEngagementRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DisableProactiveEngagement"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DisableProactiveEngagement"; }
 
-    AWS_SHIELD_API Aws::String SerializePayload() const override;
+  AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

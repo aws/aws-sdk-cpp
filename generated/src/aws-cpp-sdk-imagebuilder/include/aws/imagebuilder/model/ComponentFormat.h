@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class ComponentFormat
-  {
-    NOT_SET,
-    SHELL
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class ComponentFormat { NOT_SET, SHELL };
 
-namespace ComponentFormatMapper
-{
+namespace ComponentFormatMapper {
 AWS_IMAGEBUILDER_API ComponentFormat GetComponentFormatForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForComponentFormat(ComponentFormat value);
-} // namespace ComponentFormatMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace ComponentFormatMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -12,38 +12,26 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListActionTypesRequest::SerializePayload() const
-{
+Aws::String ListActionTypesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_actionOwnerFilterHasBeenSet)
-  {
-   payload.WithString("actionOwnerFilter", ActionOwnerMapper::GetNameForActionOwner(m_actionOwnerFilter));
+  if (m_actionOwnerFilterHasBeenSet) {
+    payload.WithString("actionOwnerFilter", ActionOwnerMapper::GetNameForActionOwner(m_actionOwnerFilter));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_regionFilterHasBeenSet)
-  {
-   payload.WithString("regionFilter", m_regionFilter);
-
+  if (m_regionFilterHasBeenSet) {
+    payload.WithString("regionFilter", m_regionFilter);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListActionTypesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListActionTypesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.ListActionTypes"));
   return headers;
-
 }
-
-
-
-

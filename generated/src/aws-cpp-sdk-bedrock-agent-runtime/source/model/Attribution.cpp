@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-Attribution::Attribution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attribution::Attribution(JsonView jsonValue) { *this = jsonValue; }
 
-Attribution& Attribution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("citations"))
-  {
+Attribution& Attribution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("citations")) {
     Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");
-    for(unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex)
-    {
+    for (unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex) {
       m_citations.push_back(citationsJsonList[citationsIndex].AsObject());
     }
     m_citationsHasBeenSet = true;
@@ -37,24 +28,20 @@ Attribution& Attribution::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Attribution::Jsonize() const
-{
+JsonValue Attribution::Jsonize() const {
   JsonValue payload;
 
-  if(m_citationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> citationsJsonList(m_citations.size());
-   for(unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex)
-   {
-     citationsJsonList[citationsIndex].AsObject(m_citations[citationsIndex].Jsonize());
-   }
-   payload.WithArray("citations", std::move(citationsJsonList));
-
+  if (m_citationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> citationsJsonList(m_citations.size());
+    for (unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex) {
+      citationsJsonList[citationsIndex].AsObject(m_citations[citationsIndex].Jsonize());
+    }
+    payload.WithArray("citations", std::move(citationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

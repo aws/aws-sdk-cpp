@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-Destination::Destination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Destination::Destination(JsonView jsonValue) { *this = jsonValue; }
 
-Destination& Destination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3Bucket"))
-  {
+Destination& Destination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3Bucket")) {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("firehoseStream"))
-  {
+  if (jsonValue.ValueExists("firehoseStream")) {
     m_firehoseStream = jsonValue.GetObject("firehoseStream");
     m_firehoseStreamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Destination::Jsonize() const
-{
+JsonValue Destination::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithObject("s3Bucket", m_s3Bucket.Jsonize());
   }
 
-  if(m_firehoseStreamHasBeenSet)
-  {
-   payload.WithObject("firehoseStream", m_firehoseStream.Jsonize());
-
+  if (m_firehoseStreamHasBeenSet) {
+    payload.WithObject("firehoseStream", m_firehoseStream.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

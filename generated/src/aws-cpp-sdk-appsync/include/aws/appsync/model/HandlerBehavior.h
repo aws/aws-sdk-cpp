@@ -7,25 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class HandlerBehavior
-  {
-    NOT_SET,
-    CODE,
-    DIRECT
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class HandlerBehavior { NOT_SET, CODE, DIRECT };
 
-namespace HandlerBehaviorMapper
-{
+namespace HandlerBehaviorMapper {
 AWS_APPSYNC_API HandlerBehavior GetHandlerBehaviorForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForHandlerBehavior(HandlerBehavior value);
-} // namespace HandlerBehaviorMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace HandlerBehaviorMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

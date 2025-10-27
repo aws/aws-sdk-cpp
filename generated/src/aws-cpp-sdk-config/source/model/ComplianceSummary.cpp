@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ComplianceSummary::ComplianceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComplianceSummary::ComplianceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ComplianceSummary& ComplianceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CompliantResourceCount"))
-  {
+ComplianceSummary& ComplianceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CompliantResourceCount")) {
     m_compliantResourceCount = jsonValue.GetObject("CompliantResourceCount");
     m_compliantResourceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NonCompliantResourceCount"))
-  {
+  if (jsonValue.ValueExists("NonCompliantResourceCount")) {
     m_nonCompliantResourceCount = jsonValue.GetObject("NonCompliantResourceCount");
     m_nonCompliantResourceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceSummaryTimestamp"))
-  {
+  if (jsonValue.ValueExists("ComplianceSummaryTimestamp")) {
     m_complianceSummaryTimestamp = jsonValue.GetDouble("ComplianceSummaryTimestamp");
     m_complianceSummaryTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComplianceSummary::Jsonize() const
-{
+JsonValue ComplianceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_compliantResourceCountHasBeenSet)
-  {
-   payload.WithObject("CompliantResourceCount", m_compliantResourceCount.Jsonize());
-
+  if (m_compliantResourceCountHasBeenSet) {
+    payload.WithObject("CompliantResourceCount", m_compliantResourceCount.Jsonize());
   }
 
-  if(m_nonCompliantResourceCountHasBeenSet)
-  {
-   payload.WithObject("NonCompliantResourceCount", m_nonCompliantResourceCount.Jsonize());
-
+  if (m_nonCompliantResourceCountHasBeenSet) {
+    payload.WithObject("NonCompliantResourceCount", m_nonCompliantResourceCount.Jsonize());
   }
 
-  if(m_complianceSummaryTimestampHasBeenSet)
-  {
-   payload.WithDouble("ComplianceSummaryTimestamp", m_complianceSummaryTimestamp.SecondsWithMSPrecision());
+  if (m_complianceSummaryTimestampHasBeenSet) {
+    payload.WithDouble("ComplianceSummaryTimestamp", m_complianceSummaryTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

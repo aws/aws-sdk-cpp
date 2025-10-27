@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/personalize/PersonalizeEndpointRules.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Personalize
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Personalize {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using PersonalizeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using PersonalizeDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_PERSONALIZE_API PersonalizeEndpointProvider : public PersonalizeDefaultEpProviderBase
-{
-public:
-    using PersonalizeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_PERSONALIZE_API PersonalizeEndpointProvider : public PersonalizeDefaultEpProviderBase {
+ public:
+  using PersonalizeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    PersonalizeEndpointProvider()
-      : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::GetRulesBlob(), Aws::Personalize::PersonalizeEndpointRules::RulesBlobSize)
-    {}
+  PersonalizeEndpointProvider()
+      : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::GetRulesBlob(),
+                                         Aws::Personalize::PersonalizeEndpointRules::RulesBlobSize) {}
 
-    ~PersonalizeEndpointProvider()
-    {
-    }
+  ~PersonalizeEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Personalize
+}  // namespace Aws

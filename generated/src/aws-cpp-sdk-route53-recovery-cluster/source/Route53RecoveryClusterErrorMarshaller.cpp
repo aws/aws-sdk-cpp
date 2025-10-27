@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Route53RecoveryCluster;
 
-AWSError<CoreErrors> Route53RecoveryClusterErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> Route53RecoveryClusterErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = Route53RecoveryClusterErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

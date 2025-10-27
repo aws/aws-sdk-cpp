@@ -12,11 +12,4 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetConfiguredTableRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetConfiguredTableRequest::SerializePayload() const { return {}; }

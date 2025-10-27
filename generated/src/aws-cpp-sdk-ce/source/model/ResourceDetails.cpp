@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ResourceDetails::ResourceDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceDetails::ResourceDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EC2ResourceDetails"))
-  {
+ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EC2ResourceDetails")) {
     m_eC2ResourceDetails = jsonValue.GetObject("EC2ResourceDetails");
     m_eC2ResourceDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceDetails::Jsonize() const
-{
+JsonValue ResourceDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_eC2ResourceDetailsHasBeenSet)
-  {
-   payload.WithObject("EC2ResourceDetails", m_eC2ResourceDetails.Jsonize());
-
+  if (m_eC2ResourceDetailsHasBeenSet) {
+    payload.WithObject("EC2ResourceDetails", m_eC2ResourceDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

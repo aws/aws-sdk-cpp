@@ -12,39 +12,26 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSshPublicKeyRequest::SerializePayload() const
-{
+Aws::String DeleteSshPublicKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_sshPublicKeyIdHasBeenSet)
-  {
-   payload.WithString("SshPublicKeyId", m_sshPublicKeyId);
-
+  if (m_sshPublicKeyIdHasBeenSet) {
+    payload.WithString("SshPublicKeyId", m_sshPublicKeyId);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteSshPublicKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteSshPublicKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DeleteSshPublicKey"));
   return headers;
-
 }
-
-
-
-

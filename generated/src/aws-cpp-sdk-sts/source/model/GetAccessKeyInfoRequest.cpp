@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/GetAccessKeyInfoRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sts/model/GetAccessKeyInfoRequest.h>
 
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetAccessKeyInfoRequest::SerializePayload() const
-{
+Aws::String GetAccessKeyInfoRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetAccessKeyInfo&";
-  if(m_accessKeyIdHasBeenSet)
-  {
+  if (m_accessKeyIdHasBeenSet) {
     ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetAccessKeyInfoRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetAccessKeyInfoRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetAccessKeyInfoRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

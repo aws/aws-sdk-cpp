@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-AgentlessDialerConfig::AgentlessDialerConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentlessDialerConfig::AgentlessDialerConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AgentlessDialerConfig& AgentlessDialerConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dialingCapacity"))
-  {
+AgentlessDialerConfig& AgentlessDialerConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dialingCapacity")) {
     m_dialingCapacity = jsonValue.GetDouble("dialingCapacity");
     m_dialingCapacityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentlessDialerConfig::Jsonize() const
-{
+JsonValue AgentlessDialerConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_dialingCapacityHasBeenSet)
-  {
-   payload.WithDouble("dialingCapacity", m_dialingCapacity);
-
+  if (m_dialingCapacityHasBeenSet) {
+    payload.WithDouble("dialingCapacity", m_dialingCapacity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

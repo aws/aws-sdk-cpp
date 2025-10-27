@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channels"))
-  {
+NotificationConfiguration& NotificationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channels")) {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
-    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-    {
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
       m_channels.push_back(channelsJsonList[channelsIndex].AsObject());
     }
     m_channelsHasBeenSet = true;
@@ -37,24 +28,20 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue NotificationConfiguration::Jsonize() const
-{
+JsonValue NotificationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
-   for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
-   {
-     channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());
-   }
-   payload.WithArray("channels", std::move(channelsJsonList));
-
+  if (m_channelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());
+    }
+    payload.WithArray("channels", std::move(channelsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

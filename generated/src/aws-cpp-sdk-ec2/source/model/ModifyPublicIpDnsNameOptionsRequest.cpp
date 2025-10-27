@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyPublicIpDnsNameOptionsRequest::SerializePayload() const
-{
+Aws::String ModifyPublicIpDnsNameOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyPublicIpDnsNameOptions&";
-  if(m_networkInterfaceIdHasBeenSet)
-  {
+  if (m_networkInterfaceIdHasBeenSet) {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
-  if(m_hostnameTypeHasBeenSet)
-  {
+  if (m_hostnameTypeHasBeenSet) {
     ss << "HostnameType=" << StringUtils::URLEncode(PublicIpDnsOptionMapper::GetNameForPublicIpDnsOption(m_hostnameType)) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ModifyPublicIpDnsNameOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyPublicIpDnsNameOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyPublicIpDnsNameOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

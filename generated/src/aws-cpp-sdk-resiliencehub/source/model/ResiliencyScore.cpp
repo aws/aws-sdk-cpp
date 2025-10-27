@@ -3,89 +3,71 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/ResiliencyScore.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/ResiliencyScore.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
 
-ResiliencyScore::ResiliencyScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResiliencyScore::ResiliencyScore(JsonView jsonValue) { *this = jsonValue; }
 
-ResiliencyScore& ResiliencyScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("componentScore"))
-  {
+ResiliencyScore& ResiliencyScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("componentScore")) {
     Aws::Map<Aws::String, JsonView> componentScoreJsonMap = jsonValue.GetObject("componentScore").GetAllObjects();
-    for(auto& componentScoreItem : componentScoreJsonMap)
-    {
-      m_componentScore[ResiliencyScoreTypeMapper::GetResiliencyScoreTypeForName(componentScoreItem.first)] = componentScoreItem.second.AsObject();
+    for (auto& componentScoreItem : componentScoreJsonMap) {
+      m_componentScore[ResiliencyScoreTypeMapper::GetResiliencyScoreTypeForName(componentScoreItem.first)] =
+          componentScoreItem.second.AsObject();
     }
     m_componentScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("disruptionScore"))
-  {
+  if (jsonValue.ValueExists("disruptionScore")) {
     Aws::Map<Aws::String, JsonView> disruptionScoreJsonMap = jsonValue.GetObject("disruptionScore").GetAllObjects();
-    for(auto& disruptionScoreItem : disruptionScoreJsonMap)
-    {
+    for (auto& disruptionScoreItem : disruptionScoreJsonMap) {
       m_disruptionScore[DisruptionTypeMapper::GetDisruptionTypeForName(disruptionScoreItem.first)] = disruptionScoreItem.second.AsDouble();
     }
     m_disruptionScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("score"))
-  {
+  if (jsonValue.ValueExists("score")) {
     m_score = jsonValue.GetDouble("score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResiliencyScore::Jsonize() const
-{
+JsonValue ResiliencyScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentScoreHasBeenSet)
-  {
-   JsonValue componentScoreJsonMap;
-   for(auto& componentScoreItem : m_componentScore)
-   {
-     componentScoreJsonMap.WithObject(ResiliencyScoreTypeMapper::GetNameForResiliencyScoreType(componentScoreItem.first), componentScoreItem.second.Jsonize());
-   }
-   payload.WithObject("componentScore", std::move(componentScoreJsonMap));
-
+  if (m_componentScoreHasBeenSet) {
+    JsonValue componentScoreJsonMap;
+    for (auto& componentScoreItem : m_componentScore) {
+      componentScoreJsonMap.WithObject(ResiliencyScoreTypeMapper::GetNameForResiliencyScoreType(componentScoreItem.first),
+                                       componentScoreItem.second.Jsonize());
+    }
+    payload.WithObject("componentScore", std::move(componentScoreJsonMap));
   }
 
-  if(m_disruptionScoreHasBeenSet)
-  {
-   JsonValue disruptionScoreJsonMap;
-   for(auto& disruptionScoreItem : m_disruptionScore)
-   {
-     disruptionScoreJsonMap.WithDouble(DisruptionTypeMapper::GetNameForDisruptionType(disruptionScoreItem.first), disruptionScoreItem.second);
-   }
-   payload.WithObject("disruptionScore", std::move(disruptionScoreJsonMap));
-
+  if (m_disruptionScoreHasBeenSet) {
+    JsonValue disruptionScoreJsonMap;
+    for (auto& disruptionScoreItem : m_disruptionScore) {
+      disruptionScoreJsonMap.WithDouble(DisruptionTypeMapper::GetNameForDisruptionType(disruptionScoreItem.first),
+                                        disruptionScoreItem.second);
+    }
+    payload.WithObject("disruptionScore", std::move(disruptionScoreJsonMap));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

@@ -3,68 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/TranslationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/TranslationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Translate
-{
-namespace Model
-{
+namespace Aws {
+namespace Translate {
+namespace Model {
 
-TranslationSettings::TranslationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TranslationSettings::TranslationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-TranslationSettings& TranslationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Formality"))
-  {
+TranslationSettings& TranslationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Formality")) {
     m_formality = FormalityMapper::GetFormalityForName(jsonValue.GetString("Formality"));
     m_formalityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Profanity"))
-  {
+  if (jsonValue.ValueExists("Profanity")) {
     m_profanity = ProfanityMapper::GetProfanityForName(jsonValue.GetString("Profanity"));
     m_profanityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Brevity"))
-  {
+  if (jsonValue.ValueExists("Brevity")) {
     m_brevity = BrevityMapper::GetBrevityForName(jsonValue.GetString("Brevity"));
     m_brevityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TranslationSettings::Jsonize() const
-{
+JsonValue TranslationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_formalityHasBeenSet)
-  {
-   payload.WithString("Formality", FormalityMapper::GetNameForFormality(m_formality));
+  if (m_formalityHasBeenSet) {
+    payload.WithString("Formality", FormalityMapper::GetNameForFormality(m_formality));
   }
 
-  if(m_profanityHasBeenSet)
-  {
-   payload.WithString("Profanity", ProfanityMapper::GetNameForProfanity(m_profanity));
+  if (m_profanityHasBeenSet) {
+    payload.WithString("Profanity", ProfanityMapper::GetNameForProfanity(m_profanity));
   }
 
-  if(m_brevityHasBeenSet)
-  {
-   payload.WithString("Brevity", BrevityMapper::GetNameForBrevity(m_brevity));
+  if (m_brevityHasBeenSet) {
+    payload.WithString("Brevity", BrevityMapper::GetNameForBrevity(m_brevity));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Translate
-} // namespace Aws
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

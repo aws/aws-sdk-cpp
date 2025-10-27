@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/GetServiceEndpointResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/GetServiceEndpointResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetServiceEndpointResult& GetServiceEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetServiceEndpointResult& GetServiceEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ServiceType"))
-  {
+  if (jsonValue.ValueExists("ServiceType")) {
     m_serviceType = WirelessGatewayServiceTypeMapper::GetWirelessGatewayServiceTypeForName(jsonValue.GetString("ServiceType"));
     m_serviceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceEndpoint"))
-  {
+  if (jsonValue.ValueExists("ServiceEndpoint")) {
     m_serviceEndpoint = jsonValue.GetString("ServiceEndpoint");
     m_serviceEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerTrust"))
-  {
+  if (jsonValue.ValueExists("ServerTrust")) {
     m_serverTrust = jsonValue.GetString("ServerTrust");
     m_serverTrustHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

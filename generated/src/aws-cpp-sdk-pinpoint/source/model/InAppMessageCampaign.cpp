@@ -3,126 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/InAppMessageCampaign.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/InAppMessageCampaign.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-InAppMessageCampaign::InAppMessageCampaign(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InAppMessageCampaign::InAppMessageCampaign(JsonView jsonValue) { *this = jsonValue; }
 
-InAppMessageCampaign& InAppMessageCampaign::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CampaignId"))
-  {
+InAppMessageCampaign& InAppMessageCampaign::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CampaignId")) {
     m_campaignId = jsonValue.GetString("CampaignId");
     m_campaignIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DailyCap"))
-  {
+  if (jsonValue.ValueExists("DailyCap")) {
     m_dailyCap = jsonValue.GetInteger("DailyCap");
     m_dailyCapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InAppMessage"))
-  {
+  if (jsonValue.ValueExists("InAppMessage")) {
     m_inAppMessage = jsonValue.GetObject("InAppMessage");
     m_inAppMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Schedule"))
-  {
+  if (jsonValue.ValueExists("Schedule")) {
     m_schedule = jsonValue.GetObject("Schedule");
     m_scheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SessionCap"))
-  {
+  if (jsonValue.ValueExists("SessionCap")) {
     m_sessionCap = jsonValue.GetInteger("SessionCap");
     m_sessionCapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalCap"))
-  {
+  if (jsonValue.ValueExists("TotalCap")) {
     m_totalCap = jsonValue.GetInteger("TotalCap");
     m_totalCapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TreatmentId"))
-  {
+  if (jsonValue.ValueExists("TreatmentId")) {
     m_treatmentId = jsonValue.GetString("TreatmentId");
     m_treatmentIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InAppMessageCampaign::Jsonize() const
-{
+JsonValue InAppMessageCampaign::Jsonize() const {
   JsonValue payload;
 
-  if(m_campaignIdHasBeenSet)
-  {
-   payload.WithString("CampaignId", m_campaignId);
-
+  if (m_campaignIdHasBeenSet) {
+    payload.WithString("CampaignId", m_campaignId);
   }
 
-  if(m_dailyCapHasBeenSet)
-  {
-   payload.WithInteger("DailyCap", m_dailyCap);
-
+  if (m_dailyCapHasBeenSet) {
+    payload.WithInteger("DailyCap", m_dailyCap);
   }
 
-  if(m_inAppMessageHasBeenSet)
-  {
-   payload.WithObject("InAppMessage", m_inAppMessage.Jsonize());
-
+  if (m_inAppMessageHasBeenSet) {
+    payload.WithObject("InAppMessage", m_inAppMessage.Jsonize());
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithObject("Schedule", m_schedule.Jsonize());
-
+  if (m_scheduleHasBeenSet) {
+    payload.WithObject("Schedule", m_schedule.Jsonize());
   }
 
-  if(m_sessionCapHasBeenSet)
-  {
-   payload.WithInteger("SessionCap", m_sessionCap);
-
+  if (m_sessionCapHasBeenSet) {
+    payload.WithInteger("SessionCap", m_sessionCap);
   }
 
-  if(m_totalCapHasBeenSet)
-  {
-   payload.WithInteger("TotalCap", m_totalCap);
-
+  if (m_totalCapHasBeenSet) {
+    payload.WithInteger("TotalCap", m_totalCap);
   }
 
-  if(m_treatmentIdHasBeenSet)
-  {
-   payload.WithString("TreatmentId", m_treatmentId);
-
+  if (m_treatmentIdHasBeenSet) {
+    payload.WithString("TreatmentId", m_treatmentId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Glue;
 
-AWSError<CoreErrors> GlueErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GlueErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GlueErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

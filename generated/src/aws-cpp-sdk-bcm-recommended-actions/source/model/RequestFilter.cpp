@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMRecommendedActions
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMRecommendedActions {
+namespace Model {
 
-RequestFilter::RequestFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestFilter::RequestFilter(JsonView jsonValue) { *this = jsonValue; }
 
-RequestFilter& RequestFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actions"))
-  {
+RequestFilter& RequestFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actions")) {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
-    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-    {
+    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
     }
     m_actionsHasBeenSet = true;
@@ -37,24 +28,20 @@ RequestFilter& RequestFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RequestFilter::Jsonize() const
-{
+JsonValue RequestFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-   {
-     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
-   }
-   payload.WithArray("actions", std::move(actionsJsonList));
-
+  if (m_actionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
+      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+    }
+    payload.WithArray("actions", std::move(actionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMRecommendedActions
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMRecommendedActions
+}  // namespace Aws

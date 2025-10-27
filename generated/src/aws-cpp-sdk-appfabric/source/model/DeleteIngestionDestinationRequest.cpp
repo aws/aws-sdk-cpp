@@ -12,11 +12,4 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteIngestionDestinationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteIngestionDestinationRequest::SerializePayload() const { return {}; }

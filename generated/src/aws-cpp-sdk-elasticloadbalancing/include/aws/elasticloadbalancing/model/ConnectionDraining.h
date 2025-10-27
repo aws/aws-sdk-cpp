@@ -4,69 +4,74 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace ElasticLoadBalancing
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElasticLoadBalancing {
+namespace Model {
 
+/**
+ * <p>Information about the <code>ConnectionDraining</code>
+ * attribute.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConnectionDraining">AWS
+ * API Reference</a></p>
+ */
+class ConnectionDraining {
+ public:
+  AWS_ELASTICLOADBALANCING_API ConnectionDraining() = default;
+  AWS_ELASTICLOADBALANCING_API ConnectionDraining(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_ELASTICLOADBALANCING_API ConnectionDraining& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index,
+                                                   const char* locationValue) const;
+  AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Information about the <code>ConnectionDraining</code>
-   * attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConnectionDraining">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether connection draining is enabled for the load balancer.</p>
    */
-  class ConnectionDraining
-  {
-  public:
-    AWS_ELASTICLOADBALANCING_API ConnectionDraining() = default;
-    AWS_ELASTICLOADBALANCING_API ConnectionDraining(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_ELASTICLOADBALANCING_API ConnectionDraining& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline ConnectionDraining& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The maximum time, in seconds, to keep the existing connections open before
+   * deregistering the instances.</p>
+   */
+  inline int GetTimeout() const { return m_timeout; }
+  inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+  inline void SetTimeout(int value) {
+    m_timeoutHasBeenSet = true;
+    m_timeout = value;
+  }
+  inline ConnectionDraining& WithTimeout(int value) {
+    SetTimeout(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
 
+  int m_timeout{0};
+  bool m_timeoutHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specifies whether connection draining is enabled for the load balancer.</p>
-     */
-    inline bool GetEnabled() const { return m_enabled; }
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-    inline ConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum time, in seconds, to keep the existing connections open before
-     * deregistering the instances.</p>
-     */
-    inline int GetTimeout() const { return m_timeout; }
-    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline ConnectionDraining& WithTimeout(int value) { SetTimeout(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enabled{false};
-    bool m_enabledHasBeenSet = false;
-
-    int m_timeout{0};
-    bool m_timeoutHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

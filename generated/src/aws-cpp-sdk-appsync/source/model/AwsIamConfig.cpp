@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-AwsIamConfig::AwsIamConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsIamConfig::AwsIamConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AwsIamConfig& AwsIamConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("signingRegion"))
-  {
+AwsIamConfig& AwsIamConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("signingRegion")) {
     m_signingRegion = jsonValue.GetString("signingRegion");
     m_signingRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signingServiceName"))
-  {
+  if (jsonValue.ValueExists("signingServiceName")) {
     m_signingServiceName = jsonValue.GetString("signingServiceName");
     m_signingServiceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsIamConfig::Jsonize() const
-{
+JsonValue AwsIamConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_signingRegionHasBeenSet)
-  {
-   payload.WithString("signingRegion", m_signingRegion);
-
+  if (m_signingRegionHasBeenSet) {
+    payload.WithString("signingRegion", m_signingRegion);
   }
 
-  if(m_signingServiceNameHasBeenSet)
-  {
-   payload.WithString("signingServiceName", m_signingServiceName);
-
+  if (m_signingServiceNameHasBeenSet) {
+    payload.WithString("signingServiceName", m_signingServiceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

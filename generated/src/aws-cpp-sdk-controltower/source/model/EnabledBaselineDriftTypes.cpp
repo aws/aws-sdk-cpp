@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlTower {
+namespace Model {
 
-EnabledBaselineDriftTypes::EnabledBaselineDriftTypes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnabledBaselineDriftTypes::EnabledBaselineDriftTypes(JsonView jsonValue) { *this = jsonValue; }
 
-EnabledBaselineDriftTypes& EnabledBaselineDriftTypes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inheritance"))
-  {
+EnabledBaselineDriftTypes& EnabledBaselineDriftTypes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inheritance")) {
     m_inheritance = jsonValue.GetObject("inheritance");
     m_inheritanceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EnabledBaselineDriftTypes::Jsonize() const
-{
+JsonValue EnabledBaselineDriftTypes::Jsonize() const {
   JsonValue payload;
 
-  if(m_inheritanceHasBeenSet)
-  {
-   payload.WithObject("inheritance", m_inheritance.Jsonize());
-
+  if (m_inheritanceHasBeenSet) {
+    payload.WithObject("inheritance", m_inheritance.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

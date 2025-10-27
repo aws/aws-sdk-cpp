@@ -7,26 +7,16 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
-  enum class GenerationStatus
-  {
-    NOT_SET,
-    SUCCEEDED,
-    PROCESSING,
-    FAILED
-  };
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
+enum class GenerationStatus { NOT_SET, SUCCEEDED, PROCESSING, FAILED };
 
-namespace GenerationStatusMapper
-{
+namespace GenerationStatusMapper {
 AWS_COSTEXPLORER_API GenerationStatus GetGenerationStatusForName(const Aws::String& name);
 
 AWS_COSTEXPLORER_API Aws::String GetNameForGenerationStatus(GenerationStatus value);
-} // namespace GenerationStatusMapper
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace GenerationStatusMapper
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

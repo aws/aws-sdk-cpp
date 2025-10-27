@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl(JsonView jsonValue) { *this = jsonValue; }
 
-CreateAssessmentFrameworkControl& CreateAssessmentFrameworkControl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+CreateAssessmentFrameworkControl& CreateAssessmentFrameworkControl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateAssessmentFrameworkControl::Jsonize() const
-{
+JsonValue CreateAssessmentFrameworkControl::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

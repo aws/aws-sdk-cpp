@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-M2NonManagedApplicationStepOutput::M2NonManagedApplicationStepOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+M2NonManagedApplicationStepOutput::M2NonManagedApplicationStepOutput(JsonView jsonValue) { *this = jsonValue; }
 
-M2NonManagedApplicationStepOutput& M2NonManagedApplicationStepOutput::operator =(JsonView jsonValue)
-{
+M2NonManagedApplicationStepOutput& M2NonManagedApplicationStepOutput::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue M2NonManagedApplicationStepOutput::Jsonize() const
-{
+JsonValue M2NonManagedApplicationStepOutput::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

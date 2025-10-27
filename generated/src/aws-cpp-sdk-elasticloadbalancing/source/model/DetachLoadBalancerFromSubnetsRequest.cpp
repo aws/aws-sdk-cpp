@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DetachLoadBalancerFromSubnetsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DetachLoadBalancerFromSubnetsRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
-{
+Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetachLoadBalancerFromSubnets&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_subnetsHasBeenSet)
-  {
-    if (m_subnets.empty())
-    {
+  if (m_subnetsHasBeenSet) {
+    if (m_subnets.empty()) {
       ss << "Subnets=&";
-    }
-    else
-    {
+    } else {
       unsigned subnetsCount = 1;
-      for(auto& item : m_subnets)
-      {
-        ss << "Subnets.member." << subnetsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_subnets) {
+        ss << "Subnets.member." << subnetsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         subnetsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetachLoadBalancerFromSubnetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetachLoadBalancerFromSubnetsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

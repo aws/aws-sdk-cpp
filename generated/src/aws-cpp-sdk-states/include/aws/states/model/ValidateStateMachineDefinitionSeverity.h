@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/SFN_EXPORTS.h>
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
-  enum class ValidateStateMachineDefinitionSeverity
-  {
-    NOT_SET,
-    ERROR_,
-    WARNING
-  };
+namespace Aws {
+namespace SFN {
+namespace Model {
+enum class ValidateStateMachineDefinitionSeverity { NOT_SET, ERROR_, WARNING };
 
-namespace ValidateStateMachineDefinitionSeverityMapper
-{
+namespace ValidateStateMachineDefinitionSeverityMapper {
 AWS_SFN_API ValidateStateMachineDefinitionSeverity GetValidateStateMachineDefinitionSeverityForName(const Aws::String& name);
 
 AWS_SFN_API Aws::String GetNameForValidateStateMachineDefinitionSeverity(ValidateStateMachineDefinitionSeverity value);
-} // namespace ValidateStateMachineDefinitionSeverityMapper
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace ValidateStateMachineDefinitionSeverityMapper
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

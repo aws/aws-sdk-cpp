@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/RejectPredictionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datazone/model/RejectPredictionsRequest.h>
 
 #include <utility>
 
@@ -15,47 +15,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String RejectPredictionsRequest::SerializePayload() const
-{
+Aws::String RejectPredictionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_rejectChoicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rejectChoicesJsonList(m_rejectChoices.size());
-   for(unsigned rejectChoicesIndex = 0; rejectChoicesIndex < rejectChoicesJsonList.GetLength(); ++rejectChoicesIndex)
-   {
-     rejectChoicesJsonList[rejectChoicesIndex].AsObject(m_rejectChoices[rejectChoicesIndex].Jsonize());
-   }
-   payload.WithArray("rejectChoices", std::move(rejectChoicesJsonList));
-
+  if (m_rejectChoicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rejectChoicesJsonList(m_rejectChoices.size());
+    for (unsigned rejectChoicesIndex = 0; rejectChoicesIndex < rejectChoicesJsonList.GetLength(); ++rejectChoicesIndex) {
+      rejectChoicesJsonList[rejectChoicesIndex].AsObject(m_rejectChoices[rejectChoicesIndex].Jsonize());
+    }
+    payload.WithArray("rejectChoices", std::move(rejectChoicesJsonList));
   }
 
-  if(m_rejectRuleHasBeenSet)
-  {
-   payload.WithObject("rejectRule", m_rejectRule.Jsonize());
-
+  if (m_rejectRuleHasBeenSet) {
+    payload.WithObject("rejectRule", m_rejectRule.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-void RejectPredictionsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_revisionHasBeenSet)
-    {
-      ss << m_revision;
-      uri.AddQueryStringParameter("revision", ss.str());
-      ss.str("");
-    }
-
+void RejectPredictionsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_revisionHasBeenSet) {
+    ss << m_revision;
+    uri.AddQueryStringParameter("revision", ss.str());
+    ss.str("");
+  }
 }
-
-
-

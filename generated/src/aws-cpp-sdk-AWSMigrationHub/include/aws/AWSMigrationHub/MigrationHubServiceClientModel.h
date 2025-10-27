@@ -6,15 +6,16 @@
 #pragma once
 
 /* Generic header includes */
-#include <aws/AWSMigrationHub/MigrationHubErrors.h>
-#include <aws/core/client/GenericClientConfiguration.h>
-#include <aws/core/client/AWSError.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
 #include <aws/AWSMigrationHub/MigrationHubEndpointProvider.h>
-#include <future>
+#include <aws/AWSMigrationHub/MigrationHubErrors.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/client/GenericClientConfiguration.h>
+#include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <functional>
+#include <future>
 /* End of generic header includes */
 
 /* Service model headers required in MigrationHubClient header */
@@ -29,155 +30,191 @@
 #include <aws/AWSMigrationHub/model/DisassociateDiscoveredResourceResult.h>
 #include <aws/AWSMigrationHub/model/DisassociateSourceResourceResult.h>
 #include <aws/AWSMigrationHub/model/ImportMigrationTaskResult.h>
+#include <aws/AWSMigrationHub/model/ListApplicationStatesRequest.h>
 #include <aws/AWSMigrationHub/model/ListApplicationStatesResult.h>
 #include <aws/AWSMigrationHub/model/ListCreatedArtifactsResult.h>
 #include <aws/AWSMigrationHub/model/ListDiscoveredResourcesResult.h>
 #include <aws/AWSMigrationHub/model/ListMigrationTaskUpdatesResult.h>
+#include <aws/AWSMigrationHub/model/ListMigrationTasksRequest.h>
 #include <aws/AWSMigrationHub/model/ListMigrationTasksResult.h>
+#include <aws/AWSMigrationHub/model/ListProgressUpdateStreamsRequest.h>
 #include <aws/AWSMigrationHub/model/ListProgressUpdateStreamsResult.h>
 #include <aws/AWSMigrationHub/model/ListSourceResourcesResult.h>
 #include <aws/AWSMigrationHub/model/NotifyApplicationStateResult.h>
 #include <aws/AWSMigrationHub/model/NotifyMigrationTaskStateResult.h>
 #include <aws/AWSMigrationHub/model/PutResourceAttributesResult.h>
-#include <aws/AWSMigrationHub/model/ListMigrationTasksRequest.h>
-#include <aws/AWSMigrationHub/model/ListApplicationStatesRequest.h>
-#include <aws/AWSMigrationHub/model/ListProgressUpdateStreamsRequest.h>
 /* End of service model headers required in MigrationHubClient header */
 
-namespace Aws
-{
-  namespace Http
-  {
-    class HttpClient;
-    class HttpClientFactory;
-  } // namespace Http
+namespace Aws {
+namespace Http {
+class HttpClient;
+class HttpClientFactory;
+}  // namespace Http
 
-  namespace Utils
-  {
-    template< typename R, typename E> class Outcome;
+namespace Utils {
+template <typename R, typename E>
+class Outcome;
 
-    namespace Threading
-    {
-      class Executor;
-    } // namespace Threading
-  } // namespace Utils
+namespace Threading {
+class Executor;
+}  // namespace Threading
+}  // namespace Utils
 
-  namespace Auth
-  {
-    class AWSCredentials;
-    class AWSCredentialsProvider;
-  } // namespace Auth
+namespace Auth {
+class AWSCredentials;
+class AWSCredentialsProvider;
+}  // namespace Auth
 
-  namespace Client
-  {
-    class RetryStrategy;
-  } // namespace Client
+namespace Client {
+class RetryStrategy;
+}  // namespace Client
 
-  namespace MigrationHub
-  {
-    using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
-    using MigrationHubEndpointProviderBase = Aws::MigrationHub::Endpoint::MigrationHubEndpointProviderBase;
-    using MigrationHubEndpointProvider = Aws::MigrationHub::Endpoint::MigrationHubEndpointProvider;
+namespace MigrationHub {
+using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
+using MigrationHubEndpointProviderBase = Aws::MigrationHub::Endpoint::MigrationHubEndpointProviderBase;
+using MigrationHubEndpointProvider = Aws::MigrationHub::Endpoint::MigrationHubEndpointProvider;
 
-    namespace Model
-    {
-      /* Service model forward declarations required in MigrationHubClient header */
-      class AssociateCreatedArtifactRequest;
-      class AssociateDiscoveredResourceRequest;
-      class AssociateSourceResourceRequest;
-      class CreateProgressUpdateStreamRequest;
-      class DeleteProgressUpdateStreamRequest;
-      class DescribeApplicationStateRequest;
-      class DescribeMigrationTaskRequest;
-      class DisassociateCreatedArtifactRequest;
-      class DisassociateDiscoveredResourceRequest;
-      class DisassociateSourceResourceRequest;
-      class ImportMigrationTaskRequest;
-      class ListApplicationStatesRequest;
-      class ListCreatedArtifactsRequest;
-      class ListDiscoveredResourcesRequest;
-      class ListMigrationTaskUpdatesRequest;
-      class ListMigrationTasksRequest;
-      class ListProgressUpdateStreamsRequest;
-      class ListSourceResourcesRequest;
-      class NotifyApplicationStateRequest;
-      class NotifyMigrationTaskStateRequest;
-      class PutResourceAttributesRequest;
-      /* End of service model forward declarations required in MigrationHubClient header */
+namespace Model {
+/* Service model forward declarations required in MigrationHubClient header */
+class AssociateCreatedArtifactRequest;
+class AssociateDiscoveredResourceRequest;
+class AssociateSourceResourceRequest;
+class CreateProgressUpdateStreamRequest;
+class DeleteProgressUpdateStreamRequest;
+class DescribeApplicationStateRequest;
+class DescribeMigrationTaskRequest;
+class DisassociateCreatedArtifactRequest;
+class DisassociateDiscoveredResourceRequest;
+class DisassociateSourceResourceRequest;
+class ImportMigrationTaskRequest;
+class ListApplicationStatesRequest;
+class ListCreatedArtifactsRequest;
+class ListDiscoveredResourcesRequest;
+class ListMigrationTaskUpdatesRequest;
+class ListMigrationTasksRequest;
+class ListProgressUpdateStreamsRequest;
+class ListSourceResourcesRequest;
+class NotifyApplicationStateRequest;
+class NotifyMigrationTaskStateRequest;
+class PutResourceAttributesRequest;
+/* End of service model forward declarations required in MigrationHubClient header */
 
-      /* Service model Outcome class definitions */
-      typedef Aws::Utils::Outcome<AssociateCreatedArtifactResult, MigrationHubError> AssociateCreatedArtifactOutcome;
-      typedef Aws::Utils::Outcome<AssociateDiscoveredResourceResult, MigrationHubError> AssociateDiscoveredResourceOutcome;
-      typedef Aws::Utils::Outcome<AssociateSourceResourceResult, MigrationHubError> AssociateSourceResourceOutcome;
-      typedef Aws::Utils::Outcome<CreateProgressUpdateStreamResult, MigrationHubError> CreateProgressUpdateStreamOutcome;
-      typedef Aws::Utils::Outcome<DeleteProgressUpdateStreamResult, MigrationHubError> DeleteProgressUpdateStreamOutcome;
-      typedef Aws::Utils::Outcome<DescribeApplicationStateResult, MigrationHubError> DescribeApplicationStateOutcome;
-      typedef Aws::Utils::Outcome<DescribeMigrationTaskResult, MigrationHubError> DescribeMigrationTaskOutcome;
-      typedef Aws::Utils::Outcome<DisassociateCreatedArtifactResult, MigrationHubError> DisassociateCreatedArtifactOutcome;
-      typedef Aws::Utils::Outcome<DisassociateDiscoveredResourceResult, MigrationHubError> DisassociateDiscoveredResourceOutcome;
-      typedef Aws::Utils::Outcome<DisassociateSourceResourceResult, MigrationHubError> DisassociateSourceResourceOutcome;
-      typedef Aws::Utils::Outcome<ImportMigrationTaskResult, MigrationHubError> ImportMigrationTaskOutcome;
-      typedef Aws::Utils::Outcome<ListApplicationStatesResult, MigrationHubError> ListApplicationStatesOutcome;
-      typedef Aws::Utils::Outcome<ListCreatedArtifactsResult, MigrationHubError> ListCreatedArtifactsOutcome;
-      typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, MigrationHubError> ListDiscoveredResourcesOutcome;
-      typedef Aws::Utils::Outcome<ListMigrationTaskUpdatesResult, MigrationHubError> ListMigrationTaskUpdatesOutcome;
-      typedef Aws::Utils::Outcome<ListMigrationTasksResult, MigrationHubError> ListMigrationTasksOutcome;
-      typedef Aws::Utils::Outcome<ListProgressUpdateStreamsResult, MigrationHubError> ListProgressUpdateStreamsOutcome;
-      typedef Aws::Utils::Outcome<ListSourceResourcesResult, MigrationHubError> ListSourceResourcesOutcome;
-      typedef Aws::Utils::Outcome<NotifyApplicationStateResult, MigrationHubError> NotifyApplicationStateOutcome;
-      typedef Aws::Utils::Outcome<NotifyMigrationTaskStateResult, MigrationHubError> NotifyMigrationTaskStateOutcome;
-      typedef Aws::Utils::Outcome<PutResourceAttributesResult, MigrationHubError> PutResourceAttributesOutcome;
-      /* End of service model Outcome class definitions */
+/* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateCreatedArtifactResult, MigrationHubError> AssociateCreatedArtifactOutcome;
+typedef Aws::Utils::Outcome<AssociateDiscoveredResourceResult, MigrationHubError> AssociateDiscoveredResourceOutcome;
+typedef Aws::Utils::Outcome<AssociateSourceResourceResult, MigrationHubError> AssociateSourceResourceOutcome;
+typedef Aws::Utils::Outcome<CreateProgressUpdateStreamResult, MigrationHubError> CreateProgressUpdateStreamOutcome;
+typedef Aws::Utils::Outcome<DeleteProgressUpdateStreamResult, MigrationHubError> DeleteProgressUpdateStreamOutcome;
+typedef Aws::Utils::Outcome<DescribeApplicationStateResult, MigrationHubError> DescribeApplicationStateOutcome;
+typedef Aws::Utils::Outcome<DescribeMigrationTaskResult, MigrationHubError> DescribeMigrationTaskOutcome;
+typedef Aws::Utils::Outcome<DisassociateCreatedArtifactResult, MigrationHubError> DisassociateCreatedArtifactOutcome;
+typedef Aws::Utils::Outcome<DisassociateDiscoveredResourceResult, MigrationHubError> DisassociateDiscoveredResourceOutcome;
+typedef Aws::Utils::Outcome<DisassociateSourceResourceResult, MigrationHubError> DisassociateSourceResourceOutcome;
+typedef Aws::Utils::Outcome<ImportMigrationTaskResult, MigrationHubError> ImportMigrationTaskOutcome;
+typedef Aws::Utils::Outcome<ListApplicationStatesResult, MigrationHubError> ListApplicationStatesOutcome;
+typedef Aws::Utils::Outcome<ListCreatedArtifactsResult, MigrationHubError> ListCreatedArtifactsOutcome;
+typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, MigrationHubError> ListDiscoveredResourcesOutcome;
+typedef Aws::Utils::Outcome<ListMigrationTaskUpdatesResult, MigrationHubError> ListMigrationTaskUpdatesOutcome;
+typedef Aws::Utils::Outcome<ListMigrationTasksResult, MigrationHubError> ListMigrationTasksOutcome;
+typedef Aws::Utils::Outcome<ListProgressUpdateStreamsResult, MigrationHubError> ListProgressUpdateStreamsOutcome;
+typedef Aws::Utils::Outcome<ListSourceResourcesResult, MigrationHubError> ListSourceResourcesOutcome;
+typedef Aws::Utils::Outcome<NotifyApplicationStateResult, MigrationHubError> NotifyApplicationStateOutcome;
+typedef Aws::Utils::Outcome<NotifyMigrationTaskStateResult, MigrationHubError> NotifyMigrationTaskStateOutcome;
+typedef Aws::Utils::Outcome<PutResourceAttributesResult, MigrationHubError> PutResourceAttributesOutcome;
+/* End of service model Outcome class definitions */
 
-      /* Service model Outcome callable definitions */
-      typedef std::future<AssociateCreatedArtifactOutcome> AssociateCreatedArtifactOutcomeCallable;
-      typedef std::future<AssociateDiscoveredResourceOutcome> AssociateDiscoveredResourceOutcomeCallable;
-      typedef std::future<AssociateSourceResourceOutcome> AssociateSourceResourceOutcomeCallable;
-      typedef std::future<CreateProgressUpdateStreamOutcome> CreateProgressUpdateStreamOutcomeCallable;
-      typedef std::future<DeleteProgressUpdateStreamOutcome> DeleteProgressUpdateStreamOutcomeCallable;
-      typedef std::future<DescribeApplicationStateOutcome> DescribeApplicationStateOutcomeCallable;
-      typedef std::future<DescribeMigrationTaskOutcome> DescribeMigrationTaskOutcomeCallable;
-      typedef std::future<DisassociateCreatedArtifactOutcome> DisassociateCreatedArtifactOutcomeCallable;
-      typedef std::future<DisassociateDiscoveredResourceOutcome> DisassociateDiscoveredResourceOutcomeCallable;
-      typedef std::future<DisassociateSourceResourceOutcome> DisassociateSourceResourceOutcomeCallable;
-      typedef std::future<ImportMigrationTaskOutcome> ImportMigrationTaskOutcomeCallable;
-      typedef std::future<ListApplicationStatesOutcome> ListApplicationStatesOutcomeCallable;
-      typedef std::future<ListCreatedArtifactsOutcome> ListCreatedArtifactsOutcomeCallable;
-      typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
-      typedef std::future<ListMigrationTaskUpdatesOutcome> ListMigrationTaskUpdatesOutcomeCallable;
-      typedef std::future<ListMigrationTasksOutcome> ListMigrationTasksOutcomeCallable;
-      typedef std::future<ListProgressUpdateStreamsOutcome> ListProgressUpdateStreamsOutcomeCallable;
-      typedef std::future<ListSourceResourcesOutcome> ListSourceResourcesOutcomeCallable;
-      typedef std::future<NotifyApplicationStateOutcome> NotifyApplicationStateOutcomeCallable;
-      typedef std::future<NotifyMigrationTaskStateOutcome> NotifyMigrationTaskStateOutcomeCallable;
-      typedef std::future<PutResourceAttributesOutcome> PutResourceAttributesOutcomeCallable;
-      /* End of service model Outcome callable definitions */
-    } // namespace Model
+/* Service model Outcome callable definitions */
+typedef std::future<AssociateCreatedArtifactOutcome> AssociateCreatedArtifactOutcomeCallable;
+typedef std::future<AssociateDiscoveredResourceOutcome> AssociateDiscoveredResourceOutcomeCallable;
+typedef std::future<AssociateSourceResourceOutcome> AssociateSourceResourceOutcomeCallable;
+typedef std::future<CreateProgressUpdateStreamOutcome> CreateProgressUpdateStreamOutcomeCallable;
+typedef std::future<DeleteProgressUpdateStreamOutcome> DeleteProgressUpdateStreamOutcomeCallable;
+typedef std::future<DescribeApplicationStateOutcome> DescribeApplicationStateOutcomeCallable;
+typedef std::future<DescribeMigrationTaskOutcome> DescribeMigrationTaskOutcomeCallable;
+typedef std::future<DisassociateCreatedArtifactOutcome> DisassociateCreatedArtifactOutcomeCallable;
+typedef std::future<DisassociateDiscoveredResourceOutcome> DisassociateDiscoveredResourceOutcomeCallable;
+typedef std::future<DisassociateSourceResourceOutcome> DisassociateSourceResourceOutcomeCallable;
+typedef std::future<ImportMigrationTaskOutcome> ImportMigrationTaskOutcomeCallable;
+typedef std::future<ListApplicationStatesOutcome> ListApplicationStatesOutcomeCallable;
+typedef std::future<ListCreatedArtifactsOutcome> ListCreatedArtifactsOutcomeCallable;
+typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
+typedef std::future<ListMigrationTaskUpdatesOutcome> ListMigrationTaskUpdatesOutcomeCallable;
+typedef std::future<ListMigrationTasksOutcome> ListMigrationTasksOutcomeCallable;
+typedef std::future<ListProgressUpdateStreamsOutcome> ListProgressUpdateStreamsOutcomeCallable;
+typedef std::future<ListSourceResourcesOutcome> ListSourceResourcesOutcomeCallable;
+typedef std::future<NotifyApplicationStateOutcome> NotifyApplicationStateOutcomeCallable;
+typedef std::future<NotifyMigrationTaskStateOutcome> NotifyMigrationTaskStateOutcomeCallable;
+typedef std::future<PutResourceAttributesOutcome> PutResourceAttributesOutcomeCallable;
+/* End of service model Outcome callable definitions */
+}  // namespace Model
 
-    class MigrationHubClient;
+class MigrationHubClient;
 
-    /* Service model async handlers definitions */
-    typedef std::function<void(const MigrationHubClient*, const Model::AssociateCreatedArtifactRequest&, const Model::AssociateCreatedArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateCreatedArtifactResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::AssociateDiscoveredResourceRequest&, const Model::AssociateDiscoveredResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDiscoveredResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::AssociateSourceResourceRequest&, const Model::AssociateSourceResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSourceResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::CreateProgressUpdateStreamRequest&, const Model::CreateProgressUpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProgressUpdateStreamResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DeleteProgressUpdateStreamRequest&, const Model::DeleteProgressUpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProgressUpdateStreamResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DescribeApplicationStateRequest&, const Model::DescribeApplicationStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationStateResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DescribeMigrationTaskRequest&, const Model::DescribeMigrationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMigrationTaskResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DisassociateCreatedArtifactRequest&, const Model::DisassociateCreatedArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCreatedArtifactResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DisassociateDiscoveredResourceRequest&, const Model::DisassociateDiscoveredResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDiscoveredResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::DisassociateSourceResourceRequest&, const Model::DisassociateSourceResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSourceResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ImportMigrationTaskRequest&, const Model::ImportMigrationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportMigrationTaskResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListApplicationStatesRequest&, const Model::ListApplicationStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationStatesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListCreatedArtifactsRequest&, const Model::ListCreatedArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCreatedArtifactsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListMigrationTaskUpdatesRequest&, const Model::ListMigrationTaskUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMigrationTaskUpdatesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListMigrationTasksRequest&, const Model::ListMigrationTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMigrationTasksResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListProgressUpdateStreamsRequest&, const Model::ListProgressUpdateStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProgressUpdateStreamsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::ListSourceResourcesRequest&, const Model::ListSourceResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceResourcesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::NotifyApplicationStateRequest&, const Model::NotifyApplicationStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyApplicationStateResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::NotifyMigrationTaskStateRequest&, const Model::NotifyMigrationTaskStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyMigrationTaskStateResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubClient*, const Model::PutResourceAttributesRequest&, const Model::PutResourceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceAttributesResponseReceivedHandler;
-    /* End of service model async handlers definitions */
-  } // namespace MigrationHub
-} // namespace Aws
+/* Service model async handlers definitions */
+typedef std::function<void(const MigrationHubClient*, const Model::AssociateCreatedArtifactRequest&,
+                           const Model::AssociateCreatedArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateCreatedArtifactResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::AssociateDiscoveredResourceRequest&,
+                           const Model::AssociateDiscoveredResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateDiscoveredResourceResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::AssociateSourceResourceRequest&,
+                           const Model::AssociateSourceResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateSourceResourceResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::CreateProgressUpdateStreamRequest&,
+                           const Model::CreateProgressUpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateProgressUpdateStreamResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DeleteProgressUpdateStreamRequest&,
+                           const Model::DeleteProgressUpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProgressUpdateStreamResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DescribeApplicationStateRequest&,
+                           const Model::DescribeApplicationStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeApplicationStateResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DescribeMigrationTaskRequest&,
+                           const Model::DescribeMigrationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeMigrationTaskResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DisassociateCreatedArtifactRequest&,
+                           const Model::DisassociateCreatedArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateCreatedArtifactResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DisassociateDiscoveredResourceRequest&,
+                           const Model::DisassociateDiscoveredResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateDiscoveredResourceResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::DisassociateSourceResourceRequest&,
+                           const Model::DisassociateSourceResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateSourceResourceResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ImportMigrationTaskRequest&, const Model::ImportMigrationTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ImportMigrationTaskResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListApplicationStatesRequest&,
+                           const Model::ListApplicationStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListApplicationStatesResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListCreatedArtifactsRequest&, const Model::ListCreatedArtifactsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCreatedArtifactsResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListDiscoveredResourcesRequest&,
+                           const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDiscoveredResourcesResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListMigrationTaskUpdatesRequest&,
+                           const Model::ListMigrationTaskUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMigrationTaskUpdatesResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListMigrationTasksRequest&, const Model::ListMigrationTasksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMigrationTasksResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListProgressUpdateStreamsRequest&,
+                           const Model::ListProgressUpdateStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProgressUpdateStreamsResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::ListSourceResourcesRequest&, const Model::ListSourceResourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSourceResourcesResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::NotifyApplicationStateRequest&,
+                           const Model::NotifyApplicationStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    NotifyApplicationStateResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::NotifyMigrationTaskStateRequest&,
+                           const Model::NotifyMigrationTaskStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    NotifyMigrationTaskStateResponseReceivedHandler;
+typedef std::function<void(const MigrationHubClient*, const Model::PutResourceAttributesRequest&,
+                           const Model::PutResourceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutResourceAttributesResponseReceivedHandler;
+/* End of service model async handlers definitions */
+}  // namespace MigrationHub
+}  // namespace Aws

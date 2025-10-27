@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Inspector2;
 
-AWSError<CoreErrors> Inspector2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> Inspector2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = Inspector2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

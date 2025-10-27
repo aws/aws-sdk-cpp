@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/PutConfigurationSetSendingOptionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/PutConfigurationSetSendingOptionsRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutConfigurationSetSendingOptionsRequest::SerializePayload() const
-{
+Aws::String PutConfigurationSetSendingOptionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sendingEnabledHasBeenSet)
-  {
-   payload.WithBool("SendingEnabled", m_sendingEnabled);
-
+  if (m_sendingEnabledHasBeenSet) {
+    payload.WithBool("SendingEnabled", m_sendingEnabled);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

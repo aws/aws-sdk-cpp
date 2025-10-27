@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/CustomActionFilterOperation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/CustomActionFilterOperation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-CustomActionFilterOperation::CustomActionFilterOperation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomActionFilterOperation::CustomActionFilterOperation(JsonView jsonValue) { *this = jsonValue; }
 
-CustomActionFilterOperation& CustomActionFilterOperation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SelectedFieldsConfiguration"))
-  {
+CustomActionFilterOperation& CustomActionFilterOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SelectedFieldsConfiguration")) {
     m_selectedFieldsConfiguration = jsonValue.GetObject("SelectedFieldsConfiguration");
     m_selectedFieldsConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetVisualsConfiguration"))
-  {
+  if (jsonValue.ValueExists("TargetVisualsConfiguration")) {
     m_targetVisualsConfiguration = jsonValue.GetObject("TargetVisualsConfiguration");
     m_targetVisualsConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomActionFilterOperation::Jsonize() const
-{
+JsonValue CustomActionFilterOperation::Jsonize() const {
   JsonValue payload;
 
-  if(m_selectedFieldsConfigurationHasBeenSet)
-  {
-   payload.WithObject("SelectedFieldsConfiguration", m_selectedFieldsConfiguration.Jsonize());
-
+  if (m_selectedFieldsConfigurationHasBeenSet) {
+    payload.WithObject("SelectedFieldsConfiguration", m_selectedFieldsConfiguration.Jsonize());
   }
 
-  if(m_targetVisualsConfigurationHasBeenSet)
-  {
-   payload.WithObject("TargetVisualsConfiguration", m_targetVisualsConfiguration.Jsonize());
-
+  if (m_targetVisualsConfigurationHasBeenSet) {
+    payload.WithObject("TargetVisualsConfiguration", m_targetVisualsConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

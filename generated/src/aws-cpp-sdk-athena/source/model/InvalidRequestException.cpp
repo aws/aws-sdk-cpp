@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidRequestException::InvalidRequestException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AthenaErrorCode"))
-  {
+InvalidRequestException& InvalidRequestException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AthenaErrorCode")) {
     m_athenaErrorCode = jsonValue.GetString("AthenaErrorCode");
     m_athenaErrorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidRequestException::Jsonize() const
-{
+JsonValue InvalidRequestException::Jsonize() const {
   JsonValue payload;
 
-  if(m_athenaErrorCodeHasBeenSet)
-  {
-   payload.WithString("AthenaErrorCode", m_athenaErrorCode);
-
+  if (m_athenaErrorCodeHasBeenSet) {
+    payload.WithString("AthenaErrorCode", m_athenaErrorCode);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

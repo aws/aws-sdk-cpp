@@ -12,27 +12,18 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InferSNOMEDCTRequest::SerializePayload() const
-{
+Aws::String InferSNOMEDCTRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection InferSNOMEDCTRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection InferSNOMEDCTRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComprehendMedical_20181030.InferSNOMEDCT"));
   return headers;
-
 }
-
-
-
-

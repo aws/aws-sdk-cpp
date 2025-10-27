@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DescribeChannelRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotanalytics/model/DescribeChannelRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DescribeChannelRequest::SerializePayload() const
-{
-  return {};
+Aws::String DescribeChannelRequest::SerializePayload() const { return {}; }
+
+void DescribeChannelRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_includeStatisticsHasBeenSet) {
+    ss << m_includeStatistics;
+    uri.AddQueryStringParameter("includeStatistics", ss.str());
+    ss.str("");
+  }
 }
-
-void DescribeChannelRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_includeStatisticsHasBeenSet)
-    {
-      ss << m_includeStatistics;
-      uri.AddQueryStringParameter("includeStatistics", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

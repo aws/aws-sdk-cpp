@@ -12,33 +12,22 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeCertificateAuthorityAuditReportRequest::SerializePayload() const
-{
+Aws::String DescribeCertificateAuthorityAuditReportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_auditReportIdHasBeenSet)
-  {
-   payload.WithString("AuditReportId", m_auditReportId);
-
+  if (m_auditReportIdHasBeenSet) {
+    payload.WithString("AuditReportId", m_auditReportId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeCertificateAuthorityAuditReportRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeCertificateAuthorityAuditReportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.DescribeCertificateAuthorityAuditReport"));
   return headers;
-
 }
-
-
-
-

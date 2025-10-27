@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-BedrockRerankingConfiguration::BedrockRerankingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BedrockRerankingConfiguration::BedrockRerankingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BedrockRerankingConfiguration& BedrockRerankingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfResults"))
-  {
+BedrockRerankingConfiguration& BedrockRerankingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfResults")) {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
     m_numberOfResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelConfiguration"))
-  {
+  if (jsonValue.ValueExists("modelConfiguration")) {
     m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
     m_modelConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockRerankingConfiguration::Jsonize() const
-{
+JsonValue BedrockRerankingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfResultsHasBeenSet)
-  {
-   payload.WithInteger("numberOfResults", m_numberOfResults);
-
+  if (m_numberOfResultsHasBeenSet) {
+    payload.WithInteger("numberOfResults", m_numberOfResults);
   }
 
-  if(m_modelConfigurationHasBeenSet)
-  {
-   payload.WithObject("modelConfiguration", m_modelConfiguration.Jsonize());
-
+  if (m_modelConfigurationHasBeenSet) {
+    payload.WithObject("modelConfiguration", m_modelConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

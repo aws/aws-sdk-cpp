@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/JobScopeTerm.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/JobScopeTerm.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-JobScopeTerm::JobScopeTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobScopeTerm::JobScopeTerm(JsonView jsonValue) { *this = jsonValue; }
 
-JobScopeTerm& JobScopeTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("simpleScopeTerm"))
-  {
+JobScopeTerm& JobScopeTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("simpleScopeTerm")) {
     m_simpleScopeTerm = jsonValue.GetObject("simpleScopeTerm");
     m_simpleScopeTermHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tagScopeTerm"))
-  {
+  if (jsonValue.ValueExists("tagScopeTerm")) {
     m_tagScopeTerm = jsonValue.GetObject("tagScopeTerm");
     m_tagScopeTermHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobScopeTerm::Jsonize() const
-{
+JsonValue JobScopeTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_simpleScopeTermHasBeenSet)
-  {
-   payload.WithObject("simpleScopeTerm", m_simpleScopeTerm.Jsonize());
-
+  if (m_simpleScopeTermHasBeenSet) {
+    payload.WithObject("simpleScopeTerm", m_simpleScopeTerm.Jsonize());
   }
 
-  if(m_tagScopeTermHasBeenSet)
-  {
-   payload.WithObject("tagScopeTerm", m_tagScopeTerm.Jsonize());
-
+  if (m_tagScopeTermHasBeenSet) {
+    payload.WithObject("tagScopeTerm", m_tagScopeTerm.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

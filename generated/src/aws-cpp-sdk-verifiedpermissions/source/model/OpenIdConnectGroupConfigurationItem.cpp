@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/OpenIdConnectGroupConfigurationItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectGroupConfigurationItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-OpenIdConnectGroupConfigurationItem::OpenIdConnectGroupConfigurationItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenIdConnectGroupConfigurationItem::OpenIdConnectGroupConfigurationItem(JsonView jsonValue) { *this = jsonValue; }
 
-OpenIdConnectGroupConfigurationItem& OpenIdConnectGroupConfigurationItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("groupClaim"))
-  {
+OpenIdConnectGroupConfigurationItem& OpenIdConnectGroupConfigurationItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("groupClaim")) {
     m_groupClaim = jsonValue.GetString("groupClaim");
     m_groupClaimHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupEntityType"))
-  {
+  if (jsonValue.ValueExists("groupEntityType")) {
     m_groupEntityType = jsonValue.GetString("groupEntityType");
     m_groupEntityTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenIdConnectGroupConfigurationItem::Jsonize() const
-{
+JsonValue OpenIdConnectGroupConfigurationItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupClaimHasBeenSet)
-  {
-   payload.WithString("groupClaim", m_groupClaim);
-
+  if (m_groupClaimHasBeenSet) {
+    payload.WithString("groupClaim", m_groupClaim);
   }
 
-  if(m_groupEntityTypeHasBeenSet)
-  {
-   payload.WithString("groupEntityType", m_groupEntityType);
-
+  if (m_groupEntityTypeHasBeenSet) {
+    payload.WithString("groupEntityType", m_groupEntityType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

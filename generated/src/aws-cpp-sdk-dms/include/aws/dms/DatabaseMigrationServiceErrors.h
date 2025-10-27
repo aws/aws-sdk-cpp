@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-enum class DatabaseMigrationServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace DatabaseMigrationService {
+enum class DatabaseMigrationServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DatabaseMigrationServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class DatabaseMigrationServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_DENIED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_FAULT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   COLLECTOR_NOT_FOUND_FAULT,
   FAILED_DEPENDENCY_FAULT,
   INSUFFICIENT_RESOURCE_CAPACITY_FAULT,
@@ -75,23 +72,25 @@ enum class DatabaseMigrationServiceErrors
   UPGRADE_DEPENDENCY_FAILURE_FAULT
 };
 
-class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceError : public Aws::Client::AWSError<DatabaseMigrationServiceErrors>
-{
-public:
+class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceError : public Aws::Client::AWSError<DatabaseMigrationServiceErrors> {
+ public:
   DatabaseMigrationServiceError() {}
-  DatabaseMigrationServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
-  DatabaseMigrationServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
-  DatabaseMigrationServiceError(const Aws::Client::AWSError<DatabaseMigrationServiceErrors>& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
-  DatabaseMigrationServiceError(Aws::Client::AWSError<DatabaseMigrationServiceErrors>&& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(const Aws::Client::AWSError<DatabaseMigrationServiceErrors>& rhs)
+      : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(Aws::Client::AWSError<DatabaseMigrationServiceErrors>&& rhs)
+      : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace DatabaseMigrationServiceErrorMapper
-{
-  AWS_DATABASEMIGRATIONSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DatabaseMigrationServiceErrorMapper {
+AWS_DATABASEMIGRATIONSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

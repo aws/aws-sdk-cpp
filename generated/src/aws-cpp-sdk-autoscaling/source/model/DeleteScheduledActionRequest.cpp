@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteScheduledActionRequest::SerializePayload() const
-{
+Aws::String DeleteScheduledActionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteScheduledAction&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_scheduledActionNameHasBeenSet)
-  {
+  if (m_scheduledActionNameHasBeenSet) {
     ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteScheduledActionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteScheduledActionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteScheduledActionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

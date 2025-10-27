@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointRules.h>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MarketplaceEntitlementService
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MarketplaceEntitlementService {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MarketplaceEntitlementServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,28 @@ using MarketplaceEntitlementServiceBuiltInParameters = Aws::Endpoint::BuiltInPar
  * The SDK must use service-specific type for each service per specification.
  */
 using MarketplaceEntitlementServiceEndpointProviderBase =
-    EndpointProviderBase<MarketplaceEntitlementServiceClientConfiguration, MarketplaceEntitlementServiceBuiltInParameters, MarketplaceEntitlementServiceClientContextParameters>;
+    EndpointProviderBase<MarketplaceEntitlementServiceClientConfiguration, MarketplaceEntitlementServiceBuiltInParameters,
+                         MarketplaceEntitlementServiceClientContextParameters>;
 
 using MarketplaceEntitlementServiceDefaultEpProviderBase =
-    DefaultEndpointProvider<MarketplaceEntitlementServiceClientConfiguration, MarketplaceEntitlementServiceBuiltInParameters, MarketplaceEntitlementServiceClientContextParameters>;
+    DefaultEndpointProvider<MarketplaceEntitlementServiceClientConfiguration, MarketplaceEntitlementServiceBuiltInParameters,
+                            MarketplaceEntitlementServiceClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceEndpointProvider : public MarketplaceEntitlementServiceDefaultEpProviderBase
-{
-public:
-    using MarketplaceEntitlementServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceEndpointProvider
+    : public MarketplaceEntitlementServiceDefaultEpProviderBase {
+ public:
+  using MarketplaceEntitlementServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MarketplaceEntitlementServiceEndpointProvider()
-      : MarketplaceEntitlementServiceDefaultEpProviderBase(Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::GetRulesBlob(), Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::RulesBlobSize)
-    {}
+  MarketplaceEntitlementServiceEndpointProvider()
+      : MarketplaceEntitlementServiceDefaultEpProviderBase(
+            Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::GetRulesBlob(),
+            Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::RulesBlobSize) {}
 
-    ~MarketplaceEntitlementServiceEndpointProvider()
-    {
-    }
+  ~MarketplaceEntitlementServiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MarketplaceEntitlementService
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MarketplaceEntitlementService
+}  // namespace Aws

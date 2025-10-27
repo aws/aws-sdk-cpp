@@ -5,12 +5,8 @@
 
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+namespace Aws {
+namespace IoTDeviceAdvisor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

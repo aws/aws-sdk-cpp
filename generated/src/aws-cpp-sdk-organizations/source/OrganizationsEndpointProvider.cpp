@@ -5,12 +5,8 @@
 
 #include <aws/organizations/OrganizationsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Organizations
-} // namespace Aws
+namespace Aws {
+namespace Organizations {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Organizations
+}  // namespace Aws

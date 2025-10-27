@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
 
-namespace Aws
-{
-namespace neptunedata
-{
-enum class NeptunedataErrors
-{
-  //From Core//
+namespace Aws {
+namespace neptunedata {
+enum class NeptunedataErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class NeptunedataErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class NeptunedataErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BULK_LOAD_ID_NOT_FOUND,
   CANCELLED_BY_USER,
   CLIENT_TIMEOUT,
@@ -79,9 +76,8 @@ enum class NeptunedataErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_NEPTUNEDATA_API NeptunedataError : public Aws::Client::AWSError<NeptunedataErrors>
-{
-public:
+class AWS_NEPTUNEDATA_API NeptunedataError : public Aws::Client::AWSError<NeptunedataErrors> {
+ public:
   NeptunedataError() {}
   NeptunedataError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<NeptunedataErrors>(rhs) {}
   NeptunedataError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<NeptunedataErrors>(rhs) {}
@@ -92,10 +88,9 @@ public:
   T GetModeledError();
 };
 
-namespace NeptunedataErrorMapper
-{
-  AWS_NEPTUNEDATA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace NeptunedataErrorMapper {
+AWS_NEPTUNEDATA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace neptunedata
+}  // namespace Aws

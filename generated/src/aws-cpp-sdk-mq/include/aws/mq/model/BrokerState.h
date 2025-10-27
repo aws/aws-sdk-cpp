@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mq/MQ_EXPORTS.h>
 
-namespace Aws
-{
-namespace MQ
-{
-namespace Model
-{
-  enum class BrokerState
-  {
-    NOT_SET,
-    CREATION_IN_PROGRESS,
-    CREATION_FAILED,
-    DELETION_IN_PROGRESS,
-    RUNNING,
-    REBOOT_IN_PROGRESS,
-    CRITICAL_ACTION_REQUIRED,
-    REPLICA
-  };
+namespace Aws {
+namespace MQ {
+namespace Model {
+enum class BrokerState {
+  NOT_SET,
+  CREATION_IN_PROGRESS,
+  CREATION_FAILED,
+  DELETION_IN_PROGRESS,
+  RUNNING,
+  REBOOT_IN_PROGRESS,
+  CRITICAL_ACTION_REQUIRED,
+  REPLICA
+};
 
-namespace BrokerStateMapper
-{
+namespace BrokerStateMapper {
 AWS_MQ_API BrokerState GetBrokerStateForName(const Aws::String& name);
 
 AWS_MQ_API Aws::String GetNameForBrokerState(BrokerState value);
-} // namespace BrokerStateMapper
-} // namespace Model
-} // namespace MQ
-} // namespace Aws
+}  // namespace BrokerStateMapper
+}  // namespace Model
+}  // namespace MQ
+}  // namespace Aws

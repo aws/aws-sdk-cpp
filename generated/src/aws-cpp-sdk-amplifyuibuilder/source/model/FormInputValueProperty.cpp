@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormInputValueProperty::FormInputValueProperty(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormInputValueProperty::FormInputValueProperty(JsonView jsonValue) { *this = jsonValue; }
 
-FormInputValueProperty& FormInputValueProperty::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+FormInputValueProperty& FormInputValueProperty::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bindingProperties"))
-  {
+  if (jsonValue.ValueExists("bindingProperties")) {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
     m_bindingPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("concat"))
-  {
+  if (jsonValue.ValueExists("concat")) {
     Aws::Utils::Array<JsonView> concatJsonList = jsonValue.GetArray("concat");
-    for(unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex)
-    {
+    for (unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex) {
       m_concat.push_back(concatJsonList[concatIndex].AsObject());
     }
     m_concatHasBeenSet = true;
@@ -47,36 +36,28 @@ FormInputValueProperty& FormInputValueProperty::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FormInputValueProperty::Jsonize() const
-{
+JsonValue FormInputValueProperty::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_bindingPropertiesHasBeenSet)
-  {
-   payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
-
+  if (m_bindingPropertiesHasBeenSet) {
+    payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
   }
 
-  if(m_concatHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> concatJsonList(m_concat.size());
-   for(unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex)
-   {
-     concatJsonList[concatIndex].AsObject(m_concat[concatIndex].Jsonize());
-   }
-   payload.WithArray("concat", std::move(concatJsonList));
-
+  if (m_concatHasBeenSet) {
+    Aws::Utils::Array<JsonValue> concatJsonList(m_concat.size());
+    for (unsigned concatIndex = 0; concatIndex < concatJsonList.GetLength(); ++concatIndex) {
+      concatJsonList[concatIndex].AsObject(m_concat[concatIndex].Jsonize());
+    }
+    payload.WithArray("concat", std::move(concatJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateGatewayToServerRequest::SerializePayload() const
-{
+Aws::String AssociateGatewayToServerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gatewayArnHasBeenSet)
-  {
-   payload.WithString("GatewayArn", m_gatewayArn);
-
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
-  if(m_serverArnHasBeenSet)
-  {
-   payload.WithString("ServerArn", m_serverArn);
-
+  if (m_serverArnHasBeenSet) {
+    payload.WithString("ServerArn", m_serverArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AssociateGatewayToServerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AssociateGatewayToServerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.AssociateGatewayToServer"));
   return headers;
-
 }
-
-
-
-

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/elasticache/ElastiCacheEndpointRules.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ElastiCacheClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using ElastiCacheDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ELASTICACHE_API ElastiCacheEndpointProvider : public ElastiCacheDefaultEpProviderBase
-{
-public:
-    using ElastiCacheResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ELASTICACHE_API ElastiCacheEndpointProvider : public ElastiCacheDefaultEpProviderBase {
+ public:
+  using ElastiCacheResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ElastiCacheEndpointProvider()
-      : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::GetRulesBlob(), Aws::ElastiCache::ElastiCacheEndpointRules::RulesBlobSize)
-    {}
+  ElastiCacheEndpointProvider()
+      : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::GetRulesBlob(),
+                                         Aws::ElastiCache::ElastiCacheEndpointRules::RulesBlobSize) {}
 
-    ~ElastiCacheEndpointProvider()
-    {
-    }
+  ~ElastiCacheEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ElastiCache
+}  // namespace Aws

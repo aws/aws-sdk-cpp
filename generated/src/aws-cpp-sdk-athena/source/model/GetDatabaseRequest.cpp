@@ -12,39 +12,26 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDatabaseRequest::SerializePayload() const
-{
+Aws::String GetDatabaseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_catalogNameHasBeenSet)
-  {
-   payload.WithString("CatalogName", m_catalogName);
-
+  if (m_catalogNameHasBeenSet) {
+    payload.WithString("CatalogName", m_catalogName);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("DatabaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("DatabaseName", m_databaseName);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetDatabaseRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetDatabaseRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetDatabase"));
   return headers;
-
 }
-
-
-
-

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class ValidationExceptionReason
-  {
-    NOT_SET,
-    unknownOperation,
-    cannotParse,
-    fieldValidationFailed,
-    other
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class ValidationExceptionReason { NOT_SET, unknownOperation, cannotParse, fieldValidationFailed, other };
 
-namespace ValidationExceptionReasonMapper
-{
+namespace ValidationExceptionReasonMapper {
 AWS_DRS_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason value);
-} // namespace ValidationExceptionReasonMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace ValidationExceptionReasonMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

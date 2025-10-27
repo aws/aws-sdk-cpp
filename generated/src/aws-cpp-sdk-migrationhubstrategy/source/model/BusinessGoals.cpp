@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/BusinessGoals.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/BusinessGoals.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-BusinessGoals::BusinessGoals(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BusinessGoals::BusinessGoals(JsonView jsonValue) { *this = jsonValue; }
 
-BusinessGoals& BusinessGoals::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("licenseCostReduction"))
-  {
+BusinessGoals& BusinessGoals::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("licenseCostReduction")) {
     m_licenseCostReduction = jsonValue.GetInteger("licenseCostReduction");
     m_licenseCostReductionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modernizeInfrastructureWithCloudNativeTechnologies"))
-  {
+  if (jsonValue.ValueExists("modernizeInfrastructureWithCloudNativeTechnologies")) {
     m_modernizeInfrastructureWithCloudNativeTechnologies = jsonValue.GetInteger("modernizeInfrastructureWithCloudNativeTechnologies");
     m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reduceOperationalOverheadWithManagedServices"))
-  {
+  if (jsonValue.ValueExists("reduceOperationalOverheadWithManagedServices")) {
     m_reduceOperationalOverheadWithManagedServices = jsonValue.GetInteger("reduceOperationalOverheadWithManagedServices");
     m_reduceOperationalOverheadWithManagedServicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("speedOfMigration"))
-  {
+  if (jsonValue.ValueExists("speedOfMigration")) {
     m_speedOfMigration = jsonValue.GetInteger("speedOfMigration");
     m_speedOfMigrationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BusinessGoals::Jsonize() const
-{
+JsonValue BusinessGoals::Jsonize() const {
   JsonValue payload;
 
-  if(m_licenseCostReductionHasBeenSet)
-  {
-   payload.WithInteger("licenseCostReduction", m_licenseCostReduction);
-
+  if (m_licenseCostReductionHasBeenSet) {
+    payload.WithInteger("licenseCostReduction", m_licenseCostReduction);
   }
 
-  if(m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet)
-  {
-   payload.WithInteger("modernizeInfrastructureWithCloudNativeTechnologies", m_modernizeInfrastructureWithCloudNativeTechnologies);
-
+  if (m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet) {
+    payload.WithInteger("modernizeInfrastructureWithCloudNativeTechnologies", m_modernizeInfrastructureWithCloudNativeTechnologies);
   }
 
-  if(m_reduceOperationalOverheadWithManagedServicesHasBeenSet)
-  {
-   payload.WithInteger("reduceOperationalOverheadWithManagedServices", m_reduceOperationalOverheadWithManagedServices);
-
+  if (m_reduceOperationalOverheadWithManagedServicesHasBeenSet) {
+    payload.WithInteger("reduceOperationalOverheadWithManagedServices", m_reduceOperationalOverheadWithManagedServices);
   }
 
-  if(m_speedOfMigrationHasBeenSet)
-  {
-   payload.WithInteger("speedOfMigration", m_speedOfMigration);
-
+  if (m_speedOfMigrationHasBeenSet) {
+    payload.WithInteger("speedOfMigration", m_speedOfMigration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

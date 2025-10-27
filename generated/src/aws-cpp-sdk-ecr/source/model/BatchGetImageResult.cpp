@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/BatchGetImageResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ecr/model/BatchGetImageResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetImageResult::BatchGetImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetImageResult::BatchGetImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetImageResult& BatchGetImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetImageResult& BatchGetImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("images"))
-  {
+  if (jsonValue.ValueExists("images")) {
     Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
-    for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
-    {
+    for (unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex) {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());
     }
     m_imagesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failures"))
-  {
+  if (jsonValue.ValueExists("failures")) {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
-    for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
-    {
+    for (unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex) {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
     m_failuresHasBeenSet = true;
@@ -46,12 +38,10 @@ BatchGetImageResult& BatchGetImageResult::operator =(const Aws::AmazonWebService
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scriptModeConfig"))
-  {
+AlgorithmSpecification& AlgorithmSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scriptModeConfig")) {
     m_scriptModeConfig = jsonValue.GetObject("scriptModeConfig");
     m_scriptModeConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("containerImage"))
-  {
+  if (jsonValue.ValueExists("containerImage")) {
     m_containerImage = jsonValue.GetObject("containerImage");
     m_containerImageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlgorithmSpecification::Jsonize() const
-{
+JsonValue AlgorithmSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_scriptModeConfigHasBeenSet)
-  {
-   payload.WithObject("scriptModeConfig", m_scriptModeConfig.Jsonize());
-
+  if (m_scriptModeConfigHasBeenSet) {
+    payload.WithObject("scriptModeConfig", m_scriptModeConfig.Jsonize());
   }
 
-  if(m_containerImageHasBeenSet)
-  {
-   payload.WithObject("containerImage", m_containerImage.Jsonize());
-
+  if (m_containerImageHasBeenSet) {
+    payload.WithObject("containerImage", m_containerImage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

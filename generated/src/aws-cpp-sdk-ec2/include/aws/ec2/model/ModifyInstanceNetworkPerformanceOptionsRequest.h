@@ -4,91 +4,104 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InstanceBandwidthWeighting.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class ModifyInstanceNetworkPerformanceOptionsRequest : public EC2Request {
+ public:
+  AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceNetworkPerformanceOptions"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The ID of the instance to update.</p>
    */
-  class ModifyInstanceNetworkPerformanceOptionsRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsRequest() = default;
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  ModifyInstanceNetworkPerformanceOptionsRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceNetworkPerformanceOptions"; }
+  ///@{
+  /**
+   * <p>Specify the bandwidth weighting option to boost the associated type of
+   * baseline bandwidth, as follows:</p> <dl> <dt>default</dt> <dd> <p>This option
+   * uses the standard bandwidth configuration for your instance type.</p> </dd>
+   * <dt>vpc-1</dt> <dd> <p>This option boosts your networking baseline bandwidth and
+   * reduces your EBS baseline bandwidth.</p> </dd> <dt>ebs-1</dt> <dd> <p>This
+   * option boosts your EBS baseline bandwidth and reduces your networking baseline
+   * bandwidth.</p> </dd> </dl>
+   */
+  inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
+  inline bool BandwidthWeightingHasBeenSet() const { return m_bandwidthWeightingHasBeenSet; }
+  inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) {
+    m_bandwidthWeightingHasBeenSet = true;
+    m_bandwidthWeighting = value;
+  }
+  inline ModifyInstanceNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting value) {
+    SetBandwidthWeighting(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Checks whether you have the required permissions for the operation, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline ModifyInstanceNetworkPerformanceOptionsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceId;
+  bool m_instanceIdHasBeenSet = false;
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
+  bool m_bandwidthWeightingHasBeenSet = false;
 
-  public:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ID of the instance to update.</p>
-     */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    ModifyInstanceNetworkPerformanceOptionsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specify the bandwidth weighting option to boost the associated type of
-     * baseline bandwidth, as follows:</p> <dl> <dt>default</dt> <dd> <p>This option
-     * uses the standard bandwidth configuration for your instance type.</p> </dd>
-     * <dt>vpc-1</dt> <dd> <p>This option boosts your networking baseline bandwidth and
-     * reduces your EBS baseline bandwidth.</p> </dd> <dt>ebs-1</dt> <dd> <p>This
-     * option boosts your EBS baseline bandwidth and reduces your networking baseline
-     * bandwidth.</p> </dd> </dl>
-     */
-    inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
-    inline bool BandwidthWeightingHasBeenSet() const { return m_bandwidthWeightingHasBeenSet; }
-    inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
-    inline ModifyInstanceNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting value) { SetBandwidthWeighting(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the operation, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ModifyInstanceNetworkPerformanceOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
-    bool m_bandwidthWeightingHasBeenSet = false;
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

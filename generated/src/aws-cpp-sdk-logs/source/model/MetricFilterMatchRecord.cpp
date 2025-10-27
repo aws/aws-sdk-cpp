@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/MetricFilterMatchRecord.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/MetricFilterMatchRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue) { *this = jsonValue; }
 
-MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventNumber"))
-  {
+MetricFilterMatchRecord& MetricFilterMatchRecord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventNumber")) {
     m_eventNumber = jsonValue.GetInt64("eventNumber");
     m_eventNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventMessage"))
-  {
+  if (jsonValue.ValueExists("eventMessage")) {
     m_eventMessage = jsonValue.GetString("eventMessage");
     m_eventMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("extractedValues"))
-  {
+  if (jsonValue.ValueExists("extractedValues")) {
     Aws::Map<Aws::String, JsonView> extractedValuesJsonMap = jsonValue.GetObject("extractedValues").GetAllObjects();
-    for(auto& extractedValuesItem : extractedValuesJsonMap)
-    {
+    for (auto& extractedValuesItem : extractedValuesJsonMap) {
       m_extractedValues[extractedValuesItem.first] = extractedValuesItem.second.AsString();
     }
     m_extractedValuesHasBeenSet = true;
@@ -47,36 +36,28 @@ MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MetricFilterMatchRecord::Jsonize() const
-{
+JsonValue MetricFilterMatchRecord::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventNumberHasBeenSet)
-  {
-   payload.WithInt64("eventNumber", m_eventNumber);
-
+  if (m_eventNumberHasBeenSet) {
+    payload.WithInt64("eventNumber", m_eventNumber);
   }
 
-  if(m_eventMessageHasBeenSet)
-  {
-   payload.WithString("eventMessage", m_eventMessage);
-
+  if (m_eventMessageHasBeenSet) {
+    payload.WithString("eventMessage", m_eventMessage);
   }
 
-  if(m_extractedValuesHasBeenSet)
-  {
-   JsonValue extractedValuesJsonMap;
-   for(auto& extractedValuesItem : m_extractedValues)
-   {
-     extractedValuesJsonMap.WithString(extractedValuesItem.first, extractedValuesItem.second);
-   }
-   payload.WithObject("extractedValues", std::move(extractedValuesJsonMap));
-
+  if (m_extractedValuesHasBeenSet) {
+    JsonValue extractedValuesJsonMap;
+    for (auto& extractedValuesItem : m_extractedValues) {
+      extractedValuesJsonMap.WithString(extractedValuesItem.first, extractedValuesItem.second);
+    }
+    payload.WithObject("extractedValues", std::move(extractedValuesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

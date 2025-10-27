@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/payment-cryptography/model/ExportDukptInitialKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography/model/ExportDukptInitialKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-namespace Model
-{
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
 
-ExportDukptInitialKey::ExportDukptInitialKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportDukptInitialKey::ExportDukptInitialKey(JsonView jsonValue) { *this = jsonValue; }
 
-ExportDukptInitialKey& ExportDukptInitialKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeySerialNumber"))
-  {
+ExportDukptInitialKey& ExportDukptInitialKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeySerialNumber")) {
     m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
     m_keySerialNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportDukptInitialKey::Jsonize() const
-{
+JsonValue ExportDukptInitialKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_keySerialNumberHasBeenSet)
-  {
-   payload.WithString("KeySerialNumber", m_keySerialNumber);
-
+  if (m_keySerialNumberHasBeenSet) {
+    payload.WithString("KeySerialNumber", m_keySerialNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

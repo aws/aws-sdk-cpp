@@ -3,42 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/ListJobsFilterCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/ListJobsFilterCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-ListJobsFilterCriteria::ListJobsFilterCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListJobsFilterCriteria::ListJobsFilterCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-ListJobsFilterCriteria& ListJobsFilterCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("excludes"))
-  {
+ListJobsFilterCriteria& ListJobsFilterCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("excludes")) {
     Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("excludes");
-    for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
-    {
+    for (unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex) {
       m_excludes.push_back(excludesJsonList[excludesIndex].AsObject());
     }
     m_excludesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includes"))
-  {
+  if (jsonValue.ValueExists("includes")) {
     Aws::Utils::Array<JsonView> includesJsonList = jsonValue.GetArray("includes");
-    for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
-    {
+    for (unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex) {
       m_includes.push_back(includesJsonList[includesIndex].AsObject());
     }
     m_includesHasBeenSet = true;
@@ -46,35 +35,28 @@ ListJobsFilterCriteria& ListJobsFilterCriteria::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ListJobsFilterCriteria::Jsonize() const
-{
+JsonValue ListJobsFilterCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_excludesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> excludesJsonList(m_excludes.size());
-   for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
-   {
-     excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
-   }
-   payload.WithArray("excludes", std::move(excludesJsonList));
-
+  if (m_excludesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> excludesJsonList(m_excludes.size());
+    for (unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex) {
+      excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
+    }
+    payload.WithArray("excludes", std::move(excludesJsonList));
   }
 
-  if(m_includesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> includesJsonList(m_includes.size());
-   for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
-   {
-     includesJsonList[includesIndex].AsObject(m_includes[includesIndex].Jsonize());
-   }
-   payload.WithArray("includes", std::move(includesJsonList));
-
+  if (m_includesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> includesJsonList(m_includes.size());
+    for (unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex) {
+      includesJsonList[includesIndex].AsObject(m_includes[includesIndex].Jsonize());
+    }
+    payload.WithArray("includes", std::move(includesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

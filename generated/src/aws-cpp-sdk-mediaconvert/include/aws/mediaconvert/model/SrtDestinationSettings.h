@@ -6,59 +6,58 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/SrtStylePassthrough.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * Settings related to SRT captions. SRT is a sidecar format that holds captions in
+ * a file that is separate from the video container. Set up sidecar captions in the
+ * same output group, but different output from your video.<p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SrtDestinationSettings">AWS
+ * API Reference</a></p>
+ */
+class SrtDestinationSettings {
+ public:
+  AWS_MEDIACONVERT_API SrtDestinationSettings() = default;
+  AWS_MEDIACONVERT_API SrtDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API SrtDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Settings related to SRT captions. SRT is a sidecar format that holds captions in
-   * a file that is separate from the video container. Set up sidecar captions in the
-   * same output group, but different output from your video.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SrtDestinationSettings">AWS
-   * API Reference</a></p>
+   * Set Style passthrough to ENABLED to use the available style, color, and position
+   * information from your input captions. MediaConvert uses default settings for any
+   * missing style and position information in your input captions. Set Style
+   * passthrough to DISABLED, or leave blank, to ignore the style and position
+   * information from your input captions and use simplified output captions.
    */
-  class SrtDestinationSettings
-  {
-  public:
-    AWS_MEDIACONVERT_API SrtDestinationSettings() = default;
-    AWS_MEDIACONVERT_API SrtDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API SrtDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline SrtStylePassthrough GetStylePassthrough() const { return m_stylePassthrough; }
+  inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
+  inline void SetStylePassthrough(SrtStylePassthrough value) {
+    m_stylePassthroughHasBeenSet = true;
+    m_stylePassthrough = value;
+  }
+  inline SrtDestinationSettings& WithStylePassthrough(SrtStylePassthrough value) {
+    SetStylePassthrough(value);
+    return *this;
+  }
+  ///@}
+ private:
+  SrtStylePassthrough m_stylePassthrough{SrtStylePassthrough::NOT_SET};
+  bool m_stylePassthroughHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use simplified output captions.
-     */
-    inline SrtStylePassthrough GetStylePassthrough() const { return m_stylePassthrough; }
-    inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
-    inline void SetStylePassthrough(SrtStylePassthrough value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
-    inline SrtDestinationSettings& WithStylePassthrough(SrtStylePassthrough value) { SetStylePassthrough(value); return *this;}
-    ///@}
-  private:
-
-    SrtStylePassthrough m_stylePassthrough{SrtStylePassthrough::NOT_SET};
-    bool m_stylePassthroughHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

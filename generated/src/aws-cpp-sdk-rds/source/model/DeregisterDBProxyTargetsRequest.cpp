@@ -3,58 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeregisterDBProxyTargetsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DeregisterDBProxyTargetsRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeregisterDBProxyTargetsRequest::SerializePayload() const
-{
+Aws::String DeregisterDBProxyTargetsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeregisterDBProxyTargets&";
-  if(m_dBProxyNameHasBeenSet)
-  {
+  if (m_dBProxyNameHasBeenSet) {
     ss << "DBProxyName=" << StringUtils::URLEncode(m_dBProxyName.c_str()) << "&";
   }
 
-  if(m_targetGroupNameHasBeenSet)
-  {
+  if (m_targetGroupNameHasBeenSet) {
     ss << "TargetGroupName=" << StringUtils::URLEncode(m_targetGroupName.c_str()) << "&";
   }
 
-  if(m_dBInstanceIdentifiersHasBeenSet)
-  {
-    if (m_dBInstanceIdentifiers.empty())
-    {
+  if (m_dBInstanceIdentifiersHasBeenSet) {
+    if (m_dBInstanceIdentifiers.empty()) {
       ss << "DBInstanceIdentifiers=&";
-    }
-    else
-    {
+    } else {
       unsigned dBInstanceIdentifiersCount = 1;
-      for(auto& item : m_dBInstanceIdentifiers)
-      {
-        ss << "DBInstanceIdentifiers.member." << dBInstanceIdentifiersCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_dBInstanceIdentifiers) {
+        ss << "DBInstanceIdentifiers.member." << dBInstanceIdentifiersCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         dBInstanceIdentifiersCount++;
       }
     }
   }
 
-  if(m_dBClusterIdentifiersHasBeenSet)
-  {
-    if (m_dBClusterIdentifiers.empty())
-    {
+  if (m_dBClusterIdentifiersHasBeenSet) {
+    if (m_dBClusterIdentifiers.empty()) {
       ss << "DBClusterIdentifiers=&";
-    }
-    else
-    {
+    } else {
       unsigned dBClusterIdentifiersCount = 1;
-      for(auto& item : m_dBClusterIdentifiers)
-      {
-        ss << "DBClusterIdentifiers.member." << dBClusterIdentifiersCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_dBClusterIdentifiers) {
+        ss << "DBClusterIdentifiers.member." << dBClusterIdentifiersCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         dBClusterIdentifiersCount++;
       }
     }
@@ -64,8 +49,4 @@ Aws::String DeregisterDBProxyTargetsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeregisterDBProxyTargetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeregisterDBProxyTargetsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

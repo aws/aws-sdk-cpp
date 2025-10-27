@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/healthlake/HealthLake_EXPORTS.h>
 
-namespace Aws
-{
-namespace HealthLake
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    QUEUED,
-    IN_PROGRESS,
-    COMPLETED_WITH_ERRORS,
-    COMPLETED,
-    FAILED,
-    CANCEL_SUBMITTED,
-    CANCEL_IN_PROGRESS,
-    CANCEL_COMPLETED,
-    CANCEL_FAILED
-  };
+namespace Aws {
+namespace HealthLake {
+namespace Model {
+enum class JobStatus {
+  NOT_SET,
+  SUBMITTED,
+  QUEUED,
+  IN_PROGRESS,
+  COMPLETED_WITH_ERRORS,
+  COMPLETED,
+  FAILED,
+  CANCEL_SUBMITTED,
+  CANCEL_IN_PROGRESS,
+  CANCEL_COMPLETED,
+  CANCEL_FAILED
+};
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_HEALTHLAKE_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_HEALTHLAKE_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace HealthLake
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace HealthLake
+}  // namespace Aws

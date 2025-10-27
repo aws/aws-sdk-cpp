@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex/model/SentimentResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex/model/SentimentResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexRuntimeService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexRuntimeService {
+namespace Model {
 
-SentimentResponse::SentimentResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SentimentResponse::SentimentResponse(JsonView jsonValue) { *this = jsonValue; }
 
-SentimentResponse& SentimentResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sentimentLabel"))
-  {
+SentimentResponse& SentimentResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sentimentLabel")) {
     m_sentimentLabel = jsonValue.GetString("sentimentLabel");
     m_sentimentLabelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sentimentScore"))
-  {
+  if (jsonValue.ValueExists("sentimentScore")) {
     m_sentimentScore = jsonValue.GetString("sentimentScore");
     m_sentimentScoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SentimentResponse::Jsonize() const
-{
+JsonValue SentimentResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_sentimentLabelHasBeenSet)
-  {
-   payload.WithString("sentimentLabel", m_sentimentLabel);
-
+  if (m_sentimentLabelHasBeenSet) {
+    payload.WithString("sentimentLabel", m_sentimentLabel);
   }
 
-  if(m_sentimentScoreHasBeenSet)
-  {
-   payload.WithString("sentimentScore", m_sentimentScore);
-
+  if (m_sentimentScoreHasBeenSet) {
+    payload.WithString("sentimentScore", m_sentimentScore);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexRuntimeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeService
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-TestCaseFilter::TestCaseFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestCaseFilter::TestCaseFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TestCaseFilter& TestCaseFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+TestCaseFilter& TestCaseFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyword"))
-  {
+  if (jsonValue.ValueExists("keyword")) {
     m_keyword = jsonValue.GetString("keyword");
     m_keywordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestCaseFilter::Jsonize() const
-{
+JsonValue TestCaseFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_keywordHasBeenSet)
-  {
-   payload.WithString("keyword", m_keyword);
-
+  if (m_keywordHasBeenSet) {
+    payload.WithString("keyword", m_keyword);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

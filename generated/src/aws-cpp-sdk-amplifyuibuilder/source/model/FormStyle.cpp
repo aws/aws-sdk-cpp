@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormStyle::FormStyle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormStyle::FormStyle(JsonView jsonValue) { *this = jsonValue; }
 
-FormStyle& FormStyle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("horizontalGap"))
-  {
+FormStyle& FormStyle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("horizontalGap")) {
     m_horizontalGap = jsonValue.GetObject("horizontalGap");
     m_horizontalGapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("verticalGap"))
-  {
+  if (jsonValue.ValueExists("verticalGap")) {
     m_verticalGap = jsonValue.GetObject("verticalGap");
     m_verticalGapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outerPadding"))
-  {
+  if (jsonValue.ValueExists("outerPadding")) {
     m_outerPadding = jsonValue.GetObject("outerPadding");
     m_outerPaddingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormStyle::Jsonize() const
-{
+JsonValue FormStyle::Jsonize() const {
   JsonValue payload;
 
-  if(m_horizontalGapHasBeenSet)
-  {
-   payload.WithObject("horizontalGap", m_horizontalGap.Jsonize());
-
+  if (m_horizontalGapHasBeenSet) {
+    payload.WithObject("horizontalGap", m_horizontalGap.Jsonize());
   }
 
-  if(m_verticalGapHasBeenSet)
-  {
-   payload.WithObject("verticalGap", m_verticalGap.Jsonize());
-
+  if (m_verticalGapHasBeenSet) {
+    payload.WithObject("verticalGap", m_verticalGap.Jsonize());
   }
 
-  if(m_outerPaddingHasBeenSet)
-  {
-   payload.WithObject("outerPadding", m_outerPadding.Jsonize());
-
+  if (m_outerPaddingHasBeenSet) {
+    payload.WithObject("outerPadding", m_outerPadding.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

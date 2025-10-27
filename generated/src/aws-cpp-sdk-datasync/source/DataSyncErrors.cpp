@@ -14,44 +14,36 @@ using namespace Aws::Utils;
 using namespace Aws::DataSync;
 using namespace Aws::DataSync::Model;
 
-namespace Aws
-{
-namespace DataSync
-{
-template<> AWS_DATASYNC_API InternalException DataSyncError::GetModeledError()
-{
+namespace Aws {
+namespace DataSync {
+template <>
+AWS_DATASYNC_API InternalException DataSyncError::GetModeledError() {
   assert(this->GetErrorType() == DataSyncErrors::INTERNAL);
   return InternalException(this->GetJsonPayload().View());
 }
 
-template<> AWS_DATASYNC_API InvalidRequestException DataSyncError::GetModeledError()
-{
+template <>
+AWS_DATASYNC_API InvalidRequestException DataSyncError::GetModeledError() {
   assert(this->GetErrorType() == DataSyncErrors::INVALID_REQUEST);
   return InvalidRequestException(this->GetJsonPayload().View());
 }
 
-namespace DataSyncErrorMapper
-{
+namespace DataSyncErrorMapper {
 
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_HASH)
-  {
+  if (hashCode == INTERNAL_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DataSyncErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DataSyncErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace DataSyncErrorMapper
-} // namespace DataSync
-} // namespace Aws
+}  // namespace DataSyncErrorMapper
+}  // namespace DataSync
+}  // namespace Aws

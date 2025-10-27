@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-DocumentServiceException::DocumentServiceException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentServiceException::DocumentServiceException(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentServiceException& DocumentServiceException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+DocumentServiceException& DocumentServiceException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentServiceException::Jsonize() const
-{
+JsonValue DocumentServiceException::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", m_status);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

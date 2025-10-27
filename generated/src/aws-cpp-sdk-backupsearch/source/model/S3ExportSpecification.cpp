@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace BackupSearch {
+namespace Model {
 
-S3ExportSpecification::S3ExportSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ExportSpecification::S3ExportSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-S3ExportSpecification& S3ExportSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DestinationBucket"))
-  {
+S3ExportSpecification& S3ExportSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DestinationBucket")) {
     m_destinationBucket = jsonValue.GetString("DestinationBucket");
     m_destinationBucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationPrefix"))
-  {
+  if (jsonValue.ValueExists("DestinationPrefix")) {
     m_destinationPrefix = jsonValue.GetString("DestinationPrefix");
     m_destinationPrefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ExportSpecification::Jsonize() const
-{
+JsonValue S3ExportSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationBucketHasBeenSet)
-  {
-   payload.WithString("DestinationBucket", m_destinationBucket);
-
+  if (m_destinationBucketHasBeenSet) {
+    payload.WithString("DestinationBucket", m_destinationBucket);
   }
 
-  if(m_destinationPrefixHasBeenSet)
-  {
-   payload.WithString("DestinationPrefix", m_destinationPrefix);
-
+  if (m_destinationPrefixHasBeenSet) {
+    payload.WithString("DestinationPrefix", m_destinationPrefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupSearch
+}  // namespace Aws

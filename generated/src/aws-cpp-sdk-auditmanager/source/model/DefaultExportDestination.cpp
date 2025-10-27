@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-DefaultExportDestination::DefaultExportDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultExportDestination::DefaultExportDestination(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultExportDestination& DefaultExportDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("destinationType"))
-  {
+DefaultExportDestination& DefaultExportDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationType")) {
     m_destinationType = ExportDestinationTypeMapper::GetExportDestinationTypeForName(jsonValue.GetString("destinationType"));
     m_destinationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetString("destination");
     m_destinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultExportDestination::Jsonize() const
-{
+JsonValue DefaultExportDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationTypeHasBeenSet)
-  {
-   payload.WithString("destinationType", ExportDestinationTypeMapper::GetNameForExportDestinationType(m_destinationType));
+  if (m_destinationTypeHasBeenSet) {
+    payload.WithString("destinationType", ExportDestinationTypeMapper::GetNameForExportDestinationType(m_destinationType));
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithString("destination", m_destination);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

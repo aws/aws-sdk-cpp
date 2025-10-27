@@ -7,27 +7,16 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
-  enum class AlgorithmicStemming
-  {
-    NOT_SET,
-    none,
-    minimal,
-    light,
-    full
-  };
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
+enum class AlgorithmicStemming { NOT_SET, none, minimal, light, full };
 
-namespace AlgorithmicStemmingMapper
-{
+namespace AlgorithmicStemmingMapper {
 AWS_CLOUDSEARCH_API AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name);
 
 AWS_CLOUDSEARCH_API Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming value);
-} // namespace AlgorithmicStemmingMapper
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+}  // namespace AlgorithmicStemmingMapper
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

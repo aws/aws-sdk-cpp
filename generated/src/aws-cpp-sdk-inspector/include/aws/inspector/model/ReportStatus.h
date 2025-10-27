@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class ReportStatus
-  {
-    NOT_SET,
-    WORK_IN_PROGRESS,
-    FAILED,
-    COMPLETED
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class ReportStatus { NOT_SET, WORK_IN_PROGRESS, FAILED, COMPLETED };
 
-namespace ReportStatusMapper
-{
+namespace ReportStatusMapper {
 AWS_INSPECTOR_API ReportStatus GetReportStatusForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForReportStatus(ReportStatus value);
-} // namespace ReportStatusMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace ReportStatusMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

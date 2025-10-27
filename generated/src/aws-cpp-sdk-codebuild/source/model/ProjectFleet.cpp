@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectFleet::ProjectFleet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectFleet::ProjectFleet(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectFleet& ProjectFleet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fleetArn"))
-  {
+ProjectFleet& ProjectFleet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fleetArn")) {
     m_fleetArn = jsonValue.GetString("fleetArn");
     m_fleetArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectFleet::Jsonize() const
-{
+JsonValue ProjectFleet::Jsonize() const {
   JsonValue payload;
 
-  if(m_fleetArnHasBeenSet)
-  {
-   payload.WithString("fleetArn", m_fleetArn);
-
+  if (m_fleetArnHasBeenSet) {
+    payload.WithString("fleetArn", m_fleetArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

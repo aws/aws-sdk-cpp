@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/WorldConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/WorldConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-WorldConfig::WorldConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorldConfig::WorldConfig(JsonView jsonValue) { *this = jsonValue; }
 
-WorldConfig& WorldConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("world"))
-  {
+WorldConfig& WorldConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("world")) {
     m_world = jsonValue.GetString("world");
     m_worldHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorldConfig::Jsonize() const
-{
+JsonValue WorldConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_worldHasBeenSet)
-  {
-   payload.WithString("world", m_world);
-
+  if (m_worldHasBeenSet) {
+    payload.WithString("world", m_world);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

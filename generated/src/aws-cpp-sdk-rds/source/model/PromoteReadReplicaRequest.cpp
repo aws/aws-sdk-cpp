@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/PromoteReadReplicaRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/PromoteReadReplicaRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String PromoteReadReplicaRequest::SerializePayload() const
-{
+Aws::String PromoteReadReplicaRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PromoteReadReplica&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_backupRetentionPeriodHasBeenSet)
-  {
+  if (m_backupRetentionPeriodHasBeenSet) {
     ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
 
-  if(m_preferredBackupWindowHasBeenSet)
-  {
+  if (m_preferredBackupWindowHasBeenSet) {
     ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String PromoteReadReplicaRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PromoteReadReplicaRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PromoteReadReplicaRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

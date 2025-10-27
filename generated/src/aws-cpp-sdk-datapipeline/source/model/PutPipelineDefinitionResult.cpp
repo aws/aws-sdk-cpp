@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datapipeline/model/PutPipelineDefinitionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datapipeline/model/PutPipelineDefinitionResult.h>
 
 #include <utility>
 
@@ -17,46 +17,36 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("validationErrors"))
-  {
+  if (jsonValue.ValueExists("validationErrors")) {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
-    for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
-    {
+    for (unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex) {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
     }
     m_validationErrorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validationWarnings"))
-  {
+  if (jsonValue.ValueExists("validationWarnings")) {
     Aws::Utils::Array<JsonView> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
-    for(unsigned validationWarningsIndex = 0; validationWarningsIndex < validationWarningsJsonList.GetLength(); ++validationWarningsIndex)
-    {
+    for (unsigned validationWarningsIndex = 0; validationWarningsIndex < validationWarningsJsonList.GetLength();
+         ++validationWarningsIndex) {
       m_validationWarnings.push_back(validationWarningsJsonList[validationWarningsIndex].AsObject());
     }
     m_validationWarningsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errored"))
-  {
+  if (jsonValue.ValueExists("errored")) {
     m_errored = jsonValue.GetBool("errored");
     m_erroredHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

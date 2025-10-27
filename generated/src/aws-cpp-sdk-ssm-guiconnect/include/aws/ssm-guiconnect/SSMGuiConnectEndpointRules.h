@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSMGuiConnect
-{
-class SSMGuiConnectEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SSMGuiConnect {
+class SSMGuiConnectEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SSMGuiConnect
-} // namespace Aws
+}  // namespace SSMGuiConnect
+}  // namespace Aws

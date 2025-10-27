@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/DeleteSMSSandboxPhoneNumberRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/DeleteSMSSandboxPhoneNumberRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteSMSSandboxPhoneNumberRequest::SerializePayload() const
-{
+Aws::String DeleteSMSSandboxPhoneNumberRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteSMSSandboxPhoneNumber&";
-  if(m_phoneNumberHasBeenSet)
-  {
+  if (m_phoneNumberHasBeenSet) {
     ss << "PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteSMSSandboxPhoneNumberRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteSMSSandboxPhoneNumberRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteSMSSandboxPhoneNumberRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

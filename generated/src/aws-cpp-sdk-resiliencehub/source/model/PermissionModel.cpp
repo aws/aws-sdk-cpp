@@ -3,79 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/PermissionModel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/PermissionModel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
 
-PermissionModel::PermissionModel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PermissionModel::PermissionModel(JsonView jsonValue) { *this = jsonValue; }
 
-PermissionModel& PermissionModel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("crossAccountRoleArns"))
-  {
+PermissionModel& PermissionModel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("crossAccountRoleArns")) {
     Aws::Utils::Array<JsonView> crossAccountRoleArnsJsonList = jsonValue.GetArray("crossAccountRoleArns");
-    for(unsigned crossAccountRoleArnsIndex = 0; crossAccountRoleArnsIndex < crossAccountRoleArnsJsonList.GetLength(); ++crossAccountRoleArnsIndex)
-    {
+    for (unsigned crossAccountRoleArnsIndex = 0; crossAccountRoleArnsIndex < crossAccountRoleArnsJsonList.GetLength();
+         ++crossAccountRoleArnsIndex) {
       m_crossAccountRoleArns.push_back(crossAccountRoleArnsJsonList[crossAccountRoleArnsIndex].AsString());
     }
     m_crossAccountRoleArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("invokerRoleName"))
-  {
+  if (jsonValue.ValueExists("invokerRoleName")) {
     m_invokerRoleName = jsonValue.GetString("invokerRoleName");
     m_invokerRoleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = PermissionModelTypeMapper::GetPermissionModelTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PermissionModel::Jsonize() const
-{
+JsonValue PermissionModel::Jsonize() const {
   JsonValue payload;
 
-  if(m_crossAccountRoleArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> crossAccountRoleArnsJsonList(m_crossAccountRoleArns.size());
-   for(unsigned crossAccountRoleArnsIndex = 0; crossAccountRoleArnsIndex < crossAccountRoleArnsJsonList.GetLength(); ++crossAccountRoleArnsIndex)
-   {
-     crossAccountRoleArnsJsonList[crossAccountRoleArnsIndex].AsString(m_crossAccountRoleArns[crossAccountRoleArnsIndex]);
-   }
-   payload.WithArray("crossAccountRoleArns", std::move(crossAccountRoleArnsJsonList));
-
+  if (m_crossAccountRoleArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> crossAccountRoleArnsJsonList(m_crossAccountRoleArns.size());
+    for (unsigned crossAccountRoleArnsIndex = 0; crossAccountRoleArnsIndex < crossAccountRoleArnsJsonList.GetLength();
+         ++crossAccountRoleArnsIndex) {
+      crossAccountRoleArnsJsonList[crossAccountRoleArnsIndex].AsString(m_crossAccountRoleArns[crossAccountRoleArnsIndex]);
+    }
+    payload.WithArray("crossAccountRoleArns", std::move(crossAccountRoleArnsJsonList));
   }
 
-  if(m_invokerRoleNameHasBeenSet)
-  {
-   payload.WithString("invokerRoleName", m_invokerRoleName);
-
+  if (m_invokerRoleNameHasBeenSet) {
+    payload.WithString("invokerRoleName", m_invokerRoleName);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", PermissionModelTypeMapper::GetNameForPermissionModelType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", PermissionModelTypeMapper::GetNameForPermissionModelType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

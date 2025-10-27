@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/AssistantIntegrationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wisdom/model/AssistantIntegrationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectWisdomService {
+namespace Model {
 
-AssistantIntegrationConfiguration::AssistantIntegrationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssistantIntegrationConfiguration::AssistantIntegrationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AssistantIntegrationConfiguration& AssistantIntegrationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("topicIntegrationArn"))
-  {
+AssistantIntegrationConfiguration& AssistantIntegrationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("topicIntegrationArn")) {
     m_topicIntegrationArn = jsonValue.GetString("topicIntegrationArn");
     m_topicIntegrationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssistantIntegrationConfiguration::Jsonize() const
-{
+JsonValue AssistantIntegrationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_topicIntegrationArnHasBeenSet)
-  {
-   payload.WithString("topicIntegrationArn", m_topicIntegrationArn);
-
+  if (m_topicIntegrationArnHasBeenSet) {
+    payload.WithString("topicIntegrationArn", m_topicIntegrationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectWisdomService
+}  // namespace Aws

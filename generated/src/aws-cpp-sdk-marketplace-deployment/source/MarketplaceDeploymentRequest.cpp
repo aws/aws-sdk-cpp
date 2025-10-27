@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/marketplace-deployment/MarketplaceDeploymentRequest.h>
 
-namespace Aws
-{
-namespace MarketplaceDeployment
-{
-} // namespace MarketplaceDeployment
-} // namespace Aws
+namespace Aws {
+namespace MarketplaceDeployment {}  // namespace MarketplaceDeployment
+}  // namespace Aws

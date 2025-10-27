@@ -11,146 +11,119 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-OrganizationCustomRuleMetadata::OrganizationCustomRuleMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OrganizationCustomRuleMetadata::OrganizationCustomRuleMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LambdaFunctionArn"))
-  {
+  if (jsonValue.ValueExists("LambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("LambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes"))
-  {
+  if (jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes")) {
     Aws::Utils::Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
-    for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
-    {
-      m_organizationConfigRuleTriggerTypes.push_back(OrganizationConfigRuleTriggerTypeMapper::GetOrganizationConfigRuleTriggerTypeForName(organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString()));
+    for (unsigned organizationConfigRuleTriggerTypesIndex = 0;
+         organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength();
+         ++organizationConfigRuleTriggerTypesIndex) {
+      m_organizationConfigRuleTriggerTypes.push_back(OrganizationConfigRuleTriggerTypeMapper::GetOrganizationConfigRuleTriggerTypeForName(
+          organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString()));
     }
     m_organizationConfigRuleTriggerTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputParameters"))
-  {
+  if (jsonValue.ValueExists("InputParameters")) {
     m_inputParameters = jsonValue.GetString("InputParameters");
     m_inputParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaximumExecutionFrequency"))
-  {
-    m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
+  if (jsonValue.ValueExists("MaximumExecutionFrequency")) {
+    m_maximumExecutionFrequency =
+        MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceTypesScope"))
-  {
+  if (jsonValue.ValueExists("ResourceTypesScope")) {
     Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
-    for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
-    {
+    for (unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength();
+         ++resourceTypesScopeIndex) {
       m_resourceTypesScope.push_back(resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString());
     }
     m_resourceTypesScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceIdScope"))
-  {
+  if (jsonValue.ValueExists("ResourceIdScope")) {
     m_resourceIdScope = jsonValue.GetString("ResourceIdScope");
     m_resourceIdScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagKeyScope"))
-  {
+  if (jsonValue.ValueExists("TagKeyScope")) {
     m_tagKeyScope = jsonValue.GetString("TagKeyScope");
     m_tagKeyScopeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagValueScope"))
-  {
+  if (jsonValue.ValueExists("TagValueScope")) {
     m_tagValueScope = jsonValue.GetString("TagValueScope");
     m_tagValueScopeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OrganizationCustomRuleMetadata::Jsonize() const
-{
+JsonValue OrganizationCustomRuleMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
   }
 
-  if(m_organizationConfigRuleTriggerTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
-   for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
-   {
-     organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString(OrganizationConfigRuleTriggerTypeMapper::GetNameForOrganizationConfigRuleTriggerType(m_organizationConfigRuleTriggerTypes[organizationConfigRuleTriggerTypesIndex]));
-   }
-   payload.WithArray("OrganizationConfigRuleTriggerTypes", std::move(organizationConfigRuleTriggerTypesJsonList));
-
+  if (m_organizationConfigRuleTriggerTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
+    for (unsigned organizationConfigRuleTriggerTypesIndex = 0;
+         organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength();
+         ++organizationConfigRuleTriggerTypesIndex) {
+      organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString(
+          OrganizationConfigRuleTriggerTypeMapper::GetNameForOrganizationConfigRuleTriggerType(
+              m_organizationConfigRuleTriggerTypes[organizationConfigRuleTriggerTypesIndex]));
+    }
+    payload.WithArray("OrganizationConfigRuleTriggerTypes", std::move(organizationConfigRuleTriggerTypesJsonList));
   }
 
-  if(m_inputParametersHasBeenSet)
-  {
-   payload.WithString("InputParameters", m_inputParameters);
-
+  if (m_inputParametersHasBeenSet) {
+    payload.WithString("InputParameters", m_inputParameters);
   }
 
-  if(m_maximumExecutionFrequencyHasBeenSet)
-  {
-   payload.WithString("MaximumExecutionFrequency", MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_maximumExecutionFrequency));
+  if (m_maximumExecutionFrequencyHasBeenSet) {
+    payload.WithString("MaximumExecutionFrequency",
+                       MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_maximumExecutionFrequency));
   }
 
-  if(m_resourceTypesScopeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
-   for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
-   {
-     resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString(m_resourceTypesScope[resourceTypesScopeIndex]);
-   }
-   payload.WithArray("ResourceTypesScope", std::move(resourceTypesScopeJsonList));
-
+  if (m_resourceTypesScopeHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
+    for (unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength();
+         ++resourceTypesScopeIndex) {
+      resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString(m_resourceTypesScope[resourceTypesScopeIndex]);
+    }
+    payload.WithArray("ResourceTypesScope", std::move(resourceTypesScopeJsonList));
   }
 
-  if(m_resourceIdScopeHasBeenSet)
-  {
-   payload.WithString("ResourceIdScope", m_resourceIdScope);
-
+  if (m_resourceIdScopeHasBeenSet) {
+    payload.WithString("ResourceIdScope", m_resourceIdScope);
   }
 
-  if(m_tagKeyScopeHasBeenSet)
-  {
-   payload.WithString("TagKeyScope", m_tagKeyScope);
-
+  if (m_tagKeyScopeHasBeenSet) {
+    payload.WithString("TagKeyScope", m_tagKeyScope);
   }
 
-  if(m_tagValueScopeHasBeenSet)
-  {
-   payload.WithString("TagValueScope", m_tagValueScope);
-
+  if (m_tagValueScopeHasBeenSet) {
+    payload.WithString("TagValueScope", m_tagValueScope);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

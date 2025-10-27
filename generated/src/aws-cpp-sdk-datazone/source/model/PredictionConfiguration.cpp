@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/PredictionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/PredictionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-PredictionConfiguration::PredictionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PredictionConfiguration::PredictionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PredictionConfiguration& PredictionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("businessNameGeneration"))
-  {
+PredictionConfiguration& PredictionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("businessNameGeneration")) {
     m_businessNameGeneration = jsonValue.GetObject("businessNameGeneration");
     m_businessNameGenerationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PredictionConfiguration::Jsonize() const
-{
+JsonValue PredictionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_businessNameGenerationHasBeenSet)
-  {
-   payload.WithObject("businessNameGeneration", m_businessNameGeneration.Jsonize());
-
+  if (m_businessNameGenerationHasBeenSet) {
+    payload.WithObject("businessNameGeneration", m_businessNameGeneration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

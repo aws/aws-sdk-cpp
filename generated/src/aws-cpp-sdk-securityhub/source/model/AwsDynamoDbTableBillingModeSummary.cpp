@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsDynamoDbTableBillingModeSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsDynamoDbTableBillingModeSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AwsDynamoDbTableBillingModeSummary& AwsDynamoDbTableBillingModeSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BillingMode"))
-  {
+AwsDynamoDbTableBillingModeSummary& AwsDynamoDbTableBillingModeSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BillingMode")) {
     m_billingMode = jsonValue.GetString("BillingMode");
     m_billingModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdateToPayPerRequestDateTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdateToPayPerRequestDateTime")) {
     m_lastUpdateToPayPerRequestDateTime = jsonValue.GetString("LastUpdateToPayPerRequestDateTime");
     m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsDynamoDbTableBillingModeSummary::Jsonize() const
-{
+JsonValue AwsDynamoDbTableBillingModeSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_billingModeHasBeenSet)
-  {
-   payload.WithString("BillingMode", m_billingMode);
-
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("BillingMode", m_billingMode);
   }
 
-  if(m_lastUpdateToPayPerRequestDateTimeHasBeenSet)
-  {
-   payload.WithString("LastUpdateToPayPerRequestDateTime", m_lastUpdateToPayPerRequestDateTime);
-
+  if (m_lastUpdateToPayPerRequestDateTimeHasBeenSet) {
+    payload.WithString("LastUpdateToPayPerRequestDateTime", m_lastUpdateToPayPerRequestDateTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

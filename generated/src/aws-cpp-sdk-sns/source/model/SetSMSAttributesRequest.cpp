@@ -3,26 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/SetSMSAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/SetSMSAttributesRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String SetSMSAttributesRequest::SerializePayload() const
-{
+Aws::String SetSMSAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SetSMSAttributes&";
-  if(m_attributesHasBeenSet)
-  {
+  if (m_attributesHasBeenSet) {
     unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
+    for (auto& item : m_attributes) {
+      ss << "attributes.entry." << attributesCount << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "attributes.entry." << attributesCount << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
     }
   }
@@ -31,8 +26,4 @@ Aws::String SetSMSAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SetSMSAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SetSMSAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

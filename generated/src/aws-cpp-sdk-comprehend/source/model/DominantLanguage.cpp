@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DominantLanguage::DominantLanguage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DominantLanguage::DominantLanguage(JsonView jsonValue) { *this = jsonValue; }
 
-DominantLanguage& DominantLanguage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+DominantLanguage& DominantLanguage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = jsonValue.GetString("LanguageCode");
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DominantLanguage::Jsonize() const
-{
+JsonValue DominantLanguage::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", m_languageCode);
-
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", m_languageCode);
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

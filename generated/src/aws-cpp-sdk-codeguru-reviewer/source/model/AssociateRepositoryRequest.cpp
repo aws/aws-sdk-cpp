@@ -12,42 +12,28 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateRepositoryRequest::SerializePayload() const
-{
+Aws::String AssociateRepositoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryHasBeenSet)
-  {
-   payload.WithObject("Repository", m_repository.Jsonize());
-
+  if (m_repositoryHasBeenSet) {
+    payload.WithObject("Repository", m_repository.Jsonize());
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_kMSKeyDetailsHasBeenSet)
-  {
-   payload.WithObject("KMSKeyDetails", m_kMSKeyDetails.Jsonize());
-
+  if (m_kMSKeyDetailsHasBeenSet) {
+    payload.WithObject("KMSKeyDetails", m_kMSKeyDetails.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

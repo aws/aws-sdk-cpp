@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-LambdaConflictHandlerConfig::LambdaConflictHandlerConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaConflictHandlerConfig::LambdaConflictHandlerConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaConflictHandlerConfig& LambdaConflictHandlerConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambdaConflictHandlerArn"))
-  {
+LambdaConflictHandlerConfig& LambdaConflictHandlerConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambdaConflictHandlerArn")) {
     m_lambdaConflictHandlerArn = jsonValue.GetString("lambdaConflictHandlerArn");
     m_lambdaConflictHandlerArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaConflictHandlerConfig::Jsonize() const
-{
+JsonValue LambdaConflictHandlerConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaConflictHandlerArnHasBeenSet)
-  {
-   payload.WithString("lambdaConflictHandlerArn", m_lambdaConflictHandlerArn);
-
+  if (m_lambdaConflictHandlerArnHasBeenSet) {
+    payload.WithString("lambdaConflictHandlerArn", m_lambdaConflictHandlerArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/ReviewInformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/ReviewInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-ReviewInformation::ReviewInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReviewInformation::ReviewInformation(JsonView jsonValue) { *this = jsonValue; }
 
-ReviewInformation& ReviewInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReviewedTime"))
-  {
+ReviewInformation& ReviewInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReviewedTime")) {
     m_reviewedTime = jsonValue.GetDouble("ReviewedTime");
     m_reviewedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reviewer"))
-  {
+  if (jsonValue.ValueExists("Reviewer")) {
     m_reviewer = jsonValue.GetString("Reviewer");
     m_reviewerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReviewInformation::Jsonize() const
-{
+JsonValue ReviewInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_reviewedTimeHasBeenSet)
-  {
-   payload.WithDouble("ReviewedTime", m_reviewedTime.SecondsWithMSPrecision());
+  if (m_reviewedTimeHasBeenSet) {
+    payload.WithDouble("ReviewedTime", m_reviewedTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ReviewStatusMapper::GetNameForReviewStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ReviewStatusMapper::GetNameForReviewStatus(m_status));
   }
 
-  if(m_reviewerHasBeenSet)
-  {
-   payload.WithString("Reviewer", m_reviewer);
-
+  if (m_reviewerHasBeenSet) {
+    payload.WithString("Reviewer", m_reviewer);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

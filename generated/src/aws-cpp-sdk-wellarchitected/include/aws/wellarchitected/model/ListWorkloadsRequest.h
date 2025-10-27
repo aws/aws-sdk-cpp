@@ -4,78 +4,91 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
-#include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitectedRequest.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
+/**
+ * <p>Input to list all workloads.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloadsInput">AWS
+ * API Reference</a></p>
+ */
+class ListWorkloadsRequest : public WellArchitectedRequest {
+ public:
+  AWS_WELLARCHITECTED_API ListWorkloadsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListWorkloads"; }
+
+  AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
+
+  ///@{
+
+  inline const Aws::String& GetWorkloadNamePrefix() const { return m_workloadNamePrefix; }
+  inline bool WorkloadNamePrefixHasBeenSet() const { return m_workloadNamePrefixHasBeenSet; }
+  template <typename WorkloadNamePrefixT = Aws::String>
+  void SetWorkloadNamePrefix(WorkloadNamePrefixT&& value) {
+    m_workloadNamePrefixHasBeenSet = true;
+    m_workloadNamePrefix = std::forward<WorkloadNamePrefixT>(value);
+  }
+  template <typename WorkloadNamePrefixT = Aws::String>
+  ListWorkloadsRequest& WithWorkloadNamePrefix(WorkloadNamePrefixT&& value) {
+    SetWorkloadNamePrefix(std::forward<WorkloadNamePrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListWorkloadsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
-   * <p>Input to list all workloads.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloadsInput">AWS
-   * API Reference</a></p>
+   * <p>The maximum number of results to return for this request.</p>
    */
-  class ListWorkloadsRequest : public WellArchitectedRequest
-  {
-  public:
-    AWS_WELLARCHITECTED_API ListWorkloadsRequest() = default;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListWorkloadsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_workloadNamePrefix;
+  bool m_workloadNamePrefixHasBeenSet = false;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListWorkloads"; }
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-
-    ///@{
-    
-    inline const Aws::String& GetWorkloadNamePrefix() const { return m_workloadNamePrefix; }
-    inline bool WorkloadNamePrefixHasBeenSet() const { return m_workloadNamePrefixHasBeenSet; }
-    template<typename WorkloadNamePrefixT = Aws::String>
-    void SetWorkloadNamePrefix(WorkloadNamePrefixT&& value) { m_workloadNamePrefixHasBeenSet = true; m_workloadNamePrefix = std::forward<WorkloadNamePrefixT>(value); }
-    template<typename WorkloadNamePrefixT = Aws::String>
-    ListWorkloadsRequest& WithWorkloadNamePrefix(WorkloadNamePrefixT&& value) { SetWorkloadNamePrefix(std::forward<WorkloadNamePrefixT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListWorkloadsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListWorkloadsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_workloadNamePrefix;
-    bool m_workloadNamePrefixHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

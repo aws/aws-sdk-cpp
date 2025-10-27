@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class RepoUpgradeOnBoot
-  {
-    NOT_SET,
-    SECURITY,
-    NONE
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class RepoUpgradeOnBoot { NOT_SET, SECURITY, NONE };
 
-namespace RepoUpgradeOnBootMapper
-{
+namespace RepoUpgradeOnBootMapper {
 AWS_EMR_API RepoUpgradeOnBoot GetRepoUpgradeOnBootForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForRepoUpgradeOnBoot(RepoUpgradeOnBoot value);
-} // namespace RepoUpgradeOnBootMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace RepoUpgradeOnBootMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

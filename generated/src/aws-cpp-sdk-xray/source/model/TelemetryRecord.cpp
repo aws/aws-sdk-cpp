@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/TelemetryRecord.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/TelemetryRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace XRay {
+namespace Model {
 
-TelemetryRecord::TelemetryRecord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TelemetryRecord::TelemetryRecord(JsonView jsonValue) { *this = jsonValue; }
 
-TelemetryRecord& TelemetryRecord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Timestamp"))
-  {
+TelemetryRecord& TelemetryRecord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Timestamp")) {
     m_timestamp = jsonValue.GetDouble("Timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentsReceivedCount"))
-  {
+  if (jsonValue.ValueExists("SegmentsReceivedCount")) {
     m_segmentsReceivedCount = jsonValue.GetInteger("SegmentsReceivedCount");
     m_segmentsReceivedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentsSentCount"))
-  {
+  if (jsonValue.ValueExists("SegmentsSentCount")) {
     m_segmentsSentCount = jsonValue.GetInteger("SegmentsSentCount");
     m_segmentsSentCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentsSpilloverCount"))
-  {
+  if (jsonValue.ValueExists("SegmentsSpilloverCount")) {
     m_segmentsSpilloverCount = jsonValue.GetInteger("SegmentsSpilloverCount");
     m_segmentsSpilloverCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentsRejectedCount"))
-  {
+  if (jsonValue.ValueExists("SegmentsRejectedCount")) {
     m_segmentsRejectedCount = jsonValue.GetInteger("SegmentsRejectedCount");
     m_segmentsRejectedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackendConnectionErrors"))
-  {
+  if (jsonValue.ValueExists("BackendConnectionErrors")) {
     m_backendConnectionErrors = jsonValue.GetObject("BackendConnectionErrors");
     m_backendConnectionErrorsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TelemetryRecord::Jsonize() const
-{
+JsonValue TelemetryRecord::Jsonize() const {
   JsonValue payload;
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
-  if(m_segmentsReceivedCountHasBeenSet)
-  {
-   payload.WithInteger("SegmentsReceivedCount", m_segmentsReceivedCount);
-
+  if (m_segmentsReceivedCountHasBeenSet) {
+    payload.WithInteger("SegmentsReceivedCount", m_segmentsReceivedCount);
   }
 
-  if(m_segmentsSentCountHasBeenSet)
-  {
-   payload.WithInteger("SegmentsSentCount", m_segmentsSentCount);
-
+  if (m_segmentsSentCountHasBeenSet) {
+    payload.WithInteger("SegmentsSentCount", m_segmentsSentCount);
   }
 
-  if(m_segmentsSpilloverCountHasBeenSet)
-  {
-   payload.WithInteger("SegmentsSpilloverCount", m_segmentsSpilloverCount);
-
+  if (m_segmentsSpilloverCountHasBeenSet) {
+    payload.WithInteger("SegmentsSpilloverCount", m_segmentsSpilloverCount);
   }
 
-  if(m_segmentsRejectedCountHasBeenSet)
-  {
-   payload.WithInteger("SegmentsRejectedCount", m_segmentsRejectedCount);
-
+  if (m_segmentsRejectedCountHasBeenSet) {
+    payload.WithInteger("SegmentsRejectedCount", m_segmentsRejectedCount);
   }
 
-  if(m_backendConnectionErrorsHasBeenSet)
-  {
-   payload.WithObject("BackendConnectionErrors", m_backendConnectionErrors.Jsonize());
-
+  if (m_backendConnectionErrorsHasBeenSet) {
+    payload.WithObject("BackendConnectionErrors", m_backendConnectionErrors.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

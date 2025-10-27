@@ -12,37 +12,26 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListRepositoriesRequest::SerializePayload() const
-{
+Aws::String ListRepositoriesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("sortBy", SortByEnumMapper::GetNameForSortByEnum(m_sortBy));
+  if (m_sortByHasBeenSet) {
+    payload.WithString("sortBy", SortByEnumMapper::GetNameForSortByEnum(m_sortBy));
   }
 
-  if(m_orderHasBeenSet)
-  {
-   payload.WithString("order", OrderEnumMapper::GetNameForOrderEnum(m_order));
+  if (m_orderHasBeenSet) {
+    payload.WithString("order", OrderEnumMapper::GetNameForOrderEnum(m_order));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListRepositoriesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListRepositoriesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.ListRepositories"));
   return headers;
-
 }
-
-
-
-

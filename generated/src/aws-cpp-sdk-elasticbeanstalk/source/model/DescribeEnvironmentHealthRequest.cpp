@@ -3,40 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
-{
+Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeEnvironmentHealth&";
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_environmentIdHasBeenSet)
-  {
+  if (m_environmentIdHasBeenSet) {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
 
-  if(m_attributeNamesHasBeenSet)
-  {
-    if (m_attributeNames.empty())
-    {
+  if (m_attributeNamesHasBeenSet) {
+    if (m_attributeNames.empty()) {
       ss << "AttributeNames=&";
-    }
-    else
-    {
+    } else {
       unsigned attributeNamesCount = 1;
-      for(auto& item : m_attributeNames)
-      {
+      for (auto& item : m_attributeNames) {
         ss << "AttributeNames.member." << attributeNamesCount << "="
-            << StringUtils::URLEncode(EnvironmentHealthAttributeMapper::GetNameForEnvironmentHealthAttribute(item)) << "&";
+           << StringUtils::URLEncode(EnvironmentHealthAttributeMapper::GetNameForEnvironmentHealthAttribute(item)) << "&";
         attributeNamesCount++;
       }
     }
@@ -46,8 +38,4 @@ Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeEnvironmentHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeEnvironmentHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

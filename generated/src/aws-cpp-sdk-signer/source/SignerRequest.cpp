@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/signer/SignerRequest.h>
 
-namespace Aws
-{
-namespace signer
-{
-} // namespace signer
-} // namespace Aws
+namespace Aws {
+namespace signer {}  // namespace signer
+}  // namespace Aws

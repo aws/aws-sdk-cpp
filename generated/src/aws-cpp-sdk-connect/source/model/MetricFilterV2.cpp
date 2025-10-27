@@ -11,72 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-MetricFilterV2::MetricFilterV2(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricFilterV2::MetricFilterV2(JsonView jsonValue) { *this = jsonValue; }
 
-MetricFilterV2& MetricFilterV2::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricFilterKey"))
-  {
+MetricFilterV2& MetricFilterV2::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricFilterKey")) {
     m_metricFilterKey = jsonValue.GetString("MetricFilterKey");
     m_metricFilterKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricFilterValues"))
-  {
+  if (jsonValue.ValueExists("MetricFilterValues")) {
     Aws::Utils::Array<JsonView> metricFilterValuesJsonList = jsonValue.GetArray("MetricFilterValues");
-    for(unsigned metricFilterValuesIndex = 0; metricFilterValuesIndex < metricFilterValuesJsonList.GetLength(); ++metricFilterValuesIndex)
-    {
+    for (unsigned metricFilterValuesIndex = 0; metricFilterValuesIndex < metricFilterValuesJsonList.GetLength();
+         ++metricFilterValuesIndex) {
       m_metricFilterValues.push_back(metricFilterValuesJsonList[metricFilterValuesIndex].AsString());
     }
     m_metricFilterValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Negate"))
-  {
+  if (jsonValue.ValueExists("Negate")) {
     m_negate = jsonValue.GetBool("Negate");
     m_negateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricFilterV2::Jsonize() const
-{
+JsonValue MetricFilterV2::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricFilterKeyHasBeenSet)
-  {
-   payload.WithString("MetricFilterKey", m_metricFilterKey);
-
+  if (m_metricFilterKeyHasBeenSet) {
+    payload.WithString("MetricFilterKey", m_metricFilterKey);
   }
 
-  if(m_metricFilterValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricFilterValuesJsonList(m_metricFilterValues.size());
-   for(unsigned metricFilterValuesIndex = 0; metricFilterValuesIndex < metricFilterValuesJsonList.GetLength(); ++metricFilterValuesIndex)
-   {
-     metricFilterValuesJsonList[metricFilterValuesIndex].AsString(m_metricFilterValues[metricFilterValuesIndex]);
-   }
-   payload.WithArray("MetricFilterValues", std::move(metricFilterValuesJsonList));
-
+  if (m_metricFilterValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricFilterValuesJsonList(m_metricFilterValues.size());
+    for (unsigned metricFilterValuesIndex = 0; metricFilterValuesIndex < metricFilterValuesJsonList.GetLength();
+         ++metricFilterValuesIndex) {
+      metricFilterValuesJsonList[metricFilterValuesIndex].AsString(m_metricFilterValues[metricFilterValuesIndex]);
+    }
+    payload.WithArray("MetricFilterValues", std::move(metricFilterValuesJsonList));
   }
 
-  if(m_negateHasBeenSet)
-  {
-   payload.WithBool("Negate", m_negate);
-
+  if (m_negateHasBeenSet) {
+    payload.WithBool("Negate", m_negate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

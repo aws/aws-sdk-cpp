@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLifecycleHookRequest::SerializePayload() const
-{
+Aws::String DeleteLifecycleHookRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLifecycleHook&";
-  if(m_lifecycleHookNameHasBeenSet)
-  {
+  if (m_lifecycleHookNameHasBeenSet) {
     ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
   }
 
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteLifecycleHookRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLifecycleHookRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLifecycleHookRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

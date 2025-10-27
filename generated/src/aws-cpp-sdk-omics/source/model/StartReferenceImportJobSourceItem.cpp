@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/StartReferenceImportJobSourceItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/StartReferenceImportJobSourceItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue) { *this = jsonValue; }
 
-StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceFile"))
-  {
+StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceFile")) {
     m_sourceFile = jsonValue.GetString("sourceFile");
     m_sourceFileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -52,42 +40,32 @@ StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =
   return *this;
 }
 
-JsonValue StartReferenceImportJobSourceItem::Jsonize() const
-{
+JsonValue StartReferenceImportJobSourceItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceFileHasBeenSet)
-  {
-   payload.WithString("sourceFile", m_sourceFile);
-
+  if (m_sourceFileHasBeenSet) {
+    payload.WithString("sourceFile", m_sourceFile);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

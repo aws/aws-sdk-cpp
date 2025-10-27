@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-ActionHistoryDetails::ActionHistoryDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionHistoryDetails::ActionHistoryDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ActionHistoryDetails& ActionHistoryDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ActionHistoryDetails& ActionHistoryDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Action"))
-  {
+  if (jsonValue.ValueExists("Action")) {
     m_action = jsonValue.GetObject("Action");
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionHistoryDetails::Jsonize() const
-{
+JsonValue ActionHistoryDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("Action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("Action", m_action.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

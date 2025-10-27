@@ -12,46 +12,32 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutIntegrationResponseRequest::SerializePayload() const
-{
+Aws::String PutIntegrationResponseRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_selectionPatternHasBeenSet)
-  {
-   payload.WithString("selectionPattern", m_selectionPattern);
-
+  if (m_selectionPatternHasBeenSet) {
+    payload.WithString("selectionPattern", m_selectionPattern);
   }
 
-  if(m_responseParametersHasBeenSet)
-  {
-   JsonValue responseParametersJsonMap;
-   for(auto& responseParametersItem : m_responseParameters)
-   {
-     responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
-   }
-   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
-
+  if (m_responseParametersHasBeenSet) {
+    JsonValue responseParametersJsonMap;
+    for (auto& responseParametersItem : m_responseParameters) {
+      responseParametersJsonMap.WithString(responseParametersItem.first, responseParametersItem.second);
+    }
+    payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
   }
 
-  if(m_responseTemplatesHasBeenSet)
-  {
-   JsonValue responseTemplatesJsonMap;
-   for(auto& responseTemplatesItem : m_responseTemplates)
-   {
-     responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
-   }
-   payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
-
+  if (m_responseTemplatesHasBeenSet) {
+    JsonValue responseTemplatesJsonMap;
+    for (auto& responseTemplatesItem : m_responseTemplates) {
+      responseTemplatesJsonMap.WithString(responseTemplatesItem.first, responseTemplatesItem.second);
+    }
+    payload.WithObject("responseTemplates", std::move(responseTemplatesJsonMap));
   }
 
-  if(m_contentHandlingHasBeenSet)
-  {
-   payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
+  if (m_contentHandlingHasBeenSet) {
+    payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

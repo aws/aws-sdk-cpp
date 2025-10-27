@@ -12,93 +12,69 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RequestCertificateRequest::SerializePayload() const
-{
+Aws::String RequestCertificateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_validationMethodHasBeenSet)
-  {
-   payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
+  if (m_validationMethodHasBeenSet) {
+    payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
   }
 
-  if(m_subjectAlternativeNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
-   for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
-   {
-     subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString(m_subjectAlternativeNames[subjectAlternativeNamesIndex]);
-   }
-   payload.WithArray("SubjectAlternativeNames", std::move(subjectAlternativeNamesJsonList));
-
+  if (m_subjectAlternativeNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
+    for (unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength();
+         ++subjectAlternativeNamesIndex) {
+      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString(m_subjectAlternativeNames[subjectAlternativeNamesIndex]);
+    }
+    payload.WithArray("SubjectAlternativeNames", std::move(subjectAlternativeNamesJsonList));
   }
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
-  if(m_domainValidationOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
-   for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
-   {
-     domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
-   }
-   payload.WithArray("DomainValidationOptions", std::move(domainValidationOptionsJsonList));
-
+  if (m_domainValidationOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
+    for (unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength();
+         ++domainValidationOptionsIndex) {
+      domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(
+          m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
+    }
+    payload.WithArray("DomainValidationOptions", std::move(domainValidationOptionsJsonList));
   }
 
-  if(m_optionsHasBeenSet)
-  {
-   payload.WithObject("Options", m_options.Jsonize());
-
+  if (m_optionsHasBeenSet) {
+    payload.WithObject("Options", m_options.Jsonize());
   }
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_keyAlgorithmHasBeenSet)
-  {
-   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
+  if (m_keyAlgorithmHasBeenSet) {
+    payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
   }
 
-  if(m_managedByHasBeenSet)
-  {
-   payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
+  if (m_managedByHasBeenSet) {
+    payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RequestCertificateRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RequestCertificateRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.RequestCertificate"));
   return headers;
-
 }
-
-
-
-

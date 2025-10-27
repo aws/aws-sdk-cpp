@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class ConflictResolvingModel
-  {
-    NOT_SET,
-    RECENCY,
-    SOURCE
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class ConflictResolvingModel { NOT_SET, RECENCY, SOURCE };
 
-namespace ConflictResolvingModelMapper
-{
+namespace ConflictResolvingModelMapper {
 AWS_CUSTOMERPROFILES_API ConflictResolvingModel GetConflictResolvingModelForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForConflictResolvingModel(ConflictResolvingModel value);
-} // namespace ConflictResolvingModelMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace ConflictResolvingModelMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

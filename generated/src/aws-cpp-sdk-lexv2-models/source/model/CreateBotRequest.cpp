@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/CreateBotRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/CreateBotRequest.h>
 
 #include <utility>
 
@@ -12,87 +12,60 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBotRequest::SerializePayload() const
-{
+Aws::String CreateBotRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_botNameHasBeenSet)
-  {
-   payload.WithString("botName", m_botName);
-
+  if (m_botNameHasBeenSet) {
+    payload.WithString("botName", m_botName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_dataPrivacyHasBeenSet)
-  {
-   payload.WithObject("dataPrivacy", m_dataPrivacy.Jsonize());
-
+  if (m_dataPrivacyHasBeenSet) {
+    payload.WithObject("dataPrivacy", m_dataPrivacy.Jsonize());
   }
 
-  if(m_idleSessionTTLInSecondsHasBeenSet)
-  {
-   payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
-
+  if (m_idleSessionTTLInSecondsHasBeenSet) {
+    payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
   }
 
-  if(m_botTagsHasBeenSet)
-  {
-   JsonValue botTagsJsonMap;
-   for(auto& botTagsItem : m_botTags)
-   {
-     botTagsJsonMap.WithString(botTagsItem.first, botTagsItem.second);
-   }
-   payload.WithObject("botTags", std::move(botTagsJsonMap));
-
+  if (m_botTagsHasBeenSet) {
+    JsonValue botTagsJsonMap;
+    for (auto& botTagsItem : m_botTags) {
+      botTagsJsonMap.WithString(botTagsItem.first, botTagsItem.second);
+    }
+    payload.WithObject("botTags", std::move(botTagsJsonMap));
   }
 
-  if(m_testBotAliasTagsHasBeenSet)
-  {
-   JsonValue testBotAliasTagsJsonMap;
-   for(auto& testBotAliasTagsItem : m_testBotAliasTags)
-   {
-     testBotAliasTagsJsonMap.WithString(testBotAliasTagsItem.first, testBotAliasTagsItem.second);
-   }
-   payload.WithObject("testBotAliasTags", std::move(testBotAliasTagsJsonMap));
-
+  if (m_testBotAliasTagsHasBeenSet) {
+    JsonValue testBotAliasTagsJsonMap;
+    for (auto& testBotAliasTagsItem : m_testBotAliasTags) {
+      testBotAliasTagsJsonMap.WithString(testBotAliasTagsItem.first, testBotAliasTagsItem.second);
+    }
+    payload.WithObject("testBotAliasTags", std::move(testBotAliasTagsJsonMap));
   }
 
-  if(m_botTypeHasBeenSet)
-  {
-   payload.WithString("botType", BotTypeMapper::GetNameForBotType(m_botType));
+  if (m_botTypeHasBeenSet) {
+    payload.WithString("botType", BotTypeMapper::GetNameForBotType(m_botType));
   }
 
-  if(m_botMembersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> botMembersJsonList(m_botMembers.size());
-   for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
-   {
-     botMembersJsonList[botMembersIndex].AsObject(m_botMembers[botMembersIndex].Jsonize());
-   }
-   payload.WithArray("botMembers", std::move(botMembersJsonList));
-
+  if (m_botMembersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> botMembersJsonList(m_botMembers.size());
+    for (unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex) {
+      botMembersJsonList[botMembersIndex].AsObject(m_botMembers[botMembersIndex].Jsonize());
+    }
+    payload.WithArray("botMembers", std::move(botMembersJsonList));
   }
 
-  if(m_errorLogSettingsHasBeenSet)
-  {
-   payload.WithObject("errorLogSettings", m_errorLogSettings.Jsonize());
-
+  if (m_errorLogSettingsHasBeenSet) {
+    payload.WithObject("errorLogSettings", m_errorLogSettings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

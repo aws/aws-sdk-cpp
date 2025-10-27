@@ -11,39 +11,28 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-BackupPlan::BackupPlan(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackupPlan::BackupPlan(JsonView jsonValue) { *this = jsonValue; }
 
-BackupPlan& BackupPlan::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BackupPlanName"))
-  {
+BackupPlan& BackupPlan::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BackupPlanName")) {
     m_backupPlanName = jsonValue.GetString("BackupPlanName");
     m_backupPlanNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Rules"))
-  {
+  if (jsonValue.ValueExists("Rules")) {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
-    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-    {
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
     m_rulesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdvancedBackupSettings"))
-  {
+  if (jsonValue.ValueExists("AdvancedBackupSettings")) {
     Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
-    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
-    {
+    for (unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength();
+         ++advancedBackupSettingsIndex) {
       m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
     }
     m_advancedBackupSettingsHasBeenSet = true;
@@ -51,41 +40,33 @@ BackupPlan& BackupPlan::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BackupPlan::Jsonize() const
-{
+JsonValue BackupPlan::Jsonize() const {
   JsonValue payload;
 
-  if(m_backupPlanNameHasBeenSet)
-  {
-   payload.WithString("BackupPlanName", m_backupPlanName);
-
+  if (m_backupPlanNameHasBeenSet) {
+    payload.WithString("BackupPlanName", m_backupPlanName);
   }
 
-  if(m_rulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
-   {
-     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
-   }
-   payload.WithArray("Rules", std::move(rulesJsonList));
-
+  if (m_rulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
+      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    }
+    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
-  if(m_advancedBackupSettingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
-   for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
-   {
-     advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
-   }
-   payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
-
+  if (m_advancedBackupSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+    for (unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength();
+         ++advancedBackupSettingsIndex) {
+      advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
+    }
+    payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

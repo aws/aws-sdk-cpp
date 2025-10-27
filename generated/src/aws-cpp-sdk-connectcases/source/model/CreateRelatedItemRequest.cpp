@@ -12,30 +12,20 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateRelatedItemRequest::SerializePayload() const
-{
+Aws::String CreateRelatedItemRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("content", m_content.Jsonize());
   }
 
-  if(m_performedByHasBeenSet)
-  {
-   payload.WithObject("performedBy", m_performedBy.Jsonize());
-
+  if (m_performedByHasBeenSet) {
+    payload.WithObject("performedBy", m_performedBy.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

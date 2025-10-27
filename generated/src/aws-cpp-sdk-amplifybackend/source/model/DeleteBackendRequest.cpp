@@ -12,11 +12,4 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteBackendRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteBackendRequest::SerializePayload() const { return {}; }

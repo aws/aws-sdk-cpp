@@ -5,12 +5,8 @@
 
 #include <aws/glue/GlueEndpointProvider.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Glue
-} // namespace Aws
+namespace Aws {
+namespace Glue {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Glue
+}  // namespace Aws

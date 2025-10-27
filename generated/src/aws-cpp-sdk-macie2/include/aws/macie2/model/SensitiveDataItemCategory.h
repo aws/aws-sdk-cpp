@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class SensitiveDataItemCategory
-  {
-    NOT_SET,
-    FINANCIAL_INFORMATION,
-    PERSONAL_INFORMATION,
-    CREDENTIALS,
-    CUSTOM_IDENTIFIER
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class SensitiveDataItemCategory { NOT_SET, FINANCIAL_INFORMATION, PERSONAL_INFORMATION, CREDENTIALS, CUSTOM_IDENTIFIER };
 
-namespace SensitiveDataItemCategoryMapper
-{
+namespace SensitiveDataItemCategoryMapper {
 AWS_MACIE2_API SensitiveDataItemCategory GetSensitiveDataItemCategoryForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForSensitiveDataItemCategory(SensitiveDataItemCategory value);
-} // namespace SensitiveDataItemCategoryMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace SensitiveDataItemCategoryMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

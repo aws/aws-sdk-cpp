@@ -7,26 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class PullRequestBuildCommentApproval
-  {
-    NOT_SET,
-    DISABLED,
-    ALL_PULL_REQUESTS,
-    FORK_PULL_REQUESTS
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class PullRequestBuildCommentApproval { NOT_SET, DISABLED, ALL_PULL_REQUESTS, FORK_PULL_REQUESTS };
 
-namespace PullRequestBuildCommentApprovalMapper
-{
+namespace PullRequestBuildCommentApprovalMapper {
 AWS_CODEBUILD_API PullRequestBuildCommentApproval GetPullRequestBuildCommentApprovalForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForPullRequestBuildCommentApproval(PullRequestBuildCommentApproval value);
-} // namespace PullRequestBuildCommentApprovalMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace PullRequestBuildCommentApprovalMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

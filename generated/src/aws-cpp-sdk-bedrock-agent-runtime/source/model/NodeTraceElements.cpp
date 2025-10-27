@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-NodeTraceElements::NodeTraceElements(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NodeTraceElements::NodeTraceElements(JsonView jsonValue) { *this = jsonValue; }
 
-NodeTraceElements& NodeTraceElements::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentTraces"))
-  {
+NodeTraceElements& NodeTraceElements::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentTraces")) {
     Aws::Utils::Array<JsonView> agentTracesJsonList = jsonValue.GetArray("agentTraces");
-    for(unsigned agentTracesIndex = 0; agentTracesIndex < agentTracesJsonList.GetLength(); ++agentTracesIndex)
-    {
+    for (unsigned agentTracesIndex = 0; agentTracesIndex < agentTracesJsonList.GetLength(); ++agentTracesIndex) {
       m_agentTraces.push_back(agentTracesJsonList[agentTracesIndex].AsObject());
     }
     m_agentTracesHasBeenSet = true;
@@ -37,24 +28,20 @@ NodeTraceElements& NodeTraceElements::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue NodeTraceElements::Jsonize() const
-{
+JsonValue NodeTraceElements::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentTracesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> agentTracesJsonList(m_agentTraces.size());
-   for(unsigned agentTracesIndex = 0; agentTracesIndex < agentTracesJsonList.GetLength(); ++agentTracesIndex)
-   {
-     agentTracesJsonList[agentTracesIndex].AsObject(m_agentTraces[agentTracesIndex].Jsonize());
-   }
-   payload.WithArray("agentTraces", std::move(agentTracesJsonList));
-
+  if (m_agentTracesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> agentTracesJsonList(m_agentTraces.size());
+    for (unsigned agentTracesIndex = 0; agentTracesIndex < agentTracesJsonList.GetLength(); ++agentTracesIndex) {
+      agentTracesJsonList[agentTracesIndex].AsObject(m_agentTraces[agentTracesIndex].Jsonize());
+    }
+    payload.WithArray("agentTraces", std::move(agentTracesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ClarifyTextConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ClarifyTextConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ClarifyTextConfig::ClarifyTextConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClarifyTextConfig::ClarifyTextConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ClarifyTextConfig& ClarifyTextConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Language"))
-  {
+ClarifyTextConfig& ClarifyTextConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Language")) {
     m_language = ClarifyTextLanguageMapper::GetClarifyTextLanguageForName(jsonValue.GetString("Language"));
     m_languageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Granularity"))
-  {
+  if (jsonValue.ValueExists("Granularity")) {
     m_granularity = ClarifyTextGranularityMapper::GetClarifyTextGranularityForName(jsonValue.GetString("Granularity"));
     m_granularityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClarifyTextConfig::Jsonize() const
-{
+JsonValue ClarifyTextConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageHasBeenSet)
-  {
-   payload.WithString("Language", ClarifyTextLanguageMapper::GetNameForClarifyTextLanguage(m_language));
+  if (m_languageHasBeenSet) {
+    payload.WithString("Language", ClarifyTextLanguageMapper::GetNameForClarifyTextLanguage(m_language));
   }
 
-  if(m_granularityHasBeenSet)
-  {
-   payload.WithString("Granularity", ClarifyTextGranularityMapper::GetNameForClarifyTextGranularity(m_granularity));
+  if (m_granularityHasBeenSet) {
+    payload.WithString("Granularity", ClarifyTextGranularityMapper::GetNameForClarifyTextGranularity(m_granularity));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

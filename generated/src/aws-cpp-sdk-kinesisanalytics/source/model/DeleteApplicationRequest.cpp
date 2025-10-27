@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalytics/model/DeleteApplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalytics/model/DeleteApplicationRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteApplicationRequest::SerializePayload() const
-{
+Aws::String DeleteApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("ApplicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("ApplicationName", m_applicationName);
   }
 
-  if(m_createTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
+  if (m_createTimestampHasBeenSet) {
+    payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "KinesisAnalytics_20150814.DeleteApplication"));
   return headers;
-
 }
-
-
-
-

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class ConnectedEntityType
-  {
-    NOT_SET,
-    DBMS
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class ConnectedEntityType { NOT_SET, DBMS };
 
-namespace ConnectedEntityTypeMapper
-{
+namespace ConnectedEntityTypeMapper {
 AWS_SSMSAP_API ConnectedEntityType GetConnectedEntityTypeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForConnectedEntityType(ConnectedEntityType value);
-} // namespace ConnectedEntityTypeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace ConnectedEntityTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

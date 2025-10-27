@@ -11,40 +11,28 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-FileVersion::FileVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileVersion::FileVersion(JsonView jsonValue) { *this = jsonValue; }
 
-FileVersion& FileVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("commit"))
-  {
+FileVersion& FileVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("commit")) {
     m_commit = jsonValue.GetObject("commit");
     m_commitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("blobId"))
-  {
+  if (jsonValue.ValueExists("blobId")) {
     m_blobId = jsonValue.GetString("blobId");
     m_blobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionChildren"))
-  {
+  if (jsonValue.ValueExists("revisionChildren")) {
     Aws::Utils::Array<JsonView> revisionChildrenJsonList = jsonValue.GetArray("revisionChildren");
-    for(unsigned revisionChildrenIndex = 0; revisionChildrenIndex < revisionChildrenJsonList.GetLength(); ++revisionChildrenIndex)
-    {
+    for (unsigned revisionChildrenIndex = 0; revisionChildrenIndex < revisionChildrenJsonList.GetLength(); ++revisionChildrenIndex) {
       m_revisionChildren.push_back(revisionChildrenJsonList[revisionChildrenIndex].AsString());
     }
     m_revisionChildrenHasBeenSet = true;
@@ -52,42 +40,32 @@ FileVersion& FileVersion::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FileVersion::Jsonize() const
-{
+JsonValue FileVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_commitHasBeenSet)
-  {
-   payload.WithObject("commit", m_commit.Jsonize());
-
+  if (m_commitHasBeenSet) {
+    payload.WithObject("commit", m_commit.Jsonize());
   }
 
-  if(m_blobIdHasBeenSet)
-  {
-   payload.WithString("blobId", m_blobId);
-
+  if (m_blobIdHasBeenSet) {
+    payload.WithString("blobId", m_blobId);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_revisionChildrenHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> revisionChildrenJsonList(m_revisionChildren.size());
-   for(unsigned revisionChildrenIndex = 0; revisionChildrenIndex < revisionChildrenJsonList.GetLength(); ++revisionChildrenIndex)
-   {
-     revisionChildrenJsonList[revisionChildrenIndex].AsString(m_revisionChildren[revisionChildrenIndex]);
-   }
-   payload.WithArray("revisionChildren", std::move(revisionChildrenJsonList));
-
+  if (m_revisionChildrenHasBeenSet) {
+    Aws::Utils::Array<JsonValue> revisionChildrenJsonList(m_revisionChildren.size());
+    for (unsigned revisionChildrenIndex = 0; revisionChildrenIndex < revisionChildrenJsonList.GetLength(); ++revisionChildrenIndex) {
+      revisionChildrenJsonList[revisionChildrenIndex].AsString(m_revisionChildren[revisionChildrenIndex]);
+    }
+    payload.WithArray("revisionChildren", std::move(revisionChildrenJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

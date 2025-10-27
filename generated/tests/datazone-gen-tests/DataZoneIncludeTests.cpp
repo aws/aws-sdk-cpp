@@ -492,6 +492,9 @@
 #include <aws/datazone/model/MetadataGenerationRunTarget.h>
 #include <aws/datazone/model/MetadataGenerationRunType.h>
 #include <aws/datazone/model/MetadataGenerationTargetType.h>
+#include <aws/datazone/model/MlflowPropertiesInput.h>
+#include <aws/datazone/model/MlflowPropertiesOutput.h>
+#include <aws/datazone/model/MlflowPropertiesPatch.h>
 #include <aws/datazone/model/Model.h>
 #include <aws/datazone/model/NameIdentifier.h>
 #include <aws/datazone/model/NotEqualToExpression.h>

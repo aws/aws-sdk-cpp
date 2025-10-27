@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TargetVisualOptions
-  {
-    NOT_SET,
-    ALL_VISUALS
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TargetVisualOptions { NOT_SET, ALL_VISUALS };
 
-namespace TargetVisualOptionsMapper
-{
+namespace TargetVisualOptionsMapper {
 AWS_QUICKSIGHT_API TargetVisualOptions GetTargetVisualOptionsForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTargetVisualOptions(TargetVisualOptions value);
-} // namespace TargetVisualOptionsMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TargetVisualOptionsMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

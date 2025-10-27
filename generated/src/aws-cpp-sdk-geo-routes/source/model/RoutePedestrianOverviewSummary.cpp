@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RoutePedestrianOverviewSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RoutePedestrianOverviewSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RoutePedestrianOverviewSummary::RoutePedestrianOverviewSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutePedestrianOverviewSummary::RoutePedestrianOverviewSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RoutePedestrianOverviewSummary& RoutePedestrianOverviewSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Distance"))
-  {
+RoutePedestrianOverviewSummary& RoutePedestrianOverviewSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Distance")) {
     m_distance = jsonValue.GetInt64("Distance");
     m_distanceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Duration"))
-  {
+  if (jsonValue.ValueExists("Duration")) {
     m_duration = jsonValue.GetInt64("Duration");
     m_durationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutePedestrianOverviewSummary::Jsonize() const
-{
+JsonValue RoutePedestrianOverviewSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_distanceHasBeenSet)
-  {
-   payload.WithInt64("Distance", m_distance);
-
+  if (m_distanceHasBeenSet) {
+    payload.WithInt64("Distance", m_distance);
   }
 
-  if(m_durationHasBeenSet)
-  {
-   payload.WithInt64("Duration", m_duration);
-
+  if (m_durationHasBeenSet) {
+    payload.WithInt64("Duration", m_duration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

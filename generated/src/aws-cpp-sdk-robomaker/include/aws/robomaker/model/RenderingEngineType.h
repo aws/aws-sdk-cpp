@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/robomaker/RoboMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
-  enum class RenderingEngineType
-  {
-    NOT_SET,
-    OGRE
-  };
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
+enum class RenderingEngineType { NOT_SET, OGRE };
 
-namespace RenderingEngineTypeMapper
-{
+namespace RenderingEngineTypeMapper {
 AWS_ROBOMAKER_API RenderingEngineType GetRenderingEngineTypeForName(const Aws::String& name);
 
 AWS_ROBOMAKER_API Aws::String GetNameForRenderingEngineType(RenderingEngineType value);
-} // namespace RenderingEngineTypeMapper
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace RenderingEngineTypeMapper
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

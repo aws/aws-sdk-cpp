@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackageVod
-{
-namespace Model
-{
-  enum class ManifestLayout
-  {
-    NOT_SET,
-    FULL,
-    COMPACT
-  };
+namespace Aws {
+namespace MediaPackageVod {
+namespace Model {
+enum class ManifestLayout { NOT_SET, FULL, COMPACT };
 
-namespace ManifestLayoutMapper
-{
+namespace ManifestLayoutMapper {
 AWS_MEDIAPACKAGEVOD_API ManifestLayout GetManifestLayoutForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGEVOD_API Aws::String GetNameForManifestLayout(ManifestLayout value);
-} // namespace ManifestLayoutMapper
-} // namespace Model
-} // namespace MediaPackageVod
-} // namespace Aws
+}  // namespace ManifestLayoutMapper
+}  // namespace Model
+}  // namespace MediaPackageVod
+}  // namespace Aws

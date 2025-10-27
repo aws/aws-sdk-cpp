@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ServiceMetadata::ServiceMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceMetadata::ServiceMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceMetadata& ServiceMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserDetails"))
-  {
+ServiceMetadata& ServiceMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserDetails")) {
     m_userDetails = jsonValue.GetObject("UserDetails");
     m_userDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceMetadata::Jsonize() const
-{
+JsonValue ServiceMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_userDetailsHasBeenSet)
-  {
-   payload.WithObject("UserDetails", m_userDetails.Jsonize());
-
+  if (m_userDetailsHasBeenSet) {
+    payload.WithObject("UserDetails", m_userDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Model
-{
-  enum class GroupLifecycleEventsStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    IN_PROGRESS,
-    ERROR_
-  };
+namespace Aws {
+namespace ResourceGroups {
+namespace Model {
+enum class GroupLifecycleEventsStatus { NOT_SET, ACTIVE, INACTIVE, IN_PROGRESS, ERROR_ };
 
-namespace GroupLifecycleEventsStatusMapper
-{
+namespace GroupLifecycleEventsStatusMapper {
 AWS_RESOURCEGROUPS_API GroupLifecycleEventsStatus GetGroupLifecycleEventsStatusForName(const Aws::String& name);
 
 AWS_RESOURCEGROUPS_API Aws::String GetNameForGroupLifecycleEventsStatus(GroupLifecycleEventsStatus value);
-} // namespace GroupLifecycleEventsStatusMapper
-} // namespace Model
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace GroupLifecycleEventsStatusMapper
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

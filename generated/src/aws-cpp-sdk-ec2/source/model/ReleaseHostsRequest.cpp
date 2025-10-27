@@ -3,24 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReleaseHostsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReleaseHostsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReleaseHostsRequest::SerializePayload() const
-{
+Aws::String ReleaseHostsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReleaseHosts&";
-  if(m_hostIdsHasBeenSet)
-  {
+  if (m_hostIdsHasBeenSet) {
     unsigned hostIdsCount = 1;
-    for(auto& item : m_hostIds)
-    {
-      ss << "HostId." << hostIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_hostIds) {
+      ss << "HostId." << hostIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdsCount++;
     }
   }
@@ -29,8 +25,4 @@ Aws::String ReleaseHostsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReleaseHostsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReleaseHostsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

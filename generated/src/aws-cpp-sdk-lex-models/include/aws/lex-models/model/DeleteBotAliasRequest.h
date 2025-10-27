@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
-#include <aws/lex-models/LexModelBuildingServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingServiceRequest.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
 
+/**
+ */
+class DeleteBotAliasRequest : public LexModelBuildingServiceRequest {
+ public:
+  AWS_LEXMODELBUILDINGSERVICE_API DeleteBotAliasRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteBotAlias"; }
+
+  AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the alias to delete. The name is case sensitive. </p>
    */
-  class DeleteBotAliasRequest : public LexModelBuildingServiceRequest
-  {
-  public:
-    AWS_LEXMODELBUILDINGSERVICE_API DeleteBotAliasRequest() = default;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DeleteBotAliasRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteBotAlias"; }
+  ///@{
+  /**
+   * <p>The name of the bot that the alias points to.</p>
+   */
+  inline const Aws::String& GetBotName() const { return m_botName; }
+  inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+  template <typename BotNameT = Aws::String>
+  void SetBotName(BotNameT&& value) {
+    m_botNameHasBeenSet = true;
+    m_botName = std::forward<BotNameT>(value);
+  }
+  template <typename BotNameT = Aws::String>
+  DeleteBotAliasRequest& WithBotName(BotNameT&& value) {
+    SetBotName(std::forward<BotNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
+  Aws::String m_botName;
+  bool m_botNameHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The name of the alias to delete. The name is case sensitive. </p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DeleteBotAliasRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the bot that the alias points to.</p>
-     */
-    inline const Aws::String& GetBotName() const { return m_botName; }
-    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    template<typename BotNameT = Aws::String>
-    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
-    template<typename BotNameT = Aws::String>
-    DeleteBotAliasRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_botName;
-    bool m_botNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

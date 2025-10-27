@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-containers/model/SecurityConfigurationData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/model/SecurityConfigurationData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRContainers
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRContainers {
+namespace Model {
 
-SecurityConfigurationData::SecurityConfigurationData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecurityConfigurationData::SecurityConfigurationData(JsonView jsonValue) { *this = jsonValue; }
 
-SecurityConfigurationData& SecurityConfigurationData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authorizationConfiguration"))
-  {
+SecurityConfigurationData& SecurityConfigurationData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorizationConfiguration")) {
     m_authorizationConfiguration = jsonValue.GetObject("authorizationConfiguration");
     m_authorizationConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecurityConfigurationData::Jsonize() const
-{
+JsonValue SecurityConfigurationData::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizationConfigurationHasBeenSet)
-  {
-   payload.WithObject("authorizationConfiguration", m_authorizationConfiguration.Jsonize());
-
+  if (m_authorizationConfigurationHasBeenSet) {
+    payload.WithObject("authorizationConfiguration", m_authorizationConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRContainers
+}  // namespace Aws

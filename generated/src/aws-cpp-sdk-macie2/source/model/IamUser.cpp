@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/IamUser.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/IamUser.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-IamUser::IamUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IamUser::IamUser(JsonView jsonValue) { *this = jsonValue; }
 
-IamUser& IamUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+IamUser& IamUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("principalId"))
-  {
+  if (jsonValue.ValueExists("principalId")) {
     m_principalId = jsonValue.GetString("principalId");
     m_principalIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userName"))
-  {
+  if (jsonValue.ValueExists("userName")) {
     m_userName = jsonValue.GetString("userName");
     m_userNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IamUser::Jsonize() const
-{
+JsonValue IamUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("principalId", m_principalId);
-
+  if (m_principalIdHasBeenSet) {
+    payload.WithString("principalId", m_principalId);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("userName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("userName", m_userName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

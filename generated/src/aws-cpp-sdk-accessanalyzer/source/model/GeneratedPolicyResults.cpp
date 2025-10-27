@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue) { *this = jsonValue; }
 
-GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("properties"))
-  {
+GeneratedPolicyResults& GeneratedPolicyResults::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("properties")) {
     m_properties = jsonValue.GetObject("properties");
     m_propertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("generatedPolicies"))
-  {
+  if (jsonValue.ValueExists("generatedPolicies")) {
     Aws::Utils::Array<JsonView> generatedPoliciesJsonList = jsonValue.GetArray("generatedPolicies");
-    for(unsigned generatedPoliciesIndex = 0; generatedPoliciesIndex < generatedPoliciesJsonList.GetLength(); ++generatedPoliciesIndex)
-    {
+    for (unsigned generatedPoliciesIndex = 0; generatedPoliciesIndex < generatedPoliciesJsonList.GetLength(); ++generatedPoliciesIndex) {
       m_generatedPolicies.push_back(generatedPoliciesJsonList[generatedPoliciesIndex].AsObject());
     }
     m_generatedPoliciesHasBeenSet = true;
@@ -42,30 +32,24 @@ GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue GeneratedPolicyResults::Jsonize() const
-{
+JsonValue GeneratedPolicyResults::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertiesHasBeenSet)
-  {
-   payload.WithObject("properties", m_properties.Jsonize());
-
+  if (m_propertiesHasBeenSet) {
+    payload.WithObject("properties", m_properties.Jsonize());
   }
 
-  if(m_generatedPoliciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> generatedPoliciesJsonList(m_generatedPolicies.size());
-   for(unsigned generatedPoliciesIndex = 0; generatedPoliciesIndex < generatedPoliciesJsonList.GetLength(); ++generatedPoliciesIndex)
-   {
-     generatedPoliciesJsonList[generatedPoliciesIndex].AsObject(m_generatedPolicies[generatedPoliciesIndex].Jsonize());
-   }
-   payload.WithArray("generatedPolicies", std::move(generatedPoliciesJsonList));
-
+  if (m_generatedPoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> generatedPoliciesJsonList(m_generatedPolicies.size());
+    for (unsigned generatedPoliciesIndex = 0; generatedPoliciesIndex < generatedPoliciesJsonList.GetLength(); ++generatedPoliciesIndex) {
+      generatedPoliciesJsonList[generatedPoliciesIndex].AsObject(m_generatedPolicies[generatedPoliciesIndex].Jsonize());
+    }
+    payload.WithArray("generatedPolicies", std::move(generatedPoliciesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

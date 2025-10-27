@@ -12,32 +12,22 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeEnvironmentsRequest::SerializePayload() const
-{
+Aws::String DescribeEnvironmentsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_environmentIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> environmentIdsJsonList(m_environmentIds.size());
-   for(unsigned environmentIdsIndex = 0; environmentIdsIndex < environmentIdsJsonList.GetLength(); ++environmentIdsIndex)
-   {
-     environmentIdsJsonList[environmentIdsIndex].AsString(m_environmentIds[environmentIdsIndex]);
-   }
-   payload.WithArray("environmentIds", std::move(environmentIdsJsonList));
-
+  if (m_environmentIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> environmentIdsJsonList(m_environmentIds.size());
+    for (unsigned environmentIdsIndex = 0; environmentIdsIndex < environmentIdsJsonList.GetLength(); ++environmentIdsIndex) {
+      environmentIdsJsonList[environmentIdsIndex].AsString(m_environmentIds[environmentIdsIndex]);
+    }
+    payload.WithArray("environmentIds", std::move(environmentIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeEnvironmentsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeEnvironmentsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.DescribeEnvironments"));
   return headers;
-
 }
-
-
-
-

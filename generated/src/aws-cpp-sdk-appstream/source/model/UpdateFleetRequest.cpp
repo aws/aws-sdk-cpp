@@ -12,155 +12,109 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFleetRequest::SerializePayload() const
-{
+Aws::String UpdateFleetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_imageNameHasBeenSet)
-  {
-   payload.WithString("ImageName", m_imageName);
-
+  if (m_imageNameHasBeenSet) {
+    payload.WithString("ImageName", m_imageName);
   }
 
-  if(m_imageArnHasBeenSet)
-  {
-   payload.WithString("ImageArn", m_imageArn);
-
+  if (m_imageArnHasBeenSet) {
+    payload.WithString("ImageArn", m_imageArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("InstanceType", m_instanceType);
-
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("InstanceType", m_instanceType);
   }
 
-  if(m_computeCapacityHasBeenSet)
-  {
-   payload.WithObject("ComputeCapacity", m_computeCapacity.Jsonize());
-
+  if (m_computeCapacityHasBeenSet) {
+    payload.WithObject("ComputeCapacity", m_computeCapacity.Jsonize());
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
   }
 
-  if(m_maxUserDurationInSecondsHasBeenSet)
-  {
-   payload.WithInteger("MaxUserDurationInSeconds", m_maxUserDurationInSeconds);
-
+  if (m_maxUserDurationInSecondsHasBeenSet) {
+    payload.WithInteger("MaxUserDurationInSeconds", m_maxUserDurationInSeconds);
   }
 
-  if(m_disconnectTimeoutInSecondsHasBeenSet)
-  {
-   payload.WithInteger("DisconnectTimeoutInSeconds", m_disconnectTimeoutInSeconds);
-
+  if (m_disconnectTimeoutInSecondsHasBeenSet) {
+    payload.WithInteger("DisconnectTimeoutInSeconds", m_disconnectTimeoutInSeconds);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_enableDefaultInternetAccessHasBeenSet)
-  {
-   payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
-
+  if (m_enableDefaultInternetAccessHasBeenSet) {
+    payload.WithBool("EnableDefaultInternetAccess", m_enableDefaultInternetAccess);
   }
 
-  if(m_domainJoinInfoHasBeenSet)
-  {
-   payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
-
+  if (m_domainJoinInfoHasBeenSet) {
+    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
   }
 
-  if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
-  {
-   payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
-
+  if (m_idleDisconnectTimeoutInSecondsHasBeenSet) {
+    payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
   }
 
-  if(m_attributesToDeleteHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
-   for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
-   {
-     attributesToDeleteJsonList[attributesToDeleteIndex].AsString(FleetAttributeMapper::GetNameForFleetAttribute(m_attributesToDelete[attributesToDeleteIndex]));
-   }
-   payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
-
+  if (m_attributesToDeleteHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+    for (unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength();
+         ++attributesToDeleteIndex) {
+      attributesToDeleteJsonList[attributesToDeleteIndex].AsString(
+          FleetAttributeMapper::GetNameForFleetAttribute(m_attributesToDelete[attributesToDeleteIndex]));
+    }
+    payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_streamViewHasBeenSet)
-  {
-   payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
+  if (m_streamViewHasBeenSet) {
+    payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
   }
 
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  if (m_platformHasBeenSet) {
+    payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
   }
 
-  if(m_maxConcurrentSessionsHasBeenSet)
-  {
-   payload.WithInteger("MaxConcurrentSessions", m_maxConcurrentSessions);
-
+  if (m_maxConcurrentSessionsHasBeenSet) {
+    payload.WithInteger("MaxConcurrentSessions", m_maxConcurrentSessions);
   }
 
-  if(m_usbDeviceFilterStringsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
-   for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
-   {
-     usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
-   }
-   payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
-
+  if (m_usbDeviceFilterStringsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+    for (unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength();
+         ++usbDeviceFilterStringsIndex) {
+      usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
+    }
+    payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
   }
 
-  if(m_sessionScriptS3LocationHasBeenSet)
-  {
-   payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
-
+  if (m_sessionScriptS3LocationHasBeenSet) {
+    payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
   }
 
-  if(m_maxSessionsPerInstanceHasBeenSet)
-  {
-   payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
-
+  if (m_maxSessionsPerInstanceHasBeenSet) {
+    payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateFleetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateFleetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.UpdateFleet"));
   return headers;
-
 }
-
-
-
-

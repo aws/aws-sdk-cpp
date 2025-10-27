@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class ExecutionClass
-  {
-    NOT_SET,
-    FLEX,
-    STANDARD
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class ExecutionClass { NOT_SET, FLEX, STANDARD };
 
-namespace ExecutionClassMapper
-{
+namespace ExecutionClassMapper {
 AWS_GLUE_API ExecutionClass GetExecutionClassForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForExecutionClass(ExecutionClass value);
-} // namespace ExecutionClassMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace ExecutionClassMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

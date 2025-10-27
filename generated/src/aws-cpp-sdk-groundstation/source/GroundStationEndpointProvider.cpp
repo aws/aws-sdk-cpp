@@ -5,12 +5,8 @@
 
 #include <aws/groundstation/GroundStationEndpointProvider.h>
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GroundStation
-} // namespace Aws
+namespace Aws {
+namespace GroundStation {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GroundStation
+}  // namespace Aws

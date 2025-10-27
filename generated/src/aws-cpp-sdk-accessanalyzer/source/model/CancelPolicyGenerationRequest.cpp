@@ -12,11 +12,4 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelPolicyGenerationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String CancelPolicyGenerationRequest::SerializePayload() const { return {}; }

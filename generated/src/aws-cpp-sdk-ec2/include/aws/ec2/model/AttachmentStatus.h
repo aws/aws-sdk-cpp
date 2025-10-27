@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AttachmentStatus
-  {
-    NOT_SET,
-    attaching,
-    attached,
-    detaching,
-    detached
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AttachmentStatus { NOT_SET, attaching, attached, detaching, detached };
 
-namespace AttachmentStatusMapper
-{
+namespace AttachmentStatusMapper {
 AWS_EC2_API AttachmentStatus GetAttachmentStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAttachmentStatus(AttachmentStatus value);
-} // namespace AttachmentStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AttachmentStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -3,132 +3,101 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/ImageGenerationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/ImageGenerationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-ImageGenerationConfiguration::ImageGenerationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageGenerationConfiguration::ImageGenerationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ImageGenerationConfiguration& ImageGenerationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+ImageGenerationConfiguration& ImageGenerationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ConfigurationStatusMapper::GetConfigurationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImageSelectorType"))
-  {
+  if (jsonValue.ValueExists("ImageSelectorType")) {
     m_imageSelectorType = ImageSelectorTypeMapper::GetImageSelectorTypeForName(jsonValue.GetString("ImageSelectorType"));
     m_imageSelectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationConfig"))
-  {
+  if (jsonValue.ValueExists("DestinationConfig")) {
     m_destinationConfig = jsonValue.GetObject("DestinationConfig");
     m_destinationConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SamplingInterval"))
-  {
+  if (jsonValue.ValueExists("SamplingInterval")) {
     m_samplingInterval = jsonValue.GetInteger("SamplingInterval");
     m_samplingIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Format"))
-  {
+  if (jsonValue.ValueExists("Format")) {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("Format"));
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FormatConfig"))
-  {
+  if (jsonValue.ValueExists("FormatConfig")) {
     Aws::Map<Aws::String, JsonView> formatConfigJsonMap = jsonValue.GetObject("FormatConfig").GetAllObjects();
-    for(auto& formatConfigItem : formatConfigJsonMap)
-    {
+    for (auto& formatConfigItem : formatConfigJsonMap) {
       m_formatConfig[FormatConfigKeyMapper::GetFormatConfigKeyForName(formatConfigItem.first)] = formatConfigItem.second.AsString();
     }
     m_formatConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WidthPixels"))
-  {
+  if (jsonValue.ValueExists("WidthPixels")) {
     m_widthPixels = jsonValue.GetInteger("WidthPixels");
     m_widthPixelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HeightPixels"))
-  {
+  if (jsonValue.ValueExists("HeightPixels")) {
     m_heightPixels = jsonValue.GetInteger("HeightPixels");
     m_heightPixelsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageGenerationConfiguration::Jsonize() const
-{
+JsonValue ImageGenerationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ConfigurationStatusMapper::GetNameForConfigurationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ConfigurationStatusMapper::GetNameForConfigurationStatus(m_status));
   }
 
-  if(m_imageSelectorTypeHasBeenSet)
-  {
-   payload.WithString("ImageSelectorType", ImageSelectorTypeMapper::GetNameForImageSelectorType(m_imageSelectorType));
+  if (m_imageSelectorTypeHasBeenSet) {
+    payload.WithString("ImageSelectorType", ImageSelectorTypeMapper::GetNameForImageSelectorType(m_imageSelectorType));
   }
 
-  if(m_destinationConfigHasBeenSet)
-  {
-   payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
-
+  if (m_destinationConfigHasBeenSet) {
+    payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
   }
 
-  if(m_samplingIntervalHasBeenSet)
-  {
-   payload.WithInteger("SamplingInterval", m_samplingInterval);
-
+  if (m_samplingIntervalHasBeenSet) {
+    payload.WithInteger("SamplingInterval", m_samplingInterval);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("Format", FormatMapper::GetNameForFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("Format", FormatMapper::GetNameForFormat(m_format));
   }
 
-  if(m_formatConfigHasBeenSet)
-  {
-   JsonValue formatConfigJsonMap;
-   for(auto& formatConfigItem : m_formatConfig)
-   {
-     formatConfigJsonMap.WithString(FormatConfigKeyMapper::GetNameForFormatConfigKey(formatConfigItem.first), formatConfigItem.second);
-   }
-   payload.WithObject("FormatConfig", std::move(formatConfigJsonMap));
-
+  if (m_formatConfigHasBeenSet) {
+    JsonValue formatConfigJsonMap;
+    for (auto& formatConfigItem : m_formatConfig) {
+      formatConfigJsonMap.WithString(FormatConfigKeyMapper::GetNameForFormatConfigKey(formatConfigItem.first), formatConfigItem.second);
+    }
+    payload.WithObject("FormatConfig", std::move(formatConfigJsonMap));
   }
 
-  if(m_widthPixelsHasBeenSet)
-  {
-   payload.WithInteger("WidthPixels", m_widthPixels);
-
+  if (m_widthPixelsHasBeenSet) {
+    payload.WithInteger("WidthPixels", m_widthPixels);
   }
 
-  if(m_heightPixelsHasBeenSet)
-  {
-   payload.WithInteger("HeightPixels", m_heightPixels);
-
+  if (m_heightPixelsHasBeenSet) {
+    payload.WithInteger("HeightPixels", m_heightPixels);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

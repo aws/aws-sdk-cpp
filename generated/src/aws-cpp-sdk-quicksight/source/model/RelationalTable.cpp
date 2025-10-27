@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RelationalTable.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RelationalTable.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RelationalTable::RelationalTable(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelationalTable::RelationalTable(JsonView jsonValue) { *this = jsonValue; }
 
-RelationalTable& RelationalTable::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSourceArn"))
-  {
+RelationalTable& RelationalTable::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
     m_dataSourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Catalog"))
-  {
+  if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Schema"))
-  {
+  if (jsonValue.ValueExists("Schema")) {
     m_schema = jsonValue.GetString("Schema");
     m_schemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputColumns"))
-  {
+  if (jsonValue.ValueExists("InputColumns")) {
     Aws::Utils::Array<JsonView> inputColumnsJsonList = jsonValue.GetArray("InputColumns");
-    for(unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex)
-    {
+    for (unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex) {
       m_inputColumns.push_back(inputColumnsJsonList[inputColumnsIndex].AsObject());
     }
     m_inputColumnsHasBeenSet = true;
@@ -57,48 +44,36 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RelationalTable::Jsonize() const
-{
+JsonValue RelationalTable::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceArnHasBeenSet)
-  {
-   payload.WithString("DataSourceArn", m_dataSourceArn);
-
+  if (m_dataSourceArnHasBeenSet) {
+    payload.WithString("DataSourceArn", m_dataSourceArn);
   }
 
-  if(m_catalogHasBeenSet)
-  {
-   payload.WithString("Catalog", m_catalog);
-
+  if (m_catalogHasBeenSet) {
+    payload.WithString("Catalog", m_catalog);
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithString("Schema", m_schema);
-
+  if (m_schemaHasBeenSet) {
+    payload.WithString("Schema", m_schema);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_inputColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputColumnsJsonList(m_inputColumns.size());
-   for(unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex)
-   {
-     inputColumnsJsonList[inputColumnsIndex].AsObject(m_inputColumns[inputColumnsIndex].Jsonize());
-   }
-   payload.WithArray("InputColumns", std::move(inputColumnsJsonList));
-
+  if (m_inputColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputColumnsJsonList(m_inputColumns.size());
+    for (unsigned inputColumnsIndex = 0; inputColumnsIndex < inputColumnsJsonList.GetLength(); ++inputColumnsIndex) {
+      inputColumnsJsonList[inputColumnsIndex].AsObject(m_inputColumns[inputColumnsIndex].Jsonize());
+    }
+    payload.WithArray("InputColumns", std::move(inputColumnsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,89 +4,101 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
-#include <aws/lexv2-models/LexModelsV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2Request.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace LexModelsV2 {
+namespace Model {
 
+/**
+ */
+class DeleteBotVersionRequest : public LexModelsV2Request {
+ public:
+  AWS_LEXMODELSV2_API DeleteBotVersionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteBotVersion"; }
+
+  AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
+
+  AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The identifier of the bot that contains the version.</p>
    */
-  class DeleteBotVersionRequest : public LexModelsV2Request
-  {
-  public:
-    AWS_LEXMODELSV2_API DeleteBotVersionRequest() = default;
+  inline const Aws::String& GetBotId() const { return m_botId; }
+  inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
+  template <typename BotIdT = Aws::String>
+  void SetBotId(BotIdT&& value) {
+    m_botIdHasBeenSet = true;
+    m_botId = std::forward<BotIdT>(value);
+  }
+  template <typename BotIdT = Aws::String>
+  DeleteBotVersionRequest& WithBotId(BotIdT&& value) {
+    SetBotId(std::forward<BotIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteBotVersion"; }
+  ///@{
+  /**
+   * <p>The version of the bot to delete.</p>
+   */
+  inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+  inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
+  template <typename BotVersionT = Aws::String>
+  void SetBotVersion(BotVersionT&& value) {
+    m_botVersionHasBeenSet = true;
+    m_botVersion = std::forward<BotVersionT>(value);
+  }
+  template <typename BotVersionT = Aws::String>
+  DeleteBotVersionRequest& WithBotVersion(BotVersionT&& value) {
+    SetBotVersion(std::forward<BotVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
+   * network, is using the bot version before it is deleted and throws a
+   * <code>ResourceInUseException</code> exception if the version is being used by
+   * another resource. Set this parameter to <code>true</code> to skip this check and
+   * remove the version even if it is being used by another resource.</p>
+   */
+  inline bool GetSkipResourceInUseCheck() const { return m_skipResourceInUseCheck; }
+  inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
+  inline void SetSkipResourceInUseCheck(bool value) {
+    m_skipResourceInUseCheckHasBeenSet = true;
+    m_skipResourceInUseCheck = value;
+  }
+  inline DeleteBotVersionRequest& WithSkipResourceInUseCheck(bool value) {
+    SetSkipResourceInUseCheck(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_botId;
+  bool m_botIdHasBeenSet = false;
 
-    AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  Aws::String m_botVersion;
+  bool m_botVersionHasBeenSet = false;
 
+  bool m_skipResourceInUseCheck{false};
+  bool m_skipResourceInUseCheckHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
-    inline const Aws::String& GetBotId() const { return m_botId; }
-    inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    template<typename BotIdT = Aws::String>
-    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
-    template<typename BotIdT = Aws::String>
-    DeleteBotVersionRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
-    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
-    inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    template<typename BotVersionT = Aws::String>
-    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
-    template<typename BotVersionT = Aws::String>
-    DeleteBotVersionRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the version is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the version even if it is being used by another resource.</p>
-     */
-    inline bool GetSkipResourceInUseCheck() const { return m_skipResourceInUseCheck; }
-    inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
-    inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
-    inline DeleteBotVersionRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_botId;
-    bool m_botIdHasBeenSet = false;
-
-    Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet = false;
-
-    bool m_skipResourceInUseCheck{false};
-    bool m_skipResourceInUseCheckHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

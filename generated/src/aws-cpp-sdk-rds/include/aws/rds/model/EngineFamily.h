@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class EngineFamily
-  {
-    NOT_SET,
-    MYSQL,
-    POSTGRESQL,
-    SQLSERVER
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class EngineFamily { NOT_SET, MYSQL, POSTGRESQL, SQLSERVER };
 
-namespace EngineFamilyMapper
-{
+namespace EngineFamilyMapper {
 AWS_RDS_API EngineFamily GetEngineFamilyForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForEngineFamily(EngineFamily value);
-} // namespace EngineFamilyMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace EngineFamilyMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/ByoipCidr.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/ByoipCidr.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
 
-ByoipCidr::ByoipCidr(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ByoipCidr::ByoipCidr(JsonView jsonValue) { *this = jsonValue; }
 
-ByoipCidr& ByoipCidr::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Cidr"))
-  {
+ByoipCidr& ByoipCidr::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Cidr")) {
     m_cidr = jsonValue.GetString("Cidr");
     m_cidrHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Events"))
-  {
+  if (jsonValue.ValueExists("Events")) {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
-    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-    {
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
     m_eventsHasBeenSet = true;
@@ -47,35 +36,28 @@ ByoipCidr& ByoipCidr::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ByoipCidr::Jsonize() const
-{
+JsonValue ByoipCidr::Jsonize() const {
   JsonValue payload;
 
-  if(m_cidrHasBeenSet)
-  {
-   payload.WithString("Cidr", m_cidr);
-
+  if (m_cidrHasBeenSet) {
+    payload.WithString("Cidr", m_cidr);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ByoipCidrStateMapper::GetNameForByoipCidrState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ByoipCidrStateMapper::GetNameForByoipCidrState(m_state));
   }
 
-  if(m_eventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
-   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
-   {
-     eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
-   }
-   payload.WithArray("Events", std::move(eventsJsonList));
-
+  if (m_eventsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
+    for (unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex) {
+      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+    }
+    payload.WithArray("Events", std::move(eventsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

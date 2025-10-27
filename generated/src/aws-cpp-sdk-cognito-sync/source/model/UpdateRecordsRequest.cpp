@@ -13,51 +13,36 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRecordsRequest::SerializePayload() const
-{
+Aws::String UpdateRecordsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deviceIdHasBeenSet)
-  {
-   payload.WithString("DeviceId", m_deviceId);
-
+  if (m_deviceIdHasBeenSet) {
+    payload.WithString("DeviceId", m_deviceId);
   }
 
-  if(m_recordPatchesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> recordPatchesJsonList(m_recordPatches.size());
-   for(unsigned recordPatchesIndex = 0; recordPatchesIndex < recordPatchesJsonList.GetLength(); ++recordPatchesIndex)
-   {
-     recordPatchesJsonList[recordPatchesIndex].AsObject(m_recordPatches[recordPatchesIndex].Jsonize());
-   }
-   payload.WithArray("RecordPatches", std::move(recordPatchesJsonList));
-
+  if (m_recordPatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordPatchesJsonList(m_recordPatches.size());
+    for (unsigned recordPatchesIndex = 0; recordPatchesIndex < recordPatchesJsonList.GetLength(); ++recordPatchesIndex) {
+      recordPatchesJsonList[recordPatchesIndex].AsObject(m_recordPatches[recordPatchesIndex].Jsonize());
+    }
+    payload.WithArray("RecordPatches", std::move(recordPatchesJsonList));
   }
 
-  if(m_syncSessionTokenHasBeenSet)
-  {
-   payload.WithString("SyncSessionToken", m_syncSessionToken);
-
+  if (m_syncSessionTokenHasBeenSet) {
+    payload.WithString("SyncSessionToken", m_syncSessionToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientContextHasBeenSet)
-  {
+  if (m_clientContextHasBeenSet) {
     ss << m_clientContext;
-    headers.emplace("x-amz-client-context",  ss.str());
+    headers.emplace("x-amz-client-context", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

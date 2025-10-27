@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-contacts/model/ContactChannel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-contacts/model/ContactChannel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Model
-{
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
 
-ContactChannel::ContactChannel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactChannel::ContactChannel(JsonView jsonValue) { *this = jsonValue; }
 
-ContactChannel& ContactChannel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContactChannelArn"))
-  {
+ContactChannel& ContactChannel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactChannelArn")) {
     m_contactChannelArn = jsonValue.GetString("ContactChannelArn");
     m_contactChannelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactArn"))
-  {
+  if (jsonValue.ValueExists("ContactArn")) {
     m_contactArn = jsonValue.GetString("ContactArn");
     m_contactArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeliveryAddress"))
-  {
+  if (jsonValue.ValueExists("DeliveryAddress")) {
     m_deliveryAddress = jsonValue.GetObject("DeliveryAddress");
     m_deliveryAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActivationStatus"))
-  {
+  if (jsonValue.ValueExists("ActivationStatus")) {
     m_activationStatus = ActivationStatusMapper::GetActivationStatusForName(jsonValue.GetString("ActivationStatus"));
     m_activationStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContactChannel::Jsonize() const
-{
+JsonValue ContactChannel::Jsonize() const {
   JsonValue payload;
 
-  if(m_contactChannelArnHasBeenSet)
-  {
-   payload.WithString("ContactChannelArn", m_contactChannelArn);
-
+  if (m_contactChannelArnHasBeenSet) {
+    payload.WithString("ContactChannelArn", m_contactChannelArn);
   }
 
-  if(m_contactArnHasBeenSet)
-  {
-   payload.WithString("ContactArn", m_contactArn);
-
+  if (m_contactArnHasBeenSet) {
+    payload.WithString("ContactArn", m_contactArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
-  if(m_deliveryAddressHasBeenSet)
-  {
-   payload.WithObject("DeliveryAddress", m_deliveryAddress.Jsonize());
-
+  if (m_deliveryAddressHasBeenSet) {
+    payload.WithObject("DeliveryAddress", m_deliveryAddress.Jsonize());
   }
 
-  if(m_activationStatusHasBeenSet)
-  {
-   payload.WithString("ActivationStatus", ActivationStatusMapper::GetNameForActivationStatus(m_activationStatus));
+  if (m_activationStatusHasBeenSet) {
+    payload.WithString("ActivationStatus", ActivationStatusMapper::GetNameForActivationStatus(m_activationStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-enum class ServiceCatalogErrors
-{
-  //From Core//
+namespace Aws {
+namespace ServiceCatalog {
+enum class ServiceCatalogErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ServiceCatalogErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ServiceCatalogErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DUPLICATE_RESOURCE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_RESOURCE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETERS,
   INVALID_STATE,
   LIMIT_EXCEEDED,
@@ -56,9 +53,8 @@ enum class ServiceCatalogErrors
   TAG_OPTION_NOT_MIGRATED
 };
 
-class AWS_SERVICECATALOG_API ServiceCatalogError : public Aws::Client::AWSError<ServiceCatalogErrors>
-{
-public:
+class AWS_SERVICECATALOG_API ServiceCatalogError : public Aws::Client::AWSError<ServiceCatalogErrors> {
+ public:
   ServiceCatalogError() {}
   ServiceCatalogError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
   ServiceCatalogError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace ServiceCatalogErrorMapper
-{
-  AWS_SERVICECATALOG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ServiceCatalogErrorMapper {
+AWS_SERVICECATALOG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ServiceCatalog
+}  // namespace Aws

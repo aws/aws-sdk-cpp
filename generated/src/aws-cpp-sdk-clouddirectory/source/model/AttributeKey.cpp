@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-AttributeKey::AttributeKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttributeKey::AttributeKey(JsonView jsonValue) { *this = jsonValue; }
 
-AttributeKey& AttributeKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SchemaArn"))
-  {
+AttributeKey& AttributeKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SchemaArn")) {
     m_schemaArn = jsonValue.GetString("SchemaArn");
     m_schemaArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FacetName"))
-  {
+  if (jsonValue.ValueExists("FacetName")) {
     m_facetName = jsonValue.GetString("FacetName");
     m_facetNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttributeKey::Jsonize() const
-{
+JsonValue AttributeKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_schemaArnHasBeenSet)
-  {
-   payload.WithString("SchemaArn", m_schemaArn);
-
+  if (m_schemaArnHasBeenSet) {
+    payload.WithString("SchemaArn", m_schemaArn);
   }
 
-  if(m_facetNameHasBeenSet)
-  {
-   payload.WithString("FacetName", m_facetName);
-
+  if (m_facetNameHasBeenSet) {
+    payload.WithString("FacetName", m_facetName);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

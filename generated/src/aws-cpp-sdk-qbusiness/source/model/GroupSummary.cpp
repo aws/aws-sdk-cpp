@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qbusiness/model/GroupSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/GroupSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace QBusiness {
+namespace Model {
 
-GroupSummary::GroupSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GroupSummary::GroupSummary(JsonView jsonValue) { *this = jsonValue; }
 
-GroupSummary& GroupSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("groupName"))
-  {
+GroupSummary& GroupSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("groupName")) {
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GroupSummary::Jsonize() const
-{
+JsonValue GroupSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("groupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("groupName", m_groupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

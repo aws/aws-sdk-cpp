@@ -4,30 +4,25 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class ComparisonOperator
-  {
-    NOT_SET,
-    GreaterThanOrEqualToThreshold,
-    GreaterThanThreshold,
-    LessThanThreshold,
-    LessThanOrEqualToThreshold
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class ComparisonOperator {
+  NOT_SET,
+  GreaterThanOrEqualToThreshold,
+  GreaterThanThreshold,
+  LessThanThreshold,
+  LessThanOrEqualToThreshold
+};
 
-namespace ComparisonOperatorMapper
-{
+namespace ComparisonOperatorMapper {
 AWS_LIGHTSAIL_API ComparisonOperator GetComparisonOperatorForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForComparisonOperator(ComparisonOperator value);
-} // namespace ComparisonOperatorMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace ComparisonOperatorMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

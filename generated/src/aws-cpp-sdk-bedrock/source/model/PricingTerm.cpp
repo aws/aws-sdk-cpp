@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-PricingTerm::PricingTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PricingTerm::PricingTerm(JsonView jsonValue) { *this = jsonValue; }
 
-PricingTerm& PricingTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rateCard"))
-  {
+PricingTerm& PricingTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rateCard")) {
     Aws::Utils::Array<JsonView> rateCardJsonList = jsonValue.GetArray("rateCard");
-    for(unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex)
-    {
+    for (unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex) {
       m_rateCard.push_back(rateCardJsonList[rateCardIndex].AsObject());
     }
     m_rateCardHasBeenSet = true;
@@ -37,24 +28,20 @@ PricingTerm& PricingTerm::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PricingTerm::Jsonize() const
-{
+JsonValue PricingTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_rateCardHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> rateCardJsonList(m_rateCard.size());
-   for(unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex)
-   {
-     rateCardJsonList[rateCardIndex].AsObject(m_rateCard[rateCardIndex].Jsonize());
-   }
-   payload.WithArray("rateCard", std::move(rateCardJsonList));
-
+  if (m_rateCardHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rateCardJsonList(m_rateCard.size());
+    for (unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex) {
+      rateCardJsonList[rateCardIndex].AsObject(m_rateCard[rateCardIndex].Jsonize());
+    }
+    payload.WithArray("rateCard", std::move(rateCardJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

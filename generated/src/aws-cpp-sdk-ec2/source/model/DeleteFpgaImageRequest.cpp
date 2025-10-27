@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteFpgaImageRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteFpgaImageRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteFpgaImageRequest::SerializePayload() const
-{
+Aws::String DeleteFpgaImageRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteFpgaImage&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_fpgaImageIdHasBeenSet)
-  {
+  if (m_fpgaImageIdHasBeenSet) {
     ss << "FpgaImageId=" << StringUtils::URLEncode(m_fpgaImageId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteFpgaImageRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteFpgaImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteFpgaImageRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

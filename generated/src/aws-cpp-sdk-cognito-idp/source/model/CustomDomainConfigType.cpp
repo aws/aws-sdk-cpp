@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-CustomDomainConfigType::CustomDomainConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomDomainConfigType::CustomDomainConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-CustomDomainConfigType& CustomDomainConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CertificateArn"))
-  {
+CustomDomainConfigType& CustomDomainConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CertificateArn")) {
     m_certificateArn = jsonValue.GetString("CertificateArn");
     m_certificateArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomDomainConfigType::Jsonize() const
-{
+JsonValue CustomDomainConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("CertificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("CertificateArn", m_certificateArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

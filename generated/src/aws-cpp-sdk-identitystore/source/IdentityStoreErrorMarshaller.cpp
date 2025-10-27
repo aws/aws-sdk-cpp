@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IdentityStore;
 
-AWSError<CoreErrors> IdentityStoreErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IdentityStoreErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IdentityStoreErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

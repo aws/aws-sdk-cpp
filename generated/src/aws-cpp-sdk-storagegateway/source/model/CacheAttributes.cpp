@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/CacheAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/CacheAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
 
-CacheAttributes::CacheAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CacheAttributes::CacheAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-CacheAttributes& CacheAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CacheStaleTimeoutInSeconds"))
-  {
+CacheAttributes& CacheAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CacheStaleTimeoutInSeconds")) {
     m_cacheStaleTimeoutInSeconds = jsonValue.GetInteger("CacheStaleTimeoutInSeconds");
     m_cacheStaleTimeoutInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CacheAttributes::Jsonize() const
-{
+JsonValue CacheAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_cacheStaleTimeoutInSecondsHasBeenSet)
-  {
-   payload.WithInteger("CacheStaleTimeoutInSeconds", m_cacheStaleTimeoutInSeconds);
-
+  if (m_cacheStaleTimeoutInSecondsHasBeenSet) {
+    payload.WithInteger("CacheStaleTimeoutInSeconds", m_cacheStaleTimeoutInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class H264FramerateConversionAlgorithm
-  {
-    NOT_SET,
-    DUPLICATE_DROP,
-    INTERPOLATE,
-    FRAMEFORMER,
-    MAINTAIN_FRAME_COUNT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class H264FramerateConversionAlgorithm { NOT_SET, DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER, MAINTAIN_FRAME_COUNT };
 
-namespace H264FramerateConversionAlgorithmMapper
-{
+namespace H264FramerateConversionAlgorithmMapper {
 AWS_MEDIACONVERT_API H264FramerateConversionAlgorithm GetH264FramerateConversionAlgorithmForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForH264FramerateConversionAlgorithm(H264FramerateConversionAlgorithm value);
-} // namespace H264FramerateConversionAlgorithmMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace H264FramerateConversionAlgorithmMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

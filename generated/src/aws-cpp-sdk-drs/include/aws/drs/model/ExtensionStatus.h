@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
-  enum class ExtensionStatus
-  {
-    NOT_SET,
-    EXTENDED,
-    EXTENSION_ERROR,
-    NOT_EXTENDED
-  };
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class ExtensionStatus { NOT_SET, EXTENDED, EXTENSION_ERROR, NOT_EXTENDED };
 
-namespace ExtensionStatusMapper
-{
+namespace ExtensionStatusMapper {
 AWS_DRS_API ExtensionStatus GetExtensionStatusForName(const Aws::String& name);
 
 AWS_DRS_API Aws::String GetNameForExtensionStatus(ExtensionStatus value);
-} // namespace ExtensionStatusMapper
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace ExtensionStatusMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

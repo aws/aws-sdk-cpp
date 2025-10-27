@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ebs/model/ChangedBlock.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ebs/model/ChangedBlock.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EBS
-{
-namespace Model
-{
+namespace Aws {
+namespace EBS {
+namespace Model {
 
-ChangedBlock::ChangedBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChangedBlock::ChangedBlock(JsonView jsonValue) { *this = jsonValue; }
 
-ChangedBlock& ChangedBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BlockIndex"))
-  {
+ChangedBlock& ChangedBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BlockIndex")) {
     m_blockIndex = jsonValue.GetInteger("BlockIndex");
     m_blockIndexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FirstBlockToken"))
-  {
+  if (jsonValue.ValueExists("FirstBlockToken")) {
     m_firstBlockToken = jsonValue.GetString("FirstBlockToken");
     m_firstBlockTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecondBlockToken"))
-  {
+  if (jsonValue.ValueExists("SecondBlockToken")) {
     m_secondBlockToken = jsonValue.GetString("SecondBlockToken");
     m_secondBlockTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChangedBlock::Jsonize() const
-{
+JsonValue ChangedBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_blockIndexHasBeenSet)
-  {
-   payload.WithInteger("BlockIndex", m_blockIndex);
-
+  if (m_blockIndexHasBeenSet) {
+    payload.WithInteger("BlockIndex", m_blockIndex);
   }
 
-  if(m_firstBlockTokenHasBeenSet)
-  {
-   payload.WithString("FirstBlockToken", m_firstBlockToken);
-
+  if (m_firstBlockTokenHasBeenSet) {
+    payload.WithString("FirstBlockToken", m_firstBlockToken);
   }
 
-  if(m_secondBlockTokenHasBeenSet)
-  {
-   payload.WithString("SecondBlockToken", m_secondBlockToken);
-
+  if (m_secondBlockTokenHasBeenSet) {
+    payload.WithString("SecondBlockToken", m_secondBlockToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EBS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

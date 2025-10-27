@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeliverConfigSnapshotRequest::SerializePayload() const
-{
+Aws::String DeliverConfigSnapshotRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deliveryChannelNameHasBeenSet)
-  {
-   payload.WithString("deliveryChannelName", m_deliveryChannelName);
-
+  if (m_deliveryChannelNameHasBeenSet) {
+    payload.WithString("deliveryChannelName", m_deliveryChannelName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeliverConfigSnapshotRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeliverConfigSnapshotRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeliverConfigSnapshot"));
   return headers;
-
 }
-
-
-
-

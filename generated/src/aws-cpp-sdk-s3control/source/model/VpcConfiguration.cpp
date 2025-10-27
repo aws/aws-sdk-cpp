@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/VpcConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/VpcConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-VpcConfiguration::VpcConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpcConfiguration::VpcConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpcConfiguration& VpcConfiguration::operator =(const XmlNode& xmlNode)
-{
+VpcConfiguration& VpcConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
-    if(!vpcIdNode.IsNull())
-    {
+    if (!vpcIdNode.IsNull()) {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ VpcConfiguration& VpcConfiguration::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VpcConfiguration::AddToNode(XmlNode& parentNode) const
-{
+void VpcConfiguration::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_vpcIdHasBeenSet)
-  {
-   XmlNode vpcIdNode = parentNode.CreateChildElement("VpcId");
-   vpcIdNode.SetText(m_vpcId);
+  if (m_vpcIdHasBeenSet) {
+    XmlNode vpcIdNode = parentNode.CreateChildElement("VpcId");
+    vpcIdNode.SetText(m_vpcId);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

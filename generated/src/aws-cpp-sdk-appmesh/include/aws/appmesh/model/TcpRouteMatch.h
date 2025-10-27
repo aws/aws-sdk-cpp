@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace AppMesh {
+namespace Model {
 
+/**
+ * <p>An object representing the TCP route to match.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRouteMatch">AWS
+ * API Reference</a></p>
+ */
+class TcpRouteMatch {
+ public:
+  AWS_APPMESH_API TcpRouteMatch() = default;
+  AWS_APPMESH_API TcpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPMESH_API TcpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object representing the TCP route to match.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRouteMatch">AWS
-   * API Reference</a></p>
+   * <p>The port number to match on.</p>
    */
-  class TcpRouteMatch
-  {
-  public:
-    AWS_APPMESH_API TcpRouteMatch() = default;
-    AWS_APPMESH_API TcpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPMESH_API TcpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetPort() const { return m_port; }
+  inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+  inline void SetPort(int value) {
+    m_portHasBeenSet = true;
+    m_port = value;
+  }
+  inline TcpRouteMatch& WithPort(int value) {
+    SetPort(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_port{0};
+  bool m_portHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The port number to match on.</p>
-     */
-    inline int GetPort() const { return m_port; }
-    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-    inline TcpRouteMatch& WithPort(int value) { SetPort(value); return *this;}
-    ///@}
-  private:
-
-    int m_port{0};
-    bool m_portHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

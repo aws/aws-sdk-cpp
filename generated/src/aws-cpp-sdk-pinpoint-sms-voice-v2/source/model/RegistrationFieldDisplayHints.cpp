@@ -3,135 +3,104 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-sms-voice-v2/model/RegistrationFieldDisplayHints.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-sms-voice-v2/model/RegistrationFieldDisplayHints.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
 
-RegistrationFieldDisplayHints::RegistrationFieldDisplayHints(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegistrationFieldDisplayHints::RegistrationFieldDisplayHints(JsonView jsonValue) { *this = jsonValue; }
 
-RegistrationFieldDisplayHints& RegistrationFieldDisplayHints::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Title"))
-  {
+RegistrationFieldDisplayHints& RegistrationFieldDisplayHints::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");
     m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShortDescription"))
-  {
+  if (jsonValue.ValueExists("ShortDescription")) {
     m_shortDescription = jsonValue.GetString("ShortDescription");
     m_shortDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LongDescription"))
-  {
+  if (jsonValue.ValueExists("LongDescription")) {
     m_longDescription = jsonValue.GetString("LongDescription");
     m_longDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentationTitle"))
-  {
+  if (jsonValue.ValueExists("DocumentationTitle")) {
     m_documentationTitle = jsonValue.GetString("DocumentationTitle");
     m_documentationTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentationLink"))
-  {
+  if (jsonValue.ValueExists("DocumentationLink")) {
     m_documentationLink = jsonValue.GetString("DocumentationLink");
     m_documentationLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectOptionDescriptions"))
-  {
+  if (jsonValue.ValueExists("SelectOptionDescriptions")) {
     Aws::Utils::Array<JsonView> selectOptionDescriptionsJsonList = jsonValue.GetArray("SelectOptionDescriptions");
-    for(unsigned selectOptionDescriptionsIndex = 0; selectOptionDescriptionsIndex < selectOptionDescriptionsJsonList.GetLength(); ++selectOptionDescriptionsIndex)
-    {
+    for (unsigned selectOptionDescriptionsIndex = 0; selectOptionDescriptionsIndex < selectOptionDescriptionsJsonList.GetLength();
+         ++selectOptionDescriptionsIndex) {
       m_selectOptionDescriptions.push_back(selectOptionDescriptionsJsonList[selectOptionDescriptionsIndex].AsObject());
     }
     m_selectOptionDescriptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextValidationDescription"))
-  {
+  if (jsonValue.ValueExists("TextValidationDescription")) {
     m_textValidationDescription = jsonValue.GetString("TextValidationDescription");
     m_textValidationDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExampleTextValue"))
-  {
+  if (jsonValue.ValueExists("ExampleTextValue")) {
     m_exampleTextValue = jsonValue.GetString("ExampleTextValue");
     m_exampleTextValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RegistrationFieldDisplayHints::Jsonize() const
-{
+JsonValue RegistrationFieldDisplayHints::Jsonize() const {
   JsonValue payload;
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
-  if(m_shortDescriptionHasBeenSet)
-  {
-   payload.WithString("ShortDescription", m_shortDescription);
-
+  if (m_shortDescriptionHasBeenSet) {
+    payload.WithString("ShortDescription", m_shortDescription);
   }
 
-  if(m_longDescriptionHasBeenSet)
-  {
-   payload.WithString("LongDescription", m_longDescription);
-
+  if (m_longDescriptionHasBeenSet) {
+    payload.WithString("LongDescription", m_longDescription);
   }
 
-  if(m_documentationTitleHasBeenSet)
-  {
-   payload.WithString("DocumentationTitle", m_documentationTitle);
-
+  if (m_documentationTitleHasBeenSet) {
+    payload.WithString("DocumentationTitle", m_documentationTitle);
   }
 
-  if(m_documentationLinkHasBeenSet)
-  {
-   payload.WithString("DocumentationLink", m_documentationLink);
-
+  if (m_documentationLinkHasBeenSet) {
+    payload.WithString("DocumentationLink", m_documentationLink);
   }
 
-  if(m_selectOptionDescriptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> selectOptionDescriptionsJsonList(m_selectOptionDescriptions.size());
-   for(unsigned selectOptionDescriptionsIndex = 0; selectOptionDescriptionsIndex < selectOptionDescriptionsJsonList.GetLength(); ++selectOptionDescriptionsIndex)
-   {
-     selectOptionDescriptionsJsonList[selectOptionDescriptionsIndex].AsObject(m_selectOptionDescriptions[selectOptionDescriptionsIndex].Jsonize());
-   }
-   payload.WithArray("SelectOptionDescriptions", std::move(selectOptionDescriptionsJsonList));
-
+  if (m_selectOptionDescriptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> selectOptionDescriptionsJsonList(m_selectOptionDescriptions.size());
+    for (unsigned selectOptionDescriptionsIndex = 0; selectOptionDescriptionsIndex < selectOptionDescriptionsJsonList.GetLength();
+         ++selectOptionDescriptionsIndex) {
+      selectOptionDescriptionsJsonList[selectOptionDescriptionsIndex].AsObject(
+          m_selectOptionDescriptions[selectOptionDescriptionsIndex].Jsonize());
+    }
+    payload.WithArray("SelectOptionDescriptions", std::move(selectOptionDescriptionsJsonList));
   }
 
-  if(m_textValidationDescriptionHasBeenSet)
-  {
-   payload.WithString("TextValidationDescription", m_textValidationDescription);
-
+  if (m_textValidationDescriptionHasBeenSet) {
+    payload.WithString("TextValidationDescription", m_textValidationDescription);
   }
 
-  if(m_exampleTextValueHasBeenSet)
-  {
-   payload.WithString("ExampleTextValue", m_exampleTextValue);
-
+  if (m_exampleTextValueHasBeenSet) {
+    payload.WithString("ExampleTextValue", m_exampleTextValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

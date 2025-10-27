@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
-  enum class DestinationType
-  {
-    NOT_SET,
-    cloud_watch_logs
-  };
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+enum class DestinationType { NOT_SET, cloud_watch_logs };
 
-namespace DestinationTypeMapper
-{
+namespace DestinationTypeMapper {
 AWS_OBSERVABILITYADMIN_API DestinationType GetDestinationTypeForName(const Aws::String& name);
 
 AWS_OBSERVABILITYADMIN_API Aws::String GetNameForDestinationType(DestinationType value);
-} // namespace DestinationTypeMapper
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace DestinationTypeMapper
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

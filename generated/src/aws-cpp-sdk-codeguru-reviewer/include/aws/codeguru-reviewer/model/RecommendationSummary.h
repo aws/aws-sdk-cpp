@@ -5,163 +5,204 @@
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codeguru-reviewer/model/RecommendationCategory.h>
 #include <aws/codeguru-reviewer/model/RuleMetadata.h>
 #include <aws/codeguru-reviewer/model/Severity.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CodeGuruReviewer {
+namespace Model {
 
+/**
+ * <p>Information about recommendations.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RecommendationSummary">AWS
+ * API Reference</a></p>
+ */
+class RecommendationSummary {
+ public:
+  AWS_CODEGURUREVIEWER_API RecommendationSummary() = default;
+  AWS_CODEGURUREVIEWER_API RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CODEGURUREVIEWER_API RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Information about recommendations.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RecommendationSummary">AWS
-   * API Reference</a></p>
+   * <p>Name of the file on which a recommendation is provided.</p>
    */
-  class RecommendationSummary
-  {
-  public:
-    AWS_CODEGURUREVIEWER_API RecommendationSummary() = default;
-    AWS_CODEGURUREVIEWER_API RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CODEGURUREVIEWER_API RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetFilePath() const { return m_filePath; }
+  inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+  template <typename FilePathT = Aws::String>
+  void SetFilePath(FilePathT&& value) {
+    m_filePathHasBeenSet = true;
+    m_filePath = std::forward<FilePathT>(value);
+  }
+  template <typename FilePathT = Aws::String>
+  RecommendationSummary& WithFilePath(FilePathT&& value) {
+    SetFilePath(std::forward<FilePathT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The recommendation ID that can be used to track the provided recommendations.
+   * Later on it can be used to collect the feedback.</p>
+   */
+  inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
+  inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
+  template <typename RecommendationIdT = Aws::String>
+  void SetRecommendationId(RecommendationIdT&& value) {
+    m_recommendationIdHasBeenSet = true;
+    m_recommendationId = std::forward<RecommendationIdT>(value);
+  }
+  template <typename RecommendationIdT = Aws::String>
+  RecommendationSummary& WithRecommendationId(RecommendationIdT&& value) {
+    SetRecommendationId(std::forward<RecommendationIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Name of the file on which a recommendation is provided.</p>
-     */
-    inline const Aws::String& GetFilePath() const { return m_filePath; }
-    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    template<typename FilePathT = Aws::String>
-    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
-    template<typename FilePathT = Aws::String>
-    RecommendationSummary& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Start line from where the recommendation is applicable in the source commit
+   * or source branch.</p>
+   */
+  inline int GetStartLine() const { return m_startLine; }
+  inline bool StartLineHasBeenSet() const { return m_startLineHasBeenSet; }
+  inline void SetStartLine(int value) {
+    m_startLineHasBeenSet = true;
+    m_startLine = value;
+  }
+  inline RecommendationSummary& WithStartLine(int value) {
+    SetStartLine(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The recommendation ID that can be used to track the provided recommendations.
-     * Later on it can be used to collect the feedback.</p>
-     */
-    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
-    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    template<typename RecommendationIdT = Aws::String>
-    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
-    template<typename RecommendationIdT = Aws::String>
-    RecommendationSummary& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Last line where the recommendation is applicable in the source commit or
+   * source branch. For a single line comment the start line and end line values are
+   * the same.</p>
+   */
+  inline int GetEndLine() const { return m_endLine; }
+  inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
+  inline void SetEndLine(int value) {
+    m_endLineHasBeenSet = true;
+    m_endLine = value;
+  }
+  inline RecommendationSummary& WithEndLine(int value) {
+    SetEndLine(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Start line from where the recommendation is applicable in the source commit
-     * or source branch.</p>
-     */
-    inline int GetStartLine() const { return m_startLine; }
-    inline bool StartLineHasBeenSet() const { return m_startLineHasBeenSet; }
-    inline void SetStartLine(int value) { m_startLineHasBeenSet = true; m_startLine = value; }
-    inline RecommendationSummary& WithStartLine(int value) { SetStartLine(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A description of the recommendation generated by CodeGuru Reviewer for the
+   * lines of code between the start line and the end line.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  RecommendationSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values are
-     * the same.</p>
-     */
-    inline int GetEndLine() const { return m_endLine; }
-    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
-    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
-    inline RecommendationSummary& WithEndLine(int value) { SetEndLine(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The type of a recommendation.</p>
+   */
+  inline RecommendationCategory GetRecommendationCategory() const { return m_recommendationCategory; }
+  inline bool RecommendationCategoryHasBeenSet() const { return m_recommendationCategoryHasBeenSet; }
+  inline void SetRecommendationCategory(RecommendationCategory value) {
+    m_recommendationCategoryHasBeenSet = true;
+    m_recommendationCategory = value;
+  }
+  inline RecommendationSummary& WithRecommendationCategory(RecommendationCategory value) {
+    SetRecommendationCategory(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A description of the recommendation generated by CodeGuru Reviewer for the
-     * lines of code between the start line and the end line.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    RecommendationSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+   * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+   * A rule's recommendation is included in analysis results if code is detected that
+   * violates the rule.</p>
+   */
+  inline const RuleMetadata& GetRuleMetadata() const { return m_ruleMetadata; }
+  inline bool RuleMetadataHasBeenSet() const { return m_ruleMetadataHasBeenSet; }
+  template <typename RuleMetadataT = RuleMetadata>
+  void SetRuleMetadata(RuleMetadataT&& value) {
+    m_ruleMetadataHasBeenSet = true;
+    m_ruleMetadata = std::forward<RuleMetadataT>(value);
+  }
+  template <typename RuleMetadataT = RuleMetadata>
+  RecommendationSummary& WithRuleMetadata(RuleMetadataT&& value) {
+    SetRuleMetadata(std::forward<RuleMetadataT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of a recommendation.</p>
-     */
-    inline RecommendationCategory GetRecommendationCategory() const { return m_recommendationCategory; }
-    inline bool RecommendationCategoryHasBeenSet() const { return m_recommendationCategoryHasBeenSet; }
-    inline void SetRecommendationCategory(RecommendationCategory value) { m_recommendationCategoryHasBeenSet = true; m_recommendationCategory = value; }
-    inline RecommendationSummary& WithRecommendationCategory(RecommendationCategory value) { SetRecommendationCategory(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The severity of the issue in the code that generated this recommendation.</p>
+   */
+  inline Severity GetSeverity() const { return m_severity; }
+  inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+  inline void SetSeverity(Severity value) {
+    m_severityHasBeenSet = true;
+    m_severity = value;
+  }
+  inline RecommendationSummary& WithSeverity(Severity value) {
+    SetSeverity(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_filePath;
+  bool m_filePathHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
-     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
-     * A rule's recommendation is included in analysis results if code is detected that
-     * violates the rule.</p>
-     */
-    inline const RuleMetadata& GetRuleMetadata() const { return m_ruleMetadata; }
-    inline bool RuleMetadataHasBeenSet() const { return m_ruleMetadataHasBeenSet; }
-    template<typename RuleMetadataT = RuleMetadata>
-    void SetRuleMetadata(RuleMetadataT&& value) { m_ruleMetadataHasBeenSet = true; m_ruleMetadata = std::forward<RuleMetadataT>(value); }
-    template<typename RuleMetadataT = RuleMetadata>
-    RecommendationSummary& WithRuleMetadata(RuleMetadataT&& value) { SetRuleMetadata(std::forward<RuleMetadataT>(value)); return *this;}
-    ///@}
+  Aws::String m_recommendationId;
+  bool m_recommendationIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The severity of the issue in the code that generated this recommendation.</p>
-     */
-    inline Severity GetSeverity() const { return m_severity; }
-    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(Severity value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline RecommendationSummary& WithSeverity(Severity value) { SetSeverity(value); return *this;}
-    ///@}
-  private:
+  int m_startLine{0};
+  bool m_startLineHasBeenSet = false;
 
-    Aws::String m_filePath;
-    bool m_filePathHasBeenSet = false;
+  int m_endLine{0};
+  bool m_endLineHasBeenSet = false;
 
-    Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet = false;
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    int m_startLine{0};
-    bool m_startLineHasBeenSet = false;
+  RecommendationCategory m_recommendationCategory{RecommendationCategory::NOT_SET};
+  bool m_recommendationCategoryHasBeenSet = false;
 
-    int m_endLine{0};
-    bool m_endLineHasBeenSet = false;
+  RuleMetadata m_ruleMetadata;
+  bool m_ruleMetadataHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+  Severity m_severity{Severity::NOT_SET};
+  bool m_severityHasBeenSet = false;
+};
 
-    RecommendationCategory m_recommendationCategory{RecommendationCategory::NOT_SET};
-    bool m_recommendationCategoryHasBeenSet = false;
-
-    RuleMetadata m_ruleMetadata;
-    bool m_ruleMetadataHasBeenSet = false;
-
-    Severity m_severity{Severity::NOT_SET};
-    bool m_severityHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

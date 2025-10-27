@@ -3,49 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/ExperimentTemplateCloudWatchLogsLogConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/ExperimentTemplateCloudWatchLogsLogConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
+namespace Aws {
+namespace FIS {
+namespace Model {
 
-ExperimentTemplateCloudWatchLogsLogConfiguration::ExperimentTemplateCloudWatchLogsLogConfiguration(JsonView jsonValue)
-{
+ExperimentTemplateCloudWatchLogsLogConfiguration::ExperimentTemplateCloudWatchLogsLogConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-ExperimentTemplateCloudWatchLogsLogConfiguration& ExperimentTemplateCloudWatchLogsLogConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("logGroupArn"))
-  {
+ExperimentTemplateCloudWatchLogsLogConfiguration& ExperimentTemplateCloudWatchLogsLogConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logGroupArn")) {
     m_logGroupArn = jsonValue.GetString("logGroupArn");
     m_logGroupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentTemplateCloudWatchLogsLogConfiguration::Jsonize() const
-{
+JsonValue ExperimentTemplateCloudWatchLogsLogConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_logGroupArnHasBeenSet)
-  {
-   payload.WithString("logGroupArn", m_logGroupArn);
-
+  if (m_logGroupArnHasBeenSet) {
+    payload.WithString("logGroupArn", m_logGroupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

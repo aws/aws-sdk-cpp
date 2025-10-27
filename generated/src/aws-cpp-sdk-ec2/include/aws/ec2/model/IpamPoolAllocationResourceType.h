@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class IpamPoolAllocationResourceType
-  {
-    NOT_SET,
-    ipam_pool,
-    vpc,
-    ec2_public_ipv4_pool,
-    custom,
-    subnet,
-    eip
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class IpamPoolAllocationResourceType { NOT_SET, ipam_pool, vpc, ec2_public_ipv4_pool, custom, subnet, eip };
 
-namespace IpamPoolAllocationResourceTypeMapper
-{
+namespace IpamPoolAllocationResourceTypeMapper {
 AWS_EC2_API IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForIpamPoolAllocationResourceType(IpamPoolAllocationResourceType value);
-} // namespace IpamPoolAllocationResourceTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace IpamPoolAllocationResourceTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

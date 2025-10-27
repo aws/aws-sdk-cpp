@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/RuleResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/RuleResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-RuleResult::RuleResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleResult::RuleResult(JsonView jsonValue) { *this = jsonValue; }
 
-RuleResult& RuleResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ruleId"))
-  {
+RuleResult& RuleResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ruleId")) {
     m_ruleId = jsonValue.GetString("ruleId");
     m_ruleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("outcomes"))
-  {
+  if (jsonValue.ValueExists("outcomes")) {
     Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
-    for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
-    {
+    for (unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex) {
       m_outcomes.push_back(outcomesJsonList[outcomesIndex].AsString());
     }
     m_outcomesHasBeenSet = true;
@@ -42,30 +32,24 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RuleResult::Jsonize() const
-{
+JsonValue RuleResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("ruleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("ruleId", m_ruleId);
   }
 
-  if(m_outcomesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outcomesJsonList(m_outcomes.size());
-   for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
-   {
-     outcomesJsonList[outcomesIndex].AsString(m_outcomes[outcomesIndex]);
-   }
-   payload.WithArray("outcomes", std::move(outcomesJsonList));
-
+  if (m_outcomesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outcomesJsonList(m_outcomes.size());
+    for (unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex) {
+      outcomesJsonList[outcomesIndex].AsString(m_outcomes[outcomesIndex]);
+    }
+    payload.WithArray("outcomes", std::move(outcomesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

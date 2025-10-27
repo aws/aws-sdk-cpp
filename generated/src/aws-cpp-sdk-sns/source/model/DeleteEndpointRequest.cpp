@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/DeleteEndpointRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/DeleteEndpointRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteEndpointRequest::SerializePayload() const
-{
+Aws::String DeleteEndpointRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteEndpoint&";
-  if(m_endpointArnHasBeenSet)
-  {
+  if (m_endpointArnHasBeenSet) {
     ss << "EndpointArn=" << StringUtils::URLEncode(m_endpointArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteEndpointRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

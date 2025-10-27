@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/DescribeTimeSeriesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/DescribeTimeSeriesResult.h>
 
 #include <utility>
 
@@ -17,68 +17,53 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTimeSeriesResult::DescribeTimeSeriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeTimeSeriesResult::DescribeTimeSeriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeTimeSeriesResult& DescribeTimeSeriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeTimeSeriesResult& DescribeTimeSeriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("assetId"))
-  {
+  if (jsonValue.ValueExists("assetId")) {
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyId"))
-  {
+  if (jsonValue.ValueExists("propertyId")) {
     m_propertyId = jsonValue.GetString("propertyId");
     m_propertyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("alias"))
-  {
+  if (jsonValue.ValueExists("alias")) {
     m_alias = jsonValue.GetString("alias");
     m_aliasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeSeriesId"))
-  {
+  if (jsonValue.ValueExists("timeSeriesId")) {
     m_timeSeriesId = jsonValue.GetString("timeSeriesId");
     m_timeSeriesIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataType"))
-  {
+  if (jsonValue.ValueExists("dataType")) {
     m_dataType = PropertyDataTypeMapper::GetPropertyDataTypeForName(jsonValue.GetString("dataType"));
     m_dataTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataTypeSpec"))
-  {
+  if (jsonValue.ValueExists("dataTypeSpec")) {
     m_dataTypeSpec = jsonValue.GetString("dataTypeSpec");
     m_dataTypeSpecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeSeriesCreationDate"))
-  {
+  if (jsonValue.ValueExists("timeSeriesCreationDate")) {
     m_timeSeriesCreationDate = jsonValue.GetDouble("timeSeriesCreationDate");
     m_timeSeriesCreationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeSeriesLastUpdateDate"))
-  {
+  if (jsonValue.ValueExists("timeSeriesLastUpdateDate")) {
     m_timeSeriesLastUpdateDate = jsonValue.GetDouble("timeSeriesLastUpdateDate");
     m_timeSeriesLastUpdateDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeSeriesArn"))
-  {
+  if (jsonValue.ValueExists("timeSeriesArn")) {
     m_timeSeriesArn = jsonValue.GetString("timeSeriesArn");
     m_timeSeriesArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

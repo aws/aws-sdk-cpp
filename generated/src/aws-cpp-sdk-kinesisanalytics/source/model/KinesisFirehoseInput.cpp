@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalytics/model/KinesisFirehoseInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalytics/model/KinesisFirehoseInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalytics {
+namespace Model {
 
-KinesisFirehoseInput::KinesisFirehoseInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisFirehoseInput::KinesisFirehoseInput(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisFirehoseInput& KinesisFirehoseInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceARN"))
-  {
+KinesisFirehoseInput& KinesisFirehoseInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceARN")) {
     m_resourceARN = jsonValue.GetString("ResourceARN");
     m_resourceARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleARN"))
-  {
+  if (jsonValue.ValueExists("RoleARN")) {
     m_roleARN = jsonValue.GetString("RoleARN");
     m_roleARNHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisFirehoseInput::Jsonize() const
-{
+JsonValue KinesisFirehoseInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("ResourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("ResourceARN", m_resourceARN);
   }
 
-  if(m_roleARNHasBeenSet)
-  {
-   payload.WithString("RoleARN", m_roleARN);
-
+  if (m_roleARNHasBeenSet) {
+    payload.WithString("RoleARN", m_roleARN);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalytics
+}  // namespace Aws

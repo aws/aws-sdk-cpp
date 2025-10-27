@@ -4,57 +4,58 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
-#include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMRRequest.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
+/**
+ * <p>This input determines which cluster to describe.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeClusterInput">AWS
+ * API Reference</a></p>
+ */
+class DescribeClusterRequest : public EMRRequest {
+ public:
+  AWS_EMR_API DescribeClusterRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeCluster"; }
+
+  AWS_EMR_API Aws::String SerializePayload() const override;
+
+  AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
-   * <p>This input determines which cluster to describe.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeClusterInput">AWS
-   * API Reference</a></p>
+   * <p>The identifier of the cluster to describe.</p>
    */
-  class DescribeClusterRequest : public EMRRequest
-  {
-  public:
-    AWS_EMR_API DescribeClusterRequest() = default;
+  inline const Aws::String& GetClusterId() const { return m_clusterId; }
+  inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+  template <typename ClusterIdT = Aws::String>
+  void SetClusterId(ClusterIdT&& value) {
+    m_clusterIdHasBeenSet = true;
+    m_clusterId = std::forward<ClusterIdT>(value);
+  }
+  template <typename ClusterIdT = Aws::String>
+  DescribeClusterRequest& WithClusterId(ClusterIdT&& value) {
+    SetClusterId(std::forward<ClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clusterId;
+  bool m_clusterIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeCluster"; }
-
-    AWS_EMR_API Aws::String SerializePayload() const override;
-
-    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The identifier of the cluster to describe.</p>
-     */
-    inline const Aws::String& GetClusterId() const { return m_clusterId; }
-    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    template<typename ClusterIdT = Aws::String>
-    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
-    template<typename ClusterIdT = Aws::String>
-    DescribeClusterRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

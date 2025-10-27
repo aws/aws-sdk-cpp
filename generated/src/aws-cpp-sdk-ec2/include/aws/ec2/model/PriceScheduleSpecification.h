@@ -4,84 +4,95 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Describes the price for a Reserved Instance.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PriceScheduleSpecification">AWS
+ * API Reference</a></p>
+ */
+class PriceScheduleSpecification {
+ public:
+  AWS_EC2_API PriceScheduleSpecification() = default;
+  AWS_EC2_API PriceScheduleSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API PriceScheduleSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Describes the price for a Reserved Instance.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PriceScheduleSpecification">AWS
-   * API Reference</a></p>
+   * <p>The number of months remaining in the reservation. For example, 2 is the
+   * second to the last month before the capacity reservation expires.</p>
    */
-  class PriceScheduleSpecification
-  {
-  public:
-    AWS_EC2_API PriceScheduleSpecification() = default;
-    AWS_EC2_API PriceScheduleSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_EC2_API PriceScheduleSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline long long GetTerm() const { return m_term; }
+  inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+  inline void SetTerm(long long value) {
+    m_termHasBeenSet = true;
+    m_term = value;
+  }
+  inline PriceScheduleSpecification& WithTerm(long long value) {
+    SetTerm(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  ///@{
+  /**
+   * <p>The fixed price for the term.</p>
+   */
+  inline double GetPrice() const { return m_price; }
+  inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
+  inline void SetPrice(double value) {
+    m_priceHasBeenSet = true;
+    m_price = value;
+  }
+  inline PriceScheduleSpecification& WithPrice(double value) {
+    SetPrice(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The currency for transacting the Reserved Instance resale. At this time, the
+   * only supported currency is <code>USD</code>.</p>
+   */
+  inline CurrencyCodeValues GetCurrencyCode() const { return m_currencyCode; }
+  inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+  inline void SetCurrencyCode(CurrencyCodeValues value) {
+    m_currencyCodeHasBeenSet = true;
+    m_currencyCode = value;
+  }
+  inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues value) {
+    SetCurrencyCode(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_term{0};
+  bool m_termHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of months remaining in the reservation. For example, 2 is the
-     * second to the last month before the capacity reservation expires.</p>
-     */
-    inline long long GetTerm() const { return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
-    inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
-    ///@}
+  double m_price{0.0};
+  bool m_priceHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The fixed price for the term.</p>
-     */
-    inline double GetPrice() const { return m_price; }
-    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
-    inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
-    inline PriceScheduleSpecification& WithPrice(double value) { SetPrice(value); return *this;}
-    ///@}
+  CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
+  bool m_currencyCodeHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The currency for transacting the Reserved Instance resale. At this time, the
-     * only supported currency is <code>USD</code>.</p>
-     */
-    inline CurrencyCodeValues GetCurrencyCode() const { return m_currencyCode; }
-    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(CurrencyCodeValues value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues value) { SetCurrencyCode(value); return *this;}
-    ///@}
-  private:
-
-    long long m_term{0};
-    bool m_termHasBeenSet = false;
-
-    double m_price{0.0};
-    bool m_priceHasBeenSet = false;
-
-    CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-    bool m_currencyCodeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class RuleExecutionMode
-  {
-    NOT_SET,
-    ALL_MATCHED,
-    FIRST_MATCHED
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class RuleExecutionMode { NOT_SET, ALL_MATCHED, FIRST_MATCHED };
 
-namespace RuleExecutionModeMapper
-{
+namespace RuleExecutionModeMapper {
 AWS_FRAUDDETECTOR_API RuleExecutionMode GetRuleExecutionModeForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForRuleExecutionMode(RuleExecutionMode value);
-} // namespace RuleExecutionModeMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace RuleExecutionModeMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

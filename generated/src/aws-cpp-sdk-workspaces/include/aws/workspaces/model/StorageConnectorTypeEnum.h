@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class StorageConnectorTypeEnum
-  {
-    NOT_SET,
-    HOME_FOLDER
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class StorageConnectorTypeEnum { NOT_SET, HOME_FOLDER };
 
-namespace StorageConnectorTypeEnumMapper
-{
+namespace StorageConnectorTypeEnumMapper {
 AWS_WORKSPACES_API StorageConnectorTypeEnum GetStorageConnectorTypeEnumForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForStorageConnectorTypeEnum(StorageConnectorTypeEnum value);
-} // namespace StorageConnectorTypeEnumMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace StorageConnectorTypeEnumMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

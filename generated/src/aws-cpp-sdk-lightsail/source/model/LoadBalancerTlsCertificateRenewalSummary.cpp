@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/LoadBalancerTlsCertificateRenewalSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/LoadBalancerTlsCertificateRenewalSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue) { *this = jsonValue; }
 
-LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("renewalStatus"))
-  {
-    m_renewalStatus = LoadBalancerTlsCertificateRenewalStatusMapper::GetLoadBalancerTlsCertificateRenewalStatusForName(jsonValue.GetString("renewalStatus"));
+LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("renewalStatus")) {
+    m_renewalStatus = LoadBalancerTlsCertificateRenewalStatusMapper::GetLoadBalancerTlsCertificateRenewalStatusForName(
+        jsonValue.GetString("renewalStatus"));
     m_renewalStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainValidationOptions"))
-  {
+  if (jsonValue.ValueExists("domainValidationOptions")) {
     Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("domainValidationOptions");
-    for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
-    {
+    for (unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength();
+         ++domainValidationOptionsIndex) {
       m_domainValidationOptions.push_back(domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject());
     }
     m_domainValidationOptionsHasBeenSet = true;
@@ -42,29 +34,27 @@ LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSumma
   return *this;
 }
 
-JsonValue LoadBalancerTlsCertificateRenewalSummary::Jsonize() const
-{
+JsonValue LoadBalancerTlsCertificateRenewalSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_renewalStatusHasBeenSet)
-  {
-   payload.WithString("renewalStatus", LoadBalancerTlsCertificateRenewalStatusMapper::GetNameForLoadBalancerTlsCertificateRenewalStatus(m_renewalStatus));
+  if (m_renewalStatusHasBeenSet) {
+    payload.WithString("renewalStatus",
+                       LoadBalancerTlsCertificateRenewalStatusMapper::GetNameForLoadBalancerTlsCertificateRenewalStatus(m_renewalStatus));
   }
 
-  if(m_domainValidationOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
-   for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
-   {
-     domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
-   }
-   payload.WithArray("domainValidationOptions", std::move(domainValidationOptionsJsonList));
-
+  if (m_domainValidationOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> domainValidationOptionsJsonList(m_domainValidationOptions.size());
+    for (unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength();
+         ++domainValidationOptionsIndex) {
+      domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject(
+          m_domainValidationOptions[domainValidationOptionsIndex].Jsonize());
+    }
+    payload.WithArray("domainValidationOptions", std::move(domainValidationOptionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

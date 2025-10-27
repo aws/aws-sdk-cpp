@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/DeviceUnderTest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/model/DeviceUnderTest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTDeviceAdvisor {
+namespace Model {
 
-DeviceUnderTest::DeviceUnderTest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeviceUnderTest::DeviceUnderTest(JsonView jsonValue) { *this = jsonValue; }
 
-DeviceUnderTest& DeviceUnderTest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("thingArn"))
-  {
+DeviceUnderTest& DeviceUnderTest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("thingArn")) {
     m_thingArn = jsonValue.GetString("thingArn");
     m_thingArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificateArn"))
-  {
+  if (jsonValue.ValueExists("certificateArn")) {
     m_certificateArn = jsonValue.GetString("certificateArn");
     m_certificateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deviceRoleArn"))
-  {
+  if (jsonValue.ValueExists("deviceRoleArn")) {
     m_deviceRoleArn = jsonValue.GetString("deviceRoleArn");
     m_deviceRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeviceUnderTest::Jsonize() const
-{
+JsonValue DeviceUnderTest::Jsonize() const {
   JsonValue payload;
 
-  if(m_thingArnHasBeenSet)
-  {
-   payload.WithString("thingArn", m_thingArn);
-
+  if (m_thingArnHasBeenSet) {
+    payload.WithString("thingArn", m_thingArn);
   }
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("certificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("certificateArn", m_certificateArn);
   }
 
-  if(m_deviceRoleArnHasBeenSet)
-  {
-   payload.WithString("deviceRoleArn", m_deviceRoleArn);
-
+  if (m_deviceRoleArnHasBeenSet) {
+    payload.WithString("deviceRoleArn", m_deviceRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

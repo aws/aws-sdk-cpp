@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-QueryStagePlanNode::QueryStagePlanNode(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryStagePlanNode::QueryStagePlanNode(JsonView jsonValue) { *this = jsonValue; }
 
-QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+QueryStagePlanNode& QueryStagePlanNode::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Identifier"))
-  {
+  if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");
     m_identifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Children"))
-  {
+  if (jsonValue.ValueExists("Children")) {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
-    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
-    {
+    for (unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex) {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
     }
     m_childrenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RemoteSources"))
-  {
+  if (jsonValue.ValueExists("RemoteSources")) {
     Aws::Utils::Array<JsonView> remoteSourcesJsonList = jsonValue.GetArray("RemoteSources");
-    for(unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex)
-    {
+    for (unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex) {
       m_remoteSources.push_back(remoteSourcesJsonList[remoteSourcesIndex].AsString());
     }
     m_remoteSourcesHasBeenSet = true;
@@ -56,47 +43,36 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue QueryStagePlanNode::Jsonize() const
-{
+JsonValue QueryStagePlanNode::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("Identifier", m_identifier);
   }
 
-  if(m_childrenHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
-   for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
-   {
-     childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
-   }
-   payload.WithArray("Children", std::move(childrenJsonList));
-
+  if (m_childrenHasBeenSet) {
+    Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
+    for (unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex) {
+      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
+    }
+    payload.WithArray("Children", std::move(childrenJsonList));
   }
 
-  if(m_remoteSourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> remoteSourcesJsonList(m_remoteSources.size());
-   for(unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex)
-   {
-     remoteSourcesJsonList[remoteSourcesIndex].AsString(m_remoteSources[remoteSourcesIndex]);
-   }
-   payload.WithArray("RemoteSources", std::move(remoteSourcesJsonList));
-
+  if (m_remoteSourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remoteSourcesJsonList(m_remoteSources.size());
+    for (unsigned remoteSourcesIndex = 0; remoteSourcesIndex < remoteSourcesJsonList.GetLength(); ++remoteSourcesIndex) {
+      remoteSourcesJsonList[remoteSourcesIndex].AsString(m_remoteSources[remoteSourcesIndex]);
+    }
+    payload.WithArray("RemoteSources", std::move(remoteSourcesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

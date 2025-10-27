@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/GetCustomDomainAssociationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/GetCustomDomainAssociationRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCustomDomainAssociationRequest::SerializePayload() const
-{
+Aws::String GetCustomDomainAssociationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_customDomainNameHasBeenSet)
-  {
-   payload.WithString("customDomainName", m_customDomainName);
-
+  if (m_customDomainNameHasBeenSet) {
+    payload.WithString("customDomainName", m_customDomainName);
   }
 
-  if(m_workgroupNameHasBeenSet)
-  {
-   payload.WithString("workgroupName", m_workgroupName);
-
+  if (m_workgroupNameHasBeenSet) {
+    payload.WithString("workgroupName", m_workgroupName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCustomDomainAssociationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCustomDomainAssociationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.GetCustomDomainAssociation"));
   return headers;
-
 }
-
-
-
-

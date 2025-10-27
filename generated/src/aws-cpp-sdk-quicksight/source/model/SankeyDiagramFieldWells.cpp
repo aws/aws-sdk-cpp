@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SankeyDiagramFieldWells.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SankeyDiagramFieldWells.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SankeyDiagramFieldWells::SankeyDiagramFieldWells(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SankeyDiagramFieldWells::SankeyDiagramFieldWells(JsonView jsonValue) { *this = jsonValue; }
 
-SankeyDiagramFieldWells& SankeyDiagramFieldWells::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SankeyDiagramAggregatedFieldWells"))
-  {
+SankeyDiagramFieldWells& SankeyDiagramFieldWells::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SankeyDiagramAggregatedFieldWells")) {
     m_sankeyDiagramAggregatedFieldWells = jsonValue.GetObject("SankeyDiagramAggregatedFieldWells");
     m_sankeyDiagramAggregatedFieldWellsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SankeyDiagramFieldWells::Jsonize() const
-{
+JsonValue SankeyDiagramFieldWells::Jsonize() const {
   JsonValue payload;
 
-  if(m_sankeyDiagramAggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("SankeyDiagramAggregatedFieldWells", m_sankeyDiagramAggregatedFieldWells.Jsonize());
-
+  if (m_sankeyDiagramAggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("SankeyDiagramAggregatedFieldWells", m_sankeyDiagramAggregatedFieldWells.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

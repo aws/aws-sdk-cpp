@@ -12,57 +12,38 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateNamedQueryRequest::SerializePayload() const
-{
+Aws::String CreateNamedQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("Database", m_database);
-
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
-  if(m_queryStringHasBeenSet)
-  {
-   payload.WithString("QueryString", m_queryString);
-
+  if (m_queryStringHasBeenSet) {
+    payload.WithString("QueryString", m_queryString);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateNamedQueryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateNamedQueryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.CreateNamedQuery"));
   return headers;
-
 }
-
-
-
-

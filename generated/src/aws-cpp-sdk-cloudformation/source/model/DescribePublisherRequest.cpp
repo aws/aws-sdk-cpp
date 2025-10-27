@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribePublisherRequest::SerializePayload() const
-{
+Aws::String DescribePublisherRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribePublisher&";
-  if(m_publisherIdHasBeenSet)
-  {
+  if (m_publisherIdHasBeenSet) {
     ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribePublisherRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribePublisherRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribePublisherRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

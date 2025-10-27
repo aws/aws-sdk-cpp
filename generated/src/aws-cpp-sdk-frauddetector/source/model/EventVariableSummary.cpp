@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/EventVariableSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/EventVariableSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-EventVariableSummary::EventVariableSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventVariableSummary::EventVariableSummary(JsonView jsonValue) { *this = jsonValue; }
 
-EventVariableSummary& EventVariableSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+EventVariableSummary& EventVariableSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("source"))
-  {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventVariableSummary::Jsonize() const
-{
+JsonValue EventVariableSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

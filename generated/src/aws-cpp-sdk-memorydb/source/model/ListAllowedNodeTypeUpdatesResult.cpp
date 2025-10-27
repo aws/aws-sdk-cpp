@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/ListAllowedNodeTypeUpdatesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/memorydb/model/ListAllowedNodeTypeUpdatesResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAllowedNodeTypeUpdatesResult::ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAllowedNodeTypeUpdatesResult::ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ScaleUpNodeTypes"))
-  {
+  if (jsonValue.ValueExists("ScaleUpNodeTypes")) {
     Aws::Utils::Array<JsonView> scaleUpNodeTypesJsonList = jsonValue.GetArray("ScaleUpNodeTypes");
-    for(unsigned scaleUpNodeTypesIndex = 0; scaleUpNodeTypesIndex < scaleUpNodeTypesJsonList.GetLength(); ++scaleUpNodeTypesIndex)
-    {
+    for (unsigned scaleUpNodeTypesIndex = 0; scaleUpNodeTypesIndex < scaleUpNodeTypesJsonList.GetLength(); ++scaleUpNodeTypesIndex) {
       m_scaleUpNodeTypes.push_back(scaleUpNodeTypesJsonList[scaleUpNodeTypesIndex].AsString());
     }
     m_scaleUpNodeTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScaleDownNodeTypes"))
-  {
+  if (jsonValue.ValueExists("ScaleDownNodeTypes")) {
     Aws::Utils::Array<JsonView> scaleDownNodeTypesJsonList = jsonValue.GetArray("ScaleDownNodeTypes");
-    for(unsigned scaleDownNodeTypesIndex = 0; scaleDownNodeTypesIndex < scaleDownNodeTypesJsonList.GetLength(); ++scaleDownNodeTypesIndex)
-    {
+    for (unsigned scaleDownNodeTypesIndex = 0; scaleDownNodeTypesIndex < scaleDownNodeTypesJsonList.GetLength();
+         ++scaleDownNodeTypesIndex) {
       m_scaleDownNodeTypes.push_back(scaleDownNodeTypesJsonList[scaleDownNodeTypesIndex].AsString());
     }
     m_scaleDownNodeTypesHasBeenSet = true;
@@ -46,12 +39,10 @@ ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(c
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

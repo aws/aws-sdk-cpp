@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-GuardrailAutomatedReasoningPolicy::GuardrailAutomatedReasoningPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailAutomatedReasoningPolicy::GuardrailAutomatedReasoningPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailAutomatedReasoningPolicy& GuardrailAutomatedReasoningPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("policies"))
-  {
+GuardrailAutomatedReasoningPolicy& GuardrailAutomatedReasoningPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("policies")) {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
-    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
-    {
+    for (unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex) {
       m_policies.push_back(policiesJsonList[policiesIndex].AsString());
     }
     m_policiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("confidenceThreshold"))
-  {
+  if (jsonValue.ValueExists("confidenceThreshold")) {
     m_confidenceThreshold = jsonValue.GetDouble("confidenceThreshold");
     m_confidenceThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailAutomatedReasoningPolicy::Jsonize() const
-{
+JsonValue GuardrailAutomatedReasoningPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
-   for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
-   {
-     policiesJsonList[policiesIndex].AsString(m_policies[policiesIndex]);
-   }
-   payload.WithArray("policies", std::move(policiesJsonList));
-
+  if (m_policiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
+    for (unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex) {
+      policiesJsonList[policiesIndex].AsString(m_policies[policiesIndex]);
+    }
+    payload.WithArray("policies", std::move(policiesJsonList));
   }
 
-  if(m_confidenceThresholdHasBeenSet)
-  {
-   payload.WithDouble("confidenceThreshold", m_confidenceThreshold);
-
+  if (m_confidenceThresholdHasBeenSet) {
+    payload.WithDouble("confidenceThreshold", m_confidenceThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailCustomWord& GuardrailCustomWord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("match"))
-  {
+GuardrailCustomWord& GuardrailCustomWord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("match")) {
     m_match = jsonValue.GetString("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("action"))
-  {
+  if (jsonValue.ValueExists("action")) {
     m_action = GuardrailWordPolicyActionMapper::GetGuardrailWordPolicyActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailCustomWord::Jsonize() const
-{
+JsonValue GuardrailCustomWord::Jsonize() const {
   JsonValue payload;
 
-  if(m_matchHasBeenSet)
-  {
-   payload.WithString("match", m_match);
-
+  if (m_matchHasBeenSet) {
+    payload.WithString("match", m_match);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuardrailWordPolicyActionMapper::GetNameForGuardrailWordPolicyAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", GuardrailWordPolicyActionMapper::GetNameForGuardrailWordPolicyAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

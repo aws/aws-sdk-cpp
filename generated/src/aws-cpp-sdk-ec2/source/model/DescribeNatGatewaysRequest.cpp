@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeNatGatewaysRequest::SerializePayload() const
-{
+Aws::String DescribeNatGatewaysRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeNatGateways&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_filterHasBeenSet)
-  {
+  if (m_filterHasBeenSet) {
     unsigned filterCount = 1;
-    for(auto& item : m_filter)
-    {
+    for (auto& item : m_filter) {
       item.OutputToStream(ss, "Filter.", filterCount, "");
       filterCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_natGatewayIdsHasBeenSet)
-  {
+  if (m_natGatewayIdsHasBeenSet) {
     unsigned natGatewayIdsCount = 1;
-    for(auto& item : m_natGatewayIds)
-    {
-      ss << "NatGatewayId." << natGatewayIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_natGatewayIds) {
+      ss << "NatGatewayId." << natGatewayIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       natGatewayIdsCount++;
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -54,8 +45,4 @@ Aws::String DescribeNatGatewaysRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeNatGatewaysRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeNatGatewaysRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

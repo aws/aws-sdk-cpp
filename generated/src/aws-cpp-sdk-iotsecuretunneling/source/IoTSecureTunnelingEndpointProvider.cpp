@@ -5,12 +5,8 @@
 
 #include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTSecureTunneling
-} // namespace Aws
+namespace Aws {
+namespace IoTSecureTunneling {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTSecureTunneling
+}  // namespace Aws

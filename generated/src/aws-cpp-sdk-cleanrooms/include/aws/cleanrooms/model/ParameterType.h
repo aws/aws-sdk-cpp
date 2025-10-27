@@ -7,51 +7,46 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class ParameterType
-  {
-    NOT_SET,
-    SMALLINT,
-    INTEGER,
-    BIGINT,
-    DECIMAL,
-    REAL,
-    DOUBLE_PRECISION,
-    BOOLEAN,
-    CHAR_,
-    VARCHAR,
-    DATE,
-    TIMESTAMP,
-    TIMESTAMPTZ,
-    TIME,
-    TIMETZ,
-    VARBYTE,
-    BINARY,
-    BYTE,
-    CHARACTER,
-    DOUBLE,
-    FLOAT,
-    INT,
-    LONG,
-    NUMERIC,
-    SHORT,
-    STRING,
-    TIMESTAMP_LTZ,
-    TIMESTAMP_NTZ,
-    TINYINT
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class ParameterType {
+  NOT_SET,
+  SMALLINT,
+  INTEGER,
+  BIGINT,
+  DECIMAL,
+  REAL,
+  DOUBLE_PRECISION,
+  BOOLEAN,
+  CHAR_,
+  VARCHAR,
+  DATE,
+  TIMESTAMP,
+  TIMESTAMPTZ,
+  TIME,
+  TIMETZ,
+  VARBYTE,
+  BINARY,
+  BYTE,
+  CHARACTER,
+  DOUBLE,
+  FLOAT,
+  INT,
+  LONG,
+  NUMERIC,
+  SHORT,
+  STRING,
+  TIMESTAMP_LTZ,
+  TIMESTAMP_NTZ,
+  TINYINT
+};
 
-namespace ParameterTypeMapper
-{
+namespace ParameterTypeMapper {
 AWS_CLEANROOMS_API ParameterType GetParameterTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForParameterType(ParameterType value);
-} // namespace ParameterTypeMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace ParameterTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

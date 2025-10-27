@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/cloudhsm/CloudHSMRequest.h>
 
-namespace Aws
-{
-namespace CloudHSM
-{
-} // namespace CloudHSM
-} // namespace Aws
+namespace Aws {
+namespace CloudHSM {}  // namespace CloudHSM
+}  // namespace Aws

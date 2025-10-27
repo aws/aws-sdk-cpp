@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-SchemaStatusReason::SchemaStatusReason(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SchemaStatusReason::SchemaStatusReason(JsonView jsonValue) { *this = jsonValue; }
 
-SchemaStatusReason& SchemaStatusReason::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+SchemaStatusReason& SchemaStatusReason::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = SchemaStatusReasonCodeMapper::GetSchemaStatusReasonCodeForName(jsonValue.GetString("code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SchemaStatusReason::Jsonize() const
-{
+JsonValue SchemaStatusReason::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", SchemaStatusReasonCodeMapper::GetNameForSchemaStatusReasonCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", SchemaStatusReasonCodeMapper::GetNameForSchemaStatusReasonCode(m_code));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

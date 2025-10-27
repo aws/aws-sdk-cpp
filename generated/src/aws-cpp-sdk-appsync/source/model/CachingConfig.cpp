@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-CachingConfig::CachingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CachingConfig::CachingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CachingConfig& CachingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ttl"))
-  {
+CachingConfig& CachingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ttl")) {
     m_ttl = jsonValue.GetInt64("ttl");
     m_ttlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cachingKeys"))
-  {
+  if (jsonValue.ValueExists("cachingKeys")) {
     Aws::Utils::Array<JsonView> cachingKeysJsonList = jsonValue.GetArray("cachingKeys");
-    for(unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex)
-    {
+    for (unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex) {
       m_cachingKeys.push_back(cachingKeysJsonList[cachingKeysIndex].AsString());
     }
     m_cachingKeysHasBeenSet = true;
@@ -42,30 +32,24 @@ CachingConfig& CachingConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CachingConfig::Jsonize() const
-{
+JsonValue CachingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_ttlHasBeenSet)
-  {
-   payload.WithInt64("ttl", m_ttl);
-
+  if (m_ttlHasBeenSet) {
+    payload.WithInt64("ttl", m_ttl);
   }
 
-  if(m_cachingKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> cachingKeysJsonList(m_cachingKeys.size());
-   for(unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex)
-   {
-     cachingKeysJsonList[cachingKeysIndex].AsString(m_cachingKeys[cachingKeysIndex]);
-   }
-   payload.WithArray("cachingKeys", std::move(cachingKeysJsonList));
-
+  if (m_cachingKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cachingKeysJsonList(m_cachingKeys.size());
+    for (unsigned cachingKeysIndex = 0; cachingKeysIndex < cachingKeysJsonList.GetLength(); ++cachingKeysIndex) {
+      cachingKeysJsonList[cachingKeysIndex].AsString(m_cachingKeys[cachingKeysIndex]);
+    }
+    payload.WithArray("cachingKeys", std::move(cachingKeysJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

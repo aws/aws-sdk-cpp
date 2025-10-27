@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AIOps
-{
-namespace Model
-{
+namespace Aws {
+namespace AIOps {
+namespace Model {
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+EncryptionConfiguration& EncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = EncryptionConfigurationTypeMapper::GetEncryptionConfigurationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionConfiguration::Jsonize() const
-{
+JsonValue EncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", EncryptionConfigurationTypeMapper::GetNameForEncryptionConfigurationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", EncryptionConfigurationTypeMapper::GetNameForEncryptionConfigurationType(m_type));
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AIOps
-} // namespace Aws
+}  // namespace Model
+}  // namespace AIOps
+}  // namespace Aws

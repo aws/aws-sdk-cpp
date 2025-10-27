@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeDataSharesForConsumerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeDataSharesForConsumerRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeDataSharesForConsumerRequest::SerializePayload() const
-{
+Aws::String DescribeDataSharesForConsumerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeDataSharesForConsumer&";
-  if(m_consumerArnHasBeenSet)
-  {
+  if (m_consumerArnHasBeenSet) {
     ss << "ConsumerArn=" << StringUtils::URLEncode(m_consumerArn.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(DataShareStatusForConsumerMapper::GetNameForDataShareStatusForConsumer(m_status)) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeDataSharesForConsumerRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeDataSharesForConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeDataSharesForConsumerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

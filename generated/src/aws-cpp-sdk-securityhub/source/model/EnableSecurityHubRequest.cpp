@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/EnableSecurityHubRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/EnableSecurityHubRequest.h>
 
 #include <utility>
 
@@ -12,35 +12,25 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EnableSecurityHubRequest::SerializePayload() const
-{
+Aws::String EnableSecurityHubRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_enableDefaultStandardsHasBeenSet)
-  {
-   payload.WithBool("EnableDefaultStandards", m_enableDefaultStandards);
-
+  if (m_enableDefaultStandardsHasBeenSet) {
+    payload.WithBool("EnableDefaultStandards", m_enableDefaultStandards);
   }
 
-  if(m_controlFindingGeneratorHasBeenSet)
-  {
-   payload.WithString("ControlFindingGenerator", ControlFindingGeneratorMapper::GetNameForControlFindingGenerator(m_controlFindingGenerator));
+  if (m_controlFindingGeneratorHasBeenSet) {
+    payload.WithString("ControlFindingGenerator",
+                       ControlFindingGeneratorMapper::GetNameForControlFindingGenerator(m_controlFindingGenerator));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

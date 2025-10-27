@@ -12,44 +12,30 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRecommendationPreferencesRequest::SerializePayload() const
-{
+Aws::String GetRecommendationPreferencesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithObject("scope", m_scope.Jsonize());
-
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("scope", m_scope.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetRecommendationPreferencesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetRecommendationPreferencesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.GetRecommendationPreferences"));
   return headers;
-
 }
-
-
-
-

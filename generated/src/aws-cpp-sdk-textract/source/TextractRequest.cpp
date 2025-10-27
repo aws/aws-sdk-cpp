@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/textract/TextractRequest.h>
 
-namespace Aws
-{
-namespace Textract
-{
-} // namespace Textract
-} // namespace Aws
+namespace Aws {
+namespace Textract {}  // namespace Textract
+}  // namespace Aws

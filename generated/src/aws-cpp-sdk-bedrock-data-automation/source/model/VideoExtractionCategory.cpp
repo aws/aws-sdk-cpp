@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-VideoExtractionCategory::VideoExtractionCategory(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VideoExtractionCategory::VideoExtractionCategory(JsonView jsonValue) { *this = jsonValue; }
 
-VideoExtractionCategory& VideoExtractionCategory::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("state"))
-  {
+VideoExtractionCategory& VideoExtractionCategory::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("state")) {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("types"))
-  {
+  if (jsonValue.ValueExists("types")) {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
-    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-    {
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
       m_types.push_back(VideoExtractionCategoryTypeMapper::GetVideoExtractionCategoryTypeForName(typesJsonList[typesIndex].AsString()));
     }
     m_typesHasBeenSet = true;
@@ -42,29 +32,24 @@ VideoExtractionCategory& VideoExtractionCategory::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue VideoExtractionCategory::Jsonize() const
-{
+JsonValue VideoExtractionCategory::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", StateMapper::GetNameForState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", StateMapper::GetNameForState(m_state));
   }
 
-  if(m_typesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
-   for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-   {
-     typesJsonList[typesIndex].AsString(VideoExtractionCategoryTypeMapper::GetNameForVideoExtractionCategoryType(m_types[typesIndex]));
-   }
-   payload.WithArray("types", std::move(typesJsonList));
-
+  if (m_typesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      typesJsonList[typesIndex].AsString(VideoExtractionCategoryTypeMapper::GetNameForVideoExtractionCategoryType(m_types[typesIndex]));
+    }
+    payload.WithArray("types", std::move(typesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/DomainDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/DomainDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-DomainDetails::DomainDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainDetails::DomainDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DomainDetails& DomainDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domain"))
-  {
+DomainDetails& DomainDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domain")) {
     m_domain = jsonValue.GetString("domain");
     m_domainHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainDetails::Jsonize() const
-{
+JsonValue DomainDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("domain", m_domain);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

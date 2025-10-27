@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteInstanceEventWindowRequest::SerializePayload() const
-{
+Aws::String DeleteInstanceEventWindowRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteInstanceEventWindow&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
+  if (m_forceDeleteHasBeenSet) {
     ss << "ForceDelete=" << std::boolalpha << m_forceDelete << "&";
   }
 
-  if(m_instanceEventWindowIdHasBeenSet)
-  {
+  if (m_instanceEventWindowIdHasBeenSet) {
     ss << "InstanceEventWindowId=" << StringUtils::URLEncode(m_instanceEventWindowId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteInstanceEventWindowRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

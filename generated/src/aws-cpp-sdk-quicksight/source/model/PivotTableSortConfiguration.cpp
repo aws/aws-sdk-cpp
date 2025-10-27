@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PivotTableSortConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PivotTableSortConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-PivotTableSortConfiguration::PivotTableSortConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PivotTableSortConfiguration::PivotTableSortConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PivotTableSortConfiguration& PivotTableSortConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldSortOptions"))
-  {
+PivotTableSortConfiguration& PivotTableSortConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldSortOptions")) {
     Aws::Utils::Array<JsonView> fieldSortOptionsJsonList = jsonValue.GetArray("FieldSortOptions");
-    for(unsigned fieldSortOptionsIndex = 0; fieldSortOptionsIndex < fieldSortOptionsJsonList.GetLength(); ++fieldSortOptionsIndex)
-    {
+    for (unsigned fieldSortOptionsIndex = 0; fieldSortOptionsIndex < fieldSortOptionsJsonList.GetLength(); ++fieldSortOptionsIndex) {
       m_fieldSortOptions.push_back(fieldSortOptionsJsonList[fieldSortOptionsIndex].AsObject());
     }
     m_fieldSortOptionsHasBeenSet = true;
@@ -37,24 +28,20 @@ PivotTableSortConfiguration& PivotTableSortConfiguration::operator =(JsonView js
   return *this;
 }
 
-JsonValue PivotTableSortConfiguration::Jsonize() const
-{
+JsonValue PivotTableSortConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldSortOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldSortOptionsJsonList(m_fieldSortOptions.size());
-   for(unsigned fieldSortOptionsIndex = 0; fieldSortOptionsIndex < fieldSortOptionsJsonList.GetLength(); ++fieldSortOptionsIndex)
-   {
-     fieldSortOptionsJsonList[fieldSortOptionsIndex].AsObject(m_fieldSortOptions[fieldSortOptionsIndex].Jsonize());
-   }
-   payload.WithArray("FieldSortOptions", std::move(fieldSortOptionsJsonList));
-
+  if (m_fieldSortOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldSortOptionsJsonList(m_fieldSortOptions.size());
+    for (unsigned fieldSortOptionsIndex = 0; fieldSortOptionsIndex < fieldSortOptionsJsonList.GetLength(); ++fieldSortOptionsIndex) {
+      fieldSortOptionsJsonList[fieldSortOptionsIndex].AsObject(m_fieldSortOptions[fieldSortOptionsIndex].Jsonize());
+    }
+    payload.WithArray("FieldSortOptions", std::move(fieldSortOptionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

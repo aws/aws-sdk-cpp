@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/ActiveDirectoryError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/ActiveDirectoryError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-ActiveDirectoryError::ActiveDirectoryError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActiveDirectoryError::ActiveDirectoryError(JsonView jsonValue) { *this = jsonValue; }
 
-ActiveDirectoryError& ActiveDirectoryError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActiveDirectoryId"))
-  {
+ActiveDirectoryError& ActiveDirectoryError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActiveDirectoryId")) {
     m_activeDirectoryId = jsonValue.GetString("ActiveDirectoryId");
     m_activeDirectoryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ActiveDirectoryErrorTypeMapper::GetActiveDirectoryErrorTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActiveDirectoryError::Jsonize() const
-{
+JsonValue ActiveDirectoryError::Jsonize() const {
   JsonValue payload;
 
-  if(m_activeDirectoryIdHasBeenSet)
-  {
-   payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
-
+  if (m_activeDirectoryIdHasBeenSet) {
+    payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ActiveDirectoryErrorTypeMapper::GetNameForActiveDirectoryErrorType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ActiveDirectoryErrorTypeMapper::GetNameForActiveDirectoryErrorType(m_type));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/support-app/model/ListSlackWorkspaceConfigurationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/support-app/model/ListSlackWorkspaceConfigurationsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSlackWorkspaceConfigurationsResult::ListSlackWorkspaceConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListSlackWorkspaceConfigurationsResult::ListSlackWorkspaceConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListSlackWorkspaceConfigurationsResult& ListSlackWorkspaceConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListSlackWorkspaceConfigurationsResult& ListSlackWorkspaceConfigurationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("slackWorkspaceConfigurations"))
-  {
+  if (jsonValue.ValueExists("slackWorkspaceConfigurations")) {
     Aws::Utils::Array<JsonView> slackWorkspaceConfigurationsJsonList = jsonValue.GetArray("slackWorkspaceConfigurations");
-    for(unsigned slackWorkspaceConfigurationsIndex = 0; slackWorkspaceConfigurationsIndex < slackWorkspaceConfigurationsJsonList.GetLength(); ++slackWorkspaceConfigurationsIndex)
-    {
+    for (unsigned slackWorkspaceConfigurationsIndex = 0;
+         slackWorkspaceConfigurationsIndex < slackWorkspaceConfigurationsJsonList.GetLength(); ++slackWorkspaceConfigurationsIndex) {
       m_slackWorkspaceConfigurations.push_back(slackWorkspaceConfigurationsJsonList[slackWorkspaceConfigurationsIndex].AsObject());
     }
     m_slackWorkspaceConfigurationsHasBeenSet = true;
@@ -42,12 +39,10 @@ ListSlackWorkspaceConfigurationsResult& ListSlackWorkspaceConfigurationsResult::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

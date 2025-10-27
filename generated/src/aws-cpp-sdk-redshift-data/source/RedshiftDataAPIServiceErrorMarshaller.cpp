@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RedshiftDataAPIService;
 
-AWSError<CoreErrors> RedshiftDataAPIServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RedshiftDataAPIServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RedshiftDataAPIServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

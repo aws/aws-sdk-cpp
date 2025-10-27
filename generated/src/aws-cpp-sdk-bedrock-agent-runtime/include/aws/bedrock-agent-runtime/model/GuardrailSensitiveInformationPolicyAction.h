@@ -7,25 +7,18 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class GuardrailSensitiveInformationPolicyAction
-  {
-    NOT_SET,
-    BLOCKED,
-    ANONYMIZED
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class GuardrailSensitiveInformationPolicyAction { NOT_SET, BLOCKED, ANONYMIZED };
 
-namespace GuardrailSensitiveInformationPolicyActionMapper
-{
-AWS_BEDROCKAGENTRUNTIME_API GuardrailSensitiveInformationPolicyAction GetGuardrailSensitiveInformationPolicyActionForName(const Aws::String& name);
+namespace GuardrailSensitiveInformationPolicyActionMapper {
+AWS_BEDROCKAGENTRUNTIME_API GuardrailSensitiveInformationPolicyAction
+GetGuardrailSensitiveInformationPolicyActionForName(const Aws::String& name);
 
-AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForGuardrailSensitiveInformationPolicyAction(GuardrailSensitiveInformationPolicyAction value);
-} // namespace GuardrailSensitiveInformationPolicyActionMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForGuardrailSensitiveInformationPolicyAction(
+    GuardrailSensitiveInformationPolicyAction value);
+}  // namespace GuardrailSensitiveInformationPolicyActionMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteAudienceGenerationJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteAudienceGenerationJobRequest::SerializePayload() const { return {}; }

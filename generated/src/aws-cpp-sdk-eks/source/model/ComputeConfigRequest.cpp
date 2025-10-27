@@ -3,80 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/ComputeConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/ComputeConfigRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-ComputeConfigRequest::ComputeConfigRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComputeConfigRequest::ComputeConfigRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ComputeConfigRequest& ComputeConfigRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+ComputeConfigRequest& ComputeConfigRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodePools"))
-  {
+  if (jsonValue.ValueExists("nodePools")) {
     Aws::Utils::Array<JsonView> nodePoolsJsonList = jsonValue.GetArray("nodePools");
-    for(unsigned nodePoolsIndex = 0; nodePoolsIndex < nodePoolsJsonList.GetLength(); ++nodePoolsIndex)
-    {
+    for (unsigned nodePoolsIndex = 0; nodePoolsIndex < nodePoolsJsonList.GetLength(); ++nodePoolsIndex) {
       m_nodePools.push_back(nodePoolsJsonList[nodePoolsIndex].AsString());
     }
     m_nodePoolsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodeRoleArn"))
-  {
+  if (jsonValue.ValueExists("nodeRoleArn")) {
     m_nodeRoleArn = jsonValue.GetString("nodeRoleArn");
     m_nodeRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComputeConfigRequest::Jsonize() const
-{
+JsonValue ComputeConfigRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_nodePoolsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nodePoolsJsonList(m_nodePools.size());
-   for(unsigned nodePoolsIndex = 0; nodePoolsIndex < nodePoolsJsonList.GetLength(); ++nodePoolsIndex)
-   {
-     nodePoolsJsonList[nodePoolsIndex].AsString(m_nodePools[nodePoolsIndex]);
-   }
-   payload.WithArray("nodePools", std::move(nodePoolsJsonList));
-
+  if (m_nodePoolsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nodePoolsJsonList(m_nodePools.size());
+    for (unsigned nodePoolsIndex = 0; nodePoolsIndex < nodePoolsJsonList.GetLength(); ++nodePoolsIndex) {
+      nodePoolsJsonList[nodePoolsIndex].AsString(m_nodePools[nodePoolsIndex]);
+    }
+    payload.WithArray("nodePools", std::move(nodePoolsJsonList));
   }
 
-  if(m_nodeRoleArnHasBeenSet)
-  {
-   payload.WithString("nodeRoleArn", m_nodeRoleArn);
-
+  if (m_nodeRoleArnHasBeenSet) {
+    payload.WithString("nodeRoleArn", m_nodeRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

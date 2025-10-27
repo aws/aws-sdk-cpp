@@ -11,167 +11,127 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-DomainAssociation::DomainAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainAssociation::DomainAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainAssociationArn"))
-  {
+DomainAssociation& DomainAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainAssociationArn")) {
     m_domainAssociationArn = jsonValue.GetString("domainAssociationArn");
     m_domainAssociationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainName"))
-  {
+  if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enableAutoSubDomain"))
-  {
+  if (jsonValue.ValueExists("enableAutoSubDomain")) {
     m_enableAutoSubDomain = jsonValue.GetBool("enableAutoSubDomain");
     m_enableAutoSubDomainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoSubDomainCreationPatterns"))
-  {
+  if (jsonValue.ValueExists("autoSubDomainCreationPatterns")) {
     Aws::Utils::Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
-    for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
-    {
+    for (unsigned autoSubDomainCreationPatternsIndex = 0;
+         autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex) {
       m_autoSubDomainCreationPatterns.push_back(autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString());
     }
     m_autoSubDomainCreationPatternsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoSubDomainIAMRole"))
-  {
+  if (jsonValue.ValueExists("autoSubDomainIAMRole")) {
     m_autoSubDomainIAMRole = jsonValue.GetString("autoSubDomainIAMRole");
     m_autoSubDomainIAMRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainStatus"))
-  {
+  if (jsonValue.ValueExists("domainStatus")) {
     m_domainStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("domainStatus"));
     m_domainStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateStatus"))
-  {
+  if (jsonValue.ValueExists("updateStatus")) {
     m_updateStatus = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("updateStatus"));
     m_updateStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificateVerificationDNSRecord"))
-  {
+  if (jsonValue.ValueExists("certificateVerificationDNSRecord")) {
     m_certificateVerificationDNSRecord = jsonValue.GetString("certificateVerificationDNSRecord");
     m_certificateVerificationDNSRecordHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subDomains"))
-  {
+  if (jsonValue.ValueExists("subDomains")) {
     Aws::Utils::Array<JsonView> subDomainsJsonList = jsonValue.GetArray("subDomains");
-    for(unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex)
-    {
+    for (unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex) {
       m_subDomains.push_back(subDomainsJsonList[subDomainsIndex].AsObject());
     }
     m_subDomainsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("certificate"))
-  {
+  if (jsonValue.ValueExists("certificate")) {
     m_certificate = jsonValue.GetObject("certificate");
     m_certificateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainAssociation::Jsonize() const
-{
+JsonValue DomainAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainAssociationArnHasBeenSet)
-  {
-   payload.WithString("domainAssociationArn", m_domainAssociationArn);
-
+  if (m_domainAssociationArnHasBeenSet) {
+    payload.WithString("domainAssociationArn", m_domainAssociationArn);
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
-  if(m_enableAutoSubDomainHasBeenSet)
-  {
-   payload.WithBool("enableAutoSubDomain", m_enableAutoSubDomain);
-
+  if (m_enableAutoSubDomainHasBeenSet) {
+    payload.WithBool("enableAutoSubDomain", m_enableAutoSubDomain);
   }
 
-  if(m_autoSubDomainCreationPatternsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
-   for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
-   {
-     autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
-   }
-   payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
-
+  if (m_autoSubDomainCreationPatternsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+    for (unsigned autoSubDomainCreationPatternsIndex = 0;
+         autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex) {
+      autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(
+          m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
+    }
+    payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
   }
 
-  if(m_autoSubDomainIAMRoleHasBeenSet)
-  {
-   payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
-
+  if (m_autoSubDomainIAMRoleHasBeenSet) {
+    payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
   }
 
-  if(m_domainStatusHasBeenSet)
-  {
-   payload.WithString("domainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
+  if (m_domainStatusHasBeenSet) {
+    payload.WithString("domainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
   }
 
-  if(m_updateStatusHasBeenSet)
-  {
-   payload.WithString("updateStatus", UpdateStatusMapper::GetNameForUpdateStatus(m_updateStatus));
+  if (m_updateStatusHasBeenSet) {
+    payload.WithString("updateStatus", UpdateStatusMapper::GetNameForUpdateStatus(m_updateStatus));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("statusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
-  if(m_certificateVerificationDNSRecordHasBeenSet)
-  {
-   payload.WithString("certificateVerificationDNSRecord", m_certificateVerificationDNSRecord);
-
+  if (m_certificateVerificationDNSRecordHasBeenSet) {
+    payload.WithString("certificateVerificationDNSRecord", m_certificateVerificationDNSRecord);
   }
 
-  if(m_subDomainsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subDomainsJsonList(m_subDomains.size());
-   for(unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex)
-   {
-     subDomainsJsonList[subDomainsIndex].AsObject(m_subDomains[subDomainsIndex].Jsonize());
-   }
-   payload.WithArray("subDomains", std::move(subDomainsJsonList));
-
+  if (m_subDomainsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subDomainsJsonList(m_subDomains.size());
+    for (unsigned subDomainsIndex = 0; subDomainsIndex < subDomainsJsonList.GetLength(); ++subDomainsIndex) {
+      subDomainsJsonList[subDomainsIndex].AsObject(m_subDomains[subDomainsIndex].Jsonize());
+    }
+    payload.WithArray("subDomains", std::move(subDomainsJsonList));
   }
 
-  if(m_certificateHasBeenSet)
-  {
-   payload.WithObject("certificate", m_certificate.Jsonize());
-
+  if (m_certificateHasBeenSet) {
+    payload.WithObject("certificate", m_certificate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

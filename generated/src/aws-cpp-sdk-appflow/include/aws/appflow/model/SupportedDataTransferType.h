@@ -7,25 +7,16 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
-  enum class SupportedDataTransferType
-  {
-    NOT_SET,
-    RECORD,
-    FILE
-  };
+namespace Aws {
+namespace Appflow {
+namespace Model {
+enum class SupportedDataTransferType { NOT_SET, RECORD, FILE };
 
-namespace SupportedDataTransferTypeMapper
-{
+namespace SupportedDataTransferTypeMapper {
 AWS_APPFLOW_API SupportedDataTransferType GetSupportedDataTransferTypeForName(const Aws::String& name);
 
 AWS_APPFLOW_API Aws::String GetNameForSupportedDataTransferType(SupportedDataTransferType value);
-} // namespace SupportedDataTransferTypeMapper
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace SupportedDataTransferTypeMapper
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

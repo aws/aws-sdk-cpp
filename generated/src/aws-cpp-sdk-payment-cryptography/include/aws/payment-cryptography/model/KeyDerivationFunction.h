@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-namespace Model
-{
-  enum class KeyDerivationFunction
-  {
-    NOT_SET,
-    NIST_SP800,
-    ANSI_X963
-  };
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
+enum class KeyDerivationFunction { NOT_SET, NIST_SP800, ANSI_X963 };
 
-namespace KeyDerivationFunctionMapper
-{
+namespace KeyDerivationFunctionMapper {
 AWS_PAYMENTCRYPTOGRAPHY_API KeyDerivationFunction GetKeyDerivationFunctionForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHY_API Aws::String GetNameForKeyDerivationFunction(KeyDerivationFunction value);
-} // namespace KeyDerivationFunctionMapper
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace KeyDerivationFunctionMapper
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

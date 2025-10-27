@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DataQualityRuleRecommendationRunFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DataQualityRuleRecommendationRunFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter(JsonView jsonValue) { *this = jsonValue; }
 
-DataQualityRuleRecommendationRunFilter& DataQualityRuleRecommendationRunFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSource"))
-  {
+DataQualityRuleRecommendationRunFilter& DataQualityRuleRecommendationRunFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSource")) {
     m_dataSource = jsonValue.GetObject("DataSource");
     m_dataSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartedBefore"))
-  {
+  if (jsonValue.ValueExists("StartedBefore")) {
     m_startedBefore = jsonValue.GetDouble("StartedBefore");
     m_startedBeforeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartedAfter"))
-  {
+  if (jsonValue.ValueExists("StartedAfter")) {
     m_startedAfter = jsonValue.GetDouble("StartedAfter");
     m_startedAfterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataQualityRuleRecommendationRunFilter::Jsonize() const
-{
+JsonValue DataQualityRuleRecommendationRunFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithObject("DataSource", m_dataSource.Jsonize());
-
+  if (m_dataSourceHasBeenSet) {
+    payload.WithObject("DataSource", m_dataSource.Jsonize());
   }
 
-  if(m_startedBeforeHasBeenSet)
-  {
-   payload.WithDouble("StartedBefore", m_startedBefore.SecondsWithMSPrecision());
+  if (m_startedBeforeHasBeenSet) {
+    payload.WithDouble("StartedBefore", m_startedBefore.SecondsWithMSPrecision());
   }
 
-  if(m_startedAfterHasBeenSet)
-  {
-   payload.WithDouble("StartedAfter", m_startedAfter.SecondsWithMSPrecision());
+  if (m_startedAfterHasBeenSet) {
+    payload.WithDouble("StartedAfter", m_startedAfter.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

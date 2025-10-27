@@ -12,41 +12,29 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateOauth2CredentialProviderRequest::SerializePayload() const
-{
+Aws::String CreateOauth2CredentialProviderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_credentialProviderVendorHasBeenSet)
-  {
-   payload.WithString("credentialProviderVendor", CredentialProviderVendorTypeMapper::GetNameForCredentialProviderVendorType(m_credentialProviderVendor));
+  if (m_credentialProviderVendorHasBeenSet) {
+    payload.WithString("credentialProviderVendor",
+                       CredentialProviderVendorTypeMapper::GetNameForCredentialProviderVendorType(m_credentialProviderVendor));
   }
 
-  if(m_oauth2ProviderConfigInputHasBeenSet)
-  {
-   payload.WithObject("oauth2ProviderConfigInput", m_oauth2ProviderConfigInput.Jsonize());
-
+  if (m_oauth2ProviderConfigInputHasBeenSet) {
+    payload.WithObject("oauth2ProviderConfigInput", m_oauth2ProviderConfigInput.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

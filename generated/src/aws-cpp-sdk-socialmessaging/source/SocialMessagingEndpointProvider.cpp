@@ -5,12 +5,8 @@
 
 #include <aws/socialmessaging/SocialMessagingEndpointProvider.h>
 
-namespace Aws
-{
-namespace SocialMessaging
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SocialMessaging
-} // namespace Aws
+namespace Aws {
+namespace SocialMessaging {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SocialMessaging
+}  // namespace Aws

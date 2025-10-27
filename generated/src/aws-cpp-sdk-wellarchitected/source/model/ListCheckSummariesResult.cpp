@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ListCheckSummariesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/wellarchitected/model/ListCheckSummariesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCheckSummariesResult::ListCheckSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListCheckSummariesResult::ListCheckSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListCheckSummariesResult& ListCheckSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListCheckSummariesResult& ListCheckSummariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CheckSummaries"))
-  {
+  if (jsonValue.ValueExists("CheckSummaries")) {
     Aws::Utils::Array<JsonView> checkSummariesJsonList = jsonValue.GetArray("CheckSummaries");
-    for(unsigned checkSummariesIndex = 0; checkSummariesIndex < checkSummariesJsonList.GetLength(); ++checkSummariesIndex)
-    {
+    for (unsigned checkSummariesIndex = 0; checkSummariesIndex < checkSummariesJsonList.GetLength(); ++checkSummariesIndex) {
       m_checkSummaries.push_back(checkSummariesJsonList[checkSummariesIndex].AsObject());
     }
     m_checkSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -6,94 +6,110 @@
 #pragma once
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LexRuntimeV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LexRuntimeV2 {
+namespace Model {
 
+/**
+ * <p>The individual sentiment responses for the utterance.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/SentimentScore">AWS
+ * API Reference</a></p>
+ */
+class SentimentScore {
+ public:
+  AWS_LEXRUNTIMEV2_API SentimentScore() = default;
+  AWS_LEXRUNTIMEV2_API SentimentScore(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXRUNTIMEV2_API SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The individual sentiment responses for the utterance.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/SentimentScore">AWS
-   * API Reference</a></p>
+   * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+   * detection of the <code>POSITIVE</code> sentiment.</p>
    */
-  class SentimentScore
-  {
-  public:
-    AWS_LEXRUNTIMEV2_API SentimentScore() = default;
-    AWS_LEXRUNTIMEV2_API SentimentScore(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXRUNTIMEV2_API SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline double GetPositive() const { return m_positive; }
+  inline bool PositiveHasBeenSet() const { return m_positiveHasBeenSet; }
+  inline void SetPositive(double value) {
+    m_positiveHasBeenSet = true;
+    m_positive = value;
+  }
+  inline SentimentScore& WithPositive(double value) {
+    SetPositive(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+   * detection of the <code>NEGATIVE</code> sentiment.</p>
+   */
+  inline double GetNegative() const { return m_negative; }
+  inline bool NegativeHasBeenSet() const { return m_negativeHasBeenSet; }
+  inline void SetNegative(double value) {
+    m_negativeHasBeenSet = true;
+    m_negative = value;
+  }
+  inline SentimentScore& WithNegative(double value) {
+    SetNegative(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * detection of the <code>POSITIVE</code> sentiment.</p>
-     */
-    inline double GetPositive() const { return m_positive; }
-    inline bool PositiveHasBeenSet() const { return m_positiveHasBeenSet; }
-    inline void SetPositive(double value) { m_positiveHasBeenSet = true; m_positive = value; }
-    inline SentimentScore& WithPositive(double value) { SetPositive(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+   * detection of the <code>NEUTRAL</code> sentiment.</p>
+   */
+  inline double GetNeutral() const { return m_neutral; }
+  inline bool NeutralHasBeenSet() const { return m_neutralHasBeenSet; }
+  inline void SetNeutral(double value) {
+    m_neutralHasBeenSet = true;
+    m_neutral = value;
+  }
+  inline SentimentScore& WithNeutral(double value) {
+    SetNeutral(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * detection of the <code>NEGATIVE</code> sentiment.</p>
-     */
-    inline double GetNegative() const { return m_negative; }
-    inline bool NegativeHasBeenSet() const { return m_negativeHasBeenSet; }
-    inline void SetNegative(double value) { m_negativeHasBeenSet = true; m_negative = value; }
-    inline SentimentScore& WithNegative(double value) { SetNegative(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+   * detection of the <code>MIXED</code> sentiment.</p>
+   */
+  inline double GetMixed() const { return m_mixed; }
+  inline bool MixedHasBeenSet() const { return m_mixedHasBeenSet; }
+  inline void SetMixed(double value) {
+    m_mixedHasBeenSet = true;
+    m_mixed = value;
+  }
+  inline SentimentScore& WithMixed(double value) {
+    SetMixed(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_positive{0.0};
+  bool m_positiveHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * detection of the <code>NEUTRAL</code> sentiment.</p>
-     */
-    inline double GetNeutral() const { return m_neutral; }
-    inline bool NeutralHasBeenSet() const { return m_neutralHasBeenSet; }
-    inline void SetNeutral(double value) { m_neutralHasBeenSet = true; m_neutral = value; }
-    inline SentimentScore& WithNeutral(double value) { SetNeutral(value); return *this;}
-    ///@}
+  double m_negative{0.0};
+  bool m_negativeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
-     * detection of the <code>MIXED</code> sentiment.</p>
-     */
-    inline double GetMixed() const { return m_mixed; }
-    inline bool MixedHasBeenSet() const { return m_mixedHasBeenSet; }
-    inline void SetMixed(double value) { m_mixedHasBeenSet = true; m_mixed = value; }
-    inline SentimentScore& WithMixed(double value) { SetMixed(value); return *this;}
-    ///@}
-  private:
+  double m_neutral{0.0};
+  bool m_neutralHasBeenSet = false;
 
-    double m_positive{0.0};
-    bool m_positiveHasBeenSet = false;
+  double m_mixed{0.0};
+  bool m_mixedHasBeenSet = false;
+};
 
-    double m_negative{0.0};
-    bool m_negativeHasBeenSet = false;
-
-    double m_neutral{0.0};
-    bool m_neutralHasBeenSet = false;
-
-    double m_mixed{0.0};
-    bool m_mixedHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexRuntimeV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

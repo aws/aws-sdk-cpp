@@ -10,31 +10,23 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String EstimateTemplateCostRequest::SerializePayload() const
-{
+Aws::String EstimateTemplateCostRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EstimateTemplateCost&";
-  if(m_templateBodyHasBeenSet)
-  {
+  if (m_templateBodyHasBeenSet) {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
 
-  if(m_templateURLHasBeenSet)
-  {
+  if (m_templateURLHasBeenSet) {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
 
-  if(m_parametersHasBeenSet)
-  {
-    if (m_parameters.empty())
-    {
+  if (m_parametersHasBeenSet) {
+    if (m_parameters.empty()) {
       ss << "Parameters=&";
-    }
-    else
-    {
+    } else {
       unsigned parametersCount = 1;
-      for(auto& item : m_parameters)
-      {
+      for (auto& item : m_parameters) {
         item.OutputToStream(ss, "Parameters.member.", parametersCount, "");
         parametersCount++;
       }
@@ -45,8 +37,4 @@ Aws::String EstimateTemplateCostRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EstimateTemplateCostRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EstimateTemplateCostRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

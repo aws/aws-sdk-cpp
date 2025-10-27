@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IdentityCenterConfiguration& IdentityCenterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EnableIdentityCenter"))
-  {
+IdentityCenterConfiguration& IdentityCenterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnableIdentityCenter")) {
     m_enableIdentityCenter = jsonValue.GetBool("EnableIdentityCenter");
     m_enableIdentityCenterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdentityCenterInstanceArn"))
-  {
+  if (jsonValue.ValueExists("IdentityCenterInstanceArn")) {
     m_identityCenterInstanceArn = jsonValue.GetString("IdentityCenterInstanceArn");
     m_identityCenterInstanceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdentityCenterConfiguration::Jsonize() const
-{
+JsonValue IdentityCenterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableIdentityCenterHasBeenSet)
-  {
-   payload.WithBool("EnableIdentityCenter", m_enableIdentityCenter);
-
+  if (m_enableIdentityCenterHasBeenSet) {
+    payload.WithBool("EnableIdentityCenter", m_enableIdentityCenter);
   }
 
-  if(m_identityCenterInstanceArnHasBeenSet)
-  {
-   payload.WithString("IdentityCenterInstanceArn", m_identityCenterInstanceArn);
-
+  if (m_identityCenterInstanceArnHasBeenSet) {
+    payload.WithString("IdentityCenterInstanceArn", m_identityCenterInstanceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

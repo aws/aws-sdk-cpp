@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class ActionType
-  {
-    NOT_SET,
-    restore_cluster,
-    recommend_node_config,
-    resize_cluster
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class ActionType { NOT_SET, restore_cluster, recommend_node_config, resize_cluster };
 
-namespace ActionTypeMapper
-{
+namespace ActionTypeMapper {
 AWS_REDSHIFT_API ActionType GetActionTypeForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForActionType(ActionType value);
-} // namespace ActionTypeMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace ActionTypeMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

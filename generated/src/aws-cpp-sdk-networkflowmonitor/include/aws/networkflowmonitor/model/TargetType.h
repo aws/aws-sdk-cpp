@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Model
-{
-  enum class TargetType
-  {
-    NOT_SET,
-    ACCOUNT
-  };
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Model {
+enum class TargetType { NOT_SET, ACCOUNT };
 
-namespace TargetTypeMapper
-{
+namespace TargetTypeMapper {
 AWS_NETWORKFLOWMONITOR_API TargetType GetTargetTypeForName(const Aws::String& name);
 
 AWS_NETWORKFLOWMONITOR_API Aws::String GetNameForTargetType(TargetType value);
-} // namespace TargetTypeMapper
-} // namespace Model
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace TargetTypeMapper
+}  // namespace Model
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

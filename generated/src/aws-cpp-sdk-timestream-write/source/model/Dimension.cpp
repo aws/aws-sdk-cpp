@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/Dimension.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/Dimension.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
 
-Dimension::Dimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Dimension::Dimension(JsonView jsonValue) { *this = jsonValue; }
 
-Dimension& Dimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Dimension& Dimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DimensionValueType"))
-  {
+  if (jsonValue.ValueExists("DimensionValueType")) {
     m_dimensionValueType = DimensionValueTypeMapper::GetDimensionValueTypeForName(jsonValue.GetString("DimensionValueType"));
     m_dimensionValueTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Dimension::Jsonize() const
-{
+JsonValue Dimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_dimensionValueTypeHasBeenSet)
-  {
-   payload.WithString("DimensionValueType", DimensionValueTypeMapper::GetNameForDimensionValueType(m_dimensionValueType));
+  if (m_dimensionValueTypeHasBeenSet) {
+    payload.WithString("DimensionValueType", DimensionValueTypeMapper::GetNameForDimensionValueType(m_dimensionValueType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

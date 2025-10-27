@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteServerCertificateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteServerCertificateRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteServerCertificateRequest::SerializePayload() const
-{
+Aws::String DeleteServerCertificateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteServerCertificate&";
-  if(m_serverCertificateNameHasBeenSet)
-  {
+  if (m_serverCertificateNameHasBeenSet) {
     ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteServerCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteServerCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteServerCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

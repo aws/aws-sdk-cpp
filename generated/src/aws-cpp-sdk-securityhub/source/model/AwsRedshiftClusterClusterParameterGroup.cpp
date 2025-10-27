@@ -3,80 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRedshiftClusterClusterParameterGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRedshiftClusterClusterParameterGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRedshiftClusterClusterParameterGroup::AwsRedshiftClusterClusterParameterGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRedshiftClusterClusterParameterGroup::AwsRedshiftClusterClusterParameterGroup(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRedshiftClusterClusterParameterGroup& AwsRedshiftClusterClusterParameterGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClusterParameterStatusList"))
-  {
+AwsRedshiftClusterClusterParameterGroup& AwsRedshiftClusterClusterParameterGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClusterParameterStatusList")) {
     Aws::Utils::Array<JsonView> clusterParameterStatusListJsonList = jsonValue.GetArray("ClusterParameterStatusList");
-    for(unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength(); ++clusterParameterStatusListIndex)
-    {
+    for (unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength();
+         ++clusterParameterStatusListIndex) {
       m_clusterParameterStatusList.push_back(clusterParameterStatusListJsonList[clusterParameterStatusListIndex].AsObject());
     }
     m_clusterParameterStatusListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterApplyStatus"))
-  {
+  if (jsonValue.ValueExists("ParameterApplyStatus")) {
     m_parameterApplyStatus = jsonValue.GetString("ParameterApplyStatus");
     m_parameterApplyStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterGroupName"))
-  {
+  if (jsonValue.ValueExists("ParameterGroupName")) {
     m_parameterGroupName = jsonValue.GetString("ParameterGroupName");
     m_parameterGroupNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRedshiftClusterClusterParameterGroup::Jsonize() const
-{
+JsonValue AwsRedshiftClusterClusterParameterGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_clusterParameterStatusListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> clusterParameterStatusListJsonList(m_clusterParameterStatusList.size());
-   for(unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength(); ++clusterParameterStatusListIndex)
-   {
-     clusterParameterStatusListJsonList[clusterParameterStatusListIndex].AsObject(m_clusterParameterStatusList[clusterParameterStatusListIndex].Jsonize());
-   }
-   payload.WithArray("ClusterParameterStatusList", std::move(clusterParameterStatusListJsonList));
-
+  if (m_clusterParameterStatusListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> clusterParameterStatusListJsonList(m_clusterParameterStatusList.size());
+    for (unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength();
+         ++clusterParameterStatusListIndex) {
+      clusterParameterStatusListJsonList[clusterParameterStatusListIndex].AsObject(
+          m_clusterParameterStatusList[clusterParameterStatusListIndex].Jsonize());
+    }
+    payload.WithArray("ClusterParameterStatusList", std::move(clusterParameterStatusListJsonList));
   }
 
-  if(m_parameterApplyStatusHasBeenSet)
-  {
-   payload.WithString("ParameterApplyStatus", m_parameterApplyStatus);
-
+  if (m_parameterApplyStatusHasBeenSet) {
+    payload.WithString("ParameterApplyStatus", m_parameterApplyStatus);
   }
 
-  if(m_parameterGroupNameHasBeenSet)
-  {
-   payload.WithString("ParameterGroupName", m_parameterGroupName);
-
+  if (m_parameterGroupNameHasBeenSet) {
+    payload.WithString("ParameterGroupName", m_parameterGroupName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws
