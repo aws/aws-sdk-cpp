@@ -11,6 +11,7 @@
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/config/EndpointResolver.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
@@ -134,6 +135,11 @@ void ConnectContactLensClient::init(const ConnectContactLens::ConnectContactLens
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("connect", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ConnectContactLensClient::OverrideEndpoint(const Aws::String& endpoint) {

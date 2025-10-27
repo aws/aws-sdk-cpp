@@ -24,6 +24,7 @@
 #end
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 #if($serviceModel.endpointRules)
+\#include <aws/core/config/EndpointResolver.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 #else
 #if($arnEndpointSupported)
