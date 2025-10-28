@@ -34,18 +34,25 @@ class SecurityDetails {
 
   ///@{
   /**
-   * <p>ARN to a role needed for connecting streams to your instances. </p>
+   * <p>A list of subnets where AWS Ground Station places elastic network interfaces
+   * to send streams to your instances.</p>
    */
-  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-  template <typename RoleArnT = Aws::String>
-  void SetRoleArn(RoleArnT&& value) {
-    m_roleArnHasBeenSet = true;
-    m_roleArn = std::forward<RoleArnT>(value);
+  inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+  inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  void SetSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds = std::forward<SubnetIdsT>(value);
   }
-  template <typename RoleArnT = Aws::String>
-  SecurityDetails& WithRoleArn(RoleArnT&& value) {
-    SetRoleArn(std::forward<RoleArnT>(value));
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  SecurityDetails& WithSubnetIds(SubnetIdsT&& value) {
+    SetSubnetIds(std::forward<SubnetIdsT>(value));
+    return *this;
+  }
+  template <typename SubnetIdsT = Aws::String>
+  SecurityDetails& AddSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value));
     return *this;
   }
   ///@}
@@ -76,37 +83,30 @@ class SecurityDetails {
 
   ///@{
   /**
-   * <p>A list of subnets where AWS Ground Station places elastic network interfaces
-   * to send streams to your instances.</p>
+   * <p>ARN to a role needed for connecting streams to your instances. </p>
    */
-  inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
-  inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
-  void SetSubnetIds(SubnetIdsT&& value) {
-    m_subnetIdsHasBeenSet = true;
-    m_subnetIds = std::forward<SubnetIdsT>(value);
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
   }
-  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
-  SecurityDetails& WithSubnetIds(SubnetIdsT&& value) {
-    SetSubnetIds(std::forward<SubnetIdsT>(value));
-    return *this;
-  }
-  template <typename SubnetIdsT = Aws::String>
-  SecurityDetails& AddSubnetIds(SubnetIdsT&& value) {
-    m_subnetIdsHasBeenSet = true;
-    m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value));
+  template <typename RoleArnT = Aws::String>
+  SecurityDetails& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
+  Aws::Vector<Aws::String> m_subnetIds;
+  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
   bool m_securityGroupIdsHasBeenSet = false;
 
-  Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
+  Aws::String m_roleArn;
+  bool m_roleArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,16 +21,16 @@ ListGroundStationsResult::ListGroundStationsResult(const Aws::AmazonWebServiceRe
 
 ListGroundStationsResult& ListGroundStationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("groundStationList")) {
     Aws::Utils::Array<JsonView> groundStationListJsonList = jsonValue.GetArray("groundStationList");
     for (unsigned groundStationListIndex = 0; groundStationListIndex < groundStationListJsonList.GetLength(); ++groundStationListIndex) {
       m_groundStationList.push_back(groundStationListJsonList[groundStationListIndex].AsObject());
     }
     m_groundStationListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

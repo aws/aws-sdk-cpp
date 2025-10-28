@@ -126,8 +126,10 @@ class UpdateServiceRequest : public ECSRequest {
   ///@{
   /**
    * <p>The details of a capacity provider strategy. You can set a capacity provider
-   * when you create a cluster, run a task, or update a service.</p> <p>When you use
-   * Fargate, the capacity providers are <code>FARGATE</code> or
+   * when you create a cluster, run a task, or update a service.</p>  <p>If you
+   * want to use Amazon ECS Managed Instances, you must use the
+   * <code>capacityProviderStrategy</code> request parameter.</p>  <p>When you
+   * use Fargate, the capacity providers are <code>FARGATE</code> or
    * <code>FARGATE_SPOT</code>.</p> <p>When you use Amazon EC2, the capacity
    * providers are Auto Scaling groups.</p> <p>You can change capacity providers for
    * rolling deployments and blue/green deployments.</p> <p>The following list

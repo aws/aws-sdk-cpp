@@ -20,8 +20,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains identifying information for a service level
- * objective entity.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a Service Level Objective (SLO) entity that can be audited for
+ * compliance and performance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceLevelObjectiveEntity">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class ServiceLevelObjectiveEntity {
 
   ///@{
   /**
-   * <p>The name of the service level objective.</p>
+   * <p>The name of the Service Level Objective.</p>
    */
   inline const Aws::String& GetSloName() const { return m_sloName; }
   inline bool SloNameHasBeenSet() const { return m_sloNameHasBeenSet; }
@@ -52,8 +52,7 @@ class ServiceLevelObjectiveEntity {
 
   ///@{
   /**
-   * <p>The ARN of the service level objective. The SLO must be provided with ARN for
-   * cross-account access.</p>
+   * <p>The Amazon Resource Name (ARN) of the Service Level Objective.</p>
    */
   inline const Aws::String& GetSloArn() const { return m_sloArn; }
   inline bool SloArnHasBeenSet() const { return m_sloArnHasBeenSet; }

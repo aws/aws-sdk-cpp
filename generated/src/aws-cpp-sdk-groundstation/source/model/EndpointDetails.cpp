@@ -18,13 +18,21 @@ namespace Model {
 EndpointDetails::EndpointDetails(JsonView jsonValue) { *this = jsonValue; }
 
 EndpointDetails& EndpointDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("awsGroundStationAgentEndpoint")) {
-    m_awsGroundStationAgentEndpoint = jsonValue.GetObject("awsGroundStationAgentEndpoint");
-    m_awsGroundStationAgentEndpointHasBeenSet = true;
+  if (jsonValue.ValueExists("securityDetails")) {
+    m_securityDetails = jsonValue.GetObject("securityDetails");
+    m_securityDetailsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetObject("endpoint");
     m_endpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("awsGroundStationAgentEndpoint")) {
+    m_awsGroundStationAgentEndpoint = jsonValue.GetObject("awsGroundStationAgentEndpoint");
+    m_awsGroundStationAgentEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("healthStatus")) {
+    m_healthStatus = CapabilityHealthMapper::GetCapabilityHealthForName(jsonValue.GetString("healthStatus"));
+    m_healthStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("healthReasons")) {
     Aws::Utils::Array<JsonView> healthReasonsJsonList = jsonValue.GetArray("healthReasons");
@@ -34,26 +42,26 @@ EndpointDetails& EndpointDetails::operator=(JsonView jsonValue) {
     }
     m_healthReasonsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("healthStatus")) {
-    m_healthStatus = CapabilityHealthMapper::GetCapabilityHealthForName(jsonValue.GetString("healthStatus"));
-    m_healthStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("securityDetails")) {
-    m_securityDetails = jsonValue.GetObject("securityDetails");
-    m_securityDetailsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EndpointDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_awsGroundStationAgentEndpointHasBeenSet) {
-    payload.WithObject("awsGroundStationAgentEndpoint", m_awsGroundStationAgentEndpoint.Jsonize());
+  if (m_securityDetailsHasBeenSet) {
+    payload.WithObject("securityDetails", m_securityDetails.Jsonize());
   }
 
   if (m_endpointHasBeenSet) {
     payload.WithObject("endpoint", m_endpoint.Jsonize());
+  }
+
+  if (m_awsGroundStationAgentEndpointHasBeenSet) {
+    payload.WithObject("awsGroundStationAgentEndpoint", m_awsGroundStationAgentEndpoint.Jsonize());
+  }
+
+  if (m_healthStatusHasBeenSet) {
+    payload.WithString("healthStatus", CapabilityHealthMapper::GetNameForCapabilityHealth(m_healthStatus));
   }
 
   if (m_healthReasonsHasBeenSet) {
@@ -63,14 +71,6 @@ JsonValue EndpointDetails::Jsonize() const {
           CapabilityHealthReasonMapper::GetNameForCapabilityHealthReason(m_healthReasons[healthReasonsIndex]));
     }
     payload.WithArray("healthReasons", std::move(healthReasonsJsonList));
-  }
-
-  if (m_healthStatusHasBeenSet) {
-    payload.WithString("healthStatus", CapabilityHealthMapper::GetNameForCapabilityHealth(m_healthStatus));
-  }
-
-  if (m_securityDetailsHasBeenSet) {
-    payload.WithObject("securityDetails", m_securityDetails.Jsonize());
   }
 
   return payload;

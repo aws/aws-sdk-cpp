@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECS {
 namespace Model {
-enum class DeploymentStrategy { NOT_SET, ROLLING, BLUE_GREEN };
+enum class DeploymentStrategy { NOT_SET, ROLLING, BLUE_GREEN, LINEAR, CANARY };
 
 namespace DeploymentStrategyMapper {
 AWS_ECS_API DeploymentStrategy GetDeploymentStrategyForName(const Aws::String& name);

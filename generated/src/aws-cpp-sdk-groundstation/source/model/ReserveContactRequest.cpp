@@ -15,14 +15,6 @@ using namespace Aws::Utils;
 Aws::String ReserveContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_endTimeHasBeenSet) {
-    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
-
-  if (m_groundStationHasBeenSet) {
-    payload.WithString("groundStation", m_groundStation);
-  }
-
   if (m_missionProfileArnHasBeenSet) {
     payload.WithString("missionProfileArn", m_missionProfileArn);
   }
@@ -35,12 +27,24 @@ Aws::String ReserveContactRequest::SerializePayload() const {
     payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if (m_groundStationHasBeenSet) {
+    payload.WithString("groundStation", m_groundStation);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_trackingOverridesHasBeenSet) {
+    payload.WithObject("trackingOverrides", m_trackingOverrides.Jsonize());
   }
 
   return payload.View().WriteReadable();

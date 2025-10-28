@@ -33,25 +33,7 @@ class TimeRange {
 
   ///@{
   /**
-   * <p>Time in UTC at which the time range ends.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  TimeRange& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Time in UTC at which the time range starts.</p>
+   * <p>Unix epoch timestamp in UTC at which the time range starts.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -66,12 +48,30 @@ class TimeRange {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Unix epoch timestamp in UTC at which the time range ends.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  TimeRange& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
 };
 
 }  // namespace Model

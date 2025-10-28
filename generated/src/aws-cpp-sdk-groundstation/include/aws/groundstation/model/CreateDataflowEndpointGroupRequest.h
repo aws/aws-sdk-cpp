@@ -36,53 +36,14 @@ class CreateDataflowEndpointGroupRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time, in seconds, after a contact ends that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
-   */
-  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
-  inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
-  inline void SetContactPostPassDurationSeconds(int value) {
-    m_contactPostPassDurationSecondsHasBeenSet = true;
-    m_contactPostPassDurationSeconds = value;
-  }
-  inline CreateDataflowEndpointGroupRequest& WithContactPostPassDurationSeconds(int value) {
-    SetContactPostPassDurationSeconds(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Amount of time, in seconds, before a contact starts that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
-   */
-  inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
-  inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
-  inline void SetContactPrePassDurationSeconds(int value) {
-    m_contactPrePassDurationSecondsHasBeenSet = true;
-    m_contactPrePassDurationSeconds = value;
-  }
-  inline CreateDataflowEndpointGroupRequest& WithContactPrePassDurationSeconds(int value) {
-    SetContactPrePassDurationSeconds(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Endpoint details of each endpoint in the dataflow endpoint group. <pre><code>
-   * All dataflow endpoints within a single dataflow endpoint group must be of the
-   * same type. You cannot mix &lt;a
-   * href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html&quot;&gt;
-   * AWS Ground Station Agent endpoints&lt;/a&gt; with &lt;a
-   * href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html&quot;&gt;Dataflow
-   * endpoints&lt;/a&gt; in the same group. If your use case requires both types of
-   * endpoints, you must create separate dataflow endpoint groups for each type.
-   * &lt;/p&gt; </code></pre>
+   * <p>Endpoint details of each endpoint in the dataflow endpoint group. All
+   * dataflow endpoints within a single dataflow endpoint group must be of the same
+   * type. You cannot mix <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html">
+   * AWS Ground Station Agent endpoints</a> with <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow
+   * endpoints</a> in the same group. If your use case requires both types of
+   * endpoints, you must create separate dataflow endpoint groups for each type. </p>
    */
   inline const Aws::Vector<EndpointDetails>& GetEndpointDetails() const { return m_endpointDetails; }
   inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
@@ -127,18 +88,56 @@ class CreateDataflowEndpointGroupRequest : public GroundStationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time, in seconds, before a contact starts that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground
+   * Station Dataflow Endpoint Group State Change event will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
+   */
+  inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
+  inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
+  inline void SetContactPrePassDurationSeconds(int value) {
+    m_contactPrePassDurationSecondsHasBeenSet = true;
+    m_contactPrePassDurationSeconds = value;
+  }
+  inline CreateDataflowEndpointGroupRequest& WithContactPrePassDurationSeconds(int value) {
+    SetContactPrePassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time, in seconds, after a contact ends that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground
+   * Station Dataflow Endpoint Group State Change event will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
+   */
+  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
+  inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
+  inline void SetContactPostPassDurationSeconds(int value) {
+    m_contactPostPassDurationSecondsHasBeenSet = true;
+    m_contactPostPassDurationSeconds = value;
+  }
+  inline CreateDataflowEndpointGroupRequest& WithContactPostPassDurationSeconds(int value) {
+    SetContactPostPassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
-  int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
-
-  int m_contactPrePassDurationSeconds{0};
-  bool m_contactPrePassDurationSecondsHasBeenSet = false;
-
   Aws::Vector<EndpointDetails> m_endpointDetails;
   bool m_endpointDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  int m_contactPrePassDurationSeconds{0};
+  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+
+  int m_contactPostPassDurationSeconds{0};
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

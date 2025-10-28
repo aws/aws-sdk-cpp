@@ -18,13 +18,13 @@ namespace Model {
 ConfigDetails::ConfigDetails(JsonView jsonValue) { *this = jsonValue; }
 
 ConfigDetails& ConfigDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("antennaDemodDecodeDetails")) {
-    m_antennaDemodDecodeDetails = jsonValue.GetObject("antennaDemodDecodeDetails");
-    m_antennaDemodDecodeDetailsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("endpointDetails")) {
     m_endpointDetails = jsonValue.GetObject("endpointDetails");
     m_endpointDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("antennaDemodDecodeDetails")) {
+    m_antennaDemodDecodeDetails = jsonValue.GetObject("antennaDemodDecodeDetails");
+    m_antennaDemodDecodeDetailsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("s3RecordingDetails")) {
     m_s3RecordingDetails = jsonValue.GetObject("s3RecordingDetails");
@@ -36,12 +36,12 @@ ConfigDetails& ConfigDetails::operator=(JsonView jsonValue) {
 JsonValue ConfigDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_antennaDemodDecodeDetailsHasBeenSet) {
-    payload.WithObject("antennaDemodDecodeDetails", m_antennaDemodDecodeDetails.Jsonize());
-  }
-
   if (m_endpointDetailsHasBeenSet) {
     payload.WithObject("endpointDetails", m_endpointDetails.Jsonize());
+  }
+
+  if (m_antennaDemodDecodeDetailsHasBeenSet) {
+    payload.WithObject("antennaDemodDecodeDetails", m_antennaDemodDecodeDetails.Jsonize());
   }
 
   if (m_s3RecordingDetailsHasBeenSet) {

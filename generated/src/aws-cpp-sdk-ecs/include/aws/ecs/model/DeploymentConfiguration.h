@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/CanaryConfiguration.h>
 #include <aws/ecs/model/DeploymentAlarms.h>
 #include <aws/ecs/model/DeploymentCircuitBreaker.h>
 #include <aws/ecs/model/DeploymentLifecycleHook.h>
 #include <aws/ecs/model/DeploymentStrategy.h>
+#include <aws/ecs/model/LinearConfiguration.h>
 
 #include <utility>
 
@@ -270,6 +272,48 @@ class DeploymentConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for linear deployment strategy. Only valid when the deployment
+   * strategy is <code>LINEAR</code>. This configuration enables progressive traffic
+   * shifting in equal percentage increments with configurable bake times between
+   * each step.</p>
+   */
+  inline const LinearConfiguration& GetLinearConfiguration() const { return m_linearConfiguration; }
+  inline bool LinearConfigurationHasBeenSet() const { return m_linearConfigurationHasBeenSet; }
+  template <typename LinearConfigurationT = LinearConfiguration>
+  void SetLinearConfiguration(LinearConfigurationT&& value) {
+    m_linearConfigurationHasBeenSet = true;
+    m_linearConfiguration = std::forward<LinearConfigurationT>(value);
+  }
+  template <typename LinearConfigurationT = LinearConfiguration>
+  DeploymentConfiguration& WithLinearConfiguration(LinearConfigurationT&& value) {
+    SetLinearConfiguration(std::forward<LinearConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for canary deployment strategy. Only valid when the deployment
+   * strategy is <code>CANARY</code>. This configuration enables shifting a fixed
+   * percentage of traffic for testing, followed by shifting the remaining traffic
+   * after a bake period.</p>
+   */
+  inline const CanaryConfiguration& GetCanaryConfiguration() const { return m_canaryConfiguration; }
+  inline bool CanaryConfigurationHasBeenSet() const { return m_canaryConfigurationHasBeenSet; }
+  template <typename CanaryConfigurationT = CanaryConfiguration>
+  void SetCanaryConfiguration(CanaryConfigurationT&& value) {
+    m_canaryConfigurationHasBeenSet = true;
+    m_canaryConfiguration = std::forward<CanaryConfigurationT>(value);
+  }
+  template <typename CanaryConfigurationT = CanaryConfiguration>
+  DeploymentConfiguration& WithCanaryConfiguration(CanaryConfigurationT&& value) {
+    SetCanaryConfiguration(std::forward<CanaryConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DeploymentCircuitBreaker m_deploymentCircuitBreaker;
   bool m_deploymentCircuitBreakerHasBeenSet = false;
@@ -291,6 +335,12 @@ class DeploymentConfiguration {
 
   Aws::Vector<DeploymentLifecycleHook> m_lifecycleHooks;
   bool m_lifecycleHooksHasBeenSet = false;
+
+  LinearConfiguration m_linearConfiguration;
+  bool m_linearConfigurationHasBeenSet = false;
+
+  CanaryConfiguration m_canaryConfiguration;
+  bool m_canaryConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,9 +33,27 @@ class CreateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Whether to set the ephemeris status to <code>ENABLED</code> after
-   * validation.</p> <p>Setting this to false will set the ephemeris status to
-   * <code>DISABLED</code> after validation.</p>
+   * <p>The satellite ID that associates this ephemeris with a satellite in AWS
+   * Ground Station.</p>
+   */
+  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
+  inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
+  template <typename SatelliteIdT = Aws::String>
+  void SetSatelliteId(SatelliteIdT&& value) {
+    m_satelliteIdHasBeenSet = true;
+    m_satelliteId = std::forward<SatelliteIdT>(value);
+  }
+  template <typename SatelliteIdT = Aws::String>
+  CreateEphemerisRequest& WithSatelliteId(SatelliteIdT&& value) {
+    SetSatelliteId(std::forward<SatelliteIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Set to <code>true</code> to enable the ephemeris after validation. Set to
+   * <code>false</code> to keep it disabled.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -51,18 +69,18 @@ class CreateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Ephemeris data.</p>
+   * <p>A priority score that determines which ephemeris to use when multiple
+   * ephemerides overlap.</p> <p>Higher numbers take precedence. The default is 1.
+   * Must be 1 or greater.</p>
    */
-  inline const EphemerisData& GetEphemeris() const { return m_ephemeris; }
-  inline bool EphemerisHasBeenSet() const { return m_ephemerisHasBeenSet; }
-  template <typename EphemerisT = EphemerisData>
-  void SetEphemeris(EphemerisT&& value) {
-    m_ephemerisHasBeenSet = true;
-    m_ephemeris = std::forward<EphemerisT>(value);
+  inline int GetPriority() const { return m_priority; }
+  inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+  inline void SetPriority(int value) {
+    m_priorityHasBeenSet = true;
+    m_priority = value;
   }
-  template <typename EphemerisT = EphemerisData>
-  CreateEphemerisRequest& WithEphemeris(EphemerisT&& value) {
-    SetEphemeris(std::forward<EphemerisT>(value));
+  inline CreateEphemerisRequest& WithPriority(int value) {
+    SetPriority(value);
     return *this;
   }
   ///@}
@@ -88,26 +106,7 @@ class CreateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
-   */
-  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-  template <typename KmsKeyArnT = Aws::String>
-  void SetKmsKeyArn(KmsKeyArnT&& value) {
-    m_kmsKeyArnHasBeenSet = true;
-    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
-  }
-  template <typename KmsKeyArnT = Aws::String>
-  CreateEphemerisRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
-    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A name string associated with the ephemeris. Used as a human-readable
-   * identifier for the ephemeris.</p>
+   * <p>A name that you can use to identify the ephemeris.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -125,37 +124,36 @@ class CreateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Customer-provided priority score to establish the order in which overlapping
-   * ephemerides should be used.</p> <p>The default for customer-provided ephemeris
-   * priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or
-   * greater</p>
+   * <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
    */
-  inline int GetPriority() const { return m_priority; }
-  inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-  inline void SetPriority(int value) {
-    m_priorityHasBeenSet = true;
-    m_priority = value;
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
   }
-  inline CreateEphemerisRequest& WithPriority(int value) {
-    SetPriority(value);
+  template <typename KmsKeyArnT = Aws::String>
+  CreateEphemerisRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>AWS Ground Station satellite ID for this ephemeris.</p>
+   * <p>Ephemeris data.</p>
    */
-  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
-  inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
-  template <typename SatelliteIdT = Aws::String>
-  void SetSatelliteId(SatelliteIdT&& value) {
-    m_satelliteIdHasBeenSet = true;
-    m_satelliteId = std::forward<SatelliteIdT>(value);
+  inline const EphemerisData& GetEphemeris() const { return m_ephemeris; }
+  inline bool EphemerisHasBeenSet() const { return m_ephemerisHasBeenSet; }
+  template <typename EphemerisT = EphemerisData>
+  void SetEphemeris(EphemerisT&& value) {
+    m_ephemerisHasBeenSet = true;
+    m_ephemeris = std::forward<EphemerisT>(value);
   }
-  template <typename SatelliteIdT = Aws::String>
-  CreateEphemerisRequest& WithSatelliteId(SatelliteIdT&& value) {
-    SetSatelliteId(std::forward<SatelliteIdT>(value));
+  template <typename EphemerisT = EphemerisData>
+  CreateEphemerisRequest& WithEphemeris(EphemerisT&& value) {
+    SetEphemeris(std::forward<EphemerisT>(value));
     return *this;
   }
   ///@}
@@ -184,26 +182,26 @@ class CreateEphemerisRequest : public GroundStationRequest {
   }
   ///@}
  private:
+  Aws::String m_satelliteId;
+  bool m_satelliteIdHasBeenSet = false;
+
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
-
-  EphemerisData m_ephemeris;
-  bool m_ephemerisHasBeenSet = false;
-
-  Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
-
-  Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
-
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
   bool m_priorityHasBeenSet = false;
 
-  Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
+  Aws::Utils::DateTime m_expirationTime{};
+  bool m_expirationTimeHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+
+  Aws::String m_kmsKeyArn;
+  bool m_kmsKeyArnHasBeenSet = false;
+
+  EphemerisData m_ephemeris;
+  bool m_ephemerisHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

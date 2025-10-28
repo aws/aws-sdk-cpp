@@ -35,6 +35,25 @@ class ListDataflowEndpointGroupsResult {
 
   ///@{
   /**
+   * <p>Next token returned in the response of a previous
+   * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
+   * results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDataflowEndpointGroupsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of dataflow endpoint groups.</p>
    */
   inline const Aws::Vector<DataflowEndpointListItem>& GetDataflowEndpointGroupList() const { return m_dataflowEndpointGroupList; }
@@ -57,25 +76,6 @@ class ListDataflowEndpointGroupsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>Next token returned in the response of a previous
-   * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
-   * results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListDataflowEndpointGroupsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -90,11 +90,11 @@ class ListDataflowEndpointGroupsResult {
   }
   ///@}
  private:
-  Aws::Vector<DataflowEndpointListItem> m_dataflowEndpointGroupList;
-  bool m_dataflowEndpointGroupListHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<DataflowEndpointListItem> m_dataflowEndpointGroupList;
+  bool m_dataflowEndpointGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

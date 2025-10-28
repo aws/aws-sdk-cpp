@@ -21,9 +21,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains the result of an automated audit analysis,
- * including the auditor name, description of findings, and severity
- * level.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents the result of an audit performed by a specific auditor on a
+ * resource.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AuditorResult">AWS
  * API Reference</a></p>
  */
@@ -36,7 +35,8 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>The name of the auditor algorithm that generated this result.</p>
+   * <p>The name or identifier of the auditor that performed the examination and
+   * generated this result.</p>
    */
   inline const Aws::String& GetAuditor() const { return m_auditor; }
   inline bool AuditorHasBeenSet() const { return m_auditorHasBeenSet; }
@@ -54,8 +54,8 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>A detailed description of the audit finding, explaining what was observed and
-   * potential implications.</p>
+   * <p>A detailed description of what the auditor found, including any
+   * recommendations for remediation or further investigation.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -73,8 +73,8 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>The severity level of this audit finding, indicating the importance and
-   * potential impact of the issue.</p>
+   * <p>The severity level of the finding, such as "Critical", "High", "Medium", or
+   * "Low". This helps prioritize remediation efforts.</p>
    */
   inline Severity GetSeverity() const { return m_severity; }
   inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }

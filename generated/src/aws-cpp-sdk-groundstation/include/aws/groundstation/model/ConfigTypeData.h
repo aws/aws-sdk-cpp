@@ -60,6 +60,43 @@ class ConfigTypeData {
 
   ///@{
   /**
+   * <p>Object that determines whether tracking should be used during a contact
+   * executed with this <code>Config</code> in the mission profile. </p>
+   */
+  inline const TrackingConfig& GetTrackingConfig() const { return m_trackingConfig; }
+  inline bool TrackingConfigHasBeenSet() const { return m_trackingConfigHasBeenSet; }
+  template <typename TrackingConfigT = TrackingConfig>
+  void SetTrackingConfig(TrackingConfigT&& value) {
+    m_trackingConfigHasBeenSet = true;
+    m_trackingConfig = std::forward<TrackingConfigT>(value);
+  }
+  template <typename TrackingConfigT = TrackingConfig>
+  ConfigTypeData& WithTrackingConfig(TrackingConfigT&& value) {
+    SetTrackingConfig(std::forward<TrackingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the dataflow endpoint <code>Config</code>.</p>
+   */
+  inline const DataflowEndpointConfig& GetDataflowEndpointConfig() const { return m_dataflowEndpointConfig; }
+  inline bool DataflowEndpointConfigHasBeenSet() const { return m_dataflowEndpointConfigHasBeenSet; }
+  template <typename DataflowEndpointConfigT = DataflowEndpointConfig>
+  void SetDataflowEndpointConfig(DataflowEndpointConfigT&& value) {
+    m_dataflowEndpointConfigHasBeenSet = true;
+    m_dataflowEndpointConfig = std::forward<DataflowEndpointConfigT>(value);
+  }
+  template <typename DataflowEndpointConfigT = DataflowEndpointConfig>
+  ConfigTypeData& WithDataflowEndpointConfig(DataflowEndpointConfigT&& value) {
+    SetDataflowEndpointConfig(std::forward<DataflowEndpointConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about how AWS Ground Station should conﬁgure an antenna for
    * downlink demod decode during a contact.</p>
    */
@@ -98,18 +135,21 @@ class ConfigTypeData {
 
   ///@{
   /**
-   * <p>Information about the dataflow endpoint <code>Config</code>.</p>
+   * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+   * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+   * <code>AntennaUplinkConfigArn</code>, are used when this
+   * <code>UplinkEchoConfig</code> is used in a contact.</p>
    */
-  inline const DataflowEndpointConfig& GetDataflowEndpointConfig() const { return m_dataflowEndpointConfig; }
-  inline bool DataflowEndpointConfigHasBeenSet() const { return m_dataflowEndpointConfigHasBeenSet; }
-  template <typename DataflowEndpointConfigT = DataflowEndpointConfig>
-  void SetDataflowEndpointConfig(DataflowEndpointConfigT&& value) {
-    m_dataflowEndpointConfigHasBeenSet = true;
-    m_dataflowEndpointConfig = std::forward<DataflowEndpointConfigT>(value);
+  inline const UplinkEchoConfig& GetUplinkEchoConfig() const { return m_uplinkEchoConfig; }
+  inline bool UplinkEchoConfigHasBeenSet() const { return m_uplinkEchoConfigHasBeenSet; }
+  template <typename UplinkEchoConfigT = UplinkEchoConfig>
+  void SetUplinkEchoConfig(UplinkEchoConfigT&& value) {
+    m_uplinkEchoConfigHasBeenSet = true;
+    m_uplinkEchoConfig = std::forward<UplinkEchoConfigT>(value);
   }
-  template <typename DataflowEndpointConfigT = DataflowEndpointConfig>
-  ConfigTypeData& WithDataflowEndpointConfig(DataflowEndpointConfigT&& value) {
-    SetDataflowEndpointConfig(std::forward<DataflowEndpointConfigT>(value));
+  template <typename UplinkEchoConfigT = UplinkEchoConfig>
+  ConfigTypeData& WithUplinkEchoConfig(UplinkEchoConfigT&& value) {
+    SetUplinkEchoConfig(std::forward<UplinkEchoConfigT>(value));
     return *this;
   }
   ///@}
@@ -131,49 +171,15 @@ class ConfigTypeData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Object that determines whether tracking should be used during a contact
-   * executed with this <code>Config</code> in the mission profile. </p>
-   */
-  inline const TrackingConfig& GetTrackingConfig() const { return m_trackingConfig; }
-  inline bool TrackingConfigHasBeenSet() const { return m_trackingConfigHasBeenSet; }
-  template <typename TrackingConfigT = TrackingConfig>
-  void SetTrackingConfig(TrackingConfigT&& value) {
-    m_trackingConfigHasBeenSet = true;
-    m_trackingConfig = std::forward<TrackingConfigT>(value);
-  }
-  template <typename TrackingConfigT = TrackingConfig>
-  ConfigTypeData& WithTrackingConfig(TrackingConfigT&& value) {
-    SetTrackingConfig(std::forward<TrackingConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
-   * the <code>AntennaUplinkConfig</code>, corresponding to the specified
-   * <code>AntennaUplinkConfigArn</code>, are used when this
-   * <code>UplinkEchoConfig</code> is used in a contact.</p>
-   */
-  inline const UplinkEchoConfig& GetUplinkEchoConfig() const { return m_uplinkEchoConfig; }
-  inline bool UplinkEchoConfigHasBeenSet() const { return m_uplinkEchoConfigHasBeenSet; }
-  template <typename UplinkEchoConfigT = UplinkEchoConfig>
-  void SetUplinkEchoConfig(UplinkEchoConfigT&& value) {
-    m_uplinkEchoConfigHasBeenSet = true;
-    m_uplinkEchoConfig = std::forward<UplinkEchoConfigT>(value);
-  }
-  template <typename UplinkEchoConfigT = UplinkEchoConfig>
-  ConfigTypeData& WithUplinkEchoConfig(UplinkEchoConfigT&& value) {
-    SetUplinkEchoConfig(std::forward<UplinkEchoConfigT>(value));
-    return *this;
-  }
-  ///@}
  private:
   AntennaDownlinkConfig m_antennaDownlinkConfig;
   bool m_antennaDownlinkConfigHasBeenSet = false;
+
+  TrackingConfig m_trackingConfig;
+  bool m_trackingConfigHasBeenSet = false;
+
+  DataflowEndpointConfig m_dataflowEndpointConfig;
+  bool m_dataflowEndpointConfigHasBeenSet = false;
 
   AntennaDownlinkDemodDecodeConfig m_antennaDownlinkDemodDecodeConfig;
   bool m_antennaDownlinkDemodDecodeConfigHasBeenSet = false;
@@ -181,17 +187,11 @@ class ConfigTypeData {
   AntennaUplinkConfig m_antennaUplinkConfig;
   bool m_antennaUplinkConfigHasBeenSet = false;
 
-  DataflowEndpointConfig m_dataflowEndpointConfig;
-  bool m_dataflowEndpointConfigHasBeenSet = false;
+  UplinkEchoConfig m_uplinkEchoConfig;
+  bool m_uplinkEchoConfigHasBeenSet = false;
 
   S3RecordingConfig m_s3RecordingConfig;
   bool m_s3RecordingConfigHasBeenSet = false;
-
-  TrackingConfig m_trackingConfig;
-  bool m_trackingConfigHasBeenSet = false;
-
-  UplinkEchoConfig m_uplinkEchoConfig;
-  bool m_uplinkEchoConfigHasBeenSet = false;
 };
 
 }  // namespace Model

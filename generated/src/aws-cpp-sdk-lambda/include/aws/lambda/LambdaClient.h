@@ -537,7 +537,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
    * <p>Deletes a Lambda function. To delete a specific function version, use the
    * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
    * deleted. This doesn't require the user to have explicit permissions for
-   * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
+   * <a>DeleteAlias</a>.</p>  <p>A deleted Lambda function cannot be recovered.
+   * Ensure that you specify the correct function name and version before
+   * deleting.</p>  <p>To delete Lambda event source mappings that invoke a
    * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services services
    * and resources that invoke your function directly, delete the trigger in the
    * service where you originally configured it.</p><p><h3>See Also:</h3>   <a
@@ -1245,7 +1247,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
    * <code>RequestResponse</code>). To invoke a function asynchronously, set
    * <code>InvocationType</code> to <code>Event</code>. Lambda passes the
    * <code>ClientContext</code> object to your function for synchronous invocations
-   * only.</p> <p>For <a
+   * only.</p> <p>For synchronous invocations, the maximum payload size is 6 MB. For
+   * asynchronous invocations, the maximum payload size is 1 MB.</p> <p>For <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
    * invocation</a>, details about the function response, including errors, are
    * included in the response body and headers. For either invocation type, you can

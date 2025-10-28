@@ -18,13 +18,13 @@ namespace Model {
 ConnectionDetails::ConnectionDetails(JsonView jsonValue) { *this = jsonValue; }
 
 ConnectionDetails& ConnectionDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("mtu")) {
-    m_mtu = jsonValue.GetInteger("mtu");
-    m_mtuHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("socketAddress")) {
     m_socketAddress = jsonValue.GetObject("socketAddress");
     m_socketAddressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mtu")) {
+    m_mtu = jsonValue.GetInteger("mtu");
+    m_mtuHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ConnectionDetails& ConnectionDetails::operator=(JsonView jsonValue) {
 JsonValue ConnectionDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_mtuHasBeenSet) {
-    payload.WithInteger("mtu", m_mtu);
-  }
-
   if (m_socketAddressHasBeenSet) {
     payload.WithObject("socketAddress", m_socketAddress.Jsonize());
+  }
+
+  if (m_mtuHasBeenSet) {
+    payload.WithInteger("mtu", m_mtu);
   }
 
   return payload;

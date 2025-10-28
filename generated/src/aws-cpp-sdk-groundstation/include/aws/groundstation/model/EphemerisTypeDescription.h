@@ -33,6 +33,22 @@ class EphemerisTypeDescription {
 
   ///@{
 
+  inline const EphemerisDescription& GetTle() const { return m_tle; }
+  inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
+  template <typename TleT = EphemerisDescription>
+  void SetTle(TleT&& value) {
+    m_tleHasBeenSet = true;
+    m_tle = std::forward<TleT>(value);
+  }
+  template <typename TleT = EphemerisDescription>
+  EphemerisTypeDescription& WithTle(TleT&& value) {
+    SetTle(std::forward<TleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const EphemerisDescription& GetOem() const { return m_oem; }
   inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
   template <typename OemT = EphemerisDescription>
@@ -49,25 +65,28 @@ class EphemerisTypeDescription {
 
   ///@{
 
-  inline const EphemerisDescription& GetTle() const { return m_tle; }
-  inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-  template <typename TleT = EphemerisDescription>
-  void SetTle(TleT&& value) {
-    m_tleHasBeenSet = true;
-    m_tle = std::forward<TleT>(value);
+  inline const EphemerisDescription& GetAzEl() const { return m_azEl; }
+  inline bool AzElHasBeenSet() const { return m_azElHasBeenSet; }
+  template <typename AzElT = EphemerisDescription>
+  void SetAzEl(AzElT&& value) {
+    m_azElHasBeenSet = true;
+    m_azEl = std::forward<AzElT>(value);
   }
-  template <typename TleT = EphemerisDescription>
-  EphemerisTypeDescription& WithTle(TleT&& value) {
-    SetTle(std::forward<TleT>(value));
+  template <typename AzElT = EphemerisDescription>
+  EphemerisTypeDescription& WithAzEl(AzElT&& value) {
+    SetAzEl(std::forward<AzElT>(value));
     return *this;
   }
   ///@}
  private:
+  EphemerisDescription m_tle;
+  bool m_tleHasBeenSet = false;
+
   EphemerisDescription m_oem;
   bool m_oemHasBeenSet = false;
 
-  EphemerisDescription m_tle;
-  bool m_tleHasBeenSet = false;
+  EphemerisDescription m_azEl;
+  bool m_azElHasBeenSet = false;
 };
 
 }  // namespace Model

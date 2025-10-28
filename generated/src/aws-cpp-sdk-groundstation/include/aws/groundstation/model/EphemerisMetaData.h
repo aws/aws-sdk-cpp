@@ -35,6 +35,22 @@ class EphemerisMetaData {
 
   ///@{
   /**
+   * <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+   */
+  inline EphemerisSource GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  inline void SetSource(EphemerisSource value) {
+    m_sourceHasBeenSet = true;
+    m_source = value;
+  }
+  inline EphemerisMetaData& WithSource(EphemerisSource value) {
+    SetSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for
    * default ephemerides from Space Track.</p>
    */
@@ -90,23 +106,10 @@ class EphemerisMetaData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-   */
-  inline EphemerisSource GetSource() const { return m_source; }
-  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-  inline void SetSource(EphemerisSource value) {
-    m_sourceHasBeenSet = true;
-    m_source = value;
-  }
-  inline EphemerisMetaData& WithSource(EphemerisSource value) {
-    SetSource(value);
-    return *this;
-  }
-  ///@}
  private:
+  EphemerisSource m_source{EphemerisSource::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+
   Aws::String m_ephemerisId;
   bool m_ephemerisIdHasBeenSet = false;
 
@@ -115,9 +118,6 @@ class EphemerisMetaData {
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
-
-  EphemerisSource m_source{EphemerisSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

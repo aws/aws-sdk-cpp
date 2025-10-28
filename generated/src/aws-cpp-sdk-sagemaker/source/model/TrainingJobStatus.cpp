@@ -20,6 +20,7 @@ static const int Completed_HASH = HashingUtils::HashString("Completed");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int Stopping_HASH = HashingUtils::HashString("Stopping");
 static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 TrainingJobStatus GetTrainingJobStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ TrainingJobStatus GetTrainingJobStatusForName(const Aws::String& name) {
     return TrainingJobStatus::Stopping;
   } else if (hashCode == Stopped_HASH) {
     return TrainingJobStatus::Stopped;
+  } else if (hashCode == Deleting_HASH) {
+    return TrainingJobStatus::Deleting;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForTrainingJobStatus(TrainingJobStatus enumValue) {
       return "Stopping";
     case TrainingJobStatus::Stopped:
       return "Stopped";
+    case TrainingJobStatus::Deleting:
+      return "Deleting";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

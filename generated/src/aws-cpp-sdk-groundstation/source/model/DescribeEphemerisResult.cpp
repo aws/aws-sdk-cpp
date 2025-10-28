@@ -21,29 +21,9 @@ DescribeEphemerisResult::DescribeEphemerisResult(const Aws::AmazonWebServiceResu
 
 DescribeEphemerisResult& DescribeEphemerisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("creationTime")) {
-    m_creationTime = jsonValue.GetDouble("creationTime");
-    m_creationTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("enabled")) {
-    m_enabled = jsonValue.GetBool("enabled");
-    m_enabledHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ephemerisId")) {
     m_ephemerisId = jsonValue.GetString("ephemerisId");
     m_ephemerisIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("invalidReason")) {
-    m_invalidReason = EphemerisInvalidReasonMapper::GetEphemerisInvalidReasonForName(jsonValue.GetString("invalidReason"));
-    m_invalidReasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("priority")) {
-    m_priority = jsonValue.GetInteger("priority");
-    m_priorityHasBeenSet = true;
   }
   if (jsonValue.ValueExists("satelliteId")) {
     m_satelliteId = jsonValue.GetString("satelliteId");
@@ -53,9 +33,21 @@ DescribeEphemerisResult& DescribeEphemerisResult::operator=(const Aws::AmazonWeb
     m_status = EphemerisStatusMapper::GetEphemerisStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("suppliedData")) {
-    m_suppliedData = jsonValue.GetObject("suppliedData");
-    m_suppliedDataHasBeenSet = true;
+  if (jsonValue.ValueExists("priority")) {
+    m_priority = jsonValue.GetInteger("priority");
+    m_priorityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("creationTime")) {
+    m_creationTime = jsonValue.GetDouble("creationTime");
+    m_creationTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -63,6 +55,21 @@ DescribeEphemerisResult& DescribeEphemerisResult::operator=(const Aws::AmazonWeb
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("suppliedData")) {
+    m_suppliedData = jsonValue.GetObject("suppliedData");
+    m_suppliedDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("invalidReason")) {
+    m_invalidReason = EphemerisInvalidReasonMapper::GetEphemerisInvalidReasonForName(jsonValue.GetString("invalidReason"));
+    m_invalidReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorReasons")) {
+    Aws::Utils::Array<JsonView> errorReasonsJsonList = jsonValue.GetArray("errorReasons");
+    for (unsigned errorReasonsIndex = 0; errorReasonsIndex < errorReasonsJsonList.GetLength(); ++errorReasonsIndex) {
+      m_errorReasons.push_back(errorReasonsJsonList[errorReasonsIndex].AsObject());
+    }
+    m_errorReasonsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

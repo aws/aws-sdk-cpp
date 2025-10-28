@@ -33,6 +33,24 @@ class KmsKey {
 
   ///@{
   /**
+   * <p>KMS Key Arn.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  KmsKey& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>KMS Alias Arn.</p>
    */
   inline const Aws::String& GetKmsAliasArn() const { return m_kmsAliasArn; }
@@ -66,33 +84,15 @@ class KmsKey {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>KMS Key Arn.</p>
-   */
-  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-  template <typename KmsKeyArnT = Aws::String>
-  void SetKmsKeyArn(KmsKeyArnT&& value) {
-    m_kmsKeyArnHasBeenSet = true;
-    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
-  }
-  template <typename KmsKeyArnT = Aws::String>
-  KmsKey& WithKmsKeyArn(KmsKeyArnT&& value) {
-    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_kmsKeyArn;
+  bool m_kmsKeyArnHasBeenSet = false;
+
   Aws::String m_kmsAliasArn;
   bool m_kmsAliasArnHasBeenSet = false;
 
   Aws::String m_kmsAliasName;
   bool m_kmsAliasNameHasBeenSet = false;
-
-  Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

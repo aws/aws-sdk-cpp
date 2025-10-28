@@ -30,6 +30,23 @@ class ListEphemeridesResult {
 
   ///@{
   /**
+   * <p>Pagination token.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListEphemeridesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of ephemerides.</p>
    */
   inline const Aws::Vector<EphemerisItem>& GetEphemerides() const { return m_ephemerides; }
@@ -52,23 +69,6 @@ class ListEphemeridesResult {
   ///@}
 
   ///@{
-  /**
-   * <p>Pagination token.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListEphemeridesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -83,11 +83,11 @@ class ListEphemeridesResult {
   }
   ///@}
  private:
-  Aws::Vector<EphemerisItem> m_ephemerides;
-  bool m_ephemeridesHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<EphemerisItem> m_ephemerides;
+  bool m_ephemeridesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

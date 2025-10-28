@@ -48,6 +48,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator=(JsonView jsonValue) {
     }
     m_dnsIpAddressesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DnsIpv6Addresses")) {
+    Aws::Utils::Array<JsonView> dnsIpv6AddressesJsonList = jsonValue.GetArray("DnsIpv6Addresses");
+    for (unsigned dnsIpv6AddressesIndex = 0; dnsIpv6AddressesIndex < dnsIpv6AddressesJsonList.GetLength(); ++dnsIpv6AddressesIndex) {
+      m_dnsIpv6Addresses.push_back(dnsIpv6AddressesJsonList[dnsIpv6AddressesIndex].AsString());
+    }
+    m_dnsIpv6AddressesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CustomerUserName")) {
     m_customerUserName = jsonValue.GetString("CustomerUserName");
     m_customerUserNameHasBeenSet = true;
@@ -176,6 +183,14 @@ JsonValue WorkspaceDirectory::Jsonize() const {
       dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString(m_dnsIpAddresses[dnsIpAddressesIndex]);
     }
     payload.WithArray("DnsIpAddresses", std::move(dnsIpAddressesJsonList));
+  }
+
+  if (m_dnsIpv6AddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dnsIpv6AddressesJsonList(m_dnsIpv6Addresses.size());
+    for (unsigned dnsIpv6AddressesIndex = 0; dnsIpv6AddressesIndex < dnsIpv6AddressesJsonList.GetLength(); ++dnsIpv6AddressesIndex) {
+      dnsIpv6AddressesJsonList[dnsIpv6AddressesIndex].AsString(m_dnsIpv6Addresses[dnsIpv6AddressesIndex]);
+    }
+    payload.WithArray("DnsIpv6Addresses", std::move(dnsIpv6AddressesJsonList));
   }
 
   if (m_customerUserNameHasBeenSet) {

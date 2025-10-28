@@ -21,6 +21,7 @@ static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int ACTIVE_WITH_ERRORS_HASH = HashingUtils::HashString("ACTIVE_WITH_ERRORS");
 static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 StreamGroupStatus GetStreamGroupStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ StreamGroupStatus GetStreamGroupStatusForName(const Aws::String& name) {
     return StreamGroupStatus::ERROR_;
   } else if (hashCode == DELETING_HASH) {
     return StreamGroupStatus::DELETING;
+  } else if (hashCode == EXPIRED_HASH) {
+    return StreamGroupStatus::EXPIRED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForStreamGroupStatus(StreamGroupStatus enumValue) {
       return "ERROR";
     case StreamGroupStatus::DELETING:
       return "DELETING";
+    case StreamGroupStatus::EXPIRED:
+      return "EXPIRED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

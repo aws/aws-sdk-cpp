@@ -18,16 +18,20 @@ using namespace Aws::Http;
 Aws::String ListEphemeridesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_endTimeHasBeenSet) {
-    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
-
   if (m_satelliteIdHasBeenSet) {
     payload.WithString("satelliteId", m_satelliteId);
   }
 
+  if (m_ephemerisTypeHasBeenSet) {
+    payload.WithString("ephemerisType", EphemerisTypeMapper::GetNameForEphemerisType(m_ephemerisType));
+  }
+
   if (m_startTimeHasBeenSet) {
     payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   if (m_statusListHasBeenSet) {

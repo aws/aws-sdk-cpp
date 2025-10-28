@@ -92,7 +92,9 @@ class InstanceTopology {
   /**
    * <p>The network nodes. The nodes are hashed based on your account. Instances from
    * different accounts running under the same server will return a different hashed
-   * list of strings.</p>
+   * list of strings.</p> <p>The value is <code>null</code> or empty if:</p> <ul>
+   * <li> <p>The instance type is not supported.</p> </li> <li> <p>The instance is in
+   * a state other than <code>running</code>.</p> </li> </ul>
    */
   inline const Aws::Vector<Aws::String>& GetNetworkNodes() const { return m_networkNodes; }
   inline bool NetworkNodesHasBeenSet() const { return m_networkNodesHasBeenSet; }
@@ -153,7 +155,7 @@ class InstanceTopology {
   ///@{
   /**
    * <p>The ID of the Capacity Block. This parameter is only supported for
-   * Ultraserver instances and identifies instances within the Ultraserver
+   * UltraServer instances and identifies instances within the UltraServer
    * domain.</p>
    */
   inline const Aws::String& GetCapacityBlockId() const { return m_capacityBlockId; }

@@ -57,6 +57,10 @@ WorkspaceRequest& WorkspaceRequest::operator=(JsonView jsonValue) {
     m_workspaceName = jsonValue.GetString("WorkspaceName");
     m_workspaceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Ipv6Address")) {
+    m_ipv6Address = jsonValue.GetString("Ipv6Address");
+    m_ipv6AddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +105,10 @@ JsonValue WorkspaceRequest::Jsonize() const {
 
   if (m_workspaceNameHasBeenSet) {
     payload.WithString("WorkspaceName", m_workspaceName);
+  }
+
+  if (m_ipv6AddressHasBeenSet) {
+    payload.WithString("Ipv6Address", m_ipv6Address);
   }
 
   return payload;

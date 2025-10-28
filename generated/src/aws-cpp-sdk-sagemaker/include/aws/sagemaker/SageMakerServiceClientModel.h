@@ -552,10 +552,12 @@ class DeleteNotebookInstanceLifecycleConfigRequest;
 class DeleteOptimizationJobRequest;
 class DeletePartnerAppRequest;
 class DeletePipelineRequest;
+class DeleteProcessingJobRequest;
 class DeleteProjectRequest;
 class DeleteSpaceRequest;
 class DeleteStudioLifecycleConfigRequest;
 class DeleteTagsRequest;
+class DeleteTrainingJobRequest;
 class DeleteTrialRequest;
 class DeleteTrialComponentRequest;
 class DeleteUserProfileRequest;
@@ -924,10 +926,12 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteNotebookInstanc
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<DeletePartnerAppResult, SageMakerError> DeletePartnerAppOutcome;
 typedef Aws::Utils::Outcome<DeletePipelineResult, SageMakerError> DeletePipelineOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteProcessingJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteProjectOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteSpaceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteStudioLifecycleConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteTagsResult, SageMakerError> DeleteTagsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteTrainingJobOutcome;
 typedef Aws::Utils::Outcome<DeleteTrialResult, SageMakerError> DeleteTrialOutcome;
 typedef Aws::Utils::Outcome<DeleteTrialComponentResult, SageMakerError> DeleteTrialComponentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteUserProfileOutcome;
@@ -1298,10 +1302,12 @@ typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebook
 typedef std::future<DeleteOptimizationJobOutcome> DeleteOptimizationJobOutcomeCallable;
 typedef std::future<DeletePartnerAppOutcome> DeletePartnerAppOutcomeCallable;
 typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
+typedef std::future<DeleteProcessingJobOutcome> DeleteProcessingJobOutcomeCallable;
 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 typedef std::future<DeleteSpaceOutcome> DeleteSpaceOutcomeCallable;
 typedef std::future<DeleteStudioLifecycleConfigOutcome> DeleteStudioLifecycleConfigOutcomeCallable;
 typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
+typedef std::future<DeleteTrainingJobOutcome> DeleteTrainingJobOutcomeCallable;
 typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
 typedef std::future<DeleteTrialComponentOutcome> DeleteTrialComponentOutcomeCallable;
 typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
@@ -1931,6 +1937,9 @@ typedef std::function<void(const SageMakerClient*, const Model::DeletePartnerApp
 typedef std::function<void(const SageMakerClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePipelineResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteProcessingJobRequest&, const Model::DeleteProcessingJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProcessingJobResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteProjectResponseReceivedHandler;
@@ -1943,6 +1952,9 @@ typedef std::function<void(const SageMakerClient*, const Model::DeleteStudioLife
 typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTagsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteTrainingJobRequest&, const Model::DeleteTrainingJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTrainingJobResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTrialResponseReceivedHandler;

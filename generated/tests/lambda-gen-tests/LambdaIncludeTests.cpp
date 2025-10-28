@@ -228,6 +228,7 @@
 #include <aws/lambda/model/SchemaRegistryEventRecordFormat.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
 #include <aws/lambda/model/SnapStart.h>
 #include <aws/lambda/model/SnapStartApplyOn.h>

@@ -18,13 +18,9 @@ namespace Model {
 AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint(JsonView jsonValue) { *this = jsonValue; }
 
 AwsGroundStationAgentEndpoint& AwsGroundStationAgentEndpoint::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("agentStatus")) {
-    m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
-    m_agentStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("auditResults")) {
-    m_auditResults = AuditResultsMapper::GetAuditResultsForName(jsonValue.GetString("auditResults"));
-    m_auditResultsHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("egressAddress")) {
     m_egressAddress = jsonValue.GetObject("egressAddress");
@@ -34,9 +30,13 @@ AwsGroundStationAgentEndpoint& AwsGroundStationAgentEndpoint::operator=(JsonView
     m_ingressAddress = jsonValue.GetObject("ingressAddress");
     m_ingressAddressHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("agentStatus")) {
+    m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
+    m_agentStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("auditResults")) {
+    m_auditResults = AuditResultsMapper::GetAuditResultsForName(jsonValue.GetString("auditResults"));
+    m_auditResultsHasBeenSet = true;
   }
   return *this;
 }
@@ -44,12 +44,8 @@ AwsGroundStationAgentEndpoint& AwsGroundStationAgentEndpoint::operator=(JsonView
 JsonValue AwsGroundStationAgentEndpoint::Jsonize() const {
   JsonValue payload;
 
-  if (m_agentStatusHasBeenSet) {
-    payload.WithString("agentStatus", AgentStatusMapper::GetNameForAgentStatus(m_agentStatus));
-  }
-
-  if (m_auditResultsHasBeenSet) {
-    payload.WithString("auditResults", AuditResultsMapper::GetNameForAuditResults(m_auditResults));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_egressAddressHasBeenSet) {
@@ -60,8 +56,12 @@ JsonValue AwsGroundStationAgentEndpoint::Jsonize() const {
     payload.WithObject("ingressAddress", m_ingressAddress.Jsonize());
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_agentStatusHasBeenSet) {
+    payload.WithString("agentStatus", AgentStatusMapper::GetNameForAgentStatus(m_agentStatus));
+  }
+
+  if (m_auditResultsHasBeenSet) {
+    payload.WithString("auditResults", AuditResultsMapper::GetNameForAuditResults(m_auditResults));
   }
 
   return payload;

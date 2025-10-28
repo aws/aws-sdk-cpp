@@ -18,6 +18,10 @@ namespace Model {
 EphemerisMetaData::EphemerisMetaData(JsonView jsonValue) { *this = jsonValue; }
 
 EphemerisMetaData& EphemerisMetaData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
+    m_source = EphemerisSourceMapper::GetEphemerisSourceForName(jsonValue.GetString("source"));
+    m_sourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ephemerisId")) {
     m_ephemerisId = jsonValue.GetString("ephemerisId");
     m_ephemerisIdHasBeenSet = true;
@@ -30,15 +34,15 @@ EphemerisMetaData& EphemerisMetaData::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("source")) {
-    m_source = EphemerisSourceMapper::GetEphemerisSourceForName(jsonValue.GetString("source"));
-    m_sourceHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EphemerisMetaData::Jsonize() const {
   JsonValue payload;
+
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", EphemerisSourceMapper::GetNameForEphemerisSource(m_source));
+  }
 
   if (m_ephemerisIdHasBeenSet) {
     payload.WithString("ephemerisId", m_ephemerisId);
@@ -50,10 +54,6 @@ JsonValue EphemerisMetaData::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
-  }
-
-  if (m_sourceHasBeenSet) {
-    payload.WithString("source", EphemerisSourceMapper::GetNameForEphemerisSource(m_source));
   }
 
   return payload;

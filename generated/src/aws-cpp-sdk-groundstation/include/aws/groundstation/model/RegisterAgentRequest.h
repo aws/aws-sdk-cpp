@@ -33,24 +33,6 @@ class RegisterAgentRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Detailed information about the agent being registered.</p>
-   */
-  inline const AgentDetails& GetAgentDetails() const { return m_agentDetails; }
-  inline bool AgentDetailsHasBeenSet() const { return m_agentDetailsHasBeenSet; }
-  template <typename AgentDetailsT = AgentDetails>
-  void SetAgentDetails(AgentDetailsT&& value) {
-    m_agentDetailsHasBeenSet = true;
-    m_agentDetails = std::forward<AgentDetailsT>(value);
-  }
-  template <typename AgentDetailsT = AgentDetails>
-  RegisterAgentRequest& WithAgentDetails(AgentDetailsT&& value) {
-    SetAgentDetails(std::forward<AgentDetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Data for associating an agent with the capabilities it is managing.</p>
    */
   inline const DiscoveryData& GetDiscoveryData() const { return m_discoveryData; }
@@ -63,6 +45,24 @@ class RegisterAgentRequest : public GroundStationRequest {
   template <typename DiscoveryDataT = DiscoveryData>
   RegisterAgentRequest& WithDiscoveryData(DiscoveryDataT&& value) {
     SetDiscoveryData(std::forward<DiscoveryDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Detailed information about the agent being registered.</p>
+   */
+  inline const AgentDetails& GetAgentDetails() const { return m_agentDetails; }
+  inline bool AgentDetailsHasBeenSet() const { return m_agentDetailsHasBeenSet; }
+  template <typename AgentDetailsT = AgentDetails>
+  void SetAgentDetails(AgentDetailsT&& value) {
+    m_agentDetailsHasBeenSet = true;
+    m_agentDetails = std::forward<AgentDetailsT>(value);
+  }
+  template <typename AgentDetailsT = AgentDetails>
+  RegisterAgentRequest& WithAgentDetails(AgentDetailsT&& value) {
+    SetAgentDetails(std::forward<AgentDetailsT>(value));
     return *this;
   }
   ///@}
@@ -91,11 +91,11 @@ class RegisterAgentRequest : public GroundStationRequest {
   }
   ///@}
  private:
-  AgentDetails m_agentDetails;
-  bool m_agentDetailsHasBeenSet = false;
-
   DiscoveryData m_discoveryData;
   bool m_discoveryDataHasBeenSet = false;
+
+  AgentDetails m_agentDetails;
+  bool m_agentDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

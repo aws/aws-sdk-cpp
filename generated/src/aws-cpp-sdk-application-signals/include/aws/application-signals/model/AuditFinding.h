@@ -25,10 +25,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains information about an audit finding, which
- * represents an automated analysis result about service behavior, performance
- * issues, or potential problems identified through heuristic
- * algorithms.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents an audit finding that identifies a potential issue,
+ * misconfiguration, or compliance violation in Application Signals
+ * resources.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AuditFinding">AWS
  * API Reference</a></p>
  */
@@ -41,9 +40,9 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>The key attributes that identify the service or entity this audit finding
-   * relates to. This is a string-to-string map that includes fields like Type, Name,
-   * and Environment.</p>
+   * <p>A map of key attributes that identify the resource associated with this audit
+   * finding. These attributes help locate and understand the context of the
+   * finding.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const { return m_keyAttributes; }
   inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
@@ -67,8 +66,8 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>An array of auditor results that contain the specific findings, descriptions,
-   * and severity levels identified by different auditing algorithms.</p>
+   * <p>An array of results from different auditors that examined the resource. Each
+   * result includes the auditor name, description, and severity level.</p>
    */
   inline const Aws::Vector<AuditorResult>& GetAuditorResults() const { return m_auditorResults; }
   inline bool AuditorResultsHasBeenSet() const { return m_auditorResultsHasBeenSet; }
@@ -92,8 +91,8 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>The name of the operation associated with this audit finding, if the finding
-   * is specific to a particular service operation.</p>
+   * <p>The operation or action that was being audited when this finding was
+   * discovered. This provides context about what was being examined.</p>
    */
   inline const Aws::String& GetOperation() const { return m_operation; }
   inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
@@ -111,8 +110,8 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>A structure containing metric data queries and time range information that
-   * provides context for the audit finding through relevant performance metrics.</p>
+   * <p>A metric graph associated with the audit finding, showing relevant
+   * performance data that may be related to the identified issue.</p>
    */
   inline const MetricGraph& GetMetricGraph() const { return m_metricGraph; }
   inline bool MetricGraphHasBeenSet() const { return m_metricGraphHasBeenSet; }
@@ -130,9 +129,8 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>A structure containing nodes and edges that represent the dependency
-   * relationships relevant to this audit finding, helping to understand the context
-   * and potential impact.</p>
+   * <p>A dependency graph showing the relationships between services that may be
+   * affected by or related to the audit finding.</p>
    */
   inline const DependencyGraph& GetDependencyGraph() const { return m_dependencyGraph; }
   inline bool DependencyGraphHasBeenSet() const { return m_dependencyGraphHasBeenSet; }
@@ -150,7 +148,8 @@ class AuditFinding {
 
   ///@{
   /**
-   * <p>The type of audit finding.</p>
+   * <p>The type or category of the audit finding, such as "Performance", "Security",
+   * or "Configuration".</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -35,6 +35,22 @@ class AntennaUplinkConfig {
 
   ///@{
   /**
+   * <p>Whether or not uplink transmit is disabled.</p>
+   */
+  inline bool GetTransmitDisabled() const { return m_transmitDisabled; }
+  inline bool TransmitDisabledHasBeenSet() const { return m_transmitDisabledHasBeenSet; }
+  inline void SetTransmitDisabled(bool value) {
+    m_transmitDisabledHasBeenSet = true;
+    m_transmitDisabled = value;
+  }
+  inline AntennaUplinkConfig& WithTransmitDisabled(bool value) {
+    SetTransmitDisabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about the uplink spectral <code>Config</code>.</p>
    */
   inline const UplinkSpectrumConfig& GetSpectrumConfig() const { return m_spectrumConfig; }
@@ -68,31 +84,15 @@ class AntennaUplinkConfig {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Whether or not uplink transmit is disabled.</p>
-   */
-  inline bool GetTransmitDisabled() const { return m_transmitDisabled; }
-  inline bool TransmitDisabledHasBeenSet() const { return m_transmitDisabledHasBeenSet; }
-  inline void SetTransmitDisabled(bool value) {
-    m_transmitDisabledHasBeenSet = true;
-    m_transmitDisabled = value;
-  }
-  inline AntennaUplinkConfig& WithTransmitDisabled(bool value) {
-    SetTransmitDisabled(value);
-    return *this;
-  }
-  ///@}
  private:
+  bool m_transmitDisabled{false};
+  bool m_transmitDisabledHasBeenSet = false;
+
   UplinkSpectrumConfig m_spectrumConfig;
   bool m_spectrumConfigHasBeenSet = false;
 
   Eirp m_targetEirp;
   bool m_targetEirpHasBeenSet = false;
-
-  bool m_transmitDisabled{false};
-  bool m_transmitDisabledHasBeenSet = false;
 };
 
 }  // namespace Model

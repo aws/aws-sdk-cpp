@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String UpdateAgentStatusRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("taskId", m_taskId);
+  }
+
   if (m_aggregateStatusHasBeenSet) {
     payload.WithObject("aggregateStatus", m_aggregateStatus.Jsonize());
   }
@@ -25,10 +29,6 @@ Aws::String UpdateAgentStatusRequest::SerializePayload() const {
       componentStatusesJsonList[componentStatusesIndex].AsObject(m_componentStatuses[componentStatusesIndex].Jsonize());
     }
     payload.WithArray("componentStatuses", std::move(componentStatusesJsonList));
-  }
-
-  if (m_taskIdHasBeenSet) {
-    payload.WithString("taskId", m_taskId);
   }
 
   return payload.View().WriteReadable();

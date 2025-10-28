@@ -34,22 +34,6 @@ class Elevation {
 
   ///@{
   /**
-   * <p>Elevation angle units.</p>
-   */
-  inline AngleUnits GetUnit() const { return m_unit; }
-  inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-  inline void SetUnit(AngleUnits value) {
-    m_unitHasBeenSet = true;
-    m_unit = value;
-  }
-  inline Elevation& WithUnit(AngleUnits value) {
-    SetUnit(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Elevation angle value.</p>
    */
   inline double GetValue() const { return m_value; }
@@ -63,12 +47,28 @@ class Elevation {
     return *this;
   }
   ///@}
- private:
-  AngleUnits m_unit{AngleUnits::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Elevation angle units.</p>
+   */
+  inline AngleUnits GetUnit() const { return m_unit; }
+  inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+  inline void SetUnit(AngleUnits value) {
+    m_unitHasBeenSet = true;
+    m_unit = value;
+  }
+  inline Elevation& WithUnit(AngleUnits value) {
+    SetUnit(value);
+    return *this;
+  }
+  ///@}
+ private:
   double m_value{0.0};
   bool m_valueHasBeenSet = false;
+
+  AngleUnits m_unit{AngleUnits::NOT_SET};
+  bool m_unitHasBeenSet = false;
 };
 
 }  // namespace Model

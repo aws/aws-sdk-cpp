@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String RegisterAgentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_agentDetailsHasBeenSet) {
-    payload.WithObject("agentDetails", m_agentDetails.Jsonize());
-  }
-
   if (m_discoveryDataHasBeenSet) {
     payload.WithObject("discoveryData", m_discoveryData.Jsonize());
+  }
+
+  if (m_agentDetailsHasBeenSet) {
+    payload.WithObject("agentDetails", m_agentDetails.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

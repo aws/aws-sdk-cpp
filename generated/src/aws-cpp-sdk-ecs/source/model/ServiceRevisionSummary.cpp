@@ -34,6 +34,14 @@ ServiceRevisionSummary& ServiceRevisionSummary::operator=(JsonView jsonValue) {
     m_pendingTaskCount = jsonValue.GetInteger("pendingTaskCount");
     m_pendingTaskCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requestedTestTrafficWeight")) {
+    m_requestedTestTrafficWeight = jsonValue.GetDouble("requestedTestTrafficWeight");
+    m_requestedTestTrafficWeightHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("requestedProductionTrafficWeight")) {
+    m_requestedProductionTrafficWeight = jsonValue.GetDouble("requestedProductionTrafficWeight");
+    m_requestedProductionTrafficWeightHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue ServiceRevisionSummary::Jsonize() const {
 
   if (m_pendingTaskCountHasBeenSet) {
     payload.WithInteger("pendingTaskCount", m_pendingTaskCount);
+  }
+
+  if (m_requestedTestTrafficWeightHasBeenSet) {
+    payload.WithDouble("requestedTestTrafficWeight", m_requestedTestTrafficWeight);
+  }
+
+  if (m_requestedProductionTrafficWeightHasBeenSet) {
+    payload.WithDouble("requestedProductionTrafficWeight", m_requestedProductionTrafficWeight);
   }
 
   return payload;

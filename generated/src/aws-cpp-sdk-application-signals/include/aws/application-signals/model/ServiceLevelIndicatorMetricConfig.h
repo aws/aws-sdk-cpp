@@ -116,8 +116,8 @@ class ServiceLevelIndicatorMetricConfig {
 
   ///@{
   /**
-   * <p>The name of the CloudWatch metric to use for the SLO, when using a custom
-   * metric rather than Application Signals standard metrics.</p>
+   * <p>The name of the CloudWatch metric used as a service level indicator (SLI) for
+   * measuring service performance.</p>
    */
   inline const Aws::String& GetMetricName() const { return m_metricName; }
   inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }

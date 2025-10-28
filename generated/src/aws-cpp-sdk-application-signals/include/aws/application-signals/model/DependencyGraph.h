@@ -22,9 +22,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that represents the dependency relationships relevant to an audit
- * finding, containing nodes and edges that show how services and resources are
- * connected.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a graph showing the dependencies between services and components
+ * in your application architecture.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DependencyGraph">AWS
  * API Reference</a></p>
  */
@@ -37,8 +36,8 @@ class DependencyGraph {
 
   ///@{
   /**
-   * <p>An array of nodes representing the services, resources, or other entities in
-   * the dependency graph.</p>
+   * <p>An array of nodes in the dependency graph, where each node represents a
+   * service or component.</p>
    */
   inline const Aws::Vector<Node>& GetNodes() const { return m_nodes; }
   inline bool NodesHasBeenSet() const { return m_nodesHasBeenSet; }
@@ -62,8 +61,8 @@ class DependencyGraph {
 
   ///@{
   /**
-   * <p>An array of edges representing the connections and relationships between the
-   * nodes in the dependency graph.</p>
+   * <p>An array of edges in the dependency graph, where each edge represents a
+   * connection or dependency between two nodes.</p>
    */
   inline const Aws::Vector<Edge>& GetEdges() const { return m_edges; }
   inline bool EdgesHasBeenSet() const { return m_edgesHasBeenSet; }

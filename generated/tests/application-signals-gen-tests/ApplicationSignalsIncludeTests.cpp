@@ -26,6 +26,7 @@
 #include <aws/application-signals/model/BatchUpdateExclusionWindowsResult.h>
 #include <aws/application-signals/model/BurnRateConfiguration.h>
 #include <aws/application-signals/model/CalendarInterval.h>
+#include <aws/application-signals/model/CanaryEntity.h>
 #include <aws/application-signals/model/ChangeEvent.h>
 #include <aws/application-signals/model/ChangeEventType.h>
 #include <aws/application-signals/model/ConnectionType.h>

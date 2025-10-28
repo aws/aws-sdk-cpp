@@ -35,6 +35,24 @@ class ListGroundStationsResult {
 
   ///@{
   /**
+   * <p>Next token that can be supplied in the next call to get the next page of
+   * ground stations.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListGroundStationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of ground stations.</p>
    */
   inline const Aws::Vector<GroundStationData>& GetGroundStationList() const { return m_groundStationList; }
@@ -57,24 +75,6 @@ class ListGroundStationsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>Next token that can be supplied in the next call to get the next page of
-   * ground stations.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListGroundStationsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -89,11 +89,11 @@ class ListGroundStationsResult {
   }
   ///@}
  private:
-  Aws::Vector<GroundStationData> m_groundStationList;
-  bool m_groundStationListHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<GroundStationData> m_groundStationList;
+  bool m_groundStationListHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

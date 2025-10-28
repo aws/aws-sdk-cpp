@@ -33,22 +33,6 @@ class Eirp {
 
   ///@{
   /**
-   * <p>Units of an EIRP.</p>
-   */
-  inline EirpUnits GetUnits() const { return m_units; }
-  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-  inline void SetUnits(EirpUnits value) {
-    m_unitsHasBeenSet = true;
-    m_units = value;
-  }
-  inline Eirp& WithUnits(EirpUnits value) {
-    SetUnits(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
    */
   inline double GetValue() const { return m_value; }
@@ -62,12 +46,28 @@ class Eirp {
     return *this;
   }
   ///@}
- private:
-  EirpUnits m_units{EirpUnits::NOT_SET};
-  bool m_unitsHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Units of an EIRP.</p>
+   */
+  inline EirpUnits GetUnits() const { return m_units; }
+  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
+  inline void SetUnits(EirpUnits value) {
+    m_unitsHasBeenSet = true;
+    m_units = value;
+  }
+  inline Eirp& WithUnits(EirpUnits value) {
+    SetUnits(value);
+    return *this;
+  }
+  ///@}
+ private:
   double m_value{0.0};
   bool m_valueHasBeenSet = false;
+
+  EirpUnits m_units{EirpUnits::NOT_SET};
+  bool m_unitsHasBeenSet = false;
 };
 
 }  // namespace Model

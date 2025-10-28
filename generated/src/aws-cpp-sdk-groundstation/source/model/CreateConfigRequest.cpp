@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_configDataHasBeenSet) {
-    payload.WithObject("configData", m_configData.Jsonize());
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_configDataHasBeenSet) {
+    payload.WithObject("configData", m_configData.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

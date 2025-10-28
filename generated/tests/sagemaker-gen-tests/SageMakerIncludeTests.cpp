@@ -453,11 +453,13 @@
 #include <aws/sagemaker/model/DeletePartnerAppResult.h>
 #include <aws/sagemaker/model/DeletePipelineRequest.h>
 #include <aws/sagemaker/model/DeletePipelineResult.h>
+#include <aws/sagemaker/model/DeleteProcessingJobRequest.h>
 #include <aws/sagemaker/model/DeleteProjectRequest.h>
 #include <aws/sagemaker/model/DeleteSpaceRequest.h>
 #include <aws/sagemaker/model/DeleteStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
+#include <aws/sagemaker/model/DeleteTrainingJobRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
 #include <aws/sagemaker/model/DeleteTrialRequest.h>

@@ -40,6 +40,7 @@ namespace GroundStationErrorMapper {
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -50,6 +51,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::DEPENDENCY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

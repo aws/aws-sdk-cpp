@@ -30,9 +30,8 @@ class ListAuditFindingsResult {
 
   ///@{
   /**
-   * <p>An array of structures, where each structure contains information about one
-   * audit finding, including the auditor results, severity, and associated metric
-   * and dependency graphs.</p>
+   * <p>An array of audit findings that match the specified criteria. Each finding
+   * includes details about the issue, affected resources, and auditor results.</p>
    */
   inline const Aws::Vector<AuditFinding>& GetAuditFindings() const { return m_auditFindings; }
   template <typename AuditFindingsT = Aws::Vector<AuditFinding>>
@@ -55,8 +54,9 @@ class ListAuditFindingsResult {
 
   ///@{
   /**
-   * <p>Include this value in your next use of this API to get the next set of audit
-   * findings.</p>
+   * <p>The token to use for retrieving the next page of results. This value is
+   * present only if there are more results available than were returned in the
+   * current response.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

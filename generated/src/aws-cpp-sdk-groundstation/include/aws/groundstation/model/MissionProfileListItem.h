@@ -33,24 +33,6 @@ class MissionProfileListItem {
 
   ///@{
   /**
-   * <p>ARN of a mission profile.</p>
-   */
-  inline const Aws::String& GetMissionProfileArn() const { return m_missionProfileArn; }
-  inline bool MissionProfileArnHasBeenSet() const { return m_missionProfileArnHasBeenSet; }
-  template <typename MissionProfileArnT = Aws::String>
-  void SetMissionProfileArn(MissionProfileArnT&& value) {
-    m_missionProfileArnHasBeenSet = true;
-    m_missionProfileArn = std::forward<MissionProfileArnT>(value);
-  }
-  template <typename MissionProfileArnT = Aws::String>
-  MissionProfileListItem& WithMissionProfileArn(MissionProfileArnT&& value) {
-    SetMissionProfileArn(std::forward<MissionProfileArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>UUID of a mission profile.</p>
    */
   inline const Aws::String& GetMissionProfileId() const { return m_missionProfileId; }
@@ -69,18 +51,18 @@ class MissionProfileListItem {
 
   ///@{
   /**
-   * <p>Name of a mission profile.</p>
+   * <p>ARN of a mission profile.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetMissionProfileArn() const { return m_missionProfileArn; }
+  inline bool MissionProfileArnHasBeenSet() const { return m_missionProfileArnHasBeenSet; }
+  template <typename MissionProfileArnT = Aws::String>
+  void SetMissionProfileArn(MissionProfileArnT&& value) {
+    m_missionProfileArnHasBeenSet = true;
+    m_missionProfileArn = std::forward<MissionProfileArnT>(value);
   }
-  template <typename NameT = Aws::String>
-  MissionProfileListItem& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename MissionProfileArnT = Aws::String>
+  MissionProfileListItem& WithMissionProfileArn(MissionProfileArnT&& value) {
+    SetMissionProfileArn(std::forward<MissionProfileArnT>(value));
     return *this;
   }
   ///@}
@@ -102,18 +84,36 @@ class MissionProfileListItem {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_missionProfileArn;
-  bool m_missionProfileArnHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Name of a mission profile.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  MissionProfileListItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_missionProfileId;
   bool m_missionProfileIdHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
+  Aws::String m_missionProfileArn;
+  bool m_missionProfileArnHasBeenSet = false;
 
   Aws::String m_region;
   bool m_regionHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

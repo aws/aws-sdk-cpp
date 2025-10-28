@@ -35,24 +35,6 @@ class CreateConfigRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Parameters of a <code>Config</code>.</p>
-   */
-  inline const ConfigTypeData& GetConfigData() const { return m_configData; }
-  inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
-  template <typename ConfigDataT = ConfigTypeData>
-  void SetConfigData(ConfigDataT&& value) {
-    m_configDataHasBeenSet = true;
-    m_configData = std::forward<ConfigDataT>(value);
-  }
-  template <typename ConfigDataT = ConfigTypeData>
-  CreateConfigRequest& WithConfigData(ConfigDataT&& value) {
-    SetConfigData(std::forward<ConfigDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Name of a <code>Config</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -65,6 +47,24 @@ class CreateConfigRequest : public GroundStationRequest {
   template <typename NameT = Aws::String>
   CreateConfigRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Parameters of a <code>Config</code>.</p>
+   */
+  inline const ConfigTypeData& GetConfigData() const { return m_configData; }
+  inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
+  template <typename ConfigDataT = ConfigTypeData>
+  void SetConfigData(ConfigDataT&& value) {
+    m_configDataHasBeenSet = true;
+    m_configData = std::forward<ConfigDataT>(value);
+  }
+  template <typename ConfigDataT = ConfigTypeData>
+  CreateConfigRequest& WithConfigData(ConfigDataT&& value) {
+    SetConfigData(std::forward<ConfigDataT>(value));
     return *this;
   }
   ///@}
@@ -93,11 +93,11 @@ class CreateConfigRequest : public GroundStationRequest {
   }
   ///@}
  private:
-  ConfigTypeData m_configData;
-  bool m_configDataHasBeenSet = false;
-
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  ConfigTypeData m_configData;
+  bool m_configDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

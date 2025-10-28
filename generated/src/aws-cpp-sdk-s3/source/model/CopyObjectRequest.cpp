@@ -147,6 +147,18 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
+  if (m_ifMatchHasBeenSet) {
+    ss << m_ifMatch;
+    headers.emplace("if-match", ss.str());
+    ss.str("");
+  }
+
+  if (m_ifNoneMatchHasBeenSet) {
+    ss << m_ifNoneMatch;
+    headers.emplace("if-none-match", ss.str());
+    ss.str("");
+  }
+
   if (m_metadataHasBeenSet) {
     for (const auto& item : m_metadata) {
       ss << "x-amz-meta-" << item.first;

@@ -36,36 +36,17 @@ class GetDataflowEndpointGroupResult {
 
   ///@{
   /**
-   * <p>Amount of time, in seconds, after a contact ends that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
+   * <p>UUID of a dataflow endpoint group.</p>
    */
-  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
-  inline void SetContactPostPassDurationSeconds(int value) {
-    m_contactPostPassDurationSecondsHasBeenSet = true;
-    m_contactPostPassDurationSeconds = value;
+  inline const Aws::String& GetDataflowEndpointGroupId() const { return m_dataflowEndpointGroupId; }
+  template <typename DataflowEndpointGroupIdT = Aws::String>
+  void SetDataflowEndpointGroupId(DataflowEndpointGroupIdT&& value) {
+    m_dataflowEndpointGroupIdHasBeenSet = true;
+    m_dataflowEndpointGroupId = std::forward<DataflowEndpointGroupIdT>(value);
   }
-  inline GetDataflowEndpointGroupResult& WithContactPostPassDurationSeconds(int value) {
-    SetContactPostPassDurationSeconds(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Amount of time, in seconds, before a contact starts that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
-   */
-  inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
-  inline void SetContactPrePassDurationSeconds(int value) {
-    m_contactPrePassDurationSecondsHasBeenSet = true;
-    m_contactPrePassDurationSeconds = value;
-  }
-  inline GetDataflowEndpointGroupResult& WithContactPrePassDurationSeconds(int value) {
-    SetContactPrePassDurationSeconds(value);
+  template <typename DataflowEndpointGroupIdT = Aws::String>
+  GetDataflowEndpointGroupResult& WithDataflowEndpointGroupId(DataflowEndpointGroupIdT&& value) {
+    SetDataflowEndpointGroupId(std::forward<DataflowEndpointGroupIdT>(value));
     return *this;
   }
   ///@}
@@ -83,23 +64,6 @@ class GetDataflowEndpointGroupResult {
   template <typename DataflowEndpointGroupArnT = Aws::String>
   GetDataflowEndpointGroupResult& WithDataflowEndpointGroupArn(DataflowEndpointGroupArnT&& value) {
     SetDataflowEndpointGroupArn(std::forward<DataflowEndpointGroupArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>UUID of a dataflow endpoint group.</p>
-   */
-  inline const Aws::String& GetDataflowEndpointGroupId() const { return m_dataflowEndpointGroupId; }
-  template <typename DataflowEndpointGroupIdT = Aws::String>
-  void SetDataflowEndpointGroupId(DataflowEndpointGroupIdT&& value) {
-    m_dataflowEndpointGroupIdHasBeenSet = true;
-    m_dataflowEndpointGroupId = std::forward<DataflowEndpointGroupIdT>(value);
-  }
-  template <typename DataflowEndpointGroupIdT = Aws::String>
-  GetDataflowEndpointGroupResult& WithDataflowEndpointGroupId(DataflowEndpointGroupIdT&& value) {
-    SetDataflowEndpointGroupId(std::forward<DataflowEndpointGroupIdT>(value));
     return *this;
   }
   ///@}
@@ -151,6 +115,42 @@ class GetDataflowEndpointGroupResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Amount of time, in seconds, before a contact starts that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground
+   * Station Dataflow Endpoint Group State Change event will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
+   */
+  inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
+  inline void SetContactPrePassDurationSeconds(int value) {
+    m_contactPrePassDurationSecondsHasBeenSet = true;
+    m_contactPrePassDurationSeconds = value;
+  }
+  inline GetDataflowEndpointGroupResult& WithContactPrePassDurationSeconds(int value) {
+    SetContactPrePassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time, in seconds, after a contact ends that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground
+   * Station Dataflow Endpoint Group State Change event will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
+   */
+  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
+  inline void SetContactPostPassDurationSeconds(int value) {
+    m_contactPostPassDurationSecondsHasBeenSet = true;
+    m_contactPostPassDurationSeconds = value;
+  }
+  inline GetDataflowEndpointGroupResult& WithContactPostPassDurationSeconds(int value) {
+    SetContactPostPassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -165,23 +165,23 @@ class GetDataflowEndpointGroupResult {
   }
   ///@}
  private:
-  int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
-
-  int m_contactPrePassDurationSeconds{0};
-  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+  Aws::String m_dataflowEndpointGroupId;
+  bool m_dataflowEndpointGroupIdHasBeenSet = false;
 
   Aws::String m_dataflowEndpointGroupArn;
   bool m_dataflowEndpointGroupArnHasBeenSet = false;
-
-  Aws::String m_dataflowEndpointGroupId;
-  bool m_dataflowEndpointGroupIdHasBeenSet = false;
 
   Aws::Vector<EndpointDetails> m_endpointsDetails;
   bool m_endpointsDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  int m_contactPrePassDurationSeconds{0};
+  bool m_contactPrePassDurationSecondsHasBeenSet = false;
+
+  int m_contactPostPassDurationSeconds{0};
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

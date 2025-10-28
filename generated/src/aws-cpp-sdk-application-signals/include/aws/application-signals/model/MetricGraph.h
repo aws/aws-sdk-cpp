@@ -22,9 +22,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains metric data queries and time range information that
- * provides context for audit findings through relevant performance
- * metrics.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a graph of metric data over time, showing performance trends and
+ * patterns for monitored resources.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/MetricGraph">AWS
  * API Reference</a></p>
  */
@@ -37,8 +36,8 @@ class MetricGraph {
 
   ///@{
   /**
-   * <p>An array of metric data queries that define the metrics to be retrieved and
-   * analyzed as part of the audit finding context.</p>
+   * <p>An array of metric data queries that define what metrics to display in the
+   * graph. Each query specifies the metric source, aggregation, and time range.</p>
    */
   inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const { return m_metricDataQueries; }
   inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
@@ -62,8 +61,8 @@ class MetricGraph {
 
   ///@{
   /**
-   * <p>The start time for the metric data included in this graph. When used in a raw
-   * HTTP Query API, it is formatted as epoch time in seconds.</p>
+   * <p>The start time for the metric data displayed in the graph, expressed as the
+   * number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -81,8 +80,8 @@ class MetricGraph {
 
   ///@{
   /**
-   * <p>The end time for the metric data included in this graph. When used in a raw
-   * HTTP Query API, it is formatted as epoch time in seconds.</p>
+   * <p>The end time for the metric data displayed in the graph, expressed as the
+   * number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

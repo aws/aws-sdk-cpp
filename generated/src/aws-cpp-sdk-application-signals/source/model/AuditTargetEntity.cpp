@@ -30,6 +30,10 @@ AuditTargetEntity& AuditTargetEntity::operator=(JsonView jsonValue) {
     m_serviceOperation = jsonValue.GetObject("ServiceOperation");
     m_serviceOperationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Canary")) {
+    m_canary = jsonValue.GetObject("Canary");
+    m_canaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue AuditTargetEntity::Jsonize() const {
 
   if (m_serviceOperationHasBeenSet) {
     payload.WithObject("ServiceOperation", m_serviceOperation.Jsonize());
+  }
+
+  if (m_canaryHasBeenSet) {
+    payload.WithObject("Canary", m_canary.Jsonize());
   }
 
   return payload;

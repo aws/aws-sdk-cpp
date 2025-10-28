@@ -35,6 +35,22 @@ class AggregateStatus {
 
   ///@{
   /**
+   * <p>Aggregate status.</p>
+   */
+  inline AgentStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(AgentStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline AggregateStatus& WithStatus(AgentStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Sparse map of failure signatures.</p>
    */
   inline const Aws::Map<Aws::String, bool>& GetSignatureMap() const { return m_signatureMap; }
@@ -55,28 +71,12 @@ class AggregateStatus {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Aggregate status.</p>
-   */
-  inline AgentStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(AgentStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline AggregateStatus& WithStatus(AgentStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Map<Aws::String, bool> m_signatureMap;
-  bool m_signatureMapHasBeenSet = false;
-
   AgentStatus m_status{AgentStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  Aws::Map<Aws::String, bool> m_signatureMap;
+  bool m_signatureMapHasBeenSet = false;
 };
 
 }  // namespace Model

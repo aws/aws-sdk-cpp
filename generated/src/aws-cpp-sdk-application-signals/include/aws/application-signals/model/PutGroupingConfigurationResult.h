@@ -30,8 +30,8 @@ class PutGroupingConfigurationResult {
 
   ///@{
   /**
-   * <p>A structure containing the updated grouping configuration, including all
-   * grouping attribute definitions and the timestamp when it was last updated.</p>
+   * <p>The created or updated grouping configuration, including all attribute
+   * definitions and metadata such as the update timestamp.</p>
    */
   inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
   template <typename GroupingConfigurationT = GroupingConfiguration>

@@ -24,6 +24,12 @@
 #include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/groundstation/model/AuditResults.h>
 #include <aws/groundstation/model/AwsGroundStationAgentEndpoint.h>
+#include <aws/groundstation/model/AzElEphemeris.h>
+#include <aws/groundstation/model/AzElEphemerisFilter.h>
+#include <aws/groundstation/model/AzElProgramTrackSettings.h>
+#include <aws/groundstation/model/AzElSegment.h>
+#include <aws/groundstation/model/AzElSegments.h>
+#include <aws/groundstation/model/AzElSegmentsData.h>
 #include <aws/groundstation/model/BandwidthUnits.h>
 #include <aws/groundstation/model/CancelContactRequest.h>
 #include <aws/groundstation/model/CancelContactResult.h>
@@ -75,11 +81,16 @@
 #include <aws/groundstation/model/EndpointStatus.h>
 #include <aws/groundstation/model/EphemerisData.h>
 #include <aws/groundstation/model/EphemerisDescription.h>
+#include <aws/groundstation/model/EphemerisErrorCode.h>
+#include <aws/groundstation/model/EphemerisErrorReason.h>
+#include <aws/groundstation/model/EphemerisFilter.h>
 #include <aws/groundstation/model/EphemerisInvalidReason.h>
 #include <aws/groundstation/model/EphemerisItem.h>
 #include <aws/groundstation/model/EphemerisMetaData.h>
+#include <aws/groundstation/model/EphemerisResponseData.h>
 #include <aws/groundstation/model/EphemerisSource.h>
 #include <aws/groundstation/model/EphemerisStatus.h>
+#include <aws/groundstation/model/EphemerisType.h>
 #include <aws/groundstation/model/EphemerisTypeDescription.h>
 #include <aws/groundstation/model/Frequency.h>
 #include <aws/groundstation/model/FrequencyBandwidth.h>
@@ -97,6 +108,7 @@
 #include <aws/groundstation/model/GetSatelliteRequest.h>
 #include <aws/groundstation/model/GetSatelliteResult.h>
 #include <aws/groundstation/model/GroundStationData.h>
+#include <aws/groundstation/model/ISO8601TimeRange.h>
 #include <aws/groundstation/model/IntegerRange.h>
 #include <aws/groundstation/model/InvalidParameterException.h>
 #include <aws/groundstation/model/KmsKey.h>
@@ -119,6 +131,7 @@
 #include <aws/groundstation/model/MissionProfileListItem.h>
 #include <aws/groundstation/model/OEMEphemeris.h>
 #include <aws/groundstation/model/Polarization.h>
+#include <aws/groundstation/model/ProgramTrackSettings.h>
 #include <aws/groundstation/model/RangedConnectionDetails.h>
 #include <aws/groundstation/model/RangedSocketAddress.h>
 #include <aws/groundstation/model/RegisterAgentRequest.h>
@@ -138,8 +151,10 @@
 #include <aws/groundstation/model/TLEEphemeris.h>
 #include <aws/groundstation/model/TagResourceRequest.h>
 #include <aws/groundstation/model/TagResourceResult.h>
+#include <aws/groundstation/model/TimeAzEl.h>
 #include <aws/groundstation/model/TimeRange.h>
 #include <aws/groundstation/model/TrackingConfig.h>
+#include <aws/groundstation/model/TrackingOverrides.h>
 #include <aws/groundstation/model/UntagResourceRequest.h>
 #include <aws/groundstation/model/UntagResourceResult.h>
 #include <aws/groundstation/model/UpdateAgentStatusRequest.h>

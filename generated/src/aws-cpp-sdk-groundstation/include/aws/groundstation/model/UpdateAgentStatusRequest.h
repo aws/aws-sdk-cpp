@@ -51,6 +51,24 @@ class UpdateAgentStatusRequest : public GroundStationRequest {
 
   ///@{
   /**
+   * <p>GUID of agent task.</p>
+   */
+  inline const Aws::String& GetTaskId() const { return m_taskId; }
+  inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+  template <typename TaskIdT = Aws::String>
+  void SetTaskId(TaskIdT&& value) {
+    m_taskIdHasBeenSet = true;
+    m_taskId = std::forward<TaskIdT>(value);
+  }
+  template <typename TaskIdT = Aws::String>
+  UpdateAgentStatusRequest& WithTaskId(TaskIdT&& value) {
+    SetTaskId(std::forward<TaskIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Aggregate status for agent.</p>
    */
   inline const AggregateStatus& GetAggregateStatus() const { return m_aggregateStatus; }
@@ -90,36 +108,18 @@ class UpdateAgentStatusRequest : public GroundStationRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>GUID of agent task.</p>
-   */
-  inline const Aws::String& GetTaskId() const { return m_taskId; }
-  inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-  template <typename TaskIdT = Aws::String>
-  void SetTaskId(TaskIdT&& value) {
-    m_taskIdHasBeenSet = true;
-    m_taskId = std::forward<TaskIdT>(value);
-  }
-  template <typename TaskIdT = Aws::String>
-  UpdateAgentStatusRequest& WithTaskId(TaskIdT&& value) {
-    SetTaskId(std::forward<TaskIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_agentId;
   bool m_agentIdHasBeenSet = false;
+
+  Aws::String m_taskId;
+  bool m_taskIdHasBeenSet = false;
 
   AggregateStatus m_aggregateStatus;
   bool m_aggregateStatusHasBeenSet = false;
 
   Aws::Vector<ComponentStatusData> m_componentStatuses;
   bool m_componentStatusesHasBeenSet = false;
-
-  Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 };
 
 }  // namespace Model

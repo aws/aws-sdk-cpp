@@ -64,6 +64,10 @@ GetStreamGroupResult& GetStreamGroupResult::operator=(const Aws::AmazonWebServic
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExpiresAt")) {
+    m_expiresAt = jsonValue.GetDouble("ExpiresAt");
+    m_expiresAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AssociatedApplications")) {
     Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("AssociatedApplications");
     for (unsigned associatedApplicationsIndex = 0; associatedApplicationsIndex < associatedApplicationsJsonList.GetLength();

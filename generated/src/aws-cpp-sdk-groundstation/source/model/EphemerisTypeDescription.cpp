@@ -18,13 +18,17 @@ namespace Model {
 EphemerisTypeDescription::EphemerisTypeDescription(JsonView jsonValue) { *this = jsonValue; }
 
 EphemerisTypeDescription& EphemerisTypeDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tle")) {
+    m_tle = jsonValue.GetObject("tle");
+    m_tleHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("oem")) {
     m_oem = jsonValue.GetObject("oem");
     m_oemHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("tle")) {
-    m_tle = jsonValue.GetObject("tle");
-    m_tleHasBeenSet = true;
+  if (jsonValue.ValueExists("azEl")) {
+    m_azEl = jsonValue.GetObject("azEl");
+    m_azElHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +36,16 @@ EphemerisTypeDescription& EphemerisTypeDescription::operator=(JsonView jsonValue
 JsonValue EphemerisTypeDescription::Jsonize() const {
   JsonValue payload;
 
+  if (m_tleHasBeenSet) {
+    payload.WithObject("tle", m_tle.Jsonize());
+  }
+
   if (m_oemHasBeenSet) {
     payload.WithObject("oem", m_oem.Jsonize());
   }
 
-  if (m_tleHasBeenSet) {
-    payload.WithObject("tle", m_tle.Jsonize());
+  if (m_azElHasBeenSet) {
+    payload.WithObject("azEl", m_azEl.Jsonize());
   }
 
   return payload;

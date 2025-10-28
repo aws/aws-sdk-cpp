@@ -203,14 +203,17 @@ class CreateStreamGroupResult {
    * <code>ACTIVE</code>: The stream group is ready to host streams. </p> </li> <li>
    * <p> <code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group
    * are in an error state. Verify the details of individual locations and remove any
-   * locations which are in error. </p> </li> <li> <p> <code>ERROR</code>: An error
-   * occurred when the stream group deployed. See <code>StatusReason</code> (returned
-   * by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and
-   * <code>UpdateStreamGroup</code>) for more information. </p> </li> <li> <p>
-   * <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the
-   * stream group. </p> </li> <li> <p> <code>UPDATING_LOCATIONS</code>: One or more
-   * locations in the stream group are in the process of updating (either activating
-   * or deleting). </p> </li> </ul>
+   * locations which are in error. </p> </li> <li> <p> <code>DELETING</code>: Amazon
+   * GameLift Streams is in the process of deleting the stream group. </p> </li> <li>
+   * <p> <code>ERROR</code>: An error occurred when the stream group deployed. See
+   * <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>,
+   * <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more
+   * information. </p> </li> <li> <p> <code>EXPIRED</code>: The stream group is
+   * expired and can no longer host streams. This typically occurs when a stream
+   * group is 365 days old, as indicated by the value of <code>ExpiresAt</code>.
+   * Create a new stream group to resume streaming capabilities. </p> </li> <li> <p>
+   * <code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are
+   * in the process of updating (either activating or deleting). </p> </li> </ul>
    */
   inline StreamGroupStatus GetStatus() const { return m_status; }
   inline void SetStatus(StreamGroupStatus value) {
@@ -280,6 +283,27 @@ class CreateStreamGroupResult {
   template <typename CreatedAtT = Aws::Utils::DateTime>
   CreateStreamGroupResult& WithCreatedAt(CreatedAtT&& value) {
     SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time at which this stream group expires. Timestamps are expressed using
+   * in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After
+   * this time, you will no longer be able to update this stream group or use it to
+   * start stream sessions. Only Get and Delete operations will work on an expired
+   * stream group.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+  template <typename ExpiresAtT = Aws::Utils::DateTime>
+  void SetExpiresAt(ExpiresAtT&& value) {
+    m_expiresAtHasBeenSet = true;
+    m_expiresAt = std::forward<ExpiresAtT>(value);
+  }
+  template <typename ExpiresAtT = Aws::Utils::DateTime>
+  CreateStreamGroupResult& WithExpiresAt(ExpiresAtT&& value) {
+    SetExpiresAt(std::forward<ExpiresAtT>(value));
     return *this;
   }
   ///@}
@@ -358,6 +382,9 @@ class CreateStreamGroupResult {
 
   Aws::Utils::DateTime m_createdAt{};
   bool m_createdAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_expiresAt{};
+  bool m_expiresAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedApplications;
   bool m_associatedApplicationsHasBeenSet = false;

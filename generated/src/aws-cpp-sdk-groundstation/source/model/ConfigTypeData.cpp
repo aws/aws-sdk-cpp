@@ -22,6 +22,14 @@ ConfigTypeData& ConfigTypeData::operator=(JsonView jsonValue) {
     m_antennaDownlinkConfig = jsonValue.GetObject("antennaDownlinkConfig");
     m_antennaDownlinkConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("trackingConfig")) {
+    m_trackingConfig = jsonValue.GetObject("trackingConfig");
+    m_trackingConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataflowEndpointConfig")) {
+    m_dataflowEndpointConfig = jsonValue.GetObject("dataflowEndpointConfig");
+    m_dataflowEndpointConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("antennaDownlinkDemodDecodeConfig")) {
     m_antennaDownlinkDemodDecodeConfig = jsonValue.GetObject("antennaDownlinkDemodDecodeConfig");
     m_antennaDownlinkDemodDecodeConfigHasBeenSet = true;
@@ -30,21 +38,13 @@ ConfigTypeData& ConfigTypeData::operator=(JsonView jsonValue) {
     m_antennaUplinkConfig = jsonValue.GetObject("antennaUplinkConfig");
     m_antennaUplinkConfigHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("dataflowEndpointConfig")) {
-    m_dataflowEndpointConfig = jsonValue.GetObject("dataflowEndpointConfig");
-    m_dataflowEndpointConfigHasBeenSet = true;
+  if (jsonValue.ValueExists("uplinkEchoConfig")) {
+    m_uplinkEchoConfig = jsonValue.GetObject("uplinkEchoConfig");
+    m_uplinkEchoConfigHasBeenSet = true;
   }
   if (jsonValue.ValueExists("s3RecordingConfig")) {
     m_s3RecordingConfig = jsonValue.GetObject("s3RecordingConfig");
     m_s3RecordingConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("trackingConfig")) {
-    m_trackingConfig = jsonValue.GetObject("trackingConfig");
-    m_trackingConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("uplinkEchoConfig")) {
-    m_uplinkEchoConfig = jsonValue.GetObject("uplinkEchoConfig");
-    m_uplinkEchoConfigHasBeenSet = true;
   }
   return *this;
 }
@@ -56,6 +56,14 @@ JsonValue ConfigTypeData::Jsonize() const {
     payload.WithObject("antennaDownlinkConfig", m_antennaDownlinkConfig.Jsonize());
   }
 
+  if (m_trackingConfigHasBeenSet) {
+    payload.WithObject("trackingConfig", m_trackingConfig.Jsonize());
+  }
+
+  if (m_dataflowEndpointConfigHasBeenSet) {
+    payload.WithObject("dataflowEndpointConfig", m_dataflowEndpointConfig.Jsonize());
+  }
+
   if (m_antennaDownlinkDemodDecodeConfigHasBeenSet) {
     payload.WithObject("antennaDownlinkDemodDecodeConfig", m_antennaDownlinkDemodDecodeConfig.Jsonize());
   }
@@ -64,20 +72,12 @@ JsonValue ConfigTypeData::Jsonize() const {
     payload.WithObject("antennaUplinkConfig", m_antennaUplinkConfig.Jsonize());
   }
 
-  if (m_dataflowEndpointConfigHasBeenSet) {
-    payload.WithObject("dataflowEndpointConfig", m_dataflowEndpointConfig.Jsonize());
+  if (m_uplinkEchoConfigHasBeenSet) {
+    payload.WithObject("uplinkEchoConfig", m_uplinkEchoConfig.Jsonize());
   }
 
   if (m_s3RecordingConfigHasBeenSet) {
     payload.WithObject("s3RecordingConfig", m_s3RecordingConfig.Jsonize());
-  }
-
-  if (m_trackingConfigHasBeenSet) {
-    payload.WithObject("trackingConfig", m_trackingConfig.Jsonize());
-  }
-
-  if (m_uplinkEchoConfigHasBeenSet) {
-    payload.WithObject("uplinkEchoConfig", m_uplinkEchoConfig.Jsonize());
   }
 
   return payload;
