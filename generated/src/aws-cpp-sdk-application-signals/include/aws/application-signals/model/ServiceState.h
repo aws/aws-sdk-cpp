@@ -24,9 +24,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains information about the current state of a service,
- * including its latest change events such as deployments and other state-changing
- * activities.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents the current state and health information for a service monitored
+ * by Application Signals.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceState">AWS
  * API Reference</a></p>
  */
@@ -39,8 +38,8 @@ class ServiceState {
 
   ///@{
   /**
-   * <p>The attribute filters that were applied when retrieving this service state
-   * information.</p>
+   * <p>The attribute filters that were applied when retrieving this service
+   * state.</p>
    */
   inline const Aws::Vector<AttributeFilter>& GetAttributeFilters() const { return m_attributeFilters; }
   inline bool AttributeFiltersHasBeenSet() const { return m_attributeFiltersHasBeenSet; }
@@ -64,8 +63,7 @@ class ServiceState {
 
   ///@{
   /**
-   * <p>The key attributes that identify this service, including Type, Name, and
-   * Environment information.</p>
+   * <p>The service entity information for this service state.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetService() const { return m_service; }
   inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
@@ -89,9 +87,8 @@ class ServiceState {
 
   ///@{
   /**
-   * <p>An array containing the most recent change events for this service, such as
-   * deployments, with information about when they occurred and who initiated
-   * them.</p>
+   * <p>An array of the most recent change events that may have affected this
+   * service, such as deployments or configuration changes.</p>
    */
   inline const Aws::Vector<ChangeEvent>& GetLatestChangeEvents() const { return m_latestChangeEvents; }
   inline bool LatestChangeEventsHasBeenSet() const { return m_latestChangeEventsHasBeenSet; }

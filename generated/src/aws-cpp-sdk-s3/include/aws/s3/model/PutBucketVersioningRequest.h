@@ -116,7 +116,14 @@ class PutBucketVersioningRequest : public S3Request {
   ///@{
   /**
    * <p>The concatenation of the authentication device's serial number, a space, and
-   * the value that is displayed on your authentication device.</p>
+   * the value that is displayed on your authentication device. The serial number is
+   * the number that uniquely identifies the MFA device. For physical MFA devices,
+   * this is the unique serial number that's provided with the device. For virtual
+   * MFA devices, the serial number is the device ARN. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html">Enabling
+   * versioning on buckets</a> and <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html">Configuring
+   * MFA delete</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
    */
   inline const Aws::String& GetMFA() const { return m_mFA; }
   inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }

@@ -33,22 +33,6 @@ class FrequencyBandwidth {
 
   ///@{
   /**
-   * <p>Frequency bandwidth units.</p>
-   */
-  inline BandwidthUnits GetUnits() const { return m_units; }
-  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-  inline void SetUnits(BandwidthUnits value) {
-    m_unitsHasBeenSet = true;
-    m_units = value;
-  }
-  inline FrequencyBandwidth& WithUnits(BandwidthUnits value) {
-    SetUnits(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Frequency bandwidth value. AWS Ground Station currently has the following
    * bandwidth limitations:</p> <ul> <li> <p>For
    * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
@@ -68,12 +52,28 @@ class FrequencyBandwidth {
     return *this;
   }
   ///@}
- private:
-  BandwidthUnits m_units{BandwidthUnits::NOT_SET};
-  bool m_unitsHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Frequency bandwidth units.</p>
+   */
+  inline BandwidthUnits GetUnits() const { return m_units; }
+  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
+  inline void SetUnits(BandwidthUnits value) {
+    m_unitsHasBeenSet = true;
+    m_units = value;
+  }
+  inline FrequencyBandwidth& WithUnits(BandwidthUnits value) {
+    SetUnits(value);
+    return *this;
+  }
+  ///@}
+ private:
   double m_value{0.0};
   bool m_valueHasBeenSet = false;
+
+  BandwidthUnits m_units{BandwidthUnits::NOT_SET};
+  bool m_unitsHasBeenSet = false;
 };
 
 }  // namespace Model

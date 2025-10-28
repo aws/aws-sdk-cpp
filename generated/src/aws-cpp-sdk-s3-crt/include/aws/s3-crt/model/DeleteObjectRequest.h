@@ -209,13 +209,13 @@ class DeleteObjectRequest : public S3CrtRequest {
 
   ///@{
   /**
-   * <p>The <code>If-Match</code> header field makes the request method conditional
-   * on ETags. If the ETag value does not match, the operation returns a <code>412
-   * Precondition Failed</code> error. If the ETag matches or if the object doesn't
-   * exist, the operation will return a <code>204 Success (No Content)
-   * response</code>.</p> <p>For more information about conditional requests, see <a
-   * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>  <p>This
-   * functionality is only supported for directory buckets.</p>
+   * <p>Deletes the object if the ETag (entity tag) value provided during the delete
+   * operation matches the ETag of the object in S3. If the ETag values do not match,
+   * the operation returns a <code>412 Precondition Failed</code> error.</p>
+   * <p>Expects the ETag value as a string. <code>If-Match</code> does accept a
+   * string value of an '*' (asterisk) character to denote a match of any ETag.</p>
+   * <p>For more information about conditional requests, see <a
+   * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
    */
   inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
   inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }

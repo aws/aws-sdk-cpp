@@ -171,6 +171,30 @@ class WorkspaceDirectory {
 
   ///@{
   /**
+   * <p>The IPv6 addresses of the DNS servers for the directory.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDnsIpv6Addresses() const { return m_dnsIpv6Addresses; }
+  inline bool DnsIpv6AddressesHasBeenSet() const { return m_dnsIpv6AddressesHasBeenSet; }
+  template <typename DnsIpv6AddressesT = Aws::Vector<Aws::String>>
+  void SetDnsIpv6Addresses(DnsIpv6AddressesT&& value) {
+    m_dnsIpv6AddressesHasBeenSet = true;
+    m_dnsIpv6Addresses = std::forward<DnsIpv6AddressesT>(value);
+  }
+  template <typename DnsIpv6AddressesT = Aws::Vector<Aws::String>>
+  WorkspaceDirectory& WithDnsIpv6Addresses(DnsIpv6AddressesT&& value) {
+    SetDnsIpv6Addresses(std::forward<DnsIpv6AddressesT>(value));
+    return *this;
+  }
+  template <typename DnsIpv6AddressesT = Aws::String>
+  WorkspaceDirectory& AddDnsIpv6Addresses(DnsIpv6AddressesT&& value) {
+    m_dnsIpv6AddressesHasBeenSet = true;
+    m_dnsIpv6Addresses.emplace_back(std::forward<DnsIpv6AddressesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user name for the service account.</p>
    */
   inline const Aws::String& GetCustomerUserName() const { return m_customerUserName; }
@@ -596,6 +620,9 @@ class WorkspaceDirectory {
 
   Aws::Vector<Aws::String> m_dnsIpAddresses;
   bool m_dnsIpAddressesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_dnsIpv6Addresses;
+  bool m_dnsIpv6AddressesHasBeenSet = false;
 
   Aws::String m_customerUserName;
   bool m_customerUserNameHasBeenSet = false;

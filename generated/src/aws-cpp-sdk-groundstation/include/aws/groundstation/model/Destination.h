@@ -35,19 +35,16 @@ class Destination {
 
   ///@{
   /**
-   * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-   * antenna demod decode.</p>
+   * <p>Type of a <code>Config</code>.</p>
    */
-  inline const ConfigDetails& GetConfigDetails() const { return m_configDetails; }
-  inline bool ConfigDetailsHasBeenSet() const { return m_configDetailsHasBeenSet; }
-  template <typename ConfigDetailsT = ConfigDetails>
-  void SetConfigDetails(ConfigDetailsT&& value) {
-    m_configDetailsHasBeenSet = true;
-    m_configDetails = std::forward<ConfigDetailsT>(value);
+  inline ConfigCapabilityType GetConfigType() const { return m_configType; }
+  inline bool ConfigTypeHasBeenSet() const { return m_configTypeHasBeenSet; }
+  inline void SetConfigType(ConfigCapabilityType value) {
+    m_configTypeHasBeenSet = true;
+    m_configType = value;
   }
-  template <typename ConfigDetailsT = ConfigDetails>
-  Destination& WithConfigDetails(ConfigDetailsT&& value) {
-    SetConfigDetails(std::forward<ConfigDetailsT>(value));
+  inline Destination& WithConfigType(ConfigCapabilityType value) {
+    SetConfigType(value);
     return *this;
   }
   ///@}
@@ -72,16 +69,19 @@ class Destination {
 
   ///@{
   /**
-   * <p>Type of a <code>Config</code>.</p>
+   * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
+   * antenna demod decode.</p>
    */
-  inline ConfigCapabilityType GetConfigType() const { return m_configType; }
-  inline bool ConfigTypeHasBeenSet() const { return m_configTypeHasBeenSet; }
-  inline void SetConfigType(ConfigCapabilityType value) {
-    m_configTypeHasBeenSet = true;
-    m_configType = value;
+  inline const ConfigDetails& GetConfigDetails() const { return m_configDetails; }
+  inline bool ConfigDetailsHasBeenSet() const { return m_configDetailsHasBeenSet; }
+  template <typename ConfigDetailsT = ConfigDetails>
+  void SetConfigDetails(ConfigDetailsT&& value) {
+    m_configDetailsHasBeenSet = true;
+    m_configDetails = std::forward<ConfigDetailsT>(value);
   }
-  inline Destination& WithConfigType(ConfigCapabilityType value) {
-    SetConfigType(value);
+  template <typename ConfigDetailsT = ConfigDetails>
+  Destination& WithConfigDetails(ConfigDetailsT&& value) {
+    SetConfigDetails(std::forward<ConfigDetailsT>(value));
     return *this;
   }
   ///@}
@@ -104,14 +104,14 @@ class Destination {
   }
   ///@}
  private:
-  ConfigDetails m_configDetails;
-  bool m_configDetailsHasBeenSet = false;
+  ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
+  bool m_configTypeHasBeenSet = false;
 
   Aws::String m_configId;
   bool m_configIdHasBeenSet = false;
 
-  ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
-  bool m_configTypeHasBeenSet = false;
+  ConfigDetails m_configDetails;
+  bool m_configDetailsHasBeenSet = false;
 
   Aws::String m_dataflowDestinationRegion;
   bool m_dataflowDestinationRegionHasBeenSet = false;

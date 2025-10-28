@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class TrainingJobStatus { NOT_SET, InProgress, Completed, Failed, Stopping, Stopped };
+enum class TrainingJobStatus { NOT_SET, InProgress, Completed, Failed, Stopping, Stopped, Deleting };
 
 namespace TrainingJobStatusMapper {
 AWS_SAGEMAKER_API TrainingJobStatus GetTrainingJobStatusForName(const Aws::String& name);

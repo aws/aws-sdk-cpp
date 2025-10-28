@@ -38,32 +38,19 @@ class AwsGroundStationAgentEndpoint {
 
   ///@{
   /**
-   * <p>The status of AgentEndpoint.</p>
+   * <p>Name string associated with AgentEndpoint. Used as a human-readable
+   * identifier for AgentEndpoint.</p>
    */
-  inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
-  inline bool AgentStatusHasBeenSet() const { return m_agentStatusHasBeenSet; }
-  inline void SetAgentStatus(AgentStatus value) {
-    m_agentStatusHasBeenSet = true;
-    m_agentStatus = value;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  inline AwsGroundStationAgentEndpoint& WithAgentStatus(AgentStatus value) {
-    SetAgentStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The results of the audit.</p>
-   */
-  inline AuditResults GetAuditResults() const { return m_auditResults; }
-  inline bool AuditResultsHasBeenSet() const { return m_auditResultsHasBeenSet; }
-  inline void SetAuditResults(AuditResults value) {
-    m_auditResultsHasBeenSet = true;
-    m_auditResults = value;
-  }
-  inline AwsGroundStationAgentEndpoint& WithAuditResults(AuditResults value) {
-    SetAuditResults(value);
+  template <typename NameT = Aws::String>
+  AwsGroundStationAgentEndpoint& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -106,28 +93,38 @@ class AwsGroundStationAgentEndpoint {
 
   ///@{
   /**
-   * <p>Name string associated with AgentEndpoint. Used as a human-readable
-   * identifier for AgentEndpoint.</p>
+   * <p>The status of AgentEndpoint.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
+  inline bool AgentStatusHasBeenSet() const { return m_agentStatusHasBeenSet; }
+  inline void SetAgentStatus(AgentStatus value) {
+    m_agentStatusHasBeenSet = true;
+    m_agentStatus = value;
   }
-  template <typename NameT = Aws::String>
-  AwsGroundStationAgentEndpoint& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline AwsGroundStationAgentEndpoint& WithAgentStatus(AgentStatus value) {
+    SetAgentStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The results of the audit.</p>
+   */
+  inline AuditResults GetAuditResults() const { return m_auditResults; }
+  inline bool AuditResultsHasBeenSet() const { return m_auditResultsHasBeenSet; }
+  inline void SetAuditResults(AuditResults value) {
+    m_auditResultsHasBeenSet = true;
+    m_auditResults = value;
+  }
+  inline AwsGroundStationAgentEndpoint& WithAuditResults(AuditResults value) {
+    SetAuditResults(value);
     return *this;
   }
   ///@}
  private:
-  AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-  bool m_agentStatusHasBeenSet = false;
-
-  AuditResults m_auditResults{AuditResults::NOT_SET};
-  bool m_auditResultsHasBeenSet = false;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   ConnectionDetails m_egressAddress;
   bool m_egressAddressHasBeenSet = false;
@@ -135,8 +132,11 @@ class AwsGroundStationAgentEndpoint {
   RangedConnectionDetails m_ingressAddress;
   bool m_ingressAddressHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
+  AgentStatus m_agentStatus{AgentStatus::NOT_SET};
+  bool m_agentStatusHasBeenSet = false;
+
+  AuditResults m_auditResults{AuditResults::NOT_SET};
+  bool m_auditResultsHasBeenSet = false;
 };
 
 }  // namespace Model

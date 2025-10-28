@@ -21,10 +21,6 @@ UpdateConfigResult::UpdateConfigResult(const Aws::AmazonWebServiceResult<JsonVal
 
 UpdateConfigResult& UpdateConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("configArn")) {
-    m_configArn = jsonValue.GetString("configArn");
-    m_configArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("configId")) {
     m_configId = jsonValue.GetString("configId");
     m_configIdHasBeenSet = true;
@@ -32,6 +28,10 @@ UpdateConfigResult& UpdateConfigResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("configType")) {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
     m_configTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configArn")) {
+    m_configArn = jsonValue.GetString("configArn");
+    m_configArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

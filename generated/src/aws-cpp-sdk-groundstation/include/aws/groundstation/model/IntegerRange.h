@@ -31,22 +31,6 @@ class IntegerRange {
 
   ///@{
   /**
-   * <p>A maximum value.</p>
-   */
-  inline int GetMaximum() const { return m_maximum; }
-  inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-  inline void SetMaximum(int value) {
-    m_maximumHasBeenSet = true;
-    m_maximum = value;
-  }
-  inline IntegerRange& WithMaximum(int value) {
-    SetMaximum(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A minimum value.</p>
    */
   inline int GetMinimum() const { return m_minimum; }
@@ -60,12 +44,28 @@ class IntegerRange {
     return *this;
   }
   ///@}
- private:
-  int m_maximum{0};
-  bool m_maximumHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>A maximum value.</p>
+   */
+  inline int GetMaximum() const { return m_maximum; }
+  inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
+  inline void SetMaximum(int value) {
+    m_maximumHasBeenSet = true;
+    m_maximum = value;
+  }
+  inline IntegerRange& WithMaximum(int value) {
+    SetMaximum(value);
+    return *this;
+  }
+  ///@}
+ private:
   int m_minimum{0};
   bool m_minimumHasBeenSet = false;
+
+  int m_maximum{0};
+  bool m_maximumHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,6 +18,10 @@ namespace Model {
 AggregateStatus::AggregateStatus(JsonView jsonValue) { *this = jsonValue; }
 
 AggregateStatus& AggregateStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
+    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("signatureMap")) {
     Aws::Map<Aws::String, JsonView> signatureMapJsonMap = jsonValue.GetObject("signatureMap").GetAllObjects();
     for (auto& signatureMapItem : signatureMapJsonMap) {
@@ -25,15 +29,15 @@ AggregateStatus& AggregateStatus::operator=(JsonView jsonValue) {
     }
     m_signatureMapHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AggregateStatus::Jsonize() const {
   JsonValue payload;
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AgentStatusMapper::GetNameForAgentStatus(m_status));
+  }
 
   if (m_signatureMapHasBeenSet) {
     JsonValue signatureMapJsonMap;
@@ -41,10 +45,6 @@ JsonValue AggregateStatus::Jsonize() const {
       signatureMapJsonMap.WithBool(signatureMapItem.first, signatureMapItem.second);
     }
     payload.WithObject("signatureMap", std::move(signatureMapJsonMap));
-  }
-
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", AgentStatusMapper::GetNameForAgentStatus(m_status));
   }
 
   return payload;

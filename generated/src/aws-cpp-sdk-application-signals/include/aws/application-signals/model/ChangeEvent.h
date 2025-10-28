@@ -23,9 +23,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains information about a change event that occurred for
- * a service, such as a deployment or configuration change.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Represents a change event that occurred in the system, such as deployments,
+ * configuration changes, or other operational events that may impact service
+ * performance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ChangeEvent">AWS
  * API Reference</a></p>
  */
@@ -38,8 +38,8 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The timestamp when this change event occurred. When used in a raw HTTP Query
-   * API, it is formatted as epoch time in seconds.</p>
+   * <p>The timestamp when the change event occurred, expressed as the number of
+   * milliseconds since January 1, 1970, 00:00:00 UTC.</p>
    */
   inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
   inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
@@ -57,7 +57,7 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account ID where this change event occurred.</p>
+   * <p>The AWS account ID where the change event occurred.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -75,7 +75,7 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The Amazon Web Services region where this change event occurred.</p>
+   * <p>The AWS region where the change event occurred.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }
   inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -93,8 +93,8 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The entity (service or resource) that was affected by this change event,
-   * including its key attributes.</p>
+   * <p>The entity or resource that was changed, such as a service, deployment, or
+   * configuration.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetEntity() const { return m_entity; }
   inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }
@@ -118,7 +118,8 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The type of change event that occurred, such as <code>DEPLOYMENT</code>.</p>
+   * <p>The type of change that occurred, such as "Deployment", "Configuration", or
+   * "Infrastructure".</p>
    */
   inline ChangeEventType GetChangeEventType() const { return m_changeEventType; }
   inline bool ChangeEventTypeHasBeenSet() const { return m_changeEventTypeHasBeenSet; }
@@ -134,7 +135,7 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>A unique identifier for this change event.</p>
+   * <p>A unique identifier for the change event.</p>
    */
   inline const Aws::String& GetEventId() const { return m_eventId; }
   inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
@@ -152,7 +153,7 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The name of the user who initiated this change event, if available.</p>
+   * <p>The name of the user or system that initiated the change event.</p>
    */
   inline const Aws::String& GetUserName() const { return m_userName; }
   inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
@@ -170,7 +171,8 @@ class ChangeEvent {
 
   ///@{
   /**
-   * <p>The name or description of this change event.</p>
+   * <p>A descriptive name for the change event that provides context about what
+   * changed.</p>
    */
   inline const Aws::String& GetEventName() const { return m_eventName; }
   inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }

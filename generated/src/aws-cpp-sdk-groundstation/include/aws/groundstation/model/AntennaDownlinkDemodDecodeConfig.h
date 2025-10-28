@@ -36,18 +36,18 @@ class AntennaDownlinkDemodDecodeConfig {
 
   ///@{
   /**
-   * <p>Information about the decode <code>Config</code>.</p>
+   * <p>Information about the spectral <code>Config</code>.</p>
    */
-  inline const DecodeConfig& GetDecodeConfig() const { return m_decodeConfig; }
-  inline bool DecodeConfigHasBeenSet() const { return m_decodeConfigHasBeenSet; }
-  template <typename DecodeConfigT = DecodeConfig>
-  void SetDecodeConfig(DecodeConfigT&& value) {
-    m_decodeConfigHasBeenSet = true;
-    m_decodeConfig = std::forward<DecodeConfigT>(value);
+  inline const SpectrumConfig& GetSpectrumConfig() const { return m_spectrumConfig; }
+  inline bool SpectrumConfigHasBeenSet() const { return m_spectrumConfigHasBeenSet; }
+  template <typename SpectrumConfigT = SpectrumConfig>
+  void SetSpectrumConfig(SpectrumConfigT&& value) {
+    m_spectrumConfigHasBeenSet = true;
+    m_spectrumConfig = std::forward<SpectrumConfigT>(value);
   }
-  template <typename DecodeConfigT = DecodeConfig>
-  AntennaDownlinkDemodDecodeConfig& WithDecodeConfig(DecodeConfigT&& value) {
-    SetDecodeConfig(std::forward<DecodeConfigT>(value));
+  template <typename SpectrumConfigT = SpectrumConfig>
+  AntennaDownlinkDemodDecodeConfig& WithSpectrumConfig(SpectrumConfigT&& value) {
+    SetSpectrumConfig(std::forward<SpectrumConfigT>(value));
     return *this;
   }
   ///@}
@@ -72,30 +72,30 @@ class AntennaDownlinkDemodDecodeConfig {
 
   ///@{
   /**
-   * <p>Information about the spectral <code>Config</code>.</p>
+   * <p>Information about the decode <code>Config</code>.</p>
    */
-  inline const SpectrumConfig& GetSpectrumConfig() const { return m_spectrumConfig; }
-  inline bool SpectrumConfigHasBeenSet() const { return m_spectrumConfigHasBeenSet; }
-  template <typename SpectrumConfigT = SpectrumConfig>
-  void SetSpectrumConfig(SpectrumConfigT&& value) {
-    m_spectrumConfigHasBeenSet = true;
-    m_spectrumConfig = std::forward<SpectrumConfigT>(value);
+  inline const DecodeConfig& GetDecodeConfig() const { return m_decodeConfig; }
+  inline bool DecodeConfigHasBeenSet() const { return m_decodeConfigHasBeenSet; }
+  template <typename DecodeConfigT = DecodeConfig>
+  void SetDecodeConfig(DecodeConfigT&& value) {
+    m_decodeConfigHasBeenSet = true;
+    m_decodeConfig = std::forward<DecodeConfigT>(value);
   }
-  template <typename SpectrumConfigT = SpectrumConfig>
-  AntennaDownlinkDemodDecodeConfig& WithSpectrumConfig(SpectrumConfigT&& value) {
-    SetSpectrumConfig(std::forward<SpectrumConfigT>(value));
+  template <typename DecodeConfigT = DecodeConfig>
+  AntennaDownlinkDemodDecodeConfig& WithDecodeConfig(DecodeConfigT&& value) {
+    SetDecodeConfig(std::forward<DecodeConfigT>(value));
     return *this;
   }
   ///@}
  private:
-  DecodeConfig m_decodeConfig;
-  bool m_decodeConfigHasBeenSet = false;
+  SpectrumConfig m_spectrumConfig;
+  bool m_spectrumConfigHasBeenSet = false;
 
   DemodulationConfig m_demodulationConfig;
   bool m_demodulationConfigHasBeenSet = false;
 
-  SpectrumConfig m_spectrumConfig;
-  bool m_spectrumConfigHasBeenSet = false;
+  DecodeConfig m_decodeConfig;
+  bool m_decodeConfigHasBeenSet = false;
 };
 
 }  // namespace Model

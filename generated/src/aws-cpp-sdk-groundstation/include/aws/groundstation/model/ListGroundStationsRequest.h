@@ -38,6 +38,24 @@ class ListGroundStationsRequest : public GroundStationRequest {
 
   ///@{
   /**
+   * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+   */
+  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
+  inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
+  template <typename SatelliteIdT = Aws::String>
+  void SetSatelliteId(SatelliteIdT&& value) {
+    m_satelliteIdHasBeenSet = true;
+    m_satelliteId = std::forward<SatelliteIdT>(value);
+  }
+  template <typename SatelliteIdT = Aws::String>
+  ListGroundStationsRequest& WithSatelliteId(SatelliteIdT&& value) {
+    SetSatelliteId(std::forward<SatelliteIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Maximum number of ground stations returned.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -70,33 +88,15 @@ class ListGroundStationsRequest : public GroundStationRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-   */
-  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
-  inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
-  template <typename SatelliteIdT = Aws::String>
-  void SetSatelliteId(SatelliteIdT&& value) {
-    m_satelliteIdHasBeenSet = true;
-    m_satelliteId = std::forward<SatelliteIdT>(value);
-  }
-  template <typename SatelliteIdT = Aws::String>
-  ListGroundStationsRequest& WithSatelliteId(SatelliteIdT&& value) {
-    SetSatelliteId(std::forward<SatelliteIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_satelliteId;
+  bool m_satelliteIdHasBeenSet = false;
+
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
-
-  Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 };
 
 }  // namespace Model

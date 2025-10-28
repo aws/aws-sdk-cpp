@@ -212,7 +212,7 @@ class GetObjectResult {
   ///@{
   /**
    * <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This
-   * will only be present if the object was uploaded with the object. For more
+   * checksum is only present if the checksum was uploaded with the object. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
    * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -252,8 +252,8 @@ class GetObjectResult {
 
   ///@{
   /**
-   * <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will
-   * only be present if the object was uploaded with the object. For more
+   * <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This
+   * checksum is only present if the checksum was uploaded with the object. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
    * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -274,7 +274,7 @@ class GetObjectResult {
   ///@{
   /**
    * <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This
-   * will only be present if the object was uploaded with the object. For more
+   * checksum is only present if the checksum was uploaded with the object. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
    * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

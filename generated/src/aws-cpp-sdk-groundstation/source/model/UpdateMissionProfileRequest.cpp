@@ -15,12 +15,20 @@ using namespace Aws::Utils;
 Aws::String UpdateMissionProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_contactPostPassDurationSecondsHasBeenSet) {
-    payload.WithInteger("contactPostPassDurationSeconds", m_contactPostPassDurationSeconds);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_contactPrePassDurationSecondsHasBeenSet) {
     payload.WithInteger("contactPrePassDurationSeconds", m_contactPrePassDurationSeconds);
+  }
+
+  if (m_contactPostPassDurationSecondsHasBeenSet) {
+    payload.WithInteger("contactPostPassDurationSeconds", m_contactPostPassDurationSeconds);
+  }
+
+  if (m_minimumViableContactDurationSecondsHasBeenSet) {
+    payload.WithInteger("minimumViableContactDurationSeconds", m_minimumViableContactDurationSeconds);
   }
 
   if (m_dataflowEdgesHasBeenSet) {
@@ -35,12 +43,8 @@ Aws::String UpdateMissionProfileRequest::SerializePayload() const {
     payload.WithArray("dataflowEdges", std::move(dataflowEdgesJsonList));
   }
 
-  if (m_minimumViableContactDurationSecondsHasBeenSet) {
-    payload.WithInteger("minimumViableContactDurationSeconds", m_minimumViableContactDurationSeconds);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_trackingConfigArnHasBeenSet) {
+    payload.WithString("trackingConfigArn", m_trackingConfigArn);
   }
 
   if (m_streamsKmsKeyHasBeenSet) {
@@ -49,10 +53,6 @@ Aws::String UpdateMissionProfileRequest::SerializePayload() const {
 
   if (m_streamsKmsRoleHasBeenSet) {
     payload.WithString("streamsKmsRole", m_streamsKmsRole);
-  }
-
-  if (m_trackingConfigArnHasBeenSet) {
-    payload.WithString("trackingConfigArn", m_trackingConfigArn);
   }
 
   return payload.View().WriteReadable();

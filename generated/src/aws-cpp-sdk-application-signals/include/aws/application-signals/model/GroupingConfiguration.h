@@ -22,9 +22,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains the complete grouping configuration for an account,
- * including all defined grouping attributes and metadata about when it was last
- * updated.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the complete configuration for how services are grouped and
+ * organized in Application Signals.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GroupingConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,8 +36,8 @@ class GroupingConfiguration {
 
   ///@{
   /**
-   * <p>An array of grouping attribute definitions that specify how services should
-   * be grouped based on various attributes and source keys.</p>
+   * <p>An array of grouping attribute definitions that specify the rules for
+   * organizing services into groups.</p>
    */
   inline const Aws::Vector<GroupingAttributeDefinition>& GetGroupingAttributeDefinitions() const { return m_groupingAttributeDefinitions; }
   inline bool GroupingAttributeDefinitionsHasBeenSet() const { return m_groupingAttributeDefinitionsHasBeenSet; }
@@ -62,8 +61,8 @@ class GroupingConfiguration {
 
   ///@{
   /**
-   * <p>The timestamp when this grouping configuration was last updated. When used in
-   * a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
+   * <p>The timestamp when the grouping configuration was last updated, expressed as
+   * the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

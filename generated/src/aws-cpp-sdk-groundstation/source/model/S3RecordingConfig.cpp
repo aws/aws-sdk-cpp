@@ -22,13 +22,13 @@ S3RecordingConfig& S3RecordingConfig::operator=(JsonView jsonValue) {
     m_bucketArn = jsonValue.GetString("bucketArn");
     m_bucketArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("prefix")) {
-    m_prefix = jsonValue.GetString("prefix");
-    m_prefixHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("prefix")) {
+    m_prefix = jsonValue.GetString("prefix");
+    m_prefixHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue S3RecordingConfig::Jsonize() const {
     payload.WithString("bucketArn", m_bucketArn);
   }
 
-  if (m_prefixHasBeenSet) {
-    payload.WithString("prefix", m_prefix);
-  }
-
   if (m_roleArnHasBeenSet) {
     payload.WithString("roleArn", m_roleArn);
+  }
+
+  if (m_prefixHasBeenSet) {
+    payload.WithString("prefix", m_prefix);
   }
 
   return payload;

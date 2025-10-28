@@ -7,7 +7,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/EphemerisErrorReason.h>
 #include <aws/groundstation/model/EphemerisInvalidReason.h>
 #include <aws/groundstation/model/EphemerisStatus.h>
 #include <aws/groundstation/model/EphemerisTypeDescription.h>
@@ -33,38 +35,6 @@ class DescribeEphemerisResult {
 
   ///@{
   /**
-   * <p>The time the ephemeris was uploaded in UTC.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  void SetCreationTime(CreationTimeT&& value) {
-    m_creationTimeHasBeenSet = true;
-    m_creationTime = std::forward<CreationTimeT>(value);
-  }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  DescribeEphemerisResult& WithCreationTime(CreationTimeT&& value) {
-    SetCreationTime(std::forward<CreationTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Whether or not the ephemeris is enabled.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline DescribeEphemerisResult& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The AWS Ground Station ephemeris ID.</p>
    */
   inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
@@ -76,58 +46,6 @@ class DescribeEphemerisResult {
   template <typename EphemerisIdT = Aws::String>
   DescribeEphemerisResult& WithEphemerisId(EphemerisIdT&& value) {
     SetEphemerisId(std::forward<EphemerisIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Reason that an ephemeris failed validation. Only provided for ephemerides
-   * with <code>INVALID</code> status.</p>
-   */
-  inline EphemerisInvalidReason GetInvalidReason() const { return m_invalidReason; }
-  inline void SetInvalidReason(EphemerisInvalidReason value) {
-    m_invalidReasonHasBeenSet = true;
-    m_invalidReason = value;
-  }
-  inline DescribeEphemerisResult& WithInvalidReason(EphemerisInvalidReason value) {
-    SetInvalidReason(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A name string associated with the ephemeris. Used as a human-readable
-   * identifier for the ephemeris.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  DescribeEphemerisResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Customer-provided priority score to establish the order in which overlapping
-   * ephemerides should be used.</p> <p>The default for customer-provided ephemeris
-   * priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or
-   * greater</p>
-   */
-  inline int GetPriority() const { return m_priority; }
-  inline void SetPriority(int value) {
-    m_priorityHasBeenSet = true;
-    m_priority = value;
-  }
-  inline DescribeEphemerisResult& WithPriority(int value) {
-    SetPriority(value);
     return *this;
   }
   ///@}
@@ -166,17 +84,66 @@ class DescribeEphemerisResult {
 
   ///@{
   /**
-   * <p>Supplied ephemeris data.</p>
+   * <p>A priority score that determines which ephemeris to use when multiple
+   * ephemerides overlap.</p> <p>Higher numbers take precedence. The default is 1.
+   * Must be 1 or greater.</p>
    */
-  inline const EphemerisTypeDescription& GetSuppliedData() const { return m_suppliedData; }
-  template <typename SuppliedDataT = EphemerisTypeDescription>
-  void SetSuppliedData(SuppliedDataT&& value) {
-    m_suppliedDataHasBeenSet = true;
-    m_suppliedData = std::forward<SuppliedDataT>(value);
+  inline int GetPriority() const { return m_priority; }
+  inline void SetPriority(int value) {
+    m_priorityHasBeenSet = true;
+    m_priority = value;
   }
-  template <typename SuppliedDataT = EphemerisTypeDescription>
-  DescribeEphemerisResult& WithSuppliedData(SuppliedDataT&& value) {
-    SetSuppliedData(std::forward<SuppliedDataT>(value));
+  inline DescribeEphemerisResult& WithPriority(int value) {
+    SetPriority(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time the ephemeris was uploaded in UTC.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  DescribeEphemerisResult& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether or not the ephemeris is enabled.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline DescribeEphemerisResult& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A name that you can use to identify the ephemeris.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DescribeEphemerisResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -205,6 +172,64 @@ class DescribeEphemerisResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Supplied ephemeris data.</p>
+   */
+  inline const EphemerisTypeDescription& GetSuppliedData() const { return m_suppliedData; }
+  template <typename SuppliedDataT = EphemerisTypeDescription>
+  void SetSuppliedData(SuppliedDataT&& value) {
+    m_suppliedDataHasBeenSet = true;
+    m_suppliedData = std::forward<SuppliedDataT>(value);
+  }
+  template <typename SuppliedDataT = EphemerisTypeDescription>
+  DescribeEphemerisResult& WithSuppliedData(SuppliedDataT&& value) {
+    SetSuppliedData(std::forward<SuppliedDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reason that an ephemeris failed validation. Appears only when the status is
+   * <code>INVALID</code>.</p>
+   */
+  inline EphemerisInvalidReason GetInvalidReason() const { return m_invalidReason; }
+  inline void SetInvalidReason(EphemerisInvalidReason value) {
+    m_invalidReasonHasBeenSet = true;
+    m_invalidReason = value;
+  }
+  inline DescribeEphemerisResult& WithInvalidReason(EphemerisInvalidReason value) {
+    SetInvalidReason(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Detailed error information for ephemerides with <code>INVALID</code>
+   * status.</p> <p>Provides specific error codes and messages to help diagnose
+   * validation failures.</p>
+   */
+  inline const Aws::Vector<EphemerisErrorReason>& GetErrorReasons() const { return m_errorReasons; }
+  template <typename ErrorReasonsT = Aws::Vector<EphemerisErrorReason>>
+  void SetErrorReasons(ErrorReasonsT&& value) {
+    m_errorReasonsHasBeenSet = true;
+    m_errorReasons = std::forward<ErrorReasonsT>(value);
+  }
+  template <typename ErrorReasonsT = Aws::Vector<EphemerisErrorReason>>
+  DescribeEphemerisResult& WithErrorReasons(ErrorReasonsT&& value) {
+    SetErrorReasons(std::forward<ErrorReasonsT>(value));
+    return *this;
+  }
+  template <typename ErrorReasonsT = EphemerisErrorReason>
+  DescribeEphemerisResult& AddErrorReasons(ErrorReasonsT&& value) {
+    m_errorReasonsHasBeenSet = true;
+    m_errorReasons.emplace_back(std::forward<ErrorReasonsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -219,23 +244,8 @@ class DescribeEphemerisResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
-
-  bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
-
   Aws::String m_ephemerisId;
   bool m_ephemerisIdHasBeenSet = false;
-
-  EphemerisInvalidReason m_invalidReason{EphemerisInvalidReason::NOT_SET};
-  bool m_invalidReasonHasBeenSet = false;
-
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
-  int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_satelliteId;
   bool m_satelliteIdHasBeenSet = false;
@@ -243,11 +253,29 @@ class DescribeEphemerisResult {
   EphemerisStatus m_status{EphemerisStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
 
-  EphemerisTypeDescription m_suppliedData;
-  bool m_suppliedDataHasBeenSet = false;
+  int m_priority{0};
+  bool m_priorityHasBeenSet = false;
+
+  Aws::Utils::DateTime m_creationTime{};
+  bool m_creationTimeHasBeenSet = false;
+
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  EphemerisTypeDescription m_suppliedData;
+  bool m_suppliedDataHasBeenSet = false;
+
+  EphemerisInvalidReason m_invalidReason{EphemerisInvalidReason::NOT_SET};
+  bool m_invalidReasonHasBeenSet = false;
+
+  Aws::Vector<EphemerisErrorReason> m_errorReasons;
+  bool m_errorReasonsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

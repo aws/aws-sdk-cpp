@@ -70,7 +70,8 @@ class TLEData {
 
   ///@{
   /**
-   * <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+   * <p>The valid time range for the TLE. Time ranges must be continuous without gaps
+   * or overlaps.</p>
    */
   inline const TimeRange& GetValidTimeRange() const { return m_validTimeRange; }
   inline bool ValidTimeRangeHasBeenSet() const { return m_validTimeRangeHasBeenSet; }

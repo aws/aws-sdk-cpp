@@ -30,23 +30,6 @@ class UpdateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Whether the ephemeris is enabled or not. Changing this value will not require
-   * the ephemeris to be re-validated.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline UpdateEphemerisRequest& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The AWS Ground Station ephemeris ID.</p>
    */
   inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
@@ -65,8 +48,24 @@ class UpdateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>A name string associated with the ephemeris. Used as a human-readable
-   * identifier for the ephemeris.</p>
+   * <p>Enable or disable the ephemeris. Changing this value doesn't require
+   * re-validation.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline UpdateEphemerisRequest& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A name that you can use to identify the ephemeris.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -84,10 +83,9 @@ class UpdateEphemerisRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Customer-provided priority score to establish the order in which overlapping
-   * ephemerides should be used.</p> <p>The default for customer-provided ephemeris
-   * priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or
-   * greater</p>
+   * <p>A priority score that determines which ephemeris to use when multiple
+   * ephemerides overlap.</p> <p>Higher numbers take precedence. The default is 1.
+   * Must be 1 or greater.</p>
    */
   inline int GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -101,11 +99,11 @@ class UpdateEphemerisRequest : public GroundStationRequest {
   }
   ///@}
  private:
-  bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
-
   Aws::String m_ephemerisId;
   bool m_ephemerisIdHasBeenSet = false;
+
+  bool m_enabled{false};
+  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;

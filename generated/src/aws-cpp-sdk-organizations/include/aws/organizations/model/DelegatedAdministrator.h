@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/AccountJoinedMethod.h>
+#include <aws/organizations/model/AccountState.h>
 #include <aws/organizations/model/AccountStatus.h>
 
 #include <utility>
@@ -126,6 +127,28 @@ class DelegatedAdministrator {
 
   ///@{
   /**
+   * <p>Each state represents a specific phase in the account lifecycle. Use this
+   * information to manage account access, automate workflows, or trigger actions
+   * based on account state changes.</p> <p>For more information about account states
+   * and their implications, see <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor
+   * the state of your Amazon Web Services accounts </a> in the <i>Organizations User
+   * Guide</i>.</p>
+   */
+  inline AccountState GetState() const { return m_state; }
+  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+  inline void SetState(AccountState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline DelegatedAdministrator& WithState(AccountState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The method by which the delegated administrator's account joined the
    * organization.</p>
    */
@@ -192,6 +215,9 @@ class DelegatedAdministrator {
 
   AccountStatus m_status{AccountStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  AccountState m_state{AccountState::NOT_SET};
+  bool m_stateHasBeenSet = false;
 
   AccountJoinedMethod m_joinedMethod{AccountJoinedMethod::NOT_SET};
   bool m_joinedMethodHasBeenSet = false;

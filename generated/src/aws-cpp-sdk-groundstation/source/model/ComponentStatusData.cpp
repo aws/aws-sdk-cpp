@@ -18,33 +18,33 @@ namespace Model {
 ComponentStatusData::ComponentStatusData(JsonView jsonValue) { *this = jsonValue; }
 
 ComponentStatusData& ComponentStatusData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("bytesReceived")) {
-    m_bytesReceived = jsonValue.GetInt64("bytesReceived");
-    m_bytesReceivedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("bytesSent")) {
-    m_bytesSent = jsonValue.GetInt64("bytesSent");
-    m_bytesSentHasBeenSet = true;
+  if (jsonValue.ValueExists("componentType")) {
+    m_componentType = jsonValue.GetString("componentType");
+    m_componentTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("capabilityArn")) {
     m_capabilityArn = jsonValue.GetString("capabilityArn");
     m_capabilityArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("componentType")) {
-    m_componentType = jsonValue.GetString("componentType");
-    m_componentTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("status")) {
+    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("dataflowId")) {
-    m_dataflowId = jsonValue.GetString("dataflowId");
-    m_dataflowIdHasBeenSet = true;
+  if (jsonValue.ValueExists("bytesSent")) {
+    m_bytesSent = jsonValue.GetInt64("bytesSent");
+    m_bytesSentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bytesReceived")) {
+    m_bytesReceived = jsonValue.GetInt64("bytesReceived");
+    m_bytesReceivedHasBeenSet = true;
   }
   if (jsonValue.ValueExists("packetsDropped")) {
     m_packetsDropped = jsonValue.GetInt64("packetsDropped");
     m_packetsDroppedHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("dataflowId")) {
+    m_dataflowId = jsonValue.GetString("dataflowId");
+    m_dataflowIdHasBeenSet = true;
   }
   return *this;
 }
@@ -52,32 +52,32 @@ ComponentStatusData& ComponentStatusData::operator=(JsonView jsonValue) {
 JsonValue ComponentStatusData::Jsonize() const {
   JsonValue payload;
 
-  if (m_bytesReceivedHasBeenSet) {
-    payload.WithInt64("bytesReceived", m_bytesReceived);
-  }
-
-  if (m_bytesSentHasBeenSet) {
-    payload.WithInt64("bytesSent", m_bytesSent);
+  if (m_componentTypeHasBeenSet) {
+    payload.WithString("componentType", m_componentType);
   }
 
   if (m_capabilityArnHasBeenSet) {
     payload.WithString("capabilityArn", m_capabilityArn);
   }
 
-  if (m_componentTypeHasBeenSet) {
-    payload.WithString("componentType", m_componentType);
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AgentStatusMapper::GetNameForAgentStatus(m_status));
   }
 
-  if (m_dataflowIdHasBeenSet) {
-    payload.WithString("dataflowId", m_dataflowId);
+  if (m_bytesSentHasBeenSet) {
+    payload.WithInt64("bytesSent", m_bytesSent);
+  }
+
+  if (m_bytesReceivedHasBeenSet) {
+    payload.WithInt64("bytesReceived", m_bytesReceived);
   }
 
   if (m_packetsDroppedHasBeenSet) {
     payload.WithInt64("packetsDropped", m_packetsDropped);
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", AgentStatusMapper::GetNameForAgentStatus(m_status));
+  if (m_dataflowIdHasBeenSet) {
+    payload.WithString("dataflowId", m_dataflowId);
   }
 
   return payload;

@@ -35,24 +35,6 @@ class UpdateConfigRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Parameters of a <code>Config</code>.</p>
-   */
-  inline const ConfigTypeData& GetConfigData() const { return m_configData; }
-  inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
-  template <typename ConfigDataT = ConfigTypeData>
-  void SetConfigData(ConfigDataT&& value) {
-    m_configDataHasBeenSet = true;
-    m_configData = std::forward<ConfigDataT>(value);
-  }
-  template <typename ConfigDataT = ConfigTypeData>
-  UpdateConfigRequest& WithConfigData(ConfigDataT&& value) {
-    SetConfigData(std::forward<ConfigDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>UUID of a <code>Config</code>.</p>
    */
   inline const Aws::String& GetConfigId() const { return m_configId; }
@@ -65,6 +47,24 @@ class UpdateConfigRequest : public GroundStationRequest {
   template <typename ConfigIdT = Aws::String>
   UpdateConfigRequest& WithConfigId(ConfigIdT&& value) {
     SetConfigId(std::forward<ConfigIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Name of a <code>Config</code>.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateConfigRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -87,33 +87,33 @@ class UpdateConfigRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Name of a <code>Config</code>.</p>
+   * <p>Parameters of a <code>Config</code>.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const ConfigTypeData& GetConfigData() const { return m_configData; }
+  inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
+  template <typename ConfigDataT = ConfigTypeData>
+  void SetConfigData(ConfigDataT&& value) {
+    m_configDataHasBeenSet = true;
+    m_configData = std::forward<ConfigDataT>(value);
   }
-  template <typename NameT = Aws::String>
-  UpdateConfigRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename ConfigDataT = ConfigTypeData>
+  UpdateConfigRequest& WithConfigData(ConfigDataT&& value) {
+    SetConfigData(std::forward<ConfigDataT>(value));
     return *this;
   }
   ///@}
  private:
-  ConfigTypeData m_configData;
-  bool m_configDataHasBeenSet = false;
-
   Aws::String m_configId;
   bool m_configIdHasBeenSet = false;
+
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
   bool m_configTypeHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
+  ConfigTypeData m_configData;
+  bool m_configDataHasBeenSet = false;
 };
 
 }  // namespace Model

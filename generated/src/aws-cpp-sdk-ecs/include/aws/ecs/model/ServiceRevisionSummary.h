@@ -97,6 +97,43 @@ class ServiceRevisionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The percentage of test traffic that is directed to this service revision.
+   * This value represents a snapshot of the traffic distribution and may not reflect
+   * real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+   */
+  inline double GetRequestedTestTrafficWeight() const { return m_requestedTestTrafficWeight; }
+  inline bool RequestedTestTrafficWeightHasBeenSet() const { return m_requestedTestTrafficWeightHasBeenSet; }
+  inline void SetRequestedTestTrafficWeight(double value) {
+    m_requestedTestTrafficWeightHasBeenSet = true;
+    m_requestedTestTrafficWeight = value;
+  }
+  inline ServiceRevisionSummary& WithRequestedTestTrafficWeight(double value) {
+    SetRequestedTestTrafficWeight(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The percentage of production traffic that is directed to this service
+   * revision. This value represents a snapshot of the traffic distribution and may
+   * not reflect real-time changes during active deployments. Valid values are 0.0 to
+   * 100.0.</p>
+   */
+  inline double GetRequestedProductionTrafficWeight() const { return m_requestedProductionTrafficWeight; }
+  inline bool RequestedProductionTrafficWeightHasBeenSet() const { return m_requestedProductionTrafficWeightHasBeenSet; }
+  inline void SetRequestedProductionTrafficWeight(double value) {
+    m_requestedProductionTrafficWeightHasBeenSet = true;
+    m_requestedProductionTrafficWeight = value;
+  }
+  inline ServiceRevisionSummary& WithRequestedProductionTrafficWeight(double value) {
+    SetRequestedProductionTrafficWeight(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -109,6 +146,12 @@ class ServiceRevisionSummary {
 
   int m_pendingTaskCount{0};
   bool m_pendingTaskCountHasBeenSet = false;
+
+  double m_requestedTestTrafficWeight{0.0};
+  bool m_requestedTestTrafficWeightHasBeenSet = false;
+
+  double m_requestedProductionTrafficWeight{0.0};
+  bool m_requestedProductionTrafficWeightHasBeenSet = false;
 };
 
 }  // namespace Model

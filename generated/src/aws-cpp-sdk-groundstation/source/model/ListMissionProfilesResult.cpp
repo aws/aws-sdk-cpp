@@ -21,6 +21,10 @@ ListMissionProfilesResult::ListMissionProfilesResult(const Aws::AmazonWebService
 
 ListMissionProfilesResult& ListMissionProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("missionProfileList")) {
     Aws::Utils::Array<JsonView> missionProfileListJsonList = jsonValue.GetArray("missionProfileList");
     for (unsigned missionProfileListIndex = 0; missionProfileListIndex < missionProfileListJsonList.GetLength();
@@ -28,10 +32,6 @@ ListMissionProfilesResult& ListMissionProfilesResult::operator=(const Aws::Amazo
       m_missionProfileList.push_back(missionProfileListJsonList[missionProfileListIndex].AsObject());
     }
     m_missionProfileListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

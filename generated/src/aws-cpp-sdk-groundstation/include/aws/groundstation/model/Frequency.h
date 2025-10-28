@@ -33,22 +33,6 @@ class Frequency {
 
   ///@{
   /**
-   * <p>Frequency units.</p>
-   */
-  inline FrequencyUnits GetUnits() const { return m_units; }
-  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-  inline void SetUnits(FrequencyUnits value) {
-    m_unitsHasBeenSet = true;
-    m_units = value;
-  }
-  inline Frequency& WithUnits(FrequencyUnits value) {
-    SetUnits(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
    * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
    */
@@ -63,12 +47,28 @@ class Frequency {
     return *this;
   }
   ///@}
- private:
-  FrequencyUnits m_units{FrequencyUnits::NOT_SET};
-  bool m_unitsHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Frequency units.</p>
+   */
+  inline FrequencyUnits GetUnits() const { return m_units; }
+  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
+  inline void SetUnits(FrequencyUnits value) {
+    m_unitsHasBeenSet = true;
+    m_units = value;
+  }
+  inline Frequency& WithUnits(FrequencyUnits value) {
+    SetUnits(value);
+    return *this;
+  }
+  ///@}
+ private:
   double m_value{0.0};
   bool m_valueHasBeenSet = false;
+
+  FrequencyUnits m_units{FrequencyUnits::NOT_SET};
+  bool m_unitsHasBeenSet = false;
 };
 
 }  // namespace Model

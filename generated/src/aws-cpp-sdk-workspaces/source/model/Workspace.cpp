@@ -34,6 +34,10 @@ Workspace& Workspace::operator=(JsonView jsonValue) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Ipv6Address")) {
+    m_ipv6Address = jsonValue.GetString("Ipv6Address");
+    m_ipv6AddressHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("State")) {
     m_state = WorkspaceStateMapper::GetWorkspaceStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
@@ -125,6 +129,10 @@ JsonValue Workspace::Jsonize() const {
 
   if (m_ipAddressHasBeenSet) {
     payload.WithString("IpAddress", m_ipAddress);
+  }
+
+  if (m_ipv6AddressHasBeenSet) {
+    payload.WithString("Ipv6Address", m_ipv6Address);
   }
 
   if (m_stateHasBeenSet) {

@@ -4061,6 +4061,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a processing job. After Amazon SageMaker deletes a processing job,
+   * all of the metadata for the processing job is lost. You can delete only
+   * processing jobs that are in a terminal state (<code>Stopped</code>,
+   * <code>Failed</code>, or <code>Completed</code>). You cannot delete a job that is
+   * in the <code>InProgress</code> or <code>Stopping</code> state. After deleting
+   * the job, you can reuse its name to create another processing job.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProcessingJobOutcome DeleteProcessingJob(const Model::DeleteProcessingJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProcessingJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteProcessingJobRequestT = Model::DeleteProcessingJobRequest>
+  Model::DeleteProcessingJobOutcomeCallable DeleteProcessingJobCallable(const DeleteProcessingJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteProcessingJob, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProcessingJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteProcessingJobRequestT = Model::DeleteProcessingJobRequest>
+  void DeleteProcessingJobAsync(const DeleteProcessingJobRequestT& request, const DeleteProcessingJobResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteProcessingJob, request, handler, context);
+  }
+
+  /**
    * <p>Delete the specified project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProject">AWS
    * API Reference</a></p>
@@ -4172,6 +4204,39 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DeleteTagsAsync(const DeleteTagsRequestT& request, const DeleteTagsResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DeleteTags, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a training job. After SageMaker deletes a training job, all of the
+   * metadata for the training job is lost. You can delete only training jobs that
+   * are in a terminal state (<code>Stopped</code>, <code>Failed</code>, or
+   * <code>Completed</code>) and don't retain an <code>Available</code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+   * warm pool</a>. You cannot delete a job that is in the <code>InProgress</code> or
+   * <code>Stopping</code> state. After deleting the job, you can reuse its name to
+   * create another training job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTrainingJobOutcome DeleteTrainingJob(const Model::DeleteTrainingJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTrainingJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteTrainingJobRequestT = Model::DeleteTrainingJobRequest>
+  Model::DeleteTrainingJobOutcomeCallable DeleteTrainingJobCallable(const DeleteTrainingJobRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteTrainingJob, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTrainingJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteTrainingJobRequestT = Model::DeleteTrainingJobRequest>
+  void DeleteTrainingJobAsync(const DeleteTrainingJobRequestT& request, const DeleteTrainingJobResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteTrainingJob, request, handler, context);
   }
 
   /**

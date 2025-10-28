@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/AzElEphemeris.h>
 #include <aws/groundstation/model/OEMEphemeris.h>
 #include <aws/groundstation/model/TLEEphemeris.h>
 
@@ -34,6 +35,22 @@ class EphemerisData {
 
   ///@{
 
+  inline const TLEEphemeris& GetTle() const { return m_tle; }
+  inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
+  template <typename TleT = TLEEphemeris>
+  void SetTle(TleT&& value) {
+    m_tleHasBeenSet = true;
+    m_tle = std::forward<TleT>(value);
+  }
+  template <typename TleT = TLEEphemeris>
+  EphemerisData& WithTle(TleT&& value) {
+    SetTle(std::forward<TleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const OEMEphemeris& GetOem() const { return m_oem; }
   inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
   template <typename OemT = OEMEphemeris>
@@ -50,25 +67,28 @@ class EphemerisData {
 
   ///@{
 
-  inline const TLEEphemeris& GetTle() const { return m_tle; }
-  inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-  template <typename TleT = TLEEphemeris>
-  void SetTle(TleT&& value) {
-    m_tleHasBeenSet = true;
-    m_tle = std::forward<TleT>(value);
+  inline const AzElEphemeris& GetAzEl() const { return m_azEl; }
+  inline bool AzElHasBeenSet() const { return m_azElHasBeenSet; }
+  template <typename AzElT = AzElEphemeris>
+  void SetAzEl(AzElT&& value) {
+    m_azElHasBeenSet = true;
+    m_azEl = std::forward<AzElT>(value);
   }
-  template <typename TleT = TLEEphemeris>
-  EphemerisData& WithTle(TleT&& value) {
-    SetTle(std::forward<TleT>(value));
+  template <typename AzElT = AzElEphemeris>
+  EphemerisData& WithAzEl(AzElT&& value) {
+    SetAzEl(std::forward<AzElT>(value));
     return *this;
   }
   ///@}
  private:
+  TLEEphemeris m_tle;
+  bool m_tleHasBeenSet = false;
+
   OEMEphemeris m_oem;
   bool m_oemHasBeenSet = false;
 
-  TLEEphemeris m_tle;
-  bool m_tleHasBeenSet = false;
+  AzElEphemeris m_azEl;
+  bool m_azElHasBeenSet = false;
 };
 
 }  // namespace Model

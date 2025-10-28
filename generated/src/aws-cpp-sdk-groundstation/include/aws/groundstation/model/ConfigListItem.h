@@ -35,24 +35,6 @@ class ConfigListItem {
 
   ///@{
   /**
-   * <p>ARN of a <code>Config</code>.</p>
-   */
-  inline const Aws::String& GetConfigArn() const { return m_configArn; }
-  inline bool ConfigArnHasBeenSet() const { return m_configArnHasBeenSet; }
-  template <typename ConfigArnT = Aws::String>
-  void SetConfigArn(ConfigArnT&& value) {
-    m_configArnHasBeenSet = true;
-    m_configArn = std::forward<ConfigArnT>(value);
-  }
-  template <typename ConfigArnT = Aws::String>
-  ConfigListItem& WithConfigArn(ConfigArnT&& value) {
-    SetConfigArn(std::forward<ConfigArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>UUID of a <code>Config</code>.</p>
    */
   inline const Aws::String& GetConfigId() const { return m_configId; }
@@ -87,6 +69,24 @@ class ConfigListItem {
 
   ///@{
   /**
+   * <p>ARN of a <code>Config</code>.</p>
+   */
+  inline const Aws::String& GetConfigArn() const { return m_configArn; }
+  inline bool ConfigArnHasBeenSet() const { return m_configArnHasBeenSet; }
+  template <typename ConfigArnT = Aws::String>
+  void SetConfigArn(ConfigArnT&& value) {
+    m_configArnHasBeenSet = true;
+    m_configArn = std::forward<ConfigArnT>(value);
+  }
+  template <typename ConfigArnT = Aws::String>
+  ConfigListItem& WithConfigArn(ConfigArnT&& value) {
+    SetConfigArn(std::forward<ConfigArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Name of a <code>Config</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -103,14 +103,14 @@ class ConfigListItem {
   }
   ///@}
  private:
-  Aws::String m_configArn;
-  bool m_configArnHasBeenSet = false;
-
   Aws::String m_configId;
   bool m_configIdHasBeenSet = false;
 
   ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
   bool m_configTypeHasBeenSet = false;
+
+  Aws::String m_configArn;
+  bool m_configArnHasBeenSet = false;
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;

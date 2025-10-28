@@ -18,13 +18,13 @@ namespace Model {
 TimeRange::TimeRange(JsonView jsonValue) { *this = jsonValue; }
 
 TimeRange& TimeRange::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTime")) {
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ TimeRange& TimeRange::operator=(JsonView jsonValue) {
 JsonValue TimeRange::Jsonize() const {
   JsonValue payload;
 
-  if (m_endTimeHasBeenSet) {
-    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
-
   if (m_startTimeHasBeenSet) {
     payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -18,13 +18,13 @@ namespace Model {
 Eirp::Eirp(JsonView jsonValue) { *this = jsonValue; }
 
 Eirp& Eirp::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("units")) {
-    m_units = EirpUnitsMapper::GetEirpUnitsForName(jsonValue.GetString("units"));
-    m_unitsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("units")) {
+    m_units = EirpUnitsMapper::GetEirpUnitsForName(jsonValue.GetString("units"));
+    m_unitsHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Eirp& Eirp::operator=(JsonView jsonValue) {
 JsonValue Eirp::Jsonize() const {
   JsonValue payload;
 
-  if (m_unitsHasBeenSet) {
-    payload.WithString("units", EirpUnitsMapper::GetNameForEirpUnits(m_units));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithDouble("value", m_value);
+  }
+
+  if (m_unitsHasBeenSet) {
+    payload.WithString("units", EirpUnitsMapper::GetNameForEirpUnits(m_units));
   }
 
   return payload;

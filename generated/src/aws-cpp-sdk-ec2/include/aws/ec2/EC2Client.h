@@ -8868,6 +8868,55 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Describes a tree-based hierarchy that represents the physical host placement
+   * of your pending or active Capacity Reservations within an Availability Zone or
+   * Local Zone. You can use this information to determine the relative proximity of
+   * your capacity within the Amazon Web Services network before it is launched and
+   * use this information to allocate capacity together to support your tightly
+   * coupled workloads.</p> <p>Capacity Reservation topology is supported for
+   * specific instance types only. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+   * for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   *  <p>The Amazon EC2 API follows an eventual consistency model due to the
+   * distributed nature of the system supporting it. As a result, when you call the
+   * DescribeCapacityReservationTopology API command immediately after launching
+   * instances, the response might return a <code>null</code> value for
+   * <code>capacityBlockId</code> because the data might not have fully propagated
+   * across all subsystems. For more information, see <a
+   * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+   * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
+   * Guide</i>.</p>  <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+   * EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.</p> <p/><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationTopology">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCapacityReservationTopologyOutcome DescribeCapacityReservationTopology(
+      const Model::DescribeCapacityReservationTopologyRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeCapacityReservationTopology that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeCapacityReservationTopologyRequestT = Model::DescribeCapacityReservationTopologyRequest>
+  Model::DescribeCapacityReservationTopologyOutcomeCallable DescribeCapacityReservationTopologyCallable(
+      const DescribeCapacityReservationTopologyRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeCapacityReservationTopology, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCapacityReservationTopology that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeCapacityReservationTopologyRequestT = Model::DescribeCapacityReservationTopologyRequest>
+  void DescribeCapacityReservationTopologyAsync(const DescribeCapacityReservationTopologyResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const DescribeCapacityReservationTopologyRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeCapacityReservationTopology, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more of your Capacity Reservations. The results describe
    * only the Capacity Reservations in the Amazon Web Services Region that you're
    * currently using.</p><p><h3>See Also:</h3>   <a
@@ -10387,20 +10436,20 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * within the Amazon Web Services network to support your tightly coupled
    * workloads.</p> <p>Instance topology is supported for specific instance types
    * only. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
-   * Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User
-   * Guide</i>.</p>  <p>The Amazon EC2 API follows an eventual consistency
-   * model due to the distributed nature of the system supporting it. As a result,
-   * when you call the DescribeInstanceTopology API command immediately after
-   * launching instances, the response might return a <code>null</code> value for
-   * <code>capacityBlockId</code> because the data might not have fully propagated
-   * across all subsystems. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+   * for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   *  <p>The Amazon EC2 API follows an eventual consistency model due to the
+   * distributed nature of the system supporting it. As a result, when you call the
+   * DescribeInstanceTopology API command immediately after launching instances, the
+   * response might return a <code>null</code> value for <code>capacityBlockId</code>
+   * because the data might not have fully propagated across all subsystems. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
    * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
    * Guide</i>.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
-   * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">AWS
    * API Reference</a></p>
    */

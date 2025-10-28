@@ -18,13 +18,13 @@ namespace Model {
 FrequencyBandwidth::FrequencyBandwidth(JsonView jsonValue) { *this = jsonValue; }
 
 FrequencyBandwidth& FrequencyBandwidth::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("units")) {
-    m_units = BandwidthUnitsMapper::GetBandwidthUnitsForName(jsonValue.GetString("units"));
-    m_unitsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("units")) {
+    m_units = BandwidthUnitsMapper::GetBandwidthUnitsForName(jsonValue.GetString("units"));
+    m_unitsHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ FrequencyBandwidth& FrequencyBandwidth::operator=(JsonView jsonValue) {
 JsonValue FrequencyBandwidth::Jsonize() const {
   JsonValue payload;
 
-  if (m_unitsHasBeenSet) {
-    payload.WithString("units", BandwidthUnitsMapper::GetNameForBandwidthUnits(m_units));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithDouble("value", m_value);
+  }
+
+  if (m_unitsHasBeenSet) {
+    payload.WithString("units", BandwidthUnitsMapper::GetNameForBandwidthUnits(m_units));
   }
 
   return payload;

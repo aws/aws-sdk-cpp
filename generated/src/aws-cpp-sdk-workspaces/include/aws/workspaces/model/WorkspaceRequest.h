@@ -209,6 +209,24 @@ class WorkspaceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IPv6 address for the WorkSpace.</p>
+   */
+  inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+  inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+  template <typename Ipv6AddressT = Aws::String>
+  void SetIpv6Address(Ipv6AddressT&& value) {
+    m_ipv6AddressHasBeenSet = true;
+    m_ipv6Address = std::forward<Ipv6AddressT>(value);
+  }
+  template <typename Ipv6AddressT = Aws::String>
+  WorkspaceRequest& WithIpv6Address(Ipv6AddressT&& value) {
+    SetIpv6Address(std::forward<Ipv6AddressT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_directoryId;
   bool m_directoryIdHasBeenSet = false;
@@ -236,6 +254,9 @@ class WorkspaceRequest {
 
   Aws::String m_workspaceName;
   bool m_workspaceNameHasBeenSet = false;
+
+  Aws::String m_ipv6Address;
+  bool m_ipv6AddressHasBeenSet = false;
 };
 
 }  // namespace Model

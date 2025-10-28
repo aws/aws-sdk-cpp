@@ -18,17 +18,17 @@ namespace Model {
 AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig(JsonView jsonValue) { *this = jsonValue; }
 
 AntennaDownlinkDemodDecodeConfig& AntennaDownlinkDemodDecodeConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("decodeConfig")) {
-    m_decodeConfig = jsonValue.GetObject("decodeConfig");
-    m_decodeConfigHasBeenSet = true;
+  if (jsonValue.ValueExists("spectrumConfig")) {
+    m_spectrumConfig = jsonValue.GetObject("spectrumConfig");
+    m_spectrumConfigHasBeenSet = true;
   }
   if (jsonValue.ValueExists("demodulationConfig")) {
     m_demodulationConfig = jsonValue.GetObject("demodulationConfig");
     m_demodulationConfigHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("spectrumConfig")) {
-    m_spectrumConfig = jsonValue.GetObject("spectrumConfig");
-    m_spectrumConfigHasBeenSet = true;
+  if (jsonValue.ValueExists("decodeConfig")) {
+    m_decodeConfig = jsonValue.GetObject("decodeConfig");
+    m_decodeConfigHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ AntennaDownlinkDemodDecodeConfig& AntennaDownlinkDemodDecodeConfig::operator=(Js
 JsonValue AntennaDownlinkDemodDecodeConfig::Jsonize() const {
   JsonValue payload;
 
-  if (m_decodeConfigHasBeenSet) {
-    payload.WithObject("decodeConfig", m_decodeConfig.Jsonize());
+  if (m_spectrumConfigHasBeenSet) {
+    payload.WithObject("spectrumConfig", m_spectrumConfig.Jsonize());
   }
 
   if (m_demodulationConfigHasBeenSet) {
     payload.WithObject("demodulationConfig", m_demodulationConfig.Jsonize());
   }
 
-  if (m_spectrumConfigHasBeenSet) {
-    payload.WithObject("spectrumConfig", m_spectrumConfig.Jsonize());
+  if (m_decodeConfigHasBeenSet) {
+    payload.WithObject("decodeConfig", m_decodeConfig.Jsonize());
   }
 
   return payload;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStationRequest.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/TrackingOverrides.h>
 
 #include <utility>
 
@@ -32,42 +33,6 @@ class ReserveContactRequest : public GroundStationRequest {
   inline virtual const char* GetServiceRequestName() const override { return "ReserveContact"; }
 
   AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
-
-  ///@{
-  /**
-   * <p>End time of a contact in UTC.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  ReserveContactRequest& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Name of a ground station.</p>
-   */
-  inline const Aws::String& GetGroundStation() const { return m_groundStation; }
-  inline bool GroundStationHasBeenSet() const { return m_groundStationHasBeenSet; }
-  template <typename GroundStationT = Aws::String>
-  void SetGroundStation(GroundStationT&& value) {
-    m_groundStationHasBeenSet = true;
-    m_groundStation = std::forward<GroundStationT>(value);
-  }
-  template <typename GroundStationT = Aws::String>
-  ReserveContactRequest& WithGroundStation(GroundStationT&& value) {
-    SetGroundStation(std::forward<GroundStationT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -125,6 +90,42 @@ class ReserveContactRequest : public GroundStationRequest {
 
   ///@{
   /**
+   * <p>End time of a contact in UTC.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  ReserveContactRequest& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Name of a ground station.</p>
+   */
+  inline const Aws::String& GetGroundStation() const { return m_groundStation; }
+  inline bool GroundStationHasBeenSet() const { return m_groundStationHasBeenSet; }
+  template <typename GroundStationT = Aws::String>
+  void SetGroundStation(GroundStationT&& value) {
+    m_groundStationHasBeenSet = true;
+    m_groundStation = std::forward<GroundStationT>(value);
+  }
+  template <typename GroundStationT = Aws::String>
+  ReserveContactRequest& WithGroundStation(GroundStationT&& value) {
+    SetGroundStation(std::forward<GroundStationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags assigned to a contact.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -146,13 +147,25 @@ class ReserveContactRequest : public GroundStationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Tracking configuration overrides for the contact.</p>
+   */
+  inline const TrackingOverrides& GetTrackingOverrides() const { return m_trackingOverrides; }
+  inline bool TrackingOverridesHasBeenSet() const { return m_trackingOverridesHasBeenSet; }
+  template <typename TrackingOverridesT = TrackingOverrides>
+  void SetTrackingOverrides(TrackingOverridesT&& value) {
+    m_trackingOverridesHasBeenSet = true;
+    m_trackingOverrides = std::forward<TrackingOverridesT>(value);
+  }
+  template <typename TrackingOverridesT = TrackingOverrides>
+  ReserveContactRequest& WithTrackingOverrides(TrackingOverridesT&& value) {
+    SetTrackingOverrides(std::forward<TrackingOverridesT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
-
-  Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
-
   Aws::String m_missionProfileArn;
   bool m_missionProfileArnHasBeenSet = false;
 
@@ -162,8 +175,17 @@ class ReserveContactRequest : public GroundStationRequest {
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
 
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
+
+  Aws::String m_groundStation;
+  bool m_groundStationHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  TrackingOverrides m_trackingOverrides;
+  bool m_trackingOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

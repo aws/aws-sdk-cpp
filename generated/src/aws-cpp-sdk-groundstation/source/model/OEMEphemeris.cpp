@@ -18,13 +18,13 @@ namespace Model {
 OEMEphemeris::OEMEphemeris(JsonView jsonValue) { *this = jsonValue; }
 
 OEMEphemeris& OEMEphemeris::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("oemData")) {
-    m_oemData = jsonValue.GetString("oemData");
-    m_oemDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("s3Object")) {
     m_s3Object = jsonValue.GetObject("s3Object");
     m_s3ObjectHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("oemData")) {
+    m_oemData = jsonValue.GetString("oemData");
+    m_oemDataHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ OEMEphemeris& OEMEphemeris::operator=(JsonView jsonValue) {
 JsonValue OEMEphemeris::Jsonize() const {
   JsonValue payload;
 
-  if (m_oemDataHasBeenSet) {
-    payload.WithString("oemData", m_oemData);
-  }
-
   if (m_s3ObjectHasBeenSet) {
     payload.WithObject("s3Object", m_s3Object.Jsonize());
+  }
+
+  if (m_oemDataHasBeenSet) {
+    payload.WithString("oemData", m_oemData);
   }
 
   return payload;

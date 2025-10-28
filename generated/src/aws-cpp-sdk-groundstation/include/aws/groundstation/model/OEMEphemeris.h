@@ -21,12 +21,12 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p> Ephemeris data in Orbit Ephemeris Message (OEM) format. </p> <p> AWS Ground
- * Station processes OEM Customer Provided Ephemerides according to the <a
- * href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">CCSDS standard</a> with some
- * extra restrictions. OEM files should be in KVN format. For more detail about the
- * OEM format that AWS Ground Station supports, see <a
- * href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-custom-ephemeris-data.html#oem-ephemeris-format">OEM
+ * <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p> <p> AWS Ground
+ * Station processes OEM ephemerides according to the <a
+ * href="https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf">CCSDS
+ * standard</a> with some extra restrictions. OEM files should be in KVN format.
+ * For more detail about the OEM format that AWS Ground Station supports, see <a
+ * href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-oem-ephemeris-data.html#oem-ephemeris-format">OEM
  * ephemeris format</a> in the AWS Ground Station user guide. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/OEMEphemeris">AWS
@@ -41,26 +41,7 @@ class OEMEphemeris {
 
   ///@{
   /**
-   * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-   * through an S3 object.</p>
-   */
-  inline const Aws::String& GetOemData() const { return m_oemData; }
-  inline bool OemDataHasBeenSet() const { return m_oemDataHasBeenSet; }
-  template <typename OemDataT = Aws::String>
-  void SetOemData(OemDataT&& value) {
-    m_oemDataHasBeenSet = true;
-    m_oemData = std::forward<OemDataT>(value);
-  }
-  template <typename OemDataT = Aws::String>
-  OEMEphemeris& WithOemData(OemDataT&& value) {
-    SetOemData(std::forward<OemDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Identifies the S3 object to be used as the ephemeris.</p>
+   * <p>The Amazon S3 object that contains the ephemeris data.</p>
    */
   inline const S3Object& GetS3Object() const { return m_s3Object; }
   inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
@@ -75,12 +56,30 @@ class OEMEphemeris {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_oemData;
-  bool m_oemDataHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>OEM data that you provide directly instead of using an Amazon S3 object.</p>
+   */
+  inline const Aws::String& GetOemData() const { return m_oemData; }
+  inline bool OemDataHasBeenSet() const { return m_oemDataHasBeenSet; }
+  template <typename OemDataT = Aws::String>
+  void SetOemData(OemDataT&& value) {
+    m_oemDataHasBeenSet = true;
+    m_oemData = std::forward<OemDataT>(value);
+  }
+  template <typename OemDataT = Aws::String>
+  OEMEphemeris& WithOemData(OemDataT&& value) {
+    SetOemData(std::forward<OemDataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   S3Object m_s3Object;
   bool m_s3ObjectHasBeenSet = false;
+
+  Aws::String m_oemData;
+  bool m_oemDataHasBeenSet = false;
 };
 
 }  // namespace Model

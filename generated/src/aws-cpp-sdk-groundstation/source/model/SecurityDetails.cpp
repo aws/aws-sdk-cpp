@@ -18,9 +18,12 @@ namespace Model {
 SecurityDetails::SecurityDetails(JsonView jsonValue) { *this = jsonValue; }
 
 SecurityDetails& SecurityDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("roleArn")) {
-    m_roleArn = jsonValue.GetString("roleArn");
-    m_roleArnHasBeenSet = true;
+  if (jsonValue.ValueExists("subnetIds")) {
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
+    }
+    m_subnetIdsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("securityGroupIds")) {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -29,12 +32,9 @@ SecurityDetails& SecurityDetails::operator=(JsonView jsonValue) {
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("subnetIds")) {
-    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
-    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
-      m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
-    }
-    m_subnetIdsHasBeenSet = true;
+  if (jsonValue.ValueExists("roleArn")) {
+    m_roleArn = jsonValue.GetString("roleArn");
+    m_roleArnHasBeenSet = true;
   }
   return *this;
 }
@@ -42,8 +42,12 @@ SecurityDetails& SecurityDetails::operator=(JsonView jsonValue) {
 JsonValue SecurityDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_roleArnHasBeenSet) {
-    payload.WithString("roleArn", m_roleArn);
+  if (m_subnetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
+      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+    }
+    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
   }
 
   if (m_securityGroupIdsHasBeenSet) {
@@ -54,12 +58,8 @@ JsonValue SecurityDetails::Jsonize() const {
     payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
-  if (m_subnetIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-    for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
-      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-    }
-    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;

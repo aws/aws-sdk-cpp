@@ -34,24 +34,6 @@ class DataflowEndpointListItem {
 
   ///@{
   /**
-   * <p>ARN of a dataflow endpoint group.</p>
-   */
-  inline const Aws::String& GetDataflowEndpointGroupArn() const { return m_dataflowEndpointGroupArn; }
-  inline bool DataflowEndpointGroupArnHasBeenSet() const { return m_dataflowEndpointGroupArnHasBeenSet; }
-  template <typename DataflowEndpointGroupArnT = Aws::String>
-  void SetDataflowEndpointGroupArn(DataflowEndpointGroupArnT&& value) {
-    m_dataflowEndpointGroupArnHasBeenSet = true;
-    m_dataflowEndpointGroupArn = std::forward<DataflowEndpointGroupArnT>(value);
-  }
-  template <typename DataflowEndpointGroupArnT = Aws::String>
-  DataflowEndpointListItem& WithDataflowEndpointGroupArn(DataflowEndpointGroupArnT&& value) {
-    SetDataflowEndpointGroupArn(std::forward<DataflowEndpointGroupArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>UUID of a dataflow endpoint group.</p>
    */
   inline const Aws::String& GetDataflowEndpointGroupId() const { return m_dataflowEndpointGroupId; }
@@ -67,12 +49,30 @@ class DataflowEndpointListItem {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_dataflowEndpointGroupArn;
-  bool m_dataflowEndpointGroupArnHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>ARN of a dataflow endpoint group.</p>
+   */
+  inline const Aws::String& GetDataflowEndpointGroupArn() const { return m_dataflowEndpointGroupArn; }
+  inline bool DataflowEndpointGroupArnHasBeenSet() const { return m_dataflowEndpointGroupArnHasBeenSet; }
+  template <typename DataflowEndpointGroupArnT = Aws::String>
+  void SetDataflowEndpointGroupArn(DataflowEndpointGroupArnT&& value) {
+    m_dataflowEndpointGroupArnHasBeenSet = true;
+    m_dataflowEndpointGroupArn = std::forward<DataflowEndpointGroupArnT>(value);
+  }
+  template <typename DataflowEndpointGroupArnT = Aws::String>
+  DataflowEndpointListItem& WithDataflowEndpointGroupArn(DataflowEndpointGroupArnT&& value) {
+    SetDataflowEndpointGroupArn(std::forward<DataflowEndpointGroupArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_dataflowEndpointGroupId;
   bool m_dataflowEndpointGroupIdHasBeenSet = false;
+
+  Aws::String m_dataflowEndpointGroupArn;
+  bool m_dataflowEndpointGroupArnHasBeenSet = false;
 };
 
 }  // namespace Model

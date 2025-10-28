@@ -19,8 +19,8 @@ namespace S3Crt {
 namespace Model {
 
 /**
- *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
- * stop returning <code>DisplayName</code>. Update your applications to use
+ *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+ * will stop returning <code>DisplayName</code>. Update your applications to use
  * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
  * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
  * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects

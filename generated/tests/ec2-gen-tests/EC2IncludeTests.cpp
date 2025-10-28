@@ -262,6 +262,7 @@
 #include <aws/ec2/model/CapacityReservationTarget.h>
 #include <aws/ec2/model/CapacityReservationTargetResponse.h>
 #include <aws/ec2/model/CapacityReservationTenancy.h>
+#include <aws/ec2/model/CapacityReservationTopology.h>
 #include <aws/ec2/model/CapacityReservationType.h>
 #include <aws/ec2/model/CapacityTenancy.h>
 #include <aws/ec2/model/CarrierGateway.h>
@@ -760,6 +761,8 @@
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
+#include <aws/ec2/model/DescribeCapacityReservationTopologyRequest.h>
+#include <aws/ec2/model/DescribeCapacityReservationTopologyResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationsResponse.h>
 #include <aws/ec2/model/DescribeCarrierGatewaysRequest.h>

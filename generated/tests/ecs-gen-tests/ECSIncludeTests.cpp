@@ -34,6 +34,7 @@
 #include <aws/ecs/model/BaselineEbsBandwidthMbpsRequest.h>
 #include <aws/ecs/model/BurstablePerformance.h>
 #include <aws/ecs/model/CPUArchitecture.h>
+#include <aws/ecs/model/CanaryConfiguration.h>
 #include <aws/ecs/model/CapacityProvider.h>
 #include <aws/ecs/model/CapacityProviderField.h>
 #include <aws/ecs/model/CapacityProviderStatus.h>
@@ -164,6 +165,7 @@
 #include <aws/ecs/model/KernelCapabilities.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/LaunchType.h>
+#include <aws/ecs/model/LinearConfiguration.h>
 #include <aws/ecs/model/LinuxParameters.h>
 #include <aws/ecs/model/ListAccountSettingsRequest.h>
 #include <aws/ecs/model/ListAccountSettingsResult.h>

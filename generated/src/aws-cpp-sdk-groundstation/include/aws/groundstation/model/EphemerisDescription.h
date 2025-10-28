@@ -34,6 +34,24 @@ class EphemerisDescription {
 
   ///@{
   /**
+   * <p>Source Amazon S3 object used for the ephemeris.</p>
+   */
+  inline const S3Object& GetSourceS3Object() const { return m_sourceS3Object; }
+  inline bool SourceS3ObjectHasBeenSet() const { return m_sourceS3ObjectHasBeenSet; }
+  template <typename SourceS3ObjectT = S3Object>
+  void SetSourceS3Object(SourceS3ObjectT&& value) {
+    m_sourceS3ObjectHasBeenSet = true;
+    m_sourceS3Object = std::forward<SourceS3ObjectT>(value);
+  }
+  template <typename SourceS3ObjectT = S3Object>
+  EphemerisDescription& WithSourceS3Object(SourceS3ObjectT&& value) {
+    SetSourceS3Object(std::forward<SourceS3ObjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Supplied ephemeris data.</p>
    */
   inline const Aws::String& GetEphemerisData() const { return m_ephemerisData; }
@@ -49,30 +67,12 @@ class EphemerisDescription {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Source S3 object used for the ephemeris.</p>
-   */
-  inline const S3Object& GetSourceS3Object() const { return m_sourceS3Object; }
-  inline bool SourceS3ObjectHasBeenSet() const { return m_sourceS3ObjectHasBeenSet; }
-  template <typename SourceS3ObjectT = S3Object>
-  void SetSourceS3Object(SourceS3ObjectT&& value) {
-    m_sourceS3ObjectHasBeenSet = true;
-    m_sourceS3Object = std::forward<SourceS3ObjectT>(value);
-  }
-  template <typename SourceS3ObjectT = S3Object>
-  EphemerisDescription& WithSourceS3Object(SourceS3ObjectT&& value) {
-    SetSourceS3Object(std::forward<SourceS3ObjectT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_ephemerisData;
-  bool m_ephemerisDataHasBeenSet = false;
-
   S3Object m_sourceS3Object;
   bool m_sourceS3ObjectHasBeenSet = false;
+
+  Aws::String m_ephemerisData;
+  bool m_ephemerisDataHasBeenSet = false;
 };
 
 }  // namespace Model

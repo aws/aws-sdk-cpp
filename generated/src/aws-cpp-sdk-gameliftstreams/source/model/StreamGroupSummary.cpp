@@ -50,6 +50,10 @@ StreamGroupSummary& StreamGroupSummary::operator=(JsonView jsonValue) {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExpiresAt")) {
+    m_expiresAt = jsonValue.GetDouble("ExpiresAt");
+    m_expiresAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue StreamGroupSummary::Jsonize() const {
 
   if (m_lastUpdatedAtHasBeenSet) {
     payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_expiresAtHasBeenSet) {
+    payload.WithDouble("ExpiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
   return payload;

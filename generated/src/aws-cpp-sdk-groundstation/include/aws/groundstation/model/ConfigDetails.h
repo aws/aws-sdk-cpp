@@ -35,6 +35,22 @@ class ConfigDetails {
   AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+
+  inline const EndpointDetails& GetEndpointDetails() const { return m_endpointDetails; }
+  inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+  template <typename EndpointDetailsT = EndpointDetails>
+  void SetEndpointDetails(EndpointDetailsT&& value) {
+    m_endpointDetailsHasBeenSet = true;
+    m_endpointDetails = std::forward<EndpointDetailsT>(value);
+  }
+  template <typename EndpointDetailsT = EndpointDetails>
+  ConfigDetails& WithEndpointDetails(EndpointDetailsT&& value) {
+    SetEndpointDetails(std::forward<EndpointDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Details for antenna demod decode <code>Config</code> in a contact.</p>
    */
@@ -48,22 +64,6 @@ class ConfigDetails {
   template <typename AntennaDemodDecodeDetailsT = AntennaDemodDecodeDetails>
   ConfigDetails& WithAntennaDemodDecodeDetails(AntennaDemodDecodeDetailsT&& value) {
     SetAntennaDemodDecodeDetails(std::forward<AntennaDemodDecodeDetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const EndpointDetails& GetEndpointDetails() const { return m_endpointDetails; }
-  inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
-  template <typename EndpointDetailsT = EndpointDetails>
-  void SetEndpointDetails(EndpointDetailsT&& value) {
-    m_endpointDetailsHasBeenSet = true;
-    m_endpointDetails = std::forward<EndpointDetailsT>(value);
-  }
-  template <typename EndpointDetailsT = EndpointDetails>
-  ConfigDetails& WithEndpointDetails(EndpointDetailsT&& value) {
-    SetEndpointDetails(std::forward<EndpointDetailsT>(value));
     return *this;
   }
   ///@}
@@ -86,11 +86,11 @@ class ConfigDetails {
   }
   ///@}
  private:
-  AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
-  bool m_antennaDemodDecodeDetailsHasBeenSet = false;
-
   EndpointDetails m_endpointDetails;
   bool m_endpointDetailsHasBeenSet = false;
+
+  AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
+  bool m_antennaDemodDecodeDetailsHasBeenSet = false;
 
   S3RecordingDetails m_s3RecordingDetails;
   bool m_s3RecordingDetailsHasBeenSet = false;

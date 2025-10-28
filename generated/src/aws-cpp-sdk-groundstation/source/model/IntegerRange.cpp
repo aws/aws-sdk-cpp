@@ -18,13 +18,13 @@ namespace Model {
 IntegerRange::IntegerRange(JsonView jsonValue) { *this = jsonValue; }
 
 IntegerRange& IntegerRange::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("maximum")) {
-    m_maximum = jsonValue.GetInteger("maximum");
-    m_maximumHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("minimum")) {
     m_minimum = jsonValue.GetInteger("minimum");
     m_minimumHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maximum")) {
+    m_maximum = jsonValue.GetInteger("maximum");
+    m_maximumHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ IntegerRange& IntegerRange::operator=(JsonView jsonValue) {
 JsonValue IntegerRange::Jsonize() const {
   JsonValue payload;
 
-  if (m_maximumHasBeenSet) {
-    payload.WithInteger("maximum", m_maximum);
-  }
-
   if (m_minimumHasBeenSet) {
     payload.WithInteger("minimum", m_minimum);
+  }
+
+  if (m_maximumHasBeenSet) {
+    payload.WithInteger("maximum", m_maximum);
   }
 
   return payload;

@@ -36,6 +36,26 @@ class SpectrumConfig {
 
   ///@{
   /**
+   * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+   * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+   * uplink.</p>
+   */
+  inline const Frequency& GetCenterFrequency() const { return m_centerFrequency; }
+  inline bool CenterFrequencyHasBeenSet() const { return m_centerFrequencyHasBeenSet; }
+  template <typename CenterFrequencyT = Frequency>
+  void SetCenterFrequency(CenterFrequencyT&& value) {
+    m_centerFrequencyHasBeenSet = true;
+    m_centerFrequency = std::forward<CenterFrequencyT>(value);
+  }
+  template <typename CenterFrequencyT = Frequency>
+  SpectrumConfig& WithCenterFrequency(CenterFrequencyT&& value) {
+    SetCenterFrequency(std::forward<CenterFrequencyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
    * the following bandwidth limitations:</p> <ul> <li> <p>For
    * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
@@ -60,26 +80,6 @@ class SpectrumConfig {
 
   ///@{
   /**
-   * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
-   * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
-   * uplink.</p>
-   */
-  inline const Frequency& GetCenterFrequency() const { return m_centerFrequency; }
-  inline bool CenterFrequencyHasBeenSet() const { return m_centerFrequencyHasBeenSet; }
-  template <typename CenterFrequencyT = Frequency>
-  void SetCenterFrequency(CenterFrequencyT&& value) {
-    m_centerFrequencyHasBeenSet = true;
-    m_centerFrequency = std::forward<CenterFrequencyT>(value);
-  }
-  template <typename CenterFrequencyT = Frequency>
-  SpectrumConfig& WithCenterFrequency(CenterFrequencyT&& value) {
-    SetCenterFrequency(std::forward<CenterFrequencyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Polarization of a spectral <code>Config</code>. Capturing both
    * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
    * separate configs.</p>
@@ -96,11 +96,11 @@ class SpectrumConfig {
   }
   ///@}
  private:
-  FrequencyBandwidth m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
-
   Frequency m_centerFrequency;
   bool m_centerFrequencyHasBeenSet = false;
+
+  FrequencyBandwidth m_bandwidth;
+  bool m_bandwidthHasBeenSet = false;
 
   Polarization m_polarization{Polarization::NOT_SET};
   bool m_polarizationHasBeenSet = false;

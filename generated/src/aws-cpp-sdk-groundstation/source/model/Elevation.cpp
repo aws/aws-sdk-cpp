@@ -18,13 +18,13 @@ namespace Model {
 Elevation::Elevation(JsonView jsonValue) { *this = jsonValue; }
 
 Elevation& Elevation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("unit")) {
-    m_unit = AngleUnitsMapper::GetAngleUnitsForName(jsonValue.GetString("unit"));
-    m_unitHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("unit")) {
+    m_unit = AngleUnitsMapper::GetAngleUnitsForName(jsonValue.GetString("unit"));
+    m_unitHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Elevation& Elevation::operator=(JsonView jsonValue) {
 JsonValue Elevation::Jsonize() const {
   JsonValue payload;
 
-  if (m_unitHasBeenSet) {
-    payload.WithString("unit", AngleUnitsMapper::GetNameForAngleUnits(m_unit));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithDouble("value", m_value);
+  }
+
+  if (m_unitHasBeenSet) {
+    payload.WithString("unit", AngleUnitsMapper::GetNameForAngleUnits(m_unit));
   }
 
   return payload;

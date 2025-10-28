@@ -207,7 +207,11 @@ class PutObjectTaggingRequest : public S3CrtRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Confirms that the requester knows that she or he will be charged for the
+   * tagging object request. Bucket owners need not specify this parameter in their
+   * requests.</p>
+   */
   inline RequestPayer GetRequestPayer() const { return m_requestPayer; }
   inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
   inline void SetRequestPayer(RequestPayer value) {

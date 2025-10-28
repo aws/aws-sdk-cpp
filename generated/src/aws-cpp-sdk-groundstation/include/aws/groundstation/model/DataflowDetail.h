@@ -36,6 +36,22 @@ class DataflowDetail {
 
   ///@{
 
+  inline const Source& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = Source>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = Source>
+  DataflowDetail& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Destination& GetDestination() const { return m_destination; }
   inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
   template <typename DestinationT = Destination>
@@ -67,31 +83,15 @@ class DataflowDetail {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Source& GetSource() const { return m_source; }
-  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-  template <typename SourceT = Source>
-  void SetSource(SourceT&& value) {
-    m_sourceHasBeenSet = true;
-    m_source = std::forward<SourceT>(value);
-  }
-  template <typename SourceT = Source>
-  DataflowDetail& WithSource(SourceT&& value) {
-    SetSource(std::forward<SourceT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Source m_source;
+  bool m_sourceHasBeenSet = false;
+
   Destination m_destination;
   bool m_destinationHasBeenSet = false;
 
   Aws::String m_errorMessage;
   bool m_errorMessageHasBeenSet = false;
-
-  Source m_source;
-  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

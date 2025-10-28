@@ -18,21 +18,21 @@ namespace Model {
 MissionProfileListItem::MissionProfileListItem(JsonView jsonValue) { *this = jsonValue; }
 
 MissionProfileListItem& MissionProfileListItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("missionProfileArn")) {
-    m_missionProfileArn = jsonValue.GetString("missionProfileArn");
-    m_missionProfileArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("missionProfileId")) {
     m_missionProfileId = jsonValue.GetString("missionProfileId");
     m_missionProfileIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("missionProfileArn")) {
+    m_missionProfileArn = jsonValue.GetString("missionProfileArn");
+    m_missionProfileArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   return *this;
 }
@@ -40,20 +40,20 @@ MissionProfileListItem& MissionProfileListItem::operator=(JsonView jsonValue) {
 JsonValue MissionProfileListItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_missionProfileArnHasBeenSet) {
-    payload.WithString("missionProfileArn", m_missionProfileArn);
-  }
-
   if (m_missionProfileIdHasBeenSet) {
     payload.WithString("missionProfileId", m_missionProfileId);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_missionProfileArnHasBeenSet) {
+    payload.WithString("missionProfileArn", m_missionProfileArn);
   }
 
   if (m_regionHasBeenSet) {
     payload.WithString("region", m_region);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;

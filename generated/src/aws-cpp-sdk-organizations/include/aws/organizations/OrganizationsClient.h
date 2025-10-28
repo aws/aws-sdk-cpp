@@ -21,23 +21,21 @@ namespace Organizations {
  * the <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations
  * User Guide</a>.</p> <p> <b>Support and feedback for Organizations</b> </p> <p>We
- * welcome your feedback. Send your comments to <a
- * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
- * or post your feedback and questions in the <a
- * href="http://forums.aws.amazon.com/forum.jspa?forumID=219">Organizations support
- * forum</a>. For more information about the Amazon Web Services support forums,
- * see <a href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.</p> <p>
- * <b>Endpoint to call When using the CLI or the Amazon Web Services SDK</b> </p>
- * <p>For the current release of Organizations, specify the <code>us-east-1</code>
- * region for all Amazon Web Services API and CLI calls made from the commercial
- * Amazon Web Services Regions outside of China. If calling from one of the Amazon
- * Web Services Regions in China, then specify <code>cn-northwest-1</code>. You can
- * do this in the CLI by using these parameters and commands:</p> <ul> <li> <p>Use
- * the following parameter with each command to specify both the endpoint and its
- * region:</p> <p> <code>--endpoint-url
- * https://organizations.us-east-1.amazonaws.com</code> <i>(from commercial Amazon
- * Web Services Regions outside of China)</i> </p> <p>or</p> <p>
- * <code>--endpoint-url
+ * welcome your feedback. You can post your feedback and questions in the <a
+ * href="https://forums.aws.amazon.com/forum.jspa?forumID=219">Organizations
+ * support forum</a>. For more information about the Amazon Web Services Support
+ * forums, see <a href="https://forums.aws.amazon.com/help.jspa">Forums
+ * Help</a>.</p> <p> <b>Endpoint to call When using the CLI or the Amazon Web
+ * Services SDK</b> </p> <p>For the current release of Organizations, specify the
+ * <code>us-east-1</code> region for all Amazon Web Services API and CLI calls made
+ * from the commercial Amazon Web Services Regions outside of China. If calling
+ * from one of the Amazon Web Services Regions in China, then specify
+ * <code>cn-northwest-1</code>. You can do this in the CLI by using these
+ * parameters and commands:</p> <ul> <li> <p>Use the following parameter with each
+ * command to specify both the endpoint and its region:</p> <p>
+ * <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code>
+ * <i>(from commercial Amazon Web Services Regions outside of China)</i> </p>
+ * <p>or</p> <p> <code>--endpoint-url
  * https://organizations.cn-northwest-1.amazonaws.com.cn</code> <i>(from Amazon Web
  * Services Regions in China)</i> </p> </li> <li> <p>Use the default endpoint, but
  * configure your default region with this command:</p> <p> <code>aws configure set
@@ -1429,7 +1427,7 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * organization are deleted. Amazon Web Services accounts outside of an
    * organization do not support tags.</p> </li> <li> <p>A newly created account has
    * a waiting period before it can be removed from its organization. You must wait
-   * until at least seven days after the account was created. Invited accounts aren't
+   * until at least four days after the account was created. Invited accounts aren't
    * subject to this waiting period.</p> </li> <li> <p>If you are using an
    * organization principal to call <code>LeaveOrganization</code> across multiple
    * accounts, you can only do this up to 5 accounts per second in a single

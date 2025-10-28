@@ -49,6 +49,14 @@ DeploymentConfiguration& DeploymentConfiguration::operator=(JsonView jsonValue) 
     }
     m_lifecycleHooksHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("linearConfiguration")) {
+    m_linearConfiguration = jsonValue.GetObject("linearConfiguration");
+    m_linearConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("canaryConfiguration")) {
+    m_canaryConfiguration = jsonValue.GetObject("canaryConfiguration");
+    m_canaryConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +93,14 @@ JsonValue DeploymentConfiguration::Jsonize() const {
       lifecycleHooksJsonList[lifecycleHooksIndex].AsObject(m_lifecycleHooks[lifecycleHooksIndex].Jsonize());
     }
     payload.WithArray("lifecycleHooks", std::move(lifecycleHooksJsonList));
+  }
+
+  if (m_linearConfigurationHasBeenSet) {
+    payload.WithObject("linearConfiguration", m_linearConfiguration.Jsonize());
+  }
+
+  if (m_canaryConfigurationHasBeenSet) {
+    payload.WithObject("canaryConfiguration", m_canaryConfiguration.Jsonize());
   }
 
   return payload;

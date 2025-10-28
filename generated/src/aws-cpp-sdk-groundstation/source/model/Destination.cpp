@@ -18,17 +18,17 @@ namespace Model {
 Destination::Destination(JsonView jsonValue) { *this = jsonValue; }
 
 Destination& Destination::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("configDetails")) {
-    m_configDetails = jsonValue.GetObject("configDetails");
-    m_configDetailsHasBeenSet = true;
+  if (jsonValue.ValueExists("configType")) {
+    m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
+    m_configTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("configId")) {
     m_configId = jsonValue.GetString("configId");
     m_configIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("configType")) {
-    m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
-    m_configTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("configDetails")) {
+    m_configDetails = jsonValue.GetObject("configDetails");
+    m_configDetailsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dataflowDestinationRegion")) {
     m_dataflowDestinationRegion = jsonValue.GetString("dataflowDestinationRegion");
@@ -40,16 +40,16 @@ Destination& Destination::operator=(JsonView jsonValue) {
 JsonValue Destination::Jsonize() const {
   JsonValue payload;
 
-  if (m_configDetailsHasBeenSet) {
-    payload.WithObject("configDetails", m_configDetails.Jsonize());
+  if (m_configTypeHasBeenSet) {
+    payload.WithString("configType", ConfigCapabilityTypeMapper::GetNameForConfigCapabilityType(m_configType));
   }
 
   if (m_configIdHasBeenSet) {
     payload.WithString("configId", m_configId);
   }
 
-  if (m_configTypeHasBeenSet) {
-    payload.WithString("configType", ConfigCapabilityTypeMapper::GetNameForConfigCapabilityType(m_configType));
+  if (m_configDetailsHasBeenSet) {
+    payload.WithObject("configDetails", m_configDetails.Jsonize());
   }
 
   if (m_dataflowDestinationRegionHasBeenSet) {

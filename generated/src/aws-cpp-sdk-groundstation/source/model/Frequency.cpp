@@ -18,13 +18,13 @@ namespace Model {
 Frequency::Frequency(JsonView jsonValue) { *this = jsonValue; }
 
 Frequency& Frequency::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("units")) {
-    m_units = FrequencyUnitsMapper::GetFrequencyUnitsForName(jsonValue.GetString("units"));
-    m_unitsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("units")) {
+    m_units = FrequencyUnitsMapper::GetFrequencyUnitsForName(jsonValue.GetString("units"));
+    m_unitsHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Frequency& Frequency::operator=(JsonView jsonValue) {
 JsonValue Frequency::Jsonize() const {
   JsonValue payload;
 
-  if (m_unitsHasBeenSet) {
-    payload.WithString("units", FrequencyUnitsMapper::GetNameForFrequencyUnits(m_units));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithDouble("value", m_value);
+  }
+
+  if (m_unitsHasBeenSet) {
+    payload.WithString("units", FrequencyUnitsMapper::GetNameForFrequencyUnits(m_units));
   }
 
   return payload;

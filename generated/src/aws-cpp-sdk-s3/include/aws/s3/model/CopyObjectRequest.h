@@ -544,6 +544,55 @@ class CopyObjectRequest : public S3Request {
 
   ///@{
   /**
+   * <p>Copies the object if the entity tag (ETag) of the destination object matches
+   * the specified tag. If the ETag values do not match, the operation returns a
+   * <code>412 Precondition Failed</code> error. If a concurrent operation occurs
+   * during the upload S3 returns a <code>409 ConditionalRequestConflict</code>
+   * response. On a 409 failure you should fetch the object's ETag and retry the
+   * upload.</p> <p>Expects the ETag value as a string.</p> <p>For more information
+   * about conditional requests, see <a
+   * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+   */
+  inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
+  inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
+  template <typename IfMatchT = Aws::String>
+  void SetIfMatch(IfMatchT&& value) {
+    m_ifMatchHasBeenSet = true;
+    m_ifMatch = std::forward<IfMatchT>(value);
+  }
+  template <typename IfMatchT = Aws::String>
+  CopyObjectRequest& WithIfMatch(IfMatchT&& value) {
+    SetIfMatch(std::forward<IfMatchT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Copies the object only if the object key name at the destination does not
+   * already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412
+   * Precondition Failed</code> error. If a concurrent operation occurs during the
+   * upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a
+   * 409 failure you should retry the upload.</p> <p>Expects the '*' (asterisk)
+   * character.</p> <p>For more information about conditional requests, see <a
+   * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+   */
+  inline const Aws::String& GetIfNoneMatch() const { return m_ifNoneMatch; }
+  inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
+  template <typename IfNoneMatchT = Aws::String>
+  void SetIfNoneMatch(IfNoneMatchT&& value) {
+    m_ifNoneMatchHasBeenSet = true;
+    m_ifNoneMatch = std::forward<IfNoneMatchT>(value);
+  }
+  template <typename IfNoneMatchT = Aws::String>
+  CopyObjectRequest& WithIfNoneMatch(IfNoneMatchT&& value) {
+    SetIfNoneMatch(std::forward<IfNoneMatchT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key of the destination object.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
@@ -1281,6 +1330,12 @@ class CopyObjectRequest : public S3Request {
 
   Aws::String m_grantWriteACP;
   bool m_grantWriteACPHasBeenSet = false;
+
+  Aws::String m_ifMatch;
+  bool m_ifMatchHasBeenSet = false;
+
+  Aws::String m_ifNoneMatch;
+  bool m_ifNoneMatchHasBeenSet = false;
 
   Aws::String m_key;
   bool m_keyHasBeenSet = false;

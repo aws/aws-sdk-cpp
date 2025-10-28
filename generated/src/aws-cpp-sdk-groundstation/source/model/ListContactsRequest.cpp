@@ -15,32 +15,12 @@ using namespace Aws::Utils;
 Aws::String ListContactsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_endTimeHasBeenSet) {
-    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
-  }
-
-  if (m_groundStationHasBeenSet) {
-    payload.WithString("groundStation", m_groundStation);
-  }
-
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if (m_missionProfileArnHasBeenSet) {
-    payload.WithString("missionProfileArn", m_missionProfileArn);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_satelliteArnHasBeenSet) {
-    payload.WithString("satelliteArn", m_satelliteArn);
-  }
-
-  if (m_startTimeHasBeenSet) {
-    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if (m_statusListHasBeenSet) {
@@ -49,6 +29,30 @@ Aws::String ListContactsRequest::SerializePayload() const {
       statusListJsonList[statusListIndex].AsString(ContactStatusMapper::GetNameForContactStatus(m_statusList[statusListIndex]));
     }
     payload.WithArray("statusList", std::move(statusListJsonList));
+  }
+
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if (m_groundStationHasBeenSet) {
+    payload.WithString("groundStation", m_groundStation);
+  }
+
+  if (m_satelliteArnHasBeenSet) {
+    payload.WithString("satelliteArn", m_satelliteArn);
+  }
+
+  if (m_missionProfileArnHasBeenSet) {
+    payload.WithString("missionProfileArn", m_missionProfileArn);
+  }
+
+  if (m_ephemerisHasBeenSet) {
+    payload.WithObject("ephemeris", m_ephemeris.Jsonize());
   }
 
   return payload.View().WriteReadable();

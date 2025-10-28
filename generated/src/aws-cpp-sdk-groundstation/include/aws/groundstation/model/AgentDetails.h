@@ -35,29 +35,6 @@ class AgentDetails {
 
   ///@{
   /**
-   * <p>List of CPU cores reserved for the agent.</p>
-   */
-  inline const Aws::Vector<int>& GetAgentCpuCores() const { return m_agentCpuCores; }
-  inline bool AgentCpuCoresHasBeenSet() const { return m_agentCpuCoresHasBeenSet; }
-  template <typename AgentCpuCoresT = Aws::Vector<int>>
-  void SetAgentCpuCores(AgentCpuCoresT&& value) {
-    m_agentCpuCoresHasBeenSet = true;
-    m_agentCpuCores = std::forward<AgentCpuCoresT>(value);
-  }
-  template <typename AgentCpuCoresT = Aws::Vector<int>>
-  AgentDetails& WithAgentCpuCores(AgentCpuCoresT&& value) {
-    SetAgentCpuCores(std::forward<AgentCpuCoresT>(value));
-    return *this;
-  }
-  inline AgentDetails& AddAgentCpuCores(int value) {
-    m_agentCpuCoresHasBeenSet = true;
-    m_agentCpuCores.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Current agent version.</p>
    */
   inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
@@ -70,30 +47,6 @@ class AgentDetails {
   template <typename AgentVersionT = Aws::String>
   AgentDetails& WithAgentVersion(AgentVersionT&& value) {
     SetAgentVersion(std::forward<AgentVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>List of versions being used by agent components.</p>
-   */
-  inline const Aws::Vector<ComponentVersion>& GetComponentVersions() const { return m_componentVersions; }
-  inline bool ComponentVersionsHasBeenSet() const { return m_componentVersionsHasBeenSet; }
-  template <typename ComponentVersionsT = Aws::Vector<ComponentVersion>>
-  void SetComponentVersions(ComponentVersionsT&& value) {
-    m_componentVersionsHasBeenSet = true;
-    m_componentVersions = std::forward<ComponentVersionsT>(value);
-  }
-  template <typename ComponentVersionsT = Aws::Vector<ComponentVersion>>
-  AgentDetails& WithComponentVersions(ComponentVersionsT&& value) {
-    SetComponentVersions(std::forward<ComponentVersionsT>(value));
-    return *this;
-  }
-  template <typename ComponentVersionsT = ComponentVersion>
-  AgentDetails& AddComponentVersions(ComponentVersionsT&& value) {
-    m_componentVersionsHasBeenSet = true;
-    m_componentVersions.emplace_back(std::forward<ComponentVersionsT>(value));
     return *this;
   }
   ///@}
@@ -136,9 +89,9 @@ class AgentDetails {
 
   ///@{
   /**
-   *  <p>This field should not be used. Use agentCpuCores instead.</p>
-   * <p>List of CPU cores reserved for processes other than the agent running on the
-   * EC2 instance.</p>
+   * <p> <p>This field should not be used. Use agentCpuCores instead.</p>
+   *  <p>List of CPU cores reserved for processes other than the agent running
+   * on the EC2 instance.</p></p>
    */
   inline const Aws::Vector<int>& GetReservedCpuCores() const { return m_reservedCpuCores; }
   inline bool ReservedCpuCoresHasBeenSet() const { return m_reservedCpuCoresHasBeenSet; }
@@ -158,15 +111,56 @@ class AgentDetails {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<int> m_agentCpuCores;
-  bool m_agentCpuCoresHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>List of CPU cores reserved for the agent.</p>
+   */
+  inline const Aws::Vector<int>& GetAgentCpuCores() const { return m_agentCpuCores; }
+  inline bool AgentCpuCoresHasBeenSet() const { return m_agentCpuCoresHasBeenSet; }
+  template <typename AgentCpuCoresT = Aws::Vector<int>>
+  void SetAgentCpuCores(AgentCpuCoresT&& value) {
+    m_agentCpuCoresHasBeenSet = true;
+    m_agentCpuCores = std::forward<AgentCpuCoresT>(value);
+  }
+  template <typename AgentCpuCoresT = Aws::Vector<int>>
+  AgentDetails& WithAgentCpuCores(AgentCpuCoresT&& value) {
+    SetAgentCpuCores(std::forward<AgentCpuCoresT>(value));
+    return *this;
+  }
+  inline AgentDetails& AddAgentCpuCores(int value) {
+    m_agentCpuCoresHasBeenSet = true;
+    m_agentCpuCores.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>List of versions being used by agent components.</p>
+   */
+  inline const Aws::Vector<ComponentVersion>& GetComponentVersions() const { return m_componentVersions; }
+  inline bool ComponentVersionsHasBeenSet() const { return m_componentVersionsHasBeenSet; }
+  template <typename ComponentVersionsT = Aws::Vector<ComponentVersion>>
+  void SetComponentVersions(ComponentVersionsT&& value) {
+    m_componentVersionsHasBeenSet = true;
+    m_componentVersions = std::forward<ComponentVersionsT>(value);
+  }
+  template <typename ComponentVersionsT = Aws::Vector<ComponentVersion>>
+  AgentDetails& WithComponentVersions(ComponentVersionsT&& value) {
+    SetComponentVersions(std::forward<ComponentVersionsT>(value));
+    return *this;
+  }
+  template <typename ComponentVersionsT = ComponentVersion>
+  AgentDetails& AddComponentVersions(ComponentVersionsT&& value) {
+    m_componentVersionsHasBeenSet = true;
+    m_componentVersions.emplace_back(std::forward<ComponentVersionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_agentVersion;
   bool m_agentVersionHasBeenSet = false;
-
-  Aws::Vector<ComponentVersion> m_componentVersions;
-  bool m_componentVersionsHasBeenSet = false;
 
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -176,6 +170,12 @@ class AgentDetails {
 
   Aws::Vector<int> m_reservedCpuCores;
   bool m_reservedCpuCoresHasBeenSet = false;
+
+  Aws::Vector<int> m_agentCpuCores;
+  bool m_agentCpuCoresHasBeenSet = false;
+
+  Aws::Vector<ComponentVersion> m_componentVersions;
+  bool m_componentVersionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -52,24 +52,6 @@ class S3RecordingConfig {
 
   ///@{
   /**
-   * <p>S3 Key prefix to prefice data files.</p>
-   */
-  inline const Aws::String& GetPrefix() const { return m_prefix; }
-  inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-  template <typename PrefixT = Aws::String>
-  void SetPrefix(PrefixT&& value) {
-    m_prefixHasBeenSet = true;
-    m_prefix = std::forward<PrefixT>(value);
-  }
-  template <typename PrefixT = Aws::String>
-  S3RecordingConfig& WithPrefix(PrefixT&& value) {
-    SetPrefix(std::forward<PrefixT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
@@ -85,15 +67,33 @@ class S3RecordingConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>S3 Key prefix to prefice data files.</p>
+   */
+  inline const Aws::String& GetPrefix() const { return m_prefix; }
+  inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+  template <typename PrefixT = Aws::String>
+  void SetPrefix(PrefixT&& value) {
+    m_prefixHasBeenSet = true;
+    m_prefix = std::forward<PrefixT>(value);
+  }
+  template <typename PrefixT = Aws::String>
+  S3RecordingConfig& WithPrefix(PrefixT&& value) {
+    SetPrefix(std::forward<PrefixT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_bucketArn;
   bool m_bucketArnHasBeenSet = false;
 
-  Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
-
   Aws::String m_roleArn;
   bool m_roleArnHasBeenSet = false;
+
+  Aws::String m_prefix;
+  bool m_prefixHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,8 +21,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that contains identifying information for a service operation
- * entity.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a specific operation within a service that can be monitored and
+ * audited independently.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceOperationEntity">AWS
  * API Reference</a></p>
  */
@@ -53,7 +53,7 @@ class ServiceOperationEntity {
 
   ///@{
   /**
-   * <p>The name of the operation.</p>
+   * <p>The name of the specific operation within the service.</p>
    */
   inline const Aws::String& GetOperation() const { return m_operation; }
   inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
@@ -71,7 +71,8 @@ class ServiceOperationEntity {
 
   ///@{
   /**
-   * <p>The type of metric associated with this service operation.</p>
+   * <p>The type of metric associated with this service operation, such as "Latency",
+   * "ErrorRate", or "Throughput".</p>
    */
   inline const Aws::String& GetMetricType() const { return m_metricType; }
   inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }

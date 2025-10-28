@@ -17,6 +17,8 @@ namespace DeploymentStrategyMapper {
 
 static const int ROLLING_HASH = HashingUtils::HashString("ROLLING");
 static const int BLUE_GREEN_HASH = HashingUtils::HashString("BLUE_GREEN");
+static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+static const int CANARY_HASH = HashingUtils::HashString("CANARY");
 
 DeploymentStrategy GetDeploymentStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ DeploymentStrategy GetDeploymentStrategyForName(const Aws::String& name) {
     return DeploymentStrategy::ROLLING;
   } else if (hashCode == BLUE_GREEN_HASH) {
     return DeploymentStrategy::BLUE_GREEN;
+  } else if (hashCode == LINEAR_HASH) {
+    return DeploymentStrategy::LINEAR;
+  } else if (hashCode == CANARY_HASH) {
+    return DeploymentStrategy::CANARY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForDeploymentStrategy(DeploymentStrategy enumValue) {
       return "ROLLING";
     case DeploymentStrategy::BLUE_GREEN:
       return "BLUE_GREEN";
+    case DeploymentStrategy::LINEAR:
+      return "LINEAR";
+    case DeploymentStrategy::CANARY:
+      return "CANARY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

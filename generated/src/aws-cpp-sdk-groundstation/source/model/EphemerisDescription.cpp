@@ -18,13 +18,13 @@ namespace Model {
 EphemerisDescription::EphemerisDescription(JsonView jsonValue) { *this = jsonValue; }
 
 EphemerisDescription& EphemerisDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ephemerisData")) {
-    m_ephemerisData = jsonValue.GetString("ephemerisData");
-    m_ephemerisDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("sourceS3Object")) {
     m_sourceS3Object = jsonValue.GetObject("sourceS3Object");
     m_sourceS3ObjectHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ephemerisData")) {
+    m_ephemerisData = jsonValue.GetString("ephemerisData");
+    m_ephemerisDataHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ EphemerisDescription& EphemerisDescription::operator=(JsonView jsonValue) {
 JsonValue EphemerisDescription::Jsonize() const {
   JsonValue payload;
 
-  if (m_ephemerisDataHasBeenSet) {
-    payload.WithString("ephemerisData", m_ephemerisData);
-  }
-
   if (m_sourceS3ObjectHasBeenSet) {
     payload.WithObject("sourceS3Object", m_sourceS3Object.Jsonize());
+  }
+
+  if (m_ephemerisDataHasBeenSet) {
+    payload.WithString("ephemerisData", m_ephemerisData);
   }
 
   return payload;

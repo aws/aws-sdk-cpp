@@ -78,7 +78,7 @@ class CapacityProvider {
   /**
    * <p>The cluster that this capacity provider is associated with. Managed instances
    * capacity providers are cluster-scoped, meaning they can only be used within
-   * their associated cluster.</p>
+   * their associated cluster.</p> <p>This is required for Managed instances.</p>
    */
   inline const Aws::String& GetCluster() const { return m_cluster; }
   inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }

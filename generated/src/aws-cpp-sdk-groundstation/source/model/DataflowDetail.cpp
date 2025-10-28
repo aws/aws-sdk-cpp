@@ -18,6 +18,10 @@ namespace Model {
 DataflowDetail::DataflowDetail(JsonView jsonValue) { *this = jsonValue; }
 
 DataflowDetail& DataflowDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
+    m_source = jsonValue.GetObject("source");
+    m_sourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetObject("destination");
     m_destinationHasBeenSet = true;
@@ -26,15 +30,15 @@ DataflowDetail& DataflowDetail::operator=(JsonView jsonValue) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("source")) {
-    m_source = jsonValue.GetObject("source");
-    m_sourceHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue DataflowDetail::Jsonize() const {
   JsonValue payload;
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
+  }
 
   if (m_destinationHasBeenSet) {
     payload.WithObject("destination", m_destination.Jsonize());
@@ -42,10 +46,6 @@ JsonValue DataflowDetail::Jsonize() const {
 
   if (m_errorMessageHasBeenSet) {
     payload.WithString("errorMessage", m_errorMessage);
-  }
-
-  if (m_sourceHasBeenSet) {
-    payload.WithObject("source", m_source.Jsonize());
   }
 
   return payload;

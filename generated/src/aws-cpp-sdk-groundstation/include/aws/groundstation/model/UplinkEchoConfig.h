@@ -37,6 +37,22 @@ class UplinkEchoConfig {
 
   ///@{
   /**
+   * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline UplinkEchoConfig& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>ARN of an uplink <code>Config</code>.</p>
    */
   inline const Aws::String& GetAntennaUplinkConfigArn() const { return m_antennaUplinkConfigArn; }
@@ -52,28 +68,12 @@ class UplinkEchoConfig {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline UplinkEchoConfig& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_antennaUplinkConfigArn;
-  bool m_antennaUplinkConfigArnHasBeenSet = false;
-
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
+
+  Aws::String m_antennaUplinkConfigArn;
+  bool m_antennaUplinkConfigArnHasBeenSet = false;
 };
 
 }  // namespace Model

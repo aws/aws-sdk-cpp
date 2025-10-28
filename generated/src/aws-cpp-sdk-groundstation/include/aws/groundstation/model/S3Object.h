@@ -20,7 +20,8 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p>Object stored in S3 containing ephemeris data.</p><p><h3>See Also:</h3>   <a
+ * <p>Object stored in Amazon S3 containing ephemeris data.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/S3Object">AWS
  * API Reference</a></p>
  */
@@ -69,7 +70,7 @@ class S3Object {
 
   ///@{
   /**
-   * <p>For versioned S3 objects, the version to use for the ephemeris.</p>
+   * <p>For versioned Amazon S3 objects, the version to use for the ephemeris.</p>
    */
   inline const Aws::String& GetVersion() const { return m_version; }
   inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

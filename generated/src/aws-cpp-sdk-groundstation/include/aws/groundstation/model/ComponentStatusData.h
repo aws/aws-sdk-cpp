@@ -34,32 +34,18 @@ class ComponentStatusData {
 
   ///@{
   /**
-   * <p>Bytes received by the component.</p>
+   * <p>The Component type.</p>
    */
-  inline long long GetBytesReceived() const { return m_bytesReceived; }
-  inline bool BytesReceivedHasBeenSet() const { return m_bytesReceivedHasBeenSet; }
-  inline void SetBytesReceived(long long value) {
-    m_bytesReceivedHasBeenSet = true;
-    m_bytesReceived = value;
+  inline const Aws::String& GetComponentType() const { return m_componentType; }
+  inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
+  template <typename ComponentTypeT = Aws::String>
+  void SetComponentType(ComponentTypeT&& value) {
+    m_componentTypeHasBeenSet = true;
+    m_componentType = std::forward<ComponentTypeT>(value);
   }
-  inline ComponentStatusData& WithBytesReceived(long long value) {
-    SetBytesReceived(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Bytes sent by the component.</p>
-   */
-  inline long long GetBytesSent() const { return m_bytesSent; }
-  inline bool BytesSentHasBeenSet() const { return m_bytesSentHasBeenSet; }
-  inline void SetBytesSent(long long value) {
-    m_bytesSentHasBeenSet = true;
-    m_bytesSent = value;
-  }
-  inline ComponentStatusData& WithBytesSent(long long value) {
-    SetBytesSent(value);
+  template <typename ComponentTypeT = Aws::String>
+  ComponentStatusData& WithComponentType(ComponentTypeT&& value) {
+    SetComponentType(std::forward<ComponentTypeT>(value));
     return *this;
   }
   ///@}
@@ -84,36 +70,48 @@ class ComponentStatusData {
 
   ///@{
   /**
-   * <p>The Component type.</p>
+   * <p>Component status.</p>
    */
-  inline const Aws::String& GetComponentType() const { return m_componentType; }
-  inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-  template <typename ComponentTypeT = Aws::String>
-  void SetComponentType(ComponentTypeT&& value) {
-    m_componentTypeHasBeenSet = true;
-    m_componentType = std::forward<ComponentTypeT>(value);
+  inline AgentStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(AgentStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ComponentTypeT = Aws::String>
-  ComponentStatusData& WithComponentType(ComponentTypeT&& value) {
-    SetComponentType(std::forward<ComponentTypeT>(value));
+  inline ComponentStatusData& WithStatus(AgentStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Dataflow UUID associated with the component.</p>
+   * <p>Bytes sent by the component.</p>
    */
-  inline const Aws::String& GetDataflowId() const { return m_dataflowId; }
-  inline bool DataflowIdHasBeenSet() const { return m_dataflowIdHasBeenSet; }
-  template <typename DataflowIdT = Aws::String>
-  void SetDataflowId(DataflowIdT&& value) {
-    m_dataflowIdHasBeenSet = true;
-    m_dataflowId = std::forward<DataflowIdT>(value);
+  inline long long GetBytesSent() const { return m_bytesSent; }
+  inline bool BytesSentHasBeenSet() const { return m_bytesSentHasBeenSet; }
+  inline void SetBytesSent(long long value) {
+    m_bytesSentHasBeenSet = true;
+    m_bytesSent = value;
   }
-  template <typename DataflowIdT = Aws::String>
-  ComponentStatusData& WithDataflowId(DataflowIdT&& value) {
-    SetDataflowId(std::forward<DataflowIdT>(value));
+  inline ComponentStatusData& WithBytesSent(long long value) {
+    SetBytesSent(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Bytes received by the component.</p>
+   */
+  inline long long GetBytesReceived() const { return m_bytesReceived; }
+  inline bool BytesReceivedHasBeenSet() const { return m_bytesReceivedHasBeenSet; }
+  inline void SetBytesReceived(long long value) {
+    m_bytesReceivedHasBeenSet = true;
+    m_bytesReceived = value;
+  }
+  inline ComponentStatusData& WithBytesReceived(long long value) {
+    SetBytesReceived(value);
     return *this;
   }
   ///@}
@@ -136,40 +134,42 @@ class ComponentStatusData {
 
   ///@{
   /**
-   * <p>Component status.</p>
+   * <p>Dataflow UUID associated with the component.</p>
    */
-  inline AgentStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(AgentStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetDataflowId() const { return m_dataflowId; }
+  inline bool DataflowIdHasBeenSet() const { return m_dataflowIdHasBeenSet; }
+  template <typename DataflowIdT = Aws::String>
+  void SetDataflowId(DataflowIdT&& value) {
+    m_dataflowIdHasBeenSet = true;
+    m_dataflowId = std::forward<DataflowIdT>(value);
   }
-  inline ComponentStatusData& WithStatus(AgentStatus value) {
-    SetStatus(value);
+  template <typename DataflowIdT = Aws::String>
+  ComponentStatusData& WithDataflowId(DataflowIdT&& value) {
+    SetDataflowId(std::forward<DataflowIdT>(value));
     return *this;
   }
   ///@}
  private:
-  long long m_bytesReceived{0};
-  bool m_bytesReceivedHasBeenSet = false;
-
-  long long m_bytesSent{0};
-  bool m_bytesSentHasBeenSet = false;
+  Aws::String m_componentType;
+  bool m_componentTypeHasBeenSet = false;
 
   Aws::String m_capabilityArn;
   bool m_capabilityArnHasBeenSet = false;
 
-  Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
+  AgentStatus m_status{AgentStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
 
-  Aws::String m_dataflowId;
-  bool m_dataflowIdHasBeenSet = false;
+  long long m_bytesSent{0};
+  bool m_bytesSentHasBeenSet = false;
+
+  long long m_bytesReceived{0};
+  bool m_bytesReceivedHasBeenSet = false;
 
   long long m_packetsDropped{0};
   bool m_packetsDroppedHasBeenSet = false;
 
-  AgentStatus m_status{AgentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
+  Aws::String m_dataflowId;
+  bool m_dataflowIdHasBeenSet = false;
 };
 
 }  // namespace Model

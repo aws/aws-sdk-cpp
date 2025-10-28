@@ -35,8 +35,8 @@ class ListGroupingAttributeDefinitionsRequest : public ApplicationSignalsRequest
 
   ///@{
   /**
-   * <p>Include this value, if it was returned by the previous operation, to get the
-   * next set of grouping attribute definitions.</p>
+   * <p>The token for the next set of results. Use this token to retrieve additional
+   * pages of grouping attribute definitions when the result set is large.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

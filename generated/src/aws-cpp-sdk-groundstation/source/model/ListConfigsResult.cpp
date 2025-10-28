@@ -21,16 +21,16 @@ ListConfigsResult::ListConfigsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListConfigsResult& ListConfigsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("configList")) {
     Aws::Utils::Array<JsonView> configListJsonList = jsonValue.GetArray("configList");
     for (unsigned configListIndex = 0; configListIndex < configListJsonList.GetLength(); ++configListIndex) {
       m_configList.push_back(configListJsonList[configListIndex].AsObject());
     }
     m_configListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

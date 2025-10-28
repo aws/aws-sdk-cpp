@@ -18,13 +18,13 @@ namespace Model {
 UplinkEchoConfig::UplinkEchoConfig(JsonView jsonValue) { *this = jsonValue; }
 
 UplinkEchoConfig& UplinkEchoConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("antennaUplinkConfigArn")) {
-    m_antennaUplinkConfigArn = jsonValue.GetString("antennaUplinkConfigArn");
-    m_antennaUplinkConfigArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("antennaUplinkConfigArn")) {
+    m_antennaUplinkConfigArn = jsonValue.GetString("antennaUplinkConfigArn");
+    m_antennaUplinkConfigArnHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ UplinkEchoConfig& UplinkEchoConfig::operator=(JsonView jsonValue) {
 JsonValue UplinkEchoConfig::Jsonize() const {
   JsonValue payload;
 
-  if (m_antennaUplinkConfigArnHasBeenSet) {
-    payload.WithString("antennaUplinkConfigArn", m_antennaUplinkConfigArn);
-  }
-
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_antennaUplinkConfigArnHasBeenSet) {
+    payload.WithString("antennaUplinkConfigArn", m_antennaUplinkConfigArn);
   }
 
   return payload;

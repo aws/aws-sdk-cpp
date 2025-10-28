@@ -21,21 +21,13 @@ GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::Amazon
 
 GetDataflowEndpointGroupResult& GetDataflowEndpointGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("contactPostPassDurationSeconds")) {
-    m_contactPostPassDurationSeconds = jsonValue.GetInteger("contactPostPassDurationSeconds");
-    m_contactPostPassDurationSecondsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("contactPrePassDurationSeconds")) {
-    m_contactPrePassDurationSeconds = jsonValue.GetInteger("contactPrePassDurationSeconds");
-    m_contactPrePassDurationSecondsHasBeenSet = true;
+  if (jsonValue.ValueExists("dataflowEndpointGroupId")) {
+    m_dataflowEndpointGroupId = jsonValue.GetString("dataflowEndpointGroupId");
+    m_dataflowEndpointGroupIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dataflowEndpointGroupArn")) {
     m_dataflowEndpointGroupArn = jsonValue.GetString("dataflowEndpointGroupArn");
     m_dataflowEndpointGroupArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataflowEndpointGroupId")) {
-    m_dataflowEndpointGroupId = jsonValue.GetString("dataflowEndpointGroupId");
-    m_dataflowEndpointGroupIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("endpointsDetails")) {
     Aws::Utils::Array<JsonView> endpointsDetailsJsonList = jsonValue.GetArray("endpointsDetails");
@@ -50,6 +42,14 @@ GetDataflowEndpointGroupResult& GetDataflowEndpointGroupResult::operator=(const 
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("contactPrePassDurationSeconds")) {
+    m_contactPrePassDurationSeconds = jsonValue.GetInteger("contactPrePassDurationSeconds");
+    m_contactPrePassDurationSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("contactPostPassDurationSeconds")) {
+    m_contactPostPassDurationSeconds = jsonValue.GetInteger("contactPostPassDurationSeconds");
+    m_contactPostPassDurationSecondsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

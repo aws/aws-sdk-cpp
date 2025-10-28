@@ -18,12 +18,12 @@ namespace Model {
 DiscoveryData::DiscoveryData(JsonView jsonValue) { *this = jsonValue; }
 
 DiscoveryData& DiscoveryData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("capabilityArns")) {
-    Aws::Utils::Array<JsonView> capabilityArnsJsonList = jsonValue.GetArray("capabilityArns");
-    for (unsigned capabilityArnsIndex = 0; capabilityArnsIndex < capabilityArnsJsonList.GetLength(); ++capabilityArnsIndex) {
-      m_capabilityArns.push_back(capabilityArnsJsonList[capabilityArnsIndex].AsString());
+  if (jsonValue.ValueExists("publicIpAddresses")) {
+    Aws::Utils::Array<JsonView> publicIpAddressesJsonList = jsonValue.GetArray("publicIpAddresses");
+    for (unsigned publicIpAddressesIndex = 0; publicIpAddressesIndex < publicIpAddressesJsonList.GetLength(); ++publicIpAddressesIndex) {
+      m_publicIpAddresses.push_back(publicIpAddressesJsonList[publicIpAddressesIndex].AsString());
     }
-    m_capabilityArnsHasBeenSet = true;
+    m_publicIpAddressesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("privateIpAddresses")) {
     Aws::Utils::Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("privateIpAddresses");
@@ -33,12 +33,12 @@ DiscoveryData& DiscoveryData::operator=(JsonView jsonValue) {
     }
     m_privateIpAddressesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("publicIpAddresses")) {
-    Aws::Utils::Array<JsonView> publicIpAddressesJsonList = jsonValue.GetArray("publicIpAddresses");
-    for (unsigned publicIpAddressesIndex = 0; publicIpAddressesIndex < publicIpAddressesJsonList.GetLength(); ++publicIpAddressesIndex) {
-      m_publicIpAddresses.push_back(publicIpAddressesJsonList[publicIpAddressesIndex].AsString());
+  if (jsonValue.ValueExists("capabilityArns")) {
+    Aws::Utils::Array<JsonView> capabilityArnsJsonList = jsonValue.GetArray("capabilityArns");
+    for (unsigned capabilityArnsIndex = 0; capabilityArnsIndex < capabilityArnsJsonList.GetLength(); ++capabilityArnsIndex) {
+      m_capabilityArns.push_back(capabilityArnsJsonList[capabilityArnsIndex].AsString());
     }
-    m_publicIpAddressesHasBeenSet = true;
+    m_capabilityArnsHasBeenSet = true;
   }
   return *this;
 }
@@ -46,12 +46,12 @@ DiscoveryData& DiscoveryData::operator=(JsonView jsonValue) {
 JsonValue DiscoveryData::Jsonize() const {
   JsonValue payload;
 
-  if (m_capabilityArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> capabilityArnsJsonList(m_capabilityArns.size());
-    for (unsigned capabilityArnsIndex = 0; capabilityArnsIndex < capabilityArnsJsonList.GetLength(); ++capabilityArnsIndex) {
-      capabilityArnsJsonList[capabilityArnsIndex].AsString(m_capabilityArns[capabilityArnsIndex]);
+  if (m_publicIpAddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> publicIpAddressesJsonList(m_publicIpAddresses.size());
+    for (unsigned publicIpAddressesIndex = 0; publicIpAddressesIndex < publicIpAddressesJsonList.GetLength(); ++publicIpAddressesIndex) {
+      publicIpAddressesJsonList[publicIpAddressesIndex].AsString(m_publicIpAddresses[publicIpAddressesIndex]);
     }
-    payload.WithArray("capabilityArns", std::move(capabilityArnsJsonList));
+    payload.WithArray("publicIpAddresses", std::move(publicIpAddressesJsonList));
   }
 
   if (m_privateIpAddressesHasBeenSet) {
@@ -63,12 +63,12 @@ JsonValue DiscoveryData::Jsonize() const {
     payload.WithArray("privateIpAddresses", std::move(privateIpAddressesJsonList));
   }
 
-  if (m_publicIpAddressesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> publicIpAddressesJsonList(m_publicIpAddresses.size());
-    for (unsigned publicIpAddressesIndex = 0; publicIpAddressesIndex < publicIpAddressesJsonList.GetLength(); ++publicIpAddressesIndex) {
-      publicIpAddressesJsonList[publicIpAddressesIndex].AsString(m_publicIpAddresses[publicIpAddressesIndex]);
+  if (m_capabilityArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capabilityArnsJsonList(m_capabilityArns.size());
+    for (unsigned capabilityArnsIndex = 0; capabilityArnsIndex < capabilityArnsJsonList.GetLength(); ++capabilityArnsIndex) {
+      capabilityArnsJsonList[capabilityArnsIndex].AsString(m_capabilityArns[capabilityArnsIndex]);
     }
-    payload.WithArray("publicIpAddresses", std::move(publicIpAddressesJsonList));
+    payload.WithArray("capabilityArns", std::move(capabilityArnsJsonList));
   }
 
   return payload;

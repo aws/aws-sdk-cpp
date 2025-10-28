@@ -261,11 +261,10 @@ class AddPermissionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from
-   * a function URL. When set to <code>true</code>, this prevents the principal from
-   * invoking the function by any means other than the function URL. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
+   * <p>Restricts the <code>lambda:InvokeFunction</code> action to function URL
+   * calls. When set to <code>true</code>, this prevents the principal from invoking
+   * the function by any means other than the function URL. For more information, see
+   * <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
    * access to Lambda function URLs</a>.</p>
    */
   inline bool GetInvokedViaFunctionUrl() const { return m_invokedViaFunctionUrl; }

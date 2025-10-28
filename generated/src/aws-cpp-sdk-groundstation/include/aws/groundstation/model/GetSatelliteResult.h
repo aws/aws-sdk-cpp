@@ -35,18 +35,49 @@ class GetSatelliteResult {
 
   ///@{
   /**
-   * <p>The current ephemeris being used to compute the trajectory of the
-   * satellite.</p>
+   * <p>UUID of a satellite.</p>
    */
-  inline const EphemerisMetaData& GetCurrentEphemeris() const { return m_currentEphemeris; }
-  template <typename CurrentEphemerisT = EphemerisMetaData>
-  void SetCurrentEphemeris(CurrentEphemerisT&& value) {
-    m_currentEphemerisHasBeenSet = true;
-    m_currentEphemeris = std::forward<CurrentEphemerisT>(value);
+  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
+  template <typename SatelliteIdT = Aws::String>
+  void SetSatelliteId(SatelliteIdT&& value) {
+    m_satelliteIdHasBeenSet = true;
+    m_satelliteId = std::forward<SatelliteIdT>(value);
   }
-  template <typename CurrentEphemerisT = EphemerisMetaData>
-  GetSatelliteResult& WithCurrentEphemeris(CurrentEphemerisT&& value) {
-    SetCurrentEphemeris(std::forward<CurrentEphemerisT>(value));
+  template <typename SatelliteIdT = Aws::String>
+  GetSatelliteResult& WithSatelliteId(SatelliteIdT&& value) {
+    SetSatelliteId(std::forward<SatelliteIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ARN of a satellite.</p>
+   */
+  inline const Aws::String& GetSatelliteArn() const { return m_satelliteArn; }
+  template <typename SatelliteArnT = Aws::String>
+  void SetSatelliteArn(SatelliteArnT&& value) {
+    m_satelliteArnHasBeenSet = true;
+    m_satelliteArn = std::forward<SatelliteArnT>(value);
+  }
+  template <typename SatelliteArnT = Aws::String>
+  GetSatelliteResult& WithSatelliteArn(SatelliteArnT&& value) {
+    SetSatelliteArn(std::forward<SatelliteArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>NORAD satellite ID number.</p>
+   */
+  inline int GetNoradSatelliteID() const { return m_noradSatelliteID; }
+  inline void SetNoradSatelliteID(int value) {
+    m_noradSatelliteIDHasBeenSet = true;
+    m_noradSatelliteID = value;
+  }
+  inline GetSatelliteResult& WithNoradSatelliteID(int value) {
+    SetNoradSatelliteID(value);
     return *this;
   }
   ///@}
@@ -76,49 +107,18 @@ class GetSatelliteResult {
 
   ///@{
   /**
-   * <p>NORAD satellite ID number.</p>
+   * <p>The current ephemeris being used to compute the trajectory of the
+   * satellite.</p>
    */
-  inline int GetNoradSatelliteID() const { return m_noradSatelliteID; }
-  inline void SetNoradSatelliteID(int value) {
-    m_noradSatelliteIDHasBeenSet = true;
-    m_noradSatelliteID = value;
+  inline const EphemerisMetaData& GetCurrentEphemeris() const { return m_currentEphemeris; }
+  template <typename CurrentEphemerisT = EphemerisMetaData>
+  void SetCurrentEphemeris(CurrentEphemerisT&& value) {
+    m_currentEphemerisHasBeenSet = true;
+    m_currentEphemeris = std::forward<CurrentEphemerisT>(value);
   }
-  inline GetSatelliteResult& WithNoradSatelliteID(int value) {
-    SetNoradSatelliteID(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>ARN of a satellite.</p>
-   */
-  inline const Aws::String& GetSatelliteArn() const { return m_satelliteArn; }
-  template <typename SatelliteArnT = Aws::String>
-  void SetSatelliteArn(SatelliteArnT&& value) {
-    m_satelliteArnHasBeenSet = true;
-    m_satelliteArn = std::forward<SatelliteArnT>(value);
-  }
-  template <typename SatelliteArnT = Aws::String>
-  GetSatelliteResult& WithSatelliteArn(SatelliteArnT&& value) {
-    SetSatelliteArn(std::forward<SatelliteArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>UUID of a satellite.</p>
-   */
-  inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
-  template <typename SatelliteIdT = Aws::String>
-  void SetSatelliteId(SatelliteIdT&& value) {
-    m_satelliteIdHasBeenSet = true;
-    m_satelliteId = std::forward<SatelliteIdT>(value);
-  }
-  template <typename SatelliteIdT = Aws::String>
-  GetSatelliteResult& WithSatelliteId(SatelliteIdT&& value) {
-    SetSatelliteId(std::forward<SatelliteIdT>(value));
+  template <typename CurrentEphemerisT = EphemerisMetaData>
+  GetSatelliteResult& WithCurrentEphemeris(CurrentEphemerisT&& value) {
+    SetCurrentEphemeris(std::forward<CurrentEphemerisT>(value));
     return *this;
   }
   ///@}
@@ -138,20 +138,20 @@ class GetSatelliteResult {
   }
   ///@}
  private:
-  EphemerisMetaData m_currentEphemeris;
-  bool m_currentEphemerisHasBeenSet = false;
-
-  Aws::Vector<Aws::String> m_groundStations;
-  bool m_groundStationsHasBeenSet = false;
-
-  int m_noradSatelliteID{0};
-  bool m_noradSatelliteIDHasBeenSet = false;
+  Aws::String m_satelliteId;
+  bool m_satelliteIdHasBeenSet = false;
 
   Aws::String m_satelliteArn;
   bool m_satelliteArnHasBeenSet = false;
 
-  Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
+  int m_noradSatelliteID{0};
+  bool m_noradSatelliteIDHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_groundStations;
+  bool m_groundStationsHasBeenSet = false;
+
+  EphemerisMetaData m_currentEphemeris;
+  bool m_currentEphemerisHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

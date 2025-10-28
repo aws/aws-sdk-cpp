@@ -33,22 +33,6 @@ class GetMinuteUsageResult {
 
   ///@{
   /**
-   * <p>Estimated number of minutes remaining for an account, specific to the month
-   * being requested.</p>
-   */
-  inline int GetEstimatedMinutesRemaining() const { return m_estimatedMinutesRemaining; }
-  inline void SetEstimatedMinutesRemaining(int value) {
-    m_estimatedMinutesRemainingHasBeenSet = true;
-    m_estimatedMinutesRemaining = value;
-  }
-  inline GetMinuteUsageResult& WithEstimatedMinutesRemaining(int value) {
-    SetEstimatedMinutesRemaining(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Returns whether or not an account has signed up for the reserved minutes
    * pricing plan, specific to the month being requested.</p>
    */
@@ -81,6 +65,22 @@ class GetMinuteUsageResult {
 
   ///@{
   /**
+   * <p>Upcoming minutes scheduled for an account, specific to the month being
+   * requested.</p>
+   */
+  inline int GetUpcomingMinutesScheduled() const { return m_upcomingMinutesScheduled; }
+  inline void SetUpcomingMinutesScheduled(int value) {
+    m_upcomingMinutesScheduledHasBeenSet = true;
+    m_upcomingMinutesScheduled = value;
+  }
+  inline GetMinuteUsageResult& WithUpcomingMinutesScheduled(int value) {
+    SetUpcomingMinutesScheduled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Total scheduled minutes for an account, specific to the month being
    * requested.</p>
    */
@@ -97,16 +97,16 @@ class GetMinuteUsageResult {
 
   ///@{
   /**
-   * <p>Upcoming minutes scheduled for an account, specific to the month being
-   * requested.</p>
+   * <p>Estimated number of minutes remaining for an account, specific to the month
+   * being requested.</p>
    */
-  inline int GetUpcomingMinutesScheduled() const { return m_upcomingMinutesScheduled; }
-  inline void SetUpcomingMinutesScheduled(int value) {
-    m_upcomingMinutesScheduledHasBeenSet = true;
-    m_upcomingMinutesScheduled = value;
+  inline int GetEstimatedMinutesRemaining() const { return m_estimatedMinutesRemaining; }
+  inline void SetEstimatedMinutesRemaining(int value) {
+    m_estimatedMinutesRemainingHasBeenSet = true;
+    m_estimatedMinutesRemaining = value;
   }
-  inline GetMinuteUsageResult& WithUpcomingMinutesScheduled(int value) {
-    SetUpcomingMinutesScheduled(value);
+  inline GetMinuteUsageResult& WithEstimatedMinutesRemaining(int value) {
+    SetEstimatedMinutesRemaining(value);
     return *this;
   }
   ///@}
@@ -126,20 +126,20 @@ class GetMinuteUsageResult {
   }
   ///@}
  private:
-  int m_estimatedMinutesRemaining{0};
-  bool m_estimatedMinutesRemainingHasBeenSet = false;
-
   bool m_isReservedMinutesCustomer{false};
   bool m_isReservedMinutesCustomerHasBeenSet = false;
 
   int m_totalReservedMinuteAllocation{0};
   bool m_totalReservedMinuteAllocationHasBeenSet = false;
 
+  int m_upcomingMinutesScheduled{0};
+  bool m_upcomingMinutesScheduledHasBeenSet = false;
+
   int m_totalScheduledMinutes{0};
   bool m_totalScheduledMinutesHasBeenSet = false;
 
-  int m_upcomingMinutesScheduled{0};
-  bool m_upcomingMinutesScheduledHasBeenSet = false;
+  int m_estimatedMinutesRemaining{0};
+  bool m_estimatedMinutesRemainingHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

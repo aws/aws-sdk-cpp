@@ -34,22 +34,6 @@ class RangedConnectionDetails {
 
   ///@{
   /**
-   * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-   */
-  inline int GetMtu() const { return m_mtu; }
-  inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
-  inline void SetMtu(int value) {
-    m_mtuHasBeenSet = true;
-    m_mtu = value;
-  }
-  inline RangedConnectionDetails& WithMtu(int value) {
-    SetMtu(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A ranged socket address.</p>
    */
   inline const RangedSocketAddress& GetSocketAddress() const { return m_socketAddress; }
@@ -65,12 +49,28 @@ class RangedConnectionDetails {
     return *this;
   }
   ///@}
- private:
-  int m_mtu{0};
-  bool m_mtuHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+   */
+  inline int GetMtu() const { return m_mtu; }
+  inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
+  inline void SetMtu(int value) {
+    m_mtuHasBeenSet = true;
+    m_mtu = value;
+  }
+  inline RangedConnectionDetails& WithMtu(int value) {
+    SetMtu(value);
+    return *this;
+  }
+  ///@}
+ private:
   RangedSocketAddress m_socketAddress;
   bool m_socketAddressHasBeenSet = false;
+
+  int m_mtu{0};
+  bool m_mtuHasBeenSet = false;
 };
 
 }  // namespace Model

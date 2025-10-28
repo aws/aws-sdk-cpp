@@ -36,17 +36,18 @@ class CreateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a Ground
-   * Station Contact State Change event indicating the pass has finished.</p>
+   * <p>Name of a mission profile.</p>
    */
-  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
-  inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
-  inline void SetContactPostPassDurationSeconds(int value) {
-    m_contactPostPassDurationSecondsHasBeenSet = true;
-    m_contactPostPassDurationSeconds = value;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  inline CreateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) {
-    SetContactPostPassDurationSeconds(value);
+  template <typename NameT = Aws::String>
+  CreateMissionProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -64,6 +65,41 @@ class CreateMissionProfileRequest : public GroundStationRequest {
   }
   inline CreateMissionProfileRequest& WithContactPrePassDurationSeconds(int value) {
     SetContactPrePassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time after a contact ends that you’d like to receive a Ground
+   * Station Contact State Change event indicating the pass has finished.</p>
+   */
+  inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
+  inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
+  inline void SetContactPostPassDurationSeconds(int value) {
+    m_contactPostPassDurationSecondsHasBeenSet = true;
+    m_contactPostPassDurationSeconds = value;
+  }
+  inline CreateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) {
+    SetContactPostPassDurationSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Smallest amount of time in seconds that you’d like to see for an available
+   * contact. AWS Ground Station will not present you with contacts shorter than this
+   * duration.</p>
+   */
+  inline int GetMinimumViableContactDurationSeconds() const { return m_minimumViableContactDurationSeconds; }
+  inline bool MinimumViableContactDurationSecondsHasBeenSet() const { return m_minimumViableContactDurationSecondsHasBeenSet; }
+  inline void SetMinimumViableContactDurationSeconds(int value) {
+    m_minimumViableContactDurationSecondsHasBeenSet = true;
+    m_minimumViableContactDurationSeconds = value;
+  }
+  inline CreateMissionProfileRequest& WithMinimumViableContactDurationSeconds(int value) {
+    SetMinimumViableContactDurationSeconds(value);
     return *this;
   }
   ///@}
@@ -95,36 +131,42 @@ class CreateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Smallest amount of time in seconds that you’d like to see for an available
-   * contact. AWS Ground Station will not present you with contacts shorter than this
-   * duration.</p>
+   * <p>ARN of a tracking <code>Config</code>.</p>
    */
-  inline int GetMinimumViableContactDurationSeconds() const { return m_minimumViableContactDurationSeconds; }
-  inline bool MinimumViableContactDurationSecondsHasBeenSet() const { return m_minimumViableContactDurationSecondsHasBeenSet; }
-  inline void SetMinimumViableContactDurationSeconds(int value) {
-    m_minimumViableContactDurationSecondsHasBeenSet = true;
-    m_minimumViableContactDurationSeconds = value;
+  inline const Aws::String& GetTrackingConfigArn() const { return m_trackingConfigArn; }
+  inline bool TrackingConfigArnHasBeenSet() const { return m_trackingConfigArnHasBeenSet; }
+  template <typename TrackingConfigArnT = Aws::String>
+  void SetTrackingConfigArn(TrackingConfigArnT&& value) {
+    m_trackingConfigArnHasBeenSet = true;
+    m_trackingConfigArn = std::forward<TrackingConfigArnT>(value);
   }
-  inline CreateMissionProfileRequest& WithMinimumViableContactDurationSeconds(int value) {
-    SetMinimumViableContactDurationSeconds(value);
+  template <typename TrackingConfigArnT = Aws::String>
+  CreateMissionProfileRequest& WithTrackingConfigArn(TrackingConfigArnT&& value) {
+    SetTrackingConfigArn(std::forward<TrackingConfigArnT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Name of a mission profile.</p>
+   * <p>Tags assigned to a mission profile.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
   }
-  template <typename NameT = Aws::String>
-  CreateMissionProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateMissionProfileRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateMissionProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
   }
   ///@}
@@ -164,75 +206,33 @@ class CreateMissionProfileRequest : public GroundStationRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Tags assigned to a mission profile.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  CreateMissionProfileRequest& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  CreateMissionProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>ARN of a tracking <code>Config</code>.</p>
-   */
-  inline const Aws::String& GetTrackingConfigArn() const { return m_trackingConfigArn; }
-  inline bool TrackingConfigArnHasBeenSet() const { return m_trackingConfigArnHasBeenSet; }
-  template <typename TrackingConfigArnT = Aws::String>
-  void SetTrackingConfigArn(TrackingConfigArnT&& value) {
-    m_trackingConfigArnHasBeenSet = true;
-    m_trackingConfigArn = std::forward<TrackingConfigArnT>(value);
-  }
-  template <typename TrackingConfigArnT = Aws::String>
-  CreateMissionProfileRequest& WithTrackingConfigArn(TrackingConfigArnT&& value) {
-    SetTrackingConfigArn(std::forward<TrackingConfigArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  int m_contactPostPassDurationSeconds{0};
-  bool m_contactPostPassDurationSecondsHasBeenSet = false;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   int m_contactPrePassDurationSeconds{0};
   bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
-  Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
-  bool m_dataflowEdgesHasBeenSet = false;
+  int m_contactPostPassDurationSeconds{0};
+  bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
   int m_minimumViableContactDurationSeconds{0};
   bool m_minimumViableContactDurationSecondsHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
+  Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
+  bool m_dataflowEdgesHasBeenSet = false;
+
+  Aws::String m_trackingConfigArn;
+  bool m_trackingConfigArnHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 
   KmsKey m_streamsKmsKey;
   bool m_streamsKmsKeyHasBeenSet = false;
 
   Aws::String m_streamsKmsRole;
   bool m_streamsKmsRoleHasBeenSet = false;
-
-  Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
-
-  Aws::String m_trackingConfigArn;
-  bool m_trackingConfigArnHasBeenSet = false;
 };
 
 }  // namespace Model

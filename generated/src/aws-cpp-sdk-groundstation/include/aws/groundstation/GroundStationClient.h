@@ -167,8 +167,8 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Creates an Ephemeris with the specified
-   * <code>EphemerisData</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Create an ephemeris with your specified <a>EphemerisData</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">AWS
    * API Reference</a></p>
    */
@@ -275,7 +275,7 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deletes an ephemeris</p><p><h3>See Also:</h3>   <a
+   * <p>Delete an ephemeris.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">AWS
    * API Reference</a></p>
    */
@@ -351,7 +351,8 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Describes an existing ephemeris.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieve information about an existing ephemeris.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">AWS
    * API Reference</a></p>
    */
@@ -377,9 +378,9 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   *  <p> For use by AWS Ground Station Agent and shouldn't be called
+   * <p> <p> For use by AWS Ground Station Agent and shouldn't be called
    * directly.</p>  <p>Gets the latest configuration information for a
-   * registered agent.</p><p><h3>See Also:</h3>   <a
+   * registered agent.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">AWS
    * API Reference</a></p>
    */
@@ -619,7 +620,7 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>List existing ephemerides.</p><p><h3>See Also:</h3>   <a
+   * <p>List your existing ephemerides.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">AWS
    * API Reference</a></p>
    */
@@ -751,9 +752,9 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   *  <p> For use by AWS Ground Station Agent and shouldn't be called
+   * <p> <p> For use by AWS Ground Station Agent and shouldn't be called
    * directly.</p>  <p> Registers a new agent with AWS Ground Station.
-   * </p><p><h3>See Also:</h3>   <a
+   * </p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">AWS
    * API Reference</a></p>
    */
@@ -853,8 +854,8 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   *  <p> For use by AWS Ground Station Agent and shouldn't be called
-   * directly.</p>  <p>Update the status of the agent.</p><p><h3>See
+   * <p> <p> For use by AWS Ground Station Agent and shouldn't be called
+   * directly.</p>  <p>Update the status of the agent.</p></p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">AWS
    * API Reference</a></p>
@@ -909,7 +910,7 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Updates an existing ephemeris</p><p><h3>See Also:</h3>   <a
+   * <p>Update an existing ephemeris.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">AWS
    * API Reference</a></p>
    */

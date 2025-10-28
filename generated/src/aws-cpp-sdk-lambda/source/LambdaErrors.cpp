@@ -37,6 +37,7 @@
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
+#include <aws/lambda/model/SerializedRequestEntityTooLargeException.h>
 #include <aws/lambda/model/ServiceException.h>
 #include <aws/lambda/model/SnapStartException.h>
 #include <aws/lambda/model/SnapStartNotReadyException.h>
@@ -80,6 +81,12 @@ template <>
 AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
   return KMSInvalidStateException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API SerializedRequestEntityTooLargeException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE);
+  return SerializedRequestEntityTooLargeException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -286,6 +293,7 @@ static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNot
 static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("SerializedRequestEntityTooLargeException");
 static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
@@ -331,6 +339,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == K_M_S_INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::RETRYABLE);
+  } else if (hashCode == SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERIALIZED_REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RECURSIVE_INVOCATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RECURSIVE_INVOCATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH) {

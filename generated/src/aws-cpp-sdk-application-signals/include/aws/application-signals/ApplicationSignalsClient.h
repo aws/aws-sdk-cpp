@@ -245,9 +245,11 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
-   * <p>Deletes the grouping configuration for this account. This removes all custom
-   * grouping attribute definitions that were previously configured.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes a grouping configuration that defines how services are grouped and
+   * organized in Application Signals. Once deleted, services will no longer be
+   * grouped according to the specified configuration rules.</p> <p>This operation is
+   * irreversible. After deletion, you must recreate the grouping configuration if
+   * you want to restore the same grouping behavior.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -359,12 +361,12 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
-   * <p>Returns a list of audit findings that provide automated analysis of service
-   * behavior and root cause analysis. These findings help identify the most
-   * significant observations about your services, including performance issues,
-   * anomalies, and potential problems. The findings are generated using heuristic
-   * algorithms based on established troubleshooting patterns.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Retrieves a list of audit findings for Application Signals resources. Audit
+   * findings identify potential issues, misconfigurations, or compliance violations
+   * in your observability setup.</p> <p>You can filter findings by time range,
+   * auditor type, and target resources to focus on specific areas of concern. This
+   * operation supports pagination for large result sets.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">AWS
    * API Reference</a></p>
    */
@@ -390,11 +392,11 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
-   * <p>Returns the current grouping configuration for this account, including all
-   * custom grouping attribute definitions that have been configured. These
-   * definitions determine how services are logically grouped based on telemetry
-   * attributes, Amazon Web Services tags, or predefined mappings.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Retrieves the available grouping attribute definitions that can be used to
+   * create grouping configurations. These definitions specify the attributes and
+   * rules available for organizing services.</p> <p>Use this operation to discover
+   * what grouping options are available before creating or updating grouping
+   * configurations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">AWS
    * API Reference</a></p>
    */
@@ -570,10 +572,12 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
-   * <p>Returns information about the last deployment and other change states of
-   * services. This API provides visibility into recent changes that may have
-   * affected service performance, helping with troubleshooting and change
-   * correlation.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the current state information for services monitored by Application
+   * Signals. Service states include health status, recent change events, and other
+   * operational metadata.</p> <p>You can filter results by time range, AWS account,
+   * and service attributes to focus on specific services or time periods. This
+   * operation supports pagination and can include data from linked
+   * accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">AWS
    * API Reference</a></p>
    */
@@ -654,12 +658,12 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   }
 
   /**
-   * <p>Creates or updates the grouping configuration for this account. This
-   * operation allows you to define custom grouping attributes that determine how
-   * services are logically grouped based on telemetry attributes, Amazon Web
-   * Services tags, or predefined mappings. These grouping attributes can then be
-   * used to organize and filter services in the Application Signals console and
-   * APIs.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates or updates a grouping configuration that defines how services are
+   * organized and grouped in Application Signals dashboards and service maps.</p>
+   * <p>Grouping configurations allow you to logically organize services based on
+   * attributes such as environment, team ownership, or business function, making it
+   * easier to monitor and manage related services together.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">AWS
    * API Reference</a></p>
    */

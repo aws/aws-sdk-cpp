@@ -18,13 +18,13 @@ namespace Model {
 DataflowEndpointListItem::DataflowEndpointListItem(JsonView jsonValue) { *this = jsonValue; }
 
 DataflowEndpointListItem& DataflowEndpointListItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("dataflowEndpointGroupArn")) {
-    m_dataflowEndpointGroupArn = jsonValue.GetString("dataflowEndpointGroupArn");
-    m_dataflowEndpointGroupArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("dataflowEndpointGroupId")) {
     m_dataflowEndpointGroupId = jsonValue.GetString("dataflowEndpointGroupId");
     m_dataflowEndpointGroupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataflowEndpointGroupArn")) {
+    m_dataflowEndpointGroupArn = jsonValue.GetString("dataflowEndpointGroupArn");
+    m_dataflowEndpointGroupArnHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ DataflowEndpointListItem& DataflowEndpointListItem::operator=(JsonView jsonValue
 JsonValue DataflowEndpointListItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_dataflowEndpointGroupArnHasBeenSet) {
-    payload.WithString("dataflowEndpointGroupArn", m_dataflowEndpointGroupArn);
-  }
-
   if (m_dataflowEndpointGroupIdHasBeenSet) {
     payload.WithString("dataflowEndpointGroupId", m_dataflowEndpointGroupId);
+  }
+
+  if (m_dataflowEndpointGroupArnHasBeenSet) {
+    payload.WithString("dataflowEndpointGroupArn", m_dataflowEndpointGroupArn);
   }
 
   return payload;

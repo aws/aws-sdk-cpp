@@ -187,7 +187,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">AWS
    * API Reference</a></p>
    */
@@ -324,7 +328,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">AWS
    * API Reference</a></p>
    */
@@ -351,21 +359,19 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>  <p>Creates a copy of an object that
-   * is already stored in Amazon S3.</p>  <p>You can store individual objects
-   * of up to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size
-   * in a single atomic action using this API. However, to copy an object greater
-   * than 5 GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy)
-   * API. For more information, see <a
+   * <p>Creates a copy of an object that is already stored in Amazon S3.</p>
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>   <p>You can store individual objects of up
+   * to 5 TB in Amazon S3. You create a copy of your object up to 5 GB in size in a
+   * single atomic action using this API. However, to copy an object greater than 5
+   * GB, you must use the multipart upload Upload Part - Copy (UploadPartCopy) API.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
    * Object Using the REST Multipart Upload API</a>.</p>  <p>You can copy
    * individual objects between general purpose buckets, between directory buckets,
@@ -488,7 +494,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">AWS API
    * Reference</a></p>
    */
@@ -502,26 +512,15 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>   <p>End of support
-   * notice: Beginning October 1, 2025, Amazon S3 will stop returning
-   * <code>DisplayName</code>. Update your applications to use canonical IDs (unique
-   * identifier for Amazon Web Services accounts), Amazon Web Services account ID (12
-   * digit identifier) or IAM ARNs (full resource naming) as a direct replacement of
-   * <code>DisplayName</code>. </p> <p>This change affects the following Amazon Web
-   * Services Regions: US East (N. Virginia) Region, US West (N. California) Region,
-   * US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific (Sydney)
-   * Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South America
-   * (São Paulo) Region.</p>   <p>This action creates an Amazon S3
-   * bucket. To create an Amazon S3 on Outposts bucket, see <a
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>   <p>This action creates an Amazon S3 bucket.
+   * To create an Amazon S3 on Outposts bucket, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
    * <code>CreateBucket</code> </a>.</p>  <p>Creates a new S3 bucket. To
    * create a bucket, you must set up Amazon S3 and have a valid Amazon Web Services
@@ -625,7 +624,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">AWS API
    * Reference</a></p>
    */
@@ -691,7 +694,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">AWS
    * API Reference</a></p>
    */
@@ -758,7 +765,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">AWS
    * API Reference</a></p>
    */
@@ -787,19 +798,17 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>  <p>This action initiates a
-   * multipart upload and returns an upload ID. This upload ID is used to associate
-   * all of the parts in the specific multipart upload. You specify this upload ID in
-   * each of your subsequent upload part requests (see <a
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>  <p>This action initiates a multipart upload and
+   * returns an upload ID. This upload ID is used to associate all of the parts in
+   * the specific multipart upload. You specify this upload ID in each of your
+   * subsequent upload part requests (see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
    * You also include this upload ID in the final request to either complete or abort
    * the multipart upload request. For more information about multipart uploads, see
@@ -1001,7 +1010,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">AWS
    * API Reference</a></p>
    */
@@ -1167,7 +1180,10 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
    * <code>
    * <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
-   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * </dd> </dl>  <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateSession">AWS
    * API Reference</a></p>
    */
@@ -1227,7 +1243,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">AWS API
    * Reference</a></p>
    */
@@ -1271,7 +1291,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1312,7 +1336,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
    * API Reference</a></p>
    */
@@ -1375,7 +1403,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS
    * API Reference</a></p>
    */
@@ -1427,7 +1459,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1476,7 +1512,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1551,7 +1591,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">AWS
    * API Reference</a></p>
    */
@@ -1600,7 +1644,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1661,7 +1709,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1712,7 +1764,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
-   * Metrics with Amazon CloudWatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Metrics with Amazon CloudWatch</a> </p> </li> </ul>  <p>You must URL
+   * encode any signed header values that contain spaces. For example, if your header
+   * value is <code>my file.txt</code>, containing two spaces after <code>my</code>,
+   * you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1752,7 +1808,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Object Ownership</a>. </p> <p>The following operations are related to
    * <code>DeleteBucketOwnershipControls</code>:</p> <ul> <li> <p>
    * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
-   * <a>PutBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>PutBucketOwnershipControls</a> </p> </li> </ul>  <p>You must URL
+   * encode any signed header values that contain spaces. For example, if your header
+   * value is <code>my file.txt</code>, containing two spaces after <code>my</code>,
+   * you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">AWS
    * API Reference</a></p>
    */
@@ -1830,7 +1890,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -1874,7 +1938,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
    * API Reference</a></p>
    */
@@ -1910,7 +1978,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">AWS
    * API Reference</a></p>
    */
@@ -1954,7 +2026,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html">GetBucketWebsite</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">AWS
    * API Reference</a></p>
    */
@@ -2066,7 +2142,14 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * </dd> </dl> <p>The following action is related to <code>DeleteObject</code>:</p>
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p>The <code>If-Match</code> header is supported for both general purpose and
+   * directory buckets. <code>IfMatchLastModifiedTime</code> and
+   * <code>IfMatchSize</code> is only supported for directory buckets. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API
    * Reference</a></p>
    */
@@ -2104,7 +2187,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">AWS
    * API Reference</a></p>
    */
@@ -2213,7 +2300,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS
    * API Reference</a></p>
    */
@@ -2256,7 +2347,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
    * API Reference</a></p>
    */
@@ -2308,7 +2403,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * are related to <code>GetBucketAccelerateConfiguration</code>:</p> <ul> <li> <p>
    * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2337,8 +2436,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -2366,8 +2465,12 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * account that created the bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
    * Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User
-   * Guide</i>.</p>  <p>The following operations are related to
-   * <code>GetBucketAcl</code>:</p> <ul> <li> <p> <a
+   * Guide</i>.</p>   <p>You must URL encode any signed header
+   * values that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p>  <p>The
+   * following operations are related to <code>GetBucketAcl</code>:</p> <ul> <li> <p>
+   * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">AWS API
@@ -2415,7 +2518,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2463,7 +2570,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
    * API Reference</a></p>
    */
@@ -2526,7 +2637,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS
    * API Reference</a></p>
    */
@@ -2576,7 +2691,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2625,7 +2744,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2714,7 +2837,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2743,28 +2870,42 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Returns the Region the bucket resides in. You set the bucket's Region using
-   * the <code>LocationConstraint</code> request parameter in a
-   * <code>CreateBucket</code> request. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.</p>
-   * <p>When you use this API operation with an access point, provide the alias of
-   * the access point in place of the bucket name.</p> <p>When you use this API
-   * operation with an Object Lambda access point, provide the alias of the Object
-   * Lambda access point in place of the bucket name. If the Object Lambda access
-   * point alias in a request is not valid, the error code
-   * <code>InvalidAccessPointAliasError</code> is returned. For more information
-   * about <code>InvalidAccessPointAliasError</code>, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-   * of Error Codes</a>.</p>  <p>We recommend that you use <a
+   *  <p>Using the <code>GetBucketLocation</code> operation is no longer a
+   * best practice. To return the Region that a bucket resides in, we recommend that
+   * you use the <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-   * to return the Region that a bucket resides in. For backward compatibility,
-   * Amazon S3 continues to support GetBucketLocation.</p>  <p>The following
-   * operations are related to <code>GetBucketLocation</code>:</p> <ul> <li> <p> <a
+   * operation instead. For backward compatibility, Amazon S3 continues to support
+   * the <code>GetBucketLocation</code> operation.</p>  <p>Returns the
+   * Region the bucket resides in. You set the bucket's Region using the
+   * <code>LocationConstraint</code> request parameter in a <code>CreateBucket</code>
+   * request. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.</p>
+   *  <p>In a bucket's home Region, calls to the <code>GetBucketLocation</code>
+   * operation are governed by the bucket's policy. In other Regions, the bucket
+   * policy doesn't apply, which means that cross-account access won't be authorized.
+   * However, calls to the <code>HeadBucket</code> operation always return the
+   * bucket’s location through an HTTP response header, whether access to the bucket
+   * is authorized or not. Therefore, we recommend using the <code>HeadBucket</code>
+   * operation for bucket Region discovery and to avoid using the
+   * <code>GetBucketLocation</code> operation.</p>  <p>When you use this API
+   * operation with an access point, provide the alias of the access point in place
+   * of the bucket name.</p> <p>When you use this API operation with an Object Lambda
+   * access point, provide the alias of the Object Lambda access point in place of
+   * the bucket name. If the Object Lambda access point alias in a request is not
+   * valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For
+   * more information about <code>InvalidAccessPointAliasError</code>, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+   * of Error Codes</a>.</p>  <p>This operation is not supported for directory
+   * buckets.</p>  <p>The following operations are related to
+   * <code>GetBucketLocation</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">AWS
    * API Reference</a></p>
    */
@@ -2790,8 +2931,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -2806,7 +2947,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">AWS
    * API Reference</a></p>
    */
@@ -2855,7 +3000,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2915,7 +3064,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2966,7 +3119,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketMetricsConfigurations.html">ListBucketMetricsConfigurations</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
-   * Metrics with Amazon CloudWatch</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Metrics with Amazon CloudWatch</a> </p> </li> </ul>  <p>You must URL
+   * encode any signed header values that contain spaces. For example, if your header
+   * value is <code>my file.txt</code>, containing two spaces after <code>my</code>,
+   * you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -3019,7 +3176,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Bucket Policies</a>.</p> <p>The following action is related to
    * <code>GetBucketNotification</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -3065,7 +3226,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Object Ownership</a>. </p> <p>The following operations are related to
    * <code>GetBucketOwnershipControls</code>:</p> <ul> <li> <p>
    * <a>PutBucketOwnershipControls</a> </p> </li> <li> <p>
-   * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul>  <p>You must
+   * URL encode any signed header values that contain spaces. For example, if your
+   * header value is <code>my file.txt</code>, containing two spaces after
+   * <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">AWS
    * API Reference</a></p>
    */
@@ -3149,7 +3314,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * <p>The following action is related to <code>GetBucketPolicy</code>:</p> <ul>
    * <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -3192,7 +3361,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS
    * API Reference</a></p>
    */
@@ -3239,7 +3412,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
    * API Reference</a></p>
    */
@@ -3272,7 +3449,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Pays Buckets</a>.</p> <p>The following operations are related to
    * <code>GetBucketRequestPayment</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS
    * API Reference</a></p>
    */
@@ -3311,7 +3492,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">AWS
    * API Reference</a></p>
    */
@@ -3349,7 +3534,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">AWS
    * API Reference</a></p>
    */
@@ -3390,7 +3579,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">AWS
    * API Reference</a></p>
    */
@@ -3543,7 +3736,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">AWS API
    * Reference</a></p>
    */
@@ -3557,10 +3754,19 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Returns the access control list (ACL) of an object. To use this operation,
-   * you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code>
-   * access to the object. For more information, see <a
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
+   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+   * (Ireland) Region, and South America (São Paulo) Region.</p>
+   * <p>This operation is not supported for directory buckets.</p>  <p>Returns
+   * the access control list (ACL) of an object. To use this operation, you must have
+   * <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code> access to the
+   * object. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping
    * of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User
    * Guide</i> </p> <p>This functionality is not supported for Amazon S3 on
@@ -3581,7 +3787,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">AWS API
    * Reference</a></p>
    */
@@ -3736,7 +3946,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html">HeadObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributes">AWS
    * API Reference</a></p>
    */
@@ -3769,7 +3983,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Outposts.</p> <p>The following action is related to
    * <code>GetObjectLegalHold</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
    * API Reference</a></p>
    */
@@ -3803,7 +4021,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Objects</a>.</p> <p>The following action is related to
    * <code>GetObjectLockConfiguration</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
    * API Reference</a></p>
    */
@@ -3839,7 +4061,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Outposts.</p> <p>The following action is related to
    * <code>GetObjectRetention</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
    * API Reference</a></p>
    */
@@ -3884,7 +4110,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">AWS
    * API Reference</a></p>
    */
@@ -3919,7 +4149,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * functionality is not supported for Amazon S3 on Outposts.</p> <p>The following
    * action is related to <code>GetObjectTorrent</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">AWS
    * API Reference</a></p>
    */
@@ -3969,7 +4203,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
    * API Reference</a></p>
    */
@@ -3996,12 +4234,16 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
 
   /**
    * <p>You can use this operation to determine if a bucket exists and if you have
-   * permission to access it. The action returns a <code>200 OK</code> if the bucket
-   * exists and you have permission to access it.</p>  <p>If the bucket does
-   * not exist or you do not have permission to access it, the <code>HEAD</code>
+   * permission to access it. The action returns a <code>200 OK</code> HTTP status
+   * code if the bucket exists and you have permission to access it. You can make a
+   * <code>HeadBucket</code> call on any bucket name to any Region in the partition,
+   * and regardless of the permissions on the bucket, you will receive a response
+   * header with the correct bucket location so that you can then make a proper,
+   * signed request to the appropriate Regional endpoint.</p>  <p>If the bucket
+   * doesn't exist or you don't have permission to access it, the <code>HEAD</code>
    * request returns a generic <code>400 Bad Request</code>, <code>403
-   * Forbidden</code> or <code>404 Not Found</code> code. A message body is not
-   * included, so you cannot determine the exception beyond these HTTP response
+   * Forbidden</code>, or <code>404 Not Found</code> HTTP status code. A message body
+   * isn't included, so you can't determine the exception beyond these HTTP response
    * codes.</p>  <dl> <dt>Authentication and authorization</dt> <dd> <p>
    * <b>General purpose buckets</b> - Request to public buckets that grant the
    * s3:ListBucket permission publicly do not need to be signed. All other
@@ -4048,7 +4290,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Zones, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
    * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
-   *  </dd> </dl><p><h3>See Also:</h3>   <a
+   *  </dd> </dl>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
    * Reference</a></p>
    */
@@ -4180,7 +4426,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">AWS API
    * Reference</a></p>
    */
@@ -4232,7 +4482,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">AWS
    * API Reference</a></p>
    */
@@ -4285,7 +4539,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">AWS
    * API Reference</a></p>
    */
@@ -4317,7 +4575,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Returns a list of S3 Inventory configurations for the bucket. You can have up
-   * to 1,000 analytics configurations per bucket.</p> <p>This action supports list
+   * to 1,000 inventory configurations per bucket.</p> <p>This action supports list
    * pagination and does not return more than 100 configurations at a time. Always
    * check the <code>IsTruncated</code> element in the response. If there are no more
    * configurations to list, <code>IsTruncated</code> is set to false. If there are
@@ -4342,7 +4600,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">AWS
    * API Reference</a></p>
    */
@@ -4400,7 +4662,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">AWS
    * API Reference</a></p>
    */
@@ -4429,8 +4695,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -4452,7 +4718,10 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * paginated <code>ListBuckets</code> requests to list your account’s buckets. All
    * unpaginated <code>ListBuckets</code> requests will be rejected for Amazon Web
    * Services accounts with a general purpose bucket quota greater than 10,000. </p>
-   * <p><h3>See Also:</h3>   <a
+   *   <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
    * Reference</a></p>
    */
@@ -4506,8 +4775,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * <p> <b>Directory buckets </b> - The HTTP Host header syntax is
    * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl>
    *  <p> The <code>BucketRegion</code> response element is not part of the
-   * <code>ListDirectoryBuckets</code> Response Syntax.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <code>ListDirectoryBuckets</code> Response Syntax.</p>
+   * <p>You must URL encode any signed header values that contain spaces. For
+   * example, if your header value is <code>my file.txt</code>, containing two spaces
+   * after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">AWS
    * API Reference</a></p>
    */
@@ -4534,8 +4806,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -4630,7 +4902,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">AWS
    * API Reference</a></p>
    */
@@ -4656,8 +4932,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -4682,7 +4958,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">AWS
    * API Reference</a></p>
    */
@@ -4708,8 +4988,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -4737,7 +5017,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">AWS API
    * Reference</a></p>
    */
@@ -4762,6 +5046,15 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
+   * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
+   * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
+   * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
+   * the following Amazon Web Services Regions: US East (N. Virginia) Region, US West
+   * (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+   * Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe
+   * (Ireland) Region, and South America (São Paulo) Region.</p>
    * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
    * request. You can use the request parameters as selection criteria to return a
    * subset of the objects in a bucket. A <code>200 OK</code> response can contain
@@ -4835,7 +5128,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">AWS
    * API Reference</a></p>
    */
@@ -4860,8 +5157,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * stop returning <code>DisplayName</code>. Update your applications to use
+   *  <p>End of support notice: Beginning November 21, 2025, Amazon S3
+   * will stop returning <code>DisplayName</code>. Update your applications to use
    * canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web
    * Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as
    * a direct replacement of <code>DisplayName</code>. </p> <p>This change affects
@@ -4939,7 +5236,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">AWS API
    * Reference</a></p>
    */
@@ -4992,7 +5293,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html">GetBucketAccelerateConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5021,18 +5326,16 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>   <p>This operation is not
-   * supported for directory buckets.</p>  <p>Sets the permissions on an
-   * existing bucket using access control lists (ACL). For more information, see <a
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>   <p>This operation is not supported for
+   * directory buckets.</p>  <p>Sets the permissions on an existing bucket
+   * using access control lists (ACL). For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
    * ACLs</a>. To set the ACL of a bucket, you must have the <code>WRITE_ACP</code>
    * permission.</p> <p>You can use one of the following two ways to set a bucket's
@@ -5124,7 +5427,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">AWS API
    * Reference</a></p>
    */
@@ -5194,7 +5501,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5259,7 +5570,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
    * API Reference</a></p>
    */
@@ -5389,7 +5704,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">AWS
    * API Reference</a></p>
    */
@@ -5452,7 +5771,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * <dt>HTTP 403 Forbidden Error</dt> <dd> <p> <i>Cause:</i> You are not the owner
    * of the specified bucket, or you do not have the
    * <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the
-   * configuration on the bucket. </p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * configuration on the bucket. </p> </dd> </dl>  <p>You must URL encode
+   * any signed header values that contain spaces. For example, if your header value
+   * is <code>my file.txt</code>, containing two spaces after <code>my</code>, you
+   * must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5540,7 +5863,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5655,7 +5982,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
-   * </p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul> </dd> </dl>  <p>You must URL encode any signed
+   * header values that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5684,25 +6015,23 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>   <p>This operation is not
-   * supported for directory buckets.</p>  <p>Set the logging parameters for a
-   * bucket and to specify permissions for who can view and modify the logging
-   * parameters. All logs are saved to buckets in the same Amazon Web Services Region
-   * as the source bucket. To set the logging status of a bucket, you must be the
-   * bucket owner.</p> <p>The bucket owner is automatically granted FULL_CONTROL to
-   * all logs. You use the <code>Grantee</code> request element to grant access to
-   * other people. The <code>Permissions</code> request element specifies the kind of
-   * access the grantee has to the logs.</p>  <p>If the target bucket for
-   * log delivery uses the bucket owner enforced setting for S3 Object Ownership, you
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>   <p>This operation is not supported for
+   * directory buckets.</p>  <p>Set the logging parameters for a bucket and to
+   * specify permissions for who can view and modify the logging parameters. All logs
+   * are saved to buckets in the same Amazon Web Services Region as the source
+   * bucket. To set the logging status of a bucket, you must be the bucket owner.</p>
+   * <p>The bucket owner is automatically granted FULL_CONTROL to all logs. You use
+   * the <code>Grantee</code> request element to grant access to other people. The
+   * <code>Permissions</code> request element specifies the kind of access the
+   * grantee has to the logs.</p>  <p>If the target bucket for log
+   * delivery uses the bucket owner enforced setting for S3 Object Ownership, you
    * can't use the <code>Grantee</code> request element to grant access to others.
    * Permissions can only be granted using policies. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
@@ -5745,7 +6074,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">AWS
    * API Reference</a></p>
    */
@@ -5798,7 +6131,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * <code>TooManyConfigurations</code> </p> <ul> <li> <p>Description: You are
    * attempting to create a new configuration but have already reached the
    * 1,000-configuration limit.</p> </li> <li> <p>HTTP Status Code: HTTP 400 Bad
-   * Request</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * Request</p> </li> </ul> </li> </ul>  <p>You must URL encode any
+   * signed header values that contain spaces. For example, if your header value is
+   * <code>my file.txt</code>, containing two spaces after <code>my</code>, you must
+   * URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5870,7 +6207,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * ID of the test notification sent to the topic.</p> <p>The following action is
    * related to <code>PutBucketNotificationConfiguration</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -5911,7 +6252,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * object ownership</a>. </p> <p>The following operations are related to
    * <code>PutBucketOwnershipControls</code>:</p> <ul> <li> <p>
    * <a>GetBucketOwnershipControls</a> </p> </li> <li> <p>
-   * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>DeleteBucketOwnershipControls</a> </p> </li> </ul>  <p>You must
+   * URL encode any signed header values that contain spaces. For example, if your
+   * header value is <code>my file.txt</code>, containing two spaces after
+   * <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">AWS
    * API Reference</a></p>
    */
@@ -5998,7 +6343,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
    * API Reference</a></p>
    */
@@ -6080,7 +6429,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
    * API Reference</a></p>
    */
@@ -6117,7 +6470,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">AWS
    * API Reference</a></p>
    */
@@ -6184,7 +6541,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">AWS
    * API Reference</a></p>
    */
@@ -6246,7 +6607,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">AWS
    * API Reference</a></p>
    */
@@ -6309,7 +6674,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * redirect. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring
    * an Object Redirect</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The maximum
-   * request length is limited to 128 KB.</p><p><h3>See Also:</h3>   <a
+   * request length is limited to 128 KB.</p>  <p>You must URL encode any
+   * signed header values that contain spaces. For example, if your header value is
+   * <code>my file.txt</code>, containing two spaces after <code>my</code>, you must
+   * URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">AWS
    * API Reference</a></p>
    */
@@ -6335,26 +6704,24 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   }
 
   /**
-   *  <p>End of support notice: Beginning October 1, 2025, Amazon S3 will
-   * discontinue support for creating new Email Grantee Access Control Lists (ACL).
-   * Email Grantee ACLs created prior to this date will continue to work and remain
-   * accessible through the Amazon Web Services Management Console, Command Line
-   * Interface (CLI), SDKs, and REST API. However, you will no longer be able to
-   * create new Email Grantee ACLs. </p> <p>This change affects the following Amazon
-   * Web Services Regions: US East (N. Virginia) Region, US West (N. California)
-   * Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific
-   * (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South
-   * America (São Paulo) Region.</p>  <p>Adds an object to a bucket.</p>
-   *  <ul> <li> <p>Amazon S3 never adds partial objects; if you receive a
-   * success response, Amazon S3 added the entire object to the bucket. You cannot
-   * use <code>PutObject</code> to only update a single piece of metadata for an
-   * existing object. You must put the entire object with updated metadata if you
-   * want to update some values.</p> </li> <li> <p>If your bucket uses the bucket
-   * owner enforced setting for Object Ownership, ACLs are disabled and no longer
-   * affect permissions. All objects written to the bucket by any account will be
-   * owned by the bucket owner.</p> </li> <li> <p> <b>Directory buckets</b> - For
-   * directory buckets, you must make requests for this API operation to the Zonal
-   * endpoint. These endpoints support virtual-hosted-style requests in the format
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>  <p>Adds an object to a bucket.</p>  <ul>
+   * <li> <p>Amazon S3 never adds partial objects; if you receive a success response,
+   * Amazon S3 added the entire object to the bucket. You cannot use
+   * <code>PutObject</code> to only update a single piece of metadata for an existing
+   * object. You must put the entire object with updated metadata if you want to
+   * update some values.</p> </li> <li> <p>If your bucket uses the bucket owner
+   * enforced setting for Object Ownership, ACLs are disabled and no longer affect
+   * permissions. All objects written to the bucket by any account will be owned by
+   * the bucket owner.</p> </li> <li> <p> <b>Directory buckets</b> - For directory
+   * buckets, you must make requests for this API operation to the Zonal endpoint.
+   * These endpoints support virtual-hosted-style requests in the format
    * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
    * </code>. Path-style requests are not supported. For more information about
    * endpoints in Availability Zones, see <a
@@ -6440,7 +6807,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">AWS API
    * Reference</a></p>
    */
@@ -6454,11 +6825,18 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Uses the <code>acl</code> subresource to set the access control list (ACL)
-   * permissions for a new or existing object in an S3 bucket. You must have the
-   * <code>WRITE_ACP</code> permission to set the ACL of an object. For more
-   * information, see <a
+   *  <p>End of support notice: As of October 1, 2025, Amazon S3 has
+   * discontinued support for Email Grantee Access Control Lists (ACLs). If you
+   * attempt to use an Email Grantee ACL in a request after October 1, 2025, the
+   * request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
+   * <p>This change affects the following Amazon Web Services Regions: US East (N.
+   * Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore),
+   * Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America
+   * (São Paulo).</p>   <p>This operation is not supported for
+   * directory buckets.</p>  <p>Uses the <code>acl</code> subresource to set
+   * the access control list (ACL) permissions for a new or existing object in an S3
+   * bucket. You must have the <code>WRITE_ACP</code> permission to set the ACL of an
+   * object. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What
    * permissions can I grant?</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
    * functionality is not supported for Amazon S3 on Outposts.</p> <p>Depending on
@@ -6549,7 +6927,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">AWS API
    * Reference</a></p>
    */
@@ -6579,7 +6961,10 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
    * Objects</a>.</p> <p>This functionality is not supported for Amazon S3 on
-   * Outposts.</p><p><h3>See Also:</h3>   <a
+   * Outposts.</p>  <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
    * API Reference</a></p>
    */
@@ -6617,7 +7002,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * and <code>Years</code> at the same time.</p> </li> <li> <p>You can enable Object
    * Lock for new or existing buckets. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html">Configuring
-   * Object Lock</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+   * Object Lock</a>.</p> </li> </ul>   <p>You must URL encode any
+   * signed header values that contain spaces. For example, if your header value is
+   * <code>my file.txt</code>, containing two spaces after <code>my</code>, you must
+   * URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
    * API Reference</a></p>
    */
@@ -6654,7 +7043,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * permission in order to place an Object Retention configuration on objects.
    * Bypassing a Governance Retention configuration requires the
    * <code>s3:BypassGovernanceRetention</code> permission. </p> <p>This functionality
-   * is not supported for Amazon S3 on Outposts.</p><p><h3>See Also:</h3>   <a
+   * is not supported for Amazon S3 on Outposts.</p>  <p>You must URL
+   * encode any signed header values that contain spaces. For example, if your header
+   * value is <code>my file.txt</code>, containing two spaces after <code>my</code>,
+   * you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
    * API Reference</a></p>
    */
@@ -6713,7 +7106,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
    * API Reference</a></p>
    */
@@ -6763,7 +7160,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">Using
-   * Amazon S3 Block Public Access</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Amazon S3 Block Public Access</a> </p> </li> </ul>  <p>You must URL
+   * encode any signed header values that contain spaces. For example, if your header
+   * value is <code>my file.txt</code>, containing two spaces after <code>my</code>,
+   * you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
    * API Reference</a></p>
    */
@@ -6829,7 +7230,10 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * Guide</i>. </p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory
    * buckets </b> - The HTTP Host header syntax is <code>
    * <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
-   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * </dd> </dl>  <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">AWS API
    * Reference</a></p>
    */
@@ -6966,7 +7370,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
    * API Reference</a></p>
    */
@@ -7066,7 +7474,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">AWS
    * API Reference</a></p>
    */
@@ -7124,7 +7536,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">AWS
    * API Reference</a></p>
    */
@@ -7174,7 +7590,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">AWS
    * API Reference</a></p>
    */
@@ -7339,7 +7759,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">AWS API
    * Reference</a></p>
    */
@@ -7506,7 +7930,11 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul>  <p>You must URL encode any signed header values
+   * that contain spaces. For example, if your header value is <code>my
+   * file.txt</code>, containing two spaces after <code>my</code>, you must URL
+   * encode this value to <code>my%20%20file.txt</code>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">AWS
    * API Reference</a></p>
    */
@@ -7573,7 +8001,10 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
    * functions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
    * Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p>  <p>You must URL encode any signed header values that
+   * contain spaces. For example, if your header value is <code>my file.txt</code>,
+   * containing two spaces after <code>my</code>, you must URL encode this value to
+   * <code>my%20%20file.txt</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">AWS
    * API Reference</a></p>
    */

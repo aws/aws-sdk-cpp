@@ -35,40 +35,6 @@ class DataflowEndpoint {
 
   ///@{
   /**
-   * <p>Socket address of a dataflow endpoint.</p>
-   */
-  inline const SocketAddress& GetAddress() const { return m_address; }
-  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-  template <typename AddressT = SocketAddress>
-  void SetAddress(AddressT&& value) {
-    m_addressHasBeenSet = true;
-    m_address = std::forward<AddressT>(value);
-  }
-  template <typename AddressT = SocketAddress>
-  DataflowEndpoint& WithAddress(AddressT&& value) {
-    SetAddress(std::forward<AddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-   */
-  inline int GetMtu() const { return m_mtu; }
-  inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
-  inline void SetMtu(int value) {
-    m_mtuHasBeenSet = true;
-    m_mtu = value;
-  }
-  inline DataflowEndpoint& WithMtu(int value) {
-    SetMtu(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Name of a dataflow endpoint.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -81,6 +47,24 @@ class DataflowEndpoint {
   template <typename NameT = Aws::String>
   DataflowEndpoint& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Socket address of a dataflow endpoint.</p>
+   */
+  inline const SocketAddress& GetAddress() const { return m_address; }
+  inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+  template <typename AddressT = SocketAddress>
+  void SetAddress(AddressT&& value) {
+    m_addressHasBeenSet = true;
+    m_address = std::forward<AddressT>(value);
+  }
+  template <typename AddressT = SocketAddress>
+  DataflowEndpoint& WithAddress(AddressT&& value) {
+    SetAddress(std::forward<AddressT>(value));
     return *this;
   }
   ///@}
@@ -100,18 +84,34 @@ class DataflowEndpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+   */
+  inline int GetMtu() const { return m_mtu; }
+  inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
+  inline void SetMtu(int value) {
+    m_mtuHasBeenSet = true;
+    m_mtu = value;
+  }
+  inline DataflowEndpoint& WithMtu(int value) {
+    SetMtu(value);
+    return *this;
+  }
+  ///@}
  private:
-  SocketAddress m_address;
-  bool m_addressHasBeenSet = false;
-
-  int m_mtu{0};
-  bool m_mtuHasBeenSet = false;
-
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
+  SocketAddress m_address;
+  bool m_addressHasBeenSet = false;
+
   EndpointStatus m_status{EndpointStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  int m_mtu{0};
+  bool m_mtuHasBeenSet = false;
 };
 
 }  // namespace Model

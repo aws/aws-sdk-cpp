@@ -12,6 +12,8 @@
 #include <aws/groundstation/model/ContactStatus.h>
 #include <aws/groundstation/model/DataflowDetail.h>
 #include <aws/groundstation/model/Elevation.h>
+#include <aws/groundstation/model/EphemerisResponseData.h>
+#include <aws/groundstation/model/TrackingOverrides.h>
 
 #include <utility>
 
@@ -56,112 +58,6 @@ class DescribeContactResult {
 
   ///@{
   /**
-   * <p>Status of a contact.</p>
-   */
-  inline ContactStatus GetContactStatus() const { return m_contactStatus; }
-  inline void SetContactStatus(ContactStatus value) {
-    m_contactStatusHasBeenSet = true;
-    m_contactStatus = value;
-  }
-  inline DescribeContactResult& WithContactStatus(ContactStatus value) {
-    SetContactStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>List describing source and destination details for each dataflow edge.</p>
-   */
-  inline const Aws::Vector<DataflowDetail>& GetDataflowList() const { return m_dataflowList; }
-  template <typename DataflowListT = Aws::Vector<DataflowDetail>>
-  void SetDataflowList(DataflowListT&& value) {
-    m_dataflowListHasBeenSet = true;
-    m_dataflowList = std::forward<DataflowListT>(value);
-  }
-  template <typename DataflowListT = Aws::Vector<DataflowDetail>>
-  DescribeContactResult& WithDataflowList(DataflowListT&& value) {
-    SetDataflowList(std::forward<DataflowListT>(value));
-    return *this;
-  }
-  template <typename DataflowListT = DataflowDetail>
-  DescribeContactResult& AddDataflowList(DataflowListT&& value) {
-    m_dataflowListHasBeenSet = true;
-    m_dataflowList.emplace_back(std::forward<DataflowListT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>End time of a contact in UTC.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  DescribeContactResult& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Error message for a contact.</p>
-   */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
-  }
-  template <typename ErrorMessageT = Aws::String>
-  DescribeContactResult& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Ground station for a contact.</p>
-   */
-  inline const Aws::String& GetGroundStation() const { return m_groundStation; }
-  template <typename GroundStationT = Aws::String>
-  void SetGroundStation(GroundStationT&& value) {
-    m_groundStationHasBeenSet = true;
-    m_groundStation = std::forward<GroundStationT>(value);
-  }
-  template <typename GroundStationT = Aws::String>
-  DescribeContactResult& WithGroundStation(GroundStationT&& value) {
-    SetGroundStation(std::forward<GroundStationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Maximum elevation angle of a contact.</p>
-   */
-  inline const Elevation& GetMaximumElevation() const { return m_maximumElevation; }
-  template <typename MaximumElevationT = Elevation>
-  void SetMaximumElevation(MaximumElevationT&& value) {
-    m_maximumElevationHasBeenSet = true;
-    m_maximumElevation = std::forward<MaximumElevationT>(value);
-  }
-  template <typename MaximumElevationT = Elevation>
-  DescribeContactResult& WithMaximumElevation(MaximumElevationT&& value) {
-    SetMaximumElevation(std::forward<MaximumElevationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>ARN of a mission profile.</p>
    */
   inline const Aws::String& GetMissionProfileArn() const { return m_missionProfileArn; }
@@ -173,59 +69,6 @@ class DescribeContactResult {
   template <typename MissionProfileArnT = Aws::String>
   DescribeContactResult& WithMissionProfileArn(MissionProfileArnT&& value) {
     SetMissionProfileArn(std::forward<MissionProfileArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-   * event indicating the pass has finished.</p>
-   */
-  inline const Aws::Utils::DateTime& GetPostPassEndTime() const { return m_postPassEndTime; }
-  template <typename PostPassEndTimeT = Aws::Utils::DateTime>
-  void SetPostPassEndTime(PostPassEndTimeT&& value) {
-    m_postPassEndTimeHasBeenSet = true;
-    m_postPassEndTime = std::forward<PostPassEndTimeT>(value);
-  }
-  template <typename PostPassEndTimeT = Aws::Utils::DateTime>
-  DescribeContactResult& WithPostPassEndTime(PostPassEndTimeT&& value) {
-    SetPostPassEndTime(std::forward<PostPassEndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Amount of time prior to contact start you’d like to receive a CloudWatch
-   * event indicating an upcoming pass.</p>
-   */
-  inline const Aws::Utils::DateTime& GetPrePassStartTime() const { return m_prePassStartTime; }
-  template <typename PrePassStartTimeT = Aws::Utils::DateTime>
-  void SetPrePassStartTime(PrePassStartTimeT&& value) {
-    m_prePassStartTimeHasBeenSet = true;
-    m_prePassStartTime = std::forward<PrePassStartTimeT>(value);
-  }
-  template <typename PrePassStartTimeT = Aws::Utils::DateTime>
-  DescribeContactResult& WithPrePassStartTime(PrePassStartTimeT&& value) {
-    SetPrePassStartTime(std::forward<PrePassStartTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Region of a contact.</p>
-   */
-  inline const Aws::String& GetRegion() const { return m_region; }
-  template <typename RegionT = Aws::String>
-  void SetRegion(RegionT&& value) {
-    m_regionHasBeenSet = true;
-    m_region = std::forward<RegionT>(value);
-  }
-  template <typename RegionT = Aws::String>
-  DescribeContactResult& WithRegion(RegionT&& value) {
-    SetRegion(std::forward<RegionT>(value));
     return *this;
   }
   ///@}
@@ -266,6 +109,125 @@ class DescribeContactResult {
 
   ///@{
   /**
+   * <p>End time of a contact in UTC.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  DescribeContactResult& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time prior to contact start you’d like to receive a CloudWatch
+   * event indicating an upcoming pass.</p>
+   */
+  inline const Aws::Utils::DateTime& GetPrePassStartTime() const { return m_prePassStartTime; }
+  template <typename PrePassStartTimeT = Aws::Utils::DateTime>
+  void SetPrePassStartTime(PrePassStartTimeT&& value) {
+    m_prePassStartTimeHasBeenSet = true;
+    m_prePassStartTime = std::forward<PrePassStartTimeT>(value);
+  }
+  template <typename PrePassStartTimeT = Aws::Utils::DateTime>
+  DescribeContactResult& WithPrePassStartTime(PrePassStartTimeT&& value) {
+    SetPrePassStartTime(std::forward<PrePassStartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+   * event indicating the pass has finished.</p>
+   */
+  inline const Aws::Utils::DateTime& GetPostPassEndTime() const { return m_postPassEndTime; }
+  template <typename PostPassEndTimeT = Aws::Utils::DateTime>
+  void SetPostPassEndTime(PostPassEndTimeT&& value) {
+    m_postPassEndTimeHasBeenSet = true;
+    m_postPassEndTime = std::forward<PostPassEndTimeT>(value);
+  }
+  template <typename PostPassEndTimeT = Aws::Utils::DateTime>
+  DescribeContactResult& WithPostPassEndTime(PostPassEndTimeT&& value) {
+    SetPostPassEndTime(std::forward<PostPassEndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Ground station for a contact.</p>
+   */
+  inline const Aws::String& GetGroundStation() const { return m_groundStation; }
+  template <typename GroundStationT = Aws::String>
+  void SetGroundStation(GroundStationT&& value) {
+    m_groundStationHasBeenSet = true;
+    m_groundStation = std::forward<GroundStationT>(value);
+  }
+  template <typename GroundStationT = Aws::String>
+  DescribeContactResult& WithGroundStation(GroundStationT&& value) {
+    SetGroundStation(std::forward<GroundStationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Status of a contact.</p>
+   */
+  inline ContactStatus GetContactStatus() const { return m_contactStatus; }
+  inline void SetContactStatus(ContactStatus value) {
+    m_contactStatusHasBeenSet = true;
+    m_contactStatus = value;
+  }
+  inline DescribeContactResult& WithContactStatus(ContactStatus value) {
+    SetContactStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Error message for a contact.</p>
+   */
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = Aws::String>
+  DescribeContactResult& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Maximum elevation angle of a contact.</p>
+   */
+  inline const Elevation& GetMaximumElevation() const { return m_maximumElevation; }
+  template <typename MaximumElevationT = Elevation>
+  void SetMaximumElevation(MaximumElevationT&& value) {
+    m_maximumElevationHasBeenSet = true;
+    m_maximumElevation = std::forward<MaximumElevationT>(value);
+  }
+  template <typename MaximumElevationT = Elevation>
+  DescribeContactResult& WithMaximumElevation(MaximumElevationT&& value) {
+    SetMaximumElevation(std::forward<MaximumElevationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags assigned to a contact.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -283,6 +245,67 @@ class DescribeContactResult {
   DescribeContactResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Region of a contact.</p>
+   */
+  inline const Aws::String& GetRegion() const { return m_region; }
+  template <typename RegionT = Aws::String>
+  void SetRegion(RegionT&& value) {
+    m_regionHasBeenSet = true;
+    m_region = std::forward<RegionT>(value);
+  }
+  template <typename RegionT = Aws::String>
+  DescribeContactResult& WithRegion(RegionT&& value) {
+    SetRegion(std::forward<RegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>List describing source and destination details for each dataflow edge.</p>
+   */
+  inline const Aws::Vector<DataflowDetail>& GetDataflowList() const { return m_dataflowList; }
+  template <typename DataflowListT = Aws::Vector<DataflowDetail>>
+  void SetDataflowList(DataflowListT&& value) {
+    m_dataflowListHasBeenSet = true;
+    m_dataflowList = std::forward<DataflowListT>(value);
+  }
+  template <typename DataflowListT = Aws::Vector<DataflowDetail>>
+  DescribeContactResult& WithDataflowList(DataflowListT&& value) {
+    SetDataflowList(std::forward<DataflowListT>(value));
+    return *this;
+  }
+  template <typename DataflowListT = DataflowDetail>
+  DescribeContactResult& AddDataflowList(DataflowListT&& value) {
+    m_dataflowListHasBeenSet = true;
+    m_dataflowList.emplace_back(std::forward<DataflowListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Projected time in UTC your satellite will rise above the <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+   * mask</a>. This time is based on the satellite's current active ephemeris for
+   * future contacts and the ephemeris that was active during contact execution for
+   * completed contacts. </p>
+   */
+  inline const Aws::Utils::DateTime& GetVisibilityStartTime() const { return m_visibilityStartTime; }
+  template <typename VisibilityStartTimeT = Aws::Utils::DateTime>
+  void SetVisibilityStartTime(VisibilityStartTimeT&& value) {
+    m_visibilityStartTimeHasBeenSet = true;
+    m_visibilityStartTime = std::forward<VisibilityStartTimeT>(value);
+  }
+  template <typename VisibilityStartTimeT = Aws::Utils::DateTime>
+  DescribeContactResult& WithVisibilityStartTime(VisibilityStartTimeT&& value) {
+    SetVisibilityStartTime(std::forward<VisibilityStartTimeT>(value));
     return *this;
   }
   ///@}
@@ -310,21 +333,35 @@ class DescribeContactResult {
 
   ///@{
   /**
-   * <p> Projected time in UTC your satellite will rise above the <a
-   * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
-   * mask</a>. This time is based on the satellite's current active ephemeris for
-   * future contacts and the ephemeris that was active during contact execution for
-   * completed contacts. </p>
+   * <p>Tracking configuration overrides specified when the contact was reserved.</p>
    */
-  inline const Aws::Utils::DateTime& GetVisibilityStartTime() const { return m_visibilityStartTime; }
-  template <typename VisibilityStartTimeT = Aws::Utils::DateTime>
-  void SetVisibilityStartTime(VisibilityStartTimeT&& value) {
-    m_visibilityStartTimeHasBeenSet = true;
-    m_visibilityStartTime = std::forward<VisibilityStartTimeT>(value);
+  inline const TrackingOverrides& GetTrackingOverrides() const { return m_trackingOverrides; }
+  template <typename TrackingOverridesT = TrackingOverrides>
+  void SetTrackingOverrides(TrackingOverridesT&& value) {
+    m_trackingOverridesHasBeenSet = true;
+    m_trackingOverrides = std::forward<TrackingOverridesT>(value);
   }
-  template <typename VisibilityStartTimeT = Aws::Utils::DateTime>
-  DescribeContactResult& WithVisibilityStartTime(VisibilityStartTimeT&& value) {
-    SetVisibilityStartTime(std::forward<VisibilityStartTimeT>(value));
+  template <typename TrackingOverridesT = TrackingOverrides>
+  DescribeContactResult& WithTrackingOverrides(TrackingOverridesT&& value) {
+    SetTrackingOverrides(std::forward<TrackingOverridesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ephemeris that determines antenna pointing directions for the
+   * contact.</p>
+   */
+  inline const EphemerisResponseData& GetEphemeris() const { return m_ephemeris; }
+  template <typename EphemerisT = EphemerisResponseData>
+  void SetEphemeris(EphemerisT&& value) {
+    m_ephemerisHasBeenSet = true;
+    m_ephemeris = std::forward<EphemerisT>(value);
+  }
+  template <typename EphemerisT = EphemerisResponseData>
+  DescribeContactResult& WithEphemeris(EphemerisT&& value) {
+    SetEphemeris(std::forward<EphemerisT>(value));
     return *this;
   }
   ///@}
@@ -347,35 +384,8 @@ class DescribeContactResult {
   Aws::String m_contactId;
   bool m_contactIdHasBeenSet = false;
 
-  ContactStatus m_contactStatus{ContactStatus::NOT_SET};
-  bool m_contactStatusHasBeenSet = false;
-
-  Aws::Vector<DataflowDetail> m_dataflowList;
-  bool m_dataflowListHasBeenSet = false;
-
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
-
-  Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
-
-  Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
-
-  Elevation m_maximumElevation;
-  bool m_maximumElevationHasBeenSet = false;
-
   Aws::String m_missionProfileArn;
   bool m_missionProfileArnHasBeenSet = false;
-
-  Aws::Utils::DateTime m_postPassEndTime{};
-  bool m_postPassEndTimeHasBeenSet = false;
-
-  Aws::Utils::DateTime m_prePassStartTime{};
-  bool m_prePassStartTimeHasBeenSet = false;
-
-  Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_satelliteArn;
   bool m_satelliteArnHasBeenSet = false;
@@ -383,14 +393,47 @@ class DescribeContactResult {
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
 
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_prePassStartTime{};
+  bool m_prePassStartTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_postPassEndTime{};
+  bool m_postPassEndTimeHasBeenSet = false;
+
+  Aws::String m_groundStation;
+  bool m_groundStationHasBeenSet = false;
+
+  ContactStatus m_contactStatus{ContactStatus::NOT_SET};
+  bool m_contactStatusHasBeenSet = false;
+
+  Aws::String m_errorMessage;
+  bool m_errorMessageHasBeenSet = false;
+
+  Elevation m_maximumElevation;
+  bool m_maximumElevationHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  Aws::String m_region;
+  bool m_regionHasBeenSet = false;
+
+  Aws::Vector<DataflowDetail> m_dataflowList;
+  bool m_dataflowListHasBeenSet = false;
+
+  Aws::Utils::DateTime m_visibilityStartTime{};
+  bool m_visibilityStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_visibilityEndTime{};
   bool m_visibilityEndTimeHasBeenSet = false;
 
-  Aws::Utils::DateTime m_visibilityStartTime{};
-  bool m_visibilityStartTimeHasBeenSet = false;
+  TrackingOverrides m_trackingOverrides;
+  bool m_trackingOverridesHasBeenSet = false;
+
+  EphemerisResponseData m_ephemeris;
+  bool m_ephemerisHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

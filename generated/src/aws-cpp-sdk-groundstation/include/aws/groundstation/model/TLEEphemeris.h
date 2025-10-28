@@ -22,7 +22,10 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p>Two-line element set (TLE) ephemeris.</p><p><h3>See Also:</h3>   <a
+ * <p>Two-line element set (TLE) ephemeris.</p> <p> For more detail about providing
+ * Two-line element sets to AWS Ground Station, see the <a
+ * href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-tle-ephemeris-data.html">TLE
+ * section</a> of the AWS Ground Station user guide. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TLEEphemeris">AWS
  * API Reference</a></p>
  */
@@ -35,7 +38,7 @@ class TLEEphemeris {
 
   ///@{
   /**
-   * <p>Identifies the S3 object to be used as the ephemeris.</p>
+   * <p>The Amazon S3 object that contains the ephemeris data.</p>
    */
   inline const S3Object& GetS3Object() const { return m_s3Object; }
   inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
@@ -53,8 +56,7 @@ class TLEEphemeris {
 
   ///@{
   /**
-   * <p>The data for a TLE ephemeris, supplied directly in the request rather than
-   * through an S3 object.</p>
+   * <p>TLE data that you provide directly instead of using an Amazon S3 object.</p>
    */
   inline const Aws::Vector<TLEData>& GetTleData() const { return m_tleData; }
   inline bool TleDataHasBeenSet() const { return m_tleDataHasBeenSet; }

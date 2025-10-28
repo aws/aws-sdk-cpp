@@ -18,10 +18,6 @@ namespace Model {
 ConfigListItem::ConfigListItem(JsonView jsonValue) { *this = jsonValue; }
 
 ConfigListItem& ConfigListItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("configArn")) {
-    m_configArn = jsonValue.GetString("configArn");
-    m_configArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("configId")) {
     m_configId = jsonValue.GetString("configId");
     m_configIdHasBeenSet = true;
@@ -29,6 +25,10 @@ ConfigListItem& ConfigListItem::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("configType")) {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
     m_configTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configArn")) {
+    m_configArn = jsonValue.GetString("configArn");
+    m_configArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
@@ -40,16 +40,16 @@ ConfigListItem& ConfigListItem::operator=(JsonView jsonValue) {
 JsonValue ConfigListItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_configArnHasBeenSet) {
-    payload.WithString("configArn", m_configArn);
-  }
-
   if (m_configIdHasBeenSet) {
     payload.WithString("configId", m_configId);
   }
 
   if (m_configTypeHasBeenSet) {
     payload.WithString("configType", ConfigCapabilityTypeMapper::GetNameForConfigCapabilityType(m_configType));
+  }
+
+  if (m_configArnHasBeenSet) {
+    payload.WithString("configArn", m_configArn);
   }
 
   if (m_nameHasBeenSet) {

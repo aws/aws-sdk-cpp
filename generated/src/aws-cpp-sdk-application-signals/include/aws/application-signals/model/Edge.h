@@ -21,9 +21,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A structure that represents a connection between two nodes in a dependency
- * graph, showing the relationship and characteristics of the
- * connection.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a connection between two nodes in a dependency graph, showing how
+ * services or components interact with each other.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/Edge">AWS
  * API Reference</a></p>
  */
@@ -36,7 +35,7 @@ class Edge {
 
   ///@{
   /**
-   * <p>The identifier of the source node in this edge connection.</p>
+   * <p>The identifier of the source node in the dependency relationship.</p>
    */
   inline const Aws::String& GetSourceNodeId() const { return m_sourceNodeId; }
   inline bool SourceNodeIdHasBeenSet() const { return m_sourceNodeIdHasBeenSet; }
@@ -54,7 +53,7 @@ class Edge {
 
   ///@{
   /**
-   * <p>The identifier of the destination node in this edge connection.</p>
+   * <p>The identifier of the destination node in the dependency relationship.</p>
    */
   inline const Aws::String& GetDestinationNodeId() const { return m_destinationNodeId; }
   inline bool DestinationNodeIdHasBeenSet() const { return m_destinationNodeIdHasBeenSet; }
@@ -72,7 +71,8 @@ class Edge {
 
   ///@{
   /**
-   * <p>The duration or latency associated with this connection, if applicable.</p>
+   * <p>The typical duration or latency of interactions along this edge, measured in
+   * milliseconds.</p>
    */
   inline double GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -88,8 +88,8 @@ class Edge {
 
   ///@{
   /**
-   * <p>The type of connection between the nodes, indicating the nature of the
-   * relationship.</p>
+   * <p>The type of connection between the nodes, such as "HTTP", "Database",
+   * "Queue", or "Internal".</p>
    */
   inline ConnectionType GetConnectionType() const { return m_connectionType; }
   inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }

@@ -21,10 +21,6 @@ GetMinuteUsageResult::GetMinuteUsageResult(const Aws::AmazonWebServiceResult<Jso
 
 GetMinuteUsageResult& GetMinuteUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("estimatedMinutesRemaining")) {
-    m_estimatedMinutesRemaining = jsonValue.GetInteger("estimatedMinutesRemaining");
-    m_estimatedMinutesRemainingHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isReservedMinutesCustomer")) {
     m_isReservedMinutesCustomer = jsonValue.GetBool("isReservedMinutesCustomer");
     m_isReservedMinutesCustomerHasBeenSet = true;
@@ -33,13 +29,17 @@ GetMinuteUsageResult& GetMinuteUsageResult::operator=(const Aws::AmazonWebServic
     m_totalReservedMinuteAllocation = jsonValue.GetInteger("totalReservedMinuteAllocation");
     m_totalReservedMinuteAllocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("upcomingMinutesScheduled")) {
+    m_upcomingMinutesScheduled = jsonValue.GetInteger("upcomingMinutesScheduled");
+    m_upcomingMinutesScheduledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("totalScheduledMinutes")) {
     m_totalScheduledMinutes = jsonValue.GetInteger("totalScheduledMinutes");
     m_totalScheduledMinutesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("upcomingMinutesScheduled")) {
-    m_upcomingMinutesScheduled = jsonValue.GetInteger("upcomingMinutesScheduled");
-    m_upcomingMinutesScheduledHasBeenSet = true;
+  if (jsonValue.ValueExists("estimatedMinutesRemaining")) {
+    m_estimatedMinutesRemaining = jsonValue.GetInteger("estimatedMinutesRemaining");
+    m_estimatedMinutesRemainingHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

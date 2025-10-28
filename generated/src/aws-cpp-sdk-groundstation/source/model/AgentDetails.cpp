@@ -18,23 +18,9 @@ namespace Model {
 AgentDetails::AgentDetails(JsonView jsonValue) { *this = jsonValue; }
 
 AgentDetails& AgentDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("agentCpuCores")) {
-    Aws::Utils::Array<JsonView> agentCpuCoresJsonList = jsonValue.GetArray("agentCpuCores");
-    for (unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex) {
-      m_agentCpuCores.push_back(agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger());
-    }
-    m_agentCpuCoresHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("agentVersion")) {
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("componentVersions")) {
-    Aws::Utils::Array<JsonView> componentVersionsJsonList = jsonValue.GetArray("componentVersions");
-    for (unsigned componentVersionsIndex = 0; componentVersionsIndex < componentVersionsJsonList.GetLength(); ++componentVersionsIndex) {
-      m_componentVersions.push_back(componentVersionsJsonList[componentVersionsIndex].AsObject());
-    }
-    m_componentVersionsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("instanceId")) {
     m_instanceId = jsonValue.GetString("instanceId");
@@ -51,30 +37,28 @@ AgentDetails& AgentDetails::operator=(JsonView jsonValue) {
     }
     m_reservedCpuCoresHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("agentCpuCores")) {
+    Aws::Utils::Array<JsonView> agentCpuCoresJsonList = jsonValue.GetArray("agentCpuCores");
+    for (unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex) {
+      m_agentCpuCores.push_back(agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger());
+    }
+    m_agentCpuCoresHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("componentVersions")) {
+    Aws::Utils::Array<JsonView> componentVersionsJsonList = jsonValue.GetArray("componentVersions");
+    for (unsigned componentVersionsIndex = 0; componentVersionsIndex < componentVersionsJsonList.GetLength(); ++componentVersionsIndex) {
+      m_componentVersions.push_back(componentVersionsJsonList[componentVersionsIndex].AsObject());
+    }
+    m_componentVersionsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AgentDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_agentCpuCoresHasBeenSet) {
-    Aws::Utils::Array<JsonValue> agentCpuCoresJsonList(m_agentCpuCores.size());
-    for (unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex) {
-      agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger(m_agentCpuCores[agentCpuCoresIndex]);
-    }
-    payload.WithArray("agentCpuCores", std::move(agentCpuCoresJsonList));
-  }
-
   if (m_agentVersionHasBeenSet) {
     payload.WithString("agentVersion", m_agentVersion);
-  }
-
-  if (m_componentVersionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> componentVersionsJsonList(m_componentVersions.size());
-    for (unsigned componentVersionsIndex = 0; componentVersionsIndex < componentVersionsJsonList.GetLength(); ++componentVersionsIndex) {
-      componentVersionsJsonList[componentVersionsIndex].AsObject(m_componentVersions[componentVersionsIndex].Jsonize());
-    }
-    payload.WithArray("componentVersions", std::move(componentVersionsJsonList));
   }
 
   if (m_instanceIdHasBeenSet) {
@@ -91,6 +75,22 @@ JsonValue AgentDetails::Jsonize() const {
       reservedCpuCoresJsonList[reservedCpuCoresIndex].AsInteger(m_reservedCpuCores[reservedCpuCoresIndex]);
     }
     payload.WithArray("reservedCpuCores", std::move(reservedCpuCoresJsonList));
+  }
+
+  if (m_agentCpuCoresHasBeenSet) {
+    Aws::Utils::Array<JsonValue> agentCpuCoresJsonList(m_agentCpuCores.size());
+    for (unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex) {
+      agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger(m_agentCpuCores[agentCpuCoresIndex]);
+    }
+    payload.WithArray("agentCpuCores", std::move(agentCpuCoresJsonList));
+  }
+
+  if (m_componentVersionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> componentVersionsJsonList(m_componentVersions.size());
+    for (unsigned componentVersionsIndex = 0; componentVersionsIndex < componentVersionsJsonList.GetLength(); ++componentVersionsIndex) {
+      componentVersionsJsonList[componentVersionsIndex].AsObject(m_componentVersions[componentVersionsIndex].Jsonize());
+    }
+    payload.WithArray("componentVersions", std::move(componentVersionsJsonList));
   }
 
   return payload;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GameLiftStreams {
 namespace Model {
-enum class StreamGroupStatus { NOT_SET, ACTIVATING, UPDATING_LOCATIONS, ACTIVE, ACTIVE_WITH_ERRORS, ERROR_, DELETING };
+enum class StreamGroupStatus { NOT_SET, ACTIVATING, UPDATING_LOCATIONS, ACTIVE, ACTIVE_WITH_ERRORS, ERROR_, DELETING, EXPIRED };
 
 namespace StreamGroupStatusMapper {
 AWS_GAMELIFTSTREAMS_API StreamGroupStatus GetStreamGroupStatusForName(const Aws::String& name);

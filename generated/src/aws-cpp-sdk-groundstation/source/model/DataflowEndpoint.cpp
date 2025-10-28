@@ -18,21 +18,21 @@ namespace Model {
 DataflowEndpoint::DataflowEndpoint(JsonView jsonValue) { *this = jsonValue; }
 
 DataflowEndpoint& DataflowEndpoint::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("address")) {
-    m_address = jsonValue.GetObject("address");
-    m_addressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("mtu")) {
-    m_mtu = jsonValue.GetInteger("mtu");
-    m_mtuHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("address")) {
+    m_address = jsonValue.GetObject("address");
+    m_addressHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mtu")) {
+    m_mtu = jsonValue.GetInteger("mtu");
+    m_mtuHasBeenSet = true;
   }
   return *this;
 }
@@ -40,20 +40,20 @@ DataflowEndpoint& DataflowEndpoint::operator=(JsonView jsonValue) {
 JsonValue DataflowEndpoint::Jsonize() const {
   JsonValue payload;
 
-  if (m_addressHasBeenSet) {
-    payload.WithObject("address", m_address.Jsonize());
-  }
-
-  if (m_mtuHasBeenSet) {
-    payload.WithInteger("mtu", m_mtu);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
+  if (m_addressHasBeenSet) {
+    payload.WithObject("address", m_address.Jsonize());
+  }
+
   if (m_statusHasBeenSet) {
     payload.WithString("status", EndpointStatusMapper::GetNameForEndpointStatus(m_status));
+  }
+
+  if (m_mtuHasBeenSet) {
+    payload.WithInteger("mtu", m_mtu);
   }
 
   return payload;

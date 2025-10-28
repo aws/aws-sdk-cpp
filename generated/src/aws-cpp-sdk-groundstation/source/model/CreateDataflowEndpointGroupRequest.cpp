@@ -15,14 +15,6 @@ using namespace Aws::Utils;
 Aws::String CreateDataflowEndpointGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_contactPostPassDurationSecondsHasBeenSet) {
-    payload.WithInteger("contactPostPassDurationSeconds", m_contactPostPassDurationSeconds);
-  }
-
-  if (m_contactPrePassDurationSecondsHasBeenSet) {
-    payload.WithInteger("contactPrePassDurationSeconds", m_contactPrePassDurationSeconds);
-  }
-
   if (m_endpointDetailsHasBeenSet) {
     Aws::Utils::Array<JsonValue> endpointDetailsJsonList(m_endpointDetails.size());
     for (unsigned endpointDetailsIndex = 0; endpointDetailsIndex < endpointDetailsJsonList.GetLength(); ++endpointDetailsIndex) {
@@ -37,6 +29,14 @@ Aws::String CreateDataflowEndpointGroupRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_contactPrePassDurationSecondsHasBeenSet) {
+    payload.WithInteger("contactPrePassDurationSeconds", m_contactPrePassDurationSeconds);
+  }
+
+  if (m_contactPostPassDurationSecondsHasBeenSet) {
+    payload.WithInteger("contactPostPassDurationSeconds", m_contactPostPassDurationSeconds);
   }
 
   return payload.View().WriteReadable();

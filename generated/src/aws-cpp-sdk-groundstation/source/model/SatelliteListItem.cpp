@@ -18,9 +18,17 @@ namespace Model {
 SatelliteListItem::SatelliteListItem(JsonView jsonValue) { *this = jsonValue; }
 
 SatelliteListItem& SatelliteListItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("currentEphemeris")) {
-    m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
-    m_currentEphemerisHasBeenSet = true;
+  if (jsonValue.ValueExists("satelliteId")) {
+    m_satelliteId = jsonValue.GetString("satelliteId");
+    m_satelliteIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("satelliteArn")) {
+    m_satelliteArn = jsonValue.GetString("satelliteArn");
+    m_satelliteArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("noradSatelliteID")) {
+    m_noradSatelliteID = jsonValue.GetInteger("noradSatelliteID");
+    m_noradSatelliteIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("groundStations")) {
     Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
@@ -29,17 +37,9 @@ SatelliteListItem& SatelliteListItem::operator=(JsonView jsonValue) {
     }
     m_groundStationsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("noradSatelliteID")) {
-    m_noradSatelliteID = jsonValue.GetInteger("noradSatelliteID");
-    m_noradSatelliteIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("satelliteArn")) {
-    m_satelliteArn = jsonValue.GetString("satelliteArn");
-    m_satelliteArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("satelliteId")) {
-    m_satelliteId = jsonValue.GetString("satelliteId");
-    m_satelliteIdHasBeenSet = true;
+  if (jsonValue.ValueExists("currentEphemeris")) {
+    m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
+    m_currentEphemerisHasBeenSet = true;
   }
   return *this;
 }
@@ -47,8 +47,16 @@ SatelliteListItem& SatelliteListItem::operator=(JsonView jsonValue) {
 JsonValue SatelliteListItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_currentEphemerisHasBeenSet) {
-    payload.WithObject("currentEphemeris", m_currentEphemeris.Jsonize());
+  if (m_satelliteIdHasBeenSet) {
+    payload.WithString("satelliteId", m_satelliteId);
+  }
+
+  if (m_satelliteArnHasBeenSet) {
+    payload.WithString("satelliteArn", m_satelliteArn);
+  }
+
+  if (m_noradSatelliteIDHasBeenSet) {
+    payload.WithInteger("noradSatelliteID", m_noradSatelliteID);
   }
 
   if (m_groundStationsHasBeenSet) {
@@ -59,16 +67,8 @@ JsonValue SatelliteListItem::Jsonize() const {
     payload.WithArray("groundStations", std::move(groundStationsJsonList));
   }
 
-  if (m_noradSatelliteIDHasBeenSet) {
-    payload.WithInteger("noradSatelliteID", m_noradSatelliteID);
-  }
-
-  if (m_satelliteArnHasBeenSet) {
-    payload.WithString("satelliteArn", m_satelliteArn);
-  }
-
-  if (m_satelliteIdHasBeenSet) {
-    payload.WithString("satelliteId", m_satelliteId);
+  if (m_currentEphemerisHasBeenSet) {
+    payload.WithObject("currentEphemeris", m_currentEphemeris.Jsonize());
   }
 
   return payload;

@@ -35,6 +35,24 @@ class ListContactsResult {
 
   ///@{
   /**
+   * <p>Next token returned in the response of a previous <code>ListContacts</code>
+   * call. Used to get the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListContactsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of contacts.</p>
    */
   inline const Aws::Vector<ContactData>& GetContactList() const { return m_contactList; }
@@ -57,24 +75,6 @@ class ListContactsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>Next token returned in the response of a previous <code>ListContacts</code>
-   * call. Used to get the next page of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListContactsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -89,11 +89,11 @@ class ListContactsResult {
   }
   ///@}
  private:
-  Aws::Vector<ContactData> m_contactList;
-  bool m_contactListHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<ContactData> m_contactList;
+  bool m_contactListHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
