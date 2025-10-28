@@ -21,6 +21,12 @@ AWS_ROLE_SESSION_NAME="$3"
 
 echo "Setting the run environment"
 export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${AWS_ACCOUNT}:role/IntegrationTest
+BUILD_TYPE=$(cat build-request.json | jq .buildType | tr -d '"')
+echo "Build type: ${BUILD_TYPE}"
+pushd ${PREFIX_DIR}/aws-sdk-cpp
+if [ "${BUILD_TYPE}" = "PREVIEW" ]; then SERVICE_ID=$(git status generated/src/aws-cpp-sdk-* --porcelain | grep "generated/src/" | sed -n 's|.*generated/src/aws-cpp-sdk-\([^/]*\).*|\1|p' | sort -u | tr "\n" "," | sed "s/,$//"); else SERVICE_ID=""; fi
+popd
+echo "Service ID: ${SERVICE_ID}"
 export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/tests/aws-cpp-sdk-lambda-integration-tests/resources
 export sts=$(aws sts assume-role --role-arn "$TEST_ASSUME_ROLE_ARN" --role-session-name "${AWS_ROLE_SESSION_NAME}" --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]')
 export profile=sdk-integ-test
@@ -32,4 +38,4 @@ export AWS_PROFILE=$profile
 export DYLD_LIBRARY_PATH="${CATAPULT_WORKSPACE_DIR}/mac-install/lib:${CATAPULT_WORKSPACE_DIR}/mac-build/tests/testing-resources/"
 cd "${PREFIX_DIR}/mac-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests
+python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests --serviceId ${SERVICE_ID:-""}
