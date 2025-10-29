@@ -7,8 +7,10 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/CitationsDelta.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlockDelta.h>
+#include <aws/bedrock-runtime/model/ToolResultBlockDelta.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockDelta.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -72,6 +74,30 @@ class ContentBlockDelta {
 
   ///@{
   /**
+   * <p>An incremental update that contains the results from a tool call.</p>
+   */
+  inline const Aws::Vector<ToolResultBlockDelta>& GetToolResult() const { return m_toolResult; }
+  inline bool ToolResultHasBeenSet() const { return m_toolResultHasBeenSet; }
+  template <typename ToolResultT = Aws::Vector<ToolResultBlockDelta>>
+  void SetToolResult(ToolResultT&& value) {
+    m_toolResultHasBeenSet = true;
+    m_toolResult = std::forward<ToolResultT>(value);
+  }
+  template <typename ToolResultT = Aws::Vector<ToolResultBlockDelta>>
+  ContentBlockDelta& WithToolResult(ToolResultT&& value) {
+    SetToolResult(std::forward<ToolResultT>(value));
+    return *this;
+  }
+  template <typename ToolResultT = ToolResultBlockDelta>
+  ContentBlockDelta& AddToolResult(ToolResultT&& value) {
+    m_toolResultHasBeenSet = true;
+    m_toolResult.emplace_back(std::forward<ToolResultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains content regarding the reasoning that is carried out by the model.
    * Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance
    * the accuracy of its final response.</p>
@@ -114,6 +140,9 @@ class ContentBlockDelta {
 
   ToolUseBlockDelta m_toolUse;
   bool m_toolUseHasBeenSet = false;
+
+  Aws::Vector<ToolResultBlockDelta> m_toolResult;
+  bool m_toolResultHasBeenSet = false;
 
   ReasoningContentBlockDelta m_reasoningContent;
   bool m_reasoningContentHasBeenSet = false;

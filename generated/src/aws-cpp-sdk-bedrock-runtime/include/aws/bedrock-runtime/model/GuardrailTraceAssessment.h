@@ -23,8 +23,9 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>A Top level guardrail trace object. For more information, see
- * <a>ConverseTrace</a>.</p><p><h3>See Also:</h3>   <a
+ * <p>A Top level guardrail trace object. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseTrace.html">ConverseTrace</a>.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GuardrailTraceAssessment">AWS
  * API Reference</a></p>
  */

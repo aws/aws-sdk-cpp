@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/ToolResultBlockStart.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockStart.h>
 
 #include <utility>
@@ -48,9 +49,30 @@ class ContentBlockStart {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The </p>
+   */
+  inline const ToolResultBlockStart& GetToolResult() const { return m_toolResult; }
+  inline bool ToolResultHasBeenSet() const { return m_toolResultHasBeenSet; }
+  template <typename ToolResultT = ToolResultBlockStart>
+  void SetToolResult(ToolResultT&& value) {
+    m_toolResultHasBeenSet = true;
+    m_toolResult = std::forward<ToolResultT>(value);
+  }
+  template <typename ToolResultT = ToolResultBlockStart>
+  ContentBlockStart& WithToolResult(ToolResultT&& value) {
+    SetToolResult(std::forward<ToolResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ToolUseBlockStart m_toolUse;
   bool m_toolUseHasBeenSet = false;
+
+  ToolResultBlockStart m_toolResult;
+  bool m_toolResultHasBeenSet = false;
 };
 
 }  // namespace Model

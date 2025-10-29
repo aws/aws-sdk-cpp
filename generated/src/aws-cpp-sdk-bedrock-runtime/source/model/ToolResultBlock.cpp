@@ -33,6 +33,10 @@ ToolResultBlock& ToolResultBlock::operator=(JsonView jsonValue) {
     m_status = ToolResultStatusMapper::GetToolResultStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue ToolResultBlock::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", ToolResultStatusMapper::GetNameForToolResultStatus(m_status));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;

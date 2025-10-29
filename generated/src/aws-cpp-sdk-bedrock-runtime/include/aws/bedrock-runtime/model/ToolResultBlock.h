@@ -24,7 +24,10 @@ namespace Model {
 
 /**
  * <p>A tool result block that contains the results for a tool request that the
- * model previously made.</p><p><h3>See Also:</h3>   <a
+ * model previously made. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
+ * tool with the Converse API</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolResultBlock">AWS
  * API Reference</a></p>
  */
@@ -37,7 +40,7 @@ class ToolResultBlock {
 
   ///@{
   /**
-   * <p>The ID of the tool request that this is the result for.</p>
+   * <p>The ID of the tool request that this is the result for. </p>
    */
   inline const Aws::String& GetToolUseId() const { return m_toolUseId; }
   inline bool ToolUseIdHasBeenSet() const { return m_toolUseIdHasBeenSet; }
@@ -80,7 +83,7 @@ class ToolResultBlock {
   ///@{
   /**
    * <p>The status for the tool result content block.</p>  <p>This field is
-   * only supported Anthropic Claude 3 models.</p>
+   * only supported by Amazon Nova and Anthropic Claude 3 and 4 models.</p>
    */
   inline ToolResultStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -93,6 +96,24 @@ class ToolResultBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type for the tool result content block.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  ToolResultBlock& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_toolUseId;
   bool m_toolUseIdHasBeenSet = false;
@@ -102,6 +123,9 @@ class ToolResultBlock {
 
   ToolResultStatus m_status{ToolResultStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

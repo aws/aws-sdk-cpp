@@ -24,7 +24,10 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>The tool result content block.</p><p><h3>See Also:</h3>   <a
+ * <p>The tool result content block. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
+ * tool with the Converse API</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolResultContentBlock">AWS
  * API Reference</a></p>
  */
@@ -37,7 +40,7 @@ class ToolResultContentBlock {
 
   ///@{
   /**
-   * <p>A tool result that is JSON format data.</p>
+   * <p>A tool result that is JSON format data. </p>
    */
   inline Aws::Utils::DocumentView GetJson() const { return m_json; }
   inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
@@ -55,7 +58,7 @@ class ToolResultContentBlock {
 
   ///@{
   /**
-   * <p>A tool result that is text.</p>
+   * <p>A tool result that is text. </p>
    */
   inline const Aws::String& GetText() const { return m_text; }
   inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
@@ -73,8 +76,8 @@ class ToolResultContentBlock {
 
   ///@{
   /**
-   * <p>A tool result that is an image.</p>  <p>This field is only supported by
-   * Anthropic Claude 3 models.</p>
+   * <p>A tool result that is an image. </p>  <p>This field is only supported
+   * by Amazon Nova and Anthropic Claude 3 and 4 models.</p>
    */
   inline const ImageBlock& GetImage() const { return m_image; }
   inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }

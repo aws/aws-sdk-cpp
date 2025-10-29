@@ -18,6 +18,10 @@ namespace Model {
 CitationLocation::CitationLocation(JsonView jsonValue) { *this = jsonValue; }
 
 CitationLocation& CitationLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("web")) {
+    m_web = jsonValue.GetObject("web");
+    m_webHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("documentChar")) {
     m_documentChar = jsonValue.GetObject("documentChar");
     m_documentCharHasBeenSet = true;
@@ -35,6 +39,10 @@ CitationLocation& CitationLocation::operator=(JsonView jsonValue) {
 
 JsonValue CitationLocation::Jsonize() const {
   JsonValue payload;
+
+  if (m_webHasBeenSet) {
+    payload.WithObject("web", m_web.Jsonize());
+  }
 
   if (m_documentCharHasBeenSet) {
     payload.WithObject("documentChar", m_documentChar.Jsonize());

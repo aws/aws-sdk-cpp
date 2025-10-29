@@ -186,7 +186,7 @@ class ConverseStreamOutput {
    * <p>The input fails to satisfy the constraints specified by <i>Amazon
    * Bedrock</i>. For troubleshooting this error, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
-   * in the Amazon Bedrock User Guide</p>
+   * in the Amazon Bedrock User Guide.</p>
    */
   inline const BedrockRuntimeError& GetValidationException() const { return m_validationException; }
   inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
@@ -207,7 +207,7 @@ class ConverseStreamOutput {
    * <p>Your request was denied due to exceeding the account quotas for <i>Amazon
    * Bedrock</i>. For troubleshooting this error, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
-   * in the Amazon Bedrock User Guide</p>
+   * in the Amazon Bedrock User Guide.</p>
    */
   inline const BedrockRuntimeError& GetThrottlingException() const { return m_throttlingException; }
   inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }

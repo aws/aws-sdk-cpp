@@ -22,8 +22,9 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>Configuration information for a guardrail that you use with the
- * <a>ConverseStream</a> action. </p><p><h3>See Also:</h3>   <a
+ * <p>Configuration information for a guardrail that you use with the <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+ * action. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GuardrailStreamConfiguration">AWS
  * API Reference</a></p>
  */

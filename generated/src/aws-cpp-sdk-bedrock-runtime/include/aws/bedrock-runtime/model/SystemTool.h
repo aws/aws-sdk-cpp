@@ -20,25 +20,22 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>The model must request a specific tool. For example, <code>{"tool" : {"name"
- * : "Your tool name"}}</code>. For more information, see <a
- * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
- * tool with the Converse API</a> in the Amazon Bedrock User Guide</p>
- * <p>This field is only supported by Anthropic Claude 3 models.</p>
- * <p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/SpecificToolChoice">AWS
+ * <p>Specifies a system-defined tool for the model to use. <i>System-defined
+ * tools</i> are tools that are created and provided by the model
+ * provider.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/SystemTool">AWS
  * API Reference</a></p>
  */
-class SpecificToolChoice {
+class SystemTool {
  public:
-  AWS_BEDROCKRUNTIME_API SpecificToolChoice() = default;
-  AWS_BEDROCKRUNTIME_API SpecificToolChoice(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BEDROCKRUNTIME_API SpecificToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKRUNTIME_API SystemTool() = default;
+  AWS_BEDROCKRUNTIME_API SystemTool(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKRUNTIME_API SystemTool& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
   /**
-   * <p>The name of the tool that the model must request. </p>
+   * <p>The name of the system-defined tool that you want to call. </p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -48,7 +45,7 @@ class SpecificToolChoice {
     m_name = std::forward<NameT>(value);
   }
   template <typename NameT = Aws::String>
-  SpecificToolChoice& WithName(NameT&& value) {
+  SystemTool& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
     return *this;
   }

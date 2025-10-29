@@ -23,7 +23,8 @@ namespace Model {
 
 /**
  * <p>A text block that contains text that you want to assess with a guardrail. For
- * more information, see <a>GuardrailConverseContentBlock</a>.</p><p><h3>See
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_GuardrailConverseContentBlock.html">GuardrailConverseContentBlock</a>.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GuardrailConverseTextBlock">AWS
  * API Reference</a></p>
