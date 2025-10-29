@@ -6,14 +6,16 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/Region.h>
+#include <aws/core/http/HttpTypes.h>
 #include <aws/core/http/Scheme.h>
 #include <aws/core/http/Version.h>
-#include <aws/core/Region.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/Optional.h>
 #include <smithy/tracing/TelemetryProvider.h>
+
 #include <memory>
 
 namespace Aws
@@ -447,6 +449,16 @@ namespace Aws
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey, const Aws::String& profile,
                                                           const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
+            /**
+             * A helper function to read config value from env variable or aws profile config. Addresses a problem in
+             * LoadConfigFromEnvOrProfile where env variables values are always mapped to their lower case equivalent.
+             * This fails for cases where ENV vars need to be case sensitive in instances like AWS_ROLE_ARN can have
+             * camel case values.
+             */
+            static Aws::String LoadConfigFromEnvOrProfileCaseSensitive(
+                const Aws::String& envKey, const Aws::String& profile, const Aws::String& profileProperty,
+                const Aws::Vector<Aws::String>& allowedValues, const Aws::String& defaultValue,
+                const std::function<Aws::String(const char*)>& envValueMapping = Utils::StringUtils::ToLower);
 
             /**
              * A wrapper for interfacing with telemetry functionality. Defaults to Noop provider.

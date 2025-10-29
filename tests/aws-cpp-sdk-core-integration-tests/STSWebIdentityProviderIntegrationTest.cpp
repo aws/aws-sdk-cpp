@@ -6,8 +6,9 @@
 #include <aws/cognito-identity/model/SetIdentityPoolRolesRequest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/iam/model/CreateRoleRequest.h>
 #include <aws/iam/model/DeleteRolePolicyRequest.h>
@@ -16,10 +17,12 @@
 #include <aws/sts/STSClient.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/platform/PlatformTesting.h>
 #include <gtest/gtest.h>
 
 using namespace Aws;
 using namespace Aws::Client;
+using namespace Aws::Environment;
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 using namespace Aws::IAM;
@@ -156,6 +159,46 @@ TEST_F(STSWebIdentityProviderIntegrationTest, ShouldWork) {
   config.credentialProviderConfig.region = config.region;
   config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = testResourcesRAII.GetRoleArn();
   config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = testResourcesRAII.GetTokenFileName();
+  STSAssumeRoleWebIdentityCredentialsProvider provider{config.credentialProviderConfig};
+  AWSCredentials credentials{};
+  size_t attempts = 0;
+  bool shouldSleep = false;
+  do {
+    if (shouldSleep) {
+      std::this_thread::sleep_for(IAM_CONSISTENCY_SLEEP);
+    }
+    credentials = provider.GetAWSCredentials();
+    shouldSleep = true;
+    attempts++;
+  } while (credentials.IsEmpty() && attempts < MAX_IAM_CONSISTENCY_RETRIES);
+  EXPECT_FALSE(credentials.IsEmpty());
+}
+
+TEST_F(STSWebIdentityProviderIntegrationTest, ShouldWorkWithEnvVar) {
+  CognitoIdentitySetup testResourcesRAII{UUID::RandomUUID()};
+  const EnvironmentRAII environmentRAII{
+      {{"AWS_ROLE_ARN", testResourcesRAII.GetRoleArn()}, {"AWS_WEB_IDENTITY_TOKEN_FILE", testResourcesRAII.GetTokenFileName()}}};
+  const ClientConfiguration config{};
+  STSAssumeRoleWebIdentityCredentialsProvider provider{config.credentialProviderConfig};
+  AWSCredentials credentials{};
+  size_t attempts = 0;
+  bool shouldSleep = false;
+  do {
+    if (shouldSleep) {
+      std::this_thread::sleep_for(IAM_CONSISTENCY_SLEEP);
+    }
+    credentials = provider.GetAWSCredentials();
+    shouldSleep = true;
+    attempts++;
+  } while (credentials.IsEmpty() && attempts < MAX_IAM_CONSISTENCY_RETRIES);
+  EXPECT_FALSE(credentials.IsEmpty());
+}
+
+TEST_F(STSWebIdentityProviderIntegrationTest, ShouldWorkWithEnvVarBackwardsCompat) {
+  CognitoIdentitySetup testResourcesRAII{UUID::RandomUUID()};
+  const EnvironmentRAII environmentRAII{
+      {{"AWS_IAM_ROLE_ARN", testResourcesRAII.GetRoleArn()}, {"AWS_WEB_IDENTITY_TOKEN_FILE", testResourcesRAII.GetTokenFileName()}}};
+  const ClientConfiguration config{};
   STSAssumeRoleWebIdentityCredentialsProvider provider{config.credentialProviderConfig};
   AWSCredentials credentials{};
   size_t attempts = 0;
