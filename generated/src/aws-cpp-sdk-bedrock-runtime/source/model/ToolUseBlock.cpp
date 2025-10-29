@@ -30,6 +30,10 @@ ToolUseBlock& ToolUseBlock::operator=(JsonView jsonValue) {
     m_input = jsonValue.GetObject("input");
     m_inputHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = ToolUseTypeMapper::GetToolUseTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +52,10 @@ JsonValue ToolUseBlock::Jsonize() const {
     if (!m_input.View().IsNull()) {
       payload.WithObject("input", JsonValue(m_input.View()));
     }
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ToolUseTypeMapper::GetNameForToolUseType(m_type));
   }
 
   return payload;

@@ -23,9 +23,11 @@ namespace Model {
 
 /**
  * <p>Determines which tools the model should request in a call to
- * <code>Converse</code> or <code>ConverseStream</code>. <code>ToolChoice</code> is
- * only supported by Anthropic Claude 3 models and by Mistral AI Mistral
- * Large.</p><p><h3>See Also:</h3>   <a
+ * <code>Converse</code> or <code>ConverseStream</code>. For more information, see
+ * <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
+ * tool with the Converse API</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolChoice">AWS
  * API Reference</a></p>
  */
@@ -76,7 +78,7 @@ class ToolChoice {
   ///@{
   /**
    * <p>The Model must request the specified tool. Only supported by Anthropic Claude
-   * 3 models. </p>
+   * 3 and Amazon Nova models. </p>
    */
   inline const SpecificToolChoice& GetTool() const { return m_tool; }
   inline bool ToolHasBeenSet() const { return m_toolHasBeenSet; }

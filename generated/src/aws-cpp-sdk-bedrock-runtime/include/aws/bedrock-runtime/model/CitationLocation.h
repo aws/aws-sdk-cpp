@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/DocumentCharLocation.h>
 #include <aws/bedrock-runtime/model/DocumentChunkLocation.h>
 #include <aws/bedrock-runtime/model/DocumentPageLocation.h>
+#include <aws/bedrock-runtime/model/WebLocation.h>
 
 #include <utility>
 
@@ -35,6 +36,24 @@ class CitationLocation {
   AWS_BEDROCKRUNTIME_API CitationLocation(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKRUNTIME_API CitationLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The web URL that was cited for this reference.</p>
+   */
+  inline const WebLocation& GetWeb() const { return m_web; }
+  inline bool WebHasBeenSet() const { return m_webHasBeenSet; }
+  template <typename WebT = WebLocation>
+  void SetWeb(WebT&& value) {
+    m_webHasBeenSet = true;
+    m_web = std::forward<WebT>(value);
+  }
+  template <typename WebT = WebLocation>
+  CitationLocation& WithWeb(WebT&& value) {
+    SetWeb(std::forward<WebT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -94,6 +113,9 @@ class CitationLocation {
   }
   ///@}
  private:
+  WebLocation m_web;
+  bool m_webHasBeenSet = false;
+
   DocumentCharLocation m_documentChar;
   bool m_documentCharHasBeenSet = false;
 

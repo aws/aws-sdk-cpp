@@ -26,6 +26,13 @@ ContentBlockDelta& ContentBlockDelta::operator=(JsonView jsonValue) {
     m_toolUse = jsonValue.GetObject("toolUse");
     m_toolUseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("toolResult")) {
+    Aws::Utils::Array<JsonView> toolResultJsonList = jsonValue.GetArray("toolResult");
+    for (unsigned toolResultIndex = 0; toolResultIndex < toolResultJsonList.GetLength(); ++toolResultIndex) {
+      m_toolResult.push_back(toolResultJsonList[toolResultIndex].AsObject());
+    }
+    m_toolResultHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("reasoningContent")) {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
     m_reasoningContentHasBeenSet = true;
@@ -46,6 +53,14 @@ JsonValue ContentBlockDelta::Jsonize() const {
 
   if (m_toolUseHasBeenSet) {
     payload.WithObject("toolUse", m_toolUse.Jsonize());
+  }
+
+  if (m_toolResultHasBeenSet) {
+    Aws::Utils::Array<JsonValue> toolResultJsonList(m_toolResult.size());
+    for (unsigned toolResultIndex = 0; toolResultIndex < toolResultJsonList.GetLength(); ++toolResultIndex) {
+      toolResultJsonList[toolResultIndex].AsObject(m_toolResult[toolResultIndex].Jsonize());
+    }
+    payload.WithArray("toolResult", std::move(toolResultJsonList));
   }
 
   if (m_reasoningContentHasBeenSet) {

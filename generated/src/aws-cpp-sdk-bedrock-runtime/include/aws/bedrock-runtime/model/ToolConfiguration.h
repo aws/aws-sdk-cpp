@@ -39,7 +39,7 @@ class ToolConfiguration {
 
   ///@{
   /**
-   * <p>An array of tools that you want to pass to a model.</p>
+   * <p>An array of tools that you want to pass to a model. </p>
    */
   inline const Aws::Vector<Tool>& GetTools() const { return m_tools; }
   inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
@@ -63,7 +63,7 @@ class ToolConfiguration {
 
   ///@{
   /**
-   * <p>If supported by model, forces the model to request a tool.</p>
+   * <p>If supported by model, forces the model to request a tool. </p>
    */
   inline const ToolChoice& GetToolChoice() const { return m_toolChoice; }
   inline bool ToolChoiceHasBeenSet() const { return m_toolChoiceHasBeenSet; }

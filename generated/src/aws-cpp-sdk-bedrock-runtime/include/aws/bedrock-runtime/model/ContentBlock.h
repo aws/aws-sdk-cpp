@@ -160,7 +160,7 @@ class ContentBlock {
    * <code>guardContent</code> in a call to the Converse API, the guardrail (if
    * passed in the Converse API) assesses the entire message.</p> <p>For more
    * information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
-   * Bedrock User Guide</i>. </p>
+   * Bedrock User Guide</i>.</p>
    */
   inline const GuardrailConverseContentBlock& GetGuardContent() const { return m_guardContent; }
   inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }

@@ -173,6 +173,7 @@
 #include <aws/bedrock-runtime/model/StartAsyncInvokeResult.h>
 #include <aws/bedrock-runtime/model/StopReason.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
+#include <aws/bedrock-runtime/model/SystemTool.h>
 #include <aws/bedrock-runtime/model/Tag.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/bedrock-runtime/model/Tool.h>
@@ -180,16 +181,20 @@
 #include <aws/bedrock-runtime/model/ToolConfiguration.h>
 #include <aws/bedrock-runtime/model/ToolInputSchema.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
+#include <aws/bedrock-runtime/model/ToolResultBlockDelta.h>
+#include <aws/bedrock-runtime/model/ToolResultBlockStart.h>
 #include <aws/bedrock-runtime/model/ToolResultContentBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultStatus.h>
 #include <aws/bedrock-runtime/model/ToolSpecification.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockDelta.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockStart.h>
+#include <aws/bedrock-runtime/model/ToolUseType.h>
 #include <aws/bedrock-runtime/model/Trace.h>
 #include <aws/bedrock-runtime/model/VideoBlock.h>
 #include <aws/bedrock-runtime/model/VideoFormat.h>
 #include <aws/bedrock-runtime/model/VideoSource.h>
+#include <aws/bedrock-runtime/model/WebLocation.h>
 
 using BedrockRuntimeIncludeTest = ::testing::Test;
 

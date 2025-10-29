@@ -33,9 +33,9 @@ class CitationsConfig {
 
   ///@{
   /**
-   * <p>Specifies whether document citations should be included in the model's
-   * response. When set to true, the model can generate citations that reference the
-   * source documents used to inform the response.</p>
+   * <p>Specifies whether citations from the selected document should be used in the
+   * model's response. When set to true, the model can generate citations that
+   * reference the source documents used to inform the response.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

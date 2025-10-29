@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/ToolUseType.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -23,7 +24,10 @@ namespace Model {
 /**
  * <p>A tool use content block. Contains information about a tool that the model is
  * requesting be run., The model uses the result from the tool to generate a
- * response. </p><p><h3>See Also:</h3>   <a
+ * response. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
+ * tool with the Converse API</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolUseBlock">AWS
  * API Reference</a></p>
  */
@@ -87,6 +91,22 @@ class ToolUseBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type for the tool request.</p>
+   */
+  inline ToolUseType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ToolUseType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ToolUseBlock& WithType(ToolUseType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_toolUseId;
   bool m_toolUseIdHasBeenSet = false;
@@ -96,6 +116,9 @@ class ToolUseBlock {
 
   Aws::Utils::Document m_input;
   bool m_inputHasBeenSet = false;
+
+  ToolUseType m_type{ToolUseType::NOT_SET};
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,7 +22,10 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>A system content block.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains configurations for instructions to provide the model for how to
+ * handle input. To learn more, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-call.html">Using
+ * the Converse API</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/SystemContentBlock">AWS
  * API Reference</a></p>
  */

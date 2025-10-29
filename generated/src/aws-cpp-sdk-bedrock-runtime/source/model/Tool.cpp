@@ -22,6 +22,10 @@ Tool& Tool::operator=(JsonView jsonValue) {
     m_toolSpec = jsonValue.GetObject("toolSpec");
     m_toolSpecHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("systemTool")) {
+    m_systemTool = jsonValue.GetObject("systemTool");
+    m_systemToolHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("cachePoint")) {
     m_cachePoint = jsonValue.GetObject("cachePoint");
     m_cachePointHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue Tool::Jsonize() const {
 
   if (m_toolSpecHasBeenSet) {
     payload.WithObject("toolSpec", m_toolSpec.Jsonize());
+  }
+
+  if (m_systemToolHasBeenSet) {
+    payload.WithObject("systemTool", m_systemTool.Jsonize());
   }
 
   if (m_cachePointHasBeenSet) {

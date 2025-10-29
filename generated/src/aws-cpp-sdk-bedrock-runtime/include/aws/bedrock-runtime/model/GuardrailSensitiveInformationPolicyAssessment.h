@@ -22,7 +22,7 @@ namespace BedrockRuntime {
 namespace Model {
 
 /**
- * <p>The assessment for aPersonally Identifiable Information (PII) policy.
+ * <p>The assessment for a Personally Identifiable Information (PII) policy.
  * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GuardrailSensitiveInformationPolicyAssessment">AWS
  * API Reference</a></p>

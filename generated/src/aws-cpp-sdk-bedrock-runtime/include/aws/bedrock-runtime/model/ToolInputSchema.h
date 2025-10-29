@@ -21,7 +21,10 @@ namespace Model {
 
 /**
  * <p>The schema for the tool. The top level schema type must be
- * <code>object</code>. </p><p><h3>See Also:</h3>   <a
+ * <code>object</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call a
+ * tool with the Converse API</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ToolInputSchema">AWS
  * API Reference</a></p>
  */
