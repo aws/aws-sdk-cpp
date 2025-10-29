@@ -45,9 +45,11 @@ static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_
 static const char* AWS_METADATA_SERVICE_TIMEOUT_CONFIG_VAR = "metadata_service_timeout";
 static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_ENV_VAR = "AWS_METADATA_SERVICE_NUM_ATTEMPTS";
 static const char* AWS_METADATA_SERVICE_NUM_ATTEMPTS_CONFIG_VAR = "metadata_service_num_attempts";
-static const char* AWS_IAM_ROLE_ARN_ENV_VAR = "AWS_IAM_ROLE_ARN";
+static const char* AWS_IAM_ROLE_ARN_ENV_VAR = "AWS_ROLE_ARN";
+static const char* AWS_IAM_ROLE_ARN_ENV_VAR_COMPAT = "AWS_IAM_ROLE_ARN";
 static const char* AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION = "role_arn";
-static const char* AWS_IAM_ROLE_SESSION_NAME_ENV_VAR = "AWS_IAM_ROLE_SESSION_NAME";
+static const char* AWS_IAM_ROLE_SESSION_NAME_ENV_VAR = "AWS_ROLE_SESSION_NAME";
+static const char* AWS_IAM_ROLE_SESSION_NAME_ENV_VAR_COMPAT = "AWS_IAM_ROLE_SESSION_NAME";
 static const char* AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION = "role_session_name";
 static const char* AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR = "AWS_WEB_IDENTITY_TOKEN_FILE";
 static const char* AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION = "web_identity_token_file";
@@ -327,23 +329,34 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     // Uses default retry mode with the specified max attempts from metadata_service_num_attempts
     config.credentialProviderConfig.imdsConfig.imdsRetryStrategy = InitRetryStrategy(attempts, "");
 
-    config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_ARN_ENV_VAR,
-          config.profileName,
-          AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(
+        AWS_IAM_ROLE_ARN_ENV_VAR_COMPAT, config.profileName, AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION, {}, /* allowed values */
+        "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
 
-      config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_SESSION_NAME_ENV_VAR,
-          config.profileName,
-          AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    // there was a typo in the original environment variable, this exists for backwards compatibility
+    if (config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn.empty()) {
+      config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(
+          AWS_IAM_ROLE_ARN_ENV_VAR, config.profileName, AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION, {}, /* allowed values */
+          "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
+    }
 
-      config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR,
-          config.profileName,
-          AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName = ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(
+        AWS_IAM_ROLE_SESSION_NAME_ENV_VAR_COMPAT, config.profileName, AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION, {}, /* allowed values */
+        "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
+
+    // there was a typo in the original environment variable, this exists for backwards compatibility
+    if (config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName.empty()) {
+      config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName =
+          ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(
+              AWS_IAM_ROLE_SESSION_NAME_ENV_VAR, config.profileName, AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION, {}, /* allowed values */
+              "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
+    }
+
+    config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath =
+        ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(
+            AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR, config.profileName, AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
+            {}, /* allowed values */
+            "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
 }
 
 ClientConfiguration::ClientConfiguration()
@@ -558,29 +571,35 @@ Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& e
                                                             const Aws::Vector<Aws::String>& allowedValues,
                                                             const Aws::String& defaultValue)
 {
-    Aws::String option = Aws::Environment::GetEnv(envKey.c_str());
-    if (option.empty()) {
-        option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
-    }
-    option = Aws::Utils::StringUtils::ToLower(option.c_str());
-    if (option.empty()) {
-        return defaultValue;
-    }
+  return LoadConfigFromEnvOrProfileCaseSensitive(envKey, profile, profileProperty, allowedValues, defaultValue);
+}
+Aws::String ClientConfiguration::LoadConfigFromEnvOrProfileCaseSensitive(const Aws::String& envKey, const Aws::String& profile,
+                                                                         const Aws::String& profileProperty,
+                                                                         const Aws::Vector<Aws::String>& allowedValues,
+                                                                         const Aws::String& defaultValue,
+                                                                         const std::function<Aws::String(const char*)>& envValueMapping) {
+  Aws::String option = Aws::Environment::GetEnv(envKey.c_str());
+  if (option.empty()) {
+    option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
+  }
+  option = envValueMapping(option.c_str());
+  if (option.empty()) {
+    return defaultValue;
+  }
 
-    if (!allowedValues.empty() && std::find(allowedValues.cbegin(), allowedValues.cend(), option) == allowedValues.cend()) {
-        Aws::OStringStream expectedStr;
-        expectedStr << "[";
-        for(const auto& allowed : allowedValues) {
-            expectedStr << allowed << ";";
-        }
-        expectedStr << "]";
-
-        AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Unrecognised value for " << envKey << ": " << option <<
-                                              ". Using default instead: " << defaultValue <<
-                                              ". Expected empty or one of: " << expectedStr.str());
-        option = defaultValue;
+  if (!allowedValues.empty() && std::find(allowedValues.cbegin(), allowedValues.cend(), option) == allowedValues.cend()) {
+    Aws::OStringStream expectedStr;
+    expectedStr << "[";
+    for (const auto& allowed : allowedValues) {
+      expectedStr << allowed << ";";
     }
-    return option;
+    expectedStr << "]";
+
+    AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Unrecognised value for " << envKey << ": " << option << ". Using default instead: "
+                                                                    << defaultValue << ". Expected empty or one of: " << expectedStr.str());
+    option = defaultValue;
+  }
+  return option;
 }
 
 } // namespace Client
