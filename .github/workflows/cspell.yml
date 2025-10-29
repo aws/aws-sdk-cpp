@@ -2,6 +2,9 @@ name: cspell
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   cspell:
     name: cspell
