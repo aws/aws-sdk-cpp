@@ -83,10 +83,10 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   virtual ~RTBFabricClient();
 
   /**
-   * <p>Accepts a link request between RTB applications.</p> <p>When a requester RTB
-   * application requests to link with a responder RTB application, the responder can
-   * use this operation to accept the link request and establish the
-   * connection.</p><p><h3>See Also:</h3>   <a
+   * <p>Accepts a link request between gateways.</p> <p>When a requester gateway
+   * requests to link with a responder gateway, the responder can use this operation
+   * to accept the link request and establish the connection.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/AcceptLink">AWS
    * API Reference</a></p>
    */
@@ -139,8 +139,8 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new link between RTB applications.</p> <p>Establishes a connection
-   * that allows RTB applications to communicate and exchange bid requests and
+   * <p>Creates a new link between gateways.</p> <p>Establishes a connection that
+   * allows gateways to communicate and exchange bid requests and
    * responses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateLink">AWS
    * API Reference</a></p>
@@ -222,7 +222,8 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a responder gateway.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a responder gateway.</p>  <p>A domain name or managed
+   * endpoint is required.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateResponderGateway">AWS
    * API Reference</a></p>
    */
@@ -277,9 +278,8 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a link between RTB applications.</p> <p>Permanently removes the
-   * connection between RTB applications. This action cannot be undone.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes a link between gateways.</p> <p>Permanently removes the connection
+   * between gateways. This action cannot be undone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DeleteLink">AWS
    * API Reference</a></p>
    */
@@ -415,9 +415,9 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves information about a link between RTB applications.</p> <p>Returns
-   * detailed information about the link configuration, status, and associated RTB
-   * applications.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves information about a link between gateways.</p> <p>Returns detailed
+   * information about the link configuration, status, and associated
+   * gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetLink">AWS
    * API Reference</a></p>
    */
@@ -524,9 +524,9 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists links associated with an RTB application.</p> <p>Returns a list of all
-   * links for the specified RTB application, including their status and
-   * configuration details.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists links associated with gateways.</p> <p>Returns a list of all links for
+   * the specified gateways, including their status and configuration
+   * details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListLinks">AWS
    * API Reference</a></p>
    */
@@ -631,9 +631,9 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Rejects a link request between RTB applications.</p> <p>When a requester RTB
-   * application requests to link with a responder RTB application, the responder can
-   * use this operation to decline the link request.</p><p><h3>See Also:</h3>   <a
+   * <p>Rejects a link request between gateways.</p> <p>When a requester gateway
+   * requests to link with a responder gateway, the responder can use this operation
+   * to decline the link request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/RejectLink">AWS
    * API Reference</a></p>
    */
@@ -709,9 +709,9 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the configuration of a link between RTB applications.</p> <p>Allows
-   * you to modify settings and parameters for an existing link.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates the configuration of a link between gateways.</p> <p>Allows you to
+   * modify settings and parameters for an existing link.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/UpdateLink">AWS
    * API Reference</a></p>
    */

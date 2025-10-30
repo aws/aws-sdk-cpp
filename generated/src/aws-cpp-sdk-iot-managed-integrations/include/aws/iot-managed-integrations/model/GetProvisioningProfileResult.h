@@ -82,7 +82,7 @@ class GetProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The provisioning profile id..</p>
+   * <p>The provisioning profile id.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>

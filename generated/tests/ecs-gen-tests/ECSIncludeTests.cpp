@@ -256,8 +256,11 @@
 #include <aws/ecs/model/Scope.h>
 #include <aws/ecs/model/Secret.h>
 #include <aws/ecs/model/Service.h>
+#include <aws/ecs/model/ServiceConnectAccessLogConfiguration.h>
+#include <aws/ecs/model/ServiceConnectAccessLoggingFormat.h>
 #include <aws/ecs/model/ServiceConnectClientAlias.h>
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
+#include <aws/ecs/model/ServiceConnectIncludeQueryParameters.h>
 #include <aws/ecs/model/ServiceConnectService.h>
 #include <aws/ecs/model/ServiceConnectServiceResource.h>
 #include <aws/ecs/model/ServiceConnectTestTrafficHeaderMatchRules.h>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/core/utils/DateTime.h>
@@ -147,6 +148,24 @@ class GetBrowserResult {
 
   ///@{
   /**
+   * <p>The browser signing configuration that shows whether cryptographic agent
+   * identification is enabled for web bot authentication.</p>
+   */
+  inline const BrowserSigningConfigOutput& GetBrowserSigning() const { return m_browserSigning; }
+  template <typename BrowserSigningT = BrowserSigningConfigOutput>
+  void SetBrowserSigning(BrowserSigningT&& value) {
+    m_browserSigningHasBeenSet = true;
+    m_browserSigning = std::forward<BrowserSigningT>(value);
+  }
+  template <typename BrowserSigningT = BrowserSigningConfigOutput>
+  GetBrowserResult& WithBrowserSigning(BrowserSigningT&& value) {
+    SetBrowserSigning(std::forward<BrowserSigningT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the browser.</p>
    */
   inline BrowserStatus GetStatus() const { return m_status; }
@@ -246,6 +265,9 @@ class GetBrowserResult {
 
   RecordingConfig m_recording;
   bool m_recordingHasBeenSet = false;
+
+  BrowserSigningConfigOutput m_browserSigning;
+  bool m_browserSigningHasBeenSet = false;
 
   BrowserStatus m_status{BrowserStatus::NOT_SET};
   bool m_statusHasBeenSet = false;

@@ -27,6 +27,10 @@ Aws::String CreateGlueIdentityCenterConfigurationRequest::SerializePayload() con
     payload.WithArray("Scopes", std::move(scopesJsonList));
   }
 
+  if (m_userBackgroundSessionsEnabledHasBeenSet) {
+    payload.WithBool("UserBackgroundSessionsEnabled", m_userBackgroundSessionsEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

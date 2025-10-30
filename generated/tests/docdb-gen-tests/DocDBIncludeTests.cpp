@@ -107,9 +107,12 @@
 #include <aws/docdb/model/FailoverDBClusterResult.h>
 #include <aws/docdb/model/FailoverGlobalClusterRequest.h>
 #include <aws/docdb/model/FailoverGlobalClusterResult.h>
+#include <aws/docdb/model/FailoverState.h>
+#include <aws/docdb/model/FailoverStatus.h>
 #include <aws/docdb/model/Filter.h>
 #include <aws/docdb/model/GlobalCluster.h>
 #include <aws/docdb/model/GlobalClusterMember.h>
+#include <aws/docdb/model/GlobalClusterMemberSynchronizationStatus.h>
 #include <aws/docdb/model/ListTagsForResourceRequest.h>
 #include <aws/docdb/model/ListTagsForResourceResult.h>
 #include <aws/docdb/model/ModifyDBClusterParameterGroupRequest.h>

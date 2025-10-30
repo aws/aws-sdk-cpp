@@ -43,6 +43,10 @@ Aws::String UpdateCustomKeyStoreRequest::SerializePayload() const {
     payload.WithString("XksProxyVpcEndpointServiceName", m_xksProxyVpcEndpointServiceName);
   }
 
+  if (m_xksProxyVpcEndpointServiceOwnerHasBeenSet) {
+    payload.WithString("XksProxyVpcEndpointServiceOwner", m_xksProxyVpcEndpointServiceOwner);
+  }
+
   if (m_xksProxyAuthenticationCredentialHasBeenSet) {
     payload.WithObject("XksProxyAuthenticationCredential", m_xksProxyAuthenticationCredential.Jsonize());
   }

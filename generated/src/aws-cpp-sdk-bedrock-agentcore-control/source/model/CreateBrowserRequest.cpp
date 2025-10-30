@@ -35,6 +35,10 @@ Aws::String CreateBrowserRequest::SerializePayload() const {
     payload.WithObject("recording", m_recording.Jsonize());
   }
 
+  if (m_browserSigningHasBeenSet) {
+    payload.WithObject("browserSigning", m_browserSigning.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

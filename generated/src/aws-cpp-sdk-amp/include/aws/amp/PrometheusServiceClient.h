@@ -123,6 +123,35 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Creates an anomaly detector within a workspace using the Random Cut Forest
+   * algorithm for time-series analysis. The anomaly detector analyzes Amazon Managed
+   * Service for Prometheus metrics to identify unusual patterns and
+   * behaviors.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAnomalyDetectorOutcome CreateAnomalyDetector(const Model::CreateAnomalyDetectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAnomalyDetectorRequestT = Model::CreateAnomalyDetectorRequest>
+  Model::CreateAnomalyDetectorOutcomeCallable CreateAnomalyDetectorCallable(const CreateAnomalyDetectorRequestT& request) const {
+    return SubmitCallable(&PrometheusServiceClient::CreateAnomalyDetector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAnomalyDetector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAnomalyDetectorRequestT = Model::CreateAnomalyDetectorRequest>
+  void CreateAnomalyDetectorAsync(const CreateAnomalyDetectorRequestT& request, const CreateAnomalyDetectorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PrometheusServiceClient::CreateAnomalyDetector, request, handler, context);
+  }
+
+  /**
    * <p>The <code>CreateLoggingConfiguration</code> operation creates rules and
    * alerting logging configuration for the workspace. Use this operation to set the
    * CloudWatch log group to which the logs will be published to.</p>  <p>These
@@ -321,6 +350,33 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
                                          const DeleteAlertManagerDefinitionResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PrometheusServiceClient::DeleteAlertManagerDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Removes an anomaly detector from a workspace. This operation is
+   * idempotent.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAnomalyDetectorOutcome DeleteAnomalyDetector(const Model::DeleteAnomalyDetectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAnomalyDetectorRequestT = Model::DeleteAnomalyDetectorRequest>
+  Model::DeleteAnomalyDetectorOutcomeCallable DeleteAnomalyDetectorCallable(const DeleteAnomalyDetectorRequestT& request) const {
+    return SubmitCallable(&PrometheusServiceClient::DeleteAnomalyDetector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAnomalyDetector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAnomalyDetectorRequestT = Model::DeleteAnomalyDetectorRequest>
+  void DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequestT& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PrometheusServiceClient::DeleteAnomalyDetector, request, handler, context);
   }
 
   /**
@@ -551,6 +607,34 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
                                            const DescribeAlertManagerDefinitionResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PrometheusServiceClient::DescribeAlertManagerDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific anomaly detector, including
+   * its status and configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAnomalyDetectorOutcome DescribeAnomalyDetector(const Model::DescribeAnomalyDetectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAnomalyDetectorRequestT = Model::DescribeAnomalyDetectorRequest>
+  Model::DescribeAnomalyDetectorOutcomeCallable DescribeAnomalyDetectorCallable(const DescribeAnomalyDetectorRequestT& request) const {
+    return SubmitCallable(&PrometheusServiceClient::DescribeAnomalyDetector, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAnomalyDetector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAnomalyDetectorRequestT = Model::DescribeAnomalyDetectorRequest>
+  void DescribeAnomalyDetectorAsync(const DescribeAnomalyDetectorRequestT& request,
+                                    const DescribeAnomalyDetectorResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PrometheusServiceClient::DescribeAnomalyDetector, request, handler, context);
   }
 
   /**
@@ -819,6 +903,33 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Returns a paginated list of anomaly detectors for a workspace with optional
+   * filtering by alias.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAnomalyDetectorsRequestT = Model::ListAnomalyDetectorsRequest>
+  Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const ListAnomalyDetectorsRequestT& request) const {
+    return SubmitCallable(&PrometheusServiceClient::ListAnomalyDetectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListAnomalyDetectors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAnomalyDetectorsRequestT = Model::ListAnomalyDetectorsRequest>
+  void ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequestT& request, const ListAnomalyDetectorsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PrometheusServiceClient::ListAnomalyDetectors, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of rule groups namespaces in a workspace.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">AWS
@@ -960,6 +1071,39 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
                                       const PutAlertManagerDefinitionResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PrometheusServiceClient::PutAlertManagerDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>When you call <code>PutAnomalyDetector</code>, the operation creates a new
+   * anomaly detector if one doesn't exist, or updates an existing one. Each call to
+   * this operation triggers a complete retraining of the detector, which includes
+   * querying the minimum required samples and backfilling the detector with
+   * historical data. This process occurs regardless of whether you're making a minor
+   * change like updating the evaluation interval or making more substantial
+   * modifications. The operation serves as the single method for creating, updating,
+   * and retraining anomaly detectors.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAnomalyDetectorOutcome PutAnomalyDetector(const Model::PutAnomalyDetectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAnomalyDetectorRequestT = Model::PutAnomalyDetectorRequest>
+  Model::PutAnomalyDetectorOutcomeCallable PutAnomalyDetectorCallable(const PutAnomalyDetectorRequestT& request) const {
+    return SubmitCallable(&PrometheusServiceClient::PutAnomalyDetector, request);
+  }
+
+  /**
+   * An Async wrapper for PutAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutAnomalyDetectorRequestT = Model::PutAnomalyDetectorRequest>
+  void PutAnomalyDetectorAsync(const PutAnomalyDetectorRequestT& request, const PutAnomalyDetectorResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PrometheusServiceClient::PutAnomalyDetector, request, handler, context);
   }
 
   /**

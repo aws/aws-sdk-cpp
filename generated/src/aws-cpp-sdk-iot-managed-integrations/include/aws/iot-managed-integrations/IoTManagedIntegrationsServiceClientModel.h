@@ -47,6 +47,7 @@
 #include <aws/iot-managed-integrations/model/GetHubConfigurationRequest.h>
 #include <aws/iot-managed-integrations/model/GetHubConfigurationResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingCapabilitiesResult.h>
+#include <aws/iot-managed-integrations/model/GetManagedThingCertificateResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingConnectivityDataResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingMetaDataResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingResult.h>
@@ -167,6 +168,7 @@ class GetEventLogConfigurationRequest;
 class GetHubConfigurationRequest;
 class GetManagedThingRequest;
 class GetManagedThingCapabilitiesRequest;
+class GetManagedThingCertificateRequest;
 class GetManagedThingConnectivityDataRequest;
 class GetManagedThingMetaDataRequest;
 class GetManagedThingStateRequest;
@@ -252,6 +254,7 @@ typedef Aws::Utils::Outcome<GetEventLogConfigurationResult, IoTManagedIntegratio
 typedef Aws::Utils::Outcome<GetHubConfigurationResult, IoTManagedIntegrationsError> GetHubConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetManagedThingResult, IoTManagedIntegrationsError> GetManagedThingOutcome;
 typedef Aws::Utils::Outcome<GetManagedThingCapabilitiesResult, IoTManagedIntegrationsError> GetManagedThingCapabilitiesOutcome;
+typedef Aws::Utils::Outcome<GetManagedThingCertificateResult, IoTManagedIntegrationsError> GetManagedThingCertificateOutcome;
 typedef Aws::Utils::Outcome<GetManagedThingConnectivityDataResult, IoTManagedIntegrationsError> GetManagedThingConnectivityDataOutcome;
 typedef Aws::Utils::Outcome<GetManagedThingMetaDataResult, IoTManagedIntegrationsError> GetManagedThingMetaDataOutcome;
 typedef Aws::Utils::Outcome<GetManagedThingStateResult, IoTManagedIntegrationsError> GetManagedThingStateOutcome;
@@ -338,6 +341,7 @@ typedef std::future<GetEventLogConfigurationOutcome> GetEventLogConfigurationOut
 typedef std::future<GetHubConfigurationOutcome> GetHubConfigurationOutcomeCallable;
 typedef std::future<GetManagedThingOutcome> GetManagedThingOutcomeCallable;
 typedef std::future<GetManagedThingCapabilitiesOutcome> GetManagedThingCapabilitiesOutcomeCallable;
+typedef std::future<GetManagedThingCertificateOutcome> GetManagedThingCertificateOutcomeCallable;
 typedef std::future<GetManagedThingConnectivityDataOutcome> GetManagedThingConnectivityDataOutcomeCallable;
 typedef std::future<GetManagedThingMetaDataOutcome> GetManagedThingMetaDataOutcomeCallable;
 typedef std::future<GetManagedThingStateOutcome> GetManagedThingStateOutcomeCallable;
@@ -500,6 +504,9 @@ typedef std::function<void(const IoTManagedIntegrationsClient*, const Model::Get
 typedef std::function<void(const IoTManagedIntegrationsClient*, const Model::GetManagedThingCapabilitiesRequest&,
                            const Model::GetManagedThingCapabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetManagedThingCapabilitiesResponseReceivedHandler;
+typedef std::function<void(const IoTManagedIntegrationsClient*, const Model::GetManagedThingCertificateRequest&,
+                           const Model::GetManagedThingCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetManagedThingCertificateResponseReceivedHandler;
 typedef std::function<void(const IoTManagedIntegrationsClient*, const Model::GetManagedThingConnectivityDataRequest&,
                            const Model::GetManagedThingConnectivityDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

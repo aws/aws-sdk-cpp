@@ -254,6 +254,27 @@ class CreateCustomKeyStoreRequest : public KMSRequest {
 
   ///@{
   /**
+   * <p>Specifies the Amazon Web Services account ID that owns the Amazon VPC service
+   * endpoint for the interface that is used to communicate with your external key
+   * store proxy (XKS proxy). This parameter is optional. If not provided, the Amazon
+   * Web Services account ID calling the action will be used.</p>
+   */
+  inline const Aws::String& GetXksProxyVpcEndpointServiceOwner() const { return m_xksProxyVpcEndpointServiceOwner; }
+  inline bool XksProxyVpcEndpointServiceOwnerHasBeenSet() const { return m_xksProxyVpcEndpointServiceOwnerHasBeenSet; }
+  template <typename XksProxyVpcEndpointServiceOwnerT = Aws::String>
+  void SetXksProxyVpcEndpointServiceOwner(XksProxyVpcEndpointServiceOwnerT&& value) {
+    m_xksProxyVpcEndpointServiceOwnerHasBeenSet = true;
+    m_xksProxyVpcEndpointServiceOwner = std::forward<XksProxyVpcEndpointServiceOwnerT>(value);
+  }
+  template <typename XksProxyVpcEndpointServiceOwnerT = Aws::String>
+  CreateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceOwner(XksProxyVpcEndpointServiceOwnerT&& value) {
+    SetXksProxyVpcEndpointServiceOwner(std::forward<XksProxyVpcEndpointServiceOwnerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies an authentication credential for the external key store proxy (XKS
    * proxy). This parameter is required for all custom key stores with a
    * <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p> <p>The
@@ -344,6 +365,9 @@ class CreateCustomKeyStoreRequest : public KMSRequest {
 
   Aws::String m_xksProxyVpcEndpointServiceName;
   bool m_xksProxyVpcEndpointServiceNameHasBeenSet = false;
+
+  Aws::String m_xksProxyVpcEndpointServiceOwner;
+  bool m_xksProxyVpcEndpointServiceOwnerHasBeenSet = false;
 
   XksProxyAuthenticationCredentialType m_xksProxyAuthenticationCredential;
   bool m_xksProxyAuthenticationCredentialHasBeenSet = false;

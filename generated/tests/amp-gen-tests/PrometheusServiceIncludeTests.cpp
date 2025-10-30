@@ -18,11 +18,19 @@
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>
 #include <aws/amp/model/AmpConfiguration.h>
+#include <aws/amp/model/AnomalyDetectorConfiguration.h>
+#include <aws/amp/model/AnomalyDetectorDescription.h>
+#include <aws/amp/model/AnomalyDetectorMissingDataAction.h>
+#include <aws/amp/model/AnomalyDetectorStatus.h>
+#include <aws/amp/model/AnomalyDetectorStatusCode.h>
+#include <aws/amp/model/AnomalyDetectorSummary.h>
 #include <aws/amp/model/CloudWatchLogDestination.h>
 #include <aws/amp/model/ComponentConfig.h>
 #include <aws/amp/model/ConflictException.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionResult.h>
+#include <aws/amp/model/CreateAnomalyDetectorRequest.h>
+#include <aws/amp/model/CreateAnomalyDetectorResult.h>
 #include <aws/amp/model/CreateLoggingConfigurationRequest.h>
 #include <aws/amp/model/CreateLoggingConfigurationResult.h>
 #include <aws/amp/model/CreateQueryLoggingConfigurationRequest.h>
@@ -34,6 +42,7 @@
 #include <aws/amp/model/CreateWorkspaceRequest.h>
 #include <aws/amp/model/CreateWorkspaceResult.h>
 #include <aws/amp/model/DeleteAlertManagerDefinitionRequest.h>
+#include <aws/amp/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/amp/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteResourcePolicyRequest.h>
@@ -44,6 +53,8 @@
 #include <aws/amp/model/DeleteWorkspaceRequest.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionResult.h>
+#include <aws/amp/model/DescribeAnomalyDetectorRequest.h>
+#include <aws/amp/model/DescribeAnomalyDetectorResult.h>
 #include <aws/amp/model/DescribeLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeLoggingConfigurationResult.h>
 #include <aws/amp/model/DescribeQueryLoggingConfigurationRequest.h>
@@ -64,9 +75,12 @@
 #include <aws/amp/model/EksConfiguration.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationResult.h>
+#include <aws/amp/model/IgnoreNearExpected.h>
 #include <aws/amp/model/InternalServerException.h>
 #include <aws/amp/model/LimitsPerLabelSet.h>
 #include <aws/amp/model/LimitsPerLabelSetEntry.h>
+#include <aws/amp/model/ListAnomalyDetectorsRequest.h>
+#include <aws/amp/model/ListAnomalyDetectorsResult.h>
 #include <aws/amp/model/ListRuleGroupsNamespacesRequest.h>
 #include <aws/amp/model/ListRuleGroupsNamespacesResult.h>
 #include <aws/amp/model/ListScrapersRequest.h>
@@ -82,6 +96,8 @@
 #include <aws/amp/model/LoggingFilter.h>
 #include <aws/amp/model/PutAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/PutAlertManagerDefinitionResult.h>
+#include <aws/amp/model/PutAnomalyDetectorRequest.h>
+#include <aws/amp/model/PutAnomalyDetectorResult.h>
 #include <aws/amp/model/PutResourcePolicyRequest.h>
 #include <aws/amp/model/PutResourcePolicyResult.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceRequest.h>
@@ -89,6 +105,7 @@
 #include <aws/amp/model/QueryLoggingConfigurationMetadata.h>
 #include <aws/amp/model/QueryLoggingConfigurationStatus.h>
 #include <aws/amp/model/QueryLoggingConfigurationStatusCode.h>
+#include <aws/amp/model/RandomCutForestConfiguration.h>
 #include <aws/amp/model/ResourceNotFoundException.h>
 #include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/RuleGroupsNamespaceDescription.h>

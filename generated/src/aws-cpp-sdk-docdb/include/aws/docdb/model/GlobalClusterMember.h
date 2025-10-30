@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
+#include <aws/docdb/model/GlobalClusterMemberSynchronizationStatus.h>
 
 #include <utility>
 
@@ -96,6 +97,23 @@ class GlobalClusterMember {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of synchronization of each Amazon DocumentDB cluster in the global
+   * cluster.</p>
+   */
+  inline GlobalClusterMemberSynchronizationStatus GetSynchronizationStatus() const { return m_synchronizationStatus; }
+  inline bool SynchronizationStatusHasBeenSet() const { return m_synchronizationStatusHasBeenSet; }
+  inline void SetSynchronizationStatus(GlobalClusterMemberSynchronizationStatus value) {
+    m_synchronizationStatusHasBeenSet = true;
+    m_synchronizationStatus = value;
+  }
+  inline GlobalClusterMember& WithSynchronizationStatus(GlobalClusterMemberSynchronizationStatus value) {
+    SetSynchronizationStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterArn;
   bool m_dBClusterArnHasBeenSet = false;
@@ -105,6 +123,9 @@ class GlobalClusterMember {
 
   bool m_isWriter{false};
   bool m_isWriterHasBeenSet = false;
+
+  GlobalClusterMemberSynchronizationStatus m_synchronizationStatus{GlobalClusterMemberSynchronizationStatus::NOT_SET};
+  bool m_synchronizationStatusHasBeenSet = false;
 };
 
 }  // namespace Model

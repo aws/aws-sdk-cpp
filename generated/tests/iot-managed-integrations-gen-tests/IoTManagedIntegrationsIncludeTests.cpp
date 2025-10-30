@@ -110,6 +110,8 @@
 #include <aws/iot-managed-integrations/model/GetHubConfigurationResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingCapabilitiesRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingCapabilitiesResult.h>
+#include <aws/iot-managed-integrations/model/GetManagedThingCertificateRequest.h>
+#include <aws/iot-managed-integrations/model/GetManagedThingCertificateResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingConnectivityDataRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingConnectivityDataResult.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingMetaDataRequest.h>

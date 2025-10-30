@@ -45,6 +45,12 @@ GlobalClusterMember& GlobalClusterMember::operator=(const XmlNode& xmlNode) {
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isWriterNode.GetText()).c_str()).c_str());
       m_isWriterHasBeenSet = true;
     }
+    XmlNode synchronizationStatusNode = resultNode.FirstChild("SynchronizationStatus");
+    if (!synchronizationStatusNode.IsNull()) {
+      m_synchronizationStatus = GlobalClusterMemberSynchronizationStatusMapper::GetGlobalClusterMemberSynchronizationStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(synchronizationStatusNode.GetText()).c_str()));
+      m_synchronizationStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -66,6 +72,13 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   if (m_isWriterHasBeenSet) {
     oStream << location << index << locationValue << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
   }
+
+  if (m_synchronizationStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".SynchronizationStatus="
+            << StringUtils::URLEncode(GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(
+                   m_synchronizationStatus))
+            << "&";
+  }
 }
 
 void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -80,6 +93,12 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if (m_isWriterHasBeenSet) {
     oStream << location << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
+  }
+  if (m_synchronizationStatusHasBeenSet) {
+    oStream << location << ".SynchronizationStatus="
+            << StringUtils::URLEncode(GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(
+                   m_synchronizationStatus))
+            << "&";
   }
 }
 
