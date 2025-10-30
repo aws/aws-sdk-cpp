@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
+#include <aws/docdb/model/FailoverState.h>
 #include <aws/docdb/model/GlobalClusterMember.h>
+#include <aws/docdb/model/Tag.h>
 
 #include <utility>
 
@@ -221,6 +223,52 @@ class GlobalCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A data object containing all properties for the current state of an
+   * in-process or pending switchover or failover process for this global cluster.
+   * This object is empty unless the <code>SwitchoverGlobalCluster</code> or
+   * <code>FailoverGlobalCluster</code> operation was called on this global
+   * cluster.</p>
+   */
+  inline const FailoverState& GetFailoverState() const { return m_failoverState; }
+  inline bool FailoverStateHasBeenSet() const { return m_failoverStateHasBeenSet; }
+  template <typename FailoverStateT = FailoverState>
+  void SetFailoverState(FailoverStateT&& value) {
+    m_failoverStateHasBeenSet = true;
+    m_failoverState = std::forward<FailoverStateT>(value);
+  }
+  template <typename FailoverStateT = FailoverState>
+  GlobalCluster& WithFailoverState(FailoverStateT&& value) {
+    SetFailoverState(std::forward<FailoverStateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of global cluster tags.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+  inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+  template <typename TagListT = Aws::Vector<Tag>>
+  void SetTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList = std::forward<TagListT>(value);
+  }
+  template <typename TagListT = Aws::Vector<Tag>>
+  GlobalCluster& WithTagList(TagListT&& value) {
+    SetTagList(std::forward<TagListT>(value));
+    return *this;
+  }
+  template <typename TagListT = Tag>
+  GlobalCluster& AddTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList.emplace_back(std::forward<TagListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_globalClusterIdentifier;
   bool m_globalClusterIdentifierHasBeenSet = false;
@@ -251,6 +299,12 @@ class GlobalCluster {
 
   Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
   bool m_globalClusterMembersHasBeenSet = false;
+
+  FailoverState m_failoverState;
+  bool m_failoverStateHasBeenSet = false;
+
+  Aws::Vector<Tag> m_tagList;
+  bool m_tagListHasBeenSet = false;
 };
 
 }  // namespace Model

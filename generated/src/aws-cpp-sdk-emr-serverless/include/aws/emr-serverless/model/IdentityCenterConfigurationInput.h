@@ -20,10 +20,10 @@ namespace EMRServerless {
 namespace Model {
 
 /**
- * <p>Specifies the IAM Identity Center configuration used to enable or disable
- * trusted identity propagation. When provided, this configuration determines how
- * the application interacts with IAM Identity Center for user authentication and
- * access control.</p><p><h3>See Also:</h3>   <a
+ * <p>The IAM Identity Center Configuration accepts the Identity Center instance
+ * parameter required to enable trusted identity propagation. This configuration
+ * allows identity propagation between integrated services and the Identity Center
+ * instance.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/IdentityCenterConfigurationInput">AWS
  * API Reference</a></p>
  */
@@ -51,9 +51,30 @@ class IdentityCenterConfigurationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enables user background sessions for this application so Livy sessions can
+   * continue running after users log out of their interactive notebook or their
+   * Identity Center sessions expire.</p>
+   */
+  inline bool GetUserBackgroundSessionsEnabled() const { return m_userBackgroundSessionsEnabled; }
+  inline bool UserBackgroundSessionsEnabledHasBeenSet() const { return m_userBackgroundSessionsEnabledHasBeenSet; }
+  inline void SetUserBackgroundSessionsEnabled(bool value) {
+    m_userBackgroundSessionsEnabledHasBeenSet = true;
+    m_userBackgroundSessionsEnabled = value;
+  }
+  inline IdentityCenterConfigurationInput& WithUserBackgroundSessionsEnabled(bool value) {
+    SetUserBackgroundSessionsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityCenterInstanceArn;
   bool m_identityCenterInstanceArnHasBeenSet = false;
+
+  bool m_userBackgroundSessionsEnabled{false};
+  bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

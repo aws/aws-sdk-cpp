@@ -517,8 +517,7 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
 
   ///@{
   /**
-   * <p>The operating system that your tasks definitions run on. A platform family is
-   * specified only for tasks using the Fargate launch type. </p>
+   * <p>The operating system that your tasks definitions run on.</p>
    */
   inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
   inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }

@@ -133,6 +133,26 @@ class XksProxyConfigurationType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service
+   * used to communicate with the external key store proxy (XKS). This field appears
+   * only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+   */
+  inline const Aws::String& GetVpcEndpointServiceOwner() const { return m_vpcEndpointServiceOwner; }
+  inline bool VpcEndpointServiceOwnerHasBeenSet() const { return m_vpcEndpointServiceOwnerHasBeenSet; }
+  template <typename VpcEndpointServiceOwnerT = Aws::String>
+  void SetVpcEndpointServiceOwner(VpcEndpointServiceOwnerT&& value) {
+    m_vpcEndpointServiceOwnerHasBeenSet = true;
+    m_vpcEndpointServiceOwner = std::forward<VpcEndpointServiceOwnerT>(value);
+  }
+  template <typename VpcEndpointServiceOwnerT = Aws::String>
+  XksProxyConfigurationType& WithVpcEndpointServiceOwner(VpcEndpointServiceOwnerT&& value) {
+    SetVpcEndpointServiceOwner(std::forward<VpcEndpointServiceOwnerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   XksProxyConnectivityType m_connectivity{XksProxyConnectivityType::NOT_SET};
   bool m_connectivityHasBeenSet = false;
@@ -148,6 +168,9 @@ class XksProxyConfigurationType {
 
   Aws::String m_vpcEndpointServiceName;
   bool m_vpcEndpointServiceNameHasBeenSet = false;
+
+  Aws::String m_vpcEndpointServiceOwner;
+  bool m_vpcEndpointServiceOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

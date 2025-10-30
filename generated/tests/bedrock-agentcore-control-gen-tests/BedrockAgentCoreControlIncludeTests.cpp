@@ -29,6 +29,8 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkMode.h>
+#include <aws/bedrock-agentcore-control/model/BrowserSigningConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>

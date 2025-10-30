@@ -7,12 +7,14 @@
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <aws/amp/PrometheusServiceErrorMarshaller.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionRequest.h>
+#include <aws/amp/model/CreateAnomalyDetectorRequest.h>
 #include <aws/amp/model/CreateLoggingConfigurationRequest.h>
 #include <aws/amp/model/CreateQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/CreateRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/CreateScraperRequest.h>
 #include <aws/amp/model/CreateWorkspaceRequest.h>
 #include <aws/amp/model/DeleteAlertManagerDefinitionRequest.h>
+#include <aws/amp/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/amp/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteResourcePolicyRequest.h>
@@ -21,6 +23,7 @@
 #include <aws/amp/model/DeleteScraperRequest.h>
 #include <aws/amp/model/DeleteWorkspaceRequest.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionRequest.h>
+#include <aws/amp/model/DescribeAnomalyDetectorRequest.h>
 #include <aws/amp/model/DescribeLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeResourcePolicyRequest.h>
@@ -30,11 +33,13 @@
 #include <aws/amp/model/DescribeWorkspaceConfigurationRequest.h>
 #include <aws/amp/model/DescribeWorkspaceRequest.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
+#include <aws/amp/model/ListAnomalyDetectorsRequest.h>
 #include <aws/amp/model/ListRuleGroupsNamespacesRequest.h>
 #include <aws/amp/model/ListScrapersRequest.h>
 #include <aws/amp/model/ListTagsForResourceRequest.h>
 #include <aws/amp/model/ListWorkspacesRequest.h>
 #include <aws/amp/model/PutAlertManagerDefinitionRequest.h>
+#include <aws/amp/model/PutAnomalyDetectorRequest.h>
 #include <aws/amp/model/PutResourcePolicyRequest.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/TagResourceRequest.h>
@@ -210,6 +215,43 @@ CreateAlertManagerDefinitionOutcome PrometheusServiceClient::CreateAlertManagerD
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
         return CreateAlertManagerDefinitionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateAnomalyDetectorOutcome PrometheusServiceClient::CreateAnomalyDetector(const CreateAnomalyDetectorRequest& request) const {
+  AWS_OPERATION_GUARD(CreateAnomalyDetector);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAnomalyDetector", "Required field: WorkspaceId, is not set");
+    return CreateAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateAnomalyDetector",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateAnomalyDetectorOutcome>(
+      [&]() -> CreateAnomalyDetectorOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors");
+        return CreateAnomalyDetectorOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -421,6 +463,49 @@ DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerD
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
         return DeleteAlertManagerDefinitionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteAnomalyDetectorOutcome PrometheusServiceClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteAnomalyDetector);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAnomalyDetector", "Required field: WorkspaceId, is not set");
+    return DeleteAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.AnomalyDetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAnomalyDetector", "Required field: AnomalyDetectorId, is not set");
+    return DeleteAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnomalyDetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteAnomalyDetector",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteAnomalyDetectorOutcome>(
+      [&]() -> DeleteAnomalyDetectorOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
+        return DeleteAnomalyDetectorOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -725,6 +810,49 @@ DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertMana
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
         return DescribeAlertManagerDefinitionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeAnomalyDetectorOutcome PrometheusServiceClient::DescribeAnomalyDetector(const DescribeAnomalyDetectorRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeAnomalyDetector);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAnomalyDetector", "Required field: WorkspaceId, is not set");
+    return DescribeAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.AnomalyDetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAnomalyDetector", "Required field: AnomalyDetectorId, is not set");
+    return DescribeAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnomalyDetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeAnomalyDetector",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeAnomalyDetectorOutcome>(
+      [&]() -> DescribeAnomalyDetectorOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
+        return DescribeAnomalyDetectorOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1068,6 +1196,43 @@ GetDefaultScraperConfigurationOutcome PrometheusServiceClient::GetDefaultScraper
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListAnomalyDetectorsOutcome PrometheusServiceClient::ListAnomalyDetectors(const ListAnomalyDetectorsRequest& request) const {
+  AWS_OPERATION_GUARD(ListAnomalyDetectors);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnomalyDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAnomalyDetectors", "Required field: WorkspaceId, is not set");
+    return ListAnomalyDetectorsOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAnomalyDetectors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAnomalyDetectors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAnomalyDetectors",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAnomalyDetectorsOutcome>(
+      [&]() -> ListAnomalyDetectorsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnomalyDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors");
+        return ListAnomalyDetectorsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespaces(const ListRuleGroupsNamespacesRequest& request) const {
   AWS_OPERATION_GUARD(ListRuleGroupsNamespaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRuleGroupsNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1231,6 +1396,49 @@ PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinit
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
         return PutAlertManagerDefinitionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutAnomalyDetectorOutcome PrometheusServiceClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const {
+  AWS_OPERATION_GUARD(PutAnomalyDetector);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutAnomalyDetector", "Required field: WorkspaceId, is not set");
+    return PutAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.AnomalyDetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutAnomalyDetector", "Required field: AnomalyDetectorId, is not set");
+    return PutAnomalyDetectorOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(
+        PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnomalyDetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutAnomalyDetector, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutAnomalyDetector",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutAnomalyDetectorOutcome>(
+      [&]() -> PutAnomalyDetectorOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAnomalyDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
+        return PutAnomalyDetectorOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

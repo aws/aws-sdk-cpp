@@ -54,6 +54,7 @@
 #include <aws/iot-managed-integrations/model/GetEventLogConfigurationRequest.h>
 #include <aws/iot-managed-integrations/model/GetHubConfigurationRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingCapabilitiesRequest.h>
+#include <aws/iot-managed-integrations/model/GetManagedThingCertificateRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingConnectivityDataRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingMetaDataRequest.h>
 #include <aws/iot-managed-integrations/model/GetManagedThingRequest.h>
@@ -1406,6 +1407,43 @@ GetManagedThingCapabilitiesOutcome IoTManagedIntegrationsClient::GetManagedThing
         endpointResolutionOutcome.GetResult().AddPathSegments("/managed-things-capabilities/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         return GetManagedThingCapabilitiesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetManagedThingCertificateOutcome IoTManagedIntegrationsClient::GetManagedThingCertificate(
+    const GetManagedThingCertificateRequest& request) const {
+  AWS_OPERATION_GUARD(GetManagedThingCertificate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetManagedThingCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetManagedThingCertificate", "Required field: Identifier, is not set");
+    return GetManagedThingCertificateOutcome(Aws::Client::AWSError<IoTManagedIntegrationsErrors>(
+        IoTManagedIntegrationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetManagedThingCertificate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetManagedThingCertificate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetManagedThingCertificate",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetManagedThingCertificateOutcome>(
+      [&]() -> GetManagedThingCertificateOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetManagedThingCertificate, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/managed-things-certificate/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+        return GetManagedThingCertificateOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

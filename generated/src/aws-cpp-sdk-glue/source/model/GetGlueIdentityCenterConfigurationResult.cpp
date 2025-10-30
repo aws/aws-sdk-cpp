@@ -39,6 +39,10 @@ GetGlueIdentityCenterConfigurationResult& GetGlueIdentityCenterConfigurationResu
     }
     m_scopesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UserBackgroundSessionsEnabled")) {
+    m_userBackgroundSessionsEnabled = jsonValue.GetBool("UserBackgroundSessionsEnabled");
+    m_userBackgroundSessionsEnabledHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -212,6 +212,28 @@ class UpdateCustomKeyStoreRequest : public KMSRequest {
 
   ///@{
   /**
+   * <p>Changes the Amazon Web Services account ID that KMS uses to identify the
+   * Amazon VPC endpoint service for your external key store proxy (XKS proxy). This
+   * parameter is optional. If not specified, the current Amazon Web Services account
+   * ID for the VPC endpoint service will not be updated.</p> <p>To change this
+   * value, the external key store must be disconnected.</p>
+   */
+  inline const Aws::String& GetXksProxyVpcEndpointServiceOwner() const { return m_xksProxyVpcEndpointServiceOwner; }
+  inline bool XksProxyVpcEndpointServiceOwnerHasBeenSet() const { return m_xksProxyVpcEndpointServiceOwnerHasBeenSet; }
+  template <typename XksProxyVpcEndpointServiceOwnerT = Aws::String>
+  void SetXksProxyVpcEndpointServiceOwner(XksProxyVpcEndpointServiceOwnerT&& value) {
+    m_xksProxyVpcEndpointServiceOwnerHasBeenSet = true;
+    m_xksProxyVpcEndpointServiceOwner = std::forward<XksProxyVpcEndpointServiceOwnerT>(value);
+  }
+  template <typename XksProxyVpcEndpointServiceOwnerT = Aws::String>
+  UpdateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceOwner(XksProxyVpcEndpointServiceOwnerT&& value) {
+    SetXksProxyVpcEndpointServiceOwner(std::forward<XksProxyVpcEndpointServiceOwnerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Changes the credentials that KMS uses to sign requests to the external key
    * store proxy (XKS proxy). This parameter is valid only for custom key stores with
    * a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p> <p>You
@@ -286,6 +308,9 @@ class UpdateCustomKeyStoreRequest : public KMSRequest {
 
   Aws::String m_xksProxyVpcEndpointServiceName;
   bool m_xksProxyVpcEndpointServiceNameHasBeenSet = false;
+
+  Aws::String m_xksProxyVpcEndpointServiceOwner;
+  bool m_xksProxyVpcEndpointServiceOwnerHasBeenSet = false;
 
   XksProxyAuthenticationCredentialType m_xksProxyAuthenticationCredential;
   bool m_xksProxyAuthenticationCredentialHasBeenSet = false;

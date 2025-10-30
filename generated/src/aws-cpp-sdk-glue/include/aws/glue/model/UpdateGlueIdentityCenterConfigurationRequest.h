@@ -59,9 +59,29 @@ class UpdateGlueIdentityCenterConfigurationRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether users can run background sessions when using Identity
+   * Center authentication with Glue services.</p>
+   */
+  inline bool GetUserBackgroundSessionsEnabled() const { return m_userBackgroundSessionsEnabled; }
+  inline bool UserBackgroundSessionsEnabledHasBeenSet() const { return m_userBackgroundSessionsEnabledHasBeenSet; }
+  inline void SetUserBackgroundSessionsEnabled(bool value) {
+    m_userBackgroundSessionsEnabledHasBeenSet = true;
+    m_userBackgroundSessionsEnabled = value;
+  }
+  inline UpdateGlueIdentityCenterConfigurationRequest& WithUserBackgroundSessionsEnabled(bool value) {
+    SetUserBackgroundSessionsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_scopes;
   bool m_scopesHasBeenSet = false;
+
+  bool m_userBackgroundSessionsEnabled{false};
+  bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

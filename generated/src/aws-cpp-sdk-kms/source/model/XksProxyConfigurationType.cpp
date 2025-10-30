@@ -38,6 +38,10 @@ XksProxyConfigurationType& XksProxyConfigurationType::operator=(JsonView jsonVal
     m_vpcEndpointServiceName = jsonValue.GetString("VpcEndpointServiceName");
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VpcEndpointServiceOwner")) {
+    m_vpcEndpointServiceOwner = jsonValue.GetString("VpcEndpointServiceOwner");
+    m_vpcEndpointServiceOwnerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue XksProxyConfigurationType::Jsonize() const {
 
   if (m_vpcEndpointServiceNameHasBeenSet) {
     payload.WithString("VpcEndpointServiceName", m_vpcEndpointServiceName);
+  }
+
+  if (m_vpcEndpointServiceOwnerHasBeenSet) {
+    payload.WithString("VpcEndpointServiceOwner", m_vpcEndpointServiceOwner);
   }
 
   return payload;

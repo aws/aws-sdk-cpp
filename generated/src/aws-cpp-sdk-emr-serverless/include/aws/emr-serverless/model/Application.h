@@ -482,7 +482,7 @@ class Application {
   ///@{
   /**
    * <p>The IAM Identity Center configuration applied to enable trusted identity
-   * propagation. </p>
+   * propagation.</p>
    */
   inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
   inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }

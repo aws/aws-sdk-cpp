@@ -167,9 +167,9 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Create a product credential locker. This operation will trigger the creation
-   * of all the manufacturing resources including the Wi-Fi setup key pair and device
-   * certificate.</p><p><h3>See Also:</h3>   <a
+   * <p>Create a credential locker.</p>  <p>This operation will not trigger the
+   * creation of all the manufacturing resources.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCredentialLocker">AWS
    * API Reference</a></p>
    */
@@ -196,9 +196,10 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p> Create a destination. IoT managed integrations uses the destination to
-   * determine where to deliver notifications for a device. </p><p><h3>See Also:</h3>
-   * <a
+   * <p> Create a notification destination such as Kinesis Data Streams that receive
+   * events and notifications from Managed integrations. Managed integrations uses
+   * the destination to determine where to deliver notifications.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateDestination">AWS
    * API Reference</a></p>
    */
@@ -255,8 +256,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
 
   /**
    * <p>Creates a managed thing. A managed thing contains the device identifier,
-   * protocol supported, and capabilities of the device in a protocol-specific
-   * format.</p><p><h3>See Also:</h3>   <a
+   * protocol supported, and capabilities of the device in a data model format
+   * defined by Managed integrations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateManagedThing">AWS
    * API Reference</a></p>
    */
@@ -313,7 +314,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Create an over-the-air (OTA) task to update a device.</p><p><h3>See
+   * <p>Create an over-the-air (OTA) task to target a device.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateOtaTask">AWS
    * API Reference</a></p>
@@ -400,8 +401,11 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Remove a third party account and related devices from an end
-   * user.</p><p><h3>See Also:</h3>   <a
+   * <p>Remove a third-party account association for an end user.</p>  <p>You
+   * must first call the <code>DeregisterAccountAssociation</code> to remove the
+   * connection between the managed thing and the third-party account before calling
+   * the <code>DeleteAccountAssociation</code> API.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">AWS
    * API Reference</a></p>
    */
@@ -454,9 +458,9 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Delete a connector destination for connecting a cloud-to-cloud (C2C)
-   * connector to the customer's Amazon Web Services account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Delete a connector destination linked to a cloud-to-cloud (C2C)
+   * connector.</p>  <p>Deletion can't be done if the account association has
+   * used this connector destination.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">AWS
    * API Reference</a></p>
    */
@@ -514,7 +518,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Deletes a customer-managed destination specified by id. </p><p><h3>See
+   * <p>Deletes a notification destination specified by name. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteDestination">AWS
    * API Reference</a></p>
@@ -570,9 +574,10 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Delete a managed thing. If a controller is deleted, all of the devices
+   * <p>Delete a managed thing. For direct-connected and hub-connected devices
+   * connecting with Managed integrations via a controller, all of the devices
    * connected to it will have their status changed to <code>PENDING</code>. It is
-   * not possible to remove a cloud device.</p><p><h3>See Also:</h3>   <a
+   * not possible to remove a cloud-to-cloud device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteManagedThing">AWS
    * API Reference</a></p>
    */
@@ -710,8 +715,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Deregisters an account association, removing the connection between a managed
-   * thing and a third-party account.</p><p><h3>See Also:</h3>   <a
+   * <p>Deregister an account association from a managed thing.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">AWS
    * API Reference</a></p>
    */
@@ -767,8 +772,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Gets all the information about a connector for a connector
-   * developer.</p><p><h3>See Also:</h3>   <a
+   * <p>Get configuration details for a cloud connector.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">AWS
    * API Reference</a></p>
    */
@@ -794,8 +799,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Get a connector destination of a cloud-to-cloud (C2C) connector connecting to
-   * a customer's Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+   * <p>Get connector destination details linked to a cloud-to-cloud (C2C)
+   * connector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">AWS
    * API Reference</a></p>
    */
@@ -911,7 +916,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Gets a destination by ID. </p><p><h3>See Also:</h3>   <a
+   * <p>Gets a destination by name. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetDestination">AWS
    * API Reference</a></p>
    */
@@ -1016,8 +1021,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p> Get the attributes and capabilities associated with a managed
-   * thing.</p><p><h3>See Also:</h3>   <a
+   * <p> Get details of a managed thing including its attributes and
+   * capabilities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThing">AWS
    * API Reference</a></p>
    */
@@ -1069,6 +1074,36 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
                                         const GetManagedThingCapabilitiesResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IoTManagedIntegrationsClient::GetManagedThingCapabilities, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the certificate PEM for a managed IoT thing.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetManagedThingCertificate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetManagedThingCertificateOutcome GetManagedThingCertificate(
+      const Model::GetManagedThingCertificateRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetManagedThingCertificate that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetManagedThingCertificateRequestT = Model::GetManagedThingCertificateRequest>
+  Model::GetManagedThingCertificateOutcomeCallable GetManagedThingCertificateCallable(
+      const GetManagedThingCertificateRequestT& request) const {
+    return SubmitCallable(&IoTManagedIntegrationsClient::GetManagedThingCertificate, request);
+  }
+
+  /**
+   * An Async wrapper for GetManagedThingCertificate that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetManagedThingCertificateRequestT = Model::GetManagedThingCertificateRequest>
+  void GetManagedThingCertificateAsync(const GetManagedThingCertificateRequestT& request,
+                                       const GetManagedThingCertificateResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IoTManagedIntegrationsClient::GetManagedThingCertificate, request, handler, context);
   }
 
   /**
@@ -1160,7 +1195,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p> Get a notification configuration.</p><p><h3>See Also:</h3>   <a
+   * <p> Get a notification configuration for a specified event type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetNotificationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1189,7 +1225,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Get the over-the-air (OTA) task.</p><p><h3>See Also:</h3>   <a
+   * <p>Get details of the over-the-air (OTA) task by its task id.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetOtaTask">AWS
    * API Reference</a></p>
    */
@@ -1269,8 +1306,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Get the runtime log configuration for a specific managed thing or for all
-   * managed things as a group.</p><p><h3>See Also:</h3>   <a
+   * <p>Get the runtime log configuration for a specific managed thing.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetRuntimeLogConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1354,8 +1391,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Returns a list of connectors based on permissions. </p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns a list of connectors filtered by its Lambda Amazon Resource Name
+   * (ARN) and <code>type</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">AWS
    * API Reference</a></p>
    */
@@ -1440,8 +1477,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p> List all destination names under one Amazon Web Services
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p> List all notification destinations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDestinations">AWS
    * API Reference</a></p>
    */
@@ -1980,8 +2016,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Reset a runtime log configuration for a specific managed thing or for all
-   * managed things as a group.</p><p><h3>See Also:</h3>   <a
+   * <p>Reset a runtime log configuration for a specific managed thing.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ResetRuntimeLogConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2097,7 +2133,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   /**
    * <p> This API is used to start device discovery for hub-connected and
    * third-party-connected devices. The authentication material (install code) is
-   * passed as a message to the controller telling it to start the
+   * delivered as a message to the controller instructing it to start the
    * discovery.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartDeviceDiscovery">AWS
    * API Reference</a></p>
@@ -2258,7 +2294,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p> Update a destination specified by id. </p><p><h3>See Also:</h3>   <a
+   * <p> Update a destination specified by name. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateDestination">AWS
    * API Reference</a></p>
    */

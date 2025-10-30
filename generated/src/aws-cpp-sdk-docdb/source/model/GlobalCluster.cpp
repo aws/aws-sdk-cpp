@@ -81,6 +81,22 @@ GlobalCluster& GlobalCluster::operator=(const XmlNode& xmlNode) {
 
       m_globalClusterMembersHasBeenSet = true;
     }
+    XmlNode failoverStateNode = resultNode.FirstChild("FailoverState");
+    if (!failoverStateNode.IsNull()) {
+      m_failoverState = failoverStateNode;
+      m_failoverStateHasBeenSet = true;
+    }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if (!tagListNode.IsNull()) {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
+      while (!tagListMember.IsNull()) {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -134,6 +150,21 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
       item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
     }
   }
+
+  if (m_failoverStateHasBeenSet) {
+    Aws::StringStream failoverStateLocationAndMemberSs;
+    failoverStateLocationAndMemberSs << location << index << locationValue << ".FailoverState";
+    m_failoverState.OutputToStream(oStream, failoverStateLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << index << locationValue << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
+    }
+  }
 }
 
 void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -170,6 +201,19 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::StringStream globalClusterMembersSs;
       globalClusterMembersSs << location << ".GlobalClusterMembers.GlobalClusterMember." << globalClusterMembersIdx++;
       item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
+    }
+  }
+  if (m_failoverStateHasBeenSet) {
+    Aws::String failoverStateLocationAndMember(location);
+    failoverStateLocationAndMember += ".FailoverState";
+    m_failoverState.OutputToStream(oStream, failoverStateLocationAndMember.c_str());
+  }
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
     }
   }
 }

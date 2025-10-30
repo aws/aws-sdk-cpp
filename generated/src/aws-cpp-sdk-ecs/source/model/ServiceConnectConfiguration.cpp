@@ -37,6 +37,10 @@ ServiceConnectConfiguration& ServiceConnectConfiguration::operator=(JsonView jso
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
     m_logConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accessLogConfiguration")) {
+    m_accessLogConfiguration = jsonValue.GetObject("accessLogConfiguration");
+    m_accessLogConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue ServiceConnectConfiguration::Jsonize() const {
 
   if (m_logConfigurationHasBeenSet) {
     payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+  }
+
+  if (m_accessLogConfigurationHasBeenSet) {
+    payload.WithObject("accessLogConfiguration", m_accessLogConfiguration.Jsonize());
   }
 
   return payload;

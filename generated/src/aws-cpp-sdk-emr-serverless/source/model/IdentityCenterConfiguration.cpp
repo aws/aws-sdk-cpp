@@ -26,6 +26,10 @@ IdentityCenterConfiguration& IdentityCenterConfiguration::operator=(JsonView jso
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
     m_identityCenterApplicationArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("userBackgroundSessionsEnabled")) {
+    m_userBackgroundSessionsEnabled = jsonValue.GetBool("userBackgroundSessionsEnabled");
+    m_userBackgroundSessionsEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue IdentityCenterConfiguration::Jsonize() const {
 
   if (m_identityCenterApplicationArnHasBeenSet) {
     payload.WithString("identityCenterApplicationArn", m_identityCenterApplicationArn);
+  }
+
+  if (m_userBackgroundSessionsEnabledHasBeenSet) {
+    payload.WithBool("userBackgroundSessionsEnabled", m_userBackgroundSessionsEnabled);
   }
 
   return payload;

@@ -435,6 +435,7 @@
 #include <aws/cleanrooms/model/ValidationExceptionField.h>
 #include <aws/cleanrooms/model/ValidationExceptionReason.h>
 #include <aws/cleanrooms/model/WorkerComputeConfiguration.h>
+#include <aws/cleanrooms/model/WorkerComputeConfigurationProperties.h>
 #include <aws/cleanrooms/model/WorkerComputeType.h>
 
 using CleanRoomsIncludeTest = ::testing::Test;

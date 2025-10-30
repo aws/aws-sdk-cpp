@@ -49,6 +49,10 @@ GetBrowserResult& GetBrowserResult::operator=(const Aws::AmazonWebServiceResult<
     m_recording = jsonValue.GetObject("recording");
     m_recordingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("browserSigning")) {
+    m_browserSigning = jsonValue.GetObject("browserSigning");
+    m_browserSigningHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = BrowserStatusMapper::GetBrowserStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

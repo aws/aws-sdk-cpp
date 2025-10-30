@@ -14,10 +14,9 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 /**
- * <p> <p> is in preview release and is subject to change.</p>
  * <p>Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control
  * plane actions configure, create, modify, and monitor Amazon Web Services
- * resources.</p></p>
+ * resources.</p>
  */
 class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     : public Aws::Client::AWSJsonClient,

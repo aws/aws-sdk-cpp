@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/BrowserSigningConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -127,6 +128,25 @@ class CreateBrowserRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The browser signing configuration that enables cryptographic agent
+   * identification using HTTP message signatures for web bot authentication.</p>
+   */
+  inline const BrowserSigningConfigInput& GetBrowserSigning() const { return m_browserSigning; }
+  inline bool BrowserSigningHasBeenSet() const { return m_browserSigningHasBeenSet; }
+  template <typename BrowserSigningT = BrowserSigningConfigInput>
+  void SetBrowserSigning(BrowserSigningT&& value) {
+    m_browserSigningHasBeenSet = true;
+    m_browserSigning = std::forward<BrowserSigningT>(value);
+  }
+  template <typename BrowserSigningT = BrowserSigningConfigInput>
+  CreateBrowserRequest& WithBrowserSigning(BrowserSigningT&& value) {
+    SetBrowserSigning(std::forward<BrowserSigningT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the operation completes no
    * more than one time. If this token matches a previous request, Amazon Bedrock
    * ignores the request but does not return an error.</p>
@@ -185,6 +205,9 @@ class CreateBrowserRequest : public BedrockAgentCoreControlRequest {
 
   RecordingConfig m_recording;
   bool m_recordingHasBeenSet = false;
+
+  BrowserSigningConfigInput m_browserSigning;
+  bool m_browserSigningHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;

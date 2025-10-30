@@ -94,6 +94,22 @@ class GetGlueIdentityCenterConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether users can run background sessions when using Identity
+   * Center authentication with Glue services.</p>
+   */
+  inline bool GetUserBackgroundSessionsEnabled() const { return m_userBackgroundSessionsEnabled; }
+  inline void SetUserBackgroundSessionsEnabled(bool value) {
+    m_userBackgroundSessionsEnabledHasBeenSet = true;
+    m_userBackgroundSessionsEnabled = value;
+  }
+  inline GetGlueIdentityCenterConfigurationResult& WithUserBackgroundSessionsEnabled(bool value) {
+    SetUserBackgroundSessionsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -116,6 +132,9 @@ class GetGlueIdentityCenterConfigurationResult {
 
   Aws::Vector<Aws::String> m_scopes;
   bool m_scopesHasBeenSet = false;
+
+  bool m_userBackgroundSessionsEnabled{false};
+  bool m_userBackgroundSessionsEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

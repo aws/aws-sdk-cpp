@@ -142,9 +142,9 @@ class ContainerDefinition {
   ///@{
   /**
    * <p>The number of <code>cpu</code> units reserved for the container. This
-   * parameter maps to <code>CpuShares</code> in the docker container create
-   * commandand the <code>--cpu-shares</code> option to docker run.</p> <p>This field
-   * is optional for tasks using the Fargate launch type, and the only requirement is
+   * parameter maps to <code>CpuShares</code> in the docker container create command
+   * and the <code>--cpu-shares</code> option to docker run.</p> <p>This field is
+   * optional for tasks using the Fargate launch type, and the only requirement is
    * that the total amount of CPU reserved for all containers within a task be lower
    * than the task-level <code>cpu</code> value.</p>  <p>You can determine the
    * number of CPU units that are available per EC2 instance type by multiplying the

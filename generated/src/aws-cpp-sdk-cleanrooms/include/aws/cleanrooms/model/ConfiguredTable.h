@@ -210,7 +210,7 @@ class ConfiguredTable {
 
   ///@{
   /**
-   * <p>The columns within the underlying Glue table that can be utilized within
+   * <p>The columns within the underlying Glue table that can be used within
    * collaborations.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedColumns() const { return m_allowedColumns; }

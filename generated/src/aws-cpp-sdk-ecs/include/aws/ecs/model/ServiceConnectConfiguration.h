@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/LogConfiguration.h>
+#include <aws/ecs/model/ServiceConnectAccessLogConfiguration.h>
 #include <aws/ecs/model/ServiceConnectService.h>
 
 #include <utility>
@@ -130,6 +131,31 @@ class ServiceConnectConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for Service Connect access logging. Access logs capture
+   * detailed information about requests made to your service, including request
+   * patterns, response codes, and timing data. They can be useful for debugging
+   * connectivity issues, monitoring service performance, and auditing
+   * service-to-service communication for security and compliance purposes.</p>
+   *  <p>To enable access logs, you must also specify a
+   * <code>logConfiguration</code> in the
+   * <code>serviceConnectConfiguration</code>.</p>
+   */
+  inline const ServiceConnectAccessLogConfiguration& GetAccessLogConfiguration() const { return m_accessLogConfiguration; }
+  inline bool AccessLogConfigurationHasBeenSet() const { return m_accessLogConfigurationHasBeenSet; }
+  template <typename AccessLogConfigurationT = ServiceConnectAccessLogConfiguration>
+  void SetAccessLogConfiguration(AccessLogConfigurationT&& value) {
+    m_accessLogConfigurationHasBeenSet = true;
+    m_accessLogConfiguration = std::forward<AccessLogConfigurationT>(value);
+  }
+  template <typename AccessLogConfigurationT = ServiceConnectAccessLogConfiguration>
+  ServiceConnectConfiguration& WithAccessLogConfiguration(AccessLogConfigurationT&& value) {
+    SetAccessLogConfiguration(std::forward<AccessLogConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
@@ -142,6 +168,9 @@ class ServiceConnectConfiguration {
 
   LogConfiguration m_logConfiguration;
   bool m_logConfigurationHasBeenSet = false;
+
+  ServiceConnectAccessLogConfiguration m_accessLogConfiguration;
+  bool m_accessLogConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model
