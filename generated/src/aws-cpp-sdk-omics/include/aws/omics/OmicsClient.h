@@ -167,7 +167,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Cancels an annotation import job.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Cancels an annotation import
+   * job.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelAnnotationImportJob">AWS
    * API Reference</a></p>
    */
@@ -223,7 +231,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Cancels a variant import job.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Cancels a variant import job.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelVariantImportJob">AWS
    * API Reference</a></p>
    */
@@ -287,7 +303,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Creates an annotation store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Creates an annotation store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">AWS
    * API Reference</a></p>
    */
@@ -559,7 +583,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Creates a variant store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Creates a variant store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">AWS
    * API Reference</a></p>
    */
@@ -587,19 +619,31 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   /**
    * <p>Creates a private workflow. Before you create a private workflow, you must
    * create and configure these required resources:</p> <ul> <li> <p> <i>Workflow
-   * definition files</i>: Define your workflow in one or more workflow definition
-   * files, written in WDL, Nextflow, or CWL. The workflow definition specifies the
-   * inputs and outputs for runs that use the workflow. It also includes
-   * specifications for the runs and run tasks for your workflow, including compute
-   * and memory requirements. The workflow definition file must be in .zip
-   * format.</p> </li> <li> <p>(Optional) <i>Parameter template</i>: You can create a
-   * parameter template file that defines the run parameters, or Amazon Web Services
-   * HealthOmics can generate the parameter template for you.</p> </li> <li> <p>
-   * <i>ECR container images</i>: Create container images for the workflow in a
-   * private ECR repository, or synchronize images from a supported upstream registry
-   * with your Amazon ECR private repository.</p> </li> <li> <p>(Optional)
-   * <i>Sentieon licenses</i>: Request a Sentieon license if using the Sentieon
-   * software in a private workflow.</p> </li> </ul> <p>For more information, see <a
+   * definition file:</i> A workflow definition file written in WDL, Nextflow, or
+   * CWL. The workflow definition specifies the inputs and outputs for runs that use
+   * the workflow. It also includes specifications for the runs and run tasks for
+   * your workflow, including compute and memory requirements. The workflow
+   * definition file must be in <code>.zip</code> format. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-files.html">Workflow
+   * definition files</a> in Amazon Web Services HealthOmics.</p> <ul> <li> <p>You
+   * can use Amazon Q CLI to build and validate your workflow definition files in
+   * WDL, Nextflow, and CWL. For more information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/getting-started.html#omics-q-prompts">Example
+   * prompts for Amazon Q CLI</a> and the <a
+   * href="https://github.com/aws-samples/aws-healthomics-tutorials/tree/main/generative-ai">Amazon
+   * Web Services HealthOmics Agentic generative AI tutorial</a> on GitHub.</p> </li>
+   * </ul> </li> <li> <p> <i>(Optional) Parameter template file:</i> A parameter
+   * template file written in JSON. Create the file to define the run parameters, or
+   * Amazon Web Services HealthOmics generates the parameter template for you. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter
+   * template files for HealthOmics workflows</a>. </p> </li> <li> <p> <i>ECR
+   * container images:</i> Create container images for the workflow in a private ECR
+   * repository, or synchronize images from a supported upstream registry with your
+   * Amazon ECR private repository.</p> </li> <li> <p> <i>(Optional) Sentieon
+   * licenses:</i> Request a Sentieon license to use the Sentieon software in private
+   * workflows.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
    * or updating a private workflow in Amazon Web Services HealthOmics</a> in the
    * <i>Amazon Web Services HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -663,7 +707,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Deletes an annotation store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Deletes an annotation store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStore">AWS
    * API Reference</a></p>
    */
@@ -969,7 +1021,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Deletes a variant store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Deletes a variant store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">AWS
    * API Reference</a></p>
    */
@@ -1056,8 +1116,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Gets information about an annotation import job.</p><p><h3>See Also:</h3>
-   * <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Gets information about an annotation import
+   * job.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationImportJob">AWS
    * API Reference</a></p>
    */
@@ -1084,7 +1151,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Gets information about an annotation store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Gets information about an annotation
+   * store.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStore">AWS
    * API Reference</a></p>
    */
@@ -1584,7 +1659,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Gets information about a variant import job.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Gets information about a variant import
+   * job.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">AWS
    * API Reference</a></p>
    */
@@ -1610,7 +1693,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Gets information about a variant store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Gets information about a variant
+   * store.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantStore">AWS
    * API Reference</a></p>
    */
@@ -1694,7 +1785,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Retrieves a list of annotation import jobs.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Retrieves a list of annotation import
+   * jobs.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">AWS
    * API Reference</a></p>
    */
@@ -1751,7 +1850,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Retrieves a list of annotation stores.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Retrieves a list of annotation
+   * stores.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">AWS
    * API Reference</a></p>
    */
@@ -2238,7 +2345,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Retrieves a list of variant import jobs.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Retrieves a list of variant import
+   * jobs.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">AWS
    * API Reference</a></p>
    */
@@ -2265,7 +2380,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Retrieves a list of variant stores.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Retrieves a list of variant
+   * stores.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">AWS
    * API Reference</a></p>
    */
@@ -2379,7 +2502,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Starts an annotation import job.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Starts an annotation import
+   * job.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">AWS
    * API Reference</a></p>
    */
@@ -2567,8 +2698,11 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
    * remove the excess runs.</p> </li> </ul> <p>To learn more about the retention
    * modes, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run
-   * retention mode</a> in the <i>Amazon Web Services HealthOmics User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+   * <p>You can use Amazon Q CLI to analyze run logs and make performance
+   * optimization recommendations. To get started, see the <a
+   * href="https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server">Amazon
+   * Web Services HealthOmics MCP server</a> on GitHub.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS API
    * Reference</a></p>
    */
@@ -2593,7 +2727,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Starts a variant import job.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Starts a variant import job.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartVariantImportJob">AWS
    * API Reference</a></p>
    */
@@ -2669,7 +2811,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Updates an annotation store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Updates an annotation store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStore">AWS
    * API Reference</a></p>
    */
@@ -2817,7 +2967,15 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
-   * <p>Updates a variant store.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
+   * stores will no longer be open to new customers starting November 7, 2025. If you
+   * would like to use variant stores or annotation stores, sign up prior to that
+   * date. Existing customers can continue to use the service as normal. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+   * Amazon Web Services HealthOmics variant store and annotation store availability
+   * change</a>.</p>  <p>Updates a variant store.</p></p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateVariantStore">AWS
    * API Reference</a></p>
    */

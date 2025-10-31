@@ -18,6 +18,10 @@ namespace Model {
 TrackSourceSettings::TrackSourceSettings(JsonView jsonValue) { *this = jsonValue; }
 
 TrackSourceSettings& TrackSourceSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamNumber")) {
+    m_streamNumber = jsonValue.GetInteger("streamNumber");
+    m_streamNumberHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("trackNumber")) {
     m_trackNumber = jsonValue.GetInteger("trackNumber");
     m_trackNumberHasBeenSet = true;
@@ -27,6 +31,10 @@ TrackSourceSettings& TrackSourceSettings::operator=(JsonView jsonValue) {
 
 JsonValue TrackSourceSettings::Jsonize() const {
   JsonValue payload;
+
+  if (m_streamNumberHasBeenSet) {
+    payload.WithInteger("streamNumber", m_streamNumber);
+  }
 
   if (m_trackNumberHasBeenSet) {
     payload.WithInteger("trackNumber", m_trackNumber);

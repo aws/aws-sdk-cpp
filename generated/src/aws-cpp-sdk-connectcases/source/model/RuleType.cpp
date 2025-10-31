@@ -16,11 +16,17 @@ namespace Model {
 namespace RuleTypeMapper {
 
 static const int Required_HASH = HashingUtils::HashString("Required");
+static const int Hidden_HASH = HashingUtils::HashString("Hidden");
+static const int FieldOptions_HASH = HashingUtils::HashString("FieldOptions");
 
 RuleType GetRuleTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Required_HASH) {
     return RuleType::Required;
+  } else if (hashCode == Hidden_HASH) {
+    return RuleType::Hidden;
+  } else if (hashCode == FieldOptions_HASH) {
+    return RuleType::FieldOptions;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForRuleType(RuleType enumValue) {
       return {};
     case RuleType::Required:
       return "Required";
+    case RuleType::Hidden:
+      return "Hidden";
+    case RuleType::FieldOptions:
+      return "FieldOptions";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

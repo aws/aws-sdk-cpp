@@ -107,6 +107,54 @@ class VpcEncryptionControlExclusions {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const VpcEncryptionControlExclusion& GetLambda() const { return m_lambda; }
+  inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+  template <typename LambdaT = VpcEncryptionControlExclusion>
+  void SetLambda(LambdaT&& value) {
+    m_lambdaHasBeenSet = true;
+    m_lambda = std::forward<LambdaT>(value);
+  }
+  template <typename LambdaT = VpcEncryptionControlExclusion>
+  VpcEncryptionControlExclusions& WithLambda(LambdaT&& value) {
+    SetLambda(std::forward<LambdaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const VpcEncryptionControlExclusion& GetVpcLattice() const { return m_vpcLattice; }
+  inline bool VpcLatticeHasBeenSet() const { return m_vpcLatticeHasBeenSet; }
+  template <typename VpcLatticeT = VpcEncryptionControlExclusion>
+  void SetVpcLattice(VpcLatticeT&& value) {
+    m_vpcLatticeHasBeenSet = true;
+    m_vpcLattice = std::forward<VpcLatticeT>(value);
+  }
+  template <typename VpcLatticeT = VpcEncryptionControlExclusion>
+  VpcEncryptionControlExclusions& WithVpcLattice(VpcLatticeT&& value) {
+    SetVpcLattice(std::forward<VpcLatticeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const VpcEncryptionControlExclusion& GetElasticFileSystem() const { return m_elasticFileSystem; }
+  inline bool ElasticFileSystemHasBeenSet() const { return m_elasticFileSystemHasBeenSet; }
+  template <typename ElasticFileSystemT = VpcEncryptionControlExclusion>
+  void SetElasticFileSystem(ElasticFileSystemT&& value) {
+    m_elasticFileSystemHasBeenSet = true;
+    m_elasticFileSystem = std::forward<ElasticFileSystemT>(value);
+  }
+  template <typename ElasticFileSystemT = VpcEncryptionControlExclusion>
+  VpcEncryptionControlExclusions& WithElasticFileSystem(ElasticFileSystemT&& value) {
+    SetElasticFileSystem(std::forward<ElasticFileSystemT>(value));
+    return *this;
+  }
+  ///@}
  private:
   VpcEncryptionControlExclusion m_internetGateway;
   bool m_internetGatewayHasBeenSet = false;
@@ -122,6 +170,15 @@ class VpcEncryptionControlExclusions {
 
   VpcEncryptionControlExclusion m_vpcPeering;
   bool m_vpcPeeringHasBeenSet = false;
+
+  VpcEncryptionControlExclusion m_lambda;
+  bool m_lambdaHasBeenSet = false;
+
+  VpcEncryptionControlExclusion m_vpcLattice;
+  bool m_vpcLatticeHasBeenSet = false;
+
+  VpcEncryptionControlExclusion m_elasticFileSystem;
+  bool m_elasticFileSystemHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -50,6 +50,10 @@ VideoCodecSettings& VideoCodecSettings::operator=(JsonView jsonValue) {
     m_mpeg2Settings = jsonValue.GetObject("mpeg2Settings");
     m_mpeg2SettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("passthroughSettings")) {
+    m_passthroughSettings = jsonValue.GetObject("passthroughSettings");
+    m_passthroughSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("proresSettings")) {
     m_proresSettings = jsonValue.GetObject("proresSettings");
     m_proresSettingsHasBeenSet = true;
@@ -110,6 +114,10 @@ JsonValue VideoCodecSettings::Jsonize() const {
 
   if (m_mpeg2SettingsHasBeenSet) {
     payload.WithObject("mpeg2Settings", m_mpeg2Settings.Jsonize());
+  }
+
+  if (m_passthroughSettingsHasBeenSet) {
+    payload.WithObject("passthroughSettings", m_passthroughSettings.Jsonize());
   }
 
   if (m_proresSettingsHasBeenSet) {

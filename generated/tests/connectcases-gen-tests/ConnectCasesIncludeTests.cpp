@@ -90,6 +90,7 @@
 #include <aws/connectcases/model/FieldNamespace.h>
 #include <aws/connectcases/model/FieldOption.h>
 #include <aws/connectcases/model/FieldOptionError.h>
+#include <aws/connectcases/model/FieldOptionsCaseRule.h>
 #include <aws/connectcases/model/FieldSummary.h>
 #include <aws/connectcases/model/FieldType.h>
 #include <aws/connectcases/model/FieldValue.h>
@@ -110,6 +111,7 @@
 #include <aws/connectcases/model/GetLayoutResult.h>
 #include <aws/connectcases/model/GetTemplateRequest.h>
 #include <aws/connectcases/model/GetTemplateResult.h>
+#include <aws/connectcases/model/HiddenCaseRule.h>
 #include <aws/connectcases/model/InternalServerException.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/connectcases/model/LayoutContent.h>
@@ -134,6 +136,7 @@
 #include <aws/connectcases/model/OperandOne.h>
 #include <aws/connectcases/model/OperandTwo.h>
 #include <aws/connectcases/model/Order.h>
+#include <aws/connectcases/model/ParentChildFieldOptionsMapping.h>
 #include <aws/connectcases/model/PutCaseEventConfigurationRequest.h>
 #include <aws/connectcases/model/PutCaseEventConfigurationResult.h>
 #include <aws/connectcases/model/RelatedItemContent.h>

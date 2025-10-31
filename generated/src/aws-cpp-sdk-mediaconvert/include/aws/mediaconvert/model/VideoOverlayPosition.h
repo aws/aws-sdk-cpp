@@ -57,6 +57,23 @@ class VideoOverlayPosition {
 
   ///@{
   /**
+   * Use Opacity to specify how much of the underlying video shows through the
+   * overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+   */
+  inline int GetOpacity() const { return m_opacity; }
+  inline bool OpacityHasBeenSet() const { return m_opacityHasBeenSet; }
+  inline void SetOpacity(int value) {
+    m_opacityHasBeenSet = true;
+    m_opacity = value;
+  }
+  inline VideoOverlayPosition& WithOpacity(int value) {
+    SetOpacity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the Unit type to use when you enter a value for X position, Y position,
    * Width, or Height. You can choose Pixels or Percentage. Leave blank to use the
    * default value, Pixels.
@@ -147,6 +164,9 @@ class VideoOverlayPosition {
  private:
   int m_height{0};
   bool m_heightHasBeenSet = false;
+
+  int m_opacity{0};
+  bool m_opacityHasBeenSet = false;
 
   VideoOverlayUnit m_unit{VideoOverlayUnit::NOT_SET};
   bool m_unitHasBeenSet = false;

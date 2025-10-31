@@ -304,11 +304,14 @@ class Key {
 
   ///@{
   /**
-   * <p>Indicates whether this key is a multi-region key and its role in the
-   * multi-region key hierarchy.</p> <p>Multi-region keys allow the same key material
-   * to be used across multiple Amazon Web Services Regions. This field specifies
-   * whether the key is a primary key (which can be replicated to other regions) or a
-   * replica key (which is a copy of a primary key in another region).</p>
+   * <p>Indicates whether this key is a Multi-Region key and its role in the
+   * Multi-Region key hierarchy.</p> <p>Multi-Region replication keys allow the same
+   * key material to be used across multiple Amazon Web Services Regions. This field
+   * specifies whether the key is a Primary Region key (PRK) (which can be replicated
+   * to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a
+   * copy of a PRK in another Region). For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a>.</p>
    */
   inline MultiRegionKeyType GetMultiRegionKeyType() const { return m_multiRegionKeyType; }
   inline bool MultiRegionKeyTypeHasBeenSet() const { return m_multiRegionKeyTypeHasBeenSet; }
@@ -340,10 +343,10 @@ class Key {
 
   ///@{
   /**
-   * <p>Information about the replication status of the key across different
-   * regions.</p> <p>This field provides details about the current state of key
-   * replication, including any status messages or operational information. It helps
-   * track the progress and health of key replication operations.</p>
+   * <p>Information about the replication status of the key across different Amazon
+   * Web Services Regions.</p> <p>This field provides details about the current state
+   * of key replication, including any status messages or operational information. It
+   * helps track the progress and health of key replication operations.</p>
    */
   inline const Aws::Map<Aws::String, ReplicationStatusType>& GetReplicationStatus() const { return m_replicationStatus; }
   inline bool ReplicationStatusHasBeenSet() const { return m_replicationStatusHasBeenSet; }
@@ -368,7 +371,9 @@ class Key {
   ///@{
   /**
    * <p>Indicates whether this key is using the account's default replication regions
-   * configuration.</p> <p>When set to <code>true</code>, the key automatically
+   * configuration for <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a>.</p> <p>When set to <code>true</code>, the key automatically
    * replicates to the regions specified in the account's default replication
    * settings. When set to <code>false</code>, the key has a custom replication
    * configuration that overrides the account defaults.</p>

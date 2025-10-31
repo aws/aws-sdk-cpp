@@ -26,6 +26,10 @@ AudioDescription& AudioDescription::operator=(JsonView jsonValue) {
     m_audioNormalizationSettings = jsonValue.GetObject("audioNormalizationSettings");
     m_audioNormalizationSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("audioPitchCorrectionSettings")) {
+    m_audioPitchCorrectionSettings = jsonValue.GetObject("audioPitchCorrectionSettings");
+    m_audioPitchCorrectionSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("audioSourceName")) {
     m_audioSourceName = jsonValue.GetString("audioSourceName");
     m_audioSourceNameHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue AudioDescription::Jsonize() const {
 
   if (m_audioNormalizationSettingsHasBeenSet) {
     payload.WithObject("audioNormalizationSettings", m_audioNormalizationSettings.Jsonize());
+  }
+
+  if (m_audioPitchCorrectionSettingsHasBeenSet) {
+    payload.WithObject("audioPitchCorrectionSettings", m_audioPitchCorrectionSettings.Jsonize());
   }
 
   if (m_audioSourceNameHasBeenSet) {

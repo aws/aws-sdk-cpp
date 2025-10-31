@@ -144,11 +144,14 @@ class KeySummary {
 
   ///@{
   /**
-   * <p>Indicates whether this key is a multi-region key and its role in the
-   * multi-region key hierarchy.</p> <p>Multi-region keys allow the same key material
-   * to be used across multiple Amazon Web Services Regions. This field specifies
-   * whether the key is a primary key (which can be replicated to other regions) or a
-   * replica key (which is a copy of a primary key in another region).</p>
+   * <p>Indicates whether this key is a Multi-Region key and its role in the
+   * Multi-Region key hierarchy.</p> <p>Multi-Region replication keys allow the same
+   * key material to be used across multiple Amazon Web Services Regions. This field
+   * specifies whether the key is a Primary Region key (PRK) (which can be replicated
+   * to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a
+   * copy of a PRK in another Region). For more information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a>.</p>
    */
   inline MultiRegionKeyType GetMultiRegionKeyType() const { return m_multiRegionKeyType; }
   inline bool MultiRegionKeyTypeHasBeenSet() const { return m_multiRegionKeyTypeHasBeenSet; }

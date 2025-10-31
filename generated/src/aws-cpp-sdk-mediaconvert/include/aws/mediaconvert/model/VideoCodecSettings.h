@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/H264Settings.h>
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
+#include <aws/mediaconvert/model/PassthroughSettings.h>
 #include <aws/mediaconvert/model/ProresSettings.h>
 #include <aws/mediaconvert/model/UncompressedSettings.h>
 #include <aws/mediaconvert/model/Vc3Settings.h>
@@ -206,6 +207,24 @@ class VideoCodecSettings {
 
   ///@{
   /**
+   * Optional settings when you set Codec to the value Passthrough.
+   */
+  inline const PassthroughSettings& GetPassthroughSettings() const { return m_passthroughSettings; }
+  inline bool PassthroughSettingsHasBeenSet() const { return m_passthroughSettingsHasBeenSet; }
+  template <typename PassthroughSettingsT = PassthroughSettings>
+  void SetPassthroughSettings(PassthroughSettingsT&& value) {
+    m_passthroughSettingsHasBeenSet = true;
+    m_passthroughSettings = std::forward<PassthroughSettingsT>(value);
+  }
+  template <typename PassthroughSettingsT = PassthroughSettings>
+  VideoCodecSettings& WithPassthroughSettings(PassthroughSettingsT&& value) {
+    SetPassthroughSettings(std::forward<PassthroughSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Required when you set Codec to the value PRORES.
    */
   inline const ProresSettings& GetProresSettings() const { return m_proresSettings; }
@@ -336,6 +355,9 @@ class VideoCodecSettings {
 
   Mpeg2Settings m_mpeg2Settings;
   bool m_mpeg2SettingsHasBeenSet = false;
+
+  PassthroughSettings m_passthroughSettings;
+  bool m_passthroughSettingsHasBeenSet = false;
 
   ProresSettings m_proresSettings;
   bool m_proresSettingsHasBeenSet = false;

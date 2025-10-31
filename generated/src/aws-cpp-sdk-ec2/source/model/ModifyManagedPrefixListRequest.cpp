@@ -49,6 +49,10 @@ Aws::String ModifyManagedPrefixListRequest::SerializePayload() const {
     ss << "MaxEntries=" << m_maxEntries << "&";
   }
 
+  if (m_ipamPrefixListResolverSyncEnabledHasBeenSet) {
+    ss << "IpamPrefixListResolverSyncEnabled=" << std::boolalpha << m_ipamPrefixListResolverSyncEnabled << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

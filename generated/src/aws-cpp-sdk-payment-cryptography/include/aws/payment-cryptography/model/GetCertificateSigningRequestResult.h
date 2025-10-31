@@ -29,7 +29,8 @@ class GetCertificateSigningRequestResult {
 
   ///@{
   /**
-   * <p>Certificate signing request</p>
+   * <p>The certificate signing request generated using the key pair associated with
+   * the key identifier.</p>
    */
   inline const Aws::String& GetCertificateSigningRequest() const { return m_certificateSigningRequest; }
   template <typename CertificateSigningRequestT = Aws::String>

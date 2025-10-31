@@ -22,6 +22,14 @@ CaseRuleDetails& CaseRuleDetails::operator=(JsonView jsonValue) {
     m_required = jsonValue.GetObject("required");
     m_requiredHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fieldOptions")) {
+    m_fieldOptions = jsonValue.GetObject("fieldOptions");
+    m_fieldOptionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("hidden")) {
+    m_hidden = jsonValue.GetObject("hidden");
+    m_hiddenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue CaseRuleDetails::Jsonize() const {
 
   if (m_requiredHasBeenSet) {
     payload.WithObject("required", m_required.Jsonize());
+  }
+
+  if (m_fieldOptionsHasBeenSet) {
+    payload.WithObject("fieldOptions", m_fieldOptions.Jsonize());
+  }
+
+  if (m_hiddenHasBeenSet) {
+    payload.WithObject("hidden", m_hidden.Jsonize());
   }
 
   return payload;

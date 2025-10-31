@@ -115,7 +115,7 @@ class ExportTr34KeyBlock {
 
   ///@{
   /**
-   * <p>Certificate used for signing the export key</p>
+   * <p>The certificate used to sign the TR-34 key block.</p>
    */
   inline const Aws::String& GetSigningKeyCertificate() const { return m_signingKeyCertificate; }
   inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }

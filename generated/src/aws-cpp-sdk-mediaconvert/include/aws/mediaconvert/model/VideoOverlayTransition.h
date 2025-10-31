@@ -25,7 +25,7 @@ namespace Model {
  * reposition or resize your overlay over time. To use the same position and size
  * for the duration of your video overlay: Leave blank. To specify a Transition:
  * Enter a value for Start timecode, End Timecode, X Position, Y Position, Width,
- * or Height.<p><h3>See Also:</h3>   <a
+ * Height, or Opacity<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoOverlayTransition">AWS
  * API Reference</a></p>
  */

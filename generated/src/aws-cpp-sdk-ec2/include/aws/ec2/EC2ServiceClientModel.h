@@ -113,6 +113,8 @@
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/CreateIpamPoolResponse.h>
+#include <aws/ec2/model/CreateIpamPrefixListResolverResponse.h>
+#include <aws/ec2/model/CreateIpamPrefixListResolverTargetResponse.h>
 #include <aws/ec2/model/CreateIpamRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryResponse.h>
@@ -204,6 +206,8 @@
 #include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/DeleteIpamPoolResponse.h>
+#include <aws/ec2/model/DeleteIpamPrefixListResolverResponse.h>
+#include <aws/ec2/model/DeleteIpamPrefixListResolverTargetResponse.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DeleteIpamResponse.h>
 #include <aws/ec2/model/DeleteIpamScopeResponse.h>
@@ -395,6 +399,10 @@
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsResponse.h>
+#include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
+#include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsResponse.h>
+#include <aws/ec2/model/DescribeIpamPrefixListResolversRequest.h>
+#include <aws/ec2/model/DescribeIpamPrefixListResolversResponse.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveriesRequest.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveriesResponse.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveryAssociationsRequest.h>
@@ -704,6 +712,9 @@
 #include <aws/ec2/model/GetIpamDiscoveredResourceCidrsResponse.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsResponse.h>
 #include <aws/ec2/model/GetIpamPoolCidrsResponse.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverRulesResponse.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverVersionEntriesResponse.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverVersionsResponse.h>
 #include <aws/ec2/model/GetIpamResourceCidrsResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
@@ -772,6 +783,8 @@
 #include <aws/ec2/model/ModifyInstanceNetworkPerformanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyIpamPoolResponse.h>
+#include <aws/ec2/model/ModifyIpamPrefixListResolverResponse.h>
+#include <aws/ec2/model/ModifyIpamPrefixListResolverTargetResponse.h>
 #include <aws/ec2/model/ModifyIpamResourceCidrResponse.h>
 #include <aws/ec2/model/ModifyIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/ModifyIpamResponse.h>
@@ -1008,6 +1021,8 @@ class CreateInternetGatewayRequest;
 class CreateIpamRequest;
 class CreateIpamExternalResourceVerificationTokenRequest;
 class CreateIpamPoolRequest;
+class CreateIpamPrefixListResolverRequest;
+class CreateIpamPrefixListResolverTargetRequest;
 class CreateIpamResourceDiscoveryRequest;
 class CreateIpamScopeRequest;
 class CreateKeyPairRequest;
@@ -1094,6 +1109,8 @@ class DeleteInternetGatewayRequest;
 class DeleteIpamRequest;
 class DeleteIpamExternalResourceVerificationTokenRequest;
 class DeleteIpamPoolRequest;
+class DeleteIpamPrefixListResolverRequest;
+class DeleteIpamPrefixListResolverTargetRequest;
 class DeleteIpamResourceDiscoveryRequest;
 class DeleteIpamScopeRequest;
 class DeleteKeyPairRequest;
@@ -1237,6 +1254,8 @@ class DescribeInternetGatewaysRequest;
 class DescribeIpamByoasnRequest;
 class DescribeIpamExternalResourceVerificationTokensRequest;
 class DescribeIpamPoolsRequest;
+class DescribeIpamPrefixListResolverTargetsRequest;
+class DescribeIpamPrefixListResolversRequest;
 class DescribeIpamResourceDiscoveriesRequest;
 class DescribeIpamResourceDiscoveryAssociationsRequest;
 class DescribeIpamScopesRequest;
@@ -1439,6 +1458,9 @@ class GetIpamDiscoveredPublicAddressesRequest;
 class GetIpamDiscoveredResourceCidrsRequest;
 class GetIpamPoolAllocationsRequest;
 class GetIpamPoolCidrsRequest;
+class GetIpamPrefixListResolverRulesRequest;
+class GetIpamPrefixListResolverVersionEntriesRequest;
+class GetIpamPrefixListResolverVersionsRequest;
 class GetIpamResourceCidrsRequest;
 class GetLaunchTemplateDataRequest;
 class GetManagedPrefixListAssociationsRequest;
@@ -1504,6 +1526,8 @@ class ModifyInstanceNetworkPerformanceOptionsRequest;
 class ModifyInstancePlacementRequest;
 class ModifyIpamRequest;
 class ModifyIpamPoolRequest;
+class ModifyIpamPrefixListResolverRequest;
+class ModifyIpamPrefixListResolverTargetRequest;
 class ModifyIpamResourceCidrRequest;
 class ModifyIpamResourceDiscoveryRequest;
 class ModifyIpamScopeRequest;
@@ -1719,6 +1743,8 @@ typedef Aws::Utils::Outcome<CreateIpamResponse, EC2Error> CreateIpamOutcome;
 typedef Aws::Utils::Outcome<CreateIpamExternalResourceVerificationTokenResponse, EC2Error>
     CreateIpamExternalResourceVerificationTokenOutcome;
 typedef Aws::Utils::Outcome<CreateIpamPoolResponse, EC2Error> CreateIpamPoolOutcome;
+typedef Aws::Utils::Outcome<CreateIpamPrefixListResolverResponse, EC2Error> CreateIpamPrefixListResolverOutcome;
+typedef Aws::Utils::Outcome<CreateIpamPrefixListResolverTargetResponse, EC2Error> CreateIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<CreateIpamResourceDiscoveryResponse, EC2Error> CreateIpamResourceDiscoveryOutcome;
 typedef Aws::Utils::Outcome<CreateIpamScopeResponse, EC2Error> CreateIpamScopeOutcome;
 typedef Aws::Utils::Outcome<CreateKeyPairResponse, EC2Error> CreateKeyPairOutcome;
@@ -1808,6 +1834,8 @@ typedef Aws::Utils::Outcome<DeleteIpamResponse, EC2Error> DeleteIpamOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamExternalResourceVerificationTokenResponse, EC2Error>
     DeleteIpamExternalResourceVerificationTokenOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamPoolResponse, EC2Error> DeleteIpamPoolOutcome;
+typedef Aws::Utils::Outcome<DeleteIpamPrefixListResolverResponse, EC2Error> DeleteIpamPrefixListResolverOutcome;
+typedef Aws::Utils::Outcome<DeleteIpamPrefixListResolverTargetResponse, EC2Error> DeleteIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamResourceDiscoveryResponse, EC2Error> DeleteIpamResourceDiscoveryOutcome;
 typedef Aws::Utils::Outcome<DeleteIpamScopeResponse, EC2Error> DeleteIpamScopeOutcome;
 typedef Aws::Utils::Outcome<DeleteKeyPairResponse, EC2Error> DeleteKeyPairOutcome;
@@ -1958,6 +1986,8 @@ typedef Aws::Utils::Outcome<DescribeIpamByoasnResponse, EC2Error> DescribeIpamBy
 typedef Aws::Utils::Outcome<DescribeIpamExternalResourceVerificationTokensResponse, EC2Error>
     DescribeIpamExternalResourceVerificationTokensOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamPoolsResponse, EC2Error> DescribeIpamPoolsOutcome;
+typedef Aws::Utils::Outcome<DescribeIpamPrefixListResolverTargetsResponse, EC2Error> DescribeIpamPrefixListResolverTargetsOutcome;
+typedef Aws::Utils::Outcome<DescribeIpamPrefixListResolversResponse, EC2Error> DescribeIpamPrefixListResolversOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamResourceDiscoveriesResponse, EC2Error> DescribeIpamResourceDiscoveriesOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamResourceDiscoveryAssociationsResponse, EC2Error> DescribeIpamResourceDiscoveryAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeIpamScopesResponse, EC2Error> DescribeIpamScopesOutcome;
@@ -2170,6 +2200,9 @@ typedef Aws::Utils::Outcome<GetIpamDiscoveredPublicAddressesResponse, EC2Error> 
 typedef Aws::Utils::Outcome<GetIpamDiscoveredResourceCidrsResponse, EC2Error> GetIpamDiscoveredResourceCidrsOutcome;
 typedef Aws::Utils::Outcome<GetIpamPoolAllocationsResponse, EC2Error> GetIpamPoolAllocationsOutcome;
 typedef Aws::Utils::Outcome<GetIpamPoolCidrsResponse, EC2Error> GetIpamPoolCidrsOutcome;
+typedef Aws::Utils::Outcome<GetIpamPrefixListResolverRulesResponse, EC2Error> GetIpamPrefixListResolverRulesOutcome;
+typedef Aws::Utils::Outcome<GetIpamPrefixListResolverVersionEntriesResponse, EC2Error> GetIpamPrefixListResolverVersionEntriesOutcome;
+typedef Aws::Utils::Outcome<GetIpamPrefixListResolverVersionsResponse, EC2Error> GetIpamPrefixListResolverVersionsOutcome;
 typedef Aws::Utils::Outcome<GetIpamResourceCidrsResponse, EC2Error> GetIpamResourceCidrsOutcome;
 typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, EC2Error> GetLaunchTemplateDataOutcome;
 typedef Aws::Utils::Outcome<GetManagedPrefixListAssociationsResponse, EC2Error> GetManagedPrefixListAssociationsOutcome;
@@ -2239,6 +2272,8 @@ typedef Aws::Utils::Outcome<ModifyInstanceNetworkPerformanceOptionsResponse, EC2
 typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyInstancePlacementOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResponse, EC2Error> ModifyIpamOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamPoolResponse, EC2Error> ModifyIpamPoolOutcome;
+typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverResponse, EC2Error> ModifyIpamPrefixListResolverOutcome;
+typedef Aws::Utils::Outcome<ModifyIpamPrefixListResolverTargetResponse, EC2Error> ModifyIpamPrefixListResolverTargetOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResourceCidrResponse, EC2Error> ModifyIpamResourceCidrOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamResourceDiscoveryResponse, EC2Error> ModifyIpamResourceDiscoveryOutcome;
 typedef Aws::Utils::Outcome<ModifyIpamScopeResponse, EC2Error> ModifyIpamScopeOutcome;
@@ -2459,6 +2494,8 @@ typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCa
 typedef std::future<CreateIpamOutcome> CreateIpamOutcomeCallable;
 typedef std::future<CreateIpamExternalResourceVerificationTokenOutcome> CreateIpamExternalResourceVerificationTokenOutcomeCallable;
 typedef std::future<CreateIpamPoolOutcome> CreateIpamPoolOutcomeCallable;
+typedef std::future<CreateIpamPrefixListResolverOutcome> CreateIpamPrefixListResolverOutcomeCallable;
+typedef std::future<CreateIpamPrefixListResolverTargetOutcome> CreateIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<CreateIpamResourceDiscoveryOutcome> CreateIpamResourceDiscoveryOutcomeCallable;
 typedef std::future<CreateIpamScopeOutcome> CreateIpamScopeOutcomeCallable;
 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
@@ -2547,6 +2584,8 @@ typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCa
 typedef std::future<DeleteIpamOutcome> DeleteIpamOutcomeCallable;
 typedef std::future<DeleteIpamExternalResourceVerificationTokenOutcome> DeleteIpamExternalResourceVerificationTokenOutcomeCallable;
 typedef std::future<DeleteIpamPoolOutcome> DeleteIpamPoolOutcomeCallable;
+typedef std::future<DeleteIpamPrefixListResolverOutcome> DeleteIpamPrefixListResolverOutcomeCallable;
+typedef std::future<DeleteIpamPrefixListResolverTargetOutcome> DeleteIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<DeleteIpamResourceDiscoveryOutcome> DeleteIpamResourceDiscoveryOutcomeCallable;
 typedef std::future<DeleteIpamScopeOutcome> DeleteIpamScopeOutcomeCallable;
 typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
@@ -2692,6 +2731,8 @@ typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOut
 typedef std::future<DescribeIpamByoasnOutcome> DescribeIpamByoasnOutcomeCallable;
 typedef std::future<DescribeIpamExternalResourceVerificationTokensOutcome> DescribeIpamExternalResourceVerificationTokensOutcomeCallable;
 typedef std::future<DescribeIpamPoolsOutcome> DescribeIpamPoolsOutcomeCallable;
+typedef std::future<DescribeIpamPrefixListResolverTargetsOutcome> DescribeIpamPrefixListResolverTargetsOutcomeCallable;
+typedef std::future<DescribeIpamPrefixListResolversOutcome> DescribeIpamPrefixListResolversOutcomeCallable;
 typedef std::future<DescribeIpamResourceDiscoveriesOutcome> DescribeIpamResourceDiscoveriesOutcomeCallable;
 typedef std::future<DescribeIpamResourceDiscoveryAssociationsOutcome> DescribeIpamResourceDiscoveryAssociationsOutcomeCallable;
 typedef std::future<DescribeIpamScopesOutcome> DescribeIpamScopesOutcomeCallable;
@@ -2896,6 +2937,9 @@ typedef std::future<GetIpamDiscoveredPublicAddressesOutcome> GetIpamDiscoveredPu
 typedef std::future<GetIpamDiscoveredResourceCidrsOutcome> GetIpamDiscoveredResourceCidrsOutcomeCallable;
 typedef std::future<GetIpamPoolAllocationsOutcome> GetIpamPoolAllocationsOutcomeCallable;
 typedef std::future<GetIpamPoolCidrsOutcome> GetIpamPoolCidrsOutcomeCallable;
+typedef std::future<GetIpamPrefixListResolverRulesOutcome> GetIpamPrefixListResolverRulesOutcomeCallable;
+typedef std::future<GetIpamPrefixListResolverVersionEntriesOutcome> GetIpamPrefixListResolverVersionEntriesOutcomeCallable;
+typedef std::future<GetIpamPrefixListResolverVersionsOutcome> GetIpamPrefixListResolverVersionsOutcomeCallable;
 typedef std::future<GetIpamResourceCidrsOutcome> GetIpamResourceCidrsOutcomeCallable;
 typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
 typedef std::future<GetManagedPrefixListAssociationsOutcome> GetManagedPrefixListAssociationsOutcomeCallable;
@@ -2961,6 +3005,8 @@ typedef std::future<ModifyInstanceNetworkPerformanceOptionsOutcome> ModifyInstan
 typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
 typedef std::future<ModifyIpamOutcome> ModifyIpamOutcomeCallable;
 typedef std::future<ModifyIpamPoolOutcome> ModifyIpamPoolOutcomeCallable;
+typedef std::future<ModifyIpamPrefixListResolverOutcome> ModifyIpamPrefixListResolverOutcomeCallable;
+typedef std::future<ModifyIpamPrefixListResolverTargetOutcome> ModifyIpamPrefixListResolverTargetOutcomeCallable;
 typedef std::future<ModifyIpamResourceCidrOutcome> ModifyIpamResourceCidrOutcomeCallable;
 typedef std::future<ModifyIpamResourceDiscoveryOutcome> ModifyIpamResourceDiscoveryOutcomeCallable;
 typedef std::future<ModifyIpamScopeOutcome> ModifyIpamScopeOutcomeCallable;
@@ -3382,6 +3428,14 @@ typedef std::function<void(const EC2Client*, const Model::CreateIpamExternalReso
 typedef std::function<void(const EC2Client*, const Model::CreateIpamPoolRequest&, const Model::CreateIpamPoolOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamPoolResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateIpamPrefixListResolverRequest&,
+                           const Model::CreateIpamPrefixListResolverOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIpamPrefixListResolverResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateIpamPrefixListResolverTargetRequest&,
+                           const Model::CreateIpamPrefixListResolverTargetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateIpamPrefixListResolverTargetResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateIpamResourceDiscoveryRequest&,
                            const Model::CreateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamResourceDiscoveryResponseReceivedHandler;
@@ -3669,6 +3723,14 @@ typedef std::function<void(const EC2Client*, const Model::DeleteIpamExternalReso
 typedef std::function<void(const EC2Client*, const Model::DeleteIpamPoolRequest&, const Model::DeleteIpamPoolOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamPoolResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteIpamPrefixListResolverRequest&,
+                           const Model::DeleteIpamPrefixListResolverOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIpamPrefixListResolverResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteIpamPrefixListResolverTargetRequest&,
+                           const Model::DeleteIpamPrefixListResolverTargetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIpamPrefixListResolverTargetResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteIpamResourceDiscoveryRequest&,
                            const Model::DeleteIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIpamResourceDiscoveryResponseReceivedHandler;
@@ -4155,6 +4217,14 @@ typedef std::function<void(const EC2Client*, const Model::DescribeIpamExternalRe
 typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoolsRequest&, const Model::DescribeIpamPoolsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIpamPoolsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeIpamPrefixListResolverTargetsRequest&,
+                           const Model::DescribeIpamPrefixListResolverTargetsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeIpamPrefixListResolverTargetsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeIpamPrefixListResolversRequest&,
+                           const Model::DescribeIpamPrefixListResolversOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeIpamPrefixListResolversResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeIpamResourceDiscoveriesRequest&,
                            const Model::DescribeIpamResourceDiscoveriesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4866,6 +4936,18 @@ typedef std::function<void(const EC2Client*, const Model::GetIpamPoolAllocations
 typedef std::function<void(const EC2Client*, const Model::GetIpamPoolCidrsRequest&, const Model::GetIpamPoolCidrsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIpamPoolCidrsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamPrefixListResolverRulesRequest&,
+                           const Model::GetIpamPrefixListResolverRulesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamPrefixListResolverRulesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamPrefixListResolverVersionEntriesRequest&,
+                           const Model::GetIpamPrefixListResolverVersionEntriesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamPrefixListResolverVersionEntriesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetIpamPrefixListResolverVersionsRequest&,
+                           const Model::GetIpamPrefixListResolverVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIpamPrefixListResolverVersionsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetIpamResourceCidrsRequest&, const Model::GetIpamResourceCidrsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIpamResourceCidrsResponseReceivedHandler;
@@ -5091,6 +5173,14 @@ typedef std::function<void(const EC2Client*, const Model::ModifyIpamRequest&, co
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamPoolRequest&, const Model::ModifyIpamPoolOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIpamPoolResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyIpamPrefixListResolverRequest&,
+                           const Model::ModifyIpamPrefixListResolverOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyIpamPrefixListResolverResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyIpamPrefixListResolverTargetRequest&,
+                           const Model::ModifyIpamPrefixListResolverTargetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyIpamPrefixListResolverTargetResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyIpamResourceCidrRequest&, const Model::ModifyIpamResourceCidrOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIpamResourceCidrResponseReceivedHandler;

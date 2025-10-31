@@ -174,6 +174,25 @@ class ModifyManagedPrefixListRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether synchronization with an IPAM prefix list resolver should be
+   * enabled for this managed prefix list. When enabled, the prefix list CIDRs are
+   * automatically updated based on the associated resolver's CIDR selection
+   * rules.</p>
+   */
+  inline bool GetIpamPrefixListResolverSyncEnabled() const { return m_ipamPrefixListResolverSyncEnabled; }
+  inline bool IpamPrefixListResolverSyncEnabledHasBeenSet() const { return m_ipamPrefixListResolverSyncEnabledHasBeenSet; }
+  inline void SetIpamPrefixListResolverSyncEnabled(bool value) {
+    m_ipamPrefixListResolverSyncEnabledHasBeenSet = true;
+    m_ipamPrefixListResolverSyncEnabled = value;
+  }
+  inline ModifyManagedPrefixListRequest& WithIpamPrefixListResolverSyncEnabled(bool value) {
+    SetIpamPrefixListResolverSyncEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
   bool m_dryRunHasBeenSet = false;
@@ -195,6 +214,9 @@ class ModifyManagedPrefixListRequest : public EC2Request {
 
   int m_maxEntries{0};
   bool m_maxEntriesHasBeenSet = false;
+
+  bool m_ipamPrefixListResolverSyncEnabled{false};
+  bool m_ipamPrefixListResolverSyncEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

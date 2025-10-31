@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class DashManifestStyle { NOT_SET, BASIC, COMPACT, DISTINCT };
+enum class DashManifestStyle { NOT_SET, BASIC, COMPACT, DISTINCT, FULL };
 
 namespace DashManifestStyleMapper {
 AWS_MEDIACONVERT_API DashManifestStyle GetDashManifestStyleForName(const Aws::String& name);

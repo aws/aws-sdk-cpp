@@ -323,17 +323,35 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Creates a related item (comments, tasks, and contacts) and associates it with
-   * a case.</p>  <ul> <li> <p>A Related Item is a resource that is associated
-   * with a case. It may or may not have an external identifier linking it to an
-   * external resource (for example, a <code>contactArn</code>). All Related Items
-   * have their own internal identifier, the <code>relatedItemArn</code>. Examples of
-   * related items include <code>comments</code> and <code>contacts</code>.</p> </li>
-   * <li> <p>If you provide a value for <code>performedBy.userArn</code> you must
-   * also have <a
+   * a case.</p> <p>There's a quota for the number of fields allowed in a Custom type
+   * related item. See <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+   * Connect Cases quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are
+   * examples of related items that you may want to associate with a case:</p> <ul>
+   * <li> <p>Related contacts, such as calls, chats, emails tasks</p> </li> <li>
+   * <p>Comments, for agent notes</p> </li> <li> <p>SLAs, to capture target
+   * resolution goals</p> </li> <li> <p>Cases, to capture related Amazon Connect
+   * Cases</p> </li> <li> <p>Files, such as policy documentation or customer-provided
+   * attachments</p> </li> <li> <p>Custom related items, which provide flexibility
+   * for you to define related items that such as bookings, orders, products,
+   * notices, and more</p> </li> </ul> <p> <b>Important things to know</b> </p> <ul>
+   * <li> <p>If you are associating a contact to a case by passing in
+   * <code>Contact</code> for a <code>type</code>, you must have <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html">DescribeContact</a>
+   * permission on the ARN of the contact that you provide in
+   * <code>content.contact.contactArn</code>.</p> </li> <li> <p>A Related Item is a
+   * resource that is associated with a case. It may or may not have an external
+   * identifier linking it to an external resource (for example, a
+   * <code>contactArn</code>). All Related Items have their own internal identifier,
+   * the <code>relatedItemArn</code>. Examples of related items include
+   * <code>comments</code> and <code>contacts</code>.</p> </li> <li> <p>If you
+   * provide a value for <code>performedBy.userArn</code> you must also have <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
    * permission on the ARN of the user that you provide.</p> </li> <li> <p>The
-   * <code>type</code> field is reserved for internal use only.</p> </li> </ul>
-   * <p><h3>See Also:</h3>   <a
+   * <code>type</code> field is reserved for internal use only.</p> </li> </ul> <p>
+   * <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateRelatedItem">AWS
    * API Reference</a></p>
    */
@@ -494,9 +512,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * <code>ValidationException</code>.</p> </li> <li> <p>Deleted fields are not
    * included in the <code>ListFields</code> response.</p> </li> <li> <p>Calling
    * <code>CreateCase</code> with a deleted field throws a
-   * <code>ValidationException</code> denoting which field IDs in the request have
-   * been deleted.</p> </li> <li> <p>Calling <code>GetCase</code> with a deleted
-   * field ID returns the deleted field's value if one exists.</p> </li> <li>
+   * <code>ValidationException</code> denoting which field identifiers in the request
+   * have been deleted.</p> </li> <li> <p>Calling <code>GetCase</code> with a deleted
+   * field identifier returns the deleted field's value if one exists.</p> </li> <li>
    * <p>Calling <code>UpdateCase</code> with a deleted field ID throws a
    * <code>ValidationException</code> if the case does not already contain a value
    * for the deleted field. Otherwise it succeeds, allowing you to update or remove
@@ -1059,9 +1077,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * to a contactArn to understand the complete customer journey. </p> </li> <li>
    * <p>Monitor SLA compliance across cases. For example, search for all cases with
    * "Active" SLA status to prioritize remediation efforts.</p> </li> </ul> <p>
-   * <b>Important things to know</b> </p> <ul> <li> <p>This API returns case IDs, not
-   * complete case objects. To retrieve full case details, you must make additional
-   * calls to the <a
+   * <b>Important things to know</b> </p> <ul> <li> <p>This API returns case
+   * identifiers, not complete case objects. To retrieve full case details, you must
+   * make additional calls to the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
    * API for each returned case ID. </p> </li> <li> <p>This API searches across
    * related items content, not case fields. Use the <a

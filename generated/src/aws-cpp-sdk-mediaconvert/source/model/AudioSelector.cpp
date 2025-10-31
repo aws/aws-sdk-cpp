@@ -66,6 +66,13 @@ AudioSelector& AudioSelector::operator=(JsonView jsonValue) {
     m_selectorType = AudioSelectorTypeMapper::GetAudioSelectorTypeForName(jsonValue.GetString("selectorType"));
     m_selectorTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("streams")) {
+    Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
+      m_streams.push_back(streamsJsonList[streamsIndex].AsInteger());
+    }
+    m_streamsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tracks")) {
     Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for (unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex) {
@@ -126,6 +133,14 @@ JsonValue AudioSelector::Jsonize() const {
 
   if (m_selectorTypeHasBeenSet) {
     payload.WithString("selectorType", AudioSelectorTypeMapper::GetNameForAudioSelectorType(m_selectorType));
+  }
+
+  if (m_streamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
+      streamsJsonList[streamsIndex].AsInteger(m_streams[streamsIndex]);
+    }
+    payload.WithArray("streams", std::move(streamsJsonList));
   }
 
   if (m_tracksHasBeenSet) {

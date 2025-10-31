@@ -53,7 +53,9 @@ enum class Runtime {
   java21,
   python3_13,
   nodejs22_x,
-  nodejs24_x
+  java25,
+  nodejs24_x,
+  python3_14
 };
 
 namespace RuntimeMapper {

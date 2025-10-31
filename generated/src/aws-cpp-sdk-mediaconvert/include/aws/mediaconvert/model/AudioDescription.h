@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/AudioCodecSettings.h>
 #include <aws/mediaconvert/model/AudioLanguageCodeControl.h>
 #include <aws/mediaconvert/model/AudioNormalizationSettings.h>
+#include <aws/mediaconvert/model/AudioPitchCorrectionSettings.h>
 #include <aws/mediaconvert/model/AudioTypeControl.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/mediaconvert/model/RemixSettings.h>
@@ -79,6 +80,24 @@ class AudioDescription {
   template <typename AudioNormalizationSettingsT = AudioNormalizationSettings>
   AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettingsT&& value) {
     SetAudioNormalizationSettings(std::forward<AudioNormalizationSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Settings for audio pitch correction during framerate conversion.
+   */
+  inline const AudioPitchCorrectionSettings& GetAudioPitchCorrectionSettings() const { return m_audioPitchCorrectionSettings; }
+  inline bool AudioPitchCorrectionSettingsHasBeenSet() const { return m_audioPitchCorrectionSettingsHasBeenSet; }
+  template <typename AudioPitchCorrectionSettingsT = AudioPitchCorrectionSettings>
+  void SetAudioPitchCorrectionSettings(AudioPitchCorrectionSettingsT&& value) {
+    m_audioPitchCorrectionSettingsHasBeenSet = true;
+    m_audioPitchCorrectionSettings = std::forward<AudioPitchCorrectionSettingsT>(value);
+  }
+  template <typename AudioPitchCorrectionSettingsT = AudioPitchCorrectionSettings>
+  AudioDescription& WithAudioPitchCorrectionSettings(AudioPitchCorrectionSettingsT&& value) {
+    SetAudioPitchCorrectionSettings(std::forward<AudioPitchCorrectionSettingsT>(value));
     return *this;
   }
   ///@}
@@ -282,6 +301,9 @@ class AudioDescription {
 
   AudioNormalizationSettings m_audioNormalizationSettings;
   bool m_audioNormalizationSettingsHasBeenSet = false;
+
+  AudioPitchCorrectionSettings m_audioPitchCorrectionSettings;
+  bool m_audioPitchCorrectionSettingsHasBeenSet = false;
 
   Aws::String m_audioSourceName;
   bool m_audioSourceNameHasBeenSet = false;

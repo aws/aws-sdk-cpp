@@ -338,7 +338,7 @@ class CreateWorkflowVersionRequest : public OmicsRequest {
    * private repository and one or more upstream registries. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
-   * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. </p>
+   * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
    */
   inline const ContainerRegistryMap& GetContainerRegistryMap() const { return m_containerRegistryMap; }
   inline bool ContainerRegistryMapHasBeenSet() const { return m_containerRegistryMapHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class AudioSelectorType { NOT_SET, PID, TRACK, LANGUAGE_CODE, HLS_RENDITION_GROUP, ALL_PCM };
+enum class AudioSelectorType { NOT_SET, PID, TRACK, LANGUAGE_CODE, HLS_RENDITION_GROUP, ALL_PCM, STREAM };
 
 namespace AudioSelectorTypeMapper {
 AWS_MEDIACONVERT_API AudioSelectorType GetAudioSelectorTypeForName(const Aws::String& name);

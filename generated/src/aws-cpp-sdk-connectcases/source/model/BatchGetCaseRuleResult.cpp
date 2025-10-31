@@ -35,6 +35,14 @@ BatchGetCaseRuleResult& BatchGetCaseRuleResult::operator=(const Aws::AmazonWebSe
     }
     m_errorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("unprocessedCaseRules")) {
+    Aws::Utils::Array<JsonView> unprocessedCaseRulesJsonList = jsonValue.GetArray("unprocessedCaseRules");
+    for (unsigned unprocessedCaseRulesIndex = 0; unprocessedCaseRulesIndex < unprocessedCaseRulesJsonList.GetLength();
+         ++unprocessedCaseRulesIndex) {
+      m_unprocessedCaseRules.push_back(unprocessedCaseRulesJsonList[unprocessedCaseRulesIndex].AsString());
+    }
+    m_unprocessedCaseRulesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

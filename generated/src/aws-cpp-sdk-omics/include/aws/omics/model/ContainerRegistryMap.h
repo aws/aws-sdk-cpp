@@ -25,8 +25,8 @@ namespace Model {
  * <p>Use a container registry map to specify mappings between the ECR private
  * repository and one or more upstream registries. For more information, see <a
  * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
- * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
- * </p><p><h3>See Also:</h3>   <a
+ * images</a> in the <i>Amazon Web Services HealthOmics User
+ * Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ContainerRegistryMap">AWS
  * API Reference</a></p>
  */
