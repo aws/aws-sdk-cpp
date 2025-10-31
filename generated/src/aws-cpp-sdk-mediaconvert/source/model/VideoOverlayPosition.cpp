@@ -22,6 +22,10 @@ VideoOverlayPosition& VideoOverlayPosition::operator=(JsonView jsonValue) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("opacity")) {
+    m_opacity = jsonValue.GetInteger("opacity");
+    m_opacityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("unit")) {
     m_unit = VideoOverlayUnitMapper::GetVideoOverlayUnitForName(jsonValue.GetString("unit"));
     m_unitHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue VideoOverlayPosition::Jsonize() const {
 
   if (m_heightHasBeenSet) {
     payload.WithInteger("height", m_height);
+  }
+
+  if (m_opacityHasBeenSet) {
+    payload.WithInteger("opacity", m_opacity);
   }
 
   if (m_unitHasBeenSet) {

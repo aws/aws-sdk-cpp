@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/FieldOptionsCaseRule.h>
+#include <aws/connectcases/model/HiddenCaseRule.h>
 #include <aws/connectcases/model/RequiredCaseRule.h>
 
 #include <utility>
@@ -52,9 +54,52 @@ class CaseRuleDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Which options are available in a child field based on the selected value in a
+   * parent field.</p>
+   */
+  inline const FieldOptionsCaseRule& GetFieldOptions() const { return m_fieldOptions; }
+  inline bool FieldOptionsHasBeenSet() const { return m_fieldOptionsHasBeenSet; }
+  template <typename FieldOptionsT = FieldOptionsCaseRule>
+  void SetFieldOptions(FieldOptionsT&& value) {
+    m_fieldOptionsHasBeenSet = true;
+    m_fieldOptions = std::forward<FieldOptionsT>(value);
+  }
+  template <typename FieldOptionsT = FieldOptionsCaseRule>
+  CaseRuleDetails& WithFieldOptions(FieldOptionsT&& value) {
+    SetFieldOptions(std::forward<FieldOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether a field is visible, based on values in other fields.</p>
+   */
+  inline const HiddenCaseRule& GetHidden() const { return m_hidden; }
+  inline bool HiddenHasBeenSet() const { return m_hiddenHasBeenSet; }
+  template <typename HiddenT = HiddenCaseRule>
+  void SetHidden(HiddenT&& value) {
+    m_hiddenHasBeenSet = true;
+    m_hidden = std::forward<HiddenT>(value);
+  }
+  template <typename HiddenT = HiddenCaseRule>
+  CaseRuleDetails& WithHidden(HiddenT&& value) {
+    SetHidden(std::forward<HiddenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RequiredCaseRule m_required;
   bool m_requiredHasBeenSet = false;
+
+  FieldOptionsCaseRule m_fieldOptions;
+  bool m_fieldOptionsHasBeenSet = false;
+
+  HiddenCaseRule m_hidden;
+  bool m_hiddenHasBeenSet = false;
 };
 
 }  // namespace Model

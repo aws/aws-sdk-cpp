@@ -38,9 +38,11 @@ class EnableDefaultKeyReplicationRegionsRequest : public PaymentCryptographyRequ
   ///@{
   /**
    * <p>The list of Amazon Web Services Regions to enable as default replication
-   * regions for the account.</p> <p>New keys created in this account will
-   * automatically be replicated to these regions unless explicitly overridden during
-   * key creation.</p>
+   * regions for the Amazon Web Services account for <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a>.</p> <p>New keys created in this account will automatically
+   * be replicated to these regions unless explicitly overridden during key
+   * creation.</p>
    */
   inline const Aws::Vector<Aws::String>& GetReplicationRegions() const { return m_replicationRegions; }
   inline bool ReplicationRegionsHasBeenSet() const { return m_replicationRegionsHasBeenSet; }

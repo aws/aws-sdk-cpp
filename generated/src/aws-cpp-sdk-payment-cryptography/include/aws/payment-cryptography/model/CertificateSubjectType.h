@@ -20,7 +20,8 @@ namespace PaymentCryptography {
 namespace Model {
 
 /**
- * <p>Metadata used in generating the CSR</p><p><h3>See Also:</h3>   <a
+ * <p>The metadata used to create the certificate signing request.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CertificateSubjectType">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>Common Name to be used in the certificate signing request</p>
+   * <p>The name you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetCommonName() const { return m_commonName; }
   inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
@@ -51,7 +52,8 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>Organization Unit to be used in the certificate signing request</p>
+   * <p>The organization unit you provide to create the certificate signing
+   * request.</p>
    */
   inline const Aws::String& GetOrganizationUnit() const { return m_organizationUnit; }
   inline bool OrganizationUnitHasBeenSet() const { return m_organizationUnitHasBeenSet; }
@@ -69,7 +71,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>Organization to be used in the certificate signing request</p>
+   * <p>The organization you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetOrganization() const { return m_organization; }
   inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
@@ -87,7 +89,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>City to be used in the certificate signing request</p>
+   * <p>The city you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetCity() const { return m_city; }
   inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
@@ -105,7 +107,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>Country to be used in the certificate signing request</p>
+   * <p>The city you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetCountry() const { return m_country; }
   inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
@@ -123,7 +125,8 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>State Or Province to be used in the certificate signing request</p>
+   * <p>The state or province you provide to create the certificate signing
+   * request.</p>
    */
   inline const Aws::String& GetStateOrProvince() const { return m_stateOrProvince; }
   inline bool StateOrProvinceHasBeenSet() const { return m_stateOrProvinceHasBeenSet; }
@@ -141,7 +144,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>Email to be used in the certificate signing request</p>
+   * <p>The email address you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
   inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }

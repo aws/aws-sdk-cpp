@@ -92,6 +92,24 @@ class UpdateNotebookInstanceRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>The platform identifier of the notebook instance runtime environment.</p>
+   */
+  inline const Aws::String& GetPlatformIdentifier() const { return m_platformIdentifier; }
+  inline bool PlatformIdentifierHasBeenSet() const { return m_platformIdentifierHasBeenSet; }
+  template <typename PlatformIdentifierT = Aws::String>
+  void SetPlatformIdentifier(PlatformIdentifierT&& value) {
+    m_platformIdentifierHasBeenSet = true;
+    m_platformIdentifier = std::forward<PlatformIdentifierT>(value);
+  }
+  template <typename PlatformIdentifierT = Aws::String>
+  UpdateNotebookInstanceRequest& WithPlatformIdentifier(PlatformIdentifierT&& value) {
+    SetPlatformIdentifier(std::forward<PlatformIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker AI can assume
    * to access the notebook instance. For more information, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
@@ -361,6 +379,9 @@ class UpdateNotebookInstanceRequest : public SageMakerRequest {
 
   IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
   bool m_ipAddressTypeHasBeenSet = false;
+
+  Aws::String m_platformIdentifier;
+  bool m_platformIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
   bool m_roleArnHasBeenSet = false;

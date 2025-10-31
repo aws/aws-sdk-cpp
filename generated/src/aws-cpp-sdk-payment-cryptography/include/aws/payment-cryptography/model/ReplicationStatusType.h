@@ -22,9 +22,11 @@ namespace Model {
 
 /**
  * <p>Represents the replication status information for a key in a replication
- * region.</p> <p>This structure contains details about the current state of key
- * replication, including any status messages and operational information about the
- * replication process.</p><p><h3>See Also:</h3>   <a
+ * region for <a
+ * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+ * key replication</a>.</p> <p>This structure contains details about the current
+ * state of key replication, including any status messages and operational
+ * information about the replication process.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ReplicationStatusType">AWS
  * API Reference</a></p>
  */
@@ -37,11 +39,13 @@ class ReplicationStatusType {
 
   ///@{
   /**
-   * <p>The current status of key replication in this region.</p> <p>This field
-   * indicates whether the key replication is in progress, completed successfully, or
-   * has encountered an error. Possible values include states such as SYNCRHONIZED,
-   * IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the
-   * replication process for monitoring and troubleshooting purposes.</p>
+   * <p>The current status of key replication in this Amazon Web Services Region.</p>
+   * <p>This field indicates whether the key replication is in progress, completed
+   * successfully, or has encountered an error. Possible values include states such
+   * as <code>SYNCRHONIZED</code>, <code>IN_PROGRESS</code>,
+   * <code>DELETE_IN_PROGRESS</code>, or <code>FAILED</code>. This provides
+   * visibility into the replication process for monitoring and troubleshooting
+   * purposes.</p>
    */
   inline KeyReplicationState GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -102,7 +102,7 @@ class CapacityReservation {
 
   ///@{
   /**
-   * <p>The Availability Zone ID of the Capacity Reservation.</p>
+   * <p>The ID of the Availability Zone in which the capacity is reserved.</p>
    */
   inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
   inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
@@ -310,7 +310,7 @@ class CapacityReservation {
 
   ///@{
   /**
-   * <p>The date and time at which the Capacity Reservation was started.</p>
+   * <p>The date and time the Capacity Reservation was started.</p>
    */
   inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
   inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
@@ -328,7 +328,7 @@ class CapacityReservation {
 
   ///@{
   /**
-   * <p>The date and time at which the Capacity Reservation expires. When a Capacity
+   * <p>The date and time the Capacity Reservation expires. When a Capacity
    * Reservation expires, the reserved capacity is released and you can no longer
    * launch instances into it. The Capacity Reservation's state changes to
    * <code>expired</code> when it reaches its end date and time.</p>
@@ -394,7 +394,7 @@ class CapacityReservation {
 
   ///@{
   /**
-   * <p>The date and time at which the Capacity Reservation was created.</p>
+   * <p>The date and time the Capacity Reservation was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
   inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }

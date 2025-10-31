@@ -220,10 +220,10 @@ class IpamResourceDiscoveryAssociation {
    * discovery disassociation has failed.</p> </li> <li> <p>
    * <code>isolate-in-progress</code> - Amazon Web Services account that created the
    * resource discovery association has been removed and the resource discovery
-   * associatation is being isolated.</p> </li> <li> <p>
-   * <code>isolate-complete</code> - Resource discovery isolation is complete..</p>
-   * </li> <li> <p> <code>restore-in-progress</code> - Resource discovery is being
-   * restored.</p> </li> </ul>
+   * association is being isolated.</p> </li> <li> <p> <code>isolate-complete</code>
+   * - Resource discovery isolation is complete.</p> </li> <li> <p>
+   * <code>restore-in-progress</code> - Resource discovery is being restored.</p>
+   * </li> </ul>
    */
   inline IpamResourceDiscoveryAssociationState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

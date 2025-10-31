@@ -112,7 +112,7 @@ class ImportTr34KeyBlock {
 
   ///@{
   /**
-   * <p>Key Identifier used for unwrapping the import key</p>
+   * <p>The certificate used to wrap the TR-34 key block.</p>
    */
   inline const Aws::String& GetWrappingKeyCertificate() const { return m_wrappingKeyCertificate; }
   inline bool WrappingKeyCertificateHasBeenSet() const { return m_wrappingKeyCertificateHasBeenSet; }

@@ -1947,10 +1947,19 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * you choose to terminate the instances, the Spot Fleet request enters the
    * <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request
    * enters the <code>cancelled_running</code> state and the instances continue to
-   * run until they are interrupted or you terminate them manually.</p> <p
-   * class="title"> <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 100
-   * fleets in a single request. If you exceed the specified number, no fleets are
-   * deleted.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * run until they are interrupted or you terminate them manually.</p>
+   * <p> <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After
+   * you terminate an instance, you can no longer connect to it, and it can't be
+   * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+   * termination are also permanently deleted and can't be recovered. All data stored
+   * on instance store volumes is permanently lost. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+   * How instance termination works</a>.</p> <p>Before you terminate an instance,
+   * ensure that you have backed up all data that you need to retain after the
+   * termination to persistent storage.</p>  <p class="title">
+   * <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 100 fleets in a
+   * single request. If you exceed the specified number, no fleets are deleted.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">AWS
    * API Reference</a></p>
    */
@@ -3063,7 +3072,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>Create a verification token. A verification token is an Amazon Web
+   * <p>Create a verification token.</p> <p>A verification token is an Amazon Web
    * Services-generated random value that you can use to prove ownership of an
    * external resource. For example, you can use a verification token to validate
    * that you control a public IP address range when you bring an IP address range to
@@ -3127,6 +3136,81 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void CreateIpamPoolAsync(const CreateIpamPoolRequestT& request, const CreateIpamPoolResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CreateIpamPool, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an IPAM prefix list resolver.</p> <p>An IPAM prefix list resolver is
+   * a component that manages the synchronization between IPAM's CIDR selection rules
+   * and customer-managed prefix lists. It automates connectivity configurations by
+   * selecting CIDRs from IPAM's database based on your business logic and
+   * synchronizing them with prefix lists used in resources such as VPC route tables
+   * and security groups.</p> <p>For more information about IPAM prefix list
+   * resolver, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+   * prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPrefixListResolver">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIpamPrefixListResolverOutcome CreateIpamPrefixListResolver(
+      const Model::CreateIpamPrefixListResolverRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIpamPrefixListResolver that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateIpamPrefixListResolverRequestT = Model::CreateIpamPrefixListResolverRequest>
+  Model::CreateIpamPrefixListResolverOutcomeCallable CreateIpamPrefixListResolverCallable(
+      const CreateIpamPrefixListResolverRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateIpamPrefixListResolver, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIpamPrefixListResolver that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateIpamPrefixListResolverRequestT = Model::CreateIpamPrefixListResolverRequest>
+  void CreateIpamPrefixListResolverAsync(const CreateIpamPrefixListResolverRequestT& request,
+                                         const CreateIpamPrefixListResolverResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateIpamPrefixListResolver, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an IPAM prefix list resolver target.</p> <p>An IPAM prefix list
+   * resolver target is an association between a specific customer-managed prefix
+   * list and an IPAM prefix list resolver. The target enables the resolver to
+   * synchronize CIDRs selected by its rules into the specified prefix list, which
+   * can then be referenced in Amazon Web Services resources.</p> <p>For more
+   * information about IPAM prefix list resolver, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+   * prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPrefixListResolverTarget">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIpamPrefixListResolverTargetOutcome CreateIpamPrefixListResolverTarget(
+      const Model::CreateIpamPrefixListResolverTargetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIpamPrefixListResolverTarget that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateIpamPrefixListResolverTargetRequestT = Model::CreateIpamPrefixListResolverTargetRequest>
+  Model::CreateIpamPrefixListResolverTargetOutcomeCallable CreateIpamPrefixListResolverTargetCallable(
+      const CreateIpamPrefixListResolverTargetRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateIpamPrefixListResolverTarget, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIpamPrefixListResolverTarget that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateIpamPrefixListResolverTargetRequestT = Model::CreateIpamPrefixListResolverTargetRequest>
+  void CreateIpamPrefixListResolverTargetAsync(const CreateIpamPrefixListResolverTargetRequestT& request,
+                                               const CreateIpamPrefixListResolverTargetResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateIpamPrefixListResolverTarget, request, handler, context);
   }
 
   /**
@@ -5187,23 +5271,24 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>Creates a VPC with the specified CIDR blocks. For more information, see <a
+   * <p>Creates a VPC with the specified CIDR blocks.</p> <p>A VPC must have an
+   * associated IPv4 CIDR block. You can choose an IPv4 CIDR block or an
+   * IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
+   * with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR
+   * block, an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought
+   * to Amazon Web Services. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
    * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
-   * Guide</i>.</p> <p>You can optionally request an IPv6 CIDR block for the VPC. You
-   * can request an Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6
-   * addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned
-   * through bring your own IP addresses (<a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
-   * <p>By default, each instance that you launch in the VPC has the default DHCP
-   * options, which include only a default DNS server that we provide
+   * Guide</i>.</p> <p>By default, each instance that you launch in the VPC has the
+   * default DHCP options, which include only a default DNS server that we provide
    * (AmazonProvidedDNS). For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-   * option sets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>You can specify the
-   * instance tenancy value for the VPC when you create it. You can't change this
-   * value for the VPC after you create it. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-   * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * option sets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>You can specify DNS
+   * options and tenancy for a VPC when you create it. You can't change the tenancy
+   * of a VPC after you create it. For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
+   * configuration options</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
    * Reference</a></p>
    */
@@ -5790,7 +5875,16 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * its instances. For fleets with more than 1000 instances, the deletion request
    * might fail. If your fleet has more than 1000 instances, first terminate most of
    * the instances manually, leaving 1000 or fewer. Then delete the fleet, and the
-   * remaining instances will be terminated automatically.</p> <p class="title">
+   * remaining instances will be terminated automatically.</p>  <p>
+   * <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After you
+   * terminate an instance, you can no longer connect to it, and it can't be
+   * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+   * termination are also permanently deleted and can't be recovered. All data stored
+   * on instance store volumes is permanently lost. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+   * How instance termination works</a>.</p> <p>Before you terminate an instance,
+   * ensure that you have backed up all data that you need to retain after the
+   * termination to persistent storage.</p>  <p class="title">
    * <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 25 fleets of type
    * <code>instant</code> in a single request.</p> </li> <li> <p>You can delete up to
    * 100 fleets of type <code>maintain</code> or <code>request</code> in a single
@@ -6022,7 +6116,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>Delete a verification token. A verification token is an Amazon Web
+   * <p>Delete a verification token.</p> <p>A verification token is an Amazon Web
    * Services-generated random value that you can use to prove ownership of an
    * external resource. For example, you can use a verification token to validate
    * that you control a public IP address range when you bring an IP address range to
@@ -6086,6 +6180,72 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void DeleteIpamPoolAsync(const DeleteIpamPoolRequestT& request, const DeleteIpamPoolResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteIpamPool, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an IPAM prefix list resolver. Before deleting a resolver, you must
+   * first delete all resolver targets associated with it.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPrefixListResolver">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIpamPrefixListResolverOutcome DeleteIpamPrefixListResolver(
+      const Model::DeleteIpamPrefixListResolverRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIpamPrefixListResolver that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteIpamPrefixListResolverRequestT = Model::DeleteIpamPrefixListResolverRequest>
+  Model::DeleteIpamPrefixListResolverOutcomeCallable DeleteIpamPrefixListResolverCallable(
+      const DeleteIpamPrefixListResolverRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteIpamPrefixListResolver, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIpamPrefixListResolver that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteIpamPrefixListResolverRequestT = Model::DeleteIpamPrefixListResolverRequest>
+  void DeleteIpamPrefixListResolverAsync(const DeleteIpamPrefixListResolverRequestT& request,
+                                         const DeleteIpamPrefixListResolverResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteIpamPrefixListResolver, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an IPAM prefix list resolver target. This removes the association
+   * between the resolver and the managed prefix list, stopping automatic CIDR
+   * synchronization.</p> <p>For more information about IPAM prefix list resolver,
+   * see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/automate-prefix-list-updates.html">Automate
+   * prefix list updates with IPAM</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPrefixListResolverTarget">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIpamPrefixListResolverTargetOutcome DeleteIpamPrefixListResolverTarget(
+      const Model::DeleteIpamPrefixListResolverTargetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIpamPrefixListResolverTarget that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteIpamPrefixListResolverTargetRequestT = Model::DeleteIpamPrefixListResolverTargetRequest>
+  Model::DeleteIpamPrefixListResolverTargetOutcomeCallable DeleteIpamPrefixListResolverTargetCallable(
+      const DeleteIpamPrefixListResolverTargetRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteIpamPrefixListResolverTarget, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIpamPrefixListResolverTarget that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteIpamPrefixListResolverTargetRequestT = Model::DeleteIpamPrefixListResolverTargetRequest>
+  void DeleteIpamPrefixListResolverTargetAsync(const DeleteIpamPrefixListResolverTargetRequestT& request,
+                                               const DeleteIpamPrefixListResolverTargetResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteIpamPrefixListResolverTarget, request, handler, context);
   }
 
   /**
@@ -10709,6 +10869,68 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const DescribeIpamPoolsRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeIpamPools, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more IPAM prefix list resolver Targets. Use this operation
+   * to view the configuration and status of resolver targets.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPrefixListResolverTargets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamPrefixListResolverTargetsOutcome DescribeIpamPrefixListResolverTargets(
+      const Model::DescribeIpamPrefixListResolverTargetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamPrefixListResolverTargets that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeIpamPrefixListResolverTargetsRequestT = Model::DescribeIpamPrefixListResolverTargetsRequest>
+  Model::DescribeIpamPrefixListResolverTargetsOutcomeCallable DescribeIpamPrefixListResolverTargetsCallable(
+      const DescribeIpamPrefixListResolverTargetsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamPrefixListResolverTargets, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamPrefixListResolverTargets that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeIpamPrefixListResolverTargetsRequestT = Model::DescribeIpamPrefixListResolverTargetsRequest>
+  void DescribeIpamPrefixListResolverTargetsAsync(const DescribeIpamPrefixListResolverTargetsResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                  const DescribeIpamPrefixListResolverTargetsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamPrefixListResolverTargets, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more IPAM prefix list resolvers. Use this operation to view
+   * the configuration, status, and properties of your resolvers.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPrefixListResolvers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamPrefixListResolversOutcome DescribeIpamPrefixListResolvers(
+      const Model::DescribeIpamPrefixListResolversRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamPrefixListResolvers that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeIpamPrefixListResolversRequestT = Model::DescribeIpamPrefixListResolversRequest>
+  Model::DescribeIpamPrefixListResolversOutcomeCallable DescribeIpamPrefixListResolversCallable(
+      const DescribeIpamPrefixListResolversRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamPrefixListResolvers, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamPrefixListResolvers that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeIpamPrefixListResolversRequestT = Model::DescribeIpamPrefixListResolversRequest>
+  void DescribeIpamPrefixListResolversAsync(const DescribeIpamPrefixListResolversResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const DescribeIpamPrefixListResolversRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamPrefixListResolvers, request, handler, context);
   }
 
   /**
@@ -17352,6 +17574,109 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Retrieves the CIDR selection rules for an IPAM prefix list resolver. Use this
+   * operation to view the business logic that determines which CIDRs are selected
+   * for synchronization with prefix lists.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamPrefixListResolverRulesOutcome GetIpamPrefixListResolverRules(
+      const Model::GetIpamPrefixListResolverRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamPrefixListResolverRules that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetIpamPrefixListResolverRulesRequestT = Model::GetIpamPrefixListResolverRulesRequest>
+  Model::GetIpamPrefixListResolverRulesOutcomeCallable GetIpamPrefixListResolverRulesCallable(
+      const GetIpamPrefixListResolverRulesRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamPrefixListResolverRules, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamPrefixListResolverRules that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamPrefixListResolverRulesRequestT = Model::GetIpamPrefixListResolverRulesRequest>
+  void GetIpamPrefixListResolverRulesAsync(const GetIpamPrefixListResolverRulesRequestT& request,
+                                           const GetIpamPrefixListResolverRulesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamPrefixListResolverRules, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the CIDR entries for a specific version of an IPAM prefix list
+   * resolver. This shows the actual CIDRs that were selected and synchronized at a
+   * particular point in time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverVersionEntries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamPrefixListResolverVersionEntriesOutcome GetIpamPrefixListResolverVersionEntries(
+      const Model::GetIpamPrefixListResolverVersionEntriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamPrefixListResolverVersionEntries that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetIpamPrefixListResolverVersionEntriesRequestT = Model::GetIpamPrefixListResolverVersionEntriesRequest>
+  Model::GetIpamPrefixListResolverVersionEntriesOutcomeCallable GetIpamPrefixListResolverVersionEntriesCallable(
+      const GetIpamPrefixListResolverVersionEntriesRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamPrefixListResolverVersionEntries, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamPrefixListResolverVersionEntries that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetIpamPrefixListResolverVersionEntriesRequestT = Model::GetIpamPrefixListResolverVersionEntriesRequest>
+  void GetIpamPrefixListResolverVersionEntriesAsync(const GetIpamPrefixListResolverVersionEntriesRequestT& request,
+                                                    const GetIpamPrefixListResolverVersionEntriesResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamPrefixListResolverVersionEntries, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves version information for an IPAM prefix list resolver.</p> <p>Each
+   * version is a snapshot of what CIDRs matched your rules at that moment in time.
+   * The version number increments every time the CIDR list changes due to
+   * infrastructure changes.</p> <p> <b>Version example:</b> </p> <p> <b>Initial
+   * State (Version 1)</b> </p> <p>Production environment:</p> <ul> <li>
+   * <p>vpc-prod-web (10.1.0.0/16) - tagged env=prod</p> </li> <li> <p>vpc-prod-db
+   * (10.2.0.0/16) - tagged env=prod</p> </li> </ul> <p>Resolver rule: Include all
+   * VPCs tagged env=prod</p> <p> <b>Version 1 CIDRs:</b> 10.1.0.0/16,
+   * 10.2.0.0/16</p> <p> <b>Infrastructure Change (Version 2)</b> </p> <p>New VPC
+   * added:</p> <ul> <li> <p>vpc-prod-api (10.3.0.0/16) - tagged env=prod</p> </li>
+   * </ul> <p>IPAM automatically detects the change and creates a new version.</p>
+   * <p> <b>Version 2 CIDRs:</b> 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPrefixListResolverVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamPrefixListResolverVersionsOutcome GetIpamPrefixListResolverVersions(
+      const Model::GetIpamPrefixListResolverVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamPrefixListResolverVersions that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetIpamPrefixListResolverVersionsRequestT = Model::GetIpamPrefixListResolverVersionsRequest>
+  Model::GetIpamPrefixListResolverVersionsOutcomeCallable GetIpamPrefixListResolverVersionsCallable(
+      const GetIpamPrefixListResolverVersionsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamPrefixListResolverVersions, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamPrefixListResolverVersions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamPrefixListResolverVersionsRequestT = Model::GetIpamPrefixListResolverVersionsRequest>
+  void GetIpamPrefixListResolverVersionsAsync(const GetIpamPrefixListResolverVersionsRequestT& request,
+                                              const GetIpamPrefixListResolverVersionsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamPrefixListResolverVersions, request, handler, context);
+  }
+
+  /**
    * <p>Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is
    * associated with more than one resource discovery, the resource CIDRs across all
    * of the resource discoveries is returned. A resource discovery is an IPAM
@@ -19571,6 +19896,68 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void ModifyIpamPoolAsync(const ModifyIpamPoolRequestT& request, const ModifyIpamPoolResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyIpamPool, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies an IPAM prefix list resolver. You can update the description and
+   * CIDR selection rules. Changes to rules will trigger re-evaluation and potential
+   * updates to associated prefix lists.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPrefixListResolver">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamPrefixListResolverOutcome ModifyIpamPrefixListResolver(
+      const Model::ModifyIpamPrefixListResolverRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamPrefixListResolver that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyIpamPrefixListResolverRequestT = Model::ModifyIpamPrefixListResolverRequest>
+  Model::ModifyIpamPrefixListResolverOutcomeCallable ModifyIpamPrefixListResolverCallable(
+      const ModifyIpamPrefixListResolverRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamPrefixListResolver, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamPrefixListResolver that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyIpamPrefixListResolverRequestT = Model::ModifyIpamPrefixListResolverRequest>
+  void ModifyIpamPrefixListResolverAsync(const ModifyIpamPrefixListResolverRequestT& request,
+                                         const ModifyIpamPrefixListResolverResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamPrefixListResolver, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies an IPAM prefix list resolver target. You can update version tracking
+   * settings and the desired version of the target prefix list.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPrefixListResolverTarget">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamPrefixListResolverTargetOutcome ModifyIpamPrefixListResolverTarget(
+      const Model::ModifyIpamPrefixListResolverTargetRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamPrefixListResolverTarget that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ModifyIpamPrefixListResolverTargetRequestT = Model::ModifyIpamPrefixListResolverTargetRequest>
+  Model::ModifyIpamPrefixListResolverTargetOutcomeCallable ModifyIpamPrefixListResolverTargetCallable(
+      const ModifyIpamPrefixListResolverTargetRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamPrefixListResolverTarget, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamPrefixListResolverTarget that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ModifyIpamPrefixListResolverTargetRequestT = Model::ModifyIpamPrefixListResolverTargetRequest>
+  void ModifyIpamPrefixListResolverTargetAsync(const ModifyIpamPrefixListResolverTargetRequestT& request,
+                                               const ModifyIpamPrefixListResolverTargetResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamPrefixListResolverTarget, request, handler, context);
   }
 
   /**
@@ -23393,19 +23780,28 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>Shuts down the specified instances. This operation is <a
+   * <p>Terminates (deletes) the specified instances. This operation is <a
    * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
-   * if you terminate an instance more than once, each call succeeds.</p> <p>If you
-   * specify multiple instances and the request fails (for example, because of a
-   * single incorrect instance ID), none of the instances are terminated.</p> <p>If
-   * you terminate multiple instances across multiple Availability Zones, and one or
-   * more of the specified instances are enabled for termination protection, the
-   * request fails with the following results:</p> <ul> <li> <p>The specified
-   * instances that are in the same Availability Zone as the protected instance are
-   * not terminated.</p> </li> <li> <p>The specified instances that are in different
-   * Availability Zones, where no other specified instances are protected, are
-   * successfully terminated.</p> </li> </ul> <p>For example, say you have the
-   * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
+   * if you terminate an instance more than once, each call succeeds.</p>
+   * <p> <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After
+   * you terminate an instance, you can no longer connect to it, and it can't be
+   * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+   * termination are also permanently deleted and can't be recovered. All data stored
+   * on instance store volumes is permanently lost. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+   * How instance termination works</a>.</p> <p>Before you terminate an instance,
+   * ensure that you have backed up all data that you need to retain after the
+   * termination to persistent storage.</p>  <p>If you specify multiple
+   * instances and the request fails (for example, because of a single incorrect
+   * instance ID), none of the instances are terminated.</p> <p>If you terminate
+   * multiple instances across multiple Availability Zones, and one or more of the
+   * specified instances are enabled for termination protection, the request fails
+   * with the following results:</p> <ul> <li> <p>The specified instances that are in
+   * the same Availability Zone as the protected instance are not terminated.</p>
+   * </li> <li> <p>The specified instances that are in different Availability Zones,
+   * where no other specified instances are protected, are successfully
+   * terminated.</p> </li> </ul> <p>For example, say you have the following
+   * instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
    * protected</p> </li> <li> <p>Instance B: <code>us-east-1a</code>; Not
    * protected</p> </li> <li> <p>Instance C: <code>us-east-1b</code>; Protected</p>
    * </li> <li> <p>Instance D: <code>us-east-1b</code>; not protected</p> </li> </ul>

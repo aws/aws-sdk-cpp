@@ -52,7 +52,7 @@ class GetCertificateSigningRequestRequest : public PaymentCryptographyRequest {
 
   ///@{
   /**
-   * <p>Algorithm used to generate the certificate signing request</p>
+   * <p>The cryptographic algorithm used to sign your CSR.</p>
    */
   inline SigningAlgorithmType GetSigningAlgorithm() const { return m_signingAlgorithm; }
   inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
@@ -68,7 +68,7 @@ class GetCertificateSigningRequestRequest : public PaymentCryptographyRequest {
 
   ///@{
   /**
-   * <p>Certificate subject data</p>
+   * <p>The metadata used to create the CSR.</p>
    */
   inline const CertificateSubjectType& GetCertificateSubject() const { return m_certificateSubject; }
   inline bool CertificateSubjectHasBeenSet() const { return m_certificateSubjectHasBeenSet; }

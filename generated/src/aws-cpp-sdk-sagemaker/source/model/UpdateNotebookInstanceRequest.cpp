@@ -27,6 +27,10 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const {
     payload.WithString("IpAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
   }
 
+  if (m_platformIdentifierHasBeenSet) {
+    payload.WithString("PlatformIdentifier", m_platformIdentifier);
+  }
+
   if (m_roleArnHasBeenSet) {
     payload.WithString("RoleArn", m_roleArn);
   }
