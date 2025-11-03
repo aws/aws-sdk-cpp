@@ -74,12 +74,34 @@ class UpdateStreamModeRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The target warm throughput in MB/s that the stream should be scaled to
+   * handle. This represents the throughput capacity that will be immediately
+   * available for write operations. This field is only valid when the stream mode is
+   * being updated to on-demand.</p>
+   */
+  inline int GetWarmThroughputMiBps() const { return m_warmThroughputMiBps; }
+  inline bool WarmThroughputMiBpsHasBeenSet() const { return m_warmThroughputMiBpsHasBeenSet; }
+  inline void SetWarmThroughputMiBps(int value) {
+    m_warmThroughputMiBpsHasBeenSet = true;
+    m_warmThroughputMiBps = value;
+  }
+  inline UpdateStreamModeRequest& WithWarmThroughputMiBps(int value) {
+    SetWarmThroughputMiBps(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamARN;
   bool m_streamARNHasBeenSet = false;
 
   StreamModeDetails m_streamModeDetails;
   bool m_streamModeDetailsHasBeenSet = false;
+
+  int m_warmThroughputMiBps{0};
+  bool m_warmThroughputMiBpsHasBeenSet = false;
 };
 
 }  // namespace Model

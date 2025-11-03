@@ -12,6 +12,7 @@
 #include <aws/kinesis/model/EnhancedMetrics.h>
 #include <aws/kinesis/model/StreamModeDetails.h>
 #include <aws/kinesis/model/StreamStatus.h>
+#include <aws/kinesis/model/WarmThroughputObject.h>
 
 #include <utility>
 
@@ -260,6 +261,25 @@ class StreamDescriptionSummary {
 
   ///@{
   /**
+   * <p>The warm throughput in MB/s for the stream. This represents the throughput
+   * capacity that will be immediately available for write operations.</p>
+   */
+  inline const WarmThroughputObject& GetWarmThroughput() const { return m_warmThroughput; }
+  inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+  template <typename WarmThroughputT = WarmThroughputObject>
+  void SetWarmThroughput(WarmThroughputT&& value) {
+    m_warmThroughputHasBeenSet = true;
+    m_warmThroughput = std::forward<WarmThroughputT>(value);
+  }
+  template <typename WarmThroughputT = WarmThroughputObject>
+  StreamDescriptionSummary& WithWarmThroughput(WarmThroughputT&& value) {
+    SetWarmThroughput(std::forward<WarmThroughputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum record size of a single record in kibibyte (KiB) that you can
    * write to, and read from a stream.</p>
    */
@@ -307,6 +327,9 @@ class StreamDescriptionSummary {
 
   int m_consumerCount{0};
   bool m_consumerCountHasBeenSet = false;
+
+  WarmThroughputObject m_warmThroughput;
+  bool m_warmThroughputHasBeenSet = false;
 
   int m_maxRecordSizeInKiB{0};
   bool m_maxRecordSizeInKiBHasBeenSet = false;

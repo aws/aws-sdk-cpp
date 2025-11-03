@@ -22,6 +22,8 @@
 #include <aws/core/NoResult.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
+#include <aws/kinesis/model/DescribeAccountSettingsRequest.h>
+#include <aws/kinesis/model/DescribeAccountSettingsResult.h>
 #include <aws/kinesis/model/DescribeLimitsRequest.h>
 #include <aws/kinesis/model/DescribeLimitsResult.h>
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
@@ -46,7 +48,9 @@
 #include <aws/kinesis/model/PutRecordResult.h>
 #include <aws/kinesis/model/PutRecordsResult.h>
 #include <aws/kinesis/model/RegisterStreamConsumerResult.h>
+#include <aws/kinesis/model/UpdateAccountSettingsResult.h>
 #include <aws/kinesis/model/UpdateShardCountResult.h>
+#include <aws/kinesis/model/UpdateStreamWarmThroughputResult.h>
 /* End of service model headers required in KinesisClient header */
 
 namespace Aws {
@@ -86,6 +90,7 @@ class DecreaseStreamRetentionPeriodRequest;
 class DeleteResourcePolicyRequest;
 class DeleteStreamRequest;
 class DeregisterStreamConsumerRequest;
+class DescribeAccountSettingsRequest;
 class DescribeLimitsRequest;
 class DescribeStreamRequest;
 class DescribeStreamConsumerRequest;
@@ -113,9 +118,11 @@ class StopStreamEncryptionRequest;
 class SubscribeToShardRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateAccountSettingsRequest;
 class UpdateMaxRecordSizeRequest;
 class UpdateShardCountRequest;
 class UpdateStreamModeRequest;
+class UpdateStreamWarmThroughputRequest;
 /* End of service model forward declarations required in KinesisClient header */
 
 /* Service model Outcome class definitions */
@@ -125,6 +132,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DecreaseStreamRetention
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeleteStreamOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeregisterStreamConsumerOutcome;
+typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, KinesisError> DescribeAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<DescribeLimitsResult, KinesisError> DescribeLimitsOutcome;
 typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisError> DescribeStreamOutcome;
 typedef Aws::Utils::Outcome<DescribeStreamConsumerResult, KinesisError> DescribeStreamConsumerOutcome;
@@ -152,9 +160,11 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOut
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, KinesisError> UpdateAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateMaxRecordSizeOutcome;
 typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
+typedef Aws::Utils::Outcome<UpdateStreamWarmThroughputResult, KinesisError> UpdateStreamWarmThroughputOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -164,6 +174,7 @@ typedef std::future<DecreaseStreamRetentionPeriodOutcome> DecreaseStreamRetentio
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
 typedef std::future<DeregisterStreamConsumerOutcome> DeregisterStreamConsumerOutcomeCallable;
+typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
 typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
 typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
 typedef std::future<DescribeStreamConsumerOutcome> DescribeStreamConsumerOutcomeCallable;
@@ -191,9 +202,11 @@ typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCall
 typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
 typedef std::future<UpdateMaxRecordSizeOutcome> UpdateMaxRecordSizeOutcomeCallable;
 typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
 typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
+typedef std::future<UpdateStreamWarmThroughputOutcome> UpdateStreamWarmThroughputOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -219,6 +232,9 @@ typedef std::function<void(const KinesisClient*, const Model::DeleteStreamReques
 typedef std::function<void(const KinesisClient*, const Model::DeregisterStreamConsumerRequest&,
                            const Model::DeregisterStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeregisterStreamConsumerResponseReceivedHandler;
+typedef std::function<void(const KinesisClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAccountSettingsResponseReceivedHandler;
 typedef std::function<void(const KinesisClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeLimitsResponseReceivedHandler;
@@ -301,6 +317,9 @@ typedef std::function<void(const KinesisClient*, const Model::TagResourceRequest
 typedef std::function<void(const KinesisClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const KinesisClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAccountSettingsResponseReceivedHandler;
 typedef std::function<void(const KinesisClient*, const Model::UpdateMaxRecordSizeRequest&, const Model::UpdateMaxRecordSizeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMaxRecordSizeResponseReceivedHandler;
@@ -310,6 +329,9 @@ typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRe
 typedef std::function<void(const KinesisClient*, const Model::UpdateStreamModeRequest&, const Model::UpdateStreamModeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStreamModeResponseReceivedHandler;
+typedef std::function<void(const KinesisClient*, const Model::UpdateStreamWarmThroughputRequest&,
+                           const Model::UpdateStreamWarmThroughputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateStreamWarmThroughputResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Kinesis
 }  // namespace Aws

@@ -23,6 +23,10 @@ Aws::String UpdateStreamModeRequest::SerializePayload() const {
     payload.WithObject("StreamModeDetails", m_streamModeDetails.Jsonize());
   }
 
+  if (m_warmThroughputMiBpsHasBeenSet) {
+    payload.WithInteger("WarmThroughputMiBps", m_warmThroughputMiBps);
+  }
+
   return payload.View().WriteReadable();
 }
 

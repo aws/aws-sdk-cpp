@@ -14,6 +14,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/AgentManagedRuntimeType.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntime.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpoint.h>
@@ -33,6 +34,8 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
+#include <aws/bedrock-agentcore-control/model/Code.h>
+#include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterStatus.h>

@@ -24,6 +24,8 @@
 #include <aws/kinesis/model/DeleteResourcePolicyRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
+#include <aws/kinesis/model/DescribeAccountSettingsRequest.h>
+#include <aws/kinesis/model/DescribeAccountSettingsResult.h>
 #include <aws/kinesis/model/DescribeLimitsRequest.h>
 #include <aws/kinesis/model/DescribeLimitsResult.h>
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
@@ -58,6 +60,10 @@
 #include <aws/kinesis/model/ListTagsForStreamResult.h>
 #include <aws/kinesis/model/MergeShardsRequest.h>
 #include <aws/kinesis/model/MetricsName.h>
+#include <aws/kinesis/model/MinimumThroughputBillingCommitmentInput.h>
+#include <aws/kinesis/model/MinimumThroughputBillingCommitmentInputStatus.h>
+#include <aws/kinesis/model/MinimumThroughputBillingCommitmentOutput.h>
+#include <aws/kinesis/model/MinimumThroughputBillingCommitmentOutputStatus.h>
 #include <aws/kinesis/model/PutRecordRequest.h>
 #include <aws/kinesis/model/PutRecordResult.h>
 #include <aws/kinesis/model/PutRecordsRequest.h>
@@ -93,10 +99,15 @@
 #include <aws/kinesis/model/Tag.h>
 #include <aws/kinesis/model/TagResourceRequest.h>
 #include <aws/kinesis/model/UntagResourceRequest.h>
+#include <aws/kinesis/model/UpdateAccountSettingsRequest.h>
+#include <aws/kinesis/model/UpdateAccountSettingsResult.h>
 #include <aws/kinesis/model/UpdateMaxRecordSizeRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateShardCountResult.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>
+#include <aws/kinesis/model/UpdateStreamWarmThroughputRequest.h>
+#include <aws/kinesis/model/UpdateStreamWarmThroughputResult.h>
+#include <aws/kinesis/model/WarmThroughputObject.h>
 
 using KinesisIncludeTest = ::testing::Test;
 

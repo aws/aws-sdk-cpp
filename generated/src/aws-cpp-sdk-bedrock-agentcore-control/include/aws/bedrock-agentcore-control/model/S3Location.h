@@ -68,12 +68,34 @@ class S3Location {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest
+   * version of the object is used.</p>
+   */
+  inline const Aws::String& GetVersionId() const { return m_versionId; }
+  inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+  template <typename VersionIdT = Aws::String>
+  void SetVersionId(VersionIdT&& value) {
+    m_versionIdHasBeenSet = true;
+    m_versionId = std::forward<VersionIdT>(value);
+  }
+  template <typename VersionIdT = Aws::String>
+  S3Location& WithVersionId(VersionIdT&& value) {
+    SetVersionId(std::forward<VersionIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_bucket;
   bool m_bucketHasBeenSet = false;
 
   Aws::String m_prefix;
   bool m_prefixHasBeenSet = false;
+
+  Aws::String m_versionId;
+  bool m_versionIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -35,6 +35,10 @@ Aws::String CreateStreamRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_warmThroughputMiBpsHasBeenSet) {
+    payload.WithInteger("WarmThroughputMiBps", m_warmThroughputMiBps);
+  }
+
   if (m_maxRecordSizeInKiBHasBeenSet) {
     payload.WithInteger("MaxRecordSizeInKiB", m_maxRecordSizeInKiB);
   }

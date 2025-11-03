@@ -26,6 +26,10 @@ S3Location& S3Location::operator=(JsonView jsonValue) {
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("versionId")) {
+    m_versionId = jsonValue.GetString("versionId");
+    m_versionIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue S3Location::Jsonize() const {
 
   if (m_prefixHasBeenSet) {
     payload.WithString("prefix", m_prefix);
+  }
+
+  if (m_versionIdHasBeenSet) {
+    payload.WithString("versionId", m_versionId);
   }
 
   return payload;
