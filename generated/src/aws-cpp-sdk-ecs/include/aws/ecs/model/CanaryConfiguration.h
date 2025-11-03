@@ -17,7 +17,7 @@ namespace ECS {
 namespace Model {
 
 /**
- * <p>Configuration for canary deployment strategy that shifts a fixed percentage
+ * <p>Configuration for a canary deployment strategy that shifts a fixed percentage
  * of traffic to the new service revision, waits for a specified bake time, then
  * shifts the remaining traffic. </p> <p>This is only valid when you run
  * <code>CreateService</code> or <code>UpdateService</code> with
@@ -37,8 +37,8 @@ class CanaryConfiguration {
   ///@{
   /**
    * <p>The percentage of production traffic to shift to the new service revision
-   * during the canary phase. Valid values are 0.1 to 100.0. The default value is
-   * 5.0.</p>
+   * during the canary phase. Valid values are multiples of 0.1 from 0.1 to 100.0.
+   * The default value is 5.0.</p>
    */
   inline double GetCanaryPercent() const { return m_canaryPercent; }
   inline bool CanaryPercentHasBeenSet() const { return m_canaryPercentHasBeenSet; }
