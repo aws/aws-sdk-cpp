@@ -26,6 +26,8 @@
 #include <aws/pinpoint-sms-voice-v2/model/AssociateProtectConfigurationResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/AttachmentStatus.h>
 #include <aws/pinpoint-sms-voice-v2/model/AttachmentUploadErrorReason.h>
+#include <aws/pinpoint-sms-voice-v2/model/CarrierLookupRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/CarrierLookupResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/CloudWatchLogsDestination.h>
 #include <aws/pinpoint-sms-voice-v2/model/ConfigurationSetFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/ConfigurationSetFilterName.h>
@@ -172,6 +174,7 @@
 #include <aws/pinpoint-sms-voice-v2/model/PhoneNumberFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/PhoneNumberFilterName.h>
 #include <aws/pinpoint-sms-voice-v2/model/PhoneNumberInformation.h>
+#include <aws/pinpoint-sms-voice-v2/model/PhoneNumberType.h>
 #include <aws/pinpoint-sms-voice-v2/model/PoolFilter.h>
 #include <aws/pinpoint-sms-voice-v2/model/PoolFilterName.h>
 #include <aws/pinpoint-sms-voice-v2/model/PoolInformation.h>

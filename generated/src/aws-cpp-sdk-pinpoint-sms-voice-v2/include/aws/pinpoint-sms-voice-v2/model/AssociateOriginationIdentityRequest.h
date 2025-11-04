@@ -34,9 +34,10 @@ class AssociateOriginationIdentityRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The pool to update with the new Identity. This value can be either the PoolId
-   * or PoolArn, and you can find these values using <a>DescribePools</a>.</p>
-   *  <p>If you are using a shared AWS End User Messaging SMS and Voice
-   * resource then you must use the full Amazon Resource Name(ARN).</p>
+   * or PoolArn, and you can find these values using <a
+   * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePools.html">DescribePools</a>.</p>
+   *  <p>If you are using a shared End User MessagingSMS; resource then
+   * you must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }
   inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -58,8 +59,8 @@ class AssociateOriginationIdentityRequest : public PinpointSMSVoiceV2Request {
    * SenderId, or SenderIdArn. You can use <a>DescribePhoneNumbers</a> to find the
    * values for PhoneNumberId and PhoneNumberArn, while <a>DescribeSenderIds</a> can
    * be used to get the values for SenderId and SenderIdArn.</p>  <p>If
-   * you are using a shared AWS End User Messaging SMS and Voice resource then you
-   * must use the full Amazon Resource Name(ARN).</p>
+   * you are using a shared End User MessagingSMS resource then you must use the full
+   * Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }

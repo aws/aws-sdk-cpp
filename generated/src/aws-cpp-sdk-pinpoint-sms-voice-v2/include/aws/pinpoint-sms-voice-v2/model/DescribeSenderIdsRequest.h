@@ -37,8 +37,8 @@ class DescribeSenderIdsRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>An array of SenderIdAndCountry objects to search for.</p>  <p>If
-   * you are using a shared AWS End User Messaging SMS and Voice resource then you
-   * must use the full Amazon Resource Name(ARN).</p>
+   * you are using a shared End User MessagingSMS resource then you must use the full
+   * Amazon Resource Name(ARN).</p>
    */
   inline const Aws::Vector<SenderIdAndCountry>& GetSenderIds() const { return m_senderIds; }
   inline bool SenderIdsHasBeenSet() const { return m_senderIdsHasBeenSet; }

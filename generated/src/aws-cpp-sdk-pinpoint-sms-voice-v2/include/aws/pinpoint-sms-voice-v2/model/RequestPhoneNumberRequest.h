@@ -119,8 +119,8 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The name of the OptOutList to associate with the phone number. You can use
    * the OptOutListName or OptOutListArn.</p>  <p>If you are using a
-   * shared AWS End User Messaging SMS and Voice resource then you must use the full
-   * Amazon Resource Name(ARN).</p>
+   * shared End User MessagingSMS resource then you must use the full Amazon Resource
+   * Name(ARN).</p>
    */
   inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
   inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
@@ -139,9 +139,8 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The pool to associated with the phone number. You can use the PoolId or
-   * PoolArn. </p>  <p>If you are using a shared AWS End User Messaging
-   * SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
-   *
+   * PoolArn. </p>  <p>If you are using a shared End User MessagingSMS
+   * resource then you must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }
   inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -212,7 +211,7 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>An array of tags (key and value pairs) associate with the requested phone
+   * <p>An array of tags (key and value pairs) to associate with the requested phone
    * number. </p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }

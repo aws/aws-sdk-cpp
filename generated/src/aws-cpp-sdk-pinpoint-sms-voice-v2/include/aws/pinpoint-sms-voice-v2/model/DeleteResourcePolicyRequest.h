@@ -32,8 +32,8 @@ class DeleteResourcePolicyRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice
-   * resource you're deleting the resource-based policy from.</p>
+   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource you're
+   * deleting the resource-based policy from.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
