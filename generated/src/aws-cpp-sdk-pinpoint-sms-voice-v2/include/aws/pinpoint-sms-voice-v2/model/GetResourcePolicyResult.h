@@ -29,8 +29,8 @@ class GetResourcePolicyResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice
-   * resource attached to the resource-based policy.</p>
+   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached
+   * to the resource-based policy.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>
@@ -48,7 +48,7 @@ class GetResourcePolicyResult {
   ///@{
   /**
    * <p>The JSON formatted string that contains the resource-based policy attached to
-   * the AWS End User Messaging SMS and Voice resource. </p>
+   * the End User MessagingSMS resource. </p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   template <typename PolicyT = Aws::String>

@@ -33,9 +33,9 @@ class UpdatePoolRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The unique identifier of the pool to update. Valid values are either the
-   * PoolId or PoolArn.</p>  <p>If you are using a shared AWS End User
-   * Messaging SMS and Voice resource then you must use the full Amazon Resource
-   * Name(ARN).</p>
+   * PoolId or PoolArn.</p>  <p>If you are using a shared End User
+   * MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+   *
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }
   inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -107,12 +107,12 @@ class UpdatePoolRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>By default this is set to false. When an end recipient sends a message that
-   * begins with HELP or STOP to one of your dedicated numbers, AWS End User
-   * Messaging SMS and Voice automatically replies with a customizable message and
-   * adds the end recipient to the OptOutList. When set to true you're responsible
-   * for responding to HELP and STOP requests. You're also responsible for tracking
-   * and honoring opt-out requests.</p>
+   * <p>By default this is set to false. When set to false and an end recipient sends
+   * a message that begins with HELP or STOP to one of your dedicated numbers, End
+   * User MessagingSMS automatically replies with a customizable message and adds the
+   * end recipient to the OptOutList. When set to true you're responsible for
+   * responding to HELP and STOP requests. You're also responsible for tracking and
+   * honoring opt-out requests.</p>
    */
   inline bool GetSelfManagedOptOutsEnabled() const { return m_selfManagedOptOutsEnabled; }
   inline bool SelfManagedOptOutsEnabledHasBeenSet() const { return m_selfManagedOptOutsEnabledHasBeenSet; }
@@ -130,8 +130,8 @@ class UpdatePoolRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The OptOutList to associate with the pool. Valid values are either
    * OptOutListName or OptOutListArn.</p>  <p>If you are using a shared
-   * AWS End User Messaging SMS and Voice resource then you must use the full Amazon
-   * Resource Name(ARN).</p>
+   * End User MessagingSMS resource then you must use the full Amazon Resource
+   * Name(ARN).</p>
    */
   inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
   inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }

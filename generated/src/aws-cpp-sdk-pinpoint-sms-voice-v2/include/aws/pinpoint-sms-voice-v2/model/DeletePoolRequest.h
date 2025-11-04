@@ -34,8 +34,8 @@ class DeletePoolRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
    * to find the values for PoolId and PoolArn .</p>  <p>If you are using
-   * a shared AWS End User Messaging SMS and Voice resource then you must use the
-   * full Amazon Resource Name(ARN).</p>
+   * a shared End User MessagingSMS resource then you must use the full Amazon
+   * Resource Name(ARN).</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }
   inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }

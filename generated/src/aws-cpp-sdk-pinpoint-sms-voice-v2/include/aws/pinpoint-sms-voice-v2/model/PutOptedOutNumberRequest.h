@@ -33,8 +33,8 @@ class PutOptedOutNumberRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
-   *  <p>If you are using a shared AWS End User Messaging SMS and Voice
-   * resource then you must use the full Amazon Resource Name(ARN).</p>
+   *  <p>If you are using a shared End User MessagingSMS resource then you
+   * must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
   inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }

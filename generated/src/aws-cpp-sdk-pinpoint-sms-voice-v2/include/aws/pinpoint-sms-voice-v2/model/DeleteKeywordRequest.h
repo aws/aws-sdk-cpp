@@ -35,9 +35,9 @@ class DeleteKeywordRequest : public PinpointSMSVoiceV2Request {
    * <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
    * PoolId or PoolArn. You can use <a>DescribePhoneNumbers</a> to find the values
    * for PhoneNumberId and PhoneNumberArn and <a>DescribePools</a> to find the values
-   * of PoolId and PoolArn.</p>  <p>If you are using a shared AWS End User
-   * Messaging SMS and Voice resource then you must use the full Amazon Resource
-   * Name(ARN).</p>
+   * of PoolId and PoolArn.</p>  <p>If you are using a shared End User
+   * MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+   *
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }

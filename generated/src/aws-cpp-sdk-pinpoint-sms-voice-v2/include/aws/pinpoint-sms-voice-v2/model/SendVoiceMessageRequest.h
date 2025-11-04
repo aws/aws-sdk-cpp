@@ -55,8 +55,8 @@ class SendVoiceMessageRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The origination identity to use for the voice call. This can be the
    * PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-   * <p>If you are using a shared AWS End User Messaging SMS and Voice resource then
-   * you must use the full Amazon Resource Name(ARN).</p>
+   * <p>If you are using a shared End User MessagingSMS resource then you must use
+   * the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
