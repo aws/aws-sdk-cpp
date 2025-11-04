@@ -1087,6 +1087,7 @@ static const int m8a_24xlarge_HASH = HashingUtils::HashString("m8a.24xlarge");
 static const int m8a_48xlarge_HASH = HashingUtils::HashString("m8a.48xlarge");
 static const int m8a_metal_24xl_HASH = HashingUtils::HashString("m8a.metal-24xl");
 static const int m8a_metal_48xl_HASH = HashingUtils::HashString("m8a.metal-48xl");
+static const int trn2_3xlarge_HASH = HashingUtils::HashString("trn2.3xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -4341,6 +4342,9 @@ static bool GetEnumForNameHelper8(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == m8a_metal_48xl_HASH) {
     enumValue = InstanceType::m8a_metal_48xl;
+    return true;
+  } else if (hashCode == trn2_3xlarge_HASH) {
+    enumValue = InstanceType::trn2_3xlarge;
     return true;
   }
   return false;
@@ -7611,6 +7615,9 @@ static bool GetNameForEnumHelper8(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::m8a_metal_48xl:
       value = "m8a.metal-48xl";
+      return true;
+    case InstanceType::trn2_3xlarge:
+      value = "trn2.3xlarge";
       return true;
     default:
       return false;

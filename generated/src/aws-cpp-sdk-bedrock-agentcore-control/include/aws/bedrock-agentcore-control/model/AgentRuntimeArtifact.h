@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CodeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContainerConfiguration.h>
 
 #include <utility>
@@ -48,9 +49,31 @@ class AgentRuntimeArtifact {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The code configuration for the agent runtime artifact, including the source
+   * code location and execution settings.</p>
+   */
+  inline const CodeConfiguration& GetCodeConfiguration() const { return m_codeConfiguration; }
+  inline bool CodeConfigurationHasBeenSet() const { return m_codeConfigurationHasBeenSet; }
+  template <typename CodeConfigurationT = CodeConfiguration>
+  void SetCodeConfiguration(CodeConfigurationT&& value) {
+    m_codeConfigurationHasBeenSet = true;
+    m_codeConfiguration = std::forward<CodeConfigurationT>(value);
+  }
+  template <typename CodeConfigurationT = CodeConfiguration>
+  AgentRuntimeArtifact& WithCodeConfiguration(CodeConfigurationT&& value) {
+    SetCodeConfiguration(std::forward<CodeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ContainerConfiguration m_containerConfiguration;
   bool m_containerConfigurationHasBeenSet = false;
+
+  CodeConfiguration m_codeConfiguration;
+  bool m_codeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -66,6 +66,10 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator=(JsonView jsonValue
     m_consumerCount = jsonValue.GetInteger("ConsumerCount");
     m_consumerCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WarmThroughput")) {
+    m_warmThroughput = jsonValue.GetObject("WarmThroughput");
+    m_warmThroughputHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MaxRecordSizeInKiB")) {
     m_maxRecordSizeInKiB = jsonValue.GetInteger("MaxRecordSizeInKiB");
     m_maxRecordSizeInKiBHasBeenSet = true;
@@ -123,6 +127,10 @@ JsonValue StreamDescriptionSummary::Jsonize() const {
 
   if (m_consumerCountHasBeenSet) {
     payload.WithInteger("ConsumerCount", m_consumerCount);
+  }
+
+  if (m_warmThroughputHasBeenSet) {
+    payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
   }
 
   if (m_maxRecordSizeInKiBHasBeenSet) {

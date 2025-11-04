@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Omics {
 namespace Model {
-enum class WorkflowEngine { NOT_SET, WDL, NEXTFLOW, CWL };
+enum class WorkflowEngine { NOT_SET, WDL, NEXTFLOW, CWL, WDL_LENIENT };
 
 namespace WorkflowEngineMapper {
 AWS_OMICS_API WorkflowEngine GetWorkflowEngineForName(const Aws::String& name);

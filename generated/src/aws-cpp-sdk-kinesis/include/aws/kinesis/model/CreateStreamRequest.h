@@ -124,6 +124,24 @@ class CreateStreamRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>The target warm throughput in MB/s that the stream should be scaled to
+   * handle. This represents the throughput capacity that will be immediately
+   * available for write operations.</p>
+   */
+  inline int GetWarmThroughputMiBps() const { return m_warmThroughputMiBps; }
+  inline bool WarmThroughputMiBpsHasBeenSet() const { return m_warmThroughputMiBpsHasBeenSet; }
+  inline void SetWarmThroughputMiBps(int value) {
+    m_warmThroughputMiBpsHasBeenSet = true;
+    m_warmThroughputMiBps = value;
+  }
+  inline CreateStreamRequest& WithWarmThroughputMiBps(int value) {
+    SetWarmThroughputMiBps(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum record size of a single record in kibibyte (KiB) that you can
    * write to, and read from a stream.</p>
    */
@@ -150,6 +168,9 @@ class CreateStreamRequest : public KinesisRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  int m_warmThroughputMiBps{0};
+  bool m_warmThroughputMiBpsHasBeenSet = false;
 
   int m_maxRecordSizeInKiB{0};
   bool m_maxRecordSizeInKiBHasBeenSet = false;

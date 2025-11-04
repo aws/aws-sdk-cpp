@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectCases {
 namespace Model {
-enum class RuleType { NOT_SET, Required };
+enum class RuleType { NOT_SET, Required, Hidden, FieldOptions };
 
 namespace RuleTypeMapper {
 AWS_CONNECTCASES_API RuleType GetRuleTypeForName(const Aws::String& name);

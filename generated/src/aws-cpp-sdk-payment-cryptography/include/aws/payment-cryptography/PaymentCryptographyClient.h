@@ -101,16 +101,18 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
   /**
    * <p>Adds replication Amazon Web Services Regions to an existing Amazon Web
    * Services Payment Cryptography key, enabling the key to be used for cryptographic
-   * operations in additional Amazon Web Services Regions.</p> <p>Multi-region keys
-   * allow you to use the same key material across multiple Amazon Web Services
-   * Regions, providing lower latency for applications distributed across regions.
-   * When you add Replication Regions, Amazon Web Services Payment Cryptography
-   * securely replicates the key material to the specified Amazon Web Services
-   * Regions.</p> <p>The key must be in an active state to add Replication Regions.
-   * You can add multiple regions in a single operation, and the key will be
-   * available for use in those regions once replication is complete.</p> <p>
-   * <b>Cross-account use:</b> This operation can't be used across different Amazon
-   * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+   * operations in additional Amazon Web Services Regions.</p> <p> <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a> allow you to use the same key material across multiple
+   * Amazon Web Services Regions, providing lower latency for applications
+   * distributed across regions. When you add Replication Regions, Amazon Web
+   * Services Payment Cryptography securely replicates the key material to the
+   * specified Amazon Web Services Regions.</p> <p>The key must be in an active state
+   * to add Replication Regions. You can add multiple regions in a single operation,
+   * and the key will be available for use in those regions once replication is
+   * complete.</p> <p> <b>Cross-account use:</b> This operation can't be used across
+   * different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p>
+   * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html">RemoveKeyReplicationRegions</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
@@ -357,15 +359,18 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
   }
 
   /**
-   * <p>Disables multi-region key replication settings for the specified Amazon Web
-   * Services Regions in your account, preventing new keys from being automatically
-   * replicated to those regions.</p> <p>After disabling default replication for
-   * specific regions, new keys created in your account will not be automatically
+   * <p>Disables <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a> settings for the specified Amazon Web Services Regions in
+   * your Amazon Web Services account, preventing new keys from being automatically
+   * replicated to those regions.</p> <p>After disabling Multi-Region key replication
+   * for specific regions, new keys created in your account will not be automatically
    * replicated to those regions. You can still manually add replication to those
-   * regions for individual keys using the AddKeyReplicationRegions operation.</p>
-   * <p>This operation does not affect existing keys or their current replication
-   * configuration.</p> <p> <b>Cross-account use:</b> This operation can't be used
-   * across different Amazon Web Services accounts.</p> <p> <b>Related
+   * regions for individual keys using the <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
+   * operation.</p> <p>This operation does not affect existing keys or their current
+   * replication configuration.</p> <p> <b>Cross-account use:</b> This operation
+   * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
    * operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
    * </p> </li> <li> <p> <a
@@ -399,9 +404,11 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
   }
 
   /**
-   * <p>Enables multi-region key replication settings for your account, causing new
+   * <p>Enables <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a> settings for your Amazon Web Services account, causing new
    * keys to be automatically replicated to the specified Amazon Web Services Regions
-   * when created.</p> <p>When default Replication Regions are enabled, any new keys
+   * when created.</p> <p>When Multi-Region key replication are enabled, any new keys
    * created in your account will automatically be replicated to these regions unless
    * you explicitly override this behavior during key creation. This simplifies key
    * management for applications that operate across multiple regions.</p>
@@ -652,7 +659,8 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
   }
 
   /**
-   * <p>Used to retrieve the public key for a keypair.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a certificate signing request (CSR) from a key pair.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">AWS
    * API Reference</a></p>
    */
@@ -681,13 +689,14 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
   }
 
   /**
-   * <p>Retrieves the list of regions where default key replication is currently
-   * enabled for your account.</p> <p>This operation returns the current
-   * configuration of default Replication Regions. New keys created in your account
-   * will be automatically replicated to these regions unless explicitly overridden
-   * during key creation.</p> <p> <b>Cross-account use:</b> This operation can't be
-   * used across different Amazon Web Services accounts.</p> <p> <b>Related
-   * operations:</b> </p> <ul> <li> <p> <a
+   * <p>Retrieves the list of Amazon Web Services Regions where <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a> is currently enabled for your Amazon Web Services
+   * account.</p> <p>This operation returns the current Multi-Region key replication
+   * configuration. New keys created in your account will be automatically replicated
+   * to these regions unless explicitly overridden during key creation.</p> <p>
+   * <b>Cross-account use:</b> This operation can't be used across different Amazon
+   * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
@@ -1170,11 +1179,14 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
    * in the specified Amazon Web Services Regions.</p> <p>When you remove Replication
    * Regions, the key material is securely deleted from those regions and can no
    * longer be used for cryptographic operations there. This operation is
-   * irreversible for the specified Amazon Web Services Regions.</p> <p>Ensure that
-   * no active cryptographic operations or applications depend on the key in the
-   * regions you're removing before performing this operation.</p> <p>
-   * <b>Cross-account use:</b> This operation can't be used across different Amazon
-   * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+   * irreversible for the specified Amazon Web Services Regions. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+   * key replication</a>.</p>  <p>Ensure that no active cryptographic
+   * operations or applications depend on the key in the regions you're removing
+   * before performing this operation.</p>  <p> <b>Cross-account use:</b>
+   * This operation can't be used across different Amazon Web Services accounts.</p>
+   * <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>

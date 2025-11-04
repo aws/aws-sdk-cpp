@@ -31,7 +31,7 @@ class BatchGetCaseRuleResult {
 
   ///@{
   /**
-   * <p>List of detailed case rule information.</p>
+   * <p>A list of detailed case rule information.</p>
    */
   inline const Aws::Vector<GetCaseRuleResponse>& GetCaseRules() const { return m_caseRules; }
   template <typename CaseRulesT = Aws::Vector<GetCaseRuleResponse>>
@@ -54,7 +54,7 @@ class BatchGetCaseRuleResult {
 
   ///@{
   /**
-   * <p>List of case rule errors.</p>
+   * <p>A list of case rule errors.</p>
    */
   inline const Aws::Vector<CaseRuleError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<CaseRuleError>>
@@ -71,6 +71,29 @@ class BatchGetCaseRuleResult {
   BatchGetCaseRuleResult& AddErrors(ErrorsT&& value) {
     m_errorsHasBeenSet = true;
     m_errors.emplace_back(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of unprocessed case rule identifiers.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetUnprocessedCaseRules() const { return m_unprocessedCaseRules; }
+  template <typename UnprocessedCaseRulesT = Aws::Vector<Aws::String>>
+  void SetUnprocessedCaseRules(UnprocessedCaseRulesT&& value) {
+    m_unprocessedCaseRulesHasBeenSet = true;
+    m_unprocessedCaseRules = std::forward<UnprocessedCaseRulesT>(value);
+  }
+  template <typename UnprocessedCaseRulesT = Aws::Vector<Aws::String>>
+  BatchGetCaseRuleResult& WithUnprocessedCaseRules(UnprocessedCaseRulesT&& value) {
+    SetUnprocessedCaseRules(std::forward<UnprocessedCaseRulesT>(value));
+    return *this;
+  }
+  template <typename UnprocessedCaseRulesT = Aws::String>
+  BatchGetCaseRuleResult& AddUnprocessedCaseRules(UnprocessedCaseRulesT&& value) {
+    m_unprocessedCaseRulesHasBeenSet = true;
+    m_unprocessedCaseRules.emplace_back(std::forward<UnprocessedCaseRulesT>(value));
     return *this;
   }
   ///@}
@@ -95,6 +118,9 @@ class BatchGetCaseRuleResult {
 
   Aws::Vector<CaseRuleError> m_errors;
   bool m_errorsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_unprocessedCaseRules;
+  bool m_unprocessedCaseRulesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

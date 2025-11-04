@@ -33,12 +33,40 @@ class TrackSourceSettings {
 
   ///@{
   /**
+   * Use this setting to select a single captions track from a source. Stream numbers
+   * include all tracks in the source file, regardless of type, and correspond to
+   * either the order of tracks in the file, or if applicable, the stream number
+   * metadata of the track. Although all tracks count toward these stream numbers, in
+   * this caption selector context, only the stream number of a track containing
+   * caption data may be used. To include more than one captions track in your job
+   * outputs, create multiple input captions selectors. Specify one stream per
+   * selector. If your source file contains a track which is not recognized by the
+   * service, then the corresponding stream number will still be reserved for future
+   * use. If more types of caption data get recognized in the future, these
+   * numberings will not shift.
+   */
+  inline int GetStreamNumber() const { return m_streamNumber; }
+  inline bool StreamNumberHasBeenSet() const { return m_streamNumberHasBeenSet; }
+  inline void SetStreamNumber(int value) {
+    m_streamNumberHasBeenSet = true;
+    m_streamNumber = value;
+  }
+  inline TrackSourceSettings& WithStreamNumber(int value) {
+    SetStreamNumber(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Use this setting to select a single captions track from a source. Track numbers
    * correspond to the order in the captions source file. For IMF sources, track
    * numbering is based on the order that the captions appear in the CPL. For
    * example, use 1 to select the captions asset that is listed first in the CPL. To
    * include more than one captions track in your job outputs, create multiple input
-   * captions selectors. Specify one track per selector.
+   * captions selectors. Specify one track per selector. If more types of caption
+   * data get recognized in the future, these numberings may shift, but the
+   * numberings used for streamNumber will not.
    */
   inline int GetTrackNumber() const { return m_trackNumber; }
   inline bool TrackNumberHasBeenSet() const { return m_trackNumberHasBeenSet; }
@@ -52,6 +80,9 @@ class TrackSourceSettings {
   }
   ///@}
  private:
+  int m_streamNumber{0};
+  bool m_streamNumberHasBeenSet = false;
+
   int m_trackNumber{0};
   bool m_trackNumberHasBeenSet = false;
 };

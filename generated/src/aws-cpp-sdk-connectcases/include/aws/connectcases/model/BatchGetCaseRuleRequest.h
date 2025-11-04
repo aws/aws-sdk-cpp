@@ -50,7 +50,7 @@ class BatchGetCaseRuleRequest : public ConnectCasesRequest {
 
   ///@{
   /**
-   * <p>List of case rule identifiers.</p>
+   * <p>A list of case rule identifiers.</p>
    */
   inline const Aws::Vector<CaseRuleIdentifier>& GetCaseRules() const { return m_caseRules; }
   inline bool CaseRulesHasBeenSet() const { return m_caseRulesHasBeenSet; }

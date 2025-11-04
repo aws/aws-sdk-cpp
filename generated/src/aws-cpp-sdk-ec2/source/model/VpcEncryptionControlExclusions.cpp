@@ -48,6 +48,21 @@ VpcEncryptionControlExclusions& VpcEncryptionControlExclusions::operator=(const 
       m_vpcPeering = vpcPeeringNode;
       m_vpcPeeringHasBeenSet = true;
     }
+    XmlNode lambdaNode = resultNode.FirstChild("lambda");
+    if (!lambdaNode.IsNull()) {
+      m_lambda = lambdaNode;
+      m_lambdaHasBeenSet = true;
+    }
+    XmlNode vpcLatticeNode = resultNode.FirstChild("vpcLattice");
+    if (!vpcLatticeNode.IsNull()) {
+      m_vpcLattice = vpcLatticeNode;
+      m_vpcLatticeHasBeenSet = true;
+    }
+    XmlNode elasticFileSystemNode = resultNode.FirstChild("elasticFileSystem");
+    if (!elasticFileSystemNode.IsNull()) {
+      m_elasticFileSystem = elasticFileSystemNode;
+      m_elasticFileSystemHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -84,6 +99,24 @@ void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const
     vpcPeeringLocationAndMemberSs << location << index << locationValue << ".VpcPeering";
     m_vpcPeering.OutputToStream(oStream, vpcPeeringLocationAndMemberSs.str().c_str());
   }
+
+  if (m_lambdaHasBeenSet) {
+    Aws::StringStream lambdaLocationAndMemberSs;
+    lambdaLocationAndMemberSs << location << index << locationValue << ".Lambda";
+    m_lambda.OutputToStream(oStream, lambdaLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_vpcLatticeHasBeenSet) {
+    Aws::StringStream vpcLatticeLocationAndMemberSs;
+    vpcLatticeLocationAndMemberSs << location << index << locationValue << ".VpcLattice";
+    m_vpcLattice.OutputToStream(oStream, vpcLatticeLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_elasticFileSystemHasBeenSet) {
+    Aws::StringStream elasticFileSystemLocationAndMemberSs;
+    elasticFileSystemLocationAndMemberSs << location << index << locationValue << ".ElasticFileSystem";
+    m_elasticFileSystem.OutputToStream(oStream, elasticFileSystemLocationAndMemberSs.str().c_str());
+  }
 }
 
 void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -111,6 +144,21 @@ void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const
     Aws::String vpcPeeringLocationAndMember(location);
     vpcPeeringLocationAndMember += ".VpcPeering";
     m_vpcPeering.OutputToStream(oStream, vpcPeeringLocationAndMember.c_str());
+  }
+  if (m_lambdaHasBeenSet) {
+    Aws::String lambdaLocationAndMember(location);
+    lambdaLocationAndMember += ".Lambda";
+    m_lambda.OutputToStream(oStream, lambdaLocationAndMember.c_str());
+  }
+  if (m_vpcLatticeHasBeenSet) {
+    Aws::String vpcLatticeLocationAndMember(location);
+    vpcLatticeLocationAndMember += ".VpcLattice";
+    m_vpcLattice.OutputToStream(oStream, vpcLatticeLocationAndMember.c_str());
+  }
+  if (m_elasticFileSystemHasBeenSet) {
+    Aws::String elasticFileSystemLocationAndMember(location);
+    elasticFileSystemLocationAndMember += ".ElasticFileSystem";
+    m_elasticFileSystem.OutputToStream(oStream, elasticFileSystemLocationAndMember.c_str());
   }
 }
 

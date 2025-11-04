@@ -113,17 +113,23 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
    * streams with an on-demand mode require no capacity planning and automatically
    * scale to handle gigabytes of write and read throughput per minute. With the
    * on-demand mode, Kinesis Data Streams automatically manages the shards in order
-   * to provide the necessary throughput. For the data streams with a provisioned
-   * mode, you must specify the number of shards for the data stream. Each shard can
-   * support reads up to five transactions per second, up to a maximum data read
-   * total of 2 MiB per second. Each shard can support writes up to 1,000 records per
-   * second, up to a maximum data write total of 1 MiB per second. If the amount of
-   * data input increases or decreases, you can add or remove shards.</p> <p>The
-   * stream name identifies the stream. The name is scoped to the Amazon Web Services
-   * account used by the application. It is also scoped by Amazon Web Services
-   * Region. That is, two streams in two different accounts can have the same name,
-   * and two streams in the same account, but in two different Regions, can have the
-   * same name.</p> <p> <code>CreateStream</code> is an asynchronous operation. Upon
+   * to provide the necessary throughput.</p> <p>If you'd still like to proactively
+   * scale your on-demand data stream’s capacity, you can unlock the warm throughput
+   * feature for on-demand data streams by enabling
+   * <code>MinimumThroughputBillingCommitment</code> for your account. Once your
+   * account has <code>MinimumThroughputBillingCommitment</code> enabled, you can
+   * specify the warm throughput in MiB per second that your stream can support in
+   * writes.</p> <p>For the data streams with a provisioned mode, you must specify
+   * the number of shards for the data stream. Each shard can support reads up to
+   * five transactions per second, up to a maximum data read total of 2 MiB per
+   * second. Each shard can support writes up to 1,000 records per second, up to a
+   * maximum data write total of 1 MiB per second. If the amount of data input
+   * increases or decreases, you can add or remove shards.</p> <p>The stream name
+   * identifies the stream. The name is scoped to the Amazon Web Services account
+   * used by the application. It is also scoped by Amazon Web Services Region. That
+   * is, two streams in two different accounts can have the same name, and two
+   * streams in the same account, but in two different Regions, can have the same
+   * name.</p> <p> <code>CreateStream</code> is an asynchronous operation. Upon
    * receiving a <code>CreateStream</code> request, Kinesis Data Streams immediately
    * returns and sets the stream status to <code>CREATING</code>. After the stream is
    * created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>. You
@@ -132,8 +138,8 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
    * <code>CreateStream</code> request when you try to do one of the following:</p>
    * <ul> <li> <p>Have more than five streams in the <code>CREATING</code> state at
    * any point in time.</p> </li> <li> <p>Create more shards than are authorized for
-   * your account.</p> </li> </ul> <p>For the default shard limit for an Amazon Web
-   * Services account, see <a
+   * your account.</p> </li> </ul> <p>For the default shard or on-demand throughput
+   * limits for an Amazon Web Services account, see <a
    * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
    * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
    * Guide</i>. To increase this limit, <a
@@ -320,6 +326,38 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                      const DeregisterStreamConsumerRequestT& request = {}) const {
     return SubmitAsync(&KinesisClient::DeregisterStreamConsumer, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the account-level settings for Amazon Kinesis Data Streams. This
+   * operation returns information about the minimum throughput billing commitments
+   * and other account-level configurations.</p> <p>This API has a call limit of 5
+   * transactions per second (TPS) for each Amazon Web Services account. TPS over 5
+   * will initiate the <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeAccountSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeAccountSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+  Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const DescribeAccountSettingsRequestT& request = {}) const {
+    return SubmitCallable(&KinesisClient::DescribeAccountSettings, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAccountSettings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+  void DescribeAccountSettingsAsync(const DescribeAccountSettingsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const DescribeAccountSettingsRequestT& request = {}) const {
+    return SubmitAsync(&KinesisClient::DescribeAccountSettings, request, handler, context);
   }
 
   /**
@@ -1517,6 +1555,40 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Updates the account-level settings for Amazon Kinesis Data Streams.</p>
+   * <p>Updating account settings is a synchronous operation. Upon receiving the
+   * request, Kinesis Data Streams will return immediately with your account’s
+   * updated settings.</p> <p> <b>API limits</b> </p> <ul> <li> <p>Certain account
+   * configurations have minimum commitment windows. Attempting to update your
+   * settings prior to the end of the minimum commitment window might have certain
+   * restrictions.</p> </li> <li> <p>This API has a call limit of 5 transactions per
+   * second (TPS) for each Amazon Web Services account. TPS over 5 will initiate the
+   * <code>LimitExceededException</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+  Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateAccountSettings, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+  void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateAccountSettings, request, handler, context);
+  }
+
+  /**
    * <p>This allows you to update the <code>MaxRecordSize</code> of a single record
    * that you can write to, and read from a stream. You can ingest and digest single
    * records up to 10240 KiB.</p><p><h3>See Also:</h3>   <a
@@ -1607,8 +1679,13 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p> Updates the capacity mode of the data stream. Currently, in Kinesis Data
    * Streams, you can choose between an <b>on-demand</b> capacity mode and a
-   * <b>provisioned</b> capacity mode for your data stream. </p><p><h3>See Also:</h3>
-   * <a
+   * <b>provisioned</b> capacity mode for your data stream. </p> <p>If you'd still
+   * like to proactively scale your on-demand data stream’s capacity, you can unlock
+   * the warm throughput feature for on-demand data streams by enabling
+   * <code>MinimumThroughputBillingCommitment</code> for your account. Once your
+   * account has <code>MinimumThroughputBillingCommitment</code> enabled, you can
+   * specify the warm throughput in MiB per second that your stream can support in
+   * writes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">AWS
    * API Reference</a></p>
    */
@@ -1631,6 +1708,63 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
   void UpdateStreamModeAsync(const UpdateStreamModeRequestT& request, const UpdateStreamModeResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::UpdateStreamMode, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the warm throughput configuration for the specified Amazon Kinesis
+   * Data Streams on-demand data stream. This operation allows you to proactively
+   * scale your on-demand data stream to a specified throughput level, enabling
+   * better performance for sudden traffic spikes. </p>  <p>When invoking this
+   * API, you must use either the <code>StreamARN</code> or the
+   * <code>StreamName</code> parameter, or both. It is recommended that you use the
+   * <code>StreamARN</code> input parameter when you invoke this API.</p>
+   * <p>Updating the warm throughput is an asynchronous operation. Upon receiving the
+   * request, Kinesis Data Streams returns immediately and sets the status of the
+   * stream to <code>UPDATING</code>. After the update is complete, Kinesis Data
+   * Streams sets the status of the stream back to <code>ACTIVE</code>. Depending on
+   * the size of the stream, the scaling action could take a few minutes to complete.
+   * You can continue to read and write data to your stream while its status is
+   * <code>UPDATING</code>.</p> <p>This operation is only supported for data streams
+   * with the on-demand capacity mode in accounts that have
+   * <code>MinimumThroughputBillingCommitment</code> enabled. Provisioned capacity
+   * mode streams do not support warm throughput configuration.</p> <p>This operation
+   * has the following default limits. By default, you cannot do the following:</p>
+   * <ul> <li> <p>Scale to more than 10 GiBps for an on-demand stream.</p> </li> <li>
+   * <p>This API has a call limit of 5 transactions per second (TPS) for each Amazon
+   * Web Services account. TPS over 5 will initiate the
+   * <code>LimitExceededException</code>.</p> </li> </ul> <p>For the default limits
+   * for an Amazon Web Services account, see <a
+   * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+   * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
+   * an increase in the call rate limit, the shard limit for this API, or your
+   * overall shard limit, use the <a
+   * href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits
+   * form</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamWarmThroughput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateStreamWarmThroughputOutcome UpdateStreamWarmThroughput(
+      const Model::UpdateStreamWarmThroughputRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateStreamWarmThroughput that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateStreamWarmThroughputRequestT = Model::UpdateStreamWarmThroughputRequest>
+  Model::UpdateStreamWarmThroughputOutcomeCallable UpdateStreamWarmThroughputCallable(
+      const UpdateStreamWarmThroughputRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateStreamWarmThroughput, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateStreamWarmThroughput that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateStreamWarmThroughputRequestT = Model::UpdateStreamWarmThroughputRequest>
+  void UpdateStreamWarmThroughputAsync(const UpdateStreamWarmThroughputRequestT& request,
+                                       const UpdateStreamWarmThroughputResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateStreamWarmThroughput, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

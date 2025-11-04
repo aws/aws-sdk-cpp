@@ -22,6 +22,10 @@ AgentRuntimeArtifact& AgentRuntimeArtifact::operator=(JsonView jsonValue) {
     m_containerConfiguration = jsonValue.GetObject("containerConfiguration");
     m_containerConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("codeConfiguration")) {
+    m_codeConfiguration = jsonValue.GetObject("codeConfiguration");
+    m_codeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AgentRuntimeArtifact::Jsonize() const {
 
   if (m_containerConfigurationHasBeenSet) {
     payload.WithObject("containerConfiguration", m_containerConfiguration.Jsonize());
+  }
+
+  if (m_codeConfigurationHasBeenSet) {
+    payload.WithObject("codeConfiguration", m_codeConfiguration.Jsonize());
   }
 
   return payload;

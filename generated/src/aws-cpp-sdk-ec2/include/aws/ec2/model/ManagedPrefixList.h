@@ -215,6 +215,48 @@ class ManagedPrefixList {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the IPAM prefix list resolver target associated with this managed
+   * prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+   * <p>An IPAM-managed prefix list is a customer-managed prefix list that has been
+   * associated with an IPAM prefix list resolver target. When a prefix list becomes
+   * IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix
+   * list resolver's CIDR selection rules, and direct CIDR modifications are
+   * restricted.</p>
+   */
+  inline const Aws::String& GetIpamPrefixListResolverTargetId() const { return m_ipamPrefixListResolverTargetId; }
+  inline bool IpamPrefixListResolverTargetIdHasBeenSet() const { return m_ipamPrefixListResolverTargetIdHasBeenSet; }
+  template <typename IpamPrefixListResolverTargetIdT = Aws::String>
+  void SetIpamPrefixListResolverTargetId(IpamPrefixListResolverTargetIdT&& value) {
+    m_ipamPrefixListResolverTargetIdHasBeenSet = true;
+    m_ipamPrefixListResolverTargetId = std::forward<IpamPrefixListResolverTargetIdT>(value);
+  }
+  template <typename IpamPrefixListResolverTargetIdT = Aws::String>
+  ManagedPrefixList& WithIpamPrefixListResolverTargetId(IpamPrefixListResolverTargetIdT&& value) {
+    SetIpamPrefixListResolverTargetId(std::forward<IpamPrefixListResolverTargetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether synchronization with an IPAM prefix list resolver is
+   * enabled for this managed prefix list. When enabled, the prefix list CIDRs are
+   * automatically updated based on the resolver's CIDR selection rules.</p>
+   */
+  inline bool GetIpamPrefixListResolverSyncEnabled() const { return m_ipamPrefixListResolverSyncEnabled; }
+  inline bool IpamPrefixListResolverSyncEnabledHasBeenSet() const { return m_ipamPrefixListResolverSyncEnabledHasBeenSet; }
+  inline void SetIpamPrefixListResolverSyncEnabled(bool value) {
+    m_ipamPrefixListResolverSyncEnabledHasBeenSet = true;
+    m_ipamPrefixListResolverSyncEnabled = value;
+  }
+  inline ManagedPrefixList& WithIpamPrefixListResolverSyncEnabled(bool value) {
+    SetIpamPrefixListResolverSyncEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_prefixListId;
   bool m_prefixListIdHasBeenSet = false;
@@ -245,6 +287,12 @@ class ManagedPrefixList {
 
   Aws::String m_ownerId;
   bool m_ownerIdHasBeenSet = false;
+
+  Aws::String m_ipamPrefixListResolverTargetId;
+  bool m_ipamPrefixListResolverTargetIdHasBeenSet = false;
+
+  bool m_ipamPrefixListResolverSyncEnabled{false};
+  bool m_ipamPrefixListResolverSyncEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

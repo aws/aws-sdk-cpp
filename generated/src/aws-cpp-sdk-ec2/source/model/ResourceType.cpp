@@ -113,6 +113,8 @@ static const int verified_access_endpoint_target_HASH = HashingUtils::HashString
 static const int ipam_external_resource_verification_token_HASH = HashingUtils::HashString("ipam-external-resource-verification-token");
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modification-task");
+static const int ipam_prefix_list_resolver_HASH = HashingUtils::HashString("ipam-prefix-list-resolver");
+static const int ipam_prefix_list_resolver_target_HASH = HashingUtils::HashString("ipam-prefix-list-resolver-target");
 static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
@@ -311,6 +313,10 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::capacity_block;
   } else if (hashCode == mac_modification_task_HASH) {
     return ResourceType::mac_modification_task;
+  } else if (hashCode == ipam_prefix_list_resolver_HASH) {
+    return ResourceType::ipam_prefix_list_resolver;
+  } else if (hashCode == ipam_prefix_list_resolver_target_HASH) {
+    return ResourceType::ipam_prefix_list_resolver_target;
   } else if (hashCode == capacity_manager_data_export_HASH) {
     return ResourceType::capacity_manager_data_export;
   }
@@ -521,6 +527,10 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "capacity-block";
     case ResourceType::mac_modification_task:
       return "mac-modification-task";
+    case ResourceType::ipam_prefix_list_resolver:
+      return "ipam-prefix-list-resolver";
+    case ResourceType::ipam_prefix_list_resolver_target:
+      return "ipam-prefix-list-resolver-target";
     case ResourceType::capacity_manager_data_export:
       return "capacity-manager-data-export";
     default:

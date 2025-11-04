@@ -82,6 +82,17 @@ ManagedPrefixList& ManagedPrefixList::operator=(const XmlNode& xmlNode) {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
+    XmlNode ipamPrefixListResolverTargetIdNode = resultNode.FirstChild("ipamPrefixListResolverTargetId");
+    if (!ipamPrefixListResolverTargetIdNode.IsNull()) {
+      m_ipamPrefixListResolverTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamPrefixListResolverTargetIdNode.GetText());
+      m_ipamPrefixListResolverTargetIdHasBeenSet = true;
+    }
+    XmlNode ipamPrefixListResolverSyncEnabledNode = resultNode.FirstChild("ipamPrefixListResolverSyncEnabled");
+    if (!ipamPrefixListResolverSyncEnabledNode.IsNull()) {
+      m_ipamPrefixListResolverSyncEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipamPrefixListResolverSyncEnabledNode.GetText()).c_str()).c_str());
+      m_ipamPrefixListResolverSyncEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -133,6 +144,16 @@ void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* locati
   if (m_ownerIdHasBeenSet) {
     oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
+  if (m_ipamPrefixListResolverTargetIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".IpamPrefixListResolverTargetId=" << StringUtils::URLEncode(m_ipamPrefixListResolverTargetId.c_str()) << "&";
+  }
+
+  if (m_ipamPrefixListResolverSyncEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".IpamPrefixListResolverSyncEnabled=" << std::boolalpha
+            << m_ipamPrefixListResolverSyncEnabled << "&";
+  }
 }
 
 void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -170,6 +191,12 @@ void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_ownerIdHasBeenSet) {
     oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if (m_ipamPrefixListResolverTargetIdHasBeenSet) {
+    oStream << location << ".IpamPrefixListResolverTargetId=" << StringUtils::URLEncode(m_ipamPrefixListResolverTargetId.c_str()) << "&";
+  }
+  if (m_ipamPrefixListResolverSyncEnabledHasBeenSet) {
+    oStream << location << ".IpamPrefixListResolverSyncEnabled=" << std::boolalpha << m_ipamPrefixListResolverSyncEnabled << "&";
   }
 }
 

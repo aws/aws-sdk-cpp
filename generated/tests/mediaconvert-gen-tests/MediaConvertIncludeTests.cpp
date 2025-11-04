@@ -61,6 +61,7 @@
 #include <aws/mediaconvert/model/AudioNormalizationLoudnessLogging.h>
 #include <aws/mediaconvert/model/AudioNormalizationPeakCalculation.h>
 #include <aws/mediaconvert/model/AudioNormalizationSettings.h>
+#include <aws/mediaconvert/model/AudioPitchCorrectionSettings.h>
 #include <aws/mediaconvert/model/AudioProperties.h>
 #include <aws/mediaconvert/model/AudioSelector.h>
 #include <aws/mediaconvert/model/AudioSelectorGroup.h>
@@ -560,6 +561,7 @@
 #include <aws/mediaconvert/model/OutputSettings.h>
 #include <aws/mediaconvert/model/PadVideo.h>
 #include <aws/mediaconvert/model/PartnerWatermarking.h>
+#include <aws/mediaconvert/model/PassthroughSettings.h>
 #include <aws/mediaconvert/model/Policy.h>
 #include <aws/mediaconvert/model/Preset.h>
 #include <aws/mediaconvert/model/PresetListBy.h>
@@ -613,6 +615,7 @@
 #include <aws/mediaconvert/model/ServiceOverride.h>
 #include <aws/mediaconvert/model/ShareStatus.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
+#include <aws/mediaconvert/model/SlowPalPitchCorrection.h>
 #include <aws/mediaconvert/model/SpekeKeyProvider.h>
 #include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
 #include <aws/mediaconvert/model/SrtDestinationSettings.h>
@@ -684,6 +687,7 @@
 #include <aws/mediaconvert/model/VideoPreprocessor.h>
 #include <aws/mediaconvert/model/VideoProperties.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
+#include <aws/mediaconvert/model/VideoSelectorMode.h>
 #include <aws/mediaconvert/model/VideoSelectorType.h>
 #include <aws/mediaconvert/model/VideoTimecodeInsertion.h>
 #include <aws/mediaconvert/model/VorbisSettings.h>

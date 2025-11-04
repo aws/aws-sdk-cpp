@@ -18,6 +18,7 @@ namespace DashManifestStyleMapper {
 static const int BASIC_HASH = HashingUtils::HashString("BASIC");
 static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
 static const int DISTINCT_HASH = HashingUtils::HashString("DISTINCT");
+static const int FULL_HASH = HashingUtils::HashString("FULL");
 
 DashManifestStyle GetDashManifestStyleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ DashManifestStyle GetDashManifestStyleForName(const Aws::String& name) {
     return DashManifestStyle::COMPACT;
   } else if (hashCode == DISTINCT_HASH) {
     return DashManifestStyle::DISTINCT;
+  } else if (hashCode == FULL_HASH) {
+    return DashManifestStyle::FULL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForDashManifestStyle(DashManifestStyle enumValue) {
       return "COMPACT";
     case DashManifestStyle::DISTINCT:
       return "DISTINCT";
+    case DashManifestStyle::FULL:
+      return "FULL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

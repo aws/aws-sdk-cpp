@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/IpamPrefixListResolverTarget.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DeleteIpamPrefixListResolverTargetResponse {
+ public:
+  AWS_EC2_API DeleteIpamPrefixListResolverTargetResponse() = default;
+  AWS_EC2_API DeleteIpamPrefixListResolverTargetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DeleteIpamPrefixListResolverTargetResponse& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>Information about the IPAM prefix list resolver target that was deleted.</p>
+   */
+  inline const IpamPrefixListResolverTarget& GetIpamPrefixListResolverTarget() const { return m_ipamPrefixListResolverTarget; }
+  template <typename IpamPrefixListResolverTargetT = IpamPrefixListResolverTarget>
+  void SetIpamPrefixListResolverTarget(IpamPrefixListResolverTargetT&& value) {
+    m_ipamPrefixListResolverTargetHasBeenSet = true;
+    m_ipamPrefixListResolverTarget = std::forward<IpamPrefixListResolverTargetT>(value);
+  }
+  template <typename IpamPrefixListResolverTargetT = IpamPrefixListResolverTarget>
+  DeleteIpamPrefixListResolverTargetResponse& WithIpamPrefixListResolverTarget(IpamPrefixListResolverTargetT&& value) {
+    SetIpamPrefixListResolverTarget(std::forward<IpamPrefixListResolverTargetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DeleteIpamPrefixListResolverTargetResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  IpamPrefixListResolverTarget m_ipamPrefixListResolverTarget;
+  bool m_ipamPrefixListResolverTargetHasBeenSet = false;
+
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -216,7 +216,16 @@ class DeploymentConfiguration {
    * With Amazon ECS blue/green deployments, you can validate new service revisions
    * before directing production traffic to them. This approach provides a safer way
    * to deploy changes with the ability to quickly roll back if needed.</p> </li>
-   * </ul>
+   * <li> <p> <code>LINEAR</code> - A <i>linear</i> deployment strategy
+   * (<code>LINEAR</code>) gradually shifts traffic from the current production
+   * environment to a new environment in equal percentages over time. With Amazon ECS
+   * linear deployments, you can control the pace of traffic shifting and validate
+   * new service revisions with increasing amounts of production traffic.</p> </li>
+   * <li> <p> <code>CANARY</code> - A <i>canary</i> deployment strategy
+   * (<code>CANARY</code>) shifts a small percentage of traffic to the new service
+   * revision first, then shifts the remaining traffic all at once after a specified
+   * time period. This allows you to test the new version with a subset of users
+   * before full deployment.</p> </li> </ul>
    */
   inline DeploymentStrategy GetStrategy() const { return m_strategy; }
   inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }

@@ -18,6 +18,7 @@ namespace WorkflowEngineMapper {
 static const int WDL_HASH = HashingUtils::HashString("WDL");
 static const int NEXTFLOW_HASH = HashingUtils::HashString("NEXTFLOW");
 static const int CWL_HASH = HashingUtils::HashString("CWL");
+static const int WDL_LENIENT_HASH = HashingUtils::HashString("WDL_LENIENT");
 
 WorkflowEngine GetWorkflowEngineForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ WorkflowEngine GetWorkflowEngineForName(const Aws::String& name) {
     return WorkflowEngine::NEXTFLOW;
   } else if (hashCode == CWL_HASH) {
     return WorkflowEngine::CWL;
+  } else if (hashCode == WDL_LENIENT_HASH) {
+    return WorkflowEngine::WDL_LENIENT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForWorkflowEngine(WorkflowEngine enumValue) {
       return "NEXTFLOW";
     case WorkflowEngine::CWL:
       return "CWL";
+    case WorkflowEngine::WDL_LENIENT:
+      return "WDL_LENIENT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
