@@ -1140,30 +1140,26 @@ namespace Aws
                 {
                     const auto& requestedRange = request.GetRange();
                     const auto& responseContentRange = outcome.GetResult().GetContentRange();
-                    
-                    if (!responseContentRange.empty())
-                    {
-                        if (!VerifyContentRange(requestedRange, responseContentRange))
-                        {
-                            Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
-                                                                           "ContentRangeMismatch", 
-                                                                           "ContentRange in response does not match requested range", 
-                                                                           false);
-                            AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                                    << "] ContentRange mismatch. Requested: [" << requestedRange 
-                                    << "] Received: [" << responseContentRange << "]");
-                            handle->ChangePartToFailed(partState);
-                            handle->SetError(error);
-                            TriggerErrorCallback(handle, error);
-                            handle->Cancel();
 
-                            if(partState->GetDownloadBuffer())
-                            {
-                                m_bufferManager.Release(partState->GetDownloadBuffer());
-                                partState->SetDownloadBuffer(nullptr);
-                            }
-                            return;
+                    if (responseContentRange.empty() or !VerifyContentRange(requestedRange, responseContentRange)) {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                       "ContentRangeMismatch",
+                                                                       "ContentRange in response does not match requested range",
+                                                                       false);
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] ContentRange mismatch. Requested: [" << requestedRange
+                                << "] Received: [" << responseContentRange << "]");
+                        handle->ChangePartToFailed(partState);
+                        handle->SetError(error);
+                        TriggerErrorCallback(handle, error);
+                        handle->Cancel();
+
+                        if(partState->GetDownloadBuffer())
+                        {
+                            m_bufferManager.Release(partState->GetDownloadBuffer());
+                            partState->SetDownloadBuffer(nullptr);
                         }
+                        return;
                     }
                 }
 
