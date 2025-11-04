@@ -563,6 +563,12 @@ namespace Aws
               std::chrono::milliseconds credentialCacheCacheTTL = std::chrono::minutes(50);
             } stsCredentialsProviderConfig;
           } credentialProviderConfig;
+
+          /**
+           * Authentication scheme preferences in order of preference.
+           * First available auth scheme will be used for each operation.
+           */
+          Aws::Vector<Aws::String> authPreferences;
         };
 
         /**
