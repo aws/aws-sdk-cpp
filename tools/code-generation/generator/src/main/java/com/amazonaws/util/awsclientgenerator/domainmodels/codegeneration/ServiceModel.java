@@ -54,6 +54,13 @@ public class ServiceModel {
         return operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4_SIGNER"));
     }
 
+    public boolean hasSigV4aAuth() {
+        if(metadata.getSignatureVersion().equals("v4") || metadata.getSignatureVersion().equals("s3v4")) {
+            return true;
+        }
+        return operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::ASYMMETRIC_SIGV4_SIGNER"));
+    }
+
     public boolean hasBearerAuth() {
         if(metadata.getSignatureVersion().equals("bearer")) {
             return true;
