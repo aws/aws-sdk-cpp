@@ -41,6 +41,10 @@ SelfManagedActiveDirectoryAttributes& SelfManagedActiveDirectoryAttributes::oper
     }
     m_dnsIpsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DomainJoinServiceAccountSecret")) {
+    m_domainJoinServiceAccountSecret = jsonValue.GetString("DomainJoinServiceAccountSecret");
+    m_domainJoinServiceAccountSecretHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue SelfManagedActiveDirectoryAttributes::Jsonize() const {
       dnsIpsJsonList[dnsIpsIndex].AsString(m_dnsIps[dnsIpsIndex]);
     }
     payload.WithArray("DnsIps", std::move(dnsIpsJsonList));
+  }
+
+  if (m_domainJoinServiceAccountSecretHasBeenSet) {
+    payload.WithString("DomainJoinServiceAccountSecret", m_domainJoinServiceAccountSecret);
   }
 
   return payload;

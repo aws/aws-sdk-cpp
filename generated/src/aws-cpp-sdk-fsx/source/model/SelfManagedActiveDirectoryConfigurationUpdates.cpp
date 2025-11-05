@@ -45,6 +45,10 @@ SelfManagedActiveDirectoryConfigurationUpdates& SelfManagedActiveDirectoryConfig
     m_fileSystemAdministratorsGroup = jsonValue.GetString("FileSystemAdministratorsGroup");
     m_fileSystemAdministratorsGroupHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DomainJoinServiceAccountSecret")) {
+    m_domainJoinServiceAccountSecret = jsonValue.GetString("DomainJoinServiceAccountSecret");
+    m_domainJoinServiceAccountSecretHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue SelfManagedActiveDirectoryConfigurationUpdates::Jsonize() const {
 
   if (m_fileSystemAdministratorsGroupHasBeenSet) {
     payload.WithString("FileSystemAdministratorsGroup", m_fileSystemAdministratorsGroup);
+  }
+
+  if (m_domainJoinServiceAccountSecretHasBeenSet) {
+    payload.WithString("DomainJoinServiceAccountSecret", m_domainJoinServiceAccountSecret);
   }
 
   return payload;

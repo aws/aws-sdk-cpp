@@ -30,6 +30,14 @@ EndpointDetails& EndpointDetails::operator=(JsonView jsonValue) {
     m_awsGroundStationAgentEndpoint = jsonValue.GetObject("awsGroundStationAgentEndpoint");
     m_awsGroundStationAgentEndpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("uplinkAwsGroundStationAgentEndpoint")) {
+    m_uplinkAwsGroundStationAgentEndpoint = jsonValue.GetObject("uplinkAwsGroundStationAgentEndpoint");
+    m_uplinkAwsGroundStationAgentEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("downlinkAwsGroundStationAgentEndpoint")) {
+    m_downlinkAwsGroundStationAgentEndpoint = jsonValue.GetObject("downlinkAwsGroundStationAgentEndpoint");
+    m_downlinkAwsGroundStationAgentEndpointHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("healthStatus")) {
     m_healthStatus = CapabilityHealthMapper::GetCapabilityHealthForName(jsonValue.GetString("healthStatus"));
     m_healthStatusHasBeenSet = true;
@@ -58,6 +66,14 @@ JsonValue EndpointDetails::Jsonize() const {
 
   if (m_awsGroundStationAgentEndpointHasBeenSet) {
     payload.WithObject("awsGroundStationAgentEndpoint", m_awsGroundStationAgentEndpoint.Jsonize());
+  }
+
+  if (m_uplinkAwsGroundStationAgentEndpointHasBeenSet) {
+    payload.WithObject("uplinkAwsGroundStationAgentEndpoint", m_uplinkAwsGroundStationAgentEndpoint.Jsonize());
+  }
+
+  if (m_downlinkAwsGroundStationAgentEndpointHasBeenSet) {
+    payload.WithObject("downlinkAwsGroundStationAgentEndpoint", m_downlinkAwsGroundStationAgentEndpoint.Jsonize());
   }
 
   if (m_healthStatusHasBeenSet) {

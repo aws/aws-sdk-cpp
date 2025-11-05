@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/IpAddressType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -140,6 +141,40 @@ class AnycastIpListSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type for the Anycast static IP list.</p>
+   */
+  inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(IpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline AnycastIpListSummary& WithIpAddressType(IpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current version (ETag value) of the Anycast static IP list.</p>
+   */
+  inline const Aws::String& GetETag() const { return m_eTag; }
+  inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+  template <typename ETagT = Aws::String>
+  void SetETag(ETagT&& value) {
+    m_eTagHasBeenSet = true;
+    m_eTag = std::forward<ETagT>(value);
+  }
+  template <typename ETagT = Aws::String>
+  AnycastIpListSummary& WithETag(ETagT&& value) {
+    SetETag(std::forward<ETagT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -158,6 +193,12 @@ class AnycastIpListSummary {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_lastModifiedTimeHasBeenSet = false;
+
+  IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_ipAddressTypeHasBeenSet = false;
+
+  Aws::String m_eTag;
+  bool m_eTagHasBeenSet = false;
 };
 
 }  // namespace Model

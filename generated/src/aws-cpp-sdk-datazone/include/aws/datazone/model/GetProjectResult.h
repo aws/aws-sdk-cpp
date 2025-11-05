@@ -12,6 +12,7 @@
 #include <aws/datazone/model/EnvironmentDeploymentDetails.h>
 #include <aws/datazone/model/ProjectDeletionError.h>
 #include <aws/datazone/model/ProjectStatus.h>
+#include <aws/datazone/model/ResourceTag.h>
 
 #include <utility>
 
@@ -266,6 +267,29 @@ class GetProjectResult {
 
   ///@{
   /**
+   * <p>The resource tags of the project.</p>
+   */
+  inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
+  template <typename ResourceTagsT = Aws::Vector<ResourceTag>>
+  void SetResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags = std::forward<ResourceTagsT>(value);
+  }
+  template <typename ResourceTagsT = Aws::Vector<ResourceTag>>
+  GetProjectResult& WithResourceTags(ResourceTagsT&& value) {
+    SetResourceTags(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ResourceTagsT = ResourceTag>
+  GetProjectResult& AddResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user parameters of a project.</p>
    */
   inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const { return m_userParameters; }
@@ -340,6 +364,9 @@ class GetProjectResult {
 
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
   bool m_projectStatusHasBeenSet = false;
+
+  Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
   bool m_userParametersHasBeenSet = false;
