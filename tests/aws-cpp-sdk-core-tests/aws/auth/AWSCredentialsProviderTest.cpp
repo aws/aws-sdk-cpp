@@ -1162,3 +1162,42 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }
+
+class STSCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite {
+public:
+    void SetUp() {
+        mockHttpClient = Aws::MakeShared<MockHttpClient>(AllocationTag);
+        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(AllocationTag);
+        mockHttpClientFactory->SetClient(mockHttpClient);
+        SetHttpClientFactory(mockHttpClientFactory);
+    }
+
+    void TearDown() {
+        mockHttpClient = nullptr;
+        mockHttpClientFactory = nullptr;
+        CleanupHttp();
+        InitHttp();
+    }
+
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+};
+
+TEST_F(STSCredentialsProviderTest, TestInvalidRegionCredentials) {
+    Aws::Client::ClientConfiguration::CredentialProviderConfiguration config;
+    config.region = "@amazon.com#";
+
+    config.stsCredentialsProviderConfig.roleArn = "arn:aws:iam::123456789012:role/TestRole";
+    config.stsCredentialsProviderConfig.sessionName = "test-session";
+    config.stsCredentialsProviderConfig.tokenFilePath = "/tmp/token";
+
+    STSAssumeRoleWebIdentityCredentialsProvider provider(config);
+
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+
+    if (!mockHttpClient ->GetAllRequestsMade().empty()) {
+        auto httpRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_TRUE(httpRequest.GetURIString().find("@amazon.com#") != std::string::npos);
+    }
+}
