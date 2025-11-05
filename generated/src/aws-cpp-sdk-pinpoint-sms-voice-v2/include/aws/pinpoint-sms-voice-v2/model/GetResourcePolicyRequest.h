@@ -32,8 +32,8 @@ class GetResourcePolicyRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice
-   * resource attached to the resource-based policy.</p>
+   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached
+   * to the resource-based policy.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

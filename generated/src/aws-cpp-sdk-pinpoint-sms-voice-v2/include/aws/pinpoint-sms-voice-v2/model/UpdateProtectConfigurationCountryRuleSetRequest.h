@@ -73,7 +73,7 @@ class UpdateProtectConfigurationCountryRuleSetRequest : public PinpointSMSVoiceV
    * the details for the requested NumberCapability. The Key is the two-letter ISO
    * country code. For a list of supported ISO country codes, see <a
    * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html">Supported
-   * countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User
+   * countries and regions (SMS channel)</a> in the End User MessagingSMS User
    * Guide.</p> <p>For example, to set the United States as allowed and Canada as
    * blocked, the <code>CountryRuleSetUpdates</code> would be formatted as:
    * <code>"CountryRuleSetUpdates": { "US" : { "ProtectStatus": "ALLOW" } "CA" : {

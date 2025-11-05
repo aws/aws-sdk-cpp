@@ -37,8 +37,8 @@ class PutKeywordRequest : public PinpointSMSVoiceV2Request {
    * SenderId or SenderIdArn. You can use <a>DescribePhoneNumbers</a> get the values
    * for PhoneNumberId and PhoneNumberArn while <a>DescribeSenderIds</a> can be used
    * to get the values for SenderId and SenderIdArn.</p>  <p>If you are
-   * using a shared AWS End User Messaging SMS and Voice resource then you must use
-   * the full Amazon Resource Name(ARN).</p>
+   * using a shared End User MessagingSMS resource then you must use the full Amazon
+   * Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }

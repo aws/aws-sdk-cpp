@@ -21,6 +21,7 @@
 /* Service model headers required in PinpointSMSVoiceV2Client header */
 #include <aws/pinpoint-sms-voice-v2/model/AssociateOriginationIdentityResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/AssociateProtectConfigurationResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/CarrierLookupResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateConfigurationSetResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateEventDestinationResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/CreateOptOutListResult.h>
@@ -163,6 +164,7 @@ namespace Model {
 /* Service model forward declarations required in PinpointSMSVoiceV2Client header */
 class AssociateOriginationIdentityRequest;
 class AssociateProtectConfigurationRequest;
+class CarrierLookupRequest;
 class CreateConfigurationSetRequest;
 class CreateEventDestinationRequest;
 class CreateOptOutListRequest;
@@ -256,6 +258,7 @@ class VerifyDestinationNumberRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AssociateOriginationIdentityResult, PinpointSMSVoiceV2Error> AssociateOriginationIdentityOutcome;
 typedef Aws::Utils::Outcome<AssociateProtectConfigurationResult, PinpointSMSVoiceV2Error> AssociateProtectConfigurationOutcome;
+typedef Aws::Utils::Outcome<CarrierLookupResult, PinpointSMSVoiceV2Error> CarrierLookupOutcome;
 typedef Aws::Utils::Outcome<CreateConfigurationSetResult, PinpointSMSVoiceV2Error> CreateConfigurationSetOutcome;
 typedef Aws::Utils::Outcome<CreateEventDestinationResult, PinpointSMSVoiceV2Error> CreateEventDestinationOutcome;
 typedef Aws::Utils::Outcome<CreateOptOutListResult, PinpointSMSVoiceV2Error> CreateOptOutListOutcome;
@@ -361,6 +364,7 @@ typedef Aws::Utils::Outcome<VerifyDestinationNumberResult, PinpointSMSVoiceV2Err
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateOriginationIdentityOutcome> AssociateOriginationIdentityOutcomeCallable;
 typedef std::future<AssociateProtectConfigurationOutcome> AssociateProtectConfigurationOutcomeCallable;
+typedef std::future<CarrierLookupOutcome> CarrierLookupOutcomeCallable;
 typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
 typedef std::future<CreateEventDestinationOutcome> CreateEventDestinationOutcomeCallable;
 typedef std::future<CreateOptOutListOutcome> CreateOptOutListOutcomeCallable;
@@ -463,6 +467,9 @@ typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::Associa
                            const Model::AssociateProtectConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateProtectConfigurationResponseReceivedHandler;
+typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::CarrierLookupRequest&, const Model::CarrierLookupOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CarrierLookupResponseReceivedHandler;
 typedef std::function<void(const PinpointSMSVoiceV2Client*, const Model::CreateConfigurationSetRequest&,
                            const Model::CreateConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateConfigurationSetResponseReceivedHandler;

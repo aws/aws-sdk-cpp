@@ -37,13 +37,15 @@ class CreatePoolRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
-   * SenderId or SenderIdArn. You can use <a>DescribePhoneNumbers</a> to find the
-   * values for PhoneNumberId and PhoneNumberArn while <a>DescribeSenderIds</a> can
-   * be used to get the values for SenderId and SenderIdArn.</p> <p>After the pool is
-   * created you can add more origination identities to the pool by using <a
+   * SenderId or SenderIdArn. You can use <a
+   * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html">DescribePhoneNumbers</a>
+   * to find the values for PhoneNumberId and PhoneNumberArn, and use <a
+   * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html">DescribeSenderIds</a>
+   * can be used to get the values for SenderId and SenderIdArn.</p> <p>After the
+   * pool is created you can add more origination identities to the pool by using <a
    * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p>
-   *  <p>If you are using a shared AWS End User Messaging SMS and Voice
-   * resource then you must use the full Amazon Resource Name(ARN).</p>
+   *  <p>If you are using a shared End User MessagingSMS resource then you
+   * must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
@@ -99,7 +101,9 @@ class CreatePoolRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>By default this is set to false. When set to true the pool can't be deleted.
-   * You can change this value using the <a>UpdatePool</a> action.</p>
+   * You can change this value using the <a
+   * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html">UpdatePool</a>
+   * action.</p>
    */
   inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
   inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
