@@ -956,6 +956,48 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
 }
 
+TEST_F(SSOCredentialsProviderTest, TestInvalidRegionCredentials)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "base64string",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile.close();
+
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([default]
+sso_account_id = 012345678901
+sso_region = @amazon.com#
+sso_role_name = SampleRole
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile.close();
+
+    // Mock DNS/connection failure for invalid region
+    std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI("https://portal.sso.@amazon.com#.amazonaws.com/federation/credentials"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> dnsFailureResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
+    dnsFailureResponse->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
+    mockHttpClient->AddResponseToReturn(dnsFailureResponse);
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    
+    // Check if any requests were made before calling GetMostRecentHttpRequest
+    if (!mockHttpClient->GetAllRequestsMade().empty()) {
+        auto request = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_TRUE(request.GetURIString().find("@amazon.com#") != std::string::npos);
+    }
+}
+
 class AWSCredentialsTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };

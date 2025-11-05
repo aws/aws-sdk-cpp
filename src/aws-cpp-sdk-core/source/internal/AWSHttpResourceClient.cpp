@@ -119,7 +119,6 @@ namespace Aws
             }
             std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                                    Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-
             request->SetUserAgent(m_userAgent);
 
             if (authToken)
@@ -133,6 +132,12 @@ namespace Aws
         AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const std::shared_ptr<HttpRequest> &httpRequest) const
         {
             AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << httpRequest->GetURIString());
+            Aws::Http::URI uri(httpRequest->GetURIString());
+            if (!Aws::Utils::IsValidHost(uri.GetHost())) {
+                AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Invalid endpoint host constructed: "<< uri.GetHost());
+                return {{}, {}, HttpResponseCode::REQUEST_NOT_MADE};
+            }
+
             if (!m_httpClient)
             {
                 AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Unable to get a response: missing http client!");
@@ -552,15 +557,6 @@ namespace Aws
                 ss << ".cn";
             }
 
-            Aws::Http::URI uri(ss.str());
-            if (!Aws::Utils::IsValidHost(uri.GetHost()))
-            {
-                AWS_LOGSTREAM_ERROR(STS_RESOURCE_CLIENT_LOG_TAG,
-                    "Invalid endpoint host constructed: " << uri.GetHost());
-                m_endpoint.clear();
-                return;
-            }
-
             m_endpoint =  ss.str();
 
             AWS_LOGSTREAM_INFO(STS_RESOURCE_CLIENT_LOG_TAG, "Creating STS ResourceClient with endpoint: " << m_endpoint);
@@ -695,15 +691,6 @@ namespace Aws
             if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
             {
                 ss << ".cn";
-            }
-            ss.str();
-
-            Aws::Http::URI uri(ss.str());
-            if (!Aws::Utils::IsValidHost(uri.GetHost()))
-            {
-                AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG,
-                    "Invalid endpoint host constructed: " << uri.GetHost());
-                return {};
             }
 
             return ss.str();
