@@ -6,7 +6,6 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
-#include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
@@ -1184,17 +1183,17 @@ public:
 };
 
 TEST_F(STSCredentialsProviderTest, TestInvalidRegionCredentials) {
-    Aws::Client::ClientConfiguration::CredentialProviderConfiguration config;
+    ClientConfiguration config;
     config.region = "@amazon.com#";
 
-    config.stsCredentialsProviderConfig.roleArn = "arn:aws:iam::123456789012:role/TestRole";
-    config.stsCredentialsProviderConfig.sessionName = "test-session";
-    config.stsCredentialsProviderConfig.tokenFilePath = "/tmp/token";
+    Aws::Internal::STSCredentialsClient stsClient(config);
+    Aws::Internal::STSCredentialsClient::STSAssumeRoleWithWebIdentityRequest request;
+    request.roleArn = "arn:aws:iam::123456789012:role/TestRole";
+    request.roleSessionName = "test-session";
+    request.webIdentityToken = "test-token";
 
-    STSAssumeRoleWebIdentityCredentialsProvider provider(config);
-
-    auto creds = provider.GetAWSCredentials();
-    ASSERT_TRUE(creds.IsEmpty());
+    auto result = stsClient.GetAssumeRoleWithWebIdentityCredentials(request);
+    ASSERT_TRUE(result.creds.IsEmpty());
 
     if (!mockHttpClient ->GetAllRequestsMade().empty()) {
         auto httpRequest = mockHttpClient->GetMostRecentHttpRequest();
