@@ -99,6 +99,12 @@ namespace Endpoint
 
     void BuiltInParameters::SetParameter(EndpointParameter param)
     {
+        if (param.GetName() == "Region" && !param.GetStrValueNoCheck().empty()) {
+            if (param.GetStrValueNoCheck().find('@') != Aws::String::npos || param.GetStrValueNoCheck().find('#') != Aws::String::npos) {
+                AWS_LOGSTREAM_ERROR(ENDPOINT_BUILTIN_LOG_TAG, "Region contains invalid characters: " << param.GetStrValueNoCheck());
+                return;
+            }
+        }
         const auto foundIt = std::find_if(m_params.begin(), m_params.end(),
                                           [param](const BuiltInParameters::EndpointParameter& item)
                                           {

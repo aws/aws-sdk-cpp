@@ -111,6 +111,8 @@ list(APPEND SDK_TEST_PROJECT_LIST "s3-encryption:tests/aws-cpp-sdk-s3-encryption
 list(APPEND SDK_TEST_PROJECT_LIST "s3control:tests/aws-cpp-sdk-s3control-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sns:tests/aws-cpp-sdk-sns-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:tests/aws-cpp-sdk-sqs-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "sso:tests/aws-cpp-sdk-sso-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "sts:tests/aws-cpp-sdk-sts-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:tests/aws-cpp-sdk-sqs-unit-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "transfer:tests/aws-cpp-sdk-transfer-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "text-to-speech:tests/aws-cpp-sdk-text-to-speech-tests,tests/aws-cpp-sdk-polly-sample")
