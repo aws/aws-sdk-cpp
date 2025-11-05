@@ -5,9 +5,6 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthSchemeResolverBase.h>
-#include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
-#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
 
 
 namespace smithy {
