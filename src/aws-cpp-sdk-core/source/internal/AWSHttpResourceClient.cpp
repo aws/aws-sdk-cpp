@@ -10,6 +10,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ARN.h>
+#include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/Environment.h>
@@ -550,6 +551,16 @@ namespace Aws
             {
                 ss << ".cn";
             }
+
+            Aws::Http::URI uri(ss.str());
+            if (!Aws::Utils::IsValidHost(uri.GetHost()))
+            {
+                AWS_LOGSTREAM_ERROR(STS_RESOURCE_CLIENT_LOG_TAG,
+                    "Invalid endpoint host constructed: " << uri.GetHost());
+                m_endpoint.clear();
+                return;
+            }
+
             m_endpoint =  ss.str();
 
             AWS_LOGSTREAM_INFO(STS_RESOURCE_CLIENT_LOG_TAG, "Creating STS ResourceClient with endpoint: " << m_endpoint);
@@ -685,6 +696,16 @@ namespace Aws
             {
                 ss << ".cn";
             }
+            ss.str();
+
+            Aws::Http::URI uri(ss.str());
+            if (!Aws::Utils::IsValidHost(uri.GetHost()))
+            {
+                AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG,
+                    "Invalid endpoint host constructed: " << uri.GetHost());
+                return {};
+            }
+
             return ss.str();
         }
 
