@@ -8,7 +8,7 @@
             
             var uidToServiceName = JSON.parse(uidServiceData);            
             
-            var baseUri = "LATEST/";
+            var defaultUrl = "root/html/index.html";
             
             function getQueryStringParameter(name, url) {
                 
@@ -46,7 +46,7 @@
                 var serviceName = uidToServiceName[uid];
                 
                 if(serviceName == null) {
-                    return baseUri;
+                    return defaultUrl;
                 }
                 
                 var dirtyName = "class_aws_1_1_";
@@ -69,7 +69,7 @@
                 }
                 
                 dirtyName += ".html";
-                return baseUri + "aws-cpp-sdk-" + serviceName.toLowerCase() + "/html/" + escapeCharacters(dirtyName);
+                return "aws-cpp-sdk-" + serviceName.toLowerCase() + "/html/" + escapeCharacters(dirtyName);
             }
             
             function checkResourceExists(url) {  
@@ -101,7 +101,7 @@
                     window.location.href = secondAttempt;
                 }
                 else {
-                    window.location.href = baseUri + "index.html";
+                    window.location.href = defaultUrl;
                 }
             }
             
