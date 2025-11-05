@@ -38,5 +38,10 @@ Aws::String CreateAnycastIpList2020_05_31Request::SerializePayload() const {
     m_tags.AddToNode(tagsNode);
   }
 
+  if (m_ipAddressTypeHasBeenSet) {
+    XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
+    ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
   return payloadDoc.ConvertToString();
 }

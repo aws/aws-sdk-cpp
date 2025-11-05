@@ -21,6 +21,10 @@ UpdateProjectProfileResult::UpdateProjectProfileResult(const Aws::AmazonWebServi
 
 UpdateProjectProfileResult& UpdateProjectProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("allowCustomProjectResourceTags")) {
+    m_allowCustomProjectResourceTags = jsonValue.GetBool("allowCustomProjectResourceTags");
+    m_allowCustomProjectResourceTagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -60,6 +64,18 @@ UpdateProjectProfileResult& UpdateProjectProfileResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("projectResourceTags")) {
+    Aws::Utils::Array<JsonView> projectResourceTagsJsonList = jsonValue.GetArray("projectResourceTags");
+    for (unsigned projectResourceTagsIndex = 0; projectResourceTagsIndex < projectResourceTagsJsonList.GetLength();
+         ++projectResourceTagsIndex) {
+      m_projectResourceTags.push_back(projectResourceTagsJsonList[projectResourceTagsIndex].AsObject());
+    }
+    m_projectResourceTagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("projectResourceTagsDescription")) {
+    m_projectResourceTagsDescription = jsonValue.GetString("projectResourceTagsDescription");
+    m_projectResourceTagsDescriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));

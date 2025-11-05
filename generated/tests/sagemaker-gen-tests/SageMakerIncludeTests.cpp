@@ -1423,6 +1423,7 @@
 #include <aws/sagemaker/model/SharingType.h>
 #include <aws/sagemaker/model/ShuffleConfig.h>
 #include <aws/sagemaker/model/SkipModelValidation.h>
+#include <aws/sagemaker/model/SoftwareUpdateStatus.h>
 #include <aws/sagemaker/model/SortActionsBy.h>
 #include <aws/sagemaker/model/SortArtifactsBy.h>
 #include <aws/sagemaker/model/SortAssociationsBy.h>

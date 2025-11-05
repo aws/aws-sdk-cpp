@@ -134,6 +134,26 @@ class SelfManagedActiveDirectoryAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret containing the service account credentials used to join the file system
+   * to your self-managed Active Directory domain.</p>
+   */
+  inline const Aws::String& GetDomainJoinServiceAccountSecret() const { return m_domainJoinServiceAccountSecret; }
+  inline bool DomainJoinServiceAccountSecretHasBeenSet() const { return m_domainJoinServiceAccountSecretHasBeenSet; }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  void SetDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    m_domainJoinServiceAccountSecretHasBeenSet = true;
+    m_domainJoinServiceAccountSecret = std::forward<DomainJoinServiceAccountSecretT>(value);
+  }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  SelfManagedActiveDirectoryAttributes& WithDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    SetDomainJoinServiceAccountSecret(std::forward<DomainJoinServiceAccountSecretT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
   bool m_domainNameHasBeenSet = false;
@@ -149,6 +169,9 @@ class SelfManagedActiveDirectoryAttributes {
 
   Aws::Vector<Aws::String> m_dnsIps;
   bool m_dnsIpsHasBeenSet = false;
+
+  Aws::String m_domainJoinServiceAccountSecret;
+  bool m_domainJoinServiceAccountSecretHasBeenSet = false;
 };
 
 }  // namespace Model

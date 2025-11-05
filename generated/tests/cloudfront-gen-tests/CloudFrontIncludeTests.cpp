@@ -140,6 +140,7 @@
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteResourcePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteVpcOrigin2020_05_31Request.h>
@@ -156,6 +157,8 @@
 #include <aws/cloudfront/model/DistributionConfig.h>
 #include <aws/cloudfront/model/DistributionConfigWithTags.h>
 #include <aws/cloudfront/model/DistributionIdList.h>
+#include <aws/cloudfront/model/DistributionIdOwner.h>
+#include <aws/cloudfront/model/DistributionIdOwnerList.h>
 #include <aws/cloudfront/model/DistributionList.h>
 #include <aws/cloudfront/model/DistributionResourceId.h>
 #include <aws/cloudfront/model/DistributionResourceType.h>
@@ -257,6 +260,8 @@
 #include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetResourcePolicy2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResourcePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicyConfig2020_05_31Request.h>
@@ -320,6 +325,8 @@
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByOwnedResource2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByOwnedResource2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Request.h>
@@ -409,6 +416,8 @@
 #include <aws/cloudfront/model/PublicKeySummary.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Result.h>
+#include <aws/cloudfront/model/PutResourcePolicy2020_05_31Request.h>
+#include <aws/cloudfront/model/PutResourcePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/QueryArgProfile.h>
 #include <aws/cloudfront/model/QueryArgProfileConfig.h>
 #include <aws/cloudfront/model/QueryArgProfiles.h>
@@ -470,6 +479,8 @@
 #include <aws/cloudfront/model/TrustedKeyGroups.h>
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateAnycastIpList2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateAnycastIpList2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>

@@ -33,6 +33,11 @@ DisableFastSnapshotRestoreSuccessItem& DisableFastSnapshotRestoreSuccessItem::op
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if (!stateNode.IsNull()) {
       m_state = FastSnapshotRestoreStateCodeMapper::GetFastSnapshotRestoreStateCodeForName(
@@ -99,6 +104,10 @@ void DisableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream
     oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if (m_stateHasBeenSet) {
     oStream << location << index << locationValue
             << ".State=" << StringUtils::URLEncode(FastSnapshotRestoreStateCodeMapper::GetNameForFastSnapshotRestoreStateCode(m_state))
@@ -150,6 +159,9 @@ void DisableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream
   }
   if (m_availabilityZoneHasBeenSet) {
     oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if (m_stateHasBeenSet) {
     oStream << location

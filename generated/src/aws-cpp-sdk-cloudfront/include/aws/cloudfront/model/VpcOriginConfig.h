@@ -51,6 +51,25 @@ class VpcOriginConfig {
 
   ///@{
   /**
+   * <p>The account ID of the Amazon Web Services account that owns the VPC
+   * origin.</p>
+   */
+  inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
+  inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+  template <typename OwnerAccountIdT = Aws::String>
+  void SetOwnerAccountId(OwnerAccountIdT&& value) {
+    m_ownerAccountIdHasBeenSet = true;
+    m_ownerAccountId = std::forward<OwnerAccountIdT>(value);
+  }
+  template <typename OwnerAccountIdT = Aws::String>
+  VpcOriginConfig& WithOwnerAccountId(OwnerAccountIdT&& value) {
+    SetOwnerAccountId(std::forward<OwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies how long, in seconds, CloudFront waits for a response from the
    * origin. This is also known as the <i>origin response timeout</i>. The minimum
    * timeout is 1 second, the maximum is 120 seconds, and the default (if you don't
@@ -94,6 +113,9 @@ class VpcOriginConfig {
  private:
   Aws::String m_vpcOriginId;
   bool m_vpcOriginIdHasBeenSet = false;
+
+  Aws::String m_ownerAccountId;
+  bool m_ownerAccountIdHasBeenSet = false;
 
   int m_originReadTimeout{0};
   bool m_originReadTimeoutHasBeenSet = false;

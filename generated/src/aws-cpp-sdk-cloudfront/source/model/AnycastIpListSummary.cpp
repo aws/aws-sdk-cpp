@@ -56,6 +56,17 @@ AnycastIpListSummary& AnycastIpListSummary::operator=(const XmlNode& xmlNode) {
                    Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if (!ipAddressTypeNode.IsNull()) {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
+    XmlNode eTagNode = resultNode.FirstChild("ETag");
+    if (!eTagNode.IsNull()) {
+      m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
+      m_eTagHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +104,16 @@ void AnycastIpListSummary::AddToNode(XmlNode& parentNode) const {
   if (m_lastModifiedTimeHasBeenSet) {
     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
+    ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if (m_eTagHasBeenSet) {
+    XmlNode eTagNode = parentNode.CreateChildElement("ETag");
+    eTagNode.SetText(m_eTag);
   }
 }
 

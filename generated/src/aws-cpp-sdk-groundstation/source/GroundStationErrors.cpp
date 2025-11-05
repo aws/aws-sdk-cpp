@@ -9,6 +9,7 @@
 #include <aws/groundstation/model/DependencyException.h>
 #include <aws/groundstation/model/InvalidParameterException.h>
 #include <aws/groundstation/model/ResourceLimitExceededException.h>
+#include <aws/groundstation/model/ServiceQuotaExceededException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -17,6 +18,12 @@ using namespace Aws::GroundStation::Model;
 
 namespace Aws {
 namespace GroundStation {
+template <>
+AWS_GROUNDSTATION_API ServiceQuotaExceededException GroundStationError::GetModeledError() {
+  assert(this->GetErrorType() == GroundStationErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_GROUNDSTATION_API InvalidParameterException GroundStationError::GetModeledError() {
   assert(this->GetErrorType() == GroundStationErrors::INVALID_PARAMETER);
@@ -37,6 +44,7 @@ AWS_GROUNDSTATION_API DependencyException GroundStationError::GetModeledError() 
 
 namespace GroundStationErrorMapper {
 
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
@@ -45,7 +53,9 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH) {
+  if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GroundStationErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);

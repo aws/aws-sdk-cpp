@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/EnvironmentConfiguration.h>
+#include <aws/datazone/model/ResourceTagParameter.h>
 #include <aws/datazone/model/Status.h>
 
 #include <utility>
@@ -29,6 +30,21 @@ class UpdateProjectProfileResult {
   AWS_DATAZONE_API UpdateProjectProfileResult() = default;
   AWS_DATAZONE_API UpdateProjectProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_DATAZONE_API UpdateProjectProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Specifies whether custom project resource tags are supported.</p>
+   */
+  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
+  inline void SetAllowCustomProjectResourceTags(bool value) {
+    m_allowCustomProjectResourceTagsHasBeenSet = true;
+    m_allowCustomProjectResourceTags = value;
+  }
+  inline UpdateProjectProfileResult& WithAllowCustomProjectResourceTags(bool value) {
+    SetAllowCustomProjectResourceTags(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -191,6 +207,47 @@ class UpdateProjectProfileResult {
 
   ///@{
   /**
+   * <p>The resource tags of the project profile.</p>
+   */
+  inline const Aws::Vector<ResourceTagParameter>& GetProjectResourceTags() const { return m_projectResourceTags; }
+  template <typename ProjectResourceTagsT = Aws::Vector<ResourceTagParameter>>
+  void SetProjectResourceTags(ProjectResourceTagsT&& value) {
+    m_projectResourceTagsHasBeenSet = true;
+    m_projectResourceTags = std::forward<ProjectResourceTagsT>(value);
+  }
+  template <typename ProjectResourceTagsT = Aws::Vector<ResourceTagParameter>>
+  UpdateProjectProfileResult& WithProjectResourceTags(ProjectResourceTagsT&& value) {
+    SetProjectResourceTags(std::forward<ProjectResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ProjectResourceTagsT = ResourceTagParameter>
+  UpdateProjectProfileResult& AddProjectResourceTags(ProjectResourceTagsT&& value) {
+    m_projectResourceTagsHasBeenSet = true;
+    m_projectResourceTags.emplace_back(std::forward<ProjectResourceTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Field viewable through the UI that provides a project user with the allowed
+   * resource tag specifications.</p>
+   */
+  inline const Aws::String& GetProjectResourceTagsDescription() const { return m_projectResourceTagsDescription; }
+  template <typename ProjectResourceTagsDescriptionT = Aws::String>
+  void SetProjectResourceTagsDescription(ProjectResourceTagsDescriptionT&& value) {
+    m_projectResourceTagsDescriptionHasBeenSet = true;
+    m_projectResourceTagsDescription = std::forward<ProjectResourceTagsDescriptionT>(value);
+  }
+  template <typename ProjectResourceTagsDescriptionT = Aws::String>
+  UpdateProjectProfileResult& WithProjectResourceTagsDescription(ProjectResourceTagsDescriptionT&& value) {
+    SetProjectResourceTagsDescription(std::forward<ProjectResourceTagsDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the project profile.</p>
    */
   inline Status GetStatus() const { return m_status; }
@@ -219,6 +276,9 @@ class UpdateProjectProfileResult {
   }
   ///@}
  private:
+  bool m_allowCustomProjectResourceTags{false};
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+
   Aws::Utils::DateTime m_createdAt{};
   bool m_createdAtHasBeenSet = false;
 
@@ -245,6 +305,12 @@ class UpdateProjectProfileResult {
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::Vector<ResourceTagParameter> m_projectResourceTags;
+  bool m_projectResourceTagsHasBeenSet = false;
+
+  Aws::String m_projectResourceTagsDescription;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
   bool m_statusHasBeenSet = false;

@@ -79,6 +79,13 @@ UpdateProjectResult& UpdateProjectResult::operator=(const Aws::AmazonWebServiceR
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("projectStatus"));
     m_projectStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceTags")) {
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
+    for (unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex) {
+      m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
+    }
+    m_resourceTagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("userParameters")) {
     Aws::Utils::Array<JsonView> userParametersJsonList = jsonValue.GetArray("userParameters");
     for (unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex) {

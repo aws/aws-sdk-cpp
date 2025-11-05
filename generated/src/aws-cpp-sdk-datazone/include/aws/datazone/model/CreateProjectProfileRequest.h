@@ -9,6 +9,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/EnvironmentConfiguration.h>
+#include <aws/datazone/model/ResourceTagParameter.h>
 #include <aws/datazone/model/Status.h>
 
 #include <utility>
@@ -30,6 +31,22 @@ class CreateProjectProfileRequest : public DataZoneRequest {
   inline virtual const char* GetServiceRequestName() const override { return "CreateProjectProfile"; }
 
   AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>Specifies whether custom project resource tags are supported.</p>
+   */
+  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
+  inline bool AllowCustomProjectResourceTagsHasBeenSet() const { return m_allowCustomProjectResourceTagsHasBeenSet; }
+  inline void SetAllowCustomProjectResourceTags(bool value) {
+    m_allowCustomProjectResourceTagsHasBeenSet = true;
+    m_allowCustomProjectResourceTags = value;
+  }
+  inline CreateProjectProfileRequest& WithAllowCustomProjectResourceTags(bool value) {
+    SetAllowCustomProjectResourceTags(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -129,6 +146,49 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The resource tags of the project profile.</p>
+   */
+  inline const Aws::Vector<ResourceTagParameter>& GetProjectResourceTags() const { return m_projectResourceTags; }
+  inline bool ProjectResourceTagsHasBeenSet() const { return m_projectResourceTagsHasBeenSet; }
+  template <typename ProjectResourceTagsT = Aws::Vector<ResourceTagParameter>>
+  void SetProjectResourceTags(ProjectResourceTagsT&& value) {
+    m_projectResourceTagsHasBeenSet = true;
+    m_projectResourceTags = std::forward<ProjectResourceTagsT>(value);
+  }
+  template <typename ProjectResourceTagsT = Aws::Vector<ResourceTagParameter>>
+  CreateProjectProfileRequest& WithProjectResourceTags(ProjectResourceTagsT&& value) {
+    SetProjectResourceTags(std::forward<ProjectResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ProjectResourceTagsT = ResourceTagParameter>
+  CreateProjectProfileRequest& AddProjectResourceTags(ProjectResourceTagsT&& value) {
+    m_projectResourceTagsHasBeenSet = true;
+    m_projectResourceTags.emplace_back(std::forward<ProjectResourceTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Field viewable through the UI that provides a project user with the allowed
+   * resource tag specifications.</p>
+   */
+  inline const Aws::String& GetProjectResourceTagsDescription() const { return m_projectResourceTagsDescription; }
+  inline bool ProjectResourceTagsDescriptionHasBeenSet() const { return m_projectResourceTagsDescriptionHasBeenSet; }
+  template <typename ProjectResourceTagsDescriptionT = Aws::String>
+  void SetProjectResourceTagsDescription(ProjectResourceTagsDescriptionT&& value) {
+    m_projectResourceTagsDescriptionHasBeenSet = true;
+    m_projectResourceTagsDescription = std::forward<ProjectResourceTagsDescriptionT>(value);
+  }
+  template <typename ProjectResourceTagsDescriptionT = Aws::String>
+  CreateProjectProfileRequest& WithProjectResourceTagsDescription(ProjectResourceTagsDescriptionT&& value) {
+    SetProjectResourceTagsDescription(std::forward<ProjectResourceTagsDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Project profile status.</p>
    */
   inline Status GetStatus() const { return m_status; }
@@ -143,6 +203,9 @@ class CreateProjectProfileRequest : public DataZoneRequest {
   }
   ///@}
  private:
+  bool m_allowCustomProjectResourceTags{false};
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
 
@@ -157,6 +220,12 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::Vector<ResourceTagParameter> m_projectResourceTags;
+  bool m_projectResourceTagsHasBeenSet = false;
+
+  Aws::String m_projectResourceTagsDescription;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
   bool m_statusHasBeenSet = false;

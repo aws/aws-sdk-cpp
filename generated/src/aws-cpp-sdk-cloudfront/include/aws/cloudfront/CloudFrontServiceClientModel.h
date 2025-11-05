@@ -85,6 +85,7 @@
 #include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetResourcePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Result.h>
@@ -112,6 +113,7 @@
 #include <aws/cloudfront/model/ListDistributionsByConnectionMode2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByOwnedResource2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Result.h>
@@ -146,7 +148,9 @@
 #include <aws/cloudfront/model/ListVpcOrigins2020_05_31Request.h>
 #include <aws/cloudfront/model/ListVpcOrigins2020_05_31Result.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Result.h>
+#include <aws/cloudfront/model/PutResourcePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/TestFunction2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateAnycastIpList2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateConnectionGroup2020_05_31Result.h>
@@ -248,6 +252,7 @@ class DeleteOriginAccessControl2020_05_31Request;
 class DeleteOriginRequestPolicy2020_05_31Request;
 class DeletePublicKey2020_05_31Request;
 class DeleteRealtimeLogConfig2020_05_31Request;
+class DeleteResourcePolicy2020_05_31Request;
 class DeleteResponseHeadersPolicy2020_05_31Request;
 class DeleteStreamingDistribution2020_05_31Request;
 class DeleteVpcOrigin2020_05_31Request;
@@ -286,6 +291,7 @@ class GetOriginRequestPolicyConfig2020_05_31Request;
 class GetPublicKey2020_05_31Request;
 class GetPublicKeyConfig2020_05_31Request;
 class GetRealtimeLogConfig2020_05_31Request;
+class GetResourcePolicy2020_05_31Request;
 class GetResponseHeadersPolicy2020_05_31Request;
 class GetResponseHeadersPolicyConfig2020_05_31Request;
 class GetStreamingDistribution2020_05_31Request;
@@ -305,6 +311,7 @@ class ListDistributionsByCachePolicyId2020_05_31Request;
 class ListDistributionsByConnectionMode2020_05_31Request;
 class ListDistributionsByKeyGroup2020_05_31Request;
 class ListDistributionsByOriginRequestPolicyId2020_05_31Request;
+class ListDistributionsByOwnedResource2020_05_31Request;
 class ListDistributionsByRealtimeLogConfig2020_05_31Request;
 class ListDistributionsByResponseHeadersPolicyId2020_05_31Request;
 class ListDistributionsByVpcOriginId2020_05_31Request;
@@ -326,9 +333,11 @@ class ListStreamingDistributions2020_05_31Request;
 class ListTagsForResource2020_05_31Request;
 class ListVpcOrigins2020_05_31Request;
 class PublishFunction2020_05_31Request;
+class PutResourcePolicy2020_05_31Request;
 class TagResource2020_05_31Request;
 class TestFunction2020_05_31Request;
 class UntagResource2020_05_31Request;
+class UpdateAnycastIpList2020_05_31Request;
 class UpdateCachePolicy2020_05_31Request;
 class UpdateCloudFrontOriginAccessIdentity2020_05_31Request;
 class UpdateConnectionGroup2020_05_31Request;
@@ -405,6 +414,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteOriginAccessCo
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteOriginRequestPolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeletePublicKey2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteRealtimeLogConfig2020_05_31Outcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteResourcePolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteResponseHeadersPolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteStreamingDistribution2020_05_31Outcome;
 typedef Aws::Utils::Outcome<DeleteVpcOrigin2020_05_31Result, CloudFrontError> DeleteVpcOrigin2020_05_31Outcome;
@@ -452,6 +462,7 @@ typedef Aws::Utils::Outcome<GetOriginRequestPolicyConfig2020_05_31Result, CloudF
 typedef Aws::Utils::Outcome<GetPublicKey2020_05_31Result, CloudFrontError> GetPublicKey2020_05_31Outcome;
 typedef Aws::Utils::Outcome<GetPublicKeyConfig2020_05_31Result, CloudFrontError> GetPublicKeyConfig2020_05_31Outcome;
 typedef Aws::Utils::Outcome<GetRealtimeLogConfig2020_05_31Result, CloudFrontError> GetRealtimeLogConfig2020_05_31Outcome;
+typedef Aws::Utils::Outcome<GetResourcePolicy2020_05_31Result, CloudFrontError> GetResourcePolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<GetResponseHeadersPolicy2020_05_31Result, CloudFrontError> GetResponseHeadersPolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<GetResponseHeadersPolicyConfig2020_05_31Result, CloudFrontError>
     GetResponseHeadersPolicyConfig2020_05_31Outcome;
@@ -480,6 +491,8 @@ typedef Aws::Utils::Outcome<ListDistributionsByConnectionMode2020_05_31Result, C
 typedef Aws::Utils::Outcome<ListDistributionsByKeyGroup2020_05_31Result, CloudFrontError> ListDistributionsByKeyGroup2020_05_31Outcome;
 typedef Aws::Utils::Outcome<ListDistributionsByOriginRequestPolicyId2020_05_31Result, CloudFrontError>
     ListDistributionsByOriginRequestPolicyId2020_05_31Outcome;
+typedef Aws::Utils::Outcome<ListDistributionsByOwnedResource2020_05_31Result, CloudFrontError>
+    ListDistributionsByOwnedResource2020_05_31Outcome;
 typedef Aws::Utils::Outcome<ListDistributionsByRealtimeLogConfig2020_05_31Result, CloudFrontError>
     ListDistributionsByRealtimeLogConfig2020_05_31Outcome;
 typedef Aws::Utils::Outcome<ListDistributionsByResponseHeadersPolicyId2020_05_31Result, CloudFrontError>
@@ -507,9 +520,11 @@ typedef Aws::Utils::Outcome<ListStreamingDistributions2020_05_31Result, CloudFro
 typedef Aws::Utils::Outcome<ListTagsForResource2020_05_31Result, CloudFrontError> ListTagsForResource2020_05_31Outcome;
 typedef Aws::Utils::Outcome<ListVpcOrigins2020_05_31Result, CloudFrontError> ListVpcOrigins2020_05_31Outcome;
 typedef Aws::Utils::Outcome<PublishFunction2020_05_31Result, CloudFrontError> PublishFunction2020_05_31Outcome;
+typedef Aws::Utils::Outcome<PutResourcePolicy2020_05_31Result, CloudFrontError> PutResourcePolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> TagResource2020_05_31Outcome;
 typedef Aws::Utils::Outcome<TestFunction2020_05_31Result, CloudFrontError> TestFunction2020_05_31Outcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> UntagResource2020_05_31Outcome;
+typedef Aws::Utils::Outcome<UpdateAnycastIpList2020_05_31Result, CloudFrontError> UpdateAnycastIpList2020_05_31Outcome;
 typedef Aws::Utils::Outcome<UpdateCachePolicy2020_05_31Result, CloudFrontError> UpdateCachePolicy2020_05_31Outcome;
 typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError>
     UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome;
@@ -585,6 +600,7 @@ typedef std::future<DeleteOriginAccessControl2020_05_31Outcome> DeleteOriginAcce
 typedef std::future<DeleteOriginRequestPolicy2020_05_31Outcome> DeleteOriginRequestPolicy2020_05_31OutcomeCallable;
 typedef std::future<DeletePublicKey2020_05_31Outcome> DeletePublicKey2020_05_31OutcomeCallable;
 typedef std::future<DeleteRealtimeLogConfig2020_05_31Outcome> DeleteRealtimeLogConfig2020_05_31OutcomeCallable;
+typedef std::future<DeleteResourcePolicy2020_05_31Outcome> DeleteResourcePolicy2020_05_31OutcomeCallable;
 typedef std::future<DeleteResponseHeadersPolicy2020_05_31Outcome> DeleteResponseHeadersPolicy2020_05_31OutcomeCallable;
 typedef std::future<DeleteStreamingDistribution2020_05_31Outcome> DeleteStreamingDistribution2020_05_31OutcomeCallable;
 typedef std::future<DeleteVpcOrigin2020_05_31Outcome> DeleteVpcOrigin2020_05_31OutcomeCallable;
@@ -624,6 +640,7 @@ typedef std::future<GetOriginRequestPolicyConfig2020_05_31Outcome> GetOriginRequ
 typedef std::future<GetPublicKey2020_05_31Outcome> GetPublicKey2020_05_31OutcomeCallable;
 typedef std::future<GetPublicKeyConfig2020_05_31Outcome> GetPublicKeyConfig2020_05_31OutcomeCallable;
 typedef std::future<GetRealtimeLogConfig2020_05_31Outcome> GetRealtimeLogConfig2020_05_31OutcomeCallable;
+typedef std::future<GetResourcePolicy2020_05_31Outcome> GetResourcePolicy2020_05_31OutcomeCallable;
 typedef std::future<GetResponseHeadersPolicy2020_05_31Outcome> GetResponseHeadersPolicy2020_05_31OutcomeCallable;
 typedef std::future<GetResponseHeadersPolicyConfig2020_05_31Outcome> GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable;
 typedef std::future<GetStreamingDistribution2020_05_31Outcome> GetStreamingDistribution2020_05_31OutcomeCallable;
@@ -645,6 +662,7 @@ typedef std::future<ListDistributionsByConnectionMode2020_05_31Outcome> ListDist
 typedef std::future<ListDistributionsByKeyGroup2020_05_31Outcome> ListDistributionsByKeyGroup2020_05_31OutcomeCallable;
 typedef std::future<ListDistributionsByOriginRequestPolicyId2020_05_31Outcome>
     ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable;
+typedef std::future<ListDistributionsByOwnedResource2020_05_31Outcome> ListDistributionsByOwnedResource2020_05_31OutcomeCallable;
 typedef std::future<ListDistributionsByRealtimeLogConfig2020_05_31Outcome> ListDistributionsByRealtimeLogConfig2020_05_31OutcomeCallable;
 typedef std::future<ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome>
     ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable;
@@ -668,9 +686,11 @@ typedef std::future<ListStreamingDistributions2020_05_31Outcome> ListStreamingDi
 typedef std::future<ListTagsForResource2020_05_31Outcome> ListTagsForResource2020_05_31OutcomeCallable;
 typedef std::future<ListVpcOrigins2020_05_31Outcome> ListVpcOrigins2020_05_31OutcomeCallable;
 typedef std::future<PublishFunction2020_05_31Outcome> PublishFunction2020_05_31OutcomeCallable;
+typedef std::future<PutResourcePolicy2020_05_31Outcome> PutResourcePolicy2020_05_31OutcomeCallable;
 typedef std::future<TagResource2020_05_31Outcome> TagResource2020_05_31OutcomeCallable;
 typedef std::future<TestFunction2020_05_31Outcome> TestFunction2020_05_31OutcomeCallable;
 typedef std::future<UntagResource2020_05_31Outcome> UntagResource2020_05_31OutcomeCallable;
+typedef std::future<UpdateAnycastIpList2020_05_31Outcome> UpdateAnycastIpList2020_05_31OutcomeCallable;
 typedef std::future<UpdateCachePolicy2020_05_31Outcome> UpdateCachePolicy2020_05_31OutcomeCallable;
 typedef std::future<UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome> UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
 typedef std::future<UpdateConnectionGroup2020_05_31Outcome> UpdateConnectionGroup2020_05_31OutcomeCallable;
@@ -867,6 +887,10 @@ typedef std::function<void(const CloudFrontClient*, const Model::DeleteRealtimeL
                            const Model::DeleteRealtimeLogConfig2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler;
+typedef std::function<void(const CloudFrontClient*, const Model::DeleteResourcePolicy2020_05_31Request&,
+                           const Model::DeleteResourcePolicy2020_05_31Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourcePolicy2020_05_31ResponseReceivedHandler;
 typedef std::function<void(const CloudFrontClient*, const Model::DeleteResponseHeadersPolicy2020_05_31Request&,
                            const Model::DeleteResponseHeadersPolicy2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1009,6 +1033,9 @@ typedef std::function<void(const CloudFrontClient*, const Model::GetRealtimeLogC
                            const Model::GetRealtimeLogConfig2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRealtimeLogConfig2020_05_31ResponseReceivedHandler;
+typedef std::function<void(const CloudFrontClient*, const Model::GetResourcePolicy2020_05_31Request&,
+                           const Model::GetResourcePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcePolicy2020_05_31ResponseReceivedHandler;
 typedef std::function<void(const CloudFrontClient*, const Model::GetResponseHeadersPolicy2020_05_31Request&,
                            const Model::GetResponseHeadersPolicy2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1082,6 +1109,10 @@ typedef std::function<void(const CloudFrontClient*, const Model::ListDistributio
                            const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler;
+typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByOwnedResource2020_05_31Request&,
+                           const Model::ListDistributionsByOwnedResource2020_05_31Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDistributionsByOwnedResource2020_05_31ResponseReceivedHandler;
 typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request&,
                            const Model::ListDistributionsByRealtimeLogConfig2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1160,6 +1191,9 @@ typedef std::function<void(const CloudFrontClient*, const Model::ListVpcOrigins2
 typedef std::function<void(const CloudFrontClient*, const Model::PublishFunction2020_05_31Request&,
                            const Model::PublishFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PublishFunction2020_05_31ResponseReceivedHandler;
+typedef std::function<void(const CloudFrontClient*, const Model::PutResourcePolicy2020_05_31Request&,
+                           const Model::PutResourcePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutResourcePolicy2020_05_31ResponseReceivedHandler;
 typedef std::function<void(const CloudFrontClient*, const Model::TagResource2020_05_31Request&, const Model::TagResource2020_05_31Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResource2020_05_31ResponseReceivedHandler;
@@ -1169,6 +1203,10 @@ typedef std::function<void(const CloudFrontClient*, const Model::TestFunction202
 typedef std::function<void(const CloudFrontClient*, const Model::UntagResource2020_05_31Request&,
                            const Model::UntagResource2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResource2020_05_31ResponseReceivedHandler;
+typedef std::function<void(const CloudFrontClient*, const Model::UpdateAnycastIpList2020_05_31Request&,
+                           const Model::UpdateAnycastIpList2020_05_31Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAnycastIpList2020_05_31ResponseReceivedHandler;
 typedef std::function<void(const CloudFrontClient*, const Model::UpdateCachePolicy2020_05_31Request&,
                            const Model::UpdateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCachePolicy2020_05_31ResponseReceivedHandler;

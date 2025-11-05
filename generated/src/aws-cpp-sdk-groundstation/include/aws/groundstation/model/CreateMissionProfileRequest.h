@@ -71,7 +71,7 @@ class CreateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you’d like to receive a Ground
+   * <p>Amount of time after a contact ends that you���d like to receive a Ground
    * Station Contact State Change event indicating the pass has finished.</p>
    */
   inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }

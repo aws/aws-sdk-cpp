@@ -1215,7 +1215,10 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Delete a distribution.</p><p><h3>See Also:</h3>   <a
+   * <p>Delete a distribution.</p>  <p>Before you can delete a
+   * distribution, you must disable it, which requires permission to update the
+   * distribution. Once deleted, a distribution cannot be recovered.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution2020_05_31">AWS
    * API Reference</a></p>
    */
@@ -1590,6 +1593,36 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                               const DeleteRealtimeLogConfig2020_05_31RequestT& request = {}) const {
     return SubmitAsync(&CloudFrontClient::DeleteRealtimeLogConfig2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the resource policy attached to the CloudFront
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResourcePolicy2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResourcePolicy2020_05_31Outcome DeleteResourcePolicy2020_05_31(
+      const Model::DeleteResourcePolicy2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResourcePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteResourcePolicy2020_05_31RequestT = Model::DeleteResourcePolicy2020_05_31Request>
+  Model::DeleteResourcePolicy2020_05_31OutcomeCallable DeleteResourcePolicy2020_05_31Callable(
+      const DeleteResourcePolicy2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::DeleteResourcePolicy2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResourcePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteResourcePolicy2020_05_31RequestT = Model::DeleteResourcePolicy2020_05_31Request>
+  void DeleteResourcePolicy2020_05_31Async(const DeleteResourcePolicy2020_05_31RequestT& request,
+                                           const DeleteResourcePolicy2020_05_31ResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::DeleteResourcePolicy2020_05_31, request, handler, context);
   }
 
   /**
@@ -2795,6 +2828,36 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves the resource policy for the specified CloudFront resource that you
+   * own and have shared.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResourcePolicy2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourcePolicy2020_05_31Outcome GetResourcePolicy2020_05_31(
+      const Model::GetResourcePolicy2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for GetResourcePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetResourcePolicy2020_05_31RequestT = Model::GetResourcePolicy2020_05_31Request>
+  Model::GetResourcePolicy2020_05_31OutcomeCallable GetResourcePolicy2020_05_31Callable(
+      const GetResourcePolicy2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::GetResourcePolicy2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourcePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetResourcePolicy2020_05_31RequestT = Model::GetResourcePolicy2020_05_31Request>
+  void GetResourcePolicy2020_05_31Async(const GetResourcePolicy2020_05_31RequestT& request,
+                                        const GetResourcePolicy2020_05_31ResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::GetResourcePolicy2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Gets a response headers policy, including metadata (the policy's identifier
    * and the date and time when the policy was last modified).</p> <p>To get a
    * response headers policy, you must provide the policy's identifier. If the
@@ -3444,6 +3507,37 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the CloudFront distributions that are associated with the specified
+   * resource that you own.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOwnedResource2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDistributionsByOwnedResource2020_05_31Outcome ListDistributionsByOwnedResource2020_05_31(
+      const Model::ListDistributionsByOwnedResource2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for ListDistributionsByOwnedResource2020_05_31 that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListDistributionsByOwnedResource2020_05_31RequestT = Model::ListDistributionsByOwnedResource2020_05_31Request>
+  Model::ListDistributionsByOwnedResource2020_05_31OutcomeCallable ListDistributionsByOwnedResource2020_05_31Callable(
+      const ListDistributionsByOwnedResource2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::ListDistributionsByOwnedResource2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for ListDistributionsByOwnedResource2020_05_31 that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListDistributionsByOwnedResource2020_05_31RequestT = Model::ListDistributionsByOwnedResource2020_05_31Request>
+  void ListDistributionsByOwnedResource2020_05_31Async(
+      const ListDistributionsByOwnedResource2020_05_31RequestT& request,
+      const ListDistributionsByOwnedResource2020_05_31ResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::ListDistributionsByOwnedResource2020_05_31, request, handler, context);
   }
 
   /**
@@ -4169,6 +4263,36 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates a resource control policy for a given CloudFront
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PutResourcePolicy2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutResourcePolicy2020_05_31Outcome PutResourcePolicy2020_05_31(
+      const Model::PutResourcePolicy2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for PutResourcePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutResourcePolicy2020_05_31RequestT = Model::PutResourcePolicy2020_05_31Request>
+  Model::PutResourcePolicy2020_05_31OutcomeCallable PutResourcePolicy2020_05_31Callable(
+      const PutResourcePolicy2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::PutResourcePolicy2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for PutResourcePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutResourcePolicy2020_05_31RequestT = Model::PutResourcePolicy2020_05_31Request>
+  void PutResourcePolicy2020_05_31Async(const PutResourcePolicy2020_05_31RequestT& request,
+                                        const PutResourcePolicy2020_05_31ResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::PutResourcePolicy2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Add tags to a CloudFront resource. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
    * a distribution</a> in the <i>Amazon CloudFront Developer
@@ -4264,6 +4388,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                     const UntagResource2020_05_31ResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::UntagResource2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an Anycast static IP list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateAnycastIpList2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAnycastIpList2020_05_31Outcome UpdateAnycastIpList2020_05_31(
+      const Model::UpdateAnycastIpList2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAnycastIpList2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateAnycastIpList2020_05_31RequestT = Model::UpdateAnycastIpList2020_05_31Request>
+  Model::UpdateAnycastIpList2020_05_31OutcomeCallable UpdateAnycastIpList2020_05_31Callable(
+      const UpdateAnycastIpList2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::UpdateAnycastIpList2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAnycastIpList2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAnycastIpList2020_05_31RequestT = Model::UpdateAnycastIpList2020_05_31Request>
+  void UpdateAnycastIpList2020_05_31Async(const UpdateAnycastIpList2020_05_31RequestT& request,
+                                          const UpdateAnycastIpList2020_05_31ResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::UpdateAnycastIpList2020_05_31, request, handler, context);
   }
 
   /**

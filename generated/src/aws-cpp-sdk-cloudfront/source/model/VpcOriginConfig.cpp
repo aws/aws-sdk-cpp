@@ -28,6 +28,11 @@ VpcOriginConfig& VpcOriginConfig::operator=(const XmlNode& xmlNode) {
       m_vpcOriginId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcOriginIdNode.GetText());
       m_vpcOriginIdHasBeenSet = true;
     }
+    XmlNode ownerAccountIdNode = resultNode.FirstChild("OwnerAccountId");
+    if (!ownerAccountIdNode.IsNull()) {
+      m_ownerAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAccountIdNode.GetText());
+      m_ownerAccountIdHasBeenSet = true;
+    }
     XmlNode originReadTimeoutNode = resultNode.FirstChild("OriginReadTimeout");
     if (!originReadTimeoutNode.IsNull()) {
       m_originReadTimeout = StringUtils::ConvertToInt32(
@@ -50,6 +55,11 @@ void VpcOriginConfig::AddToNode(XmlNode& parentNode) const {
   if (m_vpcOriginIdHasBeenSet) {
     XmlNode vpcOriginIdNode = parentNode.CreateChildElement("VpcOriginId");
     vpcOriginIdNode.SetText(m_vpcOriginId);
+  }
+
+  if (m_ownerAccountIdHasBeenSet) {
+    XmlNode ownerAccountIdNode = parentNode.CreateChildElement("OwnerAccountId");
+    ownerAccountIdNode.SetText(m_ownerAccountId);
   }
 
   if (m_originReadTimeoutHasBeenSet) {

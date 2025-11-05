@@ -172,6 +172,38 @@ class SelfManagedActiveDirectoryConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret containing the self-managed Active Directory domain join service account
+   * credentials. When provided, Amazon FSx uses the credentials stored in this
+   * secret to join the file system to your self-managed Active Directory domain.</p>
+   * <p>The secret must contain two key-value pairs:</p> <ul> <li> <p>
+   * <code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the
+   * service account</p> </li> <li> <p>
+   * <code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the
+   * service account</p> </li> </ul> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html">
+   * Using Amazon FSx for Windows with your self-managed Microsoft Active
+   * Directory</a> or <a
+   * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html">
+   * Using Amazon FSx for ONTAP with your self-managed Microsoft Active
+   * Directory</a>.</p>
+   */
+  inline const Aws::String& GetDomainJoinServiceAccountSecret() const { return m_domainJoinServiceAccountSecret; }
+  inline bool DomainJoinServiceAccountSecretHasBeenSet() const { return m_domainJoinServiceAccountSecretHasBeenSet; }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  void SetDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    m_domainJoinServiceAccountSecretHasBeenSet = true;
+    m_domainJoinServiceAccountSecret = std::forward<DomainJoinServiceAccountSecretT>(value);
+  }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  SelfManagedActiveDirectoryConfiguration& WithDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    SetDomainJoinServiceAccountSecret(std::forward<DomainJoinServiceAccountSecretT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
   bool m_domainNameHasBeenSet = false;
@@ -190,6 +222,9 @@ class SelfManagedActiveDirectoryConfiguration {
 
   Aws::Vector<Aws::String> m_dnsIps;
   bool m_dnsIpsHasBeenSet = false;
+
+  Aws::String m_domainJoinServiceAccountSecret;
+  bool m_domainJoinServiceAccountSecretHasBeenSet = false;
 };
 
 }  // namespace Model

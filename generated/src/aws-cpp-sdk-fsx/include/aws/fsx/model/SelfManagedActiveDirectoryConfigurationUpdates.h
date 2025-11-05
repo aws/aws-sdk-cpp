@@ -158,6 +158,27 @@ class SelfManagedActiveDirectoryConfigurationUpdates {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services
+   * Secrets Manager secret containing the self-managed Active Directory domain join
+   * service account credentials. Amazon FSx uses this account to join to your
+   * self-managed Active Directory domain.</p>
+   */
+  inline const Aws::String& GetDomainJoinServiceAccountSecret() const { return m_domainJoinServiceAccountSecret; }
+  inline bool DomainJoinServiceAccountSecretHasBeenSet() const { return m_domainJoinServiceAccountSecretHasBeenSet; }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  void SetDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    m_domainJoinServiceAccountSecretHasBeenSet = true;
+    m_domainJoinServiceAccountSecret = std::forward<DomainJoinServiceAccountSecretT>(value);
+  }
+  template <typename DomainJoinServiceAccountSecretT = Aws::String>
+  SelfManagedActiveDirectoryConfigurationUpdates& WithDomainJoinServiceAccountSecret(DomainJoinServiceAccountSecretT&& value) {
+    SetDomainJoinServiceAccountSecret(std::forward<DomainJoinServiceAccountSecretT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userName;
   bool m_userNameHasBeenSet = false;
@@ -176,6 +197,9 @@ class SelfManagedActiveDirectoryConfigurationUpdates {
 
   Aws::String m_fileSystemAdministratorsGroup;
   bool m_fileSystemAdministratorsGroupHasBeenSet = false;
+
+  Aws::String m_domainJoinServiceAccountSecret;
+  bool m_domainJoinServiceAccountSecretHasBeenSet = false;
 };
 
 }  // namespace Model

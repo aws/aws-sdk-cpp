@@ -43,6 +43,14 @@ Aws::String UpdateProjectRequest::SerializePayload() const {
     payload.WithString("projectProfileVersion", m_projectProfileVersion);
   }
 
+  if (m_resourceTagsHasBeenSet) {
+    JsonValue resourceTagsJsonMap;
+    for (auto& resourceTagsItem : m_resourceTags) {
+      resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+    }
+    payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
+  }
+
   if (m_userParametersHasBeenSet) {
     Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
     for (unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex) {

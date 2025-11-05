@@ -36,6 +36,8 @@ class EnableFastSnapshotRestoresRequest : public EC2Request {
   ///@{
   /**
    * <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+   * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must
+   * be specified in the request, but not both.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
   inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
@@ -53,6 +55,32 @@ class EnableFastSnapshotRestoresRequest : public EC2Request {
   EnableFastSnapshotRestoresRequest& AddAvailabilityZones(AvailabilityZonesT&& value) {
     m_availabilityZonesHasBeenSet = true;
     m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>One or more Availability Zone IDs. For example, <code>use2-az1</code>.</p>
+   * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must
+   * be specified in the request, but not both.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  EnableFastSnapshotRestoresRequest& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  EnableFastSnapshotRestoresRequest& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
     return *this;
   }
   ///@}
@@ -104,6 +132,9 @@ class EnableFastSnapshotRestoresRequest : public EC2Request {
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
   bool m_availabilityZonesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
+  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceSnapshotIds;
   bool m_sourceSnapshotIdsHasBeenSet = false;
