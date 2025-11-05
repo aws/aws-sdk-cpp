@@ -10,7 +10,9 @@
 #include <aws/groundstation/model/CapabilityHealth.h>
 #include <aws/groundstation/model/CapabilityHealthReason.h>
 #include <aws/groundstation/model/DataflowEndpoint.h>
+#include <aws/groundstation/model/DownlinkAwsGroundStationAgentEndpointDetails.h>
 #include <aws/groundstation/model/SecurityDetails.h>
+#include <aws/groundstation/model/UplinkAwsGroundStationAgentEndpointDetails.h>
 
 #include <utility>
 
@@ -93,6 +95,46 @@ class EndpointDetails {
 
   ///@{
   /**
+   * <p>Definition for an uplink agent endpoint</p>
+   */
+  inline const UplinkAwsGroundStationAgentEndpointDetails& GetUplinkAwsGroundStationAgentEndpoint() const {
+    return m_uplinkAwsGroundStationAgentEndpoint;
+  }
+  inline bool UplinkAwsGroundStationAgentEndpointHasBeenSet() const { return m_uplinkAwsGroundStationAgentEndpointHasBeenSet; }
+  template <typename UplinkAwsGroundStationAgentEndpointT = UplinkAwsGroundStationAgentEndpointDetails>
+  void SetUplinkAwsGroundStationAgentEndpoint(UplinkAwsGroundStationAgentEndpointT&& value) {
+    m_uplinkAwsGroundStationAgentEndpointHasBeenSet = true;
+    m_uplinkAwsGroundStationAgentEndpoint = std::forward<UplinkAwsGroundStationAgentEndpointT>(value);
+  }
+  template <typename UplinkAwsGroundStationAgentEndpointT = UplinkAwsGroundStationAgentEndpointDetails>
+  EndpointDetails& WithUplinkAwsGroundStationAgentEndpoint(UplinkAwsGroundStationAgentEndpointT&& value) {
+    SetUplinkAwsGroundStationAgentEndpoint(std::forward<UplinkAwsGroundStationAgentEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Definition for a downlink agent endpoint</p>
+   */
+  inline const DownlinkAwsGroundStationAgentEndpointDetails& GetDownlinkAwsGroundStationAgentEndpoint() const {
+    return m_downlinkAwsGroundStationAgentEndpoint;
+  }
+  inline bool DownlinkAwsGroundStationAgentEndpointHasBeenSet() const { return m_downlinkAwsGroundStationAgentEndpointHasBeenSet; }
+  template <typename DownlinkAwsGroundStationAgentEndpointT = DownlinkAwsGroundStationAgentEndpointDetails>
+  void SetDownlinkAwsGroundStationAgentEndpoint(DownlinkAwsGroundStationAgentEndpointT&& value) {
+    m_downlinkAwsGroundStationAgentEndpointHasBeenSet = true;
+    m_downlinkAwsGroundStationAgentEndpoint = std::forward<DownlinkAwsGroundStationAgentEndpointT>(value);
+  }
+  template <typename DownlinkAwsGroundStationAgentEndpointT = DownlinkAwsGroundStationAgentEndpointDetails>
+  EndpointDetails& WithDownlinkAwsGroundStationAgentEndpoint(DownlinkAwsGroundStationAgentEndpointT&& value) {
+    SetDownlinkAwsGroundStationAgentEndpoint(std::forward<DownlinkAwsGroundStationAgentEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A dataflow endpoint health status. This field is ignored when calling
    * <code>CreateDataflowEndpointGroup</code>.</p>
    */
@@ -140,6 +182,12 @@ class EndpointDetails {
 
   AwsGroundStationAgentEndpoint m_awsGroundStationAgentEndpoint;
   bool m_awsGroundStationAgentEndpointHasBeenSet = false;
+
+  UplinkAwsGroundStationAgentEndpointDetails m_uplinkAwsGroundStationAgentEndpoint;
+  bool m_uplinkAwsGroundStationAgentEndpointHasBeenSet = false;
+
+  DownlinkAwsGroundStationAgentEndpointDetails m_downlinkAwsGroundStationAgentEndpoint;
+  bool m_downlinkAwsGroundStationAgentEndpointHasBeenSet = false;
 
   CapabilityHealth m_healthStatus{CapabilityHealth::NOT_SET};
   bool m_healthStatusHasBeenSet = false;

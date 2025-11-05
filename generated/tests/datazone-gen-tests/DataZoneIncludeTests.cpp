@@ -573,6 +573,9 @@
 #include <aws/datazone/model/RemovePolicyGrantResult.h>
 #include <aws/datazone/model/ResolutionStrategy.h>
 #include <aws/datazone/model/Resource.h>
+#include <aws/datazone/model/ResourceTag.h>
+#include <aws/datazone/model/ResourceTagParameter.h>
+#include <aws/datazone/model/ResourceTagSource.h>
 #include <aws/datazone/model/RevokeSubscriptionRequest.h>
 #include <aws/datazone/model/RevokeSubscriptionResult.h>
 #include <aws/datazone/model/RowFilter.h>

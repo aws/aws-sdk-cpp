@@ -56,6 +56,11 @@ VpcOriginSummary& VpcOriginSummary::operator=(const XmlNode& xmlNode) {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
+    XmlNode accountIdNode = resultNode.FirstChild("AccountId");
+    if (!accountIdNode.IsNull()) {
+      m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
+      m_accountIdHasBeenSet = true;
+    }
     XmlNode originEndpointArnNode = resultNode.FirstChild("OriginEndpointArn");
     if (!originEndpointArnNode.IsNull()) {
       m_originEndpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(originEndpointArnNode.GetText());
@@ -96,6 +101,11 @@ void VpcOriginSummary::AddToNode(XmlNode& parentNode) const {
   if (m_arnHasBeenSet) {
     XmlNode arnNode = parentNode.CreateChildElement("Arn");
     arnNode.SetText(m_arn);
+  }
+
+  if (m_accountIdHasBeenSet) {
+    XmlNode accountIdNode = parentNode.CreateChildElement("AccountId");
+    accountIdNode.SetText(m_accountId);
   }
 
   if (m_originEndpointArnHasBeenSet) {

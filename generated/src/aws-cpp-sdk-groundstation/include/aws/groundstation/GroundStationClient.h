@@ -167,6 +167,41 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a <code>DataflowEndpointGroupV2</code> containing the specified list
+   * of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in
+   * each endpoint is used in your mission profile
+   * <code>DataflowEndpointConfig</code> to specify which endpoints to use during a
+   * contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code>
+   * objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in
+   * the same group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDataflowEndpointGroupV2Outcome CreateDataflowEndpointGroupV2(
+      const Model::CreateDataflowEndpointGroupV2Request& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataflowEndpointGroupV2 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateDataflowEndpointGroupV2RequestT = Model::CreateDataflowEndpointGroupV2Request>
+  Model::CreateDataflowEndpointGroupV2OutcomeCallable CreateDataflowEndpointGroupV2Callable(
+      const CreateDataflowEndpointGroupV2RequestT& request) const {
+    return SubmitCallable(&GroundStationClient::CreateDataflowEndpointGroupV2, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataflowEndpointGroupV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDataflowEndpointGroupV2RequestT = Model::CreateDataflowEndpointGroupV2Request>
+  void CreateDataflowEndpointGroupV2Async(const CreateDataflowEndpointGroupV2RequestT& request,
+                                          const CreateDataflowEndpointGroupV2ResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::CreateDataflowEndpointGroupV2, request, handler, context);
+  }
+
+  /**
    * <p>Create an ephemeris with your specified <a>EphemerisData</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">AWS
@@ -403,6 +438,35 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   void GetAgentConfigurationAsync(const GetAgentConfigurationRequestT& request, const GetAgentConfigurationResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GroundStationClient::GetAgentConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p> <p> For use by AWS Ground Station Agent and shouldn't be called
+   * directly.</p>  <p>Gets a presigned URL for uploading agent task response
+   * logs.</p></p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentTaskResponseUrlOutcome GetAgentTaskResponseUrl(const Model::GetAgentTaskResponseUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentTaskResponseUrl that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgentTaskResponseUrlRequestT = Model::GetAgentTaskResponseUrlRequest>
+  Model::GetAgentTaskResponseUrlOutcomeCallable GetAgentTaskResponseUrlCallable(const GetAgentTaskResponseUrlRequestT& request) const {
+    return SubmitCallable(&GroundStationClient::GetAgentTaskResponseUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentTaskResponseUrl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgentTaskResponseUrlRequestT = Model::GetAgentTaskResponseUrlRequest>
+  void GetAgentTaskResponseUrlAsync(const GetAgentTaskResponseUrlRequestT& request,
+                                    const GetAgentTaskResponseUrlResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GroundStationClient::GetAgentTaskResponseUrl, request, handler, context);
   }
 
   /**

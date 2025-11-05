@@ -11,8 +11,10 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
+#include <aws/sagemaker/model/DeploymentConfiguration.h>
 #include <aws/sagemaker/model/InstanceGroupStatus.h>
 #include <aws/sagemaker/model/ScheduledUpdateConfig.h>
+#include <aws/sagemaker/model/SoftwareUpdateStatus.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 
 #include <utility>
@@ -357,6 +359,55 @@ class ClusterInstanceGroupDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of nodes running a specific image ID since the last software
+   * update request.</p>
+   */
+  inline int GetTargetStateCount() const { return m_targetStateCount; }
+  inline bool TargetStateCountHasBeenSet() const { return m_targetStateCountHasBeenSet; }
+  inline void SetTargetStateCount(int value) {
+    m_targetStateCountHasBeenSet = true;
+    m_targetStateCount = value;
+  }
+  inline ClusterInstanceGroupDetails& WithTargetStateCount(int value) {
+    SetTargetStateCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Status of the last software udpate request.</p>
+   */
+  inline SoftwareUpdateStatus GetSoftwareUpdateStatus() const { return m_softwareUpdateStatus; }
+  inline bool SoftwareUpdateStatusHasBeenSet() const { return m_softwareUpdateStatusHasBeenSet; }
+  inline void SetSoftwareUpdateStatus(SoftwareUpdateStatus value) {
+    m_softwareUpdateStatusHasBeenSet = true;
+    m_softwareUpdateStatus = value;
+  }
+  inline ClusterInstanceGroupDetails& WithSoftwareUpdateStatus(SoftwareUpdateStatus value) {
+    SetSoftwareUpdateStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const DeploymentConfiguration& GetActiveSoftwareUpdateConfig() const { return m_activeSoftwareUpdateConfig; }
+  inline bool ActiveSoftwareUpdateConfigHasBeenSet() const { return m_activeSoftwareUpdateConfigHasBeenSet; }
+  template <typename ActiveSoftwareUpdateConfigT = DeploymentConfiguration>
+  void SetActiveSoftwareUpdateConfig(ActiveSoftwareUpdateConfigT&& value) {
+    m_activeSoftwareUpdateConfigHasBeenSet = true;
+    m_activeSoftwareUpdateConfig = std::forward<ActiveSoftwareUpdateConfigT>(value);
+  }
+  template <typename ActiveSoftwareUpdateConfigT = DeploymentConfiguration>
+  ClusterInstanceGroupDetails& WithActiveSoftwareUpdateConfig(ActiveSoftwareUpdateConfigT&& value) {
+    SetActiveSoftwareUpdateConfig(std::forward<ActiveSoftwareUpdateConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_currentCount{0};
   bool m_currentCountHasBeenSet = false;
@@ -405,6 +456,15 @@ class ClusterInstanceGroupDetails {
 
   Aws::String m_desiredImageId;
   bool m_desiredImageIdHasBeenSet = false;
+
+  int m_targetStateCount{0};
+  bool m_targetStateCountHasBeenSet = false;
+
+  SoftwareUpdateStatus m_softwareUpdateStatus{SoftwareUpdateStatus::NOT_SET};
+  bool m_softwareUpdateStatusHasBeenSet = false;
+
+  DeploymentConfiguration m_activeSoftwareUpdateConfig;
+  bool m_activeSoftwareUpdateConfigHasBeenSet = false;
 };
 
 }  // namespace Model
