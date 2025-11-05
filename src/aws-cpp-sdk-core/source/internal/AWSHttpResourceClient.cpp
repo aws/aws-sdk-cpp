@@ -132,10 +132,9 @@ namespace Aws
         AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const std::shared_ptr<HttpRequest> &httpRequest) const
         {
             AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << httpRequest->GetURIString());
-            Aws::Http::URI uri(httpRequest->GetURIString());
-            if (!Aws::Utils::IsValidHost(uri.GetHost())) {
-                AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Invalid endpoint host constructed: "<< uri.GetHost());
-                return {{}, {}, HttpResponseCode::REQUEST_NOT_MADE};
+            if (!Aws::Utils::IsValidHost(httpRequest->GetUri().GetHost())) {
+              AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Invalid endpoint host constructed: " << httpRequest->GetURIString());
+              return {{}, {}, HttpResponseCode::REQUEST_NOT_MADE};
             }
 
             if (!m_httpClient)
