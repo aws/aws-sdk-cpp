@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/IpAddressType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,22 @@ class AnycastIpList {
 
   ///@{
   /**
+   * <p>The IP address type for the Anycast static IP list.</p>
+   */
+  inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(IpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline AnycastIpList& WithIpAddressType(IpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAnycastIps() const { return m_anycastIps; }
@@ -178,6 +195,9 @@ class AnycastIpList {
 
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
+
+  IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_anycastIps;
   bool m_anycastIpsHasBeenSet = false;

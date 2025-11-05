@@ -23,6 +23,7 @@
 #include <aws/groundstation/model/CancelContactRequest.h>
 #include <aws/groundstation/model/CreateConfigRequest.h>
 #include <aws/groundstation/model/CreateDataflowEndpointGroupRequest.h>
+#include <aws/groundstation/model/CreateDataflowEndpointGroupV2Request.h>
 #include <aws/groundstation/model/CreateEphemerisRequest.h>
 #include <aws/groundstation/model/CreateMissionProfileRequest.h>
 #include <aws/groundstation/model/DeleteConfigRequest.h>
@@ -32,6 +33,7 @@
 #include <aws/groundstation/model/DescribeContactRequest.h>
 #include <aws/groundstation/model/DescribeEphemerisRequest.h>
 #include <aws/groundstation/model/GetAgentConfigurationRequest.h>
+#include <aws/groundstation/model/GetAgentTaskResponseUrlRequest.h>
 #include <aws/groundstation/model/GetConfigRequest.h>
 #include <aws/groundstation/model/GetDataflowEndpointGroupRequest.h>
 #include <aws/groundstation/model/GetMinuteUsageRequest.h>
@@ -260,6 +262,37 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/dataflowEndpointGroup");
         return CreateDataflowEndpointGroupOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateDataflowEndpointGroupV2Outcome GroundStationClient::CreateDataflowEndpointGroupV2(
+    const CreateDataflowEndpointGroupV2Request& request) const {
+  AWS_OPERATION_GUARD(CreateDataflowEndpointGroupV2);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataflowEndpointGroupV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDataflowEndpointGroupV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDataflowEndpointGroupV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataflowEndpointGroupV2",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDataflowEndpointGroupV2Outcome>(
+      [&]() -> CreateDataflowEndpointGroupV2Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataflowEndpointGroupV2, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/dataflowEndpointGroupV2");
+        return CreateDataflowEndpointGroupV2Outcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -581,6 +614,48 @@ GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const Ge
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
         return GetAgentConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetAgentTaskResponseUrlOutcome GroundStationClient::GetAgentTaskResponseUrl(const GetAgentTaskResponseUrlRequest& request) const {
+  AWS_OPERATION_GUARD(GetAgentTaskResponseUrl);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentTaskResponseUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentTaskResponseUrl", "Required field: AgentId, is not set");
+    return GetAgentTaskResponseUrlOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.TaskIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentTaskResponseUrl", "Required field: TaskId, is not set");
+    return GetAgentTaskResponseUrlOutcome(Aws::Client::AWSError<GroundStationErrors>(
+        GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentTaskResponseUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetAgentTaskResponseUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAgentTaskResponseUrl",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetAgentTaskResponseUrlOutcome>(
+      [&]() -> GetAgentTaskResponseUrlOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAgentTaskResponseUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/agentResponseUrl/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
+        return GetAgentTaskResponseUrlOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

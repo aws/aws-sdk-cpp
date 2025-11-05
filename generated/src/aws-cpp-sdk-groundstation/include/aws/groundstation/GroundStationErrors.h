@@ -47,7 +47,8 @@ enum class GroundStationErrors {
   DEPENDENCY = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   RESOURCE_IN_USE,
-  RESOURCE_LIMIT_EXCEEDED
+  RESOURCE_LIMIT_EXCEEDED,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_GROUNDSTATION_API GroundStationError : public Aws::Client::AWSError<GroundStationErrors> {
