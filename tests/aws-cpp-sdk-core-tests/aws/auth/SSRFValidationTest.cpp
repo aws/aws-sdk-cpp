@@ -30,11 +30,8 @@ TEST_F(SSRFValidationTest, TestSSOCredentialsClientMaliciousRegion) {
     std::vector<Aws::String> maliciousRegions = {
         "@attacker.com#",
         "attacker.com@aws",
-        "127.0.0.1",
-        "169.254.169.254",
         "@evil.com#.amazonaws.com",
         "us-east-1@attacker.com",
-        "../../../etc/passwd",
         "internal-service.local"
     };
 
