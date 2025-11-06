@@ -199,7 +199,7 @@ void Route53ResolverClient::init(const Route53Resolver::Route53ResolverClientCon
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "route53resolver");
 }
 
 void Route53ResolverClient::OverrideEndpoint(const Aws::String& endpoint) {

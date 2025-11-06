@@ -151,7 +151,7 @@ void ARCRegionswitchClient::init(const ARCRegionswitch::ARCRegionswitchClientCon
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "arc-region-switch");
 }
 
 void ARCRegionswitchClient::OverrideEndpoint(const Aws::String& endpoint) {

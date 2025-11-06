@@ -158,7 +158,7 @@ void Mediapackagev2Client::init(const mediapackagev2::Mediapackagev2ClientConfig
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "mediapackagev2");
 }
 
 void Mediapackagev2Client::OverrideEndpoint(const Aws::String& endpoint) {

@@ -219,7 +219,7 @@ void GreengrassClient::init(const Greengrass::GreengrassClientConfiguration& con
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "greengrass");
 }
 
 void GreengrassClient::OverrideEndpoint(const Aws::String& endpoint) {

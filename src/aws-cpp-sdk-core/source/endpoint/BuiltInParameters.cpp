@@ -5,6 +5,7 @@
 
 #include <aws/core/endpoint/BuiltInParameters.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 static const char ENDPOINT_BUILTIN_LOG_TAG[] = "EndpointBuiltInParameters";
 
@@ -33,7 +34,7 @@ namespace Endpoint
         return std::equal(suffix.rbegin(), suffix.rend(), str.rbegin());
     }
 
-    void BuiltInParameters::SetFromClientConfiguration(const Client::ClientConfiguration& config)
+    void BuiltInParameters::SetFromClientConfigurationImpl(const Client::ClientConfiguration& config, const Aws::String& serviceName)
     {
         bool forceFIPS = false;
         static const char* AWS_REGION = "Region";
@@ -66,16 +67,36 @@ namespace Endpoint
             if (config.region.empty()) {
                 AWS_LOGSTREAM_WARN(ENDPOINT_BUILTIN_LOG_TAG,
                                    "Endpoint is overridden but region is not set. "
-                                   "Region is required my many endpoint rule sets to resolve the endpoint. "
+                                   "Region is required by many endpoint rule sets to resolve the endpoint. "
                                    "And it is required to compute an aws signature.");
                 SetStringParameter(AWS_REGION, "region-not-set"); // dummy endpoint resolution parameter
+            }
+        } else if (!serviceName.empty()) {
+            Aws::String resolvedEndpoint = Aws::Config::EndpointResolver::EndpointSource(serviceName, config.profileName);
+            if (!resolvedEndpoint.empty()) {
+                OverrideEndpoint(resolvedEndpoint, config.scheme);
             }
         }
     }
 
+    void BuiltInParameters::SetFromClientConfiguration(const Client::ClientConfiguration& config)
+    {
+        SetFromClientConfiguration(config, "");
+    }
+
     void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration& config)
     {
-        return SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config));
+        SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config), "");
+    }
+
+    void BuiltInParameters::SetFromClientConfiguration(const Client::ClientConfiguration& config, const Aws::String& serviceName)
+    {
+        SetFromClientConfigurationImpl(config, serviceName);
+    }
+
+    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration& config, const Aws::String& serviceName)
+    {
+        SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config), serviceName);
     }
 
     const BuiltInParameters::EndpointParameter& BuiltInParameters::GetParameter(const Aws::String& name) const

@@ -135,7 +135,7 @@ void DynamoDBStreamsClient::init(const DynamoDBStreams::DynamoDBStreamsClientCon
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "dynamodb");
 }
 
 void DynamoDBStreamsClient::OverrideEndpoint(const Aws::String& endpoint) {

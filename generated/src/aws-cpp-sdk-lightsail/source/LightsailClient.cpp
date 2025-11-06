@@ -288,7 +288,7 @@ void LightsailClient::init(const Lightsail::LightsailClientConfiguration& config
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "lightsail");
 }
 
 void LightsailClient::OverrideEndpoint(const Aws::String& endpoint) {

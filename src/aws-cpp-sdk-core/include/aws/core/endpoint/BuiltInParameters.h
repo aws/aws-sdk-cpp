@@ -26,6 +26,8 @@ namespace Aws
 
             virtual void SetFromClientConfiguration(const Client::ClientConfiguration& config);
             virtual void SetFromClientConfiguration(const Client::GenericClientConfiguration& config);
+            virtual void SetFromClientConfiguration(const Client::ClientConfiguration& config, const Aws::String& serviceName);
+            virtual void SetFromClientConfiguration(const Client::GenericClientConfiguration& config, const Aws::String& serviceName);
 
             virtual void OverrideEndpoint(const Aws::String& endpoint, const Aws::Http::Scheme& scheme = Aws::Http::Scheme::HTTPS);
 
@@ -35,6 +37,9 @@ namespace Aws
             void SetBooleanParameter(Aws::String name, bool value);
             void SetStringArrayParameter(Aws::String name, const Aws::Vector<Aws::String>&& value);
             const Aws::Vector<EndpointParameter>& GetAllParameters() const;
+
+        private:
+            void SetFromClientConfigurationImpl(const Client::ClientConfiguration& config, const Aws::String& serviceName);
 
         protected:
             Aws::Vector<EndpointParameter> m_params;

@@ -161,7 +161,7 @@ void ServiceDiscoveryClient::init(const ServiceDiscovery::ServiceDiscoveryClient
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "servicediscovery");
 }
 
 void ServiceDiscoveryClient::OverrideEndpoint(const Aws::String& endpoint) {

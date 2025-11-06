@@ -224,7 +224,7 @@ void StorageGatewayClient::init(const StorageGateway::StorageGatewayClientConfig
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "storagegateway");
 }
 
 void StorageGatewayClient::OverrideEndpoint(const Aws::String& endpoint) {

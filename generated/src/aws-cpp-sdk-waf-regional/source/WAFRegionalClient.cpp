@@ -208,7 +208,7 @@ void WAFRegionalClient::init(const WAFRegional::WAFRegionalClientConfiguration& 
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "waf-regional");
 }
 
 void WAFRegionalClient::OverrideEndpoint(const Aws::String& endpoint) {

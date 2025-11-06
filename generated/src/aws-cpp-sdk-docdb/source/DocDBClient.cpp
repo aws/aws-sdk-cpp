@@ -182,7 +182,7 @@ void DocDBClient::init(const DocDB::DocDBClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "rds");
 }
 
 void DocDBClient::OverrideEndpoint(const Aws::String& endpoint) {

@@ -67,6 +67,11 @@ namespace Aws
                 m_builtInParameters.SetFromClientConfiguration(config);
             }
 
+            void InitBuiltInParameters(const ClientConfigurationT& config, const Aws::String& serviceName) override
+            {
+                m_builtInParameters.SetFromClientConfiguration(config, serviceName);
+            }
+
             /**
              * Default implementation of the ResolveEndpoint
              */

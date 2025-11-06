@@ -132,7 +132,7 @@ void S3OutpostsClient::init(const S3Outposts::S3OutpostsClientConfiguration& con
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "s3-outposts");
 }
 
 void S3OutpostsClient::OverrideEndpoint(const Aws::String& endpoint) {

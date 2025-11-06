@@ -185,7 +185,7 @@ void IoTFleetWiseClient::init(const IoTFleetWise::IoTFleetWiseClientConfiguratio
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "iotfleetwise");
 }
 
 void IoTFleetWiseClient::OverrideEndpoint(const Aws::String& endpoint) {

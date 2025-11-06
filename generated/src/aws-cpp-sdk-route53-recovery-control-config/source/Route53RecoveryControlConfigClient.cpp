@@ -161,7 +161,7 @@ void Route53RecoveryControlConfigClient::init(const Route53RecoveryControlConfig
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "route53-recovery-control-config");
 }
 
 void Route53RecoveryControlConfigClient::OverrideEndpoint(const Aws::String& endpoint) {

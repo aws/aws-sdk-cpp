@@ -33,6 +33,7 @@ void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientC
     SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
   }
 }
+
 }  // namespace Endpoint
 }  // namespace DynamoDB
 }  // namespace Aws

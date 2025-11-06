@@ -50,6 +50,15 @@ namespace Aws
             virtual void InitBuiltInParameters(const ClientConfigurationT& config) = 0;
 
             /**
+             * Initialize client context parameters from a ClientConfiguration with service name
+             */
+            virtual void InitBuiltInParameters(const ClientConfigurationT& config, const Aws::String& serviceName)
+            {
+                AWS_UNREFERENCED_PARAM(serviceName);
+                InitBuiltInParameters(config);
+            }
+
+            /**
              * Function to override endpoint, i.e. to set built-in parameter "AWS::Endpoint"
              */
             virtual void OverrideEndpoint(const Aws::String& endpoint) = 0;

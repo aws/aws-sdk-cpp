@@ -144,7 +144,7 @@ void IvschatClient::init(const ivschat::IvschatClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "ivschat");
 }
 
 void IvschatClient::OverrideEndpoint(const Aws::String& endpoint) {

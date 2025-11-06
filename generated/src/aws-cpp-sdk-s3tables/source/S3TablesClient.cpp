@@ -157,7 +157,7 @@ void S3TablesClient::init(const S3Tables::S3TablesClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "s3tables");
 }
 
 void S3TablesClient::OverrideEndpoint(const Aws::String& endpoint) {

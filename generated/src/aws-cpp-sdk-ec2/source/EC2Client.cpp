@@ -225,7 +225,7 @@ void EC2Client::init(const EC2::EC2ClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "ec2");
 }
 
 void EC2Client::OverrideEndpoint(const Aws::String& endpoint) {
