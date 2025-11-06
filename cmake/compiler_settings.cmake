@@ -36,7 +36,6 @@ endfunction()
 
 
 macro(set_gcc_flags)
-    list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions" "-std=c++${CPP_STANDARD}")
     if(COMPILER_IS_MINGW)
         list(APPEND AWS_COMPILER_FLAGS -D__USE_MINGW_ANSI_STDIO=1)
     endif()
