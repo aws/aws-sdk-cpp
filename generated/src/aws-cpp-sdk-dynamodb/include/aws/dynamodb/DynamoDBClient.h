@@ -13,7 +13,6 @@
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
 
 namespace Aws {
 namespace DynamoDB {
