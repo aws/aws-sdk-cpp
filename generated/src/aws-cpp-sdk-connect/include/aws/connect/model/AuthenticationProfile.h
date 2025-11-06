@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>This API is in preview release for Amazon Connect and is subject to change.
- * To request access to this API, contact Amazon Web ServicesSupport.</p>
+ * To request access to this API, contact Amazon Web Services Support.</p>
  * <p>Information about an authentication profile. An authentication profile is a
  * resource that stores the authentication settings for users in your contact
  * center. You use authentication profiles to set up IP address range restrictions

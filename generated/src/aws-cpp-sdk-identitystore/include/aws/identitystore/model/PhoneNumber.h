@@ -34,7 +34,7 @@ class PhoneNumber {
   ///@{
   /**
    * <p>A string containing a phone number. For example, "8675309" or "+1 (800)
-   * 123-4567".</p>
+   * 123-4567". </p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

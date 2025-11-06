@@ -227,6 +227,7 @@ static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAss
 static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
 static const int DOES_NOT_EXIST_HASH = HashingUtils::HashString("DoesNotExistException");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int NO_LONGER_SUPPORTED_HASH = HashingUtils::HashString("NoLongerSupportedException");
 static const int OPS_METADATA_NOT_FOUND_HASH = HashingUtils::HashString("OpsMetadataNotFoundException");
 static const int OPS_ITEM_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemNotFoundException");
 static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
@@ -581,6 +582,9 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), RetryableType::NOT_RETRYABLE);
     return true;
+  } else if (hashCode == NO_LONGER_SUPPORTED_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::NO_LONGER_SUPPORTED), RetryableType::NOT_RETRYABLE);
+    return true;
   } else if (hashCode == OPS_METADATA_NOT_FOUND_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
@@ -629,15 +633,15 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == RESOURCE_DATA_SYNC_CONFLICT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_DATA_SYNC_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH) {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-    return true;
   }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
-  if (hashCode == INVALID_FILTER_HASH) {
+  if (hashCode == OPS_METADATA_KEY_LIMIT_EXCEEDED_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_METADATA_KEY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == INVALID_FILTER_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH) {

@@ -75,8 +75,7 @@ class AnalyzerSummary {
 
   ///@{
   /**
-   * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-   * analyzer.</p>
+   * <p>The type represents the zone of trust or scope for the analyzer.</p>
    */
   inline Type GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -146,7 +145,12 @@ class AnalyzerSummary {
 
   ///@{
   /**
-   * <p>The tags added to the analyzer.</p>
+   * <p>An array of key-value pairs applied to the analyzer. The key-value pairs
+   * consist of the set of Unicode letters, digits, whitespace, <code>_</code>,
+   * <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and
+   * <code>-</code>.</p> <p>The tag key is a value that is 1 to 128 characters in
+   * length and cannot be prefixed with <code>aws:</code>.</p> <p>The tag value is a
+   * value that is 0 to 256 characters in length.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -215,7 +219,12 @@ class AnalyzerSummary {
   ///@{
   /**
    * <p>Specifies if the analyzer is an external access, unused access, or internal
-   * access analyzer.</p>
+   * access analyzer. The <a
+   * href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a>
+   * action includes this property in its response if a configuration is specified,
+   * while the <a
+   * href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a>
+   * action omits it.</p>
    */
   inline const AnalyzerConfiguration& GetConfiguration() const { return m_configuration; }
   inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

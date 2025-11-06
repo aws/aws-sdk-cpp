@@ -42,7 +42,7 @@ class SnapshotAnonymousUser {
    * are not the tags that are used for Amazon Web Services resource tagging. For
    * more information on row level security in Amazon Quick Sight, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-   * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+   * Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Suite User
    * Guide</i>.</p>
    */
   inline const Aws::Vector<SessionTag>& GetRowLevelPermissionTags() const { return m_rowLevelPermissionTags; }

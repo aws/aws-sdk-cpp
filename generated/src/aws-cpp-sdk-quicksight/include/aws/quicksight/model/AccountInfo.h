@@ -21,7 +21,7 @@ namespace QuickSight {
 namespace Model {
 
 /**
- * <p>A structure that contains the following account information elements:</p>
+ * <p>A structure that contains the following account information elements: </p>
  * <ul> <li> <p>Your Quick Sight account name.</p> </li> <li> <p>The edition of
  * Quick Sight that your account is using.</p> </li> <li> <p>The notification email
  * address that is associated with the Quick Sight account. </p> </li> <li> <p>The
@@ -42,7 +42,7 @@ class AccountInfo {
   /**
    * <p>The account name that you provided for the Amazon Quick Sight subscription in
    * your Amazon Web Services account. You create this name when you sign up for
-   * QuickSight. It's unique over all of Amazon Web Services, and it appears only
+   * Quick Suite. It's unique over all of Amazon Web Services, and it appears only
    * when users sign in.</p>
    */
   inline const Aws::String& GetAccountName() const { return m_accountName; }

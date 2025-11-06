@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DataSetDateFilterCondition.h>
+#include <aws/quicksight/model/DataSetNumericFilterCondition.h>
+#include <aws/quicksight/model/DataSetStringFilterCondition.h>
 
 #include <utility>
 
@@ -50,9 +53,72 @@ class FilterOperation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A string-based filter condition within a filter operation.</p>
+   */
+  inline const DataSetStringFilterCondition& GetStringFilterCondition() const { return m_stringFilterCondition; }
+  inline bool StringFilterConditionHasBeenSet() const { return m_stringFilterConditionHasBeenSet; }
+  template <typename StringFilterConditionT = DataSetStringFilterCondition>
+  void SetStringFilterCondition(StringFilterConditionT&& value) {
+    m_stringFilterConditionHasBeenSet = true;
+    m_stringFilterCondition = std::forward<StringFilterConditionT>(value);
+  }
+  template <typename StringFilterConditionT = DataSetStringFilterCondition>
+  FilterOperation& WithStringFilterCondition(StringFilterConditionT&& value) {
+    SetStringFilterCondition(std::forward<StringFilterConditionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A numeric-based filter condition within a filter operation.</p>
+   */
+  inline const DataSetNumericFilterCondition& GetNumericFilterCondition() const { return m_numericFilterCondition; }
+  inline bool NumericFilterConditionHasBeenSet() const { return m_numericFilterConditionHasBeenSet; }
+  template <typename NumericFilterConditionT = DataSetNumericFilterCondition>
+  void SetNumericFilterCondition(NumericFilterConditionT&& value) {
+    m_numericFilterConditionHasBeenSet = true;
+    m_numericFilterCondition = std::forward<NumericFilterConditionT>(value);
+  }
+  template <typename NumericFilterConditionT = DataSetNumericFilterCondition>
+  FilterOperation& WithNumericFilterCondition(NumericFilterConditionT&& value) {
+    SetNumericFilterCondition(std::forward<NumericFilterConditionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A date-based filter condition within a filter operation.</p>
+   */
+  inline const DataSetDateFilterCondition& GetDateFilterCondition() const { return m_dateFilterCondition; }
+  inline bool DateFilterConditionHasBeenSet() const { return m_dateFilterConditionHasBeenSet; }
+  template <typename DateFilterConditionT = DataSetDateFilterCondition>
+  void SetDateFilterCondition(DateFilterConditionT&& value) {
+    m_dateFilterConditionHasBeenSet = true;
+    m_dateFilterCondition = std::forward<DateFilterConditionT>(value);
+  }
+  template <typename DateFilterConditionT = DataSetDateFilterCondition>
+  FilterOperation& WithDateFilterCondition(DateFilterConditionT&& value) {
+    SetDateFilterCondition(std::forward<DateFilterConditionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_conditionExpression;
   bool m_conditionExpressionHasBeenSet = false;
+
+  DataSetStringFilterCondition m_stringFilterCondition;
+  bool m_stringFilterConditionHasBeenSet = false;
+
+  DataSetNumericFilterCondition m_numericFilterCondition;
+  bool m_numericFilterConditionHasBeenSet = false;
+
+  DataSetDateFilterCondition m_dateFilterCondition;
+  bool m_dateFilterConditionHasBeenSet = false;
 };
 
 }  // namespace Model

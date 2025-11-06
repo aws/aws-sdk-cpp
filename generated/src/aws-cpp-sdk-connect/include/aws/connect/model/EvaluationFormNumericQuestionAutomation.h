@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormQuestionAutomationAnswerSource.h>
 #include <aws/connect/model/NumericQuestionPropertyValueAutomation.h>
 
 #include <utility>
@@ -49,9 +50,30 @@ class EvaluationFormNumericQuestionAutomation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A source of automation answer for numeric question.</p>
+   */
+  inline const EvaluationFormQuestionAutomationAnswerSource& GetAnswerSource() const { return m_answerSource; }
+  inline bool AnswerSourceHasBeenSet() const { return m_answerSourceHasBeenSet; }
+  template <typename AnswerSourceT = EvaluationFormQuestionAutomationAnswerSource>
+  void SetAnswerSource(AnswerSourceT&& value) {
+    m_answerSourceHasBeenSet = true;
+    m_answerSource = std::forward<AnswerSourceT>(value);
+  }
+  template <typename AnswerSourceT = EvaluationFormQuestionAutomationAnswerSource>
+  EvaluationFormNumericQuestionAutomation& WithAnswerSource(AnswerSourceT&& value) {
+    SetAnswerSource(std::forward<AnswerSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NumericQuestionPropertyValueAutomation m_propertyValue;
   bool m_propertyValueHasBeenSet = false;
+
+  EvaluationFormQuestionAutomationAnswerSource m_answerSource;
+  bool m_answerSourceHasBeenSet = false;
 };
 
 }  // namespace Model

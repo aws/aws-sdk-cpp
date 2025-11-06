@@ -125,6 +125,26 @@ class CreateLogicallyAirGappedBackupVaultRequest : public BackupRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the customer-managed KMS key to use for encrypting the logically
+   * air-gapped backup vault. If not specified, the vault will be encrypted with an
+   * Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  CreateLogicallyAirGappedBackupVaultRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_backupVaultName;
   bool m_backupVaultNameHasBeenSet = false;
@@ -140,6 +160,9 @@ class CreateLogicallyAirGappedBackupVaultRequest : public BackupRequest {
 
   long long m_maxRetentionDays{0};
   bool m_maxRetentionDaysHasBeenSet = false;
+
+  Aws::String m_encryptionKeyArn;
+  bool m_encryptionKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

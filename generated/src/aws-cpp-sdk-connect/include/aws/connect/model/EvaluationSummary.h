@@ -5,8 +5,11 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AutoEvaluationStatus.h>
+#include <aws/connect/model/EvaluationAcknowledgementSummary.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/connect/model/EvaluationStatus.h>
+#include <aws/connect/model/EvaluationType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -108,6 +111,24 @@ class EvaluationSummary {
 
   ///@{
   /**
+   * <p>The calibration session ID that this evaluation belongs to.</p>
+   */
+  inline const Aws::String& GetCalibrationSessionId() const { return m_calibrationSessionId; }
+  inline bool CalibrationSessionIdHasBeenSet() const { return m_calibrationSessionIdHasBeenSet; }
+  template <typename CalibrationSessionIdT = Aws::String>
+  void SetCalibrationSessionId(CalibrationSessionIdT&& value) {
+    m_calibrationSessionIdHasBeenSet = true;
+    m_calibrationSessionId = std::forward<CalibrationSessionIdT>(value);
+  }
+  template <typename CalibrationSessionIdT = Aws::String>
+  EvaluationSummary& WithCalibrationSessionId(CalibrationSessionIdT&& value) {
+    SetCalibrationSessionId(std::forward<CalibrationSessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the contact evaluation.</p>
    */
   inline EvaluationStatus GetStatus() const { return m_status; }
@@ -118,6 +139,38 @@ class EvaluationSummary {
   }
   inline EvaluationSummary& WithStatus(EvaluationStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether automated evaluation is enabled.</p>
+   */
+  inline bool GetAutoEvaluationEnabled() const { return m_autoEvaluationEnabled; }
+  inline bool AutoEvaluationEnabledHasBeenSet() const { return m_autoEvaluationEnabledHasBeenSet; }
+  inline void SetAutoEvaluationEnabled(bool value) {
+    m_autoEvaluationEnabledHasBeenSet = true;
+    m_autoEvaluationEnabled = value;
+  }
+  inline EvaluationSummary& WithAutoEvaluationEnabled(bool value) {
+    SetAutoEvaluationEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the contact auto evaluation. </p>
+   */
+  inline AutoEvaluationStatus GetAutoEvaluationStatus() const { return m_autoEvaluationStatus; }
+  inline bool AutoEvaluationStatusHasBeenSet() const { return m_autoEvaluationStatusHasBeenSet; }
+  inline void SetAutoEvaluationStatus(AutoEvaluationStatus value) {
+    m_autoEvaluationStatusHasBeenSet = true;
+    m_autoEvaluationStatus = value;
+  }
+  inline EvaluationSummary& WithAutoEvaluationStatus(AutoEvaluationStatus value) {
+    SetAutoEvaluationStatus(value);
     return *this;
   }
   ///@}
@@ -155,6 +208,40 @@ class EvaluationSummary {
   template <typename ScoreT = EvaluationScore>
   EvaluationSummary& WithScore(ScoreT&& value) {
     SetScore(std::forward<ScoreT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information related to evaluation acknowledgement.</p>
+   */
+  inline const EvaluationAcknowledgementSummary& GetAcknowledgement() const { return m_acknowledgement; }
+  inline bool AcknowledgementHasBeenSet() const { return m_acknowledgementHasBeenSet; }
+  template <typename AcknowledgementT = EvaluationAcknowledgementSummary>
+  void SetAcknowledgement(AcknowledgementT&& value) {
+    m_acknowledgementHasBeenSet = true;
+    m_acknowledgement = std::forward<AcknowledgementT>(value);
+  }
+  template <typename AcknowledgementT = EvaluationAcknowledgementSummary>
+  EvaluationSummary& WithAcknowledgement(AcknowledgementT&& value) {
+    SetAcknowledgement(std::forward<AcknowledgementT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Type of the evaluation. </p>
+   */
+  inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
+  inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
+  inline void SetEvaluationType(EvaluationType value) {
+    m_evaluationTypeHasBeenSet = true;
+    m_evaluationType = value;
+  }
+  inline EvaluationSummary& WithEvaluationType(EvaluationType value) {
+    SetEvaluationType(value);
     return *this;
   }
   ///@}
@@ -207,14 +294,29 @@ class EvaluationSummary {
   Aws::String m_evaluationFormId;
   bool m_evaluationFormIdHasBeenSet = false;
 
+  Aws::String m_calibrationSessionId;
+  bool m_calibrationSessionIdHasBeenSet = false;
+
   EvaluationStatus m_status{EvaluationStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  bool m_autoEvaluationEnabled{false};
+  bool m_autoEvaluationEnabledHasBeenSet = false;
+
+  AutoEvaluationStatus m_autoEvaluationStatus{AutoEvaluationStatus::NOT_SET};
+  bool m_autoEvaluationStatusHasBeenSet = false;
 
   Aws::String m_evaluatorArn;
   bool m_evaluatorArnHasBeenSet = false;
 
   EvaluationScore m_score;
   bool m_scoreHasBeenSet = false;
+
+  EvaluationAcknowledgementSummary m_acknowledgement;
+  bool m_acknowledgementHasBeenSet = false;
+
+  EvaluationType m_evaluationType{EvaluationType::NOT_SET};
+  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
   bool m_createdTimeHasBeenSet = false;

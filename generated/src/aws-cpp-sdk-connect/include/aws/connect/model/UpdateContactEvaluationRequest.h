@@ -8,6 +8,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationAnswerInput.h>
 #include <aws/connect/model/EvaluationNote.h>
+#include <aws/connect/model/EvaluatorUserUnion.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -116,6 +117,24 @@ class UpdateContactEvaluationRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the user who updated the contact evaluation.</p>
+   */
+  inline const EvaluatorUserUnion& GetUpdatedBy() const { return m_updatedBy; }
+  inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+  template <typename UpdatedByT = EvaluatorUserUnion>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = EvaluatorUserUnion>
+  UpdateContactEvaluationRequest& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -128,6 +147,9 @@ class UpdateContactEvaluationRequest : public ConnectRequest {
 
   Aws::Map<Aws::String, EvaluationNote> m_notes;
   bool m_notesHasBeenSet = false;
+
+  EvaluatorUserUnion m_updatedBy;
+  bool m_updatedByHasBeenSet = false;
 };
 
 }  // namespace Model

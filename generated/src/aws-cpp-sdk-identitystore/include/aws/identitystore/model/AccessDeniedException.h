@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/model/AccessDeniedExceptionReason.h>
 
 #include <utility>
 
@@ -67,12 +68,33 @@ class AccessDeniedException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the reason for an access denial when returned by KMS while
+   * accessing a Customer Managed KMS key. For non-KMS access-denied errors, this
+   * field is not included.</p>
+   */
+  inline AccessDeniedExceptionReason GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  inline void SetReason(AccessDeniedExceptionReason value) {
+    m_reasonHasBeenSet = true;
+    m_reason = value;
+  }
+  inline AccessDeniedException& WithReason(AccessDeniedExceptionReason value) {
+    SetReason(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
   bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
+
+  AccessDeniedExceptionReason m_reason{AccessDeniedExceptionReason::NOT_SET};
+  bool m_reasonHasBeenSet = false;
 };
 
 }  // namespace Model

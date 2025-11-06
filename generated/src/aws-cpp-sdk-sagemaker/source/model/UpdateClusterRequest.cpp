@@ -54,6 +54,11 @@ Aws::String UpdateClusterRequest::SerializePayload() const {
     payload.WithArray("InstanceGroupsToDelete", std::move(instanceGroupsToDeleteJsonList));
   }
 
+  if (m_nodeProvisioningModeHasBeenSet) {
+    payload.WithString("NodeProvisioningMode",
+                       ClusterNodeProvisioningModeMapper::GetNameForClusterNodeProvisioningMode(m_nodeProvisioningMode));
+  }
+
   if (m_clusterRoleHasBeenSet) {
     payload.WithString("ClusterRole", m_clusterRole);
   }

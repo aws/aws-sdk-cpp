@@ -20,13 +20,12 @@ namespace GameLift {
 namespace Model {
 
 /**
- * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
- * server groups.</b> </p> <p>Configuration settings for intelligent automatic
- * scaling that uses target tracking. These settings are used to add an Auto
- * Scaling policy when creating the corresponding Auto Scaling group. After the
- * Auto Scaling group is created, all updates to Auto Scaling policies, including
- * changing this policy and adding or removing other policies, is done directly on
- * the Auto Scaling group. </p><p><h3>See Also:</h3>   <a
+ * <p>Configuration settings for intelligent automatic scaling that uses target
+ * tracking. These settings are used to add an Auto Scaling policy when creating
+ * the corresponding Auto Scaling group. After the Auto Scaling group is created,
+ * all updates to Auto Scaling policies, including changing this policy and adding
+ * or removing other policies, is done directly on the Auto Scaling group.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroupAutoScalingPolicy">AWS
  * API Reference</a></p>
  */

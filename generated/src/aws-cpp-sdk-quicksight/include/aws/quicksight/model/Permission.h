@@ -76,10 +76,10 @@ class Permission {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon
-   * QuickSight user, group or namespace associated with the flow. Namespace
-   * principal can only be set as a viewer and will grant everyone in the same
-   * namespace viewer permissions.</p>
+   * <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick
+   * Suite user, group or namespace associated with the flow. Namespace principal can
+   * only be set as a viewer and will grant everyone in the same namespace viewer
+   * permissions.</p>
    */
   inline const Aws::String& GetPrincipal() const { return m_principal; }
   inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

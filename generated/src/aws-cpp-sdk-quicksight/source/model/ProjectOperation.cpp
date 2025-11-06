@@ -18,6 +18,14 @@ namespace Model {
 ProjectOperation::ProjectOperation(JsonView jsonValue) { *this = jsonValue; }
 
 ProjectOperation& ProjectOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Alias")) {
+    m_alias = jsonValue.GetString("Alias");
+    m_aliasHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Source")) {
+    m_source = jsonValue.GetObject("Source");
+    m_sourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ProjectedColumns")) {
     Aws::Utils::Array<JsonView> projectedColumnsJsonList = jsonValue.GetArray("ProjectedColumns");
     for (unsigned projectedColumnsIndex = 0; projectedColumnsIndex < projectedColumnsJsonList.GetLength(); ++projectedColumnsIndex) {
@@ -30,6 +38,14 @@ ProjectOperation& ProjectOperation::operator=(JsonView jsonValue) {
 
 JsonValue ProjectOperation::Jsonize() const {
   JsonValue payload;
+
+  if (m_aliasHasBeenSet) {
+    payload.WithString("Alias", m_alias);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
+  }
 
   if (m_projectedColumnsHasBeenSet) {
     Aws::Utils::Array<JsonValue> projectedColumnsJsonList(m_projectedColumns.size());

@@ -35,8 +35,20 @@ Aws::String CreateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("ScoringStrategy", m_scoringStrategy.Jsonize());
   }
 
+  if (m_autoEvaluationConfigurationHasBeenSet) {
+    payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();

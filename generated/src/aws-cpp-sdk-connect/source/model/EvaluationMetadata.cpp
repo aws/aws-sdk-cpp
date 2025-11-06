@@ -30,9 +30,21 @@ EvaluationMetadata& EvaluationMetadata::operator=(JsonView jsonValue) {
     m_contactAgentId = jsonValue.GetString("ContactAgentId");
     m_contactAgentIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CalibrationSessionId")) {
+    m_calibrationSessionId = jsonValue.GetString("CalibrationSessionId");
+    m_calibrationSessionIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetObject("Score");
     m_scoreHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AutoEvaluation")) {
+    m_autoEvaluation = jsonValue.GetObject("AutoEvaluation");
+    m_autoEvaluationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Acknowledgement")) {
+    m_acknowledgement = jsonValue.GetObject("Acknowledgement");
+    m_acknowledgementHasBeenSet = true;
   }
   return *this;
 }
@@ -52,8 +64,20 @@ JsonValue EvaluationMetadata::Jsonize() const {
     payload.WithString("ContactAgentId", m_contactAgentId);
   }
 
+  if (m_calibrationSessionIdHasBeenSet) {
+    payload.WithString("CalibrationSessionId", m_calibrationSessionId);
+  }
+
   if (m_scoreHasBeenSet) {
     payload.WithObject("Score", m_score.Jsonize());
+  }
+
+  if (m_autoEvaluationHasBeenSet) {
+    payload.WithObject("AutoEvaluation", m_autoEvaluation.Jsonize());
+  }
+
+  if (m_acknowledgementHasBeenSet) {
+    payload.WithObject("Acknowledgement", m_acknowledgement.Jsonize());
   }
 
   return payload;

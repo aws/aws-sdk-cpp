@@ -34,6 +34,22 @@ GroupMembership& GroupMembership::operator=(JsonView jsonValue) {
     m_memberId = jsonValue.GetObject("MemberId");
     m_memberIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedBy")) {
+    m_updatedBy = jsonValue.GetString("UpdatedBy");
+    m_updatedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +70,22 @@ JsonValue GroupMembership::Jsonize() const {
 
   if (m_memberIdHasBeenSet) {
     payload.WithObject("MemberId", m_memberId.Jsonize());
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("CreatedBy", m_createdBy);
+  }
+
+  if (m_updatedByHasBeenSet) {
+    payload.WithString("UpdatedBy", m_updatedBy);
   }
 
   return payload;

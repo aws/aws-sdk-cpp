@@ -71,7 +71,9 @@ class UpdateGroupRequest : public IdentityStoreRequest {
   ///@{
   /**
    * <p>A list of <code>AttributeOperation</code> objects to apply to the requested
-   * group. These operations might add, replace, or remove an attribute.</p>
+   * group. These operations might add, replace, or remove an attribute. For more
+   * information on the attributes that can be added, replaced, or removed, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.</p>
    */
   inline const Aws::Vector<AttributeOperation>& GetOperations() const { return m_operations; }
   inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }

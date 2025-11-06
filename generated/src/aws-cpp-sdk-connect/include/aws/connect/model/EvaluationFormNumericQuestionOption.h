@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AutomaticFailConfiguration.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -93,6 +96,24 @@ class EvaluationFormNumericQuestionOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A configuration for automatic fail.</p>
+   */
+  inline const AutomaticFailConfiguration& GetAutomaticFailConfiguration() const { return m_automaticFailConfiguration; }
+  inline bool AutomaticFailConfigurationHasBeenSet() const { return m_automaticFailConfigurationHasBeenSet; }
+  template <typename AutomaticFailConfigurationT = AutomaticFailConfiguration>
+  void SetAutomaticFailConfiguration(AutomaticFailConfigurationT&& value) {
+    m_automaticFailConfigurationHasBeenSet = true;
+    m_automaticFailConfiguration = std::forward<AutomaticFailConfigurationT>(value);
+  }
+  template <typename AutomaticFailConfigurationT = AutomaticFailConfiguration>
+  EvaluationFormNumericQuestionOption& WithAutomaticFailConfiguration(AutomaticFailConfigurationT&& value) {
+    SetAutomaticFailConfiguration(std::forward<AutomaticFailConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_minValue{0};
   bool m_minValueHasBeenSet = false;
@@ -105,6 +126,9 @@ class EvaluationFormNumericQuestionOption {
 
   bool m_automaticFail{false};
   bool m_automaticFailHasBeenSet = false;
+
+  AutomaticFailConfiguration m_automaticFailConfiguration;
+  bool m_automaticFailConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

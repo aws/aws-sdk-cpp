@@ -50,7 +50,7 @@ class UpdatePublicSharingSettingsRequest : public QuickSightRequest {
   ///@{
   /**
    * <p>A Boolean value that indicates whether public sharing is turned on for an
-   * QuickSight account.</p>
+   * Quick Suite account.</p>
    */
   inline bool GetPublicSharingEnabled() const { return m_publicSharingEnabled; }
   inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }

@@ -24,7 +24,7 @@ namespace Model {
 
 /**
  * <p>The type of experience you want to embed. For anonymous users, you can embed
- * QuickSight dashboards.</p><p><h3>See Also:</h3>   <a
+ * Quick Suite dashboards.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnonymousUserEmbeddingExperienceConfiguration">AWS
  * API Reference</a></p>
  */

@@ -61,12 +61,31 @@ class ResourceTypeDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The total number of active errors for the resource type.</p>
+   */
+  inline int GetTotalActiveErrors() const { return m_totalActiveErrors; }
+  inline bool TotalActiveErrorsHasBeenSet() const { return m_totalActiveErrorsHasBeenSet; }
+  inline void SetTotalActiveErrors(int value) {
+    m_totalActiveErrorsHasBeenSet = true;
+    m_totalActiveErrors = value;
+  }
+  inline ResourceTypeDetails& WithTotalActiveErrors(int value) {
+    SetTotalActiveErrors(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_totalActivePublic{0};
   bool m_totalActivePublicHasBeenSet = false;
 
   int m_totalActiveCrossAccount{0};
   bool m_totalActiveCrossAccountHasBeenSet = false;
+
+  int m_totalActiveErrors{0};
+  bool m_totalActiveErrorsHasBeenSet = false;
 };
 
 }  // namespace Model

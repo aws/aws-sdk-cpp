@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/model/ResourceNotFoundExceptionReason.h>
 #include <aws/identitystore/model/ResourceType.h>
 
 #include <utility>
@@ -57,7 +58,7 @@ class ResourceNotFoundException {
    * <code>ResourceId</code> is either <code>UUID</code> or
    * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
    * value for each resource when it is created and <code>1234567890</code>
-   * represents the <code>IdentityStoreId</code> string value. In the case that the
+   * represents the <code> IdentityStoreId</code> string value. In the case that the
    * identity store is migrated from a legacy SSO identity store, the
    * <code>ResourceId</code> for that identity store will be in the format of
    * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
@@ -73,6 +74,24 @@ class ResourceNotFoundException {
   template <typename ResourceIdT = Aws::String>
   ResourceNotFoundException& WithResourceId(ResourceIdT&& value) {
     SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the reason for a resource not found error when the service is
+   * unable to access a Customer Managed KMS key. For non-KMS permission errors, this
+   * field is not included.</p>
+   */
+  inline ResourceNotFoundExceptionReason GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  inline void SetReason(ResourceNotFoundExceptionReason value) {
+    m_reasonHasBeenSet = true;
+    m_reason = value;
+  }
+  inline ResourceNotFoundException& WithReason(ResourceNotFoundExceptionReason value) {
+    SetReason(value);
     return *this;
   }
   ///@}
@@ -118,6 +137,9 @@ class ResourceNotFoundException {
 
   Aws::String m_resourceId;
   bool m_resourceIdHasBeenSet = false;
+
+  ResourceNotFoundExceptionReason m_reason{ResourceNotFoundExceptionReason::NOT_SET};
+  bool m_reasonHasBeenSet = false;
 
   Aws::String m_message;
   bool m_messageHasBeenSet = false;

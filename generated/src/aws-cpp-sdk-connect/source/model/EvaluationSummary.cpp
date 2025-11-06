@@ -34,9 +34,21 @@ EvaluationSummary& EvaluationSummary::operator=(JsonView jsonValue) {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
     m_evaluationFormIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CalibrationSessionId")) {
+    m_calibrationSessionId = jsonValue.GetString("CalibrationSessionId");
+    m_calibrationSessionIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Status")) {
     m_status = EvaluationStatusMapper::GetEvaluationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AutoEvaluationEnabled")) {
+    m_autoEvaluationEnabled = jsonValue.GetBool("AutoEvaluationEnabled");
+    m_autoEvaluationEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AutoEvaluationStatus")) {
+    m_autoEvaluationStatus = AutoEvaluationStatusMapper::GetAutoEvaluationStatusForName(jsonValue.GetString("AutoEvaluationStatus"));
+    m_autoEvaluationStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("EvaluatorArn")) {
     m_evaluatorArn = jsonValue.GetString("EvaluatorArn");
@@ -45,6 +57,14 @@ EvaluationSummary& EvaluationSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetObject("Score");
     m_scoreHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Acknowledgement")) {
+    m_acknowledgement = jsonValue.GetObject("Acknowledgement");
+    m_acknowledgementHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EvaluationType")) {
+    m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
+    m_evaluationTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
@@ -76,8 +96,20 @@ JsonValue EvaluationSummary::Jsonize() const {
     payload.WithString("EvaluationFormId", m_evaluationFormId);
   }
 
+  if (m_calibrationSessionIdHasBeenSet) {
+    payload.WithString("CalibrationSessionId", m_calibrationSessionId);
+  }
+
   if (m_statusHasBeenSet) {
     payload.WithString("Status", EvaluationStatusMapper::GetNameForEvaluationStatus(m_status));
+  }
+
+  if (m_autoEvaluationEnabledHasBeenSet) {
+    payload.WithBool("AutoEvaluationEnabled", m_autoEvaluationEnabled);
+  }
+
+  if (m_autoEvaluationStatusHasBeenSet) {
+    payload.WithString("AutoEvaluationStatus", AutoEvaluationStatusMapper::GetNameForAutoEvaluationStatus(m_autoEvaluationStatus));
   }
 
   if (m_evaluatorArnHasBeenSet) {
@@ -86,6 +118,14 @@ JsonValue EvaluationSummary::Jsonize() const {
 
   if (m_scoreHasBeenSet) {
     payload.WithObject("Score", m_score.Jsonize());
+  }
+
+  if (m_acknowledgementHasBeenSet) {
+    payload.WithObject("Acknowledgement", m_acknowledgement.Jsonize());
+  }
+
+  if (m_evaluationTypeHasBeenSet) {
+    payload.WithString("EvaluationType", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluationType));
   }
 
   if (m_createdTimeHasBeenSet) {

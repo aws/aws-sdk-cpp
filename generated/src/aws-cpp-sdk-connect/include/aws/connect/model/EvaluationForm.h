@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
@@ -277,6 +278,24 @@ class EvaluationForm {
 
   ///@{
   /**
+   * <p>The automatic evaluation configuration of an evaluation form.</p>
+   */
+  inline const EvaluationFormAutoEvaluationConfiguration& GetAutoEvaluationConfiguration() const { return m_autoEvaluationConfiguration; }
+  inline bool AutoEvaluationConfigurationHasBeenSet() const { return m_autoEvaluationConfigurationHasBeenSet; }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  void SetAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    m_autoEvaluationConfigurationHasBeenSet = true;
+    m_autoEvaluationConfiguration = std::forward<AutoEvaluationConfigurationT>(value);
+  }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  EvaluationForm& WithAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    SetAutoEvaluationConfiguration(std::forward<AutoEvaluationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -338,6 +357,9 @@ class EvaluationForm {
 
   Aws::String m_lastModifiedBy;
   bool m_lastModifiedByHasBeenSet = false;
+
+  EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

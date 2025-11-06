@@ -29,6 +29,10 @@ EvaluationFormSingleSelectQuestionAutomation& EvaluationFormSingleSelectQuestion
     m_defaultOptionRefId = jsonValue.GetString("DefaultOptionRefId");
     m_defaultOptionRefIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AnswerSource")) {
+    m_answerSource = jsonValue.GetObject("AnswerSource");
+    m_answerSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue EvaluationFormSingleSelectQuestionAutomation::Jsonize() const {
 
   if (m_defaultOptionRefIdHasBeenSet) {
     payload.WithString("DefaultOptionRefId", m_defaultOptionRefId);
+  }
+
+  if (m_answerSourceHasBeenSet) {
+    payload.WithObject("AnswerSource", m_answerSource.Jsonize());
   }
 
   return payload;

@@ -69,7 +69,7 @@ class PutTableMaintenanceConfigurationRequest : public S3TablesRequest {
 
   ///@{
   /**
-   * <p>The name of the maintenance configuration.</p>
+   * <p>The name of the table.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

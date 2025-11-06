@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/IndexStatus.h>
 #include <aws/backup/model/RecoveryPointStatus.h>
 #include <aws/backup/model/VaultType.h>
@@ -274,6 +275,24 @@ class RecoveryPointByResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption key used for the recovery point. Valid values are
+   * CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web
+   * Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+   */
+  inline EncryptionKeyType GetEncryptionKeyType() const { return m_encryptionKeyType; }
+  inline bool EncryptionKeyTypeHasBeenSet() const { return m_encryptionKeyTypeHasBeenSet; }
+  inline void SetEncryptionKeyType(EncryptionKeyType value) {
+    m_encryptionKeyTypeHasBeenSet = true;
+    m_encryptionKeyType = value;
+  }
+  inline RecoveryPointByResource& WithEncryptionKeyType(EncryptionKeyType value) {
+    SetEncryptionKeyType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_recoveryPointArn;
   bool m_recoveryPointArnHasBeenSet = false;
@@ -313,6 +332,9 @@ class RecoveryPointByResource {
 
   Aws::String m_indexStatusMessage;
   bool m_indexStatusMessageHasBeenSet = false;
+
+  EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
+  bool m_encryptionKeyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

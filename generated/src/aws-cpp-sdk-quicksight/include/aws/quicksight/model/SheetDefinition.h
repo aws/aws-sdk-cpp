@@ -99,8 +99,8 @@ class SheetDefinition {
 
   ///@{
   /**
-   * <p>The name of the sheet. This name is displayed on the sheet's tab in the
-   * QuickSight console.</p>
+   * <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick
+   * Suite console.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

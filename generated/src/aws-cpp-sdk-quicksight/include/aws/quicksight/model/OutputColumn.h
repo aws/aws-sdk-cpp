@@ -53,6 +53,24 @@ class OutputColumn {
 
   ///@{
   /**
+   * <p>A unique identifier for the output column.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  OutputColumn& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A description for a column.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -103,6 +121,9 @@ class OutputColumn {
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;

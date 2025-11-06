@@ -199,6 +199,28 @@ class UpdateDomainRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier for the VPC used by the domain for network communication. Use
+   * this field only when adding VPC configuration to a SageMaker AI domain used in
+   * Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker
+   * AI doesn't automatically apply VPC updates to existing applications. Stop and
+   * restart your applications to apply the changes.</p>
+   */
+  inline const Aws::String& GetVpcId() const { return m_vpcId; }
+  inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+  template <typename VpcIdT = Aws::String>
+  void SetVpcId(VpcIdT&& value) {
+    m_vpcIdHasBeenSet = true;
+    m_vpcId = std::forward<VpcIdT>(value);
+  }
+  template <typename VpcIdT = Aws::String>
+  UpdateDomainRequest& WithVpcId(VpcIdT&& value) {
+    SetVpcId(std::forward<VpcIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
   bool m_domainIdHasBeenSet = false;
@@ -223,6 +245,9 @@ class UpdateDomainRequest : public SageMakerRequest {
 
   TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
   bool m_tagPropagationHasBeenSet = false;
+
+  Aws::String m_vpcId;
+  bool m_vpcIdHasBeenSet = false;
 };
 
 }  // namespace Model

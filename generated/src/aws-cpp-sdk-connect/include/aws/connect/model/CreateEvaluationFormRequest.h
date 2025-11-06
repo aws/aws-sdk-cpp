@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -134,6 +136,24 @@ class CreateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Configuration information about automated evaluations.</p>
+   */
+  inline const EvaluationFormAutoEvaluationConfiguration& GetAutoEvaluationConfiguration() const { return m_autoEvaluationConfiguration; }
+  inline bool AutoEvaluationConfigurationHasBeenSet() const { return m_autoEvaluationConfigurationHasBeenSet; }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  void SetAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    m_autoEvaluationConfigurationHasBeenSet = true;
+    m_autoEvaluationConfiguration = std::forward<AutoEvaluationConfigurationT>(value);
+  }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  CreateEvaluationFormRequest& WithAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    SetAutoEvaluationConfiguration(std::forward<AutoEvaluationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If not provided, the Amazon Web Services SDK
    * populates this field. For more information about idempotency, see <a
@@ -153,6 +173,31 @@ class CreateEvaluationFormRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For
+   * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateEvaluationFormRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateEvaluationFormRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -169,8 +214,14 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   EvaluationFormScoringStrategy m_scoringStrategy;
   bool m_scoringStrategyHasBeenSet = false;
 
+  EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model
