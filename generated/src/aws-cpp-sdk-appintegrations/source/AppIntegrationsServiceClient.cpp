@@ -159,7 +159,7 @@ void AppIntegrationsServiceClient::init(const AppIntegrationsService::AppIntegra
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "app-integrations");
 }
 
 void AppIntegrationsServiceClient::OverrideEndpoint(const Aws::String& endpoint) {

@@ -144,7 +144,7 @@ void CloudFrontKeyValueStoreClient::init(const CloudFrontKeyValueStore::CloudFro
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "cloudfront-keyvaluestore");
 }
 
 void CloudFrontKeyValueStoreClient::OverrideEndpoint(const Aws::String& endpoint) {

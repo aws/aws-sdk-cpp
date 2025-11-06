@@ -211,7 +211,7 @@ void DirectoryServiceClient::init(const DirectoryService::DirectoryServiceClient
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "ds");
 }
 
 void DirectoryServiceClient::OverrideEndpoint(const Aws::String& endpoint) {

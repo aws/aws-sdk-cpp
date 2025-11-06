@@ -173,7 +173,7 @@ void MainframeModernizationClient::init(const MainframeModernization::MainframeM
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "m2");
 }
 
 void MainframeModernizationClient::OverrideEndpoint(const Aws::String& endpoint) {

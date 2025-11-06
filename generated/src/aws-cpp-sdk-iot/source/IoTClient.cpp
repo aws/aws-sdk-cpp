@@ -225,7 +225,7 @@ void IoTClient::init(const IoT::IoTClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "iot");
 }
 
 void IoTClient::OverrideEndpoint(const Aws::String& endpoint) {

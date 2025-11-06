@@ -26,6 +26,7 @@ namespace Endpoint {
 void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config));
 }
+
 }  // namespace Endpoint
 }  // namespace TimestreamQuery
 }  // namespace Aws

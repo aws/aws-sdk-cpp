@@ -159,7 +159,7 @@ void AmplifyBackendClient::init(const AmplifyBackend::AmplifyBackendClientConfig
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "amplifybackend");
 }
 
 void AmplifyBackendClient::OverrideEndpoint(const Aws::String& endpoint) {
