@@ -6,7 +6,6 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
-#include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
@@ -956,6 +955,48 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
 }
 
+TEST_F(SSOCredentialsProviderTest, TestInvalidRegionCredentials)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "base64string",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile.close();
+
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([default]
+sso_account_id = 012345678901
+sso_region = @amazon.com#
+sso_role_name = SampleRole
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile.close();
+
+    // Mock DNS/connection failure for invalid region
+    std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI("https://portal.sso.@amazon.com#.amazonaws.com/federation/credentials"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> dnsFailureResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
+    dnsFailureResponse->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
+    mockHttpClient->AddResponseToReturn(dnsFailureResponse);
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    
+    // Check if any requests were made before calling GetMostRecentHttpRequest
+    if (!mockHttpClient->GetAllRequestsMade().empty()) {
+        auto request = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_TRUE(request.GetURIString().find("@amazon.com#") != std::string::npos);
+    }
+}
+
 class AWSCredentialsTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
@@ -1119,4 +1160,43 @@ TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "alarms"}));
   ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
   ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
+}
+
+class STSCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite {
+public:
+    void SetUp() {
+        mockHttpClient = Aws::MakeShared<MockHttpClient>(AllocationTag);
+        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(AllocationTag);
+        mockHttpClientFactory->SetClient(mockHttpClient);
+        SetHttpClientFactory(mockHttpClientFactory);
+    }
+
+    void TearDown() {
+        mockHttpClient = nullptr;
+        mockHttpClientFactory = nullptr;
+        CleanupHttp();
+        InitHttp();
+    }
+
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+};
+
+TEST_F(STSCredentialsProviderTest, TestInvalidRegionCredentials) {
+    ClientConfiguration config;
+    config.region = "@amazon.com#";
+
+    Aws::Internal::STSCredentialsClient stsClient(config);
+    Aws::Internal::STSCredentialsClient::STSAssumeRoleWithWebIdentityRequest request;
+    request.roleArn = "arn:aws:iam::123456789012:role/TestRole";
+    request.roleSessionName = "test-session";
+    request.webIdentityToken = "test-token";
+
+    auto result = stsClient.GetAssumeRoleWithWebIdentityCredentials(request);
+    ASSERT_TRUE(result.creds.IsEmpty());
+
+    if (!mockHttpClient ->GetAllRequestsMade().empty()) {
+        auto httpRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_TRUE(httpRequest.GetURIString().find("@amazon.com#") != std::string::npos);
+    }
 }
