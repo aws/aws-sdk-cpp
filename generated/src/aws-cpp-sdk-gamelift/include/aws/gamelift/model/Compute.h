@@ -158,7 +158,11 @@ class Compute {
   ///@{
   /**
    * <p>Current status of the compute. A compute must have an <code>ACTIVE</code>
-   * status to host game sessions.</p>
+   * status to host game sessions. Valid values include <code>PENDING</code>,
+   * <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p>
+   *  <p>While the ComputeStatus enum type is valid for Container based
+   * servers, the result may also include other non-enumerated string values such as
+   * "Active" for fleets which are not Container-based.</p>
    */
   inline ComputeStatus GetComputeStatus() const { return m_computeStatus; }
   inline bool ComputeStatusHasBeenSet() const { return m_computeStatusHasBeenSet; }

@@ -70,6 +70,10 @@ RecoveryPointByResource& RecoveryPointByResource::operator=(JsonView jsonValue) 
     m_indexStatusMessage = jsonValue.GetString("IndexStatusMessage");
     m_indexStatusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionKeyType")) {
+    m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
+    m_encryptionKeyTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +130,10 @@ JsonValue RecoveryPointByResource::Jsonize() const {
 
   if (m_indexStatusMessageHasBeenSet) {
     payload.WithString("IndexStatusMessage", m_indexStatusMessage);
+  }
+
+  if (m_encryptionKeyTypeHasBeenSet) {
+    payload.WithString("EncryptionKeyType", EncryptionKeyTypeMapper::GetNameForEncryptionKeyType(m_encryptionKeyType));
   }
 
   return payload;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/backup/model/VaultType.h>
 #include <aws/core/utils/DateTime.h>
@@ -280,6 +281,24 @@ class BackupVaultListMember {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption key used for the backup vault. Valid values are
+   * CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web
+   * Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+   */
+  inline EncryptionKeyType GetEncryptionKeyType() const { return m_encryptionKeyType; }
+  inline bool EncryptionKeyTypeHasBeenSet() const { return m_encryptionKeyTypeHasBeenSet; }
+  inline void SetEncryptionKeyType(EncryptionKeyType value) {
+    m_encryptionKeyTypeHasBeenSet = true;
+    m_encryptionKeyType = value;
+  }
+  inline BackupVaultListMember& WithEncryptionKeyType(EncryptionKeyType value) {
+    SetEncryptionKeyType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_backupVaultName;
   bool m_backupVaultNameHasBeenSet = false;
@@ -316,6 +335,9 @@ class BackupVaultListMember {
 
   Aws::Utils::DateTime m_lockDate{};
   bool m_lockDateHasBeenSet = false;
+
+  EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
+  bool m_encryptionKeyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

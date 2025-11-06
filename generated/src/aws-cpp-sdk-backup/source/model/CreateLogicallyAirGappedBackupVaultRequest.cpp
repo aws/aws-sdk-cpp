@@ -35,5 +35,9 @@ Aws::String CreateLogicallyAirGappedBackupVaultRequest::SerializePayload() const
     payload.WithInt64("MaxRetentionDays", m_maxRetentionDays);
   }
 
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

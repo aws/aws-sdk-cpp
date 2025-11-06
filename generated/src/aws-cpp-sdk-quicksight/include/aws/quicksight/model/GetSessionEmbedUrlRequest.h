@@ -98,9 +98,9 @@ class GetSessionEmbedUrlRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+   * <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with
    * <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon
-   * QuickSight users in your account (readers, authors, or admins). They need to be
+   * Quick Suite users in your account (readers, authors, or admins). They need to be
    * authenticated as one of the following:</p> <ol> <li> <p>Active Directory (AD)
    * users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li>
    * <li> <p>IAM users and IAM role-based sessions authenticated through Federated

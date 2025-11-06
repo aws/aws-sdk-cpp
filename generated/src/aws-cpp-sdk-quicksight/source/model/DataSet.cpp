@@ -116,6 +116,14 @@ DataSet& DataSet::operator=(JsonView jsonValue) {
     m_useAs = DataSetUseAsMapper::GetDataSetUseAsForName(jsonValue.GetString("UseAs"));
     m_useAsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DataPrepConfiguration")) {
+    m_dataPrepConfiguration = jsonValue.GetObject("DataPrepConfiguration");
+    m_dataPrepConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SemanticModelConfiguration")) {
+    m_semanticModelConfiguration = jsonValue.GetObject("SemanticModelConfiguration");
+    m_semanticModelConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -226,6 +234,14 @@ JsonValue DataSet::Jsonize() const {
 
   if (m_useAsHasBeenSet) {
     payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
+  }
+
+  if (m_dataPrepConfigurationHasBeenSet) {
+    payload.WithObject("DataPrepConfiguration", m_dataPrepConfiguration.Jsonize());
+  }
+
+  if (m_semanticModelConfigurationHasBeenSet) {
+    payload.WithObject("SemanticModelConfiguration", m_semanticModelConfiguration.Jsonize());
   }
 
   return payload;

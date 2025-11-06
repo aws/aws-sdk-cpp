@@ -30,6 +30,8 @@
 #include <aws/quicksight/model/AdHocFilteringOption.h>
 #include <aws/quicksight/model/AggFunction.h>
 #include <aws/quicksight/model/AggType.h>
+#include <aws/quicksight/model/AggregateOperation.h>
+#include <aws/quicksight/model/Aggregation.h>
 #include <aws/quicksight/model/AggregationFunction.h>
 #include <aws/quicksight/model/AggregationPartitionBy.h>
 #include <aws/quicksight/model/AggregationSortConfiguration.h>
@@ -61,6 +63,8 @@
 #include <aws/quicksight/model/AnonymousUserGenerativeQnAEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserQSearchBarEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserSnapshotJobResult.h>
+#include <aws/quicksight/model/AppendOperation.h>
+#include <aws/quicksight/model/AppendedColumn.h>
 #include <aws/quicksight/model/ApplicationTheme.h>
 #include <aws/quicksight/model/ArcAxisConfiguration.h>
 #include <aws/quicksight/model/ArcAxisDisplayRange.h>
@@ -208,6 +212,7 @@
 #include <aws/quicksight/model/CascadingControlConfiguration.h>
 #include <aws/quicksight/model/CascadingControlSource.h>
 #include <aws/quicksight/model/CastColumnTypeOperation.h>
+#include <aws/quicksight/model/CastColumnTypesOperation.h>
 #include <aws/quicksight/model/CategoricalAggregationFunction.h>
 #include <aws/quicksight/model/CategoricalDimensionField.h>
 #include <aws/quicksight/model/CategoricalMeasureField.h>
@@ -249,6 +254,7 @@
 #include <aws/quicksight/model/ColumnSort.h>
 #include <aws/quicksight/model/ColumnTag.h>
 #include <aws/quicksight/model/ColumnTagName.h>
+#include <aws/quicksight/model/ColumnToUnpivot.h>
 #include <aws/quicksight/model/ColumnTooltipItem.h>
 #include <aws/quicksight/model/ComboChartAggregatedFieldWells.h>
 #include <aws/quicksight/model/ComboChartConfiguration.h>
@@ -393,17 +399,40 @@
 #include <aws/quicksight/model/DataPointDrillUpDownOption.h>
 #include <aws/quicksight/model/DataPointMenuLabelOption.h>
 #include <aws/quicksight/model/DataPointTooltipOption.h>
+#include <aws/quicksight/model/DataPrepAggregationFunction.h>
+#include <aws/quicksight/model/DataPrepConfiguration.h>
+#include <aws/quicksight/model/DataPrepListAggregationFunction.h>
+#include <aws/quicksight/model/DataPrepSimpleAggregationFunction.h>
+#include <aws/quicksight/model/DataPrepSimpleAggregationFunctionType.h>
 #include <aws/quicksight/model/DataQAEnabledOption.h>
 #include <aws/quicksight/model/DataQnAConfigurations.h>
 #include <aws/quicksight/model/DataSet.h>
+#include <aws/quicksight/model/DataSetColumnIdMapping.h>
 #include <aws/quicksight/model/DataSetConfiguration.h>
+#include <aws/quicksight/model/DataSetDateComparisonFilterCondition.h>
+#include <aws/quicksight/model/DataSetDateComparisonFilterOperator.h>
+#include <aws/quicksight/model/DataSetDateFilterCondition.h>
+#include <aws/quicksight/model/DataSetDateFilterValue.h>
+#include <aws/quicksight/model/DataSetDateRangeFilterCondition.h>
 #include <aws/quicksight/model/DataSetFilterAttribute.h>
 #include <aws/quicksight/model/DataSetIdentifierDeclaration.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
+#include <aws/quicksight/model/DataSetNumericComparisonFilterCondition.h>
+#include <aws/quicksight/model/DataSetNumericComparisonFilterOperator.h>
+#include <aws/quicksight/model/DataSetNumericFilterCondition.h>
+#include <aws/quicksight/model/DataSetNumericFilterValue.h>
+#include <aws/quicksight/model/DataSetNumericRangeFilterCondition.h>
 #include <aws/quicksight/model/DataSetReference.h>
 #include <aws/quicksight/model/DataSetRefreshProperties.h>
 #include <aws/quicksight/model/DataSetSchema.h>
 #include <aws/quicksight/model/DataSetSearchFilter.h>
+#include <aws/quicksight/model/DataSetStringComparisonFilterCondition.h>
+#include <aws/quicksight/model/DataSetStringComparisonFilterOperator.h>
+#include <aws/quicksight/model/DataSetStringFilterCondition.h>
+#include <aws/quicksight/model/DataSetStringFilterValue.h>
+#include <aws/quicksight/model/DataSetStringListFilterCondition.h>
+#include <aws/quicksight/model/DataSetStringListFilterOperator.h>
+#include <aws/quicksight/model/DataSetStringListFilterValue.h>
 #include <aws/quicksight/model/DataSetSummary.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/DataSetUseAs.h>
@@ -636,6 +665,8 @@
 #include <aws/quicksight/model/DescribeVPCConnectionRequest.h>
 #include <aws/quicksight/model/DescribeVPCConnectionResult.h>
 #include <aws/quicksight/model/DestinationParameterValueConfiguration.h>
+#include <aws/quicksight/model/DestinationTable.h>
+#include <aws/quicksight/model/DestinationTableSource.h>
 #include <aws/quicksight/model/DigitGroupingStyle.h>
 #include <aws/quicksight/model/DimensionField.h>
 #include <aws/quicksight/model/DisplayFormat.h>
@@ -700,6 +731,7 @@
 #include <aws/quicksight/model/FilterTextAreaControl.h>
 #include <aws/quicksight/model/FilterTextFieldControl.h>
 #include <aws/quicksight/model/FilterVisualScope.h>
+#include <aws/quicksight/model/FiltersOperation.h>
 #include <aws/quicksight/model/FlowPublishState.h>
 #include <aws/quicksight/model/FlowSummary.h>
 #include <aws/quicksight/model/Folder.h>
@@ -854,6 +886,8 @@
 #include <aws/quicksight/model/ImageSource.h>
 #include <aws/quicksight/model/ImageStaticFile.h>
 #include <aws/quicksight/model/ImpalaParameters.h>
+#include <aws/quicksight/model/ImportTableOperation.h>
+#include <aws/quicksight/model/ImportTableOperationSource.h>
 #include <aws/quicksight/model/IncludeFolderMembers.h>
 #include <aws/quicksight/model/IncludeGeneratedAnswer.h>
 #include <aws/quicksight/model/IncludeQuickSightQIndex.h>
@@ -876,6 +910,7 @@
 #include <aws/quicksight/model/IntegerParameterDeclaration.h>
 #include <aws/quicksight/model/IntegerValueWhenUnsetConfiguration.h>
 #include <aws/quicksight/model/InternalFailureException.h>
+#include <aws/quicksight/model/InvalidDataSetParameterValueException.h>
 #include <aws/quicksight/model/InvalidNextTokenException.h>
 #include <aws/quicksight/model/InvalidParameterValueException.h>
 #include <aws/quicksight/model/InvalidRequestException.h>
@@ -884,6 +919,9 @@
 #include <aws/quicksight/model/JiraParameters.h>
 #include <aws/quicksight/model/JoinInstruction.h>
 #include <aws/quicksight/model/JoinKeyProperties.h>
+#include <aws/quicksight/model/JoinOperandProperties.h>
+#include <aws/quicksight/model/JoinOperation.h>
+#include <aws/quicksight/model/JoinOperationType.h>
 #include <aws/quicksight/model/JoinType.h>
 #include <aws/quicksight/model/KPIActualValueConditionalFormatting.h>
 #include <aws/quicksight/model/KPIComparisonValueConditionalFormatting.h>
@@ -1071,6 +1109,7 @@
 #include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/OtherCategories.h>
 #include <aws/quicksight/model/OutputColumn.h>
+#include <aws/quicksight/model/OutputColumnNameOverride.h>
 #include <aws/quicksight/model/OverrideDatasetParameterOperation.h>
 #include <aws/quicksight/model/PaginationConfiguration.h>
 #include <aws/quicksight/model/Palette.h>
@@ -1090,6 +1129,7 @@
 #include <aws/quicksight/model/ParameterTextFieldControl.h>
 #include <aws/quicksight/model/ParameterValueType.h>
 #include <aws/quicksight/model/Parameters.h>
+#include <aws/quicksight/model/ParentDataSet.h>
 #include <aws/quicksight/model/PercentVisibleRange.h>
 #include <aws/quicksight/model/PercentageDisplayFormatConfiguration.h>
 #include <aws/quicksight/model/PercentileAggregation.h>
@@ -1104,7 +1144,9 @@
 #include <aws/quicksight/model/PieChartFieldWells.h>
 #include <aws/quicksight/model/PieChartSortConfiguration.h>
 #include <aws/quicksight/model/PieChartVisual.h>
+#include <aws/quicksight/model/PivotConfiguration.h>
 #include <aws/quicksight/model/PivotFieldSortOptions.h>
+#include <aws/quicksight/model/PivotOperation.h>
 #include <aws/quicksight/model/PivotTableAggregatedFieldWells.h>
 #include <aws/quicksight/model/PivotTableCellConditionalFormatting.h>
 #include <aws/quicksight/model/PivotTableConditionalFormatting.h>
@@ -1132,6 +1174,7 @@
 #include <aws/quicksight/model/PivotTableTotalOptions.h>
 #include <aws/quicksight/model/PivotTableVisual.h>
 #include <aws/quicksight/model/PivotTotalOptions.h>
+#include <aws/quicksight/model/PivotedLabel.h>
 #include <aws/quicksight/model/PluginVisual.h>
 #include <aws/quicksight/model/PluginVisualAxisName.h>
 #include <aws/quicksight/model/PluginVisualConfiguration.h>
@@ -1231,6 +1274,7 @@
 #include <aws/quicksight/model/RelativeDatesFilter.h>
 #include <aws/quicksight/model/RelativeFontSize.h>
 #include <aws/quicksight/model/RenameColumnOperation.h>
+#include <aws/quicksight/model/RenameColumnsOperation.h>
 #include <aws/quicksight/model/ResizeOption.h>
 #include <aws/quicksight/model/ResourceExistsException.h>
 #include <aws/quicksight/model/ResourceNotFoundException.h>
@@ -1244,6 +1288,7 @@
 #include <aws/quicksight/model/RollingDateConfiguration.h>
 #include <aws/quicksight/model/RowAlternateColorOptions.h>
 #include <aws/quicksight/model/RowInfo.h>
+#include <aws/quicksight/model/RowLevelPermissionConfiguration.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionFormatVersion.h>
 #include <aws/quicksight/model/RowLevelPermissionPolicy.h>
@@ -1253,6 +1298,7 @@
 #include <aws/quicksight/model/S3KnowledgeBaseParameters.h>
 #include <aws/quicksight/model/S3Parameters.h>
 #include <aws/quicksight/model/S3Source.h>
+#include <aws/quicksight/model/SaaSTable.h>
 #include <aws/quicksight/model/SameSheetTargetVisualConfiguration.h>
 #include <aws/quicksight/model/SankeyDiagramAggregatedFieldWells.h>
 #include <aws/quicksight/model/SankeyDiagramChartConfiguration.h>
@@ -1302,6 +1348,8 @@
 #include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
 #include <aws/quicksight/model/SelectedTooltipType.h>
 #include <aws/quicksight/model/SemanticEntityType.h>
+#include <aws/quicksight/model/SemanticModelConfiguration.h>
+#include <aws/quicksight/model/SemanticTable.h>
 #include <aws/quicksight/model/SemanticType.h>
 #include <aws/quicksight/model/SeriesItem.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
@@ -1369,6 +1417,7 @@
 #include <aws/quicksight/model/SnapshotUserConfigurationRedacted.h>
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SortDirection.h>
+#include <aws/quicksight/model/SourceTable.h>
 #include <aws/quicksight/model/Spacing.h>
 #include <aws/quicksight/model/SparkParameters.h>
 #include <aws/quicksight/model/SpatialStaticFile.h>
@@ -1426,6 +1475,7 @@
 #include <aws/quicksight/model/TableOptions.h>
 #include <aws/quicksight/model/TableOrientation.h>
 #include <aws/quicksight/model/TablePaginatedReportOptions.h>
+#include <aws/quicksight/model/TablePathElement.h>
 #include <aws/quicksight/model/TablePinnedFieldOptions.h>
 #include <aws/quicksight/model/TableRowConditionalFormatting.h>
 #include <aws/quicksight/model/TableSideBorderOptions.h>
@@ -1536,6 +1586,8 @@
 #include <aws/quicksight/model/TotalAggregationOption.h>
 #include <aws/quicksight/model/TotalOptions.h>
 #include <aws/quicksight/model/TransformOperation.h>
+#include <aws/quicksight/model/TransformOperationSource.h>
+#include <aws/quicksight/model/TransformStep.h>
 #include <aws/quicksight/model/TransposedColumnType.h>
 #include <aws/quicksight/model/TransposedTableOption.h>
 #include <aws/quicksight/model/TreeMapAggregatedFieldWells.h>
@@ -1553,6 +1605,7 @@
 #include <aws/quicksight/model/UndefinedSpecifiedValueType.h>
 #include <aws/quicksight/model/UniqueKey.h>
 #include <aws/quicksight/model/UniqueValuesComputation.h>
+#include <aws/quicksight/model/UnpivotOperation.h>
 #include <aws/quicksight/model/UnsupportedPricingPlanException.h>
 #include <aws/quicksight/model/UnsupportedUserEditionException.h>
 #include <aws/quicksight/model/UntagColumnOperation.h>
@@ -1663,6 +1716,7 @@
 #include <aws/quicksight/model/VPCConnectionSummary.h>
 #include <aws/quicksight/model/ValidationStrategy.h>
 #include <aws/quicksight/model/ValidationStrategyMode.h>
+#include <aws/quicksight/model/ValueColumnConfiguration.h>
 #include <aws/quicksight/model/ValueWhenUnsetOption.h>
 #include <aws/quicksight/model/VerticalTextAlignment.h>
 #include <aws/quicksight/model/Visibility.h>

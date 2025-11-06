@@ -26,6 +26,10 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Reason")) {
+    m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("Reason"));
+    m_reasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ValidationException::Jsonize() const {
 
   if (m_requestIdHasBeenSet) {
     payload.WithString("RequestId", m_requestId);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
   return payload;

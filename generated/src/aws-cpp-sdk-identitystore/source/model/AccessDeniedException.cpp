@@ -26,6 +26,10 @@ AccessDeniedException& AccessDeniedException::operator=(JsonView jsonValue) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Reason")) {
+    m_reason = AccessDeniedExceptionReasonMapper::GetAccessDeniedExceptionReasonForName(jsonValue.GetString("Reason"));
+    m_reasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AccessDeniedException::Jsonize() const {
 
   if (m_requestIdHasBeenSet) {
     payload.WithString("RequestId", m_requestId);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", AccessDeniedExceptionReasonMapper::GetNameForAccessDeniedExceptionReason(m_reason));
   }
 
   return payload;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/model/DistanceMetric.h>
 #include <aws/s3vectors/model/QueryOutputVector.h>
 
 #include <utility>
@@ -52,6 +53,23 @@ class QueryVectorsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The distance metric that was used for the similarity search calculation. This
+   * is the same distance metric that was configured for the vector index when it was
+   * created.</p>
+   */
+  inline DistanceMetric GetDistanceMetric() const { return m_distanceMetric; }
+  inline void SetDistanceMetric(DistanceMetric value) {
+    m_distanceMetricHasBeenSet = true;
+    m_distanceMetric = value;
+  }
+  inline QueryVectorsResult& WithDistanceMetric(DistanceMetric value) {
+    SetDistanceMetric(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -68,6 +86,9 @@ class QueryVectorsResult {
  private:
   Aws::Vector<QueryOutputVector> m_vectors;
   bool m_vectorsHasBeenSet = false;
+
+  DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
+  bool m_distanceMetricHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

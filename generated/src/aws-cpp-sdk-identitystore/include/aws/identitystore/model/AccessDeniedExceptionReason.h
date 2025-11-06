@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/identitystore/IdentityStore_EXPORTS.h>
+
+namespace Aws {
+namespace IdentityStore {
+namespace Model {
+enum class AccessDeniedExceptionReason { NOT_SET, KMS_ACCESS_DENIED };
+
+namespace AccessDeniedExceptionReasonMapper {
+AWS_IDENTITYSTORE_API AccessDeniedExceptionReason GetAccessDeniedExceptionReasonForName(const Aws::String& name);
+
+AWS_IDENTITYSTORE_API Aws::String GetNameForAccessDeniedExceptionReason(AccessDeniedExceptionReason value);
+}  // namespace AccessDeniedExceptionReasonMapper
+}  // namespace Model
+}  // namespace IdentityStore
+}  // namespace Aws

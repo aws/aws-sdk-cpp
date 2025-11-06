@@ -115,6 +115,25 @@ class UploadSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A custom cell address range for Excel files, specifying which cells to import
+   * from the spreadsheet.</p>
+   */
+  inline const Aws::String& GetCustomCellAddressRange() const { return m_customCellAddressRange; }
+  inline bool CustomCellAddressRangeHasBeenSet() const { return m_customCellAddressRangeHasBeenSet; }
+  template <typename CustomCellAddressRangeT = Aws::String>
+  void SetCustomCellAddressRange(CustomCellAddressRangeT&& value) {
+    m_customCellAddressRangeHasBeenSet = true;
+    m_customCellAddressRange = std::forward<CustomCellAddressRangeT>(value);
+  }
+  template <typename CustomCellAddressRangeT = Aws::String>
+  UploadSettings& WithCustomCellAddressRange(CustomCellAddressRangeT&& value) {
+    SetCustomCellAddressRange(std::forward<CustomCellAddressRangeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   FileFormat m_format{FileFormat::NOT_SET};
   bool m_formatHasBeenSet = false;
@@ -130,6 +149,9 @@ class UploadSettings {
 
   Aws::String m_delimiter;
   bool m_delimiterHasBeenSet = false;
+
+  Aws::String m_customCellAddressRange;
+  bool m_customCellAddressRangeHasBeenSet = false;
 };
 
 }  // namespace Model

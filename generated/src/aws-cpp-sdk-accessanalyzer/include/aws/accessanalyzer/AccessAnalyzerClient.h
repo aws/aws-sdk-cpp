@@ -16,29 +16,35 @@ namespace AccessAnalyzer {
 /**
  * <p>Identity and Access Management Access Analyzer helps you to set, verify, and
  * refine your IAM policies by providing a suite of capabilities. Its features
- * include findings for external and unused access, basic and custom policy checks
- * for validating policies, and policy generation to generate fine-grained
- * policies. To start using IAM Access Analyzer to identify external or unused
- * access, you first need to create an analyzer.</p> <p> <b>External access
- * analyzers</b> help identify potential risks of accessing resources by enabling
- * you to identify any resource policies that grant access to an external
- * principal. It does this by using logic-based reasoning to analyze resource-based
- * policies in your Amazon Web Services environment. An external principal can be
- * another Amazon Web Services account, a root user, an IAM user or role, a
- * federated user, an Amazon Web Services service, or an anonymous user. You can
- * also use IAM Access Analyzer to preview public and cross-account access to your
- * resources before deploying permissions changes.</p> <p> <b>Unused access
- * analyzers</b> help identify potential identity access risks by enabling you to
- * identify unused IAM roles, unused access keys, unused console passwords, and IAM
- * principals with unused service and action-level permissions.</p> <p>Beyond
- * findings, IAM Access Analyzer provides basic and custom policy checks to
- * validate IAM policies before deploying permissions changes. You can use policy
- * generation to refine permissions by attaching a policy generated using access
- * activity logged in CloudTrail logs. </p> <p>This guide describes the IAM Access
- * Analyzer operations that you can call programmatically. For general information
- * about IAM Access Analyzer, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity
- * and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.</p>
+ * include findings for external, internal, and unused access, basic and custom
+ * policy checks for validating policies, and policy generation to generate
+ * fine-grained policies. To start using IAM Access Analyzer to identify external,
+ * internal, or unused access, you first need to create an analyzer.</p> <p>
+ * <b>External access analyzers</b> help you identify potential risks of accessing
+ * resources by enabling you to identify any resource policies that grant access to
+ * an external principal. It does this by using logic-based reasoning to analyze
+ * resource-based policies in your Amazon Web Services environment. An external
+ * principal can be another Amazon Web Services account, a root user, an IAM user
+ * or role, a federated user, an Amazon Web Services service, or an anonymous user.
+ * You can also use IAM Access Analyzer to preview public and cross-account access
+ * to your resources before deploying permissions changes.</p> <p> <b>Internal
+ * access analyzers</b> help you identify which principals within your organization
+ * or account have access to selected resources. This analysis supports
+ * implementing the principle of least privilege by ensuring that your specified
+ * resources can only be accessed by the intended principals within your
+ * organization.</p> <p> <b>Unused access analyzers</b> help you identify potential
+ * identity access risks by enabling you to identify unused IAM roles, unused
+ * access keys, unused console passwords, and IAM principals with unused service
+ * and action-level permissions.</p> <p>Beyond findings, IAM Access Analyzer
+ * provides basic and custom policy checks to validate IAM policies before
+ * deploying permissions changes. You can use policy generation to refine
+ * permissions by attaching a policy generated using access activity logged in
+ * CloudTrail logs. </p> <p>This guide describes the IAM Access Analyzer operations
+ * that you can call programmatically. For general information about IAM Access
+ * Analyzer, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Using
+ * Identity and Access Management Access Analyzer</a> in the <b>IAM User
+ * Guide</b>.</p>
  */
 class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient> {
@@ -437,7 +443,8 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Retrieves information about a resource that was analyzed.</p><p><h3>See
+   * <p>Retrieves information about a resource that was analyzed.</p>  <p>This
+   * action is supported only for external access analyzers.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">AWS
    * API Reference</a></p>
@@ -522,7 +529,9 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
    * <p>Retrieves information about the specified finding. GetFinding and
    * GetFindingV2 both use <code>access-analyzer:GetFinding</code> in the
    * <code>Action</code> element of an IAM policy statement. You must have permission
-   * to perform the <code>access-analyzer:GetFinding</code> action.</p><p><h3>See
+   * to perform the <code>access-analyzer:GetFinding</code> action.</p>
+   * <p>GetFinding is supported only for external access analyzers. You must use
+   * GetFindingV2 for internal and unused access analyzers.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFinding">AWS
    * API Reference</a></p>
@@ -802,7 +811,9 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
    * <code>access-analyzer:ListFindings</code> action.</p> <p>To learn about filter
    * keys that you can use to retrieve a list of findings, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
-   * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See
+   * Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
+   * <p>ListFindings is supported only for external access analyzers. You must use
+   * ListFindingsV2 for internal and unused access analyzers.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">AWS
    * API Reference</a></p>
@@ -943,7 +954,8 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Immediately starts a scan of the policies applied to the specified
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * resource.</p>  <p>This action is supported only for external access
+   * analyzers.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">AWS
    * API Reference</a></p>
    */
@@ -1019,7 +1031,8 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Modifies the configuration of an existing analyzer.</p><p><h3>See Also:</h3>
+   * <p>Modifies the configuration of an existing analyzer.</p>  <p>This action
+   * is not supported for external access analyzers.</p> <p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">AWS
    * API Reference</a></p>

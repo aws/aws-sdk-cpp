@@ -17,12 +17,15 @@ namespace IdentityStore {
  * <p>The Identity Store service used by IAM Identity Center provides a single
  * place to retrieve all of your identities (users and groups). For more
  * information, see the <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
- * Identity Center User Guide</a>.</p> <p>This reference guide describes the
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">
+ * IAM Identity Center User Guide</a>.</p> <p>This reference guide describes the
  * identity store operations that you can call programmatically and includes
- * detailed information about data types and errors.</p>  <p>IAM Identity
- * Center uses the <code>sso</code> and <code>identitystore</code> API
- * namespaces.</p>
+ * detailed information about data types and errors.</p>  <p> IAM Identity
+ * Center uses the <code>sso</code>, <code>sso-directory</code>, and
+ * <code>identitystore</code> API namespaces. The <code>sso-directory</code> and
+ * <code>identitystore</code> namespaces authorize access to data in the Identity
+ * Store. Make sure your policies with IAM actions from these two namespaces are
+ * consistent to avoid conflicting authorization to the same data.</p>
  */
 class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient> {
@@ -245,11 +248,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an
-   * identity store.</p>  <p>If you have administrator access to a member
-   * account, you can use this API from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * identity store.</p>  <p>If you have access to a member account, you can
+   * use this API operation from the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">AWS
    * API Reference</a></p>
    */
@@ -275,11 +278,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves membership metadata and attributes from <code>MembershipId</code>
-   * in an identity store.</p>  <p>If you have administrator access to a member
-   * account, you can use this API from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * in an identity store.</p>  <p>If you have access to a member account, you
+   * can use this API operation from the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership">AWS
    * API Reference</a></p>
    */
@@ -307,11 +310,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the user metadata and attributes from the <code>UserId</code> in an
-   * identity store.</p>  <p>If you have administrator access to a member
-   * account, you can use this API from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * identity store.</p>  <p>If you have access to a member account, you can
+   * use this API operation from the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">AWS
    * API Reference</a></p>
    */
@@ -337,11 +340,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves <code>GroupId</code> in an identity store.</p>  <p>If you
-   * have administrator access to a member account, you can use this API from the
-   * member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * have access to a member account, you can use this API operation from the member
+   * account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId">AWS
    * API Reference</a></p>
    */
@@ -367,11 +370,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the <code>MembershipId</code> in an identity store.</p>
-   * <p>If you have administrator access to a member account, you can use this API
-   * from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * <p>If you have access to a member account, you can use this API operation from
+   * the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId">AWS
    * API Reference</a></p>
    */
@@ -398,11 +401,11 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the <code>UserId</code> in an identity store.</p>  <p>If you
-   * have administrator access to a member account, you can use this API from the
-   * member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * have access to a member account, you can use this API operation from the member
+   * account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId">AWS
    * API Reference</a></p>
    */
@@ -428,12 +431,12 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Checks the user's membership in all requested groups and returns if the
-   * member exists in all queried groups.</p>  <p>If you have administrator
-   * access to a member account, you can use this API from the member account. Read
-   * about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * member exists in all queried groups.</p>  <p>If you have access to a
+   * member account, you can use this API operation from the member account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups">AWS
    * API Reference</a></p>
    */
@@ -460,12 +463,12 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>For the specified group in the specified identity store, returns the list of
-   * all <code>GroupMembership</code> objects and returns results in paginated
-   * form.</p>  <p>If you have administrator access to a member account, you
-   * can use this API from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * all <code> GroupMembership</code> objects and returns results in paginated
+   * form.</p>  <p>If you have access to a member account, you can use this API
+   * operation from the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships">AWS
    * API Reference</a></p>
    */
@@ -492,12 +495,12 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>For the specified member in the specified identity store, returns the list of
-   * all <code>GroupMembership</code> objects and returns results in paginated
-   * form.</p>  <p>If you have administrator access to a member account, you
-   * can use this API from the member account. Read about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * all <code> GroupMembership</code> objects and returns results in paginated
+   * form.</p>  <p>If you have access to a member account, you can use this API
+   * operation from the member account. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember">AWS
    * API Reference</a></p>
    */
@@ -529,12 +532,12 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
    * <p>Lists all groups in the identity store. Returns a paginated list of complete
    * <code>Group</code> objects. Filtering for a <code>Group</code> by the
    * <code>DisplayName</code> attribute is deprecated. Instead, use the
-   * <code>GetGroupId</code> API action.</p>  <p>If you have administrator
-   * access to a member account, you can use this API from the member account. Read
-   * about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>. </p> <p><h3>See
-   * Also:</h3>   <a
+   * <code>GetGroupId</code> API action.</p>  <p>If you have access to a member
+   * account, you can use this API operation from the member account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">AWS
    * API Reference</a></p>
    */
@@ -562,12 +565,12 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
    * <p>Lists all users in the identity store. Returns a paginated list of complete
    * <code>User</code> objects. Filtering for a <code>User</code> by the
    * <code>UserName</code> attribute is deprecated. Instead, use the
-   * <code>GetUserId</code> API action.</p>  <p>If you have administrator
-   * access to a member account, you can use this API from the member account. Read
-   * about <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-   * accounts</a> in the <i>Organizations User Guide</i>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <code>GetUserId</code> API action.</p>  <p>If you have access to a member
+   * account, you can use this API operation from the member account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+   * access to the identity store from member accounts</a> in the <i> IAM Identity
+   * Center User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">AWS
    * API Reference</a></p>
    */
@@ -592,8 +595,8 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>For the specified group in the specified identity store, updates the group
-   * metadata and attributes.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified group metadata and attributes in the specified identity
+   * store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup">AWS
    * API Reference</a></p>
    */
@@ -618,8 +621,8 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>For the specified user in the specified identity store, updates the user
-   * metadata and attributes.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified user metadata and attributes in the specified identity
+   * store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser">AWS
    * API Reference</a></p>
    */

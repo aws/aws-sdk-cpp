@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AutomaticFailConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -101,6 +102,24 @@ class EvaluationFormSingleSelectQuestionOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether automatic fail is configured on a single select question. </p>
+   */
+  inline const AutomaticFailConfiguration& GetAutomaticFailConfiguration() const { return m_automaticFailConfiguration; }
+  inline bool AutomaticFailConfigurationHasBeenSet() const { return m_automaticFailConfigurationHasBeenSet; }
+  template <typename AutomaticFailConfigurationT = AutomaticFailConfiguration>
+  void SetAutomaticFailConfiguration(AutomaticFailConfigurationT&& value) {
+    m_automaticFailConfigurationHasBeenSet = true;
+    m_automaticFailConfiguration = std::forward<AutomaticFailConfigurationT>(value);
+  }
+  template <typename AutomaticFailConfigurationT = AutomaticFailConfiguration>
+  EvaluationFormSingleSelectQuestionOption& WithAutomaticFailConfiguration(AutomaticFailConfigurationT&& value) {
+    SetAutomaticFailConfiguration(std::forward<AutomaticFailConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_refId;
   bool m_refIdHasBeenSet = false;
@@ -113,6 +132,9 @@ class EvaluationFormSingleSelectQuestionOption {
 
   bool m_automaticFail{false};
   bool m_automaticFailHasBeenSet = false;
+
+  AutomaticFailConfiguration m_automaticFailConfiguration;
+  bool m_automaticFailConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

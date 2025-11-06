@@ -26,6 +26,10 @@ EvaluationFormQuestionTypeProperties& EvaluationFormQuestionTypeProperties::oper
     m_singleSelect = jsonValue.GetObject("SingleSelect");
     m_singleSelectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Text")) {
+    m_text = jsonValue.GetObject("Text");
+    m_textHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue EvaluationFormQuestionTypeProperties::Jsonize() const {
 
   if (m_singleSelectHasBeenSet) {
     payload.WithObject("SingleSelect", m_singleSelect.Jsonize());
+  }
+
+  if (m_textHasBeenSet) {
+    payload.WithObject("Text", m_text.Jsonize());
   }
 
   return payload;

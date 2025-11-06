@@ -53,8 +53,8 @@ class UpdateInstanceAttributeRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
-   * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web
-   * ServicesSupport for allowlisting.</p>
+   * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
+   * Support for allowlisting.</p>
    */
   inline InstanceAttributeType GetAttributeType() const { return m_attributeType; }
   inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }

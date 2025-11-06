@@ -15,6 +15,7 @@
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 #include <aws/identitystore/model/AccessDeniedException.h>
+#include <aws/identitystore/model/AccessDeniedExceptionReason.h>
 #include <aws/identitystore/model/Address.h>
 #include <aws/identitystore/model/AlternateIdentifier.h>
 #include <aws/identitystore/model/AttributeOperation.h>
@@ -64,17 +65,22 @@
 #include <aws/identitystore/model/MemberId.h>
 #include <aws/identitystore/model/Name.h>
 #include <aws/identitystore/model/PhoneNumber.h>
+#include <aws/identitystore/model/Photo.h>
 #include <aws/identitystore/model/ResourceNotFoundException.h>
+#include <aws/identitystore/model/ResourceNotFoundExceptionReason.h>
 #include <aws/identitystore/model/ResourceType.h>
 #include <aws/identitystore/model/ServiceQuotaExceededException.h>
 #include <aws/identitystore/model/ThrottlingException.h>
+#include <aws/identitystore/model/ThrottlingExceptionReason.h>
 #include <aws/identitystore/model/UniqueAttribute.h>
 #include <aws/identitystore/model/UpdateGroupRequest.h>
 #include <aws/identitystore/model/UpdateGroupResult.h>
 #include <aws/identitystore/model/UpdateUserRequest.h>
 #include <aws/identitystore/model/UpdateUserResult.h>
 #include <aws/identitystore/model/User.h>
+#include <aws/identitystore/model/UserStatus.h>
 #include <aws/identitystore/model/ValidationException.h>
+#include <aws/identitystore/model/ValidationExceptionReason.h>
 
 using IdentityStoreIncludeTest = ::testing::Test;
 

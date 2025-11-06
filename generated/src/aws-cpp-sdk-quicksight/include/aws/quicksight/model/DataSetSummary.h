@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
@@ -143,7 +144,8 @@ class DataSetSummary {
 
   ///@{
   /**
-   * <p>The row-level security configuration for the dataset.</p>
+   * <p>The row-level security configuration for the dataset in the legacy data
+   * preparation experience.</p>
    */
   inline const RowLevelPermissionDataSet& GetRowLevelPermissionDataSet() const { return m_rowLevelPermissionDataSet; }
   inline bool RowLevelPermissionDataSetHasBeenSet() const { return m_rowLevelPermissionDataSetHasBeenSet; }
@@ -155,6 +157,35 @@ class DataSetSummary {
   template <typename RowLevelPermissionDataSetT = RowLevelPermissionDataSet>
   DataSetSummary& WithRowLevelPermissionDataSet(RowLevelPermissionDataSetT&& value) {
     SetRowLevelPermissionDataSet(std::forward<RowLevelPermissionDataSetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The row-level security configuration for the dataset in the new data
+   * preparation experience.</p>
+   */
+  inline const Aws::Map<Aws::String, RowLevelPermissionDataSet>& GetRowLevelPermissionDataSetMap() const {
+    return m_rowLevelPermissionDataSetMap;
+  }
+  inline bool RowLevelPermissionDataSetMapHasBeenSet() const { return m_rowLevelPermissionDataSetMapHasBeenSet; }
+  template <typename RowLevelPermissionDataSetMapT = Aws::Map<Aws::String, RowLevelPermissionDataSet>>
+  void SetRowLevelPermissionDataSetMap(RowLevelPermissionDataSetMapT&& value) {
+    m_rowLevelPermissionDataSetMapHasBeenSet = true;
+    m_rowLevelPermissionDataSetMap = std::forward<RowLevelPermissionDataSetMapT>(value);
+  }
+  template <typename RowLevelPermissionDataSetMapT = Aws::Map<Aws::String, RowLevelPermissionDataSet>>
+  DataSetSummary& WithRowLevelPermissionDataSetMap(RowLevelPermissionDataSetMapT&& value) {
+    SetRowLevelPermissionDataSetMap(std::forward<RowLevelPermissionDataSetMapT>(value));
+    return *this;
+  }
+  template <typename RowLevelPermissionDataSetMapKeyT = Aws::String,
+            typename RowLevelPermissionDataSetMapValueT = RowLevelPermissionDataSet>
+  DataSetSummary& AddRowLevelPermissionDataSetMap(RowLevelPermissionDataSetMapKeyT&& key, RowLevelPermissionDataSetMapValueT&& value) {
+    m_rowLevelPermissionDataSetMapHasBeenSet = true;
+    m_rowLevelPermissionDataSetMap.emplace(std::forward<RowLevelPermissionDataSetMapKeyT>(key),
+                                           std::forward<RowLevelPermissionDataSetMapValueT>(value));
     return *this;
   }
   ///@}
@@ -228,6 +259,9 @@ class DataSetSummary {
 
   RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
   bool m_rowLevelPermissionDataSetHasBeenSet = false;
+
+  Aws::Map<Aws::String, RowLevelPermissionDataSet> m_rowLevelPermissionDataSetMap;
+  bool m_rowLevelPermissionDataSetMapHasBeenSet = false;
 
   bool m_rowLevelPermissionTagConfigurationApplied{false};
   bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = false;

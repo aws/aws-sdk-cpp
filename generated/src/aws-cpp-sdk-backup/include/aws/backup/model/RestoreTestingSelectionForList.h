@@ -115,7 +115,8 @@ class RestoreTestingSelectionForList {
 
   ///@{
   /**
-   * <p>Unique name of a restore testing selection.</p>
+   * <p>Unique name of a restore testing selection.</p> <p>The name consists of only
+   * alphanumeric characters and underscores. Maximum length is 50.</p>
    */
   inline const Aws::String& GetRestoreTestingSelectionName() const { return m_restoreTestingSelectionName; }
   inline bool RestoreTestingSelectionNameHasBeenSet() const { return m_restoreTestingSelectionNameHasBeenSet; }

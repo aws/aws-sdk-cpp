@@ -43,6 +43,10 @@ Aws::String UpdateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("ScoringStrategy", m_scoringStrategy.Jsonize());
   }
 
+  if (m_autoEvaluationConfigurationHasBeenSet) {
+    payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
   }

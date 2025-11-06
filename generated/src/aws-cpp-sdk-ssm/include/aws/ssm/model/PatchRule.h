@@ -72,14 +72,18 @@ class PatchRule {
    * <p>The number of days after the release date of each patch matched by the rule
    * that the patch is marked as approved in the patch baseline. For example, a value
    * of <code>7</code> means that patches are approved seven days after they are
-   * released.</p> <p>This parameter is marked as <code>Required: No</code>, but your
-   * request must include a value for either <code>ApproveAfterDays</code> or
-   * <code>ApproveUntilDate</code>.</p> <p>Not supported for Debian Server or Ubuntu
-   * Server.</p>  <p>Use caution when setting this value for Windows
-   * Server patch baselines. Because patch updates that are replaced by later updates
-   * are removed, setting too broad a value for this parameter can result in crucial
-   * patches not being installed. For more information, see the <b>Windows Server</b>
-   * tab in the topic <a
+   * released.</p> <p>Patch Manager evaluates patch release dates using Coordinated
+   * Universal Time (UTC). If the day represented by <code>7</code> is
+   * <code>2025-11-16</code>, patches released between
+   * <code>2025-11-16T00:00:00Z</code> and <code>2025-11-16T23:59:59Z</code> will be
+   * included in the approval.</p> <p>This parameter is marked as <code>Required:
+   * No</code>, but your request must include a value for either
+   * <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p> <p>Not
+   * supported for Debian Server or Ubuntu Server.</p>  <p>Use caution
+   * when setting this value for Windows Server patch baselines. Because patch
+   * updates that are replaced by later updates are removed, setting too broad a
+   * value for this parameter can result in crucial patches not being installed. For
+   * more information, see the <b>Windows Server</b> tab in the topic <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
    * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
    * User Guide</i>.</p>
@@ -100,15 +104,18 @@ class PatchRule {
   /**
    * <p>The cutoff date for auto approval of released patches. Any patches released
    * on or before this date are installed automatically.</p> <p>Enter dates in the
-   * format <code>YYYY-MM-DD</code>. For example, <code>2024-12-31</code>.</p>
-   * <p>This parameter is marked as <code>Required: No</code>, but your request must
-   * include a value for either <code>ApproveUntilDate</code> or
-   * <code>ApproveAfterDays</code>.</p> <p>Not supported for Debian Server or Ubuntu
-   * Server.</p>  <p>Use caution when setting this value for Windows
-   * Server patch baselines. Because patch updates that are replaced by later updates
-   * are removed, setting too broad a value for this parameter can result in crucial
-   * patches not being installed. For more information, see the <b>Windows Server</b>
-   * tab in the topic <a
+   * format <code>YYYY-MM-DD</code>. For example, <code>2025-11-16</code>.</p>
+   * <p>Patch Manager evaluates patch release dates using Coordinated Universal Time
+   * (UTC). If you enter the date <code>2025-11-16</code>, patches released between
+   * <code>2025-11-16T00:00:00Z</code> and <code>2025-11-16T23:59:59Z</code> will be
+   * included in the approval.</p> <p>This parameter is marked as <code>Required:
+   * No</code>, but your request must include a value for either
+   * <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p> <p>Not
+   * supported for Debian Server or Ubuntu Server.</p>  <p>Use caution
+   * when setting this value for Windows Server patch baselines. Because patch
+   * updates that are replaced by later updates are removed, setting too broad a
+   * value for this parameter can result in crucial patches not being installed. For
+   * more information, see the <b>Windows Server</b> tab in the topic <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
    * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
    * User Guide</i>.</p>

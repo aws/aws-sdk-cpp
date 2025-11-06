@@ -31,5 +31,9 @@ Aws::String SubmitContactEvaluationRequest::SerializePayload() const {
     payload.WithObject("Notes", std::move(notesJsonMap));
   }
 
+  if (m_submittedByHasBeenSet) {
+    payload.WithObject("SubmittedBy", m_submittedBy.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

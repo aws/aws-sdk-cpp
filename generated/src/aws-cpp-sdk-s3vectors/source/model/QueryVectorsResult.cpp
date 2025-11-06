@@ -28,6 +28,10 @@ QueryVectorsResult& QueryVectorsResult::operator=(const Aws::AmazonWebServiceRes
     }
     m_vectorsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("distanceMetric")) {
+    m_distanceMetric = DistanceMetricMapper::GetDistanceMetricForName(jsonValue.GetString("distanceMetric"));
+    m_distanceMetricHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

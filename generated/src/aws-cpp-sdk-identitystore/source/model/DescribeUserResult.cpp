@@ -21,13 +21,17 @@ DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("UserName")) {
-    m_userName = jsonValue.GetString("UserName");
-    m_userNameHasBeenSet = true;
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserName")) {
+    m_userName = jsonValue.GetString("UserName");
+    m_userNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ExternalIds")) {
     Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
@@ -93,9 +97,40 @@ DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceRes
     m_timezone = jsonValue.GetString("Timezone");
     m_timezoneHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
+  if (jsonValue.ValueExists("UserStatus")) {
+    m_userStatus = UserStatusMapper::GetUserStatusForName(jsonValue.GetString("UserStatus"));
+    m_userStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Photos")) {
+    Aws::Utils::Array<JsonView> photosJsonList = jsonValue.GetArray("Photos");
+    for (unsigned photosIndex = 0; photosIndex < photosJsonList.GetLength(); ++photosIndex) {
+      m_photos.push_back(photosJsonList[photosIndex].AsObject());
+    }
+    m_photosHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Website")) {
+    m_website = jsonValue.GetString("Website");
+    m_websiteHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Birthdate")) {
+    m_birthdate = jsonValue.GetString("Birthdate");
+    m_birthdateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedBy")) {
+    m_updatedBy = jsonValue.GetString("UpdatedBy");
+    m_updatedByHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

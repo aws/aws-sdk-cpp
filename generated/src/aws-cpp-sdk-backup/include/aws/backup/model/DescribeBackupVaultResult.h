@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/LatestMpaApprovalTeamUpdate.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/backup/model/VaultType.h>
@@ -334,6 +335,23 @@ class DescribeBackupVaultResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The type of encryption key used for the backup vault. Valid values are
+   * CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web
+   * Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+   */
+  inline EncryptionKeyType GetEncryptionKeyType() const { return m_encryptionKeyType; }
+  inline void SetEncryptionKeyType(EncryptionKeyType value) {
+    m_encryptionKeyTypeHasBeenSet = true;
+    m_encryptionKeyType = value;
+  }
+  inline DescribeBackupVaultResult& WithEncryptionKeyType(EncryptionKeyType value) {
+    SetEncryptionKeyType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -395,6 +413,9 @@ class DescribeBackupVaultResult {
 
   LatestMpaApprovalTeamUpdate m_latestMpaApprovalTeamUpdate;
   bool m_latestMpaApprovalTeamUpdateHasBeenSet = false;
+
+  EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
+  bool m_encryptionKeyTypeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

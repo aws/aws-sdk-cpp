@@ -54,6 +54,24 @@ class InputColumn {
 
   ///@{
   /**
+   * <p>A unique identifier for the input column.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  InputColumn& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data type of the column.</p>
    */
   inline InputColumnDataType GetType() const { return m_type; }
@@ -87,6 +105,9 @@ class InputColumn {
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
   InputColumnDataType m_type{InputColumnDataType::NOT_SET};
   bool m_typeHasBeenSet = false;

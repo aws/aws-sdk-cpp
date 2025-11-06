@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationAnswerData.h>
+#include <aws/connect/model/EvaluationSuggestedAnswer.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -67,12 +69,39 @@ class EvaluationAnswerOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Automation suggested answers for the questions.</p>
+   */
+  inline const Aws::Vector<EvaluationSuggestedAnswer>& GetSuggestedAnswers() const { return m_suggestedAnswers; }
+  inline bool SuggestedAnswersHasBeenSet() const { return m_suggestedAnswersHasBeenSet; }
+  template <typename SuggestedAnswersT = Aws::Vector<EvaluationSuggestedAnswer>>
+  void SetSuggestedAnswers(SuggestedAnswersT&& value) {
+    m_suggestedAnswersHasBeenSet = true;
+    m_suggestedAnswers = std::forward<SuggestedAnswersT>(value);
+  }
+  template <typename SuggestedAnswersT = Aws::Vector<EvaluationSuggestedAnswer>>
+  EvaluationAnswerOutput& WithSuggestedAnswers(SuggestedAnswersT&& value) {
+    SetSuggestedAnswers(std::forward<SuggestedAnswersT>(value));
+    return *this;
+  }
+  template <typename SuggestedAnswersT = EvaluationSuggestedAnswer>
+  EvaluationAnswerOutput& AddSuggestedAnswers(SuggestedAnswersT&& value) {
+    m_suggestedAnswersHasBeenSet = true;
+    m_suggestedAnswers.emplace_back(std::forward<SuggestedAnswersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EvaluationAnswerData m_value;
   bool m_valueHasBeenSet = false;
 
   EvaluationAnswerData m_systemSuggestedValue;
   bool m_systemSuggestedValueHasBeenSet = false;
+
+  Aws::Vector<EvaluationSuggestedAnswer> m_suggestedAnswers;
+  bool m_suggestedAnswersHasBeenSet = false;
 };
 
 }  // namespace Model

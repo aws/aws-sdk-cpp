@@ -62,6 +62,8 @@
 #include <aws/s3tables/model/ListTableBucketsResult.h>
 #include <aws/s3tables/model/ListTablesRequest.h>
 #include <aws/s3tables/model/ListTablesResult.h>
+#include <aws/s3tables/model/ListTagsForResourceRequest.h>
+#include <aws/s3tables/model/ListTagsForResourceResult.h>
 #include <aws/s3tables/model/MaintenanceStatus.h>
 #include <aws/s3tables/model/NamespaceSummary.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
@@ -86,6 +88,10 @@
 #include <aws/s3tables/model/TableMetadata.h>
 #include <aws/s3tables/model/TableSummary.h>
 #include <aws/s3tables/model/TableType.h>
+#include <aws/s3tables/model/TagResourceRequest.h>
+#include <aws/s3tables/model/TagResourceResult.h>
+#include <aws/s3tables/model/UntagResourceRequest.h>
+#include <aws/s3tables/model/UntagResourceResult.h>
 #include <aws/s3tables/model/UpdateTableMetadataLocationRequest.h>
 #include <aws/s3tables/model/UpdateTableMetadataLocationResult.h>
 

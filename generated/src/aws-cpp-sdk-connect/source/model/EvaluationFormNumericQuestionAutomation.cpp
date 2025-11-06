@@ -22,6 +22,10 @@ EvaluationFormNumericQuestionAutomation& EvaluationFormNumericQuestionAutomation
     m_propertyValue = jsonValue.GetObject("PropertyValue");
     m_propertyValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AnswerSource")) {
+    m_answerSource = jsonValue.GetObject("AnswerSource");
+    m_answerSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EvaluationFormNumericQuestionAutomation::Jsonize() const {
 
   if (m_propertyValueHasBeenSet) {
     payload.WithObject("PropertyValue", m_propertyValue.Jsonize());
+  }
+
+  if (m_answerSourceHasBeenSet) {
+    payload.WithObject("AnswerSource", m_answerSource.Jsonize());
   }
 
   return payload;

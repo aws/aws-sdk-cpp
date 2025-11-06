@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/CustomSql.h>
 #include <aws/quicksight/model/RelationalTable.h>
 #include <aws/quicksight/model/S3Source.h>
+#include <aws/quicksight/model/SaaSTable.h>
 
 #include <utility>
 
@@ -89,6 +90,24 @@ class PhysicalTable {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A physical table type for Software-as-a-Service (SaaS) sources.</p>
+   */
+  inline const SaaSTable& GetSaaSTable() const { return m_saaSTable; }
+  inline bool SaaSTableHasBeenSet() const { return m_saaSTableHasBeenSet; }
+  template <typename SaaSTableT = SaaSTable>
+  void SetSaaSTable(SaaSTableT&& value) {
+    m_saaSTableHasBeenSet = true;
+    m_saaSTable = std::forward<SaaSTableT>(value);
+  }
+  template <typename SaaSTableT = SaaSTable>
+  PhysicalTable& WithSaaSTable(SaaSTableT&& value) {
+    SetSaaSTable(std::forward<SaaSTableT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RelationalTable m_relationalTable;
   bool m_relationalTableHasBeenSet = false;
@@ -98,6 +117,9 @@ class PhysicalTable {
 
   S3Source m_s3Source;
   bool m_s3SourceHasBeenSet = false;
+
+  SaaSTable m_saaSTable;
+  bool m_saaSTableHasBeenSet = false;
 };
 
 }  // namespace Model

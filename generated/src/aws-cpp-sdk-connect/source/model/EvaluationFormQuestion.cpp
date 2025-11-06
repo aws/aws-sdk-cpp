@@ -42,6 +42,10 @@ EvaluationFormQuestion& EvaluationFormQuestion::operator=(JsonView jsonValue) {
     m_questionTypeProperties = jsonValue.GetObject("QuestionTypeProperties");
     m_questionTypePropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Enablement")) {
+    m_enablement = jsonValue.GetObject("Enablement");
+    m_enablementHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Weight")) {
     m_weight = jsonValue.GetDouble("Weight");
     m_weightHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue EvaluationFormQuestion::Jsonize() const {
 
   if (m_questionTypePropertiesHasBeenSet) {
     payload.WithObject("QuestionTypeProperties", m_questionTypeProperties.Jsonize());
+  }
+
+  if (m_enablementHasBeenSet) {
+    payload.WithObject("Enablement", m_enablement.Jsonize());
   }
 
   if (m_weightHasBeenSet) {

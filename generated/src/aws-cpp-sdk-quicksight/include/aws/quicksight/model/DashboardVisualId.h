@@ -45,7 +45,7 @@ class DashboardVisualId {
    * <p>The ID of the dashboard that has the visual that you want to embed. The
    * <code>DashboardId</code> can be found in the <code>IDs for developers</code>
    * section of the <code>Embed visual</code> pane of the visual's on-visual menu of
-   * the QuickSight console. You can also get the <code>DashboardId</code> with a
+   * the Quick Suite console. You can also get the <code>DashboardId</code> with a
    * <code>ListDashboards</code> API operation.</p>
    */
   inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
@@ -67,7 +67,7 @@ class DashboardVisualId {
    * <p>The ID of the sheet that the has visual that you want to embed. The
    * <code>SheetId</code> can be found in the <code>IDs for developers</code> section
    * of the <code>Embed visual</code> pane of the visual's on-visual menu of the
-   * QuickSight console.</p>
+   * Quick Suite console.</p>
    */
   inline const Aws::String& GetSheetId() const { return m_sheetId; }
   inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }

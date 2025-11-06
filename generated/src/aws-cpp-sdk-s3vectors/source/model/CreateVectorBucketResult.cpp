@@ -20,7 +20,11 @@ using namespace Aws;
 CreateVectorBucketResult::CreateVectorBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVectorBucketResult& CreateVectorBucketResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("vectorBucketArn")) {
+    m_vectorBucketArn = jsonValue.GetString("vectorBucketArn");
+    m_vectorBucketArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

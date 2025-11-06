@@ -31,14 +31,6 @@ Aws::String CreateDataSetRequest::SerializePayload() const {
     payload.WithObject("PhysicalTableMap", std::move(physicalTableMapJsonMap));
   }
 
-  if (m_logicalTableMapHasBeenSet) {
-    JsonValue logicalTableMapJsonMap;
-    for (auto& logicalTableMapItem : m_logicalTableMap) {
-      logicalTableMapJsonMap.WithObject(logicalTableMapItem.first, logicalTableMapItem.second.Jsonize());
-    }
-    payload.WithObject("LogicalTableMap", std::move(logicalTableMapJsonMap));
-  }
-
   if (m_importModeHasBeenSet) {
     payload.WithString("ImportMode", DataSetImportModeMapper::GetNameForDataSetImportMode(m_importMode));
   }
@@ -65,14 +57,6 @@ Aws::String CreateDataSetRequest::SerializePayload() const {
       permissionsJsonList[permissionsIndex].AsObject(m_permissions[permissionsIndex].Jsonize());
     }
     payload.WithArray("Permissions", std::move(permissionsJsonList));
-  }
-
-  if (m_rowLevelPermissionDataSetHasBeenSet) {
-    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
-  }
-
-  if (m_rowLevelPermissionTagConfigurationHasBeenSet) {
-    payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
   }
 
   if (m_columnLevelPermissionRulesHasBeenSet) {
@@ -119,6 +103,14 @@ Aws::String CreateDataSetRequest::SerializePayload() const {
 
   if (m_useAsHasBeenSet) {
     payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
+  }
+
+  if (m_dataPrepConfigurationHasBeenSet) {
+    payload.WithObject("DataPrepConfiguration", m_dataPrepConfiguration.Jsonize());
+  }
+
+  if (m_semanticModelConfigurationHasBeenSet) {
+    payload.WithObject("SemanticModelConfiguration", m_semanticModelConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

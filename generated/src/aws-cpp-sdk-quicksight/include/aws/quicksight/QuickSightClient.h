@@ -14,7 +14,7 @@
 namespace Aws {
 namespace QuickSight {
 /**
- * <fullname>Amazon QuickSight API Reference</fullname> <p>Amazon Quick Sight is a
+ * <fullname>Amazon Quick Suite API Reference</fullname> <p>Amazon Quick Sight is a
  * fully managed, serverless business intelligence service for the Amazon Web
  * Services Cloud that makes it easy to extend data and insights to every user in
  * your organization. This API reference contains documentation for a programming
@@ -3459,7 +3459,7 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
+   * <p>Generates an embed URL that you can use to embed an Amazon Quick Suite
    * dashboard or visual in your website, without having to register any reader
    * users. Before you use this action, make sure that you have configured the
    * dashboards and permissions.</p> <p>The following rules apply to the generated
@@ -3471,13 +3471,13 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * </code> parameter. The resulting user session is valid for 15 minutes (minimum)
    * to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li>
    * <p>You are charged only when the URL is used or there is interaction with Amazon
-   * QuickSight.</p> </li> </ul> <p>For more information, see <a
+   * Quick Suite.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-   * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
+   * Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.</p> <p>For more
    * information about the high-level steps for embedding and for an interactive demo
    * of the ways you can customize embedding, visit the <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Quick Suite Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser">AWS
    * API Reference</a></p>
    */
@@ -3506,10 +3506,10 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
+   * <p>Generates an embed URL that you can use to embed an Amazon Quick Suite
    * experience in your website. This action can be used for any type of user
-   * registered in an Amazon QuickSight account. Before you use this action, make
-   * sure that you have configured the relevant Amazon QuickSight resource and
+   * registered in an Amazon Quick Suite account. Before you use this action, make
+   * sure that you have configured the relevant Amazon Quick Suite resource and
    * permissions.</p> <p>The following rules apply to the generated URL:</p> <ul>
    * <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it
    * is generated. Once redeemed within this period, it cannot be re-used again.</p>
@@ -3519,13 +3519,13 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * </code> parameter.</p> <p>The resulting user session is valid for 15 minutes
    * (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p>
    * </li> <li> <p>You are charged only when the URL is used or there is interaction
-   * with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a
+   * with Amazon Quick Suite.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-   * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
+   * Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.</p> <p>For more
    * information about the high-level steps for embedding and for an interactive demo
    * of the ways you can customize embedding, visit the <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Quick Suite Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser">AWS
    * API Reference</a></p>
    */
@@ -3608,17 +3608,17 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * must be used together.</p> </li> <li> <p>They can be used one time only.</p>
    * </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
    * <li> <p>You are charged only when the URL is used or there is interaction with
-   * QuickSight.</p> </li> <li> <p>The resulting user session is valid for 15 minutes
-   * (default) up to 10 hours (maximum). You can use the optional
+   * Quick Suite.</p> </li> <li> <p>The resulting user session is valid for 15
+   * minutes (default) up to 10 hours (maximum). You can use the optional
    * <code>SessionLifetimeInMinutes</code> parameter to customize session
    * duration.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-   * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
+   * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick Suite User
    * Guide</i>.</p> <p>For more information about the high-level steps for embedding
    * and for an interactive demo of the ways you can customize embedding, visit the
    * <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Quick Suite Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
    * API Reference</a></p>
    */
@@ -3708,11 +3708,11 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
    * </code> API operation to add a new user with a custom permission profile
    * attached. For more information, see the following sections in the <i>Amazon
-   * QuickSight User Guide</i>:</p> <ul> <li> <p> <a
+   * Quick Suite User Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
    * Analytics</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-   * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
+   * Access to the Amazon Quick Suite Console</a> </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">AWS
    * API Reference</a></p>
@@ -4718,9 +4718,9 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * receives the embed URL that is specific to that user. The IAM Identity Center
    * application that the user has logged into needs to have <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
-   * Identity Propagation enabled for QuickSight</a> with the scope value set to
+   * Identity Propagation enabled for Quick Suite</a> with the scope value set to
    * <code>quicksight:read</code>. Before you use this action, make sure that you
-   * have configured the relevant QuickSight resource and permissions.</p> <p>We
+   * have configured the relevant Quick Suite resource and permissions.</p> <p>We
    * recommend enabling the <code>QSearchStatus</code> API to unlock the full
    * potential of <code>PredictQnA</code>. When <code>QSearchStatus</code> is
    * enabled, it first checks the specified dashboard for any existing visuals that
@@ -5058,7 +5058,7 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches for any Q topic that exists in an QuickSight account.</p><p><h3>See
+   * <p>Searches for any Q topic that exists in an Quick Suite account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchTopics">AWS
    * API Reference</a></p>
@@ -5549,9 +5549,9 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates an QuickSight application with a token exchange grant. This operation
-   * only supports QuickSight applications that are registered with IAM Identity
-   * Center.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an Quick Suite application with a token exchange grant. This
+   * operation only supports Quick Suite applications that are registered with IAM
+   * Identity Center.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateApplicationWithTokenExchangeGrant">AWS
    * API Reference</a></p>
    */
@@ -6211,7 +6211,7 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * user in the Identity and Access Management (IAM) console. For more information
    * on using IAM with Amazon Quick Sight, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-   * QuickSight with IAM</a> in the <i>Amazon Quick Sight User
+   * Quick Suite with IAM</a> in the <i>Amazon Quick Sight User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">AWS
    * API Reference</a></p>

@@ -17,9 +17,7 @@ namespace GameLift {
 namespace Model {
 
 /**
- * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
- * server groups.</b> </p> <p>Settings for a target-based scaling policy as part of
- * a <a
+ * <p>Settings for a target-based scaling policy as part of a <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a>
  * . These settings are used to create a target-based policy that tracks the Amazon
  * GameLift Servers FleetIQ metric <code>"PercentUtilizedGameServers"</code> and

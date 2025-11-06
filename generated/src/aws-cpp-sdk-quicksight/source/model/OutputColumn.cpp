@@ -22,6 +22,10 @@ OutputColumn& OutputColumn::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Id")) {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue OutputColumn::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
   if (m_descriptionHasBeenSet) {

@@ -26,6 +26,13 @@ EvaluationAnswerOutput& EvaluationAnswerOutput::operator=(JsonView jsonValue) {
     m_systemSuggestedValue = jsonValue.GetObject("SystemSuggestedValue");
     m_systemSuggestedValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SuggestedAnswers")) {
+    Aws::Utils::Array<JsonView> suggestedAnswersJsonList = jsonValue.GetArray("SuggestedAnswers");
+    for (unsigned suggestedAnswersIndex = 0; suggestedAnswersIndex < suggestedAnswersJsonList.GetLength(); ++suggestedAnswersIndex) {
+      m_suggestedAnswers.push_back(suggestedAnswersJsonList[suggestedAnswersIndex].AsObject());
+    }
+    m_suggestedAnswersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +45,14 @@ JsonValue EvaluationAnswerOutput::Jsonize() const {
 
   if (m_systemSuggestedValueHasBeenSet) {
     payload.WithObject("SystemSuggestedValue", m_systemSuggestedValue.Jsonize());
+  }
+
+  if (m_suggestedAnswersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> suggestedAnswersJsonList(m_suggestedAnswers.size());
+    for (unsigned suggestedAnswersIndex = 0; suggestedAnswersIndex < suggestedAnswersJsonList.GetLength(); ++suggestedAnswersIndex) {
+      suggestedAnswersJsonList[suggestedAnswersIndex].AsObject(m_suggestedAnswers[suggestedAnswersIndex].Jsonize());
+    }
+    payload.WithArray("SuggestedAnswers", std::move(suggestedAnswersJsonList));
   }
 
   return payload;

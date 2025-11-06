@@ -10,6 +10,7 @@
 #include <aws/connect/model/EvaluationNote.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/connect/model/EvaluationStatus.h>
+#include <aws/connect/model/EvaluationType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -218,6 +219,22 @@ class Evaluation {
 
   ///@{
   /**
+   * <p>Type of the evaluation. </p>
+   */
+  inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
+  inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
+  inline void SetEvaluationType(EvaluationType value) {
+    m_evaluationTypeHasBeenSet = true;
+    m_evaluationType = value;
+  }
+  inline Evaluation& WithEvaluationType(EvaluationType value) {
+    SetEvaluationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -267,6 +284,9 @@ class Evaluation {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_lastModifiedTimeHasBeenSet = false;
+
+  EvaluationType m_evaluationType{EvaluationType::NOT_SET};
+  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

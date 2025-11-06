@@ -31,5 +31,9 @@ Aws::String UpdateContactEvaluationRequest::SerializePayload() const {
     payload.WithObject("Notes", std::move(notesJsonMap));
   }
 
+  if (m_updatedByHasBeenSet) {
+    payload.WithObject("UpdatedBy", m_updatedBy.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

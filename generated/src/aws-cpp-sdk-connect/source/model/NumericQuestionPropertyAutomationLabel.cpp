@@ -23,6 +23,9 @@ static const int NUMBER_OF_INTERRUPTIONS_HASH = HashingUtils::HashString("NUMBER
 static const int CONTACT_DURATION_HASH = HashingUtils::HashString("CONTACT_DURATION");
 static const int AGENT_INTERACTION_DURATION_HASH = HashingUtils::HashString("AGENT_INTERACTION_DURATION");
 static const int CUSTOMER_HOLD_TIME_HASH = HashingUtils::HashString("CUSTOMER_HOLD_TIME");
+static const int LONGEST_HOLD_DURATION_HASH = HashingUtils::HashString("LONGEST_HOLD_DURATION");
+static const int NUMBER_OF_HOLDS_HASH = HashingUtils::HashString("NUMBER_OF_HOLDS");
+static const int AGENT_INTERACTION_AND_HOLD_DURATION_HASH = HashingUtils::HashString("AGENT_INTERACTION_AND_HOLD_DURATION");
 
 NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabelForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +45,12 @@ NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabel
     return NumericQuestionPropertyAutomationLabel::AGENT_INTERACTION_DURATION;
   } else if (hashCode == CUSTOMER_HOLD_TIME_HASH) {
     return NumericQuestionPropertyAutomationLabel::CUSTOMER_HOLD_TIME;
+  } else if (hashCode == LONGEST_HOLD_DURATION_HASH) {
+    return NumericQuestionPropertyAutomationLabel::LONGEST_HOLD_DURATION;
+  } else if (hashCode == NUMBER_OF_HOLDS_HASH) {
+    return NumericQuestionPropertyAutomationLabel::NUMBER_OF_HOLDS;
+  } else if (hashCode == AGENT_INTERACTION_AND_HOLD_DURATION_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AGENT_INTERACTION_AND_HOLD_DURATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +81,12 @@ Aws::String GetNameForNumericQuestionPropertyAutomationLabel(NumericQuestionProp
       return "AGENT_INTERACTION_DURATION";
     case NumericQuestionPropertyAutomationLabel::CUSTOMER_HOLD_TIME:
       return "CUSTOMER_HOLD_TIME";
+    case NumericQuestionPropertyAutomationLabel::LONGEST_HOLD_DURATION:
+      return "LONGEST_HOLD_DURATION";
+    case NumericQuestionPropertyAutomationLabel::NUMBER_OF_HOLDS:
+      return "NUMBER_OF_HOLDS";
+    case NumericQuestionPropertyAutomationLabel::AGENT_INTERACTION_AND_HOLD_DURATION:
+      return "AGENT_INTERACTION_AND_HOLD_DURATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

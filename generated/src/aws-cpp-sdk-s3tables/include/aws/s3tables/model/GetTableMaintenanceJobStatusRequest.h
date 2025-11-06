@@ -66,7 +66,8 @@ class GetTableMaintenanceJobStatusRequest : public S3TablesRequest {
 
   ///@{
   /**
-   * <p>The name of the maintenance job.</p>
+   * <p>The name of the table containing the maintenance job status you want to
+   * check.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -38,6 +38,10 @@ UploadSettings& UploadSettings::operator=(JsonView jsonValue) {
     m_delimiter = jsonValue.GetString("Delimiter");
     m_delimiterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CustomCellAddressRange")) {
+    m_customCellAddressRange = jsonValue.GetString("CustomCellAddressRange");
+    m_customCellAddressRangeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue UploadSettings::Jsonize() const {
 
   if (m_delimiterHasBeenSet) {
     payload.WithString("Delimiter", m_delimiter);
+  }
+
+  if (m_customCellAddressRangeHasBeenSet) {
+    payload.WithString("CustomCellAddressRange", m_customCellAddressRange);
   }
 
   return payload;

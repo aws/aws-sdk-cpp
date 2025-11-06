@@ -27,6 +27,23 @@ class CreateVectorBucketResult {
   AWS_S3VECTORS_API CreateVectorBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+   */
+  inline const Aws::String& GetVectorBucketArn() const { return m_vectorBucketArn; }
+  template <typename VectorBucketArnT = Aws::String>
+  void SetVectorBucketArn(VectorBucketArnT&& value) {
+    m_vectorBucketArnHasBeenSet = true;
+    m_vectorBucketArn = std::forward<VectorBucketArnT>(value);
+  }
+  template <typename VectorBucketArnT = Aws::String>
+  CreateVectorBucketResult& WithVectorBucketArn(VectorBucketArnT&& value) {
+    SetVectorBucketArn(std::forward<VectorBucketArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -41,6 +58,9 @@ class CreateVectorBucketResult {
   }
   ///@}
  private:
+  Aws::String m_vectorBucketArn;
+  bool m_vectorBucketArnHasBeenSet = false;
+
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
 };

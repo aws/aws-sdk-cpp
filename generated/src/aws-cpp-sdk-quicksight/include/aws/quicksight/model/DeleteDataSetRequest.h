@@ -48,7 +48,7 @@ class DeleteDataSetRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+   * <p>The ID for the dataset that you want to delete. This ID is unique per Amazon
    * Web Services Region for each Amazon Web Services account.</p>
    */
   inline const Aws::String& GetDataSetId() const { return m_dataSetId; }

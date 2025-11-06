@@ -106,6 +106,7 @@
 #include <aws/backup/model/DisassociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointFromParentRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
+#include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateResult.h>
 #include <aws/backup/model/Framework.h>

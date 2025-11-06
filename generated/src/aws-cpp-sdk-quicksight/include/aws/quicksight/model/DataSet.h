@@ -11,6 +11,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/ColumnGroup.h>
 #include <aws/quicksight/model/ColumnLevelPermissionRule.h>
+#include <aws/quicksight/model/DataPrepConfiguration.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/DataSetUseAs.h>
@@ -22,6 +23,7 @@
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
+#include <aws/quicksight/model/SemanticModelConfiguration.h>
 
 #include <utility>
 
@@ -434,6 +436,42 @@ class DataSet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The data preparation configuration associated with this dataset.</p>
+   */
+  inline const DataPrepConfiguration& GetDataPrepConfiguration() const { return m_dataPrepConfiguration; }
+  inline bool DataPrepConfigurationHasBeenSet() const { return m_dataPrepConfigurationHasBeenSet; }
+  template <typename DataPrepConfigurationT = DataPrepConfiguration>
+  void SetDataPrepConfiguration(DataPrepConfigurationT&& value) {
+    m_dataPrepConfigurationHasBeenSet = true;
+    m_dataPrepConfiguration = std::forward<DataPrepConfigurationT>(value);
+  }
+  template <typename DataPrepConfigurationT = DataPrepConfiguration>
+  DataSet& WithDataPrepConfiguration(DataPrepConfigurationT&& value) {
+    SetDataPrepConfiguration(std::forward<DataPrepConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The semantic model configuration associated with this dataset.</p>
+   */
+  inline const SemanticModelConfiguration& GetSemanticModelConfiguration() const { return m_semanticModelConfiguration; }
+  inline bool SemanticModelConfigurationHasBeenSet() const { return m_semanticModelConfigurationHasBeenSet; }
+  template <typename SemanticModelConfigurationT = SemanticModelConfiguration>
+  void SetSemanticModelConfiguration(SemanticModelConfigurationT&& value) {
+    m_semanticModelConfigurationHasBeenSet = true;
+    m_semanticModelConfiguration = std::forward<SemanticModelConfigurationT>(value);
+  }
+  template <typename SemanticModelConfigurationT = SemanticModelConfiguration>
+  DataSet& WithSemanticModelConfiguration(SemanticModelConfigurationT&& value) {
+    SetSemanticModelConfiguration(std::forward<SemanticModelConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -491,6 +529,12 @@ class DataSet {
 
   DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
   bool m_useAsHasBeenSet = false;
+
+  DataPrepConfiguration m_dataPrepConfiguration;
+  bool m_dataPrepConfigurationHasBeenSet = false;
+
+  SemanticModelConfiguration m_semanticModelConfiguration;
+  bool m_semanticModelConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

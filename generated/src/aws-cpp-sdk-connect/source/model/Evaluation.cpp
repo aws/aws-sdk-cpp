@@ -63,6 +63,10 @@ Evaluation& Evaluation::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationType")) {
+    m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
+    m_evaluationTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -122,6 +126,10 @@ JsonValue Evaluation::Jsonize() const {
 
   if (m_lastModifiedTimeHasBeenSet) {
     payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_evaluationTypeHasBeenSet) {
+    payload.WithString("EvaluationType", EvaluationTypeMapper::GetNameForEvaluationType(m_evaluationType));
   }
 
   if (m_tagsHasBeenSet) {

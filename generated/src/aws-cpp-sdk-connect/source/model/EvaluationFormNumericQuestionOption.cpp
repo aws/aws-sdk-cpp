@@ -34,6 +34,10 @@ EvaluationFormNumericQuestionOption& EvaluationFormNumericQuestionOption::operat
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
     m_automaticFailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutomaticFailConfiguration")) {
+    m_automaticFailConfiguration = jsonValue.GetObject("AutomaticFailConfiguration");
+    m_automaticFailConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue EvaluationFormNumericQuestionOption::Jsonize() const {
 
   if (m_automaticFailHasBeenSet) {
     payload.WithBool("AutomaticFail", m_automaticFail);
+  }
+
+  if (m_automaticFailConfigurationHasBeenSet) {
+    payload.WithObject("AutomaticFailConfiguration", m_automaticFailConfiguration.Jsonize());
   }
 
   return payload;

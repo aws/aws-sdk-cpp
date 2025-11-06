@@ -20,7 +20,11 @@ using namespace Aws;
 CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIndexResult& CreateIndexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("indexArn")) {
+    m_indexArn = jsonValue.GetString("indexArn");
+    m_indexArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

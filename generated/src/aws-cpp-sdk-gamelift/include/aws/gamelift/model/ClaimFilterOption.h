@@ -21,9 +21,8 @@ namespace GameLift {
 namespace Model {
 
 /**
- * <p> <b>This data type is used with the Amazon GameLift Servers FleetIQ and game
- * server groups.</b> </p> <p> Filters which game servers may be claimed when
- * calling <code>ClaimGameServer</code>. </p><p><h3>See Also:</h3>   <a
+ * <p> Filters which game servers may be claimed when calling
+ * <code>ClaimGameServer</code>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimFilterOption">AWS
  * API Reference</a></p>
  */

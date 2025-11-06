@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/DomainNotWhitelistedException.h>
 #include <aws/quicksight/model/IdentityTypeNotSupportedException.h>
 #include <aws/quicksight/model/InternalFailureException.h>
+#include <aws/quicksight/model/InvalidDataSetParameterValueException.h>
 #include <aws/quicksight/model/InvalidNextTokenException.h>
 #include <aws/quicksight/model/InvalidParameterValueException.h>
 #include <aws/quicksight/model/InvalidRequestException.h>
@@ -50,6 +51,12 @@ template <>
 AWS_QUICKSIGHT_API ResourceNotFoundException QuickSightError::GetModeledError() {
   assert(this->GetErrorType() == QuickSightErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_QUICKSIGHT_API InvalidDataSetParameterValueException QuickSightError::GetModeledError() {
+  assert(this->GetErrorType() == QuickSightErrors::INVALID_DATA_SET_PARAMETER_VALUE);
+  return InvalidDataSetParameterValueException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -159,6 +166,7 @@ namespace QuickSightErrorMapper {
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int INVALID_DATA_SET_PARAMETER_VALUE_HASH = HashingUtils::HashString("InvalidDataSetParameterValueException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
 static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
@@ -182,6 +190,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  } else if (hashCode == INVALID_DATA_SET_PARAMETER_VALUE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_DATA_SET_PARAMETER_VALUE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == QUICK_SIGHT_USER_NOT_FOUND_HASH) {

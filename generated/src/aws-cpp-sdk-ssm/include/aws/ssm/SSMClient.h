@@ -3180,8 +3180,14 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Information about approval reviews for a version of a change template in
-   * Change Manager.</p><p><h3>See Also:</h3>   <a
+   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
+   * be open to new customers starting November 7, 2025. If you would like to use
+   * Change Manager, sign up prior to that date. Existing customers can continue to
+   * use the service as normal. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+   * Web Services Systems Manager Change Manager availability change</a>.</p>
+   *  <p>Information about approval reviews for a version of a change
+   * template in Change Manager.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">AWS
    * API Reference</a></p>
    */
@@ -4079,9 +4085,15 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Creates a change request for Change Manager. The Automation runbooks
-   * specified in the change request run only after all required approvals for the
-   * change request have been received.</p><p><h3>See Also:</h3>   <a
+   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
+   * be open to new customers starting November 7, 2025. If you would like to use
+   * Change Manager, sign up prior to that date. Existing customers can continue to
+   * use the service as normal. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+   * Web Services Systems Manager Change Manager availability change</a>.</p>
+   *  <p>Creates a change request for Change Manager. The Automation
+   * runbooks specified in the change request run only after all required approvals
+   * for the change request have been received.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
    * API Reference</a></p>
    */
@@ -4395,8 +4407,14 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Updates information related to approval reviews for a specific version of a
-   * change template in Change Manager.</p><p><h3>See Also:</h3>   <a
+   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
+   * be open to new customers starting November 7, 2025. If you would like to use
+   * Change Manager, sign up prior to that date. Existing customers can continue to
+   * use the service as normal. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+   * Web Services Systems Manager Change Manager availability change</a>.</p>
+   *  <p>Updates information related to approval reviews for a specific
+   * version of a change template in Change Manager.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">AWS
    * API Reference</a></p>
    */

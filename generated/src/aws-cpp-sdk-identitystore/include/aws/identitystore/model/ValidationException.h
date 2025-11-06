@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/model/ValidationExceptionReason.h>
 
 #include <utility>
 
@@ -67,12 +68,33 @@ class ValidationException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the reason for the validation error when the service is unable to
+   * access a Customer Managed KMS key. For non-KMS permission errors, this field is
+   * not included.</p>
+   */
+  inline ValidationExceptionReason GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  inline void SetReason(ValidationExceptionReason value) {
+    m_reasonHasBeenSet = true;
+    m_reason = value;
+  }
+  inline ValidationException& WithReason(ValidationExceptionReason value) {
+    SetReason(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
   bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
+
+  ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
+  bool m_reasonHasBeenSet = false;
 };
 
 }  // namespace Model

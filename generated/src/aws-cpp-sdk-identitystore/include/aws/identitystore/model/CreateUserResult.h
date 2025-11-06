@@ -28,23 +28,6 @@ class CreateUserResult {
 
   ///@{
   /**
-   * <p>The identifier of the newly created user in the identity store.</p>
-   */
-  inline const Aws::String& GetUserId() const { return m_userId; }
-  template <typename UserIdT = Aws::String>
-  void SetUserId(UserIdT&& value) {
-    m_userIdHasBeenSet = true;
-    m_userId = std::forward<UserIdT>(value);
-  }
-  template <typename UserIdT = Aws::String>
-  CreateUserResult& WithUserId(UserIdT&& value) {
-    SetUserId(std::forward<UserIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The globally unique identifier for the identity store.</p>
    */
   inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
@@ -56,6 +39,23 @@ class CreateUserResult {
   template <typename IdentityStoreIdT = Aws::String>
   CreateUserResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
     SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the newly created user in the identity store.</p>
+   */
+  inline const Aws::String& GetUserId() const { return m_userId; }
+  template <typename UserIdT = Aws::String>
+  void SetUserId(UserIdT&& value) {
+    m_userIdHasBeenSet = true;
+    m_userId = std::forward<UserIdT>(value);
+  }
+  template <typename UserIdT = Aws::String>
+  CreateUserResult& WithUserId(UserIdT&& value) {
+    SetUserId(std::forward<UserIdT>(value));
     return *this;
   }
   ///@}
@@ -75,11 +75,11 @@ class CreateUserResult {
   }
   ///@}
  private:
-  Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
-
   Aws::String m_identityStoreId;
   bool m_identityStoreIdHasBeenSet = false;
+
+  Aws::String m_userId;
+  bool m_userIdHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

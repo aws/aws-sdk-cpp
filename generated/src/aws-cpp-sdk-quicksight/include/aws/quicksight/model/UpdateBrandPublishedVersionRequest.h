@@ -48,7 +48,7 @@ class UpdateBrandPublishedVersionRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The ID of the QuickSight brand.</p>
+   * <p>The ID of the Quick Suite brand.</p>
    */
   inline const Aws::String& GetBrandId() const { return m_brandId; }
   inline bool BrandIdHasBeenSet() const { return m_brandIdHasBeenSet; }

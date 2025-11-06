@@ -12,6 +12,7 @@
 #include <aws/identitystore/model/Email.h>
 #include <aws/identitystore/model/Name.h>
 #include <aws/identitystore/model/PhoneNumber.h>
+#include <aws/identitystore/model/Photo.h>
 
 #include <utility>
 
@@ -78,7 +79,8 @@ class CreateUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
-   * <p>An object containing the name of the user.</p>
+   * <p>An object containing the name of the user. When used in IAM Identity Center,
+   * this parameter is required.</p>
    */
   inline const Name& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -97,7 +99,8 @@ class CreateUserRequest : public IdentityStoreRequest {
   ///@{
   /**
    * <p>A string containing the name of the user. This value is typically formatted
-   * for display when the user is referenced. For example, "John Doe." </p>
+   * for display when the user is referenced. For example, "John Doe." When used in
+   * IAM Identity Center, this parameter is required.</p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -316,6 +319,70 @@ class CreateUserRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of photos associated with the user. You can add up to 3 photos per
+   * user. Each photo can include a value, type, display name, and primary
+   * designation.</p>
+   */
+  inline const Aws::Vector<Photo>& GetPhotos() const { return m_photos; }
+  inline bool PhotosHasBeenSet() const { return m_photosHasBeenSet; }
+  template <typename PhotosT = Aws::Vector<Photo>>
+  void SetPhotos(PhotosT&& value) {
+    m_photosHasBeenSet = true;
+    m_photos = std::forward<PhotosT>(value);
+  }
+  template <typename PhotosT = Aws::Vector<Photo>>
+  CreateUserRequest& WithPhotos(PhotosT&& value) {
+    SetPhotos(std::forward<PhotosT>(value));
+    return *this;
+  }
+  template <typename PhotosT = Photo>
+  CreateUserRequest& AddPhotos(PhotosT&& value) {
+    m_photosHasBeenSet = true;
+    m_photos.emplace_back(std::forward<PhotosT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user's personal website or blog URL. This field allows users to provide a
+   * link to their personal or professional website.</p>
+   */
+  inline const Aws::String& GetWebsite() const { return m_website; }
+  inline bool WebsiteHasBeenSet() const { return m_websiteHasBeenSet; }
+  template <typename WebsiteT = Aws::String>
+  void SetWebsite(WebsiteT&& value) {
+    m_websiteHasBeenSet = true;
+    m_website = std::forward<WebsiteT>(value);
+  }
+  template <typename WebsiteT = Aws::String>
+  CreateUserRequest& WithWebsite(WebsiteT&& value) {
+    SetWebsite(std::forward<WebsiteT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date
+   * format for storing personal information.</p>
+   */
+  inline const Aws::String& GetBirthdate() const { return m_birthdate; }
+  inline bool BirthdateHasBeenSet() const { return m_birthdateHasBeenSet; }
+  template <typename BirthdateT = Aws::String>
+  void SetBirthdate(BirthdateT&& value) {
+    m_birthdateHasBeenSet = true;
+    m_birthdate = std::forward<BirthdateT>(value);
+  }
+  template <typename BirthdateT = Aws::String>
+  CreateUserRequest& WithBirthdate(BirthdateT&& value) {
+    SetBirthdate(std::forward<BirthdateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
   bool m_identityStoreIdHasBeenSet = false;
@@ -358,6 +425,15 @@ class CreateUserRequest : public IdentityStoreRequest {
 
   Aws::String m_timezone;
   bool m_timezoneHasBeenSet = false;
+
+  Aws::Vector<Photo> m_photos;
+  bool m_photosHasBeenSet = false;
+
+  Aws::String m_website;
+  bool m_websiteHasBeenSet = false;
+
+  Aws::String m_birthdate;
+  bool m_birthdateHasBeenSet = false;
 };
 
 }  // namespace Model

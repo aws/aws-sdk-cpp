@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormQuestionAutomationAnswerSource.h>
 #include <aws/connect/model/EvaluationFormSingleSelectQuestionAutomationOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -78,12 +79,33 @@ class EvaluationFormSingleSelectQuestionAutomation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Automation answer source.</p>
+   */
+  inline const EvaluationFormQuestionAutomationAnswerSource& GetAnswerSource() const { return m_answerSource; }
+  inline bool AnswerSourceHasBeenSet() const { return m_answerSourceHasBeenSet; }
+  template <typename AnswerSourceT = EvaluationFormQuestionAutomationAnswerSource>
+  void SetAnswerSource(AnswerSourceT&& value) {
+    m_answerSourceHasBeenSet = true;
+    m_answerSource = std::forward<AnswerSourceT>(value);
+  }
+  template <typename AnswerSourceT = EvaluationFormQuestionAutomationAnswerSource>
+  EvaluationFormSingleSelectQuestionAutomation& WithAnswerSource(AnswerSourceT&& value) {
+    SetAnswerSource(std::forward<AnswerSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<EvaluationFormSingleSelectQuestionAutomationOption> m_options;
   bool m_optionsHasBeenSet = false;
 
   Aws::String m_defaultOptionRefId;
   bool m_defaultOptionRefIdHasBeenSet = false;
+
+  EvaluationFormQuestionAutomationAnswerSource m_answerSource;
+  bool m_answerSourceHasBeenSet = false;
 };
 
 }  // namespace Model

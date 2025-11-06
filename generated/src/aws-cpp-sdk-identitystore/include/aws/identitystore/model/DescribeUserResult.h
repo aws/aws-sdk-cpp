@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
@@ -12,6 +13,8 @@
 #include <aws/identitystore/model/ExternalId.h>
 #include <aws/identitystore/model/Name.h>
 #include <aws/identitystore/model/PhoneNumber.h>
+#include <aws/identitystore/model/Photo.h>
+#include <aws/identitystore/model/UserStatus.h>
 
 #include <utility>
 
@@ -34,20 +37,17 @@ class DescribeUserResult {
 
   ///@{
   /**
-   * <p>A unique string used to identify the user. The length limit is 128
-   * characters. This value can consist of letters, accented characters, symbols,
-   * numbers, and punctuation. This value is specified at the time the user is
-   * created and stored as an attribute of the user object in the identity store.</p>
+   * <p>The globally unique identifier for the identity store.</p>
    */
-  inline const Aws::String& GetUserName() const { return m_userName; }
-  template <typename UserNameT = Aws::String>
-  void SetUserName(UserNameT&& value) {
-    m_userNameHasBeenSet = true;
-    m_userName = std::forward<UserNameT>(value);
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
   }
-  template <typename UserNameT = Aws::String>
-  DescribeUserResult& WithUserName(UserNameT&& value) {
-    SetUserName(std::forward<UserNameT>(value));
+  template <typename IdentityStoreIdT = Aws::String>
+  DescribeUserResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
     return *this;
   }
   ///@}
@@ -65,6 +65,26 @@ class DescribeUserResult {
   template <typename UserIdT = Aws::String>
   DescribeUserResult& WithUserId(UserIdT&& value) {
     SetUserId(std::forward<UserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique string used to identify the user. The length limit is 128
+   * characters. This value can consist of letters, accented characters, symbols,
+   * numbers, and punctuation. This value is specified at the time the user is
+   * created and stored as an attribute of the user object in the identity store.</p>
+   */
+  inline const Aws::String& GetUserName() const { return m_userName; }
+  template <typename UserNameT = Aws::String>
+  void SetUserName(UserNameT&& value) {
+    m_userNameHasBeenSet = true;
+    m_userName = std::forward<UserNameT>(value);
+  }
+  template <typename UserNameT = Aws::String>
+  DescribeUserResult& WithUserName(UserNameT&& value) {
+    SetUserName(std::forward<UserNameT>(value));
     return *this;
   }
   ///@}
@@ -317,17 +337,143 @@ class DescribeUserResult {
 
   ///@{
   /**
-   * <p>The globally unique identifier for the identity store.</p>
+   * <p>The current status of the user account.</p>
    */
-  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
-  template <typename IdentityStoreIdT = Aws::String>
-  void SetIdentityStoreId(IdentityStoreIdT&& value) {
-    m_identityStoreIdHasBeenSet = true;
-    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  inline UserStatus GetUserStatus() const { return m_userStatus; }
+  inline void SetUserStatus(UserStatus value) {
+    m_userStatusHasBeenSet = true;
+    m_userStatus = value;
   }
-  template <typename IdentityStoreIdT = Aws::String>
-  DescribeUserResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
-    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+  inline DescribeUserResult& WithUserStatus(UserStatus value) {
+    SetUserStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of photos associated with the user. Returns up to 3 photos with their
+   * associated metadata including type, display name, and primary designation.</p>
+   */
+  inline const Aws::Vector<Photo>& GetPhotos() const { return m_photos; }
+  template <typename PhotosT = Aws::Vector<Photo>>
+  void SetPhotos(PhotosT&& value) {
+    m_photosHasBeenSet = true;
+    m_photos = std::forward<PhotosT>(value);
+  }
+  template <typename PhotosT = Aws::Vector<Photo>>
+  DescribeUserResult& WithPhotos(PhotosT&& value) {
+    SetPhotos(std::forward<PhotosT>(value));
+    return *this;
+  }
+  template <typename PhotosT = Photo>
+  DescribeUserResult& AddPhotos(PhotosT&& value) {
+    m_photosHasBeenSet = true;
+    m_photos.emplace_back(std::forward<PhotosT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user's personal website or blog URL. Returns the stored website
+   * information for the user.</p>
+   */
+  inline const Aws::String& GetWebsite() const { return m_website; }
+  template <typename WebsiteT = Aws::String>
+  void SetWebsite(WebsiteT&& value) {
+    m_websiteHasBeenSet = true;
+    m_website = std::forward<WebsiteT>(value);
+  }
+  template <typename WebsiteT = Aws::String>
+  DescribeUserResult& WithWebsite(WebsiteT&& value) {
+    SetWebsite(std::forward<WebsiteT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user's birthdate in YYYY-MM-DD format. This field returns the stored
+   * birthdate information for the user.</p>
+   */
+  inline const Aws::String& GetBirthdate() const { return m_birthdate; }
+  template <typename BirthdateT = Aws::String>
+  void SetBirthdate(BirthdateT&& value) {
+    m_birthdateHasBeenSet = true;
+    m_birthdate = std::forward<BirthdateT>(value);
+  }
+  template <typename BirthdateT = Aws::String>
+  DescribeUserResult& WithBirthdate(BirthdateT&& value) {
+    SetBirthdate(std::forward<BirthdateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time the user was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DescribeUserResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the user or system that created the user.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  DescribeUserResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time the user was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  DescribeUserResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the user or system that last updated the user.</p>
+   */
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = Aws::String>
+  DescribeUserResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
     return *this;
   }
   ///@}
@@ -347,11 +493,14 @@ class DescribeUserResult {
   }
   ///@}
  private:
-  Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
+  Aws::String m_identityStoreId;
+  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_userId;
   bool m_userIdHasBeenSet = false;
+
+  Aws::String m_userName;
+  bool m_userNameHasBeenSet = false;
 
   Aws::Vector<ExternalId> m_externalIds;
   bool m_externalIdsHasBeenSet = false;
@@ -392,8 +541,29 @@ class DescribeUserResult {
   Aws::String m_timezone;
   bool m_timezoneHasBeenSet = false;
 
-  Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
+  UserStatus m_userStatus{UserStatus::NOT_SET};
+  bool m_userStatusHasBeenSet = false;
+
+  Aws::Vector<Photo> m_photos;
+  bool m_photosHasBeenSet = false;
+
+  Aws::String m_website;
+  bool m_websiteHasBeenSet = false;
+
+  Aws::String m_birthdate;
+  bool m_birthdateHasBeenSet = false;
+
+  Aws::Utils::DateTime m_createdAt{};
+  bool m_createdAtHasBeenSet = false;
+
+  Aws::String m_createdBy;
+  bool m_createdByHasBeenSet = false;
+
+  Aws::Utils::DateTime m_updatedAt{};
+  bool m_updatedAtHasBeenSet = false;
+
+  Aws::String m_updatedBy;
+  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

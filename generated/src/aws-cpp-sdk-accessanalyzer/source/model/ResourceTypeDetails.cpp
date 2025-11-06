@@ -26,6 +26,10 @@ ResourceTypeDetails& ResourceTypeDetails::operator=(JsonView jsonValue) {
     m_totalActiveCrossAccount = jsonValue.GetInteger("totalActiveCrossAccount");
     m_totalActiveCrossAccountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalActiveErrors")) {
+    m_totalActiveErrors = jsonValue.GetInteger("totalActiveErrors");
+    m_totalActiveErrorsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ResourceTypeDetails::Jsonize() const {
 
   if (m_totalActiveCrossAccountHasBeenSet) {
     payload.WithInteger("totalActiveCrossAccount", m_totalActiveCrossAccount);
+  }
+
+  if (m_totalActiveErrorsHasBeenSet) {
+    payload.WithInteger("totalActiveErrors", m_totalActiveErrors);
   }
 
   return payload;

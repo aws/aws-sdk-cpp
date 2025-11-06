@@ -18,13 +18,17 @@ namespace Model {
 User::User(JsonView jsonValue) { *this = jsonValue; }
 
 User& User::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("UserName")) {
-    m_userName = jsonValue.GetString("UserName");
-    m_userNameHasBeenSet = true;
+  if (jsonValue.ValueExists("IdentityStoreId")) {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+    m_identityStoreIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserName")) {
+    m_userName = jsonValue.GetString("UserName");
+    m_userNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ExternalIds")) {
     Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
@@ -90,9 +94,40 @@ User& User::operator=(JsonView jsonValue) {
     m_timezone = jsonValue.GetString("Timezone");
     m_timezoneHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IdentityStoreId")) {
-    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-    m_identityStoreIdHasBeenSet = true;
+  if (jsonValue.ValueExists("UserStatus")) {
+    m_userStatus = UserStatusMapper::GetUserStatusForName(jsonValue.GetString("UserStatus"));
+    m_userStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Photos")) {
+    Aws::Utils::Array<JsonView> photosJsonList = jsonValue.GetArray("Photos");
+    for (unsigned photosIndex = 0; photosIndex < photosJsonList.GetLength(); ++photosIndex) {
+      m_photos.push_back(photosJsonList[photosIndex].AsObject());
+    }
+    m_photosHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Website")) {
+    m_website = jsonValue.GetString("Website");
+    m_websiteHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Birthdate")) {
+    m_birthdate = jsonValue.GetString("Birthdate");
+    m_birthdateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedBy")) {
+    m_updatedBy = jsonValue.GetString("UpdatedBy");
+    m_updatedByHasBeenSet = true;
   }
   return *this;
 }
@@ -100,12 +135,16 @@ User& User::operator=(JsonView jsonValue) {
 JsonValue User::Jsonize() const {
   JsonValue payload;
 
-  if (m_userNameHasBeenSet) {
-    payload.WithString("UserName", m_userName);
+  if (m_identityStoreIdHasBeenSet) {
+    payload.WithString("IdentityStoreId", m_identityStoreId);
   }
 
   if (m_userIdHasBeenSet) {
     payload.WithString("UserId", m_userId);
+  }
+
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   if (m_externalIdsHasBeenSet) {
@@ -176,8 +215,40 @@ JsonValue User::Jsonize() const {
     payload.WithString("Timezone", m_timezone);
   }
 
-  if (m_identityStoreIdHasBeenSet) {
-    payload.WithString("IdentityStoreId", m_identityStoreId);
+  if (m_userStatusHasBeenSet) {
+    payload.WithString("UserStatus", UserStatusMapper::GetNameForUserStatus(m_userStatus));
+  }
+
+  if (m_photosHasBeenSet) {
+    Aws::Utils::Array<JsonValue> photosJsonList(m_photos.size());
+    for (unsigned photosIndex = 0; photosIndex < photosJsonList.GetLength(); ++photosIndex) {
+      photosJsonList[photosIndex].AsObject(m_photos[photosIndex].Jsonize());
+    }
+    payload.WithArray("Photos", std::move(photosJsonList));
+  }
+
+  if (m_websiteHasBeenSet) {
+    payload.WithString("Website", m_website);
+  }
+
+  if (m_birthdateHasBeenSet) {
+    payload.WithString("Birthdate", m_birthdate);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("CreatedBy", m_createdBy);
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedByHasBeenSet) {
+    payload.WithString("UpdatedBy", m_updatedBy);
   }
 
   return payload;
