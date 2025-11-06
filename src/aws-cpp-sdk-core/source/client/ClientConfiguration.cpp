@@ -195,9 +195,9 @@ Aws::Vector<Aws::String> calculateAuthPreferences() {
   // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
   Aws::Vector<Aws::String> res;
   auto prefs = Aws::Environment::GetEnv("AWS_AUTH_SCHEME_PREFERENCE");
-  Aws::Vector<Aws::String> prefsList  = StringUtils::Split(prefs, ',');
+  Aws::Vector<Aws::String> prefsList  = Aws::Utils::StringUtils::Split(prefs, ',');
   for (auto& pref : prefsList) {
-    res.push_back(StringUtils::Trim(pref.c_str()));
+    res.push_back(Aws::Utils::StringUtils::Trim(pref.c_str()));
   }
   return res;
 }
