@@ -50,6 +50,14 @@ ServiceNetworkVpcAssociationSummary& ServiceNetworkVpcAssociationSummary::operat
     m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
     m_serviceNetworkArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateDnsEnabled")) {
+    m_privateDnsEnabled = jsonValue.GetBool("privateDnsEnabled");
+    m_privateDnsEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dnsOptions")) {
+    m_dnsOptions = jsonValue.GetObject("dnsOptions");
+    m_dnsOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("vpcId")) {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
@@ -94,6 +102,14 @@ JsonValue ServiceNetworkVpcAssociationSummary::Jsonize() const {
 
   if (m_serviceNetworkArnHasBeenSet) {
     payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
+  }
+
+  if (m_privateDnsEnabledHasBeenSet) {
+    payload.WithBool("privateDnsEnabled", m_privateDnsEnabled);
+  }
+
+  if (m_dnsOptionsHasBeenSet) {
+    payload.WithObject("dnsOptions", m_dnsOptions.Jsonize());
   }
 
   if (m_vpcIdHasBeenSet) {

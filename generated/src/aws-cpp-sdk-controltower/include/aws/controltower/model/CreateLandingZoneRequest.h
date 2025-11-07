@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/controltower/ControlTowerRequest.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/controltower/model/RemediationType.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -32,6 +34,24 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
 
   ///@{
   /**
+   * <p>The landing zone version, for example, 3.0.</p>
+   */
+  inline const Aws::String& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = Aws::String>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
+  }
+  template <typename VersionT = Aws::String>
+  CreateLandingZoneRequest& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The manifest JSON file is a text file that describes your Amazon Web Services
    * resources. For examples, review <a
    * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
@@ -47,6 +67,30 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
   template <typename ManifestT = Aws::Utils::Document>
   CreateLandingZoneRequest& WithManifest(ManifestT&& value) {
     SetManifest(std::forward<ManifestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the types of remediation actions to apply when creating the landing
+   * zone, such as automatic drift correction or compliance enforcement.</p>
+   */
+  inline const Aws::Vector<RemediationType>& GetRemediationTypes() const { return m_remediationTypes; }
+  inline bool RemediationTypesHasBeenSet() const { return m_remediationTypesHasBeenSet; }
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  void SetRemediationTypes(RemediationTypesT&& value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes = std::forward<RemediationTypesT>(value);
+  }
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  CreateLandingZoneRequest& WithRemediationTypes(RemediationTypesT&& value) {
+    SetRemediationTypes(std::forward<RemediationTypesT>(value));
+    return *this;
+  }
+  inline CreateLandingZoneRequest& AddRemediationTypes(RemediationType value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes.push_back(value);
     return *this;
   }
   ///@}
@@ -74,33 +118,18 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The landing zone version, for example, 3.0.</p>
-   */
-  inline const Aws::String& GetVersion() const { return m_version; }
-  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-  template <typename VersionT = Aws::String>
-  void SetVersion(VersionT&& value) {
-    m_versionHasBeenSet = true;
-    m_version = std::forward<VersionT>(value);
-  }
-  template <typename VersionT = Aws::String>
-  CreateLandingZoneRequest& WithVersion(VersionT&& value) {
-    SetVersion(std::forward<VersionT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_version;
+  bool m_versionHasBeenSet = false;
+
   Aws::Utils::Document m_manifest;
   bool m_manifestHasBeenSet = false;
 
+  Aws::Vector<RemediationType> m_remediationTypes;
+  bool m_remediationTypesHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
-
-  Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 };
 
 }  // namespace Model

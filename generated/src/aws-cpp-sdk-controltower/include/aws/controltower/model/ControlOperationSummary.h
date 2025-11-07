@@ -37,78 +37,6 @@ class ControlOperationSummary {
 
   ///@{
   /**
-   * <p>The <code>controlIdentifier</code> of a control.</p>
-   */
-  inline const Aws::String& GetControlIdentifier() const { return m_controlIdentifier; }
-  inline bool ControlIdentifierHasBeenSet() const { return m_controlIdentifierHasBeenSet; }
-  template <typename ControlIdentifierT = Aws::String>
-  void SetControlIdentifier(ControlIdentifierT&& value) {
-    m_controlIdentifierHasBeenSet = true;
-    m_controlIdentifier = std::forward<ControlIdentifierT>(value);
-  }
-  template <typename ControlIdentifierT = Aws::String>
-  ControlOperationSummary& WithControlIdentifier(ControlIdentifierT&& value) {
-    SetControlIdentifier(std::forward<ControlIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-   */
-  inline const Aws::String& GetEnabledControlIdentifier() const { return m_enabledControlIdentifier; }
-  inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
-  template <typename EnabledControlIdentifierT = Aws::String>
-  void SetEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
-    m_enabledControlIdentifierHasBeenSet = true;
-    m_enabledControlIdentifier = std::forward<EnabledControlIdentifierT>(value);
-  }
-  template <typename EnabledControlIdentifierT = Aws::String>
-  ControlOperationSummary& WithEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
-    SetEnabledControlIdentifier(std::forward<EnabledControlIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The time at which the control operation was completed.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  ControlOperationSummary& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of a control operation.</p>
-   */
-  inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
-  inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-  template <typename OperationIdentifierT = Aws::String>
-  void SetOperationIdentifier(OperationIdentifierT&& value) {
-    m_operationIdentifierHasBeenSet = true;
-    m_operationIdentifier = std::forward<OperationIdentifierT>(value);
-  }
-  template <typename OperationIdentifierT = Aws::String>
-  ControlOperationSummary& WithOperationIdentifier(OperationIdentifierT&& value) {
-    SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of operation.</p>
    */
   inline ControlOperationType GetOperationType() const { return m_operationType; }
@@ -137,6 +65,24 @@ class ControlOperationSummary {
   template <typename StartTimeT = Aws::Utils::DateTime>
   ControlOperationSummary& WithStartTime(StartTimeT&& value) {
     SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time at which the control operation was completed.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  ControlOperationSummary& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
     return *this;
   }
   ///@}
@@ -177,6 +123,42 @@ class ControlOperationSummary {
 
   ///@{
   /**
+   * <p>The unique identifier of a control operation.</p>
+   */
+  inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
+  inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
+  template <typename OperationIdentifierT = Aws::String>
+  void SetOperationIdentifier(OperationIdentifierT&& value) {
+    m_operationIdentifierHasBeenSet = true;
+    m_operationIdentifier = std::forward<OperationIdentifierT>(value);
+  }
+  template <typename OperationIdentifierT = Aws::String>
+  ControlOperationSummary& WithOperationIdentifier(OperationIdentifierT&& value) {
+    SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>controlIdentifier</code> of a control.</p>
+   */
+  inline const Aws::String& GetControlIdentifier() const { return m_controlIdentifier; }
+  inline bool ControlIdentifierHasBeenSet() const { return m_controlIdentifierHasBeenSet; }
+  template <typename ControlIdentifierT = Aws::String>
+  void SetControlIdentifier(ControlIdentifierT&& value) {
+    m_controlIdentifierHasBeenSet = true;
+    m_controlIdentifier = std::forward<ControlIdentifierT>(value);
+  }
+  template <typename ControlIdentifierT = Aws::String>
+  ControlOperationSummary& WithControlIdentifier(ControlIdentifierT&& value) {
+    SetControlIdentifier(std::forward<ControlIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the target of a control operation.</p>
    */
   inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
@@ -192,24 +174,33 @@ class ControlOperationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>controlIdentifier</code> of an enabled control.</p>
+   */
+  inline const Aws::String& GetEnabledControlIdentifier() const { return m_enabledControlIdentifier; }
+  inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  void SetEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    m_enabledControlIdentifierHasBeenSet = true;
+    m_enabledControlIdentifier = std::forward<EnabledControlIdentifierT>(value);
+  }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  ControlOperationSummary& WithEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    SetEnabledControlIdentifier(std::forward<EnabledControlIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_controlIdentifier;
-  bool m_controlIdentifierHasBeenSet = false;
-
-  Aws::String m_enabledControlIdentifier;
-  bool m_enabledControlIdentifierHasBeenSet = false;
-
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
-
-  Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
-
   ControlOperationType m_operationType{ControlOperationType::NOT_SET};
   bool m_operationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
 
   ControlOperationStatus m_status{ControlOperationStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
@@ -217,8 +208,17 @@ class ControlOperationSummary {
   Aws::String m_statusMessage;
   bool m_statusMessageHasBeenSet = false;
 
+  Aws::String m_operationIdentifier;
+  bool m_operationIdentifierHasBeenSet = false;
+
+  Aws::String m_controlIdentifier;
+  bool m_controlIdentifierHasBeenSet = false;
+
   Aws::String m_targetIdentifier;
   bool m_targetIdentifierHasBeenSet = false;
+
+  Aws::String m_enabledControlIdentifier;
+  bool m_enabledControlIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

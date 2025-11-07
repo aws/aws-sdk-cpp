@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/DnsOptions.h>
 
 #include <utility>
 
@@ -91,6 +92,22 @@ class CreateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest {
 
   ///@{
   /**
+   * <p> Indicates if private DNS is enabled for the VPC association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline CreateServiceNetworkVpcAssociationRequest& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The IDs of the security groups. Security groups aren't added by default. You
    * can add a security group to apply network level controls to control which
    * resources in a VPC are allowed to access the service network and its services.
@@ -142,6 +159,24 @@ class CreateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> DNS options for the service network VPC association. </p>
+   */
+  inline const DnsOptions& GetDnsOptions() const { return m_dnsOptions; }
+  inline bool DnsOptionsHasBeenSet() const { return m_dnsOptionsHasBeenSet; }
+  template <typename DnsOptionsT = DnsOptions>
+  void SetDnsOptions(DnsOptionsT&& value) {
+    m_dnsOptionsHasBeenSet = true;
+    m_dnsOptions = std::forward<DnsOptionsT>(value);
+  }
+  template <typename DnsOptionsT = DnsOptions>
+  CreateServiceNetworkVpcAssociationRequest& WithDnsOptions(DnsOptionsT&& value) {
+    SetDnsOptions(std::forward<DnsOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
@@ -152,11 +187,17 @@ class CreateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest {
   Aws::String m_vpcIdentifier;
   bool m_vpcIdentifierHasBeenSet = false;
 
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_securityGroupIds;
   bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  DnsOptions m_dnsOptions;
+  bool m_dnsOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -266,6 +266,76 @@ class CreateResourceConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The custom domain name for your resource configuration. </p>
+   */
+  inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+  template <typename CustomDomainNameT = Aws::String>
+  void SetCustomDomainName(CustomDomainNameT&& value) {
+    m_customDomainNameHasBeenSet = true;
+    m_customDomainName = std::forward<CustomDomainNameT>(value);
+  }
+  template <typename CustomDomainNameT = Aws::String>
+  CreateResourceConfigurationResult& WithCustomDomainName(CustomDomainNameT&& value) {
+    SetCustomDomainName(std::forward<CustomDomainNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The domain name verification ID. </p>
+   */
+  inline const Aws::String& GetDomainVerificationId() const { return m_domainVerificationId; }
+  template <typename DomainVerificationIdT = Aws::String>
+  void SetDomainVerificationId(DomainVerificationIdT&& value) {
+    m_domainVerificationIdHasBeenSet = true;
+    m_domainVerificationId = std::forward<DomainVerificationIdT>(value);
+  }
+  template <typename DomainVerificationIdT = Aws::String>
+  CreateResourceConfigurationResult& WithDomainVerificationId(DomainVerificationIdT&& value) {
+    SetDomainVerificationId(std::forward<DomainVerificationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> (GROUP) The group domain for a group resource configuration. Any domains
+   * that you create for the child resource are subdomains of the group domain. Child
+   * resources inherit the verification status of the domain. </p>
+   */
+  inline const Aws::String& GetGroupDomain() const { return m_groupDomain; }
+  template <typename GroupDomainT = Aws::String>
+  void SetGroupDomain(GroupDomainT&& value) {
+    m_groupDomainHasBeenSet = true;
+    m_groupDomain = std::forward<GroupDomainT>(value);
+  }
+  template <typename GroupDomainT = Aws::String>
+  CreateResourceConfigurationResult& WithGroupDomain(GroupDomainT&& value) {
+    SetGroupDomain(std::forward<GroupDomainT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The verification ID ARN </p>
+   */
+  inline const Aws::String& GetDomainVerificationArn() const { return m_domainVerificationArn; }
+  template <typename DomainVerificationArnT = Aws::String>
+  void SetDomainVerificationArn(DomainVerificationArnT&& value) {
+    m_domainVerificationArnHasBeenSet = true;
+    m_domainVerificationArn = std::forward<DomainVerificationArnT>(value);
+  }
+  template <typename DomainVerificationArnT = Aws::String>
+  CreateResourceConfigurationResult& WithDomainVerificationArn(DomainVerificationArnT&& value) {
+    SetDomainVerificationArn(std::forward<DomainVerificationArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -318,6 +388,18 @@ class CreateResourceConfigurationResult {
 
   Aws::String m_failureReason;
   bool m_failureReasonHasBeenSet = false;
+
+  Aws::String m_customDomainName;
+  bool m_customDomainNameHasBeenSet = false;
+
+  Aws::String m_domainVerificationId;
+  bool m_domainVerificationIdHasBeenSet = false;
+
+  Aws::String m_groupDomain;
+  bool m_groupDomainHasBeenSet = false;
+
+  Aws::String m_domainVerificationArn;
+  bool m_domainVerificationArnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

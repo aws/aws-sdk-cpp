@@ -18,13 +18,13 @@ namespace Model {
 EnablementStatusSummary::EnablementStatusSummary(JsonView jsonValue) { *this = jsonValue; }
 
 EnablementStatusSummary& EnablementStatusSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("lastOperationIdentifier")) {
-    m_lastOperationIdentifier = jsonValue.GetString("lastOperationIdentifier");
-    m_lastOperationIdentifierHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = EnablementStatusMapper::GetEnablementStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastOperationIdentifier")) {
+    m_lastOperationIdentifier = jsonValue.GetString("lastOperationIdentifier");
+    m_lastOperationIdentifierHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ EnablementStatusSummary& EnablementStatusSummary::operator=(JsonView jsonValue) 
 JsonValue EnablementStatusSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_lastOperationIdentifierHasBeenSet) {
-    payload.WithString("lastOperationIdentifier", m_lastOperationIdentifier);
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", EnablementStatusMapper::GetNameForEnablementStatus(m_status));
+  }
+
+  if (m_lastOperationIdentifierHasBeenSet) {
+    payload.WithString("lastOperationIdentifier", m_lastOperationIdentifier);
   }
 
   return payload;

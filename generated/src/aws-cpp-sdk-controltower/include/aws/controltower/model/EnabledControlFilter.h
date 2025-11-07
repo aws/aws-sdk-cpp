@@ -62,6 +62,29 @@ class EnabledControlFilter {
 
   ///@{
   /**
+   * <p>A list of <code>EnablementStatus</code> items.</p>
+   */
+  inline const Aws::Vector<EnablementStatus>& GetStatuses() const { return m_statuses; }
+  inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+  template <typename StatusesT = Aws::Vector<EnablementStatus>>
+  void SetStatuses(StatusesT&& value) {
+    m_statusesHasBeenSet = true;
+    m_statuses = std::forward<StatusesT>(value);
+  }
+  template <typename StatusesT = Aws::Vector<EnablementStatus>>
+  EnabledControlFilter& WithStatuses(StatusesT&& value) {
+    SetStatuses(std::forward<StatusesT>(value));
+    return *this;
+  }
+  inline EnabledControlFilter& AddStatuses(EnablementStatus value) {
+    m_statusesHasBeenSet = true;
+    m_statuses.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of <code>DriftStatus</code> items.</p>
    */
   inline const Aws::Vector<DriftStatus>& GetDriftStatuses() const { return m_driftStatuses; }
@@ -85,23 +108,73 @@ class EnabledControlFilter {
 
   ///@{
   /**
-   * <p>A list of <code>EnablementStatus</code> items.</p>
+   * <p>Filters enabled controls by their parent control identifiers, allowing you to
+   * find child controls of specific parent controls.</p>
    */
-  inline const Aws::Vector<EnablementStatus>& GetStatuses() const { return m_statuses; }
-  inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-  template <typename StatusesT = Aws::Vector<EnablementStatus>>
-  void SetStatuses(StatusesT&& value) {
-    m_statusesHasBeenSet = true;
-    m_statuses = std::forward<StatusesT>(value);
+  inline const Aws::Vector<Aws::String>& GetParentIdentifiers() const { return m_parentIdentifiers; }
+  inline bool ParentIdentifiersHasBeenSet() const { return m_parentIdentifiersHasBeenSet; }
+  template <typename ParentIdentifiersT = Aws::Vector<Aws::String>>
+  void SetParentIdentifiers(ParentIdentifiersT&& value) {
+    m_parentIdentifiersHasBeenSet = true;
+    m_parentIdentifiers = std::forward<ParentIdentifiersT>(value);
   }
-  template <typename StatusesT = Aws::Vector<EnablementStatus>>
-  EnabledControlFilter& WithStatuses(StatusesT&& value) {
-    SetStatuses(std::forward<StatusesT>(value));
+  template <typename ParentIdentifiersT = Aws::Vector<Aws::String>>
+  EnabledControlFilter& WithParentIdentifiers(ParentIdentifiersT&& value) {
+    SetParentIdentifiers(std::forward<ParentIdentifiersT>(value));
     return *this;
   }
-  inline EnabledControlFilter& AddStatuses(EnablementStatus value) {
-    m_statusesHasBeenSet = true;
-    m_statuses.push_back(value);
+  template <typename ParentIdentifiersT = Aws::String>
+  EnabledControlFilter& AddParentIdentifiers(ParentIdentifiersT&& value) {
+    m_parentIdentifiersHasBeenSet = true;
+    m_parentIdentifiers.emplace_back(std::forward<ParentIdentifiersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters enabled controls by their inheritance drift status, allowing you to
+   * find controls with specific inheritance-related drift conditions.</p>
+   */
+  inline const Aws::Vector<DriftStatus>& GetInheritanceDriftStatuses() const { return m_inheritanceDriftStatuses; }
+  inline bool InheritanceDriftStatusesHasBeenSet() const { return m_inheritanceDriftStatusesHasBeenSet; }
+  template <typename InheritanceDriftStatusesT = Aws::Vector<DriftStatus>>
+  void SetInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
+    m_inheritanceDriftStatusesHasBeenSet = true;
+    m_inheritanceDriftStatuses = std::forward<InheritanceDriftStatusesT>(value);
+  }
+  template <typename InheritanceDriftStatusesT = Aws::Vector<DriftStatus>>
+  EnabledControlFilter& WithInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
+    SetInheritanceDriftStatuses(std::forward<InheritanceDriftStatusesT>(value));
+    return *this;
+  }
+  inline EnabledControlFilter& AddInheritanceDriftStatuses(DriftStatus value) {
+    m_inheritanceDriftStatusesHasBeenSet = true;
+    m_inheritanceDriftStatuses.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters enabled controls by their resource drift status, allowing you to find
+   * controls with specific resource-related drift conditions.</p>
+   */
+  inline const Aws::Vector<DriftStatus>& GetResourceDriftStatuses() const { return m_resourceDriftStatuses; }
+  inline bool ResourceDriftStatusesHasBeenSet() const { return m_resourceDriftStatusesHasBeenSet; }
+  template <typename ResourceDriftStatusesT = Aws::Vector<DriftStatus>>
+  void SetResourceDriftStatuses(ResourceDriftStatusesT&& value) {
+    m_resourceDriftStatusesHasBeenSet = true;
+    m_resourceDriftStatuses = std::forward<ResourceDriftStatusesT>(value);
+  }
+  template <typename ResourceDriftStatusesT = Aws::Vector<DriftStatus>>
+  EnabledControlFilter& WithResourceDriftStatuses(ResourceDriftStatusesT&& value) {
+    SetResourceDriftStatuses(std::forward<ResourceDriftStatusesT>(value));
+    return *this;
+  }
+  inline EnabledControlFilter& AddResourceDriftStatuses(DriftStatus value) {
+    m_resourceDriftStatusesHasBeenSet = true;
+    m_resourceDriftStatuses.push_back(value);
     return *this;
   }
   ///@}
@@ -109,11 +182,20 @@ class EnabledControlFilter {
   Aws::Vector<Aws::String> m_controlIdentifiers;
   bool m_controlIdentifiersHasBeenSet = false;
 
+  Aws::Vector<EnablementStatus> m_statuses;
+  bool m_statusesHasBeenSet = false;
+
   Aws::Vector<DriftStatus> m_driftStatuses;
   bool m_driftStatusesHasBeenSet = false;
 
-  Aws::Vector<EnablementStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
+  Aws::Vector<Aws::String> m_parentIdentifiers;
+  bool m_parentIdentifiersHasBeenSet = false;
+
+  Aws::Vector<DriftStatus> m_inheritanceDriftStatuses;
+  bool m_inheritanceDriftStatusesHasBeenSet = false;
+
+  Aws::Vector<DriftStatus> m_resourceDriftStatuses;
+  bool m_resourceDriftStatusesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,16 +19,16 @@ Aws::String ListEnabledBaselinesRequest::SerializePayload() const {
     payload.WithObject("filter", m_filter.Jsonize());
   }
 
-  if (m_includeChildrenHasBeenSet) {
-    payload.WithBool("includeChildren", m_includeChildren);
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+  if (m_includeChildrenHasBeenSet) {
+    payload.WithBool("includeChildren", m_includeChildren);
   }
 
   return payload.View().WriteReadable();

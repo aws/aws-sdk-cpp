@@ -22,6 +22,7 @@
 #include <aws/controltower/model/CreateLandingZoneResult.h>
 #include <aws/controltower/model/DeleteLandingZoneResult.h>
 #include <aws/controltower/model/DisableBaselineResult.h>
+#include <aws/controltower/model/DisableControlRequest.h>
 #include <aws/controltower/model/DisableControlResult.h>
 #include <aws/controltower/model/EnableBaselineResult.h>
 #include <aws/controltower/model/EnableControlResult.h>

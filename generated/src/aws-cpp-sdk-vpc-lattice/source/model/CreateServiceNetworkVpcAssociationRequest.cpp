@@ -27,6 +27,10 @@ Aws::String CreateServiceNetworkVpcAssociationRequest::SerializePayload() const 
     payload.WithString("vpcIdentifier", m_vpcIdentifier);
   }
 
+  if (m_privateDnsEnabledHasBeenSet) {
+    payload.WithBool("privateDnsEnabled", m_privateDnsEnabled);
+  }
+
   if (m_securityGroupIdsHasBeenSet) {
     Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
     for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
@@ -41,6 +45,10 @@ Aws::String CreateServiceNetworkVpcAssociationRequest::SerializePayload() const 
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_dnsOptionsHasBeenSet) {
+    payload.WithObject("dnsOptions", m_dnsOptions.Jsonize());
   }
 
   return payload.View().WriteReadable();

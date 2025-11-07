@@ -27,6 +27,10 @@ Aws::String CreateServiceNetworkResourceAssociationRequest::SerializePayload() c
     payload.WithString("serviceNetworkIdentifier", m_serviceNetworkIdentifier);
   }
 
+  if (m_privateDnsEnabledHasBeenSet) {
+    payload.WithBool("privateDnsEnabled", m_privateDnsEnabled);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

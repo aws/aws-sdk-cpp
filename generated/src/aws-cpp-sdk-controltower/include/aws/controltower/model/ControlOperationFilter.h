@@ -61,23 +61,24 @@ class ControlOperationFilter {
 
   ///@{
   /**
-   * <p>The set of <code>ControlOperation</code> objects returned by the filter.</p>
+   * <p>The set of <code>targetIdentifier</code> objects returned by the filter.</p>
    */
-  inline const Aws::Vector<ControlOperationType>& GetControlOperationTypes() const { return m_controlOperationTypes; }
-  inline bool ControlOperationTypesHasBeenSet() const { return m_controlOperationTypesHasBeenSet; }
-  template <typename ControlOperationTypesT = Aws::Vector<ControlOperationType>>
-  void SetControlOperationTypes(ControlOperationTypesT&& value) {
-    m_controlOperationTypesHasBeenSet = true;
-    m_controlOperationTypes = std::forward<ControlOperationTypesT>(value);
+  inline const Aws::Vector<Aws::String>& GetTargetIdentifiers() const { return m_targetIdentifiers; }
+  inline bool TargetIdentifiersHasBeenSet() const { return m_targetIdentifiersHasBeenSet; }
+  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
+  void SetTargetIdentifiers(TargetIdentifiersT&& value) {
+    m_targetIdentifiersHasBeenSet = true;
+    m_targetIdentifiers = std::forward<TargetIdentifiersT>(value);
   }
-  template <typename ControlOperationTypesT = Aws::Vector<ControlOperationType>>
-  ControlOperationFilter& WithControlOperationTypes(ControlOperationTypesT&& value) {
-    SetControlOperationTypes(std::forward<ControlOperationTypesT>(value));
+  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
+  ControlOperationFilter& WithTargetIdentifiers(TargetIdentifiersT&& value) {
+    SetTargetIdentifiers(std::forward<TargetIdentifiersT>(value));
     return *this;
   }
-  inline ControlOperationFilter& AddControlOperationTypes(ControlOperationType value) {
-    m_controlOperationTypesHasBeenSet = true;
-    m_controlOperationTypes.push_back(value);
+  template <typename TargetIdentifiersT = Aws::String>
+  ControlOperationFilter& AddTargetIdentifiers(TargetIdentifiersT&& value) {
+    m_targetIdentifiersHasBeenSet = true;
+    m_targetIdentifiers.emplace_back(std::forward<TargetIdentifiersT>(value));
     return *this;
   }
   ///@}
@@ -132,24 +133,23 @@ class ControlOperationFilter {
 
   ///@{
   /**
-   * <p>The set of <code>targetIdentifier</code> objects returned by the filter.</p>
+   * <p>The set of <code>ControlOperation</code> objects returned by the filter.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetTargetIdentifiers() const { return m_targetIdentifiers; }
-  inline bool TargetIdentifiersHasBeenSet() const { return m_targetIdentifiersHasBeenSet; }
-  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
-  void SetTargetIdentifiers(TargetIdentifiersT&& value) {
-    m_targetIdentifiersHasBeenSet = true;
-    m_targetIdentifiers = std::forward<TargetIdentifiersT>(value);
+  inline const Aws::Vector<ControlOperationType>& GetControlOperationTypes() const { return m_controlOperationTypes; }
+  inline bool ControlOperationTypesHasBeenSet() const { return m_controlOperationTypesHasBeenSet; }
+  template <typename ControlOperationTypesT = Aws::Vector<ControlOperationType>>
+  void SetControlOperationTypes(ControlOperationTypesT&& value) {
+    m_controlOperationTypesHasBeenSet = true;
+    m_controlOperationTypes = std::forward<ControlOperationTypesT>(value);
   }
-  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
-  ControlOperationFilter& WithTargetIdentifiers(TargetIdentifiersT&& value) {
-    SetTargetIdentifiers(std::forward<TargetIdentifiersT>(value));
+  template <typename ControlOperationTypesT = Aws::Vector<ControlOperationType>>
+  ControlOperationFilter& WithControlOperationTypes(ControlOperationTypesT&& value) {
+    SetControlOperationTypes(std::forward<ControlOperationTypesT>(value));
     return *this;
   }
-  template <typename TargetIdentifiersT = Aws::String>
-  ControlOperationFilter& AddTargetIdentifiers(TargetIdentifiersT&& value) {
-    m_targetIdentifiersHasBeenSet = true;
-    m_targetIdentifiers.emplace_back(std::forward<TargetIdentifiersT>(value));
+  inline ControlOperationFilter& AddControlOperationTypes(ControlOperationType value) {
+    m_controlOperationTypesHasBeenSet = true;
+    m_controlOperationTypes.push_back(value);
     return *this;
   }
   ///@}
@@ -157,8 +157,8 @@ class ControlOperationFilter {
   Aws::Vector<Aws::String> m_controlIdentifiers;
   bool m_controlIdentifiersHasBeenSet = false;
 
-  Aws::Vector<ControlOperationType> m_controlOperationTypes;
-  bool m_controlOperationTypesHasBeenSet = false;
+  Aws::Vector<Aws::String> m_targetIdentifiers;
+  bool m_targetIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledControlIdentifiers;
   bool m_enabledControlIdentifiersHasBeenSet = false;
@@ -166,8 +166,8 @@ class ControlOperationFilter {
   Aws::Vector<ControlOperationStatus> m_statuses;
   bool m_statusesHasBeenSet = false;
 
-  Aws::Vector<Aws::String> m_targetIdentifiers;
-  bool m_targetIdentifiersHasBeenSet = false;
+  Aws::Vector<ControlOperationType> m_controlOperationTypes;
+  bool m_controlOperationTypesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,7 +22,9 @@ enum class SigningAlgorithmSpec {
   ECDSA_SHA_384,
   ECDSA_SHA_512,
   SM2DSA,
-  ML_DSA_SHAKE_256
+  ML_DSA_SHAKE_256,
+  ED25519_SHA_512,
+  ED25519_PH_SHA_512
 };
 
 namespace SigningAlgorithmSpecMapper {

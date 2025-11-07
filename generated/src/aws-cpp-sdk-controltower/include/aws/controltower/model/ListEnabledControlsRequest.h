@@ -31,35 +31,21 @@ class ListEnabledControlsRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>An input filter for the <code>ListEnabledControls</code> API that lets you
-   * select the types of control operations to view.</p>
+   * <p>The ARN of the organizational unit. For information on how to find the
+   * <code>targetIdentifier</code>, see <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+   * overview page</a>.</p>
    */
-  inline const EnabledControlFilter& GetFilter() const { return m_filter; }
-  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-  template <typename FilterT = EnabledControlFilter>
-  void SetFilter(FilterT&& value) {
-    m_filterHasBeenSet = true;
-    m_filter = std::forward<FilterT>(value);
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
   }
-  template <typename FilterT = EnabledControlFilter>
-  ListEnabledControlsRequest& WithFilter(FilterT&& value) {
-    SetFilter(std::forward<FilterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>How many results to return per API call.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListEnabledControlsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename TargetIdentifierT = Aws::String>
+  ListEnabledControlsRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -85,36 +71,70 @@ class ListEnabledControlsRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The ARN of the organizational unit. For information on how to find the
-   * <code>targetIdentifier</code>, see <a
-   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-   * overview page</a>.</p>
+   * <p>How many results to return per API call.</p>
    */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename TargetIdentifierT = Aws::String>
-  ListEnabledControlsRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+  inline ListEnabledControlsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An input filter for the <code>ListEnabledControls</code> API that lets you
+   * select the types of control operations to view.</p>
+   */
+  inline const EnabledControlFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = EnabledControlFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = EnabledControlFilter>
+  ListEnabledControlsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A boolean value that determines whether to include enabled controls from
+   * child organizational units in the response.</p>
+   */
+  inline bool GetIncludeChildren() const { return m_includeChildren; }
+  inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
+  inline void SetIncludeChildren(bool value) {
+    m_includeChildrenHasBeenSet = true;
+    m_includeChildren = value;
+  }
+  inline ListEnabledControlsRequest& WithIncludeChildren(bool value) {
+    SetIncludeChildren(value);
     return *this;
   }
   ///@}
  private:
-  EnabledControlFilter m_filter;
-  bool m_filterHasBeenSet = false;
-
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
 
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+
+  EnabledControlFilter m_filter;
+  bool m_filterHasBeenSet = false;
+
+  bool m_includeChildren{false};
+  bool m_includeChildrenHasBeenSet = false;
 };
 
 }  // namespace Model

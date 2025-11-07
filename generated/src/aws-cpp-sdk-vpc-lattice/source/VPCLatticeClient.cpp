@@ -34,6 +34,7 @@
 #include <aws/vpc-lattice/model/CreateTargetGroupRequest.h>
 #include <aws/vpc-lattice/model/DeleteAccessLogSubscriptionRequest.h>
 #include <aws/vpc-lattice/model/DeleteAuthPolicyRequest.h>
+#include <aws/vpc-lattice/model/DeleteDomainVerificationRequest.h>
 #include <aws/vpc-lattice/model/DeleteListenerRequest.h>
 #include <aws/vpc-lattice/model/DeleteResourceConfigurationRequest.h>
 #include <aws/vpc-lattice/model/DeleteResourceEndpointAssociationRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/vpc-lattice/model/DeregisterTargetsRequest.h>
 #include <aws/vpc-lattice/model/GetAccessLogSubscriptionRequest.h>
 #include <aws/vpc-lattice/model/GetAuthPolicyRequest.h>
+#include <aws/vpc-lattice/model/GetDomainVerificationRequest.h>
 #include <aws/vpc-lattice/model/GetListenerRequest.h>
 #include <aws/vpc-lattice/model/GetResourceConfigurationRequest.h>
 #include <aws/vpc-lattice/model/GetResourceGatewayRequest.h>
@@ -61,6 +63,7 @@
 #include <aws/vpc-lattice/model/GetServiceRequest.h>
 #include <aws/vpc-lattice/model/GetTargetGroupRequest.h>
 #include <aws/vpc-lattice/model/ListAccessLogSubscriptionsRequest.h>
+#include <aws/vpc-lattice/model/ListDomainVerificationsRequest.h>
 #include <aws/vpc-lattice/model/ListListenersRequest.h>
 #include <aws/vpc-lattice/model/ListResourceConfigurationsRequest.h>
 #include <aws/vpc-lattice/model/ListResourceEndpointAssociationsRequest.h>
@@ -78,6 +81,7 @@
 #include <aws/vpc-lattice/model/PutAuthPolicyRequest.h>
 #include <aws/vpc-lattice/model/PutResourcePolicyRequest.h>
 #include <aws/vpc-lattice/model/RegisterTargetsRequest.h>
+#include <aws/vpc-lattice/model/StartDomainVerificationRequest.h>
 #include <aws/vpc-lattice/model/TagResourceRequest.h>
 #include <aws/vpc-lattice/model/UntagResourceRequest.h>
 #include <aws/vpc-lattice/model/UpdateAccessLogSubscriptionRequest.h>
@@ -675,6 +679,42 @@ DeleteAuthPolicyOutcome VPCLatticeClient::DeleteAuthPolicy(const DeleteAuthPolic
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteDomainVerificationOutcome VPCLatticeClient::DeleteDomainVerification(const DeleteDomainVerificationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteDomainVerification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainVerificationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDomainVerification", "Required field: DomainVerificationIdentifier, is not set");
+    return DeleteDomainVerificationOutcome(Aws::Client::AWSError<VPCLatticeErrors>(
+        VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainVerificationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDomainVerification",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDomainVerificationOutcome>(
+      [&]() -> DeleteDomainVerificationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomainVerification, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainVerificationIdentifier());
+        return DeleteDomainVerificationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerRequest& request) const {
   AWS_OPERATION_GUARD(DeleteListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1245,6 +1285,42 @@ GetAuthPolicyOutcome VPCLatticeClient::GetAuthPolicy(const GetAuthPolicyRequest&
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDomainVerificationOutcome VPCLatticeClient::GetDomainVerification(const GetDomainVerificationRequest& request) const {
+  AWS_OPERATION_GUARD(GetDomainVerification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainVerificationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDomainVerification", "Required field: DomainVerificationIdentifier, is not set");
+    return GetDomainVerificationOutcome(Aws::Client::AWSError<VPCLatticeErrors>(
+        VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainVerificationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDomainVerification",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDomainVerificationOutcome>(
+      [&]() -> GetDomainVerificationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainVerificationIdentifier());
+        return GetDomainVerificationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& request) const {
   AWS_OPERATION_GUARD(GetListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1696,6 +1772,36 @@ ListAccessLogSubscriptionsOutcome VPCLatticeClient::ListAccessLogSubscriptions(c
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/accesslogsubscriptions");
         return ListAccessLogSubscriptionsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDomainVerificationsOutcome VPCLatticeClient::ListDomainVerifications(const ListDomainVerificationsRequest& request) const {
+  AWS_OPERATION_GUARD(ListDomainVerifications);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainVerifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDomainVerifications, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDomainVerifications, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDomainVerifications",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDomainVerificationsOutcome>(
+      [&]() -> ListDomainVerificationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainVerifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications");
+        return ListDomainVerificationsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2275,6 +2381,36 @@ RegisterTargetsOutcome VPCLatticeClient::RegisterTargets(const RegisterTargetsRe
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetGroupIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/registertargets");
         return RegisterTargetsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartDomainVerificationOutcome VPCLatticeClient::StartDomainVerification(const StartDomainVerificationRequest& request) const {
+  AWS_OPERATION_GUARD(StartDomainVerification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDomainVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartDomainVerification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartDomainVerification",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartDomainVerificationOutcome>(
+      [&]() -> StartDomainVerificationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDomainVerification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domainverifications");
+        return StartDomainVerificationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

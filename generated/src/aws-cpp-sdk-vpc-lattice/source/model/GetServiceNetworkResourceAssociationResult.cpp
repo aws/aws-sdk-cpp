@@ -86,6 +86,10 @@ GetServiceNetworkResourceAssociationResult& GetServiceNetworkResourceAssociation
     m_privateDnsEntry = jsonValue.GetObject("privateDnsEntry");
     m_privateDnsEntryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateDnsEnabled")) {
+    m_privateDnsEnabled = jsonValue.GetBool("privateDnsEnabled");
+    m_privateDnsEnabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dnsEntry")) {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;
@@ -93,6 +97,10 @@ GetServiceNetworkResourceAssociationResult& GetServiceNetworkResourceAssociation
   if (jsonValue.ValueExists("isManagedAssociation")) {
     m_isManagedAssociation = jsonValue.GetBool("isManagedAssociation");
     m_isManagedAssociationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainVerificationStatus")) {
+    m_domainVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("domainVerificationStatus"));
+    m_domainVerificationStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

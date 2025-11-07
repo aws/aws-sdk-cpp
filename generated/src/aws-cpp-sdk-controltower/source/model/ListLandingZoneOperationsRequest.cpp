@@ -19,12 +19,12 @@ Aws::String ListLandingZoneOperationsRequest::SerializePayload() const {
     payload.WithObject("filter", m_filter.Jsonize());
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();

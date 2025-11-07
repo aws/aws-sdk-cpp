@@ -126,7 +126,7 @@ class CreateKeyRequest : public KMSRequest {
    * HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
    * <li> <p>For asymmetric KMS keys with RSA key pairs, specify
    * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
-   * asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify
+   * asymmetric KMS keys with NIST-standard elliptic curve key pairs, specify
    * <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p> </li> <li> <p>For
    * asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify
    * <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric KMS keys with ML-DSA
@@ -182,12 +182,20 @@ class CreateKeyRequest : public KMSRequest {
    * pairs (encryption and decryption -or- signing and verification)</p> <ul> <li>
    * <p> <code>RSA_2048</code> </p> </li> <li> <p> <code>RSA_3072</code> </p> </li>
    * <li> <p> <code>RSA_4096</code> </p> </li> </ul> </li> <li> <p>Asymmetric
-   * NIST-recommended elliptic curve key pairs (signing and verification -or-
-   * deriving shared secrets)</p> <ul> <li> <p> <code>ECC_NIST_P256</code>
-   * (secp256r1)</p> </li> <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li>
-   * <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li>
-   * <p>Other asymmetric elliptic curve key pairs (signing and verification)</p> <ul>
-   * <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+   * NIST-standard elliptic curve key pairs (signing and verification -or- deriving
+   * shared secrets)</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p>
+   * </li> <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+   * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> <li> <p>
+   * <code>ECC_NIST_EDWARDS25519</code> (ed25519) - signing and verification only</p>
+   * <ul> <li> <p> <b>Note:</b> For ECC_NIST_EDWARDS25519 KMS keys, the
+   * ED25519_SHA_512 signing algorithm requires <a
+   * href="kms/latest/APIReference/API_Sign.html#KMS-Sign-request-MessageType">
+   * <code>MessageType:RAW</code> </a>, while ED25519_PH_SHA_512 requires <a
+   * href="kms/latest/APIReference/API_Sign.html#KMS-Sign-request-MessageType">
+   * <code>MessageType:DIGEST</code> </a>. These message types cannot be used
+   * interchangeably.</p> </li> </ul> </li> </ul> </li> <li> <p>Other asymmetric
+   * elliptic curve key pairs (signing and verification)</p> <ul> <li> <p>
+   * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
    * cryptocurrencies.</p> </li> </ul> </li> <li> <p>Asymmetric ML-DSA key pairs
    * (signing and verification)</p> <ul> <li> <p> <code>ML_DSA_44</code> </p> </li>
    * <li> <p> <code>ML_DSA_65</code> </p> </li> <li> <p> <code>ML_DSA_87</code> </p>

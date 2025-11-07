@@ -45,23 +45,6 @@ class GetBaselineResult {
 
   ///@{
   /**
-   * <p>A description of the baseline.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetBaselineResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A user-friendly name for the baseline.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -73,6 +56,23 @@ class GetBaselineResult {
   template <typename NameT = Aws::String>
   GetBaselineResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A description of the baseline.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetBaselineResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -95,11 +95,11 @@ class GetBaselineResult {
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
 
-  Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
-
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

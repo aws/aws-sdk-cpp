@@ -15,10 +15,23 @@ using namespace Aws::Utils;
 Aws::String CreateLandingZoneRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
+  }
+
   if (m_manifestHasBeenSet) {
     if (!m_manifest.View().IsNull()) {
       payload.WithObject("manifest", JsonValue(m_manifest.View()));
     }
+  }
+
+  if (m_remediationTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remediationTypesJsonList(m_remediationTypes.size());
+    for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
+      remediationTypesJsonList[remediationTypesIndex].AsString(
+          RemediationTypeMapper::GetNameForRemediationType(m_remediationTypes[remediationTypesIndex]));
+    }
+    payload.WithArray("remediationTypes", std::move(remediationTypesJsonList));
   }
 
   if (m_tagsHasBeenSet) {
@@ -27,10 +40,6 @@ Aws::String CreateLandingZoneRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_versionHasBeenSet) {
-    payload.WithString("version", m_version);
   }
 
   return payload.View().WriteReadable();

@@ -79,6 +79,10 @@ ServiceNetworkResourceAssociationSummary& ServiceNetworkResourceAssociationSumma
     m_failureCode = jsonValue.GetString("failureCode");
     m_failureCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateDnsEnabled")) {
+    m_privateDnsEnabled = jsonValue.GetBool("privateDnsEnabled");
+    m_privateDnsEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -144,6 +148,10 @@ JsonValue ServiceNetworkResourceAssociationSummary::Jsonize() const {
 
   if (m_failureCodeHasBeenSet) {
     payload.WithString("failureCode", m_failureCode);
+  }
+
+  if (m_privateDnsEnabledHasBeenSet) {
+    payload.WithBool("privateDnsEnabled", m_privateDnsEnabled);
   }
 
   return payload;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ExternalAuthorityConfiguration.h>
 #include <aws/ec2/model/TagSpecification.h>
 
 #include <utility>
@@ -138,6 +139,31 @@ class CreateIpamScopeRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that links an Amazon VPC IPAM scope to an external
+   * authority system. It specifies the type of external system and the external
+   * resource identifier that identifies your account or instance in that system.</p>
+   * <p>In IPAM, an external authority is a third-party IP address management system
+   * that provides CIDR blocks when you provision address space for top-level IPAM
+   * pools. This allows you to use your existing IP management system to control
+   * which address ranges are allocated to Amazon Web Services while using Amazon VPC
+   * IPAM to manage subnets within those ranges.</p>
+   */
+  inline const ExternalAuthorityConfiguration& GetExternalAuthorityConfiguration() const { return m_externalAuthorityConfiguration; }
+  inline bool ExternalAuthorityConfigurationHasBeenSet() const { return m_externalAuthorityConfigurationHasBeenSet; }
+  template <typename ExternalAuthorityConfigurationT = ExternalAuthorityConfiguration>
+  void SetExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    m_externalAuthorityConfigurationHasBeenSet = true;
+    m_externalAuthorityConfiguration = std::forward<ExternalAuthorityConfigurationT>(value);
+  }
+  template <typename ExternalAuthorityConfigurationT = ExternalAuthorityConfiguration>
+  CreateIpamScopeRequest& WithExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    SetExternalAuthorityConfiguration(std::forward<ExternalAuthorityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
   bool m_dryRunHasBeenSet = false;
@@ -153,6 +179,9 @@ class CreateIpamScopeRequest : public EC2Request {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  ExternalAuthorityConfiguration m_externalAuthorityConfiguration;
+  bool m_externalAuthorityConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model
