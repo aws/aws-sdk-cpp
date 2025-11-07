@@ -22,7 +22,7 @@ function(set_compiler_flags target)
     if(NOT MSVC)
         set_gcc_flags()
         target_compile_options(${target} PRIVATE "${AWS_COMPILER_FLAGS}")
-        string(REPLACE ";" " " _TMP "${AWS_COMPILER_FLAGS}")
+        string(REPLACE ";" " " _TMP "${AWS_PUBLIC_COMPILER_FLAGS}")
         set(PKG_CONFIG_CFLAGS "${_TMP}" CACHE INTERNAL "C++ compiler flags which affect the ABI")
     endif()
 endfunction()
@@ -36,17 +36,26 @@ endfunction()
 
 
 macro(set_gcc_flags)
-    list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions" "-std=c++${CPP_STANDARD}")
+    # Internal flags - only for SDK compilation
+    list(APPEND AWS_COMPILER_FLAGS "-std=c++${CPP_STANDARD}")
+    
+    # Public flags - needed by downstream projects for ABI compatibility
+    list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions")
+    list(APPEND AWS_PUBLIC_COMPILER_FLAGS "-fno-exceptions")
+    
     if(COMPILER_IS_MINGW)
         list(APPEND AWS_COMPILER_FLAGS -D__USE_MINGW_ANSI_STDIO=1)
+        list(APPEND AWS_PUBLIC_COMPILER_FLAGS -D__USE_MINGW_ANSI_STDIO=1)
     endif()
 
     if(NOT BUILD_SHARED_LIBS)
         list(APPEND AWS_COMPILER_FLAGS "-fPIC")
+        list(APPEND AWS_PUBLIC_COMPILER_FLAGS "-fPIC")
     endif()
 
     if(NOT ENABLE_RTTI)
         list(APPEND AWS_COMPILER_FLAGS "-fno-rtti")
+        list(APPEND AWS_PUBLIC_COMPILER_FLAGS "-fno-rtti")
     endif()
 
     if(MINIMIZE_SIZE AND COMPILER_GCC)
