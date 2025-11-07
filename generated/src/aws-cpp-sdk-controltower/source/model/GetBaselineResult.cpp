@@ -25,13 +25,13 @@ GetBaselineResult& GetBaselineResult::operator=(const Aws::AmazonWebServiceResul
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

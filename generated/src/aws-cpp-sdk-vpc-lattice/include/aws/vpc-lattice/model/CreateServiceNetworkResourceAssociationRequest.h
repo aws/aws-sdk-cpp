@@ -91,6 +91,23 @@ class CreateServiceNetworkResourceAssociationRequest : public VPCLatticeRequest 
 
   ///@{
   /**
+   * <p> Indicates if private DNS is enabled for the service network resource
+   * association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline CreateServiceNetworkResourceAssociationRequest& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A key-value pair to associate with a resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -121,6 +138,9 @@ class CreateServiceNetworkResourceAssociationRequest : public VPCLatticeRequest 
 
   Aws::String m_serviceNetworkIdentifier;
   bool m_serviceNetworkIdentifierHasBeenSet = false;
+
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

@@ -33,24 +33,6 @@ class EnableBaselineRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The ARN of the baseline to be enabled.</p>
-   */
-  inline const Aws::String& GetBaselineIdentifier() const { return m_baselineIdentifier; }
-  inline bool BaselineIdentifierHasBeenSet() const { return m_baselineIdentifierHasBeenSet; }
-  template <typename BaselineIdentifierT = Aws::String>
-  void SetBaselineIdentifier(BaselineIdentifierT&& value) {
-    m_baselineIdentifierHasBeenSet = true;
-    m_baselineIdentifier = std::forward<BaselineIdentifierT>(value);
-  }
-  template <typename BaselineIdentifierT = Aws::String>
-  EnableBaselineRequest& WithBaselineIdentifier(BaselineIdentifierT&& value) {
-    SetBaselineIdentifier(std::forward<BaselineIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The specific version to be enabled of the specified baseline.</p>
    */
   inline const Aws::String& GetBaselineVersion() const { return m_baselineVersion; }
@@ -95,24 +77,18 @@ class EnableBaselineRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>Tags associated with input to <code>EnableBaseline</code>.</p>
+   * <p>The ARN of the baseline to be enabled.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
+  inline const Aws::String& GetBaselineIdentifier() const { return m_baselineIdentifier; }
+  inline bool BaselineIdentifierHasBeenSet() const { return m_baselineIdentifierHasBeenSet; }
+  template <typename BaselineIdentifierT = Aws::String>
+  void SetBaselineIdentifier(BaselineIdentifierT&& value) {
+    m_baselineIdentifierHasBeenSet = true;
+    m_baselineIdentifier = std::forward<BaselineIdentifierT>(value);
   }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  EnableBaselineRequest& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  EnableBaselineRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+  template <typename BaselineIdentifierT = Aws::String>
+  EnableBaselineRequest& WithBaselineIdentifier(BaselineIdentifierT&& value) {
+    SetBaselineIdentifier(std::forward<BaselineIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -135,21 +111,45 @@ class EnableBaselineRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_baselineIdentifier;
-  bool m_baselineIdentifierHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Tags associated with input to <code>EnableBaseline</code>.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  EnableBaselineRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  EnableBaselineRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_baselineVersion;
   bool m_baselineVersionHasBeenSet = false;
 
   Aws::Vector<EnabledBaselineParameter> m_parameters;
   bool m_parametersHasBeenSet = false;
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
+  Aws::String m_baselineIdentifier;
+  bool m_baselineIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
   bool m_targetIdentifierHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

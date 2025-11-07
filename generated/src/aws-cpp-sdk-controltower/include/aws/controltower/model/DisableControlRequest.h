@@ -70,12 +70,34 @@ class DisableControlRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the enabled control to be disabled, which uniquely identifies the
+   * control instance on the target organizational unit.</p>
+   */
+  inline const Aws::String& GetEnabledControlIdentifier() const { return m_enabledControlIdentifier; }
+  inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  void SetEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    m_enabledControlIdentifierHasBeenSet = true;
+    m_enabledControlIdentifier = std::forward<EnabledControlIdentifierT>(value);
+  }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  DisableControlRequest& WithEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    SetEnabledControlIdentifier(std::forward<EnabledControlIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_controlIdentifier;
   bool m_controlIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
   bool m_targetIdentifierHasBeenSet = false;
+
+  Aws::String m_enabledControlIdentifier;
+  bool m_enabledControlIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

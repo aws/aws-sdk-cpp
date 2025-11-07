@@ -31,6 +31,12 @@ void ListResourceConfigurationsRequest::AddQueryStringParameters(URI& uri) const
     ss.str("");
   }
 
+  if (m_domainVerificationIdentifierHasBeenSet) {
+    ss << m_domainVerificationIdentifier;
+    uri.AddQueryStringParameter("domainVerificationIdentifier", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());

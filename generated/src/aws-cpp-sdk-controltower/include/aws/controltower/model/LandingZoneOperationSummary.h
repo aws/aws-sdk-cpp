@@ -36,6 +36,22 @@ class LandingZoneOperationSummary {
 
   ///@{
   /**
+   * <p>The type of the landing zone operation.</p>
+   */
+  inline LandingZoneOperationType GetOperationType() const { return m_operationType; }
+  inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
+  inline void SetOperationType(LandingZoneOperationType value) {
+    m_operationTypeHasBeenSet = true;
+    m_operationType = value;
+  }
+  inline LandingZoneOperationSummary& WithOperationType(LandingZoneOperationType value) {
+    SetOperationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
    */
   inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
@@ -48,22 +64,6 @@ class LandingZoneOperationSummary {
   template <typename OperationIdentifierT = Aws::String>
   LandingZoneOperationSummary& WithOperationIdentifier(OperationIdentifierT&& value) {
     SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the landing zone operation.</p>
-   */
-  inline LandingZoneOperationType GetOperationType() const { return m_operationType; }
-  inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
-  inline void SetOperationType(LandingZoneOperationType value) {
-    m_operationTypeHasBeenSet = true;
-    m_operationType = value;
-  }
-  inline LandingZoneOperationSummary& WithOperationType(LandingZoneOperationType value) {
-    SetOperationType(value);
     return *this;
   }
   ///@}
@@ -84,11 +84,11 @@ class LandingZoneOperationSummary {
   }
   ///@}
  private:
-  Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
-
   LandingZoneOperationType m_operationType{LandingZoneOperationType::NOT_SET};
   bool m_operationTypeHasBeenSet = false;
+
+  Aws::String m_operationIdentifier;
+  bool m_operationIdentifierHasBeenSet = false;
 
   LandingZoneOperationStatus m_status{LandingZoneOperationStatus::NOT_SET};
   bool m_statusHasBeenSet = false;

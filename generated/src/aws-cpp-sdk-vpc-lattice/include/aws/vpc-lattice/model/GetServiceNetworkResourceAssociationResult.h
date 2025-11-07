@@ -9,6 +9,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/model/DnsEntry.h>
 #include <aws/vpc-lattice/model/ServiceNetworkResourceAssociationStatus.h>
+#include <aws/vpc-lattice/model/VerificationStatus.h>
 
 #include <utility>
 
@@ -291,6 +292,22 @@ class GetServiceNetworkResourceAssociationResult {
 
   ///@{
   /**
+   * <p> Indicates if private DNS is enabled in the service network resource
+   * association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline GetServiceNetworkResourceAssociationResult& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The DNS entry for the service.</p>
    */
   inline const DnsEntry& GetDnsEntry() const { return m_dnsEntry; }
@@ -317,6 +334,22 @@ class GetServiceNetworkResourceAssociationResult {
   }
   inline GetServiceNetworkResourceAssociationResult& WithIsManagedAssociation(bool value) {
     SetIsManagedAssociation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The domain verification status in the service network resource association.
+   * </p>
+   */
+  inline VerificationStatus GetDomainVerificationStatus() const { return m_domainVerificationStatus; }
+  inline void SetDomainVerificationStatus(VerificationStatus value) {
+    m_domainVerificationStatusHasBeenSet = true;
+    m_domainVerificationStatus = value;
+  }
+  inline GetServiceNetworkResourceAssociationResult& WithDomainVerificationStatus(VerificationStatus value) {
+    SetDomainVerificationStatus(value);
     return *this;
   }
   ///@}
@@ -381,11 +414,17 @@ class GetServiceNetworkResourceAssociationResult {
   DnsEntry m_privateDnsEntry;
   bool m_privateDnsEntryHasBeenSet = false;
 
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
+
   DnsEntry m_dnsEntry;
   bool m_dnsEntryHasBeenSet = false;
 
   bool m_isManagedAssociation{false};
   bool m_isManagedAssociationHasBeenSet = false;
+
+  VerificationStatus m_domainVerificationStatus{VerificationStatus::NOT_SET};
+  bool m_domainVerificationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -10,7 +10,18 @@
 namespace Aws {
 namespace KMS {
 namespace Model {
-enum class DataKeyPairSpec { NOT_SET, RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SM2 };
+enum class DataKeyPairSpec {
+  NOT_SET,
+  RSA_2048,
+  RSA_3072,
+  RSA_4096,
+  ECC_NIST_P256,
+  ECC_NIST_P384,
+  ECC_NIST_P521,
+  ECC_SECG_P256K1,
+  SM2,
+  ECC_NIST_EDWARDS25519
+};
 
 namespace DataKeyPairSpecMapper {
 AWS_KMS_API DataKeyPairSpec GetDataKeyPairSpecForName(const Aws::String& name);

@@ -176,6 +176,8 @@
 #include <aws/opensearch/model/GetCompatibleVersionsResult.h>
 #include <aws/opensearch/model/GetDataSourceRequest.h>
 #include <aws/opensearch/model/GetDataSourceResult.h>
+#include <aws/opensearch/model/GetDefaultApplicationSettingRequest.h>
+#include <aws/opensearch/model/GetDefaultApplicationSettingResult.h>
 #include <aws/opensearch/model/GetDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/GetDirectQueryDataSourceResult.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
@@ -280,6 +282,8 @@
 #include <aws/opensearch/model/PropertyValueType.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingRequest.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingResult.h>
+#include <aws/opensearch/model/PutDefaultApplicationSettingRequest.h>
+#include <aws/opensearch/model/PutDefaultApplicationSettingResult.h>
 #include <aws/opensearch/model/RecurringCharge.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionResult.h>

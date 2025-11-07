@@ -200,6 +200,64 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
 
   ///@{
   /**
+   * <p> A custom domain name for your resource configuration. Additionally, provide
+   * a DomainVerificationID to prove your ownership of a domain. </p>
+   */
+  inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+  inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+  template <typename CustomDomainNameT = Aws::String>
+  void SetCustomDomainName(CustomDomainNameT&& value) {
+    m_customDomainNameHasBeenSet = true;
+    m_customDomainName = std::forward<CustomDomainNameT>(value);
+  }
+  template <typename CustomDomainNameT = Aws::String>
+  CreateResourceConfigurationRequest& WithCustomDomainName(CustomDomainNameT&& value) {
+    SetCustomDomainName(std::forward<CustomDomainNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> (GROUP) The group domain for a group resource configuration. Any domains
+   * that you create for the child resource are subdomains of the group domain. Child
+   * resources inherit the verification status of the domain. </p>
+   */
+  inline const Aws::String& GetGroupDomain() const { return m_groupDomain; }
+  inline bool GroupDomainHasBeenSet() const { return m_groupDomainHasBeenSet; }
+  template <typename GroupDomainT = Aws::String>
+  void SetGroupDomain(GroupDomainT&& value) {
+    m_groupDomainHasBeenSet = true;
+    m_groupDomain = std::forward<GroupDomainT>(value);
+  }
+  template <typename GroupDomainT = Aws::String>
+  CreateResourceConfigurationRequest& WithGroupDomain(GroupDomainT&& value) {
+    SetGroupDomain(std::forward<GroupDomainT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The domain verification ID of your verified custom domain name. If you don't
+   * provide an ID, you must configure the DNS settings yourself. </p>
+   */
+  inline const Aws::String& GetDomainVerificationIdentifier() const { return m_domainVerificationIdentifier; }
+  inline bool DomainVerificationIdentifierHasBeenSet() const { return m_domainVerificationIdentifierHasBeenSet; }
+  template <typename DomainVerificationIdentifierT = Aws::String>
+  void SetDomainVerificationIdentifier(DomainVerificationIdentifierT&& value) {
+    m_domainVerificationIdentifierHasBeenSet = true;
+    m_domainVerificationIdentifier = std::forward<DomainVerificationIdentifierT>(value);
+  }
+  template <typename DomainVerificationIdentifierT = Aws::String>
+  CreateResourceConfigurationRequest& WithDomainVerificationIdentifier(DomainVerificationIdentifierT&& value) {
+    SetDomainVerificationIdentifier(std::forward<DomainVerificationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If you retry a request that completed successfully
    * using the same client token and parameters, the retry succeeds without
@@ -266,6 +324,15 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
 
   bool m_allowAssociationToShareableServiceNetwork{false};
   bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+
+  Aws::String m_customDomainName;
+  bool m_customDomainNameHasBeenSet = false;
+
+  Aws::String m_groupDomain;
+  bool m_groupDomainHasBeenSet = false;
+
+  Aws::String m_domainVerificationIdentifier;
+  bool m_domainVerificationIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;

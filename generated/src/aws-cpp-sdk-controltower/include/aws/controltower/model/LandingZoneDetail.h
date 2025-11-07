@@ -7,8 +7,10 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/controltower/model/LandingZoneDriftStatusSummary.h>
 #include <aws/controltower/model/LandingZoneStatus.h>
+#include <aws/controltower/model/RemediationType.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -36,54 +38,18 @@ class LandingZoneDetail {
 
   ///@{
   /**
-   * <p>The ARN of the landing zone.</p>
+   * <p>The landing zone's current deployed version.</p>
    */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
+  inline const Aws::String& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = Aws::String>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
   }
-  template <typename ArnT = Aws::String>
-  LandingZoneDetail& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The drift status of the landing zone.</p>
-   */
-  inline const LandingZoneDriftStatusSummary& GetDriftStatus() const { return m_driftStatus; }
-  inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-  template <typename DriftStatusT = LandingZoneDriftStatusSummary>
-  void SetDriftStatus(DriftStatusT&& value) {
-    m_driftStatusHasBeenSet = true;
-    m_driftStatus = std::forward<DriftStatusT>(value);
-  }
-  template <typename DriftStatusT = LandingZoneDriftStatusSummary>
-  LandingZoneDetail& WithDriftStatus(DriftStatusT&& value) {
-    SetDriftStatus(std::forward<DriftStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The latest available version of the landing zone.</p>
-   */
-  inline const Aws::String& GetLatestAvailableVersion() const { return m_latestAvailableVersion; }
-  inline bool LatestAvailableVersionHasBeenSet() const { return m_latestAvailableVersionHasBeenSet; }
-  template <typename LatestAvailableVersionT = Aws::String>
-  void SetLatestAvailableVersion(LatestAvailableVersionT&& value) {
-    m_latestAvailableVersionHasBeenSet = true;
-    m_latestAvailableVersion = std::forward<LatestAvailableVersionT>(value);
-  }
-  template <typename LatestAvailableVersionT = Aws::String>
-  LandingZoneDetail& WithLatestAvailableVersion(LatestAvailableVersionT&& value) {
-    SetLatestAvailableVersion(std::forward<LatestAvailableVersionT>(value));
+  template <typename VersionT = Aws::String>
+  LandingZoneDetail& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
     return *this;
   }
   ///@}
@@ -109,6 +75,48 @@ class LandingZoneDetail {
 
   ///@{
   /**
+   * <p>The types of remediation actions configured for the landing zone, such as
+   * automatic drift correction or compliance enforcement.</p>
+   */
+  inline const Aws::Vector<RemediationType>& GetRemediationTypes() const { return m_remediationTypes; }
+  inline bool RemediationTypesHasBeenSet() const { return m_remediationTypesHasBeenSet; }
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  void SetRemediationTypes(RemediationTypesT&& value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes = std::forward<RemediationTypesT>(value);
+  }
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  LandingZoneDetail& WithRemediationTypes(RemediationTypesT&& value) {
+    SetRemediationTypes(std::forward<RemediationTypesT>(value));
+    return *this;
+  }
+  inline LandingZoneDetail& AddRemediationTypes(RemediationType value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the landing zone.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  LandingZoneDetail& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
    * <code>PROCESSING</code>, <code>FAILED</code>.</p>
    */
@@ -126,39 +134,60 @@ class LandingZoneDetail {
 
   ///@{
   /**
-   * <p>The landing zone's current deployed version.</p>
+   * <p>The latest available version of the landing zone.</p>
    */
-  inline const Aws::String& GetVersion() const { return m_version; }
-  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-  template <typename VersionT = Aws::String>
-  void SetVersion(VersionT&& value) {
-    m_versionHasBeenSet = true;
-    m_version = std::forward<VersionT>(value);
+  inline const Aws::String& GetLatestAvailableVersion() const { return m_latestAvailableVersion; }
+  inline bool LatestAvailableVersionHasBeenSet() const { return m_latestAvailableVersionHasBeenSet; }
+  template <typename LatestAvailableVersionT = Aws::String>
+  void SetLatestAvailableVersion(LatestAvailableVersionT&& value) {
+    m_latestAvailableVersionHasBeenSet = true;
+    m_latestAvailableVersion = std::forward<LatestAvailableVersionT>(value);
   }
-  template <typename VersionT = Aws::String>
-  LandingZoneDetail& WithVersion(VersionT&& value) {
-    SetVersion(std::forward<VersionT>(value));
+  template <typename LatestAvailableVersionT = Aws::String>
+  LandingZoneDetail& WithLatestAvailableVersion(LatestAvailableVersionT&& value) {
+    SetLatestAvailableVersion(std::forward<LatestAvailableVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The drift status of the landing zone.</p>
+   */
+  inline const LandingZoneDriftStatusSummary& GetDriftStatus() const { return m_driftStatus; }
+  inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
+  template <typename DriftStatusT = LandingZoneDriftStatusSummary>
+  void SetDriftStatus(DriftStatusT&& value) {
+    m_driftStatusHasBeenSet = true;
+    m_driftStatus = std::forward<DriftStatusT>(value);
+  }
+  template <typename DriftStatusT = LandingZoneDriftStatusSummary>
+  LandingZoneDetail& WithDriftStatus(DriftStatusT&& value) {
+    SetDriftStatus(std::forward<DriftStatusT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
-
-  LandingZoneDriftStatusSummary m_driftStatus;
-  bool m_driftStatusHasBeenSet = false;
-
-  Aws::String m_latestAvailableVersion;
-  bool m_latestAvailableVersionHasBeenSet = false;
+  Aws::String m_version;
+  bool m_versionHasBeenSet = false;
 
   Aws::Utils::Document m_manifest;
   bool m_manifestHasBeenSet = false;
 
+  Aws::Vector<RemediationType> m_remediationTypes;
+  bool m_remediationTypesHasBeenSet = false;
+
+  Aws::String m_arn;
+  bool m_arnHasBeenSet = false;
+
   LandingZoneStatus m_status{LandingZoneStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
 
-  Aws::String m_version;
-  bool m_versionHasBeenSet = false;
+  Aws::String m_latestAvailableVersion;
+  bool m_latestAvailableVersionHasBeenSet = false;
+
+  LandingZoneDriftStatusSummary m_driftStatus;
+  bool m_driftStatusHasBeenSet = false;
 };
 
 }  // namespace Model

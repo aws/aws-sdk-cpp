@@ -26,6 +26,8 @@ static const int ECDSA_SHA_384_HASH = HashingUtils::HashString("ECDSA_SHA_384");
 static const int ECDSA_SHA_512_HASH = HashingUtils::HashString("ECDSA_SHA_512");
 static const int SM2DSA_HASH = HashingUtils::HashString("SM2DSA");
 static const int ML_DSA_SHAKE_256_HASH = HashingUtils::HashString("ML_DSA_SHAKE_256");
+static const int ED25519_SHA_512_HASH = HashingUtils::HashString("ED25519_SHA_512");
+static const int ED25519_PH_SHA_512_HASH = HashingUtils::HashString("ED25519_PH_SHA_512");
 
 SigningAlgorithmSpec GetSigningAlgorithmSpecForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +53,10 @@ SigningAlgorithmSpec GetSigningAlgorithmSpecForName(const Aws::String& name) {
     return SigningAlgorithmSpec::SM2DSA;
   } else if (hashCode == ML_DSA_SHAKE_256_HASH) {
     return SigningAlgorithmSpec::ML_DSA_SHAKE_256;
+  } else if (hashCode == ED25519_SHA_512_HASH) {
+    return SigningAlgorithmSpec::ED25519_SHA_512;
+  } else if (hashCode == ED25519_PH_SHA_512_HASH) {
+    return SigningAlgorithmSpec::ED25519_PH_SHA_512;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +93,10 @@ Aws::String GetNameForSigningAlgorithmSpec(SigningAlgorithmSpec enumValue) {
       return "SM2DSA";
     case SigningAlgorithmSpec::ML_DSA_SHAKE_256:
       return "ML_DSA_SHAKE_256";
+    case SigningAlgorithmSpec::ED25519_SHA_512:
+      return "ED25519_SHA_512";
+    case SigningAlgorithmSpec::ED25519_PH_SHA_512:
+      return "ED25519_PH_SHA_512";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -27,7 +27,8 @@ enum class KeySpec {
   SM2,
   ML_DSA_44,
   ML_DSA_65,
-  ML_DSA_87
+  ML_DSA_87,
+  ECC_NIST_EDWARDS25519
 };
 
 namespace KeySpecMapper {

@@ -36,42 +36,6 @@ class LandingZoneOperationDetail {
 
   ///@{
   /**
-   * <p>The landing zone operation end time.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  LandingZoneOperationDetail& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
-   */
-  inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
-  inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-  template <typename OperationIdentifierT = Aws::String>
-  void SetOperationIdentifier(OperationIdentifierT&& value) {
-    m_operationIdentifierHasBeenSet = true;
-    m_operationIdentifier = std::forward<OperationIdentifierT>(value);
-  }
-  template <typename OperationIdentifierT = Aws::String>
-  LandingZoneOperationDetail& WithOperationIdentifier(OperationIdentifierT&& value) {
-    SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The landing zone operation type. </p> <p>Valid values:</p> <ul> <li> <p>
    * <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. </p> </li>
    * <li> <p> <code>CREATE</code>: The <code>CreateLandingZone</code> operation. </p>
@@ -93,18 +57,18 @@ class LandingZoneOperationDetail {
 
   ///@{
   /**
-   * <p>The landing zone operation start time.</p>
+   * <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
    */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
+  inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
+  inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
+  template <typename OperationIdentifierT = Aws::String>
+  void SetOperationIdentifier(OperationIdentifierT&& value) {
+    m_operationIdentifierHasBeenSet = true;
+    m_operationIdentifier = std::forward<OperationIdentifierT>(value);
   }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  LandingZoneOperationDetail& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  template <typename OperationIdentifierT = Aws::String>
+  LandingZoneOperationDetail& WithOperationIdentifier(OperationIdentifierT&& value) {
+    SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -130,6 +94,42 @@ class LandingZoneOperationDetail {
 
   ///@{
   /**
+   * <p>The landing zone operation start time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  LandingZoneOperationDetail& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The landing zone operation end time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  LandingZoneOperationDetail& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If the operation result is FAILED, this string contains a message explaining
    * why the operation failed.</p>
    */
@@ -147,20 +147,20 @@ class LandingZoneOperationDetail {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
+  LandingZoneOperationType m_operationType{LandingZoneOperationType::NOT_SET};
+  bool m_operationTypeHasBeenSet = false;
 
   Aws::String m_operationIdentifier;
   bool m_operationIdentifierHasBeenSet = false;
 
-  LandingZoneOperationType m_operationType{LandingZoneOperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
+  LandingZoneOperationStatus m_status{LandingZoneOperationStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
 
-  LandingZoneOperationStatus m_status{LandingZoneOperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
   bool m_statusMessageHasBeenSet = false;

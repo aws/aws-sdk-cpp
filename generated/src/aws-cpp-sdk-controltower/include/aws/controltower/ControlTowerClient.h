@@ -299,7 +299,10 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
   /**
    * <p>Decommissions a landing zone. This API call starts an asynchronous operation
    * that deletes Amazon Web Services Control Tower resources deployed in accounts
-   * managed by Amazon Web Services Control Tower.</p><p><h3>See Also:</h3>   <a
+   * managed by Amazon Web Services Control Tower.</p> <p>Decommissioning a landing
+   * zone is a process with significant consequences, and it cannot be undone. We
+   * strongly recommend that you perform this decommissioning process only if you
+   * intend to stop using your landing zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">AWS
    * API Reference</a></p>
    */
@@ -365,13 +368,13 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">AWS
    * API Reference</a></p>
    */
-  virtual Model::DisableControlOutcome DisableControl(const Model::DisableControlRequest& request) const;
+  virtual Model::DisableControlOutcome DisableControl(const Model::DisableControlRequest& request = {}) const;
 
   /**
    * A Callable wrapper for DisableControl that returns a future to the operation so that it can be executed in parallel to other requests.
    */
   template <typename DisableControlRequestT = Model::DisableControlRequest>
-  Model::DisableControlOutcomeCallable DisableControlCallable(const DisableControlRequestT& request) const {
+  Model::DisableControlOutcomeCallable DisableControlCallable(const DisableControlRequestT& request = {}) const {
     return SubmitCallable(&ControlTowerClient::DisableControl, request);
   }
 
@@ -380,8 +383,9 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
    * finished.
    */
   template <typename DisableControlRequestT = Model::DisableControlRequest>
-  void DisableControlAsync(const DisableControlRequestT& request, const DisableControlResponseReceivedHandler& handler,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void DisableControlAsync(const DisableControlResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const DisableControlRequestT& request = {}) const {
     return SubmitAsync(&ControlTowerClient::DisableControl, request, handler, context);
   }
 
@@ -890,7 +894,8 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Resets an enabled control.</p><p><h3>See Also:</h3>   <a
+   * <p>Resets an enabled control. Does not work for controls implemented with
+   * SCPs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">AWS
    * API Reference</a></p>
    */

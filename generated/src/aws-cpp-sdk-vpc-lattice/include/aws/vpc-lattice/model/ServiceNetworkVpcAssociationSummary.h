@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/DnsOptions.h>
 #include <aws/vpc-lattice/model/ServiceNetworkVpcAssociationStatus.h>
 
 #include <utility>
@@ -178,6 +179,41 @@ class ServiceNetworkVpcAssociationSummary {
 
   ///@{
   /**
+   * <p> Indicates if private DNS is enabled for the service network VPC association.
+   * </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline ServiceNetworkVpcAssociationSummary& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The DNS options for the service network VPC association. </p>
+   */
+  inline const DnsOptions& GetDnsOptions() const { return m_dnsOptions; }
+  inline bool DnsOptionsHasBeenSet() const { return m_dnsOptionsHasBeenSet; }
+  template <typename DnsOptionsT = DnsOptions>
+  void SetDnsOptions(DnsOptionsT&& value) {
+    m_dnsOptionsHasBeenSet = true;
+    m_dnsOptions = std::forward<DnsOptionsT>(value);
+  }
+  template <typename DnsOptionsT = DnsOptions>
+  ServiceNetworkVpcAssociationSummary& WithDnsOptions(DnsOptionsT&& value) {
+    SetDnsOptions(std::forward<DnsOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the VPC.</p>
    */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
@@ -236,6 +272,12 @@ class ServiceNetworkVpcAssociationSummary {
 
   Aws::String m_serviceNetworkArn;
   bool m_serviceNetworkArnHasBeenSet = false;
+
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
+
+  DnsOptions m_dnsOptions;
+  bool m_dnsOptionsHasBeenSet = false;
 
   Aws::String m_vpcId;
   bool m_vpcIdHasBeenSet = false;

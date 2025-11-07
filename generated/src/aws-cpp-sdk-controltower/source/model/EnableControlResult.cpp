@@ -21,13 +21,13 @@ EnableControlResult::EnableControlResult(const Aws::AmazonWebServiceResult<JsonV
 
 EnableControlResult& EnableControlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationIdentifier")) {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");
     m_operationIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

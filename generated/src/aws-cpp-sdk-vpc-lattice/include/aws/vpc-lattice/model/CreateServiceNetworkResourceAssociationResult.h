@@ -95,6 +95,22 @@ class CreateServiceNetworkResourceAssociationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> Indicates if private DNS is is enabled for the service network resource
+   * association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline CreateServiceNetworkResourceAssociationResult& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -120,6 +136,9 @@ class CreateServiceNetworkResourceAssociationResult {
 
   Aws::String m_createdBy;
   bool m_createdByHasBeenSet = false;
+
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

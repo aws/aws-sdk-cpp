@@ -20,8 +20,8 @@ namespace OpenSearchService {
 namespace Model {
 
 /**
- * <p>Describes the IAM federation options configured for the domain.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Output parameters showing the current IAM identity federation
+ * configuration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IAMFederationOptionsOutput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class IAMFederationOptionsOutput {
 
   ///@{
   /**
-   * <p>True if IAM federation is enabled.</p>
+   * <p>Indicates whether IAM identity federation is currently enabled for the
+   * domain.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -50,7 +51,8 @@ class IAMFederationOptionsOutput {
 
   ///@{
   /**
-   * <p>The key used for matching the IAM federation subject attribute.</p>
+   * <p>The configured key in the SAML assertion for the user's subject
+   * identifier.</p>
    */
   inline const Aws::String& GetSubjectKey() const { return m_subjectKey; }
   inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
@@ -68,7 +70,7 @@ class IAMFederationOptionsOutput {
 
   ///@{
   /**
-   * <p>The key used for matching the IAM federation roles attribute.</p>
+   * <p>The configured key in the SAML assertion for the user's role information.</p>
    */
   inline const Aws::String& GetRolesKey() const { return m_rolesKey; }
   inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }

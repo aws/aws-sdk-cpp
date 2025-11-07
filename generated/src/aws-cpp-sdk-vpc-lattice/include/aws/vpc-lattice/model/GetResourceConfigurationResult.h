@@ -12,6 +12,7 @@
 #include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
 #include <aws/vpc-lattice/model/ResourceConfigurationStatus.h>
 #include <aws/vpc-lattice/model/ResourceConfigurationType.h>
+#include <aws/vpc-lattice/model/VerificationStatus.h>
 
 #include <utility>
 
@@ -313,6 +314,74 @@ class GetResourceConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The domain verification ID. </p>
+   */
+  inline const Aws::String& GetDomainVerificationId() const { return m_domainVerificationId; }
+  template <typename DomainVerificationIdT = Aws::String>
+  void SetDomainVerificationId(DomainVerificationIdT&& value) {
+    m_domainVerificationIdHasBeenSet = true;
+    m_domainVerificationId = std::forward<DomainVerificationIdT>(value);
+  }
+  template <typename DomainVerificationIdT = Aws::String>
+  GetResourceConfigurationResult& WithDomainVerificationId(DomainVerificationIdT&& value) {
+    SetDomainVerificationId(std::forward<DomainVerificationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The ARN of the domain verification. </p>
+   */
+  inline const Aws::String& GetDomainVerificationArn() const { return m_domainVerificationArn; }
+  template <typename DomainVerificationArnT = Aws::String>
+  void SetDomainVerificationArn(DomainVerificationArnT&& value) {
+    m_domainVerificationArnHasBeenSet = true;
+    m_domainVerificationArn = std::forward<DomainVerificationArnT>(value);
+  }
+  template <typename DomainVerificationArnT = Aws::String>
+  GetResourceConfigurationResult& WithDomainVerificationArn(DomainVerificationArnT&& value) {
+    SetDomainVerificationArn(std::forward<DomainVerificationArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The domain verification status. </p>
+   */
+  inline VerificationStatus GetDomainVerificationStatus() const { return m_domainVerificationStatus; }
+  inline void SetDomainVerificationStatus(VerificationStatus value) {
+    m_domainVerificationStatusHasBeenSet = true;
+    m_domainVerificationStatus = value;
+  }
+  inline GetResourceConfigurationResult& WithDomainVerificationStatus(VerificationStatus value) {
+    SetDomainVerificationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> (GROUP) The group domain for a group resource configuration. Any domains
+   * that you create for the child resource are subdomains of the group domain. Child
+   * resources inherit the verification status of the domain. </p>
+   */
+  inline const Aws::String& GetGroupDomain() const { return m_groupDomain; }
+  template <typename GroupDomainT = Aws::String>
+  void SetGroupDomain(GroupDomainT&& value) {
+    m_groupDomainHasBeenSet = true;
+    m_groupDomain = std::forward<GroupDomainT>(value);
+  }
+  template <typename GroupDomainT = Aws::String>
+  GetResourceConfigurationResult& WithGroupDomain(GroupDomainT&& value) {
+    SetGroupDomain(std::forward<GroupDomainT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -374,6 +443,18 @@ class GetResourceConfigurationResult {
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_lastUpdatedAtHasBeenSet = false;
+
+  Aws::String m_domainVerificationId;
+  bool m_domainVerificationIdHasBeenSet = false;
+
+  Aws::String m_domainVerificationArn;
+  bool m_domainVerificationArnHasBeenSet = false;
+
+  VerificationStatus m_domainVerificationStatus{VerificationStatus::NOT_SET};
+  bool m_domainVerificationStatusHasBeenSet = false;
+
+  Aws::String m_groupDomain;
+  bool m_groupDomainHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

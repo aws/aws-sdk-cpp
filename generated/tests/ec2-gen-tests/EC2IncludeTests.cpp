@@ -1305,6 +1305,7 @@
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/ExportVerifiedAccessInstanceClientConfigurationRequest.h>
 #include <aws/ec2/model/ExportVerifiedAccessInstanceClientConfigurationResponse.h>
+#include <aws/ec2/model/ExternalAuthorityConfiguration.h>
 #include <aws/ec2/model/FailedCapacityReservationFleetCancellationResponse.h>
 #include <aws/ec2/model/FailedQueuedPurchaseDeletion.h>
 #include <aws/ec2/model/FastLaunchLaunchTemplateSpecificationRequest.h>
@@ -1706,6 +1707,8 @@
 #include <aws/ec2/model/IpamResourceTag.h>
 #include <aws/ec2/model/IpamResourceType.h>
 #include <aws/ec2/model/IpamScope.h>
+#include <aws/ec2/model/IpamScopeExternalAuthorityConfiguration.h>
+#include <aws/ec2/model/IpamScopeExternalAuthorityType.h>
 #include <aws/ec2/model/IpamScopeState.h>
 #include <aws/ec2/model/IpamScopeType.h>
 #include <aws/ec2/model/IpamState.h>

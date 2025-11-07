@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 Aws::String UpdateLandingZoneRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_landingZoneIdentifierHasBeenSet) {
-    payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   if (m_manifestHasBeenSet) {
@@ -25,8 +25,17 @@ Aws::String UpdateLandingZoneRequest::SerializePayload() const {
     }
   }
 
-  if (m_versionHasBeenSet) {
-    payload.WithString("version", m_version);
+  if (m_remediationTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remediationTypesJsonList(m_remediationTypes.size());
+    for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
+      remediationTypesJsonList[remediationTypesIndex].AsString(
+          RemediationTypeMapper::GetNameForRemediationType(m_remediationTypes[remediationTypesIndex]));
+    }
+    payload.WithArray("remediationTypes", std::move(remediationTypesJsonList));
+  }
+
+  if (m_landingZoneIdentifierHasBeenSet) {
+    payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
   }
 
   return payload.View().WriteReadable();

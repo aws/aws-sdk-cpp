@@ -305,6 +305,23 @@ class ServiceNetworkResourceAssociationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Indicates if private DNS is enabled for the service network resource
+   * association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline ServiceNetworkResourceAssociationSummary& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -350,6 +367,9 @@ class ServiceNetworkResourceAssociationSummary {
 
   Aws::String m_failureCode;
   bool m_failureCodeHasBeenSet = false;
+
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

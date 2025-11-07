@@ -88,6 +88,11 @@ IpamScope& IpamScope::operator=(const XmlNode& xmlNode) {
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode externalAuthorityConfigurationNode = resultNode.FirstChild("externalAuthorityConfiguration");
+    if (!externalAuthorityConfigurationNode.IsNull()) {
+      m_externalAuthorityConfiguration = externalAuthorityConfigurationNode;
+      m_externalAuthorityConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -144,6 +149,12 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       item.OutputToStream(oStream, tagsSs.str().c_str());
     }
   }
+
+  if (m_externalAuthorityConfigurationHasBeenSet) {
+    Aws::StringStream externalAuthorityConfigurationLocationAndMemberSs;
+    externalAuthorityConfigurationLocationAndMemberSs << location << index << locationValue << ".ExternalAuthorityConfiguration";
+    m_externalAuthorityConfiguration.OutputToStream(oStream, externalAuthorityConfigurationLocationAndMemberSs.str().c_str());
+  }
 }
 
 void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -185,6 +196,11 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location) cons
       tagsSs << location << ".TagSet." << tagsIdx++;
       item.OutputToStream(oStream, tagsSs.str().c_str());
     }
+  }
+  if (m_externalAuthorityConfigurationHasBeenSet) {
+    Aws::String externalAuthorityConfigurationLocationAndMember(location);
+    externalAuthorityConfigurationLocationAndMember += ".ExternalAuthorityConfiguration";
+    m_externalAuthorityConfiguration.OutputToStream(oStream, externalAuthorityConfigurationLocationAndMember.c_str());
   }
 }
 

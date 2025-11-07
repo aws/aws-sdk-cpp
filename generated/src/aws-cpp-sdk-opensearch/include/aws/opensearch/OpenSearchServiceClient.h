@@ -1298,6 +1298,37 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Gets the ARN of the current default application.</p> <p> If the default
+   * application isn't set, the operation returns a resource not found
+   * error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDefaultApplicationSettingOutcome GetDefaultApplicationSetting(
+      const Model::GetDefaultApplicationSettingRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetDefaultApplicationSetting that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDefaultApplicationSettingRequestT = Model::GetDefaultApplicationSettingRequest>
+  Model::GetDefaultApplicationSettingOutcomeCallable GetDefaultApplicationSettingCallable(
+      const GetDefaultApplicationSettingRequestT& request = {}) const {
+    return SubmitCallable(&OpenSearchServiceClient::GetDefaultApplicationSetting, request);
+  }
+
+  /**
+   * An Async wrapper for GetDefaultApplicationSetting that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDefaultApplicationSettingRequestT = Model::GetDefaultApplicationSettingRequest>
+  void GetDefaultApplicationSettingAsync(const GetDefaultApplicationSettingResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const GetDefaultApplicationSettingRequestT& request = {}) const {
+    return SubmitAsync(&OpenSearchServiceClient::GetDefaultApplicationSetting, request, handler, context);
+  }
+
+  /**
    * <p> Returns detailed configuration information for a specific direct query data
    * source in Amazon OpenSearch Service. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">AWS
@@ -1866,6 +1897,40 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                              const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::PurchaseReservedInstanceOffering, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the default application to the application with the specified ARN.</p>
+   * <p> To remove the default application, use the
+   * <code>GetDefaultApplicationSetting</code> operation to get the current default
+   * and then call the <code>PutDefaultApplicationSetting</code> with the current
+   * applications ARN and the <code>setAsDefault</code> parameter set to
+   * <code>false</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutDefaultApplicationSettingOutcome PutDefaultApplicationSetting(
+      const Model::PutDefaultApplicationSettingRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutDefaultApplicationSetting that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutDefaultApplicationSettingRequestT = Model::PutDefaultApplicationSettingRequest>
+  Model::PutDefaultApplicationSettingOutcomeCallable PutDefaultApplicationSettingCallable(
+      const PutDefaultApplicationSettingRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::PutDefaultApplicationSetting, request);
+  }
+
+  /**
+   * An Async wrapper for PutDefaultApplicationSetting that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutDefaultApplicationSettingRequestT = Model::PutDefaultApplicationSettingRequest>
+  void PutDefaultApplicationSettingAsync(const PutDefaultApplicationSettingRequestT& request,
+                                         const PutDefaultApplicationSettingResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::PutDefaultApplicationSetting, request, handler, context);
   }
 
   /**

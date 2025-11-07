@@ -15,20 +15,24 @@ using namespace Aws::Utils;
 Aws::String ListEnabledControlsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_filterHasBeenSet) {
-    payload.WithObject("filter", m_filter.Jsonize());
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }
 
-  if (m_targetIdentifierHasBeenSet) {
-    payload.WithString("targetIdentifier", m_targetIdentifier);
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
+  }
+
+  if (m_filterHasBeenSet) {
+    payload.WithObject("filter", m_filter.Jsonize());
+  }
+
+  if (m_includeChildrenHasBeenSet) {
+    payload.WithBool("includeChildren", m_includeChildren);
   }
 
   return payload.View().WriteReadable();

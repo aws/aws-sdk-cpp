@@ -19,12 +19,8 @@ Aws::String EnableControlRequest::SerializePayload() const {
     payload.WithString("controlIdentifier", m_controlIdentifier);
   }
 
-  if (m_parametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-    }
-    payload.WithArray("parameters", std::move(parametersJsonList));
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   if (m_tagsHasBeenSet) {
@@ -35,8 +31,12 @@ Aws::String EnableControlRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if (m_targetIdentifierHasBeenSet) {
-    payload.WithString("targetIdentifier", m_targetIdentifier);
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
   }
 
   return payload.View().WriteReadable();

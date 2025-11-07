@@ -77,42 +77,21 @@ class EnabledControlDetails {
 
   ///@{
   /**
-   * <p>The drift status of the enabled control.</p>
+   * <p>The ARN of the organizational unit. For information on how to find the
+   * <code>targetIdentifier</code>, see <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+   * overview page</a>.</p>
    */
-  inline const DriftStatusSummary& GetDriftStatusSummary() const { return m_driftStatusSummary; }
-  inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
-  template <typename DriftStatusSummaryT = DriftStatusSummary>
-  void SetDriftStatusSummary(DriftStatusSummaryT&& value) {
-    m_driftStatusSummaryHasBeenSet = true;
-    m_driftStatusSummary = std::forward<DriftStatusSummaryT>(value);
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
   }
-  template <typename DriftStatusSummaryT = DriftStatusSummary>
-  EnabledControlDetails& WithDriftStatusSummary(DriftStatusSummaryT&& value) {
-    SetDriftStatusSummary(std::forward<DriftStatusSummaryT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Array of <code>EnabledControlParameter</code> objects.</p>
-   */
-  inline const Aws::Vector<EnabledControlParameterSummary>& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = Aws::Vector<EnabledControlParameterSummary>>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
-  }
-  template <typename ParametersT = Aws::Vector<EnabledControlParameterSummary>>
-  EnabledControlDetails& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
-    return *this;
-  }
-  template <typename ParametersT = EnabledControlParameterSummary>
-  EnabledControlDetails& AddParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters.emplace_back(std::forward<ParametersT>(value));
+  template <typename TargetIdentifierT = Aws::String>
+  EnabledControlDetails& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -137,21 +116,37 @@ class EnabledControlDetails {
 
   ///@{
   /**
-   * <p>The ARN of the organizational unit. For information on how to find the
-   * <code>targetIdentifier</code>, see <a
-   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-   * overview page</a>.</p>
+   * <p>The drift status of the enabled control.</p>
    */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  inline const DriftStatusSummary& GetDriftStatusSummary() const { return m_driftStatusSummary; }
+  inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
+  template <typename DriftStatusSummaryT = DriftStatusSummary>
+  void SetDriftStatusSummary(DriftStatusSummaryT&& value) {
+    m_driftStatusSummaryHasBeenSet = true;
+    m_driftStatusSummary = std::forward<DriftStatusSummaryT>(value);
   }
-  template <typename TargetIdentifierT = Aws::String>
-  EnabledControlDetails& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+  template <typename DriftStatusSummaryT = DriftStatusSummary>
+  EnabledControlDetails& WithDriftStatusSummary(DriftStatusSummaryT&& value) {
+    SetDriftStatusSummary(std::forward<DriftStatusSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the parent enabled control from which this control inherits its
+   * configuration, if applicable.</p>
+   */
+  inline const Aws::String& GetParentIdentifier() const { return m_parentIdentifier; }
+  inline bool ParentIdentifierHasBeenSet() const { return m_parentIdentifierHasBeenSet; }
+  template <typename ParentIdentifierT = Aws::String>
+  void SetParentIdentifier(ParentIdentifierT&& value) {
+    m_parentIdentifierHasBeenSet = true;
+    m_parentIdentifier = std::forward<ParentIdentifierT>(value);
+  }
+  template <typename ParentIdentifierT = Aws::String>
+  EnabledControlDetails& WithParentIdentifier(ParentIdentifierT&& value) {
+    SetParentIdentifier(std::forward<ParentIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -179,6 +174,30 @@ class EnabledControlDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Array of <code>EnabledControlParameter</code> objects.</p>
+   */
+  inline const Aws::Vector<EnabledControlParameterSummary>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<EnabledControlParameterSummary>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Vector<EnabledControlParameterSummary>>
+  EnabledControlDetails& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = EnabledControlParameterSummary>
+  EnabledControlDetails& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -186,20 +205,23 @@ class EnabledControlDetails {
   Aws::String m_controlIdentifier;
   bool m_controlIdentifierHasBeenSet = false;
 
-  DriftStatusSummary m_driftStatusSummary;
-  bool m_driftStatusSummaryHasBeenSet = false;
-
-  Aws::Vector<EnabledControlParameterSummary> m_parameters;
-  bool m_parametersHasBeenSet = false;
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   EnablementStatusSummary m_statusSummary;
   bool m_statusSummaryHasBeenSet = false;
 
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
+  DriftStatusSummary m_driftStatusSummary;
+  bool m_driftStatusSummaryHasBeenSet = false;
+
+  Aws::String m_parentIdentifier;
+  bool m_parentIdentifierHasBeenSet = false;
 
   Aws::Vector<Region> m_targetRegions;
   bool m_targetRegionsHasBeenSet = false;
+
+  Aws::Vector<EnabledControlParameterSummary> m_parameters;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

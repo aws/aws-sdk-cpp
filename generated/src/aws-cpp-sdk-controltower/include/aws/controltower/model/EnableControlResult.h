@@ -28,23 +28,6 @@ class EnableControlResult {
 
   ///@{
   /**
-   * <p>The ARN of the <code>EnabledControl</code> resource.</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  EnableControlResult& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the asynchronous operation, which is used to track status. The
    * operation is available for 90 days.</p>
    */
@@ -57,6 +40,23 @@ class EnableControlResult {
   template <typename OperationIdentifierT = Aws::String>
   EnableControlResult& WithOperationIdentifier(OperationIdentifierT&& value) {
     SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the <code>EnabledControl</code> resource.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  EnableControlResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -76,11 +76,11 @@ class EnableControlResult {
   }
   ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
-
   Aws::String m_operationIdentifier;
   bool m_operationIdentifierHasBeenSet = false;
+
+  Aws::String m_arn;
+  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

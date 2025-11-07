@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/controltower/model/DriftStatus.h>
+#include <aws/controltower/model/EnabledControlDriftTypes.h>
 
 #include <utility>
 
@@ -59,9 +60,31 @@ class DriftStatusSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that categorizes the different types of drift detected for the
+   * enabled control.</p>
+   */
+  inline const EnabledControlDriftTypes& GetTypes() const { return m_types; }
+  inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
+  template <typename TypesT = EnabledControlDriftTypes>
+  void SetTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types = std::forward<TypesT>(value);
+  }
+  template <typename TypesT = EnabledControlDriftTypes>
+  DriftStatusSummary& WithTypes(TypesT&& value) {
+    SetTypes(std::forward<TypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DriftStatus m_driftStatus{DriftStatus::NOT_SET};
   bool m_driftStatusHasBeenSet = false;
+
+  EnabledControlDriftTypes m_types;
+  bool m_typesHasBeenSet = false;
 };
 
 }  // namespace Model

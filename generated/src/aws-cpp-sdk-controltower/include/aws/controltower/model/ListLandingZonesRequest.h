@@ -30,22 +30,6 @@ class ListLandingZonesRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The maximum number of returned landing zone ARNs, which is one.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListLandingZonesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The token to continue the list from a previous API call with the same
    * parameters.</p>
    */
@@ -62,12 +46,28 @@ class ListLandingZonesRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
- private:
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The maximum number of returned landing zone ARNs, which is one.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListLandingZonesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

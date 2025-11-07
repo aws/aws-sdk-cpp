@@ -36,6 +36,29 @@ class LandingZoneOperationFilter {
 
   ///@{
   /**
+   * <p>The set of landing zone operation types selected by the filter.</p>
+   */
+  inline const Aws::Vector<LandingZoneOperationType>& GetTypes() const { return m_types; }
+  inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
+  template <typename TypesT = Aws::Vector<LandingZoneOperationType>>
+  void SetTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types = std::forward<TypesT>(value);
+  }
+  template <typename TypesT = Aws::Vector<LandingZoneOperationType>>
+  LandingZoneOperationFilter& WithTypes(TypesT&& value) {
+    SetTypes(std::forward<TypesT>(value));
+    return *this;
+  }
+  inline LandingZoneOperationFilter& AddTypes(LandingZoneOperationType value) {
+    m_typesHasBeenSet = true;
+    m_types.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The statuses of the set of landing zone operations selected by the
    * filter.</p>
    */
@@ -57,35 +80,12 @@ class LandingZoneOperationFilter {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The set of landing zone operation types selected by the filter.</p>
-   */
-  inline const Aws::Vector<LandingZoneOperationType>& GetTypes() const { return m_types; }
-  inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-  template <typename TypesT = Aws::Vector<LandingZoneOperationType>>
-  void SetTypes(TypesT&& value) {
-    m_typesHasBeenSet = true;
-    m_types = std::forward<TypesT>(value);
-  }
-  template <typename TypesT = Aws::Vector<LandingZoneOperationType>>
-  LandingZoneOperationFilter& WithTypes(TypesT&& value) {
-    SetTypes(std::forward<TypesT>(value));
-    return *this;
-  }
-  inline LandingZoneOperationFilter& AddTypes(LandingZoneOperationType value) {
-    m_typesHasBeenSet = true;
-    m_types.push_back(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<LandingZoneOperationStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
-
   Aws::Vector<LandingZoneOperationType> m_types;
   bool m_typesHasBeenSet = false;
+
+  Aws::Vector<LandingZoneOperationStatus> m_statuses;
+  bool m_statusesHasBeenSet = false;
 };
 
 }  // namespace Model

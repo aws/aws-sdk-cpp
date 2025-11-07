@@ -28,23 +28,6 @@ class EnableBaselineResult {
 
   ///@{
   /**
-   * <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  EnableBaselineResult& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID (in UUID format) of the asynchronous <code>EnableBaseline</code>
    * operation. This <code>operationIdentifier</code> is used to track status through
    * calls to the <code>GetBaselineOperation</code> API.</p>
@@ -58,6 +41,23 @@ class EnableBaselineResult {
   template <typename OperationIdentifierT = Aws::String>
   EnableBaselineResult& WithOperationIdentifier(OperationIdentifierT&& value) {
     SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the <code>EnabledBaseline</code> resource.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  EnableBaselineResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -77,11 +77,11 @@ class EnableBaselineResult {
   }
   ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
-
   Aws::String m_operationIdentifier;
   bool m_operationIdentifierHasBeenSet = false;
+
+  Aws::String m_arn;
+  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

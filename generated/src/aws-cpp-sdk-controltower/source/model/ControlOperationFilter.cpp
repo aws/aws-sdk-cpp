@@ -26,14 +26,12 @@ ControlOperationFilter& ControlOperationFilter::operator=(JsonView jsonValue) {
     }
     m_controlIdentifiersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("controlOperationTypes")) {
-    Aws::Utils::Array<JsonView> controlOperationTypesJsonList = jsonValue.GetArray("controlOperationTypes");
-    for (unsigned controlOperationTypesIndex = 0; controlOperationTypesIndex < controlOperationTypesJsonList.GetLength();
-         ++controlOperationTypesIndex) {
-      m_controlOperationTypes.push_back(
-          ControlOperationTypeMapper::GetControlOperationTypeForName(controlOperationTypesJsonList[controlOperationTypesIndex].AsString()));
+  if (jsonValue.ValueExists("targetIdentifiers")) {
+    Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
+    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
+      m_targetIdentifiers.push_back(targetIdentifiersJsonList[targetIdentifiersIndex].AsString());
     }
-    m_controlOperationTypesHasBeenSet = true;
+    m_targetIdentifiersHasBeenSet = true;
   }
   if (jsonValue.ValueExists("enabledControlIdentifiers")) {
     Aws::Utils::Array<JsonView> enabledControlIdentifiersJsonList = jsonValue.GetArray("enabledControlIdentifiers");
@@ -50,12 +48,14 @@ ControlOperationFilter& ControlOperationFilter::operator=(JsonView jsonValue) {
     }
     m_statusesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetIdentifiers")) {
-    Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
-    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
-      m_targetIdentifiers.push_back(targetIdentifiersJsonList[targetIdentifiersIndex].AsString());
+  if (jsonValue.ValueExists("controlOperationTypes")) {
+    Aws::Utils::Array<JsonView> controlOperationTypesJsonList = jsonValue.GetArray("controlOperationTypes");
+    for (unsigned controlOperationTypesIndex = 0; controlOperationTypesIndex < controlOperationTypesJsonList.GetLength();
+         ++controlOperationTypesIndex) {
+      m_controlOperationTypes.push_back(
+          ControlOperationTypeMapper::GetControlOperationTypeForName(controlOperationTypesJsonList[controlOperationTypesIndex].AsString()));
     }
-    m_targetIdentifiersHasBeenSet = true;
+    m_controlOperationTypesHasBeenSet = true;
   }
   return *this;
 }
@@ -72,14 +72,12 @@ JsonValue ControlOperationFilter::Jsonize() const {
     payload.WithArray("controlIdentifiers", std::move(controlIdentifiersJsonList));
   }
 
-  if (m_controlOperationTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> controlOperationTypesJsonList(m_controlOperationTypes.size());
-    for (unsigned controlOperationTypesIndex = 0; controlOperationTypesIndex < controlOperationTypesJsonList.GetLength();
-         ++controlOperationTypesIndex) {
-      controlOperationTypesJsonList[controlOperationTypesIndex].AsString(
-          ControlOperationTypeMapper::GetNameForControlOperationType(m_controlOperationTypes[controlOperationTypesIndex]));
+  if (m_targetIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetIdentifiersJsonList(m_targetIdentifiers.size());
+    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
+      targetIdentifiersJsonList[targetIdentifiersIndex].AsString(m_targetIdentifiers[targetIdentifiersIndex]);
     }
-    payload.WithArray("controlOperationTypes", std::move(controlOperationTypesJsonList));
+    payload.WithArray("targetIdentifiers", std::move(targetIdentifiersJsonList));
   }
 
   if (m_enabledControlIdentifiersHasBeenSet) {
@@ -100,12 +98,14 @@ JsonValue ControlOperationFilter::Jsonize() const {
     payload.WithArray("statuses", std::move(statusesJsonList));
   }
 
-  if (m_targetIdentifiersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> targetIdentifiersJsonList(m_targetIdentifiers.size());
-    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
-      targetIdentifiersJsonList[targetIdentifiersIndex].AsString(m_targetIdentifiers[targetIdentifiersIndex]);
+  if (m_controlOperationTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> controlOperationTypesJsonList(m_controlOperationTypes.size());
+    for (unsigned controlOperationTypesIndex = 0; controlOperationTypesIndex < controlOperationTypesJsonList.GetLength();
+         ++controlOperationTypesIndex) {
+      controlOperationTypesJsonList[controlOperationTypesIndex].AsString(
+          ControlOperationTypeMapper::GetNameForControlOperationType(m_controlOperationTypes[controlOperationTypesIndex]));
     }
-    payload.WithArray("targetIdentifiers", std::move(targetIdentifiersJsonList));
+    payload.WithArray("controlOperationTypes", std::move(controlOperationTypesJsonList));
   }
 
   return payload;

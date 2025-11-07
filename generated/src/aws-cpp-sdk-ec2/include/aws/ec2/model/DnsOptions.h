@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/DnsRecordIpType.h>
 
@@ -64,12 +66,78 @@ class DnsOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The preference for which private domains have a private hosted zone created
+   * for and associated with the specified VPC. Only supported when private DNS is
+   * enabled and when the VPC endpoint type is ServiceNetwork or Resource. </p> <ul>
+   * <li> <p> <code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones
+   * for all custom domain names.</p> </li> <li> <p>
+   * <code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted
+   * zone only if custom domain name has been verified by the provider.</p> </li>
+   * <li> <p> <code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice
+   * provisions private hosted zones for all verified custom domain names and other
+   * domain names that the resource consumer specifies. The resource consumer
+   * specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p>
+   * </li> <li> <p> <code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a
+   * private hosted zone for domain names specified by the resource consumer. The
+   * resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains
+   * parameter.</p> </li> </ul>
+   */
+  inline const Aws::String& GetPrivateDnsPreference() const { return m_privateDnsPreference; }
+  inline bool PrivateDnsPreferenceHasBeenSet() const { return m_privateDnsPreferenceHasBeenSet; }
+  template <typename PrivateDnsPreferenceT = Aws::String>
+  void SetPrivateDnsPreference(PrivateDnsPreferenceT&& value) {
+    m_privateDnsPreferenceHasBeenSet = true;
+    m_privateDnsPreference = std::forward<PrivateDnsPreferenceT>(value);
+  }
+  template <typename PrivateDnsPreferenceT = Aws::String>
+  DnsOptions& WithPrivateDnsPreference(PrivateDnsPreferenceT&& value) {
+    SetPrivateDnsPreference(std::forward<PrivateDnsPreferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Indicates which of the private domains to create private hosted zones for
+   * and associate with the specified VPC. Only supported when private DNS is enabled
+   * and the private DNS preference is
+   * <code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> or
+   * <code>SPECIFIED_DOMAINS_ONLY</code>. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPrivateDnsSpecifiedDomains() const { return m_privateDnsSpecifiedDomains; }
+  inline bool PrivateDnsSpecifiedDomainsHasBeenSet() const { return m_privateDnsSpecifiedDomainsHasBeenSet; }
+  template <typename PrivateDnsSpecifiedDomainsT = Aws::Vector<Aws::String>>
+  void SetPrivateDnsSpecifiedDomains(PrivateDnsSpecifiedDomainsT&& value) {
+    m_privateDnsSpecifiedDomainsHasBeenSet = true;
+    m_privateDnsSpecifiedDomains = std::forward<PrivateDnsSpecifiedDomainsT>(value);
+  }
+  template <typename PrivateDnsSpecifiedDomainsT = Aws::Vector<Aws::String>>
+  DnsOptions& WithPrivateDnsSpecifiedDomains(PrivateDnsSpecifiedDomainsT&& value) {
+    SetPrivateDnsSpecifiedDomains(std::forward<PrivateDnsSpecifiedDomainsT>(value));
+    return *this;
+  }
+  template <typename PrivateDnsSpecifiedDomainsT = Aws::String>
+  DnsOptions& AddPrivateDnsSpecifiedDomains(PrivateDnsSpecifiedDomainsT&& value) {
+    m_privateDnsSpecifiedDomainsHasBeenSet = true;
+    m_privateDnsSpecifiedDomains.emplace_back(std::forward<PrivateDnsSpecifiedDomainsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DnsRecordIpType m_dnsRecordIpType{DnsRecordIpType::NOT_SET};
   bool m_dnsRecordIpTypeHasBeenSet = false;
 
   bool m_privateDnsOnlyForInboundResolverEndpoint{false};
   bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
+
+  Aws::String m_privateDnsPreference;
+  bool m_privateDnsPreferenceHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_privateDnsSpecifiedDomains;
+  bool m_privateDnsSpecifiedDomainsHasBeenSet = false;
 };
 
 }  // namespace Model

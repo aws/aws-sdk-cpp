@@ -18,13 +18,13 @@ namespace Model {
 LandingZoneOperationSummary::LandingZoneOperationSummary(JsonView jsonValue) { *this = jsonValue; }
 
 LandingZoneOperationSummary& LandingZoneOperationSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("operationIdentifier")) {
-    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
-    m_operationIdentifierHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationType")) {
     m_operationType = LandingZoneOperationTypeMapper::GetLandingZoneOperationTypeForName(jsonValue.GetString("operationType"));
     m_operationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("operationIdentifier")) {
+    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
+    m_operationIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = LandingZoneOperationStatusMapper::GetLandingZoneOperationStatusForName(jsonValue.GetString("status"));
@@ -36,12 +36,12 @@ LandingZoneOperationSummary& LandingZoneOperationSummary::operator=(JsonView jso
 JsonValue LandingZoneOperationSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_operationIdentifierHasBeenSet) {
-    payload.WithString("operationIdentifier", m_operationIdentifier);
-  }
-
   if (m_operationTypeHasBeenSet) {
     payload.WithString("operationType", LandingZoneOperationTypeMapper::GetNameForLandingZoneOperationType(m_operationType));
+  }
+
+  if (m_operationIdentifierHasBeenSet) {
+    payload.WithString("operationIdentifier", m_operationIdentifier);
   }
 
   if (m_statusHasBeenSet) {

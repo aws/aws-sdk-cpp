@@ -25,6 +25,14 @@ Aws::String ModifyIpamScopeRequest::SerializePayload() const {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if (m_externalAuthorityConfigurationHasBeenSet) {
+    m_externalAuthorityConfiguration.OutputToStream(ss, "ExternalAuthorityConfiguration");
+  }
+
+  if (m_removeExternalAuthorityConfigurationHasBeenSet) {
+    ss << "RemoveExternalAuthorityConfiguration=" << std::boolalpha << m_removeExternalAuthorityConfiguration << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

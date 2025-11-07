@@ -18,22 +18,6 @@ namespace Model {
 ControlOperationSummary::ControlOperationSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ControlOperationSummary& ControlOperationSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("controlIdentifier")) {
-    m_controlIdentifier = jsonValue.GetString("controlIdentifier");
-    m_controlIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("enabledControlIdentifier")) {
-    m_enabledControlIdentifier = jsonValue.GetString("enabledControlIdentifier");
-    m_enabledControlIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetString("endTime");
-    m_endTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("operationIdentifier")) {
-    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
-    m_operationIdentifierHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationType")) {
     m_operationType = ControlOperationTypeMapper::GetControlOperationTypeForName(jsonValue.GetString("operationType"));
     m_operationTypeHasBeenSet = true;
@@ -41,6 +25,10 @@ ControlOperationSummary& ControlOperationSummary::operator=(JsonView jsonValue) 
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetString("startTime");
     m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTime")) {
+    m_endTime = jsonValue.GetString("endTime");
+    m_endTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = ControlOperationStatusMapper::GetControlOperationStatusForName(jsonValue.GetString("status"));
@@ -50,9 +38,21 @@ ControlOperationSummary& ControlOperationSummary::operator=(JsonView jsonValue) 
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("operationIdentifier")) {
+    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
+    m_operationIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("controlIdentifier")) {
+    m_controlIdentifier = jsonValue.GetString("controlIdentifier");
+    m_controlIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetIdentifier")) {
     m_targetIdentifier = jsonValue.GetString("targetIdentifier");
     m_targetIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enabledControlIdentifier")) {
+    m_enabledControlIdentifier = jsonValue.GetString("enabledControlIdentifier");
+    m_enabledControlIdentifierHasBeenSet = true;
   }
   return *this;
 }
@@ -60,28 +60,16 @@ ControlOperationSummary& ControlOperationSummary::operator=(JsonView jsonValue) 
 JsonValue ControlOperationSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_controlIdentifierHasBeenSet) {
-    payload.WithString("controlIdentifier", m_controlIdentifier);
-  }
-
-  if (m_enabledControlIdentifierHasBeenSet) {
-    payload.WithString("enabledControlIdentifier", m_enabledControlIdentifier);
-  }
-
-  if (m_endTimeHasBeenSet) {
-    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_operationIdentifierHasBeenSet) {
-    payload.WithString("operationIdentifier", m_operationIdentifier);
-  }
-
   if (m_operationTypeHasBeenSet) {
     payload.WithString("operationType", ControlOperationTypeMapper::GetNameForControlOperationType(m_operationType));
   }
 
   if (m_startTimeHasBeenSet) {
     payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_endTimeHasBeenSet) {
+    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_statusHasBeenSet) {
@@ -92,8 +80,20 @@ JsonValue ControlOperationSummary::Jsonize() const {
     payload.WithString("statusMessage", m_statusMessage);
   }
 
+  if (m_operationIdentifierHasBeenSet) {
+    payload.WithString("operationIdentifier", m_operationIdentifier);
+  }
+
+  if (m_controlIdentifierHasBeenSet) {
+    payload.WithString("controlIdentifier", m_controlIdentifier);
+  }
+
   if (m_targetIdentifierHasBeenSet) {
     payload.WithString("targetIdentifier", m_targetIdentifier);
+  }
+
+  if (m_enabledControlIdentifierHasBeenSet) {
+    payload.WithString("enabledControlIdentifier", m_enabledControlIdentifier);
   }
 
   return payload;

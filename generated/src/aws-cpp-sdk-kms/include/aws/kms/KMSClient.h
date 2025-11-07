@@ -540,7 +540,7 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * operation to download the public key so it can be used outside of KMS. Each KMS
    * key can have only one key usage. KMS keys with RSA key pairs can be used to
    * encrypt and decrypt data or sign and verify messages (but not both). KMS keys
-   * with NIST-recommended ECC key pairs can be used to sign and verify messages or
+   * with NIST-standard ECC key pairs can be used to sign and verify messages or
    * derive shared secrets (but not both). KMS keys with <code>ECC_SECG_P256K1</code>
    * can be used only to sign and verify messages. KMS keys with ML-DSA key pairs can
    * be used to sign and verify messages. KMS keys with SM2 key pairs (China Regions
@@ -939,8 +939,8 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Derives a shared secret using a key agreement algorithm.</p>  <p>You
-   * must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China
-   * Regions only) KMS key pair with a <code>KeyUsage</code> value of
+   * must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
+   * only) KMS key pair with a <code>KeyUsage</code> value of
    * <code>KEY_AGREEMENT</code> to call DeriveSharedSecret.</p>
    * <p>DeriveSharedSecret uses the <a
    * href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar3.pdf#page=60">Elliptic
@@ -957,10 +957,10 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * DeriveSharedSecret.</p> <ol> <li> <p> <b>Alice</b> calls <a>CreateKey</a> to
    * create an asymmetric KMS key pair with a <code>KeyUsage</code> value of
    * <code>KEY_AGREEMENT</code>.</p> <p>The asymmetric KMS key must use a
-   * NIST-recommended elliptic curve (ECC) or SM2 (China Regions only) key spec.</p>
+   * NIST-standard elliptic curve (ECC) or SM2 (China Regions only) key spec.</p>
    * </li> <li> <p> <b>Bob</b> creates an elliptic curve key pair.</p> <p>Bob can
    * call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-   * pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic
+   * pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic
    * curve (ECC) or SM2 (China Regions ony) curve as Alice.</p> </li> <li> <p>Alice
    * and Bob <b>exchange their public keys</b> through an insecure communication
    * channel (like the internet).</p> <p>Use <a>GetPublicKey</a> to download the
@@ -975,9 +975,9 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * uses the Elliptic Curve Cryptography Cofactor Diffie-Hellman Primitive to
    * calculate the same raw secret using his private key and Alice's public key.</p>
    * </li> </ol> <p>To derive a shared secret you must provide a key agreement
-   * algorithm, the private key of the caller's asymmetric NIST-recommended elliptic
+   * algorithm, the private key of the caller's asymmetric NIST-standard elliptic
    * curve or SM2 (China Regions only) KMS key pair, and the public key from your
-   * peer's NIST-recommended elliptic curve or SM2 (China Regions only) key pair. The
+   * peer's NIST-standard elliptic curve or SM2 (China Regions only) key pair. The
    * public key can be from another asymmetric KMS key pair or from a key pair
    * generated outside of KMS, but both key pairs must be on the same elliptic
    * curve.</p> <p>The KMS key that you use for this operation must be in a

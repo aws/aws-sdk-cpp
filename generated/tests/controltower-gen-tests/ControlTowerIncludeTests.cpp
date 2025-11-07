@@ -47,9 +47,12 @@
 #include <aws/controltower/model/EnabledBaselineParameterSummary.h>
 #include <aws/controltower/model/EnabledBaselineSummary.h>
 #include <aws/controltower/model/EnabledControlDetails.h>
+#include <aws/controltower/model/EnabledControlDriftTypes.h>
 #include <aws/controltower/model/EnabledControlFilter.h>
+#include <aws/controltower/model/EnabledControlInheritanceDrift.h>
 #include <aws/controltower/model/EnabledControlParameter.h>
 #include <aws/controltower/model/EnabledControlParameterSummary.h>
+#include <aws/controltower/model/EnabledControlResourceDrift.h>
 #include <aws/controltower/model/EnabledControlSummary.h>
 #include <aws/controltower/model/EnablementStatus.h>
 #include <aws/controltower/model/EnablementStatusSummary.h>
@@ -92,6 +95,7 @@
 #include <aws/controltower/model/ListTagsForResourceRequest.h>
 #include <aws/controltower/model/ListTagsForResourceResult.h>
 #include <aws/controltower/model/Region.h>
+#include <aws/controltower/model/RemediationType.h>
 #include <aws/controltower/model/ResetEnabledBaselineRequest.h>
 #include <aws/controltower/model/ResetEnabledBaselineResult.h>
 #include <aws/controltower/model/ResetEnabledControlRequest.h>

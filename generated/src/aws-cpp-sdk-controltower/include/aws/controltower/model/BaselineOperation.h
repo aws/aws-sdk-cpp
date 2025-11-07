@@ -37,24 +37,6 @@ class BaselineOperation {
 
   ///@{
   /**
-   * <p>The end time of the operation (if applicable), in ISO 8601 format.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  BaselineOperation& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the specified operation.</p>
    */
   inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
@@ -92,6 +74,23 @@ class BaselineOperation {
 
   ///@{
   /**
+   * <p>An enumerated type (<code>enum</code>) with possible values of
+   * <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>IN_PROGRESS</code>.</p>
+   */
+  inline BaselineOperationStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(BaselineOperationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline BaselineOperation& WithStatus(BaselineOperationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The start time of the operation, in ISO 8601 format.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
@@ -110,17 +109,18 @@ class BaselineOperation {
 
   ///@{
   /**
-   * <p>An enumerated type (<code>enum</code>) with possible values of
-   * <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>IN_PROGRESS</code>.</p>
+   * <p>The end time of the operation (if applicable), in ISO 8601 format.</p>
    */
-  inline BaselineOperationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(BaselineOperationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
   }
-  inline BaselineOperation& WithStatus(BaselineOperationStatus value) {
-    SetStatus(value);
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  BaselineOperation& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
     return *this;
   }
   ///@}
@@ -144,20 +144,20 @@ class BaselineOperation {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
-
   Aws::String m_operationIdentifier;
   bool m_operationIdentifierHasBeenSet = false;
 
   BaselineOperationType m_operationType{BaselineOperationType::NOT_SET};
   bool m_operationTypeHasBeenSet = false;
 
+  BaselineOperationStatus m_status{BaselineOperationStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+
   Aws::Utils::DateTime m_startTime{};
   bool m_startTimeHasBeenSet = false;
 
-  BaselineOperationStatus m_status{BaselineOperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
   bool m_statusMessageHasBeenSet = false;

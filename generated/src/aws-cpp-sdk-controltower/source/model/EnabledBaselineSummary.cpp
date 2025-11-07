@@ -34,6 +34,10 @@ EnabledBaselineSummary& EnabledBaselineSummary::operator=(JsonView jsonValue) {
     m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
     m_driftStatusSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetIdentifier")) {
+    m_targetIdentifier = jsonValue.GetString("targetIdentifier");
+    m_targetIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("parentIdentifier")) {
     m_parentIdentifier = jsonValue.GetString("parentIdentifier");
     m_parentIdentifierHasBeenSet = true;
@@ -41,10 +45,6 @@ EnabledBaselineSummary& EnabledBaselineSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("statusSummary")) {
     m_statusSummary = jsonValue.GetObject("statusSummary");
     m_statusSummaryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("targetIdentifier")) {
-    m_targetIdentifier = jsonValue.GetString("targetIdentifier");
-    m_targetIdentifierHasBeenSet = true;
   }
   return *this;
 }
@@ -68,16 +68,16 @@ JsonValue EnabledBaselineSummary::Jsonize() const {
     payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
   }
 
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
+  }
+
   if (m_parentIdentifierHasBeenSet) {
     payload.WithString("parentIdentifier", m_parentIdentifier);
   }
 
   if (m_statusSummaryHasBeenSet) {
     payload.WithObject("statusSummary", m_statusSummary.Jsonize());
-  }
-
-  if (m_targetIdentifierHasBeenSet) {
-    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   return payload;

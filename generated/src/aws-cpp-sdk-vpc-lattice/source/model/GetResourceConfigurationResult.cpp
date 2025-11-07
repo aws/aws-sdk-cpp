@@ -88,6 +88,22 @@ GetResourceConfigurationResult& GetResourceConfigurationResult::operator=(const 
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("domainVerificationId")) {
+    m_domainVerificationId = jsonValue.GetString("domainVerificationId");
+    m_domainVerificationIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainVerificationArn")) {
+    m_domainVerificationArn = jsonValue.GetString("domainVerificationArn");
+    m_domainVerificationArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainVerificationStatus")) {
+    m_domainVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("domainVerificationStatus"));
+    m_domainVerificationStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("groupDomain")) {
+    m_groupDomain = jsonValue.GetString("groupDomain");
+    m_groupDomainHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

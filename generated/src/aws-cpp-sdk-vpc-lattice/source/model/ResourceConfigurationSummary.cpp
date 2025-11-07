@@ -58,6 +58,18 @@ ResourceConfigurationSummary& ResourceConfigurationSummary::operator=(JsonView j
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customDomainName")) {
+    m_customDomainName = jsonValue.GetString("customDomainName");
+    m_customDomainNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainVerificationId")) {
+    m_domainVerificationId = jsonValue.GetString("domainVerificationId");
+    m_domainVerificationIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("groupDomain")) {
+    m_groupDomain = jsonValue.GetString("groupDomain");
+    m_groupDomainHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +114,18 @@ JsonValue ResourceConfigurationSummary::Jsonize() const {
 
   if (m_lastUpdatedAtHasBeenSet) {
     payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_customDomainNameHasBeenSet) {
+    payload.WithString("customDomainName", m_customDomainName);
+  }
+
+  if (m_domainVerificationIdHasBeenSet) {
+    payload.WithString("domainVerificationId", m_domainVerificationId);
+  }
+
+  if (m_groupDomainHasBeenSet) {
+    payload.WithString("groupDomain", m_groupDomain);
   }
 
   return payload;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/IpamScopeExternalAuthorityConfiguration.h>
 #include <aws/ec2/model/IpamScopeState.h>
 #include <aws/ec2/model/IpamScopeType.h>
 #include <aws/ec2/model/Tag.h>
@@ -244,6 +245,34 @@ class IpamScope {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The external authority configuration for this IPAM scope, if configured.</p>
+   * <p>The configuration that links an Amazon VPC IPAM scope to an external
+   * authority system. It specifies the type of external system and the external
+   * resource identifier that identifies your account or instance in that system.</p>
+   * <p>In IPAM, an external authority is a third-party IP address management system
+   * that provides CIDR blocks when you provision address space for top-level IPAM
+   * pools. This allows you to use your existing IP management system to control
+   * which address ranges are allocated to Amazon Web Services while using Amazon VPC
+   * IPAM to manage subnets within those ranges.</p>
+   */
+  inline const IpamScopeExternalAuthorityConfiguration& GetExternalAuthorityConfiguration() const {
+    return m_externalAuthorityConfiguration;
+  }
+  inline bool ExternalAuthorityConfigurationHasBeenSet() const { return m_externalAuthorityConfigurationHasBeenSet; }
+  template <typename ExternalAuthorityConfigurationT = IpamScopeExternalAuthorityConfiguration>
+  void SetExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    m_externalAuthorityConfigurationHasBeenSet = true;
+    m_externalAuthorityConfiguration = std::forward<ExternalAuthorityConfigurationT>(value);
+  }
+  template <typename ExternalAuthorityConfigurationT = IpamScopeExternalAuthorityConfiguration>
+  IpamScope& WithExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    SetExternalAuthorityConfiguration(std::forward<ExternalAuthorityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ownerId;
   bool m_ownerIdHasBeenSet = false;
@@ -277,6 +306,9 @@ class IpamScope {
 
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  IpamScopeExternalAuthorityConfiguration m_externalAuthorityConfiguration;
+  bool m_externalAuthorityConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

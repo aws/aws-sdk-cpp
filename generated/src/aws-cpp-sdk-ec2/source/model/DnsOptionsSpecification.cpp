@@ -35,6 +35,22 @@ DnsOptionsSpecification& DnsOptionsSpecification::operator=(const XmlNode& xmlNo
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsOnlyForInboundResolverEndpointNode.GetText()).c_str()).c_str());
       m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true;
     }
+    XmlNode privateDnsPreferenceNode = resultNode.FirstChild("PrivateDnsPreference");
+    if (!privateDnsPreferenceNode.IsNull()) {
+      m_privateDnsPreference = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsPreferenceNode.GetText());
+      m_privateDnsPreferenceHasBeenSet = true;
+    }
+    XmlNode privateDnsSpecifiedDomainsNode = resultNode.FirstChild("PrivateDnsSpecifiedDomain");
+    if (!privateDnsSpecifiedDomainsNode.IsNull()) {
+      XmlNode privateDnsSpecifiedDomainsMember = privateDnsSpecifiedDomainsNode.FirstChild("item");
+      m_privateDnsSpecifiedDomainsHasBeenSet = !privateDnsSpecifiedDomainsMember.IsNull();
+      while (!privateDnsSpecifiedDomainsMember.IsNull()) {
+        m_privateDnsSpecifiedDomains.push_back(privateDnsSpecifiedDomainsMember.GetText());
+        privateDnsSpecifiedDomainsMember = privateDnsSpecifiedDomainsMember.NextNode("item");
+      }
+
+      m_privateDnsSpecifiedDomainsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -50,6 +66,19 @@ void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* 
     oStream << location << index << locationValue << ".PrivateDnsOnlyForInboundResolverEndpoint=" << std::boolalpha
             << m_privateDnsOnlyForInboundResolverEndpoint << "&";
   }
+
+  if (m_privateDnsPreferenceHasBeenSet) {
+    oStream << location << index << locationValue << ".PrivateDnsPreference=" << StringUtils::URLEncode(m_privateDnsPreference.c_str())
+            << "&";
+  }
+
+  if (m_privateDnsSpecifiedDomainsHasBeenSet) {
+    unsigned privateDnsSpecifiedDomainsIdx = 1;
+    for (auto& item : m_privateDnsSpecifiedDomains) {
+      oStream << location << index << locationValue << ".PrivateDnsSpecifiedDomain." << privateDnsSpecifiedDomainsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
 }
 
 void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -60,6 +89,16 @@ void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* 
   if (m_privateDnsOnlyForInboundResolverEndpointHasBeenSet) {
     oStream << location << ".PrivateDnsOnlyForInboundResolverEndpoint=" << std::boolalpha << m_privateDnsOnlyForInboundResolverEndpoint
             << "&";
+  }
+  if (m_privateDnsPreferenceHasBeenSet) {
+    oStream << location << ".PrivateDnsPreference=" << StringUtils::URLEncode(m_privateDnsPreference.c_str()) << "&";
+  }
+  if (m_privateDnsSpecifiedDomainsHasBeenSet) {
+    unsigned privateDnsSpecifiedDomainsIdx = 1;
+    for (auto& item : m_privateDnsSpecifiedDomains) {
+      oStream << location << ".PrivateDnsSpecifiedDomain." << privateDnsSpecifiedDomainsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
   }
 }
 

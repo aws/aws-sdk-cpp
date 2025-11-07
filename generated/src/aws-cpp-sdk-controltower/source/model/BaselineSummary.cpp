@@ -22,13 +22,13 @@ BaselineSummary& BaselineSummary::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue BaselineSummary::Jsonize() const {
     payload.WithString("arn", m_arn);
   }
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;

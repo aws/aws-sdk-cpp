@@ -20,8 +20,8 @@ namespace OpenSearchService {
 namespace Model {
 
 /**
- * <p>The IAM federation authentication configuration for an Amazon OpenSearch
- * Service domain.</p><p><h3>See Also:</h3>   <a
+ * <p>Input parameters for configuring IAM identity federation
+ * settings.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/IAMFederationOptionsInput">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,8 @@ class IAMFederationOptionsInput {
 
   ///@{
   /**
-   * <p>True to enable IAM federation authentication for a domain.</p>
+   * <p>Specifies whether IAM identity federation is enabled for the OpenSearch
+   * domain.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -50,8 +51,8 @@ class IAMFederationOptionsInput {
 
   ///@{
   /**
-   * <p>Element of the IAM federation assertion to use for the user name. Default is
-   * <code>sub</code>.</p>
+   * <p>The key in the SAML assertion that contains the user's subject
+   * identifier.</p>
    */
   inline const Aws::String& GetSubjectKey() const { return m_subjectKey; }
   inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
@@ -69,8 +70,7 @@ class IAMFederationOptionsInput {
 
   ///@{
   /**
-   * <p>Element of the IAM federation assertion to use for backend roles. Default is
-   * <code>roles</code>.</p>
+   * <p>The key in the SAML assertion that contains the user's role information.</p>
    */
   inline const Aws::String& GetRolesKey() const { return m_rolesKey; }
   inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }

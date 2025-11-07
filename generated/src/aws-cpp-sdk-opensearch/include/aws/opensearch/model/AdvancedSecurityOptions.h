@@ -107,8 +107,8 @@ class AdvancedSecurityOptions {
 
   ///@{
   /**
-   * <p>Container for information about the IAM federation configuration for an
-   * OpenSearch UI application.</p>
+   * <p>Configuration options for IAM identity federation in advanced security
+   * settings.</p>
    */
   inline const IAMFederationOptionsOutput& GetIAMFederationOptions() const { return m_iAMFederationOptions; }
   inline bool IAMFederationOptionsHasBeenSet() const { return m_iAMFederationOptionsHasBeenSet; }

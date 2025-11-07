@@ -42,6 +42,10 @@ CreateServiceNetworkResourceAssociationResult& CreateServiceNetworkResourceAssoc
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateDnsEnabled")) {
+    m_privateDnsEnabled = jsonValue.GetBool("privateDnsEnabled");
+    m_privateDnsEnabledHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

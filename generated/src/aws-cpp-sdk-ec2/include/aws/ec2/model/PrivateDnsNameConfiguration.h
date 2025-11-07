@@ -37,8 +37,8 @@ class PrivateDnsNameConfiguration {
 
   ///@{
   /**
-   * <p>The verification state of the VPC endpoint service.</p> <p>&gt;Consumers of
-   * the endpoint service can use the private name only when the state is
+   * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+   * endpoint service can use the private name only when the state is
    * <code>verified</code>.</p>
    */
   inline DnsNameState GetState() const { return m_state; }

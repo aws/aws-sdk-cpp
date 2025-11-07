@@ -536,6 +536,33 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p> Deletes the specified domain verification. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteDomainVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDomainVerificationOutcome DeleteDomainVerification(const Model::DeleteDomainVerificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDomainVerification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDomainVerificationRequestT = Model::DeleteDomainVerificationRequest>
+  Model::DeleteDomainVerificationOutcomeCallable DeleteDomainVerificationCallable(const DeleteDomainVerificationRequestT& request) const {
+    return SubmitCallable(&VPCLatticeClient::DeleteDomainVerification, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDomainVerification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDomainVerificationRequestT = Model::DeleteDomainVerificationRequest>
+  void DeleteDomainVerificationAsync(const DeleteDomainVerificationRequestT& request,
+                                     const DeleteDomainVerificationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VPCLatticeClient::DeleteDomainVerification, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified listener.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteListener">AWS
    * API Reference</a></p>
@@ -969,6 +996,33 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p> Retrieves information about a domain verification.ß </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetDomainVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDomainVerificationOutcome GetDomainVerification(const Model::GetDomainVerificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDomainVerification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDomainVerificationRequestT = Model::GetDomainVerificationRequest>
+  Model::GetDomainVerificationOutcomeCallable GetDomainVerificationCallable(const GetDomainVerificationRequestT& request) const {
+    return SubmitCallable(&VPCLatticeClient::GetDomainVerification, request);
+  }
+
+  /**
+   * An Async wrapper for GetDomainVerification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDomainVerificationRequestT = Model::GetDomainVerificationRequest>
+  void GetDomainVerificationAsync(const GetDomainVerificationRequestT& request, const GetDomainVerificationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VPCLatticeClient::GetDomainVerification, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about the specified listener for the specified
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetListener">AWS
@@ -1304,6 +1358,33 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
                                        const ListAccessLogSubscriptionsResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&VPCLatticeClient::ListAccessLogSubscriptions, request, handler, context);
+  }
+
+  /**
+   * <p> Lists the domain verifications. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListDomainVerifications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDomainVerificationsOutcome ListDomainVerifications(const Model::ListDomainVerificationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDomainVerifications that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDomainVerificationsRequestT = Model::ListDomainVerificationsRequest>
+  Model::ListDomainVerificationsOutcomeCallable ListDomainVerificationsCallable(const ListDomainVerificationsRequestT& request = {}) const {
+    return SubmitCallable(&VPCLatticeClient::ListDomainVerifications, request);
+  }
+
+  /**
+   * An Async wrapper for ListDomainVerifications that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDomainVerificationsRequestT = Model::ListDomainVerificationsRequest>
+  void ListDomainVerificationsAsync(const ListDomainVerificationsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListDomainVerificationsRequestT& request = {}) const {
+    return SubmitAsync(&VPCLatticeClient::ListDomainVerifications, request, handler, context);
   }
 
   /**
@@ -1791,6 +1872,34 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
   void RegisterTargetsAsync(const RegisterTargetsRequestT& request, const RegisterTargetsResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&VPCLatticeClient::RegisterTargets, request, handler, context);
+  }
+
+  /**
+   * <p> Starts the domain verification process for a custom domain name.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/StartDomainVerification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartDomainVerificationOutcome StartDomainVerification(const Model::StartDomainVerificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartDomainVerification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartDomainVerificationRequestT = Model::StartDomainVerificationRequest>
+  Model::StartDomainVerificationOutcomeCallable StartDomainVerificationCallable(const StartDomainVerificationRequestT& request) const {
+    return SubmitCallable(&VPCLatticeClient::StartDomainVerification, request);
+  }
+
+  /**
+   * An Async wrapper for StartDomainVerification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartDomainVerificationRequestT = Model::StartDomainVerificationRequest>
+  void StartDomainVerificationAsync(const StartDomainVerificationRequestT& request,
+                                    const StartDomainVerificationResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VPCLatticeClient::StartDomainVerification, request, handler, context);
   }
 
   /**
