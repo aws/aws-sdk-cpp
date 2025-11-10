@@ -562,6 +562,23 @@ namespace Aws
                */
               std::chrono::milliseconds credentialCacheCacheTTL = std::chrono::minutes(50);
             } stsCredentialsProviderConfig;
+            struct LoginProviderConfig {
+              /**
+               * ARN for AWS login session.
+               */
+              Aws::String loginSession{};
+
+              /**
+               * Overrides the login cache directory. by default the cache directory
+               * is located at `~/.aws/login/cache`.
+               */
+              Aws::String loginCacheOverride{};
+
+              /**
+               * Time out for the credentials future call.
+               */
+              std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
+            } loginCredentialProviderConfig;
           } credentialProviderConfig;
         };
 
