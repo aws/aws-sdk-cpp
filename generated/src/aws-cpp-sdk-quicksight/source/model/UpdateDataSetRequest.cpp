@@ -27,14 +27,6 @@ Aws::String UpdateDataSetRequest::SerializePayload() const {
     payload.WithObject("PhysicalTableMap", std::move(physicalTableMapJsonMap));
   }
 
-  if (m_logicalTableMapHasBeenSet) {
-    JsonValue logicalTableMapJsonMap;
-    for (auto& logicalTableMapItem : m_logicalTableMap) {
-      logicalTableMapJsonMap.WithObject(logicalTableMapItem.first, logicalTableMapItem.second.Jsonize());
-    }
-    payload.WithObject("LogicalTableMap", std::move(logicalTableMapJsonMap));
-  }
-
   if (m_importModeHasBeenSet) {
     payload.WithString("ImportMode", DataSetImportModeMapper::GetNameForDataSetImportMode(m_importMode));
   }
@@ -53,14 +45,6 @@ Aws::String UpdateDataSetRequest::SerializePayload() const {
       fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
     }
     payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
-  }
-
-  if (m_rowLevelPermissionDataSetHasBeenSet) {
-    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
-  }
-
-  if (m_rowLevelPermissionTagConfigurationHasBeenSet) {
-    payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
   }
 
   if (m_columnLevelPermissionRulesHasBeenSet) {
@@ -87,6 +71,14 @@ Aws::String UpdateDataSetRequest::SerializePayload() const {
 
   if (m_performanceConfigurationHasBeenSet) {
     payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
+  }
+
+  if (m_dataPrepConfigurationHasBeenSet) {
+    payload.WithObject("DataPrepConfiguration", m_dataPrepConfiguration.Jsonize());
+  }
+
+  if (m_semanticModelConfigurationHasBeenSet) {
+    payload.WithObject("SemanticModelConfiguration", m_semanticModelConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

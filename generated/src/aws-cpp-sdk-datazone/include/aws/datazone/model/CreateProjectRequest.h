@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
@@ -147,6 +148,30 @@ class CreateProjectRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The resource tags of the project.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
+  inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags = std::forward<ResourceTagsT>(value);
+  }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateProjectRequest& WithResourceTags(ResourceTagsT&& value) {
+    SetResourceTags(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ResourceTagsKeyT = Aws::String, typename ResourceTagsValueT = Aws::String>
+  CreateProjectRequest& AddResourceTags(ResourceTagsKeyT&& key, ResourceTagsValueT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags.emplace(std::forward<ResourceTagsKeyT>(key), std::forward<ResourceTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user parameters of the project.</p>
    */
   inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const { return m_userParameters; }
@@ -186,6 +211,9 @@ class CreateProjectRequest : public DataZoneRequest {
 
   Aws::String m_projectProfileId;
   bool m_projectProfileIdHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_resourceTags;
+  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
   bool m_userParametersHasBeenSet = false;

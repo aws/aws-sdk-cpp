@@ -27,6 +27,23 @@ class CreateIndexResult {
   AWS_S3VECTORS_API CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+   */
+  inline const Aws::String& GetIndexArn() const { return m_indexArn; }
+  template <typename IndexArnT = Aws::String>
+  void SetIndexArn(IndexArnT&& value) {
+    m_indexArnHasBeenSet = true;
+    m_indexArn = std::forward<IndexArnT>(value);
+  }
+  template <typename IndexArnT = Aws::String>
+  CreateIndexResult& WithIndexArn(IndexArnT&& value) {
+    SetIndexArn(std::forward<IndexArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -41,6 +58,9 @@ class CreateIndexResult {
   }
   ///@}
  private:
+  Aws::String m_indexArn;
+  bool m_indexArnHasBeenSet = false;
+
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
 };

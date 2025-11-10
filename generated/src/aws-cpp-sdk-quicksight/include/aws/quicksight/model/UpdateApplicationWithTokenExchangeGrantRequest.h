@@ -54,7 +54,7 @@ class UpdateApplicationWithTokenExchangeGrantRequest : public QuickSightRequest 
 
   ///@{
   /**
-   * <p>The namespace of the QuickSight application.</p>
+   * <p>The namespace of the Quick Suite application.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

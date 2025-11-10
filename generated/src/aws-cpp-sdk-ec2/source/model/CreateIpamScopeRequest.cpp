@@ -37,6 +37,10 @@ Aws::String CreateIpamScopeRequest::SerializePayload() const {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
+  if (m_externalAuthorityConfigurationHasBeenSet) {
+    m_externalAuthorityConfiguration.OutputToStream(ss, "ExternalAuthorityConfiguration");
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

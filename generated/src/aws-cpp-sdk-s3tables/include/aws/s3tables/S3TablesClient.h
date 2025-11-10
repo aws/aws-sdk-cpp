@@ -128,9 +128,12 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
    * request parameter you must have the <code>s3tables:PutTableData</code>
    * permission. </p> </li> <li> <p>If you use this operation with the optional
    * <code>encryptionConfiguration</code> request parameter you must have the
-   * <code>s3tables:PutTableEncryption</code> permission. </p> </li> </ul>
-   * <p>Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables
-   * maintenance principal access to your KMS key. For more information, see <a
+   * <code>s3tables:PutTableEncryption</code> permission. </p> </li> <li> <p>You must
+   * have the <code>s3tables:TagResource</code> permission in addition to
+   * <code>s3tables:CreateTable</code> permission to create a table with tags.</p>
+   * </li> </ul>  <p>Additionally, If you choose SSE-KMS encryption you must
+   * grant the S3 Tables maintenance principal access to your KMS key. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
    * requirements for S3 Tables SSE-KMS encryption</a>. </p>  </dd>
    * </dl><p><h3>See Also:</h3>   <a
@@ -165,8 +168,10 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
    * <code>s3tables:CreateTableBucket</code> permission to use this operation. </p>
    * </li> <li> <p>If you use this operation with the optional
    * <code>encryptionConfiguration</code> parameter you must have the
-   * <code>s3tables:PutTableBucketEncryption</code> permission.</p> </li> </ul> </dd>
-   * </dl><p><h3>See Also:</h3>   <a
+   * <code>s3tables:PutTableBucketEncryption</code> permission.</p> </li> <li> <p>You
+   * must have the <code>s3tables:TagResource</code> permission in addition to
+   * <code>s3tables:CreateTableBucket</code> permission to create a table bucket with
+   * tags.</p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTableBucket">AWS
    * API Reference</a></p>
    */
@@ -815,6 +820,40 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists all of the tags applied to a specified Amazon S3 Tables resource. Each
+   * tag is a label consisting of a key and value pair. Tags can help you organize,
+   * track costs for, and control access to resources. </p>  <p>For a list of
+   * S3 resources that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For tables and table buckets, you must have the
+   * <code>s3tables:ListTagsForResource</code> permission to use this operation.</p>
+   * </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
    * <p>Sets the encryption configuration for a table bucket.</p> <dl>
    * <dt>Permissions</dt> <dd> <p>You must have the
    * <code>s3tables:PutTableBucketEncryption</code> permission to use this
@@ -886,8 +925,8 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new maintenance configuration or replaces an existing table bucket
-   * policy for a table bucket. For more information, see <a
+   * <p>Creates a new table bucket policy or replaces an existing table bucket policy
+   * for a table bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
    * a table bucket policy</a> in the <i>Amazon Simple Storage Service User
    * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
@@ -953,8 +992,8 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a new maintenance configuration or replaces an existing table policy
-   * for a table. For more information, see <a
+   * <p>Creates a new table policy or replaces an existing table policy for a table.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add">Adding
    * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>. </p>
    * <dl> <dt>Permissions</dt> <dd> <p>You must have the
@@ -1010,6 +1049,72 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   void RenameTableAsync(const RenameTableRequestT& request, const RenameTableResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::RenameTable, request, handler, context);
+  }
+
+  /**
+   * <p>Applies one or more user-defined tags to an Amazon S3 Tables resource or
+   * updates existing tags. Each tag is a label consisting of a key and value pair.
+   * Tags can help you organize, track costs for, and control access to your
+   * resources. You can add up to 50 tags for each S3 resource. </p>  <p>For a
+   * list of S3 resources that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For tables and table buckets, you must have the
+   * <code>s3tables:TagResource</code> permission to use this operation.</p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/TagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the specified user-defined tags from an Amazon S3 Tables resource.
+   * You can pass one or more tag keys. </p>  <p>For a list of S3 resources
+   * that support tagging, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags">Managing
+   * tags for Amazon S3 resources</a>.</p>  <dl> <dt>Permissions</dt> <dd>
+   * <p>For tables and table buckets, you must have the
+   * <code>s3tables:UntagResource</code> permission to use this operation.</p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::UntagResource, request, handler, context);
   }
 
   /**

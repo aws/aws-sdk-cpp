@@ -72,18 +72,18 @@ class EnabledControlSummary {
 
   ///@{
   /**
-   * <p>The drift status of the enabled control.</p>
+   * <p>The ARN of the organizational unit.</p>
    */
-  inline const DriftStatusSummary& GetDriftStatusSummary() const { return m_driftStatusSummary; }
-  inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
-  template <typename DriftStatusSummaryT = DriftStatusSummary>
-  void SetDriftStatusSummary(DriftStatusSummaryT&& value) {
-    m_driftStatusSummaryHasBeenSet = true;
-    m_driftStatusSummary = std::forward<DriftStatusSummaryT>(value);
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
   }
-  template <typename DriftStatusSummaryT = DriftStatusSummary>
-  EnabledControlSummary& WithDriftStatusSummary(DriftStatusSummaryT&& value) {
-    SetDriftStatusSummary(std::forward<DriftStatusSummaryT>(value));
+  template <typename TargetIdentifierT = Aws::String>
+  EnabledControlSummary& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -108,18 +108,37 @@ class EnabledControlSummary {
 
   ///@{
   /**
-   * <p>The ARN of the organizational unit.</p>
+   * <p>The drift status of the enabled control.</p>
    */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  inline const DriftStatusSummary& GetDriftStatusSummary() const { return m_driftStatusSummary; }
+  inline bool DriftStatusSummaryHasBeenSet() const { return m_driftStatusSummaryHasBeenSet; }
+  template <typename DriftStatusSummaryT = DriftStatusSummary>
+  void SetDriftStatusSummary(DriftStatusSummaryT&& value) {
+    m_driftStatusSummaryHasBeenSet = true;
+    m_driftStatusSummary = std::forward<DriftStatusSummaryT>(value);
   }
-  template <typename TargetIdentifierT = Aws::String>
-  EnabledControlSummary& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+  template <typename DriftStatusSummaryT = DriftStatusSummary>
+  EnabledControlSummary& WithDriftStatusSummary(DriftStatusSummaryT&& value) {
+    SetDriftStatusSummary(std::forward<DriftStatusSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the parent enabled control from which this control inherits its
+   * configuration, if applicable.</p>
+   */
+  inline const Aws::String& GetParentIdentifier() const { return m_parentIdentifier; }
+  inline bool ParentIdentifierHasBeenSet() const { return m_parentIdentifierHasBeenSet; }
+  template <typename ParentIdentifierT = Aws::String>
+  void SetParentIdentifier(ParentIdentifierT&& value) {
+    m_parentIdentifierHasBeenSet = true;
+    m_parentIdentifier = std::forward<ParentIdentifierT>(value);
+  }
+  template <typename ParentIdentifierT = Aws::String>
+  EnabledControlSummary& WithParentIdentifier(ParentIdentifierT&& value) {
+    SetParentIdentifier(std::forward<ParentIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -130,14 +149,17 @@ class EnabledControlSummary {
   Aws::String m_controlIdentifier;
   bool m_controlIdentifierHasBeenSet = false;
 
-  DriftStatusSummary m_driftStatusSummary;
-  bool m_driftStatusSummaryHasBeenSet = false;
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   EnablementStatusSummary m_statusSummary;
   bool m_statusSummaryHasBeenSet = false;
 
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
+  DriftStatusSummary m_driftStatusSummary;
+  bool m_driftStatusSummaryHasBeenSet = false;
+
+  Aws::String m_parentIdentifier;
+  bool m_parentIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -166,6 +167,24 @@ class EvaluationFormContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the automated evaluation.</p>
+   */
+  inline const EvaluationFormAutoEvaluationConfiguration& GetAutoEvaluationConfiguration() const { return m_autoEvaluationConfiguration; }
+  inline bool AutoEvaluationConfigurationHasBeenSet() const { return m_autoEvaluationConfigurationHasBeenSet; }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  void SetAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    m_autoEvaluationConfigurationHasBeenSet = true;
+    m_autoEvaluationConfiguration = std::forward<AutoEvaluationConfigurationT>(value);
+  }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  EvaluationFormContent& WithAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    SetAutoEvaluationConfiguration(std::forward<AutoEvaluationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_evaluationFormVersion{0};
   bool m_evaluationFormVersionHasBeenSet = false;
@@ -187,6 +206,9 @@ class EvaluationFormContent {
 
   EvaluationFormScoringStrategy m_scoringStrategy;
   bool m_scoringStrategyHasBeenSet = false;
+
+  EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

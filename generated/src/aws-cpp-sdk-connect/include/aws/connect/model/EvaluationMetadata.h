@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AutoEvaluationDetails.h>
+#include <aws/connect/model/EvaluationAcknowledgement.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -90,6 +92,24 @@ class EvaluationMetadata {
 
   ///@{
   /**
+   * <p>The calibration session ID that this evaluation belongs to.</p>
+   */
+  inline const Aws::String& GetCalibrationSessionId() const { return m_calibrationSessionId; }
+  inline bool CalibrationSessionIdHasBeenSet() const { return m_calibrationSessionIdHasBeenSet; }
+  template <typename CalibrationSessionIdT = Aws::String>
+  void SetCalibrationSessionId(CalibrationSessionIdT&& value) {
+    m_calibrationSessionIdHasBeenSet = true;
+    m_calibrationSessionId = std::forward<CalibrationSessionIdT>(value);
+  }
+  template <typename CalibrationSessionIdT = Aws::String>
+  EvaluationMetadata& WithCalibrationSessionId(CalibrationSessionIdT&& value) {
+    SetCalibrationSessionId(std::forward<CalibrationSessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The overall score of the contact evaluation.</p>
    */
   inline const EvaluationScore& GetScore() const { return m_score; }
@@ -105,6 +125,42 @@ class EvaluationMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information related to automated evaluation.</p>
+   */
+  inline const AutoEvaluationDetails& GetAutoEvaluation() const { return m_autoEvaluation; }
+  inline bool AutoEvaluationHasBeenSet() const { return m_autoEvaluationHasBeenSet; }
+  template <typename AutoEvaluationT = AutoEvaluationDetails>
+  void SetAutoEvaluation(AutoEvaluationT&& value) {
+    m_autoEvaluationHasBeenSet = true;
+    m_autoEvaluation = std::forward<AutoEvaluationT>(value);
+  }
+  template <typename AutoEvaluationT = AutoEvaluationDetails>
+  EvaluationMetadata& WithAutoEvaluation(AutoEvaluationT&& value) {
+    SetAutoEvaluation(std::forward<AutoEvaluationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information related to evaluation acknowledgement.</p>
+   */
+  inline const EvaluationAcknowledgement& GetAcknowledgement() const { return m_acknowledgement; }
+  inline bool AcknowledgementHasBeenSet() const { return m_acknowledgementHasBeenSet; }
+  template <typename AcknowledgementT = EvaluationAcknowledgement>
+  void SetAcknowledgement(AcknowledgementT&& value) {
+    m_acknowledgementHasBeenSet = true;
+    m_acknowledgement = std::forward<AcknowledgementT>(value);
+  }
+  template <typename AcknowledgementT = EvaluationAcknowledgement>
+  EvaluationMetadata& WithAcknowledgement(AcknowledgementT&& value) {
+    SetAcknowledgement(std::forward<AcknowledgementT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactId;
   bool m_contactIdHasBeenSet = false;
@@ -115,8 +171,17 @@ class EvaluationMetadata {
   Aws::String m_contactAgentId;
   bool m_contactAgentIdHasBeenSet = false;
 
+  Aws::String m_calibrationSessionId;
+  bool m_calibrationSessionIdHasBeenSet = false;
+
   EvaluationScore m_score;
   bool m_scoreHasBeenSet = false;
+
+  AutoEvaluationDetails m_autoEvaluation;
+  bool m_autoEvaluationHasBeenSet = false;
+
+  EvaluationAcknowledgement m_acknowledgement;
+  bool m_acknowledgementHasBeenSet = false;
 };
 
 }  // namespace Model

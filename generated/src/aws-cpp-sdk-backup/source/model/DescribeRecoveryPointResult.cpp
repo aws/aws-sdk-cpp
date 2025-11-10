@@ -129,6 +129,10 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator=(const Aws::A
     m_indexStatusMessage = jsonValue.GetString("IndexStatusMessage");
     m_indexStatusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionKeyType")) {
+    m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
+    m_encryptionKeyTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

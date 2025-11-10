@@ -22,6 +22,10 @@ DriftStatusSummary& DriftStatusSummary::operator=(JsonView jsonValue) {
     m_driftStatus = DriftStatusMapper::GetDriftStatusForName(jsonValue.GetString("driftStatus"));
     m_driftStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("types")) {
+    m_types = jsonValue.GetObject("types");
+    m_typesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue DriftStatusSummary::Jsonize() const {
 
   if (m_driftStatusHasBeenSet) {
     payload.WithString("driftStatus", DriftStatusMapper::GetNameForDriftStatus(m_driftStatus));
+  }
+
+  if (m_typesHasBeenSet) {
+    payload.WithObject("types", m_types.Jsonize());
   }
 
   return payload;

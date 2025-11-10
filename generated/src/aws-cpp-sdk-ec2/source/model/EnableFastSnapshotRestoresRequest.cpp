@@ -21,6 +21,14 @@ Aws::String EnableFastSnapshotRestoresRequest::SerializePayload() const {
     }
   }
 
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsCount = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      ss << "AvailabilityZoneId." << availabilityZoneIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      availabilityZoneIdsCount++;
+    }
+  }
+
   if (m_sourceSnapshotIdsHasBeenSet) {
     unsigned sourceSnapshotIdsCount = 1;
     for (auto& item : m_sourceSnapshotIds) {

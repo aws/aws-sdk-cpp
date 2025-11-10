@@ -138,7 +138,7 @@ void LexRuntimeV2Client::init(const LexRuntimeV2::LexRuntimeV2ClientConfiguratio
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "lex");
 }
 
 void LexRuntimeV2Client::OverrideEndpoint(const Aws::String& endpoint) {

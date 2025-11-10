@@ -21,13 +21,13 @@ EnableBaselineResult::EnableBaselineResult(const Aws::AmazonWebServiceResult<Jso
 
 EnableBaselineResult& EnableBaselineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationIdentifier")) {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");
     m_operationIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

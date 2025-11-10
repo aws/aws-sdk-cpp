@@ -83,6 +83,22 @@ Aws::String CreateUserRequest::SerializePayload() const {
     payload.WithString("Timezone", m_timezone);
   }
 
+  if (m_photosHasBeenSet) {
+    Aws::Utils::Array<JsonValue> photosJsonList(m_photos.size());
+    for (unsigned photosIndex = 0; photosIndex < photosJsonList.GetLength(); ++photosIndex) {
+      photosJsonList[photosIndex].AsObject(m_photos[photosIndex].Jsonize());
+    }
+    payload.WithArray("Photos", std::move(photosJsonList));
+  }
+
+  if (m_websiteHasBeenSet) {
+    payload.WithString("Website", m_website);
+  }
+
+  if (m_birthdateHasBeenSet) {
+    payload.WithString("Birthdate", m_birthdate);
+  }
+
   return payload.View().WriteReadable();
 }
 

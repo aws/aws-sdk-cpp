@@ -8,6 +8,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationAnswerInput.h>
 #include <aws/connect/model/EvaluationNote.h>
+#include <aws/connect/model/EvaluatorUserUnion.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -116,6 +117,24 @@ class SubmitContactEvaluationRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the user who submitted the contact evaluation.</p>
+   */
+  inline const EvaluatorUserUnion& GetSubmittedBy() const { return m_submittedBy; }
+  inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
+  template <typename SubmittedByT = EvaluatorUserUnion>
+  void SetSubmittedBy(SubmittedByT&& value) {
+    m_submittedByHasBeenSet = true;
+    m_submittedBy = std::forward<SubmittedByT>(value);
+  }
+  template <typename SubmittedByT = EvaluatorUserUnion>
+  SubmitContactEvaluationRequest& WithSubmittedBy(SubmittedByT&& value) {
+    SetSubmittedBy(std::forward<SubmittedByT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -128,6 +147,9 @@ class SubmitContactEvaluationRequest : public ConnectRequest {
 
   Aws::Map<Aws::String, EvaluationNote> m_notes;
   bool m_notesHasBeenSet = false;
+
+  EvaluatorUserUnion m_submittedBy;
+  bool m_submittedByHasBeenSet = false;
 };
 
 }  // namespace Model

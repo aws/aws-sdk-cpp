@@ -85,6 +85,10 @@ DescribeBackupVaultResult& DescribeBackupVaultResult::operator=(const Aws::Amazo
     m_latestMpaApprovalTeamUpdate = jsonValue.GetObject("LatestMpaApprovalTeamUpdate");
     m_latestMpaApprovalTeamUpdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionKeyType")) {
+    m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
+    m_encryptionKeyTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

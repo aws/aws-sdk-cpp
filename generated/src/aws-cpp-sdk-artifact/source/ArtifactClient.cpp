@@ -134,7 +134,7 @@ void ArtifactClient::init(const Artifact::ArtifactClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "artifact");
 }
 
 void ArtifactClient::OverrideEndpoint(const Aws::String& endpoint) {

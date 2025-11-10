@@ -73,6 +73,10 @@ EvaluationForm& EvaluationForm::operator=(JsonView jsonValue) {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoEvaluationConfiguration")) {
+    m_autoEvaluationConfiguration = jsonValue.GetObject("AutoEvaluationConfiguration");
+    m_autoEvaluationConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -140,6 +144,10 @@ JsonValue EvaluationForm::Jsonize() const {
 
   if (m_lastModifiedByHasBeenSet) {
     payload.WithString("LastModifiedBy", m_lastModifiedBy);
+  }
+
+  if (m_autoEvaluationConfigurationHasBeenSet) {
+    payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

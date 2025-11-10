@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormNumericQuestionProperties.h>
 #include <aws/connect/model/EvaluationFormSingleSelectQuestionProperties.h>
+#include <aws/connect/model/EvaluationFormTextQuestionProperties.h>
 
 #include <utility>
 
@@ -69,12 +70,33 @@ class EvaluationFormQuestionTypeProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The properties of the text question.</p>
+   */
+  inline const EvaluationFormTextQuestionProperties& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = EvaluationFormTextQuestionProperties>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = EvaluationFormTextQuestionProperties>
+  EvaluationFormQuestionTypeProperties& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EvaluationFormNumericQuestionProperties m_numeric;
   bool m_numericHasBeenSet = false;
 
   EvaluationFormSingleSelectQuestionProperties m_singleSelect;
   bool m_singleSelectHasBeenSet = false;
+
+  EvaluationFormTextQuestionProperties m_text;
+  bool m_textHasBeenSet = false;
 };
 
 }  // namespace Model

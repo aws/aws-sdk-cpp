@@ -142,6 +142,25 @@ class VpcOriginSummary {
 
   ///@{
   /**
+   * <p>The account ID of the Amazon Web Services account that owns the VPC
+   * origin.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  VpcOriginSummary& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The VPC origin summary origin endpoint ARN.</p>
    */
   inline const Aws::String& GetOriginEndpointArn() const { return m_originEndpointArn; }
@@ -175,6 +194,9 @@ class VpcOriginSummary {
 
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
+
+  Aws::String m_accountId;
+  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_originEndpointArn;
   bool m_originEndpointArnHasBeenSet = false;

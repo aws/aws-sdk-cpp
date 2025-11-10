@@ -187,7 +187,7 @@ void ElasticLoadBalancingv2Client::init(const ElasticLoadBalancingv2::ElasticLoa
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "elasticloadbalancing");
 }
 
 void ElasticLoadBalancingv2Client::OverrideEndpoint(const Aws::String& endpoint) {

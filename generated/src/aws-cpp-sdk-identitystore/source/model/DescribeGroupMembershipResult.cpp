@@ -37,6 +37,22 @@ DescribeGroupMembershipResult& DescribeGroupMembershipResult::operator=(const Aw
     m_memberId = jsonValue.GetObject("MemberId");
     m_memberIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedBy")) {
+    m_updatedBy = jsonValue.GetString("UpdatedBy");
+    m_updatedByHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

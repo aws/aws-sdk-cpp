@@ -11,17 +11,16 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/ColumnGroup.h>
 #include <aws/quicksight/model/ColumnLevelPermissionRule.h>
+#include <aws/quicksight/model/DataPrepConfiguration.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
 #include <aws/quicksight/model/DataSetUseAs.h>
 #include <aws/quicksight/model/DatasetParameter.h>
 #include <aws/quicksight/model/FieldFolder.h>
-#include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/PerformanceConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/ResourcePermission.h>
-#include <aws/quicksight/model/RowLevelPermissionDataSet.h>
-#include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
+#include <aws/quicksight/model/SemanticModelConfiguration.h>
 #include <aws/quicksight/model/Tag.h>
 
 #include <utility>
@@ -126,31 +125,6 @@ class CreateDataSetRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>Configures the combination and transformation of the data from the physical
-   * tables.</p>
-   */
-  inline const Aws::Map<Aws::String, LogicalTable>& GetLogicalTableMap() const { return m_logicalTableMap; }
-  inline bool LogicalTableMapHasBeenSet() const { return m_logicalTableMapHasBeenSet; }
-  template <typename LogicalTableMapT = Aws::Map<Aws::String, LogicalTable>>
-  void SetLogicalTableMap(LogicalTableMapT&& value) {
-    m_logicalTableMapHasBeenSet = true;
-    m_logicalTableMap = std::forward<LogicalTableMapT>(value);
-  }
-  template <typename LogicalTableMapT = Aws::Map<Aws::String, LogicalTable>>
-  CreateDataSetRequest& WithLogicalTableMap(LogicalTableMapT&& value) {
-    SetLogicalTableMap(std::forward<LogicalTableMapT>(value));
-    return *this;
-  }
-  template <typename LogicalTableMapKeyT = Aws::String, typename LogicalTableMapValueT = LogicalTable>
-  CreateDataSetRequest& AddLogicalTableMap(LogicalTableMapKeyT&& key, LogicalTableMapValueT&& value) {
-    m_logicalTableMapHasBeenSet = true;
-    m_logicalTableMap.emplace(std::forward<LogicalTableMapKeyT>(key), std::forward<LogicalTableMapValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Indicates whether you want to import the data into SPICE.</p>
    */
   inline DataSetImportMode GetImportMode() const { return m_importMode; }
@@ -234,46 +208,6 @@ class CreateDataSetRequest : public QuickSightRequest {
   CreateDataSetRequest& AddPermissions(PermissionsT&& value) {
     m_permissionsHasBeenSet = true;
     m_permissions.emplace_back(std::forward<PermissionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The row-level security configuration for the data that you want to
-   * create.</p>
-   */
-  inline const RowLevelPermissionDataSet& GetRowLevelPermissionDataSet() const { return m_rowLevelPermissionDataSet; }
-  inline bool RowLevelPermissionDataSetHasBeenSet() const { return m_rowLevelPermissionDataSetHasBeenSet; }
-  template <typename RowLevelPermissionDataSetT = RowLevelPermissionDataSet>
-  void SetRowLevelPermissionDataSet(RowLevelPermissionDataSetT&& value) {
-    m_rowLevelPermissionDataSetHasBeenSet = true;
-    m_rowLevelPermissionDataSet = std::forward<RowLevelPermissionDataSetT>(value);
-  }
-  template <typename RowLevelPermissionDataSetT = RowLevelPermissionDataSet>
-  CreateDataSetRequest& WithRowLevelPermissionDataSet(RowLevelPermissionDataSetT&& value) {
-    SetRowLevelPermissionDataSet(std::forward<RowLevelPermissionDataSetT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration of tags on a dataset to set row-level security. Row-level
-   * security tags are currently supported for anonymous embedding only.</p>
-   */
-  inline const RowLevelPermissionTagConfiguration& GetRowLevelPermissionTagConfiguration() const {
-    return m_rowLevelPermissionTagConfiguration;
-  }
-  inline bool RowLevelPermissionTagConfigurationHasBeenSet() const { return m_rowLevelPermissionTagConfigurationHasBeenSet; }
-  template <typename RowLevelPermissionTagConfigurationT = RowLevelPermissionTagConfiguration>
-  void SetRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfigurationT&& value) {
-    m_rowLevelPermissionTagConfigurationHasBeenSet = true;
-    m_rowLevelPermissionTagConfiguration = std::forward<RowLevelPermissionTagConfigurationT>(value);
-  }
-  template <typename RowLevelPermissionTagConfigurationT = RowLevelPermissionTagConfiguration>
-  CreateDataSetRequest& WithRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfigurationT&& value) {
-    SetRowLevelPermissionTagConfiguration(std::forward<RowLevelPermissionTagConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -429,6 +363,47 @@ class CreateDataSetRequest : public QuickSightRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The data preparation configuration for the dataset. This configuration
+   * defines the source tables, transformation steps, and destination tables used to
+   * prepare the data. Required when using the new data preparation experience.</p>
+   */
+  inline const DataPrepConfiguration& GetDataPrepConfiguration() const { return m_dataPrepConfiguration; }
+  inline bool DataPrepConfigurationHasBeenSet() const { return m_dataPrepConfigurationHasBeenSet; }
+  template <typename DataPrepConfigurationT = DataPrepConfiguration>
+  void SetDataPrepConfiguration(DataPrepConfigurationT&& value) {
+    m_dataPrepConfigurationHasBeenSet = true;
+    m_dataPrepConfiguration = std::forward<DataPrepConfigurationT>(value);
+  }
+  template <typename DataPrepConfigurationT = DataPrepConfiguration>
+  CreateDataSetRequest& WithDataPrepConfiguration(DataPrepConfigurationT&& value) {
+    SetDataPrepConfiguration(std::forward<DataPrepConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The semantic model configuration for the dataset. This configuration defines
+   * how the prepared data is structured for an analysis, including table mappings
+   * and row-level security configurations. Required when using the new data
+   * preparation experience.</p>
+   */
+  inline const SemanticModelConfiguration& GetSemanticModelConfiguration() const { return m_semanticModelConfiguration; }
+  inline bool SemanticModelConfigurationHasBeenSet() const { return m_semanticModelConfigurationHasBeenSet; }
+  template <typename SemanticModelConfigurationT = SemanticModelConfiguration>
+  void SetSemanticModelConfiguration(SemanticModelConfigurationT&& value) {
+    m_semanticModelConfigurationHasBeenSet = true;
+    m_semanticModelConfiguration = std::forward<SemanticModelConfigurationT>(value);
+  }
+  template <typename SemanticModelConfigurationT = SemanticModelConfiguration>
+  CreateDataSetRequest& WithSemanticModelConfiguration(SemanticModelConfigurationT&& value) {
+    SetSemanticModelConfiguration(std::forward<SemanticModelConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_awsAccountId;
   bool m_awsAccountIdHasBeenSet = false;
@@ -442,9 +417,6 @@ class CreateDataSetRequest : public QuickSightRequest {
   Aws::Map<Aws::String, PhysicalTable> m_physicalTableMap;
   bool m_physicalTableMapHasBeenSet = false;
 
-  Aws::Map<Aws::String, LogicalTable> m_logicalTableMap;
-  bool m_logicalTableMapHasBeenSet = false;
-
   DataSetImportMode m_importMode{DataSetImportMode::NOT_SET};
   bool m_importModeHasBeenSet = false;
 
@@ -456,12 +428,6 @@ class CreateDataSetRequest : public QuickSightRequest {
 
   Aws::Vector<ResourcePermission> m_permissions;
   bool m_permissionsHasBeenSet = false;
-
-  RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-  bool m_rowLevelPermissionDataSetHasBeenSet = false;
-
-  RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
-  bool m_rowLevelPermissionTagConfigurationHasBeenSet = false;
 
   Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
   bool m_columnLevelPermissionRulesHasBeenSet = false;
@@ -483,6 +449,12 @@ class CreateDataSetRequest : public QuickSightRequest {
 
   DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
   bool m_useAsHasBeenSet = false;
+
+  DataPrepConfiguration m_dataPrepConfiguration;
+  bool m_dataPrepConfigurationHasBeenSet = false;
+
+  SemanticModelConfiguration m_semanticModelConfiguration;
+  bool m_semanticModelConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CalculatedColumn.h>
+#include <aws/quicksight/model/TransformOperationSource.h>
 
 #include <utility>
 
@@ -35,6 +37,43 @@ class CreateColumnsOperation {
 
   ///@{
   /**
+   * <p>Alias for this operation.</p>
+   */
+  inline const Aws::String& GetAlias() const { return m_alias; }
+  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+  template <typename AliasT = Aws::String>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
+  }
+  template <typename AliasT = Aws::String>
+  CreateColumnsOperation& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source transform operation that provides input data for creating new
+   * calculated columns.</p>
+   */
+  inline const TransformOperationSource& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = TransformOperationSource>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = TransformOperationSource>
+  CreateColumnsOperation& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Calculated columns to create.</p>
    */
   inline const Aws::Vector<CalculatedColumn>& GetColumns() const { return m_columns; }
@@ -57,6 +96,12 @@ class CreateColumnsOperation {
   }
   ///@}
  private:
+  Aws::String m_alias;
+  bool m_aliasHasBeenSet = false;
+
+  TransformOperationSource m_source;
+  bool m_sourceHasBeenSet = false;
+
   Aws::Vector<CalculatedColumn> m_columns;
   bool m_columnsHasBeenSet = false;
 };

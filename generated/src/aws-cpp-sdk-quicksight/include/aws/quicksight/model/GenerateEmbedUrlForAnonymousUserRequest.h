@@ -70,7 +70,7 @@ class GenerateEmbedUrlForAnonymousUserRequest : public QuickSightRequest {
   ///@{
   /**
    * <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs
-   * to. If you are not using an Amazon QuickSight custom namespace, set this to
+   * to. If you are not using an Amazon Quick Suite custom namespace, set this to
    * <code>default</code>.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }

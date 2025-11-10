@@ -51,17 +51,18 @@ class ListEnabledBaselinesRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>A value that can be set to include the child enabled baselines in responses.
-   * The default value is false.</p>
+   * <p>A pagination token.</p>
    */
-  inline bool GetIncludeChildren() const { return m_includeChildren; }
-  inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
-  inline void SetIncludeChildren(bool value) {
-    m_includeChildrenHasBeenSet = true;
-    m_includeChildren = value;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  inline ListEnabledBaselinesRequest& WithIncludeChildren(bool value) {
-    SetIncludeChildren(value);
+  template <typename NextTokenT = Aws::String>
+  ListEnabledBaselinesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -84,18 +85,17 @@ class ListEnabledBaselinesRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>A pagination token.</p>
+   * <p>A value that can be set to include the child enabled baselines in responses.
+   * The default value is false.</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline bool GetIncludeChildren() const { return m_includeChildren; }
+  inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
+  inline void SetIncludeChildren(bool value) {
+    m_includeChildrenHasBeenSet = true;
+    m_includeChildren = value;
   }
-  template <typename NextTokenT = Aws::String>
-  ListEnabledBaselinesRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  inline ListEnabledBaselinesRequest& WithIncludeChildren(bool value) {
+    SetIncludeChildren(value);
     return *this;
   }
   ///@}
@@ -103,14 +103,14 @@ class ListEnabledBaselinesRequest : public ControlTowerRequest {
   EnabledBaselineFilter m_filter;
   bool m_filterHasBeenSet = false;
 
-  bool m_includeChildren{false};
-  bool m_includeChildrenHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
 
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
+  bool m_includeChildren{false};
+  bool m_includeChildrenHasBeenSet = false;
 };
 
 }  // namespace Model

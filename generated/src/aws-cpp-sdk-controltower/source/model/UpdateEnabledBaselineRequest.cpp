@@ -19,16 +19,16 @@ Aws::String UpdateEnabledBaselineRequest::SerializePayload() const {
     payload.WithString("baselineVersion", m_baselineVersion);
   }
 
-  if (m_enabledBaselineIdentifierHasBeenSet) {
-    payload.WithString("enabledBaselineIdentifier", m_enabledBaselineIdentifier);
-  }
-
   if (m_parametersHasBeenSet) {
     Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
     for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
       parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
     }
     payload.WithArray("parameters", std::move(parametersJsonList));
+  }
+
+  if (m_enabledBaselineIdentifierHasBeenSet) {
+    payload.WithString("enabledBaselineIdentifier", m_enabledBaselineIdentifier);
   }
 
   return payload.View().WriteReadable();

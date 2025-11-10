@@ -1088,6 +1088,18 @@ static const int m8a_48xlarge_HASH = HashingUtils::HashString("m8a.48xlarge");
 static const int m8a_metal_24xl_HASH = HashingUtils::HashString("m8a.metal-24xl");
 static const int m8a_metal_48xl_HASH = HashingUtils::HashString("m8a.metal-48xl");
 static const int trn2_3xlarge_HASH = HashingUtils::HashString("trn2.3xlarge");
+static const int r8a_medium_HASH = HashingUtils::HashString("r8a.medium");
+static const int r8a_large_HASH = HashingUtils::HashString("r8a.large");
+static const int r8a_xlarge_HASH = HashingUtils::HashString("r8a.xlarge");
+static const int r8a_2xlarge_HASH = HashingUtils::HashString("r8a.2xlarge");
+static const int r8a_4xlarge_HASH = HashingUtils::HashString("r8a.4xlarge");
+static const int r8a_8xlarge_HASH = HashingUtils::HashString("r8a.8xlarge");
+static const int r8a_12xlarge_HASH = HashingUtils::HashString("r8a.12xlarge");
+static const int r8a_16xlarge_HASH = HashingUtils::HashString("r8a.16xlarge");
+static const int r8a_24xlarge_HASH = HashingUtils::HashString("r8a.24xlarge");
+static const int r8a_48xlarge_HASH = HashingUtils::HashString("r8a.48xlarge");
+static const int r8a_metal_24xl_HASH = HashingUtils::HashString("r8a.metal-24xl");
+static const int r8a_metal_48xl_HASH = HashingUtils::HashString("r8a.metal-48xl");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -4345,6 +4357,42 @@ static bool GetEnumForNameHelper8(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == trn2_3xlarge_HASH) {
     enumValue = InstanceType::trn2_3xlarge;
+    return true;
+  } else if (hashCode == r8a_medium_HASH) {
+    enumValue = InstanceType::r8a_medium;
+    return true;
+  } else if (hashCode == r8a_large_HASH) {
+    enumValue = InstanceType::r8a_large;
+    return true;
+  } else if (hashCode == r8a_xlarge_HASH) {
+    enumValue = InstanceType::r8a_xlarge;
+    return true;
+  } else if (hashCode == r8a_2xlarge_HASH) {
+    enumValue = InstanceType::r8a_2xlarge;
+    return true;
+  } else if (hashCode == r8a_4xlarge_HASH) {
+    enumValue = InstanceType::r8a_4xlarge;
+    return true;
+  } else if (hashCode == r8a_8xlarge_HASH) {
+    enumValue = InstanceType::r8a_8xlarge;
+    return true;
+  } else if (hashCode == r8a_12xlarge_HASH) {
+    enumValue = InstanceType::r8a_12xlarge;
+    return true;
+  } else if (hashCode == r8a_16xlarge_HASH) {
+    enumValue = InstanceType::r8a_16xlarge;
+    return true;
+  } else if (hashCode == r8a_24xlarge_HASH) {
+    enumValue = InstanceType::r8a_24xlarge;
+    return true;
+  } else if (hashCode == r8a_48xlarge_HASH) {
+    enumValue = InstanceType::r8a_48xlarge;
+    return true;
+  } else if (hashCode == r8a_metal_24xl_HASH) {
+    enumValue = InstanceType::r8a_metal_24xl;
+    return true;
+  } else if (hashCode == r8a_metal_48xl_HASH) {
+    enumValue = InstanceType::r8a_metal_48xl;
     return true;
   }
   return false;
@@ -7618,6 +7666,42 @@ static bool GetNameForEnumHelper8(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::trn2_3xlarge:
       value = "trn2.3xlarge";
+      return true;
+    case InstanceType::r8a_medium:
+      value = "r8a.medium";
+      return true;
+    case InstanceType::r8a_large:
+      value = "r8a.large";
+      return true;
+    case InstanceType::r8a_xlarge:
+      value = "r8a.xlarge";
+      return true;
+    case InstanceType::r8a_2xlarge:
+      value = "r8a.2xlarge";
+      return true;
+    case InstanceType::r8a_4xlarge:
+      value = "r8a.4xlarge";
+      return true;
+    case InstanceType::r8a_8xlarge:
+      value = "r8a.8xlarge";
+      return true;
+    case InstanceType::r8a_12xlarge:
+      value = "r8a.12xlarge";
+      return true;
+    case InstanceType::r8a_16xlarge:
+      value = "r8a.16xlarge";
+      return true;
+    case InstanceType::r8a_24xlarge:
+      value = "r8a.24xlarge";
+      return true;
+    case InstanceType::r8a_48xlarge:
+      value = "r8a.48xlarge";
+      return true;
+    case InstanceType::r8a_metal_24xl:
+      value = "r8a.metal-24xl";
+      return true;
+    case InstanceType::r8a_metal_48xl:
+      value = "r8a.metal-48xl";
       return true;
     default:
       return false;

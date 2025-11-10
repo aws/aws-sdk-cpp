@@ -190,7 +190,7 @@ void AuditManagerClient::init(const AuditManager::AuditManagerClientConfiguratio
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "auditmanager");
 }
 
 void AuditManagerClient::OverrideEndpoint(const Aws::String& endpoint) {

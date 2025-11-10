@@ -161,7 +161,7 @@ void ChimeSDKIdentityClient::init(const ChimeSDKIdentity::ChimeSDKIdentityClient
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "chime");
 }
 
 void ChimeSDKIdentityClient::OverrideEndpoint(const Aws::String& endpoint) {

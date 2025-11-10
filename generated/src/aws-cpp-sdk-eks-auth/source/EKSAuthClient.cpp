@@ -128,7 +128,7 @@ void EKSAuthClient::init(const EKSAuth::EKSAuthClientConfiguration& config) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "eks-auth");
 }
 
 void EKSAuthClient::OverrideEndpoint(const Aws::String& endpoint) {

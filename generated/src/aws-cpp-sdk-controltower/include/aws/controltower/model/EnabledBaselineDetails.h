@@ -111,25 +111,18 @@ class EnabledBaselineDetails {
 
   ///@{
   /**
-   * <p>Shows the parameters that are applied when enabling this
-   * <code>Baseline</code>.</p>
+   * <p>The target on which to enable the <code>Baseline</code>.</p>
    */
-  inline const Aws::Vector<EnabledBaselineParameterSummary>& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = Aws::Vector<EnabledBaselineParameterSummary>>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
   }
-  template <typename ParametersT = Aws::Vector<EnabledBaselineParameterSummary>>
-  EnabledBaselineDetails& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
-    return *this;
-  }
-  template <typename ParametersT = EnabledBaselineParameterSummary>
-  EnabledBaselineDetails& AddParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters.emplace_back(std::forward<ParametersT>(value));
+  template <typename TargetIdentifierT = Aws::String>
+  EnabledBaselineDetails& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -173,18 +166,25 @@ class EnabledBaselineDetails {
 
   ///@{
   /**
-   * <p>The target on which to enable the <code>Baseline</code>.</p>
+   * <p>Shows the parameters that are applied when enabling this
+   * <code>Baseline</code>.</p>
    */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  inline const Aws::Vector<EnabledBaselineParameterSummary>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<EnabledBaselineParameterSummary>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
   }
-  template <typename TargetIdentifierT = Aws::String>
-  EnabledBaselineDetails& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+  template <typename ParametersT = Aws::Vector<EnabledBaselineParameterSummary>>
+  EnabledBaselineDetails& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = EnabledBaselineParameterSummary>
+  EnabledBaselineDetails& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
     return *this;
   }
   ///@}
@@ -201,8 +201,8 @@ class EnabledBaselineDetails {
   EnabledBaselineDriftStatusSummary m_driftStatusSummary;
   bool m_driftStatusSummaryHasBeenSet = false;
 
-  Aws::Vector<EnabledBaselineParameterSummary> m_parameters;
-  bool m_parametersHasBeenSet = false;
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_parentIdentifier;
   bool m_parentIdentifierHasBeenSet = false;
@@ -210,8 +210,8 @@ class EnabledBaselineDetails {
   EnablementStatusSummary m_statusSummary;
   bool m_statusSummaryHasBeenSet = false;
 
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
+  Aws::Vector<EnabledBaselineParameterSummary> m_parameters;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

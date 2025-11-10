@@ -51,6 +51,7 @@
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteResourcePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteVpcOrigin2020_05_31Request.h>
@@ -89,6 +90,7 @@
 #include <aws/cloudfront/model/GetPublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResourcePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetResponseHeadersPolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Request.h>
@@ -108,6 +110,7 @@
 #include <aws/cloudfront/model/ListDistributionsByConnectionMode2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByOwnedResource2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByVpcOriginId2020_05_31Request.h>
@@ -129,9 +132,11 @@
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Request.h>
 #include <aws/cloudfront/model/ListVpcOrigins2020_05_31Request.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/PutResourcePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/TagResource2020_05_31Request.h>
 #include <aws/cloudfront/model/TestFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateAnycastIpList2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateConnectionGroup2020_05_31Request.h>
@@ -274,7 +279,7 @@ void CloudFrontClient::init(const CloudFront::CloudFrontClientConfiguration& con
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "cloudfront");
 }
 
 void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint) {
@@ -1860,6 +1865,37 @@ DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConf
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteResourcePolicy2020_05_31Outcome CloudFrontClient::DeleteResourcePolicy2020_05_31(
+    const DeleteResourcePolicy2020_05_31Request& request) const {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteResourcePolicy2020_05_31Outcome>(
+      [&]() -> DeleteResourcePolicy2020_05_31Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy2020_05_31, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/delete-resource-policy");
+        return DeleteResourcePolicy2020_05_31Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(
     const DeleteResponseHeadersPolicy2020_05_31Request& request) const {
   AWS_OPERATION_GUARD(DeleteResponseHeadersPolicy2020_05_31);
@@ -3288,6 +3324,36 @@ GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetResourcePolicy2020_05_31Outcome CloudFrontClient::GetResourcePolicy2020_05_31(const GetResourcePolicy2020_05_31Request& request) const {
+  AWS_OPERATION_GUARD(GetResourcePolicy2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetResourcePolicy2020_05_31Outcome>(
+      [&]() -> GetResourcePolicy2020_05_31Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy2020_05_31, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/get-resource-policy");
+        return GetResourcePolicy2020_05_31Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(
     const GetResponseHeadersPolicy2020_05_31Request& request) const {
   AWS_OPERATION_GUARD(GetResponseHeadersPolicy2020_05_31);
@@ -3947,6 +4013,44 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByOriginRequestPolicyId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginRequestPolicyId());
         return ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDistributionsByOwnedResource2020_05_31Outcome CloudFrontClient::ListDistributionsByOwnedResource2020_05_31(
+    const ListDistributionsByOwnedResource2020_05_31Request& request) const {
+  AWS_OPERATION_GUARD(ListDistributionsByOwnedResource2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByOwnedResource2020_05_31, CoreErrors,
+                          CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDistributionsByOwnedResource2020_05_31", "Required field: ResourceArn, is not set");
+    return ListDistributionsByOwnedResource2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(
+        CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDistributionsByOwnedResource2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDistributionsByOwnedResource2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDistributionsByOwnedResource2020_05_31Outcome>(
+      [&]() -> ListDistributionsByOwnedResource2020_05_31Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionsByOwnedResource2020_05_31, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByOwnedResource/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+        return ListDistributionsByOwnedResource2020_05_31Outcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -4653,6 +4757,36 @@ PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(con
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+PutResourcePolicy2020_05_31Outcome CloudFrontClient::PutResourcePolicy2020_05_31(const PutResourcePolicy2020_05_31Request& request) const {
+  AWS_OPERATION_GUARD(PutResourcePolicy2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutResourcePolicy2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutResourcePolicy2020_05_31Outcome>(
+      [&]() -> PutResourcePolicy2020_05_31Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy2020_05_31, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/put-resource-policy");
+        return PutResourcePolicy2020_05_31Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const {
   AWS_OPERATION_GUARD(TagResource2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -4763,6 +4897,48 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         return UntagResource2020_05_31Outcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateAnycastIpList2020_05_31Outcome CloudFrontClient::UpdateAnycastIpList2020_05_31(
+    const UpdateAnycastIpList2020_05_31Request& request) const {
+  AWS_OPERATION_GUARD(UpdateAnycastIpList2020_05_31);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnycastIpList2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAnycastIpList2020_05_31", "Required field: Id, is not set");
+    return UpdateAnycastIpList2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(
+        CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.IfMatchHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAnycastIpList2020_05_31", "Required field: IfMatch, is not set");
+    return UpdateAnycastIpList2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(
+        CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAnycastIpList2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateAnycastIpList2020_05_31, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateAnycastIpList2020_05_31Outcome>(
+      [&]() -> UpdateAnycastIpList2020_05_31Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAnycastIpList2020_05_31, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        return UpdateAnycastIpList2020_05_31Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -21,13 +21,13 @@ GetUserIdResult::GetUserIdResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetUserIdResult& GetUserIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("UserId")) {
-    m_userId = jsonValue.GetString("UserId");
-    m_userIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("IdentityStoreId")) {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UserId")) {
+    m_userId = jsonValue.GetString("UserId");
+    m_userIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

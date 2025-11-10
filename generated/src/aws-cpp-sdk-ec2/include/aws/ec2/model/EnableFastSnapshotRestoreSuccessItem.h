@@ -74,6 +74,24 @@ class EnableFastSnapshotRestoreSuccessItem {
 
   ///@{
   /**
+   * <p>The ID of the Availability Zone.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  EnableFastSnapshotRestoreSuccessItem& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The state of fast snapshot restores.</p>
    */
   inline FastSnapshotRestoreStateCode GetState() const { return m_state; }
@@ -249,6 +267,9 @@ class EnableFastSnapshotRestoreSuccessItem {
 
   Aws::String m_availabilityZone;
   bool m_availabilityZoneHasBeenSet = false;
+
+  Aws::String m_availabilityZoneId;
+  bool m_availabilityZoneIdHasBeenSet = false;
 
   FastSnapshotRestoreStateCode m_state{FastSnapshotRestoreStateCode::NOT_SET};
   bool m_stateHasBeenSet = false;

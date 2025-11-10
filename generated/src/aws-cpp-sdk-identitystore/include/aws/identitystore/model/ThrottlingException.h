@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
+#include <aws/identitystore/model/ThrottlingExceptionReason.h>
 
 #include <utility>
 
@@ -83,6 +84,24 @@ class ThrottlingException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the reason for the throttling error when the service is unable to
+   * access a Customer Managed KMS key. For non-KMS permission errors, this field is
+   * not included.</p>
+   */
+  inline ThrottlingExceptionReason GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  inline void SetReason(ThrottlingExceptionReason value) {
+    m_reasonHasBeenSet = true;
+    m_reason = value;
+  }
+  inline ThrottlingException& WithReason(ThrottlingExceptionReason value) {
+    SetReason(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
   bool m_messageHasBeenSet = false;
@@ -92,6 +111,9 @@ class ThrottlingException {
 
   int m_retryAfterSeconds{0};
   bool m_retryAfterSecondsHasBeenSet = false;
+
+  ThrottlingExceptionReason m_reason{ThrottlingExceptionReason::NOT_SET};
+  bool m_reasonHasBeenSet = false;
 };
 
 }  // namespace Model

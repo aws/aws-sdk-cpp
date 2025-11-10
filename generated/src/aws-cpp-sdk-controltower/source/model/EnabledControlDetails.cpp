@@ -26,24 +26,21 @@ EnabledControlDetails& EnabledControlDetails::operator=(JsonView jsonValue) {
     m_controlIdentifier = jsonValue.GetString("controlIdentifier");
     m_controlIdentifierHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("driftStatusSummary")) {
-    m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
-    m_driftStatusSummaryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("parameters")) {
-    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
-    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
-    }
-    m_parametersHasBeenSet = true;
+  if (jsonValue.ValueExists("targetIdentifier")) {
+    m_targetIdentifier = jsonValue.GetString("targetIdentifier");
+    m_targetIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("statusSummary")) {
     m_statusSummary = jsonValue.GetObject("statusSummary");
     m_statusSummaryHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetIdentifier")) {
-    m_targetIdentifier = jsonValue.GetString("targetIdentifier");
-    m_targetIdentifierHasBeenSet = true;
+  if (jsonValue.ValueExists("driftStatusSummary")) {
+    m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
+    m_driftStatusSummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parentIdentifier")) {
+    m_parentIdentifier = jsonValue.GetString("parentIdentifier");
+    m_parentIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("targetRegions")) {
     Aws::Utils::Array<JsonView> targetRegionsJsonList = jsonValue.GetArray("targetRegions");
@@ -51,6 +48,13 @@ EnabledControlDetails& EnabledControlDetails::operator=(JsonView jsonValue) {
       m_targetRegions.push_back(targetRegionsJsonList[targetRegionsIndex].AsObject());
     }
     m_targetRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
   }
   return *this;
 }
@@ -66,24 +70,20 @@ JsonValue EnabledControlDetails::Jsonize() const {
     payload.WithString("controlIdentifier", m_controlIdentifier);
   }
 
-  if (m_driftStatusSummaryHasBeenSet) {
-    payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
-  }
-
-  if (m_parametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-    }
-    payload.WithArray("parameters", std::move(parametersJsonList));
+  if (m_targetIdentifierHasBeenSet) {
+    payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
   if (m_statusSummaryHasBeenSet) {
     payload.WithObject("statusSummary", m_statusSummary.Jsonize());
   }
 
-  if (m_targetIdentifierHasBeenSet) {
-    payload.WithString("targetIdentifier", m_targetIdentifier);
+  if (m_driftStatusSummaryHasBeenSet) {
+    payload.WithObject("driftStatusSummary", m_driftStatusSummary.Jsonize());
+  }
+
+  if (m_parentIdentifierHasBeenSet) {
+    payload.WithString("parentIdentifier", m_parentIdentifier);
   }
 
   if (m_targetRegionsHasBeenSet) {
@@ -92,6 +92,14 @@ JsonValue EnabledControlDetails::Jsonize() const {
       targetRegionsJsonList[targetRegionsIndex].AsObject(m_targetRegions[targetRegionsIndex].Jsonize());
     }
     payload.WithArray("targetRegions", std::move(targetRegionsJsonList));
+  }
+
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
   }
 
   return payload;

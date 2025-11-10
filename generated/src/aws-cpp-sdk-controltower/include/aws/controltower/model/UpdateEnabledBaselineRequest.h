@@ -51,24 +51,6 @@ class UpdateEnabledBaselineRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
-   */
-  inline const Aws::String& GetEnabledBaselineIdentifier() const { return m_enabledBaselineIdentifier; }
-  inline bool EnabledBaselineIdentifierHasBeenSet() const { return m_enabledBaselineIdentifierHasBeenSet; }
-  template <typename EnabledBaselineIdentifierT = Aws::String>
-  void SetEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) {
-    m_enabledBaselineIdentifierHasBeenSet = true;
-    m_enabledBaselineIdentifier = std::forward<EnabledBaselineIdentifierT>(value);
-  }
-  template <typename EnabledBaselineIdentifierT = Aws::String>
-  UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) {
-    SetEnabledBaselineIdentifier(std::forward<EnabledBaselineIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Parameters to apply when making an update.</p>
    */
   inline const Aws::Vector<EnabledBaselineParameter>& GetParameters() const { return m_parameters; }
@@ -90,15 +72,33 @@ class UpdateEnabledBaselineRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
+   */
+  inline const Aws::String& GetEnabledBaselineIdentifier() const { return m_enabledBaselineIdentifier; }
+  inline bool EnabledBaselineIdentifierHasBeenSet() const { return m_enabledBaselineIdentifierHasBeenSet; }
+  template <typename EnabledBaselineIdentifierT = Aws::String>
+  void SetEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) {
+    m_enabledBaselineIdentifierHasBeenSet = true;
+    m_enabledBaselineIdentifier = std::forward<EnabledBaselineIdentifierT>(value);
+  }
+  template <typename EnabledBaselineIdentifierT = Aws::String>
+  UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) {
+    SetEnabledBaselineIdentifier(std::forward<EnabledBaselineIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_baselineVersion;
   bool m_baselineVersionHasBeenSet = false;
 
-  Aws::String m_enabledBaselineIdentifier;
-  bool m_enabledBaselineIdentifierHasBeenSet = false;
-
   Aws::Vector<EnabledBaselineParameter> m_parameters;
   bool m_parametersHasBeenSet = false;
+
+  Aws::String m_enabledBaselineIdentifier;
+  bool m_enabledBaselineIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

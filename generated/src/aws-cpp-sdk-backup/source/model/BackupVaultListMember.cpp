@@ -66,6 +66,10 @@ BackupVaultListMember& BackupVaultListMember::operator=(JsonView jsonValue) {
     m_lockDate = jsonValue.GetDouble("LockDate");
     m_lockDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionKeyType")) {
+    m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
+    m_encryptionKeyTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue BackupVaultListMember::Jsonize() const {
 
   if (m_lockDateHasBeenSet) {
     payload.WithDouble("LockDate", m_lockDate.SecondsWithMSPrecision());
+  }
+
+  if (m_encryptionKeyTypeHasBeenSet) {
+    payload.WithString("EncryptionKeyType", EncryptionKeyTypeMapper::GetNameForEncryptionKeyType(m_encryptionKeyType));
   }
 
   return payload;

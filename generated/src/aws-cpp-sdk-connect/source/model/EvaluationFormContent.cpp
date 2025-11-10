@@ -49,6 +49,10 @@ EvaluationFormContent& EvaluationFormContent::operator=(JsonView jsonValue) {
     m_scoringStrategy = jsonValue.GetObject("ScoringStrategy");
     m_scoringStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoEvaluationConfiguration")) {
+    m_autoEvaluationConfiguration = jsonValue.GetObject("AutoEvaluationConfiguration");
+    m_autoEvaluationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +89,10 @@ JsonValue EvaluationFormContent::Jsonize() const {
 
   if (m_scoringStrategyHasBeenSet) {
     payload.WithObject("ScoringStrategy", m_scoringStrategy.Jsonize());
+  }
+
+  if (m_autoEvaluationConfigurationHasBeenSet) {
+    payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
   }
 
   return payload;

@@ -110,7 +110,8 @@ class AccountSettings {
   ///@{
   /**
    * <p>A Boolean value that indicates whether public sharing is turned on for an
-   * QuickSight account. For more information about turning on public sharing, see <a
+   * Quick Suite account. For more information about turning on public sharing, see
+   * <a
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
    */
   inline bool GetPublicSharingEnabled() const { return m_publicSharingEnabled; }

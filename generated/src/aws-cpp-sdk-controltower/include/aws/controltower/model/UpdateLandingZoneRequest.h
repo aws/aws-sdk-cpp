@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/controltower/ControlTowerRequest.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/controltower/model/RemediationType.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -31,18 +33,18 @@ class UpdateLandingZoneRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the landing zone.</p>
+   * <p>The landing zone version, for example, 3.2.</p>
    */
-  inline const Aws::String& GetLandingZoneIdentifier() const { return m_landingZoneIdentifier; }
-  inline bool LandingZoneIdentifierHasBeenSet() const { return m_landingZoneIdentifierHasBeenSet; }
-  template <typename LandingZoneIdentifierT = Aws::String>
-  void SetLandingZoneIdentifier(LandingZoneIdentifierT&& value) {
-    m_landingZoneIdentifierHasBeenSet = true;
-    m_landingZoneIdentifier = std::forward<LandingZoneIdentifierT>(value);
+  inline const Aws::String& GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  template <typename VersionT = Aws::String>
+  void SetVersion(VersionT&& value) {
+    m_versionHasBeenSet = true;
+    m_version = std::forward<VersionT>(value);
   }
-  template <typename LandingZoneIdentifierT = Aws::String>
-  UpdateLandingZoneRequest& WithLandingZoneIdentifier(LandingZoneIdentifierT&& value) {
-    SetLandingZoneIdentifier(std::forward<LandingZoneIdentifierT>(value));
+  template <typename VersionT = Aws::String>
+  UpdateLandingZoneRequest& WithVersion(VersionT&& value) {
+    SetVersion(std::forward<VersionT>(value));
     return *this;
   }
   ///@}
@@ -72,30 +74,57 @@ class UpdateLandingZoneRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The landing zone version, for example, 3.2.</p>
+   * <p>Specifies the types of remediation actions to apply when updating the landing
+   * zone configuration.</p>
    */
-  inline const Aws::String& GetVersion() const { return m_version; }
-  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-  template <typename VersionT = Aws::String>
-  void SetVersion(VersionT&& value) {
-    m_versionHasBeenSet = true;
-    m_version = std::forward<VersionT>(value);
+  inline const Aws::Vector<RemediationType>& GetRemediationTypes() const { return m_remediationTypes; }
+  inline bool RemediationTypesHasBeenSet() const { return m_remediationTypesHasBeenSet; }
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  void SetRemediationTypes(RemediationTypesT&& value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes = std::forward<RemediationTypesT>(value);
   }
-  template <typename VersionT = Aws::String>
-  UpdateLandingZoneRequest& WithVersion(VersionT&& value) {
-    SetVersion(std::forward<VersionT>(value));
+  template <typename RemediationTypesT = Aws::Vector<RemediationType>>
+  UpdateLandingZoneRequest& WithRemediationTypes(RemediationTypesT&& value) {
+    SetRemediationTypes(std::forward<RemediationTypesT>(value));
+    return *this;
+  }
+  inline UpdateLandingZoneRequest& AddRemediationTypes(RemediationType value) {
+    m_remediationTypesHasBeenSet = true;
+    m_remediationTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the landing zone.</p>
+   */
+  inline const Aws::String& GetLandingZoneIdentifier() const { return m_landingZoneIdentifier; }
+  inline bool LandingZoneIdentifierHasBeenSet() const { return m_landingZoneIdentifierHasBeenSet; }
+  template <typename LandingZoneIdentifierT = Aws::String>
+  void SetLandingZoneIdentifier(LandingZoneIdentifierT&& value) {
+    m_landingZoneIdentifierHasBeenSet = true;
+    m_landingZoneIdentifier = std::forward<LandingZoneIdentifierT>(value);
+  }
+  template <typename LandingZoneIdentifierT = Aws::String>
+  UpdateLandingZoneRequest& WithLandingZoneIdentifier(LandingZoneIdentifierT&& value) {
+    SetLandingZoneIdentifier(std::forward<LandingZoneIdentifierT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_landingZoneIdentifier;
-  bool m_landingZoneIdentifierHasBeenSet = false;
+  Aws::String m_version;
+  bool m_versionHasBeenSet = false;
 
   Aws::Utils::Document m_manifest;
   bool m_manifestHasBeenSet = false;
 
-  Aws::String m_version;
-  bool m_versionHasBeenSet = false;
+  Aws::Vector<RemediationType> m_remediationTypes;
+  bool m_remediationTypesHasBeenSet = false;
+
+  Aws::String m_landingZoneIdentifier;
+  bool m_landingZoneIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

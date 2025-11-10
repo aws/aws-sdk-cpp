@@ -25,7 +25,7 @@ namespace Model {
 
 /**
  * <p>The type of experience you want to embed. For registered users, you can embed
- * QuickSight dashboards or the Amazon Quick Sight console.</p>  <p>Exactly
+ * Quick Suite dashboards or the Amazon Quick Sight console.</p>  <p>Exactly
  * one of the experience configurations is required. You can choose
  * <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more
  * than one experience configuration.</p> <p><h3>See Also:</h3>   <a
@@ -63,7 +63,7 @@ class RegisteredUserEmbeddingExperienceConfiguration {
    * embedding experience. This can be used along with custom permissions to restrict
    * access to certain features. For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-   * Access to the Amazon Quick Sight Console</a> in the <i>Amazon QuickSight User
+   * Access to the Amazon Quick Sight Console</a> in the <i>Amazon Quick Suite User
    * Guide</i>.</p> <p>Use <code> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
    * </code> where you want to provide an authoring portal that allows users to
@@ -76,16 +76,16 @@ class RegisteredUserEmbeddingExperienceConfiguration {
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
    * </code> API operation to add a new user with a custom permission profile
    * attached. For more information, see the following sections in the <i>Amazon
-   * QuickSight User Guide</i>:</p> <ul> <li> <p> <a
+   * Quick Suite User Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding
    * the Full Functionality of the Amazon Quick Sight Console for Authenticated
    * Users</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-   * Access to the Amazon QuickSight Console</a> </p> </li> </ul> <p>For more
+   * Access to the Amazon Quick Suite Console</a> </p> </li> </ul> <p>For more
    * information about the high-level steps for embedding and for an interactive demo
    * of the ways you can customize embedding, visit the <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * QuickSight Developer Portal</a>.</p>
+   * Quick Suite Developer Portal</a>.</p>
    */
   inline const RegisteredUserQuickSightConsoleEmbeddingConfiguration& GetQuickSightConsole() const { return m_quickSightConsole; }
   inline bool QuickSightConsoleHasBeenSet() const { return m_quickSightConsoleHasBeenSet; }

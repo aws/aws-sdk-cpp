@@ -71,6 +71,24 @@ class ListResourceConfigurationsRequest : public VPCLatticeRequest {
 
   ///@{
   /**
+   * <p> The domain verification ID. </p>
+   */
+  inline const Aws::String& GetDomainVerificationIdentifier() const { return m_domainVerificationIdentifier; }
+  inline bool DomainVerificationIdentifierHasBeenSet() const { return m_domainVerificationIdentifierHasBeenSet; }
+  template <typename DomainVerificationIdentifierT = Aws::String>
+  void SetDomainVerificationIdentifier(DomainVerificationIdentifierT&& value) {
+    m_domainVerificationIdentifierHasBeenSet = true;
+    m_domainVerificationIdentifier = std::forward<DomainVerificationIdentifierT>(value);
+  }
+  template <typename DomainVerificationIdentifierT = Aws::String>
+  ListResourceConfigurationsRequest& WithDomainVerificationIdentifier(DomainVerificationIdentifierT&& value) {
+    SetDomainVerificationIdentifier(std::forward<DomainVerificationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum page size.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -108,6 +126,9 @@ class ListResourceConfigurationsRequest : public VPCLatticeRequest {
 
   Aws::String m_resourceConfigurationGroupIdentifier;
   bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
+
+  Aws::String m_domainVerificationIdentifier;
+  bool m_domainVerificationIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;

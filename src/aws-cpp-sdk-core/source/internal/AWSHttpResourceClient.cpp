@@ -10,6 +10,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ARN.h>
+#include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/Environment.h>
@@ -118,7 +119,6 @@ namespace Aws
             }
             std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                                    Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-
             request->SetUserAgent(m_userAgent);
 
             if (authToken)
@@ -132,6 +132,11 @@ namespace Aws
         AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const std::shared_ptr<HttpRequest> &httpRequest) const
         {
             AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << httpRequest->GetURIString());
+            if (!Aws::Utils::IsValidHost(httpRequest->GetUri().GetHost())) {
+              AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Invalid endpoint host constructed: " << httpRequest->GetURIString());
+              return {{}, {}, HttpResponseCode::REQUEST_NOT_MADE};
+            }
+
             if (!m_httpClient)
             {
                 AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Unable to get a response: missing http client!");
@@ -550,6 +555,7 @@ namespace Aws
             {
                 ss << ".cn";
             }
+
             m_endpoint =  ss.str();
 
             AWS_LOGSTREAM_INFO(STS_RESOURCE_CLIENT_LOG_TAG, "Creating STS ResourceClient with endpoint: " << m_endpoint);
@@ -685,6 +691,7 @@ namespace Aws
             {
                 ss << ".cn";
             }
+
             return ss.str();
         }
 

@@ -48,6 +48,9 @@
 #include <aws/groundstation/model/CreateConfigResult.h>
 #include <aws/groundstation/model/CreateDataflowEndpointGroupRequest.h>
 #include <aws/groundstation/model/CreateDataflowEndpointGroupResult.h>
+#include <aws/groundstation/model/CreateDataflowEndpointGroupV2Request.h>
+#include <aws/groundstation/model/CreateDataflowEndpointGroupV2Result.h>
+#include <aws/groundstation/model/CreateEndpointDetails.h>
 #include <aws/groundstation/model/CreateEphemerisRequest.h>
 #include <aws/groundstation/model/CreateEphemerisResult.h>
 #include <aws/groundstation/model/CreateMissionProfileRequest.h>
@@ -74,6 +77,10 @@
 #include <aws/groundstation/model/DescribeEphemerisResult.h>
 #include <aws/groundstation/model/Destination.h>
 #include <aws/groundstation/model/DiscoveryData.h>
+#include <aws/groundstation/model/DownlinkAwsGroundStationAgentEndpoint.h>
+#include <aws/groundstation/model/DownlinkAwsGroundStationAgentEndpointDetails.h>
+#include <aws/groundstation/model/DownlinkConnectionDetails.h>
+#include <aws/groundstation/model/DownlinkDataflowDetails.h>
 #include <aws/groundstation/model/Eirp.h>
 #include <aws/groundstation/model/EirpUnits.h>
 #include <aws/groundstation/model/Elevation.h>
@@ -97,6 +104,8 @@
 #include <aws/groundstation/model/FrequencyUnits.h>
 #include <aws/groundstation/model/GetAgentConfigurationRequest.h>
 #include <aws/groundstation/model/GetAgentConfigurationResult.h>
+#include <aws/groundstation/model/GetAgentTaskResponseUrlRequest.h>
+#include <aws/groundstation/model/GetAgentTaskResponseUrlResult.h>
 #include <aws/groundstation/model/GetConfigRequest.h>
 #include <aws/groundstation/model/GetConfigResult.h>
 #include <aws/groundstation/model/GetDataflowEndpointGroupRequest.h>
@@ -144,6 +153,7 @@
 #include <aws/groundstation/model/S3RecordingDetails.h>
 #include <aws/groundstation/model/SatelliteListItem.h>
 #include <aws/groundstation/model/SecurityDetails.h>
+#include <aws/groundstation/model/ServiceQuotaExceededException.h>
 #include <aws/groundstation/model/SocketAddress.h>
 #include <aws/groundstation/model/Source.h>
 #include <aws/groundstation/model/SpectrumConfig.h>
@@ -165,6 +175,10 @@
 #include <aws/groundstation/model/UpdateEphemerisResult.h>
 #include <aws/groundstation/model/UpdateMissionProfileRequest.h>
 #include <aws/groundstation/model/UpdateMissionProfileResult.h>
+#include <aws/groundstation/model/UplinkAwsGroundStationAgentEndpoint.h>
+#include <aws/groundstation/model/UplinkAwsGroundStationAgentEndpointDetails.h>
+#include <aws/groundstation/model/UplinkConnectionDetails.h>
+#include <aws/groundstation/model/UplinkDataflowDetails.h>
 #include <aws/groundstation/model/UplinkEchoConfig.h>
 #include <aws/groundstation/model/UplinkSpectrumConfig.h>
 

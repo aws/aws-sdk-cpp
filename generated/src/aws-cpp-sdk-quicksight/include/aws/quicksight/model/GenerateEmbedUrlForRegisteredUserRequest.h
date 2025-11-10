@@ -87,7 +87,7 @@ class GenerateEmbedUrlForRegisteredUserRequest : public QuickSightRequest {
   ///@{
   /**
    * <p>The experience that you want to embed. For registered users, you can embed
-   * QuickSight dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q
+   * Quick Suite dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q
    * search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire
    * Amazon Quick Sight console.</p>
    */

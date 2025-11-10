@@ -217,7 +217,7 @@ void CloudWatchLogsClient::init(const CloudWatchLogs::CloudWatchLogsClientConfig
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "logs");
 }
 
 void CloudWatchLogsClient::OverrideEndpoint(const Aws::String& endpoint) {

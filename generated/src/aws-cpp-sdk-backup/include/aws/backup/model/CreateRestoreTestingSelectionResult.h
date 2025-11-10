@@ -84,7 +84,8 @@ class CreateRestoreTestingSelectionResult {
   ///@{
   /**
    * <p>The name of the restore testing selection for the related restore testing
-   * plan.</p>
+   * plan.</p> <p>The name cannot be changed after creation. The name consists of
+   * only alphanumeric characters and underscores. Maximum length is 50.</p>
    */
   inline const Aws::String& GetRestoreTestingSelectionName() const { return m_restoreTestingSelectionName; }
   template <typename RestoreTestingSelectionNameT = Aws::String>

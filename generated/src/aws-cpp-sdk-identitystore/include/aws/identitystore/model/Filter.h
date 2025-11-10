@@ -37,8 +37,8 @@ class Filter {
   /**
    * <p>The attribute path that is used to specify which attribute name to search.
    * Length limit is 255 characters. For example, <code>UserName</code> is a valid
-   * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
-   * is a valid attribute path for the <code>ListGroups</code> API.</p>
+   * attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code>
+   * is a valid attribute path for the <code> ListGroups</code> API.</p>
    */
   inline const Aws::String& GetAttributePath() const { return m_attributePath; }
   inline bool AttributePathHasBeenSet() const { return m_attributePathHasBeenSet; }

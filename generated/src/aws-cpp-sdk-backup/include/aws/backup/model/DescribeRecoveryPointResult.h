@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/CalculatedLifecycle.h>
+#include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/IndexStatus.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
@@ -564,6 +565,23 @@ class DescribeRecoveryPointResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The type of encryption key used for the recovery point. Valid values are
+   * CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web
+   * Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+   */
+  inline EncryptionKeyType GetEncryptionKeyType() const { return m_encryptionKeyType; }
+  inline void SetEncryptionKeyType(EncryptionKeyType value) {
+    m_encryptionKeyTypeHasBeenSet = true;
+    m_encryptionKeyType = value;
+  }
+  inline DescribeRecoveryPointResult& WithEncryptionKeyType(EncryptionKeyType value) {
+    SetEncryptionKeyType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -658,6 +676,9 @@ class DescribeRecoveryPointResult {
 
   Aws::String m_indexStatusMessage;
   bool m_indexStatusMessageHasBeenSet = false;
+
+  EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
+  bool m_encryptionKeyTypeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

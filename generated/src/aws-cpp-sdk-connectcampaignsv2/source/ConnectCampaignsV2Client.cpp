@@ -167,7 +167,7 @@ void ConnectCampaignsV2Client::init(const ConnectCampaignsV2::ConnectCampaignsV2
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "connect-campaigns");
 }
 
 void ConnectCampaignsV2Client::OverrideEndpoint(const Aws::String& endpoint) {

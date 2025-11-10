@@ -18,6 +18,13 @@ namespace Model {
 EnabledBaselineFilter::EnabledBaselineFilter(JsonView jsonValue) { *this = jsonValue; }
 
 EnabledBaselineFilter& EnabledBaselineFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("targetIdentifiers")) {
+    Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
+    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
+      m_targetIdentifiers.push_back(targetIdentifiersJsonList[targetIdentifiersIndex].AsString());
+    }
+    m_targetIdentifiersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("baselineIdentifiers")) {
     Aws::Utils::Array<JsonView> baselineIdentifiersJsonList = jsonValue.GetArray("baselineIdentifiers");
     for (unsigned baselineIdentifiersIndex = 0; baselineIdentifiersIndex < baselineIdentifiersJsonList.GetLength();
@@ -25,15 +32,6 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator=(JsonView jsonValue) {
       m_baselineIdentifiers.push_back(baselineIdentifiersJsonList[baselineIdentifiersIndex].AsString());
     }
     m_baselineIdentifiersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("inheritanceDriftStatuses")) {
-    Aws::Utils::Array<JsonView> inheritanceDriftStatusesJsonList = jsonValue.GetArray("inheritanceDriftStatuses");
-    for (unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength();
-         ++inheritanceDriftStatusesIndex) {
-      m_inheritanceDriftStatuses.push_back(EnabledBaselineDriftStatusMapper::GetEnabledBaselineDriftStatusForName(
-          inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString()));
-    }
-    m_inheritanceDriftStatusesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parentIdentifiers")) {
     Aws::Utils::Array<JsonView> parentIdentifiersJsonList = jsonValue.GetArray("parentIdentifiers");
@@ -49,18 +47,28 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator=(JsonView jsonValue) {
     }
     m_statusesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetIdentifiers")) {
-    Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
-    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
-      m_targetIdentifiers.push_back(targetIdentifiersJsonList[targetIdentifiersIndex].AsString());
+  if (jsonValue.ValueExists("inheritanceDriftStatuses")) {
+    Aws::Utils::Array<JsonView> inheritanceDriftStatusesJsonList = jsonValue.GetArray("inheritanceDriftStatuses");
+    for (unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength();
+         ++inheritanceDriftStatusesIndex) {
+      m_inheritanceDriftStatuses.push_back(EnabledBaselineDriftStatusMapper::GetEnabledBaselineDriftStatusForName(
+          inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString()));
     }
-    m_targetIdentifiersHasBeenSet = true;
+    m_inheritanceDriftStatusesHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue EnabledBaselineFilter::Jsonize() const {
   JsonValue payload;
+
+  if (m_targetIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetIdentifiersJsonList(m_targetIdentifiers.size());
+    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
+      targetIdentifiersJsonList[targetIdentifiersIndex].AsString(m_targetIdentifiers[targetIdentifiersIndex]);
+    }
+    payload.WithArray("targetIdentifiers", std::move(targetIdentifiersJsonList));
+  }
 
   if (m_baselineIdentifiersHasBeenSet) {
     Aws::Utils::Array<JsonValue> baselineIdentifiersJsonList(m_baselineIdentifiers.size());
@@ -69,17 +77,6 @@ JsonValue EnabledBaselineFilter::Jsonize() const {
       baselineIdentifiersJsonList[baselineIdentifiersIndex].AsString(m_baselineIdentifiers[baselineIdentifiersIndex]);
     }
     payload.WithArray("baselineIdentifiers", std::move(baselineIdentifiersJsonList));
-  }
-
-  if (m_inheritanceDriftStatusesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> inheritanceDriftStatusesJsonList(m_inheritanceDriftStatuses.size());
-    for (unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength();
-         ++inheritanceDriftStatusesIndex) {
-      inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString(
-          EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(
-              m_inheritanceDriftStatuses[inheritanceDriftStatusesIndex]));
-    }
-    payload.WithArray("inheritanceDriftStatuses", std::move(inheritanceDriftStatusesJsonList));
   }
 
   if (m_parentIdentifiersHasBeenSet) {
@@ -98,12 +95,15 @@ JsonValue EnabledBaselineFilter::Jsonize() const {
     payload.WithArray("statuses", std::move(statusesJsonList));
   }
 
-  if (m_targetIdentifiersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> targetIdentifiersJsonList(m_targetIdentifiers.size());
-    for (unsigned targetIdentifiersIndex = 0; targetIdentifiersIndex < targetIdentifiersJsonList.GetLength(); ++targetIdentifiersIndex) {
-      targetIdentifiersJsonList[targetIdentifiersIndex].AsString(m_targetIdentifiers[targetIdentifiersIndex]);
+  if (m_inheritanceDriftStatusesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inheritanceDriftStatusesJsonList(m_inheritanceDriftStatuses.size());
+    for (unsigned inheritanceDriftStatusesIndex = 0; inheritanceDriftStatusesIndex < inheritanceDriftStatusesJsonList.GetLength();
+         ++inheritanceDriftStatusesIndex) {
+      inheritanceDriftStatusesJsonList[inheritanceDriftStatusesIndex].AsString(
+          EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(
+              m_inheritanceDriftStatuses[inheritanceDriftStatusesIndex]));
     }
-    payload.WithArray("targetIdentifiers", std::move(targetIdentifiersJsonList));
+    payload.WithArray("inheritanceDriftStatuses", std::move(inheritanceDriftStatusesJsonList));
   }
 
   return payload;

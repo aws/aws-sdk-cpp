@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormItemEnablementConfiguration.h>
 #include <aws/connect/model/EvaluationFormQuestionType.h>
 #include <aws/connect/model/EvaluationFormQuestionTypeProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -142,6 +143,24 @@ class EvaluationFormQuestion {
 
   ///@{
   /**
+   * <p>A question conditional enablement.</p>
+   */
+  inline const EvaluationFormItemEnablementConfiguration& GetEnablement() const { return m_enablement; }
+  inline bool EnablementHasBeenSet() const { return m_enablementHasBeenSet; }
+  template <typename EnablementT = EvaluationFormItemEnablementConfiguration>
+  void SetEnablement(EnablementT&& value) {
+    m_enablementHasBeenSet = true;
+    m_enablement = std::forward<EnablementT>(value);
+  }
+  template <typename EnablementT = EvaluationFormItemEnablementConfiguration>
+  EvaluationFormQuestion& WithEnablement(EnablementT&& value) {
+    SetEnablement(std::forward<EnablementT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The scoring weight of the section.</p>
    */
   inline double GetWeight() const { return m_weight; }
@@ -173,6 +192,9 @@ class EvaluationFormQuestion {
 
   EvaluationFormQuestionTypeProperties m_questionTypeProperties;
   bool m_questionTypePropertiesHasBeenSet = false;
+
+  EvaluationFormItemEnablementConfiguration m_enablement;
+  bool m_enablementHasBeenSet = false;
 
   double m_weight{0.0};
   bool m_weightHasBeenSet = false;

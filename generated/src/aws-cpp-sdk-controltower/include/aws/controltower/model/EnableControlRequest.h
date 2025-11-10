@@ -55,25 +55,21 @@ class EnableControlRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>A list of input parameter values, which are specified to configure the
-   * control when you enable it.</p>
+   * <p>The ARN of the organizational unit. For information on how to find the
+   * <code>targetIdentifier</code>, see <a
+   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+   * overview page</a>.</p>
    */
-  inline const Aws::Vector<EnabledControlParameter>& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = Aws::Vector<EnabledControlParameter>>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
   }
-  template <typename ParametersT = Aws::Vector<EnabledControlParameter>>
-  EnableControlRequest& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
-    return *this;
-  }
-  template <typename ParametersT = EnabledControlParameter>
-  EnableControlRequest& AddParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters.emplace_back(std::forward<ParametersT>(value));
+  template <typename TargetIdentifierT = Aws::String>
+  EnableControlRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -104,21 +100,25 @@ class EnableControlRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The ARN of the organizational unit. For information on how to find the
-   * <code>targetIdentifier</code>, see <a
-   * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-   * overview page</a>.</p>
+   * <p>A list of input parameter values, which are specified to configure the
+   * control when you enable it.</p>
    */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  inline const Aws::Vector<EnabledControlParameter>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<EnabledControlParameter>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
   }
-  template <typename TargetIdentifierT = Aws::String>
-  EnableControlRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+  template <typename ParametersT = Aws::Vector<EnabledControlParameter>>
+  EnableControlRequest& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = EnabledControlParameter>
+  EnableControlRequest& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
     return *this;
   }
   ///@}
@@ -126,14 +126,14 @@ class EnableControlRequest : public ControlTowerRequest {
   Aws::String m_controlIdentifier;
   bool m_controlIdentifierHasBeenSet = false;
 
-  Aws::Vector<EnabledControlParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
 
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
+  Aws::Vector<EnabledControlParameter> m_parameters;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

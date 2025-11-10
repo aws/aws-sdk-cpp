@@ -18,6 +18,14 @@ namespace Model {
 CreateColumnsOperation::CreateColumnsOperation(JsonView jsonValue) { *this = jsonValue; }
 
 CreateColumnsOperation& CreateColumnsOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Alias")) {
+    m_alias = jsonValue.GetString("Alias");
+    m_aliasHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Source")) {
+    m_source = jsonValue.GetObject("Source");
+    m_sourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Columns")) {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for (unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex) {
@@ -30,6 +38,14 @@ CreateColumnsOperation& CreateColumnsOperation::operator=(JsonView jsonValue) {
 
 JsonValue CreateColumnsOperation::Jsonize() const {
   JsonValue payload;
+
+  if (m_aliasHasBeenSet) {
+    payload.WithString("Alias", m_alias);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
+  }
 
   if (m_columnsHasBeenSet) {
     Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());

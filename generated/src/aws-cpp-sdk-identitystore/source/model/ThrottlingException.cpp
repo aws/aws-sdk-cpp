@@ -30,6 +30,10 @@ ThrottlingException& ThrottlingException::operator=(JsonView jsonValue) {
     m_retryAfterSeconds = jsonValue.GetInteger("RetryAfterSeconds");
     m_retryAfterSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Reason")) {
+    m_reason = ThrottlingExceptionReasonMapper::GetThrottlingExceptionReasonForName(jsonValue.GetString("Reason"));
+    m_reasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ThrottlingException::Jsonize() const {
 
   if (m_retryAfterSecondsHasBeenSet) {
     payload.WithInteger("RetryAfterSeconds", m_retryAfterSeconds);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", ThrottlingExceptionReasonMapper::GetNameForThrottlingExceptionReason(m_reason));
   }
 
   return payload;

@@ -47,6 +47,8 @@
 #include <aws/vpc-lattice/model/DeleteAccessLogSubscriptionResult.h>
 #include <aws/vpc-lattice/model/DeleteAuthPolicyRequest.h>
 #include <aws/vpc-lattice/model/DeleteAuthPolicyResult.h>
+#include <aws/vpc-lattice/model/DeleteDomainVerificationRequest.h>
+#include <aws/vpc-lattice/model/DeleteDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/DeleteListenerRequest.h>
 #include <aws/vpc-lattice/model/DeleteListenerResult.h>
 #include <aws/vpc-lattice/model/DeleteResourceConfigurationRequest.h>
@@ -74,13 +76,17 @@
 #include <aws/vpc-lattice/model/DeregisterTargetsRequest.h>
 #include <aws/vpc-lattice/model/DeregisterTargetsResult.h>
 #include <aws/vpc-lattice/model/DnsEntry.h>
+#include <aws/vpc-lattice/model/DnsOptions.h>
 #include <aws/vpc-lattice/model/DnsResource.h>
+#include <aws/vpc-lattice/model/DomainVerificationSummary.h>
 #include <aws/vpc-lattice/model/FixedResponseAction.h>
 #include <aws/vpc-lattice/model/ForwardAction.h>
 #include <aws/vpc-lattice/model/GetAccessLogSubscriptionRequest.h>
 #include <aws/vpc-lattice/model/GetAccessLogSubscriptionResult.h>
 #include <aws/vpc-lattice/model/GetAuthPolicyRequest.h>
 #include <aws/vpc-lattice/model/GetAuthPolicyResult.h>
+#include <aws/vpc-lattice/model/GetDomainVerificationRequest.h>
+#include <aws/vpc-lattice/model/GetDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/GetListenerRequest.h>
 #include <aws/vpc-lattice/model/GetListenerResult.h>
 #include <aws/vpc-lattice/model/GetResourceConfigurationRequest.h>
@@ -114,6 +120,8 @@
 #include <aws/vpc-lattice/model/LambdaEventStructureVersion.h>
 #include <aws/vpc-lattice/model/ListAccessLogSubscriptionsRequest.h>
 #include <aws/vpc-lattice/model/ListAccessLogSubscriptionsResult.h>
+#include <aws/vpc-lattice/model/ListDomainVerificationsRequest.h>
+#include <aws/vpc-lattice/model/ListDomainVerificationsResult.h>
 #include <aws/vpc-lattice/model/ListListenersRequest.h>
 #include <aws/vpc-lattice/model/ListListenersResult.h>
 #include <aws/vpc-lattice/model/ListResourceConfigurationsRequest.h>
@@ -147,6 +155,7 @@
 #include <aws/vpc-lattice/model/Matcher.h>
 #include <aws/vpc-lattice/model/PathMatch.h>
 #include <aws/vpc-lattice/model/PathMatchType.h>
+#include <aws/vpc-lattice/model/PrivateDnsPreference.h>
 #include <aws/vpc-lattice/model/ProtocolType.h>
 #include <aws/vpc-lattice/model/PutAuthPolicyRequest.h>
 #include <aws/vpc-lattice/model/PutAuthPolicyResult.h>
@@ -183,6 +192,8 @@
 #include <aws/vpc-lattice/model/ServiceStatus.h>
 #include <aws/vpc-lattice/model/ServiceSummary.h>
 #include <aws/vpc-lattice/model/SharingConfig.h>
+#include <aws/vpc-lattice/model/StartDomainVerificationRequest.h>
+#include <aws/vpc-lattice/model/StartDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/TagResourceRequest.h>
 #include <aws/vpc-lattice/model/TagResourceResult.h>
 #include <aws/vpc-lattice/model/Target.h>
@@ -196,6 +207,7 @@
 #include <aws/vpc-lattice/model/TargetStatus.h>
 #include <aws/vpc-lattice/model/TargetSummary.h>
 #include <aws/vpc-lattice/model/ThrottlingException.h>
+#include <aws/vpc-lattice/model/TxtMethodConfig.h>
 #include <aws/vpc-lattice/model/UntagResourceRequest.h>
 #include <aws/vpc-lattice/model/UntagResourceResult.h>
 #include <aws/vpc-lattice/model/UpdateAccessLogSubscriptionRequest.h>
@@ -219,6 +231,7 @@
 #include <aws/vpc-lattice/model/ValidationException.h>
 #include <aws/vpc-lattice/model/ValidationExceptionField.h>
 #include <aws/vpc-lattice/model/ValidationExceptionReason.h>
+#include <aws/vpc-lattice/model/VerificationStatus.h>
 #include <aws/vpc-lattice/model/WeightedTargetGroup.h>
 
 using VPCLatticeIncludeTest = ::testing::Test;

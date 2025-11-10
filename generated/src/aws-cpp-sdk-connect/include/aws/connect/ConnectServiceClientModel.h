@@ -181,10 +181,12 @@
 #include <aws/connect/model/ResumeContactResult.h>
 #include <aws/connect/model/SearchAgentStatusesResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchContactEvaluationsResult.h>
 #include <aws/connect/model/SearchContactFlowModulesResult.h>
 #include <aws/connect/model/SearchContactFlowsResult.h>
 #include <aws/connect/model/SearchContactsResult.h>
 #include <aws/connect/model/SearchEmailAddressesResult.h>
+#include <aws/connect/model/SearchEvaluationFormsResult.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesResult.h>
@@ -469,10 +471,12 @@ class ResumeContactRequest;
 class ResumeContactRecordingRequest;
 class SearchAgentStatusesRequest;
 class SearchAvailablePhoneNumbersRequest;
+class SearchContactEvaluationsRequest;
 class SearchContactFlowModulesRequest;
 class SearchContactFlowsRequest;
 class SearchContactsRequest;
 class SearchEmailAddressesRequest;
+class SearchEvaluationFormsRequest;
 class SearchHoursOfOperationOverridesRequest;
 class SearchHoursOfOperationsRequest;
 class SearchPredefinedAttributesRequest;
@@ -759,10 +763,12 @@ typedef Aws::Utils::Outcome<ResumeContactResult, ConnectError> ResumeContactOutc
 typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
 typedef Aws::Utils::Outcome<SearchAgentStatusesResult, ConnectError> SearchAgentStatusesOutcome;
 typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+typedef Aws::Utils::Outcome<SearchContactEvaluationsResult, ConnectError> SearchContactEvaluationsOutcome;
 typedef Aws::Utils::Outcome<SearchContactFlowModulesResult, ConnectError> SearchContactFlowModulesOutcome;
 typedef Aws::Utils::Outcome<SearchContactFlowsResult, ConnectError> SearchContactFlowsOutcome;
 typedef Aws::Utils::Outcome<SearchContactsResult, ConnectError> SearchContactsOutcome;
 typedef Aws::Utils::Outcome<SearchEmailAddressesResult, ConnectError> SearchEmailAddressesOutcome;
+typedef Aws::Utils::Outcome<SearchEvaluationFormsResult, ConnectError> SearchEvaluationFormsOutcome;
 typedef Aws::Utils::Outcome<SearchHoursOfOperationOverridesResult, ConnectError> SearchHoursOfOperationOverridesOutcome;
 typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
 typedef Aws::Utils::Outcome<SearchPredefinedAttributesResult, ConnectError> SearchPredefinedAttributesOutcome;
@@ -1049,10 +1055,12 @@ typedef std::future<ResumeContactOutcome> ResumeContactOutcomeCallable;
 typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
 typedef std::future<SearchAgentStatusesOutcome> SearchAgentStatusesOutcomeCallable;
 typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+typedef std::future<SearchContactEvaluationsOutcome> SearchContactEvaluationsOutcomeCallable;
 typedef std::future<SearchContactFlowModulesOutcome> SearchContactFlowModulesOutcomeCallable;
 typedef std::future<SearchContactFlowsOutcome> SearchContactFlowsOutcomeCallable;
 typedef std::future<SearchContactsOutcome> SearchContactsOutcomeCallable;
 typedef std::future<SearchEmailAddressesOutcome> SearchEmailAddressesOutcomeCallable;
+typedef std::future<SearchEvaluationFormsOutcome> SearchEvaluationFormsOutcomeCallable;
 typedef std::future<SearchHoursOfOperationOverridesOutcome> SearchHoursOfOperationOverridesOutcomeCallable;
 typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
 typedef std::future<SearchPredefinedAttributesOutcome> SearchPredefinedAttributesOutcomeCallable;
@@ -1773,6 +1781,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchAgentStatuse
 typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&,
                            const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchAvailablePhoneNumbersResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchContactEvaluationsRequest&,
+                           const Model::SearchContactEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchContactEvaluationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchContactFlowModulesRequest&,
                            const Model::SearchContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchContactFlowModulesResponseReceivedHandler;
@@ -1785,6 +1796,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchContactsRequ
 typedef std::function<void(const ConnectClient*, const Model::SearchEmailAddressesRequest&, const Model::SearchEmailAddressesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchEmailAddressesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchEvaluationFormsRequest&, const Model::SearchEvaluationFormsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchEvaluationFormsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationOverridesRequest&,
                            const Model::SearchHoursOfOperationOverridesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -10,6 +10,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
+#include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
@@ -168,6 +169,27 @@ class UpdateClusterRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>Determines how instance provisioning is handled during cluster operations. In
+   * <code>Continuous</code> mode, the cluster provisions available instances
+   * incrementally and retries until the target count is reached. The cluster becomes
+   * operational once cluster-level resources are ready. Use
+   * <code>CurrentCount</code> and <code>TargetCount</code> in
+   * <code>DescribeCluster</code> to track provisioning progress.</p>
+   */
+  inline ClusterNodeProvisioningMode GetNodeProvisioningMode() const { return m_nodeProvisioningMode; }
+  inline bool NodeProvisioningModeHasBeenSet() const { return m_nodeProvisioningModeHasBeenSet; }
+  inline void SetNodeProvisioningMode(ClusterNodeProvisioningMode value) {
+    m_nodeProvisioningModeHasBeenSet = true;
+    m_nodeProvisioningMode = value;
+  }
+  inline UpdateClusterRequest& WithNodeProvisioningMode(ClusterNodeProvisioningMode value) {
+    SetNodeProvisioningMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for
    * cluster autoscaling operations. Cannot be updated while autoscaling is
    * enabled.</p>
@@ -222,6 +244,9 @@ class UpdateClusterRequest : public SageMakerRequest {
 
   Aws::Vector<Aws::String> m_instanceGroupsToDelete;
   bool m_instanceGroupsToDeleteHasBeenSet = false;
+
+  ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
+  bool m_nodeProvisioningModeHasBeenSet = false;
 
   Aws::String m_clusterRole;
   bool m_clusterRoleHasBeenSet = false;

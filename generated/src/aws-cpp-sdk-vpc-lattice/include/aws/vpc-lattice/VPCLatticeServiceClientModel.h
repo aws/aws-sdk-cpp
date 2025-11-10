@@ -33,6 +33,7 @@
 #include <aws/vpc-lattice/model/CreateTargetGroupResult.h>
 #include <aws/vpc-lattice/model/DeleteAccessLogSubscriptionResult.h>
 #include <aws/vpc-lattice/model/DeleteAuthPolicyResult.h>
+#include <aws/vpc-lattice/model/DeleteDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/DeleteListenerResult.h>
 #include <aws/vpc-lattice/model/DeleteResourceConfigurationResult.h>
 #include <aws/vpc-lattice/model/DeleteResourceEndpointAssociationResult.h>
@@ -48,6 +49,7 @@
 #include <aws/vpc-lattice/model/DeregisterTargetsResult.h>
 #include <aws/vpc-lattice/model/GetAccessLogSubscriptionResult.h>
 #include <aws/vpc-lattice/model/GetAuthPolicyResult.h>
+#include <aws/vpc-lattice/model/GetDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/GetListenerResult.h>
 #include <aws/vpc-lattice/model/GetResourceConfigurationResult.h>
 #include <aws/vpc-lattice/model/GetResourceGatewayResult.h>
@@ -60,6 +62,8 @@
 #include <aws/vpc-lattice/model/GetServiceResult.h>
 #include <aws/vpc-lattice/model/GetTargetGroupResult.h>
 #include <aws/vpc-lattice/model/ListAccessLogSubscriptionsResult.h>
+#include <aws/vpc-lattice/model/ListDomainVerificationsRequest.h>
+#include <aws/vpc-lattice/model/ListDomainVerificationsResult.h>
 #include <aws/vpc-lattice/model/ListListenersResult.h>
 #include <aws/vpc-lattice/model/ListResourceConfigurationsRequest.h>
 #include <aws/vpc-lattice/model/ListResourceConfigurationsResult.h>
@@ -85,6 +89,7 @@
 #include <aws/vpc-lattice/model/PutAuthPolicyResult.h>
 #include <aws/vpc-lattice/model/PutResourcePolicyResult.h>
 #include <aws/vpc-lattice/model/RegisterTargetsResult.h>
+#include <aws/vpc-lattice/model/StartDomainVerificationResult.h>
 #include <aws/vpc-lattice/model/TagResourceResult.h>
 #include <aws/vpc-lattice/model/UntagResourceResult.h>
 #include <aws/vpc-lattice/model/UpdateAccessLogSubscriptionResult.h>
@@ -143,6 +148,7 @@ class CreateServiceNetworkVpcAssociationRequest;
 class CreateTargetGroupRequest;
 class DeleteAccessLogSubscriptionRequest;
 class DeleteAuthPolicyRequest;
+class DeleteDomainVerificationRequest;
 class DeleteListenerRequest;
 class DeleteResourceConfigurationRequest;
 class DeleteResourceEndpointAssociationRequest;
@@ -158,6 +164,7 @@ class DeleteTargetGroupRequest;
 class DeregisterTargetsRequest;
 class GetAccessLogSubscriptionRequest;
 class GetAuthPolicyRequest;
+class GetDomainVerificationRequest;
 class GetListenerRequest;
 class GetResourceConfigurationRequest;
 class GetResourceGatewayRequest;
@@ -170,6 +177,7 @@ class GetServiceNetworkServiceAssociationRequest;
 class GetServiceNetworkVpcAssociationRequest;
 class GetTargetGroupRequest;
 class ListAccessLogSubscriptionsRequest;
+class ListDomainVerificationsRequest;
 class ListListenersRequest;
 class ListResourceConfigurationsRequest;
 class ListResourceEndpointAssociationsRequest;
@@ -187,6 +195,7 @@ class ListTargetsRequest;
 class PutAuthPolicyRequest;
 class PutResourcePolicyRequest;
 class RegisterTargetsRequest;
+class StartDomainVerificationRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAccessLogSubscriptionRequest;
@@ -215,6 +224,7 @@ typedef Aws::Utils::Outcome<CreateServiceNetworkVpcAssociationResult, VPCLattice
 typedef Aws::Utils::Outcome<CreateTargetGroupResult, VPCLatticeError> CreateTargetGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteAccessLogSubscriptionResult, VPCLatticeError> DeleteAccessLogSubscriptionOutcome;
 typedef Aws::Utils::Outcome<DeleteAuthPolicyResult, VPCLatticeError> DeleteAuthPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteDomainVerificationResult, VPCLatticeError> DeleteDomainVerificationOutcome;
 typedef Aws::Utils::Outcome<DeleteListenerResult, VPCLatticeError> DeleteListenerOutcome;
 typedef Aws::Utils::Outcome<DeleteResourceConfigurationResult, VPCLatticeError> DeleteResourceConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteResourceEndpointAssociationResult, VPCLatticeError> DeleteResourceEndpointAssociationOutcome;
@@ -230,6 +240,7 @@ typedef Aws::Utils::Outcome<DeleteTargetGroupResult, VPCLatticeError> DeleteTarg
 typedef Aws::Utils::Outcome<DeregisterTargetsResult, VPCLatticeError> DeregisterTargetsOutcome;
 typedef Aws::Utils::Outcome<GetAccessLogSubscriptionResult, VPCLatticeError> GetAccessLogSubscriptionOutcome;
 typedef Aws::Utils::Outcome<GetAuthPolicyResult, VPCLatticeError> GetAuthPolicyOutcome;
+typedef Aws::Utils::Outcome<GetDomainVerificationResult, VPCLatticeError> GetDomainVerificationOutcome;
 typedef Aws::Utils::Outcome<GetListenerResult, VPCLatticeError> GetListenerOutcome;
 typedef Aws::Utils::Outcome<GetResourceConfigurationResult, VPCLatticeError> GetResourceConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetResourceGatewayResult, VPCLatticeError> GetResourceGatewayOutcome;
@@ -242,6 +253,7 @@ typedef Aws::Utils::Outcome<GetServiceNetworkServiceAssociationResult, VPCLattic
 typedef Aws::Utils::Outcome<GetServiceNetworkVpcAssociationResult, VPCLatticeError> GetServiceNetworkVpcAssociationOutcome;
 typedef Aws::Utils::Outcome<GetTargetGroupResult, VPCLatticeError> GetTargetGroupOutcome;
 typedef Aws::Utils::Outcome<ListAccessLogSubscriptionsResult, VPCLatticeError> ListAccessLogSubscriptionsOutcome;
+typedef Aws::Utils::Outcome<ListDomainVerificationsResult, VPCLatticeError> ListDomainVerificationsOutcome;
 typedef Aws::Utils::Outcome<ListListenersResult, VPCLatticeError> ListListenersOutcome;
 typedef Aws::Utils::Outcome<ListResourceConfigurationsResult, VPCLatticeError> ListResourceConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListResourceEndpointAssociationsResult, VPCLatticeError> ListResourceEndpointAssociationsOutcome;
@@ -260,6 +272,7 @@ typedef Aws::Utils::Outcome<ListTargetsResult, VPCLatticeError> ListTargetsOutco
 typedef Aws::Utils::Outcome<PutAuthPolicyResult, VPCLatticeError> PutAuthPolicyOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, VPCLatticeError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<RegisterTargetsResult, VPCLatticeError> RegisterTargetsOutcome;
+typedef Aws::Utils::Outcome<StartDomainVerificationResult, VPCLatticeError> StartDomainVerificationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, VPCLatticeError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, VPCLatticeError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAccessLogSubscriptionResult, VPCLatticeError> UpdateAccessLogSubscriptionOutcome;
@@ -288,6 +301,7 @@ typedef std::future<CreateServiceNetworkVpcAssociationOutcome> CreateServiceNetw
 typedef std::future<CreateTargetGroupOutcome> CreateTargetGroupOutcomeCallable;
 typedef std::future<DeleteAccessLogSubscriptionOutcome> DeleteAccessLogSubscriptionOutcomeCallable;
 typedef std::future<DeleteAuthPolicyOutcome> DeleteAuthPolicyOutcomeCallable;
+typedef std::future<DeleteDomainVerificationOutcome> DeleteDomainVerificationOutcomeCallable;
 typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
 typedef std::future<DeleteResourceConfigurationOutcome> DeleteResourceConfigurationOutcomeCallable;
 typedef std::future<DeleteResourceEndpointAssociationOutcome> DeleteResourceEndpointAssociationOutcomeCallable;
@@ -303,6 +317,7 @@ typedef std::future<DeleteTargetGroupOutcome> DeleteTargetGroupOutcomeCallable;
 typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
 typedef std::future<GetAccessLogSubscriptionOutcome> GetAccessLogSubscriptionOutcomeCallable;
 typedef std::future<GetAuthPolicyOutcome> GetAuthPolicyOutcomeCallable;
+typedef std::future<GetDomainVerificationOutcome> GetDomainVerificationOutcomeCallable;
 typedef std::future<GetListenerOutcome> GetListenerOutcomeCallable;
 typedef std::future<GetResourceConfigurationOutcome> GetResourceConfigurationOutcomeCallable;
 typedef std::future<GetResourceGatewayOutcome> GetResourceGatewayOutcomeCallable;
@@ -315,6 +330,7 @@ typedef std::future<GetServiceNetworkServiceAssociationOutcome> GetServiceNetwor
 typedef std::future<GetServiceNetworkVpcAssociationOutcome> GetServiceNetworkVpcAssociationOutcomeCallable;
 typedef std::future<GetTargetGroupOutcome> GetTargetGroupOutcomeCallable;
 typedef std::future<ListAccessLogSubscriptionsOutcome> ListAccessLogSubscriptionsOutcomeCallable;
+typedef std::future<ListDomainVerificationsOutcome> ListDomainVerificationsOutcomeCallable;
 typedef std::future<ListListenersOutcome> ListListenersOutcomeCallable;
 typedef std::future<ListResourceConfigurationsOutcome> ListResourceConfigurationsOutcomeCallable;
 typedef std::future<ListResourceEndpointAssociationsOutcome> ListResourceEndpointAssociationsOutcomeCallable;
@@ -332,6 +348,7 @@ typedef std::future<ListTargetsOutcome> ListTargetsOutcomeCallable;
 typedef std::future<PutAuthPolicyOutcome> PutAuthPolicyOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<RegisterTargetsOutcome> RegisterTargetsOutcomeCallable;
+typedef std::future<StartDomainVerificationOutcome> StartDomainVerificationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAccessLogSubscriptionOutcome> UpdateAccessLogSubscriptionOutcomeCallable;
@@ -394,6 +411,9 @@ typedef std::function<void(const VPCLatticeClient*, const Model::DeleteAccessLog
 typedef std::function<void(const VPCLatticeClient*, const Model::DeleteAuthPolicyRequest&, const Model::DeleteAuthPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAuthPolicyResponseReceivedHandler;
+typedef std::function<void(const VPCLatticeClient*, const Model::DeleteDomainVerificationRequest&,
+                           const Model::DeleteDomainVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDomainVerificationResponseReceivedHandler;
 typedef std::function<void(const VPCLatticeClient*, const Model::DeleteListenerRequest&, const Model::DeleteListenerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteListenerResponseReceivedHandler;
@@ -443,6 +463,9 @@ typedef std::function<void(const VPCLatticeClient*, const Model::GetAccessLogSub
 typedef std::function<void(const VPCLatticeClient*, const Model::GetAuthPolicyRequest&, const Model::GetAuthPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAuthPolicyResponseReceivedHandler;
+typedef std::function<void(const VPCLatticeClient*, const Model::GetDomainVerificationRequest&, const Model::GetDomainVerificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDomainVerificationResponseReceivedHandler;
 typedef std::function<void(const VPCLatticeClient*, const Model::GetListenerRequest&, const Model::GetListenerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetListenerResponseReceivedHandler;
@@ -482,6 +505,9 @@ typedef std::function<void(const VPCLatticeClient*, const Model::GetTargetGroupR
 typedef std::function<void(const VPCLatticeClient*, const Model::ListAccessLogSubscriptionsRequest&,
                            const Model::ListAccessLogSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAccessLogSubscriptionsResponseReceivedHandler;
+typedef std::function<void(const VPCLatticeClient*, const Model::ListDomainVerificationsRequest&,
+                           const Model::ListDomainVerificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDomainVerificationsResponseReceivedHandler;
 typedef std::function<void(const VPCLatticeClient*, const Model::ListListenersRequest&, const Model::ListListenersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListListenersResponseReceivedHandler;
@@ -538,6 +564,9 @@ typedef std::function<void(const VPCLatticeClient*, const Model::PutResourcePoli
 typedef std::function<void(const VPCLatticeClient*, const Model::RegisterTargetsRequest&, const Model::RegisterTargetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RegisterTargetsResponseReceivedHandler;
+typedef std::function<void(const VPCLatticeClient*, const Model::StartDomainVerificationRequest&,
+                           const Model::StartDomainVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartDomainVerificationResponseReceivedHandler;
 typedef std::function<void(const VPCLatticeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

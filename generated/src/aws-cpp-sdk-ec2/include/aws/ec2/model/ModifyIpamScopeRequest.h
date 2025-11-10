@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ExternalAuthorityConfiguration.h>
 
 #include <utility>
 
@@ -86,6 +87,47 @@ class ModifyIpamScopeRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that links an Amazon VPC IPAM scope to an external
+   * authority system. It specifies the type of external system and the external
+   * resource identifier that identifies your account or instance in that system.</p>
+   * <p>In IPAM, an external authority is a third-party IP address management system
+   * that provides CIDR blocks when you provision address space for top-level IPAM
+   * pools. This allows you to use your existing IP management system to control
+   * which address ranges are allocated to Amazon Web Services while using Amazon VPC
+   * IPAM to manage subnets within those ranges.</p>
+   */
+  inline const ExternalAuthorityConfiguration& GetExternalAuthorityConfiguration() const { return m_externalAuthorityConfiguration; }
+  inline bool ExternalAuthorityConfigurationHasBeenSet() const { return m_externalAuthorityConfigurationHasBeenSet; }
+  template <typename ExternalAuthorityConfigurationT = ExternalAuthorityConfiguration>
+  void SetExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    m_externalAuthorityConfigurationHasBeenSet = true;
+    m_externalAuthorityConfiguration = std::forward<ExternalAuthorityConfigurationT>(value);
+  }
+  template <typename ExternalAuthorityConfigurationT = ExternalAuthorityConfiguration>
+  ModifyIpamScopeRequest& WithExternalAuthorityConfiguration(ExternalAuthorityConfigurationT&& value) {
+    SetExternalAuthorityConfiguration(std::forward<ExternalAuthorityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+   */
+  inline bool GetRemoveExternalAuthorityConfiguration() const { return m_removeExternalAuthorityConfiguration; }
+  inline bool RemoveExternalAuthorityConfigurationHasBeenSet() const { return m_removeExternalAuthorityConfigurationHasBeenSet; }
+  inline void SetRemoveExternalAuthorityConfiguration(bool value) {
+    m_removeExternalAuthorityConfigurationHasBeenSet = true;
+    m_removeExternalAuthorityConfiguration = value;
+  }
+  inline ModifyIpamScopeRequest& WithRemoveExternalAuthorityConfiguration(bool value) {
+    SetRemoveExternalAuthorityConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
   bool m_dryRunHasBeenSet = false;
@@ -95,6 +137,12 @@ class ModifyIpamScopeRequest : public EC2Request {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  ExternalAuthorityConfiguration m_externalAuthorityConfiguration;
+  bool m_externalAuthorityConfigurationHasBeenSet = false;
+
+  bool m_removeExternalAuthorityConfiguration{false};
+  bool m_removeExternalAuthorityConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,10 +18,6 @@ namespace Model {
 BaselineOperation::BaselineOperation(JsonView jsonValue) { *this = jsonValue; }
 
 BaselineOperation& BaselineOperation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetString("endTime");
-    m_endTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("operationIdentifier")) {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");
     m_operationIdentifierHasBeenSet = true;
@@ -30,13 +26,17 @@ BaselineOperation& BaselineOperation::operator=(JsonView jsonValue) {
     m_operationType = BaselineOperationTypeMapper::GetBaselineOperationTypeForName(jsonValue.GetString("operationType"));
     m_operationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = BaselineOperationStatusMapper::GetBaselineOperationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetString("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = BaselineOperationStatusMapper::GetBaselineOperationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("endTime")) {
+    m_endTime = jsonValue.GetString("endTime");
+    m_endTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("statusMessage")) {
     m_statusMessage = jsonValue.GetString("statusMessage");
@@ -48,10 +48,6 @@ BaselineOperation& BaselineOperation::operator=(JsonView jsonValue) {
 JsonValue BaselineOperation::Jsonize() const {
   JsonValue payload;
 
-  if (m_endTimeHasBeenSet) {
-    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if (m_operationIdentifierHasBeenSet) {
     payload.WithString("operationIdentifier", m_operationIdentifier);
   }
@@ -60,12 +56,16 @@ JsonValue BaselineOperation::Jsonize() const {
     payload.WithString("operationType", BaselineOperationTypeMapper::GetNameForBaselineOperationType(m_operationType));
   }
 
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", BaselineOperationStatusMapper::GetNameForBaselineOperationStatus(m_status));
+  }
+
   if (m_startTimeHasBeenSet) {
     payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", BaselineOperationStatusMapper::GetNameForBaselineOperationStatus(m_status));
+  if (m_endTimeHasBeenSet) {
+    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_statusMessageHasBeenSet) {

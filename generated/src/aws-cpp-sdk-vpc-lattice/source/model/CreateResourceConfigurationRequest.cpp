@@ -51,6 +51,18 @@ Aws::String CreateResourceConfigurationRequest::SerializePayload() const {
     payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
   }
 
+  if (m_customDomainNameHasBeenSet) {
+    payload.WithString("customDomainName", m_customDomainName);
+  }
+
+  if (m_groupDomainHasBeenSet) {
+    payload.WithString("groupDomain", m_groupDomain);
+  }
+
+  if (m_domainVerificationIdentifierHasBeenSet) {
+    payload.WithString("domainVerificationIdentifier", m_domainVerificationIdentifier);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

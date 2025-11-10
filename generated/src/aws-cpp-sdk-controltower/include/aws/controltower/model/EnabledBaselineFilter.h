@@ -38,6 +38,31 @@ class EnabledBaselineFilter {
 
   ///@{
   /**
+   * <p>Identifiers for the targets of the <code>Baseline</code> filter
+   * operation.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTargetIdentifiers() const { return m_targetIdentifiers; }
+  inline bool TargetIdentifiersHasBeenSet() const { return m_targetIdentifiersHasBeenSet; }
+  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
+  void SetTargetIdentifiers(TargetIdentifiersT&& value) {
+    m_targetIdentifiersHasBeenSet = true;
+    m_targetIdentifiers = std::forward<TargetIdentifiersT>(value);
+  }
+  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
+  EnabledBaselineFilter& WithTargetIdentifiers(TargetIdentifiersT&& value) {
+    SetTargetIdentifiers(std::forward<TargetIdentifiersT>(value));
+    return *this;
+  }
+  template <typename TargetIdentifiersT = Aws::String>
+  EnabledBaselineFilter& AddTargetIdentifiers(TargetIdentifiersT&& value) {
+    m_targetIdentifiersHasBeenSet = true;
+    m_targetIdentifiers.emplace_back(std::forward<TargetIdentifiersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Identifiers for the <code>Baseline</code> objects returned as part of the
    * filter operation.</p>
    */
@@ -57,30 +82,6 @@ class EnabledBaselineFilter {
   EnabledBaselineFilter& AddBaselineIdentifiers(BaselineIdentifiersT&& value) {
     m_baselineIdentifiersHasBeenSet = true;
     m_baselineIdentifiers.emplace_back(std::forward<BaselineIdentifiersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled
-   * baselines.</p>
-   */
-  inline const Aws::Vector<EnabledBaselineDriftStatus>& GetInheritanceDriftStatuses() const { return m_inheritanceDriftStatuses; }
-  inline bool InheritanceDriftStatusesHasBeenSet() const { return m_inheritanceDriftStatusesHasBeenSet; }
-  template <typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
-  void SetInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
-    m_inheritanceDriftStatusesHasBeenSet = true;
-    m_inheritanceDriftStatuses = std::forward<InheritanceDriftStatusesT>(value);
-  }
-  template <typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
-  EnabledBaselineFilter& WithInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
-    SetInheritanceDriftStatuses(std::forward<InheritanceDriftStatusesT>(value));
-    return *this;
-  }
-  inline EnabledBaselineFilter& AddInheritanceDriftStatuses(EnabledBaselineDriftStatus value) {
-    m_inheritanceDriftStatusesHasBeenSet = true;
-    m_inheritanceDriftStatuses.push_back(value);
     return *this;
   }
   ///@}
@@ -135,34 +136,33 @@ class EnabledBaselineFilter {
 
   ///@{
   /**
-   * <p>Identifiers for the targets of the <code>Baseline</code> filter
-   * operation.</p>
+   * <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled
+   * baselines.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetTargetIdentifiers() const { return m_targetIdentifiers; }
-  inline bool TargetIdentifiersHasBeenSet() const { return m_targetIdentifiersHasBeenSet; }
-  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
-  void SetTargetIdentifiers(TargetIdentifiersT&& value) {
-    m_targetIdentifiersHasBeenSet = true;
-    m_targetIdentifiers = std::forward<TargetIdentifiersT>(value);
+  inline const Aws::Vector<EnabledBaselineDriftStatus>& GetInheritanceDriftStatuses() const { return m_inheritanceDriftStatuses; }
+  inline bool InheritanceDriftStatusesHasBeenSet() const { return m_inheritanceDriftStatusesHasBeenSet; }
+  template <typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+  void SetInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
+    m_inheritanceDriftStatusesHasBeenSet = true;
+    m_inheritanceDriftStatuses = std::forward<InheritanceDriftStatusesT>(value);
   }
-  template <typename TargetIdentifiersT = Aws::Vector<Aws::String>>
-  EnabledBaselineFilter& WithTargetIdentifiers(TargetIdentifiersT&& value) {
-    SetTargetIdentifiers(std::forward<TargetIdentifiersT>(value));
+  template <typename InheritanceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+  EnabledBaselineFilter& WithInheritanceDriftStatuses(InheritanceDriftStatusesT&& value) {
+    SetInheritanceDriftStatuses(std::forward<InheritanceDriftStatusesT>(value));
     return *this;
   }
-  template <typename TargetIdentifiersT = Aws::String>
-  EnabledBaselineFilter& AddTargetIdentifiers(TargetIdentifiersT&& value) {
-    m_targetIdentifiersHasBeenSet = true;
-    m_targetIdentifiers.emplace_back(std::forward<TargetIdentifiersT>(value));
+  inline EnabledBaselineFilter& AddInheritanceDriftStatuses(EnabledBaselineDriftStatus value) {
+    m_inheritanceDriftStatusesHasBeenSet = true;
+    m_inheritanceDriftStatuses.push_back(value);
     return *this;
   }
   ///@}
  private:
+  Aws::Vector<Aws::String> m_targetIdentifiers;
+  bool m_targetIdentifiersHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_baselineIdentifiers;
   bool m_baselineIdentifiersHasBeenSet = false;
-
-  Aws::Vector<EnabledBaselineDriftStatus> m_inheritanceDriftStatuses;
-  bool m_inheritanceDriftStatusesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentIdentifiers;
   bool m_parentIdentifiersHasBeenSet = false;
@@ -170,8 +170,8 @@ class EnabledBaselineFilter {
   Aws::Vector<EnablementStatus> m_statuses;
   bool m_statusesHasBeenSet = false;
 
-  Aws::Vector<Aws::String> m_targetIdentifiers;
-  bool m_targetIdentifiersHasBeenSet = false;
+  Aws::Vector<EnabledBaselineDriftStatus> m_inheritanceDriftStatuses;
+  bool m_inheritanceDriftStatusesHasBeenSet = false;
 };
 
 }  // namespace Model

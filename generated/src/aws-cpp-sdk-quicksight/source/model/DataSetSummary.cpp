@@ -46,6 +46,14 @@ DataSetSummary& DataSetSummary::operator=(JsonView jsonValue) {
     m_rowLevelPermissionDataSet = jsonValue.GetObject("RowLevelPermissionDataSet");
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RowLevelPermissionDataSetMap")) {
+    Aws::Map<Aws::String, JsonView> rowLevelPermissionDataSetMapJsonMap =
+        jsonValue.GetObject("RowLevelPermissionDataSetMap").GetAllObjects();
+    for (auto& rowLevelPermissionDataSetMapItem : rowLevelPermissionDataSetMapJsonMap) {
+      m_rowLevelPermissionDataSetMap[rowLevelPermissionDataSetMapItem.first] = rowLevelPermissionDataSetMapItem.second.AsObject();
+    }
+    m_rowLevelPermissionDataSetMapHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RowLevelPermissionTagConfigurationApplied")) {
     m_rowLevelPermissionTagConfigurationApplied = jsonValue.GetBool("RowLevelPermissionTagConfigurationApplied");
     m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = true;
@@ -90,6 +98,15 @@ JsonValue DataSetSummary::Jsonize() const {
 
   if (m_rowLevelPermissionDataSetHasBeenSet) {
     payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+  }
+
+  if (m_rowLevelPermissionDataSetMapHasBeenSet) {
+    JsonValue rowLevelPermissionDataSetMapJsonMap;
+    for (auto& rowLevelPermissionDataSetMapItem : m_rowLevelPermissionDataSetMap) {
+      rowLevelPermissionDataSetMapJsonMap.WithObject(rowLevelPermissionDataSetMapItem.first,
+                                                     rowLevelPermissionDataSetMapItem.second.Jsonize());
+    }
+    payload.WithObject("RowLevelPermissionDataSetMap", std::move(rowLevelPermissionDataSetMapJsonMap));
   }
 
   if (m_rowLevelPermissionTagConfigurationAppliedHasBeenSet) {

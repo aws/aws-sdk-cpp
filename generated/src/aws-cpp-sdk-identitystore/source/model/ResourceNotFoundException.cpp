@@ -26,6 +26,10 @@ ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonVal
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Reason")) {
+    m_reason = ResourceNotFoundExceptionReasonMapper::GetResourceNotFoundExceptionReasonForName(jsonValue.GetString("Reason"));
+    m_reasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue ResourceNotFoundException::Jsonize() const {
 
   if (m_resourceIdHasBeenSet) {
     payload.WithString("ResourceId", m_resourceId);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", ResourceNotFoundExceptionReasonMapper::GetNameForResourceNotFoundExceptionReason(m_reason));
   }
 
   if (m_messageHasBeenSet) {

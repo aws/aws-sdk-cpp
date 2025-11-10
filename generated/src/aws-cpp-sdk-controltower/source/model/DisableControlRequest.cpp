@@ -23,5 +23,9 @@ Aws::String DisableControlRequest::SerializePayload() const {
     payload.WithString("targetIdentifier", m_targetIdentifier);
   }
 
+  if (m_enabledControlIdentifierHasBeenSet) {
+    payload.WithString("enabledControlIdentifier", m_enabledControlIdentifier);
+  }
+
   return payload.View().WriteReadable();
 }

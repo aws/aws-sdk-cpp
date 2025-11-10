@@ -18,29 +18,37 @@ namespace Model {
 LandingZoneDetail::LandingZoneDetail(JsonView jsonValue) { *this = jsonValue; }
 
 LandingZoneDetail& LandingZoneDetail::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("driftStatus")) {
-    m_driftStatus = jsonValue.GetObject("driftStatus");
-    m_driftStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("latestAvailableVersion")) {
-    m_latestAvailableVersion = jsonValue.GetString("latestAvailableVersion");
-    m_latestAvailableVersionHasBeenSet = true;
+  if (jsonValue.ValueExists("version")) {
+    m_version = jsonValue.GetString("version");
+    m_versionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("manifest")) {
     m_manifest = jsonValue.GetObject("manifest");
     m_manifestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("remediationTypes")) {
+    Aws::Utils::Array<JsonView> remediationTypesJsonList = jsonValue.GetArray("remediationTypes");
+    for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
+      m_remediationTypes.push_back(
+          RemediationTypeMapper::GetRemediationTypeForName(remediationTypesJsonList[remediationTypesIndex].AsString()));
+    }
+    m_remediationTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = LandingZoneStatusMapper::GetLandingZoneStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("version")) {
-    m_version = jsonValue.GetString("version");
-    m_versionHasBeenSet = true;
+  if (jsonValue.ValueExists("latestAvailableVersion")) {
+    m_latestAvailableVersion = jsonValue.GetString("latestAvailableVersion");
+    m_latestAvailableVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("driftStatus")) {
+    m_driftStatus = jsonValue.GetObject("driftStatus");
+    m_driftStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -48,16 +56,8 @@ LandingZoneDetail& LandingZoneDetail::operator=(JsonView jsonValue) {
 JsonValue LandingZoneDetail::Jsonize() const {
   JsonValue payload;
 
-  if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
-  }
-
-  if (m_driftStatusHasBeenSet) {
-    payload.WithObject("driftStatus", m_driftStatus.Jsonize());
-  }
-
-  if (m_latestAvailableVersionHasBeenSet) {
-    payload.WithString("latestAvailableVersion", m_latestAvailableVersion);
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   if (m_manifestHasBeenSet) {
@@ -66,12 +66,29 @@ JsonValue LandingZoneDetail::Jsonize() const {
     }
   }
 
+  if (m_remediationTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> remediationTypesJsonList(m_remediationTypes.size());
+    for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
+      remediationTypesJsonList[remediationTypesIndex].AsString(
+          RemediationTypeMapper::GetNameForRemediationType(m_remediationTypes[remediationTypesIndex]));
+    }
+    payload.WithArray("remediationTypes", std::move(remediationTypesJsonList));
+  }
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
   if (m_statusHasBeenSet) {
     payload.WithString("status", LandingZoneStatusMapper::GetNameForLandingZoneStatus(m_status));
   }
 
-  if (m_versionHasBeenSet) {
-    payload.WithString("version", m_version);
+  if (m_latestAvailableVersionHasBeenSet) {
+    payload.WithString("latestAvailableVersion", m_latestAvailableVersion);
+  }
+
+  if (m_driftStatusHasBeenSet) {
+    payload.WithObject("driftStatus", m_driftStatus.Jsonize());
   }
 
   return payload;

@@ -37,6 +37,7 @@ void S3ControlBuiltInParameters::SetFromClientConfiguration(const S3ControlClien
     SetStringParameter("AccountId", config.accountId);
   }
 }
+
 }  // namespace Endpoint
 }  // namespace S3Control
 }  // namespace Aws

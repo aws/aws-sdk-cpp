@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationFormAutoEvaluationConfiguration.h>
 #include <aws/connect/model/EvaluationFormItem.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/core/utils/UUID.h>
@@ -184,6 +185,24 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Whether automated evaluations are enabled.</p>
+   */
+  inline const EvaluationFormAutoEvaluationConfiguration& GetAutoEvaluationConfiguration() const { return m_autoEvaluationConfiguration; }
+  inline bool AutoEvaluationConfigurationHasBeenSet() const { return m_autoEvaluationConfigurationHasBeenSet; }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  void SetAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    m_autoEvaluationConfigurationHasBeenSet = true;
+    m_autoEvaluationConfiguration = std::forward<AutoEvaluationConfigurationT>(value);
+  }
+  template <typename AutoEvaluationConfigurationT = EvaluationFormAutoEvaluationConfiguration>
+  UpdateEvaluationFormRequest& WithAutoEvaluationConfiguration(AutoEvaluationConfigurationT&& value) {
+    SetAutoEvaluationConfiguration(std::forward<AutoEvaluationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. If not provided, the Amazon Web Services SDK
    * populates this field. For more information about idempotency, see <a
@@ -227,6 +246,9 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
 
   EvaluationFormScoringStrategy m_scoringStrategy;
   bool m_scoringStrategyHasBeenSet = false;
+
+  EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
+  bool m_autoEvaluationConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;

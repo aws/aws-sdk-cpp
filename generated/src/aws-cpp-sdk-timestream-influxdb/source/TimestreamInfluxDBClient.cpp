@@ -149,7 +149,7 @@ void TimestreamInfluxDBClient::init(const TimestreamInfluxDB::TimestreamInfluxDB
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "timestream-influxdb");
 }
 
 void TimestreamInfluxDBClient::OverrideEndpoint(const Aws::String& endpoint) {

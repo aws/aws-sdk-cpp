@@ -62,6 +62,7 @@
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetDataSourceRequest.h>
+#include <aws/opensearch/model/GetDefaultApplicationSettingRequest.h>
 #include <aws/opensearch/model/GetDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
@@ -82,6 +83,7 @@
 #include <aws/opensearch/model/ListVpcEndpointsForDomainRequest.h>
 #include <aws/opensearch/model/ListVpcEndpointsRequest.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingRequest.h>
+#include <aws/opensearch/model/PutDefaultApplicationSettingRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
@@ -207,7 +209,7 @@ void OpenSearchServiceClient::init(const OpenSearchService::OpenSearchServiceCli
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "es");
 }
 
 void OpenSearchServiceClient::OverrideEndpoint(const Aws::String& endpoint) {
@@ -1671,6 +1673,37 @@ GetDataSourceOutcome OpenSearchServiceClient::GetDataSource(const GetDataSourceR
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDefaultApplicationSettingOutcome OpenSearchServiceClient::GetDefaultApplicationSetting(
+    const GetDefaultApplicationSettingRequest& request) const {
+  AWS_OPERATION_GUARD(GetDefaultApplicationSetting);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDefaultApplicationSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDefaultApplicationSetting, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDefaultApplicationSetting, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDefaultApplicationSetting",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDefaultApplicationSettingOutcome>(
+      [&]() -> GetDefaultApplicationSettingOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDefaultApplicationSetting, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/defaultApplicationSetting");
+        return GetDefaultApplicationSettingOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDirectQueryDataSourceOutcome OpenSearchServiceClient::GetDirectQueryDataSource(const GetDirectQueryDataSourceRequest& request) const {
   AWS_OPERATION_GUARD(GetDirectQueryDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDirectQueryDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2367,6 +2400,37 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
         endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/purchaseReservedInstanceOffering");
         return PurchaseReservedInstanceOfferingOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutDefaultApplicationSettingOutcome OpenSearchServiceClient::PutDefaultApplicationSetting(
+    const PutDefaultApplicationSettingRequest& request) const {
+  AWS_OPERATION_GUARD(PutDefaultApplicationSetting);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDefaultApplicationSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutDefaultApplicationSetting, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutDefaultApplicationSetting, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutDefaultApplicationSetting",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutDefaultApplicationSettingOutcome>(
+      [&]() -> PutDefaultApplicationSettingOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDefaultApplicationSetting, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/defaultApplicationSetting");
+        return PutDefaultApplicationSettingOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

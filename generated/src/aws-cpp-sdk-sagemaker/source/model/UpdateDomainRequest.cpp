@@ -52,6 +52,10 @@ Aws::String UpdateDomainRequest::SerializePayload() const {
     payload.WithString("TagPropagation", TagPropagationMapper::GetNameForTagPropagation(m_tagPropagation));
   }
 
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
+  }
+
   return payload.View().WriteReadable();
 }
 

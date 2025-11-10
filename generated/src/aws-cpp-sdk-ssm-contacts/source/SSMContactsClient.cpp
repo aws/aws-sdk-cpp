@@ -166,7 +166,7 @@ void SSMContactsClient::init(const SSMContacts::SSMContactsClientConfiguration& 
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
+  m_endpointProvider->InitBuiltInParameters(config, "ssm-contacts");
 }
 
 void SSMContactsClient::OverrideEndpoint(const Aws::String& endpoint) {

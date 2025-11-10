@@ -32,24 +32,6 @@ class UpdateEnabledControlRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p> The ARN of the enabled control that will be updated. </p>
-   */
-  inline const Aws::String& GetEnabledControlIdentifier() const { return m_enabledControlIdentifier; }
-  inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
-  template <typename EnabledControlIdentifierT = Aws::String>
-  void SetEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
-    m_enabledControlIdentifierHasBeenSet = true;
-    m_enabledControlIdentifier = std::forward<EnabledControlIdentifierT>(value);
-  }
-  template <typename EnabledControlIdentifierT = Aws::String>
-  UpdateEnabledControlRequest& WithEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
-    SetEnabledControlIdentifier(std::forward<EnabledControlIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and
    * <code>Value</code> is of type <code>Document</code>.</p>
    */
@@ -72,12 +54,30 @@ class UpdateEnabledControlRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_enabledControlIdentifier;
-  bool m_enabledControlIdentifierHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p> The ARN of the enabled control that will be updated. </p>
+   */
+  inline const Aws::String& GetEnabledControlIdentifier() const { return m_enabledControlIdentifier; }
+  inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  void SetEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    m_enabledControlIdentifierHasBeenSet = true;
+    m_enabledControlIdentifier = std::forward<EnabledControlIdentifierT>(value);
+  }
+  template <typename EnabledControlIdentifierT = Aws::String>
+  UpdateEnabledControlRequest& WithEnabledControlIdentifier(EnabledControlIdentifierT&& value) {
+    SetEnabledControlIdentifier(std::forward<EnabledControlIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<EnabledControlParameter> m_parameters;
   bool m_parametersHasBeenSet = false;
+
+  Aws::String m_enabledControlIdentifier;
+  bool m_enabledControlIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

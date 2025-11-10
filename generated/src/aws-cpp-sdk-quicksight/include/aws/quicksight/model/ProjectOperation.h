@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/TransformOperationSource.h>
 
 #include <utility>
 
@@ -35,6 +36,43 @@ class ProjectOperation {
 
   ///@{
   /**
+   * <p>Alias for this operation.</p>
+   */
+  inline const Aws::String& GetAlias() const { return m_alias; }
+  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+  template <typename AliasT = Aws::String>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
+  }
+  template <typename AliasT = Aws::String>
+  ProjectOperation& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source transform operation that provides input data for column
+   * projection.</p>
+   */
+  inline const TransformOperationSource& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = TransformOperationSource>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = TransformOperationSource>
+  ProjectOperation& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Projected columns.</p>
    */
   inline const Aws::Vector<Aws::String>& GetProjectedColumns() const { return m_projectedColumns; }
@@ -57,6 +95,12 @@ class ProjectOperation {
   }
   ///@}
  private:
+  Aws::String m_alias;
+  bool m_aliasHasBeenSet = false;
+
+  TransformOperationSource m_source;
+  bool m_sourceHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_projectedColumns;
   bool m_projectedColumnsHasBeenSet = false;
 };

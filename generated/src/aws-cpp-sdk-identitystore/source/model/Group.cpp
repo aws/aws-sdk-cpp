@@ -37,6 +37,22 @@ Group& Group::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedBy")) {
+    m_updatedBy = jsonValue.GetString("UpdatedBy");
+    m_updatedByHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("IdentityStoreId")) {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
@@ -65,6 +81,22 @@ JsonValue Group::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("CreatedBy", m_createdBy);
+  }
+
+  if (m_updatedByHasBeenSet) {
+    payload.WithString("UpdatedBy", m_updatedBy);
   }
 
   if (m_identityStoreIdHasBeenSet) {

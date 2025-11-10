@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GameLift {
 namespace Model {
-enum class OperatingSystem { NOT_SET, WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2, WINDOWS_2016, AMAZON_LINUX_2023 };
+enum class OperatingSystem { NOT_SET, WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2, WINDOWS_2016, AMAZON_LINUX_2023, WINDOWS_2022 };
 
 namespace OperatingSystemMapper {
 AWS_GAMELIFT_API OperatingSystem GetOperatingSystemForName(const Aws::String& name);

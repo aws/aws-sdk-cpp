@@ -39,6 +39,9 @@
 #include <aws/s3tables/model/ListTableBucketsRequest.h>
 #include <aws/s3tables/model/ListTableBucketsResult.h>
 #include <aws/s3tables/model/ListTablesResult.h>
+#include <aws/s3tables/model/ListTagsForResourceResult.h>
+#include <aws/s3tables/model/TagResourceResult.h>
+#include <aws/s3tables/model/UntagResourceResult.h>
 #include <aws/s3tables/model/UpdateTableMetadataLocationResult.h>
 /* End of service model headers required in S3TablesClient header */
 
@@ -96,12 +99,15 @@ class GetTablePolicyRequest;
 class ListNamespacesRequest;
 class ListTableBucketsRequest;
 class ListTablesRequest;
+class ListTagsForResourceRequest;
 class PutTableBucketEncryptionRequest;
 class PutTableBucketMaintenanceConfigurationRequest;
 class PutTableBucketPolicyRequest;
 class PutTableMaintenanceConfigurationRequest;
 class PutTablePolicyRequest;
 class RenameTableRequest;
+class TagResourceRequest;
+class UntagResourceRequest;
 class UpdateTableMetadataLocationRequest;
 /* End of service model forward declarations required in S3TablesClient header */
 
@@ -129,12 +135,15 @@ typedef Aws::Utils::Outcome<GetTablePolicyResult, S3TablesError> GetTablePolicyO
 typedef Aws::Utils::Outcome<ListNamespacesResult, S3TablesError> ListNamespacesOutcome;
 typedef Aws::Utils::Outcome<ListTableBucketsResult, S3TablesError> ListTableBucketsOutcome;
 typedef Aws::Utils::Outcome<ListTablesResult, S3TablesError> ListTablesOutcome;
+typedef Aws::Utils::Outcome<ListTagsForResourceResult, S3TablesError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketEncryptionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketMaintenanceConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableBucketPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTableMaintenanceConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> PutTablePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> RenameTableOutcome;
+typedef Aws::Utils::Outcome<TagResourceResult, S3TablesError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<UntagResourceResult, S3TablesError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateTableMetadataLocationResult, S3TablesError> UpdateTableMetadataLocationOutcome;
 /* End of service model Outcome class definitions */
 
@@ -162,12 +171,15 @@ typedef std::future<GetTablePolicyOutcome> GetTablePolicyOutcomeCallable;
 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
 typedef std::future<ListTableBucketsOutcome> ListTableBucketsOutcomeCallable;
 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
+typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutTableBucketEncryptionOutcome> PutTableBucketEncryptionOutcomeCallable;
 typedef std::future<PutTableBucketMaintenanceConfigurationOutcome> PutTableBucketMaintenanceConfigurationOutcomeCallable;
 typedef std::future<PutTableBucketPolicyOutcome> PutTableBucketPolicyOutcomeCallable;
 typedef std::future<PutTableMaintenanceConfigurationOutcome> PutTableMaintenanceConfigurationOutcomeCallable;
 typedef std::future<PutTablePolicyOutcome> PutTablePolicyOutcomeCallable;
 typedef std::future<RenameTableOutcome> RenameTableOutcomeCallable;
+typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateTableMetadataLocationOutcome> UpdateTableMetadataLocationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -247,6 +259,9 @@ typedef std::function<void(const S3TablesClient*, const Model::ListTableBucketsR
 typedef std::function<void(const S3TablesClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTablesResponseReceivedHandler;
+typedef std::function<void(const S3TablesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const S3TablesClient*, const Model::PutTableBucketEncryptionRequest&,
                            const Model::PutTableBucketEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutTableBucketEncryptionResponseReceivedHandler;
@@ -267,6 +282,12 @@ typedef std::function<void(const S3TablesClient*, const Model::PutTablePolicyReq
 typedef std::function<void(const S3TablesClient*, const Model::RenameTableRequest&, const Model::RenameTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RenameTableResponseReceivedHandler;
+typedef std::function<void(const S3TablesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TagResourceResponseReceivedHandler;
+typedef std::function<void(const S3TablesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UntagResourceResponseReceivedHandler;
 typedef std::function<void(const S3TablesClient*, const Model::UpdateTableMetadataLocationRequest&,
                            const Model::UpdateTableMetadataLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTableMetadataLocationResponseReceivedHandler;

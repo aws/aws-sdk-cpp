@@ -31,6 +31,7 @@ static const int SM2_HASH = HashingUtils::HashString("SM2");
 static const int ML_DSA_44_HASH = HashingUtils::HashString("ML_DSA_44");
 static const int ML_DSA_65_HASH = HashingUtils::HashString("ML_DSA_65");
 static const int ML_DSA_87_HASH = HashingUtils::HashString("ML_DSA_87");
+static const int ECC_NIST_EDWARDS25519_HASH = HashingUtils::HashString("ECC_NIST_EDWARDS25519");
 
 KeySpec GetKeySpecForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ KeySpec GetKeySpecForName(const Aws::String& name) {
     return KeySpec::ML_DSA_65;
   } else if (hashCode == ML_DSA_87_HASH) {
     return KeySpec::ML_DSA_87;
+  } else if (hashCode == ECC_NIST_EDWARDS25519_HASH) {
+    return KeySpec::ECC_NIST_EDWARDS25519;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForKeySpec(KeySpec enumValue) {
       return "ML_DSA_65";
     case KeySpec::ML_DSA_87:
       return "ML_DSA_87";
+    case KeySpec::ECC_NIST_EDWARDS25519:
+      return "ECC_NIST_EDWARDS25519";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

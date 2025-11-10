@@ -109,6 +109,24 @@ class EnabledBaselineSummary {
 
   ///@{
   /**
+   * <p>The target upon which the baseline is enabled.</p>
+   */
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  }
+  template <typename TargetIdentifierT = Aws::String>
+  EnabledBaselineSummary& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An ARN that represents an object returned by
    * <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
    */
@@ -141,24 +159,6 @@ class EnabledBaselineSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The target upon which the baseline is enabled.</p>
-   */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
-  }
-  template <typename TargetIdentifierT = Aws::String>
-  EnabledBaselineSummary& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -172,14 +172,14 @@ class EnabledBaselineSummary {
   EnabledBaselineDriftStatusSummary m_driftStatusSummary;
   bool m_driftStatusSummaryHasBeenSet = false;
 
+  Aws::String m_targetIdentifier;
+  bool m_targetIdentifierHasBeenSet = false;
+
   Aws::String m_parentIdentifier;
   bool m_parentIdentifierHasBeenSet = false;
 
   EnablementStatusSummary m_statusSummary;
   bool m_statusSummaryHasBeenSet = false;
-
-  Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

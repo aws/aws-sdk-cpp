@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/DnsOptions.h>
 #include <aws/vpc-lattice/model/ServiceNetworkVpcAssociationStatus.h>
 
 #include <utility>
@@ -206,6 +207,21 @@ class GetServiceNetworkVpcAssociationResult {
 
   ///@{
   /**
+   * <p> Indicates if private DNS is enabled in the VPC association. </p>
+   */
+  inline bool GetPrivateDnsEnabled() const { return m_privateDnsEnabled; }
+  inline void SetPrivateDnsEnabled(bool value) {
+    m_privateDnsEnabledHasBeenSet = true;
+    m_privateDnsEnabled = value;
+  }
+  inline GetServiceNetworkVpcAssociationResult& WithPrivateDnsEnabled(bool value) {
+    SetPrivateDnsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The failure message.</p>
    */
   inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
@@ -257,6 +273,23 @@ class GetServiceNetworkVpcAssociationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> DNS options for the service network VPC association. </p>
+   */
+  inline const DnsOptions& GetDnsOptions() const { return m_dnsOptions; }
+  template <typename DnsOptionsT = DnsOptions>
+  void SetDnsOptions(DnsOptionsT&& value) {
+    m_dnsOptionsHasBeenSet = true;
+    m_dnsOptions = std::forward<DnsOptionsT>(value);
+  }
+  template <typename DnsOptionsT = DnsOptions>
+  GetServiceNetworkVpcAssociationResult& WithDnsOptions(DnsOptionsT&& value) {
+    SetDnsOptions(std::forward<DnsOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -301,6 +334,9 @@ class GetServiceNetworkVpcAssociationResult {
   Aws::Vector<Aws::String> m_securityGroupIds;
   bool m_securityGroupIdsHasBeenSet = false;
 
+  bool m_privateDnsEnabled{false};
+  bool m_privateDnsEnabledHasBeenSet = false;
+
   Aws::String m_failureMessage;
   bool m_failureMessageHasBeenSet = false;
 
@@ -309,6 +345,9 @@ class GetServiceNetworkVpcAssociationResult {
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_lastUpdatedAtHasBeenSet = false;
+
+  DnsOptions m_dnsOptions;
+  bool m_dnsOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

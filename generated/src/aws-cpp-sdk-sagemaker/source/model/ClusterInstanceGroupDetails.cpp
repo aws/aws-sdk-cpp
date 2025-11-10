@@ -91,6 +91,18 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_desiredImageId = jsonValue.GetString("DesiredImageId");
     m_desiredImageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetStateCount")) {
+    m_targetStateCount = jsonValue.GetInteger("TargetStateCount");
+    m_targetStateCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SoftwareUpdateStatus")) {
+    m_softwareUpdateStatus = SoftwareUpdateStatusMapper::GetSoftwareUpdateStatusForName(jsonValue.GetString("SoftwareUpdateStatus"));
+    m_softwareUpdateStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ActiveSoftwareUpdateConfig")) {
+    m_activeSoftwareUpdateConfig = jsonValue.GetObject("ActiveSoftwareUpdateConfig");
+    m_activeSoftwareUpdateConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -170,6 +182,18 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_desiredImageIdHasBeenSet) {
     payload.WithString("DesiredImageId", m_desiredImageId);
+  }
+
+  if (m_targetStateCountHasBeenSet) {
+    payload.WithInteger("TargetStateCount", m_targetStateCount);
+  }
+
+  if (m_softwareUpdateStatusHasBeenSet) {
+    payload.WithString("SoftwareUpdateStatus", SoftwareUpdateStatusMapper::GetNameForSoftwareUpdateStatus(m_softwareUpdateStatus));
+  }
+
+  if (m_activeSoftwareUpdateConfigHasBeenSet) {
+    payload.WithObject("ActiveSoftwareUpdateConfig", m_activeSoftwareUpdateConfig.Jsonize());
   }
 
   return payload;
