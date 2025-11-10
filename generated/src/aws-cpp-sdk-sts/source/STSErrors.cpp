@@ -19,6 +19,7 @@ static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("Malf
 static const int PACKED_POLICY_TOO_LARGE_HASH = HashingUtils::HashString("PackedPolicyTooLarge");
 static const int I_D_P_COMMUNICATION_ERROR_HASH = HashingUtils::HashString("IDPCommunicationError");
 static const int I_D_P_REJECTED_CLAIM_HASH = HashingUtils::HashString("IDPRejectedClaim");
+static const int EXPIRED_TRADE_IN_TOKEN_HASH = HashingUtils::HashString("ExpiredTradeInTokenException");
 static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
 static const int INVALID_IDENTITY_TOKEN_HASH = HashingUtils::HashString("InvalidIdentityToken");
 static const int INVALID_AUTHORIZATION_MESSAGE_HASH = HashingUtils::HashString("InvalidAuthorizationMessageException");
@@ -35,6 +36,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_COMMUNICATION_ERROR), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == I_D_P_REJECTED_CLAIM_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_REJECTED_CLAIM), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EXPIRED_TRADE_IN_TOKEN_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::EXPIRED_TRADE_IN_TOKEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == EXPIRED_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::EXPIRED_TOKEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_IDENTITY_TOKEN_HASH) {

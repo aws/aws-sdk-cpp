@@ -30,6 +30,7 @@
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenOutputItem.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenRequest.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
+#include <aws/verifiedpermissions/model/CedarTagValue.h>
 #include <aws/verifiedpermissions/model/CedarVersion.h>
 #include <aws/verifiedpermissions/model/CognitoGroupConfiguration.h>
 #include <aws/verifiedpermissions/model/CognitoGroupConfigurationDetail.h>

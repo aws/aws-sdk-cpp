@@ -36,6 +36,13 @@ EntityItem& EntityItem::operator=(JsonView jsonValue) {
     }
     m_parentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tags")) {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for (auto& tagsItem : tagsJsonMap) {
+      m_tags[tagsItem.first] = tagsItem.second.AsObject();
+    }
+    m_tagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +67,14 @@ JsonValue EntityItem::Jsonize() const {
       parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());
     }
     payload.WithArray("parents", std::move(parentsJsonList));
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithObject(tagsItem.first, tagsItem.second.Jsonize());
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;

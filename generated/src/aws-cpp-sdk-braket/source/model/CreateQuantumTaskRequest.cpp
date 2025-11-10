@@ -63,5 +63,9 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const {
     payload.WithArray("associations", std::move(associationsJsonList));
   }
 
+  if (m_experimentalCapabilitiesHasBeenSet) {
+    payload.WithObject("experimentalCapabilities", m_experimentalCapabilities.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

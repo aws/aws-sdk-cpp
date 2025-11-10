@@ -198,7 +198,9 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * STS credentials</a> in the <i>IAM User Guide</i>.</p> <p>The temporary security
    * credentials returned by this operation consist of an access key ID, a secret
    * access key, and a security token. Applications can use these temporary security
-   * credentials to sign calls to Amazon Web Services services.</p> <p> <b>Session
+   * credentials to sign calls to Amazon Web Services services.</p>
+   * <p>AssumeRoleWithSAML will not work on IAM Identity Center managed roles. These
+   * roles' names start with <code>AWSReservedSSO_</code>.</p>  <p> <b>Session
    * Duration</b> </p> <p>By default, the temporary security credentials created by
    * <code>AssumeRoleWithSAML</code> last for one hour. However, you can use the
    * optional <code>DurationSeconds</code> parameter to specify the duration of your
@@ -395,10 +397,11 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * <p>(Optional) You can configure your IdP to pass attributes into your web
    * identity token as session tags. Each session tag consists of a key name and an
    * associated value. For more information about session tags, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
-   * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>You can pass up to
-   * 50 session tags. The plaintext session tag keys can’t exceed 128 characters and
-   * the values can’t exceed 256 characters. For these and additional limits, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_adding-assume-role-idp">Passing
+   * session tags using AssumeRoleWithWebIdentity</a> in the <i>IAM User
+   * Guide</i>.</p> <p>You can pass up to 50 session tags. The plaintext session tag
+   * keys can’t exceed 128 characters and the values can’t exceed 256 characters. For
+   * these and additional limits, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
    * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
    * Amazon Web Services conversion compresses the passed inline session policy,
@@ -472,9 +475,12 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
 
   /**
    * <p>Returns a set of short term credentials you can use to perform privileged
-   * tasks on a member account in your organization.</p> <p>Before you can launch a
-   * privileged session, you must have centralized root access in your organization.
-   * For steps to enable this feature, see <a
+   * tasks on a member account in your organization. You must use credentials from an
+   * Organizations management account or a delegated administrator account for IAM to
+   * call <code>AssumeRoot</code>. You cannot use root user credentials to make this
+   * call.</p> <p>Before you can launch a privileged session, you must have
+   * centralized root access in your organization. For steps to enable this feature,
+   * see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize
    * root access for member accounts</a> in the <i>IAM User Guide</i>.</p>
    * <p>The STS global endpoint is not supported for AssumeRoot. You must send this
@@ -483,8 +489,17 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    *  <p>You can track AssumeRoot in CloudTrail logs to determine what actions
    * were performed in a session. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
-   * privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.</p> <p>When
+   * granting access to privileged tasks you should only grant the necessary
+   * permissions required to perform that task. For more information, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security
+   * best practices in IAM</a>. In addition, you can use <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">service
+   * control policies</a> (SCPs) to manage and limit permissions in your
+   * organization. See <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples_general.html">General
+   * examples</a> in the <i>Organizations User Guide</i> for more information on
+   * SCPs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoot">AWS API
    * Reference</a></p>
    */
@@ -645,6 +660,34 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const GetCallerIdentityRequestT& request = {}) const {
     return SubmitAsync(&STSClient::GetCallerIdentity, request, handler, context);
+  }
+
+  /**
+   * <p>This API is currently unavailable for general use.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetDelegatedAccessToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDelegatedAccessTokenOutcome GetDelegatedAccessToken(const Model::GetDelegatedAccessTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDelegatedAccessToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDelegatedAccessTokenRequestT = Model::GetDelegatedAccessTokenRequest>
+  Model::GetDelegatedAccessTokenOutcomeCallable GetDelegatedAccessTokenCallable(const GetDelegatedAccessTokenRequestT& request) const {
+    return SubmitCallable(&STSClient::GetDelegatedAccessToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetDelegatedAccessToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDelegatedAccessTokenRequestT = Model::GetDelegatedAccessTokenRequest>
+  void GetDelegatedAccessTokenAsync(const GetDelegatedAccessTokenRequestT& request,
+                                    const GetDelegatedAccessTokenResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&STSClient::GetDelegatedAccessToken, request, handler, context);
   }
 
   /**

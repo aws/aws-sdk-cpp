@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WAFV2 {
 namespace Model {
-enum class LogScope { NOT_SET, CUSTOMER, SECURITY_LAKE };
+enum class LogScope { NOT_SET, CUSTOMER, SECURITY_LAKE, CLOUDWATCH_TELEMETRY_RULE_MANAGED };
 
 namespace LogScopeMapper {
 AWS_WAFV2_API LogScope GetLogScopeForName(const Aws::String& name);

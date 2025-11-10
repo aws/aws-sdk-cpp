@@ -15,6 +15,7 @@
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/OpenMonitoringInfo.h>
+#include <aws/kafka/model/Rebalancing.h>
 #include <aws/kafka/model/StorageMode.h>
 
 #include <utility>
@@ -53,6 +54,28 @@ class CreateClusterRequest : public KafkaRequest {
   template <typename BrokerNodeGroupInfoT = BrokerNodeGroupInfo>
   CreateClusterRequest& WithBrokerNodeGroupInfo(BrokerNodeGroupInfoT&& value) {
     SetBrokerNodeGroupInfo(std::forward<BrokerNodeGroupInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>Specifies if intelligent rebalancing should be turned on for the
+   * new MSK Provisioned cluster with Express brokers. By default, intelligent
+   * rebalancing status is ACTIVE for all new clusters.</p>
+
+   */
+  inline const Rebalancing& GetRebalancing() const { return m_rebalancing; }
+  inline bool RebalancingHasBeenSet() const { return m_rebalancingHasBeenSet; }
+  template <typename RebalancingT = Rebalancing>
+  void SetRebalancing(RebalancingT&& value) {
+    m_rebalancingHasBeenSet = true;
+    m_rebalancing = std::forward<RebalancingT>(value);
+  }
+  template <typename RebalancingT = Rebalancing>
+  CreateClusterRequest& WithRebalancing(RebalancingT&& value) {
+    SetRebalancing(std::forward<RebalancingT>(value));
     return *this;
   }
   ///@}
@@ -280,6 +303,9 @@ class CreateClusterRequest : public KafkaRequest {
  private:
   BrokerNodeGroupInfo m_brokerNodeGroupInfo;
   bool m_brokerNodeGroupInfoHasBeenSet = false;
+
+  Rebalancing m_rebalancing;
+  bool m_rebalancingHasBeenSet = false;
 
   ClientAuthentication m_clientAuthentication;
   bool m_clientAuthenticationHasBeenSet = false;

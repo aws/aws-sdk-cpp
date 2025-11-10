@@ -31,6 +31,8 @@
 #include <aws/sts/model/GetAccessKeyInfoResult.h>
 #include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/sts/model/GetCallerIdentityResult.h>
+#include <aws/sts/model/GetDelegatedAccessTokenRequest.h>
+#include <aws/sts/model/GetDelegatedAccessTokenResult.h>
 #include <aws/sts/model/GetFederationTokenRequest.h>
 #include <aws/sts/model/GetFederationTokenResult.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>

@@ -19,6 +19,10 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     payload.WithObject("brokerNodeGroupInfo", m_brokerNodeGroupInfo.Jsonize());
   }
 
+  if (m_rebalancingHasBeenSet) {
+    payload.WithObject("rebalancing", m_rebalancing.Jsonize());
+  }
+
   if (m_clientAuthenticationHasBeenSet) {
     payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
   }

@@ -69,6 +69,7 @@
 #include <aws/kafka/model/UpdateConfigurationRequest.h>
 #include <aws/kafka/model/UpdateConnectivityRequest.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
+#include <aws/kafka/model/UpdateRebalancingRequest.h>
 #include <aws/kafka/model/UpdateReplicationInfoRequest.h>
 #include <aws/kafka/model/UpdateSecurityRequest.h>
 #include <aws/kafka/model/UpdateStorageRequest.h>
@@ -1906,6 +1907,43 @@ UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
         endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring");
         return UpdateMonitoringOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRebalancingOutcome KafkaClient::UpdateRebalancing(const UpdateRebalancingRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateRebalancing);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRebalancing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRebalancing", "Required field: ClusterArn, is not set");
+    return UpdateRebalancingOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [ClusterArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRebalancing, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRebalancing, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRebalancing",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRebalancingOutcome>(
+      [&]() -> UpdateRebalancingOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRebalancing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/rebalancing");
+        return UpdateRebalancingOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

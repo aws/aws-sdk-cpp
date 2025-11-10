@@ -35,6 +35,8 @@
 #include <aws/iam/model/CreateAccessKeyRequest.h>
 #include <aws/iam/model/CreateAccessKeyResult.h>
 #include <aws/iam/model/CreateAccountAliasRequest.h>
+#include <aws/iam/model/CreateDelegationRequestRequest.h>
+#include <aws/iam/model/CreateDelegationRequestResult.h>
 #include <aws/iam/model/CreateGroupRequest.h>
 #include <aws/iam/model/CreateGroupResult.h>
 #include <aws/iam/model/CreateInstanceProfileRequest.h>
@@ -60,6 +62,7 @@
 #include <aws/iam/model/CreateVirtualMFADeviceRequest.h>
 #include <aws/iam/model/CreateVirtualMFADeviceResult.h>
 #include <aws/iam/model/DeactivateMFADeviceRequest.h>
+#include <aws/iam/model/DelegationPermission.h>
 #include <aws/iam/model/DeleteAccessKeyRequest.h>
 #include <aws/iam/model/DeleteAccountAliasRequest.h>
 #include <aws/iam/model/DeleteAccountPasswordPolicyRequest.h>
@@ -253,6 +256,8 @@
 #include <aws/iam/model/PolicyGrantingServiceAccess.h>
 #include <aws/iam/model/PolicyGroup.h>
 #include <aws/iam/model/PolicyOwnerEntityType.h>
+#include <aws/iam/model/PolicyParameter.h>
+#include <aws/iam/model/PolicyParameterTypeEnum.h>
 #include <aws/iam/model/PolicyRole.h>
 #include <aws/iam/model/PolicyScopeType.h>
 #include <aws/iam/model/PolicySourceType.h>

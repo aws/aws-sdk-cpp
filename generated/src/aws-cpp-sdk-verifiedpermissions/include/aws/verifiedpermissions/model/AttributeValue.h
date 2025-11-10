@@ -27,7 +27,7 @@ namespace Model {
  * context for a request for which an authorization decision is made. </p> <p>This
  * data type is used as a member of the <a
  * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ContextDefinition.html">ContextDefinition</a>
- * structure which is uses as a request parameter for the <a
+ * structure which is used as a request parameter for the <a
  * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
  * <a
  * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>,
@@ -47,7 +47,7 @@ class AttributeValue {
   ///@{
   /**
    * <p>An attribute value of <a
-   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#boolean">Boolean</a>
+   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-bool">Boolean</a>
    * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
    */
   inline bool GetBoolean() const { return m_boolean; }
@@ -66,8 +66,8 @@ class AttributeValue {
   /**
    * <p>An attribute value of type <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_EntityIdentifier.html">EntityIdentifier</a>.</p>
-   * <p>Example: <code>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType":
-   * "&lt;entity type&gt;"}</code> </p>
+   * <p>Example: <code>{"entityIdentifier": { "entityId": "alice", "entityType":
+   * "User"} }</code> </p>
    */
   inline const EntityIdentifier& GetEntityIdentifier() const { return m_entityIdentifier; }
   inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
@@ -86,7 +86,7 @@ class AttributeValue {
   ///@{
   /**
    * <p>An attribute value of <a
-   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#long">Long</a>
+   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-long">Long</a>
    * type.</p> <p>Example: <code>{"long": 0}</code> </p>
    */
   inline long long GetLong() const { return m_long; }
@@ -104,7 +104,7 @@ class AttributeValue {
   ///@{
   /**
    * <p>An attribute value of <a
-   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a>
+   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-string">String</a>
    * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
    */
   inline const Aws::String& GetString() const { return m_string; }
@@ -124,7 +124,7 @@ class AttributeValue {
   ///@{
   /**
    * <p>An attribute value of <a
-   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a>
+   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-set">Set</a>
    * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
    */
   inline const Aws::Vector<AttributeValue>& GetSet() const { return m_set; }
@@ -150,7 +150,7 @@ class AttributeValue {
   ///@{
   /**
    * <p>An attribute value of <a
-   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#record">Record</a>
+   * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-record">Record</a>
    * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
    */
   inline const Aws::Map<Aws::String, AttributeValue>& GetRecord() const { return m_record; }

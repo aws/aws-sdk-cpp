@@ -17,6 +17,7 @@ namespace LogScopeMapper {
 
 static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
 static const int SECURITY_LAKE_HASH = HashingUtils::HashString("SECURITY_LAKE");
+static const int CLOUDWATCH_TELEMETRY_RULE_MANAGED_HASH = HashingUtils::HashString("CLOUDWATCH_TELEMETRY_RULE_MANAGED");
 
 LogScope GetLogScopeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ LogScope GetLogScopeForName(const Aws::String& name) {
     return LogScope::CUSTOMER;
   } else if (hashCode == SECURITY_LAKE_HASH) {
     return LogScope::SECURITY_LAKE;
+  } else if (hashCode == CLOUDWATCH_TELEMETRY_RULE_MANAGED_HASH) {
+    return LogScope::CLOUDWATCH_TELEMETRY_RULE_MANAGED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForLogScope(LogScope enumValue) {
       return "CUSTOMER";
     case LogScope::SECURITY_LAKE:
       return "SECURITY_LAKE";
+    case LogScope::CLOUDWATCH_TELEMETRY_RULE_MANAGED:
+      return "CLOUDWATCH_TELEMETRY_RULE_MANAGED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

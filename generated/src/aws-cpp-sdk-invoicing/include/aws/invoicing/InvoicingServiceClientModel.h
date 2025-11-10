@@ -22,6 +22,7 @@
 #include <aws/invoicing/model/BatchGetInvoiceProfileResult.h>
 #include <aws/invoicing/model/CreateInvoiceUnitResult.h>
 #include <aws/invoicing/model/DeleteInvoiceUnitResult.h>
+#include <aws/invoicing/model/GetInvoicePDFResult.h>
 #include <aws/invoicing/model/GetInvoiceUnitResult.h>
 #include <aws/invoicing/model/ListInvoiceSummariesResult.h>
 #include <aws/invoicing/model/ListInvoiceUnitsRequest.h>
@@ -66,6 +67,7 @@ namespace Model {
 class BatchGetInvoiceProfileRequest;
 class CreateInvoiceUnitRequest;
 class DeleteInvoiceUnitRequest;
+class GetInvoicePDFRequest;
 class GetInvoiceUnitRequest;
 class ListInvoiceSummariesRequest;
 class ListInvoiceUnitsRequest;
@@ -79,6 +81,7 @@ class UpdateInvoiceUnitRequest;
 typedef Aws::Utils::Outcome<BatchGetInvoiceProfileResult, InvoicingError> BatchGetInvoiceProfileOutcome;
 typedef Aws::Utils::Outcome<CreateInvoiceUnitResult, InvoicingError> CreateInvoiceUnitOutcome;
 typedef Aws::Utils::Outcome<DeleteInvoiceUnitResult, InvoicingError> DeleteInvoiceUnitOutcome;
+typedef Aws::Utils::Outcome<GetInvoicePDFResult, InvoicingError> GetInvoicePDFOutcome;
 typedef Aws::Utils::Outcome<GetInvoiceUnitResult, InvoicingError> GetInvoiceUnitOutcome;
 typedef Aws::Utils::Outcome<ListInvoiceSummariesResult, InvoicingError> ListInvoiceSummariesOutcome;
 typedef Aws::Utils::Outcome<ListInvoiceUnitsResult, InvoicingError> ListInvoiceUnitsOutcome;
@@ -92,6 +95,7 @@ typedef Aws::Utils::Outcome<UpdateInvoiceUnitResult, InvoicingError> UpdateInvoi
 typedef std::future<BatchGetInvoiceProfileOutcome> BatchGetInvoiceProfileOutcomeCallable;
 typedef std::future<CreateInvoiceUnitOutcome> CreateInvoiceUnitOutcomeCallable;
 typedef std::future<DeleteInvoiceUnitOutcome> DeleteInvoiceUnitOutcomeCallable;
+typedef std::future<GetInvoicePDFOutcome> GetInvoicePDFOutcomeCallable;
 typedef std::future<GetInvoiceUnitOutcome> GetInvoiceUnitOutcomeCallable;
 typedef std::future<ListInvoiceSummariesOutcome> ListInvoiceSummariesOutcomeCallable;
 typedef std::future<ListInvoiceUnitsOutcome> ListInvoiceUnitsOutcomeCallable;
@@ -114,6 +118,9 @@ typedef std::function<void(const InvoicingClient*, const Model::CreateInvoiceUni
 typedef std::function<void(const InvoicingClient*, const Model::DeleteInvoiceUnitRequest&, const Model::DeleteInvoiceUnitOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteInvoiceUnitResponseReceivedHandler;
+typedef std::function<void(const InvoicingClient*, const Model::GetInvoicePDFRequest&, const Model::GetInvoicePDFOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetInvoicePDFResponseReceivedHandler;
 typedef std::function<void(const InvoicingClient*, const Model::GetInvoiceUnitRequest&, const Model::GetInvoiceUnitOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInvoiceUnitResponseReceivedHandler;

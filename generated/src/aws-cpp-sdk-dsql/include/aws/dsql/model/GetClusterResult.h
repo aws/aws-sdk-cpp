@@ -174,6 +174,23 @@ class GetClusterResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The connection endpoint for the cluster.</p>
+   */
+  inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+  template <typename EndpointT = Aws::String>
+  void SetEndpoint(EndpointT&& value) {
+    m_endpointHasBeenSet = true;
+    m_endpoint = std::forward<EndpointT>(value);
+  }
+  template <typename EndpointT = Aws::String>
+  GetClusterResult& WithEndpoint(EndpointT&& value) {
+    SetEndpoint(std::forward<EndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -211,6 +228,9 @@ class GetClusterResult {
 
   EncryptionDetails m_encryptionDetails;
   bool m_encryptionDetailsHasBeenSet = false;
+
+  Aws::String m_endpoint;
+  bool m_endpointHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

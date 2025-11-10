@@ -14,6 +14,7 @@
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/OpenMonitoringInfo.h>
+#include <aws/kafka/model/Rebalancing.h>
 #include <aws/kafka/model/StorageMode.h>
 
 #include <utility>
@@ -58,6 +59,30 @@ class Provisioned {
   template <typename BrokerNodeGroupInfoT = BrokerNodeGroupInfo>
   Provisioned& WithBrokerNodeGroupInfo(BrokerNodeGroupInfoT&& value) {
     SetBrokerNodeGroupInfo(std::forward<BrokerNodeGroupInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>Specifies whether or not intelligent rebalancing is turned on
+   * for a newly created MSK Provisioned cluster with Express brokers. Intelligent
+   * rebalancing performs automatic partition balancing operations when you scale
+   * your clusters up or down.  By default, intelligent rebalancing is ACTIVE for all
+   * new Express-based clusters.</p>
+
+   */
+  inline const Rebalancing& GetRebalancing() const { return m_rebalancing; }
+  inline bool RebalancingHasBeenSet() const { return m_rebalancingHasBeenSet; }
+  template <typename RebalancingT = Rebalancing>
+  void SetRebalancing(RebalancingT&& value) {
+    m_rebalancingHasBeenSet = true;
+    m_rebalancing = std::forward<RebalancingT>(value);
+  }
+  template <typename RebalancingT = Rebalancing>
+  Provisioned& WithRebalancing(RebalancingT&& value) {
+    SetRebalancing(std::forward<RebalancingT>(value));
     return *this;
   }
   ///@}
@@ -283,6 +308,9 @@ class Provisioned {
  private:
   BrokerNodeGroupInfo m_brokerNodeGroupInfo;
   bool m_brokerNodeGroupInfoHasBeenSet = false;
+
+  Rebalancing m_rebalancing;
+  bool m_rebalancingHasBeenSet = false;
 
   BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
   bool m_currentBrokerSoftwareInfoHasBeenSet = false;

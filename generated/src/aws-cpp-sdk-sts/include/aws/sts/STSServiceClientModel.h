@@ -27,6 +27,7 @@
 #include <aws/sts/model/GetAccessKeyInfoResult.h>
 #include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/sts/model/GetCallerIdentityResult.h>
+#include <aws/sts/model/GetDelegatedAccessTokenResult.h>
 #include <aws/sts/model/GetFederationTokenResult.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenResult.h>
@@ -70,6 +71,7 @@ class AssumeRootRequest;
 class DecodeAuthorizationMessageRequest;
 class GetAccessKeyInfoRequest;
 class GetCallerIdentityRequest;
+class GetDelegatedAccessTokenRequest;
 class GetFederationTokenRequest;
 class GetSessionTokenRequest;
 /* End of service model forward declarations required in STSClient header */
@@ -82,6 +84,7 @@ typedef Aws::Utils::Outcome<AssumeRootResult, STSError> AssumeRootOutcome;
 typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, STSError> DecodeAuthorizationMessageOutcome;
 typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOutcome;
 typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
+typedef Aws::Utils::Outcome<GetDelegatedAccessTokenResult, STSError> GetDelegatedAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
 typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
 /* End of service model Outcome class definitions */
@@ -94,6 +97,7 @@ typedef std::future<AssumeRootOutcome> AssumeRootOutcomeCallable;
 typedef std::future<DecodeAuthorizationMessageOutcome> DecodeAuthorizationMessageOutcomeCallable;
 typedef std::future<GetAccessKeyInfoOutcome> GetAccessKeyInfoOutcomeCallable;
 typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
+typedef std::future<GetDelegatedAccessTokenOutcome> GetDelegatedAccessTokenOutcomeCallable;
 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
 typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -123,6 +127,9 @@ typedef std::function<void(const STSClient*, const Model::GetAccessKeyInfoReques
 typedef std::function<void(const STSClient*, const Model::GetCallerIdentityRequest&, const Model::GetCallerIdentityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCallerIdentityResponseReceivedHandler;
+typedef std::function<void(const STSClient*, const Model::GetDelegatedAccessTokenRequest&, const Model::GetDelegatedAccessTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDelegatedAccessTokenResponseReceivedHandler;
 typedef std::function<void(const STSClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFederationTokenResponseReceivedHandler;

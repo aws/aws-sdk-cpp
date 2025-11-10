@@ -82,6 +82,14 @@ RestoreJobsListMember& RestoreJobsListMember::operator=(JsonView jsonValue) {
     m_recoveryPointCreationDate = jsonValue.GetDouble("RecoveryPointCreationDate");
     m_recoveryPointCreationDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsParent")) {
+    m_isParent = jsonValue.GetBool("IsParent");
+    m_isParentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ParentJobId")) {
+    m_parentJobId = jsonValue.GetString("ParentJobId");
+    m_parentJobIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
@@ -170,6 +178,14 @@ JsonValue RestoreJobsListMember::Jsonize() const {
 
   if (m_recoveryPointCreationDateHasBeenSet) {
     payload.WithDouble("RecoveryPointCreationDate", m_recoveryPointCreationDate.SecondsWithMSPrecision());
+  }
+
+  if (m_isParentHasBeenSet) {
+    payload.WithBool("IsParent", m_isParent);
+  }
+
+  if (m_parentJobIdHasBeenSet) {
+    payload.WithString("ParentJobId", m_parentJobId);
   }
 
   if (m_createdByHasBeenSet) {

@@ -45,6 +45,7 @@ enum class STSErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   EXPIRED_TOKEN = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_TRADE_IN_TOKEN,
   INVALID_AUTHORIZATION_MESSAGE,
   INVALID_IDENTITY_TOKEN,
   I_D_P_COMMUNICATION_ERROR,

@@ -48,31 +48,9 @@ class MlflowPropertiesInput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the tracking server as part of the MLflow properties of a
-   * connection.</p>
-   */
-  inline const Aws::String& GetTrackingServerName() const { return m_trackingServerName; }
-  inline bool TrackingServerNameHasBeenSet() const { return m_trackingServerNameHasBeenSet; }
-  template <typename TrackingServerNameT = Aws::String>
-  void SetTrackingServerName(TrackingServerNameT&& value) {
-    m_trackingServerNameHasBeenSet = true;
-    m_trackingServerName = std::forward<TrackingServerNameT>(value);
-  }
-  template <typename TrackingServerNameT = Aws::String>
-  MlflowPropertiesInput& WithTrackingServerName(TrackingServerNameT&& value) {
-    SetTrackingServerName(std::forward<TrackingServerNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_trackingServerArn;
   bool m_trackingServerArnHasBeenSet = false;
-
-  Aws::String m_trackingServerName;
-  bool m_trackingServerNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/ActionMetadata.h>
 #include <aws/braket/model/Association.h>
+#include <aws/braket/model/ExperimentalCapabilities.h>
 #include <aws/braket/model/QuantumTaskQueueInfo.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -317,6 +318,23 @@ class GetQuantumTaskResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Enabled experimental capabilities for the quantum task, if any.</p>
+   */
+  inline const ExperimentalCapabilities& GetExperimentalCapabilities() const { return m_experimentalCapabilities; }
+  template <typename ExperimentalCapabilitiesT = ExperimentalCapabilities>
+  void SetExperimentalCapabilities(ExperimentalCapabilitiesT&& value) {
+    m_experimentalCapabilitiesHasBeenSet = true;
+    m_experimentalCapabilities = std::forward<ExperimentalCapabilitiesT>(value);
+  }
+  template <typename ExperimentalCapabilitiesT = ExperimentalCapabilities>
+  GetQuantumTaskResult& WithExperimentalCapabilities(ExperimentalCapabilitiesT&& value) {
+    SetExperimentalCapabilities(std::forward<ExperimentalCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -378,6 +396,9 @@ class GetQuantumTaskResult {
 
   ActionMetadata m_actionMetadata;
   bool m_actionMetadataHasBeenSet = false;
+
+  ExperimentalCapabilities m_experimentalCapabilities;
+  bool m_experimentalCapabilitiesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

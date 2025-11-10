@@ -233,6 +233,25 @@ class ListRestoreJobsRequest : public BackupRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This is a filter to list child (nested) restore jobs based on parent restore
+   * job ID.</p>
+   */
+  inline const Aws::String& GetByParentJobId() const { return m_byParentJobId; }
+  inline bool ByParentJobIdHasBeenSet() const { return m_byParentJobIdHasBeenSet; }
+  template <typename ByParentJobIdT = Aws::String>
+  void SetByParentJobId(ByParentJobIdT&& value) {
+    m_byParentJobIdHasBeenSet = true;
+    m_byParentJobId = std::forward<ByParentJobIdT>(value);
+  }
+  template <typename ByParentJobIdT = Aws::String>
+  ListRestoreJobsRequest& WithByParentJobId(ByParentJobIdT&& value) {
+    SetByParentJobId(std::forward<ByParentJobIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
@@ -263,6 +282,9 @@ class ListRestoreJobsRequest : public BackupRequest {
 
   Aws::String m_byRestoreTestingPlanArn;
   bool m_byRestoreTestingPlanArnHasBeenSet = false;
+
+  Aws::String m_byParentJobId;
+  bool m_byParentJobIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -1509,6 +1509,36 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
+   *
+      <p>Use this resource to update the intelligent rebalancing status
+   * of an Amazon MSK Provisioned cluster with Express brokers.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateRebalancing">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRebalancingOutcome UpdateRebalancing(const Model::UpdateRebalancingRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRebalancing that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRebalancingRequestT = Model::UpdateRebalancingRequest>
+  Model::UpdateRebalancingOutcomeCallable UpdateRebalancingCallable(const UpdateRebalancingRequestT& request) const {
+    return SubmitCallable(&KafkaClient::UpdateRebalancing, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRebalancing that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRebalancingRequestT = Model::UpdateRebalancingRequest>
+  void UpdateRebalancingAsync(const UpdateRebalancingRequestT& request, const UpdateRebalancingResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::UpdateRebalancing, request, handler, context);
+  }
+
+  /**
    * <p>Updates replication info of a replicator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">AWS
    * API Reference</a></p>

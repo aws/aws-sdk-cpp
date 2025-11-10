@@ -22,10 +22,6 @@ MlflowPropertiesInput& MlflowPropertiesInput::operator=(JsonView jsonValue) {
     m_trackingServerArn = jsonValue.GetString("trackingServerArn");
     m_trackingServerArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("trackingServerName")) {
-    m_trackingServerName = jsonValue.GetString("trackingServerName");
-    m_trackingServerNameHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -34,10 +30,6 @@ JsonValue MlflowPropertiesInput::Jsonize() const {
 
   if (m_trackingServerArnHasBeenSet) {
     payload.WithString("trackingServerArn", m_trackingServerArn);
-  }
-
-  if (m_trackingServerNameHasBeenSet) {
-    payload.WithString("trackingServerName", m_trackingServerName);
   }
 
   return payload;

@@ -105,6 +105,14 @@ DescribeRestoreJobResult& DescribeRestoreJobResult::operator=(const Aws::AmazonW
     m_deletionStatusMessage = jsonValue.GetString("DeletionStatusMessage");
     m_deletionStatusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsParent")) {
+    m_isParent = jsonValue.GetBool("IsParent");
+    m_isParentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ParentJobId")) {
+    m_parentJobId = jsonValue.GetString("ParentJobId");
+    m_parentJobIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

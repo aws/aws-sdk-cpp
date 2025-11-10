@@ -22,6 +22,7 @@
 #include <aws/core/NoResult.h>
 #include <aws/iam/model/CreateAccessKeyRequest.h>
 #include <aws/iam/model/CreateAccessKeyResult.h>
+#include <aws/iam/model/CreateDelegationRequestResult.h>
 #include <aws/iam/model/CreateGroupResult.h>
 #include <aws/iam/model/CreateInstanceProfileResult.h>
 #include <aws/iam/model/CreateLoginProfileRequest.h>
@@ -185,6 +186,7 @@ class AttachUserPolicyRequest;
 class ChangePasswordRequest;
 class CreateAccessKeyRequest;
 class CreateAccountAliasRequest;
+class CreateDelegationRequestRequest;
 class CreateGroupRequest;
 class CreateInstanceProfileRequest;
 class CreateLoginProfileRequest;
@@ -352,6 +354,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AttachUserPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> ChangePasswordOutcome;
 typedef Aws::Utils::Outcome<CreateAccessKeyResult, IAMError> CreateAccessKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> CreateAccountAliasOutcome;
+typedef Aws::Utils::Outcome<CreateDelegationRequestResult, IAMError> CreateDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<CreateGroupResult, IAMError> CreateGroupOutcome;
 typedef Aws::Utils::Outcome<CreateInstanceProfileResult, IAMError> CreateInstanceProfileOutcome;
 typedef Aws::Utils::Outcome<CreateLoginProfileResult, IAMError> CreateLoginProfileOutcome;
@@ -521,6 +524,7 @@ typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
 typedef std::future<ChangePasswordOutcome> ChangePasswordOutcomeCallable;
 typedef std::future<CreateAccessKeyOutcome> CreateAccessKeyOutcomeCallable;
 typedef std::future<CreateAccountAliasOutcome> CreateAccountAliasOutcomeCallable;
+typedef std::future<CreateDelegationRequestOutcome> CreateDelegationRequestOutcomeCallable;
 typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
 typedef std::future<CreateInstanceProfileOutcome> CreateInstanceProfileOutcomeCallable;
 typedef std::future<CreateLoginProfileOutcome> CreateLoginProfileOutcomeCallable;
@@ -710,6 +714,9 @@ typedef std::function<void(const IAMClient*, const Model::CreateAccessKeyRequest
 typedef std::function<void(const IAMClient*, const Model::CreateAccountAliasRequest&, const Model::CreateAccountAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAccountAliasResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::CreateDelegationRequestRequest&, const Model::CreateDelegationRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateGroupResponseReceivedHandler;
