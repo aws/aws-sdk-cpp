@@ -226,7 +226,7 @@ TEST_F(S3UnitTest, S3UriPathPreservationOn) {
 
   auto putObjectRequest = PutObjectRequest()
       .WithBucket("velvetunderground")
-      .WithKey("////stephanie////says////////////that////////she//wants///////to/know.txt");
+      .WithKey("////stephanie////says////////////that////////she//wants///////to/know.txt/");
 
   std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
     "What country shall I say is calling From across the world?",
@@ -247,7 +247,7 @@ TEST_F(S3UnitTest, S3UriPathPreservationOn) {
   AWS_EXPECT_SUCCESS(response);
 
   const auto seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
-  EXPECT_EQ("https://velvetunderground.s3.us-east-1.amazonaws.com/////stephanie////says////////////that////////she//wants///////to/know.txt", seenRequest.GetUri().GetURIString());
+  EXPECT_EQ("https://velvetunderground.s3.us-east-1.amazonaws.com/////stephanie////says////////////that////////she//wants///////to/know.txt/", seenRequest.GetUri().GetURIString());
 }
 
 TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
