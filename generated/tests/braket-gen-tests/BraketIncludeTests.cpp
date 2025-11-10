@@ -35,6 +35,8 @@
 #include <aws/braket/model/DeviceStatus.h>
 #include <aws/braket/model/DeviceSummary.h>
 #include <aws/braket/model/DeviceType.h>
+#include <aws/braket/model/ExperimentalCapabilities.h>
+#include <aws/braket/model/ExperimentalCapabilitiesEnablementType.h>
 #include <aws/braket/model/GetDeviceRequest.h>
 #include <aws/braket/model/GetDeviceResult.h>
 #include <aws/braket/model/GetJobRequest.h>

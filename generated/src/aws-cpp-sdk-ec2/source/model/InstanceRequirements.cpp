@@ -211,6 +211,12 @@ InstanceRequirements& InstanceRequirements::operator=(const XmlNode& xmlNode) {
       m_baselinePerformanceFactors = baselinePerformanceFactorsNode;
       m_baselinePerformanceFactorsHasBeenSet = true;
     }
+    XmlNode requireEncryptionInTransitNode = resultNode.FirstChild("requireEncryptionInTransit");
+    if (!requireEncryptionInTransitNode.IsNull()) {
+      m_requireEncryptionInTransit = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireEncryptionInTransitNode.GetText()).c_str()).c_str());
+      m_requireEncryptionInTransitHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -374,6 +380,11 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
     baselinePerformanceFactorsLocationAndMemberSs << location << index << locationValue << ".BaselinePerformanceFactors";
     m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_requireEncryptionInTransitHasBeenSet) {
+    oStream << location << index << locationValue << ".RequireEncryptionInTransit=" << std::boolalpha << m_requireEncryptionInTransit
+            << "&";
+  }
 }
 
 void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -503,6 +514,9 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
     Aws::String baselinePerformanceFactorsLocationAndMember(location);
     baselinePerformanceFactorsLocationAndMember += ".BaselinePerformanceFactors";
     m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMember.c_str());
+  }
+  if (m_requireEncryptionInTransitHasBeenSet) {
+    oStream << location << ".RequireEncryptionInTransit=" << std::boolalpha << m_requireEncryptionInTransit << "&";
   }
 }
 

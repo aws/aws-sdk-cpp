@@ -156,6 +156,8 @@
 #include <aws/kafka/model/PublicAccess.h>
 #include <aws/kafka/model/PutClusterPolicyRequest.h>
 #include <aws/kafka/model/PutClusterPolicyResult.h>
+#include <aws/kafka/model/Rebalancing.h>
+#include <aws/kafka/model/RebalancingStatus.h>
 #include <aws/kafka/model/RebootBrokerRequest.h>
 #include <aws/kafka/model/RebootBrokerResult.h>
 #include <aws/kafka/model/RejectClientVpcConnectionRequest.h>
@@ -207,6 +209,8 @@
 #include <aws/kafka/model/UpdateConnectivityResult.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
 #include <aws/kafka/model/UpdateMonitoringResult.h>
+#include <aws/kafka/model/UpdateRebalancingRequest.h>
+#include <aws/kafka/model/UpdateRebalancingResult.h>
 #include <aws/kafka/model/UpdateReplicationInfoRequest.h>
 #include <aws/kafka/model/UpdateReplicationInfoResult.h>
 #include <aws/kafka/model/UpdateSecurityRequest.h>

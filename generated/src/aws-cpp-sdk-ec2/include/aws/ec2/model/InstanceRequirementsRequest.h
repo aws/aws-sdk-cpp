@@ -731,6 +731,27 @@ class InstanceRequirementsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether instance types must support encrypting in-transit traffic
+   * between instances. For more information, including the supported instance types,
+   * see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption
+   * in transit</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+   * <code>false</code> </p>
+   */
+  inline bool GetRequireEncryptionInTransit() const { return m_requireEncryptionInTransit; }
+  inline bool RequireEncryptionInTransitHasBeenSet() const { return m_requireEncryptionInTransitHasBeenSet; }
+  inline void SetRequireEncryptionInTransit(bool value) {
+    m_requireEncryptionInTransitHasBeenSet = true;
+    m_requireEncryptionInTransit = value;
+  }
+  inline InstanceRequirementsRequest& WithRequireEncryptionInTransit(bool value) {
+    SetRequireEncryptionInTransit(value);
+    return *this;
+  }
+  ///@}
  private:
   VCpuCountRangeRequest m_vCpuCount;
   bool m_vCpuCountHasBeenSet = false;
@@ -806,6 +827,9 @@ class InstanceRequirementsRequest {
 
   BaselinePerformanceFactorsRequest m_baselinePerformanceFactors;
   bool m_baselinePerformanceFactorsHasBeenSet = false;
+
+  bool m_requireEncryptionInTransit{false};
+  bool m_requireEncryptionInTransitHasBeenSet = false;
 };
 
 }  // namespace Model

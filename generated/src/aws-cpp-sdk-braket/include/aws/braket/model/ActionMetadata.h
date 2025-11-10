@@ -52,8 +52,8 @@ class ActionMetadata {
 
   ///@{
   /**
-   * <p>The number of programs in a program set. This is only available for a Program
-   * Set.</p>
+   * <p>The number of programs in a program set. This is only available for a program
+   * set.</p>
    */
   inline long long GetProgramCount() const { return m_programCount; }
   inline bool ProgramCountHasBeenSet() const { return m_programCountHasBeenSet; }
@@ -70,7 +70,7 @@ class ActionMetadata {
   ///@{
   /**
    * <p>The number of executables in a program set. This is only available for a
-   * Program Set.</p>
+   * program set.</p>
    */
   inline long long GetExecutableCount() const { return m_executableCount; }
   inline bool ExecutableCountHasBeenSet() const { return m_executableCountHasBeenSet; }

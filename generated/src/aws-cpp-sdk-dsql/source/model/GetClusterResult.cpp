@@ -56,6 +56,10 @@ GetClusterResult& GetClusterResult::operator=(const Aws::AmazonWebServiceResult<
     m_encryptionDetails = jsonValue.GetObject("encryptionDetails");
     m_encryptionDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpoint")) {
+    m_endpoint = jsonValue.GetString("endpoint");
+    m_endpointHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

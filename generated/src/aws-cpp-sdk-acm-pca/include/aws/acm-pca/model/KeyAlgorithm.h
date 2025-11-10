@@ -10,7 +10,19 @@
 namespace Aws {
 namespace ACMPCA {
 namespace Model {
-enum class KeyAlgorithm { NOT_SET, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1, SM2 };
+enum class KeyAlgorithm {
+  NOT_SET,
+  RSA_2048,
+  RSA_3072,
+  RSA_4096,
+  EC_prime256v1,
+  EC_secp384r1,
+  EC_secp521r1,
+  ML_DSA_44,
+  ML_DSA_65,
+  ML_DSA_87,
+  SM2
+};
 
 namespace KeyAlgorithmMapper {
 AWS_ACMPCA_API KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name);

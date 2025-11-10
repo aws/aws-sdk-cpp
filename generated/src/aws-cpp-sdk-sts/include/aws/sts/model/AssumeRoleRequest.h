@@ -73,7 +73,7 @@ class AssumeRoleRequest : public STSRequest {
    * <code>sts:RoleSessionName</code> </a>.</p> <p>The regex used to validate this
    * parameter is a string of characters consisting of upper- and lower-case
    * alphanumeric characters with no spaces. You can also include underscores or any
-   * of the following characters: =,.@-</p>
+   * of the following characters: +=,.@-</p>
    */
   inline const Aws::String& GetRoleSessionName() const { return m_roleSessionName; }
   inline bool RoleSessionNameHasBeenSet() const { return m_roleSessionNameHasBeenSet; }
@@ -318,7 +318,7 @@ class AssumeRoleRequest : public STSRequest {
    * to a Third Party</a> in the <i>IAM User Guide</i>.</p> <p>The regex used to
    * validate this parameter is a string of characters consisting of upper- and
    * lower-case alphanumeric characters with no spaces. You can also include
-   * underscores or any of the following characters: =,.@:/-</p>
+   * underscores or any of the following characters: +=,.@:\/-</p>
    */
   inline const Aws::String& GetExternalId() const { return m_externalId; }
   inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
@@ -344,7 +344,7 @@ class AssumeRoleRequest : public STSRequest {
    * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
    * <p>The regex used to validate this parameter is a string of characters
    * consisting of upper- and lower-case alphanumeric characters with no spaces. You
-   * can also include underscores or any of the following characters: =,.@-</p>
+   * can also include underscores or any of the following characters: +=/:,.@-</p>
    */
   inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
   inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }

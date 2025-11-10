@@ -74,6 +74,10 @@ MutableClusterInfo& MutableClusterInfo::operator=(JsonView jsonValue) {
     m_brokerCountUpdateInfo = jsonValue.GetObject("brokerCountUpdateInfo");
     m_brokerCountUpdateInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rebalancing")) {
+    m_rebalancing = jsonValue.GetObject("rebalancing");
+    m_rebalancingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -135,6 +139,10 @@ JsonValue MutableClusterInfo::Jsonize() const {
 
   if (m_brokerCountUpdateInfoHasBeenSet) {
     payload.WithObject("brokerCountUpdateInfo", m_brokerCountUpdateInfo.Jsonize());
+  }
+
+  if (m_rebalancingHasBeenSet) {
+    payload.WithObject("rebalancing", m_rebalancing.Jsonize());
   }
 
   return payload;

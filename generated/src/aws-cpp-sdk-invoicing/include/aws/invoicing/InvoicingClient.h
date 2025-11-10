@@ -171,6 +171,38 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a URL to download the invoice document and supplemental documents
+   * associated with an invoice. The URLs are pre-signed and have expiration time.
+   * For special cases like Brazil, where Amazon Web Services generated invoice
+   * identifiers and government provided identifiers do not match, use the Amazon Web
+   * Services generated invoice identifier when making API requests. To grant IAM
+   * permission to use this operation, the caller needs the
+   * <code>invoicing:GetInvoicePDF</code> policy action.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetInvoicePDFOutcome GetInvoicePDF(const Model::GetInvoicePDFRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetInvoicePDF that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetInvoicePDFRequestT = Model::GetInvoicePDFRequest>
+  Model::GetInvoicePDFOutcomeCallable GetInvoicePDFCallable(const GetInvoicePDFRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::GetInvoicePDF, request);
+  }
+
+  /**
+   * An Async wrapper for GetInvoicePDF that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetInvoicePDFRequestT = Model::GetInvoicePDFRequest>
+  void GetInvoicePDFAsync(const GetInvoicePDFRequestT& request, const GetInvoicePDFResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::GetInvoicePDF, request, handler, context);
+  }
+
+  /**
    * <p>This retrieves the invoice unit definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoiceUnit">AWS
    * API Reference</a></p>

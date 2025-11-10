@@ -16,6 +16,7 @@
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/OpenMonitoring.h>
+#include <aws/kafka/model/Rebalancing.h>
 #include <aws/kafka/model/StorageMode.h>
 
 #include <utility>
@@ -311,6 +312,27 @@ class MutableClusterInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *
+          <p>Describes the intelligent rebalancing configuration of an MSK
+   * Provisioned cluster with Express brokers.</p>
+
+   */
+  inline const Rebalancing& GetRebalancing() const { return m_rebalancing; }
+  inline bool RebalancingHasBeenSet() const { return m_rebalancingHasBeenSet; }
+  template <typename RebalancingT = Rebalancing>
+  void SetRebalancing(RebalancingT&& value) {
+    m_rebalancingHasBeenSet = true;
+    m_rebalancing = std::forward<RebalancingT>(value);
+  }
+  template <typename RebalancingT = Rebalancing>
+  MutableClusterInfo& WithRebalancing(RebalancingT&& value) {
+    SetRebalancing(std::forward<RebalancingT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
   bool m_brokerEBSVolumeInfoHasBeenSet = false;
@@ -350,6 +372,9 @@ class MutableClusterInfo {
 
   BrokerCountUpdateInfo m_brokerCountUpdateInfo;
   bool m_brokerCountUpdateInfoHasBeenSet = false;
+
+  Rebalancing m_rebalancing;
+  bool m_rebalancingHasBeenSet = false;
 };
 
 }  // namespace Model
