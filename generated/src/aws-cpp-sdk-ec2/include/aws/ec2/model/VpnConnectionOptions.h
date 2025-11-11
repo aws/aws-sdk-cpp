@@ -10,6 +10,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/TunnelInsideIpVersion.h>
 #include <aws/ec2/model/TunnelOption.h>
+#include <aws/ec2/model/VpnTunnelBandwidth.h>
 
 #include <utility>
 
@@ -220,6 +221,26 @@ class VpnConnectionOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The configured bandwidth for the VPN tunnel. Represents the current
+   * throughput capacity setting for the tunnel connection. <code>standard</code>
+   * tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code>
+   * supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the
+   * connection, <code>standard</code> is used as the default value. </p>
+   */
+  inline VpnTunnelBandwidth GetTunnelBandwidth() const { return m_tunnelBandwidth; }
+  inline bool TunnelBandwidthHasBeenSet() const { return m_tunnelBandwidthHasBeenSet; }
+  inline void SetTunnelBandwidth(VpnTunnelBandwidth value) {
+    m_tunnelBandwidthHasBeenSet = true;
+    m_tunnelBandwidth = value;
+  }
+  inline VpnConnectionOptions& WithTunnelBandwidth(VpnTunnelBandwidth value) {
+    SetTunnelBandwidth(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enableAcceleration{false};
   bool m_enableAccelerationHasBeenSet = false;
@@ -250,6 +271,9 @@ class VpnConnectionOptions {
 
   Aws::Vector<TunnelOption> m_tunnelOptions;
   bool m_tunnelOptionsHasBeenSet = false;
+
+  VpnTunnelBandwidth m_tunnelBandwidth{VpnTunnelBandwidth::NOT_SET};
+  bool m_tunnelBandwidthHasBeenSet = false;
 };
 
 }  // namespace Model
