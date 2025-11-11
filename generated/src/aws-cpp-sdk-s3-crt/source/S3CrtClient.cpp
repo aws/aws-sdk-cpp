@@ -687,9 +687,9 @@ void S3CrtClient::S3CrtRequestFinishCallback(struct aws_s3_meta_request* meta_re
 
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  auto error = GetErrorMarshaller()->Marshall(*response);
-  if (error.GetErrorType() != Aws::Client::CoreErrors::UNKNOWN) {
+  if (smithy::client::Utils::DoesResponseGenerateError(response)) {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+    auto error = BuildAWSError(response);
     httpOutcome = HttpResponseOutcome(std::move(error));
   } else {
     httpOutcome = HttpResponseOutcome(std::move(response));
