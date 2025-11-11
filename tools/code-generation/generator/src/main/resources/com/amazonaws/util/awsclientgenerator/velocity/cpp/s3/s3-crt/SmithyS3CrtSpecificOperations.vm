@@ -212,7 +212,7 @@ Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<Ht
   if (smithy::client::Utils::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-    auto error = BuildAWSError(response);
+    auto error = GetErrorMarshaller()->BuildAWSError(response);
     httpOutcome = HttpResponseOutcome(std::move(error));
   }
   else
