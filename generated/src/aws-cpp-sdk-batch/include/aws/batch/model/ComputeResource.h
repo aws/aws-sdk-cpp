@@ -194,7 +194,7 @@ class ComputeResource {
    * <code>default_x86_64</code> to choose x86 based instance types (from the
    * <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code>
    * instance families) that matches the resource demands of the job queue.</p> </li>
-   * <li> <p> <code>default_arm64</code> to choose x86 based instance types (from the
+   * <li> <p> <code>default_arm64</code> to choose ARM based instance types (from the
    * <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code>
    * instance families) that matches the resource demands of the job queue.</p> </li>
    * </ul>  <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is

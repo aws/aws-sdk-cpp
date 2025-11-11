@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/medical-imaging/model/DatastoreStatus.h>
+#include <aws/medical-imaging/model/LosslessStorageFormat.h>
 
 #include <utility>
 
@@ -124,6 +125,22 @@ class DatastoreProperties {
 
   ///@{
   /**
+   * <p>The datastore's lossless storage format.</p>
+   */
+  inline LosslessStorageFormat GetLosslessStorageFormat() const { return m_losslessStorageFormat; }
+  inline bool LosslessStorageFormatHasBeenSet() const { return m_losslessStorageFormatHasBeenSet; }
+  inline void SetLosslessStorageFormat(LosslessStorageFormat value) {
+    m_losslessStorageFormatHasBeenSet = true;
+    m_losslessStorageFormat = value;
+  }
+  inline DatastoreProperties& WithLosslessStorageFormat(LosslessStorageFormat value) {
+    SetLosslessStorageFormat(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) for the data store.</p>
    */
   inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
@@ -190,6 +207,9 @@ class DatastoreProperties {
 
   Aws::String m_lambdaAuthorizerArn;
   bool m_lambdaAuthorizerArnHasBeenSet = false;
+
+  LosslessStorageFormat m_losslessStorageFormat{LosslessStorageFormat::NOT_SET};
+  bool m_losslessStorageFormatHasBeenSet = false;
 
   Aws::String m_datastoreArn;
   bool m_datastoreArnHasBeenSet = false;

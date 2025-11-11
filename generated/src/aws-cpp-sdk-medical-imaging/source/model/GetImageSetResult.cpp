@@ -70,6 +70,14 @@ GetImageSetResult& GetImageSetResult::operator=(const Aws::AmazonWebServiceResul
     m_isPrimary = jsonValue.GetBool("isPrimary");
     m_isPrimaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastAccessedAt")) {
+    m_lastAccessedAt = jsonValue.GetDouble("lastAccessedAt");
+    m_lastAccessedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("storageTier")) {
+    m_storageTier = StorageTierMapper::GetStorageTierForName(jsonValue.GetString("storageTier"));
+    m_storageTierHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

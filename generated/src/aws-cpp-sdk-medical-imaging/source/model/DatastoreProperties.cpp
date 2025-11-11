@@ -38,6 +38,10 @@ DatastoreProperties& DatastoreProperties::operator=(JsonView jsonValue) {
     m_lambdaAuthorizerArn = jsonValue.GetString("lambdaAuthorizerArn");
     m_lambdaAuthorizerArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("losslessStorageFormat")) {
+    m_losslessStorageFormat = LosslessStorageFormatMapper::GetLosslessStorageFormatForName(jsonValue.GetString("losslessStorageFormat"));
+    m_losslessStorageFormatHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("datastoreArn")) {
     m_datastoreArn = jsonValue.GetString("datastoreArn");
     m_datastoreArnHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue DatastoreProperties::Jsonize() const {
 
   if (m_lambdaAuthorizerArnHasBeenSet) {
     payload.WithString("lambdaAuthorizerArn", m_lambdaAuthorizerArn);
+  }
+
+  if (m_losslessStorageFormatHasBeenSet) {
+    payload.WithString("losslessStorageFormat", LosslessStorageFormatMapper::GetNameForLosslessStorageFormat(m_losslessStorageFormat));
   }
 
   if (m_datastoreArnHasBeenSet) {

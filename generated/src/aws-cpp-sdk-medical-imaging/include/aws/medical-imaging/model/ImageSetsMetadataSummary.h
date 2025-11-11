@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/medical-imaging/model/DICOMTags.h>
+#include <aws/medical-imaging/model/StorageTier.h>
 
 #include <utility>
 
@@ -106,6 +107,40 @@ class ImageSetsMetadataSummary {
 
   ///@{
   /**
+   * <p>When the image set was last accessed.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastAccessedAt() const { return m_lastAccessedAt; }
+  inline bool LastAccessedAtHasBeenSet() const { return m_lastAccessedAtHasBeenSet; }
+  template <typename LastAccessedAtT = Aws::Utils::DateTime>
+  void SetLastAccessedAt(LastAccessedAtT&& value) {
+    m_lastAccessedAtHasBeenSet = true;
+    m_lastAccessedAt = std::forward<LastAccessedAtT>(value);
+  }
+  template <typename LastAccessedAtT = Aws::Utils::DateTime>
+  ImageSetsMetadataSummary& WithLastAccessedAt(LastAccessedAtT&& value) {
+    SetLastAccessedAt(std::forward<LastAccessedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The image set's storage tier.</p>
+   */
+  inline StorageTier GetStorageTier() const { return m_storageTier; }
+  inline bool StorageTierHasBeenSet() const { return m_storageTierHasBeenSet; }
+  inline void SetStorageTier(StorageTier value) {
+    m_storageTierHasBeenSet = true;
+    m_storageTier = value;
+  }
+  inline ImageSetsMetadataSummary& WithStorageTier(StorageTier value) {
+    SetStorageTier(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The DICOM tags associated with the image set.</p>
    */
   inline const DICOMTags& GetDICOMTags() const { return m_dICOMTags; }
@@ -149,6 +184,12 @@ class ImageSetsMetadataSummary {
 
   Aws::Utils::DateTime m_updatedAt{};
   bool m_updatedAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastAccessedAt{};
+  bool m_lastAccessedAtHasBeenSet = false;
+
+  StorageTier m_storageTier{StorageTier::NOT_SET};
+  bool m_storageTierHasBeenSet = false;
 
   DICOMTags m_dICOMTags;
   bool m_dICOMTagsHasBeenSet = false;

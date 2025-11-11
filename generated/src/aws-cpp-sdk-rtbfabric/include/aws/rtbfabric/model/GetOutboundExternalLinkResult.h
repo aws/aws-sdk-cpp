@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
 
 #include <utility>
@@ -155,6 +156,21 @@ class GetOutboundExternalLinkResult {
 
   ///@{
 
+  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
+  template <typename LogSettingsT = LinkLogSettings>
+  void SetLogSettings(LogSettingsT&& value) {
+    m_logSettingsHasBeenSet = true;
+    m_logSettings = std::forward<LogSettingsT>(value);
+  }
+  template <typename LogSettingsT = LinkLogSettings>
+  GetOutboundExternalLinkResult& WithLogSettings(LogSettingsT&& value) {
+    SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
   void SetRequestId(RequestIdT&& value) {
@@ -188,6 +204,9 @@ class GetOutboundExternalLinkResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  LinkLogSettings m_logSettings;
+  bool m_logSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/MedicalImagingRequest.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
+#include <aws/medical-imaging/model/LosslessStorageFormat.h>
 
 #include <utility>
 
@@ -126,6 +127,22 @@ class CreateDatastoreRequest : public MedicalImagingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The lossless storage format for the datastore.</p>
+   */
+  inline LosslessStorageFormat GetLosslessStorageFormat() const { return m_losslessStorageFormat; }
+  inline bool LosslessStorageFormatHasBeenSet() const { return m_losslessStorageFormatHasBeenSet; }
+  inline void SetLosslessStorageFormat(LosslessStorageFormat value) {
+    m_losslessStorageFormatHasBeenSet = true;
+    m_losslessStorageFormat = value;
+  }
+  inline CreateDatastoreRequest& WithLosslessStorageFormat(LosslessStorageFormat value) {
+    SetLosslessStorageFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_datastoreName;
   bool m_datastoreNameHasBeenSet = false;
@@ -141,6 +158,9 @@ class CreateDatastoreRequest : public MedicalImagingRequest {
 
   Aws::String m_lambdaAuthorizerArn;
   bool m_lambdaAuthorizerArnHasBeenSet = false;
+
+  LosslessStorageFormat m_losslessStorageFormat{LosslessStorageFormat::NOT_SET};
+  bool m_losslessStorageFormatHasBeenSet = false;
 };
 
 }  // namespace Model

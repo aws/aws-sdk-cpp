@@ -52,6 +52,10 @@ GetOutboundExternalLinkResult& GetOutboundExternalLinkResult::operator=(const Aw
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("logSettings")) {
+    m_logSettings = jsonValue.GetObject("logSettings");
+    m_logSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -39,5 +39,9 @@ Aws::String CreateDatastoreRequest::SerializePayload() const {
     payload.WithString("lambdaAuthorizerArn", m_lambdaAuthorizerArn);
   }
 
+  if (m_losslessStorageFormatHasBeenSet) {
+    payload.WithString("losslessStorageFormat", LosslessStorageFormatMapper::GetNameForLosslessStorageFormat(m_losslessStorageFormat));
+  }
+
   return payload.View().WriteReadable();
 }

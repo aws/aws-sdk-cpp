@@ -19,8 +19,16 @@ Aws::String CreateOutboundExternalLinkRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_attributesHasBeenSet) {
+    payload.WithObject("attributes", m_attributes.Jsonize());
+  }
+
   if (m_publicEndpointHasBeenSet) {
     payload.WithString("publicEndpoint", m_publicEndpoint);
+  }
+
+  if (m_logSettingsHasBeenSet) {
+    payload.WithObject("logSettings", m_logSettings.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

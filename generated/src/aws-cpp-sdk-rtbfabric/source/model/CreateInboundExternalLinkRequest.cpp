@@ -23,6 +23,10 @@ Aws::String CreateInboundExternalLinkRequest::SerializePayload() const {
     payload.WithObject("attributes", m_attributes.Jsonize());
   }
 
+  if (m_logSettingsHasBeenSet) {
+    payload.WithObject("logSettings", m_logSettings.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

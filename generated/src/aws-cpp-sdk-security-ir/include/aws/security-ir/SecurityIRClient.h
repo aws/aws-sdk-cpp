@@ -582,7 +582,7 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
    * <p>Updates the state transitions for a designated cases.</p> <p>
    * <b>Self-managed</b>: the following states are available for self-managed cases.
    * </p> <ul> <li> <p>Submitted → Detection and Analysis</p> </li> <li> <p>Detection
-   * and Analysis → Containment, Eradication, and Recovery</p> </li> <li>
+   * and Analysis ��� Containment, Eradication, and Recovery</p> </li> <li>
    * <p>Detection and Analysis → Post-incident Activities</p> </li> <li>
    * <p>Containment, Eradication, and Recovery → Detection and Analysis</p> </li>
    * <li> <p>Containment, Eradication, and Recovery → Post-incident Activities</p>

@@ -25,6 +25,7 @@ enum class AwsRegion {
   ap_southeast_3,
   ap_southeast_4,
   ap_southeast_5,
+  ap_southeast_6,
   ap_southeast_7,
   ca_central_1,
   ca_west_1,

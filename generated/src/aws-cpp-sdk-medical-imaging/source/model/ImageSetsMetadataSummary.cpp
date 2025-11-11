@@ -34,6 +34,14 @@ ImageSetsMetadataSummary& ImageSetsMetadataSummary::operator=(JsonView jsonValue
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastAccessedAt")) {
+    m_lastAccessedAt = jsonValue.GetDouble("lastAccessedAt");
+    m_lastAccessedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("storageTier")) {
+    m_storageTier = StorageTierMapper::GetStorageTierForName(jsonValue.GetString("storageTier"));
+    m_storageTierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DICOMTags")) {
     m_dICOMTags = jsonValue.GetObject("DICOMTags");
     m_dICOMTagsHasBeenSet = true;
@@ -62,6 +70,14 @@ JsonValue ImageSetsMetadataSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_lastAccessedAtHasBeenSet) {
+    payload.WithDouble("lastAccessedAt", m_lastAccessedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_storageTierHasBeenSet) {
+    payload.WithString("storageTier", StorageTierMapper::GetNameForStorageTier(m_storageTier));
   }
 
   if (m_dICOMTagsHasBeenSet) {

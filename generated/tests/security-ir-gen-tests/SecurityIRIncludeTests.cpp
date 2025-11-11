@@ -26,6 +26,7 @@
 #include <aws/security-ir/model/CloseCaseRequest.h>
 #include <aws/security-ir/model/CloseCaseResult.h>
 #include <aws/security-ir/model/ClosureCode.h>
+#include <aws/security-ir/model/CommunicationType.h>
 #include <aws/security-ir/model/ConflictException.h>
 #include <aws/security-ir/model/CreateCaseCommentRequest.h>
 #include <aws/security-ir/model/CreateCaseCommentResult.h>

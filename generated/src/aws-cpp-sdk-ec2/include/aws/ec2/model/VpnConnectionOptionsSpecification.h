@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/TunnelInsideIpVersion.h>
+#include <aws/ec2/model/VpnTunnelBandwidth.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>
 
 #include <utility>
@@ -212,6 +213,27 @@ class VpnConnectionOptionsSpecification {
 
   ///@{
   /**
+   * <p> The desired bandwidth specification for the VPN tunnel, used when creating
+   * or modifying VPN connection options to set the tunnel's throughput capacity.
+   * <code>standard</code> supports up to 1.25 Gbps per tunnel, while
+   * <code>large</code> supports up to 5 Gbps per tunnel. The default value is
+   * <code>standard</code>. Existing VPN connections without a bandwidth setting will
+   * automatically default to <code>standard</code>. </p>
+   */
+  inline VpnTunnelBandwidth GetTunnelBandwidth() const { return m_tunnelBandwidth; }
+  inline bool TunnelBandwidthHasBeenSet() const { return m_tunnelBandwidthHasBeenSet; }
+  inline void SetTunnelBandwidth(VpnTunnelBandwidth value) {
+    m_tunnelBandwidthHasBeenSet = true;
+    m_tunnelBandwidth = value;
+  }
+  inline VpnConnectionOptionsSpecification& WithTunnelBandwidth(VpnTunnelBandwidth value) {
+    SetTunnelBandwidth(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicate whether the VPN connection uses static routes only. If you are
    * creating a VPN connection for a device that does not support BGP, you must
    * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
@@ -255,6 +277,9 @@ class VpnConnectionOptionsSpecification {
 
   Aws::String m_transportTransitGatewayAttachmentId;
   bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
+
+  VpnTunnelBandwidth m_tunnelBandwidth{VpnTunnelBandwidth::NOT_SET};
+  bool m_tunnelBandwidthHasBeenSet = false;
 
   bool m_staticRoutesOnly{false};
   bool m_staticRoutesOnlyHasBeenSet = false;

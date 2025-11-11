@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
+#include <aws/bedrock-data-automation/model/AudioLanguageConfiguration.h>
 #include <aws/bedrock-data-automation/model/ModalityProcessingConfiguration.h>
 
 #include <utility>
@@ -46,9 +47,28 @@ class AudioOverrideConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const AudioLanguageConfiguration& GetLanguageConfiguration() const { return m_languageConfiguration; }
+  inline bool LanguageConfigurationHasBeenSet() const { return m_languageConfigurationHasBeenSet; }
+  template <typename LanguageConfigurationT = AudioLanguageConfiguration>
+  void SetLanguageConfiguration(LanguageConfigurationT&& value) {
+    m_languageConfigurationHasBeenSet = true;
+    m_languageConfiguration = std::forward<LanguageConfigurationT>(value);
+  }
+  template <typename LanguageConfigurationT = AudioLanguageConfiguration>
+  AudioOverrideConfiguration& WithLanguageConfiguration(LanguageConfigurationT&& value) {
+    SetLanguageConfiguration(std::forward<LanguageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ModalityProcessingConfiguration m_modalityProcessing;
   bool m_modalityProcessingHasBeenSet = false;
+
+  AudioLanguageConfiguration m_languageConfiguration;
+  bool m_languageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

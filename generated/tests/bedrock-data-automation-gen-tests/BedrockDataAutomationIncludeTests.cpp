@@ -17,6 +17,8 @@
 #include <aws/bedrock-data-automation/model/AudioExtractionCategory.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryType.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryTypeConfiguration.h>
+#include <aws/bedrock-data-automation/model/AudioGenerativeOutputLanguage.h>
+#include <aws/bedrock-data-automation/model/AudioLanguageConfiguration.h>
 #include <aws/bedrock-data-automation/model/AudioOverrideConfiguration.h>
 #include <aws/bedrock-data-automation/model/AudioStandardExtraction.h>
 #include <aws/bedrock-data-automation/model/AudioStandardGenerativeField.h>
@@ -71,6 +73,7 @@
 #include <aws/bedrock-data-automation/model/ImageStandardGenerativeField.h>
 #include <aws/bedrock-data-automation/model/ImageStandardGenerativeFieldType.h>
 #include <aws/bedrock-data-automation/model/ImageStandardOutputConfiguration.h>
+#include <aws/bedrock-data-automation/model/Language.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsRequest.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsResult.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsRequest.h>
