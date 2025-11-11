@@ -2660,6 +2660,7 @@
 #include <aws/ec2/model/VpnState.h>
 #include <aws/ec2/model/VpnStaticRoute.h>
 #include <aws/ec2/model/VpnStaticRouteSource.h>
+#include <aws/ec2/model/VpnTunnelBandwidth.h>
 #include <aws/ec2/model/VpnTunnelLogOptions.h>
 #include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>

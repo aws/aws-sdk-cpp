@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
+#include <aws/security-ir/model/CommunicationType.h>
 
 #include <utility>
 
@@ -84,6 +86,29 @@ class IncidentResponder {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p/>
+   */
+  inline const Aws::Vector<CommunicationType>& GetCommunicationPreferences() const { return m_communicationPreferences; }
+  inline bool CommunicationPreferencesHasBeenSet() const { return m_communicationPreferencesHasBeenSet; }
+  template <typename CommunicationPreferencesT = Aws::Vector<CommunicationType>>
+  void SetCommunicationPreferences(CommunicationPreferencesT&& value) {
+    m_communicationPreferencesHasBeenSet = true;
+    m_communicationPreferences = std::forward<CommunicationPreferencesT>(value);
+  }
+  template <typename CommunicationPreferencesT = Aws::Vector<CommunicationType>>
+  IncidentResponder& WithCommunicationPreferences(CommunicationPreferencesT&& value) {
+    SetCommunicationPreferences(std::forward<CommunicationPreferencesT>(value));
+    return *this;
+  }
+  inline IncidentResponder& AddCommunicationPreferences(CommunicationType value) {
+    m_communicationPreferencesHasBeenSet = true;
+    m_communicationPreferences.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -93,6 +118,9 @@ class IncidentResponder {
 
   Aws::String m_email;
   bool m_emailHasBeenSet = false;
+
+  Aws::Vector<CommunicationType> m_communicationPreferences;
+  bool m_communicationPreferencesHasBeenSet = false;
 };
 
 }  // namespace Model

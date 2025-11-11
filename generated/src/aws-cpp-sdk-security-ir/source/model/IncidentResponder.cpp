@@ -30,6 +30,15 @@ IncidentResponder& IncidentResponder::operator=(JsonView jsonValue) {
     m_email = jsonValue.GetString("email");
     m_emailHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("communicationPreferences")) {
+    Aws::Utils::Array<JsonView> communicationPreferencesJsonList = jsonValue.GetArray("communicationPreferences");
+    for (unsigned communicationPreferencesIndex = 0; communicationPreferencesIndex < communicationPreferencesJsonList.GetLength();
+         ++communicationPreferencesIndex) {
+      m_communicationPreferences.push_back(
+          CommunicationTypeMapper::GetCommunicationTypeForName(communicationPreferencesJsonList[communicationPreferencesIndex].AsString()));
+    }
+    m_communicationPreferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +55,16 @@ JsonValue IncidentResponder::Jsonize() const {
 
   if (m_emailHasBeenSet) {
     payload.WithString("email", m_email);
+  }
+
+  if (m_communicationPreferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> communicationPreferencesJsonList(m_communicationPreferences.size());
+    for (unsigned communicationPreferencesIndex = 0; communicationPreferencesIndex < communicationPreferencesJsonList.GetLength();
+         ++communicationPreferencesIndex) {
+      communicationPreferencesJsonList[communicationPreferencesIndex].AsString(
+          CommunicationTypeMapper::GetNameForCommunicationType(m_communicationPreferences[communicationPreferencesIndex]));
+    }
+    payload.WithArray("communicationPreferences", std::move(communicationPreferencesJsonList));
   }
 
   return payload;

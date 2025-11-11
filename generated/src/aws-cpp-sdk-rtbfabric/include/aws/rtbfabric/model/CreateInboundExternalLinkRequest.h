@@ -10,6 +10,7 @@
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
+#include <aws/rtbfabric/model/LinkLogSettings.h>
 
 #include <utility>
 
@@ -86,6 +87,22 @@ class CreateInboundExternalLinkRequest : public RTBFabricRequest {
   ///@}
 
   ///@{
+
+  inline const LinkLogSettings& GetLogSettings() const { return m_logSettings; }
+  inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
+  template <typename LogSettingsT = LinkLogSettings>
+  void SetLogSettings(LogSettingsT&& value) {
+    m_logSettingsHasBeenSet = true;
+    m_logSettings = std::forward<LogSettingsT>(value);
+  }
+  template <typename LogSettingsT = LinkLogSettings>
+  CreateInboundExternalLinkRequest& WithLogSettings(LogSettingsT&& value) {
+    SetLogSettings(std::forward<LogSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>A map of the key-value pairs of the tag or tags to assign to the
    * resource.</p>
@@ -118,6 +135,9 @@ class CreateInboundExternalLinkRequest : public RTBFabricRequest {
 
   LinkAttributes m_attributes;
   bool m_attributesHasBeenSet = false;
+
+  LinkLogSettings m_logSettings;
+  bool m_logSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

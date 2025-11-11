@@ -22,6 +22,10 @@ AudioOverrideConfiguration& AudioOverrideConfiguration::operator=(JsonView jsonV
     m_modalityProcessing = jsonValue.GetObject("modalityProcessing");
     m_modalityProcessingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("languageConfiguration")) {
+    m_languageConfiguration = jsonValue.GetObject("languageConfiguration");
+    m_languageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AudioOverrideConfiguration::Jsonize() const {
 
   if (m_modalityProcessingHasBeenSet) {
     payload.WithObject("modalityProcessing", m_modalityProcessing.Jsonize());
+  }
+
+  if (m_languageConfigurationHasBeenSet) {
+    payload.WithObject("languageConfiguration", m_languageConfiguration.Jsonize());
   }
 
   return payload;
