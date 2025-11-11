@@ -687,7 +687,7 @@ void S3CrtClient::S3CrtRequestFinishCallback(struct aws_s3_meta_request* meta_re
 
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (AWSClient::DoesResponseGenerateError(response)) {
+  if (response->HasClientError() || AWSClient::DoesResponseGenerateError(response)) {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
     auto error = BuildAWSError(response);
     httpOutcome = HttpResponseOutcome(std::move(error));
