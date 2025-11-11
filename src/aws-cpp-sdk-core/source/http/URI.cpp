@@ -206,7 +206,11 @@ Aws::String URI::GetPath() const
         path.append(segment);
     }
 
-    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
+    if (m_pathSegments.empty())
+    {
+        path.push_back('/');
+    }
+    else if (m_pathHasTrailingSlash)
     {
         path.push_back('/');
     }
