@@ -28,6 +28,7 @@ static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2"
 static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
 static const int ap_southeast_4_HASH = HashingUtils::HashString("ap-southeast-4");
 static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
+static const int ap_southeast_6_HASH = HashingUtils::HashString("ap-southeast-6");
 static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
 static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
 static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
@@ -79,6 +80,8 @@ AwsRegion GetAwsRegionForName(const Aws::String& name) {
     return AwsRegion::ap_southeast_4;
   } else if (hashCode == ap_southeast_5_HASH) {
     return AwsRegion::ap_southeast_5;
+  } else if (hashCode == ap_southeast_6_HASH) {
+    return AwsRegion::ap_southeast_6;
   } else if (hashCode == ap_southeast_7_HASH) {
     return AwsRegion::ap_southeast_7;
   } else if (hashCode == ca_central_1_HASH) {
@@ -163,6 +166,8 @@ Aws::String GetNameForAwsRegion(AwsRegion enumValue) {
       return "ap-southeast-4";
     case AwsRegion::ap_southeast_5:
       return "ap-southeast-5";
+    case AwsRegion::ap_southeast_6:
+      return "ap-southeast-6";
     case AwsRegion::ap_southeast_7:
       return "ap-southeast-7";
     case AwsRegion::ca_central_1:

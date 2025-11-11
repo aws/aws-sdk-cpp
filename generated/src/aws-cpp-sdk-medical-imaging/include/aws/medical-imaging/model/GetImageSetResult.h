@@ -10,6 +10,7 @@
 #include <aws/medical-imaging/model/ImageSetState.h>
 #include <aws/medical-imaging/model/ImageSetWorkflowStatus.h>
 #include <aws/medical-imaging/model/Overrides.h>
+#include <aws/medical-imaging/model/StorageTier.h>
 
 #include <utility>
 
@@ -232,6 +233,38 @@ class GetImageSetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>When the image set was last accessed.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastAccessedAt() const { return m_lastAccessedAt; }
+  template <typename LastAccessedAtT = Aws::Utils::DateTime>
+  void SetLastAccessedAt(LastAccessedAtT&& value) {
+    m_lastAccessedAtHasBeenSet = true;
+    m_lastAccessedAt = std::forward<LastAccessedAtT>(value);
+  }
+  template <typename LastAccessedAtT = Aws::Utils::DateTime>
+  GetImageSetResult& WithLastAccessedAt(LastAccessedAtT&& value) {
+    SetLastAccessedAt(std::forward<LastAccessedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The storage tier of the image set.</p>
+   */
+  inline StorageTier GetStorageTier() const { return m_storageTier; }
+  inline void SetStorageTier(StorageTier value) {
+    m_storageTierHasBeenSet = true;
+    m_storageTier = value;
+  }
+  inline GetImageSetResult& WithStorageTier(StorageTier value) {
+    SetStorageTier(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -281,6 +314,12 @@ class GetImageSetResult {
 
   bool m_isPrimary{false};
   bool m_isPrimaryHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastAccessedAt{};
+  bool m_lastAccessedAtHasBeenSet = false;
+
+  StorageTier m_storageTier{StorageTier::NOT_SET};
+  bool m_storageTierHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

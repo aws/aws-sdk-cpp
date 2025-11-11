@@ -59,6 +59,7 @@
 #include <aws/medical-imaging/model/ListImageSetVersionsResult.h>
 #include <aws/medical-imaging/model/ListTagsForResourceRequest.h>
 #include <aws/medical-imaging/model/ListTagsForResourceResult.h>
+#include <aws/medical-imaging/model/LosslessStorageFormat.h>
 #include <aws/medical-imaging/model/MetadataCopies.h>
 #include <aws/medical-imaging/model/MetadataUpdates.h>
 #include <aws/medical-imaging/model/Operator.h>
@@ -73,6 +74,7 @@
 #include <aws/medical-imaging/model/SortOrder.h>
 #include <aws/medical-imaging/model/StartDICOMImportJobRequest.h>
 #include <aws/medical-imaging/model/StartDICOMImportJobResult.h>
+#include <aws/medical-imaging/model/StorageTier.h>
 #include <aws/medical-imaging/model/TagResourceRequest.h>
 #include <aws/medical-imaging/model/TagResourceResult.h>
 #include <aws/medical-imaging/model/UntagResourceRequest.h>
