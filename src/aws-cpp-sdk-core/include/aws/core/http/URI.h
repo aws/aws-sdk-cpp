@@ -153,7 +153,7 @@ namespace Aws
                 {
                     m_pathSegments.push_back(segment);
                 }
-                m_pathHasTrailingSlash = s_preservePathSeparators ? (!segments.empty() && segments.back() == '/') : m_pathSegments.empty() && (!segments.empty() && segments.back() == '/');
+                m_pathHasTrailingSlash = (m_pathSegments.empty() || !s_preservePathSeparators) && (!segments.empty() && segments.back() == '/');
             }
 
             /**
