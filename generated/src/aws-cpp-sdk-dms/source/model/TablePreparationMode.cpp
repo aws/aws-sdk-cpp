@@ -15,18 +15,18 @@ namespace DatabaseMigrationService {
 namespace Model {
 namespace TablePreparationModeMapper {
 
-static const int do_nothing_HASH = HashingUtils::HashString("do-nothing");
-static const int truncate_HASH = HashingUtils::HashString("truncate");
 static const int drop_tables_on_target_HASH = HashingUtils::HashString("drop-tables-on-target");
+static const int truncate_HASH = HashingUtils::HashString("truncate");
+static const int do_nothing_HASH = HashingUtils::HashString("do-nothing");
 
 TablePreparationMode GetTablePreparationModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == do_nothing_HASH) {
-    return TablePreparationMode::do_nothing;
+  if (hashCode == drop_tables_on_target_HASH) {
+    return TablePreparationMode::drop_tables_on_target;
   } else if (hashCode == truncate_HASH) {
     return TablePreparationMode::truncate;
-  } else if (hashCode == drop_tables_on_target_HASH) {
-    return TablePreparationMode::drop_tables_on_target;
+  } else if (hashCode == do_nothing_HASH) {
+    return TablePreparationMode::do_nothing;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -41,12 +41,12 @@ Aws::String GetNameForTablePreparationMode(TablePreparationMode enumValue) {
   switch (enumValue) {
     case TablePreparationMode::NOT_SET:
       return {};
-    case TablePreparationMode::do_nothing:
-      return "do-nothing";
-    case TablePreparationMode::truncate:
-      return "truncate";
     case TablePreparationMode::drop_tables_on_target:
       return "drop-tables-on-target";
+    case TablePreparationMode::truncate:
+      return "truncate";
+    case TablePreparationMode::do_nothing:
+      return "do-nothing";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -24,6 +24,8 @@
 #include <aws/dms/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/dms/model/BatchStartRecommendationsRequest.h>
 #include <aws/dms/model/BatchStartRecommendationsResult.h>
+#include <aws/dms/model/CancelMetadataModelConversionResult.h>
+#include <aws/dms/model/CancelMetadataModelCreationResult.h>
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunResult.h>
 #include <aws/dms/model/CreateDataMigrationResult.h>
 #include <aws/dms/model/CreateDataProviderResult.h>
@@ -91,10 +93,13 @@
 #include <aws/dms/model/DescribeInstanceProfilesRequest.h>
 #include <aws/dms/model/DescribeInstanceProfilesResult.h>
 #include <aws/dms/model/DescribeMetadataModelAssessmentsResult.h>
+#include <aws/dms/model/DescribeMetadataModelChildrenResult.h>
 #include <aws/dms/model/DescribeMetadataModelConversionsResult.h>
+#include <aws/dms/model/DescribeMetadataModelCreationsResult.h>
 #include <aws/dms/model/DescribeMetadataModelExportsAsScriptResult.h>
 #include <aws/dms/model/DescribeMetadataModelExportsToTargetResult.h>
 #include <aws/dms/model/DescribeMetadataModelImportsResult.h>
+#include <aws/dms/model/DescribeMetadataModelResult.h>
 #include <aws/dms/model/DescribeMigrationProjectsRequest.h>
 #include <aws/dms/model/DescribeMigrationProjectsResult.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesRequest.h>
@@ -127,6 +132,7 @@
 #include <aws/dms/model/DescribeSchemasResult.h>
 #include <aws/dms/model/DescribeTableStatisticsResult.h>
 #include <aws/dms/model/ExportMetadataModelAssessmentResult.h>
+#include <aws/dms/model/GetTargetSelectionRulesResult.h>
 #include <aws/dms/model/ImportCertificateResult.h>
 #include <aws/dms/model/ListTagsForResourceRequest.h>
 #include <aws/dms/model/ListTagsForResourceResult.h>
@@ -153,6 +159,7 @@
 #include <aws/dms/model/StartExtensionPackAssociationResult.h>
 #include <aws/dms/model/StartMetadataModelAssessmentResult.h>
 #include <aws/dms/model/StartMetadataModelConversionResult.h>
+#include <aws/dms/model/StartMetadataModelCreationResult.h>
 #include <aws/dms/model/StartMetadataModelExportAsScriptResult.h>
 #include <aws/dms/model/StartMetadataModelExportToTargetResult.h>
 #include <aws/dms/model/StartMetadataModelImportResult.h>
@@ -202,6 +209,8 @@ namespace Model {
 class AddTagsToResourceRequest;
 class ApplyPendingMaintenanceActionRequest;
 class BatchStartRecommendationsRequest;
+class CancelMetadataModelConversionRequest;
+class CancelMetadataModelCreationRequest;
 class CancelReplicationTaskAssessmentRunRequest;
 class CreateDataMigrationRequest;
 class CreateDataProviderRequest;
@@ -250,8 +259,11 @@ class DescribeFleetAdvisorLsaAnalysisRequest;
 class DescribeFleetAdvisorSchemaObjectSummaryRequest;
 class DescribeFleetAdvisorSchemasRequest;
 class DescribeInstanceProfilesRequest;
+class DescribeMetadataModelRequest;
 class DescribeMetadataModelAssessmentsRequest;
+class DescribeMetadataModelChildrenRequest;
 class DescribeMetadataModelConversionsRequest;
+class DescribeMetadataModelCreationsRequest;
 class DescribeMetadataModelExportsAsScriptRequest;
 class DescribeMetadataModelExportsToTargetRequest;
 class DescribeMetadataModelImportsRequest;
@@ -274,6 +286,7 @@ class DescribeReplicationsRequest;
 class DescribeSchemasRequest;
 class DescribeTableStatisticsRequest;
 class ExportMetadataModelAssessmentRequest;
+class GetTargetSelectionRulesRequest;
 class ImportCertificateRequest;
 class ListTagsForResourceRequest;
 class ModifyConversionConfigurationRequest;
@@ -298,6 +311,7 @@ class StartDataMigrationRequest;
 class StartExtensionPackAssociationRequest;
 class StartMetadataModelAssessmentRequest;
 class StartMetadataModelConversionRequest;
+class StartMetadataModelCreationRequest;
 class StartMetadataModelExportAsScriptRequest;
 class StartMetadataModelExportToTargetRequest;
 class StartMetadataModelImportRequest;
@@ -317,6 +331,8 @@ class UpdateSubscriptionsToEventBridgeRequest;
 typedef Aws::Utils::Outcome<AddTagsToResourceResult, DatabaseMigrationServiceError> AddTagsToResourceOutcome;
 typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, DatabaseMigrationServiceError> ApplyPendingMaintenanceActionOutcome;
 typedef Aws::Utils::Outcome<BatchStartRecommendationsResult, DatabaseMigrationServiceError> BatchStartRecommendationsOutcome;
+typedef Aws::Utils::Outcome<CancelMetadataModelConversionResult, DatabaseMigrationServiceError> CancelMetadataModelConversionOutcome;
+typedef Aws::Utils::Outcome<CancelMetadataModelCreationResult, DatabaseMigrationServiceError> CancelMetadataModelCreationOutcome;
 typedef Aws::Utils::Outcome<CancelReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError>
     CancelReplicationTaskAssessmentRunOutcome;
 typedef Aws::Utils::Outcome<CreateDataMigrationResult, DatabaseMigrationServiceError> CreateDataMigrationOutcome;
@@ -370,8 +386,11 @@ typedef Aws::Utils::Outcome<DescribeFleetAdvisorSchemaObjectSummaryResult, Datab
     DescribeFleetAdvisorSchemaObjectSummaryOutcome;
 typedef Aws::Utils::Outcome<DescribeFleetAdvisorSchemasResult, DatabaseMigrationServiceError> DescribeFleetAdvisorSchemasOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceProfilesResult, DatabaseMigrationServiceError> DescribeInstanceProfilesOutcome;
+typedef Aws::Utils::Outcome<DescribeMetadataModelResult, DatabaseMigrationServiceError> DescribeMetadataModelOutcome;
 typedef Aws::Utils::Outcome<DescribeMetadataModelAssessmentsResult, DatabaseMigrationServiceError> DescribeMetadataModelAssessmentsOutcome;
+typedef Aws::Utils::Outcome<DescribeMetadataModelChildrenResult, DatabaseMigrationServiceError> DescribeMetadataModelChildrenOutcome;
 typedef Aws::Utils::Outcome<DescribeMetadataModelConversionsResult, DatabaseMigrationServiceError> DescribeMetadataModelConversionsOutcome;
+typedef Aws::Utils::Outcome<DescribeMetadataModelCreationsResult, DatabaseMigrationServiceError> DescribeMetadataModelCreationsOutcome;
 typedef Aws::Utils::Outcome<DescribeMetadataModelExportsAsScriptResult, DatabaseMigrationServiceError>
     DescribeMetadataModelExportsAsScriptOutcome;
 typedef Aws::Utils::Outcome<DescribeMetadataModelExportsToTargetResult, DatabaseMigrationServiceError>
@@ -404,6 +423,7 @@ typedef Aws::Utils::Outcome<DescribeReplicationsResult, DatabaseMigrationService
 typedef Aws::Utils::Outcome<DescribeSchemasResult, DatabaseMigrationServiceError> DescribeSchemasOutcome;
 typedef Aws::Utils::Outcome<DescribeTableStatisticsResult, DatabaseMigrationServiceError> DescribeTableStatisticsOutcome;
 typedef Aws::Utils::Outcome<ExportMetadataModelAssessmentResult, DatabaseMigrationServiceError> ExportMetadataModelAssessmentOutcome;
+typedef Aws::Utils::Outcome<GetTargetSelectionRulesResult, DatabaseMigrationServiceError> GetTargetSelectionRulesOutcome;
 typedef Aws::Utils::Outcome<ImportCertificateResult, DatabaseMigrationServiceError> ImportCertificateOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DatabaseMigrationServiceError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ModifyConversionConfigurationResult, DatabaseMigrationServiceError> ModifyConversionConfigurationOutcome;
@@ -428,6 +448,7 @@ typedef Aws::Utils::Outcome<StartDataMigrationResult, DatabaseMigrationServiceEr
 typedef Aws::Utils::Outcome<StartExtensionPackAssociationResult, DatabaseMigrationServiceError> StartExtensionPackAssociationOutcome;
 typedef Aws::Utils::Outcome<StartMetadataModelAssessmentResult, DatabaseMigrationServiceError> StartMetadataModelAssessmentOutcome;
 typedef Aws::Utils::Outcome<StartMetadataModelConversionResult, DatabaseMigrationServiceError> StartMetadataModelConversionOutcome;
+typedef Aws::Utils::Outcome<StartMetadataModelCreationResult, DatabaseMigrationServiceError> StartMetadataModelCreationOutcome;
 typedef Aws::Utils::Outcome<StartMetadataModelExportAsScriptResult, DatabaseMigrationServiceError> StartMetadataModelExportAsScriptOutcome;
 typedef Aws::Utils::Outcome<StartMetadataModelExportToTargetResult, DatabaseMigrationServiceError> StartMetadataModelExportToTargetOutcome;
 typedef Aws::Utils::Outcome<StartMetadataModelImportResult, DatabaseMigrationServiceError> StartMetadataModelImportOutcome;
@@ -448,6 +469,8 @@ typedef Aws::Utils::Outcome<UpdateSubscriptionsToEventBridgeResult, DatabaseMigr
 typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
 typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
 typedef std::future<BatchStartRecommendationsOutcome> BatchStartRecommendationsOutcomeCallable;
+typedef std::future<CancelMetadataModelConversionOutcome> CancelMetadataModelConversionOutcomeCallable;
+typedef std::future<CancelMetadataModelCreationOutcome> CancelMetadataModelCreationOutcomeCallable;
 typedef std::future<CancelReplicationTaskAssessmentRunOutcome> CancelReplicationTaskAssessmentRunOutcomeCallable;
 typedef std::future<CreateDataMigrationOutcome> CreateDataMigrationOutcomeCallable;
 typedef std::future<CreateDataProviderOutcome> CreateDataProviderOutcomeCallable;
@@ -496,8 +519,11 @@ typedef std::future<DescribeFleetAdvisorLsaAnalysisOutcome> DescribeFleetAdvisor
 typedef std::future<DescribeFleetAdvisorSchemaObjectSummaryOutcome> DescribeFleetAdvisorSchemaObjectSummaryOutcomeCallable;
 typedef std::future<DescribeFleetAdvisorSchemasOutcome> DescribeFleetAdvisorSchemasOutcomeCallable;
 typedef std::future<DescribeInstanceProfilesOutcome> DescribeInstanceProfilesOutcomeCallable;
+typedef std::future<DescribeMetadataModelOutcome> DescribeMetadataModelOutcomeCallable;
 typedef std::future<DescribeMetadataModelAssessmentsOutcome> DescribeMetadataModelAssessmentsOutcomeCallable;
+typedef std::future<DescribeMetadataModelChildrenOutcome> DescribeMetadataModelChildrenOutcomeCallable;
 typedef std::future<DescribeMetadataModelConversionsOutcome> DescribeMetadataModelConversionsOutcomeCallable;
+typedef std::future<DescribeMetadataModelCreationsOutcome> DescribeMetadataModelCreationsOutcomeCallable;
 typedef std::future<DescribeMetadataModelExportsAsScriptOutcome> DescribeMetadataModelExportsAsScriptOutcomeCallable;
 typedef std::future<DescribeMetadataModelExportsToTargetOutcome> DescribeMetadataModelExportsToTargetOutcomeCallable;
 typedef std::future<DescribeMetadataModelImportsOutcome> DescribeMetadataModelImportsOutcomeCallable;
@@ -520,6 +546,7 @@ typedef std::future<DescribeReplicationsOutcome> DescribeReplicationsOutcomeCall
 typedef std::future<DescribeSchemasOutcome> DescribeSchemasOutcomeCallable;
 typedef std::future<DescribeTableStatisticsOutcome> DescribeTableStatisticsOutcomeCallable;
 typedef std::future<ExportMetadataModelAssessmentOutcome> ExportMetadataModelAssessmentOutcomeCallable;
+typedef std::future<GetTargetSelectionRulesOutcome> GetTargetSelectionRulesOutcomeCallable;
 typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ModifyConversionConfigurationOutcome> ModifyConversionConfigurationOutcomeCallable;
@@ -544,6 +571,7 @@ typedef std::future<StartDataMigrationOutcome> StartDataMigrationOutcomeCallable
 typedef std::future<StartExtensionPackAssociationOutcome> StartExtensionPackAssociationOutcomeCallable;
 typedef std::future<StartMetadataModelAssessmentOutcome> StartMetadataModelAssessmentOutcomeCallable;
 typedef std::future<StartMetadataModelConversionOutcome> StartMetadataModelConversionOutcomeCallable;
+typedef std::future<StartMetadataModelCreationOutcome> StartMetadataModelCreationOutcomeCallable;
 typedef std::future<StartMetadataModelExportAsScriptOutcome> StartMetadataModelExportAsScriptOutcomeCallable;
 typedef std::future<StartMetadataModelExportToTargetOutcome> StartMetadataModelExportToTargetOutcomeCallable;
 typedef std::future<StartMetadataModelImportOutcome> StartMetadataModelImportOutcomeCallable;
@@ -573,6 +601,13 @@ typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::A
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::BatchStartRecommendationsRequest&,
                            const Model::BatchStartRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchStartRecommendationsResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CancelMetadataModelConversionRequest&,
+                           const Model::CancelMetadataModelConversionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelMetadataModelConversionResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CancelMetadataModelCreationRequest&,
+                           const Model::CancelMetadataModelCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelMetadataModelCreationResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CancelReplicationTaskAssessmentRunRequest&,
                            const Model::CancelReplicationTaskAssessmentRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -728,14 +763,25 @@ typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::D
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeInstanceProfilesRequest&,
                            const Model::DescribeInstanceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInstanceProfilesResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelRequest&,
+                           const Model::DescribeMetadataModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeMetadataModelResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelAssessmentsRequest&,
                            const Model::DescribeMetadataModelAssessmentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeMetadataModelAssessmentsResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelChildrenRequest&,
+                           const Model::DescribeMetadataModelChildrenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeMetadataModelChildrenResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelConversionsRequest&,
                            const Model::DescribeMetadataModelConversionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeMetadataModelConversionsResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelCreationsRequest&,
+                           const Model::DescribeMetadataModelCreationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeMetadataModelCreationsResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeMetadataModelExportsAsScriptRequest&,
                            const Model::DescribeMetadataModelExportsAsScriptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -817,6 +863,9 @@ typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::E
                            const Model::ExportMetadataModelAssessmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExportMetadataModelAssessmentResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::GetTargetSelectionRulesRequest&,
+                           const Model::GetTargetSelectionRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTargetSelectionRulesResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ImportCertificateRequest&,
                            const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportCertificateResponseReceivedHandler;
@@ -894,6 +943,9 @@ typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::S
                            const Model::StartMetadataModelConversionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMetadataModelConversionResponseReceivedHandler;
+typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelCreationRequest&,
+                           const Model::StartMetadataModelCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartMetadataModelCreationResponseReceivedHandler;
 typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelExportAsScriptRequest&,
                            const Model::StartMetadataModelExportAsScriptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

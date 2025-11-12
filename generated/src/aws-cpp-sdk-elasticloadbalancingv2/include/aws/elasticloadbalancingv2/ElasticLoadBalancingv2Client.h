@@ -812,8 +812,7 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
 
   /**
    * <p>Describes the specified rules or the rules for the specified listener. You
-   * must specify either a listener or one or more rules.</p><p><h3>See Also:</h3>
-   * <a
+   * must specify either a listener or rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">AWS
    * API Reference</a></p>
    */

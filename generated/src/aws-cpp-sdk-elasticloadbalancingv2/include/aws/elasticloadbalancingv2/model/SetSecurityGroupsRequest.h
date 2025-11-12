@@ -79,8 +79,9 @@ class SetSecurityGroupsRequest : public ElasticLoadBalancingv2Request {
   ///@{
   /**
    * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-   * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-   * is <code>on</code>.</p>
+   * to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only
+   * if the load balancer has an associated security group. The default is
+   * <code>on</code>.</p>
    */
   inline EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum GetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() const {
     return m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;

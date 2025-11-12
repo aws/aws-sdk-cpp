@@ -39,8 +39,12 @@ Aws::String UpdateAuthenticationProfileRequest::SerializePayload() const {
     payload.WithArray("BlockedIps", std::move(blockedIpsJsonList));
   }
 
-  if (m_periodicSessionDurationHasBeenSet) {
-    payload.WithInteger("PeriodicSessionDuration", m_periodicSessionDuration);
+  if (m_sessionInactivityDurationHasBeenSet) {
+    payload.WithInteger("SessionInactivityDuration", m_sessionInactivityDuration);
+  }
+
+  if (m_sessionInactivityHandlingEnabledHasBeenSet) {
+    payload.WithBool("SessionInactivityHandlingEnabled", m_sessionInactivityHandlingEnabled);
   }
 
   return payload.View().WriteReadable();

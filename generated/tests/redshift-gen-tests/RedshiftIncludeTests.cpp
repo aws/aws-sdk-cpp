@@ -246,6 +246,8 @@
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMResult.h>
+#include <aws/redshift/model/GetIdentityCenterAuthTokenRequest.h>
+#include <aws/redshift/model/GetIdentityCenterAuthTokenResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
