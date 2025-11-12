@@ -1134,59 +1134,56 @@ namespace Aws
                 handle->SetError(outcome.GetError());
                 TriggerErrorCallback(handle, outcome.GetError());
             }
+            else if (request.RangeHasBeenSet())
+            {
+                const auto& requestedRange = request.GetRange();
+                const auto& responseContentRange = outcome.GetResult().GetContentRange();
+
+                if (responseContentRange.empty() or !VerifyContentRange(requestedRange, responseContentRange)) {
+                    Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                   "ContentRangeMismatch",
+                                                                   "ContentRange in response does not match requested range",
+                                                                   false);
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] ContentRange mismatch. Requested: [" << requestedRange
+                            << "] Received: [" << responseContentRange << "]");
+                    handle->ChangePartToFailed(partState);
+                    handle->SetError(error);
+                    TriggerErrorCallback(handle, error);
+                    handle->Cancel();
+
+                    if(partState->GetDownloadBuffer())
+                    {
+                        m_bufferManager.Release(partState->GetDownloadBuffer());
+                        partState->SetDownloadBuffer(nullptr);
+                    }
+                    return;
+            }
+
+            if(handle->ShouldContinue())
+            {
+                Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
+                assert(bufferStream);
+
+                Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
+                if (errMsg.empty()) {
+                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                } else {
+                    Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                   "InternalFailure", errMsg, false);
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] Failed to download object in Bucket: ["
+                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                            << "] " << errMsg);
+                    handle->ChangePartToFailed(partState);
+                    handle->SetError(error);
+                    TriggerErrorCallback(handle, error);
+                }
+            }
             else
             {
-                if (request.RangeHasBeenSet())
-                {
-                    const auto& requestedRange = request.GetRange();
-                    const auto& responseContentRange = outcome.GetResult().GetContentRange();
-
-                    if (responseContentRange.empty() or !VerifyContentRange(requestedRange, responseContentRange)) {
-                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
-                                                                       "ContentRangeMismatch",
-                                                                       "ContentRange in response does not match requested range",
-                                                                       false);
-                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                                << "] ContentRange mismatch. Requested: [" << requestedRange
-                                << "] Received: [" << responseContentRange << "]");
-                        handle->ChangePartToFailed(partState);
-                        handle->SetError(error);
-                        TriggerErrorCallback(handle, error);
-                        handle->Cancel();
-
-                        if(partState->GetDownloadBuffer())
-                        {
-                            m_bufferManager.Release(partState->GetDownloadBuffer());
-                            partState->SetDownloadBuffer(nullptr);
-                        }
-                        return;
-                    }
-                }
-
-                if(handle->ShouldContinue())
-                {
-                    Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
-                    assert(bufferStream);
-
-                    Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
-                    if (errMsg.empty()) {
-                        handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
-                    } else {
-                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
-                                                                       "InternalFailure", errMsg, false);
-                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                                << "] Failed to download object in Bucket: ["
-                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
-                                << "] " << errMsg);
-                        handle->ChangePartToFailed(partState);
-                        handle->SetError(error);
-                        TriggerErrorCallback(handle, error);
-                    }
-                }
-                else
-                {
-                    handle->ChangePartToFailed(partState);
-                }
+                handle->ChangePartToFailed(partState);
+            }
             }
 
             // buffer cleanup

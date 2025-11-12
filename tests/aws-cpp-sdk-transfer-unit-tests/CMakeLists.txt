@@ -1,6 +1,7 @@
 add_project(aws-cpp-sdk-transfer-unit-tests
         "Unit Tests for the Transfer Manager"
         aws-cpp-sdk-transfer
+        aws-cpp-sdk-s3
         testing-resources
         aws_test_main
         aws-cpp-sdk-core)
