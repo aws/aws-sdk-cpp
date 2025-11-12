@@ -75,6 +75,7 @@ static const int ml_g6e_48xlarge_HASH = HashingUtils::HashString("ml.g6e.48xlarg
 static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
 static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
 static const int ml_p6_b200_48xlarge_HASH = HashingUtils::HashString("ml.p6-b200.48xlarge");
+static const int ml_trn2_3xlarge_HASH = HashingUtils::HashString("ml.trn2.3xlarge");
 static const int ml_trn2_48xlarge_HASH = HashingUtils::HashString("ml.trn2.48xlarge");
 static const int ml_c6i_large_HASH = HashingUtils::HashString("ml.c6i.large");
 static const int ml_c6i_xlarge_HASH = HashingUtils::HashString("ml.c6i.xlarge");
@@ -251,6 +252,8 @@ ClusterInstanceType GetClusterInstanceTypeForName(const Aws::String& name) {
     return ClusterInstanceType::ml_p5en_48xlarge;
   } else if (hashCode == ml_p6_b200_48xlarge_HASH) {
     return ClusterInstanceType::ml_p6_b200_48xlarge;
+  } else if (hashCode == ml_trn2_3xlarge_HASH) {
+    return ClusterInstanceType::ml_trn2_3xlarge;
   } else if (hashCode == ml_trn2_48xlarge_HASH) {
     return ClusterInstanceType::ml_trn2_48xlarge;
   } else if (hashCode == ml_c6i_large_HASH) {
@@ -491,6 +494,8 @@ Aws::String GetNameForClusterInstanceType(ClusterInstanceType enumValue) {
       return "ml.p5en.48xlarge";
     case ClusterInstanceType::ml_p6_b200_48xlarge:
       return "ml.p6-b200.48xlarge";
+    case ClusterInstanceType::ml_trn2_3xlarge:
+      return "ml.trn2.3xlarge";
     case ClusterInstanceType::ml_trn2_48xlarge:
       return "ml.trn2.48xlarge";
     case ClusterInstanceType::ml_c6i_large:

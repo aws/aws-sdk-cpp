@@ -161,21 +161,33 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The short lived session duration configuration for users logged in to Amazon
-   * Connect, in minutes. This value determines the maximum possible time before an
-   * agent is authenticated. For more information, For more information on how to
-   * configure IP addresses, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-   * session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+   * <p>The period, in minutes, before an agent is automatically signed out of the
+   * contact center when they go inactive.</p>
    */
-  inline int GetPeriodicSessionDuration() const { return m_periodicSessionDuration; }
-  inline bool PeriodicSessionDurationHasBeenSet() const { return m_periodicSessionDurationHasBeenSet; }
-  inline void SetPeriodicSessionDuration(int value) {
-    m_periodicSessionDurationHasBeenSet = true;
-    m_periodicSessionDuration = value;
+  inline int GetSessionInactivityDuration() const { return m_sessionInactivityDuration; }
+  inline bool SessionInactivityDurationHasBeenSet() const { return m_sessionInactivityDurationHasBeenSet; }
+  inline void SetSessionInactivityDuration(int value) {
+    m_sessionInactivityDurationHasBeenSet = true;
+    m_sessionInactivityDuration = value;
   }
-  inline UpdateAuthenticationProfileRequest& WithPeriodicSessionDuration(int value) {
-    SetPeriodicSessionDuration(value);
+  inline UpdateAuthenticationProfileRequest& WithSessionInactivityDuration(int value) {
+    SetSessionInactivityDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Determines if automatic logout on user inactivity is enabled.</p>
+   */
+  inline bool GetSessionInactivityHandlingEnabled() const { return m_sessionInactivityHandlingEnabled; }
+  inline bool SessionInactivityHandlingEnabledHasBeenSet() const { return m_sessionInactivityHandlingEnabledHasBeenSet; }
+  inline void SetSessionInactivityHandlingEnabled(bool value) {
+    m_sessionInactivityHandlingEnabledHasBeenSet = true;
+    m_sessionInactivityHandlingEnabled = value;
+  }
+  inline UpdateAuthenticationProfileRequest& WithSessionInactivityHandlingEnabled(bool value) {
+    SetSessionInactivityHandlingEnabled(value);
     return *this;
   }
   ///@}
@@ -198,8 +210,11 @@ class UpdateAuthenticationProfileRequest : public ConnectRequest {
   Aws::Vector<Aws::String> m_blockedIps;
   bool m_blockedIpsHasBeenSet = false;
 
-  int m_periodicSessionDuration{0};
-  bool m_periodicSessionDurationHasBeenSet = false;
+  int m_sessionInactivityDuration{0};
+  bool m_sessionInactivityDurationHasBeenSet = false;
+
+  bool m_sessionInactivityHandlingEnabled{false};
+  bool m_sessionInactivityHandlingEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

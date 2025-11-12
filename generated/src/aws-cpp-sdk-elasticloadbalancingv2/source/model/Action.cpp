@@ -64,6 +64,11 @@ Action& Action::operator=(const XmlNode& xmlNode) {
       m_forwardConfig = forwardConfigNode;
       m_forwardConfigHasBeenSet = true;
     }
+    XmlNode jwtValidationConfigNode = resultNode.FirstChild("JwtValidationConfig");
+    if (!jwtValidationConfigNode.IsNull()) {
+      m_jwtValidationConfig = jwtValidationConfigNode;
+      m_jwtValidationConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +117,12 @@ void Action::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
     forwardConfigLocationAndMemberSs << location << index << locationValue << ".ForwardConfig";
     m_forwardConfig.OutputToStream(oStream, forwardConfigLocationAndMemberSs.str().c_str());
   }
+
+  if (m_jwtValidationConfigHasBeenSet) {
+    Aws::StringStream jwtValidationConfigLocationAndMemberSs;
+    jwtValidationConfigLocationAndMemberSs << location << index << locationValue << ".JwtValidationConfig";
+    m_jwtValidationConfig.OutputToStream(oStream, jwtValidationConfigLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Action::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -148,6 +159,11 @@ void Action::OutputToStream(Aws::OStream& oStream, const char* location) const {
     Aws::String forwardConfigLocationAndMember(location);
     forwardConfigLocationAndMember += ".ForwardConfig";
     m_forwardConfig.OutputToStream(oStream, forwardConfigLocationAndMember.c_str());
+  }
+  if (m_jwtValidationConfigHasBeenSet) {
+    Aws::String jwtValidationConfigLocationAndMember(location);
+    jwtValidationConfigLocationAndMember += ".JwtValidationConfig";
+    m_jwtValidationConfig.OutputToStream(oStream, jwtValidationConfigLocationAndMember.c_str());
   }
 }
 

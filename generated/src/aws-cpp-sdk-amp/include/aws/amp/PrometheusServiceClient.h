@@ -218,10 +218,12 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   /**
    * <p>The <code>CreateRuleGroupsNamespace</code> operation creates a rule groups
    * namespace within a workspace. A rule groups namespace is associated with exactly
-   * one rules file. A workspace can have multiple rule groups namespaces.</p> <p>Use
-   * this operation only to create new rule groups namespaces. To update an existing
-   * rule groups namespace, use <code>PutRuleGroupsNamespace</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * one rules file. A workspace can have multiple rule groups namespaces.</p>
+   *  <p>The combined length of a rule group namespace and a rule group
+   * name cannot exceed 721 UTF-8 bytes.</p>  <p>Use this operation only
+   * to create new rule groups namespaces. To update an existing rule groups
+   * namespace, use <code>PutRuleGroupsNamespace</code>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">AWS
    * API Reference</a></p>
    */
@@ -250,24 +252,25 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
 
   /**
    * <p>The <code>CreateScraper</code> operation creates a scraper to collect
-   * metrics. A scraper pulls metrics from Prometheus-compatible sources within an
-   * Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus
-   * workspace. Scrapers are flexible, and can be configured to control what metrics
-   * are collected, the frequency of collection, what transformations are applied to
-   * the metrics, and more.</p> <p>An IAM role will be created for you that Amazon
-   * Managed Service for Prometheus uses to access the metrics in your cluster. You
-   * must configure this role with a policy that allows it to scrape metrics from
-   * your cluster. For more information, see <a
+   * metrics. A scraper pulls metrics from Prometheus-compatible sources and sends
+   * them to your Amazon Managed Service for Prometheus workspace. You can configure
+   * scrapers to collect metrics from Amazon EKS clusters, Amazon MSK clusters, or
+   * from VPC-based sources that support DNS-based service discovery. Scrapers are
+   * flexible, and can be configured to control what metrics are collected, the
+   * frequency of collection, what transformations are applied to the metrics, and
+   * more.</p> <p>An IAM role will be created for you that Amazon Managed Service for
+   * Prometheus uses to access the metrics in your source. You must configure this
+   * role with a policy that allows it to scrape metrics from your source. For Amazon
+   * EKS sources, see <a
    * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
    * your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User
    * Guide</i>.</p> <p>The <code>scrapeConfiguration</code> parameter contains the
    * base-64 encoded YAML configuration for the scraper.</p> <p>When creating a
    * scraper, the service creates a <code>Network Interface</code> in each
    * <b>Availability Zone</b> that are passed into <code>CreateScraper</code> through
-   * subnets. These network interfaces are used to connect to the Amazon EKS cluster
-   * within the VPC for scraping metrics.</p>  <p>For more information about
-   * collectors, including what metrics are collected, and how to configure the
-   * scraper, see <a
+   * subnets. These network interfaces are used to connect to your source within the
+   * VPC for scraping metrics.</p>  <p>For more information about collectors,
+   * including what metrics are collected, and how to configure the scraper, see <a
    * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
    * an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service
    * for Prometheus User Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -1153,8 +1156,10 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   /**
    * <p>Updates an existing rule groups namespace within a workspace. A rule groups
    * namespace is associated with exactly one rules file. A workspace can have
-   * multiple rule groups namespaces.</p> <p>Use this operation only to update
-   * existing rule groups namespaces. To create a new rule groups namespace, use
+   * multiple rule groups namespaces.</p>  <p>The combined length of a
+   * rule group namespace and a rule group name cannot exceed 721 UTF-8 bytes.</p>
+   *  <p>Use this operation only to update existing rule groups
+   * namespaces. To create a new rule groups namespace, use
    * <code>CreateRuleGroupsNamespace</code>.</p> <p>You can't use this operation to
    * add tags to an existing rule groups namespace. Instead, use
    * <code>TagResource</code>.</p><p><h3>See Also:</h3>   <a

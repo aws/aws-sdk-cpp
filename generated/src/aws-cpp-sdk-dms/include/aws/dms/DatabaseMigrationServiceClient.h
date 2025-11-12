@@ -191,6 +191,66 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
+   * <p>Cancels a single metadata model conversion operation that was started with
+   * <code>StartMetadataModelConversion</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelConversion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelMetadataModelConversionOutcome CancelMetadataModelConversion(
+      const Model::CancelMetadataModelConversionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelMetadataModelConversion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CancelMetadataModelConversionRequestT = Model::CancelMetadataModelConversionRequest>
+  Model::CancelMetadataModelConversionOutcomeCallable CancelMetadataModelConversionCallable(
+      const CancelMetadataModelConversionRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::CancelMetadataModelConversion, request);
+  }
+
+  /**
+   * An Async wrapper for CancelMetadataModelConversion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelMetadataModelConversionRequestT = Model::CancelMetadataModelConversionRequest>
+  void CancelMetadataModelConversionAsync(const CancelMetadataModelConversionRequestT& request,
+                                          const CancelMetadataModelConversionResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::CancelMetadataModelConversion, request, handler, context);
+  }
+
+  /**
+   * <p>Cancels a single metadata model creation operation that was started with
+   * <code>StartMetadataModelCreation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelMetadataModelCreation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelMetadataModelCreationOutcome CancelMetadataModelCreation(
+      const Model::CancelMetadataModelCreationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelMetadataModelCreation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CancelMetadataModelCreationRequestT = Model::CancelMetadataModelCreationRequest>
+  Model::CancelMetadataModelCreationOutcomeCallable CancelMetadataModelCreationCallable(
+      const CancelMetadataModelCreationRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::CancelMetadataModelCreation, request);
+  }
+
+  /**
+   * An Async wrapper for CancelMetadataModelCreation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelMetadataModelCreationRequestT = Model::CancelMetadataModelCreationRequest>
+  void CancelMetadataModelCreationAsync(const CancelMetadataModelCreationRequestT& request,
+                                        const CancelMetadataModelCreationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::CancelMetadataModelCreation, request, handler, context);
+  }
+
+  /**
    * <p>Cancels a single premigration assessment run.</p> <p>This operation prevents
    * any individual assessments from running if they haven't started running. It also
    * attempts to cancel any individual assessments that are currently
@@ -1698,6 +1758,34 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
+   * <p>Gets detailed information about the specified metadata model, including its
+   * definition and corresponding converted objects in the target database if
+   * applicable.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMetadataModelOutcome DescribeMetadataModel(const Model::DescribeMetadataModelRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeMetadataModel that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeMetadataModelRequestT = Model::DescribeMetadataModelRequest>
+  Model::DescribeMetadataModelOutcomeCallable DescribeMetadataModelCallable(const DescribeMetadataModelRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModel, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMetadataModel that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeMetadataModelRequestT = Model::DescribeMetadataModelRequest>
+  void DescribeMetadataModelAsync(const DescribeMetadataModelRequestT& request, const DescribeMetadataModelResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModel, request, handler, context);
+  }
+
+  /**
    * <p>Returns a paginated list of metadata model assessments for your account in
    * the current region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">AWS
@@ -1728,6 +1816,36 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   }
 
   /**
+   * <p>Gets a list of child metadata models for the specified metadata model in the
+   * database hierarchy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelChildren">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMetadataModelChildrenOutcome DescribeMetadataModelChildren(
+      const Model::DescribeMetadataModelChildrenRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeMetadataModelChildren that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeMetadataModelChildrenRequestT = Model::DescribeMetadataModelChildrenRequest>
+  Model::DescribeMetadataModelChildrenOutcomeCallable DescribeMetadataModelChildrenCallable(
+      const DescribeMetadataModelChildrenRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelChildren, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMetadataModelChildren that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeMetadataModelChildrenRequestT = Model::DescribeMetadataModelChildrenRequest>
+  void DescribeMetadataModelChildrenAsync(const DescribeMetadataModelChildrenRequestT& request,
+                                          const DescribeMetadataModelChildrenResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelChildren, request, handler, context);
+  }
+
+  /**
    * <p>Returns a paginated list of metadata model conversions for a migration
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">AWS
@@ -1755,6 +1873,36 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
                                              const DescribeMetadataModelConversionsResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelConversions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of metadata model creation requests for a migration
+   * project.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelCreations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMetadataModelCreationsOutcome DescribeMetadataModelCreations(
+      const Model::DescribeMetadataModelCreationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeMetadataModelCreations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeMetadataModelCreationsRequestT = Model::DescribeMetadataModelCreationsRequest>
+  Model::DescribeMetadataModelCreationsOutcomeCallable DescribeMetadataModelCreationsCallable(
+      const DescribeMetadataModelCreationsRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::DescribeMetadataModelCreations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMetadataModelCreations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeMetadataModelCreationsRequestT = Model::DescribeMetadataModelCreationsRequest>
+  void DescribeMetadataModelCreationsAsync(const DescribeMetadataModelCreationsRequestT& request,
+                                           const DescribeMetadataModelCreationsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::DescribeMetadataModelCreations, request, handler, context);
   }
 
   /**
@@ -2435,6 +2583,34 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
                                           const ExportMetadataModelAssessmentResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DatabaseMigrationServiceClient::ExportMetadataModelAssessment, request, handler, context);
+  }
+
+  /**
+   * <p>Converts source selection rules into their target counterparts for schema
+   * conversion operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GetTargetSelectionRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTargetSelectionRulesOutcome GetTargetSelectionRules(const Model::GetTargetSelectionRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTargetSelectionRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTargetSelectionRulesRequestT = Model::GetTargetSelectionRulesRequest>
+  Model::GetTargetSelectionRulesOutcomeCallable GetTargetSelectionRulesCallable(const GetTargetSelectionRulesRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::GetTargetSelectionRules, request);
+  }
+
+  /**
+   * An Async wrapper for GetTargetSelectionRules that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTargetSelectionRulesRequestT = Model::GetTargetSelectionRulesRequest>
+  void GetTargetSelectionRulesAsync(const GetTargetSelectionRulesRequestT& request,
+                                    const GetTargetSelectionRulesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::GetTargetSelectionRules, request, handler, context);
   }
 
   /**
@@ -3152,6 +3328,38 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
                                          const StartMetadataModelConversionResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelConversion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates source metadata model of the given type with the specified properties
+   * for schema conversion operations.</p>  <p>This action supports only these
+   * directions: from SQL Server to Aurora PostgreSQL, or from SQL Server to RDS for
+   * PostgreSQL.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelCreation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMetadataModelCreationOutcome StartMetadataModelCreation(
+      const Model::StartMetadataModelCreationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMetadataModelCreation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartMetadataModelCreationRequestT = Model::StartMetadataModelCreationRequest>
+  Model::StartMetadataModelCreationOutcomeCallable StartMetadataModelCreationCallable(
+      const StartMetadataModelCreationRequestT& request) const {
+    return SubmitCallable(&DatabaseMigrationServiceClient::StartMetadataModelCreation, request);
+  }
+
+  /**
+   * An Async wrapper for StartMetadataModelCreation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartMetadataModelCreationRequestT = Model::StartMetadataModelCreationRequest>
+  void StartMetadataModelCreationAsync(const StartMetadataModelCreationRequestT& request,
+                                       const StartMetadataModelCreationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DatabaseMigrationServiceClient::StartMetadataModelCreation, request, handler, context);
   }
 
   /**

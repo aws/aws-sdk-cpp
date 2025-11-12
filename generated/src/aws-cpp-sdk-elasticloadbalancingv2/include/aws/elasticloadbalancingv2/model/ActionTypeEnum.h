@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ElasticLoadBalancingv2 {
 namespace Model {
-enum class ActionTypeEnum { NOT_SET, forward, authenticate_oidc, authenticate_cognito, redirect, fixed_response };
+enum class ActionTypeEnum { NOT_SET, forward, authenticate_oidc, authenticate_cognito, redirect, fixed_response, jwt_validation };
 
 namespace ActionTypeEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API ActionTypeEnum GetActionTypeEnumForName(const Aws::String& name);

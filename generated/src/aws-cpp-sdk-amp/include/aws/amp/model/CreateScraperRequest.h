@@ -81,7 +81,8 @@ class CreateScraperRequest : public PrometheusServiceRequest {
 
   ///@{
   /**
-   * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+   * <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will
+   * collect metrics.</p>
    */
   inline const Source& GetSource() const { return m_source; }
   inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

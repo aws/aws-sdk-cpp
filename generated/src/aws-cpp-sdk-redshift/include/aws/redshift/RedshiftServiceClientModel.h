@@ -142,6 +142,7 @@
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMResult.h>
+#include <aws/redshift/model/GetIdentityCenterAuthTokenResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
 #include <aws/redshift/model/GetResourcePolicyResult.h>
@@ -315,6 +316,7 @@ class EnableSnapshotCopyRequest;
 class FailoverPrimaryComputeRequest;
 class GetClusterCredentialsRequest;
 class GetClusterCredentialsWithIAMRequest;
+class GetIdentityCenterAuthTokenRequest;
 class GetReservedNodeExchangeConfigurationOptionsRequest;
 class GetReservedNodeExchangeOfferingsRequest;
 class GetResourcePolicyRequest;
@@ -457,6 +459,7 @@ typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnaps
 typedef Aws::Utils::Outcome<FailoverPrimaryComputeResult, RedshiftError> FailoverPrimaryComputeOutcome;
 typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetClusterCredentialsWithIAMResult, RedshiftError> GetClusterCredentialsWithIAMOutcome;
+typedef Aws::Utils::Outcome<GetIdentityCenterAuthTokenResult, RedshiftError> GetIdentityCenterAuthTokenOutcome;
 typedef Aws::Utils::Outcome<GetReservedNodeExchangeConfigurationOptionsResult, RedshiftError>
     GetReservedNodeExchangeConfigurationOptionsOutcome;
 typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
@@ -600,6 +603,7 @@ typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable
 typedef std::future<FailoverPrimaryComputeOutcome> FailoverPrimaryComputeOutcomeCallable;
 typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
 typedef std::future<GetClusterCredentialsWithIAMOutcome> GetClusterCredentialsWithIAMOutcomeCallable;
+typedef std::future<GetIdentityCenterAuthTokenOutcome> GetIdentityCenterAuthTokenOutcomeCallable;
 typedef std::future<GetReservedNodeExchangeConfigurationOptionsOutcome> GetReservedNodeExchangeConfigurationOptionsOutcomeCallable;
 typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
@@ -966,6 +970,9 @@ typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredent
                            const Model::GetClusterCredentialsWithIAMOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetClusterCredentialsWithIAMResponseReceivedHandler;
+typedef std::function<void(const RedshiftClient*, const Model::GetIdentityCenterAuthTokenRequest&,
+                           const Model::GetIdentityCenterAuthTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIdentityCenterAuthTokenResponseReceivedHandler;
 typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeConfigurationOptionsRequest&,
                            const Model::GetReservedNodeExchangeConfigurationOptionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

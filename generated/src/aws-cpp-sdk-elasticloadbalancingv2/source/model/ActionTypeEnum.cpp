@@ -20,6 +20,7 @@ static const int authenticate_oidc_HASH = HashingUtils::HashString("authenticate
 static const int authenticate_cognito_HASH = HashingUtils::HashString("authenticate-cognito");
 static const int redirect_HASH = HashingUtils::HashString("redirect");
 static const int fixed_response_HASH = HashingUtils::HashString("fixed-response");
+static const int jwt_validation_HASH = HashingUtils::HashString("jwt-validation");
 
 ActionTypeEnum GetActionTypeEnumForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ActionTypeEnum GetActionTypeEnumForName(const Aws::String& name) {
     return ActionTypeEnum::redirect;
   } else if (hashCode == fixed_response_HASH) {
     return ActionTypeEnum::fixed_response;
+  } else if (hashCode == jwt_validation_HASH) {
+    return ActionTypeEnum::jwt_validation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForActionTypeEnum(ActionTypeEnum enumValue) {
       return "redirect";
     case ActionTypeEnum::fixed_response:
       return "fixed-response";
+    case ActionTypeEnum::jwt_validation:
+      return "jwt-validation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

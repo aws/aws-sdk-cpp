@@ -109,6 +109,9 @@
 #include <aws/elasticloadbalancingv2/model/HttpRequestMethodConditionConfig.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/IpamPools.h>
+#include <aws/elasticloadbalancingv2/model/JwtValidationActionAdditionalClaim.h>
+#include <aws/elasticloadbalancingv2/model/JwtValidationActionAdditionalClaimFormatEnum.h>
+#include <aws/elasticloadbalancingv2/model/JwtValidationActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/Limit.h>
 #include <aws/elasticloadbalancingv2/model/Listener.h>
 #include <aws/elasticloadbalancingv2/model/ListenerAttribute.h>

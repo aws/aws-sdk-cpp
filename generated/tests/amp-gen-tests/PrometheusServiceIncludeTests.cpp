@@ -143,6 +143,7 @@
 #include <aws/amp/model/ValidationException.h>
 #include <aws/amp/model/ValidationExceptionField.h>
 #include <aws/amp/model/ValidationExceptionReason.h>
+#include <aws/amp/model/VpcConfiguration.h>
 #include <aws/amp/model/WorkspaceConfigurationDescription.h>
 #include <aws/amp/model/WorkspaceConfigurationStatus.h>
 #include <aws/amp/model/WorkspaceConfigurationStatusCode.h>

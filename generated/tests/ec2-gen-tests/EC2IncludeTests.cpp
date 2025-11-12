@@ -1398,6 +1398,8 @@
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
+#include <aws/ec2/model/GetImageAncestryRequest.h>
+#include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
@@ -1514,6 +1516,7 @@
 #include <aws/ec2/model/IdFormat.h>
 #include <aws/ec2/model/Igmpv2SupportValue.h>
 #include <aws/ec2/model/Image.h>
+#include <aws/ec2/model/ImageAncestryEntry.h>
 #include <aws/ec2/model/ImageAttributeName.h>
 #include <aws/ec2/model/ImageBlockPublicAccessDisabledState.h>
 #include <aws/ec2/model/ImageBlockPublicAccessEnabledState.h>

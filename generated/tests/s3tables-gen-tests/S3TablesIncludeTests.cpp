@@ -22,6 +22,7 @@
 #include <aws/s3tables/model/CreateTableResult.h>
 #include <aws/s3tables/model/DeleteNamespaceRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketEncryptionRequest.h>
+#include <aws/s3tables/model/DeleteTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketRequest.h>
 #include <aws/s3tables/model/DeleteTablePolicyRequest.h>
@@ -33,6 +34,8 @@
 #include <aws/s3tables/model/GetTableBucketEncryptionResult.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationResult.h>
+#include <aws/s3tables/model/GetTableBucketMetricsConfigurationRequest.h>
+#include <aws/s3tables/model/GetTableBucketMetricsConfigurationResult.h>
 #include <aws/s3tables/model/GetTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/GetTableBucketPolicyResult.h>
 #include <aws/s3tables/model/GetTableBucketRequest.h>
@@ -69,6 +72,7 @@
 #include <aws/s3tables/model/OpenTableFormat.h>
 #include <aws/s3tables/model/PutTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/PutTableBucketMaintenanceConfigurationRequest.h>
+#include <aws/s3tables/model/PutTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/PutTableMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/PutTablePolicyRequest.h>

@@ -3276,6 +3276,46 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Generates an encrypted authentication token that propagates the caller's
+   * Amazon Web Services IAM Identity Center identity to Amazon Redshift clusters.
+   * This API extracts the Amazon Web Services IAM Identity Center identity from
+   * enhanced credentials and creates a secure token that Amazon Redshift drivers can
+   * use for authentication.</p> <p>The token is encrypted using Key Management
+   * Service (KMS) and can only be decrypted by the specified Amazon Redshift
+   * clusters. The token contains the caller's Amazon Web Services IAM Identity
+   * Center identity information and is valid for a limited time period.</p> <p>This
+   * API is exclusively for use with Amazon Web Services IAM Identity Center enhanced
+   * credentials. If the caller is not using enhanced credentials with embedded
+   * Amazon Web Services IAM Identity Center identity, the API will return an
+   * error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetIdentityCenterAuthToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIdentityCenterAuthTokenOutcome GetIdentityCenterAuthToken(
+      const Model::GetIdentityCenterAuthTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIdentityCenterAuthToken that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetIdentityCenterAuthTokenRequestT = Model::GetIdentityCenterAuthTokenRequest>
+  Model::GetIdentityCenterAuthTokenOutcomeCallable GetIdentityCenterAuthTokenCallable(
+      const GetIdentityCenterAuthTokenRequestT& request) const {
+    return SubmitCallable(&RedshiftClient::GetIdentityCenterAuthToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetIdentityCenterAuthToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIdentityCenterAuthTokenRequestT = Model::GetIdentityCenterAuthTokenRequest>
+  void GetIdentityCenterAuthTokenAsync(const GetIdentityCenterAuthTokenRequestT& request,
+                                       const GetIdentityCenterAuthTokenResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftClient::GetIdentityCenterAuthToken, request, handler, context);
+  }
+
+  /**
    * <p>Gets the configuration options for the reserved-node exchange. These options
    * include information about the source reserved node and target reserved node
    * offering. Details include the node type, the price, the node count, and the

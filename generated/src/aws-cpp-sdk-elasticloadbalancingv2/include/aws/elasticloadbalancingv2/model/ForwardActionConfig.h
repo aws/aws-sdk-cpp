@@ -38,8 +38,7 @@ class ForwardActionConfig {
 
   ///@{
   /**
-   * <p>The target groups. For Network Load Balancers, you can specify a single
-   * target group.</p>
+   * <p>The target groups.</p>
    */
   inline const Aws::Vector<TargetGroupTuple>& GetTargetGroups() const { return m_targetGroups; }
   inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }

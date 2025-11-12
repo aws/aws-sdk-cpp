@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DatabaseMigrationService {
 namespace Model {
-enum class TablePreparationMode { NOT_SET, do_nothing, truncate, drop_tables_on_target };
+enum class TablePreparationMode { NOT_SET, drop_tables_on_target, truncate, do_nothing };
 
 namespace TablePreparationModeMapper {
 AWS_DATABASEMIGRATIONSERVICE_API TablePreparationMode GetTablePreparationModeForName(const Aws::String& name);

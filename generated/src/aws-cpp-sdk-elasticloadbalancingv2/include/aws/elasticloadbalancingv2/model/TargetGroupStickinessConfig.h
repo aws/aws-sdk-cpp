@@ -50,9 +50,10 @@ class TargetGroupStickinessConfig {
 
   ///@{
   /**
-   * <p>The time period, in seconds, during which requests from a client should be
-   * routed to the same target group. The range is 1-604800 seconds (7 days). You
-   * must specify this value when enabling target group stickiness.</p>
+   * <p>[Application Load Balancers] The time period, in seconds, during which
+   * requests from a client should be routed to the same target group. The range is
+   * 1-604800 seconds (7 days). You must specify this value when enabling target
+   * group stickiness.</p>
    */
   inline int GetDurationSeconds() const { return m_durationSeconds; }
   inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }

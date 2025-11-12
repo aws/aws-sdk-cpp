@@ -17209,6 +17209,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Retrieves the ancestry chain of the specified AMI, tracing its lineage back
+   * to the root AMI. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+   * ancestry</a> in <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetImageAncestryOutcome GetImageAncestry(const Model::GetImageAncestryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetImageAncestry that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetImageAncestryRequestT = Model::GetImageAncestryRequest>
+  Model::GetImageAncestryOutcomeCallable GetImageAncestryCallable(const GetImageAncestryRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetImageAncestry, request);
+  }
+
+  /**
+   * An Async wrapper for GetImageAncestry that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetImageAncestryRequestT = Model::GetImageAncestryRequest>
+  void GetImageAncestryAsync(const GetImageAncestryRequestT& request, const GetImageAncestryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetImageAncestry, request, handler, context);
+  }
+
+  /**
    * <p>Gets the current state of <i>block public access for AMIs</i> at the account
    * level in the specified Amazon Web Services Region.</p> <p>For more information,
    * see <a

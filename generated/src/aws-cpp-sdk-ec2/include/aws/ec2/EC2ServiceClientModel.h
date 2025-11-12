@@ -699,6 +699,7 @@
 #include <aws/ec2/model/GetFlowLogsIntegrationTemplateResponse.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
+#include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
@@ -1447,6 +1448,7 @@ class GetEbsEncryptionByDefaultRequest;
 class GetFlowLogsIntegrationTemplateRequest;
 class GetGroupsForCapacityReservationRequest;
 class GetHostReservationPurchasePreviewRequest;
+class GetImageAncestryRequest;
 class GetImageBlockPublicAccessStateRequest;
 class GetInstanceMetadataDefaultsRequest;
 class GetInstanceTpmEkPubRequest;
@@ -2189,6 +2191,7 @@ typedef Aws::Utils::Outcome<GetEbsEncryptionByDefaultResponse, EC2Error> GetEbsE
 typedef Aws::Utils::Outcome<GetFlowLogsIntegrationTemplateResponse, EC2Error> GetFlowLogsIntegrationTemplateOutcome;
 typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> GetGroupsForCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
+typedef Aws::Utils::Outcome<GetImageAncestryResponse, EC2Error> GetImageAncestryOutcome;
 typedef Aws::Utils::Outcome<GetImageBlockPublicAccessStateResponse, EC2Error> GetImageBlockPublicAccessStateOutcome;
 typedef Aws::Utils::Outcome<GetInstanceMetadataDefaultsResponse, EC2Error> GetInstanceMetadataDefaultsOutcome;
 typedef Aws::Utils::Outcome<GetInstanceTpmEkPubResponse, EC2Error> GetInstanceTpmEkPubOutcome;
@@ -2926,6 +2929,7 @@ typedef std::future<GetEbsEncryptionByDefaultOutcome> GetEbsEncryptionByDefaultO
 typedef std::future<GetFlowLogsIntegrationTemplateOutcome> GetFlowLogsIntegrationTemplateOutcomeCallable;
 typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacityReservationOutcomeCallable;
 typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
+typedef std::future<GetImageAncestryOutcome> GetImageAncestryOutcomeCallable;
 typedef std::future<GetImageBlockPublicAccessStateOutcome> GetImageBlockPublicAccessStateOutcomeCallable;
 typedef std::future<GetInstanceMetadataDefaultsOutcome> GetInstanceMetadataDefaultsOutcomeCallable;
 typedef std::future<GetInstanceTpmEkPubOutcome> GetInstanceTpmEkPubOutcomeCallable;
@@ -4899,6 +4903,9 @@ typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurc
                            const Model::GetHostReservationPurchasePreviewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHostReservationPurchasePreviewResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetImageAncestryRequest&, const Model::GetImageAncestryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetImageAncestryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetImageBlockPublicAccessStateRequest&,
                            const Model::GetImageBlockPublicAccessStateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

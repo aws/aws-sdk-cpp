@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/EksConfiguration.h>
+#include <aws/amp/model/VpcConfiguration.h>
 
 #include <utility>
 
@@ -48,9 +49,33 @@ class Source {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon VPC configuration for the Prometheus collector when connecting to
+   * Amazon MSK clusters. This configuration enables secure, private network
+   * connectivity between the collector and your Amazon MSK cluster within your
+   * Amazon VPC.</p>
+   */
+  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  Source& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EksConfiguration m_eksConfiguration;
   bool m_eksConfigurationHasBeenSet = false;
+
+  VpcConfiguration m_vpcConfiguration;
+  bool m_vpcConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model
