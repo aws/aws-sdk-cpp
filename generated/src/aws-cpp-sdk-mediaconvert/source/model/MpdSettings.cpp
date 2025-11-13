@@ -27,9 +27,17 @@ MpdSettings& MpdSettings::operator=(JsonView jsonValue) {
     m_audioDuration = MpdAudioDurationMapper::GetMpdAudioDurationForName(jsonValue.GetString("audioDuration"));
     m_audioDurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("c2paManifest")) {
+    m_c2paManifest = MpdC2paManifestMapper::GetMpdC2paManifestForName(jsonValue.GetString("c2paManifest"));
+    m_c2paManifestHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("captionContainerType")) {
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
     m_captionContainerTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("certificateSecret")) {
+    m_certificateSecret = jsonValue.GetString("certificateSecret");
+    m_certificateSecretHasBeenSet = true;
   }
   if (jsonValue.ValueExists("klvMetadata")) {
     m_klvMetadata = MpdKlvMetadataMapper::GetMpdKlvMetadataForName(jsonValue.GetString("klvMetadata"));
@@ -47,6 +55,10 @@ MpdSettings& MpdSettings::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("scte35Source")) {
     m_scte35Source = MpdScte35SourceMapper::GetMpdScte35SourceForName(jsonValue.GetString("scte35Source"));
     m_scte35SourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("signingKmsKey")) {
+    m_signingKmsKey = jsonValue.GetString("signingKmsKey");
+    m_signingKmsKeyHasBeenSet = true;
   }
   if (jsonValue.ValueExists("timedMetadata")) {
     m_timedMetadata = MpdTimedMetadataMapper::GetMpdTimedMetadataForName(jsonValue.GetString("timedMetadata"));
@@ -80,8 +92,16 @@ JsonValue MpdSettings::Jsonize() const {
     payload.WithString("audioDuration", MpdAudioDurationMapper::GetNameForMpdAudioDuration(m_audioDuration));
   }
 
+  if (m_c2paManifestHasBeenSet) {
+    payload.WithString("c2paManifest", MpdC2paManifestMapper::GetNameForMpdC2paManifest(m_c2paManifest));
+  }
+
   if (m_captionContainerTypeHasBeenSet) {
     payload.WithString("captionContainerType", MpdCaptionContainerTypeMapper::GetNameForMpdCaptionContainerType(m_captionContainerType));
+  }
+
+  if (m_certificateSecretHasBeenSet) {
+    payload.WithString("certificateSecret", m_certificateSecret);
   }
 
   if (m_klvMetadataHasBeenSet) {
@@ -99,6 +119,10 @@ JsonValue MpdSettings::Jsonize() const {
 
   if (m_scte35SourceHasBeenSet) {
     payload.WithString("scte35Source", MpdScte35SourceMapper::GetNameForMpdScte35Source(m_scte35Source));
+  }
+
+  if (m_signingKmsKeyHasBeenSet) {
+    payload.WithString("signingKmsKey", m_signingKmsKey);
   }
 
   if (m_timedMetadataHasBeenSet) {

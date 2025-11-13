@@ -51,7 +51,6 @@
 #include <aws/cloudformation/model/DescribePublisherResult.h>
 #include <aws/cloudformation/model/DescribeResourceScanResult.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
-#include <aws/cloudformation/model/DescribeStackEventsRequest.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
 #include <aws/cloudformation/model/DescribeStackInstanceResult.h>
 #include <aws/cloudformation/model/DescribeStackRefactorResult.h>
@@ -73,6 +72,8 @@
 #include <aws/cloudformation/model/EstimateTemplateCostResult.h>
 #include <aws/cloudformation/model/ExecuteChangeSetResult.h>
 #include <aws/cloudformation/model/GetGeneratedTemplateResult.h>
+#include <aws/cloudformation/model/GetHookResultRequest.h>
+#include <aws/cloudformation/model/GetHookResultResult.h>
 #include <aws/cloudformation/model/GetStackPolicyResult.h>
 #include <aws/cloudformation/model/GetTemplateRequest.h>
 #include <aws/cloudformation/model/GetTemplateResult.h>
@@ -211,6 +212,7 @@ class EstimateTemplateCostRequest;
 class ExecuteChangeSetRequest;
 class ExecuteStackRefactorRequest;
 class GetGeneratedTemplateRequest;
+class GetHookResultRequest;
 class GetStackPolicyRequest;
 class GetTemplateRequest;
 class GetTemplateSummaryRequest;
@@ -302,6 +304,7 @@ typedef Aws::Utils::Outcome<EstimateTemplateCostResult, CloudFormationError> Est
 typedef Aws::Utils::Outcome<ExecuteChangeSetResult, CloudFormationError> ExecuteChangeSetOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> ExecuteStackRefactorOutcome;
 typedef Aws::Utils::Outcome<GetGeneratedTemplateResult, CloudFormationError> GetGeneratedTemplateOutcome;
+typedef Aws::Utils::Outcome<GetHookResultResult, CloudFormationError> GetHookResultOutcome;
 typedef Aws::Utils::Outcome<GetStackPolicyResult, CloudFormationError> GetStackPolicyOutcome;
 typedef Aws::Utils::Outcome<GetTemplateResult, CloudFormationError> GetTemplateOutcome;
 typedef Aws::Utils::Outcome<GetTemplateSummaryResult, CloudFormationError> GetTemplateSummaryOutcome;
@@ -393,6 +396,7 @@ typedef std::future<EstimateTemplateCostOutcome> EstimateTemplateCostOutcomeCall
 typedef std::future<ExecuteChangeSetOutcome> ExecuteChangeSetOutcomeCallable;
 typedef std::future<ExecuteStackRefactorOutcome> ExecuteStackRefactorOutcomeCallable;
 typedef std::future<GetGeneratedTemplateOutcome> GetGeneratedTemplateOutcomeCallable;
+typedef std::future<GetHookResultOutcome> GetHookResultOutcomeCallable;
 typedef std::future<GetStackPolicyOutcome> GetStackPolicyOutcomeCallable;
 typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
 typedef std::future<GetTemplateSummaryOutcome> GetTemplateSummaryOutcomeCallable;
@@ -580,6 +584,9 @@ typedef std::function<void(const CloudFormationClient*, const Model::ExecuteStac
 typedef std::function<void(const CloudFormationClient*, const Model::GetGeneratedTemplateRequest&,
                            const Model::GetGeneratedTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGeneratedTemplateResponseReceivedHandler;
+typedef std::function<void(const CloudFormationClient*, const Model::GetHookResultRequest&, const Model::GetHookResultOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetHookResultResponseReceivedHandler;
 typedef std::function<void(const CloudFormationClient*, const Model::GetStackPolicyRequest&, const Model::GetStackPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStackPolicyResponseReceivedHandler;

@@ -10,7 +10,28 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class AcceleratorName { NOT_SET, a100, inferentia, k520, k80, m60, radeon_pro_v520, t4, vu9p, v100, a10g, h100, t4g };
+enum class AcceleratorName {
+  NOT_SET,
+  a100,
+  inferentia,
+  k520,
+  k80,
+  m60,
+  radeon_pro_v520,
+  t4,
+  vu9p,
+  v100,
+  a10g,
+  h100,
+  t4g,
+  l40s,
+  l4,
+  gaudi_hl_205,
+  inferentia2,
+  trainium,
+  trainium2,
+  u30
+};
 
 namespace AcceleratorNameMapper {
 AWS_EC2_API AcceleratorName GetAcceleratorNameForName(const Aws::String& name);

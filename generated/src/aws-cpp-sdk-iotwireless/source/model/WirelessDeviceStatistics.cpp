@@ -62,6 +62,10 @@ WirelessDeviceStatistics& WirelessDeviceStatistics::operator=(JsonView jsonValue
     m_mcGroupId = jsonValue.GetInteger("McGroupId");
     m_mcGroupIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = PositioningConfigStatusMapper::GetPositioningConfigStatusForName(jsonValue.GetString("Positioning"));
+    m_positioningHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue WirelessDeviceStatistics::Jsonize() const {
 
   if (m_mcGroupIdHasBeenSet) {
     payload.WithInteger("McGroupId", m_mcGroupId);
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
   }
 
   return payload;

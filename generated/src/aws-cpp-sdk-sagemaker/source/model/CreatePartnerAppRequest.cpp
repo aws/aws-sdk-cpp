@@ -51,6 +51,10 @@ Aws::String CreatePartnerAppRequest::SerializePayload() const {
     payload.WithBool("EnableIamSessionBasedIdentity", m_enableIamSessionBasedIdentity);
   }
 
+  if (m_enableAutoMinorVersionUpgradeHasBeenSet) {
+    payload.WithBool("EnableAutoMinorVersionUpgrade", m_enableAutoMinorVersionUpgrade);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
   }

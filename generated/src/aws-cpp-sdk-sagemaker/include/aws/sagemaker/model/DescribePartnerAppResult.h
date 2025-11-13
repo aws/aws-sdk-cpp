@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AvailableUpgrade.h>
 #include <aws/sagemaker/model/ErrorInfo.h>
 #include <aws/sagemaker/model/PartnerAppAuthType.h>
 #include <aws/sagemaker/model/PartnerAppConfig.h>
@@ -318,6 +319,59 @@ class DescribePartnerAppResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether the SageMaker Partner AI App is configured for automatic
+   * minor version upgrades during scheduled maintenance windows.</p>
+   */
+  inline bool GetEnableAutoMinorVersionUpgrade() const { return m_enableAutoMinorVersionUpgrade; }
+  inline void SetEnableAutoMinorVersionUpgrade(bool value) {
+    m_enableAutoMinorVersionUpgradeHasBeenSet = true;
+    m_enableAutoMinorVersionUpgrade = value;
+  }
+  inline DescribePartnerAppResult& WithEnableAutoMinorVersionUpgrade(bool value) {
+    SetEnableAutoMinorVersionUpgrade(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The end-of-life date for the current version of the SageMaker Partner AI
+   * App.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCurrentVersionEolDate() const { return m_currentVersionEolDate; }
+  template <typename CurrentVersionEolDateT = Aws::Utils::DateTime>
+  void SetCurrentVersionEolDate(CurrentVersionEolDateT&& value) {
+    m_currentVersionEolDateHasBeenSet = true;
+    m_currentVersionEolDate = std::forward<CurrentVersionEolDateT>(value);
+  }
+  template <typename CurrentVersionEolDateT = Aws::Utils::DateTime>
+  DescribePartnerAppResult& WithCurrentVersionEolDate(CurrentVersionEolDateT&& value) {
+    SetCurrentVersionEolDate(std::forward<CurrentVersionEolDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of available minor version upgrades for the SageMaker Partner AI App.
+   * The key is the semantic version number, and the value is a list of release notes
+   * for that version. A null value indicates no upgrades are available.</p>
+   */
+  inline const AvailableUpgrade& GetAvailableUpgrade() const { return m_availableUpgrade; }
+  template <typename AvailableUpgradeT = AvailableUpgrade>
+  void SetAvailableUpgrade(AvailableUpgradeT&& value) {
+    m_availableUpgradeHasBeenSet = true;
+    m_availableUpgrade = std::forward<AvailableUpgradeT>(value);
+  }
+  template <typename AvailableUpgradeT = AvailableUpgrade>
+  DescribePartnerAppResult& WithAvailableUpgrade(AvailableUpgradeT&& value) {
+    SetAvailableUpgrade(std::forward<AvailableUpgradeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -379,6 +433,15 @@ class DescribePartnerAppResult {
 
   ErrorInfo m_error;
   bool m_errorHasBeenSet = false;
+
+  bool m_enableAutoMinorVersionUpgrade{false};
+  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_currentVersionEolDate{};
+  bool m_currentVersionEolDateHasBeenSet = false;
+
+  AvailableUpgrade m_availableUpgrade;
+  bool m_availableUpgradeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

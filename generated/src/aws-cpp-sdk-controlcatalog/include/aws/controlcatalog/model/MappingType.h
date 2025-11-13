@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ControlCatalog {
 namespace Model {
-enum class MappingType { NOT_SET, FRAMEWORK, COMMON_CONTROL };
+enum class MappingType { NOT_SET, FRAMEWORK, COMMON_CONTROL, RELATED_CONTROL };
 
 namespace MappingTypeMapper {
 AWS_CONTROLCATALOG_API MappingType GetMappingTypeForName(const Aws::String& name);

@@ -2251,8 +2251,8 @@ class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>List wireless devices that have been added to an import task.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>List of import tasks and summary information of onboarding status of devices
+   * in each import task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">AWS
    * API Reference</a></p>
    */

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <aws/iotwireless/model/SidewalkSingleStartImportInfo.h>
 #include <aws/iotwireless/model/Tag.h>
 
@@ -111,6 +112,23 @@ class StartSingleWirelessDeviceImportTaskRequest : public IoTWirelessRequest {
 
   ///@{
   /**
+   * <p>The integration status of the Device Location feature for Sidewalk
+   * devices.</p>
+   */
+  inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  inline void SetPositioning(PositioningConfigStatus value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = value;
+  }
+  inline StartSingleWirelessDeviceImportTaskRequest& WithPositioning(PositioningConfigStatus value) {
+    SetPositioning(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Sidewalk-related parameters for importing a single wireless device.</p>
    */
   inline const SidewalkSingleStartImportInfo& GetSidewalk() const { return m_sidewalk; }
@@ -138,6 +156,9 @@ class StartSingleWirelessDeviceImportTaskRequest : public IoTWirelessRequest {
 
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
+  bool m_positioningHasBeenSet = false;
 
   SidewalkSingleStartImportInfo m_sidewalk;
   bool m_sidewalkHasBeenSet = false;

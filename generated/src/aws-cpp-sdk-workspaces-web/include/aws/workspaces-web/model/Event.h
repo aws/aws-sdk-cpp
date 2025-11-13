@@ -27,7 +27,8 @@ enum class Event {
   SessionConnect,
   SessionStart,
   SessionDisconnect,
-  SessionEnd
+  SessionEnd,
+  UrlBlockByContentFilter
 };
 
 namespace EventMapper {

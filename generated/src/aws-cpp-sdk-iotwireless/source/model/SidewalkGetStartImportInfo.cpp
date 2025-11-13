@@ -30,6 +30,10 @@ SidewalkGetStartImportInfo& SidewalkGetStartImportInfo::operator=(JsonView jsonV
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = jsonValue.GetObject("Positioning");
+    m_positioningHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -47,6 +51,10 @@ JsonValue SidewalkGetStartImportInfo::Jsonize() const {
 
   if (m_roleHasBeenSet) {
     payload.WithString("Role", m_role);
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithObject("Positioning", m_positioning.Jsonize());
   }
 
   return payload;

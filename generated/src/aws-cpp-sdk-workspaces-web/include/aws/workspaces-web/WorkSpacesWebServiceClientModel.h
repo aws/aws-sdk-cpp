@@ -27,6 +27,7 @@
 #include <aws/workspaces-web/model/AssociateTrustStoreResult.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsResult.h>
+#include <aws/workspaces-web/model/CreateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateBrowserSettingsResult.h>
 #include <aws/workspaces-web/model/CreateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateDataProtectionSettingsResult.h>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/SidewalkPositioning.h>
 
 #include <utility>
 
@@ -50,9 +51,30 @@ class SidewalkSingleStartImportInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Positioning object of the Sidewalk device.</p>
+   */
+  inline const SidewalkPositioning& GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  template <typename PositioningT = SidewalkPositioning>
+  void SetPositioning(PositioningT&& value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = std::forward<PositioningT>(value);
+  }
+  template <typename PositioningT = SidewalkPositioning>
+  SidewalkSingleStartImportInfo& WithPositioning(PositioningT&& value) {
+    SetPositioning(std::forward<PositioningT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sidewalkManufacturingSn;
   bool m_sidewalkManufacturingSnHasBeenSet = false;
+
+  SidewalkPositioning m_positioning;
+  bool m_positioningHasBeenSet = false;
 };
 
 }  // namespace Model

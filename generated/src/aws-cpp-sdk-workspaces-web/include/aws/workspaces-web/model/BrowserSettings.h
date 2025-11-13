@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/WebContentFilteringPolicy.h>
 
 #include <utility>
 
@@ -140,6 +141,26 @@ class BrowserSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The policy that specifies which URLs end users are allowed to access or which
+   * URLs or domain categories they are restricted from accessing for enhanced
+   * security.</p>
+   */
+  inline const WebContentFilteringPolicy& GetWebContentFilteringPolicy() const { return m_webContentFilteringPolicy; }
+  inline bool WebContentFilteringPolicyHasBeenSet() const { return m_webContentFilteringPolicyHasBeenSet; }
+  template <typename WebContentFilteringPolicyT = WebContentFilteringPolicy>
+  void SetWebContentFilteringPolicy(WebContentFilteringPolicyT&& value) {
+    m_webContentFilteringPolicyHasBeenSet = true;
+    m_webContentFilteringPolicy = std::forward<WebContentFilteringPolicyT>(value);
+  }
+  template <typename WebContentFilteringPolicyT = WebContentFilteringPolicy>
+  BrowserSettings& WithWebContentFilteringPolicy(WebContentFilteringPolicyT&& value) {
+    SetWebContentFilteringPolicy(std::forward<WebContentFilteringPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_browserSettingsArn;
   bool m_browserSettingsArnHasBeenSet = false;
@@ -155,6 +176,9 @@ class BrowserSettings {
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
   bool m_additionalEncryptionContextHasBeenSet = false;
+
+  WebContentFilteringPolicy m_webContentFilteringPolicy;
+  bool m_webContentFilteringPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

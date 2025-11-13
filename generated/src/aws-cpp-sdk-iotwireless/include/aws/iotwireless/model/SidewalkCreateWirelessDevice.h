@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/SidewalkPositioning.h>
 
 #include <utility>
 
@@ -48,9 +49,51 @@ class SidewalkCreateWirelessDevice {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Positioning object of the Sidewalk device.</p>
+   */
+  inline const SidewalkPositioning& GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  template <typename PositioningT = SidewalkPositioning>
+  void SetPositioning(PositioningT&& value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = std::forward<PositioningT>(value);
+  }
+  template <typename PositioningT = SidewalkPositioning>
+  SidewalkCreateWirelessDevice& WithPositioning(PositioningT&& value) {
+    SetPositioning(std::forward<PositioningT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Sidewalk manufacturing serial number.</p>
+   */
+  inline const Aws::String& GetSidewalkManufacturingSn() const { return m_sidewalkManufacturingSn; }
+  inline bool SidewalkManufacturingSnHasBeenSet() const { return m_sidewalkManufacturingSnHasBeenSet; }
+  template <typename SidewalkManufacturingSnT = Aws::String>
+  void SetSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) {
+    m_sidewalkManufacturingSnHasBeenSet = true;
+    m_sidewalkManufacturingSn = std::forward<SidewalkManufacturingSnT>(value);
+  }
+  template <typename SidewalkManufacturingSnT = Aws::String>
+  SidewalkCreateWirelessDevice& WithSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) {
+    SetSidewalkManufacturingSn(std::forward<SidewalkManufacturingSnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_deviceProfileId;
   bool m_deviceProfileIdHasBeenSet = false;
+
+  SidewalkPositioning m_positioning;
+  bool m_positioningHasBeenSet = false;
+
+  Aws::String m_sidewalkManufacturingSn;
+  bool m_sidewalkManufacturingSnHasBeenSet = false;
 };
 
 }  // namespace Model

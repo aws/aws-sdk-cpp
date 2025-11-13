@@ -8,6 +8,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/FuotaDeviceStatus.h>
 #include <aws/iotwireless/model/LoRaWANListDevice.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <aws/iotwireless/model/SidewalkListDevice.h>
 #include <aws/iotwireless/model/WirelessDeviceType.h>
 
@@ -224,6 +225,23 @@ class WirelessDeviceStatistics {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The integration status of the Device Location feature for LoRaWAN and Amazon
+   * Sidewalk enabled devices.</p>
+   */
+  inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  inline void SetPositioning(PositioningConfigStatus value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = value;
+  }
+  inline WirelessDeviceStatistics& WithPositioning(PositioningConfigStatus value) {
+    SetPositioning(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -257,6 +275,9 @@ class WirelessDeviceStatistics {
 
   int m_mcGroupId{0};
   bool m_mcGroupIdHasBeenSet = false;
+
+  PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
+  bool m_positioningHasBeenSet = false;
 };
 
 }  // namespace Model

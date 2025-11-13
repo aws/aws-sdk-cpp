@@ -33,6 +33,14 @@ ListDevicesForWirelessDeviceImportTaskResult& ListDevicesForWirelessDeviceImport
     m_destinationName = jsonValue.GetString("DestinationName");
     m_destinationNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = PositioningConfigStatusMapper::GetPositioningConfigStatusForName(jsonValue.GetString("Positioning"));
+    m_positioningHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Sidewalk")) {
+    m_sidewalk = jsonValue.GetObject("Sidewalk");
+    m_sidewalkHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ImportedWirelessDeviceList")) {
     Aws::Utils::Array<JsonView> importedWirelessDeviceListJsonList = jsonValue.GetArray("ImportedWirelessDeviceList");
     for (unsigned importedWirelessDeviceListIndex = 0; importedWirelessDeviceListIndex < importedWirelessDeviceListJsonList.GetLength();

@@ -32,6 +32,22 @@ PartnerAppConfig& PartnerAppConfig::operator=(JsonView jsonValue) {
     }
     m_argumentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AssignedGroupPatterns")) {
+    Aws::Utils::Array<JsonView> assignedGroupPatternsJsonList = jsonValue.GetArray("AssignedGroupPatterns");
+    for (unsigned assignedGroupPatternsIndex = 0; assignedGroupPatternsIndex < assignedGroupPatternsJsonList.GetLength();
+         ++assignedGroupPatternsIndex) {
+      m_assignedGroupPatterns.push_back(assignedGroupPatternsJsonList[assignedGroupPatternsIndex].AsString());
+    }
+    m_assignedGroupPatternsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoleGroupAssignments")) {
+    Aws::Utils::Array<JsonView> roleGroupAssignmentsJsonList = jsonValue.GetArray("RoleGroupAssignments");
+    for (unsigned roleGroupAssignmentsIndex = 0; roleGroupAssignmentsIndex < roleGroupAssignmentsJsonList.GetLength();
+         ++roleGroupAssignmentsIndex) {
+      m_roleGroupAssignments.push_back(roleGroupAssignmentsJsonList[roleGroupAssignmentsIndex].AsObject());
+    }
+    m_roleGroupAssignmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +68,24 @@ JsonValue PartnerAppConfig::Jsonize() const {
       argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
     }
     payload.WithObject("Arguments", std::move(argumentsJsonMap));
+  }
+
+  if (m_assignedGroupPatternsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assignedGroupPatternsJsonList(m_assignedGroupPatterns.size());
+    for (unsigned assignedGroupPatternsIndex = 0; assignedGroupPatternsIndex < assignedGroupPatternsJsonList.GetLength();
+         ++assignedGroupPatternsIndex) {
+      assignedGroupPatternsJsonList[assignedGroupPatternsIndex].AsString(m_assignedGroupPatterns[assignedGroupPatternsIndex]);
+    }
+    payload.WithArray("AssignedGroupPatterns", std::move(assignedGroupPatternsJsonList));
+  }
+
+  if (m_roleGroupAssignmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> roleGroupAssignmentsJsonList(m_roleGroupAssignments.size());
+    for (unsigned roleGroupAssignmentsIndex = 0; roleGroupAssignmentsIndex < roleGroupAssignmentsJsonList.GetLength();
+         ++roleGroupAssignmentsIndex) {
+      roleGroupAssignmentsJsonList[roleGroupAssignmentsIndex].AsObject(m_roleGroupAssignments[roleGroupAssignmentsIndex].Jsonize());
+    }
+    payload.WithArray("RoleGroupAssignments", std::move(roleGroupAssignmentsJsonList));
   }
 
   return payload;
