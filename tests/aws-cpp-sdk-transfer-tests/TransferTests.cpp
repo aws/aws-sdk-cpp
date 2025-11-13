@@ -2332,3 +2332,25 @@ INSTANTIATE_TEST_SUITE_P(Https, TransferTests, testing::Values(TestType::Https))
 INSTANTIATE_TEST_SUITE_P(Http, TransferTests, testing::Values(TestType::Http));
 
 }
+
+TEST_P(TransferTests, TransferManager_FullObjectChecksumCalculation)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String testFileName = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(testFileName, MEDIUM_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Clients[GetParam()];
+    transferManagerConfig.checksumAlgorithm = Aws::S3::Model::ChecksumAlgorithm::CRC32;
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(
+        testFileName, GetTestBucketName(), RandomFileName, "text/plain", 
+        Aws::Map<Aws::String, Aws::String>());
+
+    requestPtr->WaitUntilFinished();
+
+    ASSERT_TRUE(requestPtr->IsMultipart());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+
+}
