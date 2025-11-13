@@ -316,12 +316,15 @@
 #include <aws/iotwireless/model/SidewalkGetDeviceProfile.h>
 #include <aws/iotwireless/model/SidewalkGetStartImportInfo.h>
 #include <aws/iotwireless/model/SidewalkListDevice.h>
+#include <aws/iotwireless/model/SidewalkListDevicesForImportInfo.h>
+#include <aws/iotwireless/model/SidewalkPositioning.h>
 #include <aws/iotwireless/model/SidewalkResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/SidewalkSendDataToDevice.h>
 #include <aws/iotwireless/model/SidewalkSingleStartImportInfo.h>
 #include <aws/iotwireless/model/SidewalkStartImportInfo.h>
 #include <aws/iotwireless/model/SidewalkUpdateAccount.h>
 #include <aws/iotwireless/model/SidewalkUpdateImportInfo.h>
+#include <aws/iotwireless/model/SidewalkUpdateWirelessDevice.h>
 #include <aws/iotwireless/model/SigningAlg.h>
 #include <aws/iotwireless/model/StartBulkAssociateWirelessDeviceWithMulticastGroupRequest.h>
 #include <aws/iotwireless/model/StartBulkAssociateWirelessDeviceWithMulticastGroupResult.h>

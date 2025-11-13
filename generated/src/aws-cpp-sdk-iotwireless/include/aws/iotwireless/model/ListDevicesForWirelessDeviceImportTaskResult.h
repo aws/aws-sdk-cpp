@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/ImportedWirelessDevice.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
+#include <aws/iotwireless/model/SidewalkListDevicesForImportInfo.h>
 
 #include <utility>
 
@@ -68,6 +70,39 @@ class ListDevicesForWirelessDeviceImportTaskResult {
 
   ///@{
   /**
+   * <p>The integration status of the Device Location feature for Sidewalk
+   * devices.</p>
+   */
+  inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
+  inline void SetPositioning(PositioningConfigStatus value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = value;
+  }
+  inline ListDevicesForWirelessDeviceImportTaskResult& WithPositioning(PositioningConfigStatus value) {
+    SetPositioning(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Sidewalk object containing Sidewalk-related device information.</p>
+   */
+  inline const SidewalkListDevicesForImportInfo& GetSidewalk() const { return m_sidewalk; }
+  template <typename SidewalkT = SidewalkListDevicesForImportInfo>
+  void SetSidewalk(SidewalkT&& value) {
+    m_sidewalkHasBeenSet = true;
+    m_sidewalk = std::forward<SidewalkT>(value);
+  }
+  template <typename SidewalkT = SidewalkListDevicesForImportInfo>
+  ListDevicesForWirelessDeviceImportTaskResult& WithSidewalk(SidewalkT&& value) {
+    SetSidewalk(std::forward<SidewalkT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of wireless devices in an import task and their onboarding status.</p>
    */
   inline const Aws::Vector<ImportedWirelessDevice>& GetImportedWirelessDeviceList() const { return m_importedWirelessDeviceList; }
@@ -109,6 +144,12 @@ class ListDevicesForWirelessDeviceImportTaskResult {
 
   Aws::String m_destinationName;
   bool m_destinationNameHasBeenSet = false;
+
+  PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
+  bool m_positioningHasBeenSet = false;
+
+  SidewalkListDevicesForImportInfo m_sidewalk;
+  bool m_sidewalkHasBeenSet = false;
 
   Aws::Vector<ImportedWirelessDevice> m_importedWirelessDeviceList;
   bool m_importedWirelessDeviceListHasBeenSet = false;

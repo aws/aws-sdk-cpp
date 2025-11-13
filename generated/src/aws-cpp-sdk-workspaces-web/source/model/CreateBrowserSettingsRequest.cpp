@@ -43,5 +43,9 @@ Aws::String CreateBrowserSettingsRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_webContentFilteringPolicyHasBeenSet) {
+    payload.WithObject("webContentFilteringPolicy", m_webContentFilteringPolicy.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

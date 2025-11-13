@@ -34,6 +34,14 @@ CmfcSettings& CmfcSettings::operator=(JsonView jsonValue) {
     m_audioTrackType = CmfcAudioTrackTypeMapper::GetCmfcAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
     m_audioTrackTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("c2paManifest")) {
+    m_c2paManifest = CmfcC2paManifestMapper::GetCmfcC2paManifestForName(jsonValue.GetString("c2paManifest"));
+    m_c2paManifestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("certificateSecret")) {
+    m_certificateSecret = jsonValue.GetString("certificateSecret");
+    m_certificateSecretHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("descriptiveVideoServiceFlag")) {
     m_descriptiveVideoServiceFlag = CmfcDescriptiveVideoServiceFlagMapper::GetCmfcDescriptiveVideoServiceFlagForName(
         jsonValue.GetString("descriptiveVideoServiceFlag"));
@@ -59,6 +67,10 @@ CmfcSettings& CmfcSettings::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("scte35Source")) {
     m_scte35Source = CmfcScte35SourceMapper::GetCmfcScte35SourceForName(jsonValue.GetString("scte35Source"));
     m_scte35SourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("signingKmsKey")) {
+    m_signingKmsKey = jsonValue.GetString("signingKmsKey");
+    m_signingKmsKeyHasBeenSet = true;
   }
   if (jsonValue.ValueExists("timedMetadata")) {
     m_timedMetadata = CmfcTimedMetadataMapper::GetCmfcTimedMetadataForName(jsonValue.GetString("timedMetadata"));
@@ -99,6 +111,14 @@ JsonValue CmfcSettings::Jsonize() const {
     payload.WithString("audioTrackType", CmfcAudioTrackTypeMapper::GetNameForCmfcAudioTrackType(m_audioTrackType));
   }
 
+  if (m_c2paManifestHasBeenSet) {
+    payload.WithString("c2paManifest", CmfcC2paManifestMapper::GetNameForCmfcC2paManifest(m_c2paManifest));
+  }
+
+  if (m_certificateSecretHasBeenSet) {
+    payload.WithString("certificateSecret", m_certificateSecret);
+  }
+
   if (m_descriptiveVideoServiceFlagHasBeenSet) {
     payload.WithString("descriptiveVideoServiceFlag",
                        CmfcDescriptiveVideoServiceFlagMapper::GetNameForCmfcDescriptiveVideoServiceFlag(m_descriptiveVideoServiceFlag));
@@ -123,6 +143,10 @@ JsonValue CmfcSettings::Jsonize() const {
 
   if (m_scte35SourceHasBeenSet) {
     payload.WithString("scte35Source", CmfcScte35SourceMapper::GetNameForCmfcScte35Source(m_scte35Source));
+  }
+
+  if (m_signingKmsKeyHasBeenSet) {
+    payload.WithString("signingKmsKey", m_signingKmsKey);
   }
 
   if (m_timedMetadataHasBeenSet) {

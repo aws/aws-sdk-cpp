@@ -9,6 +9,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/LoRaWANUpdateDevice.h>
 #include <aws/iotwireless/model/PositioningConfigStatus.h>
+#include <aws/iotwireless/model/SidewalkUpdateWirelessDevice.h>
 
 #include <utility>
 
@@ -123,8 +124,8 @@ class UpdateWirelessDeviceRequest : public IoTWirelessRequest {
 
   ///@{
   /**
-   * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
-   * information.</p>
+   * <p>The integration status of the Device Location feature for LoRaWAN and
+   * Sidewalk devices.</p>
    */
   inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
   inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
@@ -134,6 +135,24 @@ class UpdateWirelessDeviceRequest : public IoTWirelessRequest {
   }
   inline UpdateWirelessDeviceRequest& WithPositioning(PositioningConfigStatus value) {
     SetPositioning(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated sidewalk properties.</p>
+   */
+  inline const SidewalkUpdateWirelessDevice& GetSidewalk() const { return m_sidewalk; }
+  inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
+  template <typename SidewalkT = SidewalkUpdateWirelessDevice>
+  void SetSidewalk(SidewalkT&& value) {
+    m_sidewalkHasBeenSet = true;
+    m_sidewalk = std::forward<SidewalkT>(value);
+  }
+  template <typename SidewalkT = SidewalkUpdateWirelessDevice>
+  UpdateWirelessDeviceRequest& WithSidewalk(SidewalkT&& value) {
+    SetSidewalk(std::forward<SidewalkT>(value));
     return *this;
   }
   ///@}
@@ -155,6 +174,9 @@ class UpdateWirelessDeviceRequest : public IoTWirelessRequest {
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
   bool m_positioningHasBeenSet = false;
+
+  SidewalkUpdateWirelessDevice m_sidewalk;
+  bool m_sidewalkHasBeenSet = false;
 };
 
 }  // namespace Model

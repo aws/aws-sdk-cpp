@@ -146,6 +146,7 @@
 #include <aws/mediaconvert/model/CmafWriteSegmentTimelineInRepresentation.h>
 #include <aws/mediaconvert/model/CmfcAudioDuration.h>
 #include <aws/mediaconvert/model/CmfcAudioTrackType.h>
+#include <aws/mediaconvert/model/CmfcC2paManifest.h>
 #include <aws/mediaconvert/model/CmfcDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
 #include <aws/mediaconvert/model/CmfcKlvMetadata.h>
@@ -286,6 +287,7 @@
 #include <aws/mediaconvert/model/ForceIncludeRenditionSize.h>
 #include <aws/mediaconvert/model/Format.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
+#include <aws/mediaconvert/model/FrameControl.h>
 #include <aws/mediaconvert/model/FrameMetricType.h>
 #include <aws/mediaconvert/model/FrameRate.h>
 #include <aws/mediaconvert/model/GetJobRequest.h>
@@ -496,6 +498,7 @@
 #include <aws/mediaconvert/model/Mp4Settings.h>
 #include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
 #include <aws/mediaconvert/model/MpdAudioDuration.h>
+#include <aws/mediaconvert/model/MpdC2paManifest.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
 #include <aws/mediaconvert/model/MpdKlvMetadata.h>
 #include <aws/mediaconvert/model/MpdManifestMetadataSignaling.h>

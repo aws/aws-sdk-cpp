@@ -76,8 +76,8 @@ class DescribeChangeSetRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
-   * identifies the next page of information that you want to retrieve.</p>
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

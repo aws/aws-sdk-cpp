@@ -30,6 +30,10 @@ WirelessDeviceImportTask& WirelessDeviceImportTask::operator=(JsonView jsonValue
     m_destinationName = jsonValue.GetString("DestinationName");
     m_destinationNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = PositioningConfigStatusMapper::GetPositioningConfigStatusForName(jsonValue.GetString("Positioning"));
+    m_positioningHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Sidewalk")) {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
     m_sidewalkHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue WirelessDeviceImportTask::Jsonize() const {
 
   if (m_destinationNameHasBeenSet) {
     payload.WithString("DestinationName", m_destinationName);
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
   }
 
   if (m_sidewalkHasBeenSet) {

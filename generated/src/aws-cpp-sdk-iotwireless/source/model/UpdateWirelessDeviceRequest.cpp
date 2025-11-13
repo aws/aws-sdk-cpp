@@ -35,5 +35,9 @@ Aws::String UpdateWirelessDeviceRequest::SerializePayload() const {
     payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
   }
 
+  if (m_sidewalkHasBeenSet) {
+    payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

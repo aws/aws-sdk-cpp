@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
 #include <aws/mediaconvert/model/MpdAudioDuration.h>
+#include <aws/mediaconvert/model/MpdC2paManifest.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
 #include <aws/mediaconvert/model/MpdKlvMetadata.h>
 #include <aws/mediaconvert/model/MpdManifestMetadataSignaling.h>
@@ -92,6 +93,24 @@ class MpdSettings {
 
   ///@{
   /**
+   * When enabled, a C2PA compliant manifest will be generated, signed and embeded in
+   * the output. For more information on C2PA, see
+   * https://c2pa.org/specifications/specifications/2.1/index.html
+   */
+  inline MpdC2paManifest GetC2paManifest() const { return m_c2paManifest; }
+  inline bool C2paManifestHasBeenSet() const { return m_c2paManifestHasBeenSet; }
+  inline void SetC2paManifest(MpdC2paManifest value) {
+    m_c2paManifestHasBeenSet = true;
+    m_c2paManifest = value;
+  }
+  inline MpdSettings& WithC2paManifest(MpdC2paManifest value) {
+    SetC2paManifest(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Use this setting only in DASH output groups that include sidecar TTML, IMSC or
    * WEBVTT captions. You specify sidecar captions in a separate output from your
    * audio and video. Choose Raw for captions in a single XML file in a raw
@@ -107,6 +126,30 @@ class MpdSettings {
   }
   inline MpdSettings& WithCaptionContainerType(MpdCaptionContainerType value) {
     SetCaptionContainerType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify the name or ARN of the AWS Secrets Manager secret that contains your
+   * C2PA public certificate chain in PEM format. Provide a valid secret name or ARN.
+   * Note that your MediaConvert service role must allow access to this secret. The
+   * public certificate chain is added to the COSE header (x5chain) for signature
+   * validation. Include the signer's certificate and all intermediate certificates.
+   * Do not include the root certificate. For details on COSE, see:
+   * https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+   */
+  inline const Aws::String& GetCertificateSecret() const { return m_certificateSecret; }
+  inline bool CertificateSecretHasBeenSet() const { return m_certificateSecretHasBeenSet; }
+  template <typename CertificateSecretT = Aws::String>
+  void SetCertificateSecret(CertificateSecretT&& value) {
+    m_certificateSecretHasBeenSet = true;
+    m_certificateSecret = std::forward<CertificateSecretT>(value);
+  }
+  template <typename CertificateSecretT = Aws::String>
+  MpdSettings& WithCertificateSecret(CertificateSecretT&& value) {
+    SetCertificateSecret(std::forward<CertificateSecretT>(value));
     return *this;
   }
   ///@}
@@ -188,6 +231,26 @@ class MpdSettings {
   }
   inline MpdSettings& WithScte35Source(MpdScte35Source value) {
     SetScte35Source(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your
+   * MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service
+   * role must allow access to this key.
+   */
+  inline const Aws::String& GetSigningKmsKey() const { return m_signingKmsKey; }
+  inline bool SigningKmsKeyHasBeenSet() const { return m_signingKmsKeyHasBeenSet; }
+  template <typename SigningKmsKeyT = Aws::String>
+  void SetSigningKmsKey(SigningKmsKeyT&& value) {
+    m_signingKmsKeyHasBeenSet = true;
+    m_signingKmsKey = std::forward<SigningKmsKeyT>(value);
+  }
+  template <typename SigningKmsKeyT = Aws::String>
+  MpdSettings& WithSigningKmsKey(SigningKmsKeyT&& value) {
+    SetSigningKmsKey(std::forward<SigningKmsKeyT>(value));
     return *this;
   }
   ///@}
@@ -282,8 +345,14 @@ When you specify Version
   MpdAudioDuration m_audioDuration{MpdAudioDuration::NOT_SET};
   bool m_audioDurationHasBeenSet = false;
 
+  MpdC2paManifest m_c2paManifest{MpdC2paManifest::NOT_SET};
+  bool m_c2paManifestHasBeenSet = false;
+
   MpdCaptionContainerType m_captionContainerType{MpdCaptionContainerType::NOT_SET};
   bool m_captionContainerTypeHasBeenSet = false;
+
+  Aws::String m_certificateSecret;
+  bool m_certificateSecretHasBeenSet = false;
 
   MpdKlvMetadata m_klvMetadata{MpdKlvMetadata::NOT_SET};
   bool m_klvMetadataHasBeenSet = false;
@@ -296,6 +365,9 @@ When you specify Version
 
   MpdScte35Source m_scte35Source{MpdScte35Source::NOT_SET};
   bool m_scte35SourceHasBeenSet = false;
+
+  Aws::String m_signingKmsKey;
+  bool m_signingKmsKeyHasBeenSet = false;
 
   MpdTimedMetadata m_timedMetadata{MpdTimedMetadata::NOT_SET};
   bool m_timedMetadataHasBeenSet = false;

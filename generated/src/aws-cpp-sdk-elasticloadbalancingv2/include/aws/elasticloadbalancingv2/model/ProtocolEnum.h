@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ElasticLoadBalancingv2 {
 namespace Model {
-enum class ProtocolEnum { NOT_SET, HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE };
+enum class ProtocolEnum { NOT_SET, HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE, QUIC, TCP_QUIC };
 
 namespace ProtocolEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API ProtocolEnum GetProtocolEnumForName(const Aws::String& name);

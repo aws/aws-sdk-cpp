@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/SidewalkPositioning.h>
 
 #include <utility>
 
@@ -75,12 +76,33 @@ class SidewalkGetStartImportInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Positioning object of the Sidewalk device.</p>
+   */
+  inline const SidewalkPositioning& GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  template <typename PositioningT = SidewalkPositioning>
+  void SetPositioning(PositioningT&& value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = std::forward<PositioningT>(value);
+  }
+  template <typename PositioningT = SidewalkPositioning>
+  SidewalkGetStartImportInfo& WithPositioning(PositioningT&& value) {
+    SetPositioning(std::forward<PositioningT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_deviceCreationFileList;
   bool m_deviceCreationFileListHasBeenSet = false;
 
   Aws::String m_role;
   bool m_roleHasBeenSet = false;
+
+  SidewalkPositioning m_positioning;
+  bool m_positioningHasBeenSet = false;
 };
 
 }  // namespace Model

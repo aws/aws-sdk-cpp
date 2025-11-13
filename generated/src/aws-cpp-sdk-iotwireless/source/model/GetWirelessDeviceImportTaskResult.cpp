@@ -35,6 +35,10 @@ GetWirelessDeviceImportTaskResult& GetWirelessDeviceImportTaskResult::operator=(
     m_destinationName = jsonValue.GetString("DestinationName");
     m_destinationNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = PositioningConfigStatusMapper::GetPositioningConfigStatusForName(jsonValue.GetString("Positioning"));
+    m_positioningHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Sidewalk")) {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
     m_sidewalkHasBeenSet = true;

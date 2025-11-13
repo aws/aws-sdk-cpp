@@ -7,6 +7,7 @@
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/controlcatalog/model/CommonControlMappingDetails.h>
 #include <aws/controlcatalog/model/FrameworkMappingDetails.h>
+#include <aws/controlcatalog/model/RelatedControlMappingDetails.h>
 
 #include <utility>
 
@@ -70,12 +71,34 @@ class Mapping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Returns information about controls that are related to the specified
+   * control.</p>
+   */
+  inline const RelatedControlMappingDetails& GetRelatedControl() const { return m_relatedControl; }
+  inline bool RelatedControlHasBeenSet() const { return m_relatedControlHasBeenSet; }
+  template <typename RelatedControlT = RelatedControlMappingDetails>
+  void SetRelatedControl(RelatedControlT&& value) {
+    m_relatedControlHasBeenSet = true;
+    m_relatedControl = std::forward<RelatedControlT>(value);
+  }
+  template <typename RelatedControlT = RelatedControlMappingDetails>
+  Mapping& WithRelatedControl(RelatedControlT&& value) {
+    SetRelatedControl(std::forward<RelatedControlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   FrameworkMappingDetails m_framework;
   bool m_frameworkHasBeenSet = false;
 
   CommonControlMappingDetails m_commonControl;
   bool m_commonControlHasBeenSet = false;
+
+  RelatedControlMappingDetails m_relatedControl;
+  bool m_relatedControlHasBeenSet = false;
 };
 
 }  // namespace Model

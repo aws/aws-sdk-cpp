@@ -22,6 +22,8 @@ static const int TLS_HASH = HashingUtils::HashString("TLS");
 static const int UDP_HASH = HashingUtils::HashString("UDP");
 static const int TCP_UDP_HASH = HashingUtils::HashString("TCP_UDP");
 static const int GENEVE_HASH = HashingUtils::HashString("GENEVE");
+static const int QUIC_HASH = HashingUtils::HashString("QUIC");
+static const int TCP_QUIC_HASH = HashingUtils::HashString("TCP_QUIC");
 
 ProtocolEnum GetProtocolEnumForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +41,10 @@ ProtocolEnum GetProtocolEnumForName(const Aws::String& name) {
     return ProtocolEnum::TCP_UDP;
   } else if (hashCode == GENEVE_HASH) {
     return ProtocolEnum::GENEVE;
+  } else if (hashCode == QUIC_HASH) {
+    return ProtocolEnum::QUIC;
+  } else if (hashCode == TCP_QUIC_HASH) {
+    return ProtocolEnum::TCP_QUIC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +73,10 @@ Aws::String GetNameForProtocolEnum(ProtocolEnum enumValue) {
       return "TCP_UDP";
     case ProtocolEnum::GENEVE:
       return "GENEVE";
+    case ProtocolEnum::QUIC:
+      return "QUIC";
+    case ProtocolEnum::TCP_QUIC:
+      return "TCP_QUIC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

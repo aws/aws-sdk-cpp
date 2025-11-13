@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/RoleGroupAssignment.h>
 
 #include <utility>
 
@@ -84,12 +85,75 @@ class PartnerAppConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of Amazon Web Services IAM Identity Center group patterns that can
+   * access the SageMaker Partner AI App. Group names support wildcard matching using
+   * <code>*</code>. An empty list indicates the app will not use Identity Center
+   * group features. All groups specified in <code>RoleGroupAssignments</code> must
+   * match patterns in this list.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAssignedGroupPatterns() const { return m_assignedGroupPatterns; }
+  inline bool AssignedGroupPatternsHasBeenSet() const { return m_assignedGroupPatternsHasBeenSet; }
+  template <typename AssignedGroupPatternsT = Aws::Vector<Aws::String>>
+  void SetAssignedGroupPatterns(AssignedGroupPatternsT&& value) {
+    m_assignedGroupPatternsHasBeenSet = true;
+    m_assignedGroupPatterns = std::forward<AssignedGroupPatternsT>(value);
+  }
+  template <typename AssignedGroupPatternsT = Aws::Vector<Aws::String>>
+  PartnerAppConfig& WithAssignedGroupPatterns(AssignedGroupPatternsT&& value) {
+    SetAssignedGroupPatterns(std::forward<AssignedGroupPatternsT>(value));
+    return *this;
+  }
+  template <typename AssignedGroupPatternsT = Aws::String>
+  PartnerAppConfig& AddAssignedGroupPatterns(AssignedGroupPatternsT&& value) {
+    m_assignedGroupPatternsHasBeenSet = true;
+    m_assignedGroupPatterns.emplace_back(std::forward<AssignedGroupPatternsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of in-app roles to Amazon Web Services IAM Identity Center group
+   * patterns. Groups assigned to specific roles receive those permissions, while
+   * groups in <code>AssignedGroupPatterns</code> but not in this map receive default
+   * in-app role depending on app type. Group patterns support wildcard matching
+   * using <code>*</code>. Currently supported by Fiddler version 1.3 and later with
+   * roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+   */
+  inline const Aws::Vector<RoleGroupAssignment>& GetRoleGroupAssignments() const { return m_roleGroupAssignments; }
+  inline bool RoleGroupAssignmentsHasBeenSet() const { return m_roleGroupAssignmentsHasBeenSet; }
+  template <typename RoleGroupAssignmentsT = Aws::Vector<RoleGroupAssignment>>
+  void SetRoleGroupAssignments(RoleGroupAssignmentsT&& value) {
+    m_roleGroupAssignmentsHasBeenSet = true;
+    m_roleGroupAssignments = std::forward<RoleGroupAssignmentsT>(value);
+  }
+  template <typename RoleGroupAssignmentsT = Aws::Vector<RoleGroupAssignment>>
+  PartnerAppConfig& WithRoleGroupAssignments(RoleGroupAssignmentsT&& value) {
+    SetRoleGroupAssignments(std::forward<RoleGroupAssignmentsT>(value));
+    return *this;
+  }
+  template <typename RoleGroupAssignmentsT = RoleGroupAssignment>
+  PartnerAppConfig& AddRoleGroupAssignments(RoleGroupAssignmentsT&& value) {
+    m_roleGroupAssignmentsHasBeenSet = true;
+    m_roleGroupAssignments.emplace_back(std::forward<RoleGroupAssignmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_adminUsers;
   bool m_adminUsersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
   bool m_argumentsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_assignedGroupPatterns;
+  bool m_assignedGroupPatternsHasBeenSet = false;
+
+  Aws::Vector<RoleGroupAssignment> m_roleGroupAssignments;
+  bool m_roleGroupAssignmentsHasBeenSet = false;
 };
 
 }  // namespace Model

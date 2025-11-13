@@ -106,7 +106,13 @@ class UpdateStackRequest : public CloudFormationRequest {
   ///@{
   /**
    * <p>Reuse the existing template that is associated with the stack that you are
-   * updating.</p> <p>Conditional: You must specify only one of the following
+   * updating.</p> <p>When using templates with the
+   * <code>AWS::LanguageExtensions</code> transform, provide the template instead of
+   * using <code>UsePreviousTemplate</code> to ensure new parameter values and
+   * Systems Manager parameter updates are applied correctly. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/transform-aws-languageextensions.html">AWS::LanguageExtensions
+   * transform</a>.</p> <p>Conditional: You must specify only one of the following
    * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
    * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
    */
@@ -282,17 +288,16 @@ class UpdateStackRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>The template resource types that you have permissions to work with for this
-   * update stack action, such as <code>AWS::EC2::Instance</code>,
-   * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
-   * the list of resource types doesn't include a resource that you're updating, the
-   * stack update fails. By default, CloudFormation grants permissions to all
-   * resource types. IAM uses this parameter for CloudFormation-specific condition
-   * keys in IAM policies. For more information, see <a
+   * <p>Specifies which resource types you can work with, such as
+   * <code>AWS::EC2::Instance</code> or <code>Custom::MyCustomInstance</code>.</p>
+   * <p>If the list of resource types doesn't include a resource that you're
+   * updating, the stack update fails. By default, CloudFormation grants permissions
+   * to all resource types. IAM uses this parameter for CloudFormation-specific
+   * condition keys in IAM policies. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-   * access with Identity and Access Management</a>.</p>  <p>Only one of the
-   * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
-   * specified.</p>
+   * CloudFormation access with Identity and Access Management</a>.</p>
+   * <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code>
+   * parameters can be specified.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
   inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

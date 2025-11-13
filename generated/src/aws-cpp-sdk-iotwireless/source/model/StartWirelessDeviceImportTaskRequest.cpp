@@ -31,6 +31,10 @@ Aws::String StartWirelessDeviceImportTaskRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_positioningHasBeenSet) {
+    payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
+  }
+
   if (m_sidewalkHasBeenSet) {
     payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
   }

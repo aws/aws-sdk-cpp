@@ -34,6 +34,7 @@
 #include <aws/workspaces-web/model/BrowserSettings.h>
 #include <aws/workspaces-web/model/BrowserSettingsSummary.h>
 #include <aws/workspaces-web/model/BrowserType.h>
+#include <aws/workspaces-web/model/Category.h>
 #include <aws/workspaces-web/model/Certificate.h>
 #include <aws/workspaces-web/model/CertificateSummary.h>
 #include <aws/workspaces-web/model/ConflictException.h>
@@ -227,6 +228,7 @@
 #include <aws/workspaces-web/model/ValidationExceptionField.h>
 #include <aws/workspaces-web/model/ValidationExceptionReason.h>
 #include <aws/workspaces-web/model/VisualMode.h>
+#include <aws/workspaces-web/model/WebContentFilteringPolicy.h>
 
 using WorkSpacesWebIncludeTest = ::testing::Test;
 

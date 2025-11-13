@@ -115,6 +115,7 @@
 #include <aws/sagemaker/model/AutoRollbackConfig.h>
 #include <aws/sagemaker/model/Autotune.h>
 #include <aws/sagemaker/model/AutotuneMode.h>
+#include <aws/sagemaker/model/AvailableUpgrade.h>
 #include <aws/sagemaker/model/AwsManagedHumanLoopRequestSource.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesError.h>
 #include <aws/sagemaker/model/BatchAddClusterNodesErrorCode.h>
@@ -1372,6 +1373,7 @@
 #include <aws/sagemaker/model/RetryPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/RoleGroupAssignment.h>
 #include <aws/sagemaker/model/RollingDeploymentPolicy.h>
 #include <aws/sagemaker/model/RollingUpdatePolicy.h>
 #include <aws/sagemaker/model/RootAccess.h>

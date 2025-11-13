@@ -25,8 +25,8 @@ namespace CloudFormation {
 namespace Model {
 
 /**
- * <p>Describes a Hook invocation, its status, and the reason for its
- * status.</p><p><h3>See Also:</h3>   <a
+ * <p>A <code>ListHookResults</code> call returns a summary of a Hook
+ * invocation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/HookResultSummary">AWS
  * API Reference</a></p>
  */
@@ -258,9 +258,9 @@ class HookResultSummary {
 
   ///@{
   /**
-   * <p>The ARN of the target stack or request token of the Cloud Control API
-   * operation.</p> <p>Only shown in responses when the request does not specify
-   * <code>TargetType</code> and <code>TargetId</code> filters.</p>
+   * <p>The Amazon Resource Name (ARN) of the target stack or request token of the
+   * Cloud Control API operation.</p> <p>Only shown in responses when the request
+   * does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
    */
   inline const Aws::String& GetHookExecutionTarget() const { return m_hookExecutionTarget; }
   inline bool HookExecutionTargetHasBeenSet() const { return m_hookExecutionTargetHasBeenSet; }

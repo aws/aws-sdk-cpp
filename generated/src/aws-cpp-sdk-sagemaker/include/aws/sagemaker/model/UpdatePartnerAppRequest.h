@@ -128,6 +128,45 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically
+   * upgraded to the latest minor version during the next scheduled maintenance
+   * window, if one is available.</p>
+   */
+  inline bool GetEnableAutoMinorVersionUpgrade() const { return m_enableAutoMinorVersionUpgrade; }
+  inline bool EnableAutoMinorVersionUpgradeHasBeenSet() const { return m_enableAutoMinorVersionUpgradeHasBeenSet; }
+  inline void SetEnableAutoMinorVersionUpgrade(bool value) {
+    m_enableAutoMinorVersionUpgradeHasBeenSet = true;
+    m_enableAutoMinorVersionUpgrade = value;
+  }
+  inline UpdatePartnerAppRequest& WithEnableAutoMinorVersionUpgrade(bool value) {
+    SetEnableAutoMinorVersionUpgrade(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the
+   * same semantic version returned in the <code>AvailableUpgrade</code> field from
+   * <code>DescribePartnerApp</code>. Version skipping and downgrades are not
+   * supported.</p>
+   */
+  inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+  inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
+  template <typename AppVersionT = Aws::String>
+  void SetAppVersion(AppVersionT&& value) {
+    m_appVersionHasBeenSet = true;
+    m_appVersion = std::forward<AppVersionT>(value);
+  }
+  template <typename AppVersionT = Aws::String>
+  UpdatePartnerAppRequest& WithAppVersion(AppVersionT&& value) {
+    SetAppVersion(std::forward<AppVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique token that guarantees that the call to this API is idempotent.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -183,6 +222,12 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
 
   bool m_enableIamSessionBasedIdentity{false};
   bool m_enableIamSessionBasedIdentityHasBeenSet = false;
+
+  bool m_enableAutoMinorVersionUpgrade{false};
+  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
+
+  Aws::String m_appVersion;
+  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;

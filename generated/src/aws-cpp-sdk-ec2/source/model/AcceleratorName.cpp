@@ -27,6 +27,13 @@ static const int v100_HASH = HashingUtils::HashString("v100");
 static const int a10g_HASH = HashingUtils::HashString("a10g");
 static const int h100_HASH = HashingUtils::HashString("h100");
 static const int t4g_HASH = HashingUtils::HashString("t4g");
+static const int l40s_HASH = HashingUtils::HashString("l40s");
+static const int l4_HASH = HashingUtils::HashString("l4");
+static const int gaudi_hl_205_HASH = HashingUtils::HashString("gaudi-hl-205");
+static const int inferentia2_HASH = HashingUtils::HashString("inferentia2");
+static const int trainium_HASH = HashingUtils::HashString("trainium");
+static const int trainium2_HASH = HashingUtils::HashString("trainium2");
+static const int u30_HASH = HashingUtils::HashString("u30");
 
 AcceleratorName GetAcceleratorNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +61,20 @@ AcceleratorName GetAcceleratorNameForName(const Aws::String& name) {
     return AcceleratorName::h100;
   } else if (hashCode == t4g_HASH) {
     return AcceleratorName::t4g;
+  } else if (hashCode == l40s_HASH) {
+    return AcceleratorName::l40s;
+  } else if (hashCode == l4_HASH) {
+    return AcceleratorName::l4;
+  } else if (hashCode == gaudi_hl_205_HASH) {
+    return AcceleratorName::gaudi_hl_205;
+  } else if (hashCode == inferentia2_HASH) {
+    return AcceleratorName::inferentia2;
+  } else if (hashCode == trainium_HASH) {
+    return AcceleratorName::trainium;
+  } else if (hashCode == trainium2_HASH) {
+    return AcceleratorName::trainium2;
+  } else if (hashCode == u30_HASH) {
+    return AcceleratorName::u30;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +113,20 @@ Aws::String GetNameForAcceleratorName(AcceleratorName enumValue) {
       return "h100";
     case AcceleratorName::t4g:
       return "t4g";
+    case AcceleratorName::l40s:
+      return "l40s";
+    case AcceleratorName::l4:
+      return "l4";
+    case AcceleratorName::gaudi_hl_205:
+      return "gaudi-hl-205";
+    case AcceleratorName::inferentia2:
+      return "inferentia2";
+    case AcceleratorName::trainium:
+      return "trainium";
+    case AcceleratorName::trainium2:
+      return "trainium2";
+    case AcceleratorName::u30:
+      return "u30";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

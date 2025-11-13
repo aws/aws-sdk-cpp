@@ -10,7 +10,7 @@
 namespace Aws {
 namespace RDS {
 namespace Model {
-enum class ClusterScalabilityType { NOT_SET, standard, limitless, scaleout };
+enum class ClusterScalabilityType { NOT_SET, standard, limitless };
 
 namespace ClusterScalabilityTypeMapper {
 AWS_RDS_API ClusterScalabilityType GetClusterScalabilityTypeForName(const Aws::String& name);

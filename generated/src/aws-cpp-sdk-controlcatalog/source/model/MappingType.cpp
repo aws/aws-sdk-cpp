@@ -17,6 +17,7 @@ namespace MappingTypeMapper {
 
 static const int FRAMEWORK_HASH = HashingUtils::HashString("FRAMEWORK");
 static const int COMMON_CONTROL_HASH = HashingUtils::HashString("COMMON_CONTROL");
+static const int RELATED_CONTROL_HASH = HashingUtils::HashString("RELATED_CONTROL");
 
 MappingType GetMappingTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ MappingType GetMappingTypeForName(const Aws::String& name) {
     return MappingType::FRAMEWORK;
   } else if (hashCode == COMMON_CONTROL_HASH) {
     return MappingType::COMMON_CONTROL;
+  } else if (hashCode == RELATED_CONTROL_HASH) {
+    return MappingType::RELATED_CONTROL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForMappingType(MappingType enumValue) {
       return "FRAMEWORK";
     case MappingType::COMMON_CONTROL:
       return "COMMON_CONTROL";
+    case MappingType::RELATED_CONTROL:
+      return "RELATED_CONTROL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

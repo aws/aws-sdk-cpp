@@ -21,7 +21,8 @@ namespace CloudFormation {
 namespace Model {
 
 /**
- * <p>The ParameterDeclaration data type.</p><p><h3>See Also:</h3>   <a
+ * <p>The <code>ParameterDeclaration</code> data type.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ParameterDeclaration">AWS
  * API Reference</a></p>
  */

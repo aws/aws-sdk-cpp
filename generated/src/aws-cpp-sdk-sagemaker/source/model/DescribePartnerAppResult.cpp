@@ -85,6 +85,18 @@ DescribePartnerAppResult& DescribePartnerAppResult::operator=(const Aws::AmazonW
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnableAutoMinorVersionUpgrade")) {
+    m_enableAutoMinorVersionUpgrade = jsonValue.GetBool("EnableAutoMinorVersionUpgrade");
+    m_enableAutoMinorVersionUpgradeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CurrentVersionEolDate")) {
+    m_currentVersionEolDate = jsonValue.GetDouble("CurrentVersionEolDate");
+    m_currentVersionEolDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailableUpgrade")) {
+    m_availableUpgrade = jsonValue.GetObject("AvailableUpgrade");
+    m_availableUpgradeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

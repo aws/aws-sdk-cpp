@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/FrameControl.h>
 #include <aws/mediaconvert/model/VideoSelectorMode.h>
 
 #include <utility>
@@ -34,6 +35,31 @@ class PassthroughSettings {
 
   ///@{
   /**
+   * Choose how MediaConvert handles start and end times for input clipping with
+   * video passthrough. Your input video codec must be H.264 or H.265 to use IFRAME.
+   * To clip at the nearest IDR-frame: Choose Nearest IDR. If an IDR-frame is not
+   * found at the frame that you specify, MediaConvert uses the next compatible
+   * IDR-frame. Note that your output may be shorter than your input clip duration.
+   * To clip at the nearest I-frame: Choose Nearest I-frame. If an I-frame is not
+   * found at the frame that you specify, MediaConvert uses the next compatible
+   * I-frame. Note that your output may be shorter than your input clip duration. We
+   * only recommend this setting for special workflows, and when you choose this
+   * setting your output may not be compatible with most players.
+   */
+  inline FrameControl GetFrameControl() const { return m_frameControl; }
+  inline bool FrameControlHasBeenSet() const { return m_frameControlHasBeenSet; }
+  inline void SetFrameControl(FrameControl value) {
+    m_frameControlHasBeenSet = true;
+    m_frameControl = value;
+  }
+  inline PassthroughSettings& WithFrameControl(FrameControl value) {
+    SetFrameControl(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * AUTO will select the highest bitrate input in the video selector source.
    * REMUX_ALL will passthrough all the selected streams in the video selector
    * source. When selecting streams from multiple renditions (i.e. using Stream video
@@ -52,6 +78,9 @@ class PassthroughSettings {
   }
   ///@}
  private:
+  FrameControl m_frameControl{FrameControl::NOT_SET};
+  bool m_frameControlHasBeenSet = false;
+
   VideoSelectorMode m_videoSelectorMode{VideoSelectorMode::NOT_SET};
   bool m_videoSelectorModeHasBeenSet = false;
 };

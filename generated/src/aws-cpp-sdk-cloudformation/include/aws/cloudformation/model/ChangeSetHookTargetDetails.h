@@ -36,7 +36,7 @@ class ChangeSetHookTargetDetails {
 
   ///@{
   /**
-   * <p>The name of the type.</p>
+   * <p>The Hook target type.</p>
    */
   inline HookTargetType GetTargetType() const { return m_targetType; }
   inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }

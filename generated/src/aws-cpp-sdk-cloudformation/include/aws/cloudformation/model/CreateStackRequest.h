@@ -298,24 +298,17 @@ class CreateStackRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>The template resource types that you have permissions to work with for this
-   * create stack action, such as <code>AWS::EC2::Instance</code>,
-   * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
-   * following syntax to describe template resource types: <code>AWS::*</code> (for
-   * all Amazon Web Services resources), <code>Custom::*</code> (for all custom
-   * resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom
-   * resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a
-   * particular Amazon Web Services service), and
-   * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
-   * specific Amazon Web Services resource).</p> <p>If the list of resource types
-   * doesn't include a resource that you're creating, the stack creation fails. By
-   * default, CloudFormation grants permissions to all resource types. IAM uses this
-   * parameter for CloudFormation-specific condition keys in IAM policies. For more
-   * information, see <a
+   * <p>Specifies which resource types you can work with, such as
+   * <code>AWS::EC2::Instance</code> or <code>Custom::MyCustomInstance</code>.</p>
+   * <p>If the list of resource types doesn't include a resource that you're
+   * creating, the stack creation fails. By default, CloudFormation grants
+   * permissions to all resource types. IAM uses this parameter for
+   * CloudFormation-specific condition keys in IAM policies. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-   * access with Identity and Access Management</a>.</p>  <p>Only one of the
-   * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
-   * specified.</p>
+   * CloudFormation access with Identity and Access Management</a>.</p>
+   * <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code>
+   * parameters can be specified.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
   inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

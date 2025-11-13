@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class AcceleratorType { NOT_SET, gpu, fpga, inference };
+enum class AcceleratorType { NOT_SET, gpu, fpga, inference, media };
 
 namespace AcceleratorTypeMapper {
 AWS_EC2_API AcceleratorType GetAcceleratorTypeForName(const Aws::String& name);

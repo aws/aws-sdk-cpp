@@ -18,7 +18,7 @@ namespace Model {
 
 /**
  * <p>The accuracy of the estimated position in meters. An empty value indicates
- * that no position data is available. A value of ‘0.0’ value indicates that
+ * that no position data is available. A value of ���0.0’ value indicates that
  * position data is available. This data corresponds to the position information
  * that you specified instead of the position computed by solver.</p><p><h3>See
  * Also:</h3>   <a

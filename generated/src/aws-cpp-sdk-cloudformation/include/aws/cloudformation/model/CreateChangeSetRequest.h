@@ -70,8 +70,9 @@ class CreateChangeSetRequest : public CloudFormationRequest {
    * <p>A structure that contains the body of the revised template, with a minimum
    * length of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates
    * the change set by comparing this template with the template of the stack that
-   * you specified.</p> <p>Conditional: You must specify only
-   * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+   * you specified.</p> <p>Conditional: You must specify only one of the following
+   * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+   * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
    */
   inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
   inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -94,8 +95,9 @@ class CreateChangeSetRequest : public CloudFormationRequest {
    * Manager document. CloudFormation generates the change set by comparing this
    * template with the stack that you specified. The location for an Amazon S3 bucket
    * must start with <code>https://</code>. URLs from S3 static websites are not
-   * supported.</p> <p>Conditional: You must specify only <code>TemplateBody</code>
-   * or <code>TemplateURL</code>.</p>
+   * supported.</p> <p>Conditional: You must specify only one of the following
+   * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+   * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
    */
   inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
   inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
@@ -114,7 +116,15 @@ class CreateChangeSetRequest : public CloudFormationRequest {
   ///@{
   /**
    * <p>Whether to reuse the template that's associated with the stack to create the
-   * change set.</p>
+   * change set.</p> <p>When using templates with the
+   * <code>AWS::LanguageExtensions</code> transform, provide the template instead of
+   * using <code>UsePreviousTemplate</code> to ensure new parameter values and
+   * Systems Manager parameter updates are applied correctly. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/transform-aws-languageextensions.html">AWS::LanguageExtensions
+   * transform</a>.</p> <p>Conditional: You must specify only one of the following
+   * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+   * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
    */
   inline bool GetUsePreviousTemplate() const { return m_usePreviousTemplate; }
   inline bool UsePreviousTemplateHasBeenSet() const { return m_usePreviousTemplateHasBeenSet; }
@@ -159,7 +169,7 @@ class CreateChangeSetRequest : public CloudFormationRequest {
    * contains certain capabilities in order for CloudFormation to create the
    * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
    * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-   * resources that can affect permissions in your Amazon Web Services account; for
+   * resources that can affect permissions in your Amazon Web Services account, for
    * example, by creating new IAM users. For those stacks, you must explicitly
    * acknowledge this by specifying one of these capabilities.</p> <p>The following
    * IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
@@ -235,17 +245,17 @@ class CreateChangeSetRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>The template resource types that you have permissions to work with if you
-   * execute this change set, such as <code>AWS::EC2::Instance</code>,
-   * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
-   * the list of resource types doesn't include a resource type that you're updating,
-   * the stack update fails. By default, CloudFormation grants permissions to all
-   * resource types. IAM uses this parameter for condition keys in IAM policies for
-   * CloudFormation. For more information, see <a
+   * <p>Specifies which resource types you can work with, such as
+   * <code>AWS::EC2::Instance</code> or <code>Custom::MyCustomInstance</code>.</p>
+   * <p>If the list of resource types doesn't include a resource type that you're
+   * updating, the stack update fails. By default, CloudFormation grants permissions
+   * to all resource types. IAM uses this parameter for condition keys in IAM
+   * policies for CloudFormation. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-   * access with Identity and Access Management</a> in the <i>CloudFormation User
-   * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
-   * <code>ResourceType</code> parameters can be specified.</p>
+   * CloudFormation access with Identity and Access Management</a> in the
+   * <i>CloudFormation User Guide</i>.</p>  <p>Only one of the
+   * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+   * specified.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
   inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

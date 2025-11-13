@@ -53,9 +53,8 @@ class ListImportsRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>A string (provided by the <a>ListImports</a> response output) that identifies
-   * the next page of stacks that are importing the specified exported output
-   * value.</p>
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

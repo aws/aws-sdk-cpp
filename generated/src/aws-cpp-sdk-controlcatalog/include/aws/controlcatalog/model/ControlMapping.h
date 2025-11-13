@@ -55,8 +55,7 @@ class ControlMapping {
 
   ///@{
   /**
-   * <p>The type of mapping relationship between the control and other entities.
-   * Indicates whether the mapping is to a framework or common control.</p>
+   * <p>The type of mapping relationship between the control and other entities.</p>
    */
   inline MappingType GetMappingType() const { return m_mappingType; }
   inline bool MappingTypeHasBeenSet() const { return m_mappingTypeHasBeenSet; }
@@ -72,8 +71,8 @@ class ControlMapping {
 
   ///@{
   /**
-   * <p>The details of the mapping relationship, containing either framework or
-   * common control information.</p>
+   * <p>The details of the mapping relationship, for example, containing framework,
+   * common control, or related control information.</p>
    */
   inline const Mapping& GetMapping() const { return m_mapping; }
   inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }

@@ -45,6 +45,10 @@ BrowserSettings& BrowserSettings::operator=(JsonView jsonValue) {
     }
     m_additionalEncryptionContextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("webContentFilteringPolicy")) {
+    m_webContentFilteringPolicy = jsonValue.GetObject("webContentFilteringPolicy");
+    m_webContentFilteringPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue BrowserSettings::Jsonize() const {
       additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
     }
     payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+  }
+
+  if (m_webContentFilteringPolicyHasBeenSet) {
+    payload.WithObject("webContentFilteringPolicy", m_webContentFilteringPolicy.Jsonize());
   }
 
   return payload;

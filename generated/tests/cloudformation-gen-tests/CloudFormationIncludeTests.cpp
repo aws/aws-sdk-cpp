@@ -22,6 +22,9 @@
 #include <aws/cloudformation/model/ActivateOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/ActivateTypeRequest.h>
 #include <aws/cloudformation/model/ActivateTypeResult.h>
+#include <aws/cloudformation/model/Annotation.h>
+#include <aws/cloudformation/model/AnnotationSeverityLevel.h>
+#include <aws/cloudformation/model/AnnotationStatus.h>
 #include <aws/cloudformation/model/AttributeChangeType.h>
 #include <aws/cloudformation/model/AutoDeployment.h>
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsError.h>
@@ -134,6 +137,8 @@
 #include <aws/cloudformation/model/GeneratedTemplateUpdateReplacePolicy.h>
 #include <aws/cloudformation/model/GetGeneratedTemplateRequest.h>
 #include <aws/cloudformation/model/GetGeneratedTemplateResult.h>
+#include <aws/cloudformation/model/GetHookResultRequest.h>
+#include <aws/cloudformation/model/GetHookResultResult.h>
 #include <aws/cloudformation/model/GetStackPolicyRequest.h>
 #include <aws/cloudformation/model/GetStackPolicyResult.h>
 #include <aws/cloudformation/model/GetTemplateRequest.h>
@@ -145,6 +150,8 @@
 #include <aws/cloudformation/model/HookInvocationPoint.h>
 #include <aws/cloudformation/model/HookResultSummary.h>
 #include <aws/cloudformation/model/HookStatus.h>
+#include <aws/cloudformation/model/HookTarget.h>
+#include <aws/cloudformation/model/HookTargetAction.h>
 #include <aws/cloudformation/model/HookTargetType.h>
 #include <aws/cloudformation/model/IdentityProvider.h>
 #include <aws/cloudformation/model/ImportStacksToStackSetRequest.h>

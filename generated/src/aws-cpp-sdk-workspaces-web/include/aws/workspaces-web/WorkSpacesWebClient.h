@@ -315,14 +315,14 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonCli
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateBrowserSettings">AWS
    * API Reference</a></p>
    */
-  virtual Model::CreateBrowserSettingsOutcome CreateBrowserSettings(const Model::CreateBrowserSettingsRequest& request) const;
+  virtual Model::CreateBrowserSettingsOutcome CreateBrowserSettings(const Model::CreateBrowserSettingsRequest& request = {}) const;
 
   /**
    * A Callable wrapper for CreateBrowserSettings that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename CreateBrowserSettingsRequestT = Model::CreateBrowserSettingsRequest>
-  Model::CreateBrowserSettingsOutcomeCallable CreateBrowserSettingsCallable(const CreateBrowserSettingsRequestT& request) const {
+  Model::CreateBrowserSettingsOutcomeCallable CreateBrowserSettingsCallable(const CreateBrowserSettingsRequestT& request = {}) const {
     return SubmitCallable(&WorkSpacesWebClient::CreateBrowserSettings, request);
   }
 
@@ -331,8 +331,9 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonCli
    * operation has finished.
    */
   template <typename CreateBrowserSettingsRequestT = Model::CreateBrowserSettingsRequest>
-  void CreateBrowserSettingsAsync(const CreateBrowserSettingsRequestT& request, const CreateBrowserSettingsResponseReceivedHandler& handler,
-                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void CreateBrowserSettingsAsync(const CreateBrowserSettingsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const CreateBrowserSettingsRequestT& request = {}) const {
     return SubmitAsync(&WorkSpacesWebClient::CreateBrowserSettings, request, handler, context);
   }
 
