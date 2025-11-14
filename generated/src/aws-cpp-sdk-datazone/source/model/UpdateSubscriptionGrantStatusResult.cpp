@@ -42,6 +42,10 @@ UpdateSubscriptionGrantStatusResult& UpdateSubscriptionGrantStatusResult::operat
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentId")) {
+    m_environmentId = jsonValue.GetString("environmentId");
+    m_environmentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("grantedEntity")) {
     m_grantedEntity = jsonValue.GetObject("grantedEntity");
     m_grantedEntityHasBeenSet = true;

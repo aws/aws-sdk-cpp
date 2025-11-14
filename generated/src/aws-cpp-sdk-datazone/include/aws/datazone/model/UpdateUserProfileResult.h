@@ -30,7 +30,9 @@ class UpdateUserProfileResult {
   AWS_DATAZONE_API UpdateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The results of the UpdateUserProfile action.</p>
+   */
   inline const UserProfileDetails& GetDetails() const { return m_details; }
   template <typename DetailsT = UserProfileDetails>
   void SetDetails(DetailsT&& value) {

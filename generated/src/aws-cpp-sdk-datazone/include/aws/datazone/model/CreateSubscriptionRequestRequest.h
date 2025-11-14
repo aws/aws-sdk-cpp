@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/AcceptedAssetScope.h>
+#include <aws/datazone/model/AssetPermission.h>
 #include <aws/datazone/model/FormInput.h>
 #include <aws/datazone/model/SubscribedListingInput.h>
 #include <aws/datazone/model/SubscribedPrincipalInput.h>
@@ -32,6 +34,54 @@ class CreateSubscriptionRequestRequest : public DataZoneRequest {
   inline virtual const char* GetServiceRequestName() const override { return "CreateSubscriptionRequest"; }
 
   AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The asset permissions of the subscription request.</p>
+   */
+  inline const Aws::Vector<AssetPermission>& GetAssetPermissions() const { return m_assetPermissions; }
+  inline bool AssetPermissionsHasBeenSet() const { return m_assetPermissionsHasBeenSet; }
+  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
+  void SetAssetPermissions(AssetPermissionsT&& value) {
+    m_assetPermissionsHasBeenSet = true;
+    m_assetPermissions = std::forward<AssetPermissionsT>(value);
+  }
+  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
+  CreateSubscriptionRequestRequest& WithAssetPermissions(AssetPermissionsT&& value) {
+    SetAssetPermissions(std::forward<AssetPermissionsT>(value));
+    return *this;
+  }
+  template <typename AssetPermissionsT = AssetPermission>
+  CreateSubscriptionRequestRequest& AddAssetPermissions(AssetPermissionsT&& value) {
+    m_assetPermissionsHasBeenSet = true;
+    m_assetPermissions.emplace_back(std::forward<AssetPermissionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset scopes of the subscription request.</p>
+   */
+  inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const { return m_assetScopes; }
+  inline bool AssetScopesHasBeenSet() const { return m_assetScopesHasBeenSet; }
+  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+  void SetAssetScopes(AssetScopesT&& value) {
+    m_assetScopesHasBeenSet = true;
+    m_assetScopes = std::forward<AssetScopesT>(value);
+  }
+  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+  CreateSubscriptionRequestRequest& WithAssetScopes(AssetScopesT&& value) {
+    SetAssetScopes(std::forward<AssetScopesT>(value));
+    return *this;
+  }
+  template <typename AssetScopesT = AcceptedAssetScope>
+  CreateSubscriptionRequestRequest& AddAssetScopes(AssetScopesT&& value) {
+    m_assetScopesHasBeenSet = true;
+    m_assetScopes.emplace_back(std::forward<AssetScopesT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -162,6 +212,12 @@ class CreateSubscriptionRequestRequest : public DataZoneRequest {
   }
   ///@}
  private:
+  Aws::Vector<AssetPermission> m_assetPermissions;
+  bool m_assetPermissionsHasBeenSet = false;
+
+  Aws::Vector<AcceptedAssetScope> m_assetScopes;
+  bool m_assetScopesHasBeenSet = false;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
 

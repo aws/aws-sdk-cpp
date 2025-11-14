@@ -118,9 +118,7 @@ class CreateContainerRecipeRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Components for build and test that are included in the container recipe.
-   * Recipes require a minimum of one build component, and can have a maximum of 20
-   * build and test components in any combination.</p>
+   * <p>The components included in the container recipe.</p>
    */
   inline const Aws::Vector<ComponentConfiguration>& GetComponents() const { return m_components; }
   inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }

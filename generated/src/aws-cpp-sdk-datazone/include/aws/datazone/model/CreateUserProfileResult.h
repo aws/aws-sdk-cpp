@@ -30,7 +30,9 @@ class CreateUserProfileResult {
   AWS_DATAZONE_API CreateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The user profile details.</p>
+   */
   inline const UserProfileDetails& GetDetails() const { return m_details; }
   template <typename DetailsT = UserProfileDetails>
   void SetDetails(DetailsT&& value) {

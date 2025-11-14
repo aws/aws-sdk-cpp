@@ -9,6 +9,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetScope.h>
 #include <aws/datazone/model/FailureCause.h>
+#include <aws/datazone/model/Permissions.h>
 #include <aws/datazone/model/SubscriptionGrantStatus.h>
 
 #include <utility>
@@ -148,6 +149,24 @@ class SubscribedAsset {
 
   ///@{
   /**
+   * <p>The asset permissions.</p>
+   */
+  inline const Permissions& GetPermissions() const { return m_permissions; }
+  inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
+  template <typename PermissionsT = Permissions>
+  void SetPermissions(PermissionsT&& value) {
+    m_permissionsHasBeenSet = true;
+    m_permissions = std::forward<PermissionsT>(value);
+  }
+  template <typename PermissionsT = Permissions>
+  SubscribedAsset& WithPermissions(PermissionsT&& value) {
+    SetPermissions(std::forward<PermissionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the asset for which the subscription grant is created.</p>
    */
   inline SubscriptionGrantStatus GetStatus() const { return m_status; }
@@ -197,6 +216,9 @@ class SubscribedAsset {
 
   Aws::Utils::DateTime m_grantedTimestamp{};
   bool m_grantedTimestampHasBeenSet = false;
+
+  Permissions m_permissions;
+  bool m_permissionsHasBeenSet = false;
 
   SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
   bool m_statusHasBeenSet = false;

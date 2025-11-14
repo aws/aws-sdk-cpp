@@ -108,6 +108,23 @@ class GetSubscriptionGrantResult {
 
   ///@{
   /**
+   * <p>The environment ID of the subscription grant.</p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  GetSubscriptionGrantResult& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The entity to which the subscription is granted.</p>
    */
   inline const GrantedEntity& GetGrantedEntity() const { return m_grantedEntity; }
@@ -232,6 +249,9 @@ class GetSubscriptionGrantResult {
 
   Aws::String m_domainId;
   bool m_domainIdHasBeenSet = false;
+
+  Aws::String m_environmentId;
+  bool m_environmentIdHasBeenSet = false;
 
   GrantedEntity m_grantedEntity;
   bool m_grantedEntityHasBeenSet = false;

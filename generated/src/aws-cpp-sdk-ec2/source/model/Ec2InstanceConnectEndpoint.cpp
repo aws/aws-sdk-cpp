@@ -130,6 +130,11 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator=(const XmlNode&
       m_publicDnsNames = publicDnsNamesNode;
       m_publicDnsNamesHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -224,6 +229,10 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
     publicDnsNamesLocationAndMemberSs << location << index << locationValue << ".PublicDnsNames";
     m_publicDnsNames.OutputToStream(oStream, publicDnsNamesLocationAndMemberSs.str().c_str());
   }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
 }
 
 void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -293,6 +302,9 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
     Aws::String publicDnsNamesLocationAndMember(location);
     publicDnsNamesLocationAndMember += ".PublicDnsNames";
     m_publicDnsNames.OutputToStream(oStream, publicDnsNamesLocationAndMember.c_str());
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

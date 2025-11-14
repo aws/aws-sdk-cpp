@@ -45,6 +45,10 @@ SubscribedAssetListing& SubscribedAssetListing::operator=(JsonView jsonValue) {
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permissions")) {
+    m_permissions = jsonValue.GetObject("permissions");
+    m_permissionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue SubscribedAssetListing::Jsonize() const {
       glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
     }
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
+  }
+
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("permissions", m_permissions.Jsonize());
   }
 
   return payload;

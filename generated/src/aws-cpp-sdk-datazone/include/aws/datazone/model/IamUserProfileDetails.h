@@ -20,8 +20,7 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>The details of an IAM user profile in Amazon DataZone.</p><p><h3>See
- * Also:</h3>   <a
+ * <p/><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/IamUserProfileDetails">AWS
  * API Reference</a></p>
  */
@@ -34,7 +33,7 @@ class IamUserProfileDetails {
 
   ///@{
   /**
-   * <p>The ARN of an IAM user profile in Amazon DataZone.</p>
+   * <p>The ARN of the IAM user.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -52,7 +51,7 @@ class IamUserProfileDetails {
 
   ///@{
   /**
-   * <p>Principal ID of the IAM user.</p>
+   * <p>The principal ID as part of the IAM user profile details.</p>
    */
   inline const Aws::String& GetPrincipalId() const { return m_principalId; }
   inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
