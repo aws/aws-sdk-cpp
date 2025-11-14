@@ -109,6 +109,23 @@ class DeleteSubscriptionGrantResult {
 
   ///@{
   /**
+   * <p>The ID of the environment in which the subscription grant is deleted.</p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  DeleteSubscriptionGrantResult& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The entity to which the subscription is deleted.</p>
    */
   inline const GrantedEntity& GetGrantedEntity() const { return m_grantedEntity; }
@@ -235,6 +252,9 @@ class DeleteSubscriptionGrantResult {
 
   Aws::String m_domainId;
   bool m_domainIdHasBeenSet = false;
+
+  Aws::String m_environmentId;
+  bool m_environmentIdHasBeenSet = false;
 
   GrantedEntity m_grantedEntity;
   bool m_grantedEntityHasBeenSet = false;

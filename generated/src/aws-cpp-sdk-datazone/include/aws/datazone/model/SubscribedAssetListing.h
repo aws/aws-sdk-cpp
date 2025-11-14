@@ -9,6 +9,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetScope.h>
 #include <aws/datazone/model/DetailedGlossaryTerm.h>
+#include <aws/datazone/model/Permissions.h>
 
 #include <utility>
 
@@ -153,6 +154,24 @@ class SubscribedAssetListing {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The asset permissions.</p>
+   */
+  inline const Permissions& GetPermissions() const { return m_permissions; }
+  inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
+  template <typename PermissionsT = Permissions>
+  void SetPermissions(PermissionsT&& value) {
+    m_permissionsHasBeenSet = true;
+    m_permissions = std::forward<PermissionsT>(value);
+  }
+  template <typename PermissionsT = Permissions>
+  SubscribedAssetListing& WithPermissions(PermissionsT&& value) {
+    SetPermissions(std::forward<PermissionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AssetScope m_assetScope;
   bool m_assetScopeHasBeenSet = false;
@@ -171,6 +190,9 @@ class SubscribedAssetListing {
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
   bool m_glossaryTermsHasBeenSet = false;
+
+  Permissions m_permissions;
+  bool m_permissionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,8 +21,7 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>The details of the user profile in Amazon DataZone.</p><p><h3>See Also:</h3>
- * <a
+ * <p>The user profile details.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UserProfileDetails">AWS
  * API Reference</a></p>
  */
@@ -35,7 +34,7 @@ class UserProfileDetails {
 
   ///@{
   /**
-   * <p>The IAM details included in the user profile details.</p>
+   * <p>The IAM details of the user profile.</p>
    */
   inline const IamUserProfileDetails& GetIam() const { return m_iam; }
   inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
@@ -53,7 +52,7 @@ class UserProfileDetails {
 
   ///@{
   /**
-   * <p>The single sign-on details included in the user profile details.</p>
+   * <p>The SSO details of the user profile.</p>
    */
   inline const SsoUserProfileDetails& GetSso() const { return m_sso; }
   inline bool SsoHasBeenSet() const { return m_ssoHasBeenSet; }

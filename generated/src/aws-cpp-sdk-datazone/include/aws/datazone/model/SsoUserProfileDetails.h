@@ -20,7 +20,7 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>The single sign-on details of the user profile.</p><p><h3>See Also:</h3>   <a
+ * <p>The SSO user profile detail.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SsoUserProfileDetails">AWS
  * API Reference</a></p>
  */
@@ -33,8 +33,7 @@ class SsoUserProfileDetails {
 
   ///@{
   /**
-   * <p>The first name included in the single sign-on details of the user
-   * profile.</p>
+   * <p>The first name as part of the SSO user profile detail.</p>
    */
   inline const Aws::String& GetFirstName() const { return m_firstName; }
   inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -52,7 +51,7 @@ class SsoUserProfileDetails {
 
   ///@{
   /**
-   * <p>The last name included in the single sign-on details of the user profile.</p>
+   * <p>The last name as part of the SSO user profile detail.</p>
    */
   inline const Aws::String& GetLastName() const { return m_lastName; }
   inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
@@ -70,7 +69,7 @@ class SsoUserProfileDetails {
 
   ///@{
   /**
-   * <p>The username included in the single sign-on details of the user profile.</p>
+   * <p>The username as part of the SSO user profile detail. </p>
    */
   inline const Aws::String& GetUsername() const { return m_username; }
   inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }

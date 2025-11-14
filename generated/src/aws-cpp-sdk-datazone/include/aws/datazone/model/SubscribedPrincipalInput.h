@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/SubscribedGroupInput.h>
 #include <aws/datazone/model/SubscribedProjectInput.h>
+#include <aws/datazone/model/SubscribedUserInput.h>
 
 #include <utility>
 
@@ -34,6 +36,24 @@ class SubscribedPrincipalInput {
 
   ///@{
   /**
+   * <p>The subscribed group.</p>
+   */
+  inline const SubscribedGroupInput& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = SubscribedGroupInput>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = SubscribedGroupInput>
+  SubscribedPrincipalInput& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The project that is to be given a subscription grant.</p>
    */
   inline const SubscribedProjectInput& GetProject() const { return m_project; }
@@ -49,9 +69,33 @@ class SubscribedPrincipalInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The subscribed user.</p>
+   */
+  inline const SubscribedUserInput& GetUser() const { return m_user; }
+  inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+  template <typename UserT = SubscribedUserInput>
+  void SetUser(UserT&& value) {
+    m_userHasBeenSet = true;
+    m_user = std::forward<UserT>(value);
+  }
+  template <typename UserT = SubscribedUserInput>
+  SubscribedPrincipalInput& WithUser(UserT&& value) {
+    SetUser(std::forward<UserT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  SubscribedGroupInput m_group;
+  bool m_groupHasBeenSet = false;
+
   SubscribedProjectInput m_project;
   bool m_projectHasBeenSet = false;
+
+  SubscribedUserInput m_user;
+  bool m_userHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,6 +37,10 @@ SubscriptionGrantSummary& SubscriptionGrantSummary::operator=(JsonView jsonValue
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentId")) {
+    m_environmentId = jsonValue.GetString("environmentId");
+    m_environmentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("grantedEntity")) {
     m_grantedEntity = jsonValue.GetObject("grantedEntity");
     m_grantedEntityHasBeenSet = true;
@@ -85,6 +89,10 @@ JsonValue SubscriptionGrantSummary::Jsonize() const {
 
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
+  }
+
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
   }
 
   if (m_grantedEntityHasBeenSet) {

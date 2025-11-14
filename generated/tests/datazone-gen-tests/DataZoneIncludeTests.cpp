@@ -48,6 +48,7 @@
 #include <aws/datazone/model/AssetListingDetails.h>
 #include <aws/datazone/model/AssetListingItem.h>
 #include <aws/datazone/model/AssetListingItemAdditionalAttributes.h>
+#include <aws/datazone/model/AssetPermission.h>
 #include <aws/datazone/model/AssetRevision.h>
 #include <aws/datazone/model/AssetScope.h>
 #include <aws/datazone/model/AssetTargetNameMap.h>
@@ -519,6 +520,7 @@
 #include <aws/datazone/model/OwnerPropertiesOutput.h>
 #include <aws/datazone/model/OwnerUserProperties.h>
 #include <aws/datazone/model/OwnerUserPropertiesOutput.h>
+#include <aws/datazone/model/Permissions.h>
 #include <aws/datazone/model/PhysicalConnectionRequirements.h>
 #include <aws/datazone/model/PhysicalEndpoint.h>
 #include <aws/datazone/model/PolicyGrantDetail.h>
@@ -590,6 +592,7 @@
 #include <aws/datazone/model/RuleTargetType.h>
 #include <aws/datazone/model/RuleType.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
+#include <aws/datazone/model/S3Permission.h>
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/S3PropertiesOutput.h>
 #include <aws/datazone/model/S3PropertiesPatch.h>
@@ -635,6 +638,8 @@
 #include <aws/datazone/model/Status.h>
 #include <aws/datazone/model/SubscribedAsset.h>
 #include <aws/datazone/model/SubscribedAssetListing.h>
+#include <aws/datazone/model/SubscribedGroup.h>
+#include <aws/datazone/model/SubscribedGroupInput.h>
 #include <aws/datazone/model/SubscribedListing.h>
 #include <aws/datazone/model/SubscribedListingInput.h>
 #include <aws/datazone/model/SubscribedListingItem.h>
@@ -643,6 +648,8 @@
 #include <aws/datazone/model/SubscribedProductListing.h>
 #include <aws/datazone/model/SubscribedProject.h>
 #include <aws/datazone/model/SubscribedProjectInput.h>
+#include <aws/datazone/model/SubscribedUser.h>
+#include <aws/datazone/model/SubscribedUserInput.h>
 #include <aws/datazone/model/SubscriptionGrantOverallStatus.h>
 #include <aws/datazone/model/SubscriptionGrantStatus.h>
 #include <aws/datazone/model/SubscriptionGrantSummary.h>

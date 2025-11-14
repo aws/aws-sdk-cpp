@@ -42,6 +42,10 @@ SubscribedAsset& SubscribedAsset::operator=(JsonView jsonValue) {
     m_grantedTimestamp = jsonValue.GetDouble("grantedTimestamp");
     m_grantedTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permissions")) {
+    m_permissions = jsonValue.GetObject("permissions");
+    m_permissionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = SubscriptionGrantStatusMapper::GetSubscriptionGrantStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue SubscribedAsset::Jsonize() const {
 
   if (m_grantedTimestampHasBeenSet) {
     payload.WithDouble("grantedTimestamp", m_grantedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("permissions", m_permissions.Jsonize());
   }
 
   if (m_statusHasBeenSet) {
