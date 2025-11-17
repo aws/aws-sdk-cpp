@@ -86,6 +86,7 @@
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/DeleteIntegrationRequest.h>
+#include <aws/glue/model/DeleteIntegrationResourcePropertyRequest.h>
 #include <aws/glue/model/DeleteIntegrationTablePropertiesRequest.h>
 #include <aws/glue/model/DeleteJobRequest.h>
 #include <aws/glue/model/DeleteMLTransformRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/glue/model/GetColumnStatisticsForPartitionRequest.h>
 #include <aws/glue/model/GetColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/GetColumnStatisticsTaskRunRequest.h>
-#include <aws/glue/model/GetColumnStatisticsTaskRunsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -2159,6 +2159,36 @@ DeleteIntegrationOutcome GlueClient::DeleteIntegration(const DeleteIntegrationRe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteIntegrationResourcePropertyOutcome GlueClient::DeleteIntegrationResourceProperty(
+    const DeleteIntegrationResourcePropertyRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteIntegrationResourceProperty);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegrationResourceProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteIntegrationResourceProperty, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteIntegrationResourceProperty, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteIntegrationResourceProperty",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteIntegrationResourcePropertyOutcome>(
+      [&]() -> DeleteIntegrationResourcePropertyOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIntegrationResourceProperty, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DeleteIntegrationResourcePropertyOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteIntegrationTablePropertiesOutcome GlueClient::DeleteIntegrationTableProperties(
     const DeleteIntegrationTablePropertiesRequest& request) const {
   AWS_OPERATION_GUARD(DeleteIntegrationTableProperties);
@@ -3111,35 +3141,6 @@ GetColumnStatisticsTaskRunOutcome GlueClient::GetColumnStatisticsTaskRun(const G
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetColumnStatisticsTaskRun, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return GetColumnStatisticsTaskRunOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-GetColumnStatisticsTaskRunsOutcome GlueClient::GetColumnStatisticsTaskRuns(const GetColumnStatisticsTaskRunsRequest& request) const {
-  AWS_OPERATION_GUARD(GetColumnStatisticsTaskRuns);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetColumnStatisticsTaskRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetColumnStatisticsTaskRuns, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetColumnStatisticsTaskRuns, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetColumnStatisticsTaskRuns",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetColumnStatisticsTaskRunsOutcome>(
-      [&]() -> GetColumnStatisticsTaskRunsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetColumnStatisticsTaskRuns, CoreErrors,
-                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        return GetColumnStatisticsTaskRunsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

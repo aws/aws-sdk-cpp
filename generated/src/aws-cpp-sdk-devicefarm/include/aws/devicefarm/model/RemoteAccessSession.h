@@ -13,7 +13,7 @@
 #include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/devicefarm/model/ExecutionStatus.h>
-#include <aws/devicefarm/model/InteractionMode.h>
+#include <aws/devicefarm/model/RemoteAccessEndpoints.h>
 #include <aws/devicefarm/model/VpcConfig.h>
 
 #include <utility>
@@ -226,104 +226,6 @@ class RemoteAccessSession {
 
   ///@{
   /**
-   * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-   * remote access session.</p> <p>Remote debugging is <a
-   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-   * longer supported</a>.</p>
-   */
-  inline bool GetRemoteDebugEnabled() const { return m_remoteDebugEnabled; }
-  inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
-  inline void SetRemoteDebugEnabled(bool value) {
-    m_remoteDebugEnabledHasBeenSet = true;
-    m_remoteDebugEnabled = value;
-  }
-  inline RemoteAccessSession& WithRemoteDebugEnabled(bool value) {
-    SetRemoteDebugEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This flag is set to <code>true</code> if remote recording is enabled for the
-   * remote access session.</p>
-   */
-  inline bool GetRemoteRecordEnabled() const { return m_remoteRecordEnabled; }
-  inline bool RemoteRecordEnabledHasBeenSet() const { return m_remoteRecordEnabledHasBeenSet; }
-  inline void SetRemoteRecordEnabled(bool value) {
-    m_remoteRecordEnabledHasBeenSet = true;
-    m_remoteRecordEnabled = value;
-  }
-  inline RemoteAccessSession& WithRemoteRecordEnabled(bool value) {
-    SetRemoteRecordEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ARN for the app to be recorded in the remote access session.</p>
-   */
-  inline const Aws::String& GetRemoteRecordAppArn() const { return m_remoteRecordAppArn; }
-  inline bool RemoteRecordAppArnHasBeenSet() const { return m_remoteRecordAppArnHasBeenSet; }
-  template <typename RemoteRecordAppArnT = Aws::String>
-  void SetRemoteRecordAppArn(RemoteRecordAppArnT&& value) {
-    m_remoteRecordAppArnHasBeenSet = true;
-    m_remoteRecordAppArn = std::forward<RemoteRecordAppArnT>(value);
-  }
-  template <typename RemoteRecordAppArnT = Aws::String>
-  RemoteAccessSession& WithRemoteRecordAppArn(RemoteRecordAppArnT&& value) {
-    SetRemoteRecordAppArn(std::forward<RemoteRecordAppArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>IP address of the EC2 host where you need to connect to remotely debug
-   * devices. Only returned if remote debugging is enabled for the remote access
-   * session.</p> <p>Remote debugging is <a
-   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-   * longer supported</a>.</p>
-   */
-  inline const Aws::String& GetHostAddress() const { return m_hostAddress; }
-  inline bool HostAddressHasBeenSet() const { return m_hostAddressHasBeenSet; }
-  template <typename HostAddressT = Aws::String>
-  void SetHostAddress(HostAddressT&& value) {
-    m_hostAddressHasBeenSet = true;
-    m_hostAddress = std::forward<HostAddressT>(value);
-  }
-  template <typename HostAddressT = Aws::String>
-  RemoteAccessSession& WithHostAddress(HostAddressT&& value) {
-    SetHostAddress(std::forward<HostAddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Unique identifier of your client for the remote access session. Only returned
-   * if remote debugging is enabled for the remote access session.</p> <p>Remote
-   * debugging is <a
-   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-   * longer supported</a>.</p>
-   */
-  inline const Aws::String& GetClientId() const { return m_clientId; }
-  inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-  template <typename ClientIdT = Aws::String>
-  void SetClientId(ClientIdT&& value) {
-    m_clientIdHasBeenSet = true;
-    m_clientId = std::forward<ClientIdT>(value);
-  }
-  template <typename ClientIdT = Aws::String>
-  RemoteAccessSession& WithClientId(ClientIdT&& value) {
-    SetClientId(std::forward<ClientIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The billing method of the remote access session. Possible values include
    * <code>METERED</code> or <code>UNMETERED</code>. For more information about
    * metered devices, see <a
@@ -363,24 +265,6 @@ class RemoteAccessSession {
 
   ///@{
   /**
-   * <p>The endpoint for the remote access sesssion.</p>
-   */
-  inline const Aws::String& GetEndpoint() const { return m_endpoint; }
-  inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-  template <typename EndpointT = Aws::String>
-  void SetEndpoint(EndpointT&& value) {
-    m_endpointHasBeenSet = true;
-    m_endpoint = std::forward<EndpointT>(value);
-  }
-  template <typename EndpointT = Aws::String>
-  RemoteAccessSession& WithEndpoint(EndpointT&& value) {
-    SetEndpoint(std::forward<EndpointT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Unique device identifier for the remote device. Only returned if remote
    * debugging is enabled for the remote access session.</p> <p>Remote debugging is
    * <a
@@ -397,30 +281,6 @@ class RemoteAccessSession {
   template <typename DeviceUdidT = Aws::String>
   RemoteAccessSession& WithDeviceUdid(DeviceUdidT&& value) {
     SetDeviceUdid(std::forward<DeviceUdidT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
-   * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
-   * and rotating the screen. You cannot run XCUITest framework-based tests in this
-   * mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device, but cannot
-   * interact with it or view the screen. This mode has the fastest test execution
-   * speed. You can run XCUITest framework-based tests in this mode.</p> </li> <li>
-   * <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can
-   * run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
-   * </ul>
-   */
-  inline InteractionMode GetInteractionMode() const { return m_interactionMode; }
-  inline bool InteractionModeHasBeenSet() const { return m_interactionModeHasBeenSet; }
-  inline void SetInteractionMode(InteractionMode value) {
-    m_interactionModeHasBeenSet = true;
-    m_interactionMode = value;
-  }
-  inline RemoteAccessSession& WithInteractionMode(InteractionMode value) {
-    SetInteractionMode(value);
     return *this;
   }
   ///@}
@@ -498,6 +358,22 @@ class RemoteAccessSession {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const RemoteAccessEndpoints& GetEndpoints() const { return m_endpoints; }
+  inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
+  template <typename EndpointsT = RemoteAccessEndpoints>
+  void SetEndpoints(EndpointsT&& value) {
+    m_endpointsHasBeenSet = true;
+    m_endpoints = std::forward<EndpointsT>(value);
+  }
+  template <typename EndpointsT = RemoteAccessEndpoints>
+  RemoteAccessSession& WithEndpoints(EndpointsT&& value) {
+    SetEndpoints(std::forward<EndpointsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -529,35 +405,14 @@ class RemoteAccessSession {
   Aws::String m_instanceArn;
   bool m_instanceArnHasBeenSet = false;
 
-  bool m_remoteDebugEnabled{false};
-  bool m_remoteDebugEnabledHasBeenSet = false;
-
-  bool m_remoteRecordEnabled{false};
-  bool m_remoteRecordEnabledHasBeenSet = false;
-
-  Aws::String m_remoteRecordAppArn;
-  bool m_remoteRecordAppArnHasBeenSet = false;
-
-  Aws::String m_hostAddress;
-  bool m_hostAddressHasBeenSet = false;
-
-  Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
-
   BillingMethod m_billingMethod{BillingMethod::NOT_SET};
   bool m_billingMethodHasBeenSet = false;
 
   DeviceMinutes m_deviceMinutes;
   bool m_deviceMinutesHasBeenSet = false;
 
-  Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
-
   Aws::String m_deviceUdid;
   bool m_deviceUdidHasBeenSet = false;
-
-  InteractionMode m_interactionMode{InteractionMode::NOT_SET};
-  bool m_interactionModeHasBeenSet = false;
 
   bool m_skipAppResign{false};
   bool m_skipAppResignHasBeenSet = false;
@@ -570,6 +425,9 @@ class RemoteAccessSession {
 
   Aws::String m_appUpload;
   bool m_appUploadHasBeenSet = false;
+
+  RemoteAccessEndpoints m_endpoints;
+  bool m_endpointsHasBeenSet = false;
 };
 
 }  // namespace Model

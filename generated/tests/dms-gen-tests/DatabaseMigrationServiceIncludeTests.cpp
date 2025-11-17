@@ -296,6 +296,8 @@
 #include <aws/dms/model/PostgreSQLSettings.h>
 #include <aws/dms/model/PostgreSqlDataProviderSettings.h>
 #include <aws/dms/model/PremigrationAssessmentStatus.h>
+#include <aws/dms/model/ProcessedObject.h>
+#include <aws/dms/model/Progress.h>
 #include <aws/dms/model/ProvisionData.h>
 #include <aws/dms/model/RdsConfiguration.h>
 #include <aws/dms/model/RdsRecommendation.h>
@@ -388,6 +390,7 @@
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/Subnet.h>
 #include <aws/dms/model/SupportedEndpointType.h>
+#include <aws/dms/model/SybaseAseDataProviderSettings.h>
 #include <aws/dms/model/SybaseSettings.h>
 #include <aws/dms/model/TablePreparationMode.h>
 #include <aws/dms/model/TableStatistics.h>

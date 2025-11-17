@@ -1967,6 +1967,37 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   }
 
   /**
+   * <p>This API is used for deleting the <code>ResourceProperty</code> of the Glue
+   * connection (for the source) or Glue database ARN (for the target).</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationResourceProperty">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIntegrationResourcePropertyOutcome DeleteIntegrationResourceProperty(
+      const Model::DeleteIntegrationResourcePropertyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIntegrationResourceProperty that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteIntegrationResourcePropertyRequestT = Model::DeleteIntegrationResourcePropertyRequest>
+  Model::DeleteIntegrationResourcePropertyOutcomeCallable DeleteIntegrationResourcePropertyCallable(
+      const DeleteIntegrationResourcePropertyRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteIntegrationResourceProperty, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIntegrationResourceProperty that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteIntegrationResourcePropertyRequestT = Model::DeleteIntegrationResourcePropertyRequest>
+  void DeleteIntegrationResourcePropertyAsync(const DeleteIntegrationResourcePropertyRequestT& request,
+                                              const DeleteIntegrationResourcePropertyResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteIntegrationResourceProperty, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the table properties that have been created for the tables that need
    * to be replicated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationTableProperties">AWS
@@ -5202,6 +5233,36 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListEntitiesRequestT& request = {}) const {
     return SubmitAsync(&GlueClient::ListEntities, request, handler, context);
+  }
+
+  /**
+   * <p>List integration resource properties for a single customer. It supports the
+   * filters, maxRecords and markers.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIntegrationResourcePropertiesOutcome ListIntegrationResourceProperties(
+      const Model::ListIntegrationResourcePropertiesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListIntegrationResourceProperties that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListIntegrationResourcePropertiesRequestT = Model::ListIntegrationResourcePropertiesRequest>
+  Model::ListIntegrationResourcePropertiesOutcomeCallable ListIntegrationResourcePropertiesCallable(
+      const ListIntegrationResourcePropertiesRequestT& request = {}) const {
+    return SubmitCallable(&GlueClient::ListIntegrationResourceProperties, request);
+  }
+
+  /**
+   * An Async wrapper for ListIntegrationResourceProperties that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListIntegrationResourcePropertiesRequestT = Model::ListIntegrationResourcePropertiesRequest>
+  void ListIntegrationResourcePropertiesAsync(const ListIntegrationResourcePropertiesResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                              const ListIntegrationResourcePropertiesRequestT& request = {}) const {
+    return SubmitAsync(&GlueClient::ListIntegrationResourceProperties, request, handler, context);
   }
 
   /**

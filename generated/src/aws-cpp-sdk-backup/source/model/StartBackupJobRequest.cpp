@@ -19,6 +19,10 @@ Aws::String StartBackupJobRequest::SerializePayload() const {
     payload.WithString("BackupVaultName", m_backupVaultName);
   }
 
+  if (m_logicallyAirGappedBackupVaultArnHasBeenSet) {
+    payload.WithString("LogicallyAirGappedBackupVaultArn", m_logicallyAirGappedBackupVaultArn);
+  }
+
   if (m_resourceArnHasBeenSet) {
     payload.WithString("ResourceArn", m_resourceArn);
   }

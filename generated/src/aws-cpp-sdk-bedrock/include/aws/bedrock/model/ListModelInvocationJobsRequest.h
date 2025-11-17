@@ -103,7 +103,7 @@ class ListModelInvocationJobsRequest : public BedrockRequest {
    * files in the output S3 location.</p> </li> <li> <p>Failed – This job has failed.
    * Check the failure message for any further details. For further assistance, reach
    * out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web
-   * ServicesSupport Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by
+   * Services Support Center</a>.</p> </li> <li> <p>Stopped – This job was stopped by
    * a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p>
    * </li> </ul>
    */

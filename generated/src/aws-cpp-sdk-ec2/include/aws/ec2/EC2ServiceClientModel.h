@@ -381,6 +381,10 @@
 #include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
 #include <aws/ec2/model/DescribeInstanceImageMetadataRequest.h>
 #include <aws/ec2/model/DescribeInstanceImageMetadataResponse.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaHistoryStatesRequest.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaHistoryStatesResponse.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaStatesRequest.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaStatesResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusRequest.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstanceTopologyRequest.h>
@@ -618,6 +622,7 @@
 #include <aws/ec2/model/DisableImageDeprecationResponse.h>
 #include <aws/ec2/model/DisableImageDeregistrationProtectionResponse.h>
 #include <aws/ec2/model/DisableImageResponse.h>
+#include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/DisableRouteServerPropagationResponse.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
@@ -659,6 +664,7 @@
 #include <aws/ec2/model/EnableImageDeprecationResponse.h>
 #include <aws/ec2/model/EnableImageDeregistrationProtectionResponse.h>
 #include <aws/ec2/model/EnableImageResponse.h>
+#include <aws/ec2/model/EnableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingRequest.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingResponse.h>
@@ -1246,6 +1252,8 @@ class DescribeInstanceCreditSpecificationsRequest;
 class DescribeInstanceEventNotificationAttributesRequest;
 class DescribeInstanceEventWindowsRequest;
 class DescribeInstanceImageMetadataRequest;
+class DescribeInstanceSqlHaHistoryStatesRequest;
+class DescribeInstanceSqlHaStatesRequest;
 class DescribeInstanceStatusRequest;
 class DescribeInstanceTopologyRequest;
 class DescribeInstanceTypeOfferingsRequest;
@@ -1377,6 +1385,7 @@ class DisableImageRequest;
 class DisableImageBlockPublicAccessRequest;
 class DisableImageDeprecationRequest;
 class DisableImageDeregistrationProtectionRequest;
+class DisableInstanceSqlHaStandbyDetectionsRequest;
 class DisableIpamOrganizationAdminAccountRequest;
 class DisableRouteServerPropagationRequest;
 class DisableSerialConsoleAccessRequest;
@@ -1414,6 +1423,7 @@ class EnableImageRequest;
 class EnableImageBlockPublicAccessRequest;
 class EnableImageDeprecationRequest;
 class EnableImageDeregistrationProtectionRequest;
+class EnableInstanceSqlHaStandbyDetectionsRequest;
 class EnableIpamOrganizationAdminAccountRequest;
 class EnableReachabilityAnalyzerOrganizationSharingRequest;
 class EnableRouteServerPropagationRequest;
@@ -1978,6 +1988,8 @@ typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse,
     DescribeInstanceEventNotificationAttributesOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceEventWindowsResponse, EC2Error> DescribeInstanceEventWindowsOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceImageMetadataResponse, EC2Error> DescribeInstanceImageMetadataOutcome;
+typedef Aws::Utils::Outcome<DescribeInstanceSqlHaHistoryStatesResponse, EC2Error> DescribeInstanceSqlHaHistoryStatesOutcome;
+typedef Aws::Utils::Outcome<DescribeInstanceSqlHaStatesResponse, EC2Error> DescribeInstanceSqlHaStatesOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, EC2Error> DescribeInstanceStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceTopologyResponse, EC2Error> DescribeInstanceTopologyOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, EC2Error> DescribeInstanceTypeOfferingsOutcome;
@@ -2115,6 +2127,7 @@ typedef Aws::Utils::Outcome<DisableImageResponse, EC2Error> DisableImageOutcome;
 typedef Aws::Utils::Outcome<DisableImageBlockPublicAccessResponse, EC2Error> DisableImageBlockPublicAccessOutcome;
 typedef Aws::Utils::Outcome<DisableImageDeprecationResponse, EC2Error> DisableImageDeprecationOutcome;
 typedef Aws::Utils::Outcome<DisableImageDeregistrationProtectionResponse, EC2Error> DisableImageDeregistrationProtectionOutcome;
+typedef Aws::Utils::Outcome<DisableInstanceSqlHaStandbyDetectionsResponse, EC2Error> DisableInstanceSqlHaStandbyDetectionsOutcome;
 typedef Aws::Utils::Outcome<DisableIpamOrganizationAdminAccountResponse, EC2Error> DisableIpamOrganizationAdminAccountOutcome;
 typedef Aws::Utils::Outcome<DisableRouteServerPropagationResponse, EC2Error> DisableRouteServerPropagationOutcome;
 typedef Aws::Utils::Outcome<DisableSerialConsoleAccessResponse, EC2Error> DisableSerialConsoleAccessOutcome;
@@ -2154,6 +2167,7 @@ typedef Aws::Utils::Outcome<EnableImageResponse, EC2Error> EnableImageOutcome;
 typedef Aws::Utils::Outcome<EnableImageBlockPublicAccessResponse, EC2Error> EnableImageBlockPublicAccessOutcome;
 typedef Aws::Utils::Outcome<EnableImageDeprecationResponse, EC2Error> EnableImageDeprecationOutcome;
 typedef Aws::Utils::Outcome<EnableImageDeregistrationProtectionResponse, EC2Error> EnableImageDeregistrationProtectionOutcome;
+typedef Aws::Utils::Outcome<EnableInstanceSqlHaStandbyDetectionsResponse, EC2Error> EnableInstanceSqlHaStandbyDetectionsOutcome;
 typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
 typedef Aws::Utils::Outcome<EnableReachabilityAnalyzerOrganizationSharingResponse, EC2Error>
     EnableReachabilityAnalyzerOrganizationSharingOutcome;
@@ -2725,6 +2739,8 @@ typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanc
 typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
 typedef std::future<DescribeInstanceEventWindowsOutcome> DescribeInstanceEventWindowsOutcomeCallable;
 typedef std::future<DescribeInstanceImageMetadataOutcome> DescribeInstanceImageMetadataOutcomeCallable;
+typedef std::future<DescribeInstanceSqlHaHistoryStatesOutcome> DescribeInstanceSqlHaHistoryStatesOutcomeCallable;
+typedef std::future<DescribeInstanceSqlHaStatesOutcome> DescribeInstanceSqlHaStatesOutcomeCallable;
 typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
 typedef std::future<DescribeInstanceTopologyOutcome> DescribeInstanceTopologyOutcomeCallable;
 typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
@@ -2858,6 +2874,7 @@ typedef std::future<DisableImageOutcome> DisableImageOutcomeCallable;
 typedef std::future<DisableImageBlockPublicAccessOutcome> DisableImageBlockPublicAccessOutcomeCallable;
 typedef std::future<DisableImageDeprecationOutcome> DisableImageDeprecationOutcomeCallable;
 typedef std::future<DisableImageDeregistrationProtectionOutcome> DisableImageDeregistrationProtectionOutcomeCallable;
+typedef std::future<DisableInstanceSqlHaStandbyDetectionsOutcome> DisableInstanceSqlHaStandbyDetectionsOutcomeCallable;
 typedef std::future<DisableIpamOrganizationAdminAccountOutcome> DisableIpamOrganizationAdminAccountOutcomeCallable;
 typedef std::future<DisableRouteServerPropagationOutcome> DisableRouteServerPropagationOutcomeCallable;
 typedef std::future<DisableSerialConsoleAccessOutcome> DisableSerialConsoleAccessOutcomeCallable;
@@ -2895,6 +2912,7 @@ typedef std::future<EnableImageOutcome> EnableImageOutcomeCallable;
 typedef std::future<EnableImageBlockPublicAccessOutcome> EnableImageBlockPublicAccessOutcomeCallable;
 typedef std::future<EnableImageDeprecationOutcome> EnableImageDeprecationOutcomeCallable;
 typedef std::future<EnableImageDeregistrationProtectionOutcome> EnableImageDeregistrationProtectionOutcomeCallable;
+typedef std::future<EnableInstanceSqlHaStandbyDetectionsOutcome> EnableInstanceSqlHaStandbyDetectionsOutcomeCallable;
 typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
 typedef std::future<EnableReachabilityAnalyzerOrganizationSharingOutcome> EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable;
 typedef std::future<EnableRouteServerPropagationOutcome> EnableRouteServerPropagationOutcomeCallable;
@@ -4192,6 +4210,13 @@ typedef std::function<void(const EC2Client*, const Model::DescribeInstanceImageM
                            const Model::DescribeInstanceImageMetadataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInstanceImageMetadataResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeInstanceSqlHaHistoryStatesRequest&,
+                           const Model::DescribeInstanceSqlHaHistoryStatesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeInstanceSqlHaHistoryStatesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeInstanceSqlHaStatesRequest&,
+                           const Model::DescribeInstanceSqlHaStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeInstanceSqlHaStatesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInstanceStatusResponseReceivedHandler;
@@ -4651,6 +4676,10 @@ typedef std::function<void(const EC2Client*, const Model::DisableImageDeregistra
                            const Model::DisableImageDeregistrationProtectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisableImageDeregistrationProtectionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DisableInstanceSqlHaStandbyDetectionsRequest&,
+                           const Model::DisableInstanceSqlHaStandbyDetectionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisableInstanceSqlHaStandbyDetectionsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DisableIpamOrganizationAdminAccountRequest&,
                            const Model::DisableIpamOrganizationAdminAccountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4782,6 +4811,10 @@ typedef std::function<void(const EC2Client*, const Model::EnableImageDeregistrat
                            const Model::EnableImageDeregistrationProtectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableImageDeregistrationProtectionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::EnableInstanceSqlHaStandbyDetectionsRequest&,
+                           const Model::EnableInstanceSqlHaStandbyDetectionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EnableInstanceSqlHaStandbyDetectionsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&,
                            const Model::EnableIpamOrganizationAdminAccountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

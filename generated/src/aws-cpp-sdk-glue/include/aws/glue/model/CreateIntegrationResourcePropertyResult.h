@@ -47,6 +47,25 @@ class CreateIntegrationResourcePropertyResult {
 
   ///@{
   /**
+   * <p>The resource ARN created through this create API. The format is something
+   * like
+   * arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/ *</p>
+   */
+  inline const Aws::String& GetResourcePropertyArn() const { return m_resourcePropertyArn; }
+  template <typename ResourcePropertyArnT = Aws::String>
+  void SetResourcePropertyArn(ResourcePropertyArnT&& value) {
+    m_resourcePropertyArnHasBeenSet = true;
+    m_resourcePropertyArn = std::forward<ResourcePropertyArnT>(value);
+  }
+  template <typename ResourcePropertyArnT = Aws::String>
+  CreateIntegrationResourcePropertyResult& WithResourcePropertyArn(ResourcePropertyArnT&& value) {
+    SetResourcePropertyArn(std::forward<ResourcePropertyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The resource properties associated with the integration source.</p>
    */
   inline const SourceProcessingProperties& GetSourceProcessingProperties() const { return m_sourceProcessingProperties; }
@@ -96,6 +115,9 @@ class CreateIntegrationResourcePropertyResult {
  private:
   Aws::String m_resourceArn;
   bool m_resourceArnHasBeenSet = false;
+
+  Aws::String m_resourcePropertyArn;
+  bool m_resourcePropertyArnHasBeenSet = false;
 
   SourceProcessingProperties m_sourceProcessingProperties;
   bool m_sourceProcessingPropertiesHasBeenSet = false;

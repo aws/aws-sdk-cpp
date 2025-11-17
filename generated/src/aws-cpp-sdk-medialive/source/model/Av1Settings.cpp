@@ -98,6 +98,14 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_minBitrate = jsonValue.GetInteger("minBitrate");
     m_minBitrateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("spatialAq")) {
+    m_spatialAq = Av1SpatialAqMapper::GetAv1SpatialAqForName(jsonValue.GetString("spatialAq"));
+    m_spatialAqHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("temporalAq")) {
+    m_temporalAq = Av1TemporalAqMapper::GetAv1TemporalAqForName(jsonValue.GetString("temporalAq"));
+    m_temporalAqHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -182,6 +190,14 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_minBitrateHasBeenSet) {
     payload.WithInteger("minBitrate", m_minBitrate);
+  }
+
+  if (m_spatialAqHasBeenSet) {
+    payload.WithString("spatialAq", Av1SpatialAqMapper::GetNameForAv1SpatialAq(m_spatialAq));
+  }
+
+  if (m_temporalAqHasBeenSet) {
+    payload.WithString("temporalAq", Av1TemporalAqMapper::GetNameForAv1TemporalAq(m_temporalAq));
   }
 
   return payload;

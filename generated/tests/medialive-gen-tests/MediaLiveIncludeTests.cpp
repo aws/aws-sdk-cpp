@@ -78,6 +78,8 @@
 #include <aws/medialive/model/Av1RateControlMode.h>
 #include <aws/medialive/model/Av1SceneChangeDetect.h>
 #include <aws/medialive/model/Av1Settings.h>
+#include <aws/medialive/model/Av1SpatialAq.h>
+#include <aws/medialive/model/Av1TemporalAq.h>
 #include <aws/medialive/model/AvailBlanking.h>
 #include <aws/medialive/model/AvailBlankingState.h>
 #include <aws/medialive/model/AvailConfiguration.h>
@@ -403,6 +405,7 @@
 #include <aws/medialive/model/H265TimecodeInsertionBehavior.h>
 #include <aws/medialive/model/H265TreeblockSize.h>
 #include <aws/medialive/model/Hdr10Settings.h>
+#include <aws/medialive/model/Hlg2020Settings.h>
 #include <aws/medialive/model/HlsAdMarkers.h>
 #include <aws/medialive/model/HlsAkamaiHttpTransferMode.h>
 #include <aws/medialive/model/HlsAkamaiSettings.h>

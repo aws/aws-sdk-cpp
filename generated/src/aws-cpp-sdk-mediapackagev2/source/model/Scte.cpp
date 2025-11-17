@@ -25,6 +25,10 @@ Scte& Scte::operator=(JsonView jsonValue) {
     }
     m_scteFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScteInSegments")) {
+    m_scteInSegments = ScteInSegmentsMapper::GetScteInSegmentsForName(jsonValue.GetString("ScteInSegments"));
+    m_scteInSegmentsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue Scte::Jsonize() const {
       scteFilterJsonList[scteFilterIndex].AsString(ScteFilterMapper::GetNameForScteFilter(m_scteFilter[scteFilterIndex]));
     }
     payload.WithArray("ScteFilter", std::move(scteFilterJsonList));
+  }
+
+  if (m_scteInSegmentsHasBeenSet) {
+    payload.WithString("ScteInSegments", ScteInSegmentsMapper::GetNameForScteInSegments(m_scteInSegments));
   }
 
   return payload;

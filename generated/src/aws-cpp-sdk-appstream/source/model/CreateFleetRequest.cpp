@@ -112,6 +112,10 @@ Aws::String CreateFleetRequest::SerializePayload() const {
     payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
   }
 
+  if (m_rootVolumeConfigHasBeenSet) {
+    payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

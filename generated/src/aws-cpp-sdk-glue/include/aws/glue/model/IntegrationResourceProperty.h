@@ -1,0 +1,126 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/SourceProcessingProperties.h>
+#include <aws/glue/model/TargetProcessingProperties.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Glue {
+namespace Model {
+
+/**
+ * <p>A structure representing an integration resource property.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/IntegrationResourceProperty">AWS
+ * API Reference</a></p>
+ */
+class IntegrationResourceProperty {
+ public:
+  AWS_GLUE_API IntegrationResourceProperty() = default;
+  AWS_GLUE_API IntegrationResourceProperty(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GLUE_API IntegrationResourceProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The connection ARN of the source, or the database ARN of the target.</p>
+   */
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  IntegrationResourceProperty& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource ARN created through this create API. The format is something
+   * like
+   * arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/ *</p>
+   */
+  inline const Aws::String& GetResourcePropertyArn() const { return m_resourcePropertyArn; }
+  inline bool ResourcePropertyArnHasBeenSet() const { return m_resourcePropertyArnHasBeenSet; }
+  template <typename ResourcePropertyArnT = Aws::String>
+  void SetResourcePropertyArn(ResourcePropertyArnT&& value) {
+    m_resourcePropertyArnHasBeenSet = true;
+    m_resourcePropertyArn = std::forward<ResourcePropertyArnT>(value);
+  }
+  template <typename ResourcePropertyArnT = Aws::String>
+  IntegrationResourceProperty& WithResourcePropertyArn(ResourcePropertyArnT&& value) {
+    SetResourcePropertyArn(std::forward<ResourcePropertyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource properties associated with the integration source.</p>
+   */
+  inline const SourceProcessingProperties& GetSourceProcessingProperties() const { return m_sourceProcessingProperties; }
+  inline bool SourceProcessingPropertiesHasBeenSet() const { return m_sourceProcessingPropertiesHasBeenSet; }
+  template <typename SourceProcessingPropertiesT = SourceProcessingProperties>
+  void SetSourceProcessingProperties(SourceProcessingPropertiesT&& value) {
+    m_sourceProcessingPropertiesHasBeenSet = true;
+    m_sourceProcessingProperties = std::forward<SourceProcessingPropertiesT>(value);
+  }
+  template <typename SourceProcessingPropertiesT = SourceProcessingProperties>
+  IntegrationResourceProperty& WithSourceProcessingProperties(SourceProcessingPropertiesT&& value) {
+    SetSourceProcessingProperties(std::forward<SourceProcessingPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource properties associated with the integration target.</p>
+   */
+  inline const TargetProcessingProperties& GetTargetProcessingProperties() const { return m_targetProcessingProperties; }
+  inline bool TargetProcessingPropertiesHasBeenSet() const { return m_targetProcessingPropertiesHasBeenSet; }
+  template <typename TargetProcessingPropertiesT = TargetProcessingProperties>
+  void SetTargetProcessingProperties(TargetProcessingPropertiesT&& value) {
+    m_targetProcessingPropertiesHasBeenSet = true;
+    m_targetProcessingProperties = std::forward<TargetProcessingPropertiesT>(value);
+  }
+  template <typename TargetProcessingPropertiesT = TargetProcessingProperties>
+  IntegrationResourceProperty& WithTargetProcessingProperties(TargetProcessingPropertiesT&& value) {
+    SetTargetProcessingProperties(std::forward<TargetProcessingPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
+
+  Aws::String m_resourcePropertyArn;
+  bool m_resourcePropertyArnHasBeenSet = false;
+
+  SourceProcessingProperties m_sourceProcessingProperties;
+  bool m_sourceProcessingPropertiesHasBeenSet = false;
+
+  TargetProcessingProperties m_targetProcessingProperties;
+  bool m_targetProcessingPropertiesHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

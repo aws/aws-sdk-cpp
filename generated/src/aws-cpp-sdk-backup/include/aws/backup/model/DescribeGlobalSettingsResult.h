@@ -30,8 +30,9 @@ class DescribeGlobalSettingsResult {
 
   ///@{
   /**
-   * <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and
-   * <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
+   * <p>The status of the flags <code>isCrossAccountBackupEnabled</code>,
+   * <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval), and
+   * <code>isDelegatedAdministratorEnabled</code>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
   template <typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>

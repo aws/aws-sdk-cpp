@@ -11,6 +11,7 @@
 #include <aws/appstream/model/ImageSharedWithOthers.h>
 #include <aws/appstream/model/ImageState.h>
 #include <aws/appstream/model/ImageStateChangeReason.h>
+#include <aws/appstream/model/ImageType.h>
 #include <aws/appstream/model/LatestAppstreamAgentVersion.h>
 #include <aws/appstream/model/PlatformType.h>
 #include <aws/appstream/model/ResourceError.h>
@@ -300,8 +301,8 @@ class Image {
 
   ///@{
   /**
-   * <p>The version of the AppStream 2.0 agent to use for instances that are launched
-   * from this image. </p>
+   * <p>The version of the WorkSpaces Applications agent to use for instances that
+   * are launched from this image. </p>
    */
   inline const Aws::String& GetAppstreamAgentVersion() const { return m_appstreamAgentVersion; }
   inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }
@@ -362,8 +363,8 @@ class Image {
 
   ///@{
   /**
-   * <p>Indicates whether the image is using the latest AppStream 2.0 agent version
-   * or not.</p>
+   * <p>Indicates whether the image is using the latest WorkSpaces Applications agent
+   * version or not.</p>
    */
   inline LatestAppstreamAgentVersion GetLatestAppstreamAgentVersion() const { return m_latestAppstreamAgentVersion; }
   inline bool LatestAppstreamAgentVersionHasBeenSet() const { return m_latestAppstreamAgentVersionHasBeenSet; }
@@ -408,8 +409,8 @@ class Image {
 
   ///@{
   /**
-   * <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0
-   * image or not.</p>
+   * <p>Indicates whether dynamic app providers are enabled within an WorkSpaces
+   * Applications image or not.</p>
    */
   inline DynamicAppProvidersEnabled GetDynamicAppProvidersEnabled() const { return m_dynamicAppProvidersEnabled; }
   inline bool DynamicAppProvidersEnabledHasBeenSet() const { return m_dynamicAppProvidersEnabledHasBeenSet; }
@@ -451,6 +452,25 @@ class Image {
   }
   inline Image& WithManagedSoftwareIncluded(bool value) {
     SetManagedSoftwareIncluded(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the image. Images created through AMI import have type "custom",
+   * while WorkSpaces Applications provided images have type "native". Custom images
+   * support additional instance types including GeneralPurpose, MemoryOptimized,
+   * ComputeOptimized, and Accelerated instance families.</p>
+   */
+  inline ImageType GetImageType() const { return m_imageType; }
+  inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
+  inline void SetImageType(ImageType value) {
+    m_imageTypeHasBeenSet = true;
+    m_imageType = value;
+  }
+  inline Image& WithImageType(ImageType value) {
+    SetImageType(value);
     return *this;
   }
   ///@}
@@ -520,6 +540,9 @@ class Image {
 
   bool m_managedSoftwareIncluded{false};
   bool m_managedSoftwareIncludedHasBeenSet = false;
+
+  ImageType m_imageType{ImageType::NOT_SET};
+  bool m_imageTypeHasBeenSet = false;
 };
 
 }  // namespace Model

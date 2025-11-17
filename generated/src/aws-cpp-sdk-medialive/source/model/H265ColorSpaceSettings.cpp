@@ -38,6 +38,10 @@ H265ColorSpaceSettings& H265ColorSpaceSettings::operator=(JsonView jsonValue) {
     m_rec709Settings = jsonValue.GetObject("rec709Settings");
     m_rec709SettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("hlg2020Settings")) {
+    m_hlg2020Settings = jsonValue.GetObject("hlg2020Settings");
+    m_hlg2020SettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue H265ColorSpaceSettings::Jsonize() const {
 
   if (m_rec709SettingsHasBeenSet) {
     payload.WithObject("rec709Settings", m_rec709Settings.Jsonize());
+  }
+
+  if (m_hlg2020SettingsHasBeenSet) {
+    payload.WithObject("hlg2020Settings", m_hlg2020Settings.Jsonize());
   }
 
   return payload;

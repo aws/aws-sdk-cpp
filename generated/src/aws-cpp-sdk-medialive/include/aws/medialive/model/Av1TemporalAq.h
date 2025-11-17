@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
+
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class Av1TemporalAq { NOT_SET, DISABLED, ENABLED };
+
+namespace Av1TemporalAqMapper {
+AWS_MEDIALIVE_API Av1TemporalAq GetAv1TemporalAqForName(const Aws::String& name);
+
+AWS_MEDIALIVE_API Aws::String GetNameForAv1TemporalAq(Av1TemporalAq value);
+}  // namespace Av1TemporalAqMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

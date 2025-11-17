@@ -97,6 +97,10 @@ ImageBuilder& ImageBuilder::operator=(JsonView jsonValue) {
     }
     m_accessEndpointsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RootVolumeConfig")) {
+    m_rootVolumeConfig = jsonValue.GetObject("RootVolumeConfig");
+    m_rootVolumeConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LatestAppstreamAgentVersion")) {
     m_latestAppstreamAgentVersion =
         LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
@@ -187,6 +191,10 @@ JsonValue ImageBuilder::Jsonize() const {
       accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
     }
     payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
+  }
+
+  if (m_rootVolumeConfigHasBeenSet) {
+    payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
   }
 
   if (m_latestAppstreamAgentVersionHasBeenSet) {

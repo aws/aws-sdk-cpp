@@ -12,6 +12,8 @@
 #include <aws/medialive/model/Av1LookAheadRateControl.h>
 #include <aws/medialive/model/Av1RateControlMode.h>
 #include <aws/medialive/model/Av1SceneChangeDetect.h>
+#include <aws/medialive/model/Av1SpatialAq.h>
+#include <aws/medialive/model/Av1TemporalAq.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/TimecodeBurninSettings.h>
 
@@ -428,6 +430,44 @@ Enter a minimum bitrate if you
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Spatial AQ makes adjustments within each frame based on spatial variation of
+   * content complexity. Enabled: MediaLive will determine the appropriate level of
+   * spatial AQ to apply. Disabled: No spatial AQ. For more information, see the
+   * topic about video adaptive quantization in the MediaLive user guide.
+   */
+  inline Av1SpatialAq GetSpatialAq() const { return m_spatialAq; }
+  inline bool SpatialAqHasBeenSet() const { return m_spatialAqHasBeenSet; }
+  inline void SetSpatialAq(Av1SpatialAq value) {
+    m_spatialAqHasBeenSet = true;
+    m_spatialAq = value;
+  }
+  inline Av1Settings& WithSpatialAq(Av1SpatialAq value) {
+    SetSpatialAq(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Temporal AQ makes adjustments within each frame based on variations in content
+   * complexity over time. Enabled: MediaLive will determine the appropriate level of
+   * temporal AQ to apply. Disabled: No temporal AQ. For more information, see the
+   * topic about video adaptive quantization in the MediaLive user guide.
+   */
+  inline Av1TemporalAq GetTemporalAq() const { return m_temporalAq; }
+  inline bool TemporalAqHasBeenSet() const { return m_temporalAqHasBeenSet; }
+  inline void SetTemporalAq(Av1TemporalAq value) {
+    m_temporalAqHasBeenSet = true;
+    m_temporalAq = value;
+  }
+  inline Av1Settings& WithTemporalAq(Av1TemporalAq value) {
+    SetTemporalAq(value);
+    return *this;
+  }
+  ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
   bool m_afdSignalingHasBeenSet = false;
@@ -488,6 +528,12 @@ Enter a minimum bitrate if you
 
   int m_minBitrate{0};
   bool m_minBitrateHasBeenSet = false;
+
+  Av1SpatialAq m_spatialAq{Av1SpatialAq::NOT_SET};
+  bool m_spatialAqHasBeenSet = false;
+
+  Av1TemporalAq m_temporalAq{Av1TemporalAq::NOT_SET};
+  bool m_temporalAqHasBeenSet = false;
 };
 
 }  // namespace Model

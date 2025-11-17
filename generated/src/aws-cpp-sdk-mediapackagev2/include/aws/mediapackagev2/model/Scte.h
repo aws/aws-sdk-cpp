@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/ScteFilter.h>
+#include <aws/mediapackagev2/model/ScteInSegments.h>
 
 #include <utility>
 
@@ -55,9 +56,33 @@ class Scte {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls whether SCTE-35 messages are included in segment files.</p> <ul>
+   * <li> <p>None – SCTE-35 messages are not included in segments (default)</p> </li>
+   * <li> <p>All – SCTE-35 messages are embedded in segment data</p> </li> </ul> <p>
+   * For DASH manifests, when set to <code>All</code>, an
+   * <code>InbandEventStream</code> tag signals that SCTE messages are present in
+   * segments. This setting works independently of manifest ad markers.</p>
+   */
+  inline ScteInSegments GetScteInSegments() const { return m_scteInSegments; }
+  inline bool ScteInSegmentsHasBeenSet() const { return m_scteInSegmentsHasBeenSet; }
+  inline void SetScteInSegments(ScteInSegments value) {
+    m_scteInSegmentsHasBeenSet = true;
+    m_scteInSegments = value;
+  }
+  inline Scte& WithScteInSegments(ScteInSegments value) {
+    SetScteInSegments(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ScteFilter> m_scteFilter;
   bool m_scteFilterHasBeenSet = false;
+
+  ScteInSegments m_scteInSegments{ScteInSegments::NOT_SET};
+  bool m_scteInSegmentsHasBeenSet = false;
 };
 
 }  // namespace Model

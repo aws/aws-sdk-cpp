@@ -78,6 +78,7 @@
 #include <aws/lexv2-models/model/AnalyticsUtteranceMetricResult.h>
 #include <aws/lexv2-models/model/AnalyticsUtteranceResult.h>
 #include <aws/lexv2-models/model/AnalyticsUtteranceSortByName.h>
+#include <aws/lexv2-models/model/AssistedNluMode.h>
 #include <aws/lexv2-models/model/AssociatedTranscript.h>
 #include <aws/lexv2-models/model/AssociatedTranscriptFilter.h>
 #include <aws/lexv2-models/model/AssociatedTranscriptFilterName.h>

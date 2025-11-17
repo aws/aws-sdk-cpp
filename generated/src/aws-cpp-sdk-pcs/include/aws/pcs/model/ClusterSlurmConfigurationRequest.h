@@ -8,6 +8,7 @@
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/AccountingRequest.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
+#include <aws/pcs/model/SlurmRestRequest.h>
 
 #include <utility>
 
@@ -94,6 +95,24 @@ class ClusterSlurmConfigurationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Slurm REST API configuration for the cluster.</p>
+   */
+  inline const SlurmRestRequest& GetSlurmRest() const { return m_slurmRest; }
+  inline bool SlurmRestHasBeenSet() const { return m_slurmRestHasBeenSet; }
+  template <typename SlurmRestT = SlurmRestRequest>
+  void SetSlurmRest(SlurmRestT&& value) {
+    m_slurmRestHasBeenSet = true;
+    m_slurmRest = std::forward<SlurmRestT>(value);
+  }
+  template <typename SlurmRestT = SlurmRestRequest>
+  ClusterSlurmConfigurationRequest& WithSlurmRest(SlurmRestT&& value) {
+    SetSlurmRest(std::forward<SlurmRestT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_scaleDownIdleTimeInSeconds{0};
   bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
@@ -103,6 +122,9 @@ class ClusterSlurmConfigurationRequest {
 
   AccountingRequest m_accounting;
   bool m_accountingHasBeenSet = false;
+
+  SlurmRestRequest m_slurmRest;
+  bool m_slurmRestHasBeenSet = false;
 };
 
 }  // namespace Model

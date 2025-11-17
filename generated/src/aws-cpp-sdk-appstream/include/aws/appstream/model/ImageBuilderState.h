@@ -24,7 +24,8 @@ enum class ImageBuilderState {
   UPDATING,
   PENDING_QUALIFICATION,
   PENDING_SYNCING_APPS,
-  SYNCING_APPS
+  SYNCING_APPS,
+  PENDING_IMAGE_IMPORT
 };
 
 namespace ImageBuilderStateMapper {

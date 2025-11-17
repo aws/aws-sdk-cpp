@@ -7,8 +7,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/Accounting.h>
+#include <aws/pcs/model/JwtAuth.h>
 #include <aws/pcs/model/SlurmAuthKey.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
+#include <aws/pcs/model/SlurmRest.h>
 
 #include <utility>
 
@@ -98,6 +100,24 @@ class ClusterSlurmConfiguration {
 
   ///@{
   /**
+   * <p>The JWT authentication configuration for Slurm REST API access.</p>
+   */
+  inline const JwtAuth& GetJwtAuth() const { return m_jwtAuth; }
+  inline bool JwtAuthHasBeenSet() const { return m_jwtAuthHasBeenSet; }
+  template <typename JwtAuthT = JwtAuth>
+  void SetJwtAuth(JwtAuthT&& value) {
+    m_jwtAuthHasBeenSet = true;
+    m_jwtAuth = std::forward<JwtAuthT>(value);
+  }
+  template <typename JwtAuthT = JwtAuth>
+  ClusterSlurmConfiguration& WithJwtAuth(JwtAuthT&& value) {
+    SetJwtAuth(std::forward<JwtAuthT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The accounting configuration includes configurable settings for Slurm
    * accounting.</p>
    */
@@ -114,6 +134,24 @@ class ClusterSlurmConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Slurm REST API configuration for the cluster.</p>
+   */
+  inline const SlurmRest& GetSlurmRest() const { return m_slurmRest; }
+  inline bool SlurmRestHasBeenSet() const { return m_slurmRestHasBeenSet; }
+  template <typename SlurmRestT = SlurmRest>
+  void SetSlurmRest(SlurmRestT&& value) {
+    m_slurmRestHasBeenSet = true;
+    m_slurmRest = std::forward<SlurmRestT>(value);
+  }
+  template <typename SlurmRestT = SlurmRest>
+  ClusterSlurmConfiguration& WithSlurmRest(SlurmRestT&& value) {
+    SetSlurmRest(std::forward<SlurmRestT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_scaleDownIdleTimeInSeconds{0};
   bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
@@ -124,8 +162,14 @@ class ClusterSlurmConfiguration {
   SlurmAuthKey m_authKey;
   bool m_authKeyHasBeenSet = false;
 
+  JwtAuth m_jwtAuth;
+  bool m_jwtAuthHasBeenSet = false;
+
   Accounting m_accounting;
   bool m_accountingHasBeenSet = false;
+
+  SlurmRest m_slurmRest;
+  bool m_slurmRestHasBeenSet = false;
 };
 
 }  // namespace Model

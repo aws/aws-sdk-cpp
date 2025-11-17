@@ -31,36 +31,12 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const {
     payload.WithString("instanceArn", m_instanceArn);
   }
 
-  if (m_sshPublicKeyHasBeenSet) {
-    payload.WithString("sshPublicKey", m_sshPublicKey);
-  }
-
-  if (m_remoteDebugEnabledHasBeenSet) {
-    payload.WithBool("remoteDebugEnabled", m_remoteDebugEnabled);
-  }
-
-  if (m_remoteRecordEnabledHasBeenSet) {
-    payload.WithBool("remoteRecordEnabled", m_remoteRecordEnabled);
-  }
-
-  if (m_remoteRecordAppArnHasBeenSet) {
-    payload.WithString("remoteRecordAppArn", m_remoteRecordAppArn);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_clientIdHasBeenSet) {
-    payload.WithString("clientId", m_clientId);
-  }
-
   if (m_configurationHasBeenSet) {
     payload.WithObject("configuration", m_configuration.Jsonize());
-  }
-
-  if (m_interactionModeHasBeenSet) {
-    payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
   }
 
   if (m_skipAppResignHasBeenSet) {

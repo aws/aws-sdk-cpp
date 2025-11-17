@@ -322,25 +322,6 @@ class Device {
 
   ///@{
   /**
-   * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-   * device.</p> <p>Remote debugging is <a
-   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-   * longer supported</a>.</p>
-   */
-  inline bool GetRemoteDebugEnabled() const { return m_remoteDebugEnabled; }
-  inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
-  inline void SetRemoteDebugEnabled(bool value) {
-    m_remoteDebugEnabledHasBeenSet = true;
-    m_remoteDebugEnabled = value;
-  }
-  inline Device& WithRemoteDebugEnabled(bool value) {
-    SetRemoteDebugEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
    * and PUBLIC.</p>
    */
@@ -464,9 +445,6 @@ class Device {
 
   bool m_remoteAccessEnabled{false};
   bool m_remoteAccessEnabledHasBeenSet = false;
-
-  bool m_remoteDebugEnabled{false};
-  bool m_remoteDebugEnabledHasBeenSet = false;
 
   Aws::String m_fleetType;
   bool m_fleetTypeHasBeenSet = false;
