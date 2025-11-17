@@ -37,7 +37,10 @@ class UpdateGlobalSettingsRequest : public BackupRequest {
    * --region us-west-2</code>.</p> <p>A value for Multi-party approval, styled as
    * "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example:
    * <code>update-global-settings --global-settings isMpaEnabled=false --region
-   * us-west-2</code>.</p>
+   * us-west-2</code>.</p> <p>A value for Backup Service-Linked Role creation, styled
+   * as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false.
+   * Example: <code>update-global-settings --global-settings
+   * isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
   inline bool GlobalSettingsHasBeenSet() const { return m_globalSettingsHasBeenSet; }

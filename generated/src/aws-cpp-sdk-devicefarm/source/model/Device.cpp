@@ -82,10 +82,6 @@ Device& Device::operator=(JsonView jsonValue) {
     m_remoteAccessEnabled = jsonValue.GetBool("remoteAccessEnabled");
     m_remoteAccessEnabledHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("remoteDebugEnabled")) {
-    m_remoteDebugEnabled = jsonValue.GetBool("remoteDebugEnabled");
-    m_remoteDebugEnabledHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("fleetType")) {
     m_fleetType = jsonValue.GetString("fleetType");
     m_fleetTypeHasBeenSet = true;
@@ -173,10 +169,6 @@ JsonValue Device::Jsonize() const {
 
   if (m_remoteAccessEnabledHasBeenSet) {
     payload.WithBool("remoteAccessEnabled", m_remoteAccessEnabled);
-  }
-
-  if (m_remoteDebugEnabledHasBeenSet) {
-    payload.WithBool("remoteDebugEnabled", m_remoteDebugEnabled);
   }
 
   if (m_fleetTypeHasBeenSet) {

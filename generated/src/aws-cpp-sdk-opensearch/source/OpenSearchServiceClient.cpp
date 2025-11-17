@@ -31,6 +31,7 @@
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/CreateApplicationRequest.h>
 #include <aws/opensearch/model/CreateDomainRequest.h>
+#include <aws/opensearch/model/CreateIndexRequest.h>
 #include <aws/opensearch/model/CreateOutboundConnectionRequest.h>
 #include <aws/opensearch/model/CreatePackageRequest.h>
 #include <aws/opensearch/model/CreateVpcEndpointRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/opensearch/model/DeleteDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/DeleteDomainRequest.h>
 #include <aws/opensearch/model/DeleteInboundConnectionRequest.h>
+#include <aws/opensearch/model/DeleteIndexRequest.h>
 #include <aws/opensearch/model/DeleteOutboundConnectionRequest.h>
 #include <aws/opensearch/model/DeletePackageRequest.h>
 #include <aws/opensearch/model/DeleteVpcEndpointRequest.h>
@@ -65,6 +67,7 @@
 #include <aws/opensearch/model/GetDefaultApplicationSettingRequest.h>
 #include <aws/opensearch/model/GetDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
+#include <aws/opensearch/model/GetIndexRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
@@ -93,6 +96,7 @@
 #include <aws/opensearch/model/UpdateDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
+#include <aws/opensearch/model/UpdateIndexRequest.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
 #include <aws/opensearch/model/UpdatePackageScopeRequest.h>
 #include <aws/opensearch/model/UpdateScheduledActionRequest.h>
@@ -590,6 +594,43 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateIndexOutcome OpenSearchServiceClient::CreateIndex(const CreateIndexRequest& request) const {
+  AWS_OPERATION_GUARD(CreateIndex);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateIndex", "Required field: DomainName, is not set");
+    return CreateIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateIndex",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateIndexOutcome>(
+      [&]() -> CreateIndexOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/index");
+        return CreateIndexOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnection(const CreateOutboundConnectionRequest& request) const {
   AWS_OPERATION_GUARD(CreateOutboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOutboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -861,6 +902,49 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
         endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
         return DeleteInboundConnectionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteIndexOutcome OpenSearchServiceClient::DeleteIndex(const DeleteIndexRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteIndex);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIndex", "Required field: DomainName, is not set");
+    return DeleteIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.IndexNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteIndex", "Required field: IndexName, is not set");
+    return DeleteIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteIndex",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteIndexOutcome>(
+      [&]() -> DeleteIndexOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/index/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
+        return DeleteIndexOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1776,6 +1860,49 @@ GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceS
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/domainMaintenance");
         return GetDomainMaintenanceStatusOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetIndexOutcome OpenSearchServiceClient::GetIndex(const GetIndexRequest& request) const {
+  AWS_OPERATION_GUARD(GetIndex);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIndex", "Required field: DomainName, is not set");
+    return GetIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainName]", false));
+  }
+  if (!request.IndexNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIndex", "Required field: IndexName, is not set");
+    return GetIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [IndexName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIndex",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetIndexOutcome>(
+      [&]() -> GetIndexOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/index/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
+        return GetIndexOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2756,6 +2883,49 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
         return UpdateDomainConfigOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateIndexOutcome OpenSearchServiceClient::UpdateIndex(const UpdateIndexRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateIndex);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIndex", "Required field: DomainName, is not set");
+    return UpdateIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.IndexNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateIndex", "Required field: IndexName, is not set");
+    return UpdateIndexOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateIndex, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateIndex",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateIndexOutcome>(
+      [&]() -> UpdateIndexOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/index/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
+        return UpdateIndexOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

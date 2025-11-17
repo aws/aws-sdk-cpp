@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppStream {
 namespace Model {
-enum class ImageState { NOT_SET, PENDING, AVAILABLE, FAILED, COPYING, DELETING, CREATING, IMPORTING };
+enum class ImageState { NOT_SET, PENDING, AVAILABLE, FAILED, COPYING, DELETING, CREATING, IMPORTING, VALIDATING };
 
 namespace ImageStateMapper {
 AWS_APPSTREAM_API ImageState GetImageStateForName(const Aws::String& name);

@@ -405,8 +405,9 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p> Deleting
-   * this resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes an AWS Device Farm project, given the project ARN. You cannot delete
+   * a project if it has an active run or session.</p>  <p>You cannot undo
+   * this operation.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
    * API Reference</a></p>
    */
@@ -431,8 +432,9 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a completed remote access session and its results.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes a completed remote access session and its results. You cannot delete
+   * a remote access session if it is still active.</p>  <p>You cannot
+   * undo this operation.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">AWS
    * API Reference</a></p>
    */
@@ -460,8 +462,9 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes the run, given the run ARN.</p> <p> Deleting this resource does not
-   * stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the run, given the run ARN. You cannot delete a run if it is still
+   * active.</p>  <p>You cannot undo this operation.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
    * API Reference</a></p>
    */
@@ -486,10 +489,9 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Deletes a Selenium testing project and all content generated under it. </p>
-   *  <p>You cannot undo this operation.</p>   <p>You
-   * cannot delete a project if it has active sessions.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <p> Deletes a Selenium testing project and all content generated under it. You
+   * cannot delete a project if it has active sessions.</p>  <p>You cannot
+   * undo this operation.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
    * API Reference</a></p>
    */

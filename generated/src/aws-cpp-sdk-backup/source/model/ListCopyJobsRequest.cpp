@@ -96,4 +96,10 @@ void ListCopyJobsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("messageCategory", ss.str());
     ss.str("");
   }
+
+  if (m_bySourceRecoveryPointArnHasBeenSet) {
+    ss << m_bySourceRecoveryPointArn;
+    uri.AddQueryStringParameter("sourceRecoveryPointArn", ss.str());
+    ss.str("");
+  }
 }

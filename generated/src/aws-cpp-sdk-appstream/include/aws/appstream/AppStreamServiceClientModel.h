@@ -33,9 +33,11 @@
 #include <aws/appstream/model/CreateApplicationResult.h>
 #include <aws/appstream/model/CreateDirectoryConfigResult.h>
 #include <aws/appstream/model/CreateEntitlementResult.h>
+#include <aws/appstream/model/CreateExportImageTaskResult.h>
 #include <aws/appstream/model/CreateFleetResult.h>
 #include <aws/appstream/model/CreateImageBuilderResult.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
+#include <aws/appstream/model/CreateImportedImageResult.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLResult.h>
 #include <aws/appstream/model/CreateThemeForStackResult.h>
@@ -96,9 +98,13 @@
 #include <aws/appstream/model/DisassociateSoftwareFromImageBuilderResult.h>
 #include <aws/appstream/model/EnableUserResult.h>
 #include <aws/appstream/model/ExpireSessionResult.h>
+#include <aws/appstream/model/GetExportImageTaskRequest.h>
+#include <aws/appstream/model/GetExportImageTaskResult.h>
 #include <aws/appstream/model/ListAssociatedFleetsResult.h>
 #include <aws/appstream/model/ListAssociatedStacksResult.h>
 #include <aws/appstream/model/ListEntitledApplicationsResult.h>
+#include <aws/appstream/model/ListExportImageTasksRequest.h>
+#include <aws/appstream/model/ListExportImageTasksResult.h>
 #include <aws/appstream/model/ListTagsForResourceResult.h>
 #include <aws/appstream/model/StartAppBlockBuilderResult.h>
 #include <aws/appstream/model/StartFleetResult.h>
@@ -165,9 +171,11 @@ class CreateAppBlockBuilderStreamingURLRequest;
 class CreateApplicationRequest;
 class CreateDirectoryConfigRequest;
 class CreateEntitlementRequest;
+class CreateExportImageTaskRequest;
 class CreateFleetRequest;
 class CreateImageBuilderRequest;
 class CreateImageBuilderStreamingURLRequest;
+class CreateImportedImageRequest;
 class CreateStackRequest;
 class CreateStreamingURLRequest;
 class CreateThemeForStackRequest;
@@ -214,9 +222,11 @@ class DisassociateFleetRequest;
 class DisassociateSoftwareFromImageBuilderRequest;
 class EnableUserRequest;
 class ExpireSessionRequest;
+class GetExportImageTaskRequest;
 class ListAssociatedFleetsRequest;
 class ListAssociatedStacksRequest;
 class ListEntitledApplicationsRequest;
+class ListExportImageTasksRequest;
 class ListTagsForResourceRequest;
 class StartAppBlockBuilderRequest;
 class StartFleetRequest;
@@ -252,9 +262,11 @@ typedef Aws::Utils::Outcome<CreateAppBlockBuilderStreamingURLResult, AppStreamEr
 typedef Aws::Utils::Outcome<CreateApplicationResult, AppStreamError> CreateApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateDirectoryConfigResult, AppStreamError> CreateDirectoryConfigOutcome;
 typedef Aws::Utils::Outcome<CreateEntitlementResult, AppStreamError> CreateEntitlementOutcome;
+typedef Aws::Utils::Outcome<CreateExportImageTaskResult, AppStreamError> CreateExportImageTaskOutcome;
 typedef Aws::Utils::Outcome<CreateFleetResult, AppStreamError> CreateFleetOutcome;
 typedef Aws::Utils::Outcome<CreateImageBuilderResult, AppStreamError> CreateImageBuilderOutcome;
 typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, AppStreamError> CreateImageBuilderStreamingURLOutcome;
+typedef Aws::Utils::Outcome<CreateImportedImageResult, AppStreamError> CreateImportedImageOutcome;
 typedef Aws::Utils::Outcome<CreateStackResult, AppStreamError> CreateStackOutcome;
 typedef Aws::Utils::Outcome<CreateStreamingURLResult, AppStreamError> CreateStreamingURLOutcome;
 typedef Aws::Utils::Outcome<CreateThemeForStackResult, AppStreamError> CreateThemeForStackOutcome;
@@ -302,9 +314,11 @@ typedef Aws::Utils::Outcome<DisassociateFleetResult, AppStreamError> Disassociat
 typedef Aws::Utils::Outcome<DisassociateSoftwareFromImageBuilderResult, AppStreamError> DisassociateSoftwareFromImageBuilderOutcome;
 typedef Aws::Utils::Outcome<EnableUserResult, AppStreamError> EnableUserOutcome;
 typedef Aws::Utils::Outcome<ExpireSessionResult, AppStreamError> ExpireSessionOutcome;
+typedef Aws::Utils::Outcome<GetExportImageTaskResult, AppStreamError> GetExportImageTaskOutcome;
 typedef Aws::Utils::Outcome<ListAssociatedFleetsResult, AppStreamError> ListAssociatedFleetsOutcome;
 typedef Aws::Utils::Outcome<ListAssociatedStacksResult, AppStreamError> ListAssociatedStacksOutcome;
 typedef Aws::Utils::Outcome<ListEntitledApplicationsResult, AppStreamError> ListEntitledApplicationsOutcome;
+typedef Aws::Utils::Outcome<ListExportImageTasksResult, AppStreamError> ListExportImageTasksOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppStreamError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartAppBlockBuilderResult, AppStreamError> StartAppBlockBuilderOutcome;
 typedef Aws::Utils::Outcome<StartFleetResult, AppStreamError> StartFleetOutcome;
@@ -340,9 +354,11 @@ typedef std::future<CreateAppBlockBuilderStreamingURLOutcome> CreateAppBlockBuil
 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateDirectoryConfigOutcome> CreateDirectoryConfigOutcomeCallable;
 typedef std::future<CreateEntitlementOutcome> CreateEntitlementOutcomeCallable;
+typedef std::future<CreateExportImageTaskOutcome> CreateExportImageTaskOutcomeCallable;
 typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
 typedef std::future<CreateImageBuilderOutcome> CreateImageBuilderOutcomeCallable;
 typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
+typedef std::future<CreateImportedImageOutcome> CreateImportedImageOutcomeCallable;
 typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
 typedef std::future<CreateStreamingURLOutcome> CreateStreamingURLOutcomeCallable;
 typedef std::future<CreateThemeForStackOutcome> CreateThemeForStackOutcomeCallable;
@@ -389,9 +405,11 @@ typedef std::future<DisassociateFleetOutcome> DisassociateFleetOutcomeCallable;
 typedef std::future<DisassociateSoftwareFromImageBuilderOutcome> DisassociateSoftwareFromImageBuilderOutcomeCallable;
 typedef std::future<EnableUserOutcome> EnableUserOutcomeCallable;
 typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
+typedef std::future<GetExportImageTaskOutcome> GetExportImageTaskOutcomeCallable;
 typedef std::future<ListAssociatedFleetsOutcome> ListAssociatedFleetsOutcomeCallable;
 typedef std::future<ListAssociatedStacksOutcome> ListAssociatedStacksOutcomeCallable;
 typedef std::future<ListEntitledApplicationsOutcome> ListEntitledApplicationsOutcomeCallable;
+typedef std::future<ListExportImageTasksOutcome> ListExportImageTasksOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartAppBlockBuilderOutcome> StartAppBlockBuilderOutcomeCallable;
 typedef std::future<StartFleetOutcome> StartFleetOutcomeCallable;
@@ -462,6 +480,9 @@ typedef std::function<void(const AppStreamClient*, const Model::CreateDirectoryC
 typedef std::function<void(const AppStreamClient*, const Model::CreateEntitlementRequest&, const Model::CreateEntitlementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEntitlementResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::CreateExportImageTaskRequest&, const Model::CreateExportImageTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateExportImageTaskResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFleetResponseReceivedHandler;
@@ -472,6 +493,9 @@ typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuild
                            const Model::CreateImageBuilderStreamingURLOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateImageBuilderStreamingURLResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::CreateImportedImageRequest&, const Model::CreateImportedImageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateImportedImageResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateStackResponseReceivedHandler;
@@ -621,6 +645,9 @@ typedef std::function<void(const AppStreamClient*, const Model::EnableUserReques
 typedef std::function<void(const AppStreamClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExpireSessionResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::GetExportImageTaskRequest&, const Model::GetExportImageTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetExportImageTaskResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedFleetsRequest&, const Model::ListAssociatedFleetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssociatedFleetsResponseReceivedHandler;
@@ -630,6 +657,9 @@ typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedSt
 typedef std::function<void(const AppStreamClient*, const Model::ListEntitledApplicationsRequest&,
                            const Model::ListEntitledApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEntitledApplicationsResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::ListExportImageTasksRequest&, const Model::ListExportImageTasksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListExportImageTasksResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

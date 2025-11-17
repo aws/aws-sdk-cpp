@@ -27,7 +27,7 @@ namespace AppStream {
 namespace Model {
 
 /**
- * <p>Describes an app block.</p> <p>App blocks are an Amazon AppStream 2.0
+ * <p>Describes an app block.</p> <p>App blocks are a WorkSpaces Applications
  * resource that stores the details about the virtual hard disk in an S3 bucket. It
  * also stores the setup script with details about how to mount the virtual hard
  * disk. The virtual hard disk includes the application binaries and other files
@@ -208,12 +208,12 @@ class AppBlock {
 
   ///@{
   /**
-   * <p>The state of the app block.</p> <p>An app block with AppStream 2.0 packaging
-   * will be in the <code>INACTIVE</code> state if no application package (VHD) is
-   * assigned to it. After an application package (VHD) is created by an app block
-   * builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom app
-   * blocks are always in the <code>ACTIVE</code> state and no action is required to
-   * use them.</p>
+   * <p>The state of the app block.</p> <p>An app block with WorkSpaces Applications
+   * packaging will be in the <code>INACTIVE</code> state if no application package
+   * (VHD) is assigned to it. After an application package (VHD) is created by an app
+   * block builder for an app block, it becomes <code>ACTIVE</code>. </p> <p>Custom
+   * app blocks are always in the <code>ACTIVE</code> state and no action is required
+   * to use them.</p>
    */
   inline AppBlockState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

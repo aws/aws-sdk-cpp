@@ -93,8 +93,9 @@ class ModifyDataProviderRequest : public DatabaseMigrationServiceRequest {
    * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
    * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
    * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>,
-   * <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of
-   * <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
+   * <code>db2</code>, <code>db2-zos</code>, <code>docdb</code>, and
+   * <code>sybase</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+   * MySQL-Compatible Edition.</p>
    */
   inline const Aws::String& GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

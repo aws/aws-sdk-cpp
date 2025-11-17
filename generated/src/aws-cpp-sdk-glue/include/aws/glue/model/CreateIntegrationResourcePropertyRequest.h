@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/SourceProcessingProperties.h>
+#include <aws/glue/model/Tag.h>
 #include <aws/glue/model/TargetProcessingProperties.h>
 
 #include <utility>
@@ -85,6 +87,31 @@ class CreateIntegrationResourcePropertyRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Metadata assigned to the resource consisting of a list of key-value
+   * pairs.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateIntegrationResourcePropertyRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateIntegrationResourcePropertyRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceArn;
   bool m_resourceArnHasBeenSet = false;
@@ -94,6 +121,9 @@ class CreateIntegrationResourcePropertyRequest : public GlueRequest {
 
   TargetProcessingProperties m_targetProcessingProperties;
   bool m_targetProcessingPropertiesHasBeenSet = false;
+
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

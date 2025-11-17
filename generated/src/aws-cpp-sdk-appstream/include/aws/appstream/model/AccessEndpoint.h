@@ -23,10 +23,11 @@ namespace Model {
 /**
  * <p>Describes an interface VPC endpoint (interface endpoint) that lets you create
  * a private connection between the virtual private cloud (VPC) that you specify
- * and AppStream 2.0. When you specify an interface endpoint for a stack, users of
- * the stack can connect to AppStream 2.0 only through that endpoint. When you
- * specify an interface endpoint for an image builder, administrators can connect
- * to the image builder only through that endpoint.</p><p><h3>See Also:</h3>   <a
+ * and WorkSpaces Applications. When you specify an interface endpoint for a stack,
+ * users of the stack can connect to WorkSpaces Applications only through that
+ * endpoint. When you specify an interface endpoint for an image builder,
+ * administrators can connect to the image builder only through that
+ * endpoint.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AccessEndpoint">AWS
  * API Reference</a></p>
  */

@@ -52,6 +52,8 @@
 #include <aws/pcs/model/GetQueueRequest.h>
 #include <aws/pcs/model/GetQueueResult.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/JwtAuth.h>
+#include <aws/pcs/model/JwtKey.h>
 #include <aws/pcs/model/ListClustersRequest.h>
 #include <aws/pcs/model/ListClustersResult.h>
 #include <aws/pcs/model/ListComputeNodeGroupsRequest.h>
@@ -81,11 +83,16 @@
 #include <aws/pcs/model/Size.h>
 #include <aws/pcs/model/SlurmAuthKey.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
+#include <aws/pcs/model/SlurmRest.h>
+#include <aws/pcs/model/SlurmRestMode.h>
+#include <aws/pcs/model/SlurmRestRequest.h>
 #include <aws/pcs/model/SpotAllocationStrategy.h>
 #include <aws/pcs/model/SpotOptions.h>
 #include <aws/pcs/model/TagResourceRequest.h>
+#include <aws/pcs/model/TagResourceResult.h>
 #include <aws/pcs/model/ThrottlingException.h>
 #include <aws/pcs/model/UntagResourceRequest.h>
+#include <aws/pcs/model/UntagResourceResult.h>
 #include <aws/pcs/model/UpdateAccountingRequest.h>
 #include <aws/pcs/model/UpdateClusterRequest.h>
 #include <aws/pcs/model/UpdateClusterResult.h>
@@ -96,6 +103,7 @@
 #include <aws/pcs/model/UpdateQueueRequest.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
 #include <aws/pcs/model/UpdateQueueSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateSlurmRestRequest.h>
 #include <aws/pcs/model/ValidationException.h>
 #include <aws/pcs/model/ValidationExceptionField.h>
 #include <aws/pcs/model/ValidationExceptionReason.h>

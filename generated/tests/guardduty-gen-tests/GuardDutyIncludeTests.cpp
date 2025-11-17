@@ -361,6 +361,7 @@
 #include <aws/guardduty/model/S3LogsConfigurationResult.h>
 #include <aws/guardduty/model/S3Object.h>
 #include <aws/guardduty/model/S3ObjectDetail.h>
+#include <aws/guardduty/model/S3ObjectForSendObjectMalwareScan.h>
 #include <aws/guardduty/model/Scan.h>
 #include <aws/guardduty/model/ScanCondition.h>
 #include <aws/guardduty/model/ScanConditionPair.h>
@@ -378,6 +379,8 @@
 #include <aws/guardduty/model/ScannedItemCount.h>
 #include <aws/guardduty/model/SecurityContext.h>
 #include <aws/guardduty/model/SecurityGroup.h>
+#include <aws/guardduty/model/SendObjectMalwareScanRequest.h>
+#include <aws/guardduty/model/SendObjectMalwareScanResult.h>
 #include <aws/guardduty/model/Sequence.h>
 #include <aws/guardduty/model/Service.h>
 #include <aws/guardduty/model/ServiceAdditionalInfo.h>

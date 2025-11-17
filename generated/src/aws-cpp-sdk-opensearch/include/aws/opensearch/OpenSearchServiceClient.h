@@ -404,6 +404,39 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Creates an OpenSearch index with optional automatic semantic enrichment for
+   * specified text fields. Automatic semantic enrichment enables semantic search
+   * capabilities without requiring machine learning expertise, improving search
+   * relevance by up to 20% by understanding search intent and contextual meaning
+   * beyond keyword matching. The semantic enrichment process has zero impact on
+   * search latency as sparse encodings are stored directly within the index during
+   * indexing. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-semantic-enrichment.html">Automatic
+   * semantic enrichment</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateIndexRequestT = Model::CreateIndexRequest>
+  Model::CreateIndexOutcomeCallable CreateIndexCallable(const CreateIndexRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::CreateIndex, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIndex that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateIndexRequestT = Model::CreateIndexRequest>
+  void CreateIndexAsync(const CreateIndexRequestT& request, const CreateIndexResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::CreateIndex, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch
    * Service domain to a destination domain. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
@@ -627,6 +660,32 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                     const DeleteInboundConnectionResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::DeleteInboundConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an OpenSearch index. This operation permanently removes the index and
+   * cannot be undone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteIndexRequestT = Model::DeleteIndexRequest>
+  Model::DeleteIndexOutcomeCallable DeleteIndexCallable(const DeleteIndexRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DeleteIndex, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIndex that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteIndexRequestT = Model::DeleteIndexRequest>
+  void DeleteIndexAsync(const DeleteIndexRequestT& request, const DeleteIndexResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DeleteIndex, request, handler, context);
   }
 
   /**
@@ -1191,7 +1250,7 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
-   * <p>Dissociates multiple packages from a domain simulatneously.</p><p><h3>See
+   * <p>Dissociates multiple packages from a domain simultaneously.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackages">AWS
    * API Reference</a></p>
@@ -1383,6 +1442,33 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                        const GetDomainMaintenanceStatusResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::GetDomainMaintenanceStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about an OpenSearch index including its schema and
+   * semantic enrichment configuration. Use this operation to view the current index
+   * structure and semantic search settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIndexOutcome GetIndex(const Model::GetIndexRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetIndexRequestT = Model::GetIndexRequest>
+  Model::GetIndexOutcomeCallable GetIndexCallable(const GetIndexRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::GetIndex, request);
+  }
+
+  /**
+   * An Async wrapper for GetIndex that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetIndexRequestT = Model::GetIndexRequest>
+  void GetIndexAsync(const GetIndexRequestT& request, const GetIndexResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::GetIndex, request, handler, context);
   }
 
   /**
@@ -2189,6 +2275,34 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   void UpdateDomainConfigAsync(const UpdateDomainConfigRequestT& request, const UpdateDomainConfigResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::UpdateDomainConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing OpenSearch index schema and semantic enrichment
+   * configuration. This operation allows modification of field mappings and semantic
+   * search settings for text fields. Changes to semantic enrichment configuration
+   * will apply to newly ingested documents.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateIndexOutcome UpdateIndex(const Model::UpdateIndexRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateIndexRequestT = Model::UpdateIndexRequest>
+  Model::UpdateIndexOutcomeCallable UpdateIndexCallable(const UpdateIndexRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::UpdateIndex, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateIndex that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateIndexRequestT = Model::UpdateIndexRequest>
+  void UpdateIndexAsync(const UpdateIndexRequestT& request, const UpdateIndexResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::UpdateIndex, request, handler, context);
   }
 
   /**

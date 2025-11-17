@@ -28,6 +28,7 @@ static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int PENDING_QUALIFICATION_HASH = HashingUtils::HashString("PENDING_QUALIFICATION");
 static const int PENDING_SYNCING_APPS_HASH = HashingUtils::HashString("PENDING_SYNCING_APPS");
 static const int SYNCING_APPS_HASH = HashingUtils::HashString("SYNCING_APPS");
+static const int PENDING_IMAGE_IMPORT_HASH = HashingUtils::HashString("PENDING_IMAGE_IMPORT");
 
 ImageBuilderState GetImageBuilderStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ ImageBuilderState GetImageBuilderStateForName(const Aws::String& name) {
     return ImageBuilderState::PENDING_SYNCING_APPS;
   } else if (hashCode == SYNCING_APPS_HASH) {
     return ImageBuilderState::SYNCING_APPS;
+  } else if (hashCode == PENDING_IMAGE_IMPORT_HASH) {
+    return ImageBuilderState::PENDING_IMAGE_IMPORT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForImageBuilderState(ImageBuilderState enumValue) {
       return "PENDING_SYNCING_APPS";
     case ImageBuilderState::SYNCING_APPS:
       return "SYNCING_APPS";
+    case ImageBuilderState::PENDING_IMAGE_IMPORT:
+      return "PENDING_IMAGE_IMPORT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

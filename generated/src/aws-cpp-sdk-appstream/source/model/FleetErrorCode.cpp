@@ -49,6 +49,7 @@ static const int DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED_HASH =
     HashingUtils::HashString("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
 static const int DOMAIN_JOIN_NERR_PASSWORD_EXPIRED_HASH = HashingUtils::HashString("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
 static const int DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
+static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("VALIDATION_ERROR");
 
 FleetErrorCode GetFleetErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -112,6 +113,8 @@ FleetErrorCode GetFleetErrorCodeForName(const Aws::String& name) {
     return FleetErrorCode::DOMAIN_JOIN_NERR_PASSWORD_EXPIRED;
   } else if (hashCode == DOMAIN_JOIN_INTERNAL_SERVICE_ERROR_HASH) {
     return FleetErrorCode::DOMAIN_JOIN_INTERNAL_SERVICE_ERROR;
+  } else if (hashCode == VALIDATION_ERROR_HASH) {
+    return FleetErrorCode::VALIDATION_ERROR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -186,6 +189,8 @@ Aws::String GetNameForFleetErrorCode(FleetErrorCode enumValue) {
       return "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED";
     case FleetErrorCode::DOMAIN_JOIN_INTERNAL_SERVICE_ERROR:
       return "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR";
+    case FleetErrorCode::VALIDATION_ERROR:
+      return "VALIDATION_ERROR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

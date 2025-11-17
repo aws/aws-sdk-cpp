@@ -18,6 +18,8 @@ namespace ImageStateChangeReasonCodeMapper {
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 static const int IMAGE_BUILDER_NOT_AVAILABLE_HASH = HashingUtils::HashString("IMAGE_BUILDER_NOT_AVAILABLE");
 static const int IMAGE_COPY_FAILURE_HASH = HashingUtils::HashString("IMAGE_COPY_FAILURE");
+static const int IMAGE_UPDATE_FAILURE_HASH = HashingUtils::HashString("IMAGE_UPDATE_FAILURE");
+static const int IMAGE_IMPORT_FAILURE_HASH = HashingUtils::HashString("IMAGE_IMPORT_FAILURE");
 
 ImageStateChangeReasonCode GetImageStateChangeReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ ImageStateChangeReasonCode GetImageStateChangeReasonCodeForName(const Aws::Strin
     return ImageStateChangeReasonCode::IMAGE_BUILDER_NOT_AVAILABLE;
   } else if (hashCode == IMAGE_COPY_FAILURE_HASH) {
     return ImageStateChangeReasonCode::IMAGE_COPY_FAILURE;
+  } else if (hashCode == IMAGE_UPDATE_FAILURE_HASH) {
+    return ImageStateChangeReasonCode::IMAGE_UPDATE_FAILURE;
+  } else if (hashCode == IMAGE_IMPORT_FAILURE_HASH) {
+    return ImageStateChangeReasonCode::IMAGE_IMPORT_FAILURE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForImageStateChangeReasonCode(ImageStateChangeReasonCode enum
       return "IMAGE_BUILDER_NOT_AVAILABLE";
     case ImageStateChangeReasonCode::IMAGE_COPY_FAILURE:
       return "IMAGE_COPY_FAILURE";
+    case ImageStateChangeReasonCode::IMAGE_UPDATE_FAILURE:
+      return "IMAGE_UPDATE_FAILURE";
+    case ImageStateChangeReasonCode::IMAGE_IMPORT_FAILURE:
+      return "IMAGE_IMPORT_FAILURE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

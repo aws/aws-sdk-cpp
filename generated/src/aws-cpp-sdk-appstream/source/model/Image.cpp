@@ -118,6 +118,10 @@ Image& Image::operator=(JsonView jsonValue) {
     m_managedSoftwareIncluded = jsonValue.GetBool("ManagedSoftwareIncluded");
     m_managedSoftwareIncludedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ImageType")) {
+    m_imageType = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("ImageType"));
+    m_imageTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -226,6 +230,10 @@ JsonValue Image::Jsonize() const {
 
   if (m_managedSoftwareIncludedHasBeenSet) {
     payload.WithBool("ManagedSoftwareIncluded", m_managedSoftwareIncluded);
+  }
+
+  if (m_imageTypeHasBeenSet) {
+    payload.WithString("ImageType", ImageTypeMapper::GetNameForImageType(m_imageType));
   }
 
   return payload;

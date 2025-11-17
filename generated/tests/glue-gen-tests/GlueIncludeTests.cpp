@@ -310,6 +310,8 @@
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/DeleteIntegrationRequest.h>
+#include <aws/glue/model/DeleteIntegrationResourcePropertyRequest.h>
+#include <aws/glue/model/DeleteIntegrationResourcePropertyResult.h>
 #include <aws/glue/model/DeleteIntegrationResult.h>
 #include <aws/glue/model/DeleteIntegrationTablePropertiesRequest.h>
 #include <aws/glue/model/DeleteIntegrationTablePropertiesResult.h>
@@ -610,6 +612,8 @@
 #include <aws/glue/model/IntegrationError.h>
 #include <aws/glue/model/IntegrationFilter.h>
 #include <aws/glue/model/IntegrationPartition.h>
+#include <aws/glue/model/IntegrationResourceProperty.h>
+#include <aws/glue/model/IntegrationResourcePropertyFilter.h>
 #include <aws/glue/model/IntegrationStatus.h>
 #include <aws/glue/model/InvalidInputException.h>
 #include <aws/glue/model/JDBCConnectionType.h>
@@ -671,6 +675,8 @@
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListEntitiesRequest.h>
 #include <aws/glue/model/ListEntitiesResult.h>
+#include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
+#include <aws/glue/model/ListIntegrationResourcePropertiesResult.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>

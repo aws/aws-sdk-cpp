@@ -30,6 +30,10 @@ Lifecycle& Lifecycle::operator=(JsonView jsonValue) {
     m_optInToArchiveForSupportedResources = jsonValue.GetBool("OptInToArchiveForSupportedResources");
     m_optInToArchiveForSupportedResourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeleteAfterEvent")) {
+    m_deleteAfterEvent = LifecycleDeleteAfterEventMapper::GetLifecycleDeleteAfterEventForName(jsonValue.GetString("DeleteAfterEvent"));
+    m_deleteAfterEventHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue Lifecycle::Jsonize() const {
 
   if (m_optInToArchiveForSupportedResourcesHasBeenSet) {
     payload.WithBool("OptInToArchiveForSupportedResources", m_optInToArchiveForSupportedResources);
+  }
+
+  if (m_deleteAfterEventHasBeenSet) {
+    payload.WithString("DeleteAfterEvent", LifecycleDeleteAfterEventMapper::GetNameForLifecycleDeleteAfterEvent(m_deleteAfterEvent));
   }
 
   return payload;

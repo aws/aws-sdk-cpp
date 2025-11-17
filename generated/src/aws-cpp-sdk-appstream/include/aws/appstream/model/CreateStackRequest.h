@@ -206,7 +206,8 @@ class CreateStackRequest : public AppStreamRequest {
    * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
    * : / = + \ - @</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
+   * Guide</i>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -231,7 +232,8 @@ class CreateStackRequest : public AppStreamRequest {
   ///@{
   /**
    * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
-   * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+   * stack can connect to WorkSpaces Applications only through the specified
+   * endpoints.</p>
    */
   inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const { return m_accessEndpoints; }
   inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
@@ -255,9 +257,9 @@ class CreateStackRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
-   * iframe. You must approve the domains that you want to host embedded AppStream
-   * 2.0 streaming sessions. </p>
+   * <p>The domains where WorkSpaces Applications streaming sessions can be embedded
+   * in an iframe. You must approve the domains that you want to host embedded
+   * WorkSpaces Applications streaming sessions. </p>
    */
   inline const Aws::Vector<Aws::String>& GetEmbedHostDomains() const { return m_embedHostDomains; }
   inline bool EmbedHostDomainsHasBeenSet() const { return m_embedHostDomainsHasBeenSet; }

@@ -38,8 +38,7 @@ class IntegrationConfig {
    * incremental loads should occur. This parameter provides flexibility to align the
    * refresh rate with your specific data update patterns, system load
    * considerations, and performance optimization goals. Time increment can be set
-   * from 15 minutes to 8640 minutes (six days). Currently supports creation of
-   * <code>RefreshInterval</code> only.</p>
+   * from 15 minutes to 8640 minutes (six days).</p>
    */
   inline const Aws::String& GetRefreshInterval() const { return m_refreshInterval; }
   inline bool RefreshIntervalHasBeenSet() const { return m_refreshIntervalHasBeenSet; }

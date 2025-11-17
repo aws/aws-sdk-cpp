@@ -80,6 +80,8 @@
 #include <aws/opensearch/model/CreateApplicationResult.h>
 #include <aws/opensearch/model/CreateDomainRequest.h>
 #include <aws/opensearch/model/CreateDomainResult.h>
+#include <aws/opensearch/model/CreateIndexRequest.h>
+#include <aws/opensearch/model/CreateIndexResult.h>
 #include <aws/opensearch/model/CreateOutboundConnectionRequest.h>
 #include <aws/opensearch/model/CreateOutboundConnectionResult.h>
 #include <aws/opensearch/model/CreatePackageRequest.h>
@@ -100,6 +102,8 @@
 #include <aws/opensearch/model/DeleteDomainResult.h>
 #include <aws/opensearch/model/DeleteInboundConnectionRequest.h>
 #include <aws/opensearch/model/DeleteInboundConnectionResult.h>
+#include <aws/opensearch/model/DeleteIndexRequest.h>
+#include <aws/opensearch/model/DeleteIndexResult.h>
 #include <aws/opensearch/model/DeleteOutboundConnectionRequest.h>
 #include <aws/opensearch/model/DeleteOutboundConnectionResult.h>
 #include <aws/opensearch/model/DeletePackageRequest.h>
@@ -182,6 +186,8 @@
 #include <aws/opensearch/model/GetDirectQueryDataSourceResult.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusResult.h>
+#include <aws/opensearch/model/GetIndexRequest.h>
+#include <aws/opensearch/model/GetIndexResult.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
@@ -200,6 +206,7 @@
 #include <aws/opensearch/model/InboundConnection.h>
 #include <aws/opensearch/model/InboundConnectionStatus.h>
 #include <aws/opensearch/model/InboundConnectionStatusCode.h>
+#include <aws/opensearch/model/IndexStatus.h>
 #include <aws/opensearch/model/InitiatedBy.h>
 #include <aws/opensearch/model/InstanceCountLimits.h>
 #include <aws/opensearch/model/InstanceLimits.h>
@@ -333,6 +340,8 @@
 #include <aws/opensearch/model/UpdateDirectQueryDataSourceResult.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigResult.h>
+#include <aws/opensearch/model/UpdateIndexRequest.h>
+#include <aws/opensearch/model/UpdateIndexResult.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
 #include <aws/opensearch/model/UpdatePackageResult.h>
 #include <aws/opensearch/model/UpdatePackageScopeRequest.h>

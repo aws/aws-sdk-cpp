@@ -80,6 +80,8 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyDeleteVariableAnnotation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyDeleteVariableMutation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyDisjointRuleSet.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyGeneratedTestCase.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyGeneratedTestCases.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyIngestContentAnnotation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyMutation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyPlanning.h>

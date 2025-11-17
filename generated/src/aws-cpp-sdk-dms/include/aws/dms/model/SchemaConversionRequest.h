@@ -8,6 +8,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ErrorDetails.h>
 #include <aws/dms/model/ExportSqlDetails.h>
+#include <aws/dms/model/Progress.h>
 
 #include <utility>
 
@@ -119,6 +120,22 @@ class SchemaConversionRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Progress& GetProgress() const { return m_progress; }
+  inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+  template <typename ProgressT = Progress>
+  void SetProgress(ProgressT&& value) {
+    m_progressHasBeenSet = true;
+    m_progress = std::forward<ProgressT>(value);
+  }
+  template <typename ProgressT = Progress>
+  SchemaConversionRequest& WithProgress(ProgressT&& value) {
+    SetProgress(std::forward<ProgressT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_status;
   bool m_statusHasBeenSet = false;
@@ -134,6 +151,9 @@ class SchemaConversionRequest {
 
   ExportSqlDetails m_exportSqlDetails;
   bool m_exportSqlDetailsHasBeenSet = false;
+
+  Progress m_progress;
+  bool m_progressHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -152,6 +152,7 @@
 #include <aws/backup/model/LegalHold.h>
 #include <aws/backup/model/LegalHoldStatus.h>
 #include <aws/backup/model/Lifecycle.h>
+#include <aws/backup/model/LifecycleDeleteAfterEvent.h>
 #include <aws/backup/model/LimitExceededException.h>
 #include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobSummariesResult.h>

@@ -14,23 +14,25 @@
 namespace Aws {
 namespace AppStream {
 /**
- * <fullname>Amazon AppStream 2.0</fullname> <p>This is the <i>Amazon AppStream 2.0
- * API Reference</i>. This documentation provides descriptions and syntax for each
- * of the actions and data types in AppStream 2.0. AppStream 2.0 is a fully
- * managed, secure application streaming service that lets you stream desktop
- * applications to users without rewriting applications. AppStream 2.0 manages the
- * AWS resources that are required to host and run your applications, scales
- * automatically, and provides access to your users on demand. </p>  <p>You
- * can call the AppStream 2.0 API operations by using an interface VPC endpoint
+ * <fullname>Amazon WorkSpaces Applications</fullname> <p>This is the <i>Amazon
+ * WorkSpaces Applications API Reference</i>. This documentation provides
+ * descriptions and syntax for each of the actions and data types in WorkSpaces
+ * Applications. WorkSpaces Applications is a fully managed, secure application
+ * streaming service that lets you stream desktop applications to users without
+ * rewriting applications. WorkSpaces Applications manages the AWS resources that
+ * are required to host and run your applications, scales automatically, and
+ * provides access to your users on demand. </p>  <p>You can call the
+ * WorkSpaces Applications API operations by using an interface VPC endpoint
  * (interface endpoint). For more information, see <a
  * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html">Access
- * AppStream 2.0 API Operations and CLI Commands Through an Interface VPC
- * Endpoint</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
- *  <p>To learn more about AppStream 2.0, see the following resources:</p>
- * <ul> <li> <p> <a href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0
- * product page</a> </p> </li> <li> <p> <a
- * href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0
- * documentation</a> </p> </li> </ul>
+ * WorkSpaces Applications API Operations and CLI Commands Through an Interface VPC
+ * Endpoint</a> in the <i>Amazon WorkSpaces Applications Administration
+ * Guide</i>.</p>  <p>To learn more about WorkSpaces Applications, see the
+ * following resources:</p> <ul> <li> <p> <a
+ * href="http://aws.amazon.com/appstream2">Amazon WorkSpaces Applications product
+ * page</a> </p> </li> <li> <p> <a
+ * href="http://aws.amazon.com/documentation/appstream2">Amazon WorkSpaces
+ * Applications documentation</a> </p> </li> </ul>
  */
 class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient> {
@@ -318,10 +320,10 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an app block.</p> <p>App blocks are an Amazon AppStream 2.0 resource
-   * that stores the details about the virtual hard disk in an S3 bucket. It also
-   * stores the setup script with details about how to mount the virtual hard disk.
-   * The virtual hard disk includes the application binaries and other files
+   * <p>Creates an app block.</p> <p>App blocks are a WorkSpaces Applications
+   * resource that stores the details about the virtual hard disk in an S3 bucket. It
+   * also stores the setup script with details about how to mount the virtual hard
+   * disk. The virtual hard disk includes the application binaries and other files
    * necessary to launch your applications. Multiple applications can be assigned to
    * a single app block.</p> <p>This is only supported for Elastic
    * fleets.</p><p><h3>See Also:</h3>   <a
@@ -405,7 +407,7 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an application.</p> <p>Applications are an Amazon AppStream 2.0
+   * <p>Creates an application.</p> <p>Applications are a WorkSpaces Applications
    * resource that stores the details about how to launch applications on Elastic
    * fleet streaming instances. An application consists of the launch details, icon,
    * and display name. Applications are associated with an app block that contains
@@ -437,9 +439,9 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
-   * configuration information required to join fleets and image builders to
-   * Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a Directory Config object in WorkSpaces Applications. This object
+   * includes the configuration information required to join fleets and image
+   * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
    * API Reference</a></p>
    */
@@ -467,11 +469,11 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Creates a new entitlement. Entitlements control access to specific
    * applications within a stack, based on user attributes. Entitlements apply to
-   * SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming
-   * URL users are entitled to all applications in a stack. Entitlements don't apply
-   * to the desktop stream view application, or to applications managed by a dynamic
-   * app provider using the Dynamic Application Framework.</p><p><h3>See Also:</h3>
-   * <a
+   * SAML 2.0 federated user identities. WorkSpaces Applications user pool and
+   * streaming URL users are entitled to all applications in a stack. Entitlements
+   * don't apply to the desktop stream view application, or to applications managed
+   * by a dynamic app provider using the Dynamic Application Framework.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">AWS
    * API Reference</a></p>
    */
@@ -494,6 +496,34 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   void CreateEntitlementAsync(const CreateEntitlementRequestT& request, const CreateEntitlementResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppStreamClient::CreateEntitlement, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a task to export a WorkSpaces Applications image to an EC2 AMI. This
+   * allows you to use your customized WorkSpaces Applications images with other AWS
+   * services or for backup purposes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateExportImageTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateExportImageTaskOutcome CreateExportImageTask(const Model::CreateExportImageTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateExportImageTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateExportImageTaskRequestT = Model::CreateExportImageTaskRequest>
+  Model::CreateExportImageTaskOutcomeCallable CreateExportImageTaskCallable(const CreateExportImageTaskRequestT& request) const {
+    return SubmitCallable(&AppStreamClient::CreateExportImageTask, request);
+  }
+
+  /**
+   * An Async wrapper for CreateExportImageTask that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateExportImageTaskRequestT = Model::CreateExportImageTaskRequest>
+  void CreateExportImageTaskAsync(const CreateExportImageTaskRequestT& request, const CreateExportImageTaskResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppStreamClient::CreateExportImageTask, request, handler, context);
   }
 
   /**
@@ -582,6 +612,35 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a custom WorkSpaces Applications image by importing an EC2 AMI. This
+   * allows you to use your own customized AMI to create WorkSpaces Applications
+   * images that support additional instance types beyond the standard stream.*
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImportedImage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateImportedImageOutcome CreateImportedImage(const Model::CreateImportedImageRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateImportedImage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateImportedImageRequestT = Model::CreateImportedImageRequest>
+  Model::CreateImportedImageOutcomeCallable CreateImportedImageCallable(const CreateImportedImageRequestT& request) const {
+    return SubmitCallable(&AppStreamClient::CreateImportedImage, request);
+  }
+
+  /**
+   * An Async wrapper for CreateImportedImage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateImportedImageRequestT = Model::CreateImportedImageRequest>
+  void CreateImportedImageAsync(const CreateImportedImageRequestT& request, const CreateImportedImageResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AppStreamClient::CreateImportedImage, request, handler, context);
+  }
+
+  /**
    * <p>Creates a stack to start streaming applications to users. A stack consists of
    * an associated fleet, user access policies, and storage configurations.
    * </p><p><h3>See Also:</h3>   <a
@@ -609,9 +668,9 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the
-   * specified user. A streaming URL enables application streaming to be tested
-   * without user setup. </p><p><h3>See Also:</h3>   <a
+   * <p>Creates a temporary URL to start an WorkSpaces Applications streaming session
+   * for the specified user. A streaming URL enables application streaming to be
+   * tested without user setup. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
    * API Reference</a></p>
    */
@@ -665,11 +724,12 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a new image with the latest Windows operating system updates, driver
-   * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
-   * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+   * updates, and WorkSpaces Applications agent software.</p> <p>For more
+   * information, see the "Update an Image by Using Managed WorkSpaces Applications
+   * Image Updates" section in <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
-   * Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Your WorkSpaces Applications Images</a>, in the <i>Amazon WorkSpaces
+   * Applications Administration Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage">AWS
    * API Reference</a></p>
    */
@@ -828,9 +888,9 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes the specified Directory Config object from AppStream 2.0. This object
-   * includes the information required to join streaming instances to an Active
-   * Directory domain.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified Directory Config object from WorkSpaces Applications.
+   * This object includes the information required to join streaming instances to an
+   * Active Directory domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
    * API Reference</a></p>
    */
@@ -1274,12 +1334,12 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves a list that describes one or more specified Directory Config
-   * objects for AppStream 2.0, if the names for these objects are provided.
-   * Otherwise, all Directory Config objects in the account are described. These
-   * objects include the configuration information required to join fleets and image
-   * builders to Microsoft Active Directory domains. </p> <p>Although the response
-   * syntax in this topic includes the account password, this password is not
-   * returned in the actual response.</p><p><h3>See Also:</h3>   <a
+   * objects for WorkSpaces Applications, if the names for these objects are
+   * provided. Otherwise, all Directory Config objects in the account are described.
+   * These objects include the configuration information required to join fleets and
+   * image builders to Microsoft Active Directory domains. </p> <p>Although the
+   * response syntax in this topic includes the account password, this password is
+   * not returned in the actual response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
    * API Reference</a></p>
    */
@@ -1653,8 +1713,8 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Disables the specified user in the user pool. Users can't sign in to
-   * AppStream 2.0 until they are re-enabled. This action does not delete the user.
-   * </p><p><h3>See Also:</h3>   <a
+   * WorkSpaces Applications until they are re-enabled. This action does not delete
+   * the user. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">AWS
    * API Reference</a></p>
    */
@@ -1827,7 +1887,7 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Enables a user in the user pool. After being enabled, users can sign in to
-   * AppStream 2.0 and open applications from the stacks to which they are
+   * WorkSpaces Applications and open applications from the stacks to which they are
    * assigned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">AWS
    * API Reference</a></p>
@@ -1876,6 +1936,34 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   void ExpireSessionAsync(const ExpireSessionRequestT& request, const ExpireSessionResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AppStreamClient::ExpireSession, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about an export image task, including its current
+   * state, progress, and any error details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/GetExportImageTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetExportImageTaskOutcome GetExportImageTask(const Model::GetExportImageTaskRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetExportImageTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetExportImageTaskRequestT = Model::GetExportImageTaskRequest>
+  Model::GetExportImageTaskOutcomeCallable GetExportImageTaskCallable(const GetExportImageTaskRequestT& request = {}) const {
+    return SubmitCallable(&AppStreamClient::GetExportImageTask, request);
+  }
+
+  /**
+   * An Async wrapper for GetExportImageTask that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetExportImageTaskRequestT = Model::GetExportImageTaskRequest>
+  void GetExportImageTaskAsync(const GetExportImageTaskResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const GetExportImageTaskRequestT& request = {}) const {
+    return SubmitAsync(&AppStreamClient::GetExportImageTask, request, handler, context);
   }
 
   /**
@@ -1960,11 +2048,40 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You
-   * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
-   * more information about tags, see <a
+   * <p>Lists export image tasks, with optional filtering and pagination. Use this
+   * operation to monitor the status of multiple export operations.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListExportImageTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExportImageTasksOutcome ListExportImageTasks(const Model::ListExportImageTasksRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListExportImageTasks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExportImageTasksRequestT = Model::ListExportImageTasksRequest>
+  Model::ListExportImageTasksOutcomeCallable ListExportImageTasksCallable(const ListExportImageTasksRequestT& request = {}) const {
+    return SubmitCallable(&AppStreamClient::ListExportImageTasks, request);
+  }
+
+  /**
+   * An Async wrapper for ListExportImageTasks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListExportImageTasksRequestT = Model::ListExportImageTasksRequest>
+  void ListExportImageTasksAsync(const ListExportImageTasksResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListExportImageTasksRequestT& request = {}) const {
+    return SubmitAsync(&AppStreamClient::ListExportImageTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of all tags for the specified WorkSpaces Applications
+   * resource. You can tag WorkSpaces Applications image builders, images, fleets,
+   * and stacks.</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -2180,15 +2297,15 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.
-   * You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
-   * <p>Each tag consists of a key and an optional value. If a resource already has a
-   * tag with the same key, this operation updates its value.</p> <p>To list the
-   * current tags for your resources, use <a>ListTagsForResource</a>. To disassociate
-   * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
-   * about tags, see <a
+   * <p>Adds or overwrites one or more tags for the specified WorkSpaces Applications
+   * resource. You can tag WorkSpaces Applications image builders, images, fleets,
+   * and stacks.</p> <p>Each tag consists of a key and an optional value. If a
+   * resource already has a tag with the same key, this operation updates its
+   * value.</p> <p>To list the current tags for your resources, use
+   * <a>ListTagsForResource</a>. To disassociate tags from your resources, use
+   * <a>UntagResource</a>.</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
    * API Reference</a></p>
@@ -2214,11 +2331,11 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disassociates one or more specified tags from the specified AppStream 2.0
-   * resource.</p> <p>To list the current tags for your resources, use
+   * <p>Disassociates one or more specified tags from the specified WorkSpaces
+   * Applications resource.</p> <p>To list the current tags for your resources, use
    * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
    * API Reference</a></p>
@@ -2301,9 +2418,10 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the specified Directory Config object in AppStream 2.0. This object
-   * includes the configuration information required to join fleets and image
-   * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified Directory Config object in WorkSpaces Applications.
+   * This object includes the configuration information required to join fleets and
+   * image builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
    * API Reference</a></p>
    */

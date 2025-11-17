@@ -38,6 +38,10 @@ SchemaConversionRequest& SchemaConversionRequest::operator=(JsonView jsonValue) 
     m_exportSqlDetails = jsonValue.GetObject("ExportSqlDetails");
     m_exportSqlDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Progress")) {
+    m_progress = jsonValue.GetObject("Progress");
+    m_progressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue SchemaConversionRequest::Jsonize() const {
 
   if (m_exportSqlDetailsHasBeenSet) {
     payload.WithObject("ExportSqlDetails", m_exportSqlDetails.Jsonize());
+  }
+
+  if (m_progressHasBeenSet) {
+    payload.WithObject("Progress", m_progress.Jsonize());
   }
 
   return payload;

@@ -17,6 +17,7 @@ namespace EndpointTypeMapper {
 
 static const int SLURMCTLD_HASH = HashingUtils::HashString("SLURMCTLD");
 static const int SLURMDBD_HASH = HashingUtils::HashString("SLURMDBD");
+static const int SLURMRESTD_HASH = HashingUtils::HashString("SLURMRESTD");
 
 EndpointType GetEndpointTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EndpointType GetEndpointTypeForName(const Aws::String& name) {
     return EndpointType::SLURMCTLD;
   } else if (hashCode == SLURMDBD_HASH) {
     return EndpointType::SLURMDBD;
+  } else if (hashCode == SLURMRESTD_HASH) {
+    return EndpointType::SLURMRESTD;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEndpointType(EndpointType enumValue) {
       return "SLURMCTLD";
     case EndpointType::SLURMDBD:
       return "SLURMDBD";
+    case EndpointType::SLURMRESTD:
+      return "SLURMRESTD";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

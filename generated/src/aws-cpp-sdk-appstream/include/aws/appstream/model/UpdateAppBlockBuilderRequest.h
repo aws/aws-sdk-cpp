@@ -170,13 +170,13 @@ class UpdateAppBlockBuilderRequest : public AppStreamRequest {
    * builder. To assume a role, the app block builder calls the AWS Security Token
    * Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
    * role to use. The operation creates a new session with temporary credentials.
-   * AppStream 2.0 retrieves the temporary credentials and creates the
+   * WorkSpaces Applications retrieves the temporary credentials and creates the
    * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
    * more information, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
    * an IAM Role to Grant Permissions to Applications and Scripts Running on
-   * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
-   * Administration Guide</i>.</p>
+   * WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces
+   * Applications Administration Guide</i>.</p>
    */
   inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
   inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }

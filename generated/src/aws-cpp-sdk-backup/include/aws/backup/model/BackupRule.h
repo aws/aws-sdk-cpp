@@ -78,6 +78,28 @@ class BackupRule {
 
   ///@{
   /**
+   * <p>The ARN of a logically air-gapped vault. ARN must be in the same account and
+   * Region. If provided, supported fully managed resources back up directly to
+   * logically air-gapped vault, while other supported resources create a temporary
+   * (billable) snapshot in backup vault, then copy it to logically air-gapped vault.
+   * Unsupported resources only back up to the specified backup vault.</p>
+   */
+  inline const Aws::String& GetTargetLogicallyAirGappedBackupVaultArn() const { return m_targetLogicallyAirGappedBackupVaultArn; }
+  inline bool TargetLogicallyAirGappedBackupVaultArnHasBeenSet() const { return m_targetLogicallyAirGappedBackupVaultArnHasBeenSet; }
+  template <typename TargetLogicallyAirGappedBackupVaultArnT = Aws::String>
+  void SetTargetLogicallyAirGappedBackupVaultArn(TargetLogicallyAirGappedBackupVaultArnT&& value) {
+    m_targetLogicallyAirGappedBackupVaultArnHasBeenSet = true;
+    m_targetLogicallyAirGappedBackupVaultArn = std::forward<TargetLogicallyAirGappedBackupVaultArnT>(value);
+  }
+  template <typename TargetLogicallyAirGappedBackupVaultArnT = Aws::String>
+  BackupRule& WithTargetLogicallyAirGappedBackupVaultArn(TargetLogicallyAirGappedBackupVaultArnT&& value) {
+    SetTargetLogicallyAirGappedBackupVaultArn(std::forward<TargetLogicallyAirGappedBackupVaultArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A cron expression in UTC specifying when Backup initiates a backup job. When
    * no CRON expression is provided, Backup will use the default expression
    * <code>cron(0 5 ? * * *)</code>.</p> <p>For more information about Amazon Web
@@ -311,6 +333,9 @@ class BackupRule {
 
   Aws::String m_targetBackupVaultName;
   bool m_targetBackupVaultNameHasBeenSet = false;
+
+  Aws::String m_targetLogicallyAirGappedBackupVaultArn;
+  bool m_targetLogicallyAirGappedBackupVaultArnHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
   bool m_scheduleExpressionHasBeenSet = false;

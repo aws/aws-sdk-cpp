@@ -96,8 +96,8 @@ class DomainStatus {
   /**
    * <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-   * identifiers </a> in the <i>AWS Identity and Access Management User
-   * Guide</i>.</p>
+   * identifiers </a> in the <i>Amazon Web Services Identity and Access Management
+   * User Guide</i>.</p>
    */
   inline const Aws::String& GetARN() const { return m_aRN; }
   inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }

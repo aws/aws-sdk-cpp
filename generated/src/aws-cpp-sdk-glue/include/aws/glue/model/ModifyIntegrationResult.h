@@ -265,7 +265,9 @@ class ModifyIntegrationResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The updated configuration settings for the integration.</p>
+   */
   inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
   template <typename IntegrationConfigT = IntegrationConfig>
   void SetIntegrationConfig(IntegrationConfigT&& value) {

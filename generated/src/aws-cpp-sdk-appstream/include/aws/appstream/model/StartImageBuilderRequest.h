@@ -50,8 +50,9 @@ class StartImageBuilderRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
-   * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+   * <p>The version of the WorkSpaces Applications agent to use for this image
+   * builder. To use the latest version of the WorkSpaces Applications agent, specify
+   * [LATEST]. </p>
    */
   inline const Aws::String& GetAppstreamAgentVersion() const { return m_appstreamAgentVersion; }
   inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }

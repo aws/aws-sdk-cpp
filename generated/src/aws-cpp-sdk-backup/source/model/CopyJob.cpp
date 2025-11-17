@@ -90,6 +90,10 @@ CopyJob& CopyJob::operator=(JsonView jsonValue) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedByBackupJobId")) {
+    m_createdByBackupJobId = jsonValue.GetString("CreatedByBackupJobId");
+    m_createdByBackupJobIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
@@ -201,6 +205,10 @@ JsonValue CopyJob::Jsonize() const {
 
   if (m_createdByHasBeenSet) {
     payload.WithObject("CreatedBy", m_createdBy.Jsonize());
+  }
+
+  if (m_createdByBackupJobIdHasBeenSet) {
+    payload.WithString("CreatedByBackupJobId", m_createdByBackupJobId);
   }
 
   if (m_resourceTypeHasBeenSet) {

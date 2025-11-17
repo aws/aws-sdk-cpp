@@ -26,6 +26,10 @@ BackupRule& BackupRule::operator=(JsonView jsonValue) {
     m_targetBackupVaultName = jsonValue.GetString("TargetBackupVaultName");
     m_targetBackupVaultNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetLogicallyAirGappedBackupVaultArn")) {
+    m_targetLogicallyAirGappedBackupVaultArn = jsonValue.GetString("TargetLogicallyAirGappedBackupVaultArn");
+    m_targetLogicallyAirGappedBackupVaultArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ScheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
@@ -87,6 +91,10 @@ JsonValue BackupRule::Jsonize() const {
 
   if (m_targetBackupVaultNameHasBeenSet) {
     payload.WithString("TargetBackupVaultName", m_targetBackupVaultName);
+  }
+
+  if (m_targetLogicallyAirGappedBackupVaultArnHasBeenSet) {
+    payload.WithString("TargetLogicallyAirGappedBackupVaultArn", m_targetLogicallyAirGappedBackupVaultArn);
   }
 
   if (m_scheduleExpressionHasBeenSet) {

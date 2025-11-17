@@ -297,6 +297,24 @@ class ListCopyJobsRequest : public BackupRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters copy jobs by the specified source recovery point ARN.</p>
+   */
+  inline const Aws::String& GetBySourceRecoveryPointArn() const { return m_bySourceRecoveryPointArn; }
+  inline bool BySourceRecoveryPointArnHasBeenSet() const { return m_bySourceRecoveryPointArnHasBeenSet; }
+  template <typename BySourceRecoveryPointArnT = Aws::String>
+  void SetBySourceRecoveryPointArn(BySourceRecoveryPointArnT&& value) {
+    m_bySourceRecoveryPointArnHasBeenSet = true;
+    m_bySourceRecoveryPointArn = std::forward<BySourceRecoveryPointArnT>(value);
+  }
+  template <typename BySourceRecoveryPointArnT = Aws::String>
+  ListCopyJobsRequest& WithBySourceRecoveryPointArn(BySourceRecoveryPointArnT&& value) {
+    SetBySourceRecoveryPointArn(std::forward<BySourceRecoveryPointArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
@@ -336,6 +354,9 @@ class ListCopyJobsRequest : public BackupRequest {
 
   Aws::String m_byMessageCategory;
   bool m_byMessageCategoryHasBeenSet = false;
+
+  Aws::String m_bySourceRecoveryPointArn;
+  bool m_bySourceRecoveryPointArnHasBeenSet = false;
 };
 
 }  // namespace Model

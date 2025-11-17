@@ -55,7 +55,9 @@ class RuntimeSettings {
 
   ///@{
   /**
-   * <p>An object containing specifications for the assisted nlu feature.</p>
+   * <p>An object containing specifications for the Assisted NLU feature within the
+   * bot's runtime settings. These settings determine how the bot processes and
+   * interprets user utterances during conversations.</p>
    */
   inline const NluImprovementSpecification& GetNluImprovement() const { return m_nluImprovement; }
   inline bool NluImprovementHasBeenSet() const { return m_nluImprovementHasBeenSet; }

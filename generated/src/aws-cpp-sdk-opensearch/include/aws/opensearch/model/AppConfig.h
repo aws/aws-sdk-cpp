@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>Configuration settings for an OpenSearch application. For more information,
- * see see <a
+ * see <a
  * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
  * the OpenSearch user interface in Amazon OpenSearch Service</a>.</p><p><h3>See
  * Also:</h3>   <a

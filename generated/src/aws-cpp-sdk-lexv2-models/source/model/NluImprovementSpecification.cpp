@@ -22,6 +22,10 @@ NluImprovementSpecification& NluImprovementSpecification::operator=(JsonView jso
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("assistedNluMode")) {
+    m_assistedNluMode = AssistedNluModeMapper::GetAssistedNluModeForName(jsonValue.GetString("assistedNluMode"));
+    m_assistedNluModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue NluImprovementSpecification::Jsonize() const {
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_assistedNluModeHasBeenSet) {
+    payload.WithString("assistedNluMode", AssistedNluModeMapper::GetNameForAssistedNluMode(m_assistedNluMode));
   }
 
   return payload;

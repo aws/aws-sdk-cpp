@@ -113,7 +113,8 @@ class CreateUpdatedImageRequest : public AppStreamRequest {
    * : / = + \ - @</p> <p>If you do not specify a value, the value is set to an empty
    * string.</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
+   * Guide</i>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetNewImageTags() const { return m_newImageTags; }
   inline bool NewImageTagsHasBeenSet() const { return m_newImageTagsHasBeenSet; }
@@ -138,11 +139,11 @@ class CreateUpdatedImageRequest : public AppStreamRequest {
   ///@{
   /**
    * <p>Indicates whether to display the status of image update availability before
-   * AppStream 2.0 initiates the process of creating a new updated image. If this
-   * value is set to <code>true</code>, AppStream 2.0 displays whether image updates
-   * are available. If this value is set to <code>false</code>, AppStream 2.0
-   * initiates the process of creating a new updated image without displaying whether
-   * image updates are available.</p>
+   * WorkSpaces Applications initiates the process of creating a new updated image.
+   * If this value is set to <code>true</code>, WorkSpaces Applications displays
+   * whether image updates are available. If this value is set to <code>false</code>,
+   * WorkSpaces Applications initiates the process of creating a new updated image
+   * without displaying whether image updates are available.</p>
    */
   inline bool GetDryRun() const { return m_dryRun; }
   inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }

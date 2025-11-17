@@ -29,7 +29,7 @@ class CreateImageBuilderStreamingURLResult {
 
   ///@{
   /**
-   * <p>The URL to start the AppStream 2.0 streaming session.</p>
+   * <p>The URL to start the WorkSpaces Applications streaming session.</p>
    */
   inline const Aws::String& GetStreamingURL() const { return m_streamingURL; }
   template <typename StreamingURLT = Aws::String>

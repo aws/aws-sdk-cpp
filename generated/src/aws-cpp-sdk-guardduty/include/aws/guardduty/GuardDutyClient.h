@@ -2035,6 +2035,40 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Initiates a malware scan for a specific S3 object. This API allows you to
+   * perform on-demand malware scanning of individual objects in S3 buckets that have
+   * Malware Protection for S3 enabled.</p> <p>When you use this API, the Amazon Web
+   * Services service terms for GuardDuty Malware Protection apply. For more
+   * information, see <a
+   * href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon Web
+   * Services service terms for GuardDuty Malware Protection</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendObjectMalwareScanOutcome SendObjectMalwareScan(const Model::SendObjectMalwareScanRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SendObjectMalwareScan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendObjectMalwareScanRequestT = Model::SendObjectMalwareScanRequest>
+  Model::SendObjectMalwareScanOutcomeCallable SendObjectMalwareScanCallable(const SendObjectMalwareScanRequestT& request = {}) const {
+    return SubmitCallable(&GuardDutyClient::SendObjectMalwareScan, request);
+  }
+
+  /**
+   * An Async wrapper for SendObjectMalwareScan that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SendObjectMalwareScanRequestT = Model::SendObjectMalwareScanRequest>
+  void SendObjectMalwareScanAsync(const SendObjectMalwareScanResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const SendObjectMalwareScanRequestT& request = {}) const {
+    return SubmitAsync(&GuardDutyClient::SendObjectMalwareScan, request, handler, context);
+  }
+
+  /**
    * <p>Initiates the malware scan. Invoking this API will automatically create the
    * <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked

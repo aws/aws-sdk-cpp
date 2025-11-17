@@ -54,8 +54,8 @@ class NetworkAccessConfiguration {
 
   ///@{
   /**
-   * <p>The IPv6 addresses of the elastic network interface that is attached to
-   * instances in your VPC.</p>
+   * <p>The IPv6 addresses assigned to the elastic network interface. This field
+   * supports IPv6 connectivity for WorkSpaces Applications instances.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEniIpv6Addresses() const { return m_eniIpv6Addresses; }
   inline bool EniIpv6AddressesHasBeenSet() const { return m_eniIpv6AddressesHasBeenSet; }

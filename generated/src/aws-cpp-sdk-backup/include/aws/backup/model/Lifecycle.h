@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/LifecycleDeleteAfterEvent.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -91,6 +94,24 @@ class Lifecycle {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The event after which a recovery point is deleted. A recovery point with both
+   * <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after
+   * whichever condition is satisfied first. Not valid as an input.</p>
+   */
+  inline LifecycleDeleteAfterEvent GetDeleteAfterEvent() const { return m_deleteAfterEvent; }
+  inline bool DeleteAfterEventHasBeenSet() const { return m_deleteAfterEventHasBeenSet; }
+  inline void SetDeleteAfterEvent(LifecycleDeleteAfterEvent value) {
+    m_deleteAfterEventHasBeenSet = true;
+    m_deleteAfterEvent = value;
+  }
+  inline Lifecycle& WithDeleteAfterEvent(LifecycleDeleteAfterEvent value) {
+    SetDeleteAfterEvent(value);
+    return *this;
+  }
+  ///@}
  private:
   long long m_moveToColdStorageAfterDays{0};
   bool m_moveToColdStorageAfterDaysHasBeenSet = false;
@@ -100,6 +121,9 @@ class Lifecycle {
 
   bool m_optInToArchiveForSupportedResources{false};
   bool m_optInToArchiveForSupportedResourcesHasBeenSet = false;
+
+  LifecycleDeleteAfterEvent m_deleteAfterEvent{LifecycleDeleteAfterEvent::NOT_SET};
+  bool m_deleteAfterEventHasBeenSet = false;
 };
 
 }  // namespace Model

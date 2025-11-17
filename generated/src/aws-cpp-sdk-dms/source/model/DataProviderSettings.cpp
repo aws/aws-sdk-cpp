@@ -34,6 +34,10 @@ DataProviderSettings& DataProviderSettings::operator=(JsonView jsonValue) {
     m_oracleSettings = jsonValue.GetObject("OracleSettings");
     m_oracleSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SybaseAseSettings")) {
+    m_sybaseAseSettings = jsonValue.GetObject("SybaseAseSettings");
+    m_sybaseAseSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MicrosoftSqlServerSettings")) {
     m_microsoftSqlServerSettings = jsonValue.GetObject("MicrosoftSqlServerSettings");
     m_microsoftSqlServerSettingsHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue DataProviderSettings::Jsonize() const {
 
   if (m_oracleSettingsHasBeenSet) {
     payload.WithObject("OracleSettings", m_oracleSettings.Jsonize());
+  }
+
+  if (m_sybaseAseSettingsHasBeenSet) {
+    payload.WithObject("SybaseAseSettings", m_sybaseAseSettings.Jsonize());
   }
 
   if (m_microsoftSqlServerSettingsHasBeenSet) {

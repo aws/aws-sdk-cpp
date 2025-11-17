@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PCS {
 namespace Model {
-enum class EndpointType { NOT_SET, SLURMCTLD, SLURMDBD };
+enum class EndpointType { NOT_SET, SLURMCTLD, SLURMDBD, SLURMRESTD };
 
 namespace EndpointTypeMapper {
 AWS_PCS_API EndpointType GetEndpointTypeForName(const Aws::String& name);
