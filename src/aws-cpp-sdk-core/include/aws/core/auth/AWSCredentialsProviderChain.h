@@ -27,7 +27,7 @@ namespace Aws
              * When a credentials provider in the chain returns empty credentials,
              * We go on to the next provider until we have either exhausted the installed providers in the chain or something returns non-empty credentials.
              */
-            virtual AWSCredentials GetAWSCredentials();
+            virtual AWSCredentials GetAWSCredentials() override;
 
             /**
              * Gets all providers stored in this chain.
