@@ -21,10 +21,14 @@ class MockS3Client : public S3Client {
 public:
     MockS3Client() : S3Client(){};
 
-    GetObjectOutcome GetObject(const GetObjectRequest&) const override {
+    GetObjectOutcome GetObject(const GetObjectRequest& request) const override {
         GetObjectResult result;
-        // Return wrong range to trigger validation failure
-        result.SetContentRange("bytes 1024-2047/2048");
+        
+        if (request.RangeHasBeenSet()) {
+            // Always return mismatched range to trigger validation failure
+            result.SetContentRange("bytes 1024-2047/2048");
+        }
+        
         auto stream = Aws::New<std::stringstream>(ALLOCATION_TAG);
         *stream << "mock data";
         result.ReplaceBody(stream);
