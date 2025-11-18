@@ -1139,7 +1139,7 @@ namespace Aws
                 const auto& requestedRange = request.GetRange();
                 const auto& responseContentRange = outcome.GetResult().GetContentRange();
 
-                if (responseContentRange.empty() or !VerifyContentRange(requestedRange, responseContentRange)) {
+                if (responseContentRange.empty() || !VerifyContentRange(requestedRange, responseContentRange)) {
                     Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
                                                                    "ContentRangeMismatch",
                                                                    "ContentRange in response does not match requested range",
