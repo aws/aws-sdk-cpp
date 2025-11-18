@@ -33,6 +33,11 @@ VpnConnection& VpnConnection::operator=(const XmlNode& xmlNode) {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
     }
+    XmlNode vpnConcentratorIdNode = resultNode.FirstChild("vpnConcentratorId");
+    if (!vpnConcentratorIdNode.IsNull()) {
+      m_vpnConcentratorId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConcentratorIdNode.GetText());
+      m_vpnConcentratorIdHasBeenSet = true;
+    }
     XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
     if (!coreNetworkArnNode.IsNull()) {
       m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
@@ -137,6 +142,10 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
     oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if (m_vpnConcentratorIdHasBeenSet) {
+    oStream << location << index << locationValue << ".VpnConcentratorId=" << StringUtils::URLEncode(m_vpnConcentratorId.c_str()) << "&";
+  }
+
   if (m_coreNetworkArnHasBeenSet) {
     oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
   }
@@ -222,6 +231,9 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if (m_transitGatewayIdHasBeenSet) {
     oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+  if (m_vpnConcentratorIdHasBeenSet) {
+    oStream << location << ".VpnConcentratorId=" << StringUtils::URLEncode(m_vpnConcentratorId.c_str()) << "&";
   }
   if (m_coreNetworkArnHasBeenSet) {
     oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";

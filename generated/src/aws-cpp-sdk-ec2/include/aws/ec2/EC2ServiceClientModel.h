@@ -189,6 +189,7 @@
 #include <aws/ec2/model/CreateVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/CreateVpcRequest.h>
 #include <aws/ec2/model/CreateVpcResponse.h>
+#include <aws/ec2/model/CreateVpnConcentratorResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnGatewayResponse.h>
 #include <aws/ec2/model/DeleteCapacityManagerDataExportResponse.h>
@@ -262,6 +263,7 @@
 #include <aws/ec2/model/DeleteVpcEndpointServiceConfigurationsResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
+#include <aws/ec2/model/DeleteVpnConcentratorResponse.h>
 #include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
 #include <aws/ec2/model/DeprovisionIpamByoasnResponse.h>
 #include <aws/ec2/model/DeprovisionIpamPoolCidrResponse.h>
@@ -599,6 +601,8 @@
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsRequest.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsResponse.h>
 #include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 #include <aws/ec2/model/DescribeVpnConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpnGatewaysRequest.h>
@@ -1094,6 +1098,7 @@ class CreateVpcEndpointRequest;
 class CreateVpcEndpointConnectionNotificationRequest;
 class CreateVpcEndpointServiceConfigurationRequest;
 class CreateVpcPeeringConnectionRequest;
+class CreateVpnConcentratorRequest;
 class CreateVpnConnectionRequest;
 class CreateVpnConnectionRouteRequest;
 class CreateVpnGatewayRequest;
@@ -1179,6 +1184,7 @@ class DeleteVpcEndpointConnectionNotificationsRequest;
 class DeleteVpcEndpointServiceConfigurationsRequest;
 class DeleteVpcEndpointsRequest;
 class DeleteVpcPeeringConnectionRequest;
+class DeleteVpnConcentratorRequest;
 class DeleteVpnConnectionRequest;
 class DeleteVpnConnectionRouteRequest;
 class DeleteVpnGatewayRequest;
@@ -1366,6 +1372,7 @@ class DescribeVpcEndpointServicesRequest;
 class DescribeVpcEndpointsRequest;
 class DescribeVpcPeeringConnectionsRequest;
 class DescribeVpcsRequest;
+class DescribeVpnConcentratorsRequest;
 class DescribeVpnConnectionsRequest;
 class DescribeVpnGatewaysRequest;
 class DetachClassicLinkVpcRequest;
@@ -1823,6 +1830,7 @@ typedef Aws::Utils::Outcome<CreateVpcEndpointResponse, EC2Error> CreateVpcEndpoi
 typedef Aws::Utils::Outcome<CreateVpcEndpointConnectionNotificationResponse, EC2Error> CreateVpcEndpointConnectionNotificationOutcome;
 typedef Aws::Utils::Outcome<CreateVpcEndpointServiceConfigurationResponse, EC2Error> CreateVpcEndpointServiceConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateVpcPeeringConnectionResponse, EC2Error> CreateVpcPeeringConnectionOutcome;
+typedef Aws::Utils::Outcome<CreateVpnConcentratorResponse, EC2Error> CreateVpnConcentratorOutcome;
 typedef Aws::Utils::Outcome<CreateVpnConnectionResponse, EC2Error> CreateVpnConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateVpnConnectionRouteOutcome;
 typedef Aws::Utils::Outcome<CreateVpnGatewayResponse, EC2Error> CreateVpnGatewayOutcome;
@@ -1910,6 +1918,7 @@ typedef Aws::Utils::Outcome<DeleteVpcEndpointConnectionNotificationsResponse, EC
 typedef Aws::Utils::Outcome<DeleteVpcEndpointServiceConfigurationsResponse, EC2Error> DeleteVpcEndpointServiceConfigurationsOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcEndpointsResponse, EC2Error> DeleteVpcEndpointsOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResponse, EC2Error> DeleteVpcPeeringConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteVpnConcentratorResponse, EC2Error> DeleteVpnConcentratorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpnConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpnConnectionRouteOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpnGatewayOutcome;
@@ -2107,6 +2116,7 @@ typedef Aws::Utils::Outcome<DescribeVpcEndpointServicesResponse, EC2Error> Descr
 typedef Aws::Utils::Outcome<DescribeVpcEndpointsResponse, EC2Error> DescribeVpcEndpointsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcPeeringConnectionsResponse, EC2Error> DescribeVpcPeeringConnectionsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcsResponse, EC2Error> DescribeVpcsOutcome;
+typedef Aws::Utils::Outcome<DescribeVpnConcentratorsResponse, EC2Error> DescribeVpnConcentratorsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpnConnectionsResponse, EC2Error> DescribeVpnConnectionsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpnGatewaysResponse, EC2Error> DescribeVpnGatewaysOutcome;
 typedef Aws::Utils::Outcome<DetachClassicLinkVpcResponse, EC2Error> DetachClassicLinkVpcOutcome;
@@ -2579,6 +2589,7 @@ typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
 typedef std::future<CreateVpcEndpointConnectionNotificationOutcome> CreateVpcEndpointConnectionNotificationOutcomeCallable;
 typedef std::future<CreateVpcEndpointServiceConfigurationOutcome> CreateVpcEndpointServiceConfigurationOutcomeCallable;
 typedef std::future<CreateVpcPeeringConnectionOutcome> CreateVpcPeeringConnectionOutcomeCallable;
+typedef std::future<CreateVpnConcentratorOutcome> CreateVpnConcentratorOutcomeCallable;
 typedef std::future<CreateVpnConnectionOutcome> CreateVpnConnectionOutcomeCallable;
 typedef std::future<CreateVpnConnectionRouteOutcome> CreateVpnConnectionRouteOutcomeCallable;
 typedef std::future<CreateVpnGatewayOutcome> CreateVpnGatewayOutcomeCallable;
@@ -2665,6 +2676,7 @@ typedef std::future<DeleteVpcEndpointConnectionNotificationsOutcome> DeleteVpcEn
 typedef std::future<DeleteVpcEndpointServiceConfigurationsOutcome> DeleteVpcEndpointServiceConfigurationsOutcomeCallable;
 typedef std::future<DeleteVpcEndpointsOutcome> DeleteVpcEndpointsOutcomeCallable;
 typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
+typedef std::future<DeleteVpnConcentratorOutcome> DeleteVpnConcentratorOutcomeCallable;
 typedef std::future<DeleteVpnConnectionOutcome> DeleteVpnConnectionOutcomeCallable;
 typedef std::future<DeleteVpnConnectionRouteOutcome> DeleteVpnConnectionRouteOutcomeCallable;
 typedef std::future<DeleteVpnGatewayOutcome> DeleteVpnGatewayOutcomeCallable;
@@ -2855,6 +2867,7 @@ typedef std::future<DescribeVpcEndpointServicesOutcome> DescribeVpcEndpointServi
 typedef std::future<DescribeVpcEndpointsOutcome> DescribeVpcEndpointsOutcomeCallable;
 typedef std::future<DescribeVpcPeeringConnectionsOutcome> DescribeVpcPeeringConnectionsOutcomeCallable;
 typedef std::future<DescribeVpcsOutcome> DescribeVpcsOutcomeCallable;
+typedef std::future<DescribeVpnConcentratorsOutcome> DescribeVpnConcentratorsOutcomeCallable;
 typedef std::future<DescribeVpnConnectionsOutcome> DescribeVpnConnectionsOutcomeCallable;
 typedef std::future<DescribeVpnGatewaysOutcome> DescribeVpnGatewaysOutcomeCallable;
 typedef std::future<DetachClassicLinkVpcOutcome> DetachClassicLinkVpcOutcomeCallable;
@@ -3675,6 +3688,9 @@ typedef std::function<void(const EC2Client*, const Model::CreateVpcEndpointServi
 typedef std::function<void(const EC2Client*, const Model::CreateVpcPeeringConnectionRequest&,
                            const Model::CreateVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpcPeeringConnectionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateVpnConcentratorRequest&, const Model::CreateVpnConcentratorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateVpnConcentratorResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateVpnConnectionRequest&, const Model::CreateVpnConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpnConnectionResponseReceivedHandler;
@@ -3963,6 +3979,9 @@ typedef std::function<void(const EC2Client*, const Model::DeleteVpcEndpointsRequ
 typedef std::function<void(const EC2Client*, const Model::DeleteVpcPeeringConnectionRequest&,
                            const Model::DeleteVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcPeeringConnectionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteVpnConcentratorRequest&, const Model::DeleteVpnConcentratorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteVpnConcentratorResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteVpnConnectionRequest&, const Model::DeleteVpnConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpnConnectionResponseReceivedHandler;
@@ -4613,6 +4632,9 @@ typedef std::function<void(const EC2Client*, const Model::DescribeVpcPeeringConn
 typedef std::function<void(const EC2Client*, const Model::DescribeVpcsRequest&, const Model::DescribeVpcsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeVpcsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeVpnConcentratorsRequest&, const Model::DescribeVpnConcentratorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeVpnConcentratorsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeVpnConnectionsRequest&, const Model::DescribeVpnConnectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeVpnConnectionsResponseReceivedHandler;

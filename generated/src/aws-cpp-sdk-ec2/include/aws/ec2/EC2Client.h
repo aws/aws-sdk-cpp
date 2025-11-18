@@ -5502,6 +5502,33 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Creates a VPN concentrator that aggregates multiple VPN connections to a
+   * transit gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateVpnConcentratorOutcome CreateVpnConcentrator(const Model::CreateVpnConcentratorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateVpnConcentrator that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateVpnConcentratorRequestT = Model::CreateVpnConcentratorRequest>
+  Model::CreateVpnConcentratorOutcomeCallable CreateVpnConcentratorCallable(const CreateVpnConcentratorRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateVpnConcentrator, request);
+  }
+
+  /**
+   * An Async wrapper for CreateVpnConcentrator that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateVpnConcentratorRequestT = Model::CreateVpnConcentratorRequest>
+  void CreateVpnConcentratorAsync(const CreateVpnConcentratorRequestT& request, const CreateVpnConcentratorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateVpnConcentrator, request, handler, context);
+  }
+
+  /**
    * <p>Creates a VPN connection between an existing virtual private gateway or
    * transit gateway and a customer gateway. The supported connection type is
    * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
@@ -8095,6 +8122,32 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                        const DeleteVpcPeeringConnectionResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteVpcPeeringConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified VPN concentrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVpnConcentratorOutcome DeleteVpnConcentrator(const Model::DeleteVpnConcentratorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVpnConcentrator that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteVpnConcentratorRequestT = Model::DeleteVpnConcentratorRequest>
+  Model::DeleteVpnConcentratorOutcomeCallable DeleteVpnConcentratorCallable(const DeleteVpnConcentratorRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteVpnConcentrator, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVpnConcentrator that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteVpnConcentratorRequestT = Model::DeleteVpnConcentratorRequest>
+  void DeleteVpnConcentratorAsync(const DeleteVpnConcentratorRequestT& request, const DeleteVpnConcentratorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteVpnConcentrator, request, handler, context);
   }
 
   /**
@@ -14288,6 +14341,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const DescribeVpcsRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeVpcs, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your VPN concentrators.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeVpnConcentratorsOutcome DescribeVpnConcentrators(const Model::DescribeVpnConcentratorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeVpnConcentrators that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeVpnConcentratorsRequestT = Model::DescribeVpnConcentratorsRequest>
+  Model::DescribeVpnConcentratorsOutcomeCallable DescribeVpnConcentratorsCallable(
+      const DescribeVpnConcentratorsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeVpnConcentrators, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeVpnConcentrators that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeVpnConcentratorsRequestT = Model::DescribeVpnConcentratorsRequest>
+  void DescribeVpnConcentratorsAsync(const DescribeVpnConcentratorsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeVpnConcentratorsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeVpnConcentrators, request, handler, context);
   }
 
   /**

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFormation {
 namespace Model {
-enum class ChangeAction { NOT_SET, Add, Modify, Remove, Import, Dynamic };
+enum class ChangeAction { NOT_SET, Add, Modify, Remove, Import, Dynamic, SyncWithActual };
 
 namespace ChangeActionMapper {
 AWS_CLOUDFORMATION_API ChangeAction GetChangeActionForName(const Aws::String& name);

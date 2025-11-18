@@ -22,7 +22,8 @@ namespace IAM {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Contains information about a policy parameter used to customize delegated
+ * permissions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyParameter">AWS
  * API Reference</a></p>
  */
@@ -37,7 +38,7 @@ class PolicyParameter {
 
   ///@{
   /**
-   * <p/>
+   * <p>The name of the policy parameter.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -55,7 +56,7 @@ class PolicyParameter {
 
   ///@{
   /**
-   * <p/>
+   * <p>The allowed values for the policy parameter.</p>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
@@ -79,7 +80,7 @@ class PolicyParameter {
 
   ///@{
   /**
-   * <p/>
+   * <p>The data type of the policy parameter value.</p>
    */
   inline PolicyParameterTypeEnum GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

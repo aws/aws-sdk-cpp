@@ -50,7 +50,7 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
 
   ///@{
   /**
-   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
    * date-time format</a>, when the report job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetJobCreationDate() const { return m_jobCreationDate; }
@@ -68,7 +68,7 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
 
   ///@{
   /**
-   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
    * date-time format</a>, when the generated report job was completed or failed.</p>
    * <p>This field is null if the job is still in progress, as indicated by a job
    * status value of <code>IN_PROGRESS</code>.</p>
@@ -88,7 +88,7 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
 
   ///@{
   /**
-   * <p>An <code>EntityDetailsList</code> object that contains details about when an
+   * <p>An <code>EntityDetailsList</code> object that contains details about when an
    * IAM entity (user or role) used group or policy permissions in an attempt to
    * access the specified Amazon Web Services service.</p>
    */

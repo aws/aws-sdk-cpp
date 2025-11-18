@@ -18,6 +18,7 @@ namespace AttributeChangeTypeMapper {
 static const int Add_HASH = HashingUtils::HashString("Add");
 static const int Remove_HASH = HashingUtils::HashString("Remove");
 static const int Modify_HASH = HashingUtils::HashString("Modify");
+static const int SyncWithActual_HASH = HashingUtils::HashString("SyncWithActual");
 
 AttributeChangeType GetAttributeChangeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AttributeChangeType GetAttributeChangeTypeForName(const Aws::String& name) {
     return AttributeChangeType::Remove;
   } else if (hashCode == Modify_HASH) {
     return AttributeChangeType::Modify;
+  } else if (hashCode == SyncWithActual_HASH) {
+    return AttributeChangeType::SyncWithActual;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAttributeChangeType(AttributeChangeType enumValue) {
       return "Remove";
     case AttributeChangeType::Modify:
       return "Modify";
+    case AttributeChangeType::SyncWithActual:
+      return "SyncWithActual";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

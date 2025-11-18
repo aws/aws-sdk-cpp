@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/ConverseStreamMetrics.h>
 #include <aws/bedrock-runtime/model/ConverseStreamTrace.h>
 #include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
+#include <aws/bedrock-runtime/model/ServiceTier.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 
 #include <utility>
@@ -108,6 +109,24 @@ class ConverseStreamMetadataEvent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the processing tier configuration used for serving the request.</p>
+   */
+  inline const ServiceTier& GetServiceTier() const { return m_serviceTier; }
+  inline bool ServiceTierHasBeenSet() const { return m_serviceTierHasBeenSet; }
+  template <typename ServiceTierT = ServiceTier>
+  void SetServiceTier(ServiceTierT&& value) {
+    m_serviceTierHasBeenSet = true;
+    m_serviceTier = std::forward<ServiceTierT>(value);
+  }
+  template <typename ServiceTierT = ServiceTier>
+  ConverseStreamMetadataEvent& WithServiceTier(ServiceTierT&& value) {
+    SetServiceTier(std::forward<ServiceTierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TokenUsage m_usage;
   bool m_usageHasBeenSet = false;
@@ -120,6 +139,9 @@ class ConverseStreamMetadataEvent {
 
   PerformanceConfiguration m_performanceConfig;
   bool m_performanceConfigHasBeenSet = false;
+
+  ServiceTier m_serviceTier;
+  bool m_serviceTierHasBeenSet = false;
 };
 
 }  // namespace Model

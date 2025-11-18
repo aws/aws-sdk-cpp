@@ -103,9 +103,18 @@ class GetComplianceSummaryRequest : public ResourceGroupsTaggingAPIRequest {
    * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
-   * </ul> <p>You can specify multiple resource types by using a comma separated
-   * array. The array can include up to 100 items. Note that the length constraint
-   * requirement applies to each resource type filter. </p>
+   * </ul>  <p>For the list of services whose resources you can tag using the
+   * Resource Groups Tagging API, see <a
+   * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+   * that support the Resource Groups Tagging API</a>. If an Amazon Web Services
+   * service isn't listed on that page, you might still be able to tag that service's
+   * resources by using that service's native tagging operations instead of using
+   * Resource Groups Tagging API operations. All tagged resources, whether the
+   * tagging used the Resource Groups Tagging API or not, are returned by the
+   * <code>Get*</code> operation.</p>  <p>You can specify multiple resource
+   * types by using a comma separated array. The array can include up to 100 items.
+   * Note that the length constraint requirement applies to each resource type
+   * filter. </p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const { return m_resourceTypeFilters; }
   inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }

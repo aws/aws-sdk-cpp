@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/wafv2/WAFV2Errors.h>
+#include <aws/wafv2/model/WAFFeatureNotIncludedInPricingPlanException.h>
 #include <aws/wafv2/model/WAFInvalidParameterException.h>
 #include <aws/wafv2/model/WAFLimitsExceededException.h>
 
@@ -28,6 +29,12 @@ AWS_WAFV2_API WAFInvalidParameterException WAFV2Error::GetModeledError() {
   return WAFInvalidParameterException(this->GetJsonPayload().View());
 }
 
+template <>
+AWS_WAFV2_API WAFFeatureNotIncludedInPricingPlanException WAFV2Error::GetModeledError() {
+  assert(this->GetErrorType() == WAFV2Errors::W_A_F_FEATURE_NOT_INCLUDED_IN_PRICING_PLAN);
+  return WAFFeatureNotIncludedInPricingPlanException(this->GetJsonPayload().View());
+}
+
 namespace WAFV2ErrorMapper {
 
 static const int W_A_F_UNAVAILABLE_ENTITY_HASH = HashingUtils::HashString("WAFUnavailableEntityException");
@@ -48,6 +55,7 @@ static const int W_A_F_DUPLICATE_ITEM_HASH = HashingUtils::HashString("WAFDuplic
 static const int W_A_F_OPTIMISTIC_LOCK_HASH = HashingUtils::HashString("WAFOptimisticLockException");
 static const int W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFTagOperationInternalErrorException");
 static const int W_A_F_LOG_DESTINATION_PERMISSION_ISSUE_HASH = HashingUtils::HashString("WAFLogDestinationPermissionIssueException");
+static const int W_A_F_FEATURE_NOT_INCLUDED_IN_PRICING_PLAN_HASH = HashingUtils::HashString("WAFFeatureNotIncludedInPricingPlanException");
 static const int W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH = HashingUtils::HashString("WAFServiceLinkedRoleErrorException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -90,6 +98,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_TAG_OPERATION_INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == W_A_F_LOG_DESTINATION_PERMISSION_ISSUE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_LOG_DESTINATION_PERMISSION_ISSUE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == W_A_F_FEATURE_NOT_INCLUDED_IN_PRICING_PLAN_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_FEATURE_NOT_INCLUDED_IN_PRICING_PLAN),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_SERVICE_LINKED_ROLE_ERROR), RetryableType::NOT_RETRYABLE);
   }

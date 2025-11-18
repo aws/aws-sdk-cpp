@@ -29,6 +29,10 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const {
     ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if (m_vpnConcentratorIdHasBeenSet) {
+    ss << "VpnConcentratorId=" << StringUtils::URLEncode(m_vpnConcentratorId.c_str()) << "&";
+  }
+
   if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
     for (auto& item : m_tagSpecifications) {

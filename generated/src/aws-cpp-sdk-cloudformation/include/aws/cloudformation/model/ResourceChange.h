@@ -11,6 +11,8 @@
 #include <aws/cloudformation/model/Replacement.h>
 #include <aws/cloudformation/model/ResourceAttribute.h>
 #include <aws/cloudformation/model/ResourceChangeDetail.h>
+#include <aws/cloudformation/model/ResourceDriftIgnoredAttribute.h>
+#include <aws/cloudformation/model/StackResourceDriftStatus.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -71,8 +73,9 @@ class ResourceChange {
    * <p>The action that CloudFormation takes on the resource, such as
    * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
    * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
-   * (imports a resource), or <code>Dynamic</code> (exact action for the resource
-   * can't be determined).</p>
+   * (imports a resource), <code>Dynamic</code> (exact action for the resource can't
+   * be determined), or <code>SyncWithActual</code> (resource will not be changed,
+   * only CloudFormation metadata will change).</p>
    */
   inline ChangeAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -198,6 +201,56 @@ class ResourceChange {
 
   ///@{
   /**
+   * <p>The drift status of the resource. Valid values:</p> <ul> <li> <p>
+   * <code>IN_SYNC</code> – The resource matches its template definition.</p> </li>
+   * <li> <p> <code>MODIFIED</code> – Resource properties were modified outside
+   * CloudFormation.</p> </li> <li> <p> <code>DELETED</code> – The resource was
+   * deleted outside CloudFormation.</p> </li> <li> <p> <code>NOT_CHECKED</code> –
+   * CloudFormation doesn’t currently return this value.</p> </li> <li> <p>
+   * <code>UNKNOWN</code> – Drift status could not be determined.</p> </li> <li> <p>
+   * <code>UNSUPPORTED</code> – Resource type does not support actual state
+   * comparison.</p> </li> </ul> <p>Only present for drift-aware change sets.</p>
+   */
+  inline StackResourceDriftStatus GetResourceDriftStatus() const { return m_resourceDriftStatus; }
+  inline bool ResourceDriftStatusHasBeenSet() const { return m_resourceDriftStatusHasBeenSet; }
+  inline void SetResourceDriftStatus(StackResourceDriftStatus value) {
+    m_resourceDriftStatusHasBeenSet = true;
+    m_resourceDriftStatus = value;
+  }
+  inline ResourceChange& WithResourceDriftStatus(StackResourceDriftStatus value) {
+    SetResourceDriftStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>List of resource attributes for which drift was ignored.</p>
+   */
+  inline const Aws::Vector<ResourceDriftIgnoredAttribute>& GetResourceDriftIgnoredAttributes() const {
+    return m_resourceDriftIgnoredAttributes;
+  }
+  inline bool ResourceDriftIgnoredAttributesHasBeenSet() const { return m_resourceDriftIgnoredAttributesHasBeenSet; }
+  template <typename ResourceDriftIgnoredAttributesT = Aws::Vector<ResourceDriftIgnoredAttribute>>
+  void SetResourceDriftIgnoredAttributes(ResourceDriftIgnoredAttributesT&& value) {
+    m_resourceDriftIgnoredAttributesHasBeenSet = true;
+    m_resourceDriftIgnoredAttributes = std::forward<ResourceDriftIgnoredAttributesT>(value);
+  }
+  template <typename ResourceDriftIgnoredAttributesT = Aws::Vector<ResourceDriftIgnoredAttribute>>
+  ResourceChange& WithResourceDriftIgnoredAttributes(ResourceDriftIgnoredAttributesT&& value) {
+    SetResourceDriftIgnoredAttributes(std::forward<ResourceDriftIgnoredAttributesT>(value));
+    return *this;
+  }
+  template <typename ResourceDriftIgnoredAttributesT = ResourceDriftIgnoredAttribute>
+  ResourceChange& AddResourceDriftIgnoredAttributes(ResourceDriftIgnoredAttributesT&& value) {
+    m_resourceDriftIgnoredAttributesHasBeenSet = true;
+    m_resourceDriftIgnoredAttributes.emplace_back(std::forward<ResourceDriftIgnoredAttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>For the <code>Modify</code> action, a list of
    * <code>ResourceChangeDetail</code> structures that describes the changes that
    * CloudFormation will make to the resource.</p>
@@ -296,6 +349,25 @@ class ResourceChange {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the resource's state from the previous CloudFormation
+   * deployment.</p>
+   */
+  inline const Aws::String& GetPreviousDeploymentContext() const { return m_previousDeploymentContext; }
+  inline bool PreviousDeploymentContextHasBeenSet() const { return m_previousDeploymentContextHasBeenSet; }
+  template <typename PreviousDeploymentContextT = Aws::String>
+  void SetPreviousDeploymentContext(PreviousDeploymentContextT&& value) {
+    m_previousDeploymentContextHasBeenSet = true;
+    m_previousDeploymentContext = std::forward<PreviousDeploymentContextT>(value);
+  }
+  template <typename PreviousDeploymentContextT = Aws::String>
+  ResourceChange& WithPreviousDeploymentContext(PreviousDeploymentContextT&& value) {
+    SetPreviousDeploymentContext(std::forward<PreviousDeploymentContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PolicyAction m_policyAction{PolicyAction::NOT_SET};
   bool m_policyActionHasBeenSet = false;
@@ -318,6 +390,12 @@ class ResourceChange {
   Aws::Vector<ResourceAttribute> m_scope;
   bool m_scopeHasBeenSet = false;
 
+  StackResourceDriftStatus m_resourceDriftStatus{StackResourceDriftStatus::NOT_SET};
+  bool m_resourceDriftStatusHasBeenSet = false;
+
+  Aws::Vector<ResourceDriftIgnoredAttribute> m_resourceDriftIgnoredAttributes;
+  bool m_resourceDriftIgnoredAttributesHasBeenSet = false;
+
   Aws::Vector<ResourceChangeDetail> m_details;
   bool m_detailsHasBeenSet = false;
 
@@ -332,6 +410,9 @@ class ResourceChange {
 
   Aws::String m_afterContext;
   bool m_afterContextHasBeenSet = false;
+
+  Aws::String m_previousDeploymentContext;
+  bool m_previousDeploymentContextHasBeenSet = false;
 };
 
 }  // namespace Model

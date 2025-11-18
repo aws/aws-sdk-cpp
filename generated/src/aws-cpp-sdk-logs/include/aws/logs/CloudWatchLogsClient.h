@@ -427,6 +427,34 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Creates a new Scheduled Query that runs CloudWatch Logs Insights queries on a
+   * schedule and delivers results to specified destinations.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateScheduledQueryOutcome CreateScheduledQuery(const Model::CreateScheduledQueryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateScheduledQuery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateScheduledQueryRequestT = Model::CreateScheduledQueryRequest>
+  Model::CreateScheduledQueryOutcomeCallable CreateScheduledQueryCallable(const CreateScheduledQueryRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::CreateScheduledQuery, request);
+  }
+
+  /**
+   * An Async wrapper for CreateScheduledQuery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateScheduledQueryRequestT = Model::CreateScheduledQueryRequest>
+  void CreateScheduledQueryAsync(const CreateScheduledQueryRequestT& request, const CreateScheduledQueryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::CreateScheduledQuery, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a CloudWatch Logs account policy. This stops the account-wide policy
    * from applying to log groups in the account. If you delete a data protection
    * policy or subscription filter policy, any log-group level policies of those
@@ -916,6 +944,34 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequestT& request, const DeleteRetentionPolicyResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::DeleteRetentionPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing scheduled query and all its associated configurations.
+   * This operation permanently removes the scheduled query and cannot be
+   * undone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteScheduledQueryOutcome DeleteScheduledQuery(const Model::DeleteScheduledQueryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteScheduledQuery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteScheduledQueryRequestT = Model::DeleteScheduledQueryRequest>
+  Model::DeleteScheduledQueryOutcomeCallable DeleteScheduledQueryCallable(const DeleteScheduledQueryRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::DeleteScheduledQuery, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteScheduledQuery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteScheduledQueryRequestT = Model::DeleteScheduledQueryRequest>
+  void DeleteScheduledQueryAsync(const DeleteScheduledQueryRequestT& request, const DeleteScheduledQueryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::DeleteScheduledQuery, request, handler, context);
   }
 
   /**
@@ -2019,6 +2075,63 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns detailed information about a specified scheduled query, including its
+   * configuration, current state, and execution history.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetScheduledQueryOutcome GetScheduledQuery(const Model::GetScheduledQueryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetScheduledQuery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetScheduledQueryRequestT = Model::GetScheduledQueryRequest>
+  Model::GetScheduledQueryOutcomeCallable GetScheduledQueryCallable(const GetScheduledQueryRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::GetScheduledQuery, request);
+  }
+
+  /**
+   * An Async wrapper for GetScheduledQuery that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetScheduledQueryRequestT = Model::GetScheduledQueryRequest>
+  void GetScheduledQueryAsync(const GetScheduledQueryRequestT& request, const GetScheduledQueryResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::GetScheduledQuery, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the execution history of a scheduled query within a specified time
+   * range, including execution status and destination processing
+   * metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetScheduledQueryHistoryOutcome GetScheduledQueryHistory(const Model::GetScheduledQueryHistoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetScheduledQueryHistory that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetScheduledQueryHistoryRequestT = Model::GetScheduledQueryHistoryRequest>
+  Model::GetScheduledQueryHistoryOutcomeCallable GetScheduledQueryHistoryCallable(const GetScheduledQueryHistoryRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::GetScheduledQueryHistory, request);
+  }
+
+  /**
+   * An Async wrapper for GetScheduledQueryHistory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetScheduledQueryHistoryRequestT = Model::GetScheduledQueryHistoryRequest>
+  void GetScheduledQueryHistoryAsync(const GetScheduledQueryHistoryRequestT& request,
+                                     const GetScheduledQueryHistoryResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::GetScheduledQueryHistory, request, handler, context);
+  }
+
+  /**
    * <p>Returns the information about the log transformer associated with this log
    * group.</p> <p>This operation returns data only for transformers created at the
    * log group level. To get information for an account-level transformer, use <a
@@ -2203,6 +2316,34 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Lists all scheduled queries in the current AWS account and region with
+   * optional filtering by state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScheduledQueriesOutcome ListScheduledQueries(const Model::ListScheduledQueriesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScheduledQueries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListScheduledQueriesRequestT = Model::ListScheduledQueriesRequest>
+  Model::ListScheduledQueriesOutcomeCallable ListScheduledQueriesCallable(const ListScheduledQueriesRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchLogsClient::ListScheduledQueries, request);
+  }
+
+  /**
+   * An Async wrapper for ListScheduledQueries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListScheduledQueriesRequestT = Model::ListScheduledQueriesRequest>
+  void ListScheduledQueriesAsync(const ListScheduledQueriesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListScheduledQueriesRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchLogsClient::ListScheduledQueries, request, handler, context);
+  }
+
+  /**
    * <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log
    * groups and destinations support tagging.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource">AWS
@@ -2335,12 +2476,13 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * <code>my-logging</code>.</p> <p>CloudWatch Logs provides default field indexes
    * for all log groups in the Standard log class. Default field indexes are
    * automatically available for the following fields: </p> <ul> <li> <p>
-   * <code>@aws.region</code> </p> </li> <li> <p> <code>@aws.account</code> </p>
-   * </li> <li> <p> <code>@source.log</code> </p> </li> <li> <p> <code>traceId</code>
-   * </p> </li> </ul> <p>Default field indexes are in addition to any custom field
-   * indexes you define within your policy. Default field indexes are not counted
-   * towards your field index quota. </p> <p>You can also set up a transformer at the
-   * log-group level. For more information, see <a
+   * <code>@logStream</code> </p> </li> <li> <p> <code>@aws.region</code> </p> </li>
+   * <li> <p> <code>@aws.account</code> </p> </li> <li> <p> <code>@source.log</code>
+   * </p> </li> <li> <p> <code>traceId</code> </p> </li> </ul> <p>Default field
+   * indexes are in addition to any custom field indexes you define within your
+   * policy. Default field indexes are not counted towards your field index quota.
+   * </p> <p>You can also set up a transformer at the log-group level. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
    * If there is both a log-group level transformer created with
    * <code>PutTransformer</code> and an account-level transformer that could apply to
@@ -2764,18 +2906,19 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * costs, and have improved performance.</p> <p>CloudWatch Logs provides default
    * field indexes for all log groups in the Standard log class. Default field
    * indexes are automatically available for the following fields: </p> <ul> <li> <p>
-   * <code>@aws.region</code> </p> </li> <li> <p> <code>@aws.account</code> </p>
-   * </li> <li> <p> <code>@source.log</code> </p> </li> <li> <p> <code>traceId</code>
-   * </p> </li> </ul> <p>Default field indexes are in addition to any custom field
-   * indexes you define within your policy. Default field indexes are not counted
-   * towards your field index quota. </p> <p>Each index policy has the following
-   * quotas and restrictions:</p> <ul> <li> <p>As many as 20 fields can be included
-   * in the policy.</p> </li> <li> <p>Each field name can include as many as 100
-   * characters.</p> </li> </ul> <p>Matches of log events to the names of indexed
-   * fields are case-sensitive. For example, a field index of <code>RequestId</code>
-   * won't match a log event containing <code>requestId</code>.</p> <p>Log
-   * group-level field index policies created with <code>PutIndexPolicy</code>
-   * override account-level field index policies created with <a
+   * <code>@logStream</code> </p> </li> <li> <p> <code>@aws.region</code> </p> </li>
+   * <li> <p> <code>@aws.account</code> </p> </li> <li> <p> <code>@source.log</code>
+   * </p> </li> <li> <p> <code>traceId</code> </p> </li> </ul> <p>Default field
+   * indexes are in addition to any custom field indexes you define within your
+   * policy. Default field indexes are not counted towards your field index quota.
+   * </p> <p>Each index policy has the following quotas and restrictions:</p> <ul>
+   * <li> <p>As many as 20 fields can be included in the policy.</p> </li> <li>
+   * <p>Each field name can include as many as 100 characters.</p> </li> </ul>
+   * <p>Matches of log events to the names of indexed fields are case-sensitive. For
+   * example, a field index of <code>RequestId</code> won't match a log event
+   * containing <code>requestId</code>.</p> <p>Log group-level field index policies
+   * created with <code>PutIndexPolicy</code> override account-level field index
+   * policies created with <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
    * If you use <code>PutIndexPolicy</code> to create a field index policy for a log
    * group, that log group uses only that policy. The log group ignores any
@@ -2983,9 +3126,18 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Creates or updates a resource policy allowing other Amazon Web Services
-   * services to put log events to this account, such as Amazon Route 53. An account
-   * can have up to 10 resource policies per Amazon Web Services
-   * Region.</p><p><h3>See Also:</h3>   <a
+   * services to put log events to this account, such as Amazon Route 53. This API
+   * has the following restrictions:</p> <ul> <li> <p> <b>Supported actions</b> -
+   * Policy only supports <code>logs:PutLogEvents</code> and
+   * <code>logs:CreateLogStream </code> actions</p> </li> <li> <p> <b>Supported
+   * principals</b> - Policy only applies when operations are invoked by Amazon Web
+   * Services service principals (not IAM users, roles, or cross-account
+   * principals</p> </li> <li> <p> <b>Policy limits</b> - An account can have a
+   * maximum of 10 policies without resourceARN and one per LogGroup resourceARN</p>
+   * </li> </ul>  <p>Resource policies with actions invoked by non-Amazon
+   * Web Services service principals (such as IAM users, roles, or other Amazon Web
+   * Services accounts) will not be enforced. For access control involving these
+   * principals, use the IAM policies.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -3523,6 +3675,34 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
                                      const UpdateLogAnomalyDetectorResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::UpdateLogAnomalyDetector, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing scheduled query. This operation
+   * follows PUT semantics, replacing the existing configuration with the provided
+   * values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateScheduledQueryOutcome UpdateScheduledQuery(const Model::UpdateScheduledQueryRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateScheduledQuery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateScheduledQueryRequestT = Model::UpdateScheduledQueryRequest>
+  Model::UpdateScheduledQueryOutcomeCallable UpdateScheduledQueryCallable(const UpdateScheduledQueryRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::UpdateScheduledQuery, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateScheduledQuery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateScheduledQueryRequestT = Model::UpdateScheduledQueryRequest>
+  void UpdateScheduledQueryAsync(const UpdateScheduledQueryRequestT& request, const UpdateScheduledQueryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::UpdateScheduledQuery, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

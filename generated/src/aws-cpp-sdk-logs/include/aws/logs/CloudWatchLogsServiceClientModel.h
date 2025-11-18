@@ -23,10 +23,12 @@
 #include <aws/logs/model/CreateDeliveryResult.h>
 #include <aws/logs/model/CreateExportTaskResult.h>
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
+#include <aws/logs/model/CreateScheduledQueryResult.h>
 #include <aws/logs/model/DeleteIndexPolicyResult.h>
 #include <aws/logs/model/DeleteIntegrationResult.h>
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
 #include <aws/logs/model/DeleteResourcePolicyRequest.h>
+#include <aws/logs/model/DeleteScheduledQueryResult.h>
 #include <aws/logs/model/DescribeAccountPoliciesResult.h>
 #include <aws/logs/model/DescribeConfigurationTemplatesRequest.h>
 #include <aws/logs/model/DescribeConfigurationTemplatesResult.h>
@@ -70,6 +72,8 @@
 #include <aws/logs/model/GetLogGroupFieldsResult.h>
 #include <aws/logs/model/GetLogRecordResult.h>
 #include <aws/logs/model/GetQueryResultsResult.h>
+#include <aws/logs/model/GetScheduledQueryHistoryResult.h>
+#include <aws/logs/model/GetScheduledQueryResult.h>
 #include <aws/logs/model/GetTransformerResult.h>
 #include <aws/logs/model/ListAnomaliesRequest.h>
 #include <aws/logs/model/ListAnomaliesResult.h>
@@ -80,6 +84,8 @@
 #include <aws/logs/model/ListLogGroupsForQueryResult.h>
 #include <aws/logs/model/ListLogGroupsRequest.h>
 #include <aws/logs/model/ListLogGroupsResult.h>
+#include <aws/logs/model/ListScheduledQueriesRequest.h>
+#include <aws/logs/model/ListScheduledQueriesResult.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/PutAccountPolicyResult.h>
 #include <aws/logs/model/PutDataProtectionPolicyResult.h>
@@ -98,6 +104,7 @@
 #include <aws/logs/model/TestMetricFilterResult.h>
 #include <aws/logs/model/TestTransformerResult.h>
 #include <aws/logs/model/UpdateDeliveryConfigurationResult.h>
+#include <aws/logs/model/UpdateScheduledQueryResult.h>
 /* End of service model headers required in CloudWatchLogsClient header */
 
 namespace Aws {
@@ -138,6 +145,7 @@ class CreateExportTaskRequest;
 class CreateLogAnomalyDetectorRequest;
 class CreateLogGroupRequest;
 class CreateLogStreamRequest;
+class CreateScheduledQueryRequest;
 class DeleteAccountPolicyRequest;
 class DeleteDataProtectionPolicyRequest;
 class DeleteDeliveryRequest;
@@ -154,6 +162,7 @@ class DeleteMetricFilterRequest;
 class DeleteQueryDefinitionRequest;
 class DeleteResourcePolicyRequest;
 class DeleteRetentionPolicyRequest;
+class DeleteScheduledQueryRequest;
 class DeleteSubscriptionFilterRequest;
 class DeleteTransformerRequest;
 class DescribeAccountPoliciesRequest;
@@ -186,12 +195,15 @@ class GetLogGroupFieldsRequest;
 class GetLogObjectRequest;
 class GetLogRecordRequest;
 class GetQueryResultsRequest;
+class GetScheduledQueryRequest;
+class GetScheduledQueryHistoryRequest;
 class GetTransformerRequest;
 class ListAnomaliesRequest;
 class ListIntegrationsRequest;
 class ListLogAnomalyDetectorsRequest;
 class ListLogGroupsRequest;
 class ListLogGroupsForQueryRequest;
+class ListScheduledQueriesRequest;
 class ListTagsForResourceRequest;
 class PutAccountPolicyRequest;
 class PutDataProtectionPolicyRequest;
@@ -219,6 +231,7 @@ class UntagResourceRequest;
 class UpdateAnomalyRequest;
 class UpdateDeliveryConfigurationRequest;
 class UpdateLogAnomalyDetectorRequest;
+class UpdateScheduledQueryRequest;
 /* End of service model forward declarations required in CloudWatchLogsClient header */
 
 /* Service model Outcome class definitions */
@@ -229,6 +242,7 @@ typedef Aws::Utils::Outcome<CreateExportTaskResult, CloudWatchLogsError> CreateE
 typedef Aws::Utils::Outcome<CreateLogAnomalyDetectorResult, CloudWatchLogsError> CreateLogAnomalyDetectorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogStreamOutcome;
+typedef Aws::Utils::Outcome<CreateScheduledQueryResult, CloudWatchLogsError> CreateScheduledQueryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteAccountPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDataProtectionPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDeliveryOutcome;
@@ -245,6 +259,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteMetricFilt
 typedef Aws::Utils::Outcome<DeleteQueryDefinitionResult, CloudWatchLogsError> DeleteQueryDefinitionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteRetentionPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteScheduledQueryResult, CloudWatchLogsError> DeleteScheduledQueryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSubscriptionFilterOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteTransformerOutcome;
 typedef Aws::Utils::Outcome<DescribeAccountPoliciesResult, CloudWatchLogsError> DescribeAccountPoliciesOutcome;
@@ -277,12 +292,15 @@ typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, CloudWatchLogsError> GetLog
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> GetLogObjectOutcome;
 typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
 typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQueryResultsOutcome;
+typedef Aws::Utils::Outcome<GetScheduledQueryResult, CloudWatchLogsError> GetScheduledQueryOutcome;
+typedef Aws::Utils::Outcome<GetScheduledQueryHistoryResult, CloudWatchLogsError> GetScheduledQueryHistoryOutcome;
 typedef Aws::Utils::Outcome<GetTransformerResult, CloudWatchLogsError> GetTransformerOutcome;
 typedef Aws::Utils::Outcome<ListAnomaliesResult, CloudWatchLogsError> ListAnomaliesOutcome;
 typedef Aws::Utils::Outcome<ListIntegrationsResult, CloudWatchLogsError> ListIntegrationsOutcome;
 typedef Aws::Utils::Outcome<ListLogAnomalyDetectorsResult, CloudWatchLogsError> ListLogAnomalyDetectorsOutcome;
 typedef Aws::Utils::Outcome<ListLogGroupsResult, CloudWatchLogsError> ListLogGroupsOutcome;
 typedef Aws::Utils::Outcome<ListLogGroupsForQueryResult, CloudWatchLogsError> ListLogGroupsForQueryOutcome;
+typedef Aws::Utils::Outcome<ListScheduledQueriesResult, CloudWatchLogsError> ListScheduledQueriesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
 typedef Aws::Utils::Outcome<PutDataProtectionPolicyResult, CloudWatchLogsError> PutDataProtectionPolicyOutcome;
@@ -310,6 +328,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UntagResourceOut
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UpdateAnomalyOutcome;
 typedef Aws::Utils::Outcome<UpdateDeliveryConfigurationResult, CloudWatchLogsError> UpdateDeliveryConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UpdateLogAnomalyDetectorOutcome;
+typedef Aws::Utils::Outcome<UpdateScheduledQueryResult, CloudWatchLogsError> UpdateScheduledQueryOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -320,6 +339,7 @@ typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
 typedef std::future<CreateLogAnomalyDetectorOutcome> CreateLogAnomalyDetectorOutcomeCallable;
 typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
 typedef std::future<CreateLogStreamOutcome> CreateLogStreamOutcomeCallable;
+typedef std::future<CreateScheduledQueryOutcome> CreateScheduledQueryOutcomeCallable;
 typedef std::future<DeleteAccountPolicyOutcome> DeleteAccountPolicyOutcomeCallable;
 typedef std::future<DeleteDataProtectionPolicyOutcome> DeleteDataProtectionPolicyOutcomeCallable;
 typedef std::future<DeleteDeliveryOutcome> DeleteDeliveryOutcomeCallable;
@@ -336,6 +356,7 @@ typedef std::future<DeleteMetricFilterOutcome> DeleteMetricFilterOutcomeCallable
 typedef std::future<DeleteQueryDefinitionOutcome> DeleteQueryDefinitionOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
+typedef std::future<DeleteScheduledQueryOutcome> DeleteScheduledQueryOutcomeCallable;
 typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
 typedef std::future<DeleteTransformerOutcome> DeleteTransformerOutcomeCallable;
 typedef std::future<DescribeAccountPoliciesOutcome> DescribeAccountPoliciesOutcomeCallable;
@@ -368,12 +389,15 @@ typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
 typedef std::future<GetLogObjectOutcome> GetLogObjectOutcomeCallable;
 typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
 typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
+typedef std::future<GetScheduledQueryOutcome> GetScheduledQueryOutcomeCallable;
+typedef std::future<GetScheduledQueryHistoryOutcome> GetScheduledQueryHistoryOutcomeCallable;
 typedef std::future<GetTransformerOutcome> GetTransformerOutcomeCallable;
 typedef std::future<ListAnomaliesOutcome> ListAnomaliesOutcomeCallable;
 typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
 typedef std::future<ListLogAnomalyDetectorsOutcome> ListLogAnomalyDetectorsOutcomeCallable;
 typedef std::future<ListLogGroupsOutcome> ListLogGroupsOutcomeCallable;
 typedef std::future<ListLogGroupsForQueryOutcome> ListLogGroupsForQueryOutcomeCallable;
+typedef std::future<ListScheduledQueriesOutcome> ListScheduledQueriesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
 typedef std::future<PutDataProtectionPolicyOutcome> PutDataProtectionPolicyOutcomeCallable;
@@ -401,6 +425,7 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAnomalyOutcome> UpdateAnomalyOutcomeCallable;
 typedef std::future<UpdateDeliveryConfigurationOutcome> UpdateDeliveryConfigurationOutcomeCallable;
 typedef std::future<UpdateLogAnomalyDetectorOutcome> UpdateLogAnomalyDetectorOutcomeCallable;
+typedef std::future<UpdateScheduledQueryOutcome> UpdateScheduledQueryOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -428,6 +453,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogGr
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLogStreamResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateScheduledQueryRequest&,
+                           const Model::CreateScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateScheduledQueryResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteAccountPolicyRequest&, const Model::DeleteAccountPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAccountPolicyResponseReceivedHandler;
@@ -477,6 +505,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteResou
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&,
                            const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRetentionPolicyResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteScheduledQueryRequest&,
+                           const Model::DeleteScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteScheduledQueryResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&,
                            const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSubscriptionFilterResponseReceivedHandler;
@@ -576,6 +607,12 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecor
 typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQueryResultsResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::GetScheduledQueryRequest&, const Model::GetScheduledQueryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetScheduledQueryResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::GetScheduledQueryHistoryRequest&,
+                           const Model::GetScheduledQueryHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetScheduledQueryHistoryResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::GetTransformerRequest&, const Model::GetTransformerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTransformerResponseReceivedHandler;
@@ -594,6 +631,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogGrou
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListLogGroupsForQueryRequest&,
                            const Model::ListLogGroupsForQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLogGroupsForQueryResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::ListScheduledQueriesRequest&,
+                           const Model::ListScheduledQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListScheduledQueriesResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -676,6 +716,9 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateDeliv
 typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateLogAnomalyDetectorRequest&,
                            const Model::UpdateLogAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLogAnomalyDetectorResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateScheduledQueryRequest&,
+                           const Model::UpdateScheduledQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateScheduledQueryResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace CloudWatchLogs
 }  // namespace Aws

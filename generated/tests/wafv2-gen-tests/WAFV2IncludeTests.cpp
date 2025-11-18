@@ -93,6 +93,7 @@
 #include <aws/wafv2/model/DescribeManagedProductsByVendorResult.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupRequest.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupResult.h>
+#include <aws/wafv2/model/DisallowedFeature.h>
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
 #include <aws/wafv2/model/EmailField.h>
@@ -291,6 +292,7 @@
 #include <aws/wafv2/model/UsernameField.h>
 #include <aws/wafv2/model/VersionToPublish.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/wafv2/model/WAFFeatureNotIncludedInPricingPlanException.h>
 #include <aws/wafv2/model/WAFInvalidParameterException.h>
 #include <aws/wafv2/model/WAFLimitsExceededException.h>
 #include <aws/wafv2/model/WebACL.h>

@@ -45,6 +45,24 @@ class RollbackStackResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A unique identifier for this rollback operation that can be used to track the
+   * operation's progress and events.</p>
+   */
+  inline const Aws::String& GetOperationId() const { return m_operationId; }
+  template <typename OperationIdT = Aws::String>
+  void SetOperationId(OperationIdT&& value) {
+    m_operationIdHasBeenSet = true;
+    m_operationId = std::forward<OperationIdT>(value);
+  }
+  template <typename OperationIdT = Aws::String>
+  RollbackStackResult& WithOperationId(OperationIdT&& value) {
+    SetOperationId(std::forward<OperationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -61,6 +79,9 @@ class RollbackStackResult {
  private:
   Aws::String m_stackId;
   bool m_stackIdHasBeenSet = false;
+
+  Aws::String m_operationId;
+  bool m_operationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
   bool m_responseMetadataHasBeenSet = false;

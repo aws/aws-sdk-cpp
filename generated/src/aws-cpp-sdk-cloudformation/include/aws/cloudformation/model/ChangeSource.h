@@ -10,7 +10,15 @@
 namespace Aws {
 namespace CloudFormation {
 namespace Model {
-enum class ChangeSource { NOT_SET, ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic };
+enum class ChangeSource {
+  NOT_SET,
+  ResourceReference,
+  ParameterReference,
+  ResourceAttribute,
+  DirectModification,
+  Automatic,
+  NoModification
+};
 
 namespace ChangeSourceMapper {
 AWS_CLOUDFORMATION_API ChangeSource GetChangeSourceForName(const Aws::String& name);

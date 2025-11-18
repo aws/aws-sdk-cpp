@@ -25,6 +25,7 @@ static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashStr
 static const int IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH = HashingUtils::HashString("IrreversibleInstanceRefresh");
 static const int ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ActiveInstanceRefreshNotFound");
 static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
+static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatch");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -53,6 +54,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE_FAULT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

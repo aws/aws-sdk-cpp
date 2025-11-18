@@ -8,6 +8,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/ChangeSetType.h>
+#include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/OnStackFailure.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/ResourceToImport.h>
@@ -560,6 +561,28 @@ class CreateChangeSetRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Determines how CloudFormation handles configuration drift during
+   * deployment.</p> <ul> <li> <p> <code>REVERT_DRIFT</code> – Creates a drift-aware
+   * change set that brings actual resource states in line with template definitions.
+   * Provides a three-way comparison between actual state, previous deployment state,
+   * and desired state.</p> </li> </ul> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using
+   * drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+   */
+  inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
+  inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
+  inline void SetDeploymentMode(DeploymentMode value) {
+    m_deploymentModeHasBeenSet = true;
+    m_deploymentMode = value;
+  }
+  inline CreateChangeSetRequest& WithDeploymentMode(DeploymentMode value) {
+    SetDeploymentMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackName;
   bool m_stackNameHasBeenSet = false;
@@ -617,6 +640,9 @@ class CreateChangeSetRequest : public CloudFormationRequest {
 
   bool m_importExistingResources{false};
   bool m_importExistingResourcesHasBeenSet = false;
+
+  DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+  bool m_deploymentModeHasBeenSet = false;
 };
 
 }  // namespace Model

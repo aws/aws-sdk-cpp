@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
+#include <aws/cloudformation/model/OperationEntry.h>
 #include <aws/cloudformation/model/StackDriftInformationSummary.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -245,6 +247,30 @@ class StackSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the most recent operations performed on this stack.</p>
+   */
+  inline const Aws::Vector<OperationEntry>& GetLastOperations() const { return m_lastOperations; }
+  inline bool LastOperationsHasBeenSet() const { return m_lastOperationsHasBeenSet; }
+  template <typename LastOperationsT = Aws::Vector<OperationEntry>>
+  void SetLastOperations(LastOperationsT&& value) {
+    m_lastOperationsHasBeenSet = true;
+    m_lastOperations = std::forward<LastOperationsT>(value);
+  }
+  template <typename LastOperationsT = Aws::Vector<OperationEntry>>
+  StackSummary& WithLastOperations(LastOperationsT&& value) {
+    SetLastOperations(std::forward<LastOperationsT>(value));
+    return *this;
+  }
+  template <typename LastOperationsT = OperationEntry>
+  StackSummary& AddLastOperations(LastOperationsT&& value) {
+    m_lastOperationsHasBeenSet = true;
+    m_lastOperations.emplace_back(std::forward<LastOperationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackId;
   bool m_stackIdHasBeenSet = false;
@@ -278,6 +304,9 @@ class StackSummary {
 
   StackDriftInformationSummary m_driftInformation;
   bool m_driftInformationHasBeenSet = false;
+
+  Aws::Vector<OperationEntry> m_lastOperations;
+  bool m_lastOperationsHasBeenSet = false;
 };
 
 }  // namespace Model

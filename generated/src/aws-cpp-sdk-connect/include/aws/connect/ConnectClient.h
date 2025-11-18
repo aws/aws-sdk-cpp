@@ -7114,7 +7114,10 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
    * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
    * submit a service quota increase request to the quota <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
-   * Connect campaigns</a>. </p> <p><h3>See Also:</h3>   <a
+   * Connect campaigns</a>. </p>   <p>For Preview dialing mode, only the
+   * Amazon Connect outbound campaigns service principal is allowed to assume a role
+   * in your account and call this API with OutboundStrategy. </p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
    * API Reference</a></p>
    */

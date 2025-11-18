@@ -35,6 +35,12 @@ InvokeModelResult& InvokeModelResult::operator=(Aws::AmazonWebServiceResult<Resp
     m_performanceConfigLatencyHasBeenSet = true;
   }
 
+  const auto& serviceTierIter = headers.find("x-amzn-bedrock-service-tier");
+  if (serviceTierIter != headers.end()) {
+    m_serviceTier = ServiceTierTypeMapper::GetServiceTierTypeForName(serviceTierIter->second);
+    m_serviceTierHasBeenSet = true;
+  }
+
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;

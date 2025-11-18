@@ -18,6 +18,7 @@
 #include <aws/backup/model/CreateRestoreAccessBackupVaultRequest.h>
 #include <aws/backup/model/CreateRestoreTestingPlanRequest.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
+#include <aws/backup/model/CreateTieringConfigurationRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupVaultAccessPolicyRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/backup/model/DeleteReportPlanRequest.h>
 #include <aws/backup/model/DeleteRestoreTestingPlanRequest.h>
 #include <aws/backup/model/DeleteRestoreTestingSelectionRequest.h>
+#include <aws/backup/model/DeleteTieringConfigurationRequest.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
@@ -58,6 +60,7 @@
 #include <aws/backup/model/GetRestoreTestingPlanRequest.h>
 #include <aws/backup/model/GetRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/GetSupportedResourceTypesRequest.h>
+#include <aws/backup/model/GetTieringConfigurationRequest.h>
 #include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>
 #include <aws/backup/model/ListBackupPlanTemplatesRequest.h>
@@ -84,6 +87,7 @@
 #include <aws/backup/model/ListRestoreTestingPlansRequest.h>
 #include <aws/backup/model/ListRestoreTestingSelectionsRequest.h>
 #include <aws/backup/model/ListTagsRequest.h>
+#include <aws/backup/model/ListTieringConfigurationsRequest.h>
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/PutBackupVaultLockConfigurationRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
@@ -105,6 +109,7 @@
 #include <aws/backup/model/UpdateReportPlanRequest.h>
 #include <aws/backup/model/UpdateRestoreTestingPlanRequest.h>
 #include <aws/backup/model/UpdateRestoreTestingSelectionRequest.h>
+#include <aws/backup/model/UpdateTieringConfigurationRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -643,6 +648,36 @@ CreateRestoreTestingSelectionOutcome BackupClient::CreateRestoreTestingSelection
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateTieringConfigurationOutcome BackupClient::CreateTieringConfiguration(const CreateTieringConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(CreateTieringConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateTieringConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateTieringConfigurationOutcome>(
+      [&]() -> CreateTieringConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTieringConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations");
+        return CreateTieringConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const {
   AWS_OPERATION_GUARD(DeleteBackupPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1060,6 +1095,42 @@ DeleteRestoreTestingSelectionOutcome BackupClient::DeleteRestoreTestingSelection
         endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
         return DeleteRestoreTestingSelectionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteTieringConfigurationOutcome BackupClient::DeleteTieringConfiguration(const DeleteTieringConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteTieringConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TieringConfigurationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTieringConfiguration", "Required field: TieringConfigurationName, is not set");
+    return DeleteTieringConfigurationOutcome(Aws::Client::AWSError<BackupErrors>(
+        BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TieringConfigurationName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteTieringConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteTieringConfigurationOutcome>(
+      [&]() -> DeleteTieringConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTieringConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
+        return DeleteTieringConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2157,6 +2228,42 @@ GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes(const G
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetTieringConfigurationOutcome BackupClient::GetTieringConfiguration(const GetTieringConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(GetTieringConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TieringConfigurationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTieringConfiguration", "Required field: TieringConfigurationName, is not set");
+    return GetTieringConfigurationOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [TieringConfigurationName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTieringConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTieringConfigurationOutcome>(
+      [&]() -> GetTieringConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
+        return GetTieringConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListBackupJobSummariesOutcome BackupClient::ListBackupJobSummaries(const ListBackupJobSummariesRequest& request) const {
   AWS_OPERATION_GUARD(ListBackupJobSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3011,6 +3118,36 @@ ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const {
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListTieringConfigurationsOutcome BackupClient::ListTieringConfigurations(const ListTieringConfigurationsRequest& request) const {
+  AWS_OPERATION_GUARD(ListTieringConfigurations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTieringConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTieringConfigurations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListTieringConfigurations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTieringConfigurations",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListTieringConfigurationsOutcome>(
+      [&]() -> ListTieringConfigurationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTieringConfigurations, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations/");
+        return ListTieringConfigurationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const PutBackupVaultAccessPolicyRequest& request) const {
   AWS_OPERATION_GUARD(PutBackupVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBackupVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3767,6 +3904,42 @@ UpdateRestoreTestingSelectionOutcome BackupClient::UpdateRestoreTestingSelection
         endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
         return UpdateRestoreTestingSelectionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateTieringConfigurationOutcome BackupClient::UpdateTieringConfiguration(const UpdateTieringConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateTieringConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TieringConfigurationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateTieringConfiguration", "Required field: TieringConfigurationName, is not set");
+    return UpdateTieringConfigurationOutcome(Aws::Client::AWSError<BackupErrors>(
+        BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TieringConfigurationName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateTieringConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateTieringConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateTieringConfigurationOutcome>(
+      [&]() -> UpdateTieringConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTieringConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tiering-configurations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTieringConfigurationName());
+        return UpdateTieringConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

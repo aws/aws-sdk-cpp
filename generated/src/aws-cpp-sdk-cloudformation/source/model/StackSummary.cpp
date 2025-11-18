@@ -82,6 +82,17 @@ StackSummary& StackSummary::operator=(const XmlNode& xmlNode) {
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
     }
+    XmlNode lastOperationsNode = resultNode.FirstChild("LastOperations");
+    if (!lastOperationsNode.IsNull()) {
+      XmlNode lastOperationsMember = lastOperationsNode.FirstChild("member");
+      m_lastOperationsHasBeenSet = !lastOperationsMember.IsNull();
+      while (!lastOperationsMember.IsNull()) {
+        m_lastOperations.push_back(lastOperationsMember);
+        lastOperationsMember = lastOperationsMember.NextNode("member");
+      }
+
+      m_lastOperationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -139,6 +150,15 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location, u
     driftInformationLocationAndMemberSs << location << index << locationValue << ".DriftInformation";
     m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
   }
+
+  if (m_lastOperationsHasBeenSet) {
+    unsigned lastOperationsIdx = 1;
+    for (auto& item : m_lastOperations) {
+      Aws::StringStream lastOperationsSs;
+      lastOperationsSs << location << index << locationValue << ".LastOperations.member." << lastOperationsIdx++;
+      item.OutputToStream(oStream, lastOperationsSs.str().c_str());
+    }
+  }
 }
 
 void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -180,6 +200,14 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) c
     Aws::String driftInformationLocationAndMember(location);
     driftInformationLocationAndMember += ".DriftInformation";
     m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
+  }
+  if (m_lastOperationsHasBeenSet) {
+    unsigned lastOperationsIdx = 1;
+    for (auto& item : m_lastOperations) {
+      Aws::StringStream lastOperationsSs;
+      lastOperationsSs << location << ".LastOperations.member." << lastOperationsIdx++;
+      item.OutputToStream(oStream, lastOperationsSs.str().c_str());
+    }
   }
 }
 
