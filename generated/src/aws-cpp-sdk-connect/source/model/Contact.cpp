@@ -82,6 +82,10 @@ Contact& Contact::operator=(JsonView jsonValue) {
     m_lastResumedTimestamp = jsonValue.GetDouble("LastResumedTimestamp");
     m_lastResumedTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RingStartTimestamp")) {
+    m_ringStartTimestamp = jsonValue.GetDouble("RingStartTimestamp");
+    m_ringStartTimestampHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TotalPauseCount")) {
     m_totalPauseCount = jsonValue.GetInteger("TotalPauseCount");
     m_totalPauseCountHasBeenSet = true;
@@ -282,6 +286,10 @@ JsonValue Contact::Jsonize() const {
 
   if (m_lastResumedTimestampHasBeenSet) {
     payload.WithDouble("LastResumedTimestamp", m_lastResumedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_ringStartTimestampHasBeenSet) {
+    payload.WithDouble("RingStartTimestamp", m_ringStartTimestamp.SecondsWithMSPrecision());
   }
 
   if (m_totalPauseCountHasBeenSet) {

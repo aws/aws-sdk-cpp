@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
+#include <aws/bedrock-runtime/model/ServiceTierType.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -62,12 +63,31 @@ class InvokeModelWithResponseStreamInitialResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the processing tier type used for serving the request.</p>
+   */
+  inline ServiceTierType GetServiceTier() const { return m_serviceTier; }
+  inline bool ServiceTierHasBeenSet() const { return m_serviceTierHasBeenSet; }
+  inline void SetServiceTier(ServiceTierType value) {
+    m_serviceTierHasBeenSet = true;
+    m_serviceTier = value;
+  }
+  inline InvokeModelWithResponseStreamInitialResponse& WithServiceTier(ServiceTierType value) {
+    SetServiceTier(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contentType;
   bool m_contentTypeHasBeenSet = false;
 
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
   bool m_performanceConfigLatencyHasBeenSet = false;
+
+  ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+  bool m_serviceTierHasBeenSet = false;
 };
 
 }  // namespace Model

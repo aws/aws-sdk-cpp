@@ -165,8 +165,8 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
    * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
    * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
-   * <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> |
-   * <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
+   * <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> |
+   * <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
    * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> |
    * <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> |
    * <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> |
@@ -242,10 +242,11 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>contact/segmentAttributes/connect:Subtype</code> |
    * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
    * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
-   * <code>EVALUATION_SOURCE</code> | <code>FLOWS_RESOURCE_ID</code> |
-   * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> |
-   * <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> |
-   * <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> |
+   * <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> |
+   * <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> |
+   * <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
+   * <code>FLOWS_OUTCOME_TYPE</code> | <code>FORM_VERSION</code> |
+   * <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
    * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
    * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
@@ -343,7 +344,11 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time">Average
    * after contact work time</a> </p>  <p>Feature is a valid filter but not a
-   * valid grouping.</p>  </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd>
+   * valid grouping.</p>  </dd> <dt>AVG_AGENT_CONCURRENCY</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
+   * Agent, Agent Hierarchy, Q in Connect</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-concurrency">Average
+   * agent concurrency</a> </p> </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd>
    * <p>Unit: Seconds</p> <p>Valid metric filter key: <code>INITIATION_METHOD</code>.
    * For now, this metric only supports the following as
    * <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> |

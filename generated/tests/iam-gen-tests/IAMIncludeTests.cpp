@@ -14,6 +14,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/IAMServiceClientModel.h>
 #include <aws/iam/IAM_EXPORTS.h>
+#include <aws/iam/model/AcceptDelegationRequestRequest.h>
 #include <aws/iam/model/AccessAdvisorUsageGranularityType.h>
 #include <aws/iam/model/AccessDetail.h>
 #include <aws/iam/model/AccessKey.h>
@@ -24,6 +25,7 @@
 #include <aws/iam/model/AddUserToGroupRequest.h>
 #include <aws/iam/model/AssertionEncryptionModeType.h>
 #include <aws/iam/model/AssignmentStatusType.h>
+#include <aws/iam/model/AssociateDelegationRequestRequest.h>
 #include <aws/iam/model/AttachGroupPolicyRequest.h>
 #include <aws/iam/model/AttachRolePolicyRequest.h>
 #include <aws/iam/model/AttachUserPolicyRequest.h>
@@ -63,6 +65,7 @@
 #include <aws/iam/model/CreateVirtualMFADeviceResult.h>
 #include <aws/iam/model/DeactivateMFADeviceRequest.h>
 #include <aws/iam/model/DelegationPermission.h>
+#include <aws/iam/model/DelegationRequest.h>
 #include <aws/iam/model/DeleteAccessKeyRequest.h>
 #include <aws/iam/model/DeleteAccountAliasRequest.h>
 #include <aws/iam/model/DeleteAccountPasswordPolicyRequest.h>
@@ -128,10 +131,14 @@
 #include <aws/iam/model/GetContextKeysForPrincipalPolicyResult.h>
 #include <aws/iam/model/GetCredentialReportRequest.h>
 #include <aws/iam/model/GetCredentialReportResult.h>
+#include <aws/iam/model/GetDelegationRequestRequest.h>
+#include <aws/iam/model/GetDelegationRequestResult.h>
 #include <aws/iam/model/GetGroupPolicyRequest.h>
 #include <aws/iam/model/GetGroupPolicyResult.h>
 #include <aws/iam/model/GetGroupRequest.h>
 #include <aws/iam/model/GetGroupResult.h>
+#include <aws/iam/model/GetHumanReadableSummaryRequest.h>
+#include <aws/iam/model/GetHumanReadableSummaryResult.h>
 #include <aws/iam/model/GetInstanceProfileRequest.h>
 #include <aws/iam/model/GetInstanceProfileResult.h>
 #include <aws/iam/model/GetLoginProfileRequest.h>
@@ -181,6 +188,8 @@
 #include <aws/iam/model/ListAttachedRolePoliciesResult.h>
 #include <aws/iam/model/ListAttachedUserPoliciesRequest.h>
 #include <aws/iam/model/ListAttachedUserPoliciesResult.h>
+#include <aws/iam/model/ListDelegationRequestsRequest.h>
+#include <aws/iam/model/ListDelegationRequestsResult.h>
 #include <aws/iam/model/ListEntitiesForPolicyRequest.h>
 #include <aws/iam/model/ListEntitiesForPolicyResult.h>
 #include <aws/iam/model/ListGroupPoliciesRequest.h>
@@ -248,6 +257,8 @@
 #include <aws/iam/model/OpenIDConnectProviderListEntry.h>
 #include <aws/iam/model/OrganizationsDecisionDetail.h>
 #include <aws/iam/model/PasswordPolicy.h>
+#include <aws/iam/model/PermissionCheckResultType.h>
+#include <aws/iam/model/PermissionCheckStatusType.h>
 #include <aws/iam/model/PermissionsBoundaryAttachmentType.h>
 #include <aws/iam/model/PermissionsBoundaryDecisionDetail.h>
 #include <aws/iam/model/Policy.h>
@@ -271,6 +282,7 @@
 #include <aws/iam/model/PutRolePolicyRequest.h>
 #include <aws/iam/model/PutUserPermissionsBoundaryRequest.h>
 #include <aws/iam/model/PutUserPolicyRequest.h>
+#include <aws/iam/model/RejectDelegationRequestRequest.h>
 #include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/RemoveRoleFromInstanceProfileRequest.h>
 #include <aws/iam/model/RemoveUserFromGroupRequest.h>
@@ -289,6 +301,7 @@
 #include <aws/iam/model/SAMLProviderListEntry.h>
 #include <aws/iam/model/SSHPublicKey.h>
 #include <aws/iam/model/SSHPublicKeyMetadata.h>
+#include <aws/iam/model/SendDelegationTokenRequest.h>
 #include <aws/iam/model/ServerCertificate.h>
 #include <aws/iam/model/ServerCertificateMetadata.h>
 #include <aws/iam/model/ServiceLastAccessed.h>
@@ -302,9 +315,11 @@
 #include <aws/iam/model/SimulatePrincipalPolicyRequest.h>
 #include <aws/iam/model/SimulatePrincipalPolicyResult.h>
 #include <aws/iam/model/SortKeyType.h>
+#include <aws/iam/model/StateType.h>
 #include <aws/iam/model/Statement.h>
 #include <aws/iam/model/StatusType.h>
 #include <aws/iam/model/SummaryKeyType.h>
+#include <aws/iam/model/SummaryStateType.h>
 #include <aws/iam/model/Tag.h>
 #include <aws/iam/model/TagInstanceProfileRequest.h>
 #include <aws/iam/model/TagMFADeviceRequest.h>
@@ -326,6 +341,7 @@
 #include <aws/iam/model/UpdateAccessKeyRequest.h>
 #include <aws/iam/model/UpdateAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/UpdateAssumeRolePolicyRequest.h>
+#include <aws/iam/model/UpdateDelegationRequestRequest.h>
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>

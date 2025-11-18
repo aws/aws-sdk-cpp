@@ -67,7 +67,7 @@ class GetServiceLastAccessedDetailsResult {
 
   ///@{
   /**
-   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
    * date-time format</a>, when the report job was created.</p>
    */
   inline const Aws::Utils::DateTime& GetJobCreationDate() const { return m_jobCreationDate; }
@@ -85,7 +85,7 @@ class GetServiceLastAccessedDetailsResult {
 
   ///@{
   /**
-   * <p> A <code>ServiceLastAccessed</code> object that contains details about the
+   * <p> A <code>ServiceLastAccessed</code> object that contains details about the
    * most recent attempt to access the service.</p>
    */
   inline const Aws::Vector<ServiceLastAccessed>& GetServicesLastAccessed() const { return m_servicesLastAccessed; }
@@ -109,7 +109,7 @@ class GetServiceLastAccessedDetailsResult {
 
   ///@{
   /**
-   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+   * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
    * date-time format</a>, when the generated report job was completed or failed.</p>
    * <p>This field is null if the job is still in progress, as indicated by a job
    * status value of <code>IN_PROGRESS</code>.</p>

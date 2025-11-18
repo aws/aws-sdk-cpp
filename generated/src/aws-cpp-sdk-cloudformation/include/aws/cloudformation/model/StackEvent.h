@@ -95,6 +95,24 @@ class StackEvent {
 
   ///@{
   /**
+   * <p>The unique identifier of the operation that generated this stack event.</p>
+   */
+  inline const Aws::String& GetOperationId() const { return m_operationId; }
+  inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
+  template <typename OperationIdT = Aws::String>
+  void SetOperationId(OperationIdT&& value) {
+    m_operationIdHasBeenSet = true;
+    m_operationId = std::forward<OperationIdT>(value);
+  }
+  template <typename OperationIdT = Aws::String>
+  StackEvent& WithOperationId(OperationIdT&& value) {
+    SetOperationId(std::forward<OperationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The logical name of the resource specified in the template.</p>
    */
   inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
@@ -387,6 +405,9 @@ class StackEvent {
 
   Aws::String m_stackName;
   bool m_stackNameHasBeenSet = false;
+
+  Aws::String m_operationId;
+  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
   bool m_logicalResourceIdHasBeenSet = false;

@@ -44,6 +44,8 @@
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetHooksResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
+#include <aws/cloudformation/model/DescribeEventsRequest.h>
+#include <aws/cloudformation/model/DescribeEventsResult.h>
 #include <aws/cloudformation/model/DescribeGeneratedTemplateResult.h>
 #include <aws/cloudformation/model/DescribeOrganizationsAccessRequest.h>
 #include <aws/cloudformation/model/DescribeOrganizationsAccessResult.h>
@@ -189,6 +191,7 @@ class DeregisterTypeRequest;
 class DescribeAccountLimitsRequest;
 class DescribeChangeSetRequest;
 class DescribeChangeSetHooksRequest;
+class DescribeEventsRequest;
 class DescribeGeneratedTemplateRequest;
 class DescribeOrganizationsAccessRequest;
 class DescribePublisherRequest;
@@ -281,6 +284,7 @@ typedef Aws::Utils::Outcome<DeregisterTypeResult, CloudFormationError> Deregiste
 typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, CloudFormationError> DescribeAccountLimitsOutcome;
 typedef Aws::Utils::Outcome<DescribeChangeSetResult, CloudFormationError> DescribeChangeSetOutcome;
 typedef Aws::Utils::Outcome<DescribeChangeSetHooksResult, CloudFormationError> DescribeChangeSetHooksOutcome;
+typedef Aws::Utils::Outcome<DescribeEventsResult, CloudFormationError> DescribeEventsOutcome;
 typedef Aws::Utils::Outcome<DescribeGeneratedTemplateResult, CloudFormationError> DescribeGeneratedTemplateOutcome;
 typedef Aws::Utils::Outcome<DescribeOrganizationsAccessResult, CloudFormationError> DescribeOrganizationsAccessOutcome;
 typedef Aws::Utils::Outcome<DescribePublisherResult, CloudFormationError> DescribePublisherOutcome;
@@ -373,6 +377,7 @@ typedef std::future<DeregisterTypeOutcome> DeregisterTypeOutcomeCallable;
 typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
 typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
 typedef std::future<DescribeChangeSetHooksOutcome> DescribeChangeSetHooksOutcomeCallable;
+typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
 typedef std::future<DescribeGeneratedTemplateOutcome> DescribeGeneratedTemplateOutcomeCallable;
 typedef std::future<DescribeOrganizationsAccessOutcome> DescribeOrganizationsAccessOutcomeCallable;
 typedef std::future<DescribePublisherOutcome> DescribePublisherOutcomeCallable;
@@ -514,6 +519,9 @@ typedef std::function<void(const CloudFormationClient*, const Model::DescribeCha
 typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetHooksRequest&,
                            const Model::DescribeChangeSetHooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeChangeSetHooksResponseReceivedHandler;
+typedef std::function<void(const CloudFormationClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeEventsResponseReceivedHandler;
 typedef std::function<void(const CloudFormationClient*, const Model::DescribeGeneratedTemplateRequest&,
                            const Model::DescribeGeneratedTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeGeneratedTemplateResponseReceivedHandler;

@@ -535,6 +535,8 @@
 #include <aws/ec2/model/CreateVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/CreateVpcRequest.h>
 #include <aws/ec2/model/CreateVpcResponse.h>
+#include <aws/ec2/model/CreateVpnConcentratorRequest.h>
+#include <aws/ec2/model/CreateVpnConcentratorResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionRequest.h>
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionRouteRequest.h>
@@ -713,6 +715,8 @@
 #include <aws/ec2/model/DeleteVpcPeeringConnectionRequest.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DeleteVpcRequest.h>
+#include <aws/ec2/model/DeleteVpnConcentratorRequest.h>
+#include <aws/ec2/model/DeleteVpnConcentratorResponse.h>
 #include <aws/ec2/model/DeleteVpnConnectionRequest.h>
 #include <aws/ec2/model/DeleteVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/DeleteVpnGatewayRequest.h>
@@ -1091,6 +1095,8 @@
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsRequest.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsResponse.h>
 #include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 #include <aws/ec2/model/DescribeVpnConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpnGatewaysRequest.h>
@@ -2664,6 +2670,8 @@
 #include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
 #include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcTenancy.h>
+#include <aws/ec2/model/VpnConcentrator.h>
+#include <aws/ec2/model/VpnConcentratorType.h>
 #include <aws/ec2/model/VpnConnection.h>
 #include <aws/ec2/model/VpnConnectionDeviceType.h>
 #include <aws/ec2/model/VpnConnectionOptions.h>

@@ -20,6 +20,7 @@ static const int ParameterReference_HASH = HashingUtils::HashString("ParameterRe
 static const int ResourceAttribute_HASH = HashingUtils::HashString("ResourceAttribute");
 static const int DirectModification_HASH = HashingUtils::HashString("DirectModification");
 static const int Automatic_HASH = HashingUtils::HashString("Automatic");
+static const int NoModification_HASH = HashingUtils::HashString("NoModification");
 
 ChangeSource GetChangeSourceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ChangeSource GetChangeSourceForName(const Aws::String& name) {
     return ChangeSource::DirectModification;
   } else if (hashCode == Automatic_HASH) {
     return ChangeSource::Automatic;
+  } else if (hashCode == NoModification_HASH) {
+    return ChangeSource::NoModification;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForChangeSource(ChangeSource enumValue) {
       return "DirectModification";
     case ChangeSource::Automatic:
       return "Automatic";
+    case ChangeSource::NoModification:
+      return "NoModification";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

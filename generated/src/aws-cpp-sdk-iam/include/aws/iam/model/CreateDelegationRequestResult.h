@@ -29,7 +29,12 @@ class CreateDelegationRequestResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>A deep link URL to the Amazon Web Services Management Console for managing
+   * the delegation request.</p> <p>For a console based workflow, partners should
+   * redirect the customer to this URL. If the customer is not logged in to any
+   * Amazon Web Services account, the Amazon Web Services workflow will automatically
+   * direct the customer to log in and then display the delegation request approval
+   * page.</p>
    */
   inline const Aws::String& GetConsoleDeepLink() const { return m_consoleDeepLink; }
   template <typename ConsoleDeepLinkT = Aws::String>
@@ -46,7 +51,7 @@ class CreateDelegationRequestResult {
 
   ///@{
   /**
-   * <p/>
+   * <p>The unique identifier for the created delegation request.</p>
    */
   inline const Aws::String& GetDelegationRequestId() const { return m_delegationRequestId; }
   template <typename DelegationRequestIdT = Aws::String>

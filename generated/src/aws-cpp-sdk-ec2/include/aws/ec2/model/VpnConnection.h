@@ -81,6 +81,24 @@ class VpnConnection {
 
   ///@{
   /**
+   * <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+   */
+  inline const Aws::String& GetVpnConcentratorId() const { return m_vpnConcentratorId; }
+  inline bool VpnConcentratorIdHasBeenSet() const { return m_vpnConcentratorIdHasBeenSet; }
+  template <typename VpnConcentratorIdT = Aws::String>
+  void SetVpnConcentratorId(VpnConcentratorIdT&& value) {
+    m_vpnConcentratorIdHasBeenSet = true;
+    m_vpnConcentratorId = std::forward<VpnConcentratorIdT>(value);
+  }
+  template <typename VpnConcentratorIdT = Aws::String>
+  VpnConnection& WithVpnConcentratorId(VpnConcentratorIdT&& value) {
+    SetVpnConcentratorId(std::forward<VpnConcentratorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the core network.</p>
    */
   inline const Aws::String& GetCoreNetworkArn() const { return m_coreNetworkArn; }
@@ -354,6 +372,9 @@ class VpnConnection {
 
   Aws::String m_transitGatewayId;
   bool m_transitGatewayIdHasBeenSet = false;
+
+  Aws::String m_vpnConcentratorId;
+  bool m_vpnConcentratorIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
   bool m_coreNetworkArnHasBeenSet = false;

@@ -71,6 +71,7 @@
 #include <aws/autoscaling/model/EnterStandbyResult.h>
 #include <aws/autoscaling/model/ExitStandbyResult.h>
 #include <aws/autoscaling/model/GetPredictiveScalingForecastResult.h>
+#include <aws/autoscaling/model/LaunchInstancesResult.h>
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/PutWarmPoolResult.h>
@@ -163,6 +164,7 @@ class EnterStandbyRequest;
 class ExecutePolicyRequest;
 class ExitStandbyRequest;
 class GetPredictiveScalingForecastRequest;
+class LaunchInstancesRequest;
 class PutLifecycleHookRequest;
 class PutNotificationConfigurationRequest;
 class PutScalingPolicyRequest;
@@ -231,6 +233,7 @@ typedef Aws::Utils::Outcome<EnterStandbyResult, AutoScalingError> EnterStandbyOu
 typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ExecutePolicyOutcome;
 typedef Aws::Utils::Outcome<ExitStandbyResult, AutoScalingError> ExitStandbyOutcome;
 typedef Aws::Utils::Outcome<GetPredictiveScalingForecastResult, AutoScalingError> GetPredictiveScalingForecastOutcome;
+typedef Aws::Utils::Outcome<LaunchInstancesResult, AutoScalingError> LaunchInstancesOutcome;
 typedef Aws::Utils::Outcome<PutLifecycleHookResult, AutoScalingError> PutLifecycleHookOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutNotificationConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutScalingPolicyResult, AutoScalingError> PutScalingPolicyOutcome;
@@ -299,6 +302,7 @@ typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
 typedef std::future<ExecutePolicyOutcome> ExecutePolicyOutcomeCallable;
 typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
 typedef std::future<GetPredictiveScalingForecastOutcome> GetPredictiveScalingForecastOutcomeCallable;
+typedef std::future<LaunchInstancesOutcome> LaunchInstancesOutcomeCallable;
 typedef std::future<PutLifecycleHookOutcome> PutLifecycleHookOutcomeCallable;
 typedef std::future<PutNotificationConfigurationOutcome> PutNotificationConfigurationOutcomeCallable;
 typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
@@ -482,6 +486,9 @@ typedef std::function<void(const AutoScalingClient*, const Model::GetPredictiveS
                            const Model::GetPredictiveScalingForecastOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPredictiveScalingForecastResponseReceivedHandler;
+typedef std::function<void(const AutoScalingClient*, const Model::LaunchInstancesRequest&, const Model::LaunchInstancesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    LaunchInstancesResponseReceivedHandler;
 typedef std::function<void(const AutoScalingClient*, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLifecycleHookResponseReceivedHandler;

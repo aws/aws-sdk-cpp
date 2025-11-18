@@ -116,6 +116,7 @@ static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modi
 static const int ipam_prefix_list_resolver_HASH = HashingUtils::HashString("ipam-prefix-list-resolver");
 static const int ipam_prefix_list_resolver_target_HASH = HashingUtils::HashString("ipam-prefix-list-resolver-target");
 static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
+static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentrator");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -319,6 +320,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::ipam_prefix_list_resolver_target;
   } else if (hashCode == capacity_manager_data_export_HASH) {
     return ResourceType::capacity_manager_data_export;
+  } else if (hashCode == vpn_concentrator_HASH) {
+    return ResourceType::vpn_concentrator;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -533,6 +536,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "ipam-prefix-list-resolver-target";
     case ResourceType::capacity_manager_data_export:
       return "capacity-manager-data-export";
+    case ResourceType::vpn_concentrator:
+      return "vpn-concentrator";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

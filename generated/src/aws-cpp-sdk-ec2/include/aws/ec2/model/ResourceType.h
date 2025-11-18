@@ -111,7 +111,8 @@ enum class ResourceType {
   mac_modification_task,
   ipam_prefix_list_resolver,
   ipam_prefix_list_resolver_target,
-  capacity_manager_data_export
+  capacity_manager_data_export,
+  vpn_concentrator
 };
 
 namespace ResourceTypeMapper {
