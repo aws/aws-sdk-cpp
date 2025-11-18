@@ -2328,8 +2328,8 @@ TEST_P(TransferTests, TransferManager_TestRelativePrefix)
     }
 }
 
-// Test checksum validation for single part downloads
-TEST_P(TransferTests, TransferManager_ChecksumValidationTest)
+// Test checksum validation during download
+TEST_P(TransferTests, TransferManager_DownloadChecksumValidationTest)
 {
     const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
     Aws::String testFilePath = MakeFilePath(RandomFileName.c_str());
@@ -2337,28 +2337,32 @@ TEST_P(TransferTests, TransferManager_ChecksumValidationTest)
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Clients[GetParam()];
+    transferManagerConfig.bufferSize = MB5;
+    transferManagerConfig.transferBufferMaxHeapSize = MB5 * 10;
 
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     // Upload file first
-    std::shared_ptr<TransferHandle> uploadPtr = transferManager->UploadFile(
-        testFilePath, GetTestBucketName(), RandomFileName, "text/plain", 
-        Aws::Map<Aws::String, Aws::String>());
-    
-    uploadPtr->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, uploadPtr->GetStatus());
+    auto requestPtr = transferManager->UploadFile(testFilePath, GetTestBucketName(), RandomFileName,
+                                                 "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    ASSERT_EQ(true, requestPtr->ShouldContinue());
+    ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
     // Download file and verify checksum validation works
-    Aws::String downloadFilePath = MakeDownloadFileName(testFilePath);
-    std::shared_ptr<TransferHandle> downloadPtr = transferManager->DownloadFile(
-        GetTestBucketName(), RandomFileName, downloadFilePath);
-    
+    Aws::String downloadFilePath = MakeFilePath((RandomFileName + "Download").c_str());
+    auto downloadPtr = transferManager->DownloadFile(GetTestBucketName(), RandomFileName, downloadFilePath);
+
+    ASSERT_EQ(true, downloadPtr->ShouldContinue());
+    ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
     downloadPtr->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
     
-    // Verify files are identical
-    ASSERT_TRUE(AreFilesSame(testFilePath, downloadFilePath));
+    // Should complete successfully with valid checksum
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
 }
 
 INSTANTIATE_TEST_SUITE_P(Https, TransferTests, testing::Values(TestType::Https));

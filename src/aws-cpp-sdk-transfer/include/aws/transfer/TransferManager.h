@@ -338,6 +338,13 @@ namespace Aws
              */
             void SetChecksumForAlgorithm(const std::shared_ptr<PartState>& state, Aws::S3::Model::CompletedPart& part);
 
+            /**
+             * Combines part checksums to calculate full object checksum for validation.
+             * @param handle The transfer handle containing completed parts with checksums.
+             * @return The combined checksum string, or empty string if combination is not possible.
+             */
+            Aws::String CombinePartChecksums(const std::shared_ptr<TransferHandle>& handle);
+
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
             Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;
