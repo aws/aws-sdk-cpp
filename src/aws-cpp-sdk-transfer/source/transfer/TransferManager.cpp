@@ -6,6 +6,8 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -399,6 +401,15 @@ namespace Aws
             bool isRetry = !handle->GetMultiPartId().empty();
             uint64_t sentBytes = 0;
 
+            std::shared_ptr<Aws::Utils::Crypto::Hash> fullObjectHashCalculator;
+            if (handle->GetChecksum().empty() && !isRetry) {
+                if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
+                } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
+                }
+            }
+
             if (!isRetry) {
               Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
               createMultipartRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
@@ -466,6 +477,10 @@ namespace Aws
                 streamToPut->seekg((partsIter->first - 1) * m_transferConfig.bufferSize);
                 streamToPut->read(reinterpret_cast<char*>(buffer), lengthToWrite);
 
+                if (fullObjectHashCalculator) {
+                    fullObjectHashCalculator->Update(buffer, static_cast<size_t>(lengthToWrite));
+                }
+
                 auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                 auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
@@ -524,6 +539,13 @@ namespace Aws
             {
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 TriggerTransferStatusUpdatedCallback(handle);
+            }
+            else if (fullObjectHashCalculator && handle->GetChecksum().empty()) {
+                // Finalize checksum calculation and set on handle
+                auto hashResult = fullObjectHashCalculator->GetHash();
+                if (hashResult.IsSuccess()) {
+                    handle->SetChecksum(Aws::Utils::HashingUtils::Base64Encode(hashResult.GetResult()));
+                }
             }
         }
 
