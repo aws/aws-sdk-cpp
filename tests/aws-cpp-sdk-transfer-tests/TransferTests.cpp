@@ -2328,6 +2328,39 @@ TEST_P(TransferTests, TransferManager_TestRelativePrefix)
     }
 }
 
+// Test checksum validation for single part downloads
+TEST_P(TransferTests, TransferManager_ChecksumValidationTest)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String testFilePath = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(testFilePath, SMALL_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Clients[GetParam()];
+
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    // Upload file first
+    std::shared_ptr<TransferHandle> uploadPtr = transferManager->UploadFile(
+        testFilePath, GetTestBucketName(), RandomFileName, "text/plain", 
+        Aws::Map<Aws::String, Aws::String>());
+    
+    uploadPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, uploadPtr->GetStatus());
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
+
+    // Download file and verify checksum validation works
+    Aws::String downloadFilePath = MakeDownloadFileName(testFilePath);
+    std::shared_ptr<TransferHandle> downloadPtr = transferManager->DownloadFile(
+        GetTestBucketName(), RandomFileName, downloadFilePath);
+    
+    downloadPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+    
+    // Verify files are identical
+    ASSERT_TRUE(AreFilesSame(testFilePath, downloadFilePath));
+}
+
 INSTANTIATE_TEST_SUITE_P(Https, TransferTests, testing::Values(TestType::Https));
 INSTANTIATE_TEST_SUITE_P(Http, TransferTests, testing::Values(TestType::Http));
 

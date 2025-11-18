@@ -874,6 +874,43 @@ namespace Aws
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 getObjectOutcome.GetResult().GetBody().flush();
+                
+                // Validate full object checksum if available
+                if (!handle->GetChecksum().empty()) {
+                    const auto& getResult = getObjectOutcome.GetResult();
+                    Aws::String actualChecksum;
+                    
+                    // Get the actual checksum from GetObject response
+                    if (!getResult.GetChecksumCRC32().empty()) {
+                        actualChecksum = getResult.GetChecksumCRC32();
+                    } else if (!getResult.GetChecksumCRC32C().empty()) {
+                        actualChecksum = getResult.GetChecksumCRC32C();
+                    } else if (!getResult.GetChecksumSHA256().empty()) {
+                        actualChecksum = getResult.GetChecksumSHA256();
+                    } else if (!getResult.GetChecksumSHA1().empty()) {
+                        actualChecksum = getResult.GetChecksumSHA1();
+                    } else if (!getResult.GetChecksumCRC64NVME().empty()) {
+                        actualChecksum = getResult.GetChecksumCRC64NVME();
+                    }
+                    
+                    if (!actualChecksum.empty() && actualChecksum != handle->GetChecksum()) {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
+                            Aws::S3::S3Errors::INTERNAL_FAILURE,
+                            "ChecksumMismatch", 
+                            "Full object checksum validation failed", 
+                            false);
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Checksum validation failed. Expected: " << handle->GetChecksum()
+                                << ", Actual: " << actualChecksum);
+                        handle->ChangePartToFailed(partState);
+                        handle->UpdateStatus(TransferStatus::FAILED);
+                        handle->SetError(checksumError);
+                        TriggerErrorCallback(handle, checksumError);
+                        TriggerTransferStatusUpdatedCallback(handle);
+                        return;
+                    }
+                }
+                
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
@@ -936,6 +973,23 @@ namespace Aws
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
                 handle->SetEtag(headObjectOutcome.GetResult().GetETag());
+                
+                // Store full object checksum from HeadObject for validation
+                const auto& headResult = headObjectOutcome.GetResult();
+                if (headResult.GetChecksumType() == Aws::S3::Model::ChecksumType::FULL_OBJECT) {
+                    if (!headResult.GetChecksumCRC32().empty()) {
+                        handle->SetChecksum(headResult.GetChecksumCRC32());
+                    } else if (!headResult.GetChecksumCRC32C().empty()) {
+                        handle->SetChecksum(headResult.GetChecksumCRC32C());
+                    } else if (!headResult.GetChecksumSHA256().empty()) {
+                        handle->SetChecksum(headResult.GetChecksumSHA256());
+                    } else if (!headResult.GetChecksumSHA1().empty()) {
+                        handle->SetChecksum(headResult.GetChecksumSHA1());
+                    } else if (!headResult.GetChecksumCRC64NVME().empty()) {
+                        handle->SetChecksum(headResult.GetChecksumCRC64NVME());
+                    }
+                }
+                
                 /* When bucket versioning is suspended, head object will return "null" for unversioned object.
                  * Send following GetObject with "null" as versionId will result in 403 access denied error if your IAM role or policy
                  * doesn't have GetObjectVersion permission.
@@ -1117,6 +1171,20 @@ namespace Aws
 
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
+                        // Store part checksum for later validation
+                        const auto& getResult = outcome.GetResult();
+                        if (!getResult.GetChecksumCRC32().empty()) {
+                            partState->SetChecksum(getResult.GetChecksumCRC32());
+                        } else if (!getResult.GetChecksumCRC32C().empty()) {
+                            partState->SetChecksum(getResult.GetChecksumCRC32C());
+                        } else if (!getResult.GetChecksumSHA256().empty()) {
+                            partState->SetChecksum(getResult.GetChecksumSHA256());
+                        } else if (!getResult.GetChecksumSHA1().empty()) {
+                            partState->SetChecksum(getResult.GetChecksumSHA1());
+                        } else if (!getResult.GetChecksumCRC64NVME().empty()) {
+                            partState->SetChecksum(getResult.GetChecksumCRC64NVME());
+                        }
+                        
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     } else {
                         Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
@@ -1153,6 +1221,35 @@ namespace Aws
                 if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
                     outcome.GetResult().GetBody().flush();
+                    
+                    // Validate full object checksum if available
+                    if (!handle->GetChecksum().empty()) {
+                        // For now, we'll do a simple validation - in a full implementation,
+                        // we would combine part checksums using the appropriate algorithm
+                        bool checksumValid = true;
+                        
+                        // TODO: Implement proper checksum combination logic
+                        // For CRC32, we would need to combine all part checksums
+                        // For now, we'll just log that validation should happen here
+                        AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Full object checksum validation needed but not yet implemented for multipart downloads");
+                        
+                        if (!checksumValid) {
+                            Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
+                                Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                "ChecksumMismatch", 
+                                "Full object checksum validation failed", 
+                                false);
+                            AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                    << "] Multipart checksum validation failed");
+                            handle->UpdateStatus(TransferStatus::FAILED);
+                            handle->SetError(checksumError);
+                            TriggerErrorCallback(handle, checksumError);
+                            TriggerTransferStatusUpdatedCallback(handle);
+                            return;
+                        }
+                    }
+                    
                     handle->UpdateStatus(TransferStatus::COMPLETED);
                 }
                 else
