@@ -31,10 +31,13 @@
 #include <aws/invoicing/model/FeesBreakdown.h>
 #include <aws/invoicing/model/FeesBreakdownAmount.h>
 #include <aws/invoicing/model/Filters.h>
+#include <aws/invoicing/model/GetInvoicePDFRequest.h>
+#include <aws/invoicing/model/GetInvoicePDFResult.h>
 #include <aws/invoicing/model/GetInvoiceUnitRequest.h>
 #include <aws/invoicing/model/GetInvoiceUnitResult.h>
 #include <aws/invoicing/model/InternalServerException.h>
 #include <aws/invoicing/model/InvoiceCurrencyAmount.h>
+#include <aws/invoicing/model/InvoicePDF.h>
 #include <aws/invoicing/model/InvoiceProfile.h>
 #include <aws/invoicing/model/InvoiceSummariesFilter.h>
 #include <aws/invoicing/model/InvoiceSummariesSelector.h>
@@ -52,6 +55,7 @@
 #include <aws/invoicing/model/ReceiverAddress.h>
 #include <aws/invoicing/model/ResourceNotFoundException.h>
 #include <aws/invoicing/model/ResourceTag.h>
+#include <aws/invoicing/model/SupplementalDocument.h>
 #include <aws/invoicing/model/TagResourceRequest.h>
 #include <aws/invoicing/model/TagResourceResult.h>
 #include <aws/invoicing/model/TaxesBreakdown.h>

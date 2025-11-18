@@ -22,6 +22,10 @@ Provisioned& Provisioned::operator=(JsonView jsonValue) {
     m_brokerNodeGroupInfo = jsonValue.GetObject("brokerNodeGroupInfo");
     m_brokerNodeGroupInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rebalancing")) {
+    m_rebalancing = jsonValue.GetObject("rebalancing");
+    m_rebalancingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("currentBrokerSoftwareInfo")) {
     m_currentBrokerSoftwareInfo = jsonValue.GetObject("currentBrokerSoftwareInfo");
     m_currentBrokerSoftwareInfoHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue Provisioned::Jsonize() const {
 
   if (m_brokerNodeGroupInfoHasBeenSet) {
     payload.WithObject("brokerNodeGroupInfo", m_brokerNodeGroupInfo.Jsonize());
+  }
+
+  if (m_rebalancingHasBeenSet) {
+    payload.WithObject("rebalancing", m_rebalancing.Jsonize());
   }
 
   if (m_currentBrokerSoftwareInfoHasBeenSet) {

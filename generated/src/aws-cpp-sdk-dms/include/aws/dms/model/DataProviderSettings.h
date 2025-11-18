@@ -15,6 +15,7 @@
 #include <aws/dms/model/OracleDataProviderSettings.h>
 #include <aws/dms/model/PostgreSqlDataProviderSettings.h>
 #include <aws/dms/model/RedshiftDataProviderSettings.h>
+#include <aws/dms/model/SybaseAseDataProviderSettings.h>
 
 #include <utility>
 
@@ -101,6 +102,22 @@ class DataProviderSettings {
   template <typename OracleSettingsT = OracleDataProviderSettings>
   DataProviderSettings& WithOracleSettings(OracleSettingsT&& value) {
     SetOracleSettings(std::forward<OracleSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const SybaseAseDataProviderSettings& GetSybaseAseSettings() const { return m_sybaseAseSettings; }
+  inline bool SybaseAseSettingsHasBeenSet() const { return m_sybaseAseSettingsHasBeenSet; }
+  template <typename SybaseAseSettingsT = SybaseAseDataProviderSettings>
+  void SetSybaseAseSettings(SybaseAseSettingsT&& value) {
+    m_sybaseAseSettingsHasBeenSet = true;
+    m_sybaseAseSettings = std::forward<SybaseAseSettingsT>(value);
+  }
+  template <typename SybaseAseSettingsT = SybaseAseDataProviderSettings>
+  DataProviderSettings& WithSybaseAseSettings(SybaseAseSettingsT&& value) {
+    SetSybaseAseSettings(std::forward<SybaseAseSettingsT>(value));
     return *this;
   }
   ///@}
@@ -220,6 +237,9 @@ class DataProviderSettings {
 
   OracleDataProviderSettings m_oracleSettings;
   bool m_oracleSettingsHasBeenSet = false;
+
+  SybaseAseDataProviderSettings m_sybaseAseSettings;
+  bool m_sybaseAseSettingsHasBeenSet = false;
 
   MicrosoftSqlServerDataProviderSettings m_microsoftSqlServerSettings;
   bool m_microsoftSqlServerSettingsHasBeenSet = false;

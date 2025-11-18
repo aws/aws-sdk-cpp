@@ -12,6 +12,7 @@
 #include <aws/elasticloadbalancingv2/model/AuthenticateOidcActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/FixedResponseActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/ForwardActionConfig.h>
+#include <aws/elasticloadbalancingv2/model/JwtValidationActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/RedirectActionConfig.h>
 
 #include <utility>
@@ -27,9 +28,12 @@ namespace Model {
 
 /**
  * <p>Information about an action.</p> <p>Each rule must include exactly one of the
- * following types of actions: <code>forward</code>, <code>fixed-response</code>,
- * or <code>redirect</code>, and it must be the last action to be
- * performed.</p><p><h3>See Also:</h3>   <a
+ * following routing actions: <code>forward</code>, <code>fixed-response</code>, or
+ * <code>redirect</code>, and it must be the last action to be performed.</p>
+ * <p>Optionally, a rule for an HTTPS listener can also include one of the
+ * following user authentication actions: <code>authenticate-oidc</code>,
+ * <code>authenticate-cognito</code>, or <code>jwt-validation</code>.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Action">AWS
  * API Reference</a></p>
  */
@@ -63,7 +67,7 @@ class Action {
   /**
    * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
    * <code>Type</code> is <code>forward</code> and you want to route to a single
-   * target group. To route to one or more target groups, use
+   * target group. To route to multiple target groups, you must use
    * <code>ForwardConfig</code> instead.</p>
    */
   inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
@@ -177,12 +181,12 @@ class Action {
 
   ///@{
   /**
-   * <p>Information for creating an action that distributes requests among one or
-   * more target groups. For Network Load Balancers, you can specify a single target
-   * group. Specify only when <code>Type</code> is <code>forward</code>. If you
-   * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
-   * specify only one target group using <code>ForwardConfig</code> and it must be
-   * the same target group specified in <code>TargetGroupArn</code>.</p>
+   * <p>Information for creating an action that distributes requests among multiple
+   * target groups. Specify only when <code>Type</code> is <code>forward</code>.</p>
+   * <p>If you specify both <code>ForwardConfig</code> and
+   * <code>TargetGroupArn</code>, you can specify only one target group using
+   * <code>ForwardConfig</code> and it must be the same target group specified in
+   * <code>TargetGroupArn</code>.</p>
    */
   inline const ForwardActionConfig& GetForwardConfig() const { return m_forwardConfig; }
   inline bool ForwardConfigHasBeenSet() const { return m_forwardConfigHasBeenSet; }
@@ -194,6 +198,26 @@ class Action {
   template <typename ForwardConfigT = ForwardActionConfig>
   Action& WithForwardConfig(ForwardConfigT&& value) {
     SetForwardConfig(std::forward<ForwardConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>[HTTPS listeners] Information for validating JWT access tokens in client
+   * requests. Specify only when <code>Type</code> is
+   * <code>jwt-validation</code>.</p>
+   */
+  inline const JwtValidationActionConfig& GetJwtValidationConfig() const { return m_jwtValidationConfig; }
+  inline bool JwtValidationConfigHasBeenSet() const { return m_jwtValidationConfigHasBeenSet; }
+  template <typename JwtValidationConfigT = JwtValidationActionConfig>
+  void SetJwtValidationConfig(JwtValidationConfigT&& value) {
+    m_jwtValidationConfigHasBeenSet = true;
+    m_jwtValidationConfig = std::forward<JwtValidationConfigT>(value);
+  }
+  template <typename JwtValidationConfigT = JwtValidationActionConfig>
+  Action& WithJwtValidationConfig(JwtValidationConfigT&& value) {
+    SetJwtValidationConfig(std::forward<JwtValidationConfigT>(value));
     return *this;
   }
   ///@}
@@ -221,6 +245,9 @@ class Action {
 
   ForwardActionConfig m_forwardConfig;
   bool m_forwardConfigHasBeenSet = false;
+
+  JwtValidationActionConfig m_jwtValidationConfig;
+  bool m_jwtValidationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

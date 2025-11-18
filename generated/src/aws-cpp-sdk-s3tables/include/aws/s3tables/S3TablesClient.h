@@ -320,6 +320,38 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the metrics configuration for a table bucket.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:DeleteTableBucketMetricsConfiguration</code> permission to use
+   * this operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTableBucketMetricsConfigurationOutcome DeleteTableBucketMetricsConfiguration(
+      const Model::DeleteTableBucketMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTableBucketMetricsConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteTableBucketMetricsConfigurationRequestT = Model::DeleteTableBucketMetricsConfigurationRequest>
+  Model::DeleteTableBucketMetricsConfigurationOutcomeCallable DeleteTableBucketMetricsConfigurationCallable(
+      const DeleteTableBucketMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::DeleteTableBucketMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTableBucketMetricsConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteTableBucketMetricsConfigurationRequestT = Model::DeleteTableBucketMetricsConfigurationRequest>
+  void DeleteTableBucketMetricsConfigurationAsync(const DeleteTableBucketMetricsConfigurationRequestT& request,
+                                                  const DeleteTableBucketMetricsConfigurationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::DeleteTableBucketMetricsConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a table bucket policy. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete">Deleting
    * a table bucket policy</a> in the <i>Amazon Simple Storage Service User
@@ -535,6 +567,38 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                                                    const GetTableBucketMaintenanceConfigurationResponseReceivedHandler& handler,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::GetTableBucketMaintenanceConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the metrics configuration for a table bucket.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableBucketMetricsConfiguration</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableBucketMetricsConfigurationOutcome GetTableBucketMetricsConfiguration(
+      const Model::GetTableBucketMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableBucketMetricsConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetTableBucketMetricsConfigurationRequestT = Model::GetTableBucketMetricsConfigurationRequest>
+  Model::GetTableBucketMetricsConfigurationOutcomeCallable GetTableBucketMetricsConfigurationCallable(
+      const GetTableBucketMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableBucketMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableBucketMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetTableBucketMetricsConfigurationRequestT = Model::GetTableBucketMetricsConfigurationRequest>
+  void GetTableBucketMetricsConfigurationAsync(const GetTableBucketMetricsConfigurationRequestT& request,
+                                               const GetTableBucketMetricsConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableBucketMetricsConfiguration, request, handler, context);
   }
 
   /**
@@ -922,6 +986,38 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                                                    const PutTableBucketMaintenanceConfigurationResponseReceivedHandler& handler,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::PutTableBucketMaintenanceConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the metrics configuration for a table bucket.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:PutTableBucketMetricsConfiguration</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableBucketMetricsConfigurationOutcome PutTableBucketMetricsConfiguration(
+      const Model::PutTableBucketMetricsConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableBucketMetricsConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename PutTableBucketMetricsConfigurationRequestT = Model::PutTableBucketMetricsConfigurationRequest>
+  Model::PutTableBucketMetricsConfigurationOutcomeCallable PutTableBucketMetricsConfigurationCallable(
+      const PutTableBucketMetricsConfigurationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableBucketMetricsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableBucketMetricsConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutTableBucketMetricsConfigurationRequestT = Model::PutTableBucketMetricsConfigurationRequest>
+  void PutTableBucketMetricsConfigurationAsync(const PutTableBucketMetricsConfigurationRequestT& request,
+                                               const PutTableBucketMetricsConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableBucketMetricsConfiguration, request, handler, context);
   }
 
   /**

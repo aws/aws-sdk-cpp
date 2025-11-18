@@ -18,7 +18,10 @@ enum class SigningAlgorithm {
   SHA256WITHRSA,
   SHA384WITHRSA,
   SHA512WITHRSA,
-  SM3WITHSM2
+  SM3WITHSM2,
+  ML_DSA_44,
+  ML_DSA_65,
+  ML_DSA_87
 };
 
 namespace SigningAlgorithmMapper {

@@ -339,6 +339,42 @@ class RestoreJobsListMember {
 
   ///@{
   /**
+   * <p>This is a boolean value indicating whether the restore job is a parent
+   * (composite) restore job.</p>
+   */
+  inline bool GetIsParent() const { return m_isParent; }
+  inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
+  inline void SetIsParent(bool value) {
+    m_isParentHasBeenSet = true;
+    m_isParent = value;
+  }
+  inline RestoreJobsListMember& WithIsParent(bool value) {
+    SetIsParent(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This is the unique identifier of the parent restore job for the selected
+   * restore job.</p>
+   */
+  inline const Aws::String& GetParentJobId() const { return m_parentJobId; }
+  inline bool ParentJobIdHasBeenSet() const { return m_parentJobIdHasBeenSet; }
+  template <typename ParentJobIdT = Aws::String>
+  void SetParentJobId(ParentJobIdT&& value) {
+    m_parentJobIdHasBeenSet = true;
+    m_parentJobId = std::forward<ParentJobIdT>(value);
+  }
+  template <typename ParentJobIdT = Aws::String>
+  RestoreJobsListMember& WithParentJobId(ParentJobIdT&& value) {
+    SetParentJobId(std::forward<ParentJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains identifying information about the creation of a restore job.</p>
    */
   inline const RestoreJobCreator& GetCreatedBy() const { return m_createdBy; }
@@ -472,6 +508,12 @@ class RestoreJobsListMember {
 
   Aws::Utils::DateTime m_recoveryPointCreationDate{};
   bool m_recoveryPointCreationDateHasBeenSet = false;
+
+  bool m_isParent{false};
+  bool m_isParentHasBeenSet = false;
+
+  Aws::String m_parentJobId;
+  bool m_parentJobIdHasBeenSet = false;
 
   RestoreJobCreator m_createdBy;
   bool m_createdByHasBeenSet = false;

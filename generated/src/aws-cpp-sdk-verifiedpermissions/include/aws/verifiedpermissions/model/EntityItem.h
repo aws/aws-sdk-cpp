@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/AttributeValue.h>
+#include <aws/verifiedpermissions/model/CedarTagValue.h>
 #include <aws/verifiedpermissions/model/EntityIdentifier.h>
 
 #include <utility>
@@ -111,6 +112,30 @@ class EntityItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of cedar tags for the entity.</p>
+   */
+  inline const Aws::Map<Aws::String, CedarTagValue>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, CedarTagValue>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, CedarTagValue>>
+  EntityItem& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = CedarTagValue>
+  EntityItem& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EntityIdentifier m_identifier;
   bool m_identifierHasBeenSet = false;
@@ -120,6 +145,9 @@ class EntityItem {
 
   Aws::Vector<EntityIdentifier> m_parents;
   bool m_parentsHasBeenSet = false;
+
+  Aws::Map<Aws::String, CedarTagValue> m_tags;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

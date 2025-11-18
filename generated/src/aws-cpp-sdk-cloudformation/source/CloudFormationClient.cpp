@@ -51,6 +51,7 @@
 #include <aws/cloudformation/model/ExecuteChangeSetRequest.h>
 #include <aws/cloudformation/model/ExecuteStackRefactorRequest.h>
 #include <aws/cloudformation/model/GetGeneratedTemplateRequest.h>
+#include <aws/cloudformation/model/GetHookResultRequest.h>
 #include <aws/cloudformation/model/GetStackPolicyRequest.h>
 #include <aws/cloudformation/model/GetTemplateRequest.h>
 #include <aws/cloudformation/model/GetTemplateSummaryRequest.h>
@@ -1517,6 +1518,34 @@ GetGeneratedTemplateOutcome CloudFormationClient::GetGeneratedTemplate(const Get
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGeneratedTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return GetGeneratedTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetHookResultOutcome CloudFormationClient::GetHookResult(const GetHookResultRequest& request) const {
+  AWS_OPERATION_GUARD(GetHookResult);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHookResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetHookResult, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetHookResult, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetHookResultOutcome>(
+      [&]() -> GetHookResultOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHookResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return GetHookResultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

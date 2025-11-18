@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/ImportTaskStatus.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <aws/iotwireless/model/SidewalkGetStartImportInfo.h>
 
 #include <utility>
@@ -77,6 +78,22 @@ class GetWirelessDeviceImportTaskResult {
   template <typename DestinationNameT = Aws::String>
   GetWirelessDeviceImportTaskResult& WithDestinationName(DestinationNameT&& value) {
     SetDestinationName(std::forward<DestinationNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The integration status of the Device Location feature for LoRaWAN and
+   * Sidewalk devices.</p>
+   */
+  inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
+  inline void SetPositioning(PositioningConfigStatus value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = value;
+  }
+  inline GetWirelessDeviceImportTaskResult& WithPositioning(PositioningConfigStatus value) {
+    SetPositioning(value);
     return *this;
   }
   ///@}
@@ -235,6 +252,9 @@ class GetWirelessDeviceImportTaskResult {
 
   Aws::String m_destinationName;
   bool m_destinationNameHasBeenSet = false;
+
+  PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
+  bool m_positioningHasBeenSet = false;
 
   SidewalkGetStartImportInfo m_sidewalk;
   bool m_sidewalkHasBeenSet = false;

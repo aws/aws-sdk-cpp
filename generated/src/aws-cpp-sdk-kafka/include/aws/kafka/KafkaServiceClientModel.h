@@ -74,6 +74,7 @@
 #include <aws/kafka/model/UpdateConfigurationResult.h>
 #include <aws/kafka/model/UpdateConnectivityResult.h>
 #include <aws/kafka/model/UpdateMonitoringResult.h>
+#include <aws/kafka/model/UpdateRebalancingResult.h>
 #include <aws/kafka/model/UpdateReplicationInfoResult.h>
 #include <aws/kafka/model/UpdateSecurityResult.h>
 #include <aws/kafka/model/UpdateStorageResult.h>
@@ -159,6 +160,7 @@ class UpdateClusterKafkaVersionRequest;
 class UpdateConfigurationRequest;
 class UpdateConnectivityRequest;
 class UpdateMonitoringRequest;
+class UpdateRebalancingRequest;
 class UpdateReplicationInfoRequest;
 class UpdateSecurityRequest;
 class UpdateStorageRequest;
@@ -214,6 +216,7 @@ typedef Aws::Utils::Outcome<UpdateClusterKafkaVersionResult, KafkaError> UpdateC
 typedef Aws::Utils::Outcome<UpdateConfigurationResult, KafkaError> UpdateConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectivityResult, KafkaError> UpdateConnectivityOutcome;
 typedef Aws::Utils::Outcome<UpdateMonitoringResult, KafkaError> UpdateMonitoringOutcome;
+typedef Aws::Utils::Outcome<UpdateRebalancingResult, KafkaError> UpdateRebalancingOutcome;
 typedef Aws::Utils::Outcome<UpdateReplicationInfoResult, KafkaError> UpdateReplicationInfoOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityResult, KafkaError> UpdateSecurityOutcome;
 typedef Aws::Utils::Outcome<UpdateStorageResult, KafkaError> UpdateStorageOutcome;
@@ -269,6 +272,7 @@ typedef std::future<UpdateClusterKafkaVersionOutcome> UpdateClusterKafkaVersionO
 typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
 typedef std::future<UpdateConnectivityOutcome> UpdateConnectivityOutcomeCallable;
 typedef std::future<UpdateMonitoringOutcome> UpdateMonitoringOutcomeCallable;
+typedef std::future<UpdateRebalancingOutcome> UpdateRebalancingOutcomeCallable;
 typedef std::future<UpdateReplicationInfoOutcome> UpdateReplicationInfoOutcomeCallable;
 typedef std::future<UpdateSecurityOutcome> UpdateSecurityOutcomeCallable;
 typedef std::future<UpdateStorageOutcome> UpdateStorageOutcomeCallable;
@@ -427,6 +431,9 @@ typedef std::function<void(const KafkaClient*, const Model::UpdateConnectivityRe
 typedef std::function<void(const KafkaClient*, const Model::UpdateMonitoringRequest&, const Model::UpdateMonitoringOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMonitoringResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::UpdateRebalancingRequest&, const Model::UpdateRebalancingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRebalancingResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::UpdateReplicationInfoRequest&, const Model::UpdateReplicationInfoOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateReplicationInfoResponseReceivedHandler;

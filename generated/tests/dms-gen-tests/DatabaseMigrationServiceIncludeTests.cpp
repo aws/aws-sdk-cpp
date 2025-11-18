@@ -26,6 +26,10 @@
 #include <aws/dms/model/BatchStartRecommendationsErrorEntry.h>
 #include <aws/dms/model/BatchStartRecommendationsRequest.h>
 #include <aws/dms/model/BatchStartRecommendationsResult.h>
+#include <aws/dms/model/CancelMetadataModelConversionRequest.h>
+#include <aws/dms/model/CancelMetadataModelConversionResult.h>
+#include <aws/dms/model/CancelMetadataModelCreationRequest.h>
+#include <aws/dms/model/CancelMetadataModelCreationResult.h>
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunRequest.h>
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunResult.h>
 #include <aws/dms/model/CannedAclForObjectsValue.h>
@@ -148,14 +152,20 @@
 #include <aws/dms/model/DescribeInstanceProfilesResult.h>
 #include <aws/dms/model/DescribeMetadataModelAssessmentsRequest.h>
 #include <aws/dms/model/DescribeMetadataModelAssessmentsResult.h>
+#include <aws/dms/model/DescribeMetadataModelChildrenRequest.h>
+#include <aws/dms/model/DescribeMetadataModelChildrenResult.h>
 #include <aws/dms/model/DescribeMetadataModelConversionsRequest.h>
 #include <aws/dms/model/DescribeMetadataModelConversionsResult.h>
+#include <aws/dms/model/DescribeMetadataModelCreationsRequest.h>
+#include <aws/dms/model/DescribeMetadataModelCreationsResult.h>
 #include <aws/dms/model/DescribeMetadataModelExportsAsScriptRequest.h>
 #include <aws/dms/model/DescribeMetadataModelExportsAsScriptResult.h>
 #include <aws/dms/model/DescribeMetadataModelExportsToTargetRequest.h>
 #include <aws/dms/model/DescribeMetadataModelExportsToTargetResult.h>
 #include <aws/dms/model/DescribeMetadataModelImportsRequest.h>
 #include <aws/dms/model/DescribeMetadataModelImportsResult.h>
+#include <aws/dms/model/DescribeMetadataModelRequest.h>
+#include <aws/dms/model/DescribeMetadataModelResult.h>
 #include <aws/dms/model/DescribeMigrationProjectsRequest.h>
 #include <aws/dms/model/DescribeMigrationProjectsResult.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesRequest.h>
@@ -216,6 +226,8 @@
 #include <aws/dms/model/FleetAdvisorLsaAnalysisResponse.h>
 #include <aws/dms/model/FleetAdvisorSchemaObjectResponse.h>
 #include <aws/dms/model/GcpMySQLSettings.h>
+#include <aws/dms/model/GetTargetSelectionRulesRequest.h>
+#include <aws/dms/model/GetTargetSelectionRulesResult.h>
 #include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/IbmDb2LuwDataProviderSettings.h>
 #include <aws/dms/model/IbmDb2zOsDataProviderSettings.h>
@@ -235,6 +247,8 @@
 #include <aws/dms/model/LongVarcharMappingType.h>
 #include <aws/dms/model/MariaDbDataProviderSettings.h>
 #include <aws/dms/model/MessageFormatValue.h>
+#include <aws/dms/model/MetadataModelProperties.h>
+#include <aws/dms/model/MetadataModelReference.h>
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/MicrosoftSqlServerDataProviderSettings.h>
 #include <aws/dms/model/MigrationProject.h>
@@ -282,6 +296,8 @@
 #include <aws/dms/model/PostgreSQLSettings.h>
 #include <aws/dms/model/PostgreSqlDataProviderSettings.h>
 #include <aws/dms/model/PremigrationAssessmentStatus.h>
+#include <aws/dms/model/ProcessedObject.h>
+#include <aws/dms/model/Progress.h>
 #include <aws/dms/model/ProvisionData.h>
 #include <aws/dms/model/RdsConfiguration.h>
 #include <aws/dms/model/RdsRecommendation.h>
@@ -345,6 +361,8 @@
 #include <aws/dms/model/StartMetadataModelAssessmentResult.h>
 #include <aws/dms/model/StartMetadataModelConversionRequest.h>
 #include <aws/dms/model/StartMetadataModelConversionResult.h>
+#include <aws/dms/model/StartMetadataModelCreationRequest.h>
+#include <aws/dms/model/StartMetadataModelCreationResult.h>
 #include <aws/dms/model/StartMetadataModelExportAsScriptRequest.h>
 #include <aws/dms/model/StartMetadataModelExportAsScriptResult.h>
 #include <aws/dms/model/StartMetadataModelExportToTargetRequest.h>
@@ -363,6 +381,7 @@
 #include <aws/dms/model/StartReplicationTaskRequest.h>
 #include <aws/dms/model/StartReplicationTaskResult.h>
 #include <aws/dms/model/StartReplicationTaskTypeValue.h>
+#include <aws/dms/model/StatementProperties.h>
 #include <aws/dms/model/StopDataMigrationRequest.h>
 #include <aws/dms/model/StopDataMigrationResult.h>
 #include <aws/dms/model/StopReplicationRequest.h>
@@ -371,6 +390,7 @@
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/Subnet.h>
 #include <aws/dms/model/SupportedEndpointType.h>
+#include <aws/dms/model/SybaseAseDataProviderSettings.h>
 #include <aws/dms/model/SybaseSettings.h>
 #include <aws/dms/model/TablePreparationMode.h>
 #include <aws/dms/model/TableStatistics.h>

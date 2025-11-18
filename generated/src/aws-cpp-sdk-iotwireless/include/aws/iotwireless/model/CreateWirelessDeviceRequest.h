@@ -178,8 +178,8 @@ class CreateWirelessDeviceRequest : public IoTWirelessRequest {
 
   ///@{
   /**
-   * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
-   * information.</p>
+   * <p>The integration status of the Device Location feature for LoRaWAN and
+   * Sidewalk devices.</p>
    */
   inline PositioningConfigStatus GetPositioning() const { return m_positioning; }
   inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }

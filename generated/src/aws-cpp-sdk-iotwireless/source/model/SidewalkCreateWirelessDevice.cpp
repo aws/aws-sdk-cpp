@@ -22,6 +22,14 @@ SidewalkCreateWirelessDevice& SidewalkCreateWirelessDevice::operator=(JsonView j
     m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
     m_deviceProfileIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = jsonValue.GetObject("Positioning");
+    m_positioningHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SidewalkManufacturingSn")) {
+    m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
+    m_sidewalkManufacturingSnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue SidewalkCreateWirelessDevice::Jsonize() const {
 
   if (m_deviceProfileIdHasBeenSet) {
     payload.WithString("DeviceProfileId", m_deviceProfileId);
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithObject("Positioning", m_positioning.Jsonize());
+  }
+
+  if (m_sidewalkManufacturingSnHasBeenSet) {
+    payload.WithString("SidewalkManufacturingSn", m_sidewalkManufacturingSn);
   }
 
   return payload;

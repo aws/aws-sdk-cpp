@@ -863,6 +863,10 @@
 #include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
 #include <aws/ec2/model/DescribeInstanceImageMetadataRequest.h>
 #include <aws/ec2/model/DescribeInstanceImageMetadataResponse.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaHistoryStatesRequest.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaHistoryStatesResponse.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaStatesRequest.h>
+#include <aws/ec2/model/DescribeInstanceSqlHaStatesResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusRequest.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstanceTopologyRequest.h>
@@ -1137,6 +1141,8 @@
 #include <aws/ec2/model/DisableImageDeregistrationProtectionResponse.h>
 #include <aws/ec2/model/DisableImageRequest.h>
 #include <aws/ec2/model/DisableImageResponse.h>
+#include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsRequest.h>
+#include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
@@ -1259,6 +1265,8 @@
 #include <aws/ec2/model/EnableImageDeregistrationProtectionResponse.h>
 #include <aws/ec2/model/EnableImageRequest.h>
 #include <aws/ec2/model/EnableImageResponse.h>
+#include <aws/ec2/model/EnableInstanceSqlHaStandbyDetectionsRequest.h>
+#include <aws/ec2/model/EnableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingRequest.h>
@@ -1398,6 +1406,8 @@
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
+#include <aws/ec2/model/GetImageAncestryRequest.h>
+#include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
@@ -1489,6 +1499,7 @@
 #include <aws/ec2/model/GpuInfo.h>
 #include <aws/ec2/model/GroupBy.h>
 #include <aws/ec2/model/GroupIdentifier.h>
+#include <aws/ec2/model/HaStatus.h>
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/HibernationOptionsRequest.h>
 #include <aws/ec2/model/HistoryRecord.h>
@@ -1514,6 +1525,7 @@
 #include <aws/ec2/model/IdFormat.h>
 #include <aws/ec2/model/Igmpv2SupportValue.h>
 #include <aws/ec2/model/Image.h>
+#include <aws/ec2/model/ImageAncestryEntry.h>
 #include <aws/ec2/model/ImageAttributeName.h>
 #include <aws/ec2/model/ImageBlockPublicAccessDisabledState.h>
 #include <aws/ec2/model/ImageBlockPublicAccessEnabledState.h>
@@ -2166,6 +2178,7 @@
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesResponse.h>
+#include <aws/ec2/model/RegisteredInstance.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <aws/ec2/model/RejectCapacityReservationBillingOwnershipResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsRequest.h>
@@ -2391,6 +2404,7 @@
 #include <aws/ec2/model/SpotPlacementScore.h>
 #include <aws/ec2/model/SpotPrice.h>
 #include <aws/ec2/model/SpreadLevel.h>
+#include <aws/ec2/model/SqlServerLicenseUsage.h>
 #include <aws/ec2/model/StaleIpPermission.h>
 #include <aws/ec2/model/StaleSecurityGroup.h>
 #include <aws/ec2/model/StartDeclarativePoliciesReportRequest.h>
@@ -2660,6 +2674,7 @@
 #include <aws/ec2/model/VpnState.h>
 #include <aws/ec2/model/VpnStaticRoute.h>
 #include <aws/ec2/model/VpnStaticRouteSource.h>
+#include <aws/ec2/model/VpnTunnelBandwidth.h>
 #include <aws/ec2/model/VpnTunnelLogOptions.h>
 #include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>

@@ -95,8 +95,8 @@ class StorageConnector {
   ///@{
   /**
    * <p>The OneDrive for Business domains where you require admin consent when users
-   * try to link their OneDrive account to AppStream 2.0. The attribute can only be
-   * specified when ConnectorType=ONE_DRIVE.</p>
+   * try to link their OneDrive account to WorkSpaces Applications. The attribute can
+   * only be specified when ConnectorType=ONE_DRIVE.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDomainsRequireAdminConsent() const { return m_domainsRequireAdminConsent; }
   inline bool DomainsRequireAdminConsentHasBeenSet() const { return m_domainsRequireAdminConsentHasBeenSet; }

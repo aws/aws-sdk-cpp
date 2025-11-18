@@ -223,7 +223,8 @@ class UpdateStackRequest : public AppStreamRequest {
   ///@{
   /**
    * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
-   * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+   * stack can connect to WorkSpaces Applications only through the specified
+   * endpoints.</p>
    */
   inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const { return m_accessEndpoints; }
   inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
@@ -247,9 +248,9 @@ class UpdateStackRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The domains where AppStream 2.0 streaming sessions can be embedded in an
-   * iframe. You must approve the domains that you want to host embedded AppStream
-   * 2.0 streaming sessions. </p>
+   * <p>The domains where WorkSpaces Applications streaming sessions can be embedded
+   * in an iframe. You must approve the domains that you want to host embedded
+   * WorkSpaces Applications streaming sessions. </p>
    */
   inline const Aws::Vector<Aws::String>& GetEmbedHostDomains() const { return m_embedHostDomains; }
   inline bool EmbedHostDomainsHasBeenSet() const { return m_embedHostDomainsHasBeenSet; }

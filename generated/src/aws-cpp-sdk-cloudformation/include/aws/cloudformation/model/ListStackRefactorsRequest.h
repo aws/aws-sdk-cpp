@@ -61,11 +61,8 @@ class ListStackRefactorsRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>If the request doesn't return all the remaining results,
-   * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-   * call this action again and assign that token to the request object's
-   * <code>NextToken</code> parameter. If the request returns all results,
-   * <code>NextToken</code> is set to <code>null</code>.</p>
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

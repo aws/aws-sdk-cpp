@@ -49,6 +49,10 @@ CreateClusterResult& CreateClusterResult::operator=(const Aws::AmazonWebServiceR
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpoint")) {
+    m_endpoint = jsonValue.GetString("endpoint");
+    m_endpointHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

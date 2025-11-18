@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/CertificateList.h>
+#include <aws/iotwireless/model/SidewalkPositioning.h>
 #include <aws/iotwireless/model/WirelessDeviceSidewalkStatus.h>
 
 #include <utility>
@@ -145,6 +146,24 @@ class SidewalkListDevice {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Positioning object of the Sidewalk device.</p>
+   */
+  inline const SidewalkPositioning& GetPositioning() const { return m_positioning; }
+  inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+  template <typename PositioningT = SidewalkPositioning>
+  void SetPositioning(PositioningT&& value) {
+    m_positioningHasBeenSet = true;
+    m_positioning = std::forward<PositioningT>(value);
+  }
+  template <typename PositioningT = SidewalkPositioning>
+  SidewalkListDevice& WithPositioning(PositioningT&& value) {
+    SetPositioning(std::forward<PositioningT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_amazonId;
   bool m_amazonIdHasBeenSet = false;
@@ -163,6 +182,9 @@ class SidewalkListDevice {
 
   WirelessDeviceSidewalkStatus m_status{WirelessDeviceSidewalkStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  SidewalkPositioning m_positioning;
+  bool m_positioningHasBeenSet = false;
 };
 
 }  // namespace Model

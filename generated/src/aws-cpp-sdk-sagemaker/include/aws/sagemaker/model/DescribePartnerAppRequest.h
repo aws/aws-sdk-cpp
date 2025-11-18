@@ -47,9 +47,29 @@ class DescribePartnerAppRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>When set to <code>TRUE</code>, the response includes available upgrade
+   * information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+   */
+  inline bool GetIncludeAvailableUpgrade() const { return m_includeAvailableUpgrade; }
+  inline bool IncludeAvailableUpgradeHasBeenSet() const { return m_includeAvailableUpgradeHasBeenSet; }
+  inline void SetIncludeAvailableUpgrade(bool value) {
+    m_includeAvailableUpgradeHasBeenSet = true;
+    m_includeAvailableUpgrade = value;
+  }
+  inline DescribePartnerAppRequest& WithIncludeAvailableUpgrade(bool value) {
+    SetIncludeAvailableUpgrade(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
+
+  bool m_includeAvailableUpgrade{false};
+  bool m_includeAvailableUpgradeHasBeenSet = false;
 };
 
 }  // namespace Model

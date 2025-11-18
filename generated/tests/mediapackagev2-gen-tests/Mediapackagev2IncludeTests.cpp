@@ -131,6 +131,7 @@
 #include <aws/mediapackagev2/model/ScteDash.h>
 #include <aws/mediapackagev2/model/ScteFilter.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
+#include <aws/mediapackagev2/model/ScteInSegments.h>
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/mediapackagev2/model/SpekeKeyProvider.h>
 #include <aws/mediapackagev2/model/StartTag.h>

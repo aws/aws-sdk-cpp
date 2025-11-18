@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -53,6 +54,31 @@ class NetworkAccessConfiguration {
 
   ///@{
   /**
+   * <p>The IPv6 addresses assigned to the elastic network interface. This field
+   * supports IPv6 connectivity for WorkSpaces Applications instances.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetEniIpv6Addresses() const { return m_eniIpv6Addresses; }
+  inline bool EniIpv6AddressesHasBeenSet() const { return m_eniIpv6AddressesHasBeenSet; }
+  template <typename EniIpv6AddressesT = Aws::Vector<Aws::String>>
+  void SetEniIpv6Addresses(EniIpv6AddressesT&& value) {
+    m_eniIpv6AddressesHasBeenSet = true;
+    m_eniIpv6Addresses = std::forward<EniIpv6AddressesT>(value);
+  }
+  template <typename EniIpv6AddressesT = Aws::Vector<Aws::String>>
+  NetworkAccessConfiguration& WithEniIpv6Addresses(EniIpv6AddressesT&& value) {
+    SetEniIpv6Addresses(std::forward<EniIpv6AddressesT>(value));
+    return *this;
+  }
+  template <typename EniIpv6AddressesT = Aws::String>
+  NetworkAccessConfiguration& AddEniIpv6Addresses(EniIpv6AddressesT&& value) {
+    m_eniIpv6AddressesHasBeenSet = true;
+    m_eniIpv6Addresses.emplace_back(std::forward<EniIpv6AddressesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The resource identifier of the elastic network interface that is attached to
    * instances in your VPC. All network interfaces have the eni-xxxxxxxx resource
    * identifier.</p>
@@ -73,6 +99,9 @@ class NetworkAccessConfiguration {
  private:
   Aws::String m_eniPrivateIpAddress;
   bool m_eniPrivateIpAddressHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_eniIpv6Addresses;
+  bool m_eniIpv6AddressesHasBeenSet = false;
 
   Aws::String m_eniId;
   bool m_eniIdHasBeenSet = false;

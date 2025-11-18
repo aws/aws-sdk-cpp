@@ -1,0 +1,24 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sts/model/GetDelegatedAccessTokenRequest.h>
+
+using namespace Aws::STS::Model;
+using namespace Aws::Utils;
+
+Aws::String GetDelegatedAccessTokenRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=GetDelegatedAccessToken&";
+  if (m_tradeInTokenHasBeenSet) {
+    ss << "TradeInToken=" << StringUtils::URLEncode(m_tradeInToken.c_str()) << "&";
+  }
+
+  ss << "Version=2011-06-15";
+  return ss.str();
+}
+
+void GetDelegatedAccessTokenRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

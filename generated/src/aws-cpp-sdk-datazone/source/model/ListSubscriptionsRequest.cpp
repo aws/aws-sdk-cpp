@@ -37,15 +37,21 @@ void ListSubscriptionsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_owningGroupIdHasBeenSet) {
+    ss << m_owningGroupId;
+    uri.AddQueryStringParameter("owningGroupId", ss.str());
+    ss.str("");
+  }
+
   if (m_owningProjectIdHasBeenSet) {
     ss << m_owningProjectId;
     uri.AddQueryStringParameter("owningProjectId", ss.str());
     ss.str("");
   }
 
-  if (m_sortByHasBeenSet) {
-    ss << SortKeyMapper::GetNameForSortKey(m_sortBy);
-    uri.AddQueryStringParameter("sortBy", ss.str());
+  if (m_owningUserIdHasBeenSet) {
+    ss << m_owningUserId;
+    uri.AddQueryStringParameter("owningUserId", ss.str());
     ss.str("");
   }
 

@@ -57,6 +57,7 @@ static const int SCHEDULE_DEFINITION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils:
 static const int INVALID_POLICY_FAULT_HASH = HashingUtils::HashString("InvalidPolicyFault");
 static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
 static const int REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("RedshiftIdcApplicationAlreadyExists");
+static const int REDSHIFT_INVALID_PARAMETER_FAULT_HASH = HashingUtils::HashString("RedshiftInvalidParameter");
 static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
 static const int SNAPSHOT_SCHEDULE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleQuotaExceeded");
 static const int INCOMPATIBLE_ORDERABLE_OPTIONS_HASH = HashingUtils::HashString("IncompatibleOrderableOptions");
@@ -311,6 +312,9 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_IDC_APPLICATION_ALREADY_EXISTS_FAULT),
                                  RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == REDSHIFT_INVALID_PARAMETER_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::REDSHIFT_INVALID_PARAMETER_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), RetryableType::NOT_RETRYABLE);
@@ -588,16 +592,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == COPY_TO_REGION_DISABLED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::COPY_TO_REGION_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH) {
-    error =
-        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
   }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
-  if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH) {
+  if (hashCode == NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH) {
+    error =
+        AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH) {

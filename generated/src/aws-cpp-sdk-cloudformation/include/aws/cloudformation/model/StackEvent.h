@@ -26,7 +26,7 @@ namespace CloudFormation {
 namespace Model {
 
 /**
- * <p>The StackEvent data type.</p><p><h3>See Also:</h3>   <a
+ * <p>The <code>StackEvent</code> data type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackEvent">AWS
  * API Reference</a></p>
  */

@@ -126,7 +126,8 @@ class CreateStreamingURLRequest : public AppStreamRequest {
   /**
    * <p>The session context. For more information, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
-   * Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+   * Context</a> in the <i>Amazon WorkSpaces Applications Administration
+   * Guide</i>.</p>
    */
   inline const Aws::String& GetSessionContext() const { return m_sessionContext; }
   inline bool SessionContextHasBeenSet() const { return m_sessionContextHasBeenSet; }

@@ -64,13 +64,17 @@ AuthenticationProfile& AuthenticationProfile::operator=(JsonView jsonValue) {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
     m_lastModifiedRegionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("PeriodicSessionDuration")) {
-    m_periodicSessionDuration = jsonValue.GetInteger("PeriodicSessionDuration");
-    m_periodicSessionDurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("MaxSessionDuration")) {
     m_maxSessionDuration = jsonValue.GetInteger("MaxSessionDuration");
     m_maxSessionDurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SessionInactivityDuration")) {
+    m_sessionInactivityDuration = jsonValue.GetInteger("SessionInactivityDuration");
+    m_sessionInactivityDurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SessionInactivityHandlingEnabled")) {
+    m_sessionInactivityHandlingEnabled = jsonValue.GetBool("SessionInactivityHandlingEnabled");
+    m_sessionInactivityHandlingEnabledHasBeenSet = true;
   }
   return *this;
 }
@@ -126,12 +130,16 @@ JsonValue AuthenticationProfile::Jsonize() const {
     payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
   }
 
-  if (m_periodicSessionDurationHasBeenSet) {
-    payload.WithInteger("PeriodicSessionDuration", m_periodicSessionDuration);
-  }
-
   if (m_maxSessionDurationHasBeenSet) {
     payload.WithInteger("MaxSessionDuration", m_maxSessionDuration);
+  }
+
+  if (m_sessionInactivityDurationHasBeenSet) {
+    payload.WithInteger("SessionInactivityDuration", m_sessionInactivityDuration);
+  }
+
+  if (m_sessionInactivityHandlingEnabledHasBeenSet) {
+    payload.WithBool("SessionInactivityHandlingEnabled", m_sessionInactivityHandlingEnabled);
   }
 
   return payload;

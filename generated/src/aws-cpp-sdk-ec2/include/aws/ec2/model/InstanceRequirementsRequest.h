@@ -484,7 +484,9 @@ class InstanceRequirementsRequest {
    * instance types with FPGA accelerators, specify <code>fpga</code>.</p> </li> <li>
    * <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p> </li>
    * <li> <p>For instance types with Inference accelerators, specify
-   * <code>inference</code>.</p> </li> </ul> <p>Default: Any accelerator type</p>
+   * <code>inference</code>.</p> </li> <li> <p>For instance types with Media
+   * accelerators, specify <code>media</code>.</p> </li> </ul> <p>Default: Any
+   * accelerator type</p>
    */
   inline const Aws::Vector<AcceleratorType>& GetAcceleratorTypes() const { return m_acceleratorTypes; }
   inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }
@@ -564,16 +566,25 @@ class InstanceRequirementsRequest {
    * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
    * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
    * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
-   * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-   * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
-   * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
-   * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
-   * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
-   * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
-   * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
-   * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
-   * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-   * </li> </ul> <p>Default: Any accelerator</p>
+   * instance types with Amazon Web Services Inferentia2 chips, specify
+   * <code>inferentia2</code>.</p> </li> <li> <p>For instance types with Habana Gaudi
+   * HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p> </li> <li> <p>For instance
+   * types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> <li>
+   * <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+   * <li> <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p>
+   * </li> <li> <p>For instance types with NVIDIA L40S GPUs, specify
+   * <code>l40s</code>.</p> </li> <li> <p>For instance types with NVIDIA M60 GPUs,
+   * specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon
+   * Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For
+   * instance types with Amazon Web Services Trainium chips, specify
+   * <code>trainium</code>.</p> </li> <li> <p>For instance types with Amazon Web
+   * Services Trainium2 chips, specify <code>trainium2</code>.</p> </li> <li> <p>For
+   * instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li>
+   * <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+   * <li> <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p>
+   * </li> <li> <p>For instance types with Xilinx VU9P FPGAs, specify
+   * <code>vu9p</code>.</p> </li> <li> <p>For instance types with NVIDIA V100 GPUs,
+   * specify <code>v100</code>.</p> </li> </ul> <p>Default: Any accelerator</p>
    */
   inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const { return m_acceleratorNames; }
   inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
@@ -731,6 +742,27 @@ class InstanceRequirementsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether instance types must support encrypting in-transit traffic
+   * between instances. For more information, including the supported instance types,
+   * see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption
+   * in transit</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+   * <code>false</code> </p>
+   */
+  inline bool GetRequireEncryptionInTransit() const { return m_requireEncryptionInTransit; }
+  inline bool RequireEncryptionInTransitHasBeenSet() const { return m_requireEncryptionInTransitHasBeenSet; }
+  inline void SetRequireEncryptionInTransit(bool value) {
+    m_requireEncryptionInTransitHasBeenSet = true;
+    m_requireEncryptionInTransit = value;
+  }
+  inline InstanceRequirementsRequest& WithRequireEncryptionInTransit(bool value) {
+    SetRequireEncryptionInTransit(value);
+    return *this;
+  }
+  ///@}
  private:
   VCpuCountRangeRequest m_vCpuCount;
   bool m_vCpuCountHasBeenSet = false;
@@ -806,6 +838,9 @@ class InstanceRequirementsRequest {
 
   BaselinePerformanceFactorsRequest m_baselinePerformanceFactors;
   bool m_baselinePerformanceFactorsHasBeenSet = false;
+
+  bool m_requireEncryptionInTransit{false};
+  bool m_requireEncryptionInTransitHasBeenSet = false;
 };
 
 }  // namespace Model

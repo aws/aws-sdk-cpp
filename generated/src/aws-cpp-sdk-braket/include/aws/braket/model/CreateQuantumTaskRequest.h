@@ -7,6 +7,7 @@
 #include <aws/braket/BraketRequest.h>
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/Association.h>
+#include <aws/braket/model/ExperimentalCapabilities.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -223,6 +224,24 @@ class CreateQuantumTaskRequest : public BraketRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enable experimental capabilities for the quantum task.</p>
+   */
+  inline const ExperimentalCapabilities& GetExperimentalCapabilities() const { return m_experimentalCapabilities; }
+  inline bool ExperimentalCapabilitiesHasBeenSet() const { return m_experimentalCapabilitiesHasBeenSet; }
+  template <typename ExperimentalCapabilitiesT = ExperimentalCapabilities>
+  void SetExperimentalCapabilities(ExperimentalCapabilitiesT&& value) {
+    m_experimentalCapabilitiesHasBeenSet = true;
+    m_experimentalCapabilities = std::forward<ExperimentalCapabilitiesT>(value);
+  }
+  template <typename ExperimentalCapabilitiesT = ExperimentalCapabilities>
+  CreateQuantumTaskRequest& WithExperimentalCapabilities(ExperimentalCapabilitiesT&& value) {
+    SetExperimentalCapabilities(std::forward<ExperimentalCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
@@ -253,6 +272,9 @@ class CreateQuantumTaskRequest : public BraketRequest {
 
   Aws::Vector<Association> m_associations;
   bool m_associationsHasBeenSet = false;
+
+  ExperimentalCapabilities m_experimentalCapabilities;
+  bool m_experimentalCapabilitiesHasBeenSet = false;
 };
 
 }  // namespace Model

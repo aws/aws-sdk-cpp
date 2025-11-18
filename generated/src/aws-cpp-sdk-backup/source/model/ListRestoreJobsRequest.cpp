@@ -78,4 +78,10 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("restoreTestingPlanArn", ss.str());
     ss.str("");
   }
+
+  if (m_byParentJobIdHasBeenSet) {
+    ss << m_byParentJobId;
+    uri.AddQueryStringParameter("parentJobId", ss.str());
+    ss.str("");
+  }
 }

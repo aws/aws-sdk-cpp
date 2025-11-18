@@ -125,6 +125,10 @@ Fleet& Fleet::operator=(JsonView jsonValue) {
     m_maxSessionsPerInstance = jsonValue.GetInteger("MaxSessionsPerInstance");
     m_maxSessionsPerInstanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RootVolumeConfig")) {
+    m_rootVolumeConfig = jsonValue.GetObject("RootVolumeConfig");
+    m_rootVolumeConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +242,10 @@ JsonValue Fleet::Jsonize() const {
 
   if (m_maxSessionsPerInstanceHasBeenSet) {
     payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
+  }
+
+  if (m_rootVolumeConfigHasBeenSet) {
+    payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
   }
 
   return payload;

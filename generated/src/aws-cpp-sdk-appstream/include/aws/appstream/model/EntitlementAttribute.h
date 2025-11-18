@@ -22,8 +22,8 @@ namespace Model {
 /**
  * <p>An attribute associated with an entitlement. Application entitlements work by
  * matching a supported SAML 2.0 attribute name to a value when a user identity
- * federates to an Amazon AppStream 2.0 SAML application.</p><p><h3>See Also:</h3>
- * <a
+ * federates to a WorkSpaces Applications SAML application.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EntitlementAttribute">AWS
  * API Reference</a></p>
  */
@@ -37,11 +37,11 @@ class EntitlementAttribute {
   ///@{
   /**
    * <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched
-   * to the associated value when a user identity federates into an Amazon AppStream
-   * 2.0 SAML application.</p> <p>The following are valid values:</p> <ul> <li>
-   * <p>roles</p> </li> <li> <p>department </p> </li> <li> <p>organization </p> </li>
-   * <li> <p>groups </p> </li> <li> <p>title </p> </li> <li> <p>costCenter </p> </li>
-   * <li> <p>userType</p> </li> </ul> <p> </p>
+   * to the associated value when a user identity federates into a WorkSpaces
+   * Applications SAML application.</p> <p>The following are valid values:</p> <ul>
+   * <li> <p>roles</p> </li> <li> <p>department </p> </li> <li> <p>organization </p>
+   * </li> <li> <p>groups </p> </li> <li> <p>title </p> </li> <li> <p>costCenter </p>
+   * </li> <li> <p>userType</p> </li> </ul> <p> </p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -60,7 +60,7 @@ class EntitlementAttribute {
   ///@{
   /**
    * <p>A value that is matched to a supported SAML attribute name when a user
-   * identity federates into an Amazon AppStream 2.0 SAML application. </p>
+   * identity federates into a WorkSpaces Applications SAML application. </p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

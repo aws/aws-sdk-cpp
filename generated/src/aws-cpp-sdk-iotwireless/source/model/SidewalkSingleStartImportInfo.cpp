@@ -22,6 +22,10 @@ SidewalkSingleStartImportInfo& SidewalkSingleStartImportInfo::operator=(JsonView
     m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
     m_sidewalkManufacturingSnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = jsonValue.GetObject("Positioning");
+    m_positioningHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue SidewalkSingleStartImportInfo::Jsonize() const {
 
   if (m_sidewalkManufacturingSnHasBeenSet) {
     payload.WithString("SidewalkManufacturingSn", m_sidewalkManufacturingSn);
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithObject("Positioning", m_positioning.Jsonize());
   }
 
   return payload;

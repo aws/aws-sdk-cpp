@@ -245,7 +245,7 @@ class AWS_CONTROLCATALOG_API ControlCatalogClient : public Aws::Client::AWSJsonC
   /**
    * <p>Returns a paginated list of objectives from the Control Catalog.</p> <p>You
    * can apply an optional filter to see the objectives that belong to a specific
-   * domain. If you don���t provide a filter, the operation returns all objectives.
+   * domain. If you don’t provide a filter, the operation returns all objectives.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListObjectives">AWS
    * API Reference</a></p>

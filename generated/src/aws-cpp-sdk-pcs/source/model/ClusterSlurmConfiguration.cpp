@@ -34,9 +34,17 @@ ClusterSlurmConfiguration& ClusterSlurmConfiguration::operator=(JsonView jsonVal
     m_authKey = jsonValue.GetObject("authKey");
     m_authKeyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jwtAuth")) {
+    m_jwtAuth = jsonValue.GetObject("jwtAuth");
+    m_jwtAuthHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("accounting")) {
     m_accounting = jsonValue.GetObject("accounting");
     m_accountingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slurmRest")) {
+    m_slurmRest = jsonValue.GetObject("slurmRest");
+    m_slurmRestHasBeenSet = true;
   }
   return *this;
 }
@@ -61,8 +69,16 @@ JsonValue ClusterSlurmConfiguration::Jsonize() const {
     payload.WithObject("authKey", m_authKey.Jsonize());
   }
 
+  if (m_jwtAuthHasBeenSet) {
+    payload.WithObject("jwtAuth", m_jwtAuth.Jsonize());
+  }
+
   if (m_accountingHasBeenSet) {
     payload.WithObject("accounting", m_accounting.Jsonize());
+  }
+
+  if (m_slurmRestHasBeenSet) {
+    payload.WithObject("slurmRest", m_slurmRest.Jsonize());
   }
 
   return payload;

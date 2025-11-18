@@ -8,6 +8,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/appstream/model/VolumeConfig.h>
 #include <aws/appstream/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -107,29 +108,26 @@ class CreateImageBuilderRequest : public AppStreamRequest {
    * <p>stream.graphics-design.xlarge</p> </li> <li>
    * <p>stream.graphics-design.2xlarge</p> </li> <li>
    * <p>stream.graphics-design.4xlarge</p> </li> <li>
-   * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
-   * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
-   * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> <li>
-   * <p>stream.graphics.g5.xlarge</p> </li> <li> <p>stream.graphics.g5.2xlarge</p>
-   * </li> <li> <p>stream.graphics.g5.4xlarge</p> </li> <li>
-   * <p>stream.graphics.g5.8xlarge</p> </li> <li> <p>stream.graphics.g5.16xlarge</p>
-   * </li> <li> <p>stream.graphics.g5.12xlarge</p> </li> <li>
-   * <p>stream.graphics.g5.24xlarge</p> </li> <li> <p>stream.graphics.g6.xlarge</p>
-   * </li> <li> <p>stream.graphics.g6.2xlarge</p> </li> <li>
-   * <p>stream.graphics.g6.4xlarge</p> </li> <li> <p>stream.graphics.g6.8xlarge</p>
-   * </li> <li> <p>stream.graphics.g6.16xlarge</p> </li> <li>
-   * <p>stream.graphics.g6.12xlarge</p> </li> <li> <p>stream.graphics.g6.24xlarge</p>
-   * </li> <li> <p>stream.graphics.gr6.4xlarge</p> </li> <li>
-   * <p>stream.graphics.gr6.8xlarge</p> </li> <li> <p>stream.graphics.g6f.large</p>
-   * </li> <li> <p>stream.graphics.g6f.xlarge</p> </li> <li>
-   * <p>stream.graphics.g6f.2xlarge</p> </li> <li> <p>stream.graphics.g6f.4xlarge</p>
-   * </li> <li> <p>stream.graphics.gr6f.4xlarge</p> </li> </ul>
+   * <p>stream.graphics.g4dn.16xlarge</p> </li> <li> <p>stream.graphics.g5.xlarge</p>
+   * </li> <li> <p>stream.graphics.g5.2xlarge</p> </li> <li>
+   * <p>stream.graphics.g5.4xlarge</p> </li> <li> <p>stream.graphics.g5.8xlarge</p>
+   * </li> <li> <p>stream.graphics.g5.16xlarge</p> </li> <li>
+   * <p>stream.graphics.g5.12xlarge</p> </li> <li> <p>stream.graphics.g5.24xlarge</p>
+   * </li> <li> <p>stream.graphics.g6.xlarge</p> </li> <li>
+   * <p>stream.graphics.g6.2xlarge</p> </li> <li> <p>stream.graphics.g6.4xlarge</p>
+   * </li> <li> <p>stream.graphics.g6.8xlarge</p> </li> <li>
+   * <p>stream.graphics.g6.16xlarge</p> </li> <li> <p>stream.graphics.g6.12xlarge</p>
+   * </li> <li> <p>stream.graphics.g6.24xlarge</p> </li> <li>
+   * <p>stream.graphics.gr6.4xlarge</p> </li> <li> <p>stream.graphics.gr6.8xlarge</p>
+   * </li> <li> <p>stream.graphics.g6f.large</p> </li> <li>
+   * <p>stream.graphics.g6f.xlarge</p> </li> <li> <p>stream.graphics.g6f.2xlarge</p>
+   * </li> <li> <p>stream.graphics.g6f.4xlarge</p> </li> <li>
+   * <p>stream.graphics.gr6f.4xlarge</p> </li> </ul>
    */
   inline const Aws::String& GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -205,14 +203,14 @@ class CreateImageBuilderRequest : public AppStreamRequest {
    * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
    * To assume a role, the image builder calls the AWS Security Token Service (STS)
    * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-   * operation creates a new session with temporary credentials. AppStream 2.0
-   * retrieves the temporary credentials and creates the
+   * operation creates a new session with temporary credentials. WorkSpaces
+   * Applications retrieves the temporary credentials and creates the
    * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
    * more information, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
    * an IAM Role to Grant Permissions to Applications and Scripts Running on
-   * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
-   * Administration Guide</i>.</p>
+   * WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces
+   * Applications Administration Guide</i>.</p>
    */
   inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
   inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -265,8 +263,9 @@ class CreateImageBuilderRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
-   * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+   * <p>The version of the WorkSpaces Applications agent to use for this image
+   * builder. To use the latest version of the WorkSpaces Applications agent, specify
+   * [LATEST]. </p>
    */
   inline const Aws::String& GetAppstreamAgentVersion() const { return m_appstreamAgentVersion; }
   inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }
@@ -291,7 +290,8 @@ class CreateImageBuilderRequest : public AppStreamRequest {
    * <p>_ . : / = + \ - @</p> <p>If you do not specify a value, the value is set to
    * an empty string.</p> <p>For more information about tags, see <a
    * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-   * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+   * Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration
+   * Guide</i>.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -335,6 +335,26 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   CreateImageBuilderRequest& AddAccessEndpoints(AccessEndpointsT&& value) {
     m_accessEndpointsHasBeenSet = true;
     m_accessEndpoints.emplace_back(std::forward<AccessEndpointsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the root volume of the image builder. Use this to
+   * customize storage capacity from 200 GB up to 500 GB based on your application
+   * installation requirements.</p>
+   */
+  inline const VolumeConfig& GetRootVolumeConfig() const { return m_rootVolumeConfig; }
+  inline bool RootVolumeConfigHasBeenSet() const { return m_rootVolumeConfigHasBeenSet; }
+  template <typename RootVolumeConfigT = VolumeConfig>
+  void SetRootVolumeConfig(RootVolumeConfigT&& value) {
+    m_rootVolumeConfigHasBeenSet = true;
+    m_rootVolumeConfig = std::forward<RootVolumeConfigT>(value);
+  }
+  template <typename RootVolumeConfigT = VolumeConfig>
+  CreateImageBuilderRequest& WithRootVolumeConfig(RootVolumeConfigT&& value) {
+    SetRootVolumeConfig(std::forward<RootVolumeConfigT>(value));
     return *this;
   }
   ///@}
@@ -475,6 +495,9 @@ class CreateImageBuilderRequest : public AppStreamRequest {
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
   bool m_accessEndpointsHasBeenSet = false;
+
+  VolumeConfig m_rootVolumeConfig;
+  bool m_rootVolumeConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_softwaresToInstall;
   bool m_softwaresToInstallHasBeenSet = false;

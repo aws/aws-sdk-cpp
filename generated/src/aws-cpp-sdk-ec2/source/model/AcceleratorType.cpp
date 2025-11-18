@@ -18,6 +18,7 @@ namespace AcceleratorTypeMapper {
 static const int gpu_HASH = HashingUtils::HashString("gpu");
 static const int fpga_HASH = HashingUtils::HashString("fpga");
 static const int inference_HASH = HashingUtils::HashString("inference");
+static const int media_HASH = HashingUtils::HashString("media");
 
 AcceleratorType GetAcceleratorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AcceleratorType GetAcceleratorTypeForName(const Aws::String& name) {
     return AcceleratorType::fpga;
   } else if (hashCode == inference_HASH) {
     return AcceleratorType::inference;
+  } else if (hashCode == media_HASH) {
+    return AcceleratorType::media;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAcceleratorType(AcceleratorType enumValue) {
       return "fpga";
     case AcceleratorType::inference:
       return "inference";
+    case AcceleratorType::media:
+      return "media";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

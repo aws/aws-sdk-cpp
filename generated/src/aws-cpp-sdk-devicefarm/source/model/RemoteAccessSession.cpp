@@ -58,26 +58,6 @@ RemoteAccessSession& RemoteAccessSession::operator=(JsonView jsonValue) {
     m_instanceArn = jsonValue.GetString("instanceArn");
     m_instanceArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("remoteDebugEnabled")) {
-    m_remoteDebugEnabled = jsonValue.GetBool("remoteDebugEnabled");
-    m_remoteDebugEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("remoteRecordEnabled")) {
-    m_remoteRecordEnabled = jsonValue.GetBool("remoteRecordEnabled");
-    m_remoteRecordEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("remoteRecordAppArn")) {
-    m_remoteRecordAppArn = jsonValue.GetString("remoteRecordAppArn");
-    m_remoteRecordAppArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("hostAddress")) {
-    m_hostAddress = jsonValue.GetString("hostAddress");
-    m_hostAddressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("clientId")) {
-    m_clientId = jsonValue.GetString("clientId");
-    m_clientIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("billingMethod")) {
     m_billingMethod = BillingMethodMapper::GetBillingMethodForName(jsonValue.GetString("billingMethod"));
     m_billingMethodHasBeenSet = true;
@@ -86,17 +66,9 @@ RemoteAccessSession& RemoteAccessSession::operator=(JsonView jsonValue) {
     m_deviceMinutes = jsonValue.GetObject("deviceMinutes");
     m_deviceMinutesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("endpoint")) {
-    m_endpoint = jsonValue.GetString("endpoint");
-    m_endpointHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("deviceUdid")) {
     m_deviceUdid = jsonValue.GetString("deviceUdid");
     m_deviceUdidHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("interactionMode")) {
-    m_interactionMode = InteractionModeMapper::GetInteractionModeForName(jsonValue.GetString("interactionMode"));
-    m_interactionModeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("skipAppResign")) {
     m_skipAppResign = jsonValue.GetBool("skipAppResign");
@@ -113,6 +85,10 @@ RemoteAccessSession& RemoteAccessSession::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("appUpload")) {
     m_appUpload = jsonValue.GetString("appUpload");
     m_appUploadHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endpoints")) {
+    m_endpoints = jsonValue.GetObject("endpoints");
+    m_endpointsHasBeenSet = true;
   }
   return *this;
 }
@@ -160,26 +136,6 @@ JsonValue RemoteAccessSession::Jsonize() const {
     payload.WithString("instanceArn", m_instanceArn);
   }
 
-  if (m_remoteDebugEnabledHasBeenSet) {
-    payload.WithBool("remoteDebugEnabled", m_remoteDebugEnabled);
-  }
-
-  if (m_remoteRecordEnabledHasBeenSet) {
-    payload.WithBool("remoteRecordEnabled", m_remoteRecordEnabled);
-  }
-
-  if (m_remoteRecordAppArnHasBeenSet) {
-    payload.WithString("remoteRecordAppArn", m_remoteRecordAppArn);
-  }
-
-  if (m_hostAddressHasBeenSet) {
-    payload.WithString("hostAddress", m_hostAddress);
-  }
-
-  if (m_clientIdHasBeenSet) {
-    payload.WithString("clientId", m_clientId);
-  }
-
   if (m_billingMethodHasBeenSet) {
     payload.WithString("billingMethod", BillingMethodMapper::GetNameForBillingMethod(m_billingMethod));
   }
@@ -188,16 +144,8 @@ JsonValue RemoteAccessSession::Jsonize() const {
     payload.WithObject("deviceMinutes", m_deviceMinutes.Jsonize());
   }
 
-  if (m_endpointHasBeenSet) {
-    payload.WithString("endpoint", m_endpoint);
-  }
-
   if (m_deviceUdidHasBeenSet) {
     payload.WithString("deviceUdid", m_deviceUdid);
-  }
-
-  if (m_interactionModeHasBeenSet) {
-    payload.WithString("interactionMode", InteractionModeMapper::GetNameForInteractionMode(m_interactionMode));
   }
 
   if (m_skipAppResignHasBeenSet) {
@@ -214,6 +162,10 @@ JsonValue RemoteAccessSession::Jsonize() const {
 
   if (m_appUploadHasBeenSet) {
     payload.WithString("appUpload", m_appUpload);
+  }
+
+  if (m_endpointsHasBeenSet) {
+    payload.WithObject("endpoints", m_endpoints.Jsonize());
   }
 
   return payload;

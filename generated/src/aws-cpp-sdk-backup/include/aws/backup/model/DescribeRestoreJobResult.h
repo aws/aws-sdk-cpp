@@ -395,6 +395,40 @@ class DescribeRestoreJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>This is a boolean value indicating whether the restore job is a parent
+   * (composite) restore job.</p>
+   */
+  inline bool GetIsParent() const { return m_isParent; }
+  inline void SetIsParent(bool value) {
+    m_isParentHasBeenSet = true;
+    m_isParent = value;
+  }
+  inline DescribeRestoreJobResult& WithIsParent(bool value) {
+    SetIsParent(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This is the unique identifier of the parent restore job for the selected
+   * restore job.</p>
+   */
+  inline const Aws::String& GetParentJobId() const { return m_parentJobId; }
+  template <typename ParentJobIdT = Aws::String>
+  void SetParentJobId(ParentJobIdT&& value) {
+    m_parentJobIdHasBeenSet = true;
+    m_parentJobId = std::forward<ParentJobIdT>(value);
+  }
+  template <typename ParentJobIdT = Aws::String>
+  DescribeRestoreJobResult& WithParentJobId(ParentJobIdT&& value) {
+    SetParentJobId(std::forward<ParentJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -471,6 +505,12 @@ class DescribeRestoreJobResult {
 
   Aws::String m_deletionStatusMessage;
   bool m_deletionStatusMessageHasBeenSet = false;
+
+  bool m_isParent{false};
+  bool m_isParentHasBeenSet = false;
+
+  Aws::String m_parentJobId;
+  bool m_parentJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -91,6 +91,10 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator=(const Aws::AmazonWebServic
     m_actionMetadata = jsonValue.GetObject("actionMetadata");
     m_actionMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("experimentalCapabilities")) {
+    m_experimentalCapabilities = jsonValue.GetObject("experimentalCapabilities");
+    m_experimentalCapabilitiesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

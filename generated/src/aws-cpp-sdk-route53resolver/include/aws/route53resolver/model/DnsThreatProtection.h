@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53Resolver {
 namespace Model {
-enum class DnsThreatProtection { NOT_SET, DGA, DNS_TUNNELING };
+enum class DnsThreatProtection { NOT_SET, DGA, DNS_TUNNELING, DICTIONARY_DGA };
 
 namespace DnsThreatProtectionMapper {
 AWS_ROUTE53RESOLVER_API DnsThreatProtection GetDnsThreatProtectionForName(const Aws::String& name);

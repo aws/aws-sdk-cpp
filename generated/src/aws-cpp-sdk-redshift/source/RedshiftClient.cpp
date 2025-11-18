@@ -120,6 +120,7 @@
 #include <aws/redshift/model/FailoverPrimaryComputeRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
+#include <aws/redshift/model/GetIdentityCenterAuthTokenRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
 #include <aws/redshift/model/GetResourcePolicyRequest.h>
@@ -3161,6 +3162,35 @@ GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClusterCredentialsWithIAM, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return GetClusterCredentialsWithIAMOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetIdentityCenterAuthTokenOutcome RedshiftClient::GetIdentityCenterAuthToken(const GetIdentityCenterAuthTokenRequest& request) const {
+  AWS_OPERATION_GUARD(GetIdentityCenterAuthToken);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityCenterAuthToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIdentityCenterAuthToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetIdentityCenterAuthToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetIdentityCenterAuthTokenOutcome>(
+      [&]() -> GetIdentityCenterAuthTokenOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityCenterAuthToken, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return GetIdentityCenterAuthTokenOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -57,6 +57,10 @@ SidewalkDevice& SidewalkDevice::operator=(JsonView jsonValue) {
     m_status = WirelessDeviceSidewalkStatusMapper::GetWirelessDeviceSidewalkStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Positioning")) {
+    m_positioning = jsonValue.GetObject("Positioning");
+    m_positioningHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue SidewalkDevice::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", WirelessDeviceSidewalkStatusMapper::GetNameForWirelessDeviceSidewalkStatus(m_status));
+  }
+
+  if (m_positioningHasBeenSet) {
+    payload.WithObject("Positioning", m_positioning.Jsonize());
   }
 
   return payload;

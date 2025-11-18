@@ -7,7 +7,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
-#include <aws/datazone/model/SortKey.h>
 #include <aws/datazone/model/SortOrder.h>
 
 #include <utility>
@@ -118,6 +117,24 @@ class ListSubscriptionGrantsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the owning group.</p>
+   */
+  inline const Aws::String& GetOwningGroupId() const { return m_owningGroupId; }
+  inline bool OwningGroupIdHasBeenSet() const { return m_owningGroupIdHasBeenSet; }
+  template <typename OwningGroupIdT = Aws::String>
+  void SetOwningGroupId(OwningGroupIdT&& value) {
+    m_owningGroupIdHasBeenSet = true;
+    m_owningGroupId = std::forward<OwningGroupIdT>(value);
+  }
+  template <typename OwningGroupIdT = Aws::String>
+  ListSubscriptionGrantsRequest& WithOwningGroupId(OwningGroupIdT&& value) {
+    SetOwningGroupId(std::forward<OwningGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the owning project of the subscription grants.</p>
    */
   inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
@@ -136,16 +153,18 @@ class ListSubscriptionGrantsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the way of sorting the results of this action.</p>
+   * <p>The ID of the owning user.</p>
    */
-  inline SortKey GetSortBy() const { return m_sortBy; }
-  inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-  inline void SetSortBy(SortKey value) {
-    m_sortByHasBeenSet = true;
-    m_sortBy = value;
+  inline const Aws::String& GetOwningUserId() const { return m_owningUserId; }
+  inline bool OwningUserIdHasBeenSet() const { return m_owningUserIdHasBeenSet; }
+  template <typename OwningUserIdT = Aws::String>
+  void SetOwningUserId(OwningUserIdT&& value) {
+    m_owningUserIdHasBeenSet = true;
+    m_owningUserId = std::forward<OwningUserIdT>(value);
   }
-  inline ListSubscriptionGrantsRequest& WithSortBy(SortKey value) {
-    SetSortBy(value);
+  template <typename OwningUserIdT = Aws::String>
+  ListSubscriptionGrantsRequest& WithOwningUserId(OwningUserIdT&& value) {
+    SetOwningUserId(std::forward<OwningUserIdT>(value));
     return *this;
   }
   ///@}
@@ -232,11 +251,14 @@ class ListSubscriptionGrantsRequest : public DataZoneRequest {
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
 
+  Aws::String m_owningGroupId;
+  bool m_owningGroupIdHasBeenSet = false;
+
   Aws::String m_owningProjectId;
   bool m_owningProjectIdHasBeenSet = false;
 
-  SortKey m_sortBy{SortKey::NOT_SET};
-  bool m_sortByHasBeenSet = false;
+  Aws::String m_owningUserId;
+  bool m_owningUserIdHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
   bool m_sortOrderHasBeenSet = false;

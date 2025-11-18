@@ -377,6 +377,25 @@ class CopyJob {
 
   ///@{
   /**
+   * <p>The backup job ID that initiated this copy job. Only applicable to scheduled
+   * copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+   */
+  inline const Aws::String& GetCreatedByBackupJobId() const { return m_createdByBackupJobId; }
+  inline bool CreatedByBackupJobIdHasBeenSet() const { return m_createdByBackupJobIdHasBeenSet; }
+  template <typename CreatedByBackupJobIdT = Aws::String>
+  void SetCreatedByBackupJobId(CreatedByBackupJobIdT&& value) {
+    m_createdByBackupJobIdHasBeenSet = true;
+    m_createdByBackupJobId = std::forward<CreatedByBackupJobIdT>(value);
+  }
+  template <typename CreatedByBackupJobIdT = Aws::String>
+  CopyJob& WithCreatedByBackupJobId(CreatedByBackupJobIdT&& value) {
+    SetCreatedByBackupJobId(std::forward<CreatedByBackupJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
    * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
    * (Amazon RDS) database.</p>
@@ -586,6 +605,9 @@ class CopyJob {
 
   RecoveryPointCreator m_createdBy;
   bool m_createdByHasBeenSet = false;
+
+  Aws::String m_createdByBackupJobId;
+  bool m_createdByBackupJobIdHasBeenSet = false;
 
   Aws::String m_resourceType;
   bool m_resourceTypeHasBeenSet = false;

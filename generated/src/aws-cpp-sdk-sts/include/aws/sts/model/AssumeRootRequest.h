@@ -54,8 +54,8 @@ class AssumeRootRequest : public STSRequest {
   ///@{
   /**
    * <p>The identity based policy that scopes the session to the privileged tasks
-   * that can be performed. You can use one of following Amazon Web Services managed
-   * policies to scope root session actions.</p> <ul> <li> <p> <a
+   * that can be performed. You must use one of following Amazon Web Services managed
+   * policies to scope root session actions:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMCreateRootUserPassword">IAMCreateRootUserPassword</a>

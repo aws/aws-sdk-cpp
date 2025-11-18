@@ -25,6 +25,7 @@
 #include <aws/s3tables/model/CreateTableRequest.h>
 #include <aws/s3tables/model/DeleteNamespaceRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketEncryptionRequest.h>
+#include <aws/s3tables/model/DeleteTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/DeleteTableBucketRequest.h>
 #include <aws/s3tables/model/DeleteTablePolicyRequest.h>
@@ -32,6 +33,7 @@
 #include <aws/s3tables/model/GetNamespaceRequest.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationRequest.h>
+#include <aws/s3tables/model/GetTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/GetTableBucketRequest.h>
 #include <aws/s3tables/model/GetTableEncryptionRequest.h>
@@ -46,6 +48,7 @@
 #include <aws/s3tables/model/ListTagsForResourceRequest.h>
 #include <aws/s3tables/model/PutTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/PutTableBucketMaintenanceConfigurationRequest.h>
+#include <aws/s3tables/model/PutTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketPolicyRequest.h>
 #include <aws/s3tables/model/PutTableMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/PutTablePolicyRequest.h>
@@ -440,6 +443,44 @@ DeleteTableBucketEncryptionOutcome S3TablesClient::DeleteTableBucketEncryption(c
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteTableBucketMetricsConfigurationOutcome S3TablesClient::DeleteTableBucketMetricsConfiguration(
+    const DeleteTableBucketMetricsConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteTableBucketMetricsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTableBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteTableBucketMetricsConfiguration", "Required field: TableBucketARN, is not set");
+    return DeleteTableBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3TablesErrors>(
+        S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteTableBucketMetricsConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteTableBucketMetricsConfigurationOutcome>(
+      [&]() -> DeleteTableBucketMetricsConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTableBucketMetricsConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
+        return DeleteTableBucketMetricsConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteTableBucketPolicyOutcome S3TablesClient::DeleteTableBucketPolicy(const DeleteTableBucketPolicyRequest& request) const {
   AWS_OPERATION_GUARD(DeleteTableBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTableBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -702,6 +743,44 @@ GetTableBucketMaintenanceConfigurationOutcome S3TablesClient::GetTableBucketMain
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         endpointResolutionOutcome.GetResult().AddPathSegments("/maintenance");
         return GetTableBucketMaintenanceConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTableBucketMetricsConfigurationOutcome S3TablesClient::GetTableBucketMetricsConfiguration(
+    const GetTableBucketMetricsConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(GetTableBucketMetricsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTableBucketMetricsConfiguration", "Required field: TableBucketARN, is not set");
+    return GetTableBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3TablesErrors>(
+        S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTableBucketMetricsConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTableBucketMetricsConfigurationOutcome>(
+      [&]() -> GetTableBucketMetricsConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTableBucketMetricsConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
+        return GetTableBucketMetricsConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1205,6 +1284,44 @@ PutTableBucketMaintenanceConfigurationOutcome S3TablesClient::PutTableBucketMain
         endpointResolutionOutcome.GetResult().AddPathSegment(
             TableBucketMaintenanceTypeMapper::GetNameForTableBucketMaintenanceType(request.GetType()));
         return PutTableBucketMaintenanceConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutTableBucketMetricsConfigurationOutcome S3TablesClient::PutTableBucketMetricsConfiguration(
+    const PutTableBucketMetricsConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(PutTableBucketMetricsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutTableBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TableBucketARNHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTableBucketMetricsConfiguration", "Required field: TableBucketARN, is not set");
+    return PutTableBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3TablesErrors>(
+        S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableBucketARN]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutTableBucketMetricsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutTableBucketMetricsConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutTableBucketMetricsConfigurationOutcome>(
+      [&]() -> PutTableBucketMetricsConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutTableBucketMetricsConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
+        return PutTableBucketMetricsConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

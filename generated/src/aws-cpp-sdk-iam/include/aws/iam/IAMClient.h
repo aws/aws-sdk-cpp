@@ -420,6 +420,34 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>This API is currently unavailable for general use.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDelegationRequestOutcome CreateDelegationRequest(const Model::CreateDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDelegationRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDelegationRequestRequestT = Model::CreateDelegationRequestRequest>
+  Model::CreateDelegationRequestOutcomeCallable CreateDelegationRequestCallable(const CreateDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::CreateDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDelegationRequestRequestT = Model::CreateDelegationRequestRequest>
+  void CreateDelegationRequestAsync(const CreateDelegationRequestRequestT& request,
+                                    const CreateDelegationRequestResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::CreateDelegationRequest, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new group.</p> <p> For information about the number of groups you
    * can create, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
@@ -2113,7 +2141,7 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * Services services, because the management account is not limited by SCPs. If you
    * specify a policy ID in the CLI or API, the policy is ignored. For each service,
    * the report includes data for only the management account.</p> </li> <li> <p>
-   * <b>Account</b> – When you specify another account entity and a policy ID, the
+   * <b>Account</b> �� When you specify another account entity and a policy ID, the
    * resulting report lists all of the services that are allowed by the specified
    * SCP. For each service, the report includes data for only the specified account.
    * This means that other accounts in the organization that are affected by the SCP

@@ -10,7 +10,14 @@
 namespace Aws {
 namespace AppStream {
 namespace Model {
-enum class ImageStateChangeReasonCode { NOT_SET, INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE };
+enum class ImageStateChangeReasonCode {
+  NOT_SET,
+  INTERNAL_ERROR,
+  IMAGE_BUILDER_NOT_AVAILABLE,
+  IMAGE_COPY_FAILURE,
+  IMAGE_UPDATE_FAILURE,
+  IMAGE_IMPORT_FAILURE
+};
 
 namespace ImageStateChangeReasonCodeMapper {
 AWS_APPSTREAM_API ImageStateChangeReasonCode GetImageStateChangeReasonCodeForName(const Aws::String& name);

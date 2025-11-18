@@ -11,6 +11,7 @@
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/model/Tag.h>
+#include <aws/workspaces-web/model/WebContentFilteringPolicy.h>
 
 #include <utility>
 
@@ -142,6 +143,26 @@ class CreateBrowserSettingsRequest : public WorkSpacesWebRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The policy that specifies which URLs end users are allowed to access or which
+   * URLs or domain categories they are restricted from accessing for enhanced
+   * security.</p>
+   */
+  inline const WebContentFilteringPolicy& GetWebContentFilteringPolicy() const { return m_webContentFilteringPolicy; }
+  inline bool WebContentFilteringPolicyHasBeenSet() const { return m_webContentFilteringPolicyHasBeenSet; }
+  template <typename WebContentFilteringPolicyT = WebContentFilteringPolicy>
+  void SetWebContentFilteringPolicy(WebContentFilteringPolicyT&& value) {
+    m_webContentFilteringPolicyHasBeenSet = true;
+    m_webContentFilteringPolicy = std::forward<WebContentFilteringPolicyT>(value);
+  }
+  template <typename WebContentFilteringPolicyT = WebContentFilteringPolicy>
+  CreateBrowserSettingsRequest& WithWebContentFilteringPolicy(WebContentFilteringPolicyT&& value) {
+    SetWebContentFilteringPolicy(std::forward<WebContentFilteringPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;
@@ -157,6 +178,9 @@ class CreateBrowserSettingsRequest : public WorkSpacesWebRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  WebContentFilteringPolicy m_webContentFilteringPolicy;
+  bool m_webContentFilteringPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

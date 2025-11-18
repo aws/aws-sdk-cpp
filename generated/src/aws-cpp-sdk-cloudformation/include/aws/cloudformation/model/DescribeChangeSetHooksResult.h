@@ -89,7 +89,7 @@ class DescribeChangeSetHooksResult {
 
   ///@{
   /**
-   * <p>Provides the status of the change set hook.</p>
+   * <p>Provides the status of the change set Hook.</p>
    */
   inline ChangeSetHooksStatus GetStatus() const { return m_status; }
   inline void SetStatus(ChangeSetHooksStatus value) {

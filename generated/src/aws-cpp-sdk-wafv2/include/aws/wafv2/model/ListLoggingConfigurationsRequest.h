@@ -105,7 +105,12 @@ class ListLoggingConfigurationsRequest : public WAFV2Request {
    * information, see <a
    * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
    * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
-   * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+   * guide</i>. </p> <p>The log scope <code>CLOUDWATCH_TELEMETRY_RULE_MANAGED</code>
+   * indicates a configuration that is managed through Amazon CloudWatch Logs for
+   * telemetry data collection and analysis. For information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
+   * is Amazon CloudWatch Logs ?</a> in the <i>Amazon CloudWatch Logs user guide</i>.
+   * </p> <p>Default: <code>CUSTOMER</code> </p>
    */
   inline LogScope GetLogScope() const { return m_logScope; }
   inline bool LogScopeHasBeenSet() const { return m_logScopeHasBeenSet; }

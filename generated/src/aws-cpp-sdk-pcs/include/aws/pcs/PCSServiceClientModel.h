@@ -19,7 +19,6 @@
 /* End of generic header includes */
 
 /* Service model headers required in PCSClient header */
-#include <aws/core/NoResult.h>
 #include <aws/pcs/model/CreateClusterResult.h>
 #include <aws/pcs/model/CreateComputeNodeGroupResult.h>
 #include <aws/pcs/model/CreateQueueResult.h>
@@ -35,6 +34,8 @@
 #include <aws/pcs/model/ListQueuesResult.h>
 #include <aws/pcs/model/ListTagsForResourceResult.h>
 #include <aws/pcs/model/RegisterComputeNodeGroupInstanceResult.h>
+#include <aws/pcs/model/TagResourceResult.h>
+#include <aws/pcs/model/UntagResourceResult.h>
 #include <aws/pcs/model/UpdateClusterResult.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupResult.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
@@ -107,8 +108,8 @@ typedef Aws::Utils::Outcome<ListComputeNodeGroupsResult, PCSError> ListComputeNo
 typedef Aws::Utils::Outcome<ListQueuesResult, PCSError> ListQueuesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, PCSError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<RegisterComputeNodeGroupInstanceResult, PCSError> RegisterComputeNodeGroupInstanceOutcome;
-typedef Aws::Utils::Outcome<Aws::NoResult, PCSError> TagResourceOutcome;
-typedef Aws::Utils::Outcome<Aws::NoResult, PCSError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<TagResourceResult, PCSError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<UntagResourceResult, PCSError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateClusterResult, PCSError> UpdateClusterOutcome;
 typedef Aws::Utils::Outcome<UpdateComputeNodeGroupResult, PCSError> UpdateComputeNodeGroupOutcome;
 typedef Aws::Utils::Outcome<UpdateQueueResult, PCSError> UpdateQueueOutcome;

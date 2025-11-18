@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/CmfcAudioDuration.h>
 #include <aws/mediaconvert/model/CmfcAudioTrackType.h>
+#include <aws/mediaconvert/model/CmfcC2paManifest.h>
 #include <aws/mediaconvert/model/CmfcDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
 #include <aws/mediaconvert/model/CmfcKlvMetadata.h>
@@ -163,6 +164,48 @@ class CmfcSettings {
 
   ///@{
   /**
+   * When enabled, a C2PA compliant manifest will be generated, signed and embeded in
+   * the output. For more information on C2PA, see
+   * https://c2pa.org/specifications/specifications/2.1/index.html
+   */
+  inline CmfcC2paManifest GetC2paManifest() const { return m_c2paManifest; }
+  inline bool C2paManifestHasBeenSet() const { return m_c2paManifestHasBeenSet; }
+  inline void SetC2paManifest(CmfcC2paManifest value) {
+    m_c2paManifestHasBeenSet = true;
+    m_c2paManifest = value;
+  }
+  inline CmfcSettings& WithC2paManifest(CmfcC2paManifest value) {
+    SetC2paManifest(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify the name or ARN of the AWS Secrets Manager secret that contains your
+   * C2PA public certificate chain in PEM format. Provide a valid secret name or ARN.
+   * Note that your MediaConvert service role must allow access to this secret. The
+   * public certificate chain is added to the COSE header (x5chain) for signature
+   * validation. Include the signer's certificate and all intermediate certificates.
+   * Do not include the root certificate. For details on COSE, see:
+   * https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+   */
+  inline const Aws::String& GetCertificateSecret() const { return m_certificateSecret; }
+  inline bool CertificateSecretHasBeenSet() const { return m_certificateSecretHasBeenSet; }
+  template <typename CertificateSecretT = Aws::String>
+  void SetCertificateSecret(CertificateSecretT&& value) {
+    m_certificateSecretHasBeenSet = true;
+    m_certificateSecret = std::forward<CertificateSecretT>(value);
+  }
+  template <typename CertificateSecretT = Aws::String>
+  CmfcSettings& WithCertificateSecret(CertificateSecretT&& value) {
+    SetCertificateSecret(std::forward<CertificateSecretT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify whether to flag this audio track as descriptive video service (DVS) in
    * your HLS parent manifest. When you choose Flag, MediaConvert includes the
    * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
@@ -286,6 +329,26 @@ class CmfcSettings {
 
   ///@{
   /**
+   * Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your
+   * MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service
+   * role must allow access to this key.
+   */
+  inline const Aws::String& GetSigningKmsKey() const { return m_signingKmsKey; }
+  inline bool SigningKmsKeyHasBeenSet() const { return m_signingKmsKeyHasBeenSet; }
+  template <typename SigningKmsKeyT = Aws::String>
+  void SetSigningKmsKey(SigningKmsKeyT&& value) {
+    m_signingKmsKeyHasBeenSet = true;
+    m_signingKmsKey = std::forward<SigningKmsKeyT>(value);
+  }
+  template <typename SigningKmsKeyT = Aws::String>
+  CmfcSettings& WithSigningKmsKey(SigningKmsKeyT&& value) {
+    SetSigningKmsKey(std::forward<SigningKmsKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify
    * this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each
    * instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this
@@ -380,6 +443,12 @@ When you specify Version
   CmfcAudioTrackType m_audioTrackType{CmfcAudioTrackType::NOT_SET};
   bool m_audioTrackTypeHasBeenSet = false;
 
+  CmfcC2paManifest m_c2paManifest{CmfcC2paManifest::NOT_SET};
+  bool m_c2paManifestHasBeenSet = false;
+
+  Aws::String m_certificateSecret;
+  bool m_certificateSecretHasBeenSet = false;
+
   CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag{CmfcDescriptiveVideoServiceFlag::NOT_SET};
   bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
@@ -397,6 +466,9 @@ When you specify Version
 
   CmfcScte35Source m_scte35Source{CmfcScte35Source::NOT_SET};
   bool m_scte35SourceHasBeenSet = false;
+
+  Aws::String m_signingKmsKey;
+  bool m_signingKmsKeyHasBeenSet = false;
 
   CmfcTimedMetadata m_timedMetadata{CmfcTimedMetadata::NOT_SET};
   bool m_timedMetadataHasBeenSet = false;

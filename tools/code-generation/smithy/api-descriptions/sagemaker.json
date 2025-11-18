@@ -672,7 +672,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:algorithm/[\\S]{1,2048}$"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:algorithm/[\\S]{1,2048}$"
             }
         },
         "com.amazonaws.sagemaker#AlgorithmImage": {
@@ -2555,6 +2555,18 @@
                     "traits": {
                         "smithy.api#enumValue": "Line"
                     }
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#AssignedGroupPatternsList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#GroupNamePattern"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 10
                 }
             }
         },
@@ -4888,6 +4900,26 @@
                 "smithy.api#range": {
                     "min": 0
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#AvailableUpgrade": {
+            "type": "structure",
+            "members": {
+                "Version": {
+                    "target": "com.amazonaws.sagemaker#MajorMinorVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The semantic version number of the available upgrade for the SageMaker Partner AI App.</p>"
+                    }
+                },
+                "ReleaseNotes": {
+                    "target": "com.amazonaws.sagemaker#ReleaseNotesList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of release notes describing the changes and improvements included in the available upgrade version.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about an available upgrade for a SageMaker Partner AI App, including the version number and release notes.</p>"
             }
         },
         "com.amazonaws.sagemaker#AwsManagedHumanLoopRequestSource": {
@@ -8751,6 +8783,12 @@
                         "smithy.api#enumValue": "ml.p6-b200.48xlarge"
                     }
                 },
+                "ML_TRN2_3XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.trn2.3xlarge"
+                    }
+                },
                 "ML_TRN2_48XLARGE": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -9986,7 +10024,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:code-repository/[\\S]{1,2048}$"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:code-repository/[\\S]{1,2048}$"
             }
         },
         "com.amazonaws.sagemaker#CodeRepositoryContains": {
@@ -15870,6 +15908,12 @@
                         "smithy.api#documentation": "<p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>"
                     }
                 },
+                "EnableAutoMinorVersionUpgrade": {
+                    "target": "com.amazonaws.sagemaker#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available. Default is <code>FALSE</code>.</p>"
+                    }
+                },
                 "ClientToken": {
                     "target": "com.amazonaws.sagemaker#ClientToken",
                     "traits": {
@@ -16662,8 +16706,7 @@
                     "target": "com.amazonaws.sagemaker#StoppingCondition",
                     "traits": {
                         "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p> <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p> <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>"
                     }
                 },
                 "Tags": {
@@ -27606,6 +27649,12 @@
                         "smithy.api#documentation": "<p>The ARN of the SageMaker Partner AI App to describe.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "IncludeAvailableUpgrade": {
+                    "target": "com.amazonaws.sagemaker#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -27709,6 +27758,24 @@
                     "target": "com.amazonaws.sagemaker#ErrorInfo",
                     "traits": {
                         "smithy.api#documentation": "<p>This is an error field object that contains the error code and the reason for an operation failure.</p>"
+                    }
+                },
+                "EnableAutoMinorVersionUpgrade": {
+                    "target": "com.amazonaws.sagemaker#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>"
+                    }
+                },
+                "CurrentVersionEolDate": {
+                    "target": "com.amazonaws.sagemaker#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>"
+                    }
+                },
+                "AvailableUpgrade": {
+                    "target": "com.amazonaws.sagemaker#AvailableUpgrade",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>"
                     }
                 }
             },
@@ -28883,9 +28950,7 @@
                 "AlgorithmSpecification": {
                     "target": "com.amazonaws.sagemaker#AlgorithmSpecification",
                     "traits": {
-                        "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>Information about the algorithm used for training, and algorithm metadata. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>Information about the algorithm used for training, and algorithm metadata. </p>"
                     }
                 },
                 "RoleArn": {
@@ -28909,9 +28974,7 @@
                 "ResourceConfig": {
                     "target": "com.amazonaws.sagemaker#ResourceConfig",
                     "traits": {
-                        "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>Resources, including ML compute instances and ML storage volumes, that are configured for model training. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>Resources, including ML compute instances and ML storage volumes, that are configured for model training. </p>"
                     }
                 },
                 "WarmPoolStatus": {
@@ -35062,6 +35125,28 @@
                     "max": 63
                 },
                 "smithy.api#pattern": "^[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#GroupNamePattern": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 128
+                },
+                "smithy.api#pattern": "^[\\w+=,.@*-]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#GroupPatternsList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#GroupNamePattern"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 10
+                }
             }
         },
         "com.amazonaws.sagemaker#GroupingAttributeName": {
@@ -50028,6 +50113,16 @@
                 "smithy.api#pattern": "^[a-zA-Z]+ ?\\d+\\.\\d+(\\.\\d+)?$"
             }
         },
+        "com.amazonaws.sagemaker#MajorMinorVersion": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 64
+                },
+                "smithy.api#pattern": "^\\d+\\.\\d+$"
+            }
+        },
         "com.amazonaws.sagemaker#ManagedInstanceScalingMaxInstanceCount": {
             "type": "integer",
             "traits": {
@@ -50558,7 +50653,7 @@
                     "min": 20,
                     "max": 258
                 },
-                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:ml-reservation/"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:[a-z0-9\\-]{1,14}/"
             }
         },
         "com.amazonaws.sagemaker#MlTools": {
@@ -52435,7 +52530,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:model-package/[\\S]{1,2048}$"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:model-package/[\\S]{1,2048}$"
             }
         },
         "com.amazonaws.sagemaker#ModelPackageArnList": {
@@ -52462,9 +52557,7 @@
                 "Image": {
                     "target": "com.amazonaws.sagemaker#ContainerImage",
                     "traits": {
-                        "smithy.api#clientOptional": {},
-                        "smithy.api#documentation": "<p>The Amazon Elastic Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The Amazon Elastic Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>"
                     }
                 },
                 "ImageDigest": {
@@ -52614,7 +52707,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:model-package-group/[\\S]{1,2048}$"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:model-package-group/[\\S]{1,2048}$"
             }
         },
         "com.amazonaws.sagemaker#ModelPackageGroupSortBy": {
@@ -56866,6 +56959,18 @@
                     "target": "com.amazonaws.sagemaker#PartnerAppArguments",
                     "traits": {
                         "smithy.api#documentation": "<p>This is a map of required inputs for a SageMaker Partner AI App. Based on the application type, the map is populated with a key and value pair that is specific to the user and application.</p>"
+                    }
+                },
+                "AssignedGroupPatterns": {
+                    "target": "com.amazonaws.sagemaker#AssignedGroupPatternsList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>"
+                    }
+                },
+                "RoleGroupAssignments": {
+                    "target": "com.amazonaws.sagemaker#RoleGroupAssignmentsList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>"
                     }
                 }
             },
@@ -62104,7 +62209,7 @@
                     "min": 1,
                     "max": 2048
                 },
-                "smithy.api#pattern": "^arn:aws(-cn|-us-gov|-iso-f)?:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:project/[\\S]{1,2048}$"
+                "smithy.api#pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:project/[\\S]{1,2048}$"
             }
         },
         "com.amazonaws.sagemaker#ProjectEntityName": {
@@ -63874,6 +63979,18 @@
                 "smithy.api#pattern": ".*"
             }
         },
+        "com.amazonaws.sagemaker#ReleaseNotesList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#String1024"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 10
+                }
+            }
+        },
         "com.amazonaws.sagemaker#RemoteDebugConfig": {
             "type": "structure",
             "members": {
@@ -65069,6 +65186,40 @@
                     "max": 2048
                 },
                 "smithy.api#pattern": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+            }
+        },
+        "com.amazonaws.sagemaker#RoleGroupAssignment": {
+            "type": "structure",
+            "members": {
+                "RoleName": {
+                    "target": "com.amazonaws.sagemaker#NonEmptyString256",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the in-app role within the SageMaker Partner AI App. The specific roles available depend on the app type and version.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "GroupPatterns": {
+                    "target": "com.amazonaws.sagemaker#GroupPatternsList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of AWS IAM Identity Center group patterns that should be assigned to the specified role. Group patterns support wildcard matching using <code>*</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Defines the mapping between an in-app role and the AWS IAM Identity Center group patterns that should be assigned to that role within the SageMaker Partner AI App.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#RoleGroupAssignmentsList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#RoleGroupAssignment"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 10
+                }
             }
         },
         "com.amazonaws.sagemaker#RollingDeploymentPolicy": {
@@ -79878,6 +80029,18 @@
                     "target": "com.amazonaws.sagemaker#Boolean",
                     "traits": {
                         "smithy.api#documentation": "<p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>"
+                    }
+                },
+                "EnableAutoMinorVersionUpgrade": {
+                    "target": "com.amazonaws.sagemaker#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>"
+                    }
+                },
+                "AppVersion": {
+                    "target": "com.amazonaws.sagemaker#MajorMinorVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>"
                     }
                 },
                 "ClientToken": {

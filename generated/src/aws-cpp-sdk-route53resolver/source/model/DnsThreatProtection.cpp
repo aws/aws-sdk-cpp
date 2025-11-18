@@ -17,6 +17,7 @@ namespace DnsThreatProtectionMapper {
 
 static const int DGA_HASH = HashingUtils::HashString("DGA");
 static const int DNS_TUNNELING_HASH = HashingUtils::HashString("DNS_TUNNELING");
+static const int DICTIONARY_DGA_HASH = HashingUtils::HashString("DICTIONARY_DGA");
 
 DnsThreatProtection GetDnsThreatProtectionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DnsThreatProtection GetDnsThreatProtectionForName(const Aws::String& name) {
     return DnsThreatProtection::DGA;
   } else if (hashCode == DNS_TUNNELING_HASH) {
     return DnsThreatProtection::DNS_TUNNELING;
+  } else if (hashCode == DICTIONARY_DGA_HASH) {
+    return DnsThreatProtection::DICTIONARY_DGA;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDnsThreatProtection(DnsThreatProtection enumValue) {
       return "DGA";
     case DnsThreatProtection::DNS_TUNNELING:
       return "DNS_TUNNELING";
+    case DnsThreatProtection::DICTIONARY_DGA:
+      return "DICTIONARY_DGA";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

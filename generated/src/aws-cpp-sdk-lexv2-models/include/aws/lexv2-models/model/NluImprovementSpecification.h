@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+#include <aws/lexv2-models/model/AssistedNluMode.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -17,8 +20,9 @@ namespace LexModelsV2 {
 namespace Model {
 
 /**
- * <p>Specifies whether the assisted nlu feature is turned on or off.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Configures the Assisted Natural Language Understanding (NLU) feature for your
+ * bot. This specification determines whether enhanced intent recognition and
+ * utterance understanding capabilities are active.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/NluImprovementSpecification">AWS
  * API Reference</a></p>
  */
@@ -31,7 +35,9 @@ class NluImprovementSpecification {
 
   ///@{
   /**
-   * <p>Specifies whether the assisted nlu feature is enabled.</p>
+   * <p>Determines whether the Assisted NLU feature is enabled for the bot. When set
+   * to <code>true</code>, Amazon Lex uses advanced models to improve intent
+   * recognition and slot resolution, with the default being <code>false</code>.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
   inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -44,9 +50,30 @@ class NluImprovementSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to
+   * make Assisted NLU the primary intent recognition method, or
+   * <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+   */
+  inline AssistedNluMode GetAssistedNluMode() const { return m_assistedNluMode; }
+  inline bool AssistedNluModeHasBeenSet() const { return m_assistedNluModeHasBeenSet; }
+  inline void SetAssistedNluMode(AssistedNluMode value) {
+    m_assistedNluModeHasBeenSet = true;
+    m_assistedNluMode = value;
+  }
+  inline NluImprovementSpecification& WithAssistedNluMode(AssistedNluMode value) {
+    SetAssistedNluMode(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
+
+  AssistedNluMode m_assistedNluMode{AssistedNluMode::NOT_SET};
+  bool m_assistedNluModeHasBeenSet = false;
 };
 
 }  // namespace Model

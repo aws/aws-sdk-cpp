@@ -76,6 +76,12 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator=(
       m_transportTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transportTransitGatewayAttachmentIdNode.GetText());
       m_transportTransitGatewayAttachmentIdHasBeenSet = true;
     }
+    XmlNode tunnelBandwidthNode = resultNode.FirstChild("TunnelBandwidth");
+    if (!tunnelBandwidthNode.IsNull()) {
+      m_tunnelBandwidth = VpnTunnelBandwidthMapper::GetVpnTunnelBandwidthForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelBandwidthNode.GetText()).c_str()));
+      m_tunnelBandwidthHasBeenSet = true;
+    }
     XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
     if (!staticRoutesOnlyNode.IsNull()) {
       m_staticRoutesOnly = StringUtils::ConvertToBool(
@@ -137,6 +143,12 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
             << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
   }
 
+  if (m_tunnelBandwidthHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TunnelBandwidth=" << StringUtils::URLEncode(VpnTunnelBandwidthMapper::GetNameForVpnTunnelBandwidth(m_tunnelBandwidth))
+            << "&";
+  }
+
   if (m_staticRoutesOnlyHasBeenSet) {
     oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
@@ -175,6 +187,11 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if (m_transportTransitGatewayAttachmentIdHasBeenSet) {
     oStream << location << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str())
+            << "&";
+  }
+  if (m_tunnelBandwidthHasBeenSet) {
+    oStream << location
+            << ".TunnelBandwidth=" << StringUtils::URLEncode(VpnTunnelBandwidthMapper::GetNameForVpnTunnelBandwidth(m_tunnelBandwidth))
             << "&";
   }
   if (m_staticRoutesOnlyHasBeenSet) {

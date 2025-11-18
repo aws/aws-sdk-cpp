@@ -31,6 +31,7 @@ static const int SessionConnect_HASH = HashingUtils::HashString("SessionConnect"
 static const int SessionStart_HASH = HashingUtils::HashString("SessionStart");
 static const int SessionDisconnect_HASH = HashingUtils::HashString("SessionDisconnect");
 static const int SessionEnd_HASH = HashingUtils::HashString("SessionEnd");
+static const int UrlBlockByContentFilter_HASH = HashingUtils::HashString("UrlBlockByContentFilter");
 
 Event GetEventForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ Event GetEventForName(const Aws::String& name) {
     return Event::SessionDisconnect;
   } else if (hashCode == SessionEnd_HASH) {
     return Event::SessionEnd;
+  } else if (hashCode == UrlBlockByContentFilter_HASH) {
+    return Event::UrlBlockByContentFilter;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForEvent(Event enumValue) {
       return "SessionDisconnect";
     case Event::SessionEnd:
       return "SessionEnd";
+    case Event::UrlBlockByContentFilter:
+      return "UrlBlockByContentFilter";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

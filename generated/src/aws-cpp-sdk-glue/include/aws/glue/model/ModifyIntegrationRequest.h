@@ -86,7 +86,10 @@ class ModifyIntegrationRequest : public GlueRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The configuration settings for the integration. Currently, only the
+   * RefreshInterval can be modified. </p>
+   */
   inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
   inline bool IntegrationConfigHasBeenSet() const { return m_integrationConfigHasBeenSet; }
   template <typename IntegrationConfigT = IntegrationConfig>

@@ -88,7 +88,8 @@ class DescribeStackResourceDriftsRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>A string that identifies the next page of stack resource drift results.</p>
+   * <p>The token for the next set of items to return. (You received this token from
+   * a previous call.)</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

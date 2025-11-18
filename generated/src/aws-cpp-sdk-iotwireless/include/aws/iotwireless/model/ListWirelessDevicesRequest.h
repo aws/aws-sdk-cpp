@@ -72,7 +72,8 @@ class ListWirelessDevicesRequest : public IoTWirelessRequest {
 
   ///@{
   /**
-   * <p>A filter to list only the wireless devices that use this destination.</p>
+   * <p>A filter to list only the wireless devices that use as uplink
+   * destination.</p>
    */
   inline const Aws::String& GetDestinationName() const { return m_destinationName; }
   inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }

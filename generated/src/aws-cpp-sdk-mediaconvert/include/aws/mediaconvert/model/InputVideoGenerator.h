@@ -56,7 +56,7 @@ class InputVideoGenerator {
   /**
    * Specify the duration, in milliseconds, for your video generator input.
 Enter an
-   * integer from 50 to 86400000.
+   * integer from 1 to 86400000.
    */
   inline int GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }

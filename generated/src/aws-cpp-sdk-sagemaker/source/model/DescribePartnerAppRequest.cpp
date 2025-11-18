@@ -19,6 +19,10 @@ Aws::String DescribePartnerAppRequest::SerializePayload() const {
     payload.WithString("Arn", m_arn);
   }
 
+  if (m_includeAvailableUpgradeHasBeenSet) {
+    payload.WithBool("IncludeAvailableUpgrade", m_includeAvailableUpgrade);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -54,6 +54,28 @@ class StartBackupJobRequest : public BackupRequest {
 
   ///@{
   /**
+   * <p>The ARN of a logically air-gapped vault. ARN must be in the same account and
+   * Region. If provided, supported fully managed resources back up directly to
+   * logically air-gapped vault, while other supported resources create a temporary
+   * (billable) snapshot in backup vault, then copy it to logically air-gapped vault.
+   * Unsupported resources only back up to the specified backup vault.</p>
+   */
+  inline const Aws::String& GetLogicallyAirGappedBackupVaultArn() const { return m_logicallyAirGappedBackupVaultArn; }
+  inline bool LogicallyAirGappedBackupVaultArnHasBeenSet() const { return m_logicallyAirGappedBackupVaultArnHasBeenSet; }
+  template <typename LogicallyAirGappedBackupVaultArnT = Aws::String>
+  void SetLogicallyAirGappedBackupVaultArn(LogicallyAirGappedBackupVaultArnT&& value) {
+    m_logicallyAirGappedBackupVaultArnHasBeenSet = true;
+    m_logicallyAirGappedBackupVaultArn = std::forward<LogicallyAirGappedBackupVaultArnT>(value);
+  }
+  template <typename LogicallyAirGappedBackupVaultArnT = Aws::String>
+  StartBackupJobRequest& WithLogicallyAirGappedBackupVaultArn(LogicallyAirGappedBackupVaultArnT&& value) {
+    SetLogicallyAirGappedBackupVaultArn(std::forward<LogicallyAirGappedBackupVaultArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
    * of the ARN depends on the resource type.</p>
    */
@@ -267,6 +289,9 @@ class StartBackupJobRequest : public BackupRequest {
  private:
   Aws::String m_backupVaultName;
   bool m_backupVaultNameHasBeenSet = false;
+
+  Aws::String m_logicallyAirGappedBackupVaultArn;
+  bool m_logicallyAirGappedBackupVaultArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
   bool m_resourceArnHasBeenSet = false;

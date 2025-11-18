@@ -82,6 +82,12 @@ VpnConnectionOptions& VpnConnectionOptions::operator=(const XmlNode& xmlNode) {
 
       m_tunnelOptionsHasBeenSet = true;
     }
+    XmlNode tunnelBandwidthNode = resultNode.FirstChild("tunnelBandwidth");
+    if (!tunnelBandwidthNode.IsNull()) {
+      m_tunnelBandwidth = VpnTunnelBandwidthMapper::GetVpnTunnelBandwidthForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelBandwidthNode.GetText()).c_str()));
+      m_tunnelBandwidthHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -139,6 +145,12 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
       item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
     }
   }
+
+  if (m_tunnelBandwidthHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TunnelBandwidth=" << StringUtils::URLEncode(VpnTunnelBandwidthMapper::GetNameForVpnTunnelBandwidth(m_tunnelBandwidth))
+            << "&";
+  }
 }
 
 void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -178,6 +190,11 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
       tunnelOptionsSs << location << ".TunnelOptionSet." << tunnelOptionsIdx++;
       item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
     }
+  }
+  if (m_tunnelBandwidthHasBeenSet) {
+    oStream << location
+            << ".TunnelBandwidth=" << StringUtils::URLEncode(VpnTunnelBandwidthMapper::GetNameForVpnTunnelBandwidth(m_tunnelBandwidth))
+            << "&";
   }
 }
 

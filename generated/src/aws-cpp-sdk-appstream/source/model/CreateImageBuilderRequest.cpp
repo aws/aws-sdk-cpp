@@ -75,6 +75,10 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const {
     payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
   }
 
+  if (m_rootVolumeConfigHasBeenSet) {
+    payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
+  }
+
   if (m_softwaresToInstallHasBeenSet) {
     Aws::Utils::Array<JsonValue> softwaresToInstallJsonList(m_softwaresToInstall.size());
     for (unsigned softwaresToInstallIndex = 0; softwaresToInstallIndex < softwaresToInstallJsonList.GetLength();

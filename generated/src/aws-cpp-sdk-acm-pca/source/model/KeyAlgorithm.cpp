@@ -21,6 +21,9 @@ static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
 static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
 static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
 static const int EC_secp521r1_HASH = HashingUtils::HashString("EC_secp521r1");
+static const int ML_DSA_44_HASH = HashingUtils::HashString("ML_DSA_44");
+static const int ML_DSA_65_HASH = HashingUtils::HashString("ML_DSA_65");
+static const int ML_DSA_87_HASH = HashingUtils::HashString("ML_DSA_87");
 static const int SM2_HASH = HashingUtils::HashString("SM2");
 
 KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name) {
@@ -37,6 +40,12 @@ KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name) {
     return KeyAlgorithm::EC_secp384r1;
   } else if (hashCode == EC_secp521r1_HASH) {
     return KeyAlgorithm::EC_secp521r1;
+  } else if (hashCode == ML_DSA_44_HASH) {
+    return KeyAlgorithm::ML_DSA_44;
+  } else if (hashCode == ML_DSA_65_HASH) {
+    return KeyAlgorithm::ML_DSA_65;
+  } else if (hashCode == ML_DSA_87_HASH) {
+    return KeyAlgorithm::ML_DSA_87;
   } else if (hashCode == SM2_HASH) {
     return KeyAlgorithm::SM2;
   }
@@ -65,6 +74,12 @@ Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue) {
       return "EC_secp384r1";
     case KeyAlgorithm::EC_secp521r1:
       return "EC_secp521r1";
+    case KeyAlgorithm::ML_DSA_44:
+      return "ML_DSA_44";
+    case KeyAlgorithm::ML_DSA_65:
+      return "ML_DSA_65";
+    case KeyAlgorithm::ML_DSA_87:
+      return "ML_DSA_87";
     case KeyAlgorithm::SM2:
       return "SM2";
     default:

@@ -26,6 +26,10 @@ Mapping& Mapping::operator=(JsonView jsonValue) {
     m_commonControl = jsonValue.GetObject("CommonControl");
     m_commonControlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RelatedControl")) {
+    m_relatedControl = jsonValue.GetObject("RelatedControl");
+    m_relatedControlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue Mapping::Jsonize() const {
 
   if (m_commonControlHasBeenSet) {
     payload.WithObject("CommonControl", m_commonControl.Jsonize());
+  }
+
+  if (m_relatedControlHasBeenSet) {
+    payload.WithObject("RelatedControl", m_relatedControl.Jsonize());
   }
 
   return payload;

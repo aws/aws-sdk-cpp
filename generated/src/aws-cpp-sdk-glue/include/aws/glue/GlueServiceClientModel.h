@@ -87,6 +87,7 @@
 #include <aws/glue/model/DeleteDevEndpointResult.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/DeleteGlueIdentityCenterConfigurationResult.h>
+#include <aws/glue/model/DeleteIntegrationResourcePropertyResult.h>
 #include <aws/glue/model/DeleteIntegrationResult.h>
 #include <aws/glue/model/DeleteIntegrationTablePropertiesResult.h>
 #include <aws/glue/model/DeleteJobResult.h>
@@ -238,6 +239,8 @@
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListEntitiesRequest.h>
 #include <aws/glue/model/ListEntitiesResult.h>
+#include <aws/glue/model/ListIntegrationResourcePropertiesRequest.h>
+#include <aws/glue/model/ListIntegrationResourcePropertiesResult.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
@@ -428,6 +431,7 @@ class DeleteDatabaseRequest;
 class DeleteDevEndpointRequest;
 class DeleteGlueIdentityCenterConfigurationRequest;
 class DeleteIntegrationRequest;
+class DeleteIntegrationResourcePropertyRequest;
 class DeleteIntegrationTablePropertiesRequest;
 class DeleteJobRequest;
 class DeleteMLTransformRequest;
@@ -543,6 +547,7 @@ class ListDataQualityStatisticAnnotationsRequest;
 class ListDataQualityStatisticsRequest;
 class ListDevEndpointsRequest;
 class ListEntitiesRequest;
+class ListIntegrationResourcePropertiesRequest;
 class ListJobsRequest;
 class ListMLTransformsRequest;
 class ListRegistriesRequest;
@@ -688,6 +693,7 @@ typedef Aws::Utils::Outcome<DeleteDatabaseResult, GlueError> DeleteDatabaseOutco
 typedef Aws::Utils::Outcome<DeleteDevEndpointResult, GlueError> DeleteDevEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteGlueIdentityCenterConfigurationResult, GlueError> DeleteGlueIdentityCenterConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteIntegrationResult, GlueError> DeleteIntegrationOutcome;
+typedef Aws::Utils::Outcome<DeleteIntegrationResourcePropertyResult, GlueError> DeleteIntegrationResourcePropertyOutcome;
 typedef Aws::Utils::Outcome<DeleteIntegrationTablePropertiesResult, GlueError> DeleteIntegrationTablePropertiesOutcome;
 typedef Aws::Utils::Outcome<DeleteJobResult, GlueError> DeleteJobOutcome;
 typedef Aws::Utils::Outcome<DeleteMLTransformResult, GlueError> DeleteMLTransformOutcome;
@@ -803,6 +809,7 @@ typedef Aws::Utils::Outcome<ListDataQualityStatisticAnnotationsResult, GlueError
 typedef Aws::Utils::Outcome<ListDataQualityStatisticsResult, GlueError> ListDataQualityStatisticsOutcome;
 typedef Aws::Utils::Outcome<ListDevEndpointsResult, GlueError> ListDevEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListEntitiesResult, GlueError> ListEntitiesOutcome;
+typedef Aws::Utils::Outcome<ListIntegrationResourcePropertiesResult, GlueError> ListIntegrationResourcePropertiesOutcome;
 typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
 typedef Aws::Utils::Outcome<ListRegistriesResult, GlueError> ListRegistriesOutcome;
@@ -948,6 +955,7 @@ typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 typedef std::future<DeleteDevEndpointOutcome> DeleteDevEndpointOutcomeCallable;
 typedef std::future<DeleteGlueIdentityCenterConfigurationOutcome> DeleteGlueIdentityCenterConfigurationOutcomeCallable;
 typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
+typedef std::future<DeleteIntegrationResourcePropertyOutcome> DeleteIntegrationResourcePropertyOutcomeCallable;
 typedef std::future<DeleteIntegrationTablePropertiesOutcome> DeleteIntegrationTablePropertiesOutcomeCallable;
 typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 typedef std::future<DeleteMLTransformOutcome> DeleteMLTransformOutcomeCallable;
@@ -1063,6 +1071,7 @@ typedef std::future<ListDataQualityStatisticAnnotationsOutcome> ListDataQualityS
 typedef std::future<ListDataQualityStatisticsOutcome> ListDataQualityStatisticsOutcomeCallable;
 typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
 typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
+typedef std::future<ListIntegrationResourcePropertiesOutcome> ListIntegrationResourcePropertiesOutcomeCallable;
 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
 typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
@@ -1354,6 +1363,10 @@ typedef std::function<void(const GlueClient*, const Model::DeleteGlueIdentityCen
 typedef std::function<void(const GlueClient*, const Model::DeleteIntegrationRequest&, const Model::DeleteIntegrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIntegrationResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteIntegrationResourcePropertyRequest&,
+                           const Model::DeleteIntegrationResourcePropertyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteIntegrationResourcePropertyResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteIntegrationTablePropertiesRequest&,
                            const Model::DeleteIntegrationTablePropertiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1714,6 +1727,10 @@ typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsReque
 typedef std::function<void(const GlueClient*, const Model::ListEntitiesRequest&, const Model::ListEntitiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEntitiesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListIntegrationResourcePropertiesRequest&,
+                           const Model::ListIntegrationResourcePropertiesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIntegrationResourcePropertiesResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListJobsResponseReceivedHandler;

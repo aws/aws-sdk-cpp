@@ -38,6 +38,11 @@ TargetDescription& TargetDescription::operator=(const XmlNode& xmlNode) {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode quicServerIdNode = resultNode.FirstChild("QuicServerId");
+    if (!quicServerIdNode.IsNull()) {
+      m_quicServerId = Aws::Utils::Xml::DecodeEscapedXmlText(quicServerIdNode.GetText());
+      m_quicServerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +60,10 @@ void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   if (m_availabilityZoneHasBeenSet) {
     oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
+  if (m_quicServerIdHasBeenSet) {
+    oStream << location << index << locationValue << ".QuicServerId=" << StringUtils::URLEncode(m_quicServerId.c_str()) << "&";
+  }
 }
 
 void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -66,6 +75,9 @@ void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_availabilityZoneHasBeenSet) {
     oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_quicServerIdHasBeenSet) {
+    oStream << location << ".QuicServerId=" << StringUtils::URLEncode(m_quicServerId.c_str()) << "&";
   }
 }
 

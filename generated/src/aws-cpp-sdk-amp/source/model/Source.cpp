@@ -22,6 +22,10 @@ Source& Source::operator=(JsonView jsonValue) {
     m_eksConfiguration = jsonValue.GetObject("eksConfiguration");
     m_eksConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcConfiguration")) {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+    m_vpcConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Source::Jsonize() const {
 
   if (m_eksConfigurationHasBeenSet) {
     payload.WithObject("eksConfiguration", m_eksConfiguration.Jsonize());
+  }
+
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
   return payload;

@@ -798,7 +798,7 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   }
 
   /**
-   * <p>Returns hook-related information for the change set and a list of changes
+   * <p>Returns Hook-related information for the change set and a list of changes
    * that CloudFormation makes when you run the change set.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSetHooks">AWS
@@ -1008,14 +1008,14 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
    * API Reference</a></p>
    */
-  virtual Model::DescribeStackEventsOutcome DescribeStackEvents(const Model::DescribeStackEventsRequest& request = {}) const;
+  virtual Model::DescribeStackEventsOutcome DescribeStackEvents(const Model::DescribeStackEventsRequest& request) const;
 
   /**
    * A Callable wrapper for DescribeStackEvents that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename DescribeStackEventsRequestT = Model::DescribeStackEventsRequest>
-  Model::DescribeStackEventsOutcomeCallable DescribeStackEventsCallable(const DescribeStackEventsRequestT& request = {}) const {
+  Model::DescribeStackEventsOutcomeCallable DescribeStackEventsCallable(const DescribeStackEventsRequestT& request) const {
     return SubmitCallable(&CloudFormationClient::DescribeStackEvents, request);
   }
 
@@ -1024,9 +1024,8 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
    * has finished.
    */
   template <typename DescribeStackEventsRequestT = Model::DescribeStackEventsRequest>
-  void DescribeStackEventsAsync(const DescribeStackEventsResponseReceivedHandler& handler,
-                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
-                                const DescribeStackEventsRequestT& request = {}) const {
+  void DescribeStackEventsAsync(const DescribeStackEventsRequestT& request, const DescribeStackEventsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFormationClient::DescribeStackEvents, request, handler, context);
   }
 
@@ -1614,6 +1613,33 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   void GetGeneratedTemplateAsync(const GetGeneratedTemplateRequestT& request, const GetGeneratedTemplateResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFormationClient::GetGeneratedTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information and remediation guidance for a Hook invocation
+   * result.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetHookResult">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetHookResultOutcome GetHookResult(const Model::GetHookResultRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetHookResult that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetHookResultRequestT = Model::GetHookResultRequest>
+  Model::GetHookResultOutcomeCallable GetHookResultCallable(const GetHookResultRequestT& request = {}) const {
+    return SubmitCallable(&CloudFormationClient::GetHookResult, request);
+  }
+
+  /**
+   * An Async wrapper for GetHookResult that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetHookResultRequestT = Model::GetHookResultRequest>
+  void GetHookResultAsync(const GetHookResultResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const GetHookResultRequestT& request = {}) const {
+    return SubmitAsync(&CloudFormationClient::GetHookResult, request, handler, context);
   }
 
   /**

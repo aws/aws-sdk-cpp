@@ -88,6 +88,8 @@
 #include <aws/guardduty/model/ListThreatEntitySetsResult.h>
 #include <aws/guardduty/model/ListThreatIntelSetsResult.h>
 #include <aws/guardduty/model/ListTrustedEntitySetsResult.h>
+#include <aws/guardduty/model/SendObjectMalwareScanRequest.h>
+#include <aws/guardduty/model/SendObjectMalwareScanResult.h>
 #include <aws/guardduty/model/StartMalwareScanResult.h>
 #include <aws/guardduty/model/StartMonitoringMembersResult.h>
 #include <aws/guardduty/model/StopMonitoringMembersResult.h>
@@ -201,6 +203,7 @@ class ListTagsForResourceRequest;
 class ListThreatEntitySetsRequest;
 class ListThreatIntelSetsRequest;
 class ListTrustedEntitySetsRequest;
+class SendObjectMalwareScanRequest;
 class StartMalwareScanRequest;
 class StartMonitoringMembersRequest;
 class StopMonitoringMembersRequest;
@@ -285,6 +288,7 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, GuardDutyError> ListTagsF
 typedef Aws::Utils::Outcome<ListThreatEntitySetsResult, GuardDutyError> ListThreatEntitySetsOutcome;
 typedef Aws::Utils::Outcome<ListThreatIntelSetsResult, GuardDutyError> ListThreatIntelSetsOutcome;
 typedef Aws::Utils::Outcome<ListTrustedEntitySetsResult, GuardDutyError> ListTrustedEntitySetsOutcome;
+typedef Aws::Utils::Outcome<SendObjectMalwareScanResult, GuardDutyError> SendObjectMalwareScanOutcome;
 typedef Aws::Utils::Outcome<StartMalwareScanResult, GuardDutyError> StartMalwareScanOutcome;
 typedef Aws::Utils::Outcome<StartMonitoringMembersResult, GuardDutyError> StartMonitoringMembersOutcome;
 typedef Aws::Utils::Outcome<StopMonitoringMembersResult, GuardDutyError> StopMonitoringMembersOutcome;
@@ -369,6 +373,7 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<ListThreatEntitySetsOutcome> ListThreatEntitySetsOutcomeCallable;
 typedef std::future<ListThreatIntelSetsOutcome> ListThreatIntelSetsOutcomeCallable;
 typedef std::future<ListTrustedEntitySetsOutcome> ListTrustedEntitySetsOutcomeCallable;
+typedef std::future<SendObjectMalwareScanOutcome> SendObjectMalwareScanOutcomeCallable;
 typedef std::future<StartMalwareScanOutcome> StartMalwareScanOutcomeCallable;
 typedef std::future<StartMonitoringMembersOutcome> StartMonitoringMembersOutcomeCallable;
 typedef std::future<StopMonitoringMembersOutcome> StopMonitoringMembersOutcomeCallable;
@@ -589,6 +594,9 @@ typedef std::function<void(const GuardDutyClient*, const Model::ListThreatIntelS
 typedef std::function<void(const GuardDutyClient*, const Model::ListTrustedEntitySetsRequest&, const Model::ListTrustedEntitySetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTrustedEntitySetsResponseReceivedHandler;
+typedef std::function<void(const GuardDutyClient*, const Model::SendObjectMalwareScanRequest&, const Model::SendObjectMalwareScanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendObjectMalwareScanResponseReceivedHandler;
 typedef std::function<void(const GuardDutyClient*, const Model::StartMalwareScanRequest&, const Model::StartMalwareScanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMalwareScanResponseReceivedHandler;

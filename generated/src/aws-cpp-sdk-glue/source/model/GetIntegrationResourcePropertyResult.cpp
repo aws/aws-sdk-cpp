@@ -28,6 +28,10 @@ GetIntegrationResourcePropertyResult& GetIntegrationResourcePropertyResult::oper
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourcePropertyArn")) {
+    m_resourcePropertyArn = jsonValue.GetString("ResourcePropertyArn");
+    m_resourcePropertyArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SourceProcessingProperties")) {
     m_sourceProcessingProperties = jsonValue.GetObject("SourceProcessingProperties");
     m_sourceProcessingPropertiesHasBeenSet = true;

@@ -18,6 +18,7 @@
 #include <aws/appstream/model/AccessEndpointType.h>
 #include <aws/appstream/model/Action.h>
 #include <aws/appstream/model/AdminAppLicenseUsageRecord.h>
+#include <aws/appstream/model/AgentSoftwareVersion.h>
 #include <aws/appstream/model/AppBlock.h>
 #include <aws/appstream/model/AppBlockBuilder.h>
 #include <aws/appstream/model/AppBlockBuilderAppBlockAssociation.h>
@@ -30,6 +31,7 @@
 #include <aws/appstream/model/AppVisibility.h>
 #include <aws/appstream/model/Application.h>
 #include <aws/appstream/model/ApplicationAttribute.h>
+#include <aws/appstream/model/ApplicationConfig.h>
 #include <aws/appstream/model/ApplicationFleetAssociation.h>
 #include <aws/appstream/model/ApplicationSettings.h>
 #include <aws/appstream/model/ApplicationSettingsResponse.h>
@@ -66,12 +68,16 @@
 #include <aws/appstream/model/CreateDirectoryConfigResult.h>
 #include <aws/appstream/model/CreateEntitlementRequest.h>
 #include <aws/appstream/model/CreateEntitlementResult.h>
+#include <aws/appstream/model/CreateExportImageTaskRequest.h>
+#include <aws/appstream/model/CreateExportImageTaskResult.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
 #include <aws/appstream/model/CreateFleetResult.h>
 #include <aws/appstream/model/CreateImageBuilderRequest.h>
 #include <aws/appstream/model/CreateImageBuilderResult.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLRequest.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
+#include <aws/appstream/model/CreateImportedImageRequest.h>
+#include <aws/appstream/model/CreateImportedImageResult.h>
 #include <aws/appstream/model/CreateStackRequest.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLRequest.h>
@@ -171,12 +177,17 @@
 #include <aws/appstream/model/ErrorDetails.h>
 #include <aws/appstream/model/ExpireSessionRequest.h>
 #include <aws/appstream/model/ExpireSessionResult.h>
+#include <aws/appstream/model/ExportImageTask.h>
+#include <aws/appstream/model/ExportImageTaskState.h>
+#include <aws/appstream/model/Filter.h>
 #include <aws/appstream/model/Fleet.h>
 #include <aws/appstream/model/FleetAttribute.h>
 #include <aws/appstream/model/FleetError.h>
 #include <aws/appstream/model/FleetErrorCode.h>
 #include <aws/appstream/model/FleetState.h>
 #include <aws/appstream/model/FleetType.h>
+#include <aws/appstream/model/GetExportImageTaskRequest.h>
+#include <aws/appstream/model/GetExportImageTaskResult.h>
 #include <aws/appstream/model/Image.h>
 #include <aws/appstream/model/ImageBuilder.h>
 #include <aws/appstream/model/ImageBuilderState.h>
@@ -187,6 +198,7 @@
 #include <aws/appstream/model/ImageState.h>
 #include <aws/appstream/model/ImageStateChangeReason.h>
 #include <aws/appstream/model/ImageStateChangeReasonCode.h>
+#include <aws/appstream/model/ImageType.h>
 #include <aws/appstream/model/LastReportGenerationExecutionError.h>
 #include <aws/appstream/model/LatestAppstreamAgentVersion.h>
 #include <aws/appstream/model/ListAssociatedFleetsRequest.h>
@@ -195,6 +207,8 @@
 #include <aws/appstream/model/ListAssociatedStacksResult.h>
 #include <aws/appstream/model/ListEntitledApplicationsRequest.h>
 #include <aws/appstream/model/ListEntitledApplicationsResult.h>
+#include <aws/appstream/model/ListExportImageTasksRequest.h>
+#include <aws/appstream/model/ListExportImageTasksResult.h>
 #include <aws/appstream/model/ListTagsForResourceRequest.h>
 #include <aws/appstream/model/ListTagsForResourceResult.h>
 #include <aws/appstream/model/MessageAction.h>
@@ -204,6 +218,7 @@
 #include <aws/appstream/model/PlatformType.h>
 #include <aws/appstream/model/PreferredProtocol.h>
 #include <aws/appstream/model/ResourceError.h>
+#include <aws/appstream/model/RuntimeValidationConfig.h>
 #include <aws/appstream/model/S3Location.h>
 #include <aws/appstream/model/ScriptDetails.h>
 #include <aws/appstream/model/ServiceAccountCredentials.h>
@@ -269,6 +284,7 @@
 #include <aws/appstream/model/UserStackAssociationError.h>
 #include <aws/appstream/model/UserStackAssociationErrorCode.h>
 #include <aws/appstream/model/VisibilityType.h>
+#include <aws/appstream/model/VolumeConfig.h>
 #include <aws/appstream/model/VpcConfig.h>
 
 using AppStreamIncludeTest = ::testing::Test;

@@ -22,6 +22,7 @@ static const int COPYING_HASH = HashingUtils::HashString("COPYING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
 
 ImageState GetImageStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ ImageState GetImageStateForName(const Aws::String& name) {
     return ImageState::CREATING;
   } else if (hashCode == IMPORTING_HASH) {
     return ImageState::IMPORTING;
+  } else if (hashCode == VALIDATING_HASH) {
+    return ImageState::VALIDATING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForImageState(ImageState enumValue) {
       return "CREATING";
     case ImageState::IMPORTING:
       return "IMPORTING";
+    case ImageState::VALIDATING:
+      return "VALIDATING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

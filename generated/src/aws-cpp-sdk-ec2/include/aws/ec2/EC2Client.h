@@ -10536,6 +10536,68 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Describes the historical SQL Server High Availability states for Amazon EC2
+   * instances that are enabled for Amazon EC2 High Availability for SQL Server
+   * monitoring.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeInstanceSqlHaHistoryStatesOutcome DescribeInstanceSqlHaHistoryStates(
+      const Model::DescribeInstanceSqlHaHistoryStatesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeInstanceSqlHaHistoryStates that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeInstanceSqlHaHistoryStatesRequestT = Model::DescribeInstanceSqlHaHistoryStatesRequest>
+  Model::DescribeInstanceSqlHaHistoryStatesOutcomeCallable DescribeInstanceSqlHaHistoryStatesCallable(
+      const DescribeInstanceSqlHaHistoryStatesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeInstanceSqlHaHistoryStates, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeInstanceSqlHaHistoryStates that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeInstanceSqlHaHistoryStatesRequestT = Model::DescribeInstanceSqlHaHistoryStatesRequest>
+  void DescribeInstanceSqlHaHistoryStatesAsync(const DescribeInstanceSqlHaHistoryStatesResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const DescribeInstanceSqlHaHistoryStatesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeInstanceSqlHaHistoryStates, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the SQL Server High Availability states for Amazon EC2 instances
+   * that are enabled for Amazon EC2 High Availability for SQL Server
+   * monitoring.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeInstanceSqlHaStatesOutcome DescribeInstanceSqlHaStates(
+      const Model::DescribeInstanceSqlHaStatesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeInstanceSqlHaStates that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeInstanceSqlHaStatesRequestT = Model::DescribeInstanceSqlHaStatesRequest>
+  Model::DescribeInstanceSqlHaStatesOutcomeCallable DescribeInstanceSqlHaStatesCallable(
+      const DescribeInstanceSqlHaStatesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeInstanceSqlHaStates, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeInstanceSqlHaStates that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeInstanceSqlHaStatesRequestT = Model::DescribeInstanceSqlHaStatesRequest>
+  void DescribeInstanceSqlHaStatesAsync(const DescribeInstanceSqlHaStatesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeInstanceSqlHaStatesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeInstanceSqlHaStates, request, handler, context);
+  }
+
+  /**
    * <p>Describes the status of the specified instances or all of your instances. By
    * default, only running instances are described, unless you specifically indicate
    * to return the status of all instances.</p> <p>Instance status includes the
@@ -14844,6 +14906,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Disable Amazon EC2 instances running in an SQL Server High Availability
+   * cluster from SQL Server High Availability instance standby detection monitoring.
+   * Once disabled, Amazon Web Services no longer monitors the metadata for the
+   * instances to determine whether they are active or standby nodes in the SQL
+   * Server High Availability cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableInstanceSqlHaStandbyDetectionsOutcome DisableInstanceSqlHaStandbyDetections(
+      const Model::DisableInstanceSqlHaStandbyDetectionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisableInstanceSqlHaStandbyDetections that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisableInstanceSqlHaStandbyDetectionsRequestT = Model::DisableInstanceSqlHaStandbyDetectionsRequest>
+  Model::DisableInstanceSqlHaStandbyDetectionsOutcomeCallable DisableInstanceSqlHaStandbyDetectionsCallable(
+      const DisableInstanceSqlHaStandbyDetectionsRequestT& request) const {
+    return SubmitCallable(&EC2Client::DisableInstanceSqlHaStandbyDetections, request);
+  }
+
+  /**
+   * An Async wrapper for DisableInstanceSqlHaStandbyDetections that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisableInstanceSqlHaStandbyDetectionsRequestT = Model::DisableInstanceSqlHaStandbyDetectionsRequest>
+  void DisableInstanceSqlHaStandbyDetectionsAsync(const DisableInstanceSqlHaStandbyDetectionsRequestT& request,
+                                                  const DisableInstanceSqlHaStandbyDetectionsResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DisableInstanceSqlHaStandbyDetections, request, handler, context);
+  }
+
+  /**
    * <p>Disable the IPAM account. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable
    * integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
@@ -16095,6 +16190,48 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Enable Amazon EC2 instances running in an SQL Server High Availability
+   * cluster for SQL Server High Availability instance standby detection monitoring.
+   * Once enabled, Amazon Web Services monitors the metadata for the instances to
+   * determine whether they are active or standby nodes in the SQL Server High
+   * Availability cluster. If the instances are determined to be standby failover
+   * nodes, Amazon Web Services automatically applies SQL Server licensing fee waiver
+   * for those instances.</p> <p>To register an instance, it must be running a
+   * Windows SQL Server license-included AMI and have the Amazon Web Services Systems
+   * Manager agent installed and running. Only Windows Server 2019 and later and SQL
+   * Server (Standard and Enterprise editions) 2017 and later are supported. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/sql-server-ec2/latest/userguide/prerequisites-and-requirements.html">
+   * Prerequisites for using SQL Server High Availability instance standby
+   * detection</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableInstanceSqlHaStandbyDetectionsOutcome EnableInstanceSqlHaStandbyDetections(
+      const Model::EnableInstanceSqlHaStandbyDetectionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for EnableInstanceSqlHaStandbyDetections that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename EnableInstanceSqlHaStandbyDetectionsRequestT = Model::EnableInstanceSqlHaStandbyDetectionsRequest>
+  Model::EnableInstanceSqlHaStandbyDetectionsOutcomeCallable EnableInstanceSqlHaStandbyDetectionsCallable(
+      const EnableInstanceSqlHaStandbyDetectionsRequestT& request) const {
+    return SubmitCallable(&EC2Client::EnableInstanceSqlHaStandbyDetections, request);
+  }
+
+  /**
+   * An Async wrapper for EnableInstanceSqlHaStandbyDetections that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename EnableInstanceSqlHaStandbyDetectionsRequestT = Model::EnableInstanceSqlHaStandbyDetectionsRequest>
+  void EnableInstanceSqlHaStandbyDetectionsAsync(const EnableInstanceSqlHaStandbyDetectionsRequestT& request,
+                                                 const EnableInstanceSqlHaStandbyDetectionsResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::EnableInstanceSqlHaStandbyDetections, request, handler, context);
+  }
+
+  /**
    * <p>Enable an Organizations member account as the IPAM admin account. You cannot
    * select the Organizations management account as the IPAM admin account. For more
    * information, see <a
@@ -17206,6 +17343,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                               const GetHostReservationPurchasePreviewResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetHostReservationPurchasePreview, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the ancestry chain of the specified AMI, tracing its lineage back
+   * to the root AMI. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+   * ancestry</a> in <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetImageAncestryOutcome GetImageAncestry(const Model::GetImageAncestryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetImageAncestry that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetImageAncestryRequestT = Model::GetImageAncestryRequest>
+  Model::GetImageAncestryOutcomeCallable GetImageAncestryCallable(const GetImageAncestryRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetImageAncestry, request);
+  }
+
+  /**
+   * An Async wrapper for GetImageAncestry that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetImageAncestryRequestT = Model::GetImageAncestryRequest>
+  void GetImageAncestryAsync(const GetImageAncestryRequestT& request, const GetImageAncestryResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetImageAncestry, request, handler, context);
   }
 
   /**

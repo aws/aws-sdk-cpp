@@ -34,6 +34,10 @@ UpdateClusterSlurmConfigurationRequest& UpdateClusterSlurmConfigurationRequest::
     m_accounting = jsonValue.GetObject("accounting");
     m_accountingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("slurmRest")) {
+    m_slurmRest = jsonValue.GetObject("slurmRest");
+    m_slurmRestHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -55,6 +59,10 @@ JsonValue UpdateClusterSlurmConfigurationRequest::Jsonize() const {
 
   if (m_accountingHasBeenSet) {
     payload.WithObject("accounting", m_accounting.Jsonize());
+  }
+
+  if (m_slurmRestHasBeenSet) {
+    payload.WithObject("slurmRest", m_slurmRest.Jsonize());
   }
 
   return payload;

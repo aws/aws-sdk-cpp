@@ -83,6 +83,7 @@
 #include <aws/guardduty/model/ListThreatEntitySetsRequest.h>
 #include <aws/guardduty/model/ListThreatIntelSetsRequest.h>
 #include <aws/guardduty/model/ListTrustedEntitySetsRequest.h>
+#include <aws/guardduty/model/SendObjectMalwareScanRequest.h>
 #include <aws/guardduty/model/StartMalwareScanRequest.h>
 #include <aws/guardduty/model/StartMonitoringMembersRequest.h>
 #include <aws/guardduty/model/StopMonitoringMembersRequest.h>
@@ -2532,6 +2533,36 @@ ListTrustedEntitySetsOutcome GuardDutyClient::ListTrustedEntitySets(const ListTr
         endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset");
         return ListTrustedEntitySetsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendObjectMalwareScanOutcome GuardDutyClient::SendObjectMalwareScan(const SendObjectMalwareScanRequest& request) const {
+  AWS_OPERATION_GUARD(SendObjectMalwareScan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendObjectMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendObjectMalwareScan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendObjectMalwareScan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendObjectMalwareScan",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendObjectMalwareScanOutcome>(
+      [&]() -> SendObjectMalwareScanOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendObjectMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/object-malware-scan/send");
+        return SendObjectMalwareScanOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

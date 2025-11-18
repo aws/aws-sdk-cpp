@@ -15,6 +15,14 @@ using namespace Aws::Utils;
 Aws::String AcceptSubscriptionRequestRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_assetPermissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetPermissionsJsonList(m_assetPermissions.size());
+    for (unsigned assetPermissionsIndex = 0; assetPermissionsIndex < assetPermissionsJsonList.GetLength(); ++assetPermissionsIndex) {
+      assetPermissionsJsonList[assetPermissionsIndex].AsObject(m_assetPermissions[assetPermissionsIndex].Jsonize());
+    }
+    payload.WithArray("assetPermissions", std::move(assetPermissionsJsonList));
+  }
+
   if (m_assetScopesHasBeenSet) {
     Aws::Utils::Array<JsonValue> assetScopesJsonList(m_assetScopes.size());
     for (unsigned assetScopesIndex = 0; assetScopesIndex < assetScopesJsonList.GetLength(); ++assetScopesIndex) {
