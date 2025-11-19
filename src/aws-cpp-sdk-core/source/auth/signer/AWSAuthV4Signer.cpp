@@ -229,9 +229,14 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
         request.DeleteHeader(checksumHeaderValue.c_str());
         request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
         request.SetTransferEncoding(CHUNKED_VALUE);
-        request.HasContentEncoding()
-                ? request.SetContentEncoding(Aws::String{Http::AWS_CHUNKED_VALUE} + "," + request.GetContentEncoding())
-                : request.SetContentEncoding(Http::AWS_CHUNKED_VALUE);
+        if (!request.HasContentEncoding()) {
+            request.SetContentEncoding(Http::AWS_CHUNKED_VALUE);
+        } else {
+            Aws::String currentEncoding = request.GetContentEncoding();
+            if (currentEncoding.find(Http::AWS_CHUNKED_VALUE) == Aws::String::npos) {
+                request.SetContentEncoding(Aws::String{Http::AWS_CHUNKED_VALUE} + "," + currentEncoding);
+            }
+        }
 
         if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
           request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));

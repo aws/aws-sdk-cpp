@@ -78,6 +78,16 @@ namespace Aws
           WHEN_REQUIRED,
         };
 
+        /**
+         * Control whether ChunkingInterceptor applies aws-chunked encoding.
+         * ENABLE: Apply aws-chunked encoding for requests with checksums (default)
+         * DISABLE: Skip ChunkingInterceptor, rely on signer for chunking
+         */
+        enum class UseAwsChunkedEncoding {
+          ENABLE,
+          DISABLE,
+        };
+
         struct RequestCompressionConfig {
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
@@ -493,6 +503,12 @@ namespace Aws
            * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
            */
           Aws::String accountIdEndpointMode = "preferred";
+
+          /**
+           * Control whether ChunkingInterceptor applies aws-chunked encoding.
+           * Default ENABLE for backward compatibility.
+           */
+          UseAwsChunkedEncoding useAwsChunkedEncoding = UseAwsChunkedEncoding::ENABLE;
           /**
           * Configuration structure for credential providers in the AWS SDK.
           * This structure allows passing configuration options to credential providers
