@@ -21,9 +21,9 @@ namespace SageMaker {
 namespace Model {
 
 /**
- * <p>Defines the mapping between an in-app role and the AWS IAM Identity Center
- * group patterns that should be assigned to that role within the SageMaker Partner
- * AI App.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines the mapping between an in-app role and the Amazon Web Services IAM
+ * Identity Center group patterns that should be assigned to that role within the
+ * SageMaker Partner AI App.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RoleGroupAssignment">AWS
  * API Reference</a></p>
  */
@@ -55,9 +55,9 @@ class RoleGroupAssignment {
 
   ///@{
   /**
-   * <p>A list of AWS IAM Identity Center group patterns that should be assigned to
-   * the specified role. Group patterns support wildcard matching using
-   * <code>*</code>.</p>
+   * <p>A list of Amazon Web Services IAM Identity Center group patterns that should
+   * be assigned to the specified role. Group patterns support wildcard matching
+   * using <code>*</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupPatterns() const { return m_groupPatterns; }
   inline bool GroupPatternsHasBeenSet() const { return m_groupPatternsHasBeenSet; }

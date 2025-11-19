@@ -58,6 +58,17 @@ OrganizationEvent& OrganizationEvent::operator=(JsonView jsonValue) {
     m_statusCode = EventStatusCodeMapper::GetEventStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("actionability")) {
+    m_actionability = EventActionabilityMapper::GetEventActionabilityForName(jsonValue.GetString("actionability"));
+    m_actionabilityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("personas")) {
+    Aws::Utils::Array<JsonView> personasJsonList = jsonValue.GetArray("personas");
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      m_personas.push_back(EventPersonaMapper::GetEventPersonaForName(personasJsonList[personasIndex].AsString()));
+    }
+    m_personasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +113,18 @@ JsonValue OrganizationEvent::Jsonize() const {
 
   if (m_statusCodeHasBeenSet) {
     payload.WithString("statusCode", EventStatusCodeMapper::GetNameForEventStatusCode(m_statusCode));
+  }
+
+  if (m_actionabilityHasBeenSet) {
+    payload.WithString("actionability", EventActionabilityMapper::GetNameForEventActionability(m_actionability));
+  }
+
+  if (m_personasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> personasJsonList(m_personas.size());
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      personasJsonList[personasIndex].AsString(EventPersonaMapper::GetNameForEventPersona(m_personas[personasIndex]));
+    }
+    payload.WithArray("personas", std::move(personasJsonList));
   }
 
   return payload;

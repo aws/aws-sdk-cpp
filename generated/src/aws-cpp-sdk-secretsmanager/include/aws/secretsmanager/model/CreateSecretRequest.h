@@ -287,6 +287,27 @@ class CreateSecretRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exact string that identifies the partner that holds the external secret.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using
+   * Secrets Manager managed external secrets</a>.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  CreateSecretRequest& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -314,6 +335,9 @@ class CreateSecretRequest : public SecretsManagerRequest {
 
   bool m_forceOverwriteReplicaSecret{false};
   bool m_forceOverwriteReplicaSecretHasBeenSet = false;
+
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

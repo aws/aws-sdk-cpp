@@ -20,7 +20,8 @@ enum class ScanStatus {
   PENDING,
   SCAN_ELIGIBILITY_EXPIRED,
   FINDINGS_UNAVAILABLE,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  IMAGE_ARCHIVED
 };
 
 namespace ScanStatusMapper {

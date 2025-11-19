@@ -1312,6 +1312,38 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the detailed information for a specific malware scan. Each member
+   * account can view the malware scan details for their own account. An
+   * administrator can view malware scan details for all accounts in the
+   * organization.</p> <p>There might be regional differences because some data
+   * sources might not be available in all the Amazon Web Services Regions where
+   * GuardDuty is presently supported. For more information, see <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+   * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMalwareScanOutcome GetMalwareScan(const Model::GetMalwareScanRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMalwareScan that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetMalwareScanRequestT = Model::GetMalwareScanRequest>
+  Model::GetMalwareScanOutcomeCallable GetMalwareScanCallable(const GetMalwareScanRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::GetMalwareScan, request);
+  }
+
+  /**
+   * An Async wrapper for GetMalwareScan that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetMalwareScanRequestT = Model::GetMalwareScanRequest>
+  void GetMalwareScanAsync(const GetMalwareScanRequestT& request, const GetMalwareScanResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::GetMalwareScan, request, handler, context);
+  }
+
+  /**
    * <p>Returns the details of the malware scan settings.</p> <p>There might be
    * regional differences because some data sources might not be available in all the
    * Amazon Web Services Regions where GuardDuty is presently supported. For more
@@ -1832,6 +1864,35 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a list of malware scans. Each member account can view the malware
+   * scans for their own accounts. An administrator can view the malware scans for
+   * all of its members' accounts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareScans">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMalwareScansOutcome ListMalwareScans(const Model::ListMalwareScansRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListMalwareScans that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListMalwareScansRequestT = Model::ListMalwareScansRequest>
+  Model::ListMalwareScansOutcomeCallable ListMalwareScansCallable(const ListMalwareScansRequestT& request = {}) const {
+    return SubmitCallable(&GuardDutyClient::ListMalwareScans, request);
+  }
+
+  /**
+   * An Async wrapper for ListMalwareScans that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListMalwareScansRequestT = Model::ListMalwareScansRequest>
+  void ListMalwareScansAsync(const ListMalwareScansResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListMalwareScansRequestT& request = {}) const {
+    return SubmitAsync(&GuardDutyClient::ListMalwareScans, request, handler, context);
+  }
+
+  /**
    * <p>Lists details about all member accounts for the current GuardDuty
    * administrator account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
@@ -2072,10 +2133,16 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
    * <p>Initiates the malware scan. Invoking this API will automatically create the
    * <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-   * role</a> in the corresponding account.</p> <p>When the malware scan starts, you
-   * can use the associated scan ID to track the status of the scan. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.</p><p><h3>See
+   * role</a> in the corresponding account if the resourceArn belongs to an EC2
+   * instance.</p> <p>When the malware scan starts, you can use the associated scan
+   * ID to track the status of the scan. For more information, see <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMalwareScans.html">ListMalwareScans</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMalwareScan.html">GetMalwareScan</a>.</p>
+   * <p>When you use this API, the Amazon Web Services service terms for GuardDuty
+   * Malware Protection apply. For more information, see <a
+   * href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon Web
+   * Services service terms for GuardDuty Malware Protection</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">AWS
    * API Reference</a></p>

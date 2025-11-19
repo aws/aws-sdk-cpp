@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class ServiceManaged { NOT_SET, alb, nlb, rnat };
+enum class ServiceManaged { NOT_SET, alb, nlb, rnat, rds };
 
 namespace ServiceManagedMapper {
 AWS_EC2_API ServiceManaged GetServiceManagedForName(const Aws::String& name);

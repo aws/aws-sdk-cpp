@@ -20,7 +20,7 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>The details of the IAM user profile.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/IamUserProfileDetails">AWS
  * API Reference</a></p>
  */

@@ -31,6 +31,15 @@ Aws::String CreateBillScenarioRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_groupSharingPreferenceHasBeenSet) {
+    payload.WithString("groupSharingPreference",
+                       GroupSharingPreferenceEnumMapper::GetNameForGroupSharingPreferenceEnum(m_groupSharingPreference));
+  }
+
+  if (m_costCategoryGroupSharingPreferenceArnHasBeenSet) {
+    payload.WithString("costCategoryGroupSharingPreferenceArn", m_costCategoryGroupSharingPreferenceArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

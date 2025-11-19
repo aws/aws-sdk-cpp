@@ -18,6 +18,7 @@ namespace ResourceManagedTypeMapper {
 static const int AWS_MANAGED_THREAT_SIGNATURES_HASH = HashingUtils::HashString("AWS_MANAGED_THREAT_SIGNATURES");
 static const int AWS_MANAGED_DOMAIN_LISTS_HASH = HashingUtils::HashString("AWS_MANAGED_DOMAIN_LISTS");
 static const int ACTIVE_THREAT_DEFENSE_HASH = HashingUtils::HashString("ACTIVE_THREAT_DEFENSE");
+static const int PARTNER_MANAGED_HASH = HashingUtils::HashString("PARTNER_MANAGED");
 
 ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name) {
     return ResourceManagedType::AWS_MANAGED_DOMAIN_LISTS;
   } else if (hashCode == ACTIVE_THREAT_DEFENSE_HASH) {
     return ResourceManagedType::ACTIVE_THREAT_DEFENSE;
+  } else if (hashCode == PARTNER_MANAGED_HASH) {
+    return ResourceManagedType::PARTNER_MANAGED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForResourceManagedType(ResourceManagedType enumValue) {
       return "AWS_MANAGED_DOMAIN_LISTS";
     case ResourceManagedType::ACTIVE_THREAT_DEFENSE:
       return "ACTIVE_THREAT_DEFENSE";
+    case ResourceManagedType::PARTNER_MANAGED:
+      return "PARTNER_MANAGED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

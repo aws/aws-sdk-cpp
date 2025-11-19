@@ -1979,7 +1979,7 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Deletes the tags from the bucket.</p> <p>To use this operation, you must have
+   * <p>Deletes tags from the bucket.</p> <p>To use this operation, you must have
    * permission to perform the <code>s3:PutBucketTagging</code> action. By default,
    * the bucket owner has this permission and can grant this permission to others.
    * </p> <p>The following operations are related to
@@ -2129,9 +2129,12 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * you must always have the <code>s3:DeleteObject</code> permission.</p> </li> <li>
    * <p> <b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific version
    * of an object from a versioning-enabled bucket, you must have the
-   * <code>s3:DeleteObjectVersion</code> permission.</p> </li> </ul> </li> <li> <p>
-   * <b>Directory bucket permissions</b> - To grant access to this API operation on a
-   * directory bucket, we recommend that you use the <a
+   * <code>s3:DeleteObjectVersion</code> permission.</p>  <p>If the
+   * <code>s3:DeleteObject</code> or <code>s3:DeleteObjectVersion</code> permissions
+   * are explicitly denied in your bucket policy, attempts to delete any unversioned
+   * objects result in a <code>403 Access Denied</code> error.</p>  </li>
+   * </ul> </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to
+   * this API operation on a directory bucket, we recommend that you use the <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
    * <code>CreateSession</code> </a> API operation for session-based authorization.
    * Specifically, you grant the <code>s3express:CreateSession</code> permission to
@@ -2271,9 +2274,12 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * you must always specify the <code>s3:DeleteObject</code> permission.</p> </li>
    * <li> <p> <b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific
    * version of an object from a versioning-enabled bucket, you must specify the
-   * <code>s3:DeleteObjectVersion</code> permission.</p> </li> </ul> </li> <li> <p>
-   * <b>Directory bucket permissions</b> - To grant access to this API operation on a
-   * directory bucket, we recommend that you use the <a
+   * <code>s3:DeleteObjectVersion</code> permission.</p>  <p>If the
+   * <code>s3:DeleteObject</code> or <code>s3:DeleteObjectVersion</code> permissions
+   * are explicitly denied in your bucket policy, attempts to delete any unversioned
+   * objects result in a <code>403 Access Denied</code> error.</p>  </li>
+   * </ul> </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to
+   * this API operation on a directory bucket, we recommend that you use the <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
    * <code>CreateSession</code> </a> API operation for session-based authorization.
    * Specifically, you grant the <code>s3express:CreateSession</code> permission to
@@ -2610,10 +2616,12 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   /**
    * <p>Returns the default encryption configuration for an Amazon S3 bucket. By
    * default, all buckets have a default encryption configuration that uses
-   * server-side encryption with Amazon S3 managed keys (SSE-S3). </p>  <ul>
-   * <li> <p> <b>General purpose buckets</b> - For information about the bucket
-   * default encryption feature, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+   * server-side encryption with Amazon S3 managed keys (SSE-S3). This operation also
+   * returns the <code>BucketKeyEnabled</code> and
+   * <code>BlockedEncryptionTypes</code> statuses. </p>  <ul> <li> <p>
+   * <b>General purpose buckets</b> - For information about the bucket default
+   * encryption feature, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
    * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
    * <li> <p> <b>Directory buckets</b> - For directory buckets, there are only two
    * supported options for server-side encryption: SSE-S3 and SSE-KMS. For
@@ -3490,14 +3498,15 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Returns the tag set associated with the bucket.</p> <p>To use this operation,
-   * you must have permission to perform the <code>s3:GetBucketTagging</code> action.
-   * By default, the bucket owner has this permission and can grant this permission
-   * to others.</p> <p> <code>GetBucketTagging</code> has the following special
-   * error:</p> <ul> <li> <p>Error code: <code>NoSuchTagSet</code> </p> <ul> <li>
-   * <p>Description: There is no tag set associated with the bucket.</p> </li> </ul>
-   * </li> </ul> <p>The following operations are related to
-   * <code>GetBucketTagging</code>:</p> <ul> <li> <p> <a
+   * <p>Returns the tag set associated with the general purpose bucket.</p> <p>To use
+   * this operation, you must have permission to perform the
+   * <code>s3:GetBucketTagging</code> action. By default, the bucket owner has this
+   * permission and can grant this permission to others.</p> <p>
+   * <code>GetBucketTagging</code> has the following special error:</p> <ul> <li>
+   * <p>Error code: <code>NoSuchTagSet</code> </p> <ul> <li> <p>Description: There is
+   * no tag set associated with the bucket.</p> </li> </ul> </li> </ul> <p>The
+   * following operations are related to <code>GetBucketTagging</code>:</p> <ul> <li>
+   * <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
@@ -5614,9 +5623,10 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    * <p>This operation configures default encryption and Amazon S3 Bucket Keys for an
-   * existing bucket.</p>  <p> <b>Directory buckets </b> - For directory
-   * buckets, you must make requests for this API operation to the Regional endpoint.
-   * These endpoints support path-style requests in the format
+   * existing bucket. You can also block encryption types using this operation.</p>
+   *  <p> <b>Directory buckets </b> - For directory buckets, you must make
+   * requests for this API operation to the Regional endpoint. These endpoints
+   * support path-style requests in the format
    * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
    * </code>. Virtual-hosted-style requests aren't supported. For more information
    * about endpoints in Availability Zones, see <a
@@ -6516,14 +6526,14 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Sets the tags for a bucket.</p> <p>Use tags to organize your Amazon Web
-   * Services bill to reflect your own cost structure. To do this, sign up to get
-   * your Amazon Web Services account bill with tag key values included. Then, to see
-   * the cost of combined resources, organize your billing information according to
-   * resources with the same tag key values. For example, you can tag several
-   * resources with a specific application name, and then organize your billing
-   * information to see the total cost of that application across several services.
-   * For more information, see <a
+   * <p>Sets the tags for a general purpose bucket. </p> <p>Use tags to organize your
+   * Amazon Web Services bill to reflect your own cost structure. To do this, sign up
+   * to get your Amazon Web Services account bill with tag key values included. Then,
+   * to see the cost of combined resources, organize your billing information
+   * according to resources with the same tag key values. For example, you can tag
+   * several resources with a specific application name, and then organize your
+   * billing information to see the total cost of that application across several
+   * services. For more information, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
    * Allocation and Tagging</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using

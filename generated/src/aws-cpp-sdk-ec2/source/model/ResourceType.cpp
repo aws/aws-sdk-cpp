@@ -114,6 +114,7 @@ static const int ipam_external_resource_verification_token_HASH = HashingUtils::
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modification-task");
 static const int ipam_prefix_list_resolver_HASH = HashingUtils::HashString("ipam-prefix-list-resolver");
+static const int ipam_policy_HASH = HashingUtils::HashString("ipam-policy");
 static const int ipam_prefix_list_resolver_target_HASH = HashingUtils::HashString("ipam-prefix-list-resolver-target");
 static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
 static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentrator");
@@ -316,6 +317,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::mac_modification_task;
   } else if (hashCode == ipam_prefix_list_resolver_HASH) {
     return ResourceType::ipam_prefix_list_resolver;
+  } else if (hashCode == ipam_policy_HASH) {
+    return ResourceType::ipam_policy;
   } else if (hashCode == ipam_prefix_list_resolver_target_HASH) {
     return ResourceType::ipam_prefix_list_resolver_target;
   } else if (hashCode == capacity_manager_data_export_HASH) {
@@ -532,6 +535,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "mac-modification-task";
     case ResourceType::ipam_prefix_list_resolver:
       return "ipam-prefix-list-resolver";
+    case ResourceType::ipam_policy:
+      return "ipam-policy";
     case ResourceType::ipam_prefix_list_resolver_target:
       return "ipam-prefix-list-resolver-target";
     case ResourceType::capacity_manager_data_export:

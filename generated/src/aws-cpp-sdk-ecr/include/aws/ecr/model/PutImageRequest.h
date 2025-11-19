@@ -108,9 +108,7 @@ class PutImageRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>The tag to associate with the image. This parameter is required for images
-   * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-   * (OCI) formats.</p>
+   * <p>The tag to associate with the image. This parameter is optional.</p>
    */
   inline const Aws::String& GetImageTag() const { return m_imageTag; }
   inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }

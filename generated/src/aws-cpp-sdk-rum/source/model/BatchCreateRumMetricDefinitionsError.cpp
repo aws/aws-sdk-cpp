@@ -18,6 +18,10 @@ namespace Model {
 BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError(JsonView jsonValue) { *this = jsonValue; }
 
 BatchCreateRumMetricDefinitionsError& BatchCreateRumMetricDefinitionsError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricDefinition")) {
+    m_metricDefinition = jsonValue.GetObject("MetricDefinition");
+    m_metricDefinitionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
@@ -26,15 +30,15 @@ BatchCreateRumMetricDefinitionsError& BatchCreateRumMetricDefinitionsError::oper
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("MetricDefinition")) {
-    m_metricDefinition = jsonValue.GetObject("MetricDefinition");
-    m_metricDefinitionHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue BatchCreateRumMetricDefinitionsError::Jsonize() const {
   JsonValue payload;
+
+  if (m_metricDefinitionHasBeenSet) {
+    payload.WithObject("MetricDefinition", m_metricDefinition.Jsonize());
+  }
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("ErrorCode", m_errorCode);
@@ -42,10 +46,6 @@ JsonValue BatchCreateRumMetricDefinitionsError::Jsonize() const {
 
   if (m_errorMessageHasBeenSet) {
     payload.WithString("ErrorMessage", m_errorMessage);
-  }
-
-  if (m_metricDefinitionHasBeenSet) {
-    payload.WithObject("MetricDefinition", m_metricDefinition.Jsonize());
   }
 
   return payload;

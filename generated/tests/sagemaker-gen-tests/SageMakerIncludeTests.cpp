@@ -1066,6 +1066,7 @@
 #include <aws/sagemaker/model/MetricDefinition.h>
 #include <aws/sagemaker/model/MetricSetSource.h>
 #include <aws/sagemaker/model/MetricSpecification.h>
+#include <aws/sagemaker/model/MetricsConfig.h>
 #include <aws/sagemaker/model/MetricsSource.h>
 #include <aws/sagemaker/model/MlTools.h>
 #include <aws/sagemaker/model/Model.h>

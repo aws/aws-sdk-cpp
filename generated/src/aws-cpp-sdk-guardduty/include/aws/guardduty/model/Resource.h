@@ -9,7 +9,9 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/AccessKeyDetails.h>
 #include <aws/guardduty/model/Container.h>
+#include <aws/guardduty/model/EbsSnapshotDetails.h>
 #include <aws/guardduty/model/EbsVolumeDetails.h>
+#include <aws/guardduty/model/Ec2ImageDetails.h>
 #include <aws/guardduty/model/EcsClusterDetails.h>
 #include <aws/guardduty/model/EksClusterDetails.h>
 #include <aws/guardduty/model/InstanceDetails.h>
@@ -18,6 +20,7 @@
 #include <aws/guardduty/model/RdsDbInstanceDetails.h>
 #include <aws/guardduty/model/RdsDbUserDetails.h>
 #include <aws/guardduty/model/RdsLimitlessDbDetails.h>
+#include <aws/guardduty/model/RecoveryPointDetails.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
 
 #include <utility>
@@ -290,6 +293,60 @@ class Resource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains details about the EBS snapshot that was scanned.</p>
+   */
+  inline const EbsSnapshotDetails& GetEbsSnapshotDetails() const { return m_ebsSnapshotDetails; }
+  inline bool EbsSnapshotDetailsHasBeenSet() const { return m_ebsSnapshotDetailsHasBeenSet; }
+  template <typename EbsSnapshotDetailsT = EbsSnapshotDetails>
+  void SetEbsSnapshotDetails(EbsSnapshotDetailsT&& value) {
+    m_ebsSnapshotDetailsHasBeenSet = true;
+    m_ebsSnapshotDetails = std::forward<EbsSnapshotDetailsT>(value);
+  }
+  template <typename EbsSnapshotDetailsT = EbsSnapshotDetails>
+  Resource& WithEbsSnapshotDetails(EbsSnapshotDetailsT&& value) {
+    SetEbsSnapshotDetails(std::forward<EbsSnapshotDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains details about the EC2 image that was scanned.</p>
+   */
+  inline const Ec2ImageDetails& GetEc2ImageDetails() const { return m_ec2ImageDetails; }
+  inline bool Ec2ImageDetailsHasBeenSet() const { return m_ec2ImageDetailsHasBeenSet; }
+  template <typename Ec2ImageDetailsT = Ec2ImageDetails>
+  void SetEc2ImageDetails(Ec2ImageDetailsT&& value) {
+    m_ec2ImageDetailsHasBeenSet = true;
+    m_ec2ImageDetails = std::forward<Ec2ImageDetailsT>(value);
+  }
+  template <typename Ec2ImageDetailsT = Ec2ImageDetails>
+  Resource& WithEc2ImageDetails(Ec2ImageDetailsT&& value) {
+    SetEc2ImageDetails(std::forward<Ec2ImageDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains details about the backup recovery point that was scanned.</p>
+   */
+  inline const RecoveryPointDetails& GetRecoveryPointDetails() const { return m_recoveryPointDetails; }
+  inline bool RecoveryPointDetailsHasBeenSet() const { return m_recoveryPointDetailsHasBeenSet; }
+  template <typename RecoveryPointDetailsT = RecoveryPointDetails>
+  void SetRecoveryPointDetails(RecoveryPointDetailsT&& value) {
+    m_recoveryPointDetailsHasBeenSet = true;
+    m_recoveryPointDetails = std::forward<RecoveryPointDetailsT>(value);
+  }
+  template <typename RecoveryPointDetailsT = RecoveryPointDetails>
+  Resource& WithRecoveryPointDetails(RecoveryPointDetailsT&& value) {
+    SetRecoveryPointDetails(std::forward<RecoveryPointDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AccessKeyDetails m_accessKeyDetails;
   bool m_accessKeyDetailsHasBeenSet = false;
@@ -329,6 +386,15 @@ class Resource {
 
   LambdaDetails m_lambdaDetails;
   bool m_lambdaDetailsHasBeenSet = false;
+
+  EbsSnapshotDetails m_ebsSnapshotDetails;
+  bool m_ebsSnapshotDetailsHasBeenSet = false;
+
+  Ec2ImageDetails m_ec2ImageDetails;
+  bool m_ec2ImageDetailsHasBeenSet = false;
+
+  RecoveryPointDetails m_recoveryPointDetails;
+  bool m_recoveryPointDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

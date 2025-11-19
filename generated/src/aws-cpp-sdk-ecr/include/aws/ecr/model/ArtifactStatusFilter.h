@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
+
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class ArtifactStatusFilter { NOT_SET, ACTIVE, ARCHIVED, ACTIVATING, ANY };
+
+namespace ArtifactStatusFilterMapper {
+AWS_ECR_API ArtifactStatusFilter GetArtifactStatusFilterForName(const Aws::String& name);
+
+AWS_ECR_API Aws::String GetNameForArtifactStatusFilter(ArtifactStatusFilter value);
+}  // namespace ArtifactStatusFilterMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

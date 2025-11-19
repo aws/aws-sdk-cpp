@@ -10,6 +10,7 @@
 #include <aws/rum/CloudWatchRUMRequest.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
+#include <aws/rum/model/AppMonitorPlatform.h>
 #include <aws/rum/model/CustomEvents.h>
 #include <aws/rum/model/DeobfuscationConfiguration.h>
 
@@ -35,88 +36,18 @@ class CreateAppMonitorRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>A structure that contains much of the configuration data for the app monitor.
-   * If you are using Amazon Cognito for authorization, you must include this
-   * structure in your request, and it must include the ID of the Amazon Cognito
-   * identity pool to use for authorization. If you don't include
-   * <code>AppMonitorConfiguration</code>, you must set up your own authorization
-   * method. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
-   * your application to send data to Amazon Web Services</a>.</p> <p>If you omit
-   * this argument, the sample rate used for RUM is set to 10% of the user
-   * sessions.</p>
+   * <p>A name for the app monitor.</p>
    */
-  inline const AppMonitorConfiguration& GetAppMonitorConfiguration() const { return m_appMonitorConfiguration; }
-  inline bool AppMonitorConfigurationHasBeenSet() const { return m_appMonitorConfigurationHasBeenSet; }
-  template <typename AppMonitorConfigurationT = AppMonitorConfiguration>
-  void SetAppMonitorConfiguration(AppMonitorConfigurationT&& value) {
-    m_appMonitorConfigurationHasBeenSet = true;
-    m_appMonitorConfiguration = std::forward<AppMonitorConfigurationT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename AppMonitorConfigurationT = AppMonitorConfiguration>
-  CreateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfigurationT&& value) {
-    SetAppMonitorConfiguration(std::forward<AppMonitorConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether this app monitor allows the web client to define and send
-   * custom events. If you omit this parameter, custom events are
-   * <code>DISABLED</code>.</p> <p>For more information about custom events, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
-   * custom events</a>.</p>
-   */
-  inline const CustomEvents& GetCustomEvents() const { return m_customEvents; }
-  inline bool CustomEventsHasBeenSet() const { return m_customEventsHasBeenSet; }
-  template <typename CustomEventsT = CustomEvents>
-  void SetCustomEvents(CustomEventsT&& value) {
-    m_customEventsHasBeenSet = true;
-    m_customEvents = std::forward<CustomEventsT>(value);
-  }
-  template <typename CustomEventsT = CustomEvents>
-  CreateAppMonitorRequest& WithCustomEvents(CustomEventsT&& value) {
-    SetCustomEvents(std::forward<CustomEventsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This
-   * parameter specifies whether RUM sends a copy of this telemetry data to Amazon
-   * CloudWatch Logs in your account. This enables you to keep the telemetry data for
-   * more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p> <p>If
-   * you omit this parameter, the default is <code>false</code>.</p>
-   */
-  inline bool GetCwLogEnabled() const { return m_cwLogEnabled; }
-  inline bool CwLogEnabledHasBeenSet() const { return m_cwLogEnabledHasBeenSet; }
-  inline void SetCwLogEnabled(bool value) {
-    m_cwLogEnabledHasBeenSet = true;
-    m_cwLogEnabled = value;
-  }
-  inline CreateAppMonitorRequest& WithCwLogEnabled(bool value) {
-    SetCwLogEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> A structure that contains the configuration for how an app monitor can
-   * deobfuscate stack traces. </p>
-   */
-  inline const DeobfuscationConfiguration& GetDeobfuscationConfiguration() const { return m_deobfuscationConfiguration; }
-  inline bool DeobfuscationConfigurationHasBeenSet() const { return m_deobfuscationConfigurationHasBeenSet; }
-  template <typename DeobfuscationConfigurationT = DeobfuscationConfiguration>
-  void SetDeobfuscationConfiguration(DeobfuscationConfigurationT&& value) {
-    m_deobfuscationConfigurationHasBeenSet = true;
-    m_deobfuscationConfiguration = std::forward<DeobfuscationConfigurationT>(value);
-  }
-  template <typename DeobfuscationConfigurationT = DeobfuscationConfiguration>
-  CreateAppMonitorRequest& WithDeobfuscationConfiguration(DeobfuscationConfigurationT&& value) {
-    SetDeobfuscationConfiguration(std::forward<DeobfuscationConfigurationT>(value));
+  template <typename NameT = Aws::String>
+  CreateAppMonitorRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -168,24 +99,6 @@ class CreateAppMonitorRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>A name for the app monitor.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateAppMonitorRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Assigns one or more tags (key-value pairs) to the app monitor.</p> <p>Tags
    * can help you organize and categorize your resources. You can also use them to
    * scope user permissions by granting a user permission to access or change only
@@ -215,18 +128,116 @@ class CreateAppMonitorRequest : public CloudWatchRUMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A structure that contains much of the configuration data for the app monitor.
+   * If you are using Amazon Cognito for authorization, you must include this
+   * structure in your request, and it must include the ID of the Amazon Cognito
+   * identity pool to use for authorization. If you don't include
+   * <code>AppMonitorConfiguration</code>, you must set up your own authorization
+   * method. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+   * your application to send data to Amazon Web Services</a>.</p> <p>If you omit
+   * this argument, the sample rate used for RUM is set to 10% of the user
+   * sessions.</p>
+   */
+  inline const AppMonitorConfiguration& GetAppMonitorConfiguration() const { return m_appMonitorConfiguration; }
+  inline bool AppMonitorConfigurationHasBeenSet() const { return m_appMonitorConfigurationHasBeenSet; }
+  template <typename AppMonitorConfigurationT = AppMonitorConfiguration>
+  void SetAppMonitorConfiguration(AppMonitorConfigurationT&& value) {
+    m_appMonitorConfigurationHasBeenSet = true;
+    m_appMonitorConfiguration = std::forward<AppMonitorConfigurationT>(value);
+  }
+  template <typename AppMonitorConfigurationT = AppMonitorConfiguration>
+  CreateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfigurationT&& value) {
+    SetAppMonitorConfiguration(std::forward<AppMonitorConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This
+   * parameter specifies whether RUM sends a copy of this telemetry data to Amazon
+   * CloudWatch Logs in your account. This enables you to keep the telemetry data for
+   * more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p> <p>If
+   * you omit this parameter, the default is <code>false</code>.</p>
+   */
+  inline bool GetCwLogEnabled() const { return m_cwLogEnabled; }
+  inline bool CwLogEnabledHasBeenSet() const { return m_cwLogEnabledHasBeenSet; }
+  inline void SetCwLogEnabled(bool value) {
+    m_cwLogEnabledHasBeenSet = true;
+    m_cwLogEnabled = value;
+  }
+  inline CreateAppMonitorRequest& WithCwLogEnabled(bool value) {
+    SetCwLogEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this app monitor allows the web client to define and send
+   * custom events. If you omit this parameter, custom events are
+   * <code>DISABLED</code>.</p> <p>For more information about custom events, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+   * custom events</a>.</p>
+   */
+  inline const CustomEvents& GetCustomEvents() const { return m_customEvents; }
+  inline bool CustomEventsHasBeenSet() const { return m_customEventsHasBeenSet; }
+  template <typename CustomEventsT = CustomEvents>
+  void SetCustomEvents(CustomEventsT&& value) {
+    m_customEventsHasBeenSet = true;
+    m_customEvents = std::forward<CustomEventsT>(value);
+  }
+  template <typename CustomEventsT = CustomEvents>
+  CreateAppMonitorRequest& WithCustomEvents(CustomEventsT&& value) {
+    SetCustomEvents(std::forward<CustomEventsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> A structure that contains the configuration for how an app monitor can
+   * deobfuscate stack traces. </p>
+   */
+  inline const DeobfuscationConfiguration& GetDeobfuscationConfiguration() const { return m_deobfuscationConfiguration; }
+  inline bool DeobfuscationConfigurationHasBeenSet() const { return m_deobfuscationConfigurationHasBeenSet; }
+  template <typename DeobfuscationConfigurationT = DeobfuscationConfiguration>
+  void SetDeobfuscationConfiguration(DeobfuscationConfigurationT&& value) {
+    m_deobfuscationConfigurationHasBeenSet = true;
+    m_deobfuscationConfiguration = std::forward<DeobfuscationConfigurationT>(value);
+  }
+  template <typename DeobfuscationConfigurationT = DeobfuscationConfiguration>
+  CreateAppMonitorRequest& WithDeobfuscationConfiguration(DeobfuscationConfigurationT&& value) {
+    SetDeobfuscationConfiguration(std::forward<DeobfuscationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The platform type for the app monitor. Valid values are <code>Web</code> for
+   * web applications, <code>Android</code> for Android applications, and
+   * <code>iOS</code> for IOS applications. If you omit this parameter, the default
+   * is <code>Web</code>.</p>
+   */
+  inline AppMonitorPlatform GetPlatform() const { return m_platform; }
+  inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+  inline void SetPlatform(AppMonitorPlatform value) {
+    m_platformHasBeenSet = true;
+    m_platform = value;
+  }
+  inline CreateAppMonitorRequest& WithPlatform(AppMonitorPlatform value) {
+    SetPlatform(value);
+    return *this;
+  }
+  ///@}
  private:
-  AppMonitorConfiguration m_appMonitorConfiguration;
-  bool m_appMonitorConfigurationHasBeenSet = false;
-
-  CustomEvents m_customEvents;
-  bool m_customEventsHasBeenSet = false;
-
-  bool m_cwLogEnabled{false};
-  bool m_cwLogEnabledHasBeenSet = false;
-
-  DeobfuscationConfiguration m_deobfuscationConfiguration;
-  bool m_deobfuscationConfigurationHasBeenSet = false;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   Aws::String m_domain;
   bool m_domainHasBeenSet = false;
@@ -234,11 +245,23 @@ class CreateAppMonitorRequest : public CloudWatchRUMRequest {
   Aws::Vector<Aws::String> m_domainList;
   bool m_domainListHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  AppMonitorConfiguration m_appMonitorConfiguration;
+  bool m_appMonitorConfigurationHasBeenSet = false;
+
+  bool m_cwLogEnabled{false};
+  bool m_cwLogEnabledHasBeenSet = false;
+
+  CustomEvents m_customEvents;
+  bool m_customEventsHasBeenSet = false;
+
+  DeobfuscationConfiguration m_deobfuscationConfiguration;
+  bool m_deobfuscationConfigurationHasBeenSet = false;
+
+  AppMonitorPlatform m_platform{AppMonitorPlatform::NOT_SET};
+  bool m_platformHasBeenSet = false;
 };
 
 }  // namespace Model

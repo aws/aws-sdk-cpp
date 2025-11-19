@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManagerRequest.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
+#include <aws/secretsmanager/model/ExternalSecretRotationMetadataItem.h>
 #include <aws/secretsmanager/model/RotationRulesType.h>
 
 #include <utility>
@@ -109,6 +111,13 @@ class RotateSecretRequest : public SecretsManagerRequest {
   ///@{
   /**
    * <p>A structure that defines the rotation configuration for this secret.</p>
+   *  <p>When changing an existing rotation schedule and setting
+   * <code>RotateImmediately</code> to <code>false</code>:</p> <ul> <li> <p>If using
+   * <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with
+   * <code>rate()</code>, the previously scheduled rotation might still occur.</p>
+   * </li> <li> <p>To prevent unintended rotations, use a
+   * <code>ScheduleExpression</code> with <code>cron()</code> for granular control
+   * over rotation windows.</p> </li> </ul>
    */
   inline const RotationRulesType& GetRotationRules() const { return m_rotationRules; }
   inline bool RotationRulesHasBeenSet() const { return m_rotationRulesHasBeenSet; }
@@ -126,15 +135,77 @@ class RotateSecretRequest : public SecretsManagerRequest {
 
   ///@{
   /**
+   * <p>The metadata needed to successfully rotate a managed external secret. A list
+   * of key value pairs in JSON format specified by the partner. For more information
+   * about the required information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using
+   * Secrets Manager managed external secrets</a> </p>
+   */
+  inline const Aws::Vector<ExternalSecretRotationMetadataItem>& GetExternalSecretRotationMetadata() const {
+    return m_externalSecretRotationMetadata;
+  }
+  inline bool ExternalSecretRotationMetadataHasBeenSet() const { return m_externalSecretRotationMetadataHasBeenSet; }
+  template <typename ExternalSecretRotationMetadataT = Aws::Vector<ExternalSecretRotationMetadataItem>>
+  void SetExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    m_externalSecretRotationMetadataHasBeenSet = true;
+    m_externalSecretRotationMetadata = std::forward<ExternalSecretRotationMetadataT>(value);
+  }
+  template <typename ExternalSecretRotationMetadataT = Aws::Vector<ExternalSecretRotationMetadataItem>>
+  RotateSecretRequest& WithExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    SetExternalSecretRotationMetadata(std::forward<ExternalSecretRotationMetadataT>(value));
+    return *this;
+  }
+  template <typename ExternalSecretRotationMetadataT = ExternalSecretRotationMetadataItem>
+  RotateSecretRequest& AddExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    m_externalSecretRotationMetadataHasBeenSet = true;
+    m_externalSecretRotationMetadata.emplace_back(std::forward<ExternalSecretRotationMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to
+   * rotate a secret held by a third-party partner. For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security
+   * and permissions</a>.</p>
+   */
+  inline const Aws::String& GetExternalSecretRotationRoleArn() const { return m_externalSecretRotationRoleArn; }
+  inline bool ExternalSecretRotationRoleArnHasBeenSet() const { return m_externalSecretRotationRoleArnHasBeenSet; }
+  template <typename ExternalSecretRotationRoleArnT = Aws::String>
+  void SetExternalSecretRotationRoleArn(ExternalSecretRotationRoleArnT&& value) {
+    m_externalSecretRotationRoleArnHasBeenSet = true;
+    m_externalSecretRotationRoleArn = std::forward<ExternalSecretRotationRoleArnT>(value);
+  }
+  template <typename ExternalSecretRotationRoleArnT = Aws::String>
+  RotateSecretRequest& WithExternalSecretRotationRoleArn(ExternalSecretRotationRoleArnT&& value) {
+    SetExternalSecretRotationRoleArn(std::forward<ExternalSecretRotationRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to rotate the secret immediately or wait until the next
    * scheduled rotation window. The rotation schedule is defined in
-   * <a>RotateSecretRequest$RotationRules</a>.</p> <p>For secrets that use a Lambda
-   * rotation function to rotate, if you don't immediately rotate the secret, Secrets
-   * Manager tests the rotation configuration by running the <a
-   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html#rotate-secrets_lambda-functions-code">
-   * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+   * <a>RotateSecretRequest$RotationRules</a>.</p> <p>The default for
+   * <code>RotateImmediately</code> is <code>true</code>. If you don't specify this
+   * value, Secrets Manager rotates the secret immediately.</p> <p>If you set
+   * <code>RotateImmediately</code> to <code>false</code>, Secrets Manager tests the
+   * rotation configuration by running the <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+   * <code>testSecret</code> step</a> of the Lambda rotation function. This test
    * creates an <code>AWSPENDING</code> version of the secret and then removes
-   * it.</p> <p>By default, Secrets Manager rotates the secret immediately.</p>
+   * it.</p> <p>When changing an existing rotation schedule and setting
+   * <code>RotateImmediately</code> to <code>false</code>:</p> <ul> <li> <p>If using
+   * <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with
+   * <code>rate()</code>, the previously scheduled rotation might still occur.</p>
+   * </li> <li> <p>To prevent unintended rotations, use a
+   * <code>ScheduleExpression</code> with <code>cron()</code> for granular control
+   * over rotation windows.</p> </li> </ul> <p>Rotation is an asynchronous process.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+   * rotation works</a>.</p>
    */
   inline bool GetRotateImmediately() const { return m_rotateImmediately; }
   inline bool RotateImmediatelyHasBeenSet() const { return m_rotateImmediatelyHasBeenSet; }
@@ -159,6 +230,12 @@ class RotateSecretRequest : public SecretsManagerRequest {
 
   RotationRulesType m_rotationRules;
   bool m_rotationRulesHasBeenSet = false;
+
+  Aws::Vector<ExternalSecretRotationMetadataItem> m_externalSecretRotationMetadata;
+  bool m_externalSecretRotationMetadataHasBeenSet = false;
+
+  Aws::String m_externalSecretRotationRoleArn;
+  bool m_externalSecretRotationRoleArnHasBeenSet = false;
 
   bool m_rotateImmediately{false};
   bool m_rotateImmediatelyHasBeenSet = false;

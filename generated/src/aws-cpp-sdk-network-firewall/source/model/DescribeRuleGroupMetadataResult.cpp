@@ -49,6 +49,18 @@ DescribeRuleGroupMetadataResult& DescribeRuleGroupMetadataResult::operator=(cons
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VendorName")) {
+    m_vendorName = jsonValue.GetString("VendorName");
+    m_vendorNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProductId")) {
+    m_productId = jsonValue.GetString("ProductId");
+    m_productIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ListingName")) {
+    m_listingName = jsonValue.GetString("ListingName");
+    m_listingNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

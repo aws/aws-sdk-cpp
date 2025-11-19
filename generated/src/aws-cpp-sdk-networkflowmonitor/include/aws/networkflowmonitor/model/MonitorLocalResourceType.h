@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFlowMonitor {
 namespace Model {
-enum class MonitorLocalResourceType { NOT_SET, AWS_EC2_VPC, AWS_AvailabilityZone, AWS_EC2_Subnet, AWS_Region };
+enum class MonitorLocalResourceType { NOT_SET, AWS_EC2_VPC, AWS_AvailabilityZone, AWS_EC2_Subnet, AWS_Region, AWS_EKS_Cluster };
 
 namespace MonitorLocalResourceTypeMapper {
 AWS_NETWORKFLOWMONITOR_API MonitorLocalResourceType GetMonitorLocalResourceTypeForName(const Aws::String& name);

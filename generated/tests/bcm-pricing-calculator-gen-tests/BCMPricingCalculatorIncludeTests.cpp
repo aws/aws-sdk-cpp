@@ -99,6 +99,7 @@
 #include <aws/bcm-pricing-calculator/model/GetPreferencesResult.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateResult.h>
+#include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
 #include <aws/bcm-pricing-calculator/model/HistoricalUsageEntity.h>
 #include <aws/bcm-pricing-calculator/model/InternalServerException.h>
 #include <aws/bcm-pricing-calculator/model/ListBillEstimateCommitmentsRequest.h>

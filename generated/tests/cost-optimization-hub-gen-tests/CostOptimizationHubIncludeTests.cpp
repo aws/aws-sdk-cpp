@@ -39,6 +39,7 @@
 #include <aws/cost-optimization-hub/model/Ec2ReservedInstancesConfiguration.h>
 #include <aws/cost-optimization-hub/model/EcsService.h>
 #include <aws/cost-optimization-hub/model/EcsServiceConfiguration.h>
+#include <aws/cost-optimization-hub/model/EfficiencyMetricsByGroup.h>
 #include <aws/cost-optimization-hub/model/ElastiCacheReservedInstances.h>
 #include <aws/cost-optimization-hub/model/ElastiCacheReservedInstancesConfiguration.h>
 #include <aws/cost-optimization-hub/model/EnrollmentStatus.h>
@@ -48,10 +49,13 @@
 #include <aws/cost-optimization-hub/model/GetPreferencesResult.h>
 #include <aws/cost-optimization-hub/model/GetRecommendationRequest.h>
 #include <aws/cost-optimization-hub/model/GetRecommendationResult.h>
+#include <aws/cost-optimization-hub/model/GranularityType.h>
 #include <aws/cost-optimization-hub/model/ImplementationEffort.h>
 #include <aws/cost-optimization-hub/model/InstanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/LambdaFunction.h>
 #include <aws/cost-optimization-hub/model/LambdaFunctionConfiguration.h>
+#include <aws/cost-optimization-hub/model/ListEfficiencyMetricsRequest.h>
+#include <aws/cost-optimization-hub/model/ListEfficiencyMetricsResult.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesRequest.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesResult.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationSummariesRequest.h>
@@ -61,6 +65,7 @@
 #include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstances.h>
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstancesConfiguration.h>
+#include <aws/cost-optimization-hub/model/MetricsByTime.h>
 #include <aws/cost-optimization-hub/model/MixedInstanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstances.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstancesConfiguration.h>
@@ -96,6 +101,7 @@
 #include <aws/cost-optimization-hub/model/SummaryMetricsResult.h>
 #include <aws/cost-optimization-hub/model/Tag.h>
 #include <aws/cost-optimization-hub/model/Term.h>
+#include <aws/cost-optimization-hub/model/TimePeriod.h>
 #include <aws/cost-optimization-hub/model/UpdateEnrollmentStatusRequest.h>
 #include <aws/cost-optimization-hub/model/UpdateEnrollmentStatusResult.h>
 #include <aws/cost-optimization-hub/model/UpdatePreferencesRequest.h>

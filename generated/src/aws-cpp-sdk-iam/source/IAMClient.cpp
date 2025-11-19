@@ -73,9 +73,11 @@
 #include <aws/iam/model/DetachUserPolicyRequest.h>
 #include <aws/iam/model/DisableOrganizationsRootCredentialsManagementRequest.h>
 #include <aws/iam/model/DisableOrganizationsRootSessionsRequest.h>
+#include <aws/iam/model/DisableOutboundWebIdentityFederationRequest.h>
 #include <aws/iam/model/EnableMFADeviceRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootCredentialsManagementRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootSessionsRequest.h>
+#include <aws/iam/model/EnableOutboundWebIdentityFederationRequest.h>
 #include <aws/iam/model/GenerateCredentialReportRequest.h>
 #include <aws/iam/model/GenerateOrganizationsAccessReportRequest.h>
 #include <aws/iam/model/GenerateServiceLastAccessedDetailsRequest.h>
@@ -95,6 +97,7 @@
 #include <aws/iam/model/GetMFADeviceRequest.h>
 #include <aws/iam/model/GetOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/GetOrganizationsAccessReportRequest.h>
+#include <aws/iam/model/GetOutboundWebIdentityFederationInfoRequest.h>
 #include <aws/iam/model/GetPolicyRequest.h>
 #include <aws/iam/model/GetPolicyVersionRequest.h>
 #include <aws/iam/model/GetRolePolicyRequest.h>
@@ -1834,6 +1837,36 @@ DisableOrganizationsRootSessionsOutcome IAMClient::DisableOrganizationsRootSessi
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisableOutboundWebIdentityFederationOutcome IAMClient::DisableOutboundWebIdentityFederation(
+    const DisableOutboundWebIdentityFederationRequest& request) const {
+  AWS_OPERATION_GUARD(DisableOutboundWebIdentityFederation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableOutboundWebIdentityFederation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisableOutboundWebIdentityFederation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisableOutboundWebIdentityFederation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisableOutboundWebIdentityFederationOutcome>(
+      [&]() -> DisableOutboundWebIdentityFederationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableOutboundWebIdentityFederation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DisableOutboundWebIdentityFederationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 EnableMFADeviceOutcome IAMClient::EnableMFADevice(const EnableMFADeviceRequest& request) const {
   AWS_OPERATION_GUARD(EnableMFADevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableMFADevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1916,6 +1949,36 @@ EnableOrganizationsRootSessionsOutcome IAMClient::EnableOrganizationsRootSession
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableOrganizationsRootSessions, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return EnableOrganizationsRootSessionsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+EnableOutboundWebIdentityFederationOutcome IAMClient::EnableOutboundWebIdentityFederation(
+    const EnableOutboundWebIdentityFederationRequest& request) const {
+  AWS_OPERATION_GUARD(EnableOutboundWebIdentityFederation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableOutboundWebIdentityFederation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, EnableOutboundWebIdentityFederation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, EnableOutboundWebIdentityFederation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<EnableOutboundWebIdentityFederationOutcome>(
+      [&]() -> EnableOutboundWebIdentityFederationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableOutboundWebIdentityFederation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return EnableOutboundWebIdentityFederationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2462,6 +2525,36 @@ GetOrganizationsAccessReportOutcome IAMClient::GetOrganizationsAccessReport(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOrganizationsAccessReport, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return GetOrganizationsAccessReportOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetOutboundWebIdentityFederationInfoOutcome IAMClient::GetOutboundWebIdentityFederationInfo(
+    const GetOutboundWebIdentityFederationInfoRequest& request) const {
+  AWS_OPERATION_GUARD(GetOutboundWebIdentityFederationInfo);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOutboundWebIdentityFederationInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOutboundWebIdentityFederationInfo, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetOutboundWebIdentityFederationInfo, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetOutboundWebIdentityFederationInfoOutcome>(
+      [&]() -> GetOutboundWebIdentityFederationInfoOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOutboundWebIdentityFederationInfo, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return GetOutboundWebIdentityFederationInfoOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

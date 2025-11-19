@@ -54,8 +54,8 @@ class DescribeIpamResourceDiscoveriesResponse {
 
   ///@{
   /**
-   * <p>Specify the pagination token from a previous request to retrieve the next
-   * page of results.</p>
+   * <p>The token to use to retrieve the next page of results. This value is
+   * <code>null</code> when there are no more results to return.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

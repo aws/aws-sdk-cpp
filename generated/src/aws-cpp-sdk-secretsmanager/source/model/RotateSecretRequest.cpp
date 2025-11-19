@@ -31,6 +31,20 @@ Aws::String RotateSecretRequest::SerializePayload() const {
     payload.WithObject("RotationRules", m_rotationRules.Jsonize());
   }
 
+  if (m_externalSecretRotationMetadataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> externalSecretRotationMetadataJsonList(m_externalSecretRotationMetadata.size());
+    for (unsigned externalSecretRotationMetadataIndex = 0;
+         externalSecretRotationMetadataIndex < externalSecretRotationMetadataJsonList.GetLength(); ++externalSecretRotationMetadataIndex) {
+      externalSecretRotationMetadataJsonList[externalSecretRotationMetadataIndex].AsObject(
+          m_externalSecretRotationMetadata[externalSecretRotationMetadataIndex].Jsonize());
+    }
+    payload.WithArray("ExternalSecretRotationMetadata", std::move(externalSecretRotationMetadataJsonList));
+  }
+
+  if (m_externalSecretRotationRoleArnHasBeenSet) {
+    payload.WithString("ExternalSecretRotationRoleArn", m_externalSecretRotationRoleArn);
+  }
+
   if (m_rotateImmediatelyHasBeenSet) {
     payload.WithBool("RotateImmediately", m_rotateImmediately);
   }

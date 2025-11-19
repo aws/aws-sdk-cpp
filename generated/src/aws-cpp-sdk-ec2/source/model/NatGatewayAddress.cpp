@@ -65,6 +65,16 @@ NatGatewayAddress& NatGatewayAddress::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if (!availabilityZoneNode.IsNull()) {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -103,6 +113,14 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
     oStream << location << index << locationValue
             << ".Status=" << StringUtils::URLEncode(NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status)) << "&";
   }
+
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
 }
 
 void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -130,6 +148,12 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
   if (m_statusHasBeenSet) {
     oStream << location << ".Status=" << StringUtils::URLEncode(NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status))
             << "&";
+  }
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

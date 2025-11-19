@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/TriggerType.h>
 
 #include <utility>
 
@@ -66,12 +67,31 @@ class TriggerDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the trigger type that started the malware scan.</p>
+   */
+  inline TriggerType GetTriggerType() const { return m_triggerType; }
+  inline bool TriggerTypeHasBeenSet() const { return m_triggerTypeHasBeenSet; }
+  inline void SetTriggerType(TriggerType value) {
+    m_triggerTypeHasBeenSet = true;
+    m_triggerType = value;
+  }
+  inline TriggerDetails& WithTriggerType(TriggerType value) {
+    SetTriggerType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_guardDutyFindingId;
   bool m_guardDutyFindingIdHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  TriggerType m_triggerType{TriggerType::NOT_SET};
+  bool m_triggerTypeHasBeenSet = false;
 };
 
 }  // namespace Model

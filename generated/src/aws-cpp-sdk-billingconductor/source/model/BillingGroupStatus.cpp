@@ -17,6 +17,7 @@ namespace BillingGroupStatusMapper {
 
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int PRIMARY_ACCOUNT_MISSING_HASH = HashingUtils::HashString("PRIMARY_ACCOUNT_MISSING");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 BillingGroupStatus GetBillingGroupStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ BillingGroupStatus GetBillingGroupStatusForName(const Aws::String& name) {
     return BillingGroupStatus::ACTIVE;
   } else if (hashCode == PRIMARY_ACCOUNT_MISSING_HASH) {
     return BillingGroupStatus::PRIMARY_ACCOUNT_MISSING;
+  } else if (hashCode == PENDING_HASH) {
+    return BillingGroupStatus::PENDING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForBillingGroupStatus(BillingGroupStatus enumValue) {
       return "ACTIVE";
     case BillingGroupStatus::PRIMARY_ACCOUNT_MISSING:
       return "PRIMARY_ACCOUNT_MISSING";
+    case BillingGroupStatus::PENDING:
+      return "PENDING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

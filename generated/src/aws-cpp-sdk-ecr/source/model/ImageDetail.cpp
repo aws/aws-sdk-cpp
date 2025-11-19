@@ -65,6 +65,22 @@ ImageDetail& ImageDetail::operator=(JsonView jsonValue) {
     m_lastRecordedPullTime = jsonValue.GetDouble("lastRecordedPullTime");
     m_lastRecordedPullTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("subjectManifestDigest")) {
+    m_subjectManifestDigest = jsonValue.GetString("subjectManifestDigest");
+    m_subjectManifestDigestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("imageStatus")) {
+    m_imageStatus = ImageStatusMapper::GetImageStatusForName(jsonValue.GetString("imageStatus"));
+    m_imageStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastArchivedAt")) {
+    m_lastArchivedAt = jsonValue.GetDouble("lastArchivedAt");
+    m_lastArchivedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastActivatedAt")) {
+    m_lastActivatedAt = jsonValue.GetDouble("lastActivatedAt");
+    m_lastActivatedAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +133,22 @@ JsonValue ImageDetail::Jsonize() const {
 
   if (m_lastRecordedPullTimeHasBeenSet) {
     payload.WithDouble("lastRecordedPullTime", m_lastRecordedPullTime.SecondsWithMSPrecision());
+  }
+
+  if (m_subjectManifestDigestHasBeenSet) {
+    payload.WithString("subjectManifestDigest", m_subjectManifestDigest);
+  }
+
+  if (m_imageStatusHasBeenSet) {
+    payload.WithString("imageStatus", ImageStatusMapper::GetNameForImageStatus(m_imageStatus));
+  }
+
+  if (m_lastArchivedAtHasBeenSet) {
+    payload.WithDouble("lastArchivedAt", m_lastArchivedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_lastActivatedAtHasBeenSet) {
+    payload.WithDouble("lastActivatedAt", m_lastActivatedAt.SecondsWithMSPrecision());
   }
 
   return payload;

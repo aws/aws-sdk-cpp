@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/LifecyclePolicyRuleAction.h>
+#include <aws/ecr/model/LifecyclePolicyStorageClass.h>
 
 #include <utility>
 
@@ -128,6 +129,22 @@ class LifecyclePolicyPreviewResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The storage class of the image.</p>
+   */
+  inline LifecyclePolicyStorageClass GetStorageClass() const { return m_storageClass; }
+  inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
+  inline void SetStorageClass(LifecyclePolicyStorageClass value) {
+    m_storageClassHasBeenSet = true;
+    m_storageClass = value;
+  }
+  inline LifecyclePolicyPreviewResult& WithStorageClass(LifecyclePolicyStorageClass value) {
+    SetStorageClass(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_imageTags;
   bool m_imageTagsHasBeenSet = false;
@@ -143,6 +160,9 @@ class LifecyclePolicyPreviewResult {
 
   int m_appliedRulePriority{0};
   bool m_appliedRulePriorityHasBeenSet = false;
+
+  LifecyclePolicyStorageClass m_storageClass{LifecyclePolicyStorageClass::NOT_SET};
+  bool m_storageClassHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
+#include <aws/rum/model/AppMonitorPlatform.h>
 #include <aws/rum/model/StateEnum.h>
 
 #include <utility>
@@ -35,18 +36,18 @@ class AppMonitorSummary {
 
   ///@{
   /**
-   * <p>The date and time that the app monitor was created.</p>
+   * <p>The name of this app monitor.</p>
    */
-  inline const Aws::String& GetCreated() const { return m_created; }
-  inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-  template <typename CreatedT = Aws::String>
-  void SetCreated(CreatedT&& value) {
-    m_createdHasBeenSet = true;
-    m_created = std::forward<CreatedT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedT = Aws::String>
-  AppMonitorSummary& WithCreated(CreatedT&& value) {
-    SetCreated(std::forward<CreatedT>(value));
+  template <typename NameT = Aws::String>
+  AppMonitorSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -65,6 +66,24 @@ class AppMonitorSummary {
   template <typename IdT = Aws::String>
   AppMonitorSummary& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time that the app monitor was created.</p>
+   */
+  inline const Aws::String& GetCreated() const { return m_created; }
+  inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+  template <typename CreatedT = Aws::String>
+  void SetCreated(CreatedT&& value) {
+    m_createdHasBeenSet = true;
+    m_created = std::forward<CreatedT>(value);
+  }
+  template <typename CreatedT = Aws::String>
+  AppMonitorSummary& WithCreated(CreatedT&& value) {
+    SetCreated(std::forward<CreatedT>(value));
     return *this;
   }
   ///@}
@@ -90,24 +109,6 @@ class AppMonitorSummary {
 
   ///@{
   /**
-   * <p>The name of this app monitor.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AppMonitorSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The current state of this app monitor.</p>
    */
   inline StateEnum GetState() const { return m_state; }
@@ -121,21 +122,42 @@ class AppMonitorSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The platform type for this app monitor. Valid values are <code>Web</code> for
+   * web applications, <code>Android</code> for Android applications, and
+   * <code>iOS</code> for IOS applications.</p>
+   */
+  inline AppMonitorPlatform GetPlatform() const { return m_platform; }
+  inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+  inline void SetPlatform(AppMonitorPlatform value) {
+    m_platformHasBeenSet = true;
+    m_platform = value;
+  }
+  inline AppMonitorSummary& WithPlatform(AppMonitorPlatform value) {
+    SetPlatform(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_created;
-  bool m_createdHasBeenSet = false;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
   bool m_idHasBeenSet = false;
 
+  Aws::String m_created;
+  bool m_createdHasBeenSet = false;
+
   Aws::String m_lastModified;
   bool m_lastModifiedHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
   StateEnum m_state{StateEnum::NOT_SET};
   bool m_stateHasBeenSet = false;
+
+  AppMonitorPlatform m_platform{AppMonitorPlatform::NOT_SET};
+  bool m_platformHasBeenSet = false;
 };
 
 }  // namespace Model

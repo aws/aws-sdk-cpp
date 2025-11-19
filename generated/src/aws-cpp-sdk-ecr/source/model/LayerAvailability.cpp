@@ -17,6 +17,7 @@ namespace LayerAvailabilityMapper {
 
 static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
 static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
 
 LayerAvailability GetLayerAvailabilityForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ LayerAvailability GetLayerAvailabilityForName(const Aws::String& name) {
     return LayerAvailability::AVAILABLE;
   } else if (hashCode == UNAVAILABLE_HASH) {
     return LayerAvailability::UNAVAILABLE;
+  } else if (hashCode == ARCHIVED_HASH) {
+    return LayerAvailability::ARCHIVED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForLayerAvailability(LayerAvailability enumValue) {
       return "AVAILABLE";
     case LayerAvailability::UNAVAILABLE:
       return "UNAVAILABLE";
+    case LayerAvailability::ARCHIVED:
+      return "ARCHIVED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

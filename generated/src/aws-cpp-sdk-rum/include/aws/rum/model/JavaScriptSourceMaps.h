@@ -36,6 +36,24 @@ class JavaScriptSourceMaps {
 
   ///@{
   /**
+   * <p> Specifies whether JavaScript error stack traces should be unminified for
+   * this app monitor. The default is for JavaScript error stack trace unminification
+   * to be <code>DISABLED</code>. </p>
+   */
+  inline DeobfuscationStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DeobfuscationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline JavaScriptSourceMaps& WithStatus(DeobfuscationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The S3Uri of the bucket or folder that stores the source map files. It is
    * required if status is ENABLED. </p>
    */
@@ -52,30 +70,12 @@ class JavaScriptSourceMaps {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> Specifies whether JavaScript error stack traces should be unminified for
-   * this app monitor. The default is for JavaScript error stack trace unminification
-   * to be <code>DISABLED</code>. </p>
-   */
-  inline DeobfuscationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DeobfuscationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline JavaScriptSourceMaps& WithStatus(DeobfuscationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
-
   DeobfuscationStatus m_status{DeobfuscationStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  Aws::String m_s3Uri;
+  bool m_s3UriHasBeenSet = false;
 };
 
 }  // namespace Model

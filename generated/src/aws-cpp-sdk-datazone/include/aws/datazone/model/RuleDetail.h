@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/GlossaryTermEnforcementDetail.h>
 #include <aws/datazone/model/MetadataFormEnforcementDetail.h>
 
 #include <utility>
@@ -33,6 +34,25 @@ class RuleDetail {
 
   ///@{
   /**
+   * <p>The enforcement details of a glossary term that's part of the metadata
+   * rule.</p>
+   */
+  inline const GlossaryTermEnforcementDetail& GetGlossaryTermEnforcementDetail() const { return m_glossaryTermEnforcementDetail; }
+  inline bool GlossaryTermEnforcementDetailHasBeenSet() const { return m_glossaryTermEnforcementDetailHasBeenSet; }
+  template <typename GlossaryTermEnforcementDetailT = GlossaryTermEnforcementDetail>
+  void SetGlossaryTermEnforcementDetail(GlossaryTermEnforcementDetailT&& value) {
+    m_glossaryTermEnforcementDetailHasBeenSet = true;
+    m_glossaryTermEnforcementDetail = std::forward<GlossaryTermEnforcementDetailT>(value);
+  }
+  template <typename GlossaryTermEnforcementDetailT = GlossaryTermEnforcementDetail>
+  RuleDetail& WithGlossaryTermEnforcementDetail(GlossaryTermEnforcementDetailT&& value) {
+    SetGlossaryTermEnforcementDetail(std::forward<GlossaryTermEnforcementDetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The enforcement detail of the metadata form.</p>
    */
   inline const MetadataFormEnforcementDetail& GetMetadataFormEnforcementDetail() const { return m_metadataFormEnforcementDetail; }
@@ -49,6 +69,9 @@ class RuleDetail {
   }
   ///@}
  private:
+  GlossaryTermEnforcementDetail m_glossaryTermEnforcementDetail;
+  bool m_glossaryTermEnforcementDetailHasBeenSet = false;
+
   MetadataFormEnforcementDetail m_metadataFormEnforcementDetail;
   bool m_metadataFormEnforcementDetailHasBeenSet = false;
 };

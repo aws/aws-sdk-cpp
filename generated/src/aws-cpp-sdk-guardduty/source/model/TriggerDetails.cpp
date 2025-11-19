@@ -26,6 +26,10 @@ TriggerDetails& TriggerDetails::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("triggerType")) {
+    m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
+    m_triggerTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue TriggerDetails::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_triggerTypeHasBeenSet) {
+    payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
   }
 
   return payload;

@@ -34,7 +34,8 @@ class GetDelegatedAccessTokenRequest : public STSRequest {
  public:
   ///@{
   /**
-   * <p/>
+   * <p>The token to exchange for temporary Amazon Web Services credentials. This
+   * token must be valid and unexpired at the time of the request.</p>
    */
   inline const Aws::String& GetTradeInToken() const { return m_tradeInToken; }
   inline bool TradeInTokenHasBeenSet() const { return m_tradeInTokenHasBeenSet; }

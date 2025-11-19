@@ -666,14 +666,14 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Creates a new version with a new encrypted secret value and attaches it to
-   * the secret. The version can contain a new <code>SecretString</code> value or a
-   * new <code>SecretBinary</code> value. </p> <p>We recommend you avoid calling
+   * <p>Creates a new version of your secret by creating a new encrypted value and
+   * attaching it to the secret. version can contain a new <code>SecretString</code>
+   * value or a new <code>SecretBinary</code> value. </p> <p>Do not call
    * <code>PutSecretValue</code> at a sustained rate of more than once every 10
    * minutes. When you update the secret value, Secrets Manager creates a new version
-   * of the secret. Secrets Manager removes outdated versions when there are more
-   * than 100, but it does not remove versions created less than 24 hours ago. If you
-   * call <code>PutSecretValue</code> more than once every 10 minutes, you create
+   * of the secret. Secrets Manager keeps 100 of the most recent versions, but it
+   * keeps <i>all</i> secret versions created in the last 24 hours. If you call
+   * <code>PutSecretValue</code> more than once every 10 minutes, you will create
    * more versions than Secrets Manager removes, and you will reach the quota for
    * secret versions.</p> <p>You can specify the staging labels to attach to the new
    * version in <code>VersionStages</code>. If you don't include

@@ -99,6 +99,29 @@ NatGateway& NatGateway::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()));
       m_connectivityTypeHasBeenSet = true;
     }
+    XmlNode availabilityModeNode = resultNode.FirstChild("availabilityMode");
+    if (!availabilityModeNode.IsNull()) {
+      m_availabilityMode = AvailabilityModeMapper::GetAvailabilityModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availabilityModeNode.GetText()).c_str()));
+      m_availabilityModeHasBeenSet = true;
+    }
+    XmlNode autoScalingIpsNode = resultNode.FirstChild("autoScalingIps");
+    if (!autoScalingIpsNode.IsNull()) {
+      m_autoScalingIps = AutoScalingIpsStateMapper::GetAutoScalingIpsStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingIpsNode.GetText()).c_str()));
+      m_autoScalingIpsHasBeenSet = true;
+    }
+    XmlNode autoProvisionZonesNode = resultNode.FirstChild("autoProvisionZones");
+    if (!autoProvisionZonesNode.IsNull()) {
+      m_autoProvisionZones = AutoProvisionZonesStateMapper::GetAutoProvisionZonesStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoProvisionZonesNode.GetText()).c_str()));
+      m_autoProvisionZonesHasBeenSet = true;
+    }
+    XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
+    if (!routeTableIdNode.IsNull()) {
+      m_routeTableId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableIdNode.GetText());
+      m_routeTableIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -169,6 +192,27 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
             << ".ConnectivityType=" << StringUtils::URLEncode(ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType))
             << "&";
   }
+
+  if (m_availabilityModeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".AvailabilityMode=" << StringUtils::URLEncode(AvailabilityModeMapper::GetNameForAvailabilityMode(m_availabilityMode))
+            << "&";
+  }
+
+  if (m_autoScalingIpsHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".AutoScalingIps=" << StringUtils::URLEncode(AutoScalingIpsStateMapper::GetNameForAutoScalingIpsState(m_autoScalingIps))
+            << "&";
+  }
+
+  if (m_autoProvisionZonesHasBeenSet) {
+    oStream << location << index << locationValue << ".AutoProvisionZones="
+            << StringUtils::URLEncode(AutoProvisionZonesStateMapper::GetNameForAutoProvisionZonesState(m_autoProvisionZones)) << "&";
+  }
+
+  if (m_routeTableIdHasBeenSet) {
+    oStream << location << index << locationValue << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
+  }
 }
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -223,6 +267,23 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
     oStream << location
             << ".ConnectivityType=" << StringUtils::URLEncode(ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType))
             << "&";
+  }
+  if (m_availabilityModeHasBeenSet) {
+    oStream << location
+            << ".AvailabilityMode=" << StringUtils::URLEncode(AvailabilityModeMapper::GetNameForAvailabilityMode(m_availabilityMode))
+            << "&";
+  }
+  if (m_autoScalingIpsHasBeenSet) {
+    oStream << location
+            << ".AutoScalingIps=" << StringUtils::URLEncode(AutoScalingIpsStateMapper::GetNameForAutoScalingIpsState(m_autoScalingIps))
+            << "&";
+  }
+  if (m_autoProvisionZonesHasBeenSet) {
+    oStream << location << ".AutoProvisionZones="
+            << StringUtils::URLEncode(AutoProvisionZonesStateMapper::GetNameForAutoProvisionZonesState(m_autoProvisionZones)) << "&";
+  }
+  if (m_routeTableIdHasBeenSet) {
+    oStream << location << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 }
 

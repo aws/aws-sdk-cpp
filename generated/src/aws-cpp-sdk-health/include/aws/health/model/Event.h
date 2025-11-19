@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/EventActionability.h>
+#include <aws/health/model/EventPersona.h>
 #include <aws/health/model/EventScopeCode.h>
 #include <aws/health/model/EventStatusCode.h>
 #include <aws/health/model/EventTypeCategory.h>
@@ -262,6 +265,55 @@ class Event {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The actionability classification of the event. Possible values are
+   * <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and
+   * <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code>
+   * actionability require customer action to resolve or mitigate the event. Events
+   * with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the
+   * current status is unknown or conditional and inspection is needed to determine
+   * if action is required. Events with <code>INFORMATIONAL</code> actionability are
+   * provided for awareness and do not require immediate action.</p>
+   */
+  inline EventActionability GetActionability() const { return m_actionability; }
+  inline bool ActionabilityHasBeenSet() const { return m_actionabilityHasBeenSet; }
+  inline void SetActionability(EventActionability value) {
+    m_actionabilityHasBeenSet = true;
+    m_actionability = value;
+  }
+  inline Event& WithActionability(EventActionability value) {
+    SetActionability(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of persona classifications that indicate the target audience for the
+   * event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and
+   * <code>BILLING</code>. Events can be associated with multiple personas to
+   * indicate relevance to different teams or roles within an organization.</p>
+   */
+  inline const Aws::Vector<EventPersona>& GetPersonas() const { return m_personas; }
+  inline bool PersonasHasBeenSet() const { return m_personasHasBeenSet; }
+  template <typename PersonasT = Aws::Vector<EventPersona>>
+  void SetPersonas(PersonasT&& value) {
+    m_personasHasBeenSet = true;
+    m_personas = std::forward<PersonasT>(value);
+  }
+  template <typename PersonasT = Aws::Vector<EventPersona>>
+  Event& WithPersonas(PersonasT&& value) {
+    SetPersonas(std::forward<PersonasT>(value));
+    return *this;
+  }
+  inline Event& AddPersonas(EventPersona value) {
+    m_personasHasBeenSet = true;
+    m_personas.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -295,6 +347,12 @@ class Event {
 
   EventScopeCode m_eventScopeCode{EventScopeCode::NOT_SET};
   bool m_eventScopeCodeHasBeenSet = false;
+
+  EventActionability m_actionability{EventActionability::NOT_SET};
+  bool m_actionabilityHasBeenSet = false;
+
+  Aws::Vector<EventPersona> m_personas;
+  bool m_personasHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CostExplorer {
 namespace Model {
-enum class MonitorDimension { NOT_SET, SERVICE };
+enum class MonitorDimension { NOT_SET, SERVICE, LINKED_ACCOUNT, TAG, COST_CATEGORY };
 
 namespace MonitorDimensionMapper {
 AWS_COSTEXPLORER_API MonitorDimension GetMonitorDimensionForName(const Aws::String& name);

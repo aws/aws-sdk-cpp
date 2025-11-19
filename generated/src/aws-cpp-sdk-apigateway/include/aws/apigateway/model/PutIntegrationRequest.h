@@ -9,6 +9,7 @@
 #include <aws/apigateway/model/ConnectionType.h>
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
 #include <aws/apigateway/model/IntegrationType.h>
+#include <aws/apigateway/model/ResponseTransferMode.h>
 #include <aws/apigateway/model/TlsConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -401,6 +402,22 @@ class PutIntegrationRequest : public APIGatewayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The response transfer mode of the integration. </p>
+   */
+  inline ResponseTransferMode GetResponseTransferMode() const { return m_responseTransferMode; }
+  inline bool ResponseTransferModeHasBeenSet() const { return m_responseTransferModeHasBeenSet; }
+  inline void SetResponseTransferMode(ResponseTransferMode value) {
+    m_responseTransferModeHasBeenSet = true;
+    m_responseTransferMode = value;
+  }
+  inline PutIntegrationRequest& WithResponseTransferMode(ResponseTransferMode value) {
+    SetResponseTransferMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_restApiId;
   bool m_restApiIdHasBeenSet = false;
@@ -452,6 +469,9 @@ class PutIntegrationRequest : public APIGatewayRequest {
 
   TlsConfig m_tlsConfig;
   bool m_tlsConfigHasBeenSet = false;
+
+  ResponseTransferMode m_responseTransferMode{ResponseTransferMode::NOT_SET};
+  bool m_responseTransferModeHasBeenSet = false;
 };
 
 }  // namespace Model

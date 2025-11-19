@@ -18,6 +18,10 @@ namespace Model {
 BatchDeleteRumMetricDefinitionsError::BatchDeleteRumMetricDefinitionsError(JsonView jsonValue) { *this = jsonValue; }
 
 BatchDeleteRumMetricDefinitionsError& BatchDeleteRumMetricDefinitionsError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricDefinitionId")) {
+    m_metricDefinitionId = jsonValue.GetString("MetricDefinitionId");
+    m_metricDefinitionIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
@@ -26,15 +30,15 @@ BatchDeleteRumMetricDefinitionsError& BatchDeleteRumMetricDefinitionsError::oper
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("MetricDefinitionId")) {
-    m_metricDefinitionId = jsonValue.GetString("MetricDefinitionId");
-    m_metricDefinitionIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue BatchDeleteRumMetricDefinitionsError::Jsonize() const {
   JsonValue payload;
+
+  if (m_metricDefinitionIdHasBeenSet) {
+    payload.WithString("MetricDefinitionId", m_metricDefinitionId);
+  }
 
   if (m_errorCodeHasBeenSet) {
     payload.WithString("ErrorCode", m_errorCode);
@@ -42,10 +46,6 @@ JsonValue BatchDeleteRumMetricDefinitionsError::Jsonize() const {
 
   if (m_errorMessageHasBeenSet) {
     payload.WithString("ErrorMessage", m_errorMessage);
-  }
-
-  if (m_metricDefinitionIdHasBeenSet) {
-    payload.WithString("MetricDefinitionId", m_metricDefinitionId);
   }
 
   return payload;

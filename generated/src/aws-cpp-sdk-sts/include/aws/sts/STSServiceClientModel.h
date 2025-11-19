@@ -31,6 +31,7 @@
 #include <aws/sts/model/GetFederationTokenResult.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenResult.h>
+#include <aws/sts/model/GetWebIdentityTokenResult.h>
 /* End of service model headers required in STSClient header */
 
 namespace Aws {
@@ -74,6 +75,7 @@ class GetCallerIdentityRequest;
 class GetDelegatedAccessTokenRequest;
 class GetFederationTokenRequest;
 class GetSessionTokenRequest;
+class GetWebIdentityTokenRequest;
 /* End of service model forward declarations required in STSClient header */
 
 /* Service model Outcome class definitions */
@@ -87,6 +89,7 @@ typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentity
 typedef Aws::Utils::Outcome<GetDelegatedAccessTokenResult, STSError> GetDelegatedAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
 typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
+typedef Aws::Utils::Outcome<GetWebIdentityTokenResult, STSError> GetWebIdentityTokenOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -100,6 +103,7 @@ typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
 typedef std::future<GetDelegatedAccessTokenOutcome> GetDelegatedAccessTokenOutcomeCallable;
 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
 typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
+typedef std::future<GetWebIdentityTokenOutcome> GetWebIdentityTokenOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -136,6 +140,9 @@ typedef std::function<void(const STSClient*, const Model::GetFederationTokenRequ
 typedef std::function<void(const STSClient*, const Model::GetSessionTokenRequest&, const Model::GetSessionTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionTokenResponseReceivedHandler;
+typedef std::function<void(const STSClient*, const Model::GetWebIdentityTokenRequest&, const Model::GetWebIdentityTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetWebIdentityTokenResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace STS
 }  // namespace Aws

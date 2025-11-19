@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
+#include <aws/billingconductor/model/BillingGroupType.h>
+#include <aws/billingconductor/model/StringSearch.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -117,6 +119,101 @@ class ListBillingGroupsFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A list of primary account IDs to filter the billing groups. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPrimaryAccountIds() const { return m_primaryAccountIds; }
+  inline bool PrimaryAccountIdsHasBeenSet() const { return m_primaryAccountIdsHasBeenSet; }
+  template <typename PrimaryAccountIdsT = Aws::Vector<Aws::String>>
+  void SetPrimaryAccountIds(PrimaryAccountIdsT&& value) {
+    m_primaryAccountIdsHasBeenSet = true;
+    m_primaryAccountIds = std::forward<PrimaryAccountIdsT>(value);
+  }
+  template <typename PrimaryAccountIdsT = Aws::Vector<Aws::String>>
+  ListBillingGroupsFilter& WithPrimaryAccountIds(PrimaryAccountIdsT&& value) {
+    SetPrimaryAccountIds(std::forward<PrimaryAccountIdsT>(value));
+    return *this;
+  }
+  template <typename PrimaryAccountIdsT = Aws::String>
+  ListBillingGroupsFilter& AddPrimaryAccountIds(PrimaryAccountIdsT&& value) {
+    m_primaryAccountIdsHasBeenSet = true;
+    m_primaryAccountIds.emplace_back(std::forward<PrimaryAccountIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Filter billing groups by their type. </p>
+   */
+  inline const Aws::Vector<BillingGroupType>& GetBillingGroupTypes() const { return m_billingGroupTypes; }
+  inline bool BillingGroupTypesHasBeenSet() const { return m_billingGroupTypesHasBeenSet; }
+  template <typename BillingGroupTypesT = Aws::Vector<BillingGroupType>>
+  void SetBillingGroupTypes(BillingGroupTypesT&& value) {
+    m_billingGroupTypesHasBeenSet = true;
+    m_billingGroupTypes = std::forward<BillingGroupTypesT>(value);
+  }
+  template <typename BillingGroupTypesT = Aws::Vector<BillingGroupType>>
+  ListBillingGroupsFilter& WithBillingGroupTypes(BillingGroupTypesT&& value) {
+    SetBillingGroupTypes(std::forward<BillingGroupTypesT>(value));
+    return *this;
+  }
+  inline ListBillingGroupsFilter& AddBillingGroupTypes(BillingGroupType value) {
+    m_billingGroupTypesHasBeenSet = true;
+    m_billingGroupTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Filter billing groups by their names. </p>
+   */
+  inline const Aws::Vector<StringSearch>& GetNames() const { return m_names; }
+  inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+  template <typename NamesT = Aws::Vector<StringSearch>>
+  void SetNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names = std::forward<NamesT>(value);
+  }
+  template <typename NamesT = Aws::Vector<StringSearch>>
+  ListBillingGroupsFilter& WithNames(NamesT&& value) {
+    SetNames(std::forward<NamesT>(value));
+    return *this;
+  }
+  template <typename NamesT = StringSearch>
+  ListBillingGroupsFilter& AddNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names.emplace_back(std::forward<NamesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Filter billing groups by their responsibility transfer ARNs. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetResponsibilityTransferArns() const { return m_responsibilityTransferArns; }
+  inline bool ResponsibilityTransferArnsHasBeenSet() const { return m_responsibilityTransferArnsHasBeenSet; }
+  template <typename ResponsibilityTransferArnsT = Aws::Vector<Aws::String>>
+  void SetResponsibilityTransferArns(ResponsibilityTransferArnsT&& value) {
+    m_responsibilityTransferArnsHasBeenSet = true;
+    m_responsibilityTransferArns = std::forward<ResponsibilityTransferArnsT>(value);
+  }
+  template <typename ResponsibilityTransferArnsT = Aws::Vector<Aws::String>>
+  ListBillingGroupsFilter& WithResponsibilityTransferArns(ResponsibilityTransferArnsT&& value) {
+    SetResponsibilityTransferArns(std::forward<ResponsibilityTransferArnsT>(value));
+    return *this;
+  }
+  template <typename ResponsibilityTransferArnsT = Aws::String>
+  ListBillingGroupsFilter& AddResponsibilityTransferArns(ResponsibilityTransferArnsT&& value) {
+    m_responsibilityTransferArnsHasBeenSet = true;
+    m_responsibilityTransferArns.emplace_back(std::forward<ResponsibilityTransferArnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_arns;
   bool m_arnsHasBeenSet = false;
@@ -129,6 +226,18 @@ class ListBillingGroupsFilter {
 
   bool m_autoAssociate{false};
   bool m_autoAssociateHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_primaryAccountIds;
+  bool m_primaryAccountIdsHasBeenSet = false;
+
+  Aws::Vector<BillingGroupType> m_billingGroupTypes;
+  bool m_billingGroupTypesHasBeenSet = false;
+
+  Aws::Vector<StringSearch> m_names;
+  bool m_namesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_responsibilityTransferArns;
+  bool m_responsibilityTransferArnsHasBeenSet = false;
 };
 
 }  // namespace Model

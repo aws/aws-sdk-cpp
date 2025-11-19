@@ -22,6 +22,7 @@
 #include <aws/cost-optimization-hub/CostOptimizationHubErrorMarshaller.h>
 #include <aws/cost-optimization-hub/model/GetPreferencesRequest.h>
 #include <aws/cost-optimization-hub/model/GetRecommendationRequest.h>
+#include <aws/cost-optimization-hub/model/ListEfficiencyMetricsRequest.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesRequest.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationSummariesRequest.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationsRequest.h>
@@ -199,6 +200,35 @@ GetRecommendationOutcome CostOptimizationHubClient::GetRecommendation(const GetR
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return GetRecommendationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListEfficiencyMetricsOutcome CostOptimizationHubClient::ListEfficiencyMetrics(const ListEfficiencyMetricsRequest& request) const {
+  AWS_OPERATION_GUARD(ListEfficiencyMetrics);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEfficiencyMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEfficiencyMetrics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEfficiencyMetrics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEfficiencyMetrics",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEfficiencyMetricsOutcome>(
+      [&]() -> ListEfficiencyMetricsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEfficiencyMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return ListEfficiencyMetricsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

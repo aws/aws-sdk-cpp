@@ -26,6 +26,8 @@
 #include <aws/datazone/model/AddPolicyGrantResult.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleResult.h>
 #include <aws/datazone/model/AssociateGovernedTermsResult.h>
+#include <aws/datazone/model/BatchGetAttributesMetadataResult.h>
+#include <aws/datazone/model/BatchPutAttributesMetadataResult.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunResult.h>
 #include <aws/datazone/model/CancelSubscriptionResult.h>
 #include <aws/datazone/model/CreateAccountPoolResult.h>
@@ -178,6 +180,7 @@
 #include <aws/datazone/model/UpdateGroupProfileResult.h>
 #include <aws/datazone/model/UpdateProjectProfileResult.h>
 #include <aws/datazone/model/UpdateProjectResult.h>
+#include <aws/datazone/model/UpdateRootDomainUnitOwnerResult.h>
 #include <aws/datazone/model/UpdateRuleResult.h>
 #include <aws/datazone/model/UpdateSubscriptionGrantStatusResult.h>
 #include <aws/datazone/model/UpdateSubscriptionRequestResult.h>
@@ -222,6 +225,8 @@ class AddEntityOwnerRequest;
 class AddPolicyGrantRequest;
 class AssociateEnvironmentRoleRequest;
 class AssociateGovernedTermsRequest;
+class BatchGetAttributesMetadataRequest;
+class BatchPutAttributesMetadataRequest;
 class CancelMetadataGenerationRunRequest;
 class CancelSubscriptionRequest;
 class CreateAccountPoolRequest;
@@ -380,6 +385,7 @@ class UpdateGlossaryTermRequest;
 class UpdateGroupProfileRequest;
 class UpdateProjectRequest;
 class UpdateProjectProfileRequest;
+class UpdateRootDomainUnitOwnerRequest;
 class UpdateRuleRequest;
 class UpdateSubscriptionGrantStatusRequest;
 class UpdateSubscriptionRequestRequest;
@@ -394,6 +400,8 @@ typedef Aws::Utils::Outcome<AddEntityOwnerResult, DataZoneError> AddEntityOwnerO
 typedef Aws::Utils::Outcome<AddPolicyGrantResult, DataZoneError> AddPolicyGrantOutcome;
 typedef Aws::Utils::Outcome<AssociateEnvironmentRoleResult, DataZoneError> AssociateEnvironmentRoleOutcome;
 typedef Aws::Utils::Outcome<AssociateGovernedTermsResult, DataZoneError> AssociateGovernedTermsOutcome;
+typedef Aws::Utils::Outcome<BatchGetAttributesMetadataResult, DataZoneError> BatchGetAttributesMetadataOutcome;
+typedef Aws::Utils::Outcome<BatchPutAttributesMetadataResult, DataZoneError> BatchPutAttributesMetadataOutcome;
 typedef Aws::Utils::Outcome<CancelMetadataGenerationRunResult, DataZoneError> CancelMetadataGenerationRunOutcome;
 typedef Aws::Utils::Outcome<CancelSubscriptionResult, DataZoneError> CancelSubscriptionOutcome;
 typedef Aws::Utils::Outcome<CreateAccountPoolResult, DataZoneError> CreateAccountPoolOutcome;
@@ -552,6 +560,7 @@ typedef Aws::Utils::Outcome<UpdateGlossaryTermResult, DataZoneError> UpdateGloss
 typedef Aws::Utils::Outcome<UpdateGroupProfileResult, DataZoneError> UpdateGroupProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateProjectResult, DataZoneError> UpdateProjectOutcome;
 typedef Aws::Utils::Outcome<UpdateProjectProfileResult, DataZoneError> UpdateProjectProfileOutcome;
+typedef Aws::Utils::Outcome<UpdateRootDomainUnitOwnerResult, DataZoneError> UpdateRootDomainUnitOwnerOutcome;
 typedef Aws::Utils::Outcome<UpdateRuleResult, DataZoneError> UpdateRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateSubscriptionGrantStatusResult, DataZoneError> UpdateSubscriptionGrantStatusOutcome;
 typedef Aws::Utils::Outcome<UpdateSubscriptionRequestResult, DataZoneError> UpdateSubscriptionRequestOutcome;
@@ -566,6 +575,8 @@ typedef std::future<AddEntityOwnerOutcome> AddEntityOwnerOutcomeCallable;
 typedef std::future<AddPolicyGrantOutcome> AddPolicyGrantOutcomeCallable;
 typedef std::future<AssociateEnvironmentRoleOutcome> AssociateEnvironmentRoleOutcomeCallable;
 typedef std::future<AssociateGovernedTermsOutcome> AssociateGovernedTermsOutcomeCallable;
+typedef std::future<BatchGetAttributesMetadataOutcome> BatchGetAttributesMetadataOutcomeCallable;
+typedef std::future<BatchPutAttributesMetadataOutcome> BatchPutAttributesMetadataOutcomeCallable;
 typedef std::future<CancelMetadataGenerationRunOutcome> CancelMetadataGenerationRunOutcomeCallable;
 typedef std::future<CancelSubscriptionOutcome> CancelSubscriptionOutcomeCallable;
 typedef std::future<CreateAccountPoolOutcome> CreateAccountPoolOutcomeCallable;
@@ -724,6 +735,7 @@ typedef std::future<UpdateGlossaryTermOutcome> UpdateGlossaryTermOutcomeCallable
 typedef std::future<UpdateGroupProfileOutcome> UpdateGroupProfileOutcomeCallable;
 typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 typedef std::future<UpdateProjectProfileOutcome> UpdateProjectProfileOutcomeCallable;
+typedef std::future<UpdateRootDomainUnitOwnerOutcome> UpdateRootDomainUnitOwnerOutcomeCallable;
 typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
 typedef std::future<UpdateSubscriptionGrantStatusOutcome> UpdateSubscriptionGrantStatusOutcomeCallable;
 typedef std::future<UpdateSubscriptionRequestOutcome> UpdateSubscriptionRequestOutcomeCallable;
@@ -753,6 +765,12 @@ typedef std::function<void(const DataZoneClient*, const Model::AssociateEnvironm
 typedef std::function<void(const DataZoneClient*, const Model::AssociateGovernedTermsRequest&, const Model::AssociateGovernedTermsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateGovernedTermsResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::BatchGetAttributesMetadataRequest&,
+                           const Model::BatchGetAttributesMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetAttributesMetadataResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::BatchPutAttributesMetadataRequest&,
+                           const Model::BatchPutAttributesMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchPutAttributesMetadataResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::CancelMetadataGenerationRunRequest&,
                            const Model::CancelMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelMetadataGenerationRunResponseReceivedHandler;
@@ -1232,6 +1250,9 @@ typedef std::function<void(const DataZoneClient*, const Model::UpdateProjectRequ
 typedef std::function<void(const DataZoneClient*, const Model::UpdateProjectProfileRequest&, const Model::UpdateProjectProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateProjectProfileResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::UpdateRootDomainUnitOwnerRequest&,
+                           const Model::UpdateRootDomainUnitOwnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRootDomainUnitOwnerResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRuleResponseReceivedHandler;

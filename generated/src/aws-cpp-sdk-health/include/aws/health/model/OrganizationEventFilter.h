@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/health/model/DateTimeRange.h>
+#include <aws/health/model/EventActionability.h>
+#include <aws/health/model/EventPersona.h>
 #include <aws/health/model/EventStatusCode.h>
 #include <aws/health/model/EventTypeCategory.h>
 
@@ -36,6 +38,32 @@ class OrganizationEventFilter {
   AWS_HEALTH_API OrganizationEventFilter(Aws::Utils::Json::JsonView jsonValue);
   AWS_HEALTH_API OrganizationEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>A list of actionability values to filter events. Use this to filter events
+   * based on whether they require action (<code>ACTION_REQUIRED</code>), may require
+   * action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational
+   * (<code>INFORMATIONAL</code>).</p>
+   */
+  inline const Aws::Vector<EventActionability>& GetActionabilities() const { return m_actionabilities; }
+  inline bool ActionabilitiesHasBeenSet() const { return m_actionabilitiesHasBeenSet; }
+  template <typename ActionabilitiesT = Aws::Vector<EventActionability>>
+  void SetActionabilities(ActionabilitiesT&& value) {
+    m_actionabilitiesHasBeenSet = true;
+    m_actionabilities = std::forward<ActionabilitiesT>(value);
+  }
+  template <typename ActionabilitiesT = Aws::Vector<EventActionability>>
+  OrganizationEventFilter& WithActionabilities(ActionabilitiesT&& value) {
+    SetActionabilities(std::forward<ActionabilitiesT>(value));
+    return *this;
+  }
+  inline OrganizationEventFilter& AddActionabilities(EventActionability value) {
+    m_actionabilitiesHasBeenSet = true;
+    m_actionabilities.push_back(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -281,7 +309,35 @@ class OrganizationEventFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of persona values to filter events. Use this to filter events based on
+   * their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or
+   * <code>BILLING</code>.</p>
+   */
+  inline const Aws::Vector<EventPersona>& GetPersonas() const { return m_personas; }
+  inline bool PersonasHasBeenSet() const { return m_personasHasBeenSet; }
+  template <typename PersonasT = Aws::Vector<EventPersona>>
+  void SetPersonas(PersonasT&& value) {
+    m_personasHasBeenSet = true;
+    m_personas = std::forward<PersonasT>(value);
+  }
+  template <typename PersonasT = Aws::Vector<EventPersona>>
+  OrganizationEventFilter& WithPersonas(PersonasT&& value) {
+    SetPersonas(std::forward<PersonasT>(value));
+    return *this;
+  }
+  inline OrganizationEventFilter& AddPersonas(EventPersona value) {
+    m_personasHasBeenSet = true;
+    m_personas.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
+  Aws::Vector<EventActionability> m_actionabilities;
+  bool m_actionabilitiesHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_eventTypeCodes;
   bool m_eventTypeCodesHasBeenSet = false;
 
@@ -314,6 +370,9 @@ class OrganizationEventFilter {
 
   Aws::Vector<EventStatusCode> m_eventStatusCodes;
   bool m_eventStatusCodesHasBeenSet = false;
+
+  Aws::Vector<EventPersona> m_personas;
+  bool m_personasHasBeenSet = false;
 };
 
 }  // namespace Model

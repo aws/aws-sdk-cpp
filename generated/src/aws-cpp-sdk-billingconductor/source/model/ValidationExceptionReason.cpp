@@ -67,6 +67,7 @@ static const int INVALID_BILLING_PERIOD_FOR_OPERATION_HASH = HashingUtils::HashS
 static const int ILLEGAL_BILLING_ENTITY_HASH = HashingUtils::HashString("ILLEGAL_BILLING_ENTITY");
 static const int ILLEGAL_MODIFIER_PERCENTAGE_HASH = HashingUtils::HashString("ILLEGAL_MODIFIER_PERCENTAGE");
 static const int ILLEGAL_TYPE_HASH = HashingUtils::HashString("ILLEGAL_TYPE");
+static const int ILLEGAL_BILLING_GROUP_TYPE_HASH = HashingUtils::HashString("ILLEGAL_BILLING_GROUP_TYPE");
 static const int ILLEGAL_ENDED_BILLINGGROUP_HASH = HashingUtils::HashString("ILLEGAL_ENDED_BILLINGGROUP");
 static const int ILLEGAL_TIERING_INPUT_HASH = HashingUtils::HashString("ILLEGAL_TIERING_INPUT");
 static const int ILLEGAL_OPERATION_HASH = HashingUtils::HashString("ILLEGAL_OPERATION");
@@ -187,6 +188,8 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::ILLEGAL_MODIFIER_PERCENTAGE;
   } else if (hashCode == ILLEGAL_TYPE_HASH) {
     return ValidationExceptionReason::ILLEGAL_TYPE;
+  } else if (hashCode == ILLEGAL_BILLING_GROUP_TYPE_HASH) {
+    return ValidationExceptionReason::ILLEGAL_BILLING_GROUP_TYPE;
   } else if (hashCode == ILLEGAL_ENDED_BILLINGGROUP_HASH) {
     return ValidationExceptionReason::ILLEGAL_ENDED_BILLINGGROUP;
   } else if (hashCode == ILLEGAL_TIERING_INPUT_HASH) {
@@ -329,6 +332,8 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "ILLEGAL_MODIFIER_PERCENTAGE";
     case ValidationExceptionReason::ILLEGAL_TYPE:
       return "ILLEGAL_TYPE";
+    case ValidationExceptionReason::ILLEGAL_BILLING_GROUP_TYPE:
+      return "ILLEGAL_BILLING_GROUP_TYPE";
     case ValidationExceptionReason::ILLEGAL_ENDED_BILLINGGROUP:
       return "ILLEGAL_ENDED_BILLINGGROUP";
     case ValidationExceptionReason::ILLEGAL_TIERING_INPUT:

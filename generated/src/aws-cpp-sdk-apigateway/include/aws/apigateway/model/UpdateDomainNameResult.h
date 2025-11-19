@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/DomainNameStatus.h>
+#include <aws/apigateway/model/EndpointAccessMode.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/apigateway/model/MutualTlsAuthentication.h>
 #include <aws/apigateway/model/RoutingMode.h>
@@ -322,8 +323,7 @@ class UpdateDomainNameResult {
   ///@{
   /**
    * <p>The Transport Layer Security (TLS) version + cipher suite for this
-   * DomainName. The valid values are <code>TLS_1_0</code> and
-   * <code>TLS_1_2</code>.</p>
+   * DomainName.</p>
    */
   inline SecurityPolicy GetSecurityPolicy() const { return m_securityPolicy; }
   inline void SetSecurityPolicy(SecurityPolicy value) {
@@ -332,6 +332,21 @@ class UpdateDomainNameResult {
   }
   inline UpdateDomainNameResult& WithSecurityPolicy(SecurityPolicy value) {
     SetSecurityPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The endpoint access mode of the DomainName. </p>
+   */
+  inline EndpointAccessMode GetEndpointAccessMode() const { return m_endpointAccessMode; }
+  inline void SetEndpointAccessMode(EndpointAccessMode value) {
+    m_endpointAccessModeHasBeenSet = true;
+    m_endpointAccessMode = value;
+  }
+  inline UpdateDomainNameResult& WithEndpointAccessMode(EndpointAccessMode value) {
+    SetEndpointAccessMode(value);
     return *this;
   }
   ///@}
@@ -515,6 +530,9 @@ class UpdateDomainNameResult {
 
   SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
   bool m_securityPolicyHasBeenSet = false;
+
+  EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
+  bool m_endpointAccessModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

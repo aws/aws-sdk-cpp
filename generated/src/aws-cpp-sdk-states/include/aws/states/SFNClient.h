@@ -1328,7 +1328,7 @@ class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * permissions to test a state</a>.</p> <p>The <code>TestState</code> API can run
    * for up to five minutes. If the execution of a state exceeds this duration, it
    * fails with the <code>States.Timeout</code> error.</p> <p> <code>TestState</code>
-   * doesn't support <a
+   * only supports the following when a mock is specified: <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
    * tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service

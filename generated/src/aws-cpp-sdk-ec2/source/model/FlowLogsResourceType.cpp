@@ -20,6 +20,7 @@ static const int Subnet_HASH = HashingUtils::HashString("Subnet");
 static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
 static const int TransitGateway_HASH = HashingUtils::HashString("TransitGateway");
 static const int TransitGatewayAttachment_HASH = HashingUtils::HashString("TransitGatewayAttachment");
+static const int RegionalNatGateway_HASH = HashingUtils::HashString("RegionalNatGateway");
 
 FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name) {
     return FlowLogsResourceType::TransitGateway;
   } else if (hashCode == TransitGatewayAttachment_HASH) {
     return FlowLogsResourceType::TransitGatewayAttachment;
+  } else if (hashCode == RegionalNatGateway_HASH) {
+    return FlowLogsResourceType::RegionalNatGateway;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue) {
       return "TransitGateway";
     case FlowLogsResourceType::TransitGatewayAttachment:
       return "TransitGatewayAttachment";
+    case FlowLogsResourceType::RegionalNatGateway:
+      return "RegionalNatGateway";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

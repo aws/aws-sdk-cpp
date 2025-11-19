@@ -62,6 +62,10 @@ BillingGroupListElement& BillingGroupListElement::operator=(JsonView jsonValue) 
     m_accountGrouping = jsonValue.GetObject("AccountGrouping");
     m_accountGroupingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillingGroupType")) {
+    m_billingGroupType = BillingGroupTypeMapper::GetBillingGroupTypeForName(jsonValue.GetString("BillingGroupType"));
+    m_billingGroupTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue BillingGroupListElement::Jsonize() const {
 
   if (m_accountGroupingHasBeenSet) {
     payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
+  }
+
+  if (m_billingGroupTypeHasBeenSet) {
+    payload.WithString("BillingGroupType", BillingGroupTypeMapper::GetNameForBillingGroupType(m_billingGroupType));
   }
 
   return payload;

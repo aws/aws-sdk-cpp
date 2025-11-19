@@ -9,6 +9,7 @@
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
 #include <aws/apigateway/model/IntegrationResponse.h>
 #include <aws/apigateway/model/IntegrationType.h>
+#include <aws/apigateway/model/ResponseTransferMode.h>
 #include <aws/apigateway/model/TlsConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -388,6 +389,21 @@ class UpdateIntegrationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The response transfer mode of the integration. </p>
+   */
+  inline ResponseTransferMode GetResponseTransferMode() const { return m_responseTransferMode; }
+  inline void SetResponseTransferMode(ResponseTransferMode value) {
+    m_responseTransferModeHasBeenSet = true;
+    m_responseTransferMode = value;
+  }
+  inline UpdateIntegrationResult& WithResponseTransferMode(ResponseTransferMode value) {
+    SetResponseTransferMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -446,6 +462,9 @@ class UpdateIntegrationResult {
 
   TlsConfig m_tlsConfig;
   bool m_tlsConfigHasBeenSet = false;
+
+  ResponseTransferMode m_responseTransferMode{ResponseTransferMode::NOT_SET};
+  bool m_responseTransferModeHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

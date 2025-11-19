@@ -173,6 +173,10 @@ FunctionConfiguration& FunctionConfiguration::operator=(JsonView jsonValue) {
     m_loggingConfig = jsonValue.GetObject("LoggingConfig");
     m_loggingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenancyConfig")) {
+    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
+    m_tenancyConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -334,6 +338,10 @@ JsonValue FunctionConfiguration::Jsonize() const {
 
   if (m_loggingConfigHasBeenSet) {
     payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
+  }
+
+  if (m_tenancyConfigHasBeenSet) {
+    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
   }
 
   return payload;

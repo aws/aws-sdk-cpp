@@ -280,7 +280,8 @@ class CustomLineItemVersionListElement {
 
   ///@{
   /**
-   * <p>The display settings of the custom line item</p>
+   * <p> The computation rule for a specific version of a custom line item,
+   * determining how charges are computed and reflected in the bill. </p>
    */
   inline ComputationRuleEnum GetComputationRule() const { return m_computationRule; }
   inline bool ComputationRuleHasBeenSet() const { return m_computationRuleHasBeenSet; }
@@ -296,7 +297,8 @@ class CustomLineItemVersionListElement {
 
   ///@{
   /**
-   * <p>The presentation configuration of the custom line item</p>
+   * <p> Presentation configuration for a specific version of a custom line item,
+   * specifying how charges are displayed in the bill. </p>
    */
   inline const PresentationObject& GetPresentationDetails() const { return m_presentationDetails; }
   inline bool PresentationDetailsHasBeenSet() const { return m_presentationDetailsHasBeenSet; }

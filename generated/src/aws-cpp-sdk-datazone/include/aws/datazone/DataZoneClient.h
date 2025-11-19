@@ -240,6 +240,64 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets the attribute metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchGetAttributesMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetAttributesMetadataOutcome BatchGetAttributesMetadata(
+      const Model::BatchGetAttributesMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetAttributesMetadata that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetAttributesMetadataRequestT = Model::BatchGetAttributesMetadataRequest>
+  Model::BatchGetAttributesMetadataOutcomeCallable BatchGetAttributesMetadataCallable(
+      const BatchGetAttributesMetadataRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::BatchGetAttributesMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetAttributesMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetAttributesMetadataRequestT = Model::BatchGetAttributesMetadataRequest>
+  void BatchGetAttributesMetadataAsync(const BatchGetAttributesMetadataRequestT& request,
+                                       const BatchGetAttributesMetadataResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::BatchGetAttributesMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Writes the attribute metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/BatchPutAttributesMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchPutAttributesMetadataOutcome BatchPutAttributesMetadata(
+      const Model::BatchPutAttributesMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchPutAttributesMetadata that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchPutAttributesMetadataRequestT = Model::BatchPutAttributesMetadataRequest>
+  Model::BatchPutAttributesMetadataOutcomeCallable BatchPutAttributesMetadataCallable(
+      const BatchPutAttributesMetadataRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::BatchPutAttributesMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for BatchPutAttributesMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchPutAttributesMetadataRequestT = Model::BatchPutAttributesMetadataRequest>
+  void BatchPutAttributesMetadataAsync(const BatchPutAttributesMetadataRequestT& request,
+                                       const BatchPutAttributesMetadataResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::BatchPutAttributesMetadata, request, handler, context);
+  }
+
+  /**
    * <p>Cancels the metadata generation run.</p> <p>Prerequisites:</p> <ul> <li>
    * <p>The run must exist and be in a cancelable status (e.g., SUBMITTED,
    * IN_PROGRESS). </p> </li> <li> <p>Runs in SUCCEEDED status cannot be
@@ -4766,6 +4824,34 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void UpdateProjectProfileAsync(const UpdateProjectProfileRequestT& request, const UpdateProjectProfileResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::UpdateProjectProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the owner of the root domain unit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRootDomainUnitOwner">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRootDomainUnitOwnerOutcome UpdateRootDomainUnitOwner(const Model::UpdateRootDomainUnitOwnerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRootDomainUnitOwner that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRootDomainUnitOwnerRequestT = Model::UpdateRootDomainUnitOwnerRequest>
+  Model::UpdateRootDomainUnitOwnerOutcomeCallable UpdateRootDomainUnitOwnerCallable(
+      const UpdateRootDomainUnitOwnerRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::UpdateRootDomainUnitOwner, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRootDomainUnitOwner that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRootDomainUnitOwnerRequestT = Model::UpdateRootDomainUnitOwnerRequest>
+  void UpdateRootDomainUnitOwnerAsync(const UpdateRootDomainUnitOwnerRequestT& request,
+                                      const UpdateRootDomainUnitOwnerResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::UpdateRootDomainUnitOwner, request, handler, context);
   }
 
   /**

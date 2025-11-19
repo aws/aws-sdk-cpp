@@ -44,10 +44,15 @@ enum class ECRErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EMPTY_UPLOAD = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BLOCKED_BY_ORGANIZATION_POLICY = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EMPTY_UPLOAD,
+  EXCLUSION_ALREADY_EXISTS,
+  EXCLUSION_NOT_FOUND,
   IMAGE_ALREADY_EXISTS,
+  IMAGE_ARCHIVED,
   IMAGE_DIGEST_DOES_NOT_MATCH,
   IMAGE_NOT_FOUND,
+  IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED,
   IMAGE_TAG_ALREADY_EXISTS,
   INVALID_LAYER,
   INVALID_LAYER_PART,

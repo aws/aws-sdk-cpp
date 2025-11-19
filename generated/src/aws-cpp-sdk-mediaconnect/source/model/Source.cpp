@@ -87,6 +87,18 @@ Source& Source::operator=(JsonView jsonValue) {
     m_peerIpAddress = jsonValue.GetString("peerIpAddress");
     m_peerIpAddressHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("routerIntegrationState")) {
+    m_routerIntegrationState = StateMapper::GetStateForName(jsonValue.GetString("routerIntegrationState"));
+    m_routerIntegrationStateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("routerIntegrationTransitDecryption")) {
+    m_routerIntegrationTransitDecryption = jsonValue.GetObject("routerIntegrationTransitDecryption");
+    m_routerIntegrationTransitDecryptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectedRouterOutputArn")) {
+    m_connectedRouterOutputArn = jsonValue.GetString("connectedRouterOutputArn");
+    m_connectedRouterOutputArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -162,6 +174,18 @@ JsonValue Source::Jsonize() const {
 
   if (m_peerIpAddressHasBeenSet) {
     payload.WithString("peerIpAddress", m_peerIpAddress);
+  }
+
+  if (m_routerIntegrationStateHasBeenSet) {
+    payload.WithString("routerIntegrationState", StateMapper::GetNameForState(m_routerIntegrationState));
+  }
+
+  if (m_routerIntegrationTransitDecryptionHasBeenSet) {
+    payload.WithObject("routerIntegrationTransitDecryption", m_routerIntegrationTransitDecryption.Jsonize());
+  }
+
+  if (m_connectedRouterOutputArnHasBeenSet) {
+    payload.WithString("connectedRouterOutputArn", m_connectedRouterOutputArn);
   }
 
   return payload;

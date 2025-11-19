@@ -99,11 +99,14 @@
 #include <aws/iam/model/DisableOrganizationsRootCredentialsManagementResult.h>
 #include <aws/iam/model/DisableOrganizationsRootSessionsRequest.h>
 #include <aws/iam/model/DisableOrganizationsRootSessionsResult.h>
+#include <aws/iam/model/DisableOutboundWebIdentityFederationRequest.h>
 #include <aws/iam/model/EnableMFADeviceRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootCredentialsManagementRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootCredentialsManagementResult.h>
 #include <aws/iam/model/EnableOrganizationsRootSessionsRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootSessionsResult.h>
+#include <aws/iam/model/EnableOutboundWebIdentityFederationRequest.h>
+#include <aws/iam/model/EnableOutboundWebIdentityFederationResult.h>
 #include <aws/iam/model/EncodingType.h>
 #include <aws/iam/model/EntityDetails.h>
 #include <aws/iam/model/EntityInfo.h>
@@ -149,6 +152,8 @@
 #include <aws/iam/model/GetOpenIDConnectProviderResult.h>
 #include <aws/iam/model/GetOrganizationsAccessReportRequest.h>
 #include <aws/iam/model/GetOrganizationsAccessReportResult.h>
+#include <aws/iam/model/GetOutboundWebIdentityFederationInfoRequest.h>
+#include <aws/iam/model/GetOutboundWebIdentityFederationInfoResult.h>
 #include <aws/iam/model/GetPolicyRequest.h>
 #include <aws/iam/model/GetPolicyResult.h>
 #include <aws/iam/model/GetPolicyVersionRequest.h>

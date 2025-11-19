@@ -8,6 +8,7 @@
 #include <aws/backup/model/CopyAction.h>
 #include <aws/backup/model/IndexAction.h>
 #include <aws/backup/model/Lifecycle.h>
+#include <aws/backup/model/ScanAction.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -327,6 +328,31 @@ class BackupRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains your scanning configuration for the backup rule and includes the
+   * malware scanner, and scan mode of either full or incremental.</p>
+   */
+  inline const Aws::Vector<ScanAction>& GetScanActions() const { return m_scanActions; }
+  inline bool ScanActionsHasBeenSet() const { return m_scanActionsHasBeenSet; }
+  template <typename ScanActionsT = Aws::Vector<ScanAction>>
+  void SetScanActions(ScanActionsT&& value) {
+    m_scanActionsHasBeenSet = true;
+    m_scanActions = std::forward<ScanActionsT>(value);
+  }
+  template <typename ScanActionsT = Aws::Vector<ScanAction>>
+  BackupRule& WithScanActions(ScanActionsT&& value) {
+    SetScanActions(std::forward<ScanActionsT>(value));
+    return *this;
+  }
+  template <typename ScanActionsT = ScanAction>
+  BackupRule& AddScanActions(ScanActionsT&& value) {
+    m_scanActionsHasBeenSet = true;
+    m_scanActions.emplace_back(std::forward<ScanActionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleName;
   bool m_ruleNameHasBeenSet = false;
@@ -366,6 +392,9 @@ class BackupRule {
 
   Aws::Vector<IndexAction> m_indexActions;
   bool m_indexActionsHasBeenSet = false;
+
+  Aws::Vector<ScanAction> m_scanActions;
+  bool m_scanActionsHasBeenSet = false;
 };
 
 }  // namespace Model

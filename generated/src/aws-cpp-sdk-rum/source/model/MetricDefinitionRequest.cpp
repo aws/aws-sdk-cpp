@@ -18,6 +18,18 @@ namespace Model {
 MetricDefinitionRequest::MetricDefinitionRequest(JsonView jsonValue) { *this = jsonValue; }
 
 MetricDefinitionRequest& MetricDefinitionRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ValueKey")) {
+    m_valueKey = jsonValue.GetString("ValueKey");
+    m_valueKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UnitLabel")) {
+    m_unitLabel = jsonValue.GetString("UnitLabel");
+    m_unitLabelHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DimensionKeys")) {
     Aws::Map<Aws::String, JsonView> dimensionKeysJsonMap = jsonValue.GetObject("DimensionKeys").GetAllObjects();
     for (auto& dimensionKeysItem : dimensionKeysJsonMap) {
@@ -29,27 +41,27 @@ MetricDefinitionRequest& MetricDefinitionRequest::operator=(JsonView jsonValue) 
     m_eventPattern = jsonValue.GetString("EventPattern");
     m_eventPatternHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Name")) {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Namespace")) {
     m_namespace = jsonValue.GetString("Namespace");
     m_namespaceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("UnitLabel")) {
-    m_unitLabel = jsonValue.GetString("UnitLabel");
-    m_unitLabelHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ValueKey")) {
-    m_valueKey = jsonValue.GetString("ValueKey");
-    m_valueKeyHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue MetricDefinitionRequest::Jsonize() const {
   JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
+  }
+
+  if (m_valueKeyHasBeenSet) {
+    payload.WithString("ValueKey", m_valueKey);
+  }
+
+  if (m_unitLabelHasBeenSet) {
+    payload.WithString("UnitLabel", m_unitLabel);
+  }
 
   if (m_dimensionKeysHasBeenSet) {
     JsonValue dimensionKeysJsonMap;
@@ -63,20 +75,8 @@ JsonValue MetricDefinitionRequest::Jsonize() const {
     payload.WithString("EventPattern", m_eventPattern);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_namespaceHasBeenSet) {
     payload.WithString("Namespace", m_namespace);
-  }
-
-  if (m_unitLabelHasBeenSet) {
-    payload.WithString("UnitLabel", m_unitLabel);
-  }
-
-  if (m_valueKeyHasBeenSet) {
-    payload.WithString("ValueKey", m_valueKey);
   }
 
   return payload;

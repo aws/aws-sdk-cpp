@@ -38,6 +38,79 @@ class MetricDefinition {
 
   ///@{
   /**
+   * <p>The ID of this metric definition.</p>
+   */
+  inline const Aws::String& GetMetricDefinitionId() const { return m_metricDefinitionId; }
+  inline bool MetricDefinitionIdHasBeenSet() const { return m_metricDefinitionIdHasBeenSet; }
+  template <typename MetricDefinitionIdT = Aws::String>
+  void SetMetricDefinitionId(MetricDefinitionIdT&& value) {
+    m_metricDefinitionIdHasBeenSet = true;
+    m_metricDefinitionId = std::forward<MetricDefinitionIdT>(value);
+  }
+  template <typename MetricDefinitionIdT = Aws::String>
+  MetricDefinition& WithMetricDefinitionId(MetricDefinitionIdT&& value) {
+    SetMetricDefinitionId(std::forward<MetricDefinitionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the metric that is defined in this structure.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  MetricDefinition& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The field within the event object that the metric value is sourced from.</p>
+   */
+  inline const Aws::String& GetValueKey() const { return m_valueKey; }
+  inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
+  template <typename ValueKeyT = Aws::String>
+  void SetValueKey(ValueKeyT&& value) {
+    m_valueKeyHasBeenSet = true;
+    m_valueKey = std::forward<ValueKeyT>(value);
+  }
+  template <typename ValueKeyT = Aws::String>
+  MetricDefinition& WithValueKey(ValueKeyT&& value) {
+    SetValueKey(std::forward<ValueKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Use this field only if you are sending this metric to CloudWatch. It defines
+   * the CloudWatch metric unit that this metric is measured in. </p>
+   */
+  inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
+  inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
+  template <typename UnitLabelT = Aws::String>
+  void SetUnitLabel(UnitLabelT&& value) {
+    m_unitLabelHasBeenSet = true;
+    m_unitLabel = std::forward<UnitLabelT>(value);
+  }
+  template <typename UnitLabelT = Aws::String>
+  MetricDefinition& WithUnitLabel(UnitLabelT&& value) {
+    SetUnitLabel(std::forward<UnitLabelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>This field is a map of field paths to dimension names. It defines the
    * dimensions to associate with this metric in CloudWatch The value of this field
    * is used only if the metric destination is <code>CloudWatch</code>. If the metric
@@ -89,42 +162,6 @@ class MetricDefinition {
 
   ///@{
   /**
-   * <p>The ID of this metric definition.</p>
-   */
-  inline const Aws::String& GetMetricDefinitionId() const { return m_metricDefinitionId; }
-  inline bool MetricDefinitionIdHasBeenSet() const { return m_metricDefinitionIdHasBeenSet; }
-  template <typename MetricDefinitionIdT = Aws::String>
-  void SetMetricDefinitionId(MetricDefinitionIdT&& value) {
-    m_metricDefinitionIdHasBeenSet = true;
-    m_metricDefinitionId = std::forward<MetricDefinitionIdT>(value);
-  }
-  template <typename MetricDefinitionIdT = Aws::String>
-  MetricDefinition& WithMetricDefinitionId(MetricDefinitionIdT&& value) {
-    SetMetricDefinitionId(std::forward<MetricDefinitionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the metric that is defined in this structure.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  MetricDefinition& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>If this metric definition is for a custom metric instead of an extended
    * metric, this field displays the metric namespace that the custom metric is
    * published to.</p>
@@ -142,64 +179,27 @@ class MetricDefinition {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Use this field only if you are sending this metric to CloudWatch. It defines
-   * the CloudWatch metric unit that this metric is measured in. </p>
-   */
-  inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
-  inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
-  template <typename UnitLabelT = Aws::String>
-  void SetUnitLabel(UnitLabelT&& value) {
-    m_unitLabelHasBeenSet = true;
-    m_unitLabel = std::forward<UnitLabelT>(value);
-  }
-  template <typename UnitLabelT = Aws::String>
-  MetricDefinition& WithUnitLabel(UnitLabelT&& value) {
-    SetUnitLabel(std::forward<UnitLabelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The field within the event object that the metric value is sourced from.</p>
-   */
-  inline const Aws::String& GetValueKey() const { return m_valueKey; }
-  inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
-  template <typename ValueKeyT = Aws::String>
-  void SetValueKey(ValueKeyT&& value) {
-    m_valueKeyHasBeenSet = true;
-    m_valueKey = std::forward<ValueKeyT>(value);
-  }
-  template <typename ValueKeyT = Aws::String>
-  MetricDefinition& WithValueKey(ValueKeyT&& value) {
-    SetValueKey(std::forward<ValueKeyT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Map<Aws::String, Aws::String> m_dimensionKeys;
-  bool m_dimensionKeysHasBeenSet = false;
-
-  Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
-
   Aws::String m_metricDefinitionId;
   bool m_metricDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
-  Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
+  Aws::String m_valueKey;
+  bool m_valueKeyHasBeenSet = false;
 
   Aws::String m_unitLabel;
   bool m_unitLabelHasBeenSet = false;
 
-  Aws::String m_valueKey;
-  bool m_valueKeyHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_dimensionKeys;
+  bool m_dimensionKeysHasBeenSet = false;
+
+  Aws::String m_eventPattern;
+  bool m_eventPatternHasBeenSet = false;
+
+  Aws::String m_namespace;
+  bool m_namespaceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -156,8 +156,8 @@ class AffectedEntity {
   ///@{
   /**
    * <p>The most recent status of the entity affected by the event. The possible
-   * values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and
-   * <code>UNKNOWN</code>.</p>
+   * values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>,
+   * <code>PENDING</code>, and <code>RESOLVED</code>.</p>
    */
   inline EntityStatusCode GetStatusCode() const { return m_statusCode; }
   inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }

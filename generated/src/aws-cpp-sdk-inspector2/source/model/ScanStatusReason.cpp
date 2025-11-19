@@ -51,6 +51,7 @@ static const int ACCESS_DENIED_TO_ENCRYPTION_KEY_HASH = HashingUtils::HashString
 static const int UNSUPPORTED_LANGUAGE_HASH = HashingUtils::HashString("UNSUPPORTED_LANGUAGE");
 static const int NO_SCAN_CONFIGURATION_ASSOCIATED_HASH = HashingUtils::HashString("NO_SCAN_CONFIGURATION_ASSOCIATED");
 static const int SCAN_IN_PROGRESS_HASH = HashingUtils::HashString("SCAN_IN_PROGRESS");
+static const int IMAGE_ARCHIVED_HASH = HashingUtils::HashString("IMAGE_ARCHIVED");
 
 ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -118,6 +119,8 @@ ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
     return ScanStatusReason::NO_SCAN_CONFIGURATION_ASSOCIATED;
   } else if (hashCode == SCAN_IN_PROGRESS_HASH) {
     return ScanStatusReason::SCAN_IN_PROGRESS;
+  } else if (hashCode == IMAGE_ARCHIVED_HASH) {
+    return ScanStatusReason::IMAGE_ARCHIVED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -196,6 +199,8 @@ Aws::String GetNameForScanStatusReason(ScanStatusReason enumValue) {
       return "NO_SCAN_CONFIGURATION_ASSOCIATED";
     case ScanStatusReason::SCAN_IN_PROGRESS:
       return "SCAN_IN_PROGRESS";
+    case ScanStatusReason::IMAGE_ARCHIVED:
+      return "IMAGE_ARCHIVED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -1,0 +1,23 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/apigatewayv2/model/PutPortalProductSharingPolicyRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::ApiGatewayV2::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String PutPortalProductSharingPolicyRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_policyDocumentHasBeenSet) {
+    payload.WithString("policyDocument", m_policyDocument);
+  }
+
+  return payload.View().WriteReadable();
+}

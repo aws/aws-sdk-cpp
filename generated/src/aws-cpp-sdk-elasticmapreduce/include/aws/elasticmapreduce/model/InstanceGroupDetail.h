@@ -105,10 +105,10 @@ class InstanceGroupDetail {
 
   ///@{
   /**
-   * <p>If specified, indicates that the instance group uses Spot Instances. This is
-   * the maximum price you are willing to pay for Spot Instances. Specify
-   * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
-   * specify an amount in USD.</p>
+   * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
+   * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
+   * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
+   * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
    */
   inline const Aws::String& GetBidPrice() const { return m_bidPrice; }
   inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }

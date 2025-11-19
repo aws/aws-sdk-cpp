@@ -21,6 +21,10 @@ ListInsightsMetricDataResult::ListInsightsMetricDataResult(const Aws::AmazonWebS
 
 ListInsightsMetricDataResult& ListInsightsMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("TrailARN")) {
+    m_trailARN = jsonValue.GetString("TrailARN");
+    m_trailARNHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EventSource")) {
     m_eventSource = jsonValue.GetString("EventSource");
     m_eventSourceHasBeenSet = true;

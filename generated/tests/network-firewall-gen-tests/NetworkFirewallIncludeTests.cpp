@@ -188,6 +188,7 @@
 #include <aws/network-firewall/model/StatelessRulesAndCustomActions.h>
 #include <aws/network-firewall/model/StreamExceptionPolicy.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
+#include <aws/network-firewall/model/SubscriptionStatus.h>
 #include <aws/network-firewall/model/Summary.h>
 #include <aws/network-firewall/model/SummaryConfiguration.h>
 #include <aws/network-firewall/model/SummaryRuleOption.h>

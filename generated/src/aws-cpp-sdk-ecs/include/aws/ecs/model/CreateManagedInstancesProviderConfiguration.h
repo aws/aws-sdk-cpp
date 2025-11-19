@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/InfrastructureOptimization.h>
 #include <aws/ecs/model/InstanceLaunchTemplate.h>
 #include <aws/ecs/model/PropagateMITags.h>
 
@@ -101,6 +102,26 @@ class CreateManagedInstancesProviderConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in
+   * your capacity provider. Provides control over the delay between when EC2
+   * instances become idle or underutilized and when Amazon ECS optimizes them.</p>
+   */
+  inline const InfrastructureOptimization& GetInfrastructureOptimization() const { return m_infrastructureOptimization; }
+  inline bool InfrastructureOptimizationHasBeenSet() const { return m_infrastructureOptimizationHasBeenSet; }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  void SetInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    m_infrastructureOptimizationHasBeenSet = true;
+    m_infrastructureOptimization = std::forward<InfrastructureOptimizationT>(value);
+  }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  CreateManagedInstancesProviderConfiguration& WithInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    SetInfrastructureOptimization(std::forward<InfrastructureOptimizationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_infrastructureRoleArn;
   bool m_infrastructureRoleArnHasBeenSet = false;
@@ -110,6 +131,9 @@ class CreateManagedInstancesProviderConfiguration {
 
   PropagateMITags m_propagateTags{PropagateMITags::NOT_SET};
   bool m_propagateTagsHasBeenSet = false;
+
+  InfrastructureOptimization m_infrastructureOptimization;
+  bool m_infrastructureOptimizationHasBeenSet = false;
 };
 
 }  // namespace Model

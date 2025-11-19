@@ -124,6 +124,8 @@ class ScanStatus {
    * has an unsupported runtime. To see a complete list of supported runtimes see: <a
    * href="
    * https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+   * <p> <code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and
+   * is no longer available for scanning in Amazon Inspector. </p>
    */
   inline ScanStatusReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

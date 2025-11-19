@@ -33,6 +33,21 @@ Threat& Threat::operator=(JsonView jsonValue) {
     }
     m_itemPathsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("count")) {
+    m_count = jsonValue.GetInt64("count");
+    m_countHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("hash")) {
+    m_hash = jsonValue.GetString("hash");
+    m_hashHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("itemDetails")) {
+    Aws::Utils::Array<JsonView> itemDetailsJsonList = jsonValue.GetArray("itemDetails");
+    for (unsigned itemDetailsIndex = 0; itemDetailsIndex < itemDetailsJsonList.GetLength(); ++itemDetailsIndex) {
+      m_itemDetails.push_back(itemDetailsJsonList[itemDetailsIndex].AsObject());
+    }
+    m_itemDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +68,22 @@ JsonValue Threat::Jsonize() const {
       itemPathsJsonList[itemPathsIndex].AsObject(m_itemPaths[itemPathsIndex].Jsonize());
     }
     payload.WithArray("itemPaths", std::move(itemPathsJsonList));
+  }
+
+  if (m_countHasBeenSet) {
+    payload.WithInt64("count", m_count);
+  }
+
+  if (m_hashHasBeenSet) {
+    payload.WithString("hash", m_hash);
+  }
+
+  if (m_itemDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> itemDetailsJsonList(m_itemDetails.size());
+    for (unsigned itemDetailsIndex = 0; itemDetailsIndex < itemDetailsJsonList.GetLength(); ++itemDetailsIndex) {
+      itemDetailsJsonList[itemDetailsIndex].AsObject(m_itemDetails[itemDetailsIndex].Jsonize());
+    }
+    payload.WithArray("itemDetails", std::move(itemDetailsJsonList));
   }
 
   return payload;

@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String ListInsightsMetricDataRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_trailNameHasBeenSet) {
+    payload.WithString("TrailName", m_trailName);
+  }
+
   if (m_eventSourceHasBeenSet) {
     payload.WithString("EventSource", m_eventSource);
   }

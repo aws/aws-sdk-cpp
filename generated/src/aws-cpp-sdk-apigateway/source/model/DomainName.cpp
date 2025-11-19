@@ -83,6 +83,10 @@ DomainName& DomainName::operator=(JsonView jsonValue) {
     m_securityPolicy = SecurityPolicyMapper::GetSecurityPolicyForName(jsonValue.GetString("securityPolicy"));
     m_securityPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("endpointAccessMode")) {
+    m_endpointAccessMode = EndpointAccessModeMapper::GetEndpointAccessModeForName(jsonValue.GetString("endpointAccessMode"));
+    m_endpointAccessModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -178,6 +182,10 @@ JsonValue DomainName::Jsonize() const {
 
   if (m_securityPolicyHasBeenSet) {
     payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
+  }
+
+  if (m_endpointAccessModeHasBeenSet) {
+    payload.WithString("endpointAccessMode", EndpointAccessModeMapper::GetNameForEndpointAccessMode(m_endpointAccessMode));
   }
 
   if (m_tagsHasBeenSet) {

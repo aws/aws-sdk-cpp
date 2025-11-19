@@ -232,7 +232,8 @@ class CustomLineItemListElement {
 
   ///@{
   /**
-   * <p>The display settings of the custom line item</p>
+   * <p> The computation rule that determines how the custom line item charges are
+   * computed and reflected in the bill. </p>
    */
   inline ComputationRuleEnum GetComputationRule() const { return m_computationRule; }
   inline bool ComputationRuleHasBeenSet() const { return m_computationRuleHasBeenSet; }
@@ -248,7 +249,8 @@ class CustomLineItemListElement {
 
   ///@{
   /**
-   * <p>The presentation configuration of the custom line item</p>
+   * <p> Configuration details specifying how the custom line item charges are
+   * presented, including which service the charges are shown under. </p>
    */
   inline const PresentationObject& GetPresentationDetails() const { return m_presentationDetails; }
   inline bool PresentationDetailsHasBeenSet() const { return m_presentationDetailsHasBeenSet; }

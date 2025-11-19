@@ -18,13 +18,13 @@ namespace Model {
 JavaScriptSourceMaps::JavaScriptSourceMaps(JsonView jsonValue) { *this = jsonValue; }
 
 JavaScriptSourceMaps& JavaScriptSourceMaps::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("S3Uri")) {
-    m_s3Uri = jsonValue.GetString("S3Uri");
-    m_s3UriHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Status")) {
     m_status = DeobfuscationStatusMapper::GetDeobfuscationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3Uri")) {
+    m_s3Uri = jsonValue.GetString("S3Uri");
+    m_s3UriHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ JavaScriptSourceMaps& JavaScriptSourceMaps::operator=(JsonView jsonValue) {
 JsonValue JavaScriptSourceMaps::Jsonize() const {
   JsonValue payload;
 
-  if (m_s3UriHasBeenSet) {
-    payload.WithString("S3Uri", m_s3Uri);
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("Status", DeobfuscationStatusMapper::GetNameForDeobfuscationStatus(m_status));
+  }
+
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
   return payload;

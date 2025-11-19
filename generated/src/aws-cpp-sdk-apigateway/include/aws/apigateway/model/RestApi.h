@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/ApiKeySourceType.h>
+#include <aws/apigateway/model/ApiStatus.h>
+#include <aws/apigateway/model/EndpointAccessMode.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
+#include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -318,6 +321,74 @@ class RestApi {
   ///@}
 
   ///@{
+  /**
+   * <p> The Transport Layer Security (TLS) version + cipher suite for this RestApi.
+   * </p>
+   */
+  inline SecurityPolicy GetSecurityPolicy() const { return m_securityPolicy; }
+  inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
+  inline void SetSecurityPolicy(SecurityPolicy value) {
+    m_securityPolicyHasBeenSet = true;
+    m_securityPolicy = value;
+  }
+  inline RestApi& WithSecurityPolicy(SecurityPolicy value) {
+    SetSecurityPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The endpoint access mode of the RestApi. </p>
+   */
+  inline EndpointAccessMode GetEndpointAccessMode() const { return m_endpointAccessMode; }
+  inline bool EndpointAccessModeHasBeenSet() const { return m_endpointAccessModeHasBeenSet; }
+  inline void SetEndpointAccessMode(EndpointAccessMode value) {
+    m_endpointAccessModeHasBeenSet = true;
+    m_endpointAccessMode = value;
+  }
+  inline RestApi& WithEndpointAccessMode(EndpointAccessMode value) {
+    SetEndpointAccessMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ApiStatus of the RestApi. </p>
+   */
+  inline ApiStatus GetApiStatus() const { return m_apiStatus; }
+  inline bool ApiStatusHasBeenSet() const { return m_apiStatusHasBeenSet; }
+  inline void SetApiStatus(ApiStatus value) {
+    m_apiStatusHasBeenSet = true;
+    m_apiStatus = value;
+  }
+  inline RestApi& WithApiStatus(ApiStatus value) {
+    SetApiStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The status message of the RestApi. When the status message is
+   * <code>UPDATING</code> you can still invoke it. </p>
+   */
+  inline const Aws::String& GetApiStatusMessage() const { return m_apiStatusMessage; }
+  inline bool ApiStatusMessageHasBeenSet() const { return m_apiStatusMessageHasBeenSet; }
+  template <typename ApiStatusMessageT = Aws::String>
+  void SetApiStatusMessage(ApiStatusMessageT&& value) {
+    m_apiStatusMessageHasBeenSet = true;
+    m_apiStatusMessage = std::forward<ApiStatusMessageT>(value);
+  }
+  template <typename ApiStatusMessageT = Aws::String>
+  RestApi& WithApiStatusMessage(ApiStatusMessageT&& value) {
+    SetApiStatusMessage(std::forward<ApiStatusMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -374,6 +445,18 @@ class RestApi {
 
   Aws::String m_rootResourceId;
   bool m_rootResourceIdHasBeenSet = false;
+
+  SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
+  bool m_securityPolicyHasBeenSet = false;
+
+  EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
+  bool m_endpointAccessModeHasBeenSet = false;
+
+  ApiStatus m_apiStatus{ApiStatus::NOT_SET};
+  bool m_apiStatusHasBeenSet = false;
+
+  Aws::String m_apiStatusMessage;
+  bool m_apiStatusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

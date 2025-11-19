@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/DocumentCharLocation.h>
 #include <aws/bedrock-runtime/model/DocumentChunkLocation.h>
 #include <aws/bedrock-runtime/model/DocumentPageLocation.h>
+#include <aws/bedrock-runtime/model/SearchResultLocation.h>
 #include <aws/bedrock-runtime/model/WebLocation.h>
 
 #include <utility>
@@ -112,6 +113,25 @@ class CitationLocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The search result location where the cited content is found, including the
+   * search result index and block positions within the content array.</p>
+   */
+  inline const SearchResultLocation& GetSearchResultLocation() const { return m_searchResultLocation; }
+  inline bool SearchResultLocationHasBeenSet() const { return m_searchResultLocationHasBeenSet; }
+  template <typename SearchResultLocationT = SearchResultLocation>
+  void SetSearchResultLocation(SearchResultLocationT&& value) {
+    m_searchResultLocationHasBeenSet = true;
+    m_searchResultLocation = std::forward<SearchResultLocationT>(value);
+  }
+  template <typename SearchResultLocationT = SearchResultLocation>
+  CitationLocation& WithSearchResultLocation(SearchResultLocationT&& value) {
+    SetSearchResultLocation(std::forward<SearchResultLocationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   WebLocation m_web;
   bool m_webHasBeenSet = false;
@@ -124,6 +144,9 @@ class CitationLocation {
 
   DocumentChunkLocation m_documentChunk;
   bool m_documentChunkHasBeenSet = false;
+
+  SearchResultLocation m_searchResultLocation;
+  bool m_searchResultLocationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -39,6 +39,22 @@ Aws::String TestStateRequest::SerializePayload() const {
     payload.WithString("variables", m_variables);
   }
 
+  if (m_stateNameHasBeenSet) {
+    payload.WithString("stateName", m_stateName);
+  }
+
+  if (m_mockHasBeenSet) {
+    payload.WithObject("mock", m_mock.Jsonize());
+  }
+
+  if (m_contextHasBeenSet) {
+    payload.WithString("context", m_context);
+  }
+
+  if (m_stateConfigurationHasBeenSet) {
+    payload.WithObject("stateConfiguration", m_stateConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

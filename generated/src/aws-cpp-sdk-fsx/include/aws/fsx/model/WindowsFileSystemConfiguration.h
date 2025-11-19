@@ -13,6 +13,7 @@
 #include <aws/fsx/model/SelfManagedActiveDirectoryAttributes.h>
 #include <aws/fsx/model/WindowsAuditLogConfiguration.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
+#include <aws/fsx/model/WindowsFsrmConfiguration.h>
 
 #include <utility>
 
@@ -385,6 +386,25 @@ class WindowsFileSystemConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for
+   * Windows File Server uses for the file system. FSRM is disabled by default.</p>
+   */
+  inline const WindowsFsrmConfiguration& GetFsrmConfiguration() const { return m_fsrmConfiguration; }
+  inline bool FsrmConfigurationHasBeenSet() const { return m_fsrmConfigurationHasBeenSet; }
+  template <typename FsrmConfigurationT = WindowsFsrmConfiguration>
+  void SetFsrmConfiguration(FsrmConfigurationT&& value) {
+    m_fsrmConfigurationHasBeenSet = true;
+    m_fsrmConfiguration = std::forward<FsrmConfigurationT>(value);
+  }
+  template <typename FsrmConfigurationT = WindowsFsrmConfiguration>
+  WindowsFileSystemConfiguration& WithFsrmConfiguration(FsrmConfigurationT&& value) {
+    SetFsrmConfiguration(std::forward<FsrmConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_activeDirectoryId;
   bool m_activeDirectoryIdHasBeenSet = false;
@@ -433,6 +453,9 @@ class WindowsFileSystemConfiguration {
 
   Aws::String m_preferredFileServerIpv6;
   bool m_preferredFileServerIpv6HasBeenSet = false;
+
+  WindowsFsrmConfiguration m_fsrmConfiguration;
+  bool m_fsrmConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

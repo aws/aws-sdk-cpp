@@ -95,7 +95,11 @@ class ListReportJobsRequest : public BackupRequest {
   ///@{
   /**
    * <p>Returns only report jobs that are in the specified status. The statuses
-   * are:</p> <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+   * are:</p> <p> <code>CREATED | RUNNING | COMPLETED | FAILED |
+   * COMPLETED_WITH_ISSUES</code> </p> <p> Please note that only scanning jobs finish
+   * with state completed with issues. For backup jobs this is a console
+   * interpretation of a job that finishes in completed state and has a status
+   * message.</p>
    */
   inline const Aws::String& GetByStatus() const { return m_byStatus; }
   inline bool ByStatusHasBeenSet() const { return m_byStatusHasBeenSet; }

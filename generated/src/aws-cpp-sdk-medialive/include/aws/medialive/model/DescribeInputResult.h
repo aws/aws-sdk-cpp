@@ -18,6 +18,7 @@
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/medialive/model/MulticastSettings.h>
+#include <aws/medialive/model/RouterInputSettings.h>
 #include <aws/medialive/model/Smpte2110ReceiverGroupSettings.h>
 #include <aws/medialive/model/SrtSettings.h>
 
@@ -456,6 +457,23 @@ an input in a customer network.
   ///@}
 
   ///@{
+  /**
+   * Information about any MediaConnect router association with this input.
+   */
+  inline const RouterInputSettings& GetRouterSettings() const { return m_routerSettings; }
+  template <typename RouterSettingsT = RouterInputSettings>
+  void SetRouterSettings(RouterSettingsT&& value) {
+    m_routerSettingsHasBeenSet = true;
+    m_routerSettings = std::forward<RouterSettingsT>(value);
+  }
+  template <typename RouterSettingsT = RouterInputSettings>
+  DescribeInputResult& WithRouterSettings(RouterSettingsT&& value) {
+    SetRouterSettings(std::forward<RouterSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -532,6 +550,9 @@ an input in a customer network.
 
   Aws::Vector<Aws::String> m_sdiSources;
   bool m_sdiSourcesHasBeenSet = false;
+
+  RouterInputSettings m_routerSettings;
+  bool m_routerSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

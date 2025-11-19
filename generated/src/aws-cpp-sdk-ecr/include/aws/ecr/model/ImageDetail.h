@@ -10,6 +10,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/ImageScanFindingsSummary.h>
 #include <aws/ecr/model/ImageScanStatus.h>
+#include <aws/ecr/model/ImageStatus.h>
 
 #include <utility>
 
@@ -252,6 +253,78 @@ class ImageDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The digest of the subject manifest for images that are referrers.</p>
+   */
+  inline const Aws::String& GetSubjectManifestDigest() const { return m_subjectManifestDigest; }
+  inline bool SubjectManifestDigestHasBeenSet() const { return m_subjectManifestDigestHasBeenSet; }
+  template <typename SubjectManifestDigestT = Aws::String>
+  void SetSubjectManifestDigest(SubjectManifestDigestT&& value) {
+    m_subjectManifestDigestHasBeenSet = true;
+    m_subjectManifestDigest = std::forward<SubjectManifestDigestT>(value);
+  }
+  template <typename SubjectManifestDigestT = Aws::String>
+  ImageDetail& WithSubjectManifestDigest(SubjectManifestDigestT&& value) {
+    SetSubjectManifestDigest(std::forward<SubjectManifestDigestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current status of the image.</p>
+   */
+  inline ImageStatus GetImageStatus() const { return m_imageStatus; }
+  inline bool ImageStatusHasBeenSet() const { return m_imageStatusHasBeenSet; }
+  inline void SetImageStatus(ImageStatus value) {
+    m_imageStatusHasBeenSet = true;
+    m_imageStatus = value;
+  }
+  inline ImageDetail& WithImageStatus(ImageStatus value) {
+    SetImageStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time, expressed in standard JavaScript date format, when the
+   * image was last transitioned to Amazon ECR archive.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastArchivedAt() const { return m_lastArchivedAt; }
+  inline bool LastArchivedAtHasBeenSet() const { return m_lastArchivedAtHasBeenSet; }
+  template <typename LastArchivedAtT = Aws::Utils::DateTime>
+  void SetLastArchivedAt(LastArchivedAtT&& value) {
+    m_lastArchivedAtHasBeenSet = true;
+    m_lastArchivedAt = std::forward<LastArchivedAtT>(value);
+  }
+  template <typename LastArchivedAtT = Aws::Utils::DateTime>
+  ImageDetail& WithLastArchivedAt(LastArchivedAtT&& value) {
+    SetLastArchivedAt(std::forward<LastArchivedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time, expressed in standard JavaScript date format, when the
+   * image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastActivatedAt() const { return m_lastActivatedAt; }
+  inline bool LastActivatedAtHasBeenSet() const { return m_lastActivatedAtHasBeenSet; }
+  template <typename LastActivatedAtT = Aws::Utils::DateTime>
+  void SetLastActivatedAt(LastActivatedAtT&& value) {
+    m_lastActivatedAtHasBeenSet = true;
+    m_lastActivatedAt = std::forward<LastActivatedAtT>(value);
+  }
+  template <typename LastActivatedAtT = Aws::Utils::DateTime>
+  ImageDetail& WithLastActivatedAt(LastActivatedAtT&& value) {
+    SetLastActivatedAt(std::forward<LastActivatedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryId;
   bool m_registryIdHasBeenSet = false;
@@ -285,6 +358,18 @@ class ImageDetail {
 
   Aws::Utils::DateTime m_lastRecordedPullTime{};
   bool m_lastRecordedPullTimeHasBeenSet = false;
+
+  Aws::String m_subjectManifestDigest;
+  bool m_subjectManifestDigestHasBeenSet = false;
+
+  ImageStatus m_imageStatus{ImageStatus::NOT_SET};
+  bool m_imageStatusHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastArchivedAt{};
+  bool m_lastArchivedAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastActivatedAt{};
+  bool m_lastActivatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

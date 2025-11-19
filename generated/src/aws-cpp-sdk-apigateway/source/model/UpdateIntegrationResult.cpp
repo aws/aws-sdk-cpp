@@ -94,6 +94,10 @@ UpdateIntegrationResult& UpdateIntegrationResult::operator=(const Aws::AmazonWeb
     m_tlsConfig = jsonValue.GetObject("tlsConfig");
     m_tlsConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("responseTransferMode")) {
+    m_responseTransferMode = ResponseTransferModeMapper::GetResponseTransferModeForName(jsonValue.GetString("responseTransferMode"));
+    m_responseTransferModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

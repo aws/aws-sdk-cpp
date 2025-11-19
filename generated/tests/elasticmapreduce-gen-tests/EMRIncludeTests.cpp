@@ -42,6 +42,7 @@
 #include <aws/elasticmapreduce/model/CancelStepsRequestStatus.h>
 #include <aws/elasticmapreduce/model/CancelStepsResult.h>
 #include <aws/elasticmapreduce/model/CloudWatchAlarmDefinition.h>
+#include <aws/elasticmapreduce/model/CloudWatchLogConfiguration.h>
 #include <aws/elasticmapreduce/model/Cluster.h>
 #include <aws/elasticmapreduce/model/ClusterState.h>
 #include <aws/elasticmapreduce/model/ClusterStateChangeReason.h>
@@ -179,6 +180,7 @@
 #include <aws/elasticmapreduce/model/ModifyClusterResult.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
+#include <aws/elasticmapreduce/model/MonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/NotebookExecution.h>
 #include <aws/elasticmapreduce/model/NotebookExecutionStatus.h>
 #include <aws/elasticmapreduce/model/NotebookExecutionSummary.h>

@@ -17,6 +17,7 @@
 #include <aws/rum/model/AppMonitor.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
 #include <aws/rum/model/AppMonitorDetails.h>
+#include <aws/rum/model/AppMonitorPlatform.h>
 #include <aws/rum/model/AppMonitorSummary.h>
 #include <aws/rum/model/BatchCreateRumMetricDefinitionsError.h>
 #include <aws/rum/model/BatchCreateRumMetricDefinitionsRequest.h>

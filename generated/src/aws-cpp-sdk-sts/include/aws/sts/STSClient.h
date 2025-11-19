@@ -663,8 +663,11 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>This API is currently unavailable for general use.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Exchanges a trade-in token for temporary Amazon Web Services credentials with
+   * the permissions associated with the assumed principal. This operation allows you
+   * to obtain credentials for a specific principal based on a trade-in token,
+   * enabling delegation of access to Amazon Web Services resources.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetDelegatedAccessToken">AWS
    * API Reference</a></p>
    */
@@ -873,6 +876,36 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                             const GetSessionTokenRequestT& request = {}) const {
     return SubmitAsync(&STSClient::GetSessionToken, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web
+   * Services identity. The returned JWT can be used to authenticate with external
+   * services that support OIDC discovery. The token is signed by Amazon Web Services
+   * STS and can be publicly verified using the verification keys published at the
+   * issuer's JWKS endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetWebIdentityToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetWebIdentityTokenOutcome GetWebIdentityToken(const Model::GetWebIdentityTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetWebIdentityToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetWebIdentityTokenRequestT = Model::GetWebIdentityTokenRequest>
+  Model::GetWebIdentityTokenOutcomeCallable GetWebIdentityTokenCallable(const GetWebIdentityTokenRequestT& request) const {
+    return SubmitCallable(&STSClient::GetWebIdentityToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetWebIdentityToken that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetWebIdentityTokenRequestT = Model::GetWebIdentityTokenRequest>
+  void GetWebIdentityTokenAsync(const GetWebIdentityTokenRequestT& request, const GetWebIdentityTokenResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&STSClient::GetWebIdentityToken, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

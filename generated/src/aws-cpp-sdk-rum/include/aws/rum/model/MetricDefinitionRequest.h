@@ -133,6 +133,78 @@ class MetricDefinitionRequest {
 
   ///@{
   /**
+   * <p>The name for the metric that is defined in this structure. For custom
+   * metrics, you can specify any name that you like. For extended metrics, valid
+   * values are the following:</p> <ul> <li> <p>
+   * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+   * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+   * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
+   * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
+   * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
+   * <code>WebVitalsCumulativeLayoutShift</code> </p> </li> <li> <p>
+   * <code>WebVitalsFirstInputDelay</code> </p> </li> <li> <p>
+   * <code>WebVitalsLargestContentfulPaint</code> </p> </li> <li> <p>
+   * <code>JsErrorCount</code> </p> </li> <li> <p> <code>HttpErrorCount</code> </p>
+   * </li> <li> <p> <code>SessionCount</code> </p> </li> </ul>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  MetricDefinitionRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The field within the event object that the metric value is sourced from.</p>
+   * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
+   * This is useful if you want to count the number of events that the filter
+   * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
+   * be passed to Evidently raw. Evidently will handle data extraction from the
+   * event.</p>
+   */
+  inline const Aws::String& GetValueKey() const { return m_valueKey; }
+  inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
+  template <typename ValueKeyT = Aws::String>
+  void SetValueKey(ValueKeyT&& value) {
+    m_valueKeyHasBeenSet = true;
+    m_valueKey = std::forward<ValueKeyT>(value);
+  }
+  template <typename ValueKeyT = Aws::String>
+  MetricDefinitionRequest& WithValueKey(ValueKeyT&& value) {
+    SetValueKey(std::forward<ValueKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The CloudWatch metric unit to use for this metric. If you omit this field,
+   * the metric is recorded with no unit.</p>
+   */
+  inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
+  inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
+  template <typename UnitLabelT = Aws::String>
+  void SetUnitLabel(UnitLabelT&& value) {
+    m_unitLabelHasBeenSet = true;
+    m_unitLabel = std::forward<UnitLabelT>(value);
+  }
+  template <typename UnitLabelT = Aws::String>
+  MetricDefinitionRequest& WithUnitLabel(UnitLabelT&& value) {
+    SetUnitLabel(std::forward<UnitLabelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
    * field is a map of field paths to dimension names. It defines the dimensions to
    * associate with this metric in CloudWatch. For extended metrics, valid values for
@@ -202,36 +274,6 @@ class MetricDefinitionRequest {
 
   ///@{
   /**
-   * <p>The name for the metric that is defined in this structure. For custom
-   * metrics, you can specify any name that you like. For extended metrics, valid
-   * values are the following:</p> <ul> <li> <p>
-   * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
-   * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
-   * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
-   * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
-   * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
-   * <code>WebVitalsCumulativeLayoutShift</code> </p> </li> <li> <p>
-   * <code>WebVitalsFirstInputDelay</code> </p> </li> <li> <p>
-   * <code>WebVitalsLargestContentfulPaint</code> </p> </li> <li> <p>
-   * <code>JsErrorCount</code> </p> </li> <li> <p> <code>HttpErrorCount</code> </p>
-   * </li> <li> <p> <code>SessionCount</code> </p> </li> </ul>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  MetricDefinitionRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>If this structure is for a custom metric instead of an extended metrics, use
    * this parameter to define the metric namespace for that custom metric. Do not
    * specify this parameter if this structure is for an extended metric.</p> <p>You
@@ -250,66 +292,24 @@ class MetricDefinitionRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The CloudWatch metric unit to use for this metric. If you omit this field,
-   * the metric is recorded with no unit.</p>
-   */
-  inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
-  inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
-  template <typename UnitLabelT = Aws::String>
-  void SetUnitLabel(UnitLabelT&& value) {
-    m_unitLabelHasBeenSet = true;
-    m_unitLabel = std::forward<UnitLabelT>(value);
-  }
-  template <typename UnitLabelT = Aws::String>
-  MetricDefinitionRequest& WithUnitLabel(UnitLabelT&& value) {
-    SetUnitLabel(std::forward<UnitLabelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The field within the event object that the metric value is sourced from.</p>
-   * <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value.
-   * This is useful if you want to count the number of events that the filter
-   * catches. </p> <p>If this metric is sent to CloudWatch Evidently, this field will
-   * be passed to Evidently raw. Evidently will handle data extraction from the
-   * event.</p>
-   */
-  inline const Aws::String& GetValueKey() const { return m_valueKey; }
-  inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
-  template <typename ValueKeyT = Aws::String>
-  void SetValueKey(ValueKeyT&& value) {
-    m_valueKeyHasBeenSet = true;
-    m_valueKey = std::forward<ValueKeyT>(value);
-  }
-  template <typename ValueKeyT = Aws::String>
-  MetricDefinitionRequest& WithValueKey(ValueKeyT&& value) {
-    SetValueKey(std::forward<ValueKeyT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+
+  Aws::String m_valueKey;
+  bool m_valueKeyHasBeenSet = false;
+
+  Aws::String m_unitLabel;
+  bool m_unitLabelHasBeenSet = false;
+
   Aws::Map<Aws::String, Aws::String> m_dimensionKeys;
   bool m_dimensionKeysHasBeenSet = false;
 
   Aws::String m_eventPattern;
   bool m_eventPatternHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
   Aws::String m_namespace;
   bool m_namespaceHasBeenSet = false;
-
-  Aws::String m_unitLabel;
-  bool m_unitLabelHasBeenSet = false;
-
-  Aws::String m_valueKey;
-  bool m_valueKeyHasBeenSet = false;
 };
 
 }  // namespace Model

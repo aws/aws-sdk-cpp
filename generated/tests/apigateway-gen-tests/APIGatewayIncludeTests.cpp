@@ -20,6 +20,7 @@
 #include <aws/apigateway/model/ApiKeySourceType.h>
 #include <aws/apigateway/model/ApiKeysFormat.h>
 #include <aws/apigateway/model/ApiStage.h>
+#include <aws/apigateway/model/ApiStatus.h>
 #include <aws/apigateway/model/Authorizer.h>
 #include <aws/apigateway/model/AuthorizerType.h>
 #include <aws/apigateway/model/BasePathMapping.h>
@@ -92,6 +93,7 @@
 #include <aws/apigateway/model/DomainName.h>
 #include <aws/apigateway/model/DomainNameAccessAssociation.h>
 #include <aws/apigateway/model/DomainNameStatus.h>
+#include <aws/apigateway/model/EndpointAccessMode.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/apigateway/model/EndpointType.h>
 #include <aws/apigateway/model/FlushStageAuthorizersCacheRequest.h>
@@ -234,6 +236,7 @@
 #include <aws/apigateway/model/RequestValidator.h>
 #include <aws/apigateway/model/Resource.h>
 #include <aws/apigateway/model/ResourceOwner.h>
+#include <aws/apigateway/model/ResponseTransferMode.h>
 #include <aws/apigateway/model/RestApi.h>
 #include <aws/apigateway/model/RoutingMode.h>
 #include <aws/apigateway/model/SdkConfigurationProperty.h>

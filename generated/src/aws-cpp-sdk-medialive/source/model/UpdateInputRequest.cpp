@@ -84,5 +84,9 @@ Aws::String UpdateInputRequest::SerializePayload() const {
     payload.WithArray("sdiSources", std::move(sdiSourcesJsonList));
   }
 
+  if (m_specialRouterSettingsHasBeenSet) {
+    payload.WithObject("specialRouterSettings", m_specialRouterSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

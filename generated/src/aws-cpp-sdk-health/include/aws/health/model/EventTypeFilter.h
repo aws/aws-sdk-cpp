@@ -7,7 +7,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/EventTypeActionability.h>
 #include <aws/health/model/EventTypeCategory.h>
+#include <aws/health/model/EventTypePersona.h>
 
 #include <utility>
 
@@ -108,6 +110,55 @@ class EventTypeFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of actionability values to filter event types. Possible values are
+   * <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and
+   * <code>INFORMATIONAL</code>.</p>
+   */
+  inline const Aws::Vector<EventTypeActionability>& GetActionabilities() const { return m_actionabilities; }
+  inline bool ActionabilitiesHasBeenSet() const { return m_actionabilitiesHasBeenSet; }
+  template <typename ActionabilitiesT = Aws::Vector<EventTypeActionability>>
+  void SetActionabilities(ActionabilitiesT&& value) {
+    m_actionabilitiesHasBeenSet = true;
+    m_actionabilities = std::forward<ActionabilitiesT>(value);
+  }
+  template <typename ActionabilitiesT = Aws::Vector<EventTypeActionability>>
+  EventTypeFilter& WithActionabilities(ActionabilitiesT&& value) {
+    SetActionabilities(std::forward<ActionabilitiesT>(value));
+    return *this;
+  }
+  inline EventTypeFilter& AddActionabilities(EventTypeActionability value) {
+    m_actionabilitiesHasBeenSet = true;
+    m_actionabilities.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of persona classifications to filter event types. Possible values are
+   * <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+   */
+  inline const Aws::Vector<EventTypePersona>& GetPersonas() const { return m_personas; }
+  inline bool PersonasHasBeenSet() const { return m_personasHasBeenSet; }
+  template <typename PersonasT = Aws::Vector<EventTypePersona>>
+  void SetPersonas(PersonasT&& value) {
+    m_personasHasBeenSet = true;
+    m_personas = std::forward<PersonasT>(value);
+  }
+  template <typename PersonasT = Aws::Vector<EventTypePersona>>
+  EventTypeFilter& WithPersonas(PersonasT&& value) {
+    SetPersonas(std::forward<PersonasT>(value));
+    return *this;
+  }
+  inline EventTypeFilter& AddPersonas(EventTypePersona value) {
+    m_personasHasBeenSet = true;
+    m_personas.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_eventTypeCodes;
   bool m_eventTypeCodesHasBeenSet = false;
@@ -117,6 +168,12 @@ class EventTypeFilter {
 
   Aws::Vector<EventTypeCategory> m_eventTypeCategories;
   bool m_eventTypeCategoriesHasBeenSet = false;
+
+  Aws::Vector<EventTypeActionability> m_actionabilities;
+  bool m_actionabilitiesHasBeenSet = false;
+
+  Aws::Vector<EventTypePersona> m_personas;
+  bool m_personasHasBeenSet = false;
 };
 
 }  // namespace Model

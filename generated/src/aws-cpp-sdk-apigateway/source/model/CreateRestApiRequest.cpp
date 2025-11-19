@@ -67,5 +67,13 @@ Aws::String CreateRestApiRequest::SerializePayload() const {
     payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
   }
 
+  if (m_securityPolicyHasBeenSet) {
+    payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
+  }
+
+  if (m_endpointAccessModeHasBeenSet) {
+    payload.WithString("endpointAccessMode", EndpointAccessModeMapper::GetNameForEndpointAccessMode(m_endpointAccessMode));
+  }
+
   return payload.View().WriteReadable();
 }

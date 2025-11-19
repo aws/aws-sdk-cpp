@@ -17,7 +17,7 @@ namespace CostOptimizationHub {
 namespace Model {
 
 /**
- * <p>Pricing information about a Savings Plan.</p><p><h3>See Also:</h3>   <a
+ * <p>Pricing information about a Savings Plans.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/SavingsPlansPricing">AWS
  * API Reference</a></p>
  */
@@ -30,7 +30,7 @@ class SavingsPlansPricing {
 
   ///@{
   /**
-   * <p>The cost of paying for the recommended Savings Plan monthly.</p>
+   * <p>The cost of paying for the recommended Savings Plans monthly.</p>
    */
   inline double GetMonthlySavingsPlansEligibleCost() const { return m_monthlySavingsPlansEligibleCost; }
   inline bool MonthlySavingsPlansEligibleCostHasBeenSet() const { return m_monthlySavingsPlansEligibleCostHasBeenSet; }
@@ -46,7 +46,7 @@ class SavingsPlansPricing {
 
   ///@{
   /**
-   * <p>Estimated monthly commitment for the Savings Plan.</p>
+   * <p>Estimated monthly commitment for the Savings Plans.</p>
    */
   inline double GetEstimatedMonthlyCommitment() const { return m_estimatedMonthlyCommitment; }
   inline bool EstimatedMonthlyCommitmentHasBeenSet() const { return m_estimatedMonthlyCommitmentHasBeenSet; }
@@ -63,7 +63,7 @@ class SavingsPlansPricing {
   ///@{
   /**
    * <p>Estimated savings as a percentage of your overall costs after buying the
-   * Savings Plan.</p>
+   * Savings Plans.</p>
    */
   inline double GetSavingsPercentage() const { return m_savingsPercentage; }
   inline bool SavingsPercentageHasBeenSet() const { return m_savingsPercentageHasBeenSet; }
@@ -79,7 +79,7 @@ class SavingsPlansPricing {
 
   ///@{
   /**
-   * <p>Estimated On-Demand cost you will pay after buying the Savings Plan.</p>
+   * <p>Estimated On-Demand cost you will pay after buying the Savings Plans.</p>
    */
   inline double GetEstimatedOnDemandCost() const { return m_estimatedOnDemandCost; }
   inline bool EstimatedOnDemandCostHasBeenSet() const { return m_estimatedOnDemandCostHasBeenSet; }

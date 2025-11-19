@@ -108,6 +108,10 @@
 #include <aws/cloudtrail/model/ListImportFailuresResult.h>
 #include <aws/cloudtrail/model/ListImportsRequest.h>
 #include <aws/cloudtrail/model/ListImportsResult.h>
+#include <aws/cloudtrail/model/ListInsightsDataDimensionKey.h>
+#include <aws/cloudtrail/model/ListInsightsDataRequest.h>
+#include <aws/cloudtrail/model/ListInsightsDataResult.h>
+#include <aws/cloudtrail/model/ListInsightsDataType.h>
 #include <aws/cloudtrail/model/ListInsightsMetricDataRequest.h>
 #include <aws/cloudtrail/model/ListInsightsMetricDataResult.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
@@ -156,6 +160,7 @@
 #include <aws/cloudtrail/model/SearchSampleQueriesResult.h>
 #include <aws/cloudtrail/model/SearchSampleQueriesSearchResult.h>
 #include <aws/cloudtrail/model/SourceConfig.h>
+#include <aws/cloudtrail/model/SourceEventCategory.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshRequest.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshResult.h>
 #include <aws/cloudtrail/model/StartEventDataStoreIngestionRequest.h>
