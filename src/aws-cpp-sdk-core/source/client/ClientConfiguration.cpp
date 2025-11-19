@@ -220,6 +220,10 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.writeRateLimiter = nullptr;
     clientConfig.readRateLimiter = nullptr;
     clientConfig.httpLibOverride = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+
+    // Users can explicitly set CLIENT_IMPLEMENTATION if their custom client handles chunking
+    clientConfig.httpClientChunkedMode = HttpClientChunkedMode::DEFAULT;
+    
     clientConfig.followRedirects = FollowRedirectsPolicy::DEFAULT;
     clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;

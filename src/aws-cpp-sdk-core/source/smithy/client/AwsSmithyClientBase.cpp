@@ -25,6 +25,7 @@
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 
 using namespace smithy::client;
+using namespace smithy::client::features;
 using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
 
@@ -102,7 +103,17 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
   m_serviceUserAgentName = other.m_serviceUserAgentName;
   m_httpClient = std::move(httpClient);
   m_errorMarshaller = std::move(errorMarshaller);
-  m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")};
+  
+  // Create modified config for chunking interceptor
+  Aws::Client::ClientConfiguration chunkingConfig(*m_clientConfig);
+  if (!m_httpClient->IsDefaultAwsHttpClient()) {
+    chunkingConfig.httpClientChunkedMode = Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+  }
+  
+  m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{
+      Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
+      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", chunkingConfig)
+  };
 
   baseCopyInit();
 }
