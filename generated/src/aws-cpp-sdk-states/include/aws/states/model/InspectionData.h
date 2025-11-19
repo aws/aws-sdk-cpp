@@ -8,6 +8,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/model/InspectionDataRequest.h>
 #include <aws/states/model/InspectionDataResponse.h>
+#include <aws/states/model/InspectionErrorDetails.h>
 
 #include <utility>
 
@@ -229,6 +230,150 @@ class InspectionData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object containing data about a handled exception in the tested state.</p>
+   */
+  inline const InspectionErrorDetails& GetErrorDetails() const { return m_errorDetails; }
+  inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
+  template <typename ErrorDetailsT = InspectionErrorDetails>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = InspectionErrorDetails>
+  InspectionData& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The effective input after the ItemsPath filter is applied. Not populated when
+   * the QueryLanguage is JSONata.</p>
+   */
+  inline const Aws::String& GetAfterItemsPath() const { return m_afterItemsPath; }
+  inline bool AfterItemsPathHasBeenSet() const { return m_afterItemsPathHasBeenSet; }
+  template <typename AfterItemsPathT = Aws::String>
+  void SetAfterItemsPath(AfterItemsPathT&& value) {
+    m_afterItemsPathHasBeenSet = true;
+    m_afterItemsPath = std::forward<AfterItemsPathT>(value);
+  }
+  template <typename AfterItemsPathT = Aws::String>
+  InspectionData& WithAfterItemsPath(AfterItemsPathT&& value) {
+    SetAfterItemsPath(std::forward<AfterItemsPathT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array containing the inputs for each Map iteration, transformed by the
+   * ItemSelector specified in a Map state.</p>
+   */
+  inline const Aws::String& GetAfterItemSelector() const { return m_afterItemSelector; }
+  inline bool AfterItemSelectorHasBeenSet() const { return m_afterItemSelectorHasBeenSet; }
+  template <typename AfterItemSelectorT = Aws::String>
+  void SetAfterItemSelector(AfterItemSelectorT&& value) {
+    m_afterItemSelectorHasBeenSet = true;
+    m_afterItemSelector = std::forward<AfterItemSelectorT>(value);
+  }
+  template <typename AfterItemSelectorT = Aws::String>
+  InspectionData& WithAfterItemSelector(AfterItemSelectorT&& value) {
+    SetAfterItemSelector(std::forward<AfterItemSelectorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The effective input after the ItemBatcher filter is applied in a Map
+   * state.</p>
+   */
+  inline const Aws::String& GetAfterItemBatcher() const { return m_afterItemBatcher; }
+  inline bool AfterItemBatcherHasBeenSet() const { return m_afterItemBatcherHasBeenSet; }
+  template <typename AfterItemBatcherT = Aws::String>
+  void SetAfterItemBatcher(AfterItemBatcherT&& value) {
+    m_afterItemBatcherHasBeenSet = true;
+    m_afterItemBatcher = std::forward<AfterItemBatcherT>(value);
+  }
+  template <typename AfterItemBatcherT = Aws::String>
+  InspectionData& WithAfterItemBatcher(AfterItemBatcherT&& value) {
+    SetAfterItemBatcher(std::forward<AfterItemBatcherT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The effective input after the ItemsPointer filter is applied in a Map
+   * state.</p>
+   */
+  inline const Aws::String& GetAfterItemsPointer() const { return m_afterItemsPointer; }
+  inline bool AfterItemsPointerHasBeenSet() const { return m_afterItemsPointerHasBeenSet; }
+  template <typename AfterItemsPointerT = Aws::String>
+  void SetAfterItemsPointer(AfterItemsPointerT&& value) {
+    m_afterItemsPointerHasBeenSet = true;
+    m_afterItemsPointer = std::forward<AfterItemsPointerT>(value);
+  }
+  template <typename AfterItemsPointerT = Aws::String>
+  InspectionData& WithAfterItemsPointer(AfterItemsPointerT&& value) {
+    SetAfterItemsPointer(std::forward<AfterItemsPointerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The tolerated failure threshold for a Map state as defined in number of Map
+   * state iterations.</p>
+   */
+  inline int GetToleratedFailureCount() const { return m_toleratedFailureCount; }
+  inline bool ToleratedFailureCountHasBeenSet() const { return m_toleratedFailureCountHasBeenSet; }
+  inline void SetToleratedFailureCount(int value) {
+    m_toleratedFailureCountHasBeenSet = true;
+    m_toleratedFailureCount = value;
+  }
+  inline InspectionData& WithToleratedFailureCount(int value) {
+    SetToleratedFailureCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The tolerated failure threshold for a Map state as defined in percentage of
+   * Map state iterations.</p>
+   */
+  inline double GetToleratedFailurePercentage() const { return m_toleratedFailurePercentage; }
+  inline bool ToleratedFailurePercentageHasBeenSet() const { return m_toleratedFailurePercentageHasBeenSet; }
+  inline void SetToleratedFailurePercentage(double value) {
+    m_toleratedFailurePercentageHasBeenSet = true;
+    m_toleratedFailurePercentage = value;
+  }
+  inline InspectionData& WithToleratedFailurePercentage(double value) {
+    SetToleratedFailurePercentage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The max concurrency of the Map state.</p>
+   */
+  inline int GetMaxConcurrency() const { return m_maxConcurrency; }
+  inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
+  inline void SetMaxConcurrency(int value) {
+    m_maxConcurrencyHasBeenSet = true;
+    m_maxConcurrency = value;
+  }
+  inline InspectionData& WithMaxConcurrency(int value) {
+    SetMaxConcurrency(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_input;
   bool m_inputHasBeenSet = false;
@@ -259,6 +404,30 @@ class InspectionData {
 
   Aws::String m_variables;
   bool m_variablesHasBeenSet = false;
+
+  InspectionErrorDetails m_errorDetails;
+  bool m_errorDetailsHasBeenSet = false;
+
+  Aws::String m_afterItemsPath;
+  bool m_afterItemsPathHasBeenSet = false;
+
+  Aws::String m_afterItemSelector;
+  bool m_afterItemSelectorHasBeenSet = false;
+
+  Aws::String m_afterItemBatcher;
+  bool m_afterItemBatcherHasBeenSet = false;
+
+  Aws::String m_afterItemsPointer;
+  bool m_afterItemsPointerHasBeenSet = false;
+
+  int m_toleratedFailureCount{0};
+  bool m_toleratedFailureCountHasBeenSet = false;
+
+  double m_toleratedFailurePercentage{0.0};
+  bool m_toleratedFailurePercentageHasBeenSet = false;
+
+  int m_maxConcurrency{0};
+  bool m_maxConcurrencyHasBeenSet = false;
 };
 
 }  // namespace Model

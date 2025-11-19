@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BillingConductor {
 namespace Model {
-enum class BillingGroupStatus { NOT_SET, ACTIVE, PRIMARY_ACCOUNT_MISSING };
+enum class BillingGroupStatus { NOT_SET, ACTIVE, PRIMARY_ACCOUNT_MISSING, PENDING };
 
 namespace BillingGroupStatusMapper {
 AWS_BILLINGCONDUCTOR_API BillingGroupStatus GetBillingGroupStatusForName(const Aws::String& name);

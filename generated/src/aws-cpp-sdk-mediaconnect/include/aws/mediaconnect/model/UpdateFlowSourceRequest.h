@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/UpdateGatewayBridgeSourceRequest.h>
 
@@ -404,6 +406,42 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to enable or disable router integration for this flow
+   * source.</p>
+   */
+  inline State GetRouterIntegrationState() const { return m_routerIntegrationState; }
+  inline bool RouterIntegrationStateHasBeenSet() const { return m_routerIntegrationStateHasBeenSet; }
+  inline void SetRouterIntegrationState(State value) {
+    m_routerIntegrationStateHasBeenSet = true;
+    m_routerIntegrationState = value;
+  }
+  inline UpdateFlowSourceRequest& WithRouterIntegrationState(State value) {
+    SetRouterIntegrationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The encryption configuration for the flow source when router integration is
+   * enabled.</p>
+   */
+  inline const FlowTransitEncryption& GetRouterIntegrationTransitDecryption() const { return m_routerIntegrationTransitDecryption; }
+  inline bool RouterIntegrationTransitDecryptionHasBeenSet() const { return m_routerIntegrationTransitDecryptionHasBeenSet; }
+  template <typename RouterIntegrationTransitDecryptionT = FlowTransitEncryption>
+  void SetRouterIntegrationTransitDecryption(RouterIntegrationTransitDecryptionT&& value) {
+    m_routerIntegrationTransitDecryptionHasBeenSet = true;
+    m_routerIntegrationTransitDecryption = std::forward<RouterIntegrationTransitDecryptionT>(value);
+  }
+  template <typename RouterIntegrationTransitDecryptionT = FlowTransitEncryption>
+  UpdateFlowSourceRequest& WithRouterIntegrationTransitDecryption(RouterIntegrationTransitDecryptionT&& value) {
+    SetRouterIntegrationTransitDecryption(std::forward<RouterIntegrationTransitDecryptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateEncryption m_decryption;
   bool m_decryptionHasBeenSet = false;
@@ -464,6 +502,12 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
 
   UpdateGatewayBridgeSourceRequest m_gatewayBridgeSource;
   bool m_gatewayBridgeSourceHasBeenSet = false;
+
+  State m_routerIntegrationState{State::NOT_SET};
+  bool m_routerIntegrationStateHasBeenSet = false;
+
+  FlowTransitEncryption m_routerIntegrationTransitDecryption;
+  bool m_routerIntegrationTransitDecryptionHasBeenSet = false;
 };
 
 }  // namespace Model

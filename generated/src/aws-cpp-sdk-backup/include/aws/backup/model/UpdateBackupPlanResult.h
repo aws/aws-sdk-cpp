@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
+#include <aws/backup/model/ScanSetting.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -127,6 +128,30 @@ class UpdateBackupPlanResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Contains your scanning configuration for the backup plan and includes the
+   * Malware scanner, your selected resources, and scanner role.</p>
+   */
+  inline const Aws::Vector<ScanSetting>& GetScanSettings() const { return m_scanSettings; }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  void SetScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings = std::forward<ScanSettingsT>(value);
+  }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  UpdateBackupPlanResult& WithScanSettings(ScanSettingsT&& value) {
+    SetScanSettings(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  template <typename ScanSettingsT = ScanSetting>
+  UpdateBackupPlanResult& AddScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings.emplace_back(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -155,6 +180,9 @@ class UpdateBackupPlanResult {
 
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
   bool m_advancedBackupSettingsHasBeenSet = false;
+
+  Aws::Vector<ScanSetting> m_scanSettings;
+  bool m_scanSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

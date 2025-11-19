@@ -126,6 +126,10 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator=(JsonView jsonV
     m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
     m_encryptionKeyTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AggregatedScanResult")) {
+    m_aggregatedScanResult = jsonValue.GetObject("AggregatedScanResult");
+    m_aggregatedScanResultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +242,10 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const {
 
   if (m_encryptionKeyTypeHasBeenSet) {
     payload.WithString("EncryptionKeyType", EncryptionKeyTypeMapper::GetNameForEncryptionKeyType(m_encryptionKeyType));
+  }
+
+  if (m_aggregatedScanResultHasBeenSet) {
+    payload.WithObject("AggregatedScanResult", m_aggregatedScanResult.Jsonize());
   }
 
   return payload;

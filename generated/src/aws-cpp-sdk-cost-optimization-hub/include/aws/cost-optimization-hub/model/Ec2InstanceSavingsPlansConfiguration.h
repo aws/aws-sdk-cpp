@@ -106,7 +106,7 @@ class Ec2InstanceSavingsPlansConfiguration {
 
   ///@{
   /**
-   * <p>The instance family of the recommended Savings Plan.</p>
+   * <p>The instance family of the recommended Savings Plans.</p>
    */
   inline const Aws::String& GetInstanceFamily() const { return m_instanceFamily; }
   inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }

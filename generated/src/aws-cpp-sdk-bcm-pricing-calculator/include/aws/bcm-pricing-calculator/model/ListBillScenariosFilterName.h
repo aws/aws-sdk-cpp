@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BCMPricingCalculator {
 namespace Model {
-enum class ListBillScenariosFilterName { NOT_SET, STATUS, NAME };
+enum class ListBillScenariosFilterName { NOT_SET, STATUS, NAME, GROUP_SHARING_PREFERENCE, COST_CATEGORY_ARN };
 
 namespace ListBillScenariosFilterNameMapper {
 AWS_BCMPRICINGCALCULATOR_API ListBillScenariosFilterName GetListBillScenariosFilterNameForName(const Aws::String& name);

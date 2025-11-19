@@ -9,6 +9,7 @@
 #include <aws/fsx/model/DiskIopsConfiguration.h>
 #include <aws/fsx/model/SelfManagedActiveDirectoryConfigurationUpdates.h>
 #include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
+#include <aws/fsx/model/WindowsFsrmConfiguration.h>
 
 #include <utility>
 
@@ -182,6 +183,25 @@ class UpdateFileSystemWindowsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for
+   * Windows File Server uses for the file system. FSRM is disabled by default.</p>
+   */
+  inline const WindowsFsrmConfiguration& GetFsrmConfiguration() const { return m_fsrmConfiguration; }
+  inline bool FsrmConfigurationHasBeenSet() const { return m_fsrmConfigurationHasBeenSet; }
+  template <typename FsrmConfigurationT = WindowsFsrmConfiguration>
+  void SetFsrmConfiguration(FsrmConfigurationT&& value) {
+    m_fsrmConfigurationHasBeenSet = true;
+    m_fsrmConfiguration = std::forward<FsrmConfigurationT>(value);
+  }
+  template <typename FsrmConfigurationT = WindowsFsrmConfiguration>
+  UpdateFileSystemWindowsConfiguration& WithFsrmConfiguration(FsrmConfigurationT&& value) {
+    SetFsrmConfiguration(std::forward<FsrmConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_weeklyMaintenanceStartTime;
   bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
@@ -203,6 +223,9 @@ class UpdateFileSystemWindowsConfiguration {
 
   DiskIopsConfiguration m_diskIopsConfiguration;
   bool m_diskIopsConfigurationHasBeenSet = false;
+
+  WindowsFsrmConfiguration m_fsrmConfiguration;
+  bool m_fsrmConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

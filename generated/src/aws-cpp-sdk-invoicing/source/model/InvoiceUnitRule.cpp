@@ -25,6 +25,14 @@ InvoiceUnitRule& InvoiceUnitRule::operator=(JsonView jsonValue) {
     }
     m_linkedAccountsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillSourceAccounts")) {
+    Aws::Utils::Array<JsonView> billSourceAccountsJsonList = jsonValue.GetArray("BillSourceAccounts");
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      m_billSourceAccounts.push_back(billSourceAccountsJsonList[billSourceAccountsIndex].AsString());
+    }
+    m_billSourceAccountsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +45,15 @@ JsonValue InvoiceUnitRule::Jsonize() const {
       linkedAccountsJsonList[linkedAccountsIndex].AsString(m_linkedAccounts[linkedAccountsIndex]);
     }
     payload.WithArray("LinkedAccounts", std::move(linkedAccountsJsonList));
+  }
+
+  if (m_billSourceAccountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> billSourceAccountsJsonList(m_billSourceAccounts.size());
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      billSourceAccountsJsonList[billSourceAccountsIndex].AsString(m_billSourceAccounts[billSourceAccountsIndex]);
+    }
+    payload.WithArray("BillSourceAccounts", std::move(billSourceAccountsJsonList));
   }
 
   return payload;

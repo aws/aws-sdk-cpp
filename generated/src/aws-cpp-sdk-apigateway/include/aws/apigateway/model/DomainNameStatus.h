@@ -10,7 +10,7 @@
 namespace Aws {
 namespace APIGateway {
 namespace Model {
-enum class DomainNameStatus { NOT_SET, AVAILABLE, UPDATING, PENDING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION };
+enum class DomainNameStatus { NOT_SET, AVAILABLE, UPDATING, PENDING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION, FAILED };
 
 namespace DomainNameStatusMapper {
 AWS_APIGATEWAY_API DomainNameStatus GetDomainNameStatusForName(const Aws::String& name);

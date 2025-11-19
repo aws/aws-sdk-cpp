@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
+#include <aws/billingconductor/model/BillingGroupType.h>
 #include <aws/billingconductor/model/ComputationPreference.h>
 #include <aws/billingconductor/model/ListBillingGroupAccountGrouping.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -223,6 +224,22 @@ class BillingGroupListElement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The type of billing group. </p>
+   */
+  inline BillingGroupType GetBillingGroupType() const { return m_billingGroupType; }
+  inline bool BillingGroupTypeHasBeenSet() const { return m_billingGroupTypeHasBeenSet; }
+  inline void SetBillingGroupType(BillingGroupType value) {
+    m_billingGroupTypeHasBeenSet = true;
+    m_billingGroupType = value;
+  }
+  inline BillingGroupListElement& WithBillingGroupType(BillingGroupType value) {
+    SetBillingGroupType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -256,6 +273,9 @@ class BillingGroupListElement {
 
   ListBillingGroupAccountGrouping m_accountGrouping;
   bool m_accountGroupingHasBeenSet = false;
+
+  BillingGroupType m_billingGroupType{BillingGroupType::NOT_SET};
+  bool m_billingGroupTypeHasBeenSet = false;
 };
 
 }  // namespace Model

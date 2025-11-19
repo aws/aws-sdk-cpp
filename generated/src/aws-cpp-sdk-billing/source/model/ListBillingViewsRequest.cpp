@@ -36,6 +36,14 @@ Aws::String ListBillingViewsRequest::SerializePayload() const {
     payload.WithArray("billingViewTypes", std::move(billingViewTypesJsonList));
   }
 
+  if (m_namesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
+    for (unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex) {
+      namesJsonList[namesIndex].AsObject(m_names[namesIndex].Jsonize());
+    }
+    payload.WithArray("names", std::move(namesJsonList));
+  }
+
   if (m_ownerAccountIdHasBeenSet) {
     payload.WithString("ownerAccountId", m_ownerAccountId);
   }

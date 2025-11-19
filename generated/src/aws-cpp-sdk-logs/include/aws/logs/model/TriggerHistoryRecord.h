@@ -55,8 +55,8 @@ class TriggerHistoryRecord {
 
   ///@{
   /**
-   * <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or
-   * INVALID_QUERY).</p>
+   * <p>The status of the query execution (Running, Complete, Failed, Timeout, or
+   * InvalidQuery).</p>
    */
   inline ExecutionStatus GetExecutionStatus() const { return m_executionStatus; }
   inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
@@ -108,8 +108,7 @@ class TriggerHistoryRecord {
   ///@{
   /**
    * <p>The list of destinations where the scheduled query results were delivered for
-   * this execution. This includes S3 buckets and EventBridge targets configured for
-   * the scheduled query.</p>
+   * this execution. This includes S3 buckets configured for the scheduled query.</p>
    */
   inline const Aws::Vector<ScheduledQueryDestination>& GetDestinations() const { return m_destinations; }
   inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/ItemDetails.h>
 #include <aws/guardduty/model/ItemPath.h>
 
 #include <utility>
@@ -95,6 +96,65 @@ class Threat {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of occurrences of this specific threat detected during the
+   * scan.</p>
+   */
+  inline long long GetCount() const { return m_count; }
+  inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+  inline void SetCount(long long value) {
+    m_countHasBeenSet = true;
+    m_count = value;
+  }
+  inline Threat& WithCount(long long value) {
+    SetCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The hash identifier of the detected malware threat.</p>
+   */
+  inline const Aws::String& GetHash() const { return m_hash; }
+  inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
+  template <typename HashT = Aws::String>
+  void SetHash(HashT&& value) {
+    m_hashHasBeenSet = true;
+    m_hash = std::forward<HashT>(value);
+  }
+  template <typename HashT = Aws::String>
+  Threat& WithHash(HashT&& value) {
+    SetHash(std::forward<HashT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Detailed information about the detected malware threat.</p>
+   */
+  inline const Aws::Vector<ItemDetails>& GetItemDetails() const { return m_itemDetails; }
+  inline bool ItemDetailsHasBeenSet() const { return m_itemDetailsHasBeenSet; }
+  template <typename ItemDetailsT = Aws::Vector<ItemDetails>>
+  void SetItemDetails(ItemDetailsT&& value) {
+    m_itemDetailsHasBeenSet = true;
+    m_itemDetails = std::forward<ItemDetailsT>(value);
+  }
+  template <typename ItemDetailsT = Aws::Vector<ItemDetails>>
+  Threat& WithItemDetails(ItemDetailsT&& value) {
+    SetItemDetails(std::forward<ItemDetailsT>(value));
+    return *this;
+  }
+  template <typename ItemDetailsT = ItemDetails>
+  Threat& AddItemDetails(ItemDetailsT&& value) {
+    m_itemDetailsHasBeenSet = true;
+    m_itemDetails.emplace_back(std::forward<ItemDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -104,6 +164,15 @@ class Threat {
 
   Aws::Vector<ItemPath> m_itemPaths;
   bool m_itemPathsHasBeenSet = false;
+
+  long long m_count{0};
+  bool m_countHasBeenSet = false;
+
+  Aws::String m_hash;
+  bool m_hashHasBeenSet = false;
+
+  Aws::Vector<ItemDetails> m_itemDetails;
+  bool m_itemDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

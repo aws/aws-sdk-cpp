@@ -19,6 +19,7 @@ static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAl
 static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflict");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
+static const int FEATURE_DISABLED_HASH = HashingUtils::HashString("FeatureDisabled");
 static const int INVALID_AUTHENTICATION_CODE_HASH = HashingUtils::HashString("InvalidAuthenticationCode");
 static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserType");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
@@ -32,6 +33,7 @@ static const int POLICY_NOT_ATTACHABLE_HASH = HashingUtils::HashString("PolicyNo
 static const int ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR_HASH =
     HashingUtils::HashString("AccountNotManagementOrDelegatedAdministratorException");
 static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificate");
+static const int FEATURE_ENABLED_HASH = HashingUtils::HashString("FeatureEnabled");
 static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
 static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncoding");
 static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
@@ -61,6 +63,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == FEATURE_DISABLED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::FEATURE_DISABLED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_AUTHENTICATION_CODE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::INVALID_AUTHENTICATION_CODE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_USER_TYPE_HASH) {
@@ -86,6 +90,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DUPLICATE_CERTIFICATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DUPLICATE_CERTIFICATE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == FEATURE_ENABLED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::FEATURE_ENABLED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PASSWORD_POLICY_VIOLATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::PASSWORD_POLICY_VIOLATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH) {

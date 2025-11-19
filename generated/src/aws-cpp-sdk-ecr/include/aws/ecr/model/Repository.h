@@ -152,9 +152,8 @@ class Repository {
 
   ///@{
   /**
-   * <p>The image tag mutability exclusion filters associated with the repository.
-   * These filters specify which image tags can override the repository's default
-   * image tag mutability setting.</p>
+   * <p>A list of filters that specify which image tags are excluded from the
+   * repository's image tag mutability setting.</p>
    */
   inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const {
     return m_imageTagMutabilityExclusionFilters;

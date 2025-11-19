@@ -35,6 +35,28 @@ class ListInsightsMetricDataRequest : public CloudTrailRequest {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name(ARN) or name of the trail for which you want to
+   * retrieve Insights metrics data. This parameter should only be provided to fetch
+   * Insights metrics data generated on trails logging data events. This parameter is
+   * not required for Insights metric data generated on trails logging management
+   * events.</p>
+   */
+  inline const Aws::String& GetTrailName() const { return m_trailName; }
+  inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
+  template <typename TrailNameT = Aws::String>
+  void SetTrailName(TrailNameT&& value) {
+    m_trailNameHasBeenSet = true;
+    m_trailName = std::forward<TrailNameT>(value);
+  }
+  template <typename TrailNameT = Aws::String>
+  ListInsightsMetricDataRequest& WithTrailName(TrailNameT&& value) {
+    SetTrailName(std::forward<TrailNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services service to which the request was made, such as
    * <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
    */
@@ -226,6 +248,9 @@ class ListInsightsMetricDataRequest : public CloudTrailRequest {
   }
   ///@}
  private:
+  Aws::String m_trailName;
+  bool m_trailNameHasBeenSet = false;
+
   Aws::String m_eventSource;
   bool m_eventSourceHasBeenSet = false;
 

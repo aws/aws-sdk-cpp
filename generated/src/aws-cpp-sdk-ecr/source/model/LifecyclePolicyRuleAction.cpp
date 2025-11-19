@@ -22,6 +22,11 @@ LifecyclePolicyRuleAction& LifecyclePolicyRuleAction::operator=(JsonView jsonVal
     m_type = ImageActionTypeMapper::GetImageActionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetStorageClass")) {
+    m_targetStorageClass =
+        LifecyclePolicyTargetStorageClassMapper::GetLifecyclePolicyTargetStorageClassForName(jsonValue.GetString("targetStorageClass"));
+    m_targetStorageClassHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +35,11 @@ JsonValue LifecyclePolicyRuleAction::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", ImageActionTypeMapper::GetNameForImageActionType(m_type));
+  }
+
+  if (m_targetStorageClassHasBeenSet) {
+    payload.WithString("targetStorageClass",
+                       LifecyclePolicyTargetStorageClassMapper::GetNameForLifecyclePolicyTargetStorageClass(m_targetStorageClass));
   }
 
   return payload;

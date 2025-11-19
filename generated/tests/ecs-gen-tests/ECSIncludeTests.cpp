@@ -154,6 +154,7 @@
 #include <aws/ecs/model/HostVolumeProperties.h>
 #include <aws/ecs/model/InferenceAccelerator.h>
 #include <aws/ecs/model/InferenceAcceleratorOverride.h>
+#include <aws/ecs/model/InfrastructureOptimization.h>
 #include <aws/ecs/model/InstanceGeneration.h>
 #include <aws/ecs/model/InstanceHealthCheckResult.h>
 #include <aws/ecs/model/InstanceHealthCheckState.h>

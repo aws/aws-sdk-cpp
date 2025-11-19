@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorRequest.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
+#include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -92,6 +93,42 @@ class CreateBillScenarioRequest : public BCMPricingCalculatorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The setting for the reserved instance and savings plan group sharing used in
+   * this estimate.</p>
+   */
+  inline GroupSharingPreferenceEnum GetGroupSharingPreference() const { return m_groupSharingPreference; }
+  inline bool GroupSharingPreferenceHasBeenSet() const { return m_groupSharingPreferenceHasBeenSet; }
+  inline void SetGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    m_groupSharingPreferenceHasBeenSet = true;
+    m_groupSharingPreference = value;
+  }
+  inline CreateBillScenarioRequest& WithGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    SetGroupSharingPreference(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The arn of the cost category used in the reserved and prioritized group
+   * sharing.</p>
+   */
+  inline const Aws::String& GetCostCategoryGroupSharingPreferenceArn() const { return m_costCategoryGroupSharingPreferenceArn; }
+  inline bool CostCategoryGroupSharingPreferenceArnHasBeenSet() const { return m_costCategoryGroupSharingPreferenceArnHasBeenSet; }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  void SetCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+    m_costCategoryGroupSharingPreferenceArn = std::forward<CostCategoryGroupSharingPreferenceArnT>(value);
+  }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  CreateBillScenarioRequest& WithCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    SetCostCategoryGroupSharingPreferenceArn(std::forward<CostCategoryGroupSharingPreferenceArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -101,6 +138,12 @@ class CreateBillScenarioRequest : public BCMPricingCalculatorRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
+  bool m_groupSharingPreferenceHasBeenSet = false;
+
+  Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 };
 
 }  // namespace Model

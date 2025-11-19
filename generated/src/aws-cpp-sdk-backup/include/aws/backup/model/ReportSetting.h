@@ -38,7 +38,7 @@ class ReportSetting {
    * <p>Identifies the report template for the report. Reports are built using a
    * report template. The report templates are:</p> <p>
    * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-   * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+   * | COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT</code> </p>
    */
   inline const Aws::String& GetReportTemplate() const { return m_reportTemplate; }
   inline bool ReportTemplateHasBeenSet() const { return m_reportTemplateHasBeenSet; }

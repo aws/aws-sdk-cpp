@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class PerObjectSyncStatus { NOT_SET, PENDING, IN_SYNC, CAPACITY_CONSTRAINED };
+enum class PerObjectSyncStatus { NOT_SET, PENDING, IN_SYNC, CAPACITY_CONSTRAINED, NOT_SUBSCRIBED, DEPRECATED };
 
 namespace PerObjectSyncStatusMapper {
 AWS_NETWORKFIREWALL_API PerObjectSyncStatus GetPerObjectSyncStatusForName(const Aws::String& name);

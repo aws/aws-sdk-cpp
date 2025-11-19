@@ -164,6 +164,24 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+   */
+  inline const Aws::String& GetTenantId() const { return m_tenantId; }
+  inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
+  template <typename TenantIdT = Aws::String>
+  void SetTenantId(TenantIdT&& value) {
+    m_tenantIdHasBeenSet = true;
+    m_tenantId = std::forward<TenantIdT>(value);
+  }
+  template <typename TenantIdT = Aws::String>
+  InvokeWithResponseStreamRequest& WithTenantId(TenantIdT&& value) {
+    SetTenantId(std::forward<TenantIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
   bool m_functionNameHasBeenSet = false;
@@ -180,6 +198,8 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
   Aws::String m_qualifier;
   bool m_qualifierHasBeenSet = false;
 
+  Aws::String m_tenantId;
+  bool m_tenantIdHasBeenSet = false;
   InvokeWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

@@ -1138,6 +1138,32 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Returns scan job details for the specified ScanJobID.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeScanJobOutcome DescribeScanJob(const Model::DescribeScanJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeScanJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeScanJobRequestT = Model::DescribeScanJobRequest>
+  Model::DescribeScanJobOutcomeCallable DescribeScanJobCallable(const DescribeScanJobRequestT& request) const {
+    return SubmitCallable(&BackupClient::DescribeScanJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeScanJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeScanJobRequestT = Model::DescribeScanJobRequest>
+  void DescribeScanJobAsync(const DescribeScanJobRequestT& request, const DescribeScanJobResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::DescribeScanJob, request, handler, context);
+  }
+
+  /**
    * <p>Removes the association between an MPA approval team and a backup vault,
    * disabling the MPA approval workflow for restore operations.</p><p><h3>See
    * Also:</h3>   <a
@@ -2423,6 +2449,61 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>This is a request for a summary of scan jobs created or running within the
+   * most recent 30 days.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScanJobSummariesOutcome ListScanJobSummaries(const Model::ListScanJobSummariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScanJobSummaries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListScanJobSummariesRequestT = Model::ListScanJobSummariesRequest>
+  Model::ListScanJobSummariesOutcomeCallable ListScanJobSummariesCallable(const ListScanJobSummariesRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListScanJobSummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListScanJobSummaries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListScanJobSummariesRequestT = Model::ListScanJobSummariesRequest>
+  void ListScanJobSummariesAsync(const ListScanJobSummariesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListScanJobSummariesRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListScanJobSummaries, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of existing scan jobs for an authenticated account for the
+   * last 30 days.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScanJobsOutcome ListScanJobs(const Model::ListScanJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScanJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListScanJobsRequestT = Model::ListScanJobsRequest>
+  Model::ListScanJobsOutcomeCallable ListScanJobsCallable(const ListScanJobsRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListScanJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListScanJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListScanJobsRequestT = Model::ListScanJobsRequest>
+  void ListScanJobsAsync(const ListScanJobsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListScanJobsRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListScanJobs, request, handler, context);
+  }
+
+  /**
    * <p>Returns the tags assigned to the resource, such as a target recovery point,
    * backup plan, or backup vault.</p> <p>This operation returns results depending on
    * the resource type used in the value for <code>resourceArn</code>. For example,
@@ -2760,6 +2841,31 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   void StartRestoreJobAsync(const StartRestoreJobRequestT& request, const StartRestoreJobResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::StartRestoreJob, request, handler, context);
+  }
+
+  /**
+   * <p>Starts scanning jobs for specific resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartScanJobOutcome StartScanJob(const Model::StartScanJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartScanJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartScanJobRequestT = Model::StartScanJobRequest>
+  Model::StartScanJobOutcomeCallable StartScanJobCallable(const StartScanJobRequestT& request) const {
+    return SubmitCallable(&BackupClient::StartScanJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartScanJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartScanJobRequestT = Model::StartScanJobRequest>
+  void StartScanJobAsync(const StartScanJobRequestT& request, const StartScanJobResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::StartScanJob, request, handler, context);
   }
 
   /**

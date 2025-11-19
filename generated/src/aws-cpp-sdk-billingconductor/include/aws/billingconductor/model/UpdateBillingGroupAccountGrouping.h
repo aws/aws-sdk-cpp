@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -45,9 +48,32 @@ class UpdateBillingGroupAccountGrouping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) that identifies the transfer relationship.
+   * Note: Modifications to the ResponsibilityTransferArn are not permitted for
+   * existing billing groups. </p>
+   */
+  inline const Aws::String& GetResponsibilityTransferArn() const { return m_responsibilityTransferArn; }
+  inline bool ResponsibilityTransferArnHasBeenSet() const { return m_responsibilityTransferArnHasBeenSet; }
+  template <typename ResponsibilityTransferArnT = Aws::String>
+  void SetResponsibilityTransferArn(ResponsibilityTransferArnT&& value) {
+    m_responsibilityTransferArnHasBeenSet = true;
+    m_responsibilityTransferArn = std::forward<ResponsibilityTransferArnT>(value);
+  }
+  template <typename ResponsibilityTransferArnT = Aws::String>
+  UpdateBillingGroupAccountGrouping& WithResponsibilityTransferArn(ResponsibilityTransferArnT&& value) {
+    SetResponsibilityTransferArn(std::forward<ResponsibilityTransferArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_autoAssociate{false};
   bool m_autoAssociateHasBeenSet = false;
+
+  Aws::String m_responsibilityTransferArn;
+  bool m_responsibilityTransferArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/model/ImageActionType.h>
+#include <aws/ecr/model/LifecyclePolicyTargetStorageClass.h>
 
 #include <utility>
 
@@ -46,9 +47,29 @@ class LifecyclePolicyRuleAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The target storage class for the action. This is only present when the
+   * <code>type</code> is <code>TRANSITION.</code> </p>
+   */
+  inline LifecyclePolicyTargetStorageClass GetTargetStorageClass() const { return m_targetStorageClass; }
+  inline bool TargetStorageClassHasBeenSet() const { return m_targetStorageClassHasBeenSet; }
+  inline void SetTargetStorageClass(LifecyclePolicyTargetStorageClass value) {
+    m_targetStorageClassHasBeenSet = true;
+    m_targetStorageClass = value;
+  }
+  inline LifecyclePolicyRuleAction& WithTargetStorageClass(LifecyclePolicyTargetStorageClass value) {
+    SetTargetStorageClass(value);
+    return *this;
+  }
+  ///@}
  private:
   ImageActionType m_type{ImageActionType::NOT_SET};
   bool m_typeHasBeenSet = false;
+
+  LifecyclePolicyTargetStorageClass m_targetStorageClass{LifecyclePolicyTargetStorageClass::NOT_SET};
+  bool m_targetStorageClassHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -1997,6 +1997,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Disables the outbound identity federation feature for your Amazon Web
+   * Services account. When disabled, IAM principals in the account cannot use the
+   * <code>GetWebIdentityToken</code> API to obtain JSON Web Tokens (JWTs) for
+   * authentication with external services. This operation does not affect tokens
+   * that were issued before the feature was disabled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableOutboundWebIdentityFederationOutcome DisableOutboundWebIdentityFederation(
+      const Model::DisableOutboundWebIdentityFederationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DisableOutboundWebIdentityFederation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisableOutboundWebIdentityFederationRequestT = Model::DisableOutboundWebIdentityFederationRequest>
+  Model::DisableOutboundWebIdentityFederationOutcomeCallable DisableOutboundWebIdentityFederationCallable(
+      const DisableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::DisableOutboundWebIdentityFederation, request);
+  }
+
+  /**
+   * An Async wrapper for DisableOutboundWebIdentityFederation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisableOutboundWebIdentityFederationRequestT = Model::DisableOutboundWebIdentityFederationRequest>
+  void DisableOutboundWebIdentityFederationAsync(const DisableOutboundWebIdentityFederationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const DisableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::DisableOutboundWebIdentityFederation, request, handler, context);
+  }
+
+  /**
    * <p>Enables the specified MFA device and associates it with the specified IAM
    * user. When enabled, the MFA device is required for every subsequent login by the
    * IAM user associated with the device.</p><p><h3>See Also:</h3>   <a
@@ -2106,6 +2139,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                             const EnableOrganizationsRootSessionsRequestT& request = {}) const {
     return SubmitAsync(&IAMClient::EnableOrganizationsRootSessions, request, handler, context);
+  }
+
+  /**
+   * <p>Enables the outbound identity federation feature for your Amazon Web Services
+   * account. When enabled, IAM principals in your account can use the
+   * <code>GetWebIdentityToken</code> API to obtain JSON Web Tokens (JWTs) for secure
+   * authentication with external services. This operation also generates a unique
+   * issuer URL for your Amazon Web Services account. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableOutboundWebIdentityFederationOutcome EnableOutboundWebIdentityFederation(
+      const Model::EnableOutboundWebIdentityFederationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for EnableOutboundWebIdentityFederation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename EnableOutboundWebIdentityFederationRequestT = Model::EnableOutboundWebIdentityFederationRequest>
+  Model::EnableOutboundWebIdentityFederationOutcomeCallable EnableOutboundWebIdentityFederationCallable(
+      const EnableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::EnableOutboundWebIdentityFederation, request);
+  }
+
+  /**
+   * An Async wrapper for EnableOutboundWebIdentityFederation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename EnableOutboundWebIdentityFederationRequestT = Model::EnableOutboundWebIdentityFederationRequest>
+  void EnableOutboundWebIdentityFederationAsync(const EnableOutboundWebIdentityFederationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const EnableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::EnableOutboundWebIdentityFederation, request, handler, context);
   }
 
   /**
@@ -2914,6 +2980,40 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                          const GetOrganizationsAccessReportResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::GetOrganizationsAccessReport, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the configuration information for the outbound identity federation
+   * feature in your Amazon Web Services account. The response includes the unique
+   * issuer URL for your Amazon Web Services account and the current enabled/disabled
+   * status of the feature. Use this operation to obtain the issuer URL that you need
+   * to configure trust relationships with external services.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOutboundWebIdentityFederationInfoOutcome GetOutboundWebIdentityFederationInfo(
+      const Model::GetOutboundWebIdentityFederationInfoRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetOutboundWebIdentityFederationInfo that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetOutboundWebIdentityFederationInfoRequestT = Model::GetOutboundWebIdentityFederationInfoRequest>
+  Model::GetOutboundWebIdentityFederationInfoOutcomeCallable GetOutboundWebIdentityFederationInfoCallable(
+      const GetOutboundWebIdentityFederationInfoRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::GetOutboundWebIdentityFederationInfo, request);
+  }
+
+  /**
+   * An Async wrapper for GetOutboundWebIdentityFederationInfo that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetOutboundWebIdentityFederationInfoRequestT = Model::GetOutboundWebIdentityFederationInfoRequest>
+  void GetOutboundWebIdentityFederationInfoAsync(const GetOutboundWebIdentityFederationInfoResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const GetOutboundWebIdentityFederationInfoRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::GetOutboundWebIdentityFederationInfo, request, handler, context);
   }
 
   /**

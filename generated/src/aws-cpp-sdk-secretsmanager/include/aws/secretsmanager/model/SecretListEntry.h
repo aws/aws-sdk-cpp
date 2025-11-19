@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
+#include <aws/secretsmanager/model/ExternalSecretRotationMetadataItem.h>
 #include <aws/secretsmanager/model/RotationRulesType.h>
 #include <aws/secretsmanager/model/Tag.h>
 
@@ -72,6 +73,27 @@ class SecretListEntry {
   template <typename NameT = Aws::String>
   SecretListEntry& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exact string that identifies the third-party partner that holds the
+   * external secret. For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+   * external secret partners</a>.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  SecretListEntry& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
     return *this;
   }
   ///@}
@@ -167,6 +189,57 @@ class SecretListEntry {
   template <typename RotationRulesT = RotationRulesType>
   SecretListEntry& WithRotationRules(RotationRulesT&& value) {
     SetRotationRules(std::forward<RotationRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata needed to successfully rotate a managed external secret. A list
+   * of key value pairs in JSON format specified by the partner. For more information
+   * about the required information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+   * external secrets partners</a>.</p>
+   */
+  inline const Aws::Vector<ExternalSecretRotationMetadataItem>& GetExternalSecretRotationMetadata() const {
+    return m_externalSecretRotationMetadata;
+  }
+  inline bool ExternalSecretRotationMetadataHasBeenSet() const { return m_externalSecretRotationMetadataHasBeenSet; }
+  template <typename ExternalSecretRotationMetadataT = Aws::Vector<ExternalSecretRotationMetadataItem>>
+  void SetExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    m_externalSecretRotationMetadataHasBeenSet = true;
+    m_externalSecretRotationMetadata = std::forward<ExternalSecretRotationMetadataT>(value);
+  }
+  template <typename ExternalSecretRotationMetadataT = Aws::Vector<ExternalSecretRotationMetadataItem>>
+  SecretListEntry& WithExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    SetExternalSecretRotationMetadata(std::forward<ExternalSecretRotationMetadataT>(value));
+    return *this;
+  }
+  template <typename ExternalSecretRotationMetadataT = ExternalSecretRotationMetadataItem>
+  SecretListEntry& AddExternalSecretRotationMetadata(ExternalSecretRotationMetadataT&& value) {
+    m_externalSecretRotationMetadataHasBeenSet = true;
+    m_externalSecretRotationMetadata.emplace_back(std::forward<ExternalSecretRotationMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The role that Secrets Manager assumes to call APIs required to perform the
+   * rotation. For more information about the required information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+   * external secrets partners</a>.</p>
+   */
+  inline const Aws::String& GetExternalSecretRotationRoleArn() const { return m_externalSecretRotationRoleArn; }
+  inline bool ExternalSecretRotationRoleArnHasBeenSet() const { return m_externalSecretRotationRoleArnHasBeenSet; }
+  template <typename ExternalSecretRotationRoleArnT = Aws::String>
+  void SetExternalSecretRotationRoleArn(ExternalSecretRotationRoleArnT&& value) {
+    m_externalSecretRotationRoleArnHasBeenSet = true;
+    m_externalSecretRotationRoleArn = std::forward<ExternalSecretRotationRoleArnT>(value);
+  }
+  template <typename ExternalSecretRotationRoleArnT = Aws::String>
+  SecretListEntry& WithExternalSecretRotationRoleArn(ExternalSecretRotationRoleArnT&& value) {
+    SetExternalSecretRotationRoleArn(std::forward<ExternalSecretRotationRoleArnT>(value));
     return *this;
   }
   ///@}
@@ -389,6 +462,9 @@ class SecretListEntry {
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
+
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
 
@@ -403,6 +479,12 @@ class SecretListEntry {
 
   RotationRulesType m_rotationRules;
   bool m_rotationRulesHasBeenSet = false;
+
+  Aws::Vector<ExternalSecretRotationMetadataItem> m_externalSecretRotationMetadata;
+  bool m_externalSecretRotationMetadataHasBeenSet = false;
+
+  Aws::String m_externalSecretRotationRoleArn;
+  bool m_externalSecretRotationRoleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRotatedDate{};
   bool m_lastRotatedDateHasBeenSet = false;

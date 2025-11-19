@@ -36,7 +36,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The type of destination (S3 or EVENTBRIDGE).</p>
+   * <p>The type of destination (S3).</p>
    */
   inline ScheduledQueryDestinationType GetDestinationType() const { return m_destinationType; }
   inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
@@ -52,7 +52,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+   * <p>The destination identifier (S3 URI).</p>
    */
   inline const Aws::String& GetDestinationIdentifier() const { return m_destinationIdentifier; }
   inline bool DestinationIdentifierHasBeenSet() const { return m_destinationIdentifierHasBeenSet; }
@@ -87,8 +87,7 @@ class ScheduledQueryDestination {
 
   ///@{
   /**
-   * <p>The processed identifier returned for the destination (S3 key or event
-   * ID).</p>
+   * <p>The processed identifier returned for the destination (S3 key).</p>
    */
   inline const Aws::String& GetProcessedIdentifier() const { return m_processedIdentifier; }
   inline bool ProcessedIdentifierHasBeenSet() const { return m_processedIdentifierHasBeenSet; }

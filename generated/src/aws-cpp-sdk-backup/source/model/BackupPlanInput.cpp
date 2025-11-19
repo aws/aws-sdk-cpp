@@ -37,6 +37,13 @@ BackupPlanInput& BackupPlanInput::operator=(JsonView jsonValue) {
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScanSettings")) {
+    Aws::Utils::Array<JsonView> scanSettingsJsonList = jsonValue.GetArray("ScanSettings");
+    for (unsigned scanSettingsIndex = 0; scanSettingsIndex < scanSettingsJsonList.GetLength(); ++scanSettingsIndex) {
+      m_scanSettings.push_back(scanSettingsJsonList[scanSettingsIndex].AsObject());
+    }
+    m_scanSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue BackupPlanInput::Jsonize() const {
       advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
     }
     payload.WithArray("AdvancedBackupSettings", std::move(advancedBackupSettingsJsonList));
+  }
+
+  if (m_scanSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scanSettingsJsonList(m_scanSettings.size());
+    for (unsigned scanSettingsIndex = 0; scanSettingsIndex < scanSettingsJsonList.GetLength(); ++scanSettingsIndex) {
+      scanSettingsJsonList[scanSettingsIndex].AsObject(m_scanSettings[scanSettingsIndex].Jsonize());
+    }
+    payload.WithArray("ScanSettings", std::move(scanSettingsJsonList));
   }
 
   return payload;

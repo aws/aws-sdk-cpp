@@ -80,9 +80,8 @@ class PutImageTagMutabilityResult {
 
   ///@{
   /**
-   * <p>Returns a list of filters that were defined for a repository. These filters
-   * determine which image tags can override the default image tag mutability setting
-   * of the repository.</p>
+   * <p>The list of filters that specify which image tags are excluded from the
+   * repository's image tag mutability setting.</p>
    */
   inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const {
     return m_imageTagMutabilityExclusionFilters;

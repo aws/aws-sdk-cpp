@@ -60,6 +60,10 @@ Aws::String CreateSecretRequest::SerializePayload() const {
     payload.WithBool("ForceOverwriteReplicaSecret", m_forceOverwriteReplicaSecret);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
+  }
+
   return payload.View().WriteReadable();
 }
 

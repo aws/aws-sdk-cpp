@@ -61,6 +61,9 @@
 #include <aws/datazone/model/AthenaPropertiesInput.h>
 #include <aws/datazone/model/AthenaPropertiesOutput.h>
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
+#include <aws/datazone/model/AttributeEntityType.h>
+#include <aws/datazone/model/AttributeError.h>
+#include <aws/datazone/model/AttributeInput.h>
 #include <aws/datazone/model/AuthType.h>
 #include <aws/datazone/model/AuthenticationConfiguration.h>
 #include <aws/datazone/model/AuthenticationConfigurationInput.h>
@@ -71,6 +74,12 @@
 #include <aws/datazone/model/AwsConsoleLinkParameters.h>
 #include <aws/datazone/model/AwsLocation.h>
 #include <aws/datazone/model/BasicAuthenticationCredentials.h>
+#include <aws/datazone/model/BatchGetAttributeOutput.h>
+#include <aws/datazone/model/BatchGetAttributesMetadataRequest.h>
+#include <aws/datazone/model/BatchGetAttributesMetadataResult.h>
+#include <aws/datazone/model/BatchPutAttributeOutput.h>
+#include <aws/datazone/model/BatchPutAttributesMetadataRequest.h>
+#include <aws/datazone/model/BatchPutAttributesMetadataResult.h>
 #include <aws/datazone/model/BusinessNameGenerationConfiguration.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunResult.h>
@@ -349,6 +358,7 @@
 #include <aws/datazone/model/GlossaryItem.h>
 #include <aws/datazone/model/GlossaryItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryStatus.h>
+#include <aws/datazone/model/GlossaryTermEnforcementDetail.h>
 #include <aws/datazone/model/GlossaryTermItem.h>
 #include <aws/datazone/model/GlossaryTermItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryTermStatus.h>
@@ -705,6 +715,8 @@
 #include <aws/datazone/model/UpdateProjectProfileResult.h>
 #include <aws/datazone/model/UpdateProjectRequest.h>
 #include <aws/datazone/model/UpdateProjectResult.h>
+#include <aws/datazone/model/UpdateRootDomainUnitOwnerRequest.h>
+#include <aws/datazone/model/UpdateRootDomainUnitOwnerResult.h>
 #include <aws/datazone/model/UpdateRuleRequest.h>
 #include <aws/datazone/model/UpdateRuleResult.h>
 #include <aws/datazone/model/UpdateSubscriptionGrantStatusRequest.h>

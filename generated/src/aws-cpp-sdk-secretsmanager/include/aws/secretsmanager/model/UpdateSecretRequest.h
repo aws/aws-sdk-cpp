@@ -190,6 +190,27 @@ class UpdateSecretRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exact string that identifies the third-party partner that holds the
+   * external secret. For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+   * external secret partners</a>.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  UpdateSecretRequest& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_secretId;
   bool m_secretIdHasBeenSet = false;
@@ -208,6 +229,9 @@ class UpdateSecretRequest : public SecretsManagerRequest {
 
   Aws::String m_secretString;
   bool m_secretStringHasBeenSet = false;
+
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

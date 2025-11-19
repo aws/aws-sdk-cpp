@@ -93,9 +93,12 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p> </li>
    * <li> <p>For Entity Resolution, the valid value is
    * <code>WORKFLOW_LOGS</code>.</p> </li> <li> <p>For IAM Identity Center, the valid
-   * value is <code>ERROR_LOGS</code>.</p> </li> <li> <p>For PCS, the valid values
-   * are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p> </li>
-   * <li> <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and
+   * value is <code>ERROR_LOGS</code>.</p> </li> <li> <p>For Network Load Balancer,
+   * the valid value is <code>NLB_ACCESS_LOGS</code>.</p> </li> <li> <p>For PCS, the
+   * valid values are <code>PCS_SCHEDULER_LOGS</code> and
+   * <code>PCS_JOBCOMP_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services RTB
+   * Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For
+   * Amazon Q, the valid values are <code>EVENT_LOGS</code> and
    * <code>SYNC_JOB_LOGS</code>.</p> </li> <li> <p>For Amazon SES mail manager, the
    * valid values are <code>APPLICATION_LOGS</code> and
    * <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p> </li> <li> <p>For Amazon WorkMail,

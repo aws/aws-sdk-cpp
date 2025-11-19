@@ -69,12 +69,34 @@ class RuleGroupMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon Web Services Marketplace seller that provides this
+   * rule group.</p>
+   */
+  inline const Aws::String& GetVendorName() const { return m_vendorName; }
+  inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
+  template <typename VendorNameT = Aws::String>
+  void SetVendorName(VendorNameT&& value) {
+    m_vendorNameHasBeenSet = true;
+    m_vendorName = std::forward<VendorNameT>(value);
+  }
+  template <typename VendorNameT = Aws::String>
+  RuleGroupMetadata& WithVendorName(VendorNameT&& value) {
+    SetVendorName(std::forward<VendorNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
+
+  Aws::String m_vendorName;
+  bool m_vendorNameHasBeenSet = false;
 };
 
 }  // namespace Model

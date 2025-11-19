@@ -79,6 +79,20 @@ class TelephonyOutboundConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline int GetRingTimeout() const { return m_ringTimeout; }
+  inline bool RingTimeoutHasBeenSet() const { return m_ringTimeoutHasBeenSet; }
+  inline void SetRingTimeout(int value) {
+    m_ringTimeoutHasBeenSet = true;
+    m_ringTimeout = value;
+  }
+  inline TelephonyOutboundConfig& WithRingTimeout(int value) {
+    SetRingTimeout(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectContactFlowId;
   bool m_connectContactFlowIdHasBeenSet = false;
@@ -88,6 +102,9 @@ class TelephonyOutboundConfig {
 
   AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
   bool m_answerMachineDetectionConfigHasBeenSet = false;
+
+  int m_ringTimeout{0};
+  bool m_ringTimeoutHasBeenSet = false;
 };
 
 }  // namespace Model

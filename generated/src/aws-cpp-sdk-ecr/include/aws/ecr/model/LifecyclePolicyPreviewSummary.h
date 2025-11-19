@@ -4,7 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/model/TransitioningImageTotalCount.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -44,9 +48,40 @@ class LifecyclePolicyPreviewSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The total count of images that will be transitioned to each storage class.
+   * This field is only present if at least one image will be transitoned in the
+   * summary.</p>
+   */
+  inline const Aws::Vector<TransitioningImageTotalCount>& GetTransitioningImageTotalCounts() const {
+    return m_transitioningImageTotalCounts;
+  }
+  inline bool TransitioningImageTotalCountsHasBeenSet() const { return m_transitioningImageTotalCountsHasBeenSet; }
+  template <typename TransitioningImageTotalCountsT = Aws::Vector<TransitioningImageTotalCount>>
+  void SetTransitioningImageTotalCounts(TransitioningImageTotalCountsT&& value) {
+    m_transitioningImageTotalCountsHasBeenSet = true;
+    m_transitioningImageTotalCounts = std::forward<TransitioningImageTotalCountsT>(value);
+  }
+  template <typename TransitioningImageTotalCountsT = Aws::Vector<TransitioningImageTotalCount>>
+  LifecyclePolicyPreviewSummary& WithTransitioningImageTotalCounts(TransitioningImageTotalCountsT&& value) {
+    SetTransitioningImageTotalCounts(std::forward<TransitioningImageTotalCountsT>(value));
+    return *this;
+  }
+  template <typename TransitioningImageTotalCountsT = TransitioningImageTotalCount>
+  LifecyclePolicyPreviewSummary& AddTransitioningImageTotalCounts(TransitioningImageTotalCountsT&& value) {
+    m_transitioningImageTotalCountsHasBeenSet = true;
+    m_transitioningImageTotalCounts.emplace_back(std::forward<TransitioningImageTotalCountsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_expiringImageTotalCount{0};
   bool m_expiringImageTotalCountHasBeenSet = false;
+
+  Aws::Vector<TransitioningImageTotalCount> m_transitioningImageTotalCounts;
+  bool m_transitioningImageTotalCountsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,6 +18,7 @@ namespace ServiceManagedMapper {
 static const int alb_HASH = HashingUtils::HashString("alb");
 static const int nlb_HASH = HashingUtils::HashString("nlb");
 static const int rnat_HASH = HashingUtils::HashString("rnat");
+static const int rds_HASH = HashingUtils::HashString("rds");
 
 ServiceManaged GetServiceManagedForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ServiceManaged GetServiceManagedForName(const Aws::String& name) {
     return ServiceManaged::nlb;
   } else if (hashCode == rnat_HASH) {
     return ServiceManaged::rnat;
+  } else if (hashCode == rds_HASH) {
+    return ServiceManaged::rds;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForServiceManaged(ServiceManaged enumValue) {
       return "nlb";
     case ServiceManaged::rnat:
       return "rnat";
+    case ServiceManaged::rds:
+      return "rds";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
