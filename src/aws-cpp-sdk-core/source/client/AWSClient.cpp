@@ -46,6 +46,7 @@
 
 #include <smithy/tracing/TracingUtils.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
+#include <aws/core/http/interceptor/ChunkingInterceptor.h>
 
 #include <cstring>
 #include <cassert>
@@ -139,7 +140,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<Aws::Http::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
 }
 
@@ -165,7 +166,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), m_userAgentInterceptor}
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<Aws::Http::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
 }
 
