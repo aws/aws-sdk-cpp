@@ -60,6 +60,11 @@ ByoipCidr& ByoipCidr::operator=(const XmlNode& xmlNode) {
       m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
       m_networkBorderGroupHasBeenSet = true;
     }
+    XmlNode advertisementTypeNode = resultNode.FirstChild("advertisementType");
+    if (!advertisementTypeNode.IsNull()) {
+      m_advertisementType = Aws::Utils::Xml::DecodeEscapedXmlText(advertisementTypeNode.GetText());
+      m_advertisementTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +100,10 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if (m_networkBorderGroupHasBeenSet) {
     oStream << location << index << locationValue << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
+
+  if (m_advertisementTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".AdvertisementType=" << StringUtils::URLEncode(m_advertisementType.c_str()) << "&";
+  }
 }
 
 void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -120,6 +129,9 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_networkBorderGroupHasBeenSet) {
     oStream << location << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
+  }
+  if (m_advertisementTypeHasBeenSet) {
+    oStream << location << ".AdvertisementType=" << StringUtils::URLEncode(m_advertisementType.c_str()) << "&";
   }
 }
 

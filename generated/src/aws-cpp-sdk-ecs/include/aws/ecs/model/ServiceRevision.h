@@ -11,6 +11,7 @@
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/ContainerImage.h>
 #include <aws/ecs/model/DeploymentEphemeralStorage.h>
+#include <aws/ecs/model/ECSManagedResources.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
@@ -423,6 +424,25 @@ class ServiceRevision {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resources created and managed by Amazon ECS when you create an Express
+   * service for Amazon ECS.</p>
+   */
+  inline const ECSManagedResources& GetEcsManagedResources() const { return m_ecsManagedResources; }
+  inline bool EcsManagedResourcesHasBeenSet() const { return m_ecsManagedResourcesHasBeenSet; }
+  template <typename EcsManagedResourcesT = ECSManagedResources>
+  void SetEcsManagedResources(EcsManagedResourcesT&& value) {
+    m_ecsManagedResourcesHasBeenSet = true;
+    m_ecsManagedResources = std::forward<EcsManagedResourcesT>(value);
+  }
+  template <typename EcsManagedResourcesT = ECSManagedResources>
+  ServiceRevision& WithEcsManagedResources(EcsManagedResourcesT&& value) {
+    SetEcsManagedResources(std::forward<EcsManagedResourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceRevisionArn;
   bool m_serviceRevisionArnHasBeenSet = false;
@@ -480,6 +500,9 @@ class ServiceRevision {
 
   ResolvedConfiguration m_resolvedConfiguration;
   bool m_resolvedConfigurationHasBeenSet = false;
+
+  ECSManagedResources m_ecsManagedResources;
+  bool m_ecsManagedResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

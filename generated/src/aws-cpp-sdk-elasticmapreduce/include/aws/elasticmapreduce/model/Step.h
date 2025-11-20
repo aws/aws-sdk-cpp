@@ -158,6 +158,43 @@ class Step {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon S3 destination URI for log publishing.</p>
+   */
+  inline const Aws::String& GetLogUri() const { return m_logUri; }
+  inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
+  template <typename LogUriT = Aws::String>
+  void SetLogUri(LogUriT&& value) {
+    m_logUriHasBeenSet = true;
+    m_logUri = std::forward<LogUriT>(value);
+  }
+  template <typename LogUriT = Aws::String>
+  Step& WithLogUri(LogUriT&& value) {
+    SetLogUri(std::forward<LogUriT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
+   * destination.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  Step& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -176,6 +213,12 @@ class Step {
 
   Aws::String m_executionRoleArn;
   bool m_executionRoleArnHasBeenSet = false;
+
+  Aws::String m_logUri;
+  bool m_logUriHasBeenSet = false;
+
+  Aws::String m_encryptionKeyArn;
+  bool m_encryptionKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -70,6 +70,7 @@
 #include <aws/cloudtrail/model/ListTrailsResult.h>
 #include <aws/cloudtrail/model/LookupEventsRequest.h>
 #include <aws/cloudtrail/model/LookupEventsResult.h>
+#include <aws/cloudtrail/model/PutEventConfigurationRequest.h>
 #include <aws/cloudtrail/model/PutEventConfigurationResult.h>
 #include <aws/cloudtrail/model/PutEventSelectorsResult.h>
 #include <aws/cloudtrail/model/PutInsightSelectorsResult.h>

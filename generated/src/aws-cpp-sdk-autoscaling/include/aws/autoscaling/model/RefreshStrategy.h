@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AutoScaling {
 namespace Model {
-enum class RefreshStrategy { NOT_SET, Rolling };
+enum class RefreshStrategy { NOT_SET, Rolling, ReplaceRootVolume };
 
 namespace RefreshStrategyMapper {
 AWS_AUTOSCALING_API RefreshStrategy GetRefreshStrategyForName(const Aws::String& name);

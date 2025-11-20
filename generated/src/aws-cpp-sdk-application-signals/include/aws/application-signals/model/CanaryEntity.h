@@ -20,8 +20,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents a CloudWatch Synthetics canary that can be audited for performance
- * and configuration issues.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that contains identifying information for a CloudWatch Synthetics
+ * canary entity used in audit targeting.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/CanaryEntity">AWS
  * API Reference</a></p>
  */

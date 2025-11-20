@@ -34,6 +34,10 @@ Aws::String ListAuditFindingsRequest::SerializePayload() const {
     payload.WithArray("AuditTargets", std::move(auditTargetsJsonList));
   }
 
+  if (m_detailLevelHasBeenSet) {
+    payload.WithString("DetailLevel", DetailLevelMapper::GetNameForDetailLevel(m_detailLevel));
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
   }

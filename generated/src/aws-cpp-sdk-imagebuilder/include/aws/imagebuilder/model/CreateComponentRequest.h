@@ -269,6 +269,25 @@ class CreateComponentRequest : public ImagebuilderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Validates the required permissions for the operation and the request
+   * parameters, without actually making the request, and provides an error response.
+   * Upon a successful request, the error response is
+   * <code>DryRunOperationException</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateComponentRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -302,6 +321,9 @@ class CreateComponentRequest : public ImagebuilderRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -49,6 +49,11 @@ AnycastIpList& AnycastIpList::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode ipamConfigNode = resultNode.FirstChild("IpamConfig");
+    if (!ipamConfigNode.IsNull()) {
+      m_ipamConfig = ipamConfigNode;
+      m_ipamConfigHasBeenSet = true;
+    }
     XmlNode anycastIpsNode = resultNode.FirstChild("AnycastIps");
     if (!anycastIpsNode.IsNull()) {
       XmlNode anycastIpsMember = anycastIpsNode.FirstChild("AnycastIp");
@@ -103,6 +108,11 @@ void AnycastIpList::AddToNode(XmlNode& parentNode) const {
   if (m_ipAddressTypeHasBeenSet) {
     XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
     ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if (m_ipamConfigHasBeenSet) {
+    XmlNode ipamConfigNode = parentNode.CreateChildElement("IpamConfig");
+    m_ipamConfig.AddToNode(ipamConfigNode);
   }
 
   if (m_anycastIpsHasBeenSet) {

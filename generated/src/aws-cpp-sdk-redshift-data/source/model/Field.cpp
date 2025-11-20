@@ -19,29 +19,29 @@ namespace Model {
 Field::Field(JsonView jsonValue) { *this = jsonValue; }
 
 Field& Field::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("blobValue")) {
-    m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
-    m_blobValueHasBeenSet = true;
+  if (jsonValue.ValueExists("isNull")) {
+    m_isNull = jsonValue.GetBool("isNull");
+    m_isNullHasBeenSet = true;
   }
   if (jsonValue.ValueExists("booleanValue")) {
     m_booleanValue = jsonValue.GetBool("booleanValue");
     m_booleanValueHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("doubleValue")) {
-    m_doubleValue = jsonValue.GetDouble("doubleValue");
-    m_doubleValueHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("isNull")) {
-    m_isNull = jsonValue.GetBool("isNull");
-    m_isNullHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("longValue")) {
     m_longValue = jsonValue.GetInt64("longValue");
     m_longValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("doubleValue")) {
+    m_doubleValue = jsonValue.GetDouble("doubleValue");
+    m_doubleValueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("stringValue")) {
     m_stringValue = jsonValue.GetString("stringValue");
     m_stringValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("blobValue")) {
+    m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
+    m_blobValueHasBeenSet = true;
   }
   return *this;
 }
@@ -49,28 +49,28 @@ Field& Field::operator=(JsonView jsonValue) {
 JsonValue Field::Jsonize() const {
   JsonValue payload;
 
-  if (m_blobValueHasBeenSet) {
-    payload.WithString("blobValue", HashingUtils::Base64Encode(m_blobValue));
+  if (m_isNullHasBeenSet) {
+    payload.WithBool("isNull", m_isNull);
   }
 
   if (m_booleanValueHasBeenSet) {
     payload.WithBool("booleanValue", m_booleanValue);
   }
 
-  if (m_doubleValueHasBeenSet) {
-    payload.WithDouble("doubleValue", m_doubleValue);
-  }
-
-  if (m_isNullHasBeenSet) {
-    payload.WithBool("isNull", m_isNull);
-  }
-
   if (m_longValueHasBeenSet) {
     payload.WithInt64("longValue", m_longValue);
   }
 
+  if (m_doubleValueHasBeenSet) {
+    payload.WithDouble("doubleValue", m_doubleValue);
+  }
+
   if (m_stringValueHasBeenSet) {
     payload.WithString("stringValue", m_stringValue);
+  }
+
+  if (m_blobValueHasBeenSet) {
+    payload.WithString("blobValue", HashingUtils::Base64Encode(m_blobValue));
   }
 
   return payload;

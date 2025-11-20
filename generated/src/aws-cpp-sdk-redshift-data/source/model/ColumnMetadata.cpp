@@ -18,10 +18,6 @@ namespace Model {
 ColumnMetadata::ColumnMetadata(JsonView jsonValue) { *this = jsonValue; }
 
 ColumnMetadata& ColumnMetadata::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("columnDefault")) {
-    m_columnDefault = jsonValue.GetString("columnDefault");
-    m_columnDefaultHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isCaseSensitive")) {
     m_isCaseSensitive = jsonValue.GetBool("isCaseSensitive");
     m_isCaseSensitiveHasBeenSet = true;
@@ -37,10 +33,6 @@ ColumnMetadata& ColumnMetadata::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("label")) {
     m_label = jsonValue.GetString("label");
     m_labelHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("length")) {
-    m_length = jsonValue.GetInteger("length");
-    m_lengthHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
@@ -70,15 +62,19 @@ ColumnMetadata& ColumnMetadata::operator=(JsonView jsonValue) {
     m_typeName = jsonValue.GetString("typeName");
     m_typeNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("length")) {
+    m_length = jsonValue.GetInteger("length");
+    m_lengthHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("columnDefault")) {
+    m_columnDefault = jsonValue.GetString("columnDefault");
+    m_columnDefaultHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ColumnMetadata::Jsonize() const {
   JsonValue payload;
-
-  if (m_columnDefaultHasBeenSet) {
-    payload.WithString("columnDefault", m_columnDefault);
-  }
 
   if (m_isCaseSensitiveHasBeenSet) {
     payload.WithBool("isCaseSensitive", m_isCaseSensitive);
@@ -94,10 +90,6 @@ JsonValue ColumnMetadata::Jsonize() const {
 
   if (m_labelHasBeenSet) {
     payload.WithString("label", m_label);
-  }
-
-  if (m_lengthHasBeenSet) {
-    payload.WithInteger("length", m_length);
   }
 
   if (m_nameHasBeenSet) {
@@ -126,6 +118,14 @@ JsonValue ColumnMetadata::Jsonize() const {
 
   if (m_typeNameHasBeenSet) {
     payload.WithString("typeName", m_typeName);
+  }
+
+  if (m_lengthHasBeenSet) {
+    payload.WithInteger("length", m_length);
+  }
+
+  if (m_columnDefaultHasBeenSet) {
+    payload.WithString("columnDefault", m_columnDefault);
   }
 
   return payload;

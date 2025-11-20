@@ -8,6 +8,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/LaunchType.h>
+#include <aws/ecs/model/ResourceManagementType.h>
 #include <aws/ecs/model/SchedulingStrategy.h>
 
 #include <utility>
@@ -132,6 +133,23 @@ class ListServicesRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resourceManagementType type to use when filtering the
+   * <code>ListServices</code> results.</p>
+   */
+  inline ResourceManagementType GetResourceManagementType() const { return m_resourceManagementType; }
+  inline bool ResourceManagementTypeHasBeenSet() const { return m_resourceManagementTypeHasBeenSet; }
+  inline void SetResourceManagementType(ResourceManagementType value) {
+    m_resourceManagementTypeHasBeenSet = true;
+    m_resourceManagementType = value;
+  }
+  inline ListServicesRequest& WithResourceManagementType(ResourceManagementType value) {
+    SetResourceManagementType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cluster;
   bool m_clusterHasBeenSet = false;
@@ -147,6 +165,9 @@ class ListServicesRequest : public ECSRequest {
 
   SchedulingStrategy m_schedulingStrategy{SchedulingStrategy::NOT_SET};
   bool m_schedulingStrategyHasBeenSet = false;
+
+  ResourceManagementType m_resourceManagementType{ResourceManagementType::NOT_SET};
+  bool m_resourceManagementTypeHasBeenSet = false;
 };
 
 }  // namespace Model

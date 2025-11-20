@@ -92,6 +92,11 @@ TransitGatewayOptions& TransitGatewayOptions::operator=(const XmlNode& xmlNode) 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multicastSupportNode.GetText()).c_str()));
       m_multicastSupportHasBeenSet = true;
     }
+    XmlNode encryptionSupportNode = resultNode.FirstChild("encryptionSupport");
+    if (!encryptionSupportNode.IsNull()) {
+      m_encryptionSupport = encryptionSupportNode;
+      m_encryptionSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -163,6 +168,12 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
     oStream << location << index << locationValue << ".MulticastSupport="
             << StringUtils::URLEncode(MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport)) << "&";
   }
+
+  if (m_encryptionSupportHasBeenSet) {
+    Aws::StringStream encryptionSupportLocationAndMemberSs;
+    encryptionSupportLocationAndMemberSs << location << index << locationValue << ".EncryptionSupport";
+    m_encryptionSupport.OutputToStream(oStream, encryptionSupportLocationAndMemberSs.str().c_str());
+  }
 }
 
 void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -217,6 +228,11 @@ void TransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* lo
   if (m_multicastSupportHasBeenSet) {
     oStream << location << ".MulticastSupport="
             << StringUtils::URLEncode(MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport)) << "&";
+  }
+  if (m_encryptionSupportHasBeenSet) {
+    Aws::String encryptionSupportLocationAndMember(location);
+    encryptionSupportLocationAndMember += ".EncryptionSupport";
+    m_encryptionSupport.OutputToStream(oStream, encryptionSupportLocationAndMember.c_str());
   }
 }
 

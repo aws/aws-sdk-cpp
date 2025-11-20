@@ -32,6 +32,10 @@ CreateContainerRecipeResult& CreateContainerRecipeResult::operator=(const Aws::A
     m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
     m_containerRecipeArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

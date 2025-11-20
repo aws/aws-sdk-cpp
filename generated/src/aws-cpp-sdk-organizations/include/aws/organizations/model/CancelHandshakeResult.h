@@ -29,7 +29,8 @@ class CancelHandshakeResult {
 
   ///@{
   /**
-   * <p>A structure that contains details about the handshake that you canceled.</p>
+   * <p>A <code>Handshake</code> object. Contains for the handshake that you
+   * canceled.</p>
    */
   inline const Handshake& GetHandshake() const { return m_handshake; }
   template <typename HandshakeT = Handshake>

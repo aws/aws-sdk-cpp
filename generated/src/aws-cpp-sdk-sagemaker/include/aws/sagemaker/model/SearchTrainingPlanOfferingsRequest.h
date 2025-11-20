@@ -164,12 +164,14 @@ class SearchTrainingPlanOfferingsRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) to
-   * search for in the offerings.</p> <p>Training plans are specific to their target
-   * resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs
-   * can only be used to schedule and run training jobs.</p> </li> <li> <p>A training
-   * plan for HyperPod clusters can be used exclusively to provide compute resources
-   * to a cluster's instance group.</p> </li> </ul>
+   * <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod,
+   * SageMaker Endpoints) to search for in the offerings.</p> <p>Training plans are
+   * specific to their target resource.</p> <ul> <li> <p>A training plan designed for
+   * SageMaker training jobs can only be used to schedule and run training jobs.</p>
+   * </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to
+   * provide compute resources to a cluster's instance group.</p> </li> <li> <p>A
+   * training plan for SageMaker endpoints can be used exclusively to provide compute
+   * resources to SageMaker endpoints for model deployment.</p> </li> </ul>
    */
   inline const Aws::Vector<SageMakerResourceName>& GetTargetResources() const { return m_targetResources; }
   inline bool TargetResourcesHasBeenSet() const { return m_targetResourcesHasBeenSet; }

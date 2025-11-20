@@ -152,8 +152,8 @@ class CreateAccountStatus {
 
   ///@{
   /**
-   * <p>If the account was created successfully, the unique identifier (ID) of the
-   * new account in the Amazon Web Services GovCloud (US) Region.</p>
+   * <p>If the account was created successfully, the ID for the new account in the
+   * Amazon Web Services GovCloud (US) Region.</p>
    */
   inline const Aws::String& GetGovCloudAccountId() const { return m_govCloudAccountId; }
   inline bool GovCloudAccountIdHasBeenSet() const { return m_govCloudAccountIdHasBeenSet; }

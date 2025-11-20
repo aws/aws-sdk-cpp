@@ -18,9 +18,9 @@ namespace Model {
 SubStatementData::SubStatementData(JsonView jsonValue) { *this = jsonValue; }
 
 SubStatementData& SubStatementData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CreatedAt")) {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("Id")) {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Duration")) {
     m_duration = jsonValue.GetInt64("Duration");
@@ -30,21 +30,21 @@ SubStatementData& SubStatementData::operator=(JsonView jsonValue) {
     m_error = jsonValue.GetString("Error");
     m_errorHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("HasResultSet")) {
-    m_hasResultSet = jsonValue.GetBool("HasResultSet");
-    m_hasResultSetHasBeenSet = true;
+  if (jsonValue.ValueExists("Status")) {
+    m_status = StatementStatusStringMapper::GetStatementStatusStringForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Id")) {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
     m_queryStringHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RedshiftQueryId")) {
-    m_redshiftQueryId = jsonValue.GetInt64("RedshiftQueryId");
-    m_redshiftQueryIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ResultRows")) {
     m_resultRows = jsonValue.GetInt64("ResultRows");
@@ -54,13 +54,13 @@ SubStatementData& SubStatementData::operator=(JsonView jsonValue) {
     m_resultSize = jsonValue.GetInt64("ResultSize");
     m_resultSizeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = StatementStatusStringMapper::GetStatementStatusStringForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("RedshiftQueryId")) {
+    m_redshiftQueryId = jsonValue.GetInt64("RedshiftQueryId");
+    m_redshiftQueryIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("UpdatedAt")) {
-    m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-    m_updatedAtHasBeenSet = true;
+  if (jsonValue.ValueExists("HasResultSet")) {
+    m_hasResultSet = jsonValue.GetBool("HasResultSet");
+    m_hasResultSetHasBeenSet = true;
   }
   return *this;
 }
@@ -68,8 +68,8 @@ SubStatementData& SubStatementData::operator=(JsonView jsonValue) {
 JsonValue SubStatementData::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
   if (m_durationHasBeenSet) {
@@ -80,20 +80,20 @@ JsonValue SubStatementData::Jsonize() const {
     payload.WithString("Error", m_error);
   }
 
-  if (m_hasResultSetHasBeenSet) {
-    payload.WithBool("HasResultSet", m_hasResultSet);
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", StatementStatusStringMapper::GetNameForStatementStatusString(m_status));
   }
 
-  if (m_idHasBeenSet) {
-    payload.WithString("Id", m_id);
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if (m_queryStringHasBeenSet) {
     payload.WithString("QueryString", m_queryString);
-  }
-
-  if (m_redshiftQueryIdHasBeenSet) {
-    payload.WithInt64("RedshiftQueryId", m_redshiftQueryId);
   }
 
   if (m_resultRowsHasBeenSet) {
@@ -104,12 +104,12 @@ JsonValue SubStatementData::Jsonize() const {
     payload.WithInt64("ResultSize", m_resultSize);
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("Status", StatementStatusStringMapper::GetNameForStatementStatusString(m_status));
+  if (m_redshiftQueryIdHasBeenSet) {
+    payload.WithInt64("RedshiftQueryId", m_redshiftQueryId);
   }
 
-  if (m_updatedAtHasBeenSet) {
-    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_hasResultSetHasBeenSet) {
+    payload.WithBool("HasResultSet", m_hasResultSet);
   }
 
   return payload;

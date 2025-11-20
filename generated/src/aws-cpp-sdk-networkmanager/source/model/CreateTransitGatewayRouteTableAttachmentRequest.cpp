@@ -23,6 +23,10 @@ Aws::String CreateTransitGatewayRouteTableAttachmentRequest::SerializePayload() 
     payload.WithString("TransitGatewayRouteTableArn", m_transitGatewayRouteTableArn);
   }
 
+  if (m_routingPolicyLabelHasBeenSet) {
+    payload.WithString("RoutingPolicyLabel", m_routingPolicyLabel);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

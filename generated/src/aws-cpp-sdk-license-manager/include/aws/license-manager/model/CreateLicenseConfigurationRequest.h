@@ -223,6 +223,22 @@ class CreateLicenseConfigurationRequest : public LicenseManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>License configuration expiry.</p>
+   */
+  inline long long GetLicenseExpiry() const { return m_licenseExpiry; }
+  inline bool LicenseExpiryHasBeenSet() const { return m_licenseExpiryHasBeenSet; }
+  inline void SetLicenseExpiry(long long value) {
+    m_licenseExpiryHasBeenSet = true;
+    m_licenseExpiry = value;
+  }
+  inline CreateLicenseConfigurationRequest& WithLicenseExpiry(long long value) {
+    SetLicenseExpiry(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -250,6 +266,9 @@ class CreateLicenseConfigurationRequest : public LicenseManagerRequest {
 
   Aws::Vector<ProductInformation> m_productInformationList;
   bool m_productInformationListHasBeenSet = false;
+
+  long long m_licenseExpiry{0};
+  bool m_licenseExpiryHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -45,6 +45,17 @@ static const int UNSUPPORTED_ACTION_IN_RESOURCE_POLICY_HASH = HashingUtils::Hash
 static const int UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
 static const int UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 static const int NON_DETACHABLE_POLICY_HASH = HashingUtils::HashString("NON_DETACHABLE_POLICY");
+static const int CALLER_REQUIRED_FIELD_MISSING_HASH = HashingUtils::HashString("CALLER_REQUIRED_FIELD_MISSING");
+static const int UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER_HASH =
+    HashingUtils::HashString("UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER");
+static const int START_DATE_NOT_BEGINNING_OF_MONTH_HASH = HashingUtils::HashString("START_DATE_NOT_BEGINNING_OF_MONTH");
+static const int START_DATE_NOT_BEGINNING_OF_DAY_HASH = HashingUtils::HashString("START_DATE_NOT_BEGINNING_OF_DAY");
+static const int START_DATE_TOO_EARLY_HASH = HashingUtils::HashString("START_DATE_TOO_EARLY");
+static const int START_DATE_TOO_LATE_HASH = HashingUtils::HashString("START_DATE_TOO_LATE");
+static const int INVALID_START_DATE_HASH = HashingUtils::HashString("INVALID_START_DATE");
+static const int END_DATE_NOT_END_OF_MONTH_HASH = HashingUtils::HashString("END_DATE_NOT_END_OF_MONTH");
+static const int END_DATE_TOO_EARLY_HASH = HashingUtils::HashString("END_DATE_TOO_EARLY");
+static const int INVALID_END_DATE_HASH = HashingUtils::HashString("INVALID_END_DATE");
 
 InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -108,6 +119,26 @@ InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::Str
     return InvalidInputExceptionReason::UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY;
   } else if (hashCode == NON_DETACHABLE_POLICY_HASH) {
     return InvalidInputExceptionReason::NON_DETACHABLE_POLICY;
+  } else if (hashCode == CALLER_REQUIRED_FIELD_MISSING_HASH) {
+    return InvalidInputExceptionReason::CALLER_REQUIRED_FIELD_MISSING;
+  } else if (hashCode == UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER_HASH) {
+    return InvalidInputExceptionReason::UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER;
+  } else if (hashCode == START_DATE_NOT_BEGINNING_OF_MONTH_HASH) {
+    return InvalidInputExceptionReason::START_DATE_NOT_BEGINNING_OF_MONTH;
+  } else if (hashCode == START_DATE_NOT_BEGINNING_OF_DAY_HASH) {
+    return InvalidInputExceptionReason::START_DATE_NOT_BEGINNING_OF_DAY;
+  } else if (hashCode == START_DATE_TOO_EARLY_HASH) {
+    return InvalidInputExceptionReason::START_DATE_TOO_EARLY;
+  } else if (hashCode == START_DATE_TOO_LATE_HASH) {
+    return InvalidInputExceptionReason::START_DATE_TOO_LATE;
+  } else if (hashCode == INVALID_START_DATE_HASH) {
+    return InvalidInputExceptionReason::INVALID_START_DATE;
+  } else if (hashCode == END_DATE_NOT_END_OF_MONTH_HASH) {
+    return InvalidInputExceptionReason::END_DATE_NOT_END_OF_MONTH;
+  } else if (hashCode == END_DATE_TOO_EARLY_HASH) {
+    return InvalidInputExceptionReason::END_DATE_TOO_EARLY;
+  } else if (hashCode == INVALID_END_DATE_HASH) {
+    return InvalidInputExceptionReason::INVALID_END_DATE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -182,6 +213,26 @@ Aws::String GetNameForInvalidInputExceptionReason(InvalidInputExceptionReason en
       return "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY";
     case InvalidInputExceptionReason::NON_DETACHABLE_POLICY:
       return "NON_DETACHABLE_POLICY";
+    case InvalidInputExceptionReason::CALLER_REQUIRED_FIELD_MISSING:
+      return "CALLER_REQUIRED_FIELD_MISSING";
+    case InvalidInputExceptionReason::UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER:
+      return "UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER";
+    case InvalidInputExceptionReason::START_DATE_NOT_BEGINNING_OF_MONTH:
+      return "START_DATE_NOT_BEGINNING_OF_MONTH";
+    case InvalidInputExceptionReason::START_DATE_NOT_BEGINNING_OF_DAY:
+      return "START_DATE_NOT_BEGINNING_OF_DAY";
+    case InvalidInputExceptionReason::START_DATE_TOO_EARLY:
+      return "START_DATE_TOO_EARLY";
+    case InvalidInputExceptionReason::START_DATE_TOO_LATE:
+      return "START_DATE_TOO_LATE";
+    case InvalidInputExceptionReason::INVALID_START_DATE:
+      return "INVALID_START_DATE";
+    case InvalidInputExceptionReason::END_DATE_NOT_END_OF_MONTH:
+      return "END_DATE_NOT_END_OF_MONTH";
+    case InvalidInputExceptionReason::END_DATE_TOO_EARLY:
+      return "END_DATE_TOO_EARLY";
+    case InvalidInputExceptionReason::INVALID_END_DATE:
+      return "INVALID_END_DATE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

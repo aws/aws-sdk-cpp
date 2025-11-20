@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/Component.h>
+#include <aws/imagebuilder/model/LatestVersionReferences.h>
 
 #include <utility>
 
@@ -60,12 +61,33 @@ class GetComponentResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resource ARNs with different wildcard variations of semantic
+   * versioning.</p>
+   */
+  inline const LatestVersionReferences& GetLatestVersionReferences() const { return m_latestVersionReferences; }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  void SetLatestVersionReferences(LatestVersionReferencesT&& value) {
+    m_latestVersionReferencesHasBeenSet = true;
+    m_latestVersionReferences = std::forward<LatestVersionReferencesT>(value);
+  }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  GetComponentResult& WithLatestVersionReferences(LatestVersionReferencesT&& value) {
+    SetLatestVersionReferences(std::forward<LatestVersionReferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
 
   Component m_component;
   bool m_componentHasBeenSet = false;
+
+  LatestVersionReferences m_latestVersionReferences;
+  bool m_latestVersionReferencesHasBeenSet = false;
 };
 
 }  // namespace Model

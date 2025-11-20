@@ -34,18 +34,16 @@ class Field {
 
   ///@{
   /**
-   * <p>A value of the BLOB data type. </p>
+   * <p>A value that indicates whether the data is NULL. </p>
    */
-  inline const Aws::Utils::ByteBuffer& GetBlobValue() const { return m_blobValue; }
-  inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
-  template <typename BlobValueT = Aws::Utils::ByteBuffer>
-  void SetBlobValue(BlobValueT&& value) {
-    m_blobValueHasBeenSet = true;
-    m_blobValue = std::forward<BlobValueT>(value);
+  inline bool GetIsNull() const { return m_isNull; }
+  inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
+  inline void SetIsNull(bool value) {
+    m_isNullHasBeenSet = true;
+    m_isNull = value;
   }
-  template <typename BlobValueT = Aws::Utils::ByteBuffer>
-  Field& WithBlobValue(BlobValueT&& value) {
-    SetBlobValue(std::forward<BlobValueT>(value));
+  inline Field& WithIsNull(bool value) {
+    SetIsNull(value);
     return *this;
   }
   ///@}
@@ -68,38 +66,6 @@ class Field {
 
   ///@{
   /**
-   * <p>A value of the double data type. </p>
-   */
-  inline double GetDoubleValue() const { return m_doubleValue; }
-  inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
-  inline void SetDoubleValue(double value) {
-    m_doubleValueHasBeenSet = true;
-    m_doubleValue = value;
-  }
-  inline Field& WithDoubleValue(double value) {
-    SetDoubleValue(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A value that indicates whether the data is NULL. </p>
-   */
-  inline bool GetIsNull() const { return m_isNull; }
-  inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
-  inline void SetIsNull(bool value) {
-    m_isNullHasBeenSet = true;
-    m_isNull = value;
-  }
-  inline Field& WithIsNull(bool value) {
-    SetIsNull(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A value of the long data type. </p>
    */
   inline long long GetLongValue() const { return m_longValue; }
@@ -110,6 +76,22 @@ class Field {
   }
   inline Field& WithLongValue(long long value) {
     SetLongValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A value of the double data type. </p>
+   */
+  inline double GetDoubleValue() const { return m_doubleValue; }
+  inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
+  inline void SetDoubleValue(double value) {
+    m_doubleValueHasBeenSet = true;
+    m_doubleValue = value;
+  }
+  inline Field& WithDoubleValue(double value) {
+    SetDoubleValue(value);
     return *this;
   }
   ///@}
@@ -131,24 +113,42 @@ class Field {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A value of the BLOB data type. </p>
+   */
+  inline const Aws::Utils::ByteBuffer& GetBlobValue() const { return m_blobValue; }
+  inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
+  template <typename BlobValueT = Aws::Utils::ByteBuffer>
+  void SetBlobValue(BlobValueT&& value) {
+    m_blobValueHasBeenSet = true;
+    m_blobValue = std::forward<BlobValueT>(value);
+  }
+  template <typename BlobValueT = Aws::Utils::ByteBuffer>
+  Field& WithBlobValue(BlobValueT&& value) {
+    SetBlobValue(std::forward<BlobValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::ByteBuffer m_blobValue{};
-  bool m_blobValueHasBeenSet = false;
+  bool m_isNull{false};
+  bool m_isNullHasBeenSet = false;
 
   bool m_booleanValue{false};
   bool m_booleanValueHasBeenSet = false;
 
-  double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
-
-  bool m_isNull{false};
-  bool m_isNullHasBeenSet = false;
-
   long long m_longValue{0};
   bool m_longValueHasBeenSet = false;
 
+  double m_doubleValue{0.0};
+  bool m_doubleValueHasBeenSet = false;
+
   Aws::String m_stringValue;
   bool m_stringValueHasBeenSet = false;
+
+  Aws::Utils::ByteBuffer m_blobValue{};
+  bool m_blobValueHasBeenSet = false;
 };
 
 }  // namespace Model

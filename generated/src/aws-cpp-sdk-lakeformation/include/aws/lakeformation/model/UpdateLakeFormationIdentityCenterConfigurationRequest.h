@@ -11,6 +11,7 @@
 #include <aws/lakeformation/model/ApplicationStatus.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/ExternalFilteringConfiguration.h>
+#include <aws/lakeformation/model/ServiceIntegrationUnion.h>
 
 #include <utility>
 
@@ -87,6 +88,31 @@ class UpdateLakeFormationIdentityCenterConfigurationRequest : public LakeFormati
 
   ///@{
   /**
+   * <p>A list of service integrations for enabling trusted identity propagation with
+   * external services such as Redshift.</p>
+   */
+  inline const Aws::Vector<ServiceIntegrationUnion>& GetServiceIntegrations() const { return m_serviceIntegrations; }
+  inline bool ServiceIntegrationsHasBeenSet() const { return m_serviceIntegrationsHasBeenSet; }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  void SetServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations = std::forward<ServiceIntegrationsT>(value);
+  }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  UpdateLakeFormationIdentityCenterConfigurationRequest& WithServiceIntegrations(ServiceIntegrationsT&& value) {
+    SetServiceIntegrations(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  template <typename ServiceIntegrationsT = ServiceIntegrationUnion>
+  UpdateLakeFormationIdentityCenterConfigurationRequest& AddServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations.emplace_back(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Allows to enable or disable the IAM Identity Center connection.</p>
    */
   inline ApplicationStatus GetApplicationStatus() const { return m_applicationStatus; }
@@ -125,6 +151,9 @@ class UpdateLakeFormationIdentityCenterConfigurationRequest : public LakeFormati
 
   Aws::Vector<DataLakePrincipal> m_shareRecipients;
   bool m_shareRecipientsHasBeenSet = false;
+
+  Aws::Vector<ServiceIntegrationUnion> m_serviceIntegrations;
+  bool m_serviceIntegrationsHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
   bool m_applicationStatusHasBeenSet = false;

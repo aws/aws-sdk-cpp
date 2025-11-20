@@ -10,7 +10,7 @@
 namespace Aws {
 namespace RecycleBin {
 namespace Model {
-enum class ResourceType { NOT_SET, EBS_SNAPSHOT, EC2_IMAGE };
+enum class ResourceType { NOT_SET, EBS_SNAPSHOT, EC2_IMAGE, EBS_VOLUME };
 
 namespace ResourceTypeMapper {
 AWS_RECYCLEBIN_API ResourceType GetResourceTypeForName(const Aws::String& name);

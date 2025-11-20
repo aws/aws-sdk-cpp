@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+#include <aws/devicefarm/model/EnvironmentVariable.h>
 #include <aws/devicefarm/model/VpcConfig.h>
 
 #include <utility>
@@ -88,6 +90,53 @@ class CreateProjectRequest : public DeviceFarmRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A set of environment variables which are used by default for all runs in the
+   * project. These environment variables are applied to the test run during the
+   * execution of a test spec file. </p> <p> For more information about using test
+   * spec files, please see <a
+   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom
+   * test environments </a> in <i>AWS Device Farm.</i> </p>
+   */
+  inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const { return m_environmentVariables; }
+  inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  void SetEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables = std::forward<EnvironmentVariablesT>(value);
+  }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  CreateProjectRequest& WithEnvironmentVariables(EnvironmentVariablesT&& value) {
+    SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  template <typename EnvironmentVariablesT = EnvironmentVariable>
+  CreateProjectRequest& AddEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables.emplace_back(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+   */
+  inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+  inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+  template <typename ExecutionRoleArnT = Aws::String>
+  void SetExecutionRoleArn(ExecutionRoleArnT&& value) {
+    m_executionRoleArnHasBeenSet = true;
+    m_executionRoleArn = std::forward<ExecutionRoleArnT>(value);
+  }
+  template <typename ExecutionRoleArnT = Aws::String>
+  CreateProjectRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) {
+    SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -97,6 +146,12 @@ class CreateProjectRequest : public DeviceFarmRequest {
 
   VpcConfig m_vpcConfig;
   bool m_vpcConfigHasBeenSet = false;
+
+  Aws::Vector<EnvironmentVariable> m_environmentVariables;
+  bool m_environmentVariablesHasBeenSet = false;
+
+  Aws::String m_executionRoleArn;
+  bool m_executionRoleArnHasBeenSet = false;
 };
 
 }  // namespace Model

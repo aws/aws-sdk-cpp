@@ -412,6 +412,7 @@
 #include <aws/glue/model/FindMatchesMetrics.h>
 #include <aws/glue/model/FindMatchesParameters.h>
 #include <aws/glue/model/FindMatchesTaskRunProperties.h>
+#include <aws/glue/model/FunctionType.h>
 #include <aws/glue/model/GetBlueprintRequest.h>
 #include <aws/glue/model/GetBlueprintResult.h>
 #include <aws/glue/model/GetBlueprintRunRequest.h>

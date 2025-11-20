@@ -19,36 +19,36 @@ Aws::String DescribeTableRequest::SerializePayload() const {
     payload.WithString("ClusterIdentifier", m_clusterIdentifier);
   }
 
-  if (m_connectedDatabaseHasBeenSet) {
-    payload.WithString("ConnectedDatabase", m_connectedDatabase);
-  }
-
-  if (m_databaseHasBeenSet) {
-    payload.WithString("Database", m_database);
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
   if (m_dbUserHasBeenSet) {
     payload.WithString("DbUser", m_dbUser);
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+  if (m_connectedDatabaseHasBeenSet) {
+    payload.WithString("ConnectedDatabase", m_connectedDatabase);
   }
 
   if (m_schemaHasBeenSet) {
     payload.WithString("Schema", m_schema);
   }
 
-  if (m_secretArnHasBeenSet) {
-    payload.WithString("SecretArn", m_secretArn);
-  }
-
   if (m_tableHasBeenSet) {
     payload.WithString("Table", m_table);
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   if (m_workgroupNameHasBeenSet) {

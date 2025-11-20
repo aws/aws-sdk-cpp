@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/Severity.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -21,8 +22,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents the result of an audit performed by a specific auditor on a
- * resource.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that contains the result of an automated audit analysis,
+ * including the auditor name, description of findings, additional data, and
+ * severity level.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AuditorResult">AWS
  * API Reference</a></p>
  */
@@ -35,8 +37,7 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>The name or identifier of the auditor that performed the examination and
-   * generated this result.</p>
+   * <p>The name of the auditor algorithm that generated this result.</p>
    */
   inline const Aws::String& GetAuditor() const { return m_auditor; }
   inline bool AuditorHasBeenSet() const { return m_auditorHasBeenSet; }
@@ -54,8 +55,8 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>A detailed description of what the auditor found, including any
-   * recommendations for remediation or further investigation.</p>
+   * <p>A detailed description of the audit finding, explaining what was observed and
+   * potential implications.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -73,8 +74,33 @@ class AuditorResult {
 
   ///@{
   /**
-   * <p>The severity level of the finding, such as "Critical", "High", "Medium", or
-   * "Low". This helps prioritize remediation efforts.</p>
+   * <p>This is a string-to-string map. It contains additional data about the result
+   * of an automated audit analysis.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetData() const { return m_data; }
+  inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+  template <typename DataT = Aws::Map<Aws::String, Aws::String>>
+  void SetData(DataT&& value) {
+    m_dataHasBeenSet = true;
+    m_data = std::forward<DataT>(value);
+  }
+  template <typename DataT = Aws::Map<Aws::String, Aws::String>>
+  AuditorResult& WithData(DataT&& value) {
+    SetData(std::forward<DataT>(value));
+    return *this;
+  }
+  template <typename DataKeyT = Aws::String, typename DataValueT = Aws::String>
+  AuditorResult& AddData(DataKeyT&& key, DataValueT&& value) {
+    m_dataHasBeenSet = true;
+    m_data.emplace(std::forward<DataKeyT>(key), std::forward<DataValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The severity level of this audit finding, indicating the importance and
+   * potential impact of the issue.</p>
    */
   inline Severity GetSeverity() const { return m_severity; }
   inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
@@ -93,6 +119,9 @@ class AuditorResult {
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_data;
+  bool m_dataHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
   bool m_severityHasBeenSet = false;

@@ -7,8 +7,10 @@
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/IpAddressType.h>
+#include <aws/cloudfront/model/IpamCidrConfig.h>
 #include <aws/cloudfront/model/Tags.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -84,10 +86,9 @@ class CreateAnycastIpList2020_05_31Request : public CloudFrontRequest {
   ///@{
   /**
    * <p>The IP address type for the Anycast static IP list. You can specify one of
-   * the following options:</p> <ul> <li> <p> <code>ipv4</code> - Allocate a list of
-   * only IPv4 addresses</p> </li> <li> <p> <code>ipv6</code> - Allocate a list of
-   * only IPv4 addresses</p> </li> <li> <p> <code>dualstack</code> - Allocate a list
-   * of both IPv4 and IPv6 addresses</p> </li> </ul>
+   * the following options:</p> <ul> <li> <p> <code>ipv4</code> only</p> </li> <li>
+   * <p> <code>ipv6</code> only </p> </li> <li> <p> <code>dualstack</code> - Allocate
+   * a list of both IPv4 and IPv6 addresses</p> </li> </ul>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
   inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
@@ -97,6 +98,31 @@ class CreateAnycastIpList2020_05_31Request : public CloudFrontRequest {
   }
   inline CreateAnycastIpList2020_05_31Request& WithIpAddressType(IpAddressType value) {
     SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> A list of IPAM CIDR configurations that specify the IP address ranges and
+   * IPAM pool settings for creating the Anycast static IP list. </p>
+   */
+  inline const Aws::Vector<IpamCidrConfig>& GetIpamCidrConfigs() const { return m_ipamCidrConfigs; }
+  inline bool IpamCidrConfigsHasBeenSet() const { return m_ipamCidrConfigsHasBeenSet; }
+  template <typename IpamCidrConfigsT = Aws::Vector<IpamCidrConfig>>
+  void SetIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    m_ipamCidrConfigsHasBeenSet = true;
+    m_ipamCidrConfigs = std::forward<IpamCidrConfigsT>(value);
+  }
+  template <typename IpamCidrConfigsT = Aws::Vector<IpamCidrConfig>>
+  CreateAnycastIpList2020_05_31Request& WithIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    SetIpamCidrConfigs(std::forward<IpamCidrConfigsT>(value));
+    return *this;
+  }
+  template <typename IpamCidrConfigsT = IpamCidrConfig>
+  CreateAnycastIpList2020_05_31Request& AddIpamCidrConfigs(IpamCidrConfigsT&& value) {
+    m_ipamCidrConfigsHasBeenSet = true;
+    m_ipamCidrConfigs.emplace_back(std::forward<IpamCidrConfigsT>(value));
     return *this;
   }
   ///@}
@@ -112,6 +138,9 @@ class CreateAnycastIpList2020_05_31Request : public CloudFrontRequest {
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
   bool m_ipAddressTypeHasBeenSet = false;
+
+  Aws::Vector<IpamCidrConfig> m_ipamCidrConfigs;
+  bool m_ipamCidrConfigsHasBeenSet = false;
 };
 
 }  // namespace Model
