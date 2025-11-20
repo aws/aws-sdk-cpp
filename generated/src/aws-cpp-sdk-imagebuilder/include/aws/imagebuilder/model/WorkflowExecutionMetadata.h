@@ -244,6 +244,22 @@ class WorkflowExecutionMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates retry status for this runtime instance of the workflow.</p>
+   */
+  inline bool GetRetried() const { return m_retried; }
+  inline bool RetriedHasBeenSet() const { return m_retriedHasBeenSet; }
+  inline void SetRetried(bool value) {
+    m_retriedHasBeenSet = true;
+    m_retried = value;
+  }
+  inline WorkflowExecutionMetadata& WithRetried(bool value) {
+    SetRetried(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workflowBuildVersionArn;
   bool m_workflowBuildVersionArnHasBeenSet = false;
@@ -280,6 +296,9 @@ class WorkflowExecutionMetadata {
 
   Aws::String m_parallelGroup;
   bool m_parallelGroupHasBeenSet = false;
+
+  bool m_retried{false};
+  bool m_retriedHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -32,8 +32,8 @@ class UpdateOrganizationalUnitRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the OU that you want to rename. You can get the
-   * ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p> <p>The <a
+   * <p>ID for the OU that you want to rename. You can get the ID from the
+   * <a>ListOrganizationalUnitsForParent</a> operation.</p> <p>The <a
    * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
    * unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or
    * digits (the ID of the root that contains the OU). This string is followed by a

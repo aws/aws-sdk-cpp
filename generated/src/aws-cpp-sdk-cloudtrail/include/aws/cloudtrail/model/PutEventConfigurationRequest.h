@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
+#include <aws/cloudtrail/model/AggregationConfiguration.h>
 #include <aws/cloudtrail/model/ContextKeySelector.h>
 #include <aws/cloudtrail/model/MaxEventSize.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -35,8 +36,27 @@ class PutEventConfigurationRequest : public CloudTrailRequest {
 
   ///@{
   /**
+   * <p>The name of the trail for which you want to update event configuration
+   * settings.</p>
+   */
+  inline const Aws::String& GetTrailName() const { return m_trailName; }
+  inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
+  template <typename TrailNameT = Aws::String>
+  void SetTrailName(TrailNameT&& value) {
+    m_trailNameHasBeenSet = true;
+    m_trailName = std::forward<TrailNameT>(value);
+  }
+  template <typename TrailNameT = Aws::String>
+  PutEventConfigurationRequest& WithTrailName(TrailNameT&& value) {
+    SetTrailName(std::forward<TrailNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data
-   * store for which you want to update event configuration settings.</p>
+   * store for which event configuration settings are updated.</p>
    */
   inline const Aws::String& GetEventDataStore() const { return m_eventDataStore; }
   inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
@@ -94,7 +114,35 @@ class PutEventConfigurationRequest : public CloudTrailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of aggregation configurations that you want to configure for the
+   * trail.</p>
+   */
+  inline const Aws::Vector<AggregationConfiguration>& GetAggregationConfigurations() const { return m_aggregationConfigurations; }
+  inline bool AggregationConfigurationsHasBeenSet() const { return m_aggregationConfigurationsHasBeenSet; }
+  template <typename AggregationConfigurationsT = Aws::Vector<AggregationConfiguration>>
+  void SetAggregationConfigurations(AggregationConfigurationsT&& value) {
+    m_aggregationConfigurationsHasBeenSet = true;
+    m_aggregationConfigurations = std::forward<AggregationConfigurationsT>(value);
+  }
+  template <typename AggregationConfigurationsT = Aws::Vector<AggregationConfiguration>>
+  PutEventConfigurationRequest& WithAggregationConfigurations(AggregationConfigurationsT&& value) {
+    SetAggregationConfigurations(std::forward<AggregationConfigurationsT>(value));
+    return *this;
+  }
+  template <typename AggregationConfigurationsT = AggregationConfiguration>
+  PutEventConfigurationRequest& AddAggregationConfigurations(AggregationConfigurationsT&& value) {
+    m_aggregationConfigurationsHasBeenSet = true;
+    m_aggregationConfigurations.emplace_back(std::forward<AggregationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_trailName;
+  bool m_trailNameHasBeenSet = false;
+
   Aws::String m_eventDataStore;
   bool m_eventDataStoreHasBeenSet = false;
 
@@ -103,6 +151,9 @@ class PutEventConfigurationRequest : public CloudTrailRequest {
 
   Aws::Vector<ContextKeySelector> m_contextKeySelectors;
   bool m_contextKeySelectorsHasBeenSet = false;
+
+  Aws::Vector<AggregationConfiguration> m_aggregationConfigurations;
+  bool m_aggregationConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

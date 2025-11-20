@@ -105,6 +105,10 @@ Replication& Replication::operator=(JsonView jsonValue) {
     m_replicationDeprovisionTime = jsonValue.GetDouble("ReplicationDeprovisionTime");
     m_replicationDeprovisionTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsReadOnly")) {
+    m_isReadOnly = jsonValue.GetBool("IsReadOnly");
+    m_isReadOnlyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -199,6 +203,10 @@ JsonValue Replication::Jsonize() const {
 
   if (m_replicationDeprovisionTimeHasBeenSet) {
     payload.WithDouble("ReplicationDeprovisionTime", m_replicationDeprovisionTime.SecondsWithMSPrecision());
+  }
+
+  if (m_isReadOnlyHasBeenSet) {
+    payload.WithBool("IsReadOnly", m_isReadOnly);
   }
 
   return payload;

@@ -20,8 +20,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents a logical grouping of services based on shared attributes or
- * characteristics.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that represents a logical grouping of services based on shared
+ * attributes such as business unit, environment, or entry point.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceGroup">AWS
  * API Reference</a></p>
  */
@@ -34,7 +35,8 @@ class ServiceGroup {
 
   ///@{
   /**
-   * <p>The name of the group, such as "Environment", "Team", or "Application".</p>
+   * <p>The name of the grouping attribute, such as <code>BusinessUnit</code> or
+   * <code>Environment</code>.</p>
    */
   inline const Aws::String& GetGroupName() const { return m_groupName; }
   inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
@@ -52,8 +54,8 @@ class ServiceGroup {
 
   ///@{
   /**
-   * <p>The specific value for this group, such as "Production", "TeamA", or
-   * "WebApp".</p>
+   * <p>The value of the grouping attribute for this service, such as
+   * <code>Payments</code> or <code>Production</code>.</p>
    */
   inline const Aws::String& GetGroupValue() const { return m_groupValue; }
   inline bool GroupValueHasBeenSet() const { return m_groupValueHasBeenSet; }
@@ -71,8 +73,8 @@ class ServiceGroup {
 
   ///@{
   /**
-   * <p>The source of the grouping information, such as "Tag", "Attribute", or
-   * "Manual".</p>
+   * <p>The source of the grouping attribute, such as <code>TAG</code>,
+   * <code>OTEL</code>, or <code>DEFAULT</code>.</p>
    */
   inline const Aws::String& GetGroupSource() const { return m_groupSource; }
   inline bool GroupSourceHasBeenSet() const { return m_groupSourceHasBeenSet; }
@@ -90,7 +92,8 @@ class ServiceGroup {
 
   ///@{
   /**
-   * <p>A unique identifier for the group within the grouping configuration.</p>
+   * <p>A unique identifier for this grouping attribute value, used for filtering and
+   * API operations.</p>
    */
   inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
   inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }

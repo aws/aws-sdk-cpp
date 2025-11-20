@@ -69,6 +69,14 @@ FreeFormLayoutElement& FreeFormLayoutElement::operator=(JsonView jsonValue) {
     m_loadingAnimation = jsonValue.GetObject("LoadingAnimation");
     m_loadingAnimationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BorderRadius")) {
+    m_borderRadius = jsonValue.GetString("BorderRadius");
+    m_borderRadiusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Padding")) {
+    m_padding = jsonValue.GetString("Padding");
+    m_paddingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +133,14 @@ JsonValue FreeFormLayoutElement::Jsonize() const {
 
   if (m_loadingAnimationHasBeenSet) {
     payload.WithObject("LoadingAnimation", m_loadingAnimation.Jsonize());
+  }
+
+  if (m_borderRadiusHasBeenSet) {
+    payload.WithString("BorderRadius", m_borderRadius);
+  }
+
+  if (m_paddingHasBeenSet) {
+    payload.WithString("Padding", m_padding);
   }
 
   return payload;

@@ -21,8 +21,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Specifies a target resource for auditing, such as a service, SLO, or
- * operation.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that specifies the target entity for audit analysis, such as a
+ * <code>service</code>, <code>SLO</code>, <code>service_operation</code>, or
+ * <code>canary</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AuditTarget">AWS
  * API Reference</a></p>
  */
@@ -35,8 +36,8 @@ class AuditTarget {
 
   ///@{
   /**
-   * <p>The type of resource being targeted for audit, such as "Service", "SLO",
-   * "ServiceOperation", or "Canary".</p>
+   * <p>The type of entity being audited, such as <code>service</code>,
+   * <code>SLO</code>, <code>service_operation</code>, or <code>canary</code>. </p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -54,8 +55,7 @@ class AuditTarget {
 
   ///@{
   /**
-   * <p>The specific data or entity information for the audit target, containing
-   * details needed to identify and examine the resource.</p>
+   * <p>The specific data identifying the audit target entity.</p>
    */
   inline const AuditTargetEntity& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }

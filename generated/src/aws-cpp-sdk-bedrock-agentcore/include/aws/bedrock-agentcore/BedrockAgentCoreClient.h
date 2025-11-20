@@ -14,10 +14,9 @@
 namespace Aws {
 namespace BedrockAgentCore {
 /**
- * <p> <p>Amazon Bedrock AgentCore is in preview release and is subject to
- * change.</p>  <p>Welcome to the Amazon Bedrock AgentCore Data Plane API
- * reference. Data Plane actions process and handle data or workloads within Amazon
- * Web Services services. </p></p>
+ * <p>Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane
+ * actions process and handle data or workloads within Amazon Web Services
+ * services. </p>
  */
 class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient> {
@@ -802,6 +801,36 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Lists all long-term memory extraction jobs that are eligible to be started
+   * with optional filtering.</p> <p>To use this operation, you must have the
+   * <code>bedrock-agentcore:ListMemoryExtractionJobs</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMemoryExtractionJobsOutcome ListMemoryExtractionJobs(const Model::ListMemoryExtractionJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListMemoryExtractionJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListMemoryExtractionJobsRequestT = Model::ListMemoryExtractionJobsRequest>
+  Model::ListMemoryExtractionJobsOutcomeCallable ListMemoryExtractionJobsCallable(const ListMemoryExtractionJobsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListMemoryExtractionJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListMemoryExtractionJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListMemoryExtractionJobsRequestT = Model::ListMemoryExtractionJobsRequest>
+  void ListMemoryExtractionJobsAsync(const ListMemoryExtractionJobsRequestT& request,
+                                     const ListMemoryExtractionJobsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListMemoryExtractionJobs, request, handler, context);
+  }
+
+  /**
    * <p>Lists memory records in an AgentCore Memory resource based on specified
    * criteria. We recommend using pagination to ensure that the operation returns
    * quickly and successfully.</p> <p>To use this operation, you must have the
@@ -971,6 +1000,38 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
                                         const StartCodeInterpreterSessionResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::StartCodeInterpreterSession, request, handler, context);
+  }
+
+  /**
+   * <p> Starts a memory extraction job that processes events that failed extraction
+   * previously in an AgentCore Memory resource and produces structured memory
+   * records. When earlier extraction attempts have left events unprocessed, this job
+   * will pick up and extract those as well. </p> <p>To use this operation, you must
+   * have the <code>bedrock-agentcore:StartMemoryExtractionJob</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMemoryExtractionJobOutcome StartMemoryExtractionJob(const Model::StartMemoryExtractionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMemoryExtractionJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartMemoryExtractionJobRequestT = Model::StartMemoryExtractionJobRequest>
+  Model::StartMemoryExtractionJobOutcomeCallable StartMemoryExtractionJobCallable(const StartMemoryExtractionJobRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::StartMemoryExtractionJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartMemoryExtractionJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartMemoryExtractionJobRequestT = Model::StartMemoryExtractionJobRequest>
+  void StartMemoryExtractionJobAsync(const StartMemoryExtractionJobRequestT& request,
+                                     const StartMemoryExtractionJobResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::StartMemoryExtractionJob, request, handler, context);
   }
 
   /**

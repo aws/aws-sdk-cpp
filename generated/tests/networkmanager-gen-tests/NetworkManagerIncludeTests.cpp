@@ -29,6 +29,7 @@
 #include <aws/networkmanager/model/Attachment.h>
 #include <aws/networkmanager/model/AttachmentError.h>
 #include <aws/networkmanager/model/AttachmentErrorCode.h>
+#include <aws/networkmanager/model/AttachmentRoutingPolicyAssociationSummary.h>
 #include <aws/networkmanager/model/AttachmentState.h>
 #include <aws/networkmanager/model/AttachmentType.h>
 #include <aws/networkmanager/model/Bandwidth.h>
@@ -67,6 +68,7 @@
 #include <aws/networkmanager/model/CoreNetworkPolicyError.h>
 #include <aws/networkmanager/model/CoreNetworkPolicyException.h>
 #include <aws/networkmanager/model/CoreNetworkPolicyVersion.h>
+#include <aws/networkmanager/model/CoreNetworkRoutingInformation.h>
 #include <aws/networkmanager/model/CoreNetworkSegment.h>
 #include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
 #include <aws/networkmanager/model/CoreNetworkState.h>
@@ -77,6 +79,8 @@
 #include <aws/networkmanager/model/CreateConnectPeerResult.h>
 #include <aws/networkmanager/model/CreateConnectionRequest.h>
 #include <aws/networkmanager/model/CreateConnectionResult.h>
+#include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationRequest.h>
+#include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/CreateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/CreateCoreNetworkResult.h>
 #include <aws/networkmanager/model/CreateDeviceRequest.h>
@@ -107,6 +111,8 @@
 #include <aws/networkmanager/model/DeleteConnectionResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionResult.h>
+#include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationRequest.h>
+#include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkResult.h>
 #include <aws/networkmanager/model/DeleteDeviceRequest.h>
@@ -200,12 +206,18 @@
 #include <aws/networkmanager/model/LinkAssociation.h>
 #include <aws/networkmanager/model/LinkAssociationState.h>
 #include <aws/networkmanager/model/LinkState.h>
+#include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsRequest.h>
+#include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsResult.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsResult.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsResult.h>
+#include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsRequest.h>
+#include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsResult.h>
+#include <aws/networkmanager/model/ListCoreNetworkRoutingInformationRequest.h>
+#include <aws/networkmanager/model/ListCoreNetworkRoutingInformationResult.h>
 #include <aws/networkmanager/model/ListCoreNetworksRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworksResult.h>
 #include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
@@ -230,8 +242,11 @@
 #include <aws/networkmanager/model/PeeringState.h>
 #include <aws/networkmanager/model/PeeringType.h>
 #include <aws/networkmanager/model/PermissionsErrorContext.h>
+#include <aws/networkmanager/model/PrefixListAssociation.h>
 #include <aws/networkmanager/model/ProposedNetworkFunctionGroupChange.h>
 #include <aws/networkmanager/model/ProposedSegmentChange.h>
+#include <aws/networkmanager/model/PutAttachmentRoutingPolicyLabelRequest.h>
+#include <aws/networkmanager/model/PutAttachmentRoutingPolicyLabelResult.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyResult.h>
 #include <aws/networkmanager/model/PutResourcePolicyRequest.h>
@@ -241,6 +256,8 @@
 #include <aws/networkmanager/model/RejectAttachmentRequest.h>
 #include <aws/networkmanager/model/RejectAttachmentResult.h>
 #include <aws/networkmanager/model/Relationship.h>
+#include <aws/networkmanager/model/RemoveAttachmentRoutingPolicyLabelRequest.h>
+#include <aws/networkmanager/model/RemoveAttachmentRoutingPolicyLabelResult.h>
 #include <aws/networkmanager/model/ResourceNotFoundException.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionRequest.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionResult.h>
@@ -256,6 +273,9 @@
 #include <aws/networkmanager/model/RouteTableIdentifier.h>
 #include <aws/networkmanager/model/RouteTableType.h>
 #include <aws/networkmanager/model/RouteType.h>
+#include <aws/networkmanager/model/RoutingInformationNextHop.h>
+#include <aws/networkmanager/model/RoutingPolicyAssociationDetail.h>
+#include <aws/networkmanager/model/RoutingPolicyDirection.h>
 #include <aws/networkmanager/model/SegmentActionServiceInsertion.h>
 #include <aws/networkmanager/model/SendViaMode.h>
 #include <aws/networkmanager/model/ServiceInsertionAction.h>

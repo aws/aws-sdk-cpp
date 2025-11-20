@@ -10,6 +10,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/ExternalFilteringConfiguration.h>
+#include <aws/lakeformation/model/ServiceIntegrationUnion.h>
 
 #include <utility>
 
@@ -120,6 +121,31 @@ class CreateLakeFormationIdentityCenterConfigurationRequest : public LakeFormati
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of service integrations for enabling trusted identity propagation with
+   * external services such as Redshift.</p>
+   */
+  inline const Aws::Vector<ServiceIntegrationUnion>& GetServiceIntegrations() const { return m_serviceIntegrations; }
+  inline bool ServiceIntegrationsHasBeenSet() const { return m_serviceIntegrationsHasBeenSet; }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  void SetServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations = std::forward<ServiceIntegrationsT>(value);
+  }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  CreateLakeFormationIdentityCenterConfigurationRequest& WithServiceIntegrations(ServiceIntegrationsT&& value) {
+    SetServiceIntegrations(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  template <typename ServiceIntegrationsT = ServiceIntegrationUnion>
+  CreateLakeFormationIdentityCenterConfigurationRequest& AddServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations.emplace_back(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogId;
   bool m_catalogIdHasBeenSet = false;
@@ -132,6 +158,9 @@ class CreateLakeFormationIdentityCenterConfigurationRequest : public LakeFormati
 
   Aws::Vector<DataLakePrincipal> m_shareRecipients;
   bool m_shareRecipientsHasBeenSet = false;
+
+  Aws::Vector<ServiceIntegrationUnion> m_serviceIntegrations;
+  bool m_serviceIntegrationsHasBeenSet = false;
 };
 
 }  // namespace Model

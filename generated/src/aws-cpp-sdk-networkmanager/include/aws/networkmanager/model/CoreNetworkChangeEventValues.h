@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/RoutingPolicyAssociationDetail.h>
+#include <aws/networkmanager/model/RoutingPolicyDirection.h>
 
 #include <utility>
 
@@ -45,6 +48,41 @@ class CoreNetworkChangeEventValues {
   template <typename EdgeLocationT = Aws::String>
   CoreNetworkChangeEventValues& WithEdgeLocation(EdgeLocationT&& value) {
     SetEdgeLocation(std::forward<EdgeLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The edge location of the peer in a core network change event.</p>
+   */
+  inline const Aws::String& GetPeerEdgeLocation() const { return m_peerEdgeLocation; }
+  inline bool PeerEdgeLocationHasBeenSet() const { return m_peerEdgeLocationHasBeenSet; }
+  template <typename PeerEdgeLocationT = Aws::String>
+  void SetPeerEdgeLocation(PeerEdgeLocationT&& value) {
+    m_peerEdgeLocationHasBeenSet = true;
+    m_peerEdgeLocation = std::forward<PeerEdgeLocationT>(value);
+  }
+  template <typename PeerEdgeLocationT = Aws::String>
+  CoreNetworkChangeEventValues& WithPeerEdgeLocation(PeerEdgeLocationT&& value) {
+    SetPeerEdgeLocation(std::forward<PeerEdgeLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The routing policy direction (inbound/outbound) in a core network change
+   * event.</p>
+   */
+  inline RoutingPolicyDirection GetRoutingPolicyDirection() const { return m_routingPolicyDirection; }
+  inline bool RoutingPolicyDirectionHasBeenSet() const { return m_routingPolicyDirectionHasBeenSet; }
+  inline void SetRoutingPolicyDirection(RoutingPolicyDirection value) {
+    m_routingPolicyDirectionHasBeenSet = true;
+    m_routingPolicyDirection = value;
+  }
+  inline CoreNetworkChangeEventValues& WithRoutingPolicyDirection(RoutingPolicyDirection value) {
+    SetRoutingPolicyDirection(value);
     return *this;
   }
   ///@}
@@ -121,9 +159,42 @@ class CoreNetworkChangeEventValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The names of the routing policies and other association details in the core
+   * network change values.</p>
+   */
+  inline const Aws::Vector<RoutingPolicyAssociationDetail>& GetRoutingPolicyAssociationDetails() const {
+    return m_routingPolicyAssociationDetails;
+  }
+  inline bool RoutingPolicyAssociationDetailsHasBeenSet() const { return m_routingPolicyAssociationDetailsHasBeenSet; }
+  template <typename RoutingPolicyAssociationDetailsT = Aws::Vector<RoutingPolicyAssociationDetail>>
+  void SetRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+    m_routingPolicyAssociationDetails = std::forward<RoutingPolicyAssociationDetailsT>(value);
+  }
+  template <typename RoutingPolicyAssociationDetailsT = Aws::Vector<RoutingPolicyAssociationDetail>>
+  CoreNetworkChangeEventValues& WithRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    SetRoutingPolicyAssociationDetails(std::forward<RoutingPolicyAssociationDetailsT>(value));
+    return *this;
+  }
+  template <typename RoutingPolicyAssociationDetailsT = RoutingPolicyAssociationDetail>
+  CoreNetworkChangeEventValues& AddRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+    m_routingPolicyAssociationDetails.emplace_back(std::forward<RoutingPolicyAssociationDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_edgeLocation;
   bool m_edgeLocationHasBeenSet = false;
+
+  Aws::String m_peerEdgeLocation;
+  bool m_peerEdgeLocationHasBeenSet = false;
+
+  RoutingPolicyDirection m_routingPolicyDirection{RoutingPolicyDirection::NOT_SET};
+  bool m_routingPolicyDirectionHasBeenSet = false;
 
   Aws::String m_segmentName;
   bool m_segmentNameHasBeenSet = false;
@@ -136,6 +207,9 @@ class CoreNetworkChangeEventValues {
 
   Aws::String m_cidr;
   bool m_cidrHasBeenSet = false;
+
+  Aws::Vector<RoutingPolicyAssociationDetail> m_routingPolicyAssociationDetails;
+  bool m_routingPolicyAssociationDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

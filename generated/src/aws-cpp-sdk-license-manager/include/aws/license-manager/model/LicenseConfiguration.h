@@ -343,6 +343,22 @@ class LicenseConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>License configuration expiry time in Unix timestamp format.</p>
+   */
+  inline long long GetLicenseExpiry() const { return m_licenseExpiry; }
+  inline bool LicenseExpiryHasBeenSet() const { return m_licenseExpiryHasBeenSet; }
+  inline void SetLicenseExpiry(long long value) {
+    m_licenseExpiryHasBeenSet = true;
+    m_licenseExpiry = value;
+  }
+  inline LicenseConfiguration& WithLicenseExpiry(long long value) {
+    SetLicenseExpiry(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_licenseConfigurationId;
   bool m_licenseConfigurationIdHasBeenSet = false;
@@ -391,6 +407,9 @@ class LicenseConfiguration {
 
   AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
   bool m_automatedDiscoveryInformationHasBeenSet = false;
+
+  long long m_licenseExpiry{0};
+  bool m_licenseExpiryHasBeenSet = false;
 };
 
 }  // namespace Model

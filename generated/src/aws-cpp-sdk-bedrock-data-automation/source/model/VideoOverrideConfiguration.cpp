@@ -22,6 +22,10 @@ VideoOverrideConfiguration& VideoOverrideConfiguration::operator=(JsonView jsonV
     m_modalityProcessing = jsonValue.GetObject("modalityProcessing");
     m_modalityProcessingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sensitiveDataConfiguration")) {
+    m_sensitiveDataConfiguration = jsonValue.GetObject("sensitiveDataConfiguration");
+    m_sensitiveDataConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue VideoOverrideConfiguration::Jsonize() const {
 
   if (m_modalityProcessingHasBeenSet) {
     payload.WithObject("modalityProcessing", m_modalityProcessing.Jsonize());
+  }
+
+  if (m_sensitiveDataConfigurationHasBeenSet) {
+    payload.WithObject("sensitiveDataConfiguration", m_sensitiveDataConfiguration.Jsonize());
   }
 
   return payload;

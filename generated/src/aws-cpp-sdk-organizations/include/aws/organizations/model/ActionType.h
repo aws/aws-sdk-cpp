@@ -10,7 +10,14 @@
 namespace Aws {
 namespace Organizations {
 namespace Model {
-enum class ActionType { NOT_SET, INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE };
+enum class ActionType {
+  NOT_SET,
+  INVITE,
+  ENABLE_ALL_FEATURES,
+  APPROVE_ALL_FEATURES,
+  ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE,
+  TRANSFER_RESPONSIBILITY
+};
 
 namespace ActionTypeMapper {
 AWS_ORGANIZATIONS_API ActionType GetActionTypeForName(const Aws::String& name);

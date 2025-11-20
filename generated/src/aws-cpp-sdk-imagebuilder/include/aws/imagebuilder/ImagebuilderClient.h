@@ -635,6 +635,32 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>DistributeImage distributes existing AMIs to additional regions and accounts
+   * without rebuilding the image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DistributeImage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DistributeImageOutcome DistributeImage(const Model::DistributeImageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DistributeImage that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DistributeImageRequestT = Model::DistributeImageRequest>
+  Model::DistributeImageOutcomeCallable DistributeImageCallable(const DistributeImageRequestT& request) const {
+    return SubmitCallable(&ImagebuilderClient::DistributeImage, request);
+  }
+
+  /**
+   * An Async wrapper for DistributeImage that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DistributeImageRequestT = Model::DistributeImageRequest>
+  void DistributeImageAsync(const DistributeImageRequestT& request, const DistributeImageResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ImagebuilderClient::DistributeImage, request, handler, context);
+  }
+
+  /**
    * <p>Gets a component object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
    * API Reference</a></p>
@@ -1944,6 +1970,32 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   void PutImageRecipePolicyAsync(const PutImageRecipePolicyRequestT& request, const PutImageRecipePolicyResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ImagebuilderClient::PutImageRecipePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>RetryImage retries an image distribution without rebuilding the
+   * image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/RetryImage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RetryImageOutcome RetryImage(const Model::RetryImageRequest& request) const;
+
+  /**
+   * A Callable wrapper for RetryImage that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RetryImageRequestT = Model::RetryImageRequest>
+  Model::RetryImageOutcomeCallable RetryImageCallable(const RetryImageRequestT& request) const {
+    return SubmitCallable(&ImagebuilderClient::RetryImage, request);
+  }
+
+  /**
+   * An Async wrapper for RetryImage that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RetryImageRequestT = Model::RetryImageRequest>
+  void RetryImageAsync(const RetryImageRequestT& request, const RetryImageResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ImagebuilderClient::RetryImage, request, handler, context);
   }
 
   /**

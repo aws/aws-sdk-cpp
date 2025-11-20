@@ -32,6 +32,10 @@ CreateImageResult& CreateImageResult::operator=(const Aws::AmazonWebServiceResul
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
     m_imageBuildVersionArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

@@ -144,7 +144,11 @@ class ListPermissionsRequest : public LakeFormationRequest {
 
   ///@{
   /**
-   * <p>Indicates that related permissions should be included in the results.</p>
+   * <p>Indicates that related permissions should be included in the results when
+   * listing permissions on a table resource.</p> <p>Set the field to
+   * <code>TRUE</code> to show the cell filters on a table resource. Default is
+   * <code>FALSE</code>. The Principal parameter must not be specified when
+   * requesting cell filter information.</p>
    */
   inline const Aws::String& GetIncludeRelated() const { return m_includeRelated; }
   inline bool IncludeRelatedHasBeenSet() const { return m_includeRelatedHasBeenSet; }

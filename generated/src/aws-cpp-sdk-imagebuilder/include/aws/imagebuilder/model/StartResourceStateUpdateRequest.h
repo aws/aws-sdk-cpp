@@ -35,8 +35,8 @@ class StartResourceStateUpdateRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The ARN of the Image Builder resource that is updated. The state update might
-   * also impact associated resources.</p>
+   * <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated.
+   * The state update might also impact associated resources.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

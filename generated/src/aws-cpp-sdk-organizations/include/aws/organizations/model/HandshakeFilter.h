@@ -21,7 +21,7 @@ namespace Organizations {
 namespace Model {
 
 /**
- * <p>Specifies the criteria that are used to select the handshakes for the
+ * <p>Contains the filter used to select the handshakes for an
  * operation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeFilter">AWS
  * API Reference</a></p>
@@ -35,9 +35,8 @@ class HandshakeFilter {
 
   ///@{
   /**
-   * <p>Specifies the type of handshake action.</p> <p>If you specify
-   * <code>ActionType</code>, you cannot also specify
-   * <code>ParentHandshakeId</code>.</p>
+   * <p>The type of handshake.</p> <p>If you specify <code>ActionType</code>, you
+   * cannot also specify <code>ParentHandshakeId</code>.</p>
    */
   inline ActionType GetActionType() const { return m_actionType; }
   inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
@@ -53,9 +52,9 @@ class HandshakeFilter {
 
   ///@{
   /**
-   * <p>Specifies the parent handshake. Only used for handshake types that are a
-   * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
-   * cannot also specify <code>ActionType</code>.</p> <p>The <a
+   * <p>The parent handshake. Only used for handshake types that are a child of
+   * another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you cannot
+   * also specify <code>ActionType</code>.</p> <p>The <a
    * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
    * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
    */

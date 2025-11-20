@@ -16,11 +16,14 @@ namespace Model {
 namespace RefreshStrategyMapper {
 
 static const int Rolling_HASH = HashingUtils::HashString("Rolling");
+static const int ReplaceRootVolume_HASH = HashingUtils::HashString("ReplaceRootVolume");
 
 RefreshStrategy GetRefreshStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Rolling_HASH) {
     return RefreshStrategy::Rolling;
+  } else if (hashCode == ReplaceRootVolume_HASH) {
+    return RefreshStrategy::ReplaceRootVolume;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForRefreshStrategy(RefreshStrategy enumValue) {
       return {};
     case RefreshStrategy::Rolling:
       return "Rolling";
+    case RefreshStrategy::ReplaceRootVolume:
+      return "ReplaceRootVolume";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

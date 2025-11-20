@@ -151,6 +151,8 @@
 #include <aws/lakeformation/model/QueryPlanningContext.h>
 #include <aws/lakeformation/model/QuerySessionContext.h>
 #include <aws/lakeformation/model/QueryStateString.h>
+#include <aws/lakeformation/model/RedshiftConnect.h>
+#include <aws/lakeformation/model/RedshiftScopeUnion.h>
 #include <aws/lakeformation/model/RegisterResourceRequest.h>
 #include <aws/lakeformation/model/RegisterResourceResult.h>
 #include <aws/lakeformation/model/RemoveLFTagsFromResourceRequest.h>
@@ -166,6 +168,8 @@
 #include <aws/lakeformation/model/SearchDatabasesByLFTagsResult.h>
 #include <aws/lakeformation/model/SearchTablesByLFTagsRequest.h>
 #include <aws/lakeformation/model/SearchTablesByLFTagsResult.h>
+#include <aws/lakeformation/model/ServiceAuthorization.h>
+#include <aws/lakeformation/model/ServiceIntegrationUnion.h>
 #include <aws/lakeformation/model/StartQueryPlanningRequest.h>
 #include <aws/lakeformation/model/StartQueryPlanningResult.h>
 #include <aws/lakeformation/model/StartTransactionRequest.h>

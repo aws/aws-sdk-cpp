@@ -71,10 +71,12 @@ class ListRulesRequest : public RecycleBinRequest {
   ///@{
   /**
    * <p>The resource type retained by the retention rule. Only retention rules that
-   * retain the specified resource type are listed. Currently, only Amazon EBS
-   * snapshots and EBS-backed AMIs are supported. To list retention rules that retain
-   * snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that
-   * retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+   * retain the specified resource type are listed. Currently, only EBS volumes, EBS
+   * snapshots, and EBS-backed AMIs are supported.</p> <ul> <li> <p>To list retention
+   * rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p> </li> <li>
+   * <p>To list retention rules that retain EBS snapshots, specify
+   * <code>EBS_SNAPSHOT</code>.</p> </li> <li> <p>To list retention rules that retain
+   * EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p> </li> </ul>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

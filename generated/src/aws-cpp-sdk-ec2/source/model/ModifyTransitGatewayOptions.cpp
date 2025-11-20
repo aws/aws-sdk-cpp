@@ -97,6 +97,12 @@ ModifyTransitGatewayOptions& ModifyTransitGatewayOptions::operator=(const XmlNod
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
       m_amazonSideAsnHasBeenSet = true;
     }
+    XmlNode encryptionSupportNode = resultNode.FirstChild("EncryptionSupport");
+    if (!encryptionSupportNode.IsNull()) {
+      m_encryptionSupport = EncryptionSupportOptionValueMapper::GetEncryptionSupportOptionValueForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()));
+      m_encryptionSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -172,6 +178,12 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
   if (m_amazonSideAsnHasBeenSet) {
     oStream << location << index << locationValue << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
+
+  if (m_encryptionSupportHasBeenSet) {
+    oStream << location << index << locationValue << ".EncryptionSupport="
+            << StringUtils::URLEncode(EncryptionSupportOptionValueMapper::GetNameForEncryptionSupportOptionValue(m_encryptionSupport))
+            << "&";
+  }
 }
 
 void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -229,6 +241,11 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
   }
   if (m_amazonSideAsnHasBeenSet) {
     oStream << location << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
+  }
+  if (m_encryptionSupportHasBeenSet) {
+    oStream << location << ".EncryptionSupport="
+            << StringUtils::URLEncode(EncryptionSupportOptionValueMapper::GetNameForEncryptionSupportOptionValue(m_encryptionSupport))
+            << "&";
   }
 }
 

@@ -28,6 +28,7 @@
 #include <aws/networkmanager/model/CreateConnectAttachmentRequest.h>
 #include <aws/networkmanager/model/CreateConnectPeerRequest.h>
 #include <aws/networkmanager/model/CreateConnectionRequest.h>
+#include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationRequest.h>
 #include <aws/networkmanager/model/CreateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/CreateDeviceRequest.h>
 #include <aws/networkmanager/model/CreateDirectConnectGatewayAttachmentRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/networkmanager/model/DeleteConnectPeerRequest.h>
 #include <aws/networkmanager/model/DeleteConnectionRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionRequest.h>
+#include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkRequest.h>
 #include <aws/networkmanager/model/DeleteDeviceRequest.h>
 #include <aws/networkmanager/model/DeleteGlobalNetworkRequest.h>
@@ -83,17 +85,22 @@
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayRouteTableAttachmentRequest.h>
 #include <aws/networkmanager/model/GetVpcAttachmentRequest.h>
+#include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsRequest.h>
+#include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsRequest.h>
+#include <aws/networkmanager/model/ListCoreNetworkRoutingInformationRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworksRequest.h>
 #include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
 #include <aws/networkmanager/model/ListPeeringsRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
+#include <aws/networkmanager/model/PutAttachmentRoutingPolicyLabelRequest.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/PutResourcePolicyRequest.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
 #include <aws/networkmanager/model/RejectAttachmentRequest.h>
+#include <aws/networkmanager/model/RemoveAttachmentRoutingPolicyLabelRequest.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionRequest.h>
 #include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateRequest.h>
 #include <aws/networkmanager/model/StartRouteAnalysisRequest.h>
@@ -531,6 +538,37 @@ CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCor
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/core-networks");
         return CreateCoreNetworkOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::CreateCoreNetworkPrefixListAssociation(
+    const CreateCoreNetworkPrefixListAssociationRequest& request) const {
+  AWS_OPERATION_GUARD(CreateCoreNetworkPrefixListAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateCoreNetworkPrefixListAssociation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateCoreNetworkPrefixListAssociationOutcome>(
+      [&]() -> CreateCoreNetworkPrefixListAssociationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCoreNetworkPrefixListAssociation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/prefix-list");
+        return CreateCoreNetworkPrefixListAssociationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1022,6 +1060,50 @@ DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPol
         endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-policy-versions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
         return DeleteCoreNetworkPolicyVersionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteCoreNetworkPrefixListAssociationOutcome NetworkManagerClient::DeleteCoreNetworkPrefixListAssociation(
+    const DeleteCoreNetworkPrefixListAssociationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteCoreNetworkPrefixListAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CoreNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCoreNetworkPrefixListAssociation", "Required field: CoreNetworkId, is not set");
+    return DeleteCoreNetworkPrefixListAssociationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  if (!request.PrefixListArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteCoreNetworkPrefixListAssociation", "Required field: PrefixListArn, is not set");
+    return DeleteCoreNetworkPrefixListAssociationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrefixListArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCoreNetworkPrefixListAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCoreNetworkPrefixListAssociation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCoreNetworkPrefixListAssociationOutcome>(
+      [&]() -> DeleteCoreNetworkPrefixListAssociationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCoreNetworkPrefixListAssociation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/prefix-list/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrefixListArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/core-network/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
+        return DeleteCoreNetworkPrefixListAssociationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2577,6 +2659,43 @@ GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttac
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListAttachmentRoutingPolicyAssociationsOutcome NetworkManagerClient::ListAttachmentRoutingPolicyAssociations(
+    const ListAttachmentRoutingPolicyAssociationsRequest& request) const {
+  AWS_OPERATION_GUARD(ListAttachmentRoutingPolicyAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachmentRoutingPolicyAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CoreNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAttachmentRoutingPolicyAssociations", "Required field: CoreNetworkId, is not set");
+    return ListAttachmentRoutingPolicyAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAttachmentRoutingPolicyAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAttachmentRoutingPolicyAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAttachmentRoutingPolicyAssociations",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAttachmentRoutingPolicyAssociationsOutcome>(
+      [&]() -> ListAttachmentRoutingPolicyAssociationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAttachmentRoutingPolicyAssociations, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-policy-label/core-network/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
+        return ListAttachmentRoutingPolicyAssociationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmentsRequest& request) const {
   AWS_OPERATION_GUARD(ListAttachments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2669,6 +2788,81 @@ ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicy
         endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-policy-versions");
         return ListCoreNetworkPolicyVersionsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCoreNetworkPrefixListAssociationsOutcome NetworkManagerClient::ListCoreNetworkPrefixListAssociations(
+    const ListCoreNetworkPrefixListAssociationsRequest& request) const {
+  AWS_OPERATION_GUARD(ListCoreNetworkPrefixListAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoreNetworkPrefixListAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CoreNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListCoreNetworkPrefixListAssociations", "Required field: CoreNetworkId, is not set");
+    return ListCoreNetworkPrefixListAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCoreNetworkPrefixListAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCoreNetworkPrefixListAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCoreNetworkPrefixListAssociations",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCoreNetworkPrefixListAssociationsOutcome>(
+      [&]() -> ListCoreNetworkPrefixListAssociationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCoreNetworkPrefixListAssociations, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/prefix-list/core-network/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
+        return ListCoreNetworkPrefixListAssociationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCoreNetworkRoutingInformationOutcome NetworkManagerClient::ListCoreNetworkRoutingInformation(
+    const ListCoreNetworkRoutingInformationRequest& request) const {
+  AWS_OPERATION_GUARD(ListCoreNetworkRoutingInformation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoreNetworkRoutingInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CoreNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListCoreNetworkRoutingInformation", "Required field: CoreNetworkId, is not set");
+    return ListCoreNetworkRoutingInformationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCoreNetworkRoutingInformation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCoreNetworkRoutingInformation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCoreNetworkRoutingInformation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCoreNetworkRoutingInformationOutcome>(
+      [&]() -> ListCoreNetworkRoutingInformationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCoreNetworkRoutingInformation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/core-networks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/core-network-routing-information");
+        return ListCoreNetworkRoutingInformationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2796,6 +2990,37 @@ ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListT
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         return ListTagsForResourceOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::PutAttachmentRoutingPolicyLabel(
+    const PutAttachmentRoutingPolicyLabelRequest& request) const {
+  AWS_OPERATION_GUARD(PutAttachmentRoutingPolicyLabel);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutAttachmentRoutingPolicyLabel",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutAttachmentRoutingPolicyLabelOutcome>(
+      [&]() -> PutAttachmentRoutingPolicyLabelOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAttachmentRoutingPolicyLabel, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-policy-label");
+        return PutAttachmentRoutingPolicyLabelOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2943,6 +3168,50 @@ RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttac
         endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
         return RejectAttachmentOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+RemoveAttachmentRoutingPolicyLabelOutcome NetworkManagerClient::RemoveAttachmentRoutingPolicyLabel(
+    const RemoveAttachmentRoutingPolicyLabelRequest& request) const {
+  AWS_OPERATION_GUARD(RemoveAttachmentRoutingPolicyLabel);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CoreNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RemoveAttachmentRoutingPolicyLabel", "Required field: CoreNetworkId, is not set");
+    return RemoveAttachmentRoutingPolicyLabelOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  if (!request.AttachmentIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RemoveAttachmentRoutingPolicyLabel", "Required field: AttachmentId, is not set");
+    return RemoveAttachmentRoutingPolicyLabelOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RemoveAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, RemoveAttachmentRoutingPolicyLabel, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RemoveAttachmentRoutingPolicyLabel",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RemoveAttachmentRoutingPolicyLabelOutcome>(
+      [&]() -> RemoveAttachmentRoutingPolicyLabelOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveAttachmentRoutingPolicyLabel, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/routing-policy-label/core-network/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreNetworkId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attachment/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
+        return RemoveAttachmentRoutingPolicyLabelOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

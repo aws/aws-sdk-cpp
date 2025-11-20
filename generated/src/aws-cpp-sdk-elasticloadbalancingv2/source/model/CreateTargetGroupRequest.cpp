@@ -90,6 +90,10 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const {
        << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
 
+  if (m_targetControlPortHasBeenSet) {
+    ss << "TargetControlPort=" << m_targetControlPort << "&";
+  }
+
   ss << "Version=2015-12-01";
   return ss.str();
 }

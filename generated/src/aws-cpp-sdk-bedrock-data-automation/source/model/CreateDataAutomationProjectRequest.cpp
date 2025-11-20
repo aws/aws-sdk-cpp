@@ -27,6 +27,10 @@ Aws::String CreateDataAutomationProjectRequest::SerializePayload() const {
     payload.WithString("projectStage", DataAutomationProjectStageMapper::GetNameForDataAutomationProjectStage(m_projectStage));
   }
 
+  if (m_projectTypeHasBeenSet) {
+    payload.WithString("projectType", DataAutomationProjectTypeMapper::GetNameForDataAutomationProjectType(m_projectType));
+  }
+
   if (m_standardOutputConfigurationHasBeenSet) {
     payload.WithObject("standardOutputConfiguration", m_standardOutputConfiguration.Jsonize());
   }

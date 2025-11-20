@@ -117,6 +117,18 @@ Service& Service::operator=(JsonView jsonValue) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("currentServiceDeployment")) {
+    m_currentServiceDeployment = jsonValue.GetString("currentServiceDeployment");
+    m_currentServiceDeploymentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("currentServiceRevisions")) {
+    Aws::Utils::Array<JsonView> currentServiceRevisionsJsonList = jsonValue.GetArray("currentServiceRevisions");
+    for (unsigned currentServiceRevisionsIndex = 0; currentServiceRevisionsIndex < currentServiceRevisionsJsonList.GetLength();
+         ++currentServiceRevisionsIndex) {
+      m_currentServiceRevisions.push_back(currentServiceRevisionsJsonList[currentServiceRevisionsIndex].AsObject());
+    }
+    m_currentServiceRevisionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("placementConstraints")) {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
     for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
@@ -175,6 +187,11 @@ Service& Service::operator=(JsonView jsonValue) {
     m_availabilityZoneRebalancing =
         AvailabilityZoneRebalancingMapper::GetAvailabilityZoneRebalancingForName(jsonValue.GetString("availabilityZoneRebalancing"));
     m_availabilityZoneRebalancingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resourceManagementType")) {
+    m_resourceManagementType =
+        ResourceManagementTypeMapper::GetResourceManagementTypeForName(jsonValue.GetString("resourceManagementType"));
+    m_resourceManagementTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -288,6 +305,20 @@ JsonValue Service::Jsonize() const {
     payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
+  if (m_currentServiceDeploymentHasBeenSet) {
+    payload.WithString("currentServiceDeployment", m_currentServiceDeployment);
+  }
+
+  if (m_currentServiceRevisionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> currentServiceRevisionsJsonList(m_currentServiceRevisions.size());
+    for (unsigned currentServiceRevisionsIndex = 0; currentServiceRevisionsIndex < currentServiceRevisionsJsonList.GetLength();
+         ++currentServiceRevisionsIndex) {
+      currentServiceRevisionsJsonList[currentServiceRevisionsIndex].AsObject(
+          m_currentServiceRevisions[currentServiceRevisionsIndex].Jsonize());
+    }
+    payload.WithArray("currentServiceRevisions", std::move(currentServiceRevisionsJsonList));
+  }
+
   if (m_placementConstraintsHasBeenSet) {
     Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
     for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
@@ -348,6 +379,10 @@ JsonValue Service::Jsonize() const {
   if (m_availabilityZoneRebalancingHasBeenSet) {
     payload.WithString("availabilityZoneRebalancing",
                        AvailabilityZoneRebalancingMapper::GetNameForAvailabilityZoneRebalancing(m_availabilityZoneRebalancing));
+  }
+
+  if (m_resourceManagementTypeHasBeenSet) {
+    payload.WithString("resourceManagementType", ResourceManagementTypeMapper::GetNameForResourceManagementType(m_resourceManagementType));
   }
 
   return payload;

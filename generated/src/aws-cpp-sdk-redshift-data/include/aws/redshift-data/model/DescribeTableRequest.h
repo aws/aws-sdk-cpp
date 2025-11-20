@@ -52,19 +52,38 @@ class DescribeTableRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>A database name. The connected database is specified when you connect with
-   * your authentication credentials. </p>
+   * <p>The name or ARN of the secret that enables access to the database. This
+   * parameter is required when authenticating using Secrets Manager. </p>
    */
-  inline const Aws::String& GetConnectedDatabase() const { return m_connectedDatabase; }
-  inline bool ConnectedDatabaseHasBeenSet() const { return m_connectedDatabaseHasBeenSet; }
-  template <typename ConnectedDatabaseT = Aws::String>
-  void SetConnectedDatabase(ConnectedDatabaseT&& value) {
-    m_connectedDatabaseHasBeenSet = true;
-    m_connectedDatabase = std::forward<ConnectedDatabaseT>(value);
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
   }
-  template <typename ConnectedDatabaseT = Aws::String>
-  DescribeTableRequest& WithConnectedDatabase(ConnectedDatabaseT&& value) {
-    SetConnectedDatabase(std::forward<ConnectedDatabaseT>(value));
+  template <typename SecretArnT = Aws::String>
+  DescribeTableRequest& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The database user name. This parameter is required when connecting to a
+   * cluster as a database user and authenticating using temporary credentials. </p>
+   */
+  inline const Aws::String& GetDbUser() const { return m_dbUser; }
+  inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
+  template <typename DbUserT = Aws::String>
+  void SetDbUser(DbUserT&& value) {
+    m_dbUserHasBeenSet = true;
+    m_dbUser = std::forward<DbUserT>(value);
+  }
+  template <typename DbUserT = Aws::String>
+  DescribeTableRequest& WithDbUser(DbUserT&& value) {
+    SetDbUser(std::forward<DbUserT>(value));
     return *this;
   }
   ///@}
@@ -91,37 +110,58 @@ class DescribeTableRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The database user name. This parameter is required when connecting to a
-   * cluster as a database user and authenticating using temporary credentials. </p>
+   * <p>A database name. The connected database is specified when you connect with
+   * your authentication credentials. </p>
    */
-  inline const Aws::String& GetDbUser() const { return m_dbUser; }
-  inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
-  template <typename DbUserT = Aws::String>
-  void SetDbUser(DbUserT&& value) {
-    m_dbUserHasBeenSet = true;
-    m_dbUser = std::forward<DbUserT>(value);
+  inline const Aws::String& GetConnectedDatabase() const { return m_connectedDatabase; }
+  inline bool ConnectedDatabaseHasBeenSet() const { return m_connectedDatabaseHasBeenSet; }
+  template <typename ConnectedDatabaseT = Aws::String>
+  void SetConnectedDatabase(ConnectedDatabaseT&& value) {
+    m_connectedDatabaseHasBeenSet = true;
+    m_connectedDatabase = std::forward<ConnectedDatabaseT>(value);
   }
-  template <typename DbUserT = Aws::String>
-  DescribeTableRequest& WithDbUser(DbUserT&& value) {
-    SetDbUser(std::forward<DbUserT>(value));
+  template <typename ConnectedDatabaseT = Aws::String>
+  DescribeTableRequest& WithConnectedDatabase(ConnectedDatabaseT&& value) {
+    SetConnectedDatabase(std::forward<ConnectedDatabaseT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The maximum number of tables to return in the response. If more tables exist
-   * than fit in one response, then <code>NextToken</code> is returned to page
-   * through the results. </p>
+   * <p>The schema that contains the table. If no schema is specified, then matching
+   * tables for all schemas are returned. </p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetSchema() const { return m_schema; }
+  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+  template <typename SchemaT = Aws::String>
+  void SetSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema = std::forward<SchemaT>(value);
   }
-  inline DescribeTableRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename SchemaT = Aws::String>
+  DescribeTableRequest& WithSchema(SchemaT&& value) {
+    SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The table name. If no table is specified, then all tables for all matching
+   * schemas are returned. If no table and no schema is specified, then all tables
+   * for all schemas in the database are returned</p>
+   */
+  inline const Aws::String& GetTable() const { return m_table; }
+  inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
+  template <typename TableT = Aws::String>
+  void SetTable(TableT&& value) {
+    m_tableHasBeenSet = true;
+    m_table = std::forward<TableT>(value);
+  }
+  template <typename TableT = Aws::String>
+  DescribeTableRequest& WithTable(TableT&& value) {
+    SetTable(std::forward<TableT>(value));
     return *this;
   }
   ///@}
@@ -150,58 +190,18 @@ class DescribeTableRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The schema that contains the table. If no schema is specified, then matching
-   * tables for all schemas are returned. </p>
+   * <p>The maximum number of tables to return in the response. If more tables exist
+   * than fit in one response, then <code>NextToken</code> is returned to page
+   * through the results. </p>
    */
-  inline const Aws::String& GetSchema() const { return m_schema; }
-  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-  template <typename SchemaT = Aws::String>
-  void SetSchema(SchemaT&& value) {
-    m_schemaHasBeenSet = true;
-    m_schema = std::forward<SchemaT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename SchemaT = Aws::String>
-  DescribeTableRequest& WithSchema(SchemaT&& value) {
-    SetSchema(std::forward<SchemaT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name or ARN of the secret that enables access to the database. This
-   * parameter is required when authenticating using Secrets Manager. </p>
-   */
-  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-  template <typename SecretArnT = Aws::String>
-  void SetSecretArn(SecretArnT&& value) {
-    m_secretArnHasBeenSet = true;
-    m_secretArn = std::forward<SecretArnT>(value);
-  }
-  template <typename SecretArnT = Aws::String>
-  DescribeTableRequest& WithSecretArn(SecretArnT&& value) {
-    SetSecretArn(std::forward<SecretArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The table name. If no table is specified, then all tables for all matching
-   * schemas are returned. If no table and no schema is specified, then all tables
-   * for all schemas in the database are returned</p>
-   */
-  inline const Aws::String& GetTable() const { return m_table; }
-  inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-  template <typename TableT = Aws::String>
-  void SetTable(TableT&& value) {
-    m_tableHasBeenSet = true;
-    m_table = std::forward<TableT>(value);
-  }
-  template <typename TableT = Aws::String>
-  DescribeTableRequest& WithTable(TableT&& value) {
-    SetTable(std::forward<TableT>(value));
+  inline DescribeTableRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -229,29 +229,29 @@ class DescribeTableRequest : public RedshiftDataAPIServiceRequest {
   Aws::String m_clusterIdentifier;
   bool m_clusterIdentifierHasBeenSet = false;
 
-  Aws::String m_connectedDatabase;
-  bool m_connectedDatabaseHasBeenSet = false;
-
-  Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
   bool m_dbUserHasBeenSet = false;
 
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
+  Aws::String m_database;
+  bool m_databaseHasBeenSet = false;
 
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
+  Aws::String m_connectedDatabase;
+  bool m_connectedDatabaseHasBeenSet = false;
 
   Aws::String m_schema;
   bool m_schemaHasBeenSet = false;
 
-  Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
-
   Aws::String m_table;
   bool m_tableHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workgroupName;
   bool m_workgroupNameHasBeenSet = false;

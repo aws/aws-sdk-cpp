@@ -34,8 +34,10 @@ class RetentionPeriod {
 
   ///@{
   /**
-   * <p>The period value for which the retention rule is to retain resources. The
-   * period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+   * <p>The period value for which the retention rule is to retain resources,
+   * measured in days. The supported retention periods are:</p> <ul> <li> <p>EBS
+   * volumes: 1 - 7 days</p> </li> <li> <p>EBS snapshots and EBS-backed AMIs: 1 - 365
+   * days</p> </li> </ul>
    */
   inline int GetRetentionPeriodValue() const { return m_retentionPeriodValue; }
   inline bool RetentionPeriodValueHasBeenSet() const { return m_retentionPeriodValueHasBeenSet; }

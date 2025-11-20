@@ -27,6 +27,10 @@ Aws::String GetUserDefinedFunctionsRequest::SerializePayload() const {
     payload.WithString("Pattern", m_pattern);
   }
 
+  if (m_functionTypeHasBeenSet) {
+    payload.WithString("FunctionType", FunctionTypeMapper::GetNameForFunctionType(m_functionType));
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
   }

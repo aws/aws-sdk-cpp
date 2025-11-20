@@ -98,6 +98,7 @@
 #include <aws/securityhub/model/GetFindingStatisticsV2Result.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
 #include <aws/securityhub/model/GetFindingsResult.h>
+#include <aws/securityhub/model/GetFindingsTrendsV2Result.h>
 #include <aws/securityhub/model/GetFindingsV2Request.h>
 #include <aws/securityhub/model/GetFindingsV2Result.h>
 #include <aws/securityhub/model/GetInsightResultsResult.h>
@@ -107,6 +108,7 @@
 #include <aws/securityhub/model/GetInvitationsCountResult.h>
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Result.h>
+#include <aws/securityhub/model/GetResourcesTrendsV2Result.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Result.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionResult.h>
@@ -250,12 +252,14 @@ class GetFindingAggregatorRequest;
 class GetFindingHistoryRequest;
 class GetFindingStatisticsV2Request;
 class GetFindingsRequest;
+class GetFindingsTrendsV2Request;
 class GetFindingsV2Request;
 class GetInsightResultsRequest;
 class GetInsightsRequest;
 class GetInvitationsCountRequest;
 class GetMembersRequest;
 class GetResourcesStatisticsV2Request;
+class GetResourcesTrendsV2Request;
 class GetResourcesV2Request;
 class GetSecurityControlDefinitionRequest;
 class InviteMembersRequest;
@@ -355,12 +359,14 @@ typedef Aws::Utils::Outcome<GetFindingAggregatorResult, SecurityHubError> GetFin
 typedef Aws::Utils::Outcome<GetFindingHistoryResult, SecurityHubError> GetFindingHistoryOutcome;
 typedef Aws::Utils::Outcome<GetFindingStatisticsV2Result, SecurityHubError> GetFindingStatisticsV2Outcome;
 typedef Aws::Utils::Outcome<GetFindingsResult, SecurityHubError> GetFindingsOutcome;
+typedef Aws::Utils::Outcome<GetFindingsTrendsV2Result, SecurityHubError> GetFindingsTrendsV2Outcome;
 typedef Aws::Utils::Outcome<GetFindingsV2Result, SecurityHubError> GetFindingsV2Outcome;
 typedef Aws::Utils::Outcome<GetInsightResultsResult, SecurityHubError> GetInsightResultsOutcome;
 typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutcome;
 typedef Aws::Utils::Outcome<GetInvitationsCountResult, SecurityHubError> GetInvitationsCountOutcome;
 typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
 typedef Aws::Utils::Outcome<GetResourcesStatisticsV2Result, SecurityHubError> GetResourcesStatisticsV2Outcome;
+typedef Aws::Utils::Outcome<GetResourcesTrendsV2Result, SecurityHubError> GetResourcesTrendsV2Outcome;
 typedef Aws::Utils::Outcome<GetResourcesV2Result, SecurityHubError> GetResourcesV2Outcome;
 typedef Aws::Utils::Outcome<GetSecurityControlDefinitionResult, SecurityHubError> GetSecurityControlDefinitionOutcome;
 typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
@@ -460,12 +466,14 @@ typedef std::future<GetFindingAggregatorOutcome> GetFindingAggregatorOutcomeCall
 typedef std::future<GetFindingHistoryOutcome> GetFindingHistoryOutcomeCallable;
 typedef std::future<GetFindingStatisticsV2Outcome> GetFindingStatisticsV2OutcomeCallable;
 typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
+typedef std::future<GetFindingsTrendsV2Outcome> GetFindingsTrendsV2OutcomeCallable;
 typedef std::future<GetFindingsV2Outcome> GetFindingsV2OutcomeCallable;
 typedef std::future<GetInsightResultsOutcome> GetInsightResultsOutcomeCallable;
 typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
 typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
 typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
 typedef std::future<GetResourcesStatisticsV2Outcome> GetResourcesStatisticsV2OutcomeCallable;
+typedef std::future<GetResourcesTrendsV2Outcome> GetResourcesTrendsV2OutcomeCallable;
 typedef std::future<GetResourcesV2Outcome> GetResourcesV2OutcomeCallable;
 typedef std::future<GetSecurityControlDefinitionOutcome> GetSecurityControlDefinitionOutcomeCallable;
 typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
@@ -705,6 +713,9 @@ typedef std::function<void(const SecurityHubClient*, const Model::GetFindingStat
 typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFindingsResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsTrendsV2Request&, const Model::GetFindingsTrendsV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFindingsTrendsV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsV2Request&, const Model::GetFindingsV2Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFindingsV2ResponseReceivedHandler;
@@ -723,6 +734,9 @@ typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequ
 typedef std::function<void(const SecurityHubClient*, const Model::GetResourcesStatisticsV2Request&,
                            const Model::GetResourcesStatisticsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcesStatisticsV2ResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetResourcesTrendsV2Request&, const Model::GetResourcesTrendsV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcesTrendsV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::GetResourcesV2Request&, const Model::GetResourcesV2Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcesV2ResponseReceivedHandler;

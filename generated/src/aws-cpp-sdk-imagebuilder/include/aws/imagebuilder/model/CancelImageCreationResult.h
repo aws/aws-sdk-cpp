@@ -62,7 +62,8 @@ class CancelImageCreationResult {
 
   ///@{
   /**
-   * <p>The ARN of the image whose creation this request canceled.</p>
+   * <p>The Amazon Resource Name (ARN) of the image whose creation this request
+   * canceled.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

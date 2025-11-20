@@ -21,6 +21,7 @@ static const int amazon_owned_eip_HASH = HashingUtils::HashString("amazon-owned-
 static const int amazon_owned_contig_HASH = HashingUtils::HashString("amazon-owned-contig");
 static const int byoip_HASH = HashingUtils::HashString("byoip");
 static const int ec2_public_ip_HASH = HashingUtils::HashString("ec2-public-ip");
+static const int anycast_ip_list_ip_HASH = HashingUtils::HashString("anycast-ip-list-ip");
 
 IpamPublicAddressType GetIpamPublicAddressTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ IpamPublicAddressType GetIpamPublicAddressTypeForName(const Aws::String& name) {
     return IpamPublicAddressType::byoip;
   } else if (hashCode == ec2_public_ip_HASH) {
     return IpamPublicAddressType::ec2_public_ip;
+  } else if (hashCode == anycast_ip_list_ip_HASH) {
+    return IpamPublicAddressType::anycast_ip_list_ip;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForIpamPublicAddressType(IpamPublicAddressType enumValue) {
       return "byoip";
     case IpamPublicAddressType::ec2_public_ip:
       return "ec2-public-ip";
+    case IpamPublicAddressType::anycast_ip_list_ip:
+      return "anycast-ip-list-ip";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -67,6 +67,11 @@ AnycastIpListSummary& AnycastIpListSummary::operator=(const XmlNode& xmlNode) {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
     }
+    XmlNode ipamConfigNode = resultNode.FirstChild("IpamConfig");
+    if (!ipamConfigNode.IsNull()) {
+      m_ipamConfig = ipamConfigNode;
+      m_ipamConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -114,6 +119,11 @@ void AnycastIpListSummary::AddToNode(XmlNode& parentNode) const {
   if (m_eTagHasBeenSet) {
     XmlNode eTagNode = parentNode.CreateChildElement("ETag");
     eTagNode.SetText(m_eTag);
+  }
+
+  if (m_ipamConfigHasBeenSet) {
+    XmlNode ipamConfigNode = parentNode.CreateChildElement("IpamConfig");
+    m_ipamConfig.AddToNode(ipamConfigNode);
   }
 }
 

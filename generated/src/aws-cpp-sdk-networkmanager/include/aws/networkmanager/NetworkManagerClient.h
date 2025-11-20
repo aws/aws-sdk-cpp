@@ -350,6 +350,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Creates an association between a core network and a prefix list for routing
+   * control.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCoreNetworkPrefixListAssociationOutcome CreateCoreNetworkPrefixListAssociation(
+      const Model::CreateCoreNetworkPrefixListAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCoreNetworkPrefixListAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateCoreNetworkPrefixListAssociationRequestT = Model::CreateCoreNetworkPrefixListAssociationRequest>
+  Model::CreateCoreNetworkPrefixListAssociationOutcomeCallable CreateCoreNetworkPrefixListAssociationCallable(
+      const CreateCoreNetworkPrefixListAssociationRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::CreateCoreNetworkPrefixListAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCoreNetworkPrefixListAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateCoreNetworkPrefixListAssociationRequestT = Model::CreateCoreNetworkPrefixListAssociationRequest>
+  void CreateCoreNetworkPrefixListAssociationAsync(const CreateCoreNetworkPrefixListAssociationRequestT& request,
+                                                   const CreateCoreNetworkPrefixListAssociationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::CreateCoreNetworkPrefixListAssociation, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new device in a global network. If you specify both a site ID and a
    * location, the location of the site is used for visualization in the Network
    * Manager console.</p><p><h3>See Also:</h3>   <a
@@ -736,6 +766,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
                                            const DeleteCoreNetworkPolicyVersionResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::DeleteCoreNetworkPolicyVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an association between a core network and a prefix
+   * list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCoreNetworkPrefixListAssociationOutcome DeleteCoreNetworkPrefixListAssociation(
+      const Model::DeleteCoreNetworkPrefixListAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCoreNetworkPrefixListAssociation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteCoreNetworkPrefixListAssociationRequestT = Model::DeleteCoreNetworkPrefixListAssociationRequest>
+  Model::DeleteCoreNetworkPrefixListAssociationOutcomeCallable DeleteCoreNetworkPrefixListAssociationCallable(
+      const DeleteCoreNetworkPrefixListAssociationRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::DeleteCoreNetworkPrefixListAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCoreNetworkPrefixListAssociation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteCoreNetworkPrefixListAssociationRequestT = Model::DeleteCoreNetworkPrefixListAssociationRequest>
+  void DeleteCoreNetworkPrefixListAssociationAsync(const DeleteCoreNetworkPrefixListAssociationRequestT& request,
+                                                   const DeleteCoreNetworkPrefixListAssociationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::DeleteCoreNetworkPrefixListAssociation, request, handler, context);
   }
 
   /**
@@ -1861,6 +1921,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Lists the routing policy associations for attachments in a core
+   * network.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAttachmentRoutingPolicyAssociationsOutcome ListAttachmentRoutingPolicyAssociations(
+      const Model::ListAttachmentRoutingPolicyAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAttachmentRoutingPolicyAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListAttachmentRoutingPolicyAssociationsRequestT = Model::ListAttachmentRoutingPolicyAssociationsRequest>
+  Model::ListAttachmentRoutingPolicyAssociationsOutcomeCallable ListAttachmentRoutingPolicyAssociationsCallable(
+      const ListAttachmentRoutingPolicyAssociationsRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListAttachmentRoutingPolicyAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListAttachmentRoutingPolicyAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListAttachmentRoutingPolicyAssociationsRequestT = Model::ListAttachmentRoutingPolicyAssociationsRequest>
+  void ListAttachmentRoutingPolicyAssociationsAsync(const ListAttachmentRoutingPolicyAssociationsRequestT& request,
+                                                    const ListAttachmentRoutingPolicyAssociationsResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListAttachmentRoutingPolicyAssociations, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of core network attachments.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">AWS
    * API Reference</a></p>
@@ -1940,6 +2030,66 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
                                           const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::ListCoreNetworkPolicyVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the prefix list associations for a core network.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCoreNetworkPrefixListAssociationsOutcome ListCoreNetworkPrefixListAssociations(
+      const Model::ListCoreNetworkPrefixListAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCoreNetworkPrefixListAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListCoreNetworkPrefixListAssociationsRequestT = Model::ListCoreNetworkPrefixListAssociationsRequest>
+  Model::ListCoreNetworkPrefixListAssociationsOutcomeCallable ListCoreNetworkPrefixListAssociationsCallable(
+      const ListCoreNetworkPrefixListAssociationsRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListCoreNetworkPrefixListAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCoreNetworkPrefixListAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListCoreNetworkPrefixListAssociationsRequestT = Model::ListCoreNetworkPrefixListAssociationsRequest>
+  void ListCoreNetworkPrefixListAssociationsAsync(const ListCoreNetworkPrefixListAssociationsRequestT& request,
+                                                  const ListCoreNetworkPrefixListAssociationsResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListCoreNetworkPrefixListAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists routing information for a core network, including routes and their
+   * attributes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCoreNetworkRoutingInformationOutcome ListCoreNetworkRoutingInformation(
+      const Model::ListCoreNetworkRoutingInformationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCoreNetworkRoutingInformation that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListCoreNetworkRoutingInformationRequestT = Model::ListCoreNetworkRoutingInformationRequest>
+  Model::ListCoreNetworkRoutingInformationOutcomeCallable ListCoreNetworkRoutingInformationCallable(
+      const ListCoreNetworkRoutingInformationRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListCoreNetworkRoutingInformation, request);
+  }
+
+  /**
+   * An Async wrapper for ListCoreNetworkRoutingInformation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListCoreNetworkRoutingInformationRequestT = Model::ListCoreNetworkRoutingInformationRequest>
+  void ListCoreNetworkRoutingInformationAsync(const ListCoreNetworkRoutingInformationRequestT& request,
+                                              const ListCoreNetworkRoutingInformationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListCoreNetworkRoutingInformation, request, handler, context);
   }
 
   /**
@@ -2050,6 +2200,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Applies a routing policy label to an attachment for traffic routing
+   * decisions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAttachmentRoutingPolicyLabelOutcome PutAttachmentRoutingPolicyLabel(
+      const Model::PutAttachmentRoutingPolicyLabelRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAttachmentRoutingPolicyLabel that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutAttachmentRoutingPolicyLabelRequestT = Model::PutAttachmentRoutingPolicyLabelRequest>
+  Model::PutAttachmentRoutingPolicyLabelOutcomeCallable PutAttachmentRoutingPolicyLabelCallable(
+      const PutAttachmentRoutingPolicyLabelRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::PutAttachmentRoutingPolicyLabel, request);
+  }
+
+  /**
+   * An Async wrapper for PutAttachmentRoutingPolicyLabel that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutAttachmentRoutingPolicyLabelRequestT = Model::PutAttachmentRoutingPolicyLabelRequest>
+  void PutAttachmentRoutingPolicyLabelAsync(const PutAttachmentRoutingPolicyLabelRequestT& request,
+                                            const PutAttachmentRoutingPolicyLabelResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::PutAttachmentRoutingPolicyLabel, request, handler, context);
   }
 
   /**
@@ -2165,6 +2345,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void RejectAttachmentAsync(const RejectAttachmentRequestT& request, const RejectAttachmentResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::RejectAttachment, request, handler, context);
+  }
+
+  /**
+   * <p>Removes a routing policy label from an attachment.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RemoveAttachmentRoutingPolicyLabelOutcome RemoveAttachmentRoutingPolicyLabel(
+      const Model::RemoveAttachmentRoutingPolicyLabelRequest& request) const;
+
+  /**
+   * A Callable wrapper for RemoveAttachmentRoutingPolicyLabel that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename RemoveAttachmentRoutingPolicyLabelRequestT = Model::RemoveAttachmentRoutingPolicyLabelRequest>
+  Model::RemoveAttachmentRoutingPolicyLabelOutcomeCallable RemoveAttachmentRoutingPolicyLabelCallable(
+      const RemoveAttachmentRoutingPolicyLabelRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::RemoveAttachmentRoutingPolicyLabel, request);
+  }
+
+  /**
+   * An Async wrapper for RemoveAttachmentRoutingPolicyLabel that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RemoveAttachmentRoutingPolicyLabelRequestT = Model::RemoveAttachmentRoutingPolicyLabelRequest>
+  void RemoveAttachmentRoutingPolicyLabelAsync(const RemoveAttachmentRoutingPolicyLabelRequestT& request,
+                                               const RemoveAttachmentRoutingPolicyLabelResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::RemoveAttachmentRoutingPolicyLabel, request, handler, context);
   }
 
   /**

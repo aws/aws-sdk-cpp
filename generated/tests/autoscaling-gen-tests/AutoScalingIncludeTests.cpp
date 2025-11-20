@@ -136,6 +136,7 @@
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/InstanceCollection.h>
 #include <aws/autoscaling/model/InstanceGeneration.h>
+#include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/InstanceMetadataEndpointState.h>
 #include <aws/autoscaling/model/InstanceMetadataHttpTokensState.h>
@@ -208,6 +209,8 @@
 #include <aws/autoscaling/model/RefreshStrategy.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/ResumeProcessesRequest.h>
+#include <aws/autoscaling/model/RetentionAction.h>
+#include <aws/autoscaling/model/RetentionTriggers.h>
 #include <aws/autoscaling/model/RetryStrategy.h>
 #include <aws/autoscaling/model/RollbackDetails.h>
 #include <aws/autoscaling/model/RollbackInstanceRefreshRequest.h>

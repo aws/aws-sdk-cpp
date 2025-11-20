@@ -31,8 +31,9 @@ class ListServiceStatesResult {
 
   ///@{
   /**
-   * <p>The start time of the query range, expressed as the number of milliseconds
-   * since January 1, 1970, 00:00:00 UTC.</p>
+   * <p>The start of the time period that the returned information applies to. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code>.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   template <typename StartTimeT = Aws::Utils::DateTime>
@@ -49,8 +50,9 @@ class ListServiceStatesResult {
 
   ///@{
   /**
-   * <p>The end time of the query range, expressed as the number of milliseconds
-   * since January 1, 1970, 00:00:00 UTC.</p>
+   * <p>The end of the time period that the returned information applies to. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code>.</p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   template <typename EndTimeT = Aws::Utils::DateTime>
@@ -67,9 +69,9 @@ class ListServiceStatesResult {
 
   ///@{
   /**
-   * <p>An array of service state objects that match the specified criteria. Each
-   * service state includes current status, recent change events, and service
-   * metadata.</p>
+   * <p>An array of structures, where each structure contains information about the
+   * state of one service, including its latest change events such as
+   * deployments.</p>
    */
   inline const Aws::Vector<ServiceState>& GetServiceStates() const { return m_serviceStates; }
   template <typename ServiceStatesT = Aws::Vector<ServiceState>>
@@ -92,9 +94,8 @@ class ListServiceStatesResult {
 
   ///@{
   /**
-   * <p>The token to use for retrieving the next page of results. This value is
-   * present only if there are more results available than were returned in the
-   * current response.</p>
+   * <p>Include this value in your next use of this API to get the next set of
+   * service states.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

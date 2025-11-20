@@ -225,6 +225,7 @@
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
+#include <aws/elasticmapreduce/model/S3MonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/ScalingAction.h>
 #include <aws/elasticmapreduce/model/ScalingConstraints.h>
@@ -255,6 +256,7 @@
 #include <aws/elasticmapreduce/model/StepDetail.h>
 #include <aws/elasticmapreduce/model/StepExecutionState.h>
 #include <aws/elasticmapreduce/model/StepExecutionStatusDetail.h>
+#include <aws/elasticmapreduce/model/StepMonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/StepState.h>
 #include <aws/elasticmapreduce/model/StepStateChangeReason.h>
 #include <aws/elasticmapreduce/model/StepStateChangeReasonCode.h>

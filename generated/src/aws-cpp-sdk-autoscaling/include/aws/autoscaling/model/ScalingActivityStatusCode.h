@@ -24,7 +24,10 @@ enum class ScalingActivityStatusCode {
   Successful,
   Failed,
   Cancelled,
-  WaitingForConnectionDraining
+  WaitingForConnectionDraining,
+  WaitingForInPlaceUpdateToStart,
+  WaitingForInPlaceUpdateToFinalize,
+  InPlaceUpdateInProgress
 };
 
 namespace ScalingActivityStatusCodeMapper {

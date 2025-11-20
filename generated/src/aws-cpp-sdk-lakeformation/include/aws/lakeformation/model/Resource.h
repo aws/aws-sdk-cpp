@@ -158,7 +158,7 @@ class Resource {
 
   ///@{
   /**
-   * <p>The LF-tag key and values attached to a resource.</p>
+   * <p>The LF-Tag key and values attached to a resource.</p>
    */
   inline const LFTagKeyResource& GetLFTag() const { return m_lFTag; }
   inline bool LFTagHasBeenSet() const { return m_lFTagHasBeenSet; }

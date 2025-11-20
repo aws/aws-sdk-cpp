@@ -33,6 +33,29 @@ class GetStatementResultV2Result {
 
   ///@{
   /**
+   * <p>The results of the SQL statement in CSV format.</p>
+   */
+  inline const Aws::Vector<QueryRecords>& GetRecords() const { return m_records; }
+  template <typename RecordsT = Aws::Vector<QueryRecords>>
+  void SetRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records = std::forward<RecordsT>(value);
+  }
+  template <typename RecordsT = Aws::Vector<QueryRecords>>
+  GetStatementResultV2Result& WithRecords(RecordsT&& value) {
+    SetRecords(std::forward<RecordsT>(value));
+    return *this;
+  }
+  template <typename RecordsT = QueryRecords>
+  GetStatementResultV2Result& AddRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records.emplace_back(std::forward<RecordsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The properties (metadata) of a column.</p>
    */
   inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const { return m_columnMetadata; }
@@ -50,6 +73,39 @@ class GetStatementResultV2Result {
   GetStatementResultV2Result& AddColumnMetadata(ColumnMetadataT&& value) {
     m_columnMetadataHasBeenSet = true;
     m_columnMetadata.emplace_back(std::forward<ColumnMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total number of rows in the result set returned from a query. You can use
+   * this number to estimate the number of calls to the
+   * <code>GetStatementResultV2</code> operation needed to page through the results.
+   * </p>
+   */
+  inline long long GetTotalNumRows() const { return m_totalNumRows; }
+  inline void SetTotalNumRows(long long value) {
+    m_totalNumRowsHasBeenSet = true;
+    m_totalNumRows = value;
+  }
+  inline GetStatementResultV2Result& WithTotalNumRows(long long value) {
+    SetTotalNumRows(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The data format of the result of the SQL statement.</p>
+   */
+  inline ResultFormatString GetResultFormat() const { return m_resultFormat; }
+  inline void SetResultFormat(ResultFormatString value) {
+    m_resultFormatHasBeenSet = true;
+    m_resultFormat = value;
+  }
+  inline GetStatementResultV2Result& WithResultFormat(ResultFormatString value) {
+    SetResultFormat(value);
     return *this;
   }
   ///@}
@@ -76,62 +132,6 @@ class GetStatementResultV2Result {
   ///@}
 
   ///@{
-  /**
-   * <p>The results of the SQL statement in CSV format.</p>
-   */
-  inline const Aws::Vector<QueryRecords>& GetRecords() const { return m_records; }
-  template <typename RecordsT = Aws::Vector<QueryRecords>>
-  void SetRecords(RecordsT&& value) {
-    m_recordsHasBeenSet = true;
-    m_records = std::forward<RecordsT>(value);
-  }
-  template <typename RecordsT = Aws::Vector<QueryRecords>>
-  GetStatementResultV2Result& WithRecords(RecordsT&& value) {
-    SetRecords(std::forward<RecordsT>(value));
-    return *this;
-  }
-  template <typename RecordsT = QueryRecords>
-  GetStatementResultV2Result& AddRecords(RecordsT&& value) {
-    m_recordsHasBeenSet = true;
-    m_records.emplace_back(std::forward<RecordsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The data format of the result of the SQL statement.</p>
-   */
-  inline ResultFormatString GetResultFormat() const { return m_resultFormat; }
-  inline void SetResultFormat(ResultFormatString value) {
-    m_resultFormatHasBeenSet = true;
-    m_resultFormat = value;
-  }
-  inline GetStatementResultV2Result& WithResultFormat(ResultFormatString value) {
-    SetResultFormat(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The total number of rows in the result set returned from a query. You can use
-   * this number to estimate the number of calls to the
-   * <code>GetStatementResultV2</code> operation needed to page through the results.
-   * </p>
-   */
-  inline long long GetTotalNumRows() const { return m_totalNumRows; }
-  inline void SetTotalNumRows(long long value) {
-    m_totalNumRowsHasBeenSet = true;
-    m_totalNumRows = value;
-  }
-  inline GetStatementResultV2Result& WithTotalNumRows(long long value) {
-    SetTotalNumRows(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -146,20 +146,20 @@ class GetStatementResultV2Result {
   }
   ///@}
  private:
+  Aws::Vector<QueryRecords> m_records;
+  bool m_recordsHasBeenSet = false;
+
   Aws::Vector<ColumnMetadata> m_columnMetadata;
   bool m_columnMetadataHasBeenSet = false;
 
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
-  Aws::Vector<QueryRecords> m_records;
-  bool m_recordsHasBeenSet = false;
+  long long m_totalNumRows{0};
+  bool m_totalNumRowsHasBeenSet = false;
 
   ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
   bool m_resultFormatHasBeenSet = false;
 
-  long long m_totalNumRows{0};
-  bool m_totalNumRowsHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

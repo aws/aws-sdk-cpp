@@ -71,8 +71,8 @@ class ListWorkflowStepExecutionsResult {
 
   ///@{
   /**
-   * <p>The build version ARN for the Image Builder workflow resource that defines
-   * the steps for this runtime instance of the workflow.</p>
+   * <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow
+   * resource that defines the steps for this runtime instance of the workflow.</p>
    */
   inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
   template <typename WorkflowBuildVersionArnT = Aws::String>
@@ -107,8 +107,8 @@ class ListWorkflowStepExecutionsResult {
 
   ///@{
   /**
-   * <p>The image build version resource ARN that's associated with the specified
-   * runtime instance of the workflow.</p>
+   * <p>The image build version resource Amazon Resource Name (ARN) that's associated
+   * with the specified runtime instance of the workflow.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

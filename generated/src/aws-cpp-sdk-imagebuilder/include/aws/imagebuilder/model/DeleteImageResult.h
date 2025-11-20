@@ -45,7 +45,8 @@ class DeleteImageResult {
 
   ///@{
   /**
-   * <p>The ARN of the Image Builder image resource that this request deleted.</p>
+   * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this
+   * request deleted.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

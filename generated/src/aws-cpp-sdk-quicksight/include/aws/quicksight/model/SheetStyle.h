@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/SheetBackgroundStyle.h>
 #include <aws/quicksight/model/TileLayoutStyle.h>
 #include <aws/quicksight/model/TileStyle.h>
 
@@ -67,12 +68,33 @@ class SheetStyle {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The background for sheets.</p>
+   */
+  inline const SheetBackgroundStyle& GetBackground() const { return m_background; }
+  inline bool BackgroundHasBeenSet() const { return m_backgroundHasBeenSet; }
+  template <typename BackgroundT = SheetBackgroundStyle>
+  void SetBackground(BackgroundT&& value) {
+    m_backgroundHasBeenSet = true;
+    m_background = std::forward<BackgroundT>(value);
+  }
+  template <typename BackgroundT = SheetBackgroundStyle>
+  SheetStyle& WithBackground(BackgroundT&& value) {
+    SetBackground(std::forward<BackgroundT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TileStyle m_tile;
   bool m_tileHasBeenSet = false;
 
   TileLayoutStyle m_tileLayout;
   bool m_tileLayoutHasBeenSet = false;
+
+  SheetBackgroundStyle m_background;
+  bool m_backgroundHasBeenSet = false;
 };
 
 }  // namespace Model

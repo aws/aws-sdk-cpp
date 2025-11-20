@@ -125,6 +125,24 @@ class SendNotificationActionDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Recipients to exclude from notification.</p>
+   */
+  inline const NotificationRecipientType& GetExclusion() const { return m_exclusion; }
+  inline bool ExclusionHasBeenSet() const { return m_exclusionHasBeenSet; }
+  template <typename ExclusionT = NotificationRecipientType>
+  void SetExclusion(ExclusionT&& value) {
+    m_exclusionHasBeenSet = true;
+    m_exclusion = std::forward<ExclusionT>(value);
+  }
+  template <typename ExclusionT = NotificationRecipientType>
+  SendNotificationActionDefinition& WithExclusion(ExclusionT&& value) {
+    SetExclusion(std::forward<ExclusionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NotificationDeliveryType m_deliveryMethod{NotificationDeliveryType::NOT_SET};
   bool m_deliveryMethodHasBeenSet = false;
@@ -140,6 +158,9 @@ class SendNotificationActionDefinition {
 
   NotificationRecipientType m_recipient;
   bool m_recipientHasBeenSet = false;
+
+  NotificationRecipientType m_exclusion;
+  bool m_exclusionHasBeenSet = false;
 };
 
 }  // namespace Model

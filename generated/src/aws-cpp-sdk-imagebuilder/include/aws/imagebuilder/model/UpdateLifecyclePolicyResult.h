@@ -28,7 +28,8 @@ class UpdateLifecyclePolicyResult {
 
   ///@{
   /**
-   * <p>The ARN of the image lifecycle policy resource that was updated.</p>
+   * <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that
+   * was updated.</p>
    */
   inline const Aws::String& GetLifecyclePolicyArn() const { return m_lifecyclePolicyArn; }
   template <typename LifecyclePolicyArnT = Aws::String>

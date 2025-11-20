@@ -21,8 +21,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents a node in a dependency graph, typically corresponding to a service
- * or component in your application architecture.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that represents a node in a dependency graph, containing
+ * information about a service, resource, or other entity and its
+ * characteristics.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/Node">AWS
  * API Reference</a></p>
  */
@@ -35,8 +36,8 @@ class Node {
 
   ///@{
   /**
-   * <p>A map of key attributes that identify and describe the node, such as service
-   * name, environment, and other metadata.</p>
+   * <p>The key attributes that identify this node, including Type, Name, and
+   * Environment information.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const { return m_keyAttributes; }
   inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
@@ -60,7 +61,7 @@ class Node {
 
   ///@{
   /**
-   * <p>The display name of the node, typically the service or component name.</p>
+   * <p>The name of the entity represented by this node.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -78,7 +79,7 @@ class Node {
 
   ///@{
   /**
-   * <p>A unique identifier for the node within the dependency graph.</p>
+   * <p>A unique identifier for this node within the dependency graph.</p>
    */
   inline const Aws::String& GetNodeId() const { return m_nodeId; }
   inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
@@ -96,8 +97,7 @@ class Node {
 
   ///@{
   /**
-   * <p>The specific operation or endpoint within the service that this node
-   * represents, if applicable.</p>
+   * <p>The operation associated with this node, if applicable.</p>
    */
   inline const Aws::String& GetOperation() const { return m_operation; }
   inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
@@ -115,7 +115,8 @@ class Node {
 
   ///@{
   /**
-   * <p>The type of node, such as "Service", "Database", "Queue", or "External".</p>
+   * <p>The type of entity represented by this node, such as <code>Service</code> or
+   * <code>Resource</code>.</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -133,8 +134,7 @@ class Node {
 
   ///@{
   /**
-   * <p>The typical response time or processing duration for this node, measured in
-   * milliseconds.</p>
+   * <p>The duration or processing time associated with this node, if applicable.</p>
    */
   inline double GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
@@ -150,8 +150,7 @@ class Node {
 
   ///@{
   /**
-   * <p>The current health status of the node, such as "Healthy", "Warning", or
-   * "Critical".</p>
+   * <p>The status of the entity represented by this node.</p>
    */
   inline const Aws::String& GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

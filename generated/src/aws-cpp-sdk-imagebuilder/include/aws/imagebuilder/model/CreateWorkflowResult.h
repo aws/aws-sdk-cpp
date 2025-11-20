@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+#include <aws/imagebuilder/model/LatestVersionReferences.h>
 
 #include <utility>
 
@@ -62,6 +63,24 @@ class CreateWorkflowResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The resource ARNs with different wildcard variations of semantic
+   * versioning.</p>
+   */
+  inline const LatestVersionReferences& GetLatestVersionReferences() const { return m_latestVersionReferences; }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  void SetLatestVersionReferences(LatestVersionReferencesT&& value) {
+    m_latestVersionReferencesHasBeenSet = true;
+    m_latestVersionReferences = std::forward<LatestVersionReferencesT>(value);
+  }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  CreateWorkflowResult& WithLatestVersionReferences(LatestVersionReferencesT&& value) {
+    SetLatestVersionReferences(std::forward<LatestVersionReferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -81,6 +100,9 @@ class CreateWorkflowResult {
 
   Aws::String m_workflowBuildVersionArn;
   bool m_workflowBuildVersionArnHasBeenSet = false;
+
+  LatestVersionReferences m_latestVersionReferences;
+  bool m_latestVersionReferencesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

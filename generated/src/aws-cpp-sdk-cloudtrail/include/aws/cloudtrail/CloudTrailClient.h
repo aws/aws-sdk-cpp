@@ -697,8 +697,9 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves the current event configuration settings for the specified event
-   * data store, including details about maximum event size and context key selectors
-   * configured for the event data store.</p><p><h3>See Also:</h3>   <a
+   * data store or trail. The response includes maximum event size configuration, the
+   * context key selectors configured for the event data store, and any aggregation
+   * settings configured for the trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1352,20 +1353,21 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the event configuration settings for the specified event data store.
-   * You can update the maximum event size and context key selectors.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates the event configuration settings for the specified event data store
+   * or trail. This operation supports updating the maximum event size, adding or
+   * modifying context key selectors for event data store, and configuring
+   * aggregation settings for the trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">AWS
    * API Reference</a></p>
    */
-  virtual Model::PutEventConfigurationOutcome PutEventConfiguration(const Model::PutEventConfigurationRequest& request) const;
+  virtual Model::PutEventConfigurationOutcome PutEventConfiguration(const Model::PutEventConfigurationRequest& request = {}) const;
 
   /**
    * A Callable wrapper for PutEventConfiguration that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
-  Model::PutEventConfigurationOutcomeCallable PutEventConfigurationCallable(const PutEventConfigurationRequestT& request) const {
+  Model::PutEventConfigurationOutcomeCallable PutEventConfigurationCallable(const PutEventConfigurationRequestT& request = {}) const {
     return SubmitCallable(&CloudTrailClient::PutEventConfiguration, request);
   }
 
@@ -1374,8 +1376,9 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * operation has finished.
    */
   template <typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
-  void PutEventConfigurationAsync(const PutEventConfigurationRequestT& request, const PutEventConfigurationResponseReceivedHandler& handler,
-                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void PutEventConfigurationAsync(const PutEventConfigurationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const PutEventConfigurationRequestT& request = {}) const {
     return SubmitAsync(&CloudTrailClient::PutEventConfiguration, request, handler, context);
   }
 

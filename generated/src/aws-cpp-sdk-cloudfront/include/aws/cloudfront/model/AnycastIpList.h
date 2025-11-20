@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/IpAddressType.h>
+#include <aws/cloudfront/model/IpamConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -128,6 +129,25 @@ class AnycastIpList {
 
   ///@{
   /**
+   * <p>The IPAM configuration for the Anycast static IP list, that contains the
+   * quantity and list of IPAM CIDR configurations.</p>
+   */
+  inline const IpamConfig& GetIpamConfig() const { return m_ipamConfig; }
+  inline bool IpamConfigHasBeenSet() const { return m_ipamConfigHasBeenSet; }
+  template <typename IpamConfigT = IpamConfig>
+  void SetIpamConfig(IpamConfigT&& value) {
+    m_ipamConfigHasBeenSet = true;
+    m_ipamConfig = std::forward<IpamConfigT>(value);
+  }
+  template <typename IpamConfigT = IpamConfig>
+  AnycastIpList& WithIpamConfig(IpamConfigT&& value) {
+    SetIpamConfig(std::forward<IpamConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAnycastIps() const { return m_anycastIps; }
@@ -198,6 +218,9 @@ class AnycastIpList {
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
   bool m_ipAddressTypeHasBeenSet = false;
+
+  IpamConfig m_ipamConfig;
+  bool m_ipamConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_anycastIps;
   bool m_anycastIpsHasBeenSet = false;

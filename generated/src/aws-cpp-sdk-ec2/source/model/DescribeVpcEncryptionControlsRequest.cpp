@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeVpcEncryptionControlsRequest.h>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils;
+
+Aws::String DescribeVpcEncryptionControlsRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=DescribeVpcEncryptionControls&";
+  if (m_dryRunHasBeenSet) {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if (m_filtersHasBeenSet) {
+    unsigned filtersCount = 1;
+    for (auto& item : m_filters) {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
+  if (m_vpcEncryptionControlIdsHasBeenSet) {
+    unsigned vpcEncryptionControlIdsCount = 1;
+    for (auto& item : m_vpcEncryptionControlIds) {
+      ss << "VpcEncryptionControlId." << vpcEncryptionControlIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      vpcEncryptionControlIdsCount++;
+    }
+  }
+
+  if (m_vpcIdsHasBeenSet) {
+    unsigned vpcIdsCount = 1;
+    for (auto& item : m_vpcIds) {
+      ss << "VpcId." << vpcIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      vpcIdsCount++;
+    }
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  ss << "Version=2016-11-15";
+  return ss.str();
+}
+
+void DescribeVpcEncryptionControlsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

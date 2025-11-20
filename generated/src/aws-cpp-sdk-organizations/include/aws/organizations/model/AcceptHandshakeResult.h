@@ -29,7 +29,7 @@ class AcceptHandshakeResult {
 
   ///@{
   /**
-   * <p>A structure that contains details about the accepted handshake.</p>
+   * <p>A <code>Handshake</code> object. Contains details for the handshake.</p>
    */
   inline const Handshake& GetHandshake() const { return m_handshake; }
   template <typename HandshakeT = Handshake>

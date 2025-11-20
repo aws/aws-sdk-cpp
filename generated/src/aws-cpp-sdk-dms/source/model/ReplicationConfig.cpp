@@ -62,6 +62,10 @@ ReplicationConfig& ReplicationConfig::operator=(JsonView jsonValue) {
     m_replicationConfigUpdateTime = jsonValue.GetDouble("ReplicationConfigUpdateTime");
     m_replicationConfigUpdateTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsReadOnly")) {
+    m_isReadOnly = jsonValue.GetBool("IsReadOnly");
+    m_isReadOnlyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue ReplicationConfig::Jsonize() const {
 
   if (m_replicationConfigUpdateTimeHasBeenSet) {
     payload.WithDouble("ReplicationConfigUpdateTime", m_replicationConfigUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if (m_isReadOnlyHasBeenSet) {
+    payload.WithBool("IsReadOnly", m_isReadOnly);
   }
 
   return payload;

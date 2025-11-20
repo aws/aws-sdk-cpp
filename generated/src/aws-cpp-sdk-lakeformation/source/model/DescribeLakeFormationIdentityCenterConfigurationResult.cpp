@@ -48,6 +48,14 @@ DescribeLakeFormationIdentityCenterConfigurationResult& DescribeLakeFormationIde
     }
     m_shareRecipientsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceIntegrations")) {
+    Aws::Utils::Array<JsonView> serviceIntegrationsJsonList = jsonValue.GetArray("ServiceIntegrations");
+    for (unsigned serviceIntegrationsIndex = 0; serviceIntegrationsIndex < serviceIntegrationsJsonList.GetLength();
+         ++serviceIntegrationsIndex) {
+      m_serviceIntegrations.push_back(serviceIntegrationsJsonList[serviceIntegrationsIndex].AsObject());
+    }
+    m_serviceIntegrationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ResourceShare")) {
     m_resourceShare = jsonValue.GetString("ResourceShare");
     m_resourceShareHasBeenSet = true;

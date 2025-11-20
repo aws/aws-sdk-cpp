@@ -36,19 +36,18 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that you provide to ensure the
-   * idempotency of the request.</p>
+   * <p>The SQL statement text to run. </p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetSql() const { return m_sql; }
+  inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
+  template <typename SqlT = Aws::String>
+  void SetSql(SqlT&& value) {
+    m_sqlHasBeenSet = true;
+    m_sql = std::forward<SqlT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  ExecuteStatementRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
+  template <typename SqlT = Aws::String>
+  ExecuteStatementRequest& WithSql(SqlT&& value) {
+    SetSql(std::forward<SqlT>(value));
     return *this;
   }
   ///@}
@@ -75,19 +74,19 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The name of the database. This parameter is required when authenticating
-   * using either Secrets Manager or temporary credentials. </p>
+   * <p>The name or ARN of the secret that enables access to the database. This
+   * parameter is required when authenticating using Secrets Manager. </p>
    */
-  inline const Aws::String& GetDatabase() const { return m_database; }
-  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-  template <typename DatabaseT = Aws::String>
-  void SetDatabase(DatabaseT&& value) {
-    m_databaseHasBeenSet = true;
-    m_database = std::forward<DatabaseT>(value);
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
   }
-  template <typename DatabaseT = Aws::String>
-  ExecuteStatementRequest& WithDatabase(DatabaseT&& value) {
-    SetDatabase(std::forward<DatabaseT>(value));
+  template <typename SecretArnT = Aws::String>
+  ExecuteStatementRequest& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
     return *this;
   }
   ///@}
@@ -107,6 +106,61 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   template <typename DbUserT = Aws::String>
   ExecuteStatementRequest& WithDbUser(DbUserT&& value) {
     SetDbUser(std::forward<DbUserT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the database. This parameter is required when authenticating
+   * using either Secrets Manager or temporary credentials. </p>
+   */
+  inline const Aws::String& GetDatabase() const { return m_database; }
+  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+  template <typename DatabaseT = Aws::String>
+  void SetDatabase(DatabaseT&& value) {
+    m_databaseHasBeenSet = true;
+    m_database = std::forward<DatabaseT>(value);
+  }
+  template <typename DatabaseT = Aws::String>
+  ExecuteStatementRequest& WithDatabase(DatabaseT&& value) {
+    SetDatabase(std::forward<DatabaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A value that indicates whether to send an event to the Amazon EventBridge
+   * event bus after the SQL statement runs. </p>
+   */
+  inline bool GetWithEvent() const { return m_withEvent; }
+  inline bool WithEventHasBeenSet() const { return m_withEventHasBeenSet; }
+  inline void SetWithEvent(bool value) {
+    m_withEventHasBeenSet = true;
+    m_withEvent = value;
+  }
+  inline ExecuteStatementRequest& WithWithEvent(bool value) {
+    SetWithEvent(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the SQL statement. You can name the SQL statement when you create
+   * it to identify the query. </p>
+   */
+  inline const Aws::String& GetStatementName() const { return m_statementName; }
+  inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
+  template <typename StatementNameT = Aws::String>
+  void SetStatementName(StatementNameT&& value) {
+    m_statementNameHasBeenSet = true;
+    m_statementName = std::forward<StatementNameT>(value);
+  }
+  template <typename StatementNameT = Aws::String>
+  ExecuteStatementRequest& WithStatementName(StatementNameT&& value) {
+    SetStatementName(std::forward<StatementNameT>(value));
     return *this;
   }
   ///@}
@@ -137,6 +191,45 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
+   * <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter
+   * is required when connecting to a serverless workgroup and authenticating using
+   * either Secrets Manager or temporary credentials.</p>
+   */
+  inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
+  inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
+  template <typename WorkgroupNameT = Aws::String>
+  void SetWorkgroupName(WorkgroupNameT&& value) {
+    m_workgroupNameHasBeenSet = true;
+    m_workgroupName = std::forward<WorkgroupNameT>(value);
+  }
+  template <typename WorkgroupNameT = Aws::String>
+  ExecuteStatementRequest& WithWorkgroupName(WorkgroupNameT&& value) {
+    SetWorkgroupName(std::forward<WorkgroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  ExecuteStatementRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data format of the result of the SQL statement. If no format is
    * specified, the default is JSON.</p>
    */
@@ -148,43 +241,6 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
   }
   inline ExecuteStatementRequest& WithResultFormat(ResultFormatString value) {
     SetResultFormat(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name or ARN of the secret that enables access to the database. This
-   * parameter is required when authenticating using Secrets Manager. </p>
-   */
-  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-  template <typename SecretArnT = Aws::String>
-  void SetSecretArn(SecretArnT&& value) {
-    m_secretArnHasBeenSet = true;
-    m_secretArn = std::forward<SecretArnT>(value);
-  }
-  template <typename SecretArnT = Aws::String>
-  ExecuteStatementRequest& WithSecretArn(SecretArnT&& value) {
-    SetSecretArn(std::forward<SecretArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The session identifier of the query.</p>
-   */
-  inline const Aws::String& GetSessionId() const { return m_sessionId; }
-  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-  template <typename SessionIdT = Aws::String>
-  void SetSessionId(SessionIdT&& value) {
-    m_sessionIdHasBeenSet = true;
-    m_sessionId = std::forward<SessionIdT>(value);
-  }
-  template <typename SessionIdT = Aws::String>
-  ExecuteStatementRequest& WithSessionId(SessionIdT&& value) {
-    SetSessionId(std::forward<SessionIdT>(value));
     return *this;
   }
   ///@}
@@ -209,116 +265,60 @@ class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The SQL statement text to run. </p>
+   * <p>The session identifier of the query.</p>
    */
-  inline const Aws::String& GetSql() const { return m_sql; }
-  inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
-  template <typename SqlT = Aws::String>
-  void SetSql(SqlT&& value) {
-    m_sqlHasBeenSet = true;
-    m_sql = std::forward<SqlT>(value);
+  inline const Aws::String& GetSessionId() const { return m_sessionId; }
+  inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+  template <typename SessionIdT = Aws::String>
+  void SetSessionId(SessionIdT&& value) {
+    m_sessionIdHasBeenSet = true;
+    m_sessionId = std::forward<SessionIdT>(value);
   }
-  template <typename SqlT = Aws::String>
-  ExecuteStatementRequest& WithSql(SqlT&& value) {
-    SetSql(std::forward<SqlT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the SQL statement. You can name the SQL statement when you create
-   * it to identify the query. </p>
-   */
-  inline const Aws::String& GetStatementName() const { return m_statementName; }
-  inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
-  template <typename StatementNameT = Aws::String>
-  void SetStatementName(StatementNameT&& value) {
-    m_statementNameHasBeenSet = true;
-    m_statementName = std::forward<StatementNameT>(value);
-  }
-  template <typename StatementNameT = Aws::String>
-  ExecuteStatementRequest& WithStatementName(StatementNameT&& value) {
-    SetStatementName(std::forward<StatementNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A value that indicates whether to send an event to the Amazon EventBridge
-   * event bus after the SQL statement runs. </p>
-   */
-  inline bool GetWithEvent() const { return m_withEvent; }
-  inline bool WithEventHasBeenSet() const { return m_withEventHasBeenSet; }
-  inline void SetWithEvent(bool value) {
-    m_withEventHasBeenSet = true;
-    m_withEvent = value;
-  }
-  inline ExecuteStatementRequest& WithWithEvent(bool value) {
-    SetWithEvent(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter
-   * is required when connecting to a serverless workgroup and authenticating using
-   * either Secrets Manager or temporary credentials.</p>
-   */
-  inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
-  inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-  template <typename WorkgroupNameT = Aws::String>
-  void SetWorkgroupName(WorkgroupNameT&& value) {
-    m_workgroupNameHasBeenSet = true;
-    m_workgroupName = std::forward<WorkgroupNameT>(value);
-  }
-  template <typename WorkgroupNameT = Aws::String>
-  ExecuteStatementRequest& WithWorkgroupName(WorkgroupNameT&& value) {
-    SetWorkgroupName(std::forward<WorkgroupNameT>(value));
+  template <typename SessionIdT = Aws::String>
+  ExecuteStatementRequest& WithSessionId(SessionIdT&& value) {
+    SetSessionId(std::forward<SessionIdT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
+  Aws::String m_sql;
+  bool m_sqlHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
   bool m_clusterIdentifierHasBeenSet = false;
 
-  Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
   bool m_dbUserHasBeenSet = false;
 
-  Aws::Vector<SqlParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
-
-  ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
-
-  Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
-
-  Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
-
-  int m_sessionKeepAliveSeconds{0};
-  bool m_sessionKeepAliveSecondsHasBeenSet = false;
-
-  Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
-
-  Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
+  Aws::String m_database;
+  bool m_databaseHasBeenSet = false;
 
   bool m_withEvent{false};
   bool m_withEventHasBeenSet = false;
 
+  Aws::String m_statementName;
+  bool m_statementNameHasBeenSet = false;
+
+  Aws::Vector<SqlParameter> m_parameters;
+  bool m_parametersHasBeenSet = false;
+
   Aws::String m_workgroupName;
   bool m_workgroupNameHasBeenSet = false;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+
+  ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
+  bool m_resultFormatHasBeenSet = false;
+
+  int m_sessionKeepAliveSeconds{0};
+  bool m_sessionKeepAliveSecondsHasBeenSet = false;
+
+  Aws::String m_sessionId;
+  bool m_sessionIdHasBeenSet = false;
 };
 
 }  // namespace Model

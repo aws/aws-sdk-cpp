@@ -42,6 +42,30 @@ GridLayoutElement& GridLayoutElement::operator=(JsonView jsonValue) {
     m_rowSpan = jsonValue.GetInteger("RowSpan");
     m_rowSpanHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BorderStyle")) {
+    m_borderStyle = jsonValue.GetObject("BorderStyle");
+    m_borderStyleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SelectedBorderStyle")) {
+    m_selectedBorderStyle = jsonValue.GetObject("SelectedBorderStyle");
+    m_selectedBorderStyleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BackgroundStyle")) {
+    m_backgroundStyle = jsonValue.GetObject("BackgroundStyle");
+    m_backgroundStyleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LoadingAnimation")) {
+    m_loadingAnimation = jsonValue.GetObject("LoadingAnimation");
+    m_loadingAnimationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BorderRadius")) {
+    m_borderRadius = jsonValue.GetString("BorderRadius");
+    m_borderRadiusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Padding")) {
+    m_padding = jsonValue.GetString("Padding");
+    m_paddingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +94,30 @@ JsonValue GridLayoutElement::Jsonize() const {
 
   if (m_rowSpanHasBeenSet) {
     payload.WithInteger("RowSpan", m_rowSpan);
+  }
+
+  if (m_borderStyleHasBeenSet) {
+    payload.WithObject("BorderStyle", m_borderStyle.Jsonize());
+  }
+
+  if (m_selectedBorderStyleHasBeenSet) {
+    payload.WithObject("SelectedBorderStyle", m_selectedBorderStyle.Jsonize());
+  }
+
+  if (m_backgroundStyleHasBeenSet) {
+    payload.WithObject("BackgroundStyle", m_backgroundStyle.Jsonize());
+  }
+
+  if (m_loadingAnimationHasBeenSet) {
+    payload.WithObject("LoadingAnimation", m_loadingAnimation.Jsonize());
+  }
+
+  if (m_borderRadiusHasBeenSet) {
+    payload.WithString("BorderRadius", m_borderRadius);
+  }
+
+  if (m_paddingHasBeenSet) {
+    payload.WithString("Padding", m_padding);
   }
 
   return payload;

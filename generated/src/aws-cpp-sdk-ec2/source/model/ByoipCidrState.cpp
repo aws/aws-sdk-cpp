@@ -19,8 +19,10 @@ static const int advertised_HASH = HashingUtils::HashString("advertised");
 static const int deprovisioned_HASH = HashingUtils::HashString("deprovisioned");
 static const int failed_deprovision_HASH = HashingUtils::HashString("failed-deprovision");
 static const int failed_provision_HASH = HashingUtils::HashString("failed-provision");
+static const int pending_advertising_HASH = HashingUtils::HashString("pending-advertising");
 static const int pending_deprovision_HASH = HashingUtils::HashString("pending-deprovision");
 static const int pending_provision_HASH = HashingUtils::HashString("pending-provision");
+static const int pending_withdrawal_HASH = HashingUtils::HashString("pending-withdrawal");
 static const int provisioned_HASH = HashingUtils::HashString("provisioned");
 static const int provisioned_not_publicly_advertisable_HASH = HashingUtils::HashString("provisioned-not-publicly-advertisable");
 
@@ -34,10 +36,14 @@ ByoipCidrState GetByoipCidrStateForName(const Aws::String& name) {
     return ByoipCidrState::failed_deprovision;
   } else if (hashCode == failed_provision_HASH) {
     return ByoipCidrState::failed_provision;
+  } else if (hashCode == pending_advertising_HASH) {
+    return ByoipCidrState::pending_advertising;
   } else if (hashCode == pending_deprovision_HASH) {
     return ByoipCidrState::pending_deprovision;
   } else if (hashCode == pending_provision_HASH) {
     return ByoipCidrState::pending_provision;
+  } else if (hashCode == pending_withdrawal_HASH) {
+    return ByoipCidrState::pending_withdrawal;
   } else if (hashCode == provisioned_HASH) {
     return ByoipCidrState::provisioned;
   } else if (hashCode == provisioned_not_publicly_advertisable_HASH) {
@@ -64,10 +70,14 @@ Aws::String GetNameForByoipCidrState(ByoipCidrState enumValue) {
       return "failed-deprovision";
     case ByoipCidrState::failed_provision:
       return "failed-provision";
+    case ByoipCidrState::pending_advertising:
+      return "pending-advertising";
     case ByoipCidrState::pending_deprovision:
       return "pending-deprovision";
     case ByoipCidrState::pending_provision:
       return "pending-provision";
+    case ByoipCidrState::pending_withdrawal:
+      return "pending-withdrawal";
     case ByoipCidrState::provisioned:
       return "provisioned";
     case ByoipCidrState::provisioned_not_publicly_advertisable:

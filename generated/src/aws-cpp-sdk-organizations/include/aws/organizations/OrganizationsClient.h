@@ -119,31 +119,26 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   virtual ~OrganizationsClient();
 
   /**
-   * <p>Sends a response to the originator of a handshake agreeing to the action
-   * proposed by the handshake request.</p> <p>You can only call this operation by
-   * the following principals when they also have the relevant IAM permissions:</p>
-   * <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b>
-   * handshakes: only a principal from the member account.</p> <p>The user who calls
-   * the API for an invitation to join must have the
-   * <code>organizations:AcceptHandshake</code> permission. If you enabled all
-   * features in the organization, the user must also have the
-   * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
-   * create the required service-linked role named
-   * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
-   * and service-linked roles</a> in the <i>Organizations User Guide</i>.</p> </li>
-   * <li> <p> <b>Enable all features final confirmation</b> handshake: only a
-   * principal from the management account.</p> <p>For more information about
-   * invitations, see <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
-   * an Amazon Web Services account to join your organization</a> in the
-   * <i>Organizations User Guide</i>. For more information about requests to enable
-   * all features in the organization, see <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-   * all features in your organization</a> in the <i>Organizations User
-   * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
-   * appear in the results of relevant APIs for only 30 days. After that, it's
-   * deleted.</p><p><h3>See Also:</h3>   <a
+   * <p>Accepts a handshake by sending an <code>ACCEPTED</code> response to the
+   * sender. You can view accepted handshakes in API responses for 30 days before
+   * they are deleted.</p> <p> <b>Only the management account can accept the
+   * following handshakes</b>:</p> <ul> <li> <p>Enable all features final
+   * confirmation (<code>APPROVE_ALL_FEATURES</code>)</p> </li> <li> <p>Billing
+   * transfer (<code>TRANSFER_RESPONSIBILITY</code>)</p> </li> </ul> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling
+   * all features</a> and <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_transfer_billing-respond-invitation.html">Responding
+   * to a billing transfer invitation</a> in the <i>Organizations User Guide</i>.</p>
+   * <p> <b>Only a member account can accept the following handshakes</b>:</p> <ul>
+   * <li> <p>Invitation to join (<code>INVITE</code>)</p> </li> <li> <p>Approve all
+   * features request (<code>ENABLE_ALL_FEATURES</code>)</p> </li> </ul> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_accept-decline-invite.html">Responding
+   * to invitations</a> and <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling
+   * all features</a> in the <i>Organizations User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
    * API Reference</a></p>
    */
@@ -187,9 +182,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
-   * </p> </li> </ul> <p>This operation can be called only from the organization's
-   * management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
+   * </p> </li> </ul> <p>You can only call this operation from the management account
+   * or a member account that is a delegated administrator.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
    * API Reference</a></p>
    */
@@ -214,13 +211,12 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Cancels a handshake. Canceling a handshake sets the handshake state to
-   * <code>CANCELED</code>.</p> <p>This operation can be called only from the account
-   * that originated the handshake. The recipient of the handshake can't cancel it,
-   * but can use <a>DeclineHandshake</a> instead. After a handshake is canceled, the
-   * recipient can no longer respond to that handshake.</p> <p>After you cancel a
-   * handshake, it continues to appear in the results of relevant APIs for only 30
-   * days. After that, it's deleted.</p><p><h3>See Also:</h3>   <a
+   * <p>Cancels a <a>Handshake</a>.</p> <p>Only the account that sent a handshake can
+   * call this operation. The recipient of the handshake can't cancel it, but can use
+   * <a>DeclineHandshake</a> to decline. After a handshake is canceled, the recipient
+   * can no longer respond to the handshake.</p> <p>You can view canceled handshakes
+   * in API responses for 30 days before they are deleted.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake">AWS
    * API Reference</a></p>
    */
@@ -332,9 +328,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * management account administrator permissions in the new member account.
    * Principals in the management account can assume the role. Organizations clones
    * the company name and address information for the new account from the
-   * organization's management account.</p> <p>This operation can be called only from
-   * the organization's management account.</p> <p>For more information about
-   * creating accounts, see <a
+   * organization's management account.</p> <p>You can only call this operation from
+   * the management account.</p> <p>For more information about creating accounts, see
+   * <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
    * a member account in your organization</a> in the <i>Organizations User
    * Guide</i>.</p>  <ul> <li> <p>When you create an account in an
@@ -566,9 +562,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
    * organizational units (OUs)</a> in the <i>Organizations User Guide</i>.</p> <p>If
    * the request includes tags, then the requester must have the
-   * <code>organizations:TagResource</code> permission.</p> <p>This operation can be
-   * called only from the organization's management account.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>organizations:TagResource</code> permission.</p> <p>You can only call this
+   * operation from the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit">AWS
    * API Reference</a></p>
    */
@@ -601,9 +596,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
    * Organizations policies</a>.</p> <p>If the request includes tags, then the
    * requester must have the <code>organizations:TagResource</code> permission.</p>
-   * <p>This operation can be called only from the organization's management account
-   * or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You can only call this operation from the management account or a member
+   * account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
    * API Reference</a></p>
    */
@@ -628,14 +622,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Declines a handshake request. This sets the handshake state to
-   * <code>DECLINED</code> and effectively deactivates the request.</p> <p>This
-   * operation can be called only from the account that received the handshake. The
-   * originator of the handshake can use <a>CancelHandshake</a> instead. The
-   * originator can't reactivate a declined request, but can reinitiate the process
-   * with a new handshake request.</p> <p>After you decline a handshake, it continues
-   * to appear in the results of relevant APIs for only 30 days. After that, it's
-   * deleted.</p><p><h3>See Also:</h3>   <a
+   * <p>Declines a <a>Handshake</a>.</p> <p>Only the account that receives a
+   * handshake can call this operation. The sender of the handshake can use
+   * <a>CancelHandshake</a> to cancel if the handshake hasn't yet been responded
+   * to.</p> <p>You can view canceled handshakes in API responses for 30 days before
+   * they are deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake">AWS
    * API Reference</a></p>
    */
@@ -692,8 +683,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
    * remove all accounts and child OUs from the OU that you want to delete.</p>
-   * <p>This operation can be called only from the organization's management
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>You can only call this operation from the management account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit">AWS
    * API Reference</a></p>
    */
@@ -722,9 +713,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Deletes the specified policy from your organization. Before you perform this
    * operation, you must first detach the policy from all organizational units (OUs),
-   * roots, and accounts.</p> <p>This operation can be called only from the
-   * organization's management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * roots, and accounts.</p> <p>You can only call this operation from the management
+   * account or a member account that is a delegated administrator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
    * API Reference</a></p>
    */
@@ -749,9 +740,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deletes the resource policy from your organization.</p> <p>This operation can
-   * be called only from the organization's management account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Deletes the resource policy from your organization.</p> <p>You can only call
+   * this operation from the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -789,8 +779,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * Administrator</i> in the table at <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon
    * Web Services Services that you can use with Organizations</a> in the
-   * <i>Organizations User Guide.</i> </p> <p>This operation can be called only from
-   * the organization's management account.</p><p><h3>See Also:</h3>   <a
+   * <i>Organizations User Guide.</i> </p> <p>You can only call this operation from
+   * the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
    * API Reference</a></p>
    */
@@ -820,9 +810,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves Organizations-related information about the specified account.</p>
-   * <p>This operation can be called only from the organization's management account
-   * or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You can only call this operation from the management account or a member
+   * account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount">AWS
    * API Reference</a></p>
    */
@@ -848,9 +837,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the current status of an asynchronous request to create an
-   * account.</p> <p>This operation can be called only from the organization's
-   * management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * account.</p> <p>You can only call this operation from the management account or
+   * a member account that is a delegated administrator.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus">AWS
    * API Reference</a></p>
    */
@@ -888,8 +877,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * information about policy inheritance, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inheritance_mgmt.html">Understanding
    * management policy inheritance</a> in the <i>Organizations User Guide</i>.</p>
-   * <p>This operation can be called from any account in the
-   * organization.</p><p><h3>See Also:</h3>   <a
+   * <p>You can call this operation from any account in a organization.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy">AWS
    * API Reference</a></p>
    */
@@ -916,12 +905,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves information about a previously requested handshake. The handshake
-   * ID comes from the response to the original <a>InviteAccountToOrganization</a>
-   * operation that generated the handshake.</p> <p>You can access handshakes that
-   * are <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>CANCELED</code> for
-   * only 30 days after they change to that state. They're then deleted and no longer
-   * accessible.</p> <p>This operation can be called from any account in the
+   * <p>Returns details for a handshake. A handshake is the secure exchange of
+   * information between two Amazon Web Services accounts: a sender and a
+   * recipient.</p> <p>You can view <code>ACCEPTED</code>, <code>DECLINED</code>, or
+   * <code>CANCELED</code> handshakes in API Responses for 30 days before they are
+   * deleted.</p> <p>You can call this operation from any account in a
    * organization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake">AWS
    * API Reference</a></p>
@@ -949,11 +937,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves information about the organization that the user's account belongs
-   * to.</p> <p>This operation can be called from any account in the
-   * organization.</p>  <p>Even if a policy type is shown as available in the
-   * organization, you can disable it separately at the root level with
-   * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
-   * for a specified root.</p> <p><h3>See Also:</h3>   <a
+   * to.</p> <p>You can call this operation from any account in a organization.</p>
+   *  <p>Even if a policy type is shown as available in the organization, you
+   * can disable it separately at the root level with <a>DisablePolicyType</a>. Use
+   * <a>ListRoots</a> to see the status of policy types for a specified root.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
    * API Reference</a></p>
    */
@@ -980,9 +968,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves information about an organizational unit (OU).</p> <p>This
-   * operation can be called only from the organization's management account or by a
-   * member account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves information about an organizational unit (OU).</p> <p>You can only
+   * call this operation from the management account or a member account that is a
+   * delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit">AWS
    * API Reference</a></p>
    */
@@ -1011,9 +999,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves information about a policy.</p> <p>This operation can be called
-   * only from the organization's management account or by a member account that is a
-   * delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves information about a policy.</p> <p>You can only call this operation
+   * from the management account or a member account that is a delegated
+   * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy">AWS
    * API Reference</a></p>
    */
@@ -1038,9 +1026,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Retrieves information about a resource policy.</p> <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves information about a resource policy.</p> <p>You can only call this
+   * operation from the management account or a member account that is a delegated
+   * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -1067,6 +1055,37 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns details for a transfer. A <i>transfer</i> is an arrangement between
+   * two management accounts where one account designates the other with specified
+   * responsibilities for their organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResponsibilityTransfer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeResponsibilityTransferOutcome DescribeResponsibilityTransfer(
+      const Model::DescribeResponsibilityTransferRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeResponsibilityTransfer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeResponsibilityTransferRequestT = Model::DescribeResponsibilityTransferRequest>
+  Model::DescribeResponsibilityTransferOutcomeCallable DescribeResponsibilityTransferCallable(
+      const DescribeResponsibilityTransferRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::DescribeResponsibilityTransfer, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeResponsibilityTransfer that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeResponsibilityTransferRequestT = Model::DescribeResponsibilityTransferRequest>
+  void DescribeResponsibilityTransferAsync(const DescribeResponsibilityTransferRequestT& request,
+                                           const DescribeResponsibilityTransferResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::DescribeResponsibilityTransfer, request, handler, context);
+  }
+
+  /**
    * <p>Detaches a policy from a target root, organizational unit (OU), or
    * account.</p>  <p>If the policy being detached is a service control
    * policy (SCP), the changes to permissions for Identity and Access Management
@@ -1083,9 +1102,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're
    * using the authorization strategy of a "<a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
-   * list</a>".</p> <p>This operation can be called only from the organization's
-   * management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * list</a>".</p> <p>You can only call this operation from the management account
+   * or a member account that is a delegated administrator.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
    * API Reference</a></p>
    */
@@ -1154,8 +1173,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * including the list of services that work with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
    * Organizations with other Amazon Web Services services</a> in the
-   * <i>Organizations User Guide</i>.</p> <p>This operation can be called only from
-   * the organization's management account.</p><p><h3>See Also:</h3>   <a
+   * <i>Organizations User Guide</i>.</p> <p>You can only call this operation from
+   * the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">AWS
    * API Reference</a></p>
    */
@@ -1193,10 +1212,10 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
    * features</a> are enabled for the organization. Amazon Web Services recommends
    * that you first use <a>ListRoots</a> to see the status of policy types for a
-   * specified root, and then use this operation.</p> <p>This operation can be called
-   * only from the organization's management account or by a member account that is a
-   * delegated administrator.</p> <p> To view the status of available policy types in
-   * the organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
+   * specified root, and then use this operation.</p> <p>You can only call this
+   * operation from the management account or a member account that is a delegated
+   * administrator.</p> <p> To view the status of available policy types in the
+   * organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
    * API Reference</a></p>
    */
@@ -1240,8 +1259,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * integrate with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
    * Organizations with other Amazon Web Services services</a> in the
-   * <i>Organizations User Guide</i>.</p> <p>This operation can be called only from
-   * the organization's management account.</p><p><h3>See Also:</h3>   <a
+   * <i>Organizations User Guide</i>.</p> <p>You can only call this operation from
+   * the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess">AWS
    * API Reference</a></p>
    */
@@ -1291,8 +1310,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * accounts. These policies can restrict what users and even administrators in
    * those accounts can do. The management account can apply policies that prevent
    * accounts from leaving the organization. Ensure that your account administrators
-   * are aware of this.</p> <p>This operation can be called only from the
-   * organization's management account.</p><p><h3>See Also:</h3>   <a
+   * are aware of this.</p> <p>You can only call this operation from the management
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
    * API Reference</a></p>
    */
@@ -1325,11 +1344,11 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * operation.</p> <p>This is an asynchronous request that Amazon Web Services
    * performs in the background. Amazon Web Services recommends that you first use
    * <a>ListRoots</a> to see the status of policy types for a specified root, and
-   * then use this operation.</p> <p>This operation can be called only from the
-   * organization's management account or by a member account that is a delegated
-   * administrator.</p> <p>You can enable a policy type in a root only if that policy
-   * type is available in the organization. To view the status of available policy
-   * types in the organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
+   * then use this operation.</p> <p>You can only call this operation from the
+   * management account or a member account that is a delegated administrator.</p>
+   * <p>You can enable a policy type in a root only if that policy type is available
+   * in the organization. To view the status of available policy types in the
+   * organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
    * API Reference</a></p>
    */
@@ -1365,8 +1384,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web
    * Services Support</a>.</p>  <p>If the request includes tags, then the
    * requester must have the <code>organizations:TagResource</code> permission.</p>
-   * <p>This operation can be called only from the organization's management
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>You can only call this operation from the management account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
    * API Reference</a></p>
    */
@@ -1395,14 +1414,48 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Sends an invitation to another organization's management account to designate
+   * your account with the specified responsibilities for their organization. The
+   * invitation is implemented as a <a>Handshake</a> whose details are in the
+   * response.</p> <p>You can only call this operation from the management
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteOrganizationToTransferResponsibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InviteOrganizationToTransferResponsibilityOutcome InviteOrganizationToTransferResponsibility(
+      const Model::InviteOrganizationToTransferResponsibilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for InviteOrganizationToTransferResponsibility that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename InviteOrganizationToTransferResponsibilityRequestT = Model::InviteOrganizationToTransferResponsibilityRequest>
+  Model::InviteOrganizationToTransferResponsibilityOutcomeCallable InviteOrganizationToTransferResponsibilityCallable(
+      const InviteOrganizationToTransferResponsibilityRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::InviteOrganizationToTransferResponsibility, request);
+  }
+
+  /**
+   * An Async wrapper for InviteOrganizationToTransferResponsibility that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename InviteOrganizationToTransferResponsibilityRequestT = Model::InviteOrganizationToTransferResponsibilityRequest>
+  void InviteOrganizationToTransferResponsibilityAsync(
+      const InviteOrganizationToTransferResponsibilityRequestT& request,
+      const InviteOrganizationToTransferResponsibilityResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::InviteOrganizationToTransferResponsibility, request, handler, context);
+  }
+
+  /**
    * <p>Removes a member account from its parent organization. This version of the
    * operation is performed by the account that wants to leave. To remove a member
    * account as a user in the management account, use
-   * <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be
-   * called only from a member account in the organization.</p>  <ul> <li>
-   * <p>The management account in an organization with all features enabled can set
-   * service control policies (SCPs) that can restrict what administrators of member
-   * accounts can do. This includes preventing them from successfully calling
+   * <a>RemoveAccountFromOrganization</a> instead.</p> <p>You can only call from
+   * operation from a member account.</p>  <ul> <li> <p>The management
+   * account in an organization with all features enabled can set service control
+   * policies (SCPs) that can restrict what administrators of member accounts can do.
+   * This includes preventing them from successfully calling
    * <code>LeaveOrganization</code> and leaving the organization.</p> </li> <li>
    * <p>You can leave an organization as a member account only if the account is
    * configured with the information required to operate as a standalone account.
@@ -1466,8 +1519,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * that currently work with Organizations, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
    * Organizations with other Amazon Web Services services</a> in the
-   * <i>Organizations User Guide</i>.</p> <p>This operation can be called only from
-   * the organization's management account or by a member account that is a delegated
+   * <i>Organizations User Guide</i>.</p> <p>You can only call this operation from
+   * the management account or a member account that is a delegated
    * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
    * API Reference</a></p>
@@ -1499,14 +1552,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Lists all the accounts in the organization. To request only the accounts in a
    * specified root or organizational unit (OU), use the <a>ListAccountsForParent</a>
-   * operation instead.</p>  <p>Always check the <code>NextToken</code>
-   * response parameter for a <code>null</code> value when calling a
-   * <code>List*</code> operation. These operations can occasionally return an empty
-   * set of results even when there are more results available. The
-   * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
-   * when there are no more results to display.</p>  <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * operation instead.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
    * API Reference</a></p>
    */
@@ -1537,14 +1590,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * of all the accounts that aren't in any OU. If you specify an OU, you get a list
    * of all the accounts in only that OU and not in any child OUs. To get a list of
    * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-   *  <p>Always check the <code>NextToken</code> response parameter for a
-   * <code>null</code> value when calling a <code>List*</code> operation. These
-   * operations can occasionally return an empty set of results even when there are
-   * more results available. The <code>NextToken</code> response parameter value is
-   * <code>null</code> <i>only</i> when there are no more results to display.</p>
-   *  <p>This operation can be called only from the organization's management
-   * account or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>When calling List* operations, always check the <code>NextToken</code>
+   * response parameter value, even if you receive an empty result set. These
+   * operations can occasionally return an empty set of results even when more
+   * results are available. Continue making requests until <code>NextToken</code>
+   * returns null. A null <code>NextToken</code> value indicates that you have
+   * retrieved all available results.</p>  <p>You can only call this operation
+   * from the management account or a member account that is a delegated
+   * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
    * API Reference</a></p>
    */
@@ -1575,9 +1628,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_effective.html">effective
    * policy</a> that fails validation checks, resulting in the effective policy not
    * being fully enforced on all the intended accounts within an organization.</p>
-   * <p>This operation can be called only from the organization's management account
-   * or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You can only call this operation from the management account or a member
+   * account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsWithInvalidEffectivePolicy">AWS
    * API Reference</a></p>
    */
@@ -1609,14 +1661,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * <p>Lists all of the organizational units (OUs) or accounts that are contained in
    * the specified parent OU or root. This operation, along with <a>ListParents</a>
    * enables you to traverse the tree structure that makes up this root.</p>
-   * <p>Always check the <code>NextToken</code> response parameter for a
-   * <code>null</code> value when calling a <code>List*</code> operation. These
-   * operations can occasionally return an empty set of results even when there are
-   * more results available. The <code>NextToken</code> response parameter value is
-   * <code>null</code> <i>only</i> when there are no more results to display.</p>
-   *  <p>This operation can be called only from the organization's management
-   * account or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>When calling List* operations, always check the <code>NextToken</code>
+   * response parameter value, even if you receive an empty result set. These
+   * operations can occasionally return an empty set of results even when more
+   * results are available. Continue making requests until <code>NextToken</code>
+   * returns null. A null <code>NextToken</code> value indicates that you have
+   * retrieved all available results.</p>  <p>You can only call this operation
+   * from the management account or a member account that is a delegated
+   * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
    * API Reference</a></p>
    */
@@ -1642,14 +1694,15 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Lists the account creation requests that match the specified status that is
-   * currently being tracked for the organization.</p>  <p>Always check the
-   * <code>NextToken</code> response parameter for a <code>null</code> value when
-   * calling a <code>List*</code> operation. These operations can occasionally return
-   * an empty set of results even when there are more results available. The
-   * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
-   * when there are no more results to display.</p>  <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * currently being tracked for the organization.</p>  <p>When calling List*
+   * operations, always check the <code>NextToken</code> response parameter value,
+   * even if you receive an empty result set. These operations can occasionally
+   * return an empty set of results even when more results are available. Continue
+   * making requests until <code>NextToken</code> returns null. A null
+   * <code>NextToken</code> value indicates that you have retrieved all available
+   * results.</p>  <p>You can only call this operation from the management
+   * account or a member account that is a delegated administrator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
    * API Reference</a></p>
    */
@@ -1677,9 +1730,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Lists the Amazon Web Services accounts that are designated as delegated
-   * administrators in this organization.</p> <p>This operation can be called only
-   * from the organization's management account or by a member account that is a
-   * delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * administrators in this organization.</p> <p>You can only call this operation
+   * from the management account or a member account that is a delegated
+   * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators">AWS
    * API Reference</a></p>
    */
@@ -1709,8 +1762,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>List the Amazon Web Services services for which the specified account is a
-   * delegated administrator.</p> <p>This operation can be called only from the
-   * organization's management account or by a member account that is a delegated
+   * delegated administrator.</p> <p>You can only call this operation from the
+   * management account or a member account that is a delegated
    * administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount">AWS
    * API Reference</a></p>
@@ -1742,9 +1795,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Lists all the validation errors on an <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_effective.html">effective
-   * policy</a> for a specified account and policy type.</p> <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * policy</a> for a specified account and policy type.</p> <p>You can only call
+   * this operation from the management account or a member account that is a
+   * delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListEffectivePolicyValidationErrors">AWS
    * API Reference</a></p>
    */
@@ -1773,17 +1826,17 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Lists the current handshakes that are associated with the account of the
-   * requesting user.</p> <p>Handshakes that are <code>ACCEPTED</code>,
-   * <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in
-   * the results of this API for only 30 days after changing to that state. After
-   * that, they're deleted and no longer accessible.</p>  <p>Always check the
-   * <code>NextToken</code> response parameter for a <code>null</code> value when
-   * calling a <code>List*</code> operation. These operations can occasionally return
-   * an empty set of results even when there are more results available. The
-   * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
-   * when there are no more results to display.</p>  <p>This operation can be
-   * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the recent handshakes that you have received.</p> <p>You can view
+   * <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or
+   * <code>EXPIRED</code> handshakes in API responses for 30 days before they are
+   * deleted.</p> <p>You can call this operation from any account in a
+   * organization.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
    * API Reference</a></p>
    */
@@ -1811,21 +1864,17 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Lists the handshakes that are associated with the organization that the
-   * requesting user is part of. The <code>ListHandshakesForOrganization</code>
-   * operation returns a list of handshake structures. Each structure contains
-   * details and status about a handshake.</p> <p>Handshakes that are
-   * <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or
-   * <code>EXPIRED</code> appear in the results of this API for only 30 days after
-   * changing to that state. After that, they're deleted and no longer
-   * accessible.</p>  <p>Always check the <code>NextToken</code> response
-   * parameter for a <code>null</code> value when calling a <code>List*</code>
-   * operation. These operations can occasionally return an empty set of results even
-   * when there are more results available. The <code>NextToken</code> response
-   * parameter value is <code>null</code> <i>only</i> when there are no more results
-   * to display.</p>  <p>This operation can be called only from the
-   * organization's management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the recent handshakes that you have sent.</p> <p>You can view
+   * <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or
+   * <code>EXPIRED</code> handshakes in API responses for 30 days before they are
+   * deleted.</p> <p>You can only call this operation from the management account or
+   * a member account that is a delegated administrator.</p>  <p>When calling
+   * List* operations, always check the <code>NextToken</code> response parameter
+   * value, even if you receive an empty result set. These operations can
+   * occasionally return an empty set of results even when more results are
+   * available. Continue making requests until <code>NextToken</code> returns null. A
+   * null <code>NextToken</code> value indicates that you have retrieved all
+   * available results.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
    * API Reference</a></p>
    */
@@ -1854,15 +1903,52 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Lists the organizational units (OUs) in a parent organizational unit or
-   * root.</p>  <p>Always check the <code>NextToken</code> response parameter
-   * for a <code>null</code> value when calling a <code>List*</code> operation. These
-   * operations can occasionally return an empty set of results even when there are
-   * more results available. The <code>NextToken</code> response parameter value is
-   * <code>null</code> <i>only</i> when there are no more results to display.</p>
-   *  <p>This operation can be called only from the organization's management
-   * account or by a member account that is a delegated administrator.</p><p><h3>See
+   * <p>Lists transfers that allow you to manage the specified responsibilities for
+   * another organization. This operation returns both transfer invitations and
+   * transfers.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p> <p><h3>See
    * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListInboundResponsibilityTransfers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInboundResponsibilityTransfersOutcome ListInboundResponsibilityTransfers(
+      const Model::ListInboundResponsibilityTransfersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInboundResponsibilityTransfers that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListInboundResponsibilityTransfersRequestT = Model::ListInboundResponsibilityTransfersRequest>
+  Model::ListInboundResponsibilityTransfersOutcomeCallable ListInboundResponsibilityTransfersCallable(
+      const ListInboundResponsibilityTransfersRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::ListInboundResponsibilityTransfers, request);
+  }
+
+  /**
+   * An Async wrapper for ListInboundResponsibilityTransfers that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListInboundResponsibilityTransfersRequestT = Model::ListInboundResponsibilityTransfersRequest>
+  void ListInboundResponsibilityTransfersAsync(const ListInboundResponsibilityTransfersRequestT& request,
+                                               const ListInboundResponsibilityTransfersResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::ListInboundResponsibilityTransfers, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the organizational units (OUs) in a parent organizational unit or
+   * root.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
    * API Reference</a></p>
    */
@@ -1891,18 +1977,55 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Lists transfers that allow an account outside your organization to manage the
+   * specified responsibilities for your organization. This operation returns both
+   * transfer invitations and transfers.</p>  <p>When calling List* operations,
+   * always check the <code>NextToken</code> response parameter value, even if you
+   * receive an empty result set. These operations can occasionally return an empty
+   * set of results even when more results are available. Continue making requests
+   * until <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOutboundResponsibilityTransfers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOutboundResponsibilityTransfersOutcome ListOutboundResponsibilityTransfers(
+      const Model::ListOutboundResponsibilityTransfersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOutboundResponsibilityTransfers that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListOutboundResponsibilityTransfersRequestT = Model::ListOutboundResponsibilityTransfersRequest>
+  Model::ListOutboundResponsibilityTransfersOutcomeCallable ListOutboundResponsibilityTransfersCallable(
+      const ListOutboundResponsibilityTransfersRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::ListOutboundResponsibilityTransfers, request);
+  }
+
+  /**
+   * An Async wrapper for ListOutboundResponsibilityTransfers that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListOutboundResponsibilityTransfersRequestT = Model::ListOutboundResponsibilityTransfersRequest>
+  void ListOutboundResponsibilityTransfersAsync(const ListOutboundResponsibilityTransfersRequestT& request,
+                                                const ListOutboundResponsibilityTransfersResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::ListOutboundResponsibilityTransfers, request, handler, context);
+  }
+
+  /**
    * <p>Lists the root or organizational units (OUs) that serve as the immediate
    * parent of the specified child OU or account. This operation, along with
    * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-   * this root.</p>  <p>Always check the <code>NextToken</code> response
-   * parameter for a <code>null</code> value when calling a <code>List*</code>
-   * operation. These operations can occasionally return an empty set of results even
-   * when there are more results available. The <code>NextToken</code> response
-   * parameter value is <code>null</code> <i>only</i> when there are no more results
-   * to display.</p>  <p>This operation can be called only from the
-   * organization's management account or by a member account that is a delegated
-   * administrator.</p>  <p>In the current release, a child can have only a
-   * single parent.</p> <p><h3>See Also:</h3>   <a
+   * this root.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p>  <p>In the current release, a child can
+   * have only a single parent.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
    * API Reference</a></p>
    */
@@ -1928,14 +2051,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Retrieves the list of all policies in an organization of a specified
-   * type.</p>  <p>Always check the <code>NextToken</code> response parameter
-   * for a <code>null</code> value when calling a <code>List*</code> operation. These
-   * operations can occasionally return an empty set of results even when there are
-   * more results available. The <code>NextToken</code> response parameter value is
-   * <code>null</code> <i>only</i> when there are no more results to display.</p>
-   *  <p>This operation can be called only from the organization's management
-   * account or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * type.</p>  <p>When calling List* operations, always check the
+   * <code>NextToken</code> response parameter value, even if you receive an empty
+   * result set. These operations can occasionally return an empty set of results
+   * even when more results are available. Continue making requests until
+   * <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
    * API Reference</a></p>
    */
@@ -1962,14 +2085,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Lists the policies that are directly attached to the specified target root,
    * organizational unit (OU), or account. You must specify the policy type that you
-   * want included in the returned list.</p>  <p>Always check the
-   * <code>NextToken</code> response parameter for a <code>null</code> value when
-   * calling a <code>List*</code> operation. These operations can occasionally return
-   * an empty set of results even when there are more results available. The
-   * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
-   * when there are no more results to display.</p>  <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * want included in the returned list.</p>  <p>When calling List* operations,
+   * always check the <code>NextToken</code> response parameter value, even if you
+   * receive an empty result set. These operations can occasionally return an empty
+   * set of results even when more results are available. Continue making requests
+   * until <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
    * API Reference</a></p>
    */
@@ -1996,19 +2119,19 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Lists the roots that are defined in the current organization.</p>
-   * <p>Always check the <code>NextToken</code> response parameter for a
-   * <code>null</code> value when calling a <code>List*</code> operation. These
-   * operations can occasionally return an empty set of results even when there are
-   * more results available. The <code>NextToken</code> response parameter value is
-   * <code>null</code> <i>only</i> when there are no more results to display.</p>
-   *  <p>This operation can be called only from the organization's management
-   * account or by a member account that is a delegated administrator.</p>
-   * <p>Policy types can be enabled and disabled in roots. This is distinct from
-   * whether they're available in the organization. When you enable all features, you
-   * make policy types available for use in that organization. Individual policy
-   * types can then be enabled and disabled in a root. To see the availability of a
-   * policy type in an organization, use <a>DescribeOrganization</a>.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>When calling List* operations, always check the <code>NextToken</code>
+   * response parameter value, even if you receive an empty result set. These
+   * operations can occasionally return an empty set of results even when more
+   * results are available. Continue making requests until <code>NextToken</code>
+   * returns null. A null <code>NextToken</code> value indicates that you have
+   * retrieved all available results.</p>  <p>You can only call this operation
+   * from the management account or a member account that is a delegated
+   * administrator.</p>  <p>Policy types can be enabled and disabled in roots.
+   * This is distinct from whether they're available in the organization. When you
+   * enable all features, you make policy types available for use in that
+   * organization. Individual policy types can then be enabled and disabled in a
+   * root. To see the availability of a policy type in an organization, use
+   * <a>DescribeOrganization</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
    * API Reference</a></p>
    */
@@ -2038,9 +2161,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * tags to the following resources in Organizations.</p> <ul> <li> <p>Amazon Web
    * Services account</p> </li> <li> <p>Organization root</p> </li> <li>
    * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-   * <p>This operation can be called only from the organization's management account
-   * or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You can only call this operation from the management account or a member
+   * account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -2067,14 +2189,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Lists all the roots, organizational units (OUs), and accounts that the
-   * specified policy is attached to.</p>  <p>Always check the
-   * <code>NextToken</code> response parameter for a <code>null</code> value when
-   * calling a <code>List*</code> operation. These operations can occasionally return
-   * an empty set of results even when there are more results available. The
-   * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
-   * when there are no more results to display.</p>  <p>This operation can be
-   * called only from the organization's management account or by a member account
-   * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+   * specified policy is attached to.</p>  <p>When calling List* operations,
+   * always check the <code>NextToken</code> response parameter value, even if you
+   * receive an empty result set. These operations can occasionally return an empty
+   * set of results even when more results are available. Continue making requests
+   * until <code>NextToken</code> returns null. A null <code>NextToken</code> value
+   * indicates that you have retrieved all available results.</p>  <p>You can
+   * only call this operation from the management account or a member account that is
+   * a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
    * API Reference</a></p>
    */
@@ -2101,9 +2223,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Moves an account from its current source parent root or organizational unit
-   * (OU) to the specified destination parent root or OU.</p> <p>This operation can
-   * be called only from the organization's management account.</p><p><h3>See
-   * Also:</h3>   <a
+   * (OU) to the specified destination parent root or OU.</p> <p>You can only call
+   * this operation from the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
    * API Reference</a></p>
    */
@@ -2128,8 +2249,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Creates or updates a resource policy.</p> <p>This operation can be called
-   * only from the organization's management account..</p><p><h3>See Also:</h3>   <a
+   * <p>Creates or updates a resource policy.</p> <p>You can only call this operation
+   * from the management account..</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PutResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -2164,8 +2285,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * Administrator</i> in the table at <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon
    * Web Services Services that you can use with Organizations</a> in the
-   * <i>Organizations User Guide.</i> </p> <p>This operation can be called only from
-   * the organization's management account.</p><p><h3>See Also:</h3>   <a
+   * <i>Organizations User Guide.</i> </p> <p>You can only call this operation from
+   * the management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
    * API Reference</a></p>
    */
@@ -2199,14 +2320,14 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * It's no longer subject to any policies and is responsible for its own bill
    * payments. The organization's management account is no longer charged for any
    * expenses accrued by the member account after it's removed from the
-   * organization.</p> <p>This operation can be called only from the organization's
-   * management account. Member accounts can remove themselves with
-   * <a>LeaveOrganization</a> instead.</p>  <ul> <li> <p>You can remove an
-   * account from your organization only if the account is configured with the
-   * information required to operate as a standalone account. When you create an
-   * account in an organization using the Organizations console, API, or CLI
-   * commands, the information required of standalone accounts is <i>not</i>
-   * automatically collected. For more information, see <a
+   * organization.</p> <p>You can only call this operation from the management
+   * account. Member accounts can remove themselves with <a>LeaveOrganization</a>
+   * instead.</p>  <ul> <li> <p>You can remove an account from your
+   * organization only if the account is configured with the information required to
+   * operate as a standalone account. When you create an account in an organization
+   * using the Organizations console, API, or CLI commands, the information required
+   * of standalone accounts is <i>not</i> automatically collected. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
    * before removing an account from an organization</a> in the <i>Organizations User
    * Guide</i>.</p> </li> <li> <p>The account that you want to leave must not be a
@@ -2250,9 +2371,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * attach tags to the following resources in Organizations.</p> <ul> <li> <p>Amazon
    * Web Services account</p> </li> <li> <p>Organization root</p> </li> <li>
    * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-   * <p>This operation can be called only from the organization's management account
-   * or by a member account that is a delegated administrator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You can only call this operation from the management account or a member
+   * account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource">AWS
    * API Reference</a></p>
    */
@@ -2277,13 +2397,43 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Ends a transfer. A <i>transfer</i> is an arrangement between two management
+   * accounts where one account designates the other with specified responsibilities
+   * for their organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TerminateResponsibilityTransfer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TerminateResponsibilityTransferOutcome TerminateResponsibilityTransfer(
+      const Model::TerminateResponsibilityTransferRequest& request) const;
+
+  /**
+   * A Callable wrapper for TerminateResponsibilityTransfer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename TerminateResponsibilityTransferRequestT = Model::TerminateResponsibilityTransferRequest>
+  Model::TerminateResponsibilityTransferOutcomeCallable TerminateResponsibilityTransferCallable(
+      const TerminateResponsibilityTransferRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::TerminateResponsibilityTransfer, request);
+  }
+
+  /**
+   * An Async wrapper for TerminateResponsibilityTransfer that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename TerminateResponsibilityTransferRequestT = Model::TerminateResponsibilityTransferRequest>
+  void TerminateResponsibilityTransferAsync(const TerminateResponsibilityTransferRequestT& request,
+                                            const TerminateResponsibilityTransferResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::TerminateResponsibilityTransfer, request, handler, context);
+  }
+
+  /**
    * <p>Removes any tags with the specified keys from the specified resource.</p>
    * <p>You can attach tags to the following resources in Organizations.</p> <ul>
    * <li> <p>Amazon Web Services account</p> </li> <li> <p>Organization root</p>
    * </li> <li> <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p>
-   * </li> </ul> <p>This operation can be called only from the organization's
-   * management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * </li> </ul> <p>You can only call this operation from the management account or a
+   * member account that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource">AWS
    * API Reference</a></p>
    */
@@ -2310,8 +2460,8 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Renames the specified organizational unit (OU). The ID and ARN don't change.
    * The child OUs and accounts remain in place, and any attached policies of the OU
-   * remain attached.</p> <p>This operation can be called only from the
-   * organization's management account.</p><p><h3>See Also:</h3>   <a
+   * remain attached.</p> <p>You can only call this operation from the management
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit">AWS
    * API Reference</a></p>
    */
@@ -2340,9 +2490,9 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Updates an existing policy with a new name, description, or content. If you
    * don't supply any parameter, that value remains unchanged. You can't change a
-   * policy's type.</p> <p>This operation can be called only from the organization's
-   * management account or by a member account that is a delegated
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * policy's type.</p> <p>You can only call this operation from the management
+   * account or a member account that is a delegated administrator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">AWS
    * API Reference</a></p>
    */
@@ -2364,6 +2514,38 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   void UpdatePolicyAsync(const UpdatePolicyRequestT& request, const UpdatePolicyResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OrganizationsClient::UpdatePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a transfer. A <i>transfer</i> is the arrangement between two
+   * management accounts where one account designates the other with specified
+   * responsibilities for their organization.</p> <p>You can update the name assigned
+   * to a transfer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateResponsibilityTransfer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateResponsibilityTransferOutcome UpdateResponsibilityTransfer(
+      const Model::UpdateResponsibilityTransferRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateResponsibilityTransfer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateResponsibilityTransferRequestT = Model::UpdateResponsibilityTransferRequest>
+  Model::UpdateResponsibilityTransferOutcomeCallable UpdateResponsibilityTransferCallable(
+      const UpdateResponsibilityTransferRequestT& request) const {
+    return SubmitCallable(&OrganizationsClient::UpdateResponsibilityTransfer, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateResponsibilityTransfer that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateResponsibilityTransferRequestT = Model::UpdateResponsibilityTransferRequest>
+  void UpdateResponsibilityTransferAsync(const UpdateResponsibilityTransferRequestT& request,
+                                         const UpdateResponsibilityTransferResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OrganizationsClient::UpdateResponsibilityTransfer, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

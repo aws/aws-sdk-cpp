@@ -28,6 +28,10 @@ GetComponentResult& GetComponentResult::operator=(const Aws::AmazonWebServiceRes
     m_component = jsonValue.GetObject("component");
     m_componentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

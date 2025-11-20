@@ -29,6 +29,10 @@ CreateWorkflowResult& CreateWorkflowResult::operator=(const Aws::AmazonWebServic
     m_workflowBuildVersionArn = jsonValue.GetString("workflowBuildVersionArn");
     m_workflowBuildVersionArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

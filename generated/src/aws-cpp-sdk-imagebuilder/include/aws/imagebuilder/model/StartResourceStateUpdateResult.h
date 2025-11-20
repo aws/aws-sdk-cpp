@@ -46,8 +46,8 @@ class StartResourceStateUpdateResult {
 
   ///@{
   /**
-   * <p>The requested ARN of the Image Builder resource for the asynchronous
-   * update.</p>
+   * <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for
+   * the asynchronous update.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>

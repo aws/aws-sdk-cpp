@@ -65,6 +65,18 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator=(JsonView jsonValue
     m_billingMethod = BillingMethodMapper::GetBillingMethodForName(jsonValue.GetString("billingMethod"));
     m_billingMethodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentVariables")) {
+    Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
+    for (unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength();
+         ++environmentVariablesIndex) {
+      m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("executionRoleArn")) {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+    m_executionRoleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +130,19 @@ JsonValue ScheduleRunConfiguration::Jsonize() const {
 
   if (m_billingMethodHasBeenSet) {
     payload.WithString("billingMethod", BillingMethodMapper::GetNameForBillingMethod(m_billingMethod));
+  }
+
+  if (m_environmentVariablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+    for (unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength();
+         ++environmentVariablesIndex) {
+      environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+    }
+    payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
+  }
+
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("executionRoleArn", m_executionRoleArn);
   }
 
   return payload;

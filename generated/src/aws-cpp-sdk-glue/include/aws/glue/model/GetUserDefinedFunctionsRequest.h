@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/FunctionType.h>
 
 #include <utility>
 
@@ -90,6 +91,26 @@ class GetUserDefinedFunctionsRequest : public GlueRequest {
 
   ///@{
   /**
+   * <p>An optional function-type pattern string that filters the function
+   * definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+   * <p>Specify a value of <code>REGULAR_FUNCTION</code> or
+   * <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type
+   * is only compatible with Amazon Redshift Federated Permissions Catalog. </p>
+   */
+  inline FunctionType GetFunctionType() const { return m_functionType; }
+  inline bool FunctionTypeHasBeenSet() const { return m_functionTypeHasBeenSet; }
+  inline void SetFunctionType(FunctionType value) {
+    m_functionTypeHasBeenSet = true;
+    m_functionType = value;
+  }
+  inline GetUserDefinedFunctionsRequest& WithFunctionType(FunctionType value) {
+    SetFunctionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A continuation token, if this is a continuation call.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -130,6 +151,9 @@ class GetUserDefinedFunctionsRequest : public GlueRequest {
 
   Aws::String m_pattern;
   bool m_patternHasBeenSet = false;
+
+  FunctionType m_functionType{FunctionType::NOT_SET};
+  bool m_functionTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;

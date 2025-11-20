@@ -30,6 +30,10 @@ StepConfig& StepConfig::operator=(JsonView jsonValue) {
     m_hadoopJarStep = jsonValue.GetObject("HadoopJarStep");
     m_hadoopJarStepHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StepMonitoringConfiguration")) {
+    m_stepMonitoringConfiguration = jsonValue.GetObject("StepMonitoringConfiguration");
+    m_stepMonitoringConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue StepConfig::Jsonize() const {
 
   if (m_hadoopJarStepHasBeenSet) {
     payload.WithObject("HadoopJarStep", m_hadoopJarStep.Jsonize());
+  }
+
+  if (m_stepMonitoringConfigurationHasBeenSet) {
+    payload.WithObject("StepMonitoringConfiguration", m_stepMonitoringConfiguration.Jsonize());
   }
 
   return payload;

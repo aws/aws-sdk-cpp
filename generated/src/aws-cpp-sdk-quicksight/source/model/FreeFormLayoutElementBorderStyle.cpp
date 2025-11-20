@@ -26,6 +26,10 @@ FreeFormLayoutElementBorderStyle& FreeFormLayoutElementBorderStyle::operator=(Js
     m_color = jsonValue.GetString("Color");
     m_colorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Width")) {
+    m_width = jsonValue.GetString("Width");
+    m_widthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue FreeFormLayoutElementBorderStyle::Jsonize() const {
 
   if (m_colorHasBeenSet) {
     payload.WithString("Color", m_color);
+  }
+
+  if (m_widthHasBeenSet) {
+    payload.WithString("Width", m_width);
   }
 
   return payload;

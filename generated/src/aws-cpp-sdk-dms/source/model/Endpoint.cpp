@@ -86,6 +86,10 @@ Endpoint& Endpoint::operator=(JsonView jsonValue) {
     m_externalId = jsonValue.GetString("ExternalId");
     m_externalIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsReadOnly")) {
+    m_isReadOnly = jsonValue.GetBool("IsReadOnly");
+    m_isReadOnlyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DynamoDbSettings")) {
     m_dynamoDbSettings = jsonValue.GetObject("DynamoDbSettings");
     m_dynamoDbSettingsHasBeenSet = true;
@@ -162,6 +166,10 @@ Endpoint& Endpoint::operator=(JsonView jsonValue) {
     m_timestreamSettings = jsonValue.GetObject("TimestreamSettings");
     m_timestreamSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LakehouseSettings")) {
+    m_lakehouseSettings = jsonValue.GetObject("LakehouseSettings");
+    m_lakehouseSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -234,6 +242,10 @@ JsonValue Endpoint::Jsonize() const {
 
   if (m_externalIdHasBeenSet) {
     payload.WithString("ExternalId", m_externalId);
+  }
+
+  if (m_isReadOnlyHasBeenSet) {
+    payload.WithBool("IsReadOnly", m_isReadOnly);
   }
 
   if (m_dynamoDbSettingsHasBeenSet) {
@@ -310,6 +322,10 @@ JsonValue Endpoint::Jsonize() const {
 
   if (m_timestreamSettingsHasBeenSet) {
     payload.WithObject("TimestreamSettings", m_timestreamSettings.Jsonize());
+  }
+
+  if (m_lakehouseSettingsHasBeenSet) {
+    payload.WithObject("LakehouseSettings", m_lakehouseSettings.Jsonize());
   }
 
   return payload;

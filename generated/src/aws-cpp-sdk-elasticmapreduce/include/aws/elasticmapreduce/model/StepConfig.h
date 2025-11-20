@@ -8,6 +8,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/ActionOnFailure.h>
 #include <aws/elasticmapreduce/model/HadoopJarStepConfig.h>
+#include <aws/elasticmapreduce/model/StepMonitoringConfiguration.h>
 
 #include <utility>
 
@@ -102,6 +103,24 @@ class StepConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Object that holds configuration properties for logging.</p>
+   */
+  inline const StepMonitoringConfiguration& GetStepMonitoringConfiguration() const { return m_stepMonitoringConfiguration; }
+  inline bool StepMonitoringConfigurationHasBeenSet() const { return m_stepMonitoringConfigurationHasBeenSet; }
+  template <typename StepMonitoringConfigurationT = StepMonitoringConfiguration>
+  void SetStepMonitoringConfiguration(StepMonitoringConfigurationT&& value) {
+    m_stepMonitoringConfigurationHasBeenSet = true;
+    m_stepMonitoringConfiguration = std::forward<StepMonitoringConfigurationT>(value);
+  }
+  template <typename StepMonitoringConfigurationT = StepMonitoringConfiguration>
+  StepConfig& WithStepMonitoringConfiguration(StepMonitoringConfigurationT&& value) {
+    SetStepMonitoringConfiguration(std::forward<StepMonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -111,6 +130,9 @@ class StepConfig {
 
   HadoopJarStepConfig m_hadoopJarStep;
   bool m_hadoopJarStepHasBeenSet = false;
+
+  StepMonitoringConfiguration m_stepMonitoringConfiguration;
+  bool m_stepMonitoringConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

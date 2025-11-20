@@ -80,6 +80,8 @@
 #include <aws/imagebuilder/model/DeleteWorkflowRequest.h>
 #include <aws/imagebuilder/model/DeleteWorkflowResult.h>
 #include <aws/imagebuilder/model/DiskImageFormat.h>
+#include <aws/imagebuilder/model/DistributeImageRequest.h>
+#include <aws/imagebuilder/model/DistributeImageResult.h>
 #include <aws/imagebuilder/model/Distribution.h>
 #include <aws/imagebuilder/model/DistributionConfiguration.h>
 #include <aws/imagebuilder/model/DistributionConfigurationSummary.h>
@@ -157,6 +159,7 @@
 #include <aws/imagebuilder/model/InstanceBlockDeviceMapping.h>
 #include <aws/imagebuilder/model/InstanceConfiguration.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
+#include <aws/imagebuilder/model/LatestVersionReferences.h>
 #include <aws/imagebuilder/model/LaunchPermissionConfiguration.h>
 #include <aws/imagebuilder/model/LaunchTemplateConfiguration.h>
 #include <aws/imagebuilder/model/LifecycleExecution.h>
@@ -256,6 +259,8 @@
 #include <aws/imagebuilder/model/ResourceStateUpdateExclusionRules.h>
 #include <aws/imagebuilder/model/ResourceStateUpdateIncludeResources.h>
 #include <aws/imagebuilder/model/ResourceStatus.h>
+#include <aws/imagebuilder/model/RetryImageRequest.h>
+#include <aws/imagebuilder/model/RetryImageResult.h>
 #include <aws/imagebuilder/model/S3ExportConfiguration.h>
 #include <aws/imagebuilder/model/S3Logs.h>
 #include <aws/imagebuilder/model/Schedule.h>

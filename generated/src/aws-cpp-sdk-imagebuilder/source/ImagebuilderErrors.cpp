@@ -25,8 +25,10 @@ static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("Service
 static const int INVALID_VERSION_NUMBER_HASH = HashingUtils::HashString("InvalidVersionNumberException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int CALL_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CallRateLimitExceededException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
+static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperationException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -52,10 +54,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CALL_RATE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::CALL_RATE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE), RetryableType::RETRYABLE);
+  } else if (hashCode == DRY_RUN_OPERATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::DRY_RUN_OPERATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }

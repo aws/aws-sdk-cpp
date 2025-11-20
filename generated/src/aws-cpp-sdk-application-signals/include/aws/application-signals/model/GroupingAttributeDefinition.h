@@ -21,9 +21,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Defines how services should be grouped based on specific attributes. This
- * allows logical organization of services in dashboards and service
- * maps.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that defines how services should be grouped based on specific
+ * attributes. This includes the friendly name for the grouping, the source keys to
+ * derive values from, and an optional default value.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GroupingAttributeDefinition">AWS
  * API Reference</a></p>
  */
@@ -36,8 +36,9 @@ class GroupingAttributeDefinition {
 
   ///@{
   /**
-   * <p>The name of the grouping attribute, such as "Environment", "Team", or
-   * "Application".</p>
+   * <p>The friendly name for this grouping attribute, such as
+   * <code>BusinessUnit</code> or <code>Environment</code>. This name is used to
+   * identify the grouping in the console and APIs.</p>
    */
   inline const Aws::String& GetGroupingName() const { return m_groupingName; }
   inline bool GroupingNameHasBeenSet() const { return m_groupingNameHasBeenSet; }
@@ -55,8 +56,9 @@ class GroupingAttributeDefinition {
 
   ///@{
   /**
-   * <p>An array of source attribute keys that will be used to determine the grouping
-   * value for each service. These keys correspond to service metadata or tags.</p>
+   * <p>An array of source keys used to derive the grouping attribute value from
+   * telemetry data, Amazon Web Services tags, or other sources. For example,
+   * ["business_unit", "team"] would look for values in those fields.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGroupingSourceKeys() const { return m_groupingSourceKeys; }
   inline bool GroupingSourceKeysHasBeenSet() const { return m_groupingSourceKeysHasBeenSet; }
@@ -80,8 +82,9 @@ class GroupingAttributeDefinition {
 
   ///@{
   /**
-   * <p>The default value to use for grouping when a service doesn't have any of the
-   * specified source keys, such as "Unknown" or "Unassigned".</p>
+   * <p>The default value to use for this grouping attribute when no value can be
+   * derived from the source keys. This ensures all services have a grouping value
+   * even if the source data is missing.</p>
    */
   inline const Aws::String& GetDefaultGroupingValue() const { return m_defaultGroupingValue; }
   inline bool DefaultGroupingValueHasBeenSet() const { return m_defaultGroupingValueHasBeenSet; }

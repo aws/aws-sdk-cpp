@@ -41,11 +41,13 @@
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsResult.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsResult.h>
 #include <aws/bedrock-agentcore/model/ListEventsResult.h>
+#include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsResult.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/ListSessionsResult.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionResult.h>
+#include <aws/bedrock-agentcore/model/StartMemoryExtractionJobResult.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionResult.h>
 #include <aws/bedrock-agentcore/model/StopRuntimeSessionResult.h>
@@ -107,11 +109,13 @@ class ListActorsRequest;
 class ListBrowserSessionsRequest;
 class ListCodeInterpreterSessionsRequest;
 class ListEventsRequest;
+class ListMemoryExtractionJobsRequest;
 class ListMemoryRecordsRequest;
 class ListSessionsRequest;
 class RetrieveMemoryRecordsRequest;
 class StartBrowserSessionRequest;
 class StartCodeInterpreterSessionRequest;
+class StartMemoryExtractionJobRequest;
 class StopBrowserSessionRequest;
 class StopCodeInterpreterSessionRequest;
 class StopRuntimeSessionRequest;
@@ -142,11 +146,13 @@ typedef Aws::Utils::Outcome<ListActorsResult, BedrockAgentCoreError> ListActorsO
 typedef Aws::Utils::Outcome<ListBrowserSessionsResult, BedrockAgentCoreError> ListBrowserSessionsOutcome;
 typedef Aws::Utils::Outcome<ListCodeInterpreterSessionsResult, BedrockAgentCoreError> ListCodeInterpreterSessionsOutcome;
 typedef Aws::Utils::Outcome<ListEventsResult, BedrockAgentCoreError> ListEventsOutcome;
+typedef Aws::Utils::Outcome<ListMemoryExtractionJobsResult, BedrockAgentCoreError> ListMemoryExtractionJobsOutcome;
 typedef Aws::Utils::Outcome<ListMemoryRecordsResult, BedrockAgentCoreError> ListMemoryRecordsOutcome;
 typedef Aws::Utils::Outcome<ListSessionsResult, BedrockAgentCoreError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<RetrieveMemoryRecordsResult, BedrockAgentCoreError> RetrieveMemoryRecordsOutcome;
 typedef Aws::Utils::Outcome<StartBrowserSessionResult, BedrockAgentCoreError> StartBrowserSessionOutcome;
 typedef Aws::Utils::Outcome<StartCodeInterpreterSessionResult, BedrockAgentCoreError> StartCodeInterpreterSessionOutcome;
+typedef Aws::Utils::Outcome<StartMemoryExtractionJobResult, BedrockAgentCoreError> StartMemoryExtractionJobOutcome;
 typedef Aws::Utils::Outcome<StopBrowserSessionResult, BedrockAgentCoreError> StopBrowserSessionOutcome;
 typedef Aws::Utils::Outcome<StopCodeInterpreterSessionResult, BedrockAgentCoreError> StopCodeInterpreterSessionOutcome;
 typedef Aws::Utils::Outcome<StopRuntimeSessionResult, BedrockAgentCoreError> StopRuntimeSessionOutcome;
@@ -177,11 +183,13 @@ typedef std::future<ListActorsOutcome> ListActorsOutcomeCallable;
 typedef std::future<ListBrowserSessionsOutcome> ListBrowserSessionsOutcomeCallable;
 typedef std::future<ListCodeInterpreterSessionsOutcome> ListCodeInterpreterSessionsOutcomeCallable;
 typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
+typedef std::future<ListMemoryExtractionJobsOutcome> ListMemoryExtractionJobsOutcomeCallable;
 typedef std::future<ListMemoryRecordsOutcome> ListMemoryRecordsOutcomeCallable;
 typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<RetrieveMemoryRecordsOutcome> RetrieveMemoryRecordsOutcomeCallable;
 typedef std::future<StartBrowserSessionOutcome> StartBrowserSessionOutcomeCallable;
 typedef std::future<StartCodeInterpreterSessionOutcome> StartCodeInterpreterSessionOutcomeCallable;
+typedef std::future<StartMemoryExtractionJobOutcome> StartMemoryExtractionJobOutcomeCallable;
 typedef std::future<StopBrowserSessionOutcome> StopBrowserSessionOutcomeCallable;
 typedef std::future<StopCodeInterpreterSessionOutcome> StopCodeInterpreterSessionOutcomeCallable;
 typedef std::future<StopRuntimeSessionOutcome> StopRuntimeSessionOutcomeCallable;
@@ -263,6 +271,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListCodeI
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListEventsRequest&, const Model::ListEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEventsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListMemoryExtractionJobsRequest&,
+                           const Model::ListMemoryExtractionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMemoryExtractionJobsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListMemoryRecordsRequest&, const Model::ListMemoryRecordsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMemoryRecordsResponseReceivedHandler;
@@ -278,6 +289,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::StartBrow
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::StartCodeInterpreterSessionRequest&,
                            const Model::StartCodeInterpreterSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartCodeInterpreterSessionResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::StartMemoryExtractionJobRequest&,
+                           const Model::StartMemoryExtractionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartMemoryExtractionJobResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::StopBrowserSessionRequest&, const Model::StopBrowserSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopBrowserSessionResponseReceivedHandler;

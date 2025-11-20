@@ -44,6 +44,7 @@
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStageFilter.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStatus.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectSummary.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
 #include <aws/bedrock-data-automation/model/DeleteBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/DeleteBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/DeleteDataAutomationProjectRequest.h>
@@ -83,7 +84,13 @@
 #include <aws/bedrock-data-automation/model/ModalityProcessingConfiguration.h>
 #include <aws/bedrock-data-automation/model/ModalityRoutingConfiguration.h>
 #include <aws/bedrock-data-automation/model/OverrideConfiguration.h>
+#include <aws/bedrock-data-automation/model/PIIEntitiesConfiguration.h>
+#include <aws/bedrock-data-automation/model/PIIEntityType.h>
+#include <aws/bedrock-data-automation/model/PIIRedactionMaskMode.h>
 #include <aws/bedrock-data-automation/model/ResourceOwner.h>
+#include <aws/bedrock-data-automation/model/SensitiveDataConfiguration.h>
+#include <aws/bedrock-data-automation/model/SensitiveDataDetectionMode.h>
+#include <aws/bedrock-data-automation/model/SensitiveDataDetectionScopeType.h>
 #include <aws/bedrock-data-automation/model/SpeakerLabelingConfiguration.h>
 #include <aws/bedrock-data-automation/model/SplitterConfiguration.h>
 #include <aws/bedrock-data-automation/model/StandardOutputConfiguration.h>

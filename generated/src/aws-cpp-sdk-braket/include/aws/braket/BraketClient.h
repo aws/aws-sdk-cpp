@@ -208,6 +208,63 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Creates a spending limit for a specified quantum device. Spending limits help
+   * you control costs by setting maximum amounts that can be spent on quantum
+   * computing tasks within a specified time period. Simulators do not support
+   * spending limits.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSpendingLimitOutcome CreateSpendingLimit(const Model::CreateSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSpendingLimitRequestT = Model::CreateSpendingLimitRequest>
+  Model::CreateSpendingLimitOutcomeCallable CreateSpendingLimitCallable(const CreateSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::CreateSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateSpendingLimitRequestT = Model::CreateSpendingLimitRequest>
+  void CreateSpendingLimitAsync(const CreateSpendingLimitRequestT& request, const CreateSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CreateSpendingLimit, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing spending limit. This operation permanently removes the
+   * spending limit and cannot be undone. After deletion, the associated device
+   * becomes unrestricted for spending.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeleteSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSpendingLimitOutcome DeleteSpendingLimit(const Model::DeleteSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSpendingLimitRequestT = Model::DeleteSpendingLimitRequest>
+  Model::DeleteSpendingLimitOutcomeCallable DeleteSpendingLimitCallable(const DeleteSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::DeleteSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteSpendingLimitRequestT = Model::DeleteSpendingLimitRequest>
+  void DeleteSpendingLimitAsync(const DeleteSpendingLimitRequestT& request, const DeleteSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::DeleteSpendingLimit, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
    * compatibility with older versions of BraketSchemas, OpenQASM information is
    * omitted from GetDevice API calls. To get this information the user-agent needs
@@ -396,6 +453,36 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Searches and lists spending limits based on specified filters. This operation
+   * supports pagination and allows filtering by various criteria to find specific
+   * spending limits. We recommend using pagination to ensure that the operation
+   * returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchSpendingLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchSpendingLimitsOutcome SearchSpendingLimits(const Model::SearchSpendingLimitsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SearchSpendingLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchSpendingLimitsRequestT = Model::SearchSpendingLimitsRequest>
+  Model::SearchSpendingLimitsOutcomeCallable SearchSpendingLimitsCallable(const SearchSpendingLimitsRequestT& request = {}) const {
+    return SubmitCallable(&BraketClient::SearchSpendingLimits, request);
+  }
+
+  /**
+   * An Async wrapper for SearchSpendingLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchSpendingLimitsRequestT = Model::SearchSpendingLimitsRequest>
+  void SearchSpendingLimitsAsync(const SearchSpendingLimitsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const SearchSpendingLimitsRequestT& request = {}) const {
+    return SubmitAsync(&BraketClient::SearchSpendingLimits, request, handler, context);
+  }
+
+  /**
    * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">AWS
    * API Reference</a></p>
@@ -443,6 +530,33 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aw
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BraketClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing spending limit. You can modify the spending amount or
+   * time period. Changes take effect immediately.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UpdateSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSpendingLimitOutcome UpdateSpendingLimit(const Model::UpdateSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSpendingLimitRequestT = Model::UpdateSpendingLimitRequest>
+  Model::UpdateSpendingLimitOutcomeCallable UpdateSpendingLimitCallable(const UpdateSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::UpdateSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateSpendingLimitRequestT = Model::UpdateSpendingLimitRequest>
+  void UpdateSpendingLimitAsync(const UpdateSpendingLimitRequestT& request, const UpdateSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::UpdateSpendingLimit, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

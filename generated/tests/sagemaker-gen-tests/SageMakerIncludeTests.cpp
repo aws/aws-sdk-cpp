@@ -14,6 +14,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AcceleratorPartitionConfig.h>
 #include <aws/sagemaker/model/ActionSource.h>
 #include <aws/sagemaker/model/ActionStatus.h>
 #include <aws/sagemaker/model/ActionSummary.h>
@@ -131,6 +132,16 @@
 #include <aws/sagemaker/model/BatchDescribeModelPackageRequest.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageSummary.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodeLogicalIdsError.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodesError.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodesErrorCode.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodesRequest.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodesResult.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodeLogicalIdsError.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodesError.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodesErrorCode.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodesRequest.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchStrategy.h>
 #include <aws/sagemaker/model/BatchTransformInput.h>
 #include <aws/sagemaker/model/BestObjectiveNotImproving.h>
@@ -1058,6 +1069,7 @@
 #include <aws/sagemaker/model/ListWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/ListWorkteamsSortByOptions.h>
+#include <aws/sagemaker/model/MIGProfileType.h>
 #include <aws/sagemaker/model/ManagedInstanceScalingStatus.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <aws/sagemaker/model/MetadataProperties.h>

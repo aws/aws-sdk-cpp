@@ -1979,11 +1979,21 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Deletes tags from the bucket.</p> <p>To use this operation, you must have
-   * permission to perform the <code>s3:PutBucketTagging</code> action. By default,
-   * the bucket owner has this permission and can grant this permission to others.
-   * </p> <p>The following operations are related to
-   * <code>DeleteBucketTagging</code>:</p> <ul> <li> <p> <a
+   * <p>Deletes tags from the general purpose bucket if attribute based access
+   * control (ABAC) is not enabled for the bucket. When you <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
+   * that bucket and must use <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+   * instead.</p> <p>if ABAC is not enabled for the bucket. When you <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
+   * that bucket and must use <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+   * instead.</p> <p>To use this operation, you must have permission to perform the
+   * <code>s3:PutBucketTagging</code> action. By default, the bucket owner has this
+   * permission and can grant this permission to others. </p> <p>The following
+   * operations are related to <code>DeleteBucketTagging</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
@@ -2393,6 +2403,38 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
+   * <p>Returns the attribute-based access control (ABAC) property of the general
+   * purpose bucket. If the bucket ABAC is enabled, you can use tags for bucket
+   * access control. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+   * ABAC in general purpose buckets</a>. Whether ABAC is enabled or disabled, you
+   * can use tags for cost tracking. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">Using
+   * tags with S3 general purpose buckets</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAbac">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBucketAbacOutcome GetBucketAbac(const Model::GetBucketAbacRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBucketAbac that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetBucketAbacRequestT = Model::GetBucketAbacRequest>
+  Model::GetBucketAbacOutcomeCallable GetBucketAbacCallable(const GetBucketAbacRequestT& request) const {
+    return SubmitCallable(&S3Client::GetBucketAbac, request);
+  }
+
+  /**
+   * An Async wrapper for GetBucketAbac that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetBucketAbacRequestT = Model::GetBucketAbacRequest>
+  void GetBucketAbacAsync(const GetBucketAbacRequestT& request, const GetBucketAbacResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::GetBucketAbac, request, handler, context);
+  }
+
+  /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>This implementation of the GET action uses the <code>accelerate</code>
    * subresource to return the Transfer Acceleration state of a bucket, which is
@@ -2617,10 +2659,12 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * <p>Returns the default encryption configuration for an Amazon S3 bucket. By
    * default, all buckets have a default encryption configuration that uses
    * server-side encryption with Amazon S3 managed keys (SSE-S3). This operation also
-   * returns the <code>BucketKeyEnabled</code> and
-   * <code>BlockedEncryptionTypes</code> statuses. </p>  <ul> <li> <p>
-   * <b>General purpose buckets</b> - For information about the bucket default
-   * encryption feature, see <a
+   * returns the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a>
+   * statuses. </p>  <ul> <li> <p> <b>General purpose buckets</b> - For
+   * information about the bucket default encryption feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
    * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> </li>
    * <li> <p> <b>Directory buckets</b> - For directory buckets, there are only two
@@ -3498,8 +3542,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Returns the tag set associated with the general purpose bucket.</p> <p>To use
-   * this operation, you must have permission to perform the
+   * <p>Returns the tag set associated with the general purpose bucket.</p> <p>if
+   * ABAC is not enabled for the bucket. When you <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
+   * that bucket and must use <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+   * instead.</p> <p>To use this operation, you must have permission to perform the
    * <code>s3:GetBucketTagging</code> action. By default, the bucket owner has this
    * permission and can grant this permission to others.</p> <p>
    * <code>GetBucketTagging</code> has the following special error:</p> <ul> <li>
@@ -5288,6 +5337,46 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
   }
 
   /**
+   * <p>Sets the attribute-based access control (ABAC) property of the general
+   * purpose bucket. When you enable ABAC, you can use tags for bucket access
+   * control. Additionally, when ABAC is enabled, you must use the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+   * actions to manage bucket tags, and you can nolonger use the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+   * actions to tag the bucket. You must also have the correct permissions for these
+   * actions. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+   * ABAC in general purpose buckets</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAbac">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutBucketAbacOutcome PutBucketAbac(const Model::PutBucketAbacRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutBucketAbac that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutBucketAbacRequestT = Model::PutBucketAbacRequest>
+  Model::PutBucketAbacOutcomeCallable PutBucketAbacCallable(const PutBucketAbacRequestT& request) const {
+    return SubmitCallable(&S3Client::PutBucketAbac, request);
+  }
+
+  /**
+   * An Async wrapper for PutBucketAbac that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutBucketAbacRequestT = Model::PutBucketAbacRequest>
+  void PutBucketAbacAsync(const PutBucketAbacRequestT& request, const PutBucketAbacResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::PutBucketAbac, request, handler, context);
+  }
+
+  /**
    *  <p>This operation is not supported for directory buckets.</p>
    * <p>Sets the accelerate configuration of an existing bucket. Amazon S3 Transfer
    * Acceleration is a bucket-level feature that enables you to perform faster data
@@ -5623,10 +5712,11 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    * <p>This operation configures default encryption and Amazon S3 Bucket Keys for an
-   * existing bucket. You can also block encryption types using this operation.</p>
-   *  <p> <b>Directory buckets </b> - For directory buckets, you must make
-   * requests for this API operation to the Regional endpoint. These endpoints
-   * support path-style requests in the format
+   * existing bucket. You can also <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">block
+   * encryption types</a> using this operation.</p>  <p> <b>Directory buckets
+   * </b> - For directory buckets, you must make requests for this API operation to
+   * the Regional endpoint. These endpoints support path-style requests in the format
    * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
    * </code>. Virtual-hosted-style requests aren't supported. For more information
    * about endpoints in Availability Zones, see <a
@@ -6526,14 +6616,26 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   /**
    *  <p>This operation is not supported for directory buckets.</p>
-   * <p>Sets the tags for a general purpose bucket. </p> <p>Use tags to organize your
-   * Amazon Web Services bill to reflect your own cost structure. To do this, sign up
-   * to get your Amazon Web Services account bill with tag key values included. Then,
-   * to see the cost of combined resources, organize your billing information
-   * according to resources with the same tag key values. For example, you can tag
-   * several resources with a specific application name, and then organize your
-   * billing information to see the total cost of that application across several
-   * services. For more information, see <a
+   * <p>Sets the tags for a general purpose bucket if attribute based access control
+   * (ABAC) is not enabled for the bucket. When you <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
+   * that bucket and must use the <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+   * operations instead.</p> <p>if ABAC is not enabled for the bucket. When you <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+   * ABAC for a general purpose bucket</a>, you can no longer use this operation for
+   * that bucket and must use <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+   * instead.</p> <p>Use tags to organize your Amazon Web Services bill to reflect
+   * your own cost structure. To do this, sign up to get your Amazon Web Services
+   * account bill with tag key values included. Then, to see the cost of combined
+   * resources, organize your billing information according to resources with the
+   * same tag key values. For example, you can tag several resources with a specific
+   * application name, and then organize your billing information to see the total
+   * cost of that application across several services. For more information, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
    * Allocation and Tagging</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
@@ -7756,11 +7858,17 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * specify the server-side encryption parameters in the initial Initiate Multipart
    * request. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.</p>
-   * <p>If you request server-side encryption using a customer-provided encryption
-   * key (SSE-C) in your initiate multipart upload request, you must provide
-   * identical encryption information in each part upload using the following request
-   * headers.</p> <ul> <li> <p>x-amz-server-side-encryption-customer-algorithm</p>
-   * </li> <li> <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
+   *  <p>If you have server-side encryption with customer-provided keys (SSE-C)
+   * blocked for your general purpose bucket, you will get an HTTP 403 Access Denied
+   * error when you specify the SSE-C request headers while writing new data to your
+   * bucket. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+   * or unblocking SSE-C for a general purpose bucket</a>.</p>  <p>If you
+   * request server-side encryption using a customer-provided encryption key (SSE-C)
+   * in your initiate multipart upload request, you must provide identical encryption
+   * information in each part upload using the following request headers.</p> <ul>
+   * <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
+   * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
    * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p> For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
@@ -7918,11 +8026,16 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
-   * </p> </li> <li> <p> <b>Directory buckets </b> - For directory buckets, there are
-   * only two supported options for server-side encryption: server-side encryption
-   * with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) and server-side
-   * encryption with KMS keys (SSE-KMS) (<code>aws:kms</code>). For more information,
-   * see <a
+   * </p>  <p>If you have server-side encryption with customer-provided keys
+   * (SSE-C) blocked for your general purpose bucket, you will get an HTTP 403 Access
+   * Denied error when you specify the SSE-C request headers while writing new data
+   * to your bucket. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+   * or unblocking SSE-C for a general purpose bucket</a>.</p>  </li> <li> <p>
+   * <b>Directory buckets </b> - For directory buckets, there are only two supported
+   * options for server-side encryption: server-side encryption with Amazon S3
+   * managed keys (SSE-S3) (<code>AES256</code>) and server-side encryption with KMS
+   * keys (SSE-KMS) (<code>aws:kms</code>). For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
    * data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
    *  <p>For directory buckets, when you perform a

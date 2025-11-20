@@ -9,6 +9,7 @@
 #include <aws/autoscaling/model/InstanceRefreshProgressDetails.h>
 #include <aws/autoscaling/model/InstanceRefreshStatus.h>
 #include <aws/autoscaling/model/RefreshPreferences.h>
+#include <aws/autoscaling/model/RefreshStrategy.h>
 #include <aws/autoscaling/model/RollbackDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -275,6 +276,26 @@ class InstanceRefresh {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The strategy to use for the instance refresh. This determines how instances
+   * in the Auto Scaling group are updated. Default is Rolling. </p> <ul> <li> <p>
+   * <code>Rolling</code> – Terminates instances and launches replacements in
+   * batches</p> </li> <li> <p> <code>ReplaceRootVolume</code> – Updates instances by
+   * replacing only the root volume without terminating the instance</p> </li> </ul>
+   */
+  inline RefreshStrategy GetStrategy() const { return m_strategy; }
+  inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
+  inline void SetStrategy(RefreshStrategy value) {
+    m_strategyHasBeenSet = true;
+    m_strategy = value;
+  }
+  inline InstanceRefresh& WithStrategy(RefreshStrategy value) {
+    SetStrategy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceRefreshId;
   bool m_instanceRefreshIdHasBeenSet = false;
@@ -311,6 +332,9 @@ class InstanceRefresh {
 
   RollbackDetails m_rollbackDetails;
   bool m_rollbackDetailsHasBeenSet = false;
+
+  RefreshStrategy m_strategy{RefreshStrategy::NOT_SET};
+  bool m_strategyHasBeenSet = false;
 };
 
 }  // namespace Model

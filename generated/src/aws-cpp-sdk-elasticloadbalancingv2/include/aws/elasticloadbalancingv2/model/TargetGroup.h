@@ -362,6 +362,23 @@ class TargetGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The port on which the target control agent and application load balancer
+   * exchange management traffic for the target optimizer feature.</p>
+   */
+  inline int GetTargetControlPort() const { return m_targetControlPort; }
+  inline bool TargetControlPortHasBeenSet() const { return m_targetControlPortHasBeenSet; }
+  inline void SetTargetControlPort(int value) {
+    m_targetControlPortHasBeenSet = true;
+    m_targetControlPort = value;
+  }
+  inline TargetGroup& WithTargetControlPort(int value) {
+    SetTargetControlPort(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetGroupArn;
   bool m_targetGroupArnHasBeenSet = false;
@@ -416,6 +433,9 @@ class TargetGroup {
 
   TargetGroupIpAddressTypeEnum m_ipAddressType{TargetGroupIpAddressTypeEnum::NOT_SET};
   bool m_ipAddressTypeHasBeenSet = false;
+
+  int m_targetControlPort{0};
+  bool m_targetControlPortHasBeenSet = false;
 };
 
 }  // namespace Model

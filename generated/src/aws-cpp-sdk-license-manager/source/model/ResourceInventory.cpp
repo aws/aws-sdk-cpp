@@ -42,6 +42,34 @@ ResourceInventory& ResourceInventory::operator=(JsonView jsonValue) {
     m_resourceOwningAccountId = jsonValue.GetString("ResourceOwningAccountId");
     m_resourceOwningAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MarketplaceProductCodes")) {
+    Aws::Utils::Array<JsonView> marketplaceProductCodesJsonList = jsonValue.GetArray("MarketplaceProductCodes");
+    for (unsigned marketplaceProductCodesIndex = 0; marketplaceProductCodesIndex < marketplaceProductCodesJsonList.GetLength();
+         ++marketplaceProductCodesIndex) {
+      m_marketplaceProductCodes.push_back(marketplaceProductCodesJsonList[marketplaceProductCodesIndex].AsString());
+    }
+    m_marketplaceProductCodesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UsageOperation")) {
+    m_usageOperation = jsonValue.GetString("UsageOperation");
+    m_usageOperationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AmiId")) {
+    m_amiId = jsonValue.GetString("AmiId");
+    m_amiIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("HostId")) {
+    m_hostId = jsonValue.GetString("HostId");
+    m_hostIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Region")) {
+    m_region = jsonValue.GetString("Region");
+    m_regionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceType")) {
+    m_instanceType = jsonValue.GetString("InstanceType");
+    m_instanceTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +98,35 @@ JsonValue ResourceInventory::Jsonize() const {
 
   if (m_resourceOwningAccountIdHasBeenSet) {
     payload.WithString("ResourceOwningAccountId", m_resourceOwningAccountId);
+  }
+
+  if (m_marketplaceProductCodesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> marketplaceProductCodesJsonList(m_marketplaceProductCodes.size());
+    for (unsigned marketplaceProductCodesIndex = 0; marketplaceProductCodesIndex < marketplaceProductCodesJsonList.GetLength();
+         ++marketplaceProductCodesIndex) {
+      marketplaceProductCodesJsonList[marketplaceProductCodesIndex].AsString(m_marketplaceProductCodes[marketplaceProductCodesIndex]);
+    }
+    payload.WithArray("MarketplaceProductCodes", std::move(marketplaceProductCodesJsonList));
+  }
+
+  if (m_usageOperationHasBeenSet) {
+    payload.WithString("UsageOperation", m_usageOperation);
+  }
+
+  if (m_amiIdHasBeenSet) {
+    payload.WithString("AmiId", m_amiId);
+  }
+
+  if (m_hostIdHasBeenSet) {
+    payload.WithString("HostId", m_hostId);
+  }
+
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
+  }
+
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("InstanceType", m_instanceType);
   }
 
   return payload;

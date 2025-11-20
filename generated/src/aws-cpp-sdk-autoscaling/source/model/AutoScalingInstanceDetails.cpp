@@ -63,6 +63,11 @@ AutoScalingInstanceDetails& AutoScalingInstanceDetails::operator=(const XmlNode&
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
     }
+    XmlNode imageIdNode = resultNode.FirstChild("ImageId");
+    if (!imageIdNode.IsNull()) {
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+      m_imageIdHasBeenSet = true;
+    }
     XmlNode protectedFromScaleInNode = resultNode.FirstChild("ProtectedFromScaleIn");
     if (!protectedFromScaleInNode.IsNull()) {
       m_protectedFromScaleIn = StringUtils::ConvertToBool(
@@ -117,6 +122,10 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
     m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMemberSs.str().c_str());
   }
 
+  if (m_imageIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
   if (m_protectedFromScaleInHasBeenSet) {
     oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
@@ -152,6 +161,9 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
     Aws::String launchTemplateLocationAndMember(location);
     launchTemplateLocationAndMember += ".LaunchTemplate";
     m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMember.c_str());
+  }
+  if (m_imageIdHasBeenSet) {
+    oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
   if (m_protectedFromScaleInHasBeenSet) {
     oStream << location << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";

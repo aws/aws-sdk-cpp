@@ -97,6 +97,10 @@ LicenseConfiguration& LicenseConfiguration::operator=(JsonView jsonValue) {
     m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
     m_automatedDiscoveryInformationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LicenseExpiry")) {
+    m_licenseExpiry = jsonValue.GetInt64("LicenseExpiry");
+    m_licenseExpiryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -186,6 +190,10 @@ JsonValue LicenseConfiguration::Jsonize() const {
 
   if (m_automatedDiscoveryInformationHasBeenSet) {
     payload.WithObject("AutomatedDiscoveryInformation", m_automatedDiscoveryInformation.Jsonize());
+  }
+
+  if (m_licenseExpiryHasBeenSet) {
+    payload.WithInt64("LicenseExpiry", m_licenseExpiry);
   }
 
   return payload;

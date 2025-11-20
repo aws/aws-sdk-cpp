@@ -38,6 +38,10 @@ SendNotificationActionDefinition& SendNotificationActionDefinition::operator=(Js
     m_recipient = jsonValue.GetObject("Recipient");
     m_recipientHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Exclusion")) {
+    m_exclusion = jsonValue.GetObject("Exclusion");
+    m_exclusionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue SendNotificationActionDefinition::Jsonize() const {
 
   if (m_recipientHasBeenSet) {
     payload.WithObject("Recipient", m_recipient.Jsonize());
+  }
+
+  if (m_exclusionHasBeenSet) {
+    payload.WithObject("Exclusion", m_exclusion.Jsonize());
   }
 
   return payload;

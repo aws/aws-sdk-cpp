@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LicenseManager {
 namespace Model {
-enum class ReportFrequencyType { NOT_SET, DAY, WEEK, MONTH };
+enum class ReportFrequencyType { NOT_SET, DAY, WEEK, MONTH, ONE_TIME };
 
 namespace ReportFrequencyTypeMapper {
 AWS_LICENSEMANAGER_API ReportFrequencyType GetReportFrequencyTypeForName(const Aws::String& name);

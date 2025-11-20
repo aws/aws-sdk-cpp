@@ -22,8 +22,7 @@ namespace Organizations {
 namespace Model {
 
 /**
- * <p>Contains additional data that is needed to process a handshake.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains additional details for a handshake.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeResource">AWS
  * API Reference</a></p>
  */
@@ -36,9 +35,8 @@ class HandshakeResource {
 
   ///@{
   /**
-   * <p>The information that is passed to the other party in the handshake. The
-   * format of the value string must match the requirements of the specified
-   * type.</p>
+   * <p>Additional information for the handshake. The format of the value string must
+   * match the requirements of the specified type.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -57,17 +55,13 @@ class HandshakeResource {
   ///@{
   /**
    * <p>The type of information being passed, specifying how the value is to be
-   * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-   * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
-   * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
-   * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
-   * account that receives the handshake. </p> </li> <li> <p>
-   * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
-   * management account. Included as information about an organization. </p> </li>
-   * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
-   * management account. Included as information about an organization. </p> </li>
-   * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
-   * initiator and intended for the recipient to read.</p> </li> </ul>
+   * interpreted by the other party:</p> <ul> <li> <p> <b>ACCOUNT</b>: ID for an
+   * Amazon Web Services account.</p> </li> <li> <p> <b>ORGANIZATION</b>: ID for an
+   * organization.</p> </li> <li> <p> <b>EMAIL</b>: Email address for the
+   * recipient.</p> </li> <li> <p> <b>OWNER_EMAIL</b>: Email address for the
+   * sender.</p> </li> <li> <p> <b>OWNER_NAME</b>: Name of the sender.</p> </li> <li>
+   * <p> <b>NOTES</b>: Additional text included by the sender for the recipient.</p>
+   * </li> </ul>
    */
   inline HandshakeResourceType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -83,8 +77,9 @@ class HandshakeResource {
 
   ///@{
   /**
-   * <p>When needed, contains an additional array of <code>HandshakeResource</code>
-   * objects.</p>
+   * <p>An array of <code>HandshakeResource</code> objects. When needed, contains
+   * additional details for a handshake. For example, the email address for the
+   * sender.</p>
    */
   inline const Aws::Vector<HandshakeResource>& GetResources() const { return m_resources; }
   inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }

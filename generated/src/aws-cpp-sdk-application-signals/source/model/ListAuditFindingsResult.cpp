@@ -21,6 +21,14 @@ ListAuditFindingsResult::ListAuditFindingsResult(const Aws::AmazonWebServiceResu
 
 ListAuditFindingsResult& ListAuditFindingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("StartTime")) {
+    m_startTime = jsonValue.GetDouble("StartTime");
+    m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndTime")) {
+    m_endTime = jsonValue.GetDouble("EndTime");
+    m_endTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AuditFindings")) {
     Aws::Utils::Array<JsonView> auditFindingsJsonList = jsonValue.GetArray("AuditFindings");
     for (unsigned auditFindingsIndex = 0; auditFindingsIndex < auditFindingsJsonList.GetLength(); ++auditFindingsIndex) {

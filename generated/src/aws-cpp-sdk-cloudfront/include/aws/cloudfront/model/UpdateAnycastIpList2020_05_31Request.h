@@ -52,10 +52,9 @@ class UpdateAnycastIpList2020_05_31Request : public CloudFrontRequest {
   ///@{
   /**
    * <p>The IP address type for the Anycast static IP list. You can specify one of
-   * the following options:</p> <ul> <li> <p> <code>ipv4</code> - Allocate a list of
-   * only IPv4 addresses</p> </li> <li> <p> <code>ipv6</code> - Allocate a list of
-   * only IPv4 addresses</p> </li> <li> <p> <code>dualstack</code> - Allocate a list
-   * of both IPv4 and IPv6 addresses</p> </li> </ul>
+   * the following options:</p> <ul> <li> <p> <code>ipv4</code> only</p> </li> <li>
+   * <p> <code>ipv6</code> only</p> </li> <li> <p> <code>dualstack</code> - Allocate
+   * a list of both IPv4 and IPv6 addresses</p> </li> </ul>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
   inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

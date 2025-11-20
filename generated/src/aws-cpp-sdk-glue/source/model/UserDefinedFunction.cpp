@@ -34,6 +34,10 @@ UserDefinedFunction& UserDefinedFunction::operator=(JsonView jsonValue) {
     m_ownerName = jsonValue.GetString("OwnerName");
     m_ownerNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FunctionType")) {
+    m_functionType = FunctionTypeMapper::GetFunctionTypeForName(jsonValue.GetString("FunctionType"));
+    m_functionTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OwnerType")) {
     m_ownerType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("OwnerType"));
     m_ownerTypeHasBeenSet = true;
@@ -73,6 +77,10 @@ JsonValue UserDefinedFunction::Jsonize() const {
 
   if (m_ownerNameHasBeenSet) {
     payload.WithString("OwnerName", m_ownerName);
+  }
+
+  if (m_functionTypeHasBeenSet) {
+    payload.WithString("FunctionType", FunctionTypeMapper::GetNameForFunctionType(m_functionType));
   }
 
   if (m_ownerTypeHasBeenSet) {

@@ -4891,6 +4891,66 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Creates a metering policy for a transit gateway to track and measure network
+   * traffic.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTransitGatewayMeteringPolicyOutcome CreateTransitGatewayMeteringPolicy(
+      const Model::CreateTransitGatewayMeteringPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTransitGatewayMeteringPolicy that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateTransitGatewayMeteringPolicyRequestT = Model::CreateTransitGatewayMeteringPolicyRequest>
+  Model::CreateTransitGatewayMeteringPolicyOutcomeCallable CreateTransitGatewayMeteringPolicyCallable(
+      const CreateTransitGatewayMeteringPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateTransitGatewayMeteringPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTransitGatewayMeteringPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateTransitGatewayMeteringPolicyRequestT = Model::CreateTransitGatewayMeteringPolicyRequest>
+  void CreateTransitGatewayMeteringPolicyAsync(const CreateTransitGatewayMeteringPolicyRequestT& request,
+                                               const CreateTransitGatewayMeteringPolicyResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateTransitGatewayMeteringPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an entry in a transit gateway metering policy to define traffic
+   * measurement rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTransitGatewayMeteringPolicyEntryOutcome CreateTransitGatewayMeteringPolicyEntry(
+      const Model::CreateTransitGatewayMeteringPolicyEntryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTransitGatewayMeteringPolicyEntry that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateTransitGatewayMeteringPolicyEntryRequestT = Model::CreateTransitGatewayMeteringPolicyEntryRequest>
+  Model::CreateTransitGatewayMeteringPolicyEntryOutcomeCallable CreateTransitGatewayMeteringPolicyEntryCallable(
+      const CreateTransitGatewayMeteringPolicyEntryRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateTransitGatewayMeteringPolicyEntry, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTransitGatewayMeteringPolicyEntry that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateTransitGatewayMeteringPolicyEntryRequestT = Model::CreateTransitGatewayMeteringPolicyEntryRequest>
+  void CreateTransitGatewayMeteringPolicyEntryAsync(const CreateTransitGatewayMeteringPolicyEntryRequestT& request,
+                                                    const CreateTransitGatewayMeteringPolicyEntryResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateTransitGatewayMeteringPolicyEntry, request, handler, context);
+  }
+
+  /**
    * <p>Creates a multicast domain using the specified transit gateway.</p> <p>The
    * transit gateway must be in the available state before you create a domain. Use
    * <a
@@ -5385,6 +5445,41 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                                 const CreateVpcBlockPublicAccessExclusionResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CreateVpcBlockPublicAccessExclusion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a VPC Encryption Control configuration for a specified VPC. VPC
+   * Encryption Control enables you to enforce encryption for all data in transit
+   * within and between VPCs to meet compliance requirements for standards like
+   * HIPAA, FedRAMP, and PCI DSS.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateVpcEncryptionControlOutcome CreateVpcEncryptionControl(
+      const Model::CreateVpcEncryptionControlRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateVpcEncryptionControl that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateVpcEncryptionControlRequestT = Model::CreateVpcEncryptionControlRequest>
+  Model::CreateVpcEncryptionControlOutcomeCallable CreateVpcEncryptionControlCallable(
+      const CreateVpcEncryptionControlRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateVpcEncryptionControl, request);
+  }
+
+  /**
+   * An Async wrapper for CreateVpcEncryptionControl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateVpcEncryptionControlRequestT = Model::CreateVpcEncryptionControlRequest>
+  void CreateVpcEncryptionControlAsync(const CreateVpcEncryptionControlRequestT& request,
+                                       const CreateVpcEncryptionControlResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateVpcEncryptionControl, request, handler, context);
   }
 
   /**
@@ -7605,6 +7700,65 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Deletes a transit gateway metering policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTransitGatewayMeteringPolicyOutcome DeleteTransitGatewayMeteringPolicy(
+      const Model::DeleteTransitGatewayMeteringPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTransitGatewayMeteringPolicy that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteTransitGatewayMeteringPolicyRequestT = Model::DeleteTransitGatewayMeteringPolicyRequest>
+  Model::DeleteTransitGatewayMeteringPolicyOutcomeCallable DeleteTransitGatewayMeteringPolicyCallable(
+      const DeleteTransitGatewayMeteringPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteTransitGatewayMeteringPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTransitGatewayMeteringPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteTransitGatewayMeteringPolicyRequestT = Model::DeleteTransitGatewayMeteringPolicyRequest>
+  void DeleteTransitGatewayMeteringPolicyAsync(const DeleteTransitGatewayMeteringPolicyRequestT& request,
+                                               const DeleteTransitGatewayMeteringPolicyResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteTransitGatewayMeteringPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an entry from a transit gateway metering policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTransitGatewayMeteringPolicyEntryOutcome DeleteTransitGatewayMeteringPolicyEntry(
+      const Model::DeleteTransitGatewayMeteringPolicyEntryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTransitGatewayMeteringPolicyEntry that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteTransitGatewayMeteringPolicyEntryRequestT = Model::DeleteTransitGatewayMeteringPolicyEntryRequest>
+  Model::DeleteTransitGatewayMeteringPolicyEntryOutcomeCallable DeleteTransitGatewayMeteringPolicyEntryCallable(
+      const DeleteTransitGatewayMeteringPolicyEntryRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteTransitGatewayMeteringPolicyEntry, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTransitGatewayMeteringPolicyEntry that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteTransitGatewayMeteringPolicyEntryRequestT = Model::DeleteTransitGatewayMeteringPolicyEntryRequest>
+  void DeleteTransitGatewayMeteringPolicyEntryAsync(const DeleteTransitGatewayMeteringPolicyEntryRequestT& request,
+                                                    const DeleteTransitGatewayMeteringPolicyEntryResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteTransitGatewayMeteringPolicyEntry, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified transit gateway multicast domain.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">AWS
@@ -8063,6 +8217,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                                 const DeleteVpcBlockPublicAccessExclusionResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteVpcBlockPublicAccessExclusion, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a VPC Encryption Control configuration. This removes the encryption
+   * policy enforcement from the specified VPC.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVpcEncryptionControlOutcome DeleteVpcEncryptionControl(
+      const Model::DeleteVpcEncryptionControlRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVpcEncryptionControl that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteVpcEncryptionControlRequestT = Model::DeleteVpcEncryptionControlRequest>
+  Model::DeleteVpcEncryptionControlOutcomeCallable DeleteVpcEncryptionControlCallable(
+      const DeleteVpcEncryptionControlRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteVpcEncryptionControl, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVpcEncryptionControl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteVpcEncryptionControlRequestT = Model::DeleteVpcEncryptionControlRequest>
+  void DeleteVpcEncryptionControlAsync(const DeleteVpcEncryptionControlRequestT& request,
+                                       const DeleteVpcEncryptionControlResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteVpcEncryptionControl, request, handler, context);
   }
 
   /**
@@ -13449,6 +13636,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Describes one or more transit gateway metering policies.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTransitGatewayMeteringPoliciesOutcome DescribeTransitGatewayMeteringPolicies(
+      const Model::DescribeTransitGatewayMeteringPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTransitGatewayMeteringPolicies that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeTransitGatewayMeteringPoliciesRequestT = Model::DescribeTransitGatewayMeteringPoliciesRequest>
+  Model::DescribeTransitGatewayMeteringPoliciesOutcomeCallable DescribeTransitGatewayMeteringPoliciesCallable(
+      const DescribeTransitGatewayMeteringPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeTransitGatewayMeteringPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTransitGatewayMeteringPolicies that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeTransitGatewayMeteringPoliciesRequestT = Model::DescribeTransitGatewayMeteringPoliciesRequest>
+  void DescribeTransitGatewayMeteringPoliciesAsync(const DescribeTransitGatewayMeteringPoliciesResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                   const DescribeTransitGatewayMeteringPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeTransitGatewayMeteringPolicies, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more transit gateway multicast domains.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">AWS
@@ -14167,6 +14384,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                              const DescribeVpcClassicLinkDnsSupportRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeVpcClassicLinkDnsSupport, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more VPC Encryption Control configurations. VPC Encryption
+   * Control enables you to enforce encryption for all data in transit within and
+   * between VPCs to meet compliance requirements You can filter the results to
+   * return information about specific encryption controls or VPCs.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeVpcEncryptionControlsOutcome DescribeVpcEncryptionControls(
+      const Model::DescribeVpcEncryptionControlsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeVpcEncryptionControls that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeVpcEncryptionControlsRequestT = Model::DescribeVpcEncryptionControlsRequest>
+  Model::DescribeVpcEncryptionControlsOutcomeCallable DescribeVpcEncryptionControlsCallable(
+      const DescribeVpcEncryptionControlsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeVpcEncryptionControls, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeVpcEncryptionControls that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeVpcEncryptionControlsRequestT = Model::DescribeVpcEncryptionControlsRequest>
+  void DescribeVpcEncryptionControlsAsync(const DescribeVpcEncryptionControlsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                          const DescribeVpcEncryptionControlsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeVpcEncryptionControls, request, handler, context);
   }
 
   /**
@@ -18790,6 +19043,36 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Retrieves the entries for a transit gateway metering policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTransitGatewayMeteringPolicyEntriesOutcome GetTransitGatewayMeteringPolicyEntries(
+      const Model::GetTransitGatewayMeteringPolicyEntriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTransitGatewayMeteringPolicyEntries that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTransitGatewayMeteringPolicyEntriesRequestT = Model::GetTransitGatewayMeteringPolicyEntriesRequest>
+  Model::GetTransitGatewayMeteringPolicyEntriesOutcomeCallable GetTransitGatewayMeteringPolicyEntriesCallable(
+      const GetTransitGatewayMeteringPolicyEntriesRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetTransitGatewayMeteringPolicyEntries, request);
+  }
+
+  /**
+   * An Async wrapper for GetTransitGatewayMeteringPolicyEntries that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTransitGatewayMeteringPolicyEntriesRequestT = Model::GetTransitGatewayMeteringPolicyEntriesRequest>
+  void GetTransitGatewayMeteringPolicyEntriesAsync(const GetTransitGatewayMeteringPolicyEntriesRequestT& request,
+                                                   const GetTransitGatewayMeteringPolicyEntriesResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetTransitGatewayMeteringPolicyEntries, request, handler, context);
+  }
+
+  /**
    * <p>Gets information about the associations for the transit gateway multicast
    * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">AWS
@@ -19059,6 +19342,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                          const GetVerifiedAccessGroupPolicyResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetVerifiedAccessGroupPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about resources in a VPC that are blocking encryption
+   * enforcement.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetVpcResourcesBlockingEncryptionEnforcementOutcome GetVpcResourcesBlockingEncryptionEnforcement(
+      const Model::GetVpcResourcesBlockingEncryptionEnforcementRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetVpcResourcesBlockingEncryptionEnforcement that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename GetVpcResourcesBlockingEncryptionEnforcementRequestT = Model::GetVpcResourcesBlockingEncryptionEnforcementRequest>
+  Model::GetVpcResourcesBlockingEncryptionEnforcementOutcomeCallable GetVpcResourcesBlockingEncryptionEnforcementCallable(
+      const GetVpcResourcesBlockingEncryptionEnforcementRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetVpcResourcesBlockingEncryptionEnforcement, request);
+  }
+
+  /**
+   * An Async wrapper for GetVpcResourcesBlockingEncryptionEnforcement that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename GetVpcResourcesBlockingEncryptionEnforcementRequestT = Model::GetVpcResourcesBlockingEncryptionEnforcementRequest>
+  void GetVpcResourcesBlockingEncryptionEnforcementAsync(
+      const GetVpcResourcesBlockingEncryptionEnforcementRequestT& request,
+      const GetVpcResourcesBlockingEncryptionEnforcementResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetVpcResourcesBlockingEncryptionEnforcement, request, handler, context);
   }
 
   /**
@@ -19418,6 +19735,34 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const ListSnapshotsInRecycleBinRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::ListSnapshotsInRecycleBin, request, handler, context);
+  }
+
+  /**
+   * <p>Lists one or more volumes that are currently in the Recycle
+   * Bin.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListVolumesInRecycleBinOutcome ListVolumesInRecycleBin(const Model::ListVolumesInRecycleBinRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListVolumesInRecycleBin that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListVolumesInRecycleBinRequestT = Model::ListVolumesInRecycleBinRequest>
+  Model::ListVolumesInRecycleBinOutcomeCallable ListVolumesInRecycleBinCallable(const ListVolumesInRecycleBinRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::ListVolumesInRecycleBin, request);
+  }
+
+  /**
+   * An Async wrapper for ListVolumesInRecycleBin that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListVolumesInRecycleBinRequestT = Model::ListVolumesInRecycleBinRequest>
+  void ListVolumesInRecycleBinAsync(const ListVolumesInRecycleBinResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListVolumesInRecycleBinRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::ListVolumesInRecycleBin, request, handler, context);
   }
 
   /**
@@ -21196,6 +21541,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Modifies a transit gateway metering policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyTransitGatewayMeteringPolicyOutcome ModifyTransitGatewayMeteringPolicy(
+      const Model::ModifyTransitGatewayMeteringPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyTransitGatewayMeteringPolicy that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ModifyTransitGatewayMeteringPolicyRequestT = Model::ModifyTransitGatewayMeteringPolicyRequest>
+  Model::ModifyTransitGatewayMeteringPolicyOutcomeCallable ModifyTransitGatewayMeteringPolicyCallable(
+      const ModifyTransitGatewayMeteringPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyTransitGatewayMeteringPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyTransitGatewayMeteringPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ModifyTransitGatewayMeteringPolicyRequestT = Model::ModifyTransitGatewayMeteringPolicyRequest>
+  void ModifyTransitGatewayMeteringPolicyAsync(const ModifyTransitGatewayMeteringPolicyRequestT& request,
+                                               const ModifyTransitGatewayMeteringPolicyResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyTransitGatewayMeteringPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Modifies a reference (route) to a prefix list in a specified transit gateway
    * route table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">AWS
@@ -21636,6 +22010,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                               const ModifyVpcBlockPublicAccessOptionsResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyVpcBlockPublicAccessOptions, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the encryption control configuration for a VPC. You can update the
+   * encryption mode and exclusion settings for various gateway types and peering
+   * connections.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyVpcEncryptionControlOutcome ModifyVpcEncryptionControl(
+      const Model::ModifyVpcEncryptionControlRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyVpcEncryptionControl that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyVpcEncryptionControlRequestT = Model::ModifyVpcEncryptionControlRequest>
+  Model::ModifyVpcEncryptionControlOutcomeCallable ModifyVpcEncryptionControlCallable(
+      const ModifyVpcEncryptionControlRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyVpcEncryptionControl, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyVpcEncryptionControl that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyVpcEncryptionControlRequestT = Model::ModifyVpcEncryptionControlRequest>
+  void ModifyVpcEncryptionControlAsync(const ModifyVpcEncryptionControlRequestT& request,
+                                       const ModifyVpcEncryptionControlResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyVpcEncryptionControl, request, handler, context);
   }
 
   /**
@@ -23715,6 +24123,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void RestoreSnapshotTierAsync(const RestoreSnapshotTierRequestT& request, const RestoreSnapshotTierResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::RestoreSnapshotTier, request, handler, context);
+  }
+
+  /**
+   * <p>Restores a volume from the Recycle Bin. For more information, see <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+   * volumes from the Recycle Bin</a> in the <i>Amazon EBS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreVolumeFromRecycleBinOutcome RestoreVolumeFromRecycleBin(
+      const Model::RestoreVolumeFromRecycleBinRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreVolumeFromRecycleBin that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RestoreVolumeFromRecycleBinRequestT = Model::RestoreVolumeFromRecycleBinRequest>
+  Model::RestoreVolumeFromRecycleBinOutcomeCallable RestoreVolumeFromRecycleBinCallable(
+      const RestoreVolumeFromRecycleBinRequestT& request) const {
+    return SubmitCallable(&EC2Client::RestoreVolumeFromRecycleBin, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreVolumeFromRecycleBin that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RestoreVolumeFromRecycleBinRequestT = Model::RestoreVolumeFromRecycleBinRequest>
+  void RestoreVolumeFromRecycleBinAsync(const RestoreVolumeFromRecycleBinRequestT& request,
+                                        const RestoreVolumeFromRecycleBinResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::RestoreVolumeFromRecycleBin, request, handler, context);
   }
 
   /**

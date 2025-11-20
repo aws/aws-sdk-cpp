@@ -21,16 +21,16 @@ ListSchemasResult::ListSchemasResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListSchemasResult& ListSchemasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("NextToken")) {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Schemas")) {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("Schemas");
     for (unsigned schemasIndex = 0; schemasIndex < schemasJsonList.GetLength(); ++schemasIndex) {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsString());
     }
     m_schemasHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

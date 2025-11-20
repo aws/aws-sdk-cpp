@@ -46,6 +46,7 @@ enum class ImagebuilderErrors {
 
   CALL_RATE_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLIENT,
+  DRY_RUN_OPERATION,
   FORBIDDEN,
   IDEMPOTENT_PARAMETER_MISMATCH,
   INVALID_PAGINATION_TOKEN,
@@ -56,7 +57,8 @@ enum class ImagebuilderErrors {
   RESOURCE_DEPENDENCY,
   RESOURCE_IN_USE,
   SERVICE,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  TOO_MANY_REQUESTS
 };
 
 class AWS_IMAGEBUILDER_API ImagebuilderError : public Aws::Client::AWSError<ImagebuilderErrors> {

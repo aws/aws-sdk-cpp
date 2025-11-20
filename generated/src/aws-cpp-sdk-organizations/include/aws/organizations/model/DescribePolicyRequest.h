@@ -32,11 +32,11 @@ class DescribePolicyRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the policy that you want details about. You can
-   * get the ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-   * operations.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-   * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
-   * lowercase or uppercase letters, digits, or the underscore character (_).</p>
+   * <p>ID for the policy that you want details about. You can get the ID from the
+   * <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p> <p>The <a
+   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
+   * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+   * or the underscore character (_).</p>
    */
   inline const Aws::String& GetPolicyId() const { return m_policyId; }
   inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }

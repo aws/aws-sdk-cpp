@@ -322,6 +322,94 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Reboots specific nodes within a SageMaker HyperPod cluster using a soft
+   * recovery mechanism. <code>BatchRebootClusterNodes</code> performs a graceful
+   * reboot of the specified nodes by calling the Amazon Elastic Compute Cloud
+   * <code>RebootInstances</code> API, which attempts to cleanly shut down the
+   * operating system before restarting the instance.</p> <p>This operation is useful
+   * for recovering from transient issues or applying certain configuration changes
+   * that require a restart.</p>  <ul> <li> <p>Rebooting a node may cause
+   * temporary service interruption for workloads running on that node. Ensure your
+   * workloads can handle node restarts or use appropriate scheduling to minimize
+   * impact.</p> </li> <li> <p>You can reboot up to 25 nodes in a single request.</p>
+   * </li> <li> <p>For SageMaker HyperPod clusters using the Slurm workload manager,
+   * ensure rebooting nodes will not disrupt critical cluster operations.</p> </li>
+   * </ul> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchRebootClusterNodesOutcome BatchRebootClusterNodes(const Model::BatchRebootClusterNodesRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchRebootClusterNodes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchRebootClusterNodesRequestT = Model::BatchRebootClusterNodesRequest>
+  Model::BatchRebootClusterNodesOutcomeCallable BatchRebootClusterNodesCallable(const BatchRebootClusterNodesRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::BatchRebootClusterNodes, request);
+  }
+
+  /**
+   * An Async wrapper for BatchRebootClusterNodes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchRebootClusterNodesRequestT = Model::BatchRebootClusterNodesRequest>
+  void BatchRebootClusterNodesAsync(const BatchRebootClusterNodesRequestT& request,
+                                    const BatchRebootClusterNodesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::BatchRebootClusterNodes, request, handler, context);
+  }
+
+  /**
+   * <p>Replaces specific nodes within a SageMaker HyperPod cluster with new
+   * hardware. <code>BatchReplaceClusterNodes</code> terminates the specified
+   * instances and provisions new replacement instances with the same configuration
+   * but fresh hardware. The Amazon Machine Image (AMI) and instance configuration
+   * remain the same.</p> <p>This operation is useful for recovering from hardware
+   * failures or persistent issues that cannot be resolved through a reboot.</p>
+   *  <ul> <li> <p> <b>Data Loss Warning:</b> Replacing nodes destroys all
+   * instance volumes, including both root and secondary volumes. All data stored on
+   * these volumes will be permanently lost and cannot be recovered.</p> </li> <li>
+   * <p>To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre
+   * file system before invoking the API on a worker node group. This will help
+   * prevent any potential data loss from the instance root volume. For more
+   * information about backup, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+   * the backup script provided by SageMaker HyperPod</a>.</p> </li> <li> <p>If you
+   * want to invoke this API on an existing cluster, you'll first need to patch the
+   * cluster by running the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+   * API</a>. For more information about patching a cluster, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+   * the SageMaker HyperPod platform software of a cluster</a>.</p> </li> <li> <p>You
+   * can replace up to 25 nodes in a single request.</p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchReplaceClusterNodesOutcome BatchReplaceClusterNodes(const Model::BatchReplaceClusterNodesRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchReplaceClusterNodes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchReplaceClusterNodesRequestT = Model::BatchReplaceClusterNodesRequest>
+  Model::BatchReplaceClusterNodesOutcomeCallable BatchReplaceClusterNodesCallable(const BatchReplaceClusterNodesRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::BatchReplaceClusterNodes, request);
+  }
+
+  /**
+   * An Async wrapper for BatchReplaceClusterNodes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchReplaceClusterNodesRequestT = Model::BatchReplaceClusterNodesRequest>
+  void BatchReplaceClusterNodesAsync(const BatchReplaceClusterNodesRequestT& request,
+                                     const BatchReplaceClusterNodesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::BatchReplaceClusterNodes, request, handler, context);
+  }
+
+  /**
    * <p>Creates an <i>action</i>. An action is a lineage tracking entity that
    * represents an action or activity. For example, a model deployment or an HPO job.
    * Generally, an action involves at least one input or output artifact. For more

@@ -10,6 +10,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/Tenancy.h>
+#include <aws/ec2/model/VpcEncryptionControlConfiguration.h>
 
 #include <utility>
 
@@ -201,6 +202,29 @@ class CreateVpcRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>Specifies the encryption control configuration to apply to the VPC during
+   * creation. VPC Encryption Control enables you to enforce encryption for all data
+   * in transit within and between VPCs to meet compliance requirements.</p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+   * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+   */
+  inline const VpcEncryptionControlConfiguration& GetVpcEncryptionControl() const { return m_vpcEncryptionControl; }
+  inline bool VpcEncryptionControlHasBeenSet() const { return m_vpcEncryptionControlHasBeenSet; }
+  template <typename VpcEncryptionControlT = VpcEncryptionControlConfiguration>
+  void SetVpcEncryptionControl(VpcEncryptionControlT&& value) {
+    m_vpcEncryptionControlHasBeenSet = true;
+    m_vpcEncryptionControl = std::forward<VpcEncryptionControlT>(value);
+  }
+  template <typename VpcEncryptionControlT = VpcEncryptionControlConfiguration>
+  CreateVpcRequest& WithVpcEncryptionControl(VpcEncryptionControlT&& value) {
+    SetVpcEncryptionControl(std::forward<VpcEncryptionControlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to assign to the VPC.</p>
    */
   inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
@@ -307,6 +331,9 @@ class CreateVpcRequest : public EC2Request {
 
   Aws::String m_ipv6CidrBlockNetworkBorderGroup;
   bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
+
+  VpcEncryptionControlConfiguration m_vpcEncryptionControl;
+  bool m_vpcEncryptionControlHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_tagSpecificationsHasBeenSet = false;

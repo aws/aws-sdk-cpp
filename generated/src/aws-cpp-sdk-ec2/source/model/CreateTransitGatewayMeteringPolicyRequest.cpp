@@ -1,0 +1,44 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateTransitGatewayMeteringPolicyRequest.h>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils;
+
+Aws::String CreateTransitGatewayMeteringPolicyRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=CreateTransitGatewayMeteringPolicy&";
+  if (m_transitGatewayIdHasBeenSet) {
+    ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+
+  if (m_middleboxAttachmentIdsHasBeenSet) {
+    unsigned middleboxAttachmentIdsCount = 1;
+    for (auto& item : m_middleboxAttachmentIds) {
+      ss << "MiddleboxAttachmentId." << middleboxAttachmentIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      middleboxAttachmentIdsCount++;
+    }
+  }
+
+  if (m_tagSpecificationsHasBeenSet) {
+    unsigned tagSpecificationsCount = 1;
+    for (auto& item : m_tagSpecifications) {
+      item.OutputToStream(ss, "TagSpecifications.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
+  }
+
+  if (m_dryRunHasBeenSet) {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  ss << "Version=2016-11-15";
+  return ss.str();
+}
+
+void CreateTransitGatewayMeteringPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

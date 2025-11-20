@@ -29,6 +29,7 @@
 #include <aws/s3-crt/model/DeleteObjectResult.h>
 #include <aws/s3-crt/model/DeleteObjectTaggingResult.h>
 #include <aws/s3-crt/model/DeleteObjectsResult.h>
+#include <aws/s3-crt/model/GetBucketAbacResult.h>
 #include <aws/s3-crt/model/GetBucketAccelerateConfigurationResult.h>
 #include <aws/s3-crt/model/GetBucketAclResult.h>
 #include <aws/s3-crt/model/GetBucketAnalyticsConfigurationResult.h>
@@ -145,6 +146,7 @@ class DeleteObjectRequest;
 class DeleteObjectTaggingRequest;
 class DeleteObjectsRequest;
 class DeletePublicAccessBlockRequest;
+class GetBucketAbacRequest;
 class GetBucketAccelerateConfigurationRequest;
 class GetBucketAclRequest;
 class GetBucketAnalyticsConfigurationRequest;
@@ -189,6 +191,7 @@ class ListObjectVersionsRequest;
 class ListObjectsRequest;
 class ListObjectsV2Request;
 class ListPartsRequest;
+class PutBucketAbacRequest;
 class PutBucketAccelerateConfigurationRequest;
 class PutBucketAclRequest;
 class PutBucketAnalyticsConfigurationRequest;
@@ -252,6 +255,7 @@ typedef Aws::Utils::Outcome<DeleteObjectResult, S3CrtError> DeleteObjectOutcome;
 typedef Aws::Utils::Outcome<DeleteObjectTaggingResult, S3CrtError> DeleteObjectTaggingOutcome;
 typedef Aws::Utils::Outcome<DeleteObjectsResult, S3CrtError> DeleteObjectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeletePublicAccessBlockOutcome;
+typedef Aws::Utils::Outcome<GetBucketAbacResult, S3CrtError> GetBucketAbacOutcome;
 typedef Aws::Utils::Outcome<GetBucketAccelerateConfigurationResult, S3CrtError> GetBucketAccelerateConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetBucketAclResult, S3CrtError> GetBucketAclOutcome;
 typedef Aws::Utils::Outcome<GetBucketAnalyticsConfigurationResult, S3CrtError> GetBucketAnalyticsConfigurationOutcome;
@@ -296,6 +300,7 @@ typedef Aws::Utils::Outcome<ListObjectVersionsResult, S3CrtError> ListObjectVers
 typedef Aws::Utils::Outcome<ListObjectsResult, S3CrtError> ListObjectsOutcome;
 typedef Aws::Utils::Outcome<ListObjectsV2Result, S3CrtError> ListObjectsV2Outcome;
 typedef Aws::Utils::Outcome<ListPartsResult, S3CrtError> ListPartsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> PutBucketAbacOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> PutBucketAccelerateConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> PutBucketAclOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> PutBucketAnalyticsConfigurationOutcome;
@@ -358,6 +363,7 @@ typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
 typedef std::future<DeleteObjectTaggingOutcome> DeleteObjectTaggingOutcomeCallable;
 typedef std::future<DeleteObjectsOutcome> DeleteObjectsOutcomeCallable;
 typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
+typedef std::future<GetBucketAbacOutcome> GetBucketAbacOutcomeCallable;
 typedef std::future<GetBucketAccelerateConfigurationOutcome> GetBucketAccelerateConfigurationOutcomeCallable;
 typedef std::future<GetBucketAclOutcome> GetBucketAclOutcomeCallable;
 typedef std::future<GetBucketAnalyticsConfigurationOutcome> GetBucketAnalyticsConfigurationOutcomeCallable;
@@ -401,6 +407,7 @@ typedef std::future<ListObjectVersionsOutcome> ListObjectVersionsOutcomeCallable
 typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
 typedef std::future<ListObjectsV2Outcome> ListObjectsV2OutcomeCallable;
 typedef std::future<ListPartsOutcome> ListPartsOutcomeCallable;
+typedef std::future<PutBucketAbacOutcome> PutBucketAbacOutcomeCallable;
 typedef std::future<PutBucketAccelerateConfigurationOutcome> PutBucketAccelerateConfigurationOutcomeCallable;
 typedef std::future<PutBucketAclOutcome> PutBucketAclOutcomeCallable;
 typedef std::future<PutBucketAnalyticsConfigurationOutcome> PutBucketAnalyticsConfigurationOutcomeCallable;
@@ -529,6 +536,9 @@ typedef std::function<void(const S3CrtClient*, const Model::DeleteObjectsRequest
 typedef std::function<void(const S3CrtClient*, const Model::DeletePublicAccessBlockRequest&, const Model::DeletePublicAccessBlockOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePublicAccessBlockResponseReceivedHandler;
+typedef std::function<void(const S3CrtClient*, const Model::GetBucketAbacRequest&, const Model::GetBucketAbacOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBucketAbacResponseReceivedHandler;
 typedef std::function<void(const S3CrtClient*, const Model::GetBucketAccelerateConfigurationRequest&,
                            const Model::GetBucketAccelerateConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -674,6 +684,9 @@ typedef std::function<void(const S3CrtClient*, const Model::ListObjectsV2Request
 typedef std::function<void(const S3CrtClient*, const Model::ListPartsRequest&, const Model::ListPartsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPartsResponseReceivedHandler;
+typedef std::function<void(const S3CrtClient*, const Model::PutBucketAbacRequest&, const Model::PutBucketAbacOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutBucketAbacResponseReceivedHandler;
 typedef std::function<void(const S3CrtClient*, const Model::PutBucketAccelerateConfigurationRequest&,
                            const Model::PutBucketAccelerateConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

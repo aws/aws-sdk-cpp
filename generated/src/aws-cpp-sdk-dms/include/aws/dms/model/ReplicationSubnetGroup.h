@@ -156,6 +156,26 @@ class ReplicationSubnetGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the replication subnet group is read-only. When set to
+   * <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL
+   * integration and cannot be modified or deleted directly. You can only modify or
+   * delete read-only subnet groups through their associated zero-ETL
+   * integration.</p>
+   */
+  inline bool GetIsReadOnly() const { return m_isReadOnly; }
+  inline bool IsReadOnlyHasBeenSet() const { return m_isReadOnlyHasBeenSet; }
+  inline void SetIsReadOnly(bool value) {
+    m_isReadOnlyHasBeenSet = true;
+    m_isReadOnly = value;
+  }
+  inline ReplicationSubnetGroup& WithIsReadOnly(bool value) {
+    SetIsReadOnly(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicationSubnetGroupIdentifier;
   bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
@@ -174,6 +194,9 @@ class ReplicationSubnetGroup {
 
   Aws::Vector<Aws::String> m_supportedNetworkTypes;
   bool m_supportedNetworkTypesHasBeenSet = false;
+
+  bool m_isReadOnly{false};
+  bool m_isReadOnlyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -28,6 +28,10 @@ GetImageResult& GetImageResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_image = jsonValue.GetObject("image");
     m_imageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

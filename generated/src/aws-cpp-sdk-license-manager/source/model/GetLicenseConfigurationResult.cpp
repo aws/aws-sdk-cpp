@@ -107,6 +107,10 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator=(const Aw
     m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
     m_disassociateWhenNotFoundHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LicenseExpiry")) {
+    m_licenseExpiry = jsonValue.GetInt64("LicenseExpiry");
+    m_licenseExpiryHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

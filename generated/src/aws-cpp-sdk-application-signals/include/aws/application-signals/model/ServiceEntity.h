@@ -20,8 +20,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents a service entity that is monitored by Application
- * Signals.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that contains identifying information for a service
+ * entity.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ServiceEntity">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,7 @@ class ServiceEntity {
 
   ///@{
   /**
-   * <p>The type of service, such as "WebService", "Database", "Queue", or
-   * "Function".</p>
+   * <p>The type of the service entity.</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -53,7 +52,7 @@ class ServiceEntity {
 
   ///@{
   /**
-   * <p>The name of the service as identified by Application Signals.</p>
+   * <p>The name of the service.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -71,8 +70,7 @@ class ServiceEntity {
 
   ///@{
   /**
-   * <p>The environment where the service is deployed, such as "Production",
-   * "Staging", or "Development".</p>
+   * <p>The environment where the service is deployed.</p>
    */
   inline const Aws::String& GetEnvironment() const { return m_environment; }
   inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
@@ -90,7 +88,8 @@ class ServiceEntity {
 
   ///@{
   /**
-   * <p>The AWS account ID where the service is deployed.</p>
+   * <p>The Amazon Web Services account ID where the service is located. Provide this
+   * value only for cross-account access.</p>
    */
   inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
   inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }

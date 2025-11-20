@@ -31,6 +31,16 @@ Aws::String UpdateServiceSettingsRequest::SerializePayload() const {
     payload.WithBool("EnableCrossAccountsDiscovery", m_enableCrossAccountsDiscovery);
   }
 
+  if (m_enabledDiscoverySourceRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enabledDiscoverySourceRegionsJsonList(m_enabledDiscoverySourceRegions.size());
+    for (unsigned enabledDiscoverySourceRegionsIndex = 0;
+         enabledDiscoverySourceRegionsIndex < enabledDiscoverySourceRegionsJsonList.GetLength(); ++enabledDiscoverySourceRegionsIndex) {
+      enabledDiscoverySourceRegionsJsonList[enabledDiscoverySourceRegionsIndex].AsString(
+          m_enabledDiscoverySourceRegions[enabledDiscoverySourceRegionsIndex]);
+    }
+    payload.WithArray("EnabledDiscoverySourceRegions", std::move(enabledDiscoverySourceRegionsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

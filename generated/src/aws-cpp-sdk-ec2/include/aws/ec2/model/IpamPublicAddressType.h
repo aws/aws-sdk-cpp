@@ -17,7 +17,8 @@ enum class IpamPublicAddressType {
   amazon_owned_eip,
   amazon_owned_contig,
   byoip,
-  ec2_public_ip
+  ec2_public_ip,
+  anycast_ip_list_ip
 };
 
 namespace IpamPublicAddressTypeMapper {

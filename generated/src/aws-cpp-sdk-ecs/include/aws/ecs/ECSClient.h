@@ -154,6 +154,44 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Creates an Express service that simplifies deploying containerized web
+   * applications on Amazon ECS with managed Amazon Web Services infrastructure. This
+   * operation provisions and configures Application Load Balancers, target groups,
+   * security groups, and auto-scaling policies automatically.</p> <p>Specify a
+   * primary container configuration with your application image and basic settings.
+   * Amazon ECS creates the necessary Amazon Web Services resources for traffic
+   * distribution, health monitoring, network access control, and capacity
+   * management.</p> <p>Provide an execution role for task operations and an
+   * infrastructure role for managing Amazon Web Services resources on your
+   * behalf.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateExpressGatewayServiceOutcome CreateExpressGatewayService(
+      const Model::CreateExpressGatewayServiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateExpressGatewayService that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateExpressGatewayServiceRequestT = Model::CreateExpressGatewayServiceRequest>
+  Model::CreateExpressGatewayServiceOutcomeCallable CreateExpressGatewayServiceCallable(
+      const CreateExpressGatewayServiceRequestT& request) const {
+    return SubmitCallable(&ECSClient::CreateExpressGatewayService, request);
+  }
+
+  /**
+   * An Async wrapper for CreateExpressGatewayService that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateExpressGatewayServiceRequestT = Model::CreateExpressGatewayServiceRequest>
+  void CreateExpressGatewayServiceAsync(const CreateExpressGatewayServiceRequestT& request,
+                                        const CreateExpressGatewayServiceResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::CreateExpressGatewayService, request, handler, context);
+  }
+
+  /**
    * <p>Runs and maintains your desired number of tasks from a specified task
    * definition. If the number of tasks running in a service drops below the
    * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
@@ -486,6 +524,43 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Deletes an Express service and removes all associated Amazon Web Services
+   * resources. This operation stops service tasks, removes the Application Load
+   * Balancer, target groups, security groups, auto-scaling policies, and other
+   * managed infrastructure components.</p> <p>The service enters a
+   * <code>DRAINING</code> state where existing tasks complete current requests
+   * without starting new tasks. After all tasks stop, the service and infrastructure
+   * are permanently removed.</p> <p>This operation cannot be reversed. Back up
+   * important data and verify the service is no longer needed before
+   * deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteExpressGatewayServiceOutcome DeleteExpressGatewayService(
+      const Model::DeleteExpressGatewayServiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteExpressGatewayService that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteExpressGatewayServiceRequestT = Model::DeleteExpressGatewayServiceRequest>
+  Model::DeleteExpressGatewayServiceOutcomeCallable DeleteExpressGatewayServiceCallable(
+      const DeleteExpressGatewayServiceRequestT& request) const {
+    return SubmitCallable(&ECSClient::DeleteExpressGatewayService, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteExpressGatewayService that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteExpressGatewayServiceRequestT = Model::DeleteExpressGatewayServiceRequest>
+  void DeleteExpressGatewayServiceAsync(const DeleteExpressGatewayServiceRequestT& request,
+                                        const DeleteExpressGatewayServiceResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DeleteExpressGatewayService, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a specified service within a cluster. You can delete a service if you
    * have no running tasks in it and the desired task count is zero. If the service
    * is actively maintaining tasks, you can't delete it, and you must update the
@@ -781,6 +856,41 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                        const DescribeContainerInstancesResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::DescribeContainerInstances, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about an Express service, including current
+   * status, configuration, managed infrastructure, and service revisions.</p>
+   * <p>Returns comprehensive service details, active service revisions, ingress
+   * paths with endpoints, and managed Amazon Web Services resource status including
+   * load balancers and auto-scaling policies.</p> <p>Use the <code>include</code>
+   * parameter to retrieve additional information such as resource
+   * tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeExpressGatewayServiceOutcome DescribeExpressGatewayService(
+      const Model::DescribeExpressGatewayServiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeExpressGatewayService that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeExpressGatewayServiceRequestT = Model::DescribeExpressGatewayServiceRequest>
+  Model::DescribeExpressGatewayServiceOutcomeCallable DescribeExpressGatewayServiceCallable(
+      const DescribeExpressGatewayServiceRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeExpressGatewayService, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeExpressGatewayService that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeExpressGatewayServiceRequestT = Model::DescribeExpressGatewayServiceRequest>
+  void DescribeExpressGatewayServiceAsync(const DescribeExpressGatewayServiceRequestT& request,
+                                          const DescribeExpressGatewayServiceResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeExpressGatewayService, request, handler, context);
   }
 
   /**
@@ -2132,6 +2242,42 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                           const UpdateContainerInstancesStateResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::UpdateContainerInstancesState, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing Express service configuration. Modifies container
+   * settings, resource allocation, auto-scaling configuration, and other service
+   * parameters without recreating the service.</p> <p>Amazon ECS creates a new
+   * service revision with updated configuration and performs a rolling deployment to
+   * replace existing tasks. The service remains available during updates, ensuring
+   * zero-downtime deployments.</p> <p>Some parameters like the infrastructure role
+   * cannot be modified after service creation and require creating a new
+   * service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateExpressGatewayServiceOutcome UpdateExpressGatewayService(
+      const Model::UpdateExpressGatewayServiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateExpressGatewayService that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateExpressGatewayServiceRequestT = Model::UpdateExpressGatewayServiceRequest>
+  Model::UpdateExpressGatewayServiceOutcomeCallable UpdateExpressGatewayServiceCallable(
+      const UpdateExpressGatewayServiceRequestT& request) const {
+    return SubmitCallable(&ECSClient::UpdateExpressGatewayService, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateExpressGatewayService that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateExpressGatewayServiceRequestT = Model::UpdateExpressGatewayServiceRequest>
+  void UpdateExpressGatewayServiceAsync(const UpdateExpressGatewayServiceRequestT& request,
+                                        const UpdateExpressGatewayServiceResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::UpdateExpressGatewayService, request, handler, context);
   }
 
   /**
