@@ -15,6 +15,7 @@
 #include <aws/backup/BackupServiceClientModel.h>
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
+#include <aws/backup/model/AggregatedScanResult.h>
 #include <aws/backup/model/AggregationPeriod.h>
 #include <aws/backup/model/AlreadyExistsException.h>
 #include <aws/backup/model/AssociateBackupVaultMpaApprovalTeamRequest.h>
@@ -67,6 +68,8 @@
 #include <aws/backup/model/CreateRestoreTestingPlanResult.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/CreateRestoreTestingSelectionResult.h>
+#include <aws/backup/model/CreateTieringConfigurationRequest.h>
+#include <aws/backup/model/CreateTieringConfigurationResult.h>
 #include <aws/backup/model/DateRange.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupPlanResult.h>
@@ -80,6 +83,8 @@
 #include <aws/backup/model/DeleteReportPlanRequest.h>
 #include <aws/backup/model/DeleteRestoreTestingPlanRequest.h>
 #include <aws/backup/model/DeleteRestoreTestingSelectionRequest.h>
+#include <aws/backup/model/DeleteTieringConfigurationRequest.h>
+#include <aws/backup/model/DeleteTieringConfigurationResult.h>
 #include <aws/backup/model/DependencyFailureException.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupJobResult.h>
@@ -103,6 +108,8 @@
 #include <aws/backup/model/DescribeReportPlanResult.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/DescribeRestoreJobResult.h>
+#include <aws/backup/model/DescribeScanJobRequest.h>
+#include <aws/backup/model/DescribeScanJobResult.h>
 #include <aws/backup/model/DisassociateBackupVaultMpaApprovalTeamRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointFromParentRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
@@ -139,6 +146,8 @@
 #include <aws/backup/model/GetRestoreTestingSelectionResult.h>
 #include <aws/backup/model/GetSupportedResourceTypesRequest.h>
 #include <aws/backup/model/GetSupportedResourceTypesResult.h>
+#include <aws/backup/model/GetTieringConfigurationRequest.h>
+#include <aws/backup/model/GetTieringConfigurationResult.h>
 #include <aws/backup/model/Index.h>
 #include <aws/backup/model/IndexAction.h>
 #include <aws/backup/model/IndexStatus.h>
@@ -204,8 +213,15 @@
 #include <aws/backup/model/ListRestoreTestingPlansResult.h>
 #include <aws/backup/model/ListRestoreTestingSelectionsRequest.h>
 #include <aws/backup/model/ListRestoreTestingSelectionsResult.h>
+#include <aws/backup/model/ListScanJobSummariesRequest.h>
+#include <aws/backup/model/ListScanJobSummariesResult.h>
+#include <aws/backup/model/ListScanJobsRequest.h>
+#include <aws/backup/model/ListScanJobsResult.h>
 #include <aws/backup/model/ListTagsRequest.h>
 #include <aws/backup/model/ListTagsResult.h>
+#include <aws/backup/model/ListTieringConfigurationsRequest.h>
+#include <aws/backup/model/ListTieringConfigurationsResult.h>
+#include <aws/backup/model/MalwareScanner.h>
 #include <aws/backup/model/MissingParameterValueException.h>
 #include <aws/backup/model/MpaRevokeSessionStatus.h>
 #include <aws/backup/model/MpaSessionStatus.h>
@@ -227,6 +243,7 @@
 #include <aws/backup/model/ReportPlan.h>
 #include <aws/backup/model/ReportSetting.h>
 #include <aws/backup/model/ResourceNotFoundException.h>
+#include <aws/backup/model/ResourceSelection.h>
 #include <aws/backup/model/RestoreAccessBackupVaultListMember.h>
 #include <aws/backup/model/RestoreDeletionStatus.h>
 #include <aws/backup/model/RestoreJobCreator.h>
@@ -248,6 +265,20 @@
 #include <aws/backup/model/RestoreValidationStatus.h>
 #include <aws/backup/model/RevokeRestoreAccessBackupVaultRequest.h>
 #include <aws/backup/model/RuleExecutionType.h>
+#include <aws/backup/model/ScanAction.h>
+#include <aws/backup/model/ScanFinding.h>
+#include <aws/backup/model/ScanJob.h>
+#include <aws/backup/model/ScanJobCreator.h>
+#include <aws/backup/model/ScanJobState.h>
+#include <aws/backup/model/ScanJobStatus.h>
+#include <aws/backup/model/ScanJobSummary.h>
+#include <aws/backup/model/ScanMode.h>
+#include <aws/backup/model/ScanResourceType.h>
+#include <aws/backup/model/ScanResult.h>
+#include <aws/backup/model/ScanResultInfo.h>
+#include <aws/backup/model/ScanResultStatus.h>
+#include <aws/backup/model/ScanSetting.h>
+#include <aws/backup/model/ScanState.h>
 #include <aws/backup/model/ScheduledPlanExecutionMember.h>
 #include <aws/backup/model/ServiceUnavailableException.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
@@ -258,9 +289,15 @@
 #include <aws/backup/model/StartReportJobResult.h>
 #include <aws/backup/model/StartRestoreJobRequest.h>
 #include <aws/backup/model/StartRestoreJobResult.h>
+#include <aws/backup/model/StartScanJobRequest.h>
+#include <aws/backup/model/StartScanJobResult.h>
 #include <aws/backup/model/StopBackupJobRequest.h>
 #include <aws/backup/model/StorageClass.h>
 #include <aws/backup/model/TagResourceRequest.h>
+#include <aws/backup/model/TieringConfiguration.h>
+#include <aws/backup/model/TieringConfigurationInputForCreate.h>
+#include <aws/backup/model/TieringConfigurationInputForUpdate.h>
+#include <aws/backup/model/TieringConfigurationsListMember.h>
 #include <aws/backup/model/UntagResourceRequest.h>
 #include <aws/backup/model/UpdateBackupPlanRequest.h>
 #include <aws/backup/model/UpdateBackupPlanResult.h>
@@ -278,6 +315,8 @@
 #include <aws/backup/model/UpdateRestoreTestingPlanResult.h>
 #include <aws/backup/model/UpdateRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/UpdateRestoreTestingSelectionResult.h>
+#include <aws/backup/model/UpdateTieringConfigurationRequest.h>
+#include <aws/backup/model/UpdateTieringConfigurationResult.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/backup/model/VaultType.h>
 

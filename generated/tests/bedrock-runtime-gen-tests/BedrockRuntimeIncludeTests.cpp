@@ -166,6 +166,11 @@
 #include <aws/bedrock-runtime/model/ReasoningTextBlock.h>
 #include <aws/bedrock-runtime/model/ResponseStream.h>
 #include <aws/bedrock-runtime/model/S3Location.h>
+#include <aws/bedrock-runtime/model/SearchResultBlock.h>
+#include <aws/bedrock-runtime/model/SearchResultContentBlock.h>
+#include <aws/bedrock-runtime/model/SearchResultLocation.h>
+#include <aws/bedrock-runtime/model/ServiceTier.h>
+#include <aws/bedrock-runtime/model/ServiceTierType.h>
 #include <aws/bedrock-runtime/model/SortAsyncInvocationBy.h>
 #include <aws/bedrock-runtime/model/SortOrder.h>
 #include <aws/bedrock-runtime/model/SpecificToolChoice.h>

@@ -18,13 +18,13 @@ namespace Model {
 UserDetails::UserDetails(JsonView jsonValue) { *this = jsonValue; }
 
 UserDetails& UserDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("sessionId")) {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("userId")) {
     m_userId = jsonValue.GetString("userId");
     m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sessionId")) {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ UserDetails& UserDetails::operator=(JsonView jsonValue) {
 JsonValue UserDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_sessionIdHasBeenSet) {
-    payload.WithString("sessionId", m_sessionId);
-  }
-
   if (m_userIdHasBeenSet) {
     payload.WithString("userId", m_userId);
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
   return payload;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECR {
 namespace Model {
-enum class ImageActionType { NOT_SET, EXPIRE };
+enum class ImageActionType { NOT_SET, EXPIRE, TRANSITION };
 
 namespace ImageActionTypeMapper {
 AWS_ECR_API ImageActionType GetImageActionTypeForName(const Aws::String& name);

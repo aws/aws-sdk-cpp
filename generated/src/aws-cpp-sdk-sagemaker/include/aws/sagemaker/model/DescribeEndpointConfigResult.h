@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/MetricsConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 
@@ -253,6 +254,23 @@ class DescribeEndpointConfigResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration parameters for utilization metrics.</p>
+   */
+  inline const MetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
+  template <typename MetricsConfigT = MetricsConfig>
+  void SetMetricsConfig(MetricsConfigT&& value) {
+    m_metricsConfigHasBeenSet = true;
+    m_metricsConfig = std::forward<MetricsConfigT>(value);
+  }
+  template <typename MetricsConfigT = MetricsConfig>
+  DescribeEndpointConfigResult& WithMetricsConfig(MetricsConfigT&& value) {
+    SetMetricsConfig(std::forward<MetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -302,6 +320,9 @@ class DescribeEndpointConfigResult {
 
   bool m_enableNetworkIsolation{false};
   bool m_enableNetworkIsolationHasBeenSet = false;
+
+  MetricsConfig m_metricsConfig;
+  bool m_metricsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

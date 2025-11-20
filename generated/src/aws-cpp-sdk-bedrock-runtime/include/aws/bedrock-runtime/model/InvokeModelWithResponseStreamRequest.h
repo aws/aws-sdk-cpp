@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamHandler.h>
 #include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
+#include <aws/bedrock-runtime/model/ServiceTierType.h>
 #include <aws/bedrock-runtime/model/Trace.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
@@ -197,6 +198,22 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the processing tier type used for serving the request.</p>
+   */
+  inline ServiceTierType GetServiceTier() const { return m_serviceTier; }
+  inline bool ServiceTierHasBeenSet() const { return m_serviceTierHasBeenSet; }
+  inline void SetServiceTier(ServiceTierType value) {
+    m_serviceTierHasBeenSet = true;
+    m_serviceTier = value;
+  }
+  inline InvokeModelWithResponseStreamRequest& WithServiceTier(ServiceTierType value) {
+    SetServiceTier(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accept;
   bool m_acceptHasBeenSet = false;
@@ -215,6 +232,9 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
 
   PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
   bool m_performanceConfigLatencyHasBeenSet = false;
+
+  ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
+  bool m_serviceTierHasBeenSet = false;
   InvokeModelWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

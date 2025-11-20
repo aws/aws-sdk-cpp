@@ -38,6 +38,10 @@ ToolResultContentBlock& ToolResultContentBlock::operator=(JsonView jsonValue) {
     m_video = jsonValue.GetObject("video");
     m_videoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("searchResult")) {
+    m_searchResult = jsonValue.GetObject("searchResult");
+    m_searchResultHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +68,10 @@ JsonValue ToolResultContentBlock::Jsonize() const {
 
   if (m_videoHasBeenSet) {
     payload.WithObject("video", m_video.Jsonize());
+  }
+
+  if (m_searchResultHasBeenSet) {
+    payload.WithObject("searchResult", m_searchResult.Jsonize());
   }
 
   return payload;

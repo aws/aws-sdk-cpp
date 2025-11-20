@@ -132,6 +132,10 @@ DescribeInputResult& DescribeInputResult::operator=(const Aws::AmazonWebServiceR
     }
     m_sdiSourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("routerSettings")) {
+    m_routerSettings = jsonValue.GetObject("routerSettings");
+    m_routerSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -54,14 +54,16 @@ class PutInsightSelectorsRequest : public CloudTrailRequest {
 
   ///@{
   /**
-   * <p>A JSON string that contains the Insights types you want to log on a trail or
-   * event data store. <code>ApiCallRateInsight</code> and
-   * <code>ApiErrorRateInsight</code> are valid Insight types.</p> <p>The
+   * <p>Contains the Insights types you want to log on a specific category of events
+   * on a trail or event data store. <code>ApiCallRateInsight</code> and
+   * <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field
+   * can specify <code>Management</code> or <code>Data</code> events or both. For
+   * event data store, you can log Insights for management events only.</p> <p>The
    * <code>ApiCallRateInsight</code> Insights type analyzes write-only management API
-   * calls that are aggregated per minute against a baseline API call volume.</p>
-   * <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API
-   * calls that result in error codes. The error is shown if the API call is
-   * unsuccessful.</p>
+   * calls or read and write data API calls that are aggregated per minute against a
+   * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+   * type analyzes management and data API calls that result in error codes. The
+   * error is shown if the API call is unsuccessful.</p>
    */
   inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const { return m_insightSelectors; }
   inline bool InsightSelectorsHasBeenSet() const { return m_insightSelectorsHasBeenSet; }

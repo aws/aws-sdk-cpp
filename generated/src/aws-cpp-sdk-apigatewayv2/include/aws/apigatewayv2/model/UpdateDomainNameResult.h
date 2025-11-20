@@ -66,7 +66,9 @@ class UpdateDomainNameResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The ARN of the DomainName resource.</p>
+   */
   inline const Aws::String& GetDomainNameArn() const { return m_domainNameArn; }
   template <typename DomainNameArnT = Aws::String>
   void SetDomainNameArn(DomainNameArnT&& value) {

@@ -127,5 +127,9 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
+  if (m_tenancyConfigHasBeenSet) {
+    payload.WithObject("TenancyConfig", m_tenancyConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

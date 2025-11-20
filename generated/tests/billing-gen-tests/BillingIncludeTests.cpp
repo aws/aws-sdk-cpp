@@ -45,7 +45,9 @@
 #include <aws/billing/model/ListTagsForResourceResult.h>
 #include <aws/billing/model/ResourceNotFoundException.h>
 #include <aws/billing/model/ResourceTag.h>
+#include <aws/billing/model/SearchOption.h>
 #include <aws/billing/model/ServiceQuotaExceededException.h>
+#include <aws/billing/model/StringSearch.h>
 #include <aws/billing/model/TagResourceRequest.h>
 #include <aws/billing/model/TagResourceResult.h>
 #include <aws/billing/model/TagValues.h>

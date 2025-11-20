@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfiguration.h>
 #include <aws/mediaconnect/model/OutputStatus.h>
+#include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
 
@@ -368,6 +370,60 @@ class Output {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates if router integration is enabled or disabled on the flow
+   * output.</p>
+   */
+  inline State GetRouterIntegrationState() const { return m_routerIntegrationState; }
+  inline bool RouterIntegrationStateHasBeenSet() const { return m_routerIntegrationStateHasBeenSet; }
+  inline void SetRouterIntegrationState(State value) {
+    m_routerIntegrationStateHasBeenSet = true;
+    m_routerIntegrationState = value;
+  }
+  inline Output& WithRouterIntegrationState(State value) {
+    SetRouterIntegrationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The encryption configuration for the output when router integration is
+   * enabled.</p>
+   */
+  inline const FlowTransitEncryption& GetRouterIntegrationTransitEncryption() const { return m_routerIntegrationTransitEncryption; }
+  inline bool RouterIntegrationTransitEncryptionHasBeenSet() const { return m_routerIntegrationTransitEncryptionHasBeenSet; }
+  template <typename RouterIntegrationTransitEncryptionT = FlowTransitEncryption>
+  void SetRouterIntegrationTransitEncryption(RouterIntegrationTransitEncryptionT&& value) {
+    m_routerIntegrationTransitEncryptionHasBeenSet = true;
+    m_routerIntegrationTransitEncryption = std::forward<RouterIntegrationTransitEncryptionT>(value);
+  }
+  template <typename RouterIntegrationTransitEncryptionT = FlowTransitEncryption>
+  Output& WithRouterIntegrationTransitEncryption(RouterIntegrationTransitEncryptionT&& value) {
+    SetRouterIntegrationTransitEncryption(std::forward<RouterIntegrationTransitEncryptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the router input that's connected to this flow output.</p>
+   */
+  inline const Aws::String& GetConnectedRouterInputArn() const { return m_connectedRouterInputArn; }
+  inline bool ConnectedRouterInputArnHasBeenSet() const { return m_connectedRouterInputArnHasBeenSet; }
+  template <typename ConnectedRouterInputArnT = Aws::String>
+  void SetConnectedRouterInputArn(ConnectedRouterInputArnT&& value) {
+    m_connectedRouterInputArnHasBeenSet = true;
+    m_connectedRouterInputArn = std::forward<ConnectedRouterInputArnT>(value);
+  }
+  template <typename ConnectedRouterInputArnT = Aws::String>
+  Output& WithConnectedRouterInputArn(ConnectedRouterInputArnT&& value) {
+    SetConnectedRouterInputArn(std::forward<ConnectedRouterInputArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_dataTransferSubscriberFeePercent{0};
   bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
@@ -419,6 +475,15 @@ class Output {
 
   Aws::String m_peerIpAddress;
   bool m_peerIpAddressHasBeenSet = false;
+
+  State m_routerIntegrationState{State::NOT_SET};
+  bool m_routerIntegrationStateHasBeenSet = false;
+
+  FlowTransitEncryption m_routerIntegrationTransitEncryption;
+  bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
+
+  Aws::String m_connectedRouterInputArn;
+  bool m_connectedRouterInputArnHasBeenSet = false;
 };
 
 }  // namespace Model

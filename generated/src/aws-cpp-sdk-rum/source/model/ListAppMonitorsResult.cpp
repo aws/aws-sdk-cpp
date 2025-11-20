@@ -21,6 +21,10 @@ ListAppMonitorsResult::ListAppMonitorsResult(const Aws::AmazonWebServiceResult<J
 
 ListAppMonitorsResult& ListAppMonitorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AppMonitorSummaries")) {
     Aws::Utils::Array<JsonView> appMonitorSummariesJsonList = jsonValue.GetArray("AppMonitorSummaries");
     for (unsigned appMonitorSummariesIndex = 0; appMonitorSummariesIndex < appMonitorSummariesJsonList.GetLength();
@@ -28,10 +32,6 @@ ListAppMonitorsResult& ListAppMonitorsResult::operator=(const Aws::AmazonWebServ
       m_appMonitorSummaries.push_back(appMonitorSummariesJsonList[appMonitorSummariesIndex].AsObject());
     }
     m_appMonitorSummariesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NextToken")) {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

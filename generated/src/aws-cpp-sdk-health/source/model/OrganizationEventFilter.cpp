@@ -18,6 +18,14 @@ namespace Model {
 OrganizationEventFilter::OrganizationEventFilter(JsonView jsonValue) { *this = jsonValue; }
 
 OrganizationEventFilter& OrganizationEventFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionabilities")) {
+    Aws::Utils::Array<JsonView> actionabilitiesJsonList = jsonValue.GetArray("actionabilities");
+    for (unsigned actionabilitiesIndex = 0; actionabilitiesIndex < actionabilitiesJsonList.GetLength(); ++actionabilitiesIndex) {
+      m_actionabilities.push_back(
+          EventActionabilityMapper::GetEventActionabilityForName(actionabilitiesJsonList[actionabilitiesIndex].AsString()));
+    }
+    m_actionabilitiesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("eventTypeCodes")) {
     Aws::Utils::Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
     for (unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex) {
@@ -89,11 +97,27 @@ OrganizationEventFilter& OrganizationEventFilter::operator=(JsonView jsonValue) 
     }
     m_eventStatusCodesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("personas")) {
+    Aws::Utils::Array<JsonView> personasJsonList = jsonValue.GetArray("personas");
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      m_personas.push_back(EventPersonaMapper::GetEventPersonaForName(personasJsonList[personasIndex].AsString()));
+    }
+    m_personasHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue OrganizationEventFilter::Jsonize() const {
   JsonValue payload;
+
+  if (m_actionabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionabilitiesJsonList(m_actionabilities.size());
+    for (unsigned actionabilitiesIndex = 0; actionabilitiesIndex < actionabilitiesJsonList.GetLength(); ++actionabilitiesIndex) {
+      actionabilitiesJsonList[actionabilitiesIndex].AsString(
+          EventActionabilityMapper::GetNameForEventActionability(m_actionabilities[actionabilitiesIndex]));
+    }
+    payload.WithArray("actionabilities", std::move(actionabilitiesJsonList));
+  }
 
   if (m_eventTypeCodesHasBeenSet) {
     Aws::Utils::Array<JsonValue> eventTypeCodesJsonList(m_eventTypeCodes.size());
@@ -172,6 +196,14 @@ JsonValue OrganizationEventFilter::Jsonize() const {
           EventStatusCodeMapper::GetNameForEventStatusCode(m_eventStatusCodes[eventStatusCodesIndex]));
     }
     payload.WithArray("eventStatusCodes", std::move(eventStatusCodesJsonList));
+  }
+
+  if (m_personasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> personasJsonList(m_personas.size());
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      personasJsonList[personasIndex].AsString(EventPersonaMapper::GetNameForEventPersona(m_personas[personasIndex]));
+    }
+    payload.WithArray("personas", std::move(personasJsonList));
   }
 
   return payload;

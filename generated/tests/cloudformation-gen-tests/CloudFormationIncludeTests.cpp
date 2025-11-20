@@ -22,6 +22,7 @@
 #include <aws/cloudformation/model/ActivateOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/ActivateTypeRequest.h>
 #include <aws/cloudformation/model/ActivateTypeResult.h>
+#include <aws/cloudformation/model/AfterValueFrom.h>
 #include <aws/cloudformation/model/Annotation.h>
 #include <aws/cloudformation/model/AnnotationSeverityLevel.h>
 #include <aws/cloudformation/model/AnnotationStatus.h>
@@ -30,6 +31,8 @@
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsError.h>
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsRequest.h>
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsResult.h>
+#include <aws/cloudformation/model/BeaconStackOperationStatus.h>
+#include <aws/cloudformation/model/BeforeValueFrom.h>
 #include <aws/cloudformation/model/CallAs.h>
 #include <aws/cloudformation/model/CancelUpdateStackRequest.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -73,6 +76,7 @@
 #include <aws/cloudformation/model/DeleteStackSetRequest.h>
 #include <aws/cloudformation/model/DeleteStackSetResult.h>
 #include <aws/cloudformation/model/DeletionMode.h>
+#include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/DeprecatedStatus.h>
 #include <aws/cloudformation/model/DeregisterTypeRequest.h>
@@ -83,6 +87,8 @@
 #include <aws/cloudformation/model/DescribeChangeSetHooksResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
+#include <aws/cloudformation/model/DescribeEventsRequest.h>
+#include <aws/cloudformation/model/DescribeEventsResult.h>
 #include <aws/cloudformation/model/DescribeGeneratedTemplateRequest.h>
 #include <aws/cloudformation/model/DescribeGeneratedTemplateResult.h>
 #include <aws/cloudformation/model/DescribeOrganizationsAccessRequest.h>
@@ -123,9 +129,12 @@
 #include <aws/cloudformation/model/DetectStackSetDriftRequest.h>
 #include <aws/cloudformation/model/DetectStackSetDriftResult.h>
 #include <aws/cloudformation/model/DifferenceType.h>
+#include <aws/cloudformation/model/DriftIgnoredReason.h>
 #include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
 #include <aws/cloudformation/model/EstimateTemplateCostResult.h>
 #include <aws/cloudformation/model/EvaluationType.h>
+#include <aws/cloudformation/model/EventFilter.h>
+#include <aws/cloudformation/model/EventType.h>
 #include <aws/cloudformation/model/ExecuteChangeSetRequest.h>
 #include <aws/cloudformation/model/ExecuteChangeSetResult.h>
 #include <aws/cloudformation/model/ExecuteStackRefactorRequest.h>
@@ -199,14 +208,18 @@
 #include <aws/cloudformation/model/ListTypeVersionsResult.h>
 #include <aws/cloudformation/model/ListTypesRequest.h>
 #include <aws/cloudformation/model/ListTypesResult.h>
+#include <aws/cloudformation/model/LiveResourceDrift.h>
 #include <aws/cloudformation/model/LoggingConfig.h>
 #include <aws/cloudformation/model/ManagedExecution.h>
 #include <aws/cloudformation/model/ModuleInfo.h>
 #include <aws/cloudformation/model/OnFailure.h>
 #include <aws/cloudformation/model/OnStackFailure.h>
+#include <aws/cloudformation/model/OperationEntry.h>
+#include <aws/cloudformation/model/OperationEvent.h>
 #include <aws/cloudformation/model/OperationResultFilter.h>
 #include <aws/cloudformation/model/OperationResultFilterName.h>
 #include <aws/cloudformation/model/OperationStatus.h>
+#include <aws/cloudformation/model/OperationType.h>
 #include <aws/cloudformation/model/OrganizationStatus.h>
 #include <aws/cloudformation/model/Output.h>
 #include <aws/cloudformation/model/Parameter.h>
@@ -237,6 +250,7 @@
 #include <aws/cloudformation/model/ResourceChangeDetail.h>
 #include <aws/cloudformation/model/ResourceDefinition.h>
 #include <aws/cloudformation/model/ResourceDetail.h>
+#include <aws/cloudformation/model/ResourceDriftIgnoredAttribute.h>
 #include <aws/cloudformation/model/ResourceIdentifierSummary.h>
 #include <aws/cloudformation/model/ResourceLocation.h>
 #include <aws/cloudformation/model/ResourceMapping.h>
@@ -340,6 +354,7 @@
 #include <aws/cloudformation/model/UpdateTerminationProtectionResult.h>
 #include <aws/cloudformation/model/ValidateTemplateRequest.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
+#include <aws/cloudformation/model/ValidationStatus.h>
 #include <aws/cloudformation/model/VersionBump.h>
 #include <aws/cloudformation/model/Visibility.h>
 #include <aws/cloudformation/model/WarningDetail.h>

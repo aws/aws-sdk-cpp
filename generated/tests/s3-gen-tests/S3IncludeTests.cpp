@@ -32,6 +32,7 @@
 #include <aws/s3/model/AnalyticsS3BucketDestination.h>
 #include <aws/s3/model/AnalyticsS3ExportFileFormat.h>
 #include <aws/s3/model/ArchiveStatus.h>
+#include <aws/s3/model/BlockedEncryptionTypes.h>
 #include <aws/s3/model/Bucket.h>
 #include <aws/s3/model/BucketAccelerateStatus.h>
 #include <aws/s3/model/BucketCannedACL.h>
@@ -105,6 +106,7 @@
 #include <aws/s3/model/EncodingType.h>
 #include <aws/s3/model/Encryption.h>
 #include <aws/s3/model/EncryptionConfiguration.h>
+#include <aws/s3/model/EncryptionType.h>
 #include <aws/s3/model/Error.h>
 #include <aws/s3/model/ErrorDetails.h>
 #include <aws/s3/model/ErrorDocument.h>

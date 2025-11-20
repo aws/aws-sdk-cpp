@@ -30,6 +30,10 @@ ParseToOCSF& ParseToOCSF::operator=(JsonView jsonValue) {
     m_ocsfVersion = OCSFVersionMapper::GetOCSFVersionForName(jsonValue.GetString("ocsfVersion"));
     m_ocsfVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mappingVersion")) {
+    m_mappingVersion = jsonValue.GetString("mappingVersion");
+    m_mappingVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ParseToOCSF::Jsonize() const {
 
   if (m_ocsfVersionHasBeenSet) {
     payload.WithString("ocsfVersion", OCSFVersionMapper::GetNameForOCSFVersion(m_ocsfVersion));
+  }
+
+  if (m_mappingVersionHasBeenSet) {
+    payload.WithString("mappingVersion", m_mappingVersion);
   }
 
   return payload;

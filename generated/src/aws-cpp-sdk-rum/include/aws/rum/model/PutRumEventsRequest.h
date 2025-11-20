@@ -34,23 +34,36 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>If the app monitor uses a resource-based policy that requires
-   * <code>PutRumEvents</code> requests to specify a certain alias, specify that
-   * alias here. This alias will be compared to the <code>rum:alias</code> context
-   * key in the resource-based policy. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using
-   * resource-based policies with CloudWatch RUM</a>.</p>
+   * <p>The ID of the app monitor that is sending this data.</p>
    */
-  inline const Aws::String& GetAlias() const { return m_alias; }
-  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-  template <typename AliasT = Aws::String>
-  void SetAlias(AliasT&& value) {
-    m_aliasHasBeenSet = true;
-    m_alias = std::forward<AliasT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename AliasT = Aws::String>
-  PutRumEventsRequest& WithAlias(AliasT&& value) {
-    SetAlias(std::forward<AliasT>(value));
+  template <typename IdT = Aws::String>
+  PutRumEventsRequest& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique identifier for this batch of RUM event data.</p>
+   */
+  inline const Aws::String& GetBatchId() const { return m_batchId; }
+  inline bool BatchIdHasBeenSet() const { return m_batchIdHasBeenSet; }
+  template <typename BatchIdT = Aws::String>
+  void SetBatchId(BatchIdT&& value) {
+    m_batchIdHasBeenSet = true;
+    m_batchId = std::forward<BatchIdT>(value);
+  }
+  template <typename BatchIdT = Aws::String>
+  PutRumEventsRequest& WithBatchId(BatchIdT&& value) {
+    SetBatchId(std::forward<BatchIdT>(value));
     return *this;
   }
   ///@}
@@ -76,36 +89,19 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>A unique identifier for this batch of RUM event data.</p>
+   * <p>A structure that contains information about the user session that this batch
+   * of events was collected from.</p>
    */
-  inline const Aws::String& GetBatchId() const { return m_batchId; }
-  inline bool BatchIdHasBeenSet() const { return m_batchIdHasBeenSet; }
-  template <typename BatchIdT = Aws::String>
-  void SetBatchId(BatchIdT&& value) {
-    m_batchIdHasBeenSet = true;
-    m_batchId = std::forward<BatchIdT>(value);
+  inline const UserDetails& GetUserDetails() const { return m_userDetails; }
+  inline bool UserDetailsHasBeenSet() const { return m_userDetailsHasBeenSet; }
+  template <typename UserDetailsT = UserDetails>
+  void SetUserDetails(UserDetailsT&& value) {
+    m_userDetailsHasBeenSet = true;
+    m_userDetails = std::forward<UserDetailsT>(value);
   }
-  template <typename BatchIdT = Aws::String>
-  PutRumEventsRequest& WithBatchId(BatchIdT&& value) {
-    SetBatchId(std::forward<BatchIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the app monitor that is sending this data.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  PutRumEventsRequest& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename UserDetailsT = UserDetails>
+  PutRumEventsRequest& WithUserDetails(UserDetailsT&& value) {
+    SetUserDetails(std::forward<UserDetailsT>(value));
     return *this;
   }
   ///@}
@@ -136,40 +132,44 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>A structure that contains information about the user session that this batch
-   * of events was collected from.</p>
+   * <p>If the app monitor uses a resource-based policy that requires
+   * <code>PutRumEvents</code> requests to specify a certain alias, specify that
+   * alias here. This alias will be compared to the <code>rum:alias</code> context
+   * key in the resource-based policy. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using
+   * resource-based policies with CloudWatch RUM</a>.</p>
    */
-  inline const UserDetails& GetUserDetails() const { return m_userDetails; }
-  inline bool UserDetailsHasBeenSet() const { return m_userDetailsHasBeenSet; }
-  template <typename UserDetailsT = UserDetails>
-  void SetUserDetails(UserDetailsT&& value) {
-    m_userDetailsHasBeenSet = true;
-    m_userDetails = std::forward<UserDetailsT>(value);
+  inline const Aws::String& GetAlias() const { return m_alias; }
+  inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+  template <typename AliasT = Aws::String>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
   }
-  template <typename UserDetailsT = UserDetails>
-  PutRumEventsRequest& WithUserDetails(UserDetailsT&& value) {
-    SetUserDetails(std::forward<UserDetailsT>(value));
+  template <typename AliasT = Aws::String>
+  PutRumEventsRequest& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
-
-  AppMonitorDetails m_appMonitorDetails;
-  bool m_appMonitorDetailsHasBeenSet = false;
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
   Aws::String m_batchId;
   bool m_batchIdHasBeenSet = false;
 
-  Aws::String m_id;
-  bool m_idHasBeenSet = false;
+  AppMonitorDetails m_appMonitorDetails;
+  bool m_appMonitorDetailsHasBeenSet = false;
+
+  UserDetails m_userDetails;
+  bool m_userDetailsHasBeenSet = false;
 
   Aws::Vector<RumEvent> m_rumEvents;
   bool m_rumEventsHasBeenSet = false;
 
-  UserDetails m_userDetails;
-  bool m_userDetailsHasBeenSet = false;
+  Aws::String m_alias;
+  bool m_aliasHasBeenSet = false;
 };
 
 }  // namespace Model

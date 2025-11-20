@@ -87,6 +87,10 @@
 #include <aws/kafka/model/DescribeConfigurationRevisionResult.h>
 #include <aws/kafka/model/DescribeReplicatorRequest.h>
 #include <aws/kafka/model/DescribeReplicatorResult.h>
+#include <aws/kafka/model/DescribeTopicPartitionsRequest.h>
+#include <aws/kafka/model/DescribeTopicPartitionsResult.h>
+#include <aws/kafka/model/DescribeTopicRequest.h>
+#include <aws/kafka/model/DescribeTopicResult.h>
 #include <aws/kafka/model/DescribeVpcConnectionRequest.h>
 #include <aws/kafka/model/DescribeVpcConnectionResult.h>
 #include <aws/kafka/model/EBSStorageInfo.h>
@@ -137,6 +141,8 @@
 #include <aws/kafka/model/ListScramSecretsResult.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
 #include <aws/kafka/model/ListTagsForResourceResult.h>
+#include <aws/kafka/model/ListTopicsRequest.h>
+#include <aws/kafka/model/ListTopicsResult.h>
 #include <aws/kafka/model/ListVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListVpcConnectionsResult.h>
 #include <aws/kafka/model/LoggingInfo.h>
@@ -187,8 +193,11 @@
 #include <aws/kafka/model/TargetCompressionType.h>
 #include <aws/kafka/model/Tls.h>
 #include <aws/kafka/model/TooManyRequestsException.h>
+#include <aws/kafka/model/TopicInfo.h>
+#include <aws/kafka/model/TopicPartitionInfo.h>
 #include <aws/kafka/model/TopicReplication.h>
 #include <aws/kafka/model/TopicReplicationUpdate.h>
+#include <aws/kafka/model/TopicState.h>
 #include <aws/kafka/model/Unauthenticated.h>
 #include <aws/kafka/model/UnauthorizedException.h>
 #include <aws/kafka/model/UnprocessedScramSecret.h>

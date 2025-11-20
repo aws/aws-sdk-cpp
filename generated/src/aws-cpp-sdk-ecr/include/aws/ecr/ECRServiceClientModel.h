@@ -34,6 +34,7 @@
 #include <aws/ecr/model/DeleteRepositoryCreationTemplateResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
+#include <aws/ecr/model/DeregisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusResult.h>
 #include <aws/ecr/model/DescribeImageScanFindingsResult.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
@@ -57,7 +58,10 @@
 #include <aws/ecr/model/GetRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/GetRepositoryPolicyResult.h>
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
+#include <aws/ecr/model/ListImageReferrersResult.h>
 #include <aws/ecr/model/ListImagesResult.h>
+#include <aws/ecr/model/ListPullTimeUpdateExclusionsRequest.h>
+#include <aws/ecr/model/ListPullTimeUpdateExclusionsResult.h>
 #include <aws/ecr/model/ListTagsForResourceResult.h>
 #include <aws/ecr/model/PutAccountSettingResult.h>
 #include <aws/ecr/model/PutImageResult.h>
@@ -68,11 +72,13 @@
 #include <aws/ecr/model/PutRegistryScanningConfigurationRequest.h>
 #include <aws/ecr/model/PutRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/PutReplicationConfigurationResult.h>
+#include <aws/ecr/model/RegisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
 #include <aws/ecr/model/StartImageScanResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/TagResourceResult.h>
 #include <aws/ecr/model/UntagResourceResult.h>
+#include <aws/ecr/model/UpdateImageStorageClassResult.h>
 #include <aws/ecr/model/UpdatePullThroughCacheRuleResult.h>
 #include <aws/ecr/model/UpdateRepositoryCreationTemplateResult.h>
 #include <aws/ecr/model/UploadLayerPartResult.h>
@@ -124,6 +130,7 @@ class DeleteRegistryPolicyRequest;
 class DeleteRepositoryRequest;
 class DeleteRepositoryCreationTemplateRequest;
 class DeleteRepositoryPolicyRequest;
+class DeregisterPullTimeUpdateExclusionRequest;
 class DescribeImageReplicationStatusRequest;
 class DescribeImageScanFindingsRequest;
 class DescribeImagesRequest;
@@ -140,7 +147,9 @@ class GetRegistryPolicyRequest;
 class GetRegistryScanningConfigurationRequest;
 class GetRepositoryPolicyRequest;
 class InitiateLayerUploadRequest;
+class ListImageReferrersRequest;
 class ListImagesRequest;
+class ListPullTimeUpdateExclusionsRequest;
 class ListTagsForResourceRequest;
 class PutAccountSettingRequest;
 class PutImageRequest;
@@ -150,11 +159,13 @@ class PutLifecyclePolicyRequest;
 class PutRegistryPolicyRequest;
 class PutRegistryScanningConfigurationRequest;
 class PutReplicationConfigurationRequest;
+class RegisterPullTimeUpdateExclusionRequest;
 class SetRepositoryPolicyRequest;
 class StartImageScanRequest;
 class StartLifecyclePolicyPreviewRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateImageStorageClassRequest;
 class UpdatePullThroughCacheRuleRequest;
 class UpdateRepositoryCreationTemplateRequest;
 class UploadLayerPartRequest;
@@ -176,6 +187,7 @@ typedef Aws::Utils::Outcome<DeleteRegistryPolicyResult, ECRError> DeleteRegistry
 typedef Aws::Utils::Outcome<DeleteRepositoryResult, ECRError> DeleteRepositoryOutcome;
 typedef Aws::Utils::Outcome<DeleteRepositoryCreationTemplateResult, ECRError> DeleteRepositoryCreationTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, ECRError> DeleteRepositoryPolicyOutcome;
+typedef Aws::Utils::Outcome<DeregisterPullTimeUpdateExclusionResult, ECRError> DeregisterPullTimeUpdateExclusionOutcome;
 typedef Aws::Utils::Outcome<DescribeImageReplicationStatusResult, ECRError> DescribeImageReplicationStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeImageScanFindingsResult, ECRError> DescribeImageScanFindingsOutcome;
 typedef Aws::Utils::Outcome<DescribeImagesResult, ECRError> DescribeImagesOutcome;
@@ -192,7 +204,9 @@ typedef Aws::Utils::Outcome<GetRegistryPolicyResult, ECRError> GetRegistryPolicy
 typedef Aws::Utils::Outcome<GetRegistryScanningConfigurationResult, ECRError> GetRegistryScanningConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, ECRError> GetRepositoryPolicyOutcome;
 typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRError> InitiateLayerUploadOutcome;
+typedef Aws::Utils::Outcome<ListImageReferrersResult, ECRError> ListImageReferrersOutcome;
 typedef Aws::Utils::Outcome<ListImagesResult, ECRError> ListImagesOutcome;
+typedef Aws::Utils::Outcome<ListPullTimeUpdateExclusionsResult, ECRError> ListPullTimeUpdateExclusionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECRError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountSettingResult, ECRError> PutAccountSettingOutcome;
 typedef Aws::Utils::Outcome<PutImageResult, ECRError> PutImageOutcome;
@@ -202,11 +216,13 @@ typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, ECRError> PutLifecyclePoli
 typedef Aws::Utils::Outcome<PutRegistryPolicyResult, ECRError> PutRegistryPolicyOutcome;
 typedef Aws::Utils::Outcome<PutRegistryScanningConfigurationResult, ECRError> PutRegistryScanningConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutReplicationConfigurationResult, ECRError> PutReplicationConfigurationOutcome;
+typedef Aws::Utils::Outcome<RegisterPullTimeUpdateExclusionResult, ECRError> RegisterPullTimeUpdateExclusionOutcome;
 typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, ECRError> SetRepositoryPolicyOutcome;
 typedef Aws::Utils::Outcome<StartImageScanResult, ECRError> StartImageScanOutcome;
 typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, ECRError> StartLifecyclePolicyPreviewOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, ECRError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, ECRError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateImageStorageClassResult, ECRError> UpdateImageStorageClassOutcome;
 typedef Aws::Utils::Outcome<UpdatePullThroughCacheRuleResult, ECRError> UpdatePullThroughCacheRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateRepositoryCreationTemplateResult, ECRError> UpdateRepositoryCreationTemplateOutcome;
 typedef Aws::Utils::Outcome<UploadLayerPartResult, ECRError> UploadLayerPartOutcome;
@@ -228,6 +244,7 @@ typedef std::future<DeleteRegistryPolicyOutcome> DeleteRegistryPolicyOutcomeCall
 typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
 typedef std::future<DeleteRepositoryCreationTemplateOutcome> DeleteRepositoryCreationTemplateOutcomeCallable;
 typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
+typedef std::future<DeregisterPullTimeUpdateExclusionOutcome> DeregisterPullTimeUpdateExclusionOutcomeCallable;
 typedef std::future<DescribeImageReplicationStatusOutcome> DescribeImageReplicationStatusOutcomeCallable;
 typedef std::future<DescribeImageScanFindingsOutcome> DescribeImageScanFindingsOutcomeCallable;
 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
@@ -244,7 +261,9 @@ typedef std::future<GetRegistryPolicyOutcome> GetRegistryPolicyOutcomeCallable;
 typedef std::future<GetRegistryScanningConfigurationOutcome> GetRegistryScanningConfigurationOutcomeCallable;
 typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
 typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
+typedef std::future<ListImageReferrersOutcome> ListImageReferrersOutcomeCallable;
 typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+typedef std::future<ListPullTimeUpdateExclusionsOutcome> ListPullTimeUpdateExclusionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
 typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
@@ -254,11 +273,13 @@ typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable
 typedef std::future<PutRegistryPolicyOutcome> PutRegistryPolicyOutcomeCallable;
 typedef std::future<PutRegistryScanningConfigurationOutcome> PutRegistryScanningConfigurationOutcomeCallable;
 typedef std::future<PutReplicationConfigurationOutcome> PutReplicationConfigurationOutcomeCallable;
+typedef std::future<RegisterPullTimeUpdateExclusionOutcome> RegisterPullTimeUpdateExclusionOutcomeCallable;
 typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
 typedef std::future<StartImageScanOutcome> StartImageScanOutcomeCallable;
 typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateImageStorageClassOutcome> UpdateImageStorageClassOutcomeCallable;
 typedef std::future<UpdatePullThroughCacheRuleOutcome> UpdatePullThroughCacheRuleOutcomeCallable;
 typedef std::future<UpdateRepositoryCreationTemplateOutcome> UpdateRepositoryCreationTemplateOutcomeCallable;
 typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
@@ -314,6 +335,10 @@ typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryCreati
 typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRepositoryPolicyResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::DeregisterPullTimeUpdateExclusionRequest&,
+                           const Model::DeregisterPullTimeUpdateExclusionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeregisterPullTimeUpdateExclusionResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::DescribeImageReplicationStatusRequest&,
                            const Model::DescribeImageReplicationStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -366,9 +391,16 @@ typedef std::function<void(const ECRClient*, const Model::GetRepositoryPolicyReq
 typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InitiateLayerUploadResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::ListImageReferrersRequest&, const Model::ListImageReferrersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListImageReferrersResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListImagesResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::ListPullTimeUpdateExclusionsRequest&,
+                           const Model::ListPullTimeUpdateExclusionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPullTimeUpdateExclusionsResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -398,6 +430,10 @@ typedef std::function<void(const ECRClient*, const Model::PutRegistryScanningCon
 typedef std::function<void(const ECRClient*, const Model::PutReplicationConfigurationRequest&,
                            const Model::PutReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutReplicationConfigurationResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::RegisterPullTimeUpdateExclusionRequest&,
+                           const Model::RegisterPullTimeUpdateExclusionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterPullTimeUpdateExclusionResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SetRepositoryPolicyResponseReceivedHandler;
@@ -413,6 +449,9 @@ typedef std::function<void(const ECRClient*, const Model::TagResourceRequest&, c
 typedef std::function<void(const ECRClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::UpdateImageStorageClassRequest&, const Model::UpdateImageStorageClassOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateImageStorageClassResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::UpdatePullThroughCacheRuleRequest&,
                            const Model::UpdatePullThroughCacheRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePullThroughCacheRuleResponseReceivedHandler;

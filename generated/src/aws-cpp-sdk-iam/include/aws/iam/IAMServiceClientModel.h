@@ -43,10 +43,13 @@
 #include <aws/iam/model/DisableOrganizationsRootCredentialsManagementResult.h>
 #include <aws/iam/model/DisableOrganizationsRootSessionsRequest.h>
 #include <aws/iam/model/DisableOrganizationsRootSessionsResult.h>
+#include <aws/iam/model/DisableOutboundWebIdentityFederationRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootCredentialsManagementRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootCredentialsManagementResult.h>
 #include <aws/iam/model/EnableOrganizationsRootSessionsRequest.h>
 #include <aws/iam/model/EnableOrganizationsRootSessionsResult.h>
+#include <aws/iam/model/EnableOutboundWebIdentityFederationRequest.h>
+#include <aws/iam/model/EnableOutboundWebIdentityFederationResult.h>
 #include <aws/iam/model/GenerateCredentialReportRequest.h>
 #include <aws/iam/model/GenerateCredentialReportResult.h>
 #include <aws/iam/model/GenerateOrganizationsAccessReportResult.h>
@@ -62,14 +65,18 @@
 #include <aws/iam/model/GetContextKeysForPrincipalPolicyResult.h>
 #include <aws/iam/model/GetCredentialReportRequest.h>
 #include <aws/iam/model/GetCredentialReportResult.h>
+#include <aws/iam/model/GetDelegationRequestResult.h>
 #include <aws/iam/model/GetGroupPolicyResult.h>
 #include <aws/iam/model/GetGroupResult.h>
+#include <aws/iam/model/GetHumanReadableSummaryResult.h>
 #include <aws/iam/model/GetInstanceProfileResult.h>
 #include <aws/iam/model/GetLoginProfileRequest.h>
 #include <aws/iam/model/GetLoginProfileResult.h>
 #include <aws/iam/model/GetMFADeviceResult.h>
 #include <aws/iam/model/GetOpenIDConnectProviderResult.h>
 #include <aws/iam/model/GetOrganizationsAccessReportResult.h>
+#include <aws/iam/model/GetOutboundWebIdentityFederationInfoRequest.h>
+#include <aws/iam/model/GetOutboundWebIdentityFederationInfoResult.h>
 #include <aws/iam/model/GetPolicyResult.h>
 #include <aws/iam/model/GetPolicyVersionResult.h>
 #include <aws/iam/model/GetRolePolicyResult.h>
@@ -90,6 +97,8 @@
 #include <aws/iam/model/ListAttachedGroupPoliciesResult.h>
 #include <aws/iam/model/ListAttachedRolePoliciesResult.h>
 #include <aws/iam/model/ListAttachedUserPoliciesResult.h>
+#include <aws/iam/model/ListDelegationRequestsRequest.h>
+#include <aws/iam/model/ListDelegationRequestsResult.h>
 #include <aws/iam/model/ListEntitiesForPolicyResult.h>
 #include <aws/iam/model/ListGroupPoliciesResult.h>
 #include <aws/iam/model/ListGroupsForUserResult.h>
@@ -177,9 +186,11 @@ using IAMEndpointProvider = Aws::IAM::Endpoint::IAMEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in IAMClient header */
+class AcceptDelegationRequestRequest;
 class AddClientIDToOpenIDConnectProviderRequest;
 class AddRoleToInstanceProfileRequest;
 class AddUserToGroupRequest;
+class AssociateDelegationRequestRequest;
 class AttachGroupPolicyRequest;
 class AttachRolePolicyRequest;
 class AttachUserPolicyRequest;
@@ -228,9 +239,11 @@ class DetachRolePolicyRequest;
 class DetachUserPolicyRequest;
 class DisableOrganizationsRootCredentialsManagementRequest;
 class DisableOrganizationsRootSessionsRequest;
+class DisableOutboundWebIdentityFederationRequest;
 class EnableMFADeviceRequest;
 class EnableOrganizationsRootCredentialsManagementRequest;
 class EnableOrganizationsRootSessionsRequest;
+class EnableOutboundWebIdentityFederationRequest;
 class GenerateCredentialReportRequest;
 class GenerateOrganizationsAccessReportRequest;
 class GenerateServiceLastAccessedDetailsRequest;
@@ -241,13 +254,16 @@ class GetAccountSummaryRequest;
 class GetContextKeysForCustomPolicyRequest;
 class GetContextKeysForPrincipalPolicyRequest;
 class GetCredentialReportRequest;
+class GetDelegationRequestRequest;
 class GetGroupRequest;
 class GetGroupPolicyRequest;
+class GetHumanReadableSummaryRequest;
 class GetInstanceProfileRequest;
 class GetLoginProfileRequest;
 class GetMFADeviceRequest;
 class GetOpenIDConnectProviderRequest;
 class GetOrganizationsAccessReportRequest;
+class GetOutboundWebIdentityFederationInfoRequest;
 class GetPolicyRequest;
 class GetPolicyVersionRequest;
 class GetRoleRequest;
@@ -265,6 +281,7 @@ class ListAccountAliasesRequest;
 class ListAttachedGroupPoliciesRequest;
 class ListAttachedRolePoliciesRequest;
 class ListAttachedUserPoliciesRequest;
+class ListDelegationRequestsRequest;
 class ListEntitiesForPolicyRequest;
 class ListGroupPoliciesRequest;
 class ListGroupsRequest;
@@ -300,11 +317,13 @@ class PutRolePermissionsBoundaryRequest;
 class PutRolePolicyRequest;
 class PutUserPermissionsBoundaryRequest;
 class PutUserPolicyRequest;
+class RejectDelegationRequestRequest;
 class RemoveClientIDFromOpenIDConnectProviderRequest;
 class RemoveRoleFromInstanceProfileRequest;
 class RemoveUserFromGroupRequest;
 class ResetServiceSpecificCredentialRequest;
 class ResyncMFADeviceRequest;
+class SendDelegationTokenRequest;
 class SetDefaultPolicyVersionRequest;
 class SetSecurityTokenServicePreferencesRequest;
 class SimulateCustomPolicyRequest;
@@ -328,6 +347,7 @@ class UntagUserRequest;
 class UpdateAccessKeyRequest;
 class UpdateAccountPasswordPolicyRequest;
 class UpdateAssumeRolePolicyRequest;
+class UpdateDelegationRequestRequest;
 class UpdateGroupRequest;
 class UpdateLoginProfileRequest;
 class UpdateOpenIDConnectProviderThumbprintRequest;
@@ -345,9 +365,11 @@ class UploadSigningCertificateRequest;
 /* End of service model forward declarations required in IAMClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AcceptDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddClientIDToOpenIDConnectProviderOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddRoleToInstanceProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AddUserToGroupOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AssociateDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AttachGroupPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AttachRolePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> AttachUserPolicyOutcome;
@@ -397,10 +419,12 @@ typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> DetachUserPolicyOutcome;
 typedef Aws::Utils::Outcome<DisableOrganizationsRootCredentialsManagementResult, IAMError>
     DisableOrganizationsRootCredentialsManagementOutcome;
 typedef Aws::Utils::Outcome<DisableOrganizationsRootSessionsResult, IAMError> DisableOrganizationsRootSessionsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> DisableOutboundWebIdentityFederationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> EnableMFADeviceOutcome;
 typedef Aws::Utils::Outcome<EnableOrganizationsRootCredentialsManagementResult, IAMError>
     EnableOrganizationsRootCredentialsManagementOutcome;
 typedef Aws::Utils::Outcome<EnableOrganizationsRootSessionsResult, IAMError> EnableOrganizationsRootSessionsOutcome;
+typedef Aws::Utils::Outcome<EnableOutboundWebIdentityFederationResult, IAMError> EnableOutboundWebIdentityFederationOutcome;
 typedef Aws::Utils::Outcome<GenerateCredentialReportResult, IAMError> GenerateCredentialReportOutcome;
 typedef Aws::Utils::Outcome<GenerateOrganizationsAccessReportResult, IAMError> GenerateOrganizationsAccessReportOutcome;
 typedef Aws::Utils::Outcome<GenerateServiceLastAccessedDetailsResult, IAMError> GenerateServiceLastAccessedDetailsOutcome;
@@ -411,13 +435,16 @@ typedef Aws::Utils::Outcome<GetAccountSummaryResult, IAMError> GetAccountSummary
 typedef Aws::Utils::Outcome<GetContextKeysForCustomPolicyResult, IAMError> GetContextKeysForCustomPolicyOutcome;
 typedef Aws::Utils::Outcome<GetContextKeysForPrincipalPolicyResult, IAMError> GetContextKeysForPrincipalPolicyOutcome;
 typedef Aws::Utils::Outcome<GetCredentialReportResult, IAMError> GetCredentialReportOutcome;
+typedef Aws::Utils::Outcome<GetDelegationRequestResult, IAMError> GetDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<GetGroupResult, IAMError> GetGroupOutcome;
 typedef Aws::Utils::Outcome<GetGroupPolicyResult, IAMError> GetGroupPolicyOutcome;
+typedef Aws::Utils::Outcome<GetHumanReadableSummaryResult, IAMError> GetHumanReadableSummaryOutcome;
 typedef Aws::Utils::Outcome<GetInstanceProfileResult, IAMError> GetInstanceProfileOutcome;
 typedef Aws::Utils::Outcome<GetLoginProfileResult, IAMError> GetLoginProfileOutcome;
 typedef Aws::Utils::Outcome<GetMFADeviceResult, IAMError> GetMFADeviceOutcome;
 typedef Aws::Utils::Outcome<GetOpenIDConnectProviderResult, IAMError> GetOpenIDConnectProviderOutcome;
 typedef Aws::Utils::Outcome<GetOrganizationsAccessReportResult, IAMError> GetOrganizationsAccessReportOutcome;
+typedef Aws::Utils::Outcome<GetOutboundWebIdentityFederationInfoResult, IAMError> GetOutboundWebIdentityFederationInfoOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, IAMError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyVersionResult, IAMError> GetPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<GetRoleResult, IAMError> GetRoleOutcome;
@@ -435,6 +462,7 @@ typedef Aws::Utils::Outcome<ListAccountAliasesResult, IAMError> ListAccountAlias
 typedef Aws::Utils::Outcome<ListAttachedGroupPoliciesResult, IAMError> ListAttachedGroupPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListAttachedRolePoliciesResult, IAMError> ListAttachedRolePoliciesOutcome;
 typedef Aws::Utils::Outcome<ListAttachedUserPoliciesResult, IAMError> ListAttachedUserPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListDelegationRequestsResult, IAMError> ListDelegationRequestsOutcome;
 typedef Aws::Utils::Outcome<ListEntitiesForPolicyResult, IAMError> ListEntitiesForPolicyOutcome;
 typedef Aws::Utils::Outcome<ListGroupPoliciesResult, IAMError> ListGroupPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListGroupsResult, IAMError> ListGroupsOutcome;
@@ -470,11 +498,13 @@ typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutRolePermissionsBoundaryO
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutRolePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutUserPermissionsBoundaryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> PutUserPolicyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> RejectDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> RemoveClientIDFromOpenIDConnectProviderOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> RemoveRoleFromInstanceProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> RemoveUserFromGroupOutcome;
 typedef Aws::Utils::Outcome<ResetServiceSpecificCredentialResult, IAMError> ResetServiceSpecificCredentialOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> ResyncMFADeviceOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> SendDelegationTokenOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> SetDefaultPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> SetSecurityTokenServicePreferencesOutcome;
 typedef Aws::Utils::Outcome<SimulateCustomPolicyResult, IAMError> SimulateCustomPolicyOutcome;
@@ -498,6 +528,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UntagUserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateAccessKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateAccountPasswordPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateAssumeRolePolicyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateLoginProfileOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateOpenIDConnectProviderThumbprintOutcome;
@@ -515,9 +546,11 @@ typedef Aws::Utils::Outcome<UploadSigningCertificateResult, IAMError> UploadSign
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AcceptDelegationRequestOutcome> AcceptDelegationRequestOutcomeCallable;
 typedef std::future<AddClientIDToOpenIDConnectProviderOutcome> AddClientIDToOpenIDConnectProviderOutcomeCallable;
 typedef std::future<AddRoleToInstanceProfileOutcome> AddRoleToInstanceProfileOutcomeCallable;
 typedef std::future<AddUserToGroupOutcome> AddUserToGroupOutcomeCallable;
+typedef std::future<AssociateDelegationRequestOutcome> AssociateDelegationRequestOutcomeCallable;
 typedef std::future<AttachGroupPolicyOutcome> AttachGroupPolicyOutcomeCallable;
 typedef std::future<AttachRolePolicyOutcome> AttachRolePolicyOutcomeCallable;
 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
@@ -566,9 +599,11 @@ typedef std::future<DetachRolePolicyOutcome> DetachRolePolicyOutcomeCallable;
 typedef std::future<DetachUserPolicyOutcome> DetachUserPolicyOutcomeCallable;
 typedef std::future<DisableOrganizationsRootCredentialsManagementOutcome> DisableOrganizationsRootCredentialsManagementOutcomeCallable;
 typedef std::future<DisableOrganizationsRootSessionsOutcome> DisableOrganizationsRootSessionsOutcomeCallable;
+typedef std::future<DisableOutboundWebIdentityFederationOutcome> DisableOutboundWebIdentityFederationOutcomeCallable;
 typedef std::future<EnableMFADeviceOutcome> EnableMFADeviceOutcomeCallable;
 typedef std::future<EnableOrganizationsRootCredentialsManagementOutcome> EnableOrganizationsRootCredentialsManagementOutcomeCallable;
 typedef std::future<EnableOrganizationsRootSessionsOutcome> EnableOrganizationsRootSessionsOutcomeCallable;
+typedef std::future<EnableOutboundWebIdentityFederationOutcome> EnableOutboundWebIdentityFederationOutcomeCallable;
 typedef std::future<GenerateCredentialReportOutcome> GenerateCredentialReportOutcomeCallable;
 typedef std::future<GenerateOrganizationsAccessReportOutcome> GenerateOrganizationsAccessReportOutcomeCallable;
 typedef std::future<GenerateServiceLastAccessedDetailsOutcome> GenerateServiceLastAccessedDetailsOutcomeCallable;
@@ -579,13 +614,16 @@ typedef std::future<GetAccountSummaryOutcome> GetAccountSummaryOutcomeCallable;
 typedef std::future<GetContextKeysForCustomPolicyOutcome> GetContextKeysForCustomPolicyOutcomeCallable;
 typedef std::future<GetContextKeysForPrincipalPolicyOutcome> GetContextKeysForPrincipalPolicyOutcomeCallable;
 typedef std::future<GetCredentialReportOutcome> GetCredentialReportOutcomeCallable;
+typedef std::future<GetDelegationRequestOutcome> GetDelegationRequestOutcomeCallable;
 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
 typedef std::future<GetGroupPolicyOutcome> GetGroupPolicyOutcomeCallable;
+typedef std::future<GetHumanReadableSummaryOutcome> GetHumanReadableSummaryOutcomeCallable;
 typedef std::future<GetInstanceProfileOutcome> GetInstanceProfileOutcomeCallable;
 typedef std::future<GetLoginProfileOutcome> GetLoginProfileOutcomeCallable;
 typedef std::future<GetMFADeviceOutcome> GetMFADeviceOutcomeCallable;
 typedef std::future<GetOpenIDConnectProviderOutcome> GetOpenIDConnectProviderOutcomeCallable;
 typedef std::future<GetOrganizationsAccessReportOutcome> GetOrganizationsAccessReportOutcomeCallable;
+typedef std::future<GetOutboundWebIdentityFederationInfoOutcome> GetOutboundWebIdentityFederationInfoOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
 typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
@@ -603,6 +641,7 @@ typedef std::future<ListAccountAliasesOutcome> ListAccountAliasesOutcomeCallable
 typedef std::future<ListAttachedGroupPoliciesOutcome> ListAttachedGroupPoliciesOutcomeCallable;
 typedef std::future<ListAttachedRolePoliciesOutcome> ListAttachedRolePoliciesOutcomeCallable;
 typedef std::future<ListAttachedUserPoliciesOutcome> ListAttachedUserPoliciesOutcomeCallable;
+typedef std::future<ListDelegationRequestsOutcome> ListDelegationRequestsOutcomeCallable;
 typedef std::future<ListEntitiesForPolicyOutcome> ListEntitiesForPolicyOutcomeCallable;
 typedef std::future<ListGroupPoliciesOutcome> ListGroupPoliciesOutcomeCallable;
 typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
@@ -638,11 +677,13 @@ typedef std::future<PutRolePermissionsBoundaryOutcome> PutRolePermissionsBoundar
 typedef std::future<PutRolePolicyOutcome> PutRolePolicyOutcomeCallable;
 typedef std::future<PutUserPermissionsBoundaryOutcome> PutUserPermissionsBoundaryOutcomeCallable;
 typedef std::future<PutUserPolicyOutcome> PutUserPolicyOutcomeCallable;
+typedef std::future<RejectDelegationRequestOutcome> RejectDelegationRequestOutcomeCallable;
 typedef std::future<RemoveClientIDFromOpenIDConnectProviderOutcome> RemoveClientIDFromOpenIDConnectProviderOutcomeCallable;
 typedef std::future<RemoveRoleFromInstanceProfileOutcome> RemoveRoleFromInstanceProfileOutcomeCallable;
 typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
 typedef std::future<ResetServiceSpecificCredentialOutcome> ResetServiceSpecificCredentialOutcomeCallable;
 typedef std::future<ResyncMFADeviceOutcome> ResyncMFADeviceOutcomeCallable;
+typedef std::future<SendDelegationTokenOutcome> SendDelegationTokenOutcomeCallable;
 typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
 typedef std::future<SetSecurityTokenServicePreferencesOutcome> SetSecurityTokenServicePreferencesOutcomeCallable;
 typedef std::future<SimulateCustomPolicyOutcome> SimulateCustomPolicyOutcomeCallable;
@@ -666,6 +707,7 @@ typedef std::future<UntagUserOutcome> UntagUserOutcomeCallable;
 typedef std::future<UpdateAccessKeyOutcome> UpdateAccessKeyOutcomeCallable;
 typedef std::future<UpdateAccountPasswordPolicyOutcome> UpdateAccountPasswordPolicyOutcomeCallable;
 typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
+typedef std::future<UpdateDelegationRequestOutcome> UpdateDelegationRequestOutcomeCallable;
 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
 typedef std::future<UpdateLoginProfileOutcome> UpdateLoginProfileOutcomeCallable;
 typedef std::future<UpdateOpenIDConnectProviderThumbprintOutcome> UpdateOpenIDConnectProviderThumbprintOutcomeCallable;
@@ -686,6 +728,9 @@ typedef std::future<UploadSigningCertificateOutcome> UploadSigningCertificateOut
 class IAMClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const IAMClient*, const Model::AcceptDelegationRequestRequest&, const Model::AcceptDelegationRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AcceptDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::AddClientIDToOpenIDConnectProviderRequest&,
                            const Model::AddClientIDToOpenIDConnectProviderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -696,6 +741,9 @@ typedef std::function<void(const IAMClient*, const Model::AddRoleToInstanceProfi
 typedef std::function<void(const IAMClient*, const Model::AddUserToGroupRequest&, const Model::AddUserToGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddUserToGroupResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::AssociateDelegationRequestRequest&,
+                           const Model::AssociateDelegationRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::AttachGroupPolicyRequest&, const Model::AttachGroupPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AttachGroupPolicyResponseReceivedHandler;
@@ -846,6 +894,10 @@ typedef std::function<void(const IAMClient*, const Model::DisableOrganizationsRo
                            const Model::DisableOrganizationsRootSessionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisableOrganizationsRootSessionsResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::DisableOutboundWebIdentityFederationRequest&,
+                           const Model::DisableOutboundWebIdentityFederationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisableOutboundWebIdentityFederationResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::EnableMFADeviceRequest&, const Model::EnableMFADeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableMFADeviceResponseReceivedHandler;
@@ -857,6 +909,10 @@ typedef std::function<void(const IAMClient*, const Model::EnableOrganizationsRoo
                            const Model::EnableOrganizationsRootSessionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableOrganizationsRootSessionsResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::EnableOutboundWebIdentityFederationRequest&,
+                           const Model::EnableOutboundWebIdentityFederationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EnableOutboundWebIdentityFederationResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GenerateCredentialReportRequest&, const Model::GenerateCredentialReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GenerateCredentialReportResponseReceivedHandler;
@@ -892,12 +948,18 @@ typedef std::function<void(const IAMClient*, const Model::GetContextKeysForPrinc
 typedef std::function<void(const IAMClient*, const Model::GetCredentialReportRequest&, const Model::GetCredentialReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCredentialReportResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::GetDelegationRequestRequest&, const Model::GetDelegationRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGroupResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetGroupPolicyRequest&, const Model::GetGroupPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGroupPolicyResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::GetHumanReadableSummaryRequest&, const Model::GetHumanReadableSummaryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetHumanReadableSummaryResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetInstanceProfileRequest&, const Model::GetInstanceProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInstanceProfileResponseReceivedHandler;
@@ -914,6 +976,10 @@ typedef std::function<void(const IAMClient*, const Model::GetOrganizationsAccess
                            const Model::GetOrganizationsAccessReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOrganizationsAccessReportResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::GetOutboundWebIdentityFederationInfoRequest&,
+                           const Model::GetOutboundWebIdentityFederationInfoOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetOutboundWebIdentityFederationInfoResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyResponseReceivedHandler;
@@ -968,6 +1034,9 @@ typedef std::function<void(const IAMClient*, const Model::ListAttachedRolePolici
 typedef std::function<void(const IAMClient*, const Model::ListAttachedUserPoliciesRequest&, const Model::ListAttachedUserPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAttachedUserPoliciesResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::ListDelegationRequestsRequest&, const Model::ListDelegationRequestsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDelegationRequestsResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::ListEntitiesForPolicyRequest&, const Model::ListEntitiesForPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEntitiesForPolicyResponseReceivedHandler;
@@ -1076,6 +1145,9 @@ typedef std::function<void(const IAMClient*, const Model::PutUserPermissionsBoun
 typedef std::function<void(const IAMClient*, const Model::PutUserPolicyRequest&, const Model::PutUserPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutUserPolicyResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::RejectDelegationRequestRequest&, const Model::RejectDelegationRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RejectDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::RemoveClientIDFromOpenIDConnectProviderRequest&,
                            const Model::RemoveClientIDFromOpenIDConnectProviderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1094,6 +1166,9 @@ typedef std::function<void(const IAMClient*, const Model::ResetServiceSpecificCr
 typedef std::function<void(const IAMClient*, const Model::ResyncMFADeviceRequest&, const Model::ResyncMFADeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ResyncMFADeviceResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::SendDelegationTokenRequest&, const Model::SendDelegationTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendDelegationTokenResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::SetDefaultPolicyVersionRequest&, const Model::SetDefaultPolicyVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SetDefaultPolicyVersionResponseReceivedHandler;
@@ -1164,6 +1239,9 @@ typedef std::function<void(const IAMClient*, const Model::UpdateAccountPasswordP
 typedef std::function<void(const IAMClient*, const Model::UpdateAssumeRolePolicyRequest&, const Model::UpdateAssumeRolePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAssumeRolePolicyResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::UpdateDelegationRequestRequest&, const Model::UpdateDelegationRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDelegationRequestResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateGroupResponseReceivedHandler;

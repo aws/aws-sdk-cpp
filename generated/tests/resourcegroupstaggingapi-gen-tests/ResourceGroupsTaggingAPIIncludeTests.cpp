@@ -28,6 +28,9 @@
 #include <aws/resourcegroupstaggingapi/model/GetTagValuesRequest.h>
 #include <aws/resourcegroupstaggingapi/model/GetTagValuesResult.h>
 #include <aws/resourcegroupstaggingapi/model/GroupByAttribute.h>
+#include <aws/resourcegroupstaggingapi/model/ListRequiredTagsRequest.h>
+#include <aws/resourcegroupstaggingapi/model/ListRequiredTagsResult.h>
+#include <aws/resourcegroupstaggingapi/model/RequiredTag.h>
 #include <aws/resourcegroupstaggingapi/model/ResourceTagMapping.h>
 #include <aws/resourcegroupstaggingapi/model/StartReportCreationRequest.h>
 #include <aws/resourcegroupstaggingapi/model/StartReportCreationResult.h>

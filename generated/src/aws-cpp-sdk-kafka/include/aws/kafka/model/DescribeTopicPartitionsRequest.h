@@ -1,0 +1,136 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/KafkaRequest.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace Kafka {
+namespace Model {
+
+/**
+ */
+class DescribeTopicPartitionsRequest : public KafkaRequest {
+ public:
+  AWS_KAFKA_API DescribeTopicPartitionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeTopicPartitions"; }
+
+  AWS_KAFKA_API Aws::String SerializePayload() const override;
+
+  AWS_KAFKA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+  /**
+   *
+          <p>The Amazon Resource Name (ARN) that uniquely identifies the
+   * cluster.</p>
+
+   */
+  inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+  inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+  template <typename ClusterArnT = Aws::String>
+  void SetClusterArn(ClusterArnT&& value) {
+    m_clusterArnHasBeenSet = true;
+    m_clusterArn = std::forward<ClusterArnT>(value);
+  }
+  template <typename ClusterArnT = Aws::String>
+  DescribeTopicPartitionsRequest& WithClusterArn(ClusterArnT&& value) {
+    SetClusterArn(std::forward<ClusterArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>The Kafka topic name that uniquely identifies the topic.</p>
+
+   *
+   */
+  inline const Aws::String& GetTopicName() const { return m_topicName; }
+  inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
+  template <typename TopicNameT = Aws::String>
+  void SetTopicName(TopicNameT&& value) {
+    m_topicNameHasBeenSet = true;
+    m_topicName = std::forward<TopicNameT>(value);
+  }
+  template <typename TopicNameT = Aws::String>
+  DescribeTopicPartitionsRequest& WithTopicName(TopicNameT&& value) {
+    SetTopicName(std::forward<TopicNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>The maximum number of results to return in the response. If
+   * there are more results, the response includes a NextToken parameter.</p>
+
+   *
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeTopicPartitionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>The paginated results marker. When the result of the operation
+   * is truncated, the call returns NextToken in the response.
+          To get
+   * the next batch, provide this token in your next request.</p>
+
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeTopicPartitionsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clusterArn;
+  bool m_clusterArnHasBeenSet = false;
+
+  Aws::String m_topicName;
+  bool m_topicNameHasBeenSet = false;
+
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

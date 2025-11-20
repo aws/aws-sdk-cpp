@@ -20,6 +20,7 @@
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/SnapStart.h>
+#include <aws/lambda/model/TenancyConfig.h>
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/lambda/model/VpcConfig.h>
 
@@ -568,6 +569,26 @@ class CreateFunctionRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for multi-tenant applications that use Lambda functions.
+   * Defines tenant isolation settings and resource allocations. Required for
+   * functions supporting multiple tenants.</p>
+   */
+  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
+  inline bool TenancyConfigHasBeenSet() const { return m_tenancyConfigHasBeenSet; }
+  template <typename TenancyConfigT = TenancyConfig>
+  void SetTenancyConfig(TenancyConfigT&& value) {
+    m_tenancyConfigHasBeenSet = true;
+    m_tenancyConfig = std::forward<TenancyConfigT>(value);
+  }
+  template <typename TenancyConfigT = TenancyConfig>
+  CreateFunctionRequest& WithTenancyConfig(TenancyConfigT&& value) {
+    SetTenancyConfig(std::forward<TenancyConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
   bool m_functionNameHasBeenSet = false;
@@ -640,6 +661,9 @@ class CreateFunctionRequest : public LambdaRequest {
 
   LoggingConfig m_loggingConfig;
   bool m_loggingConfigHasBeenSet = false;
+
+  TenancyConfig m_tenancyConfig;
+  bool m_tenancyConfigHasBeenSet = false;
 };
 
 }  // namespace Model

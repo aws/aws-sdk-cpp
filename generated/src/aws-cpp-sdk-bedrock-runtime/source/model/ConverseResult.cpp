@@ -49,6 +49,10 @@ ConverseResult& ConverseResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("serviceTier")) {
+    m_serviceTier = jsonValue.GetObject("serviceTier");
+    m_serviceTierHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

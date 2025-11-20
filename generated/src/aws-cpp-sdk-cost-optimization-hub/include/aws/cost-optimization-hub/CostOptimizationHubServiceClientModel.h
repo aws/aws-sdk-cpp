@@ -22,6 +22,7 @@
 #include <aws/cost-optimization-hub/model/GetPreferencesRequest.h>
 #include <aws/cost-optimization-hub/model/GetPreferencesResult.h>
 #include <aws/cost-optimization-hub/model/GetRecommendationResult.h>
+#include <aws/cost-optimization-hub/model/ListEfficiencyMetricsResult.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesRequest.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesResult.h>
 #include <aws/cost-optimization-hub/model/ListRecommendationSummariesResult.h>
@@ -65,6 +66,7 @@ namespace Model {
 /* Service model forward declarations required in CostOptimizationHubClient header */
 class GetPreferencesRequest;
 class GetRecommendationRequest;
+class ListEfficiencyMetricsRequest;
 class ListEnrollmentStatusesRequest;
 class ListRecommendationSummariesRequest;
 class ListRecommendationsRequest;
@@ -75,6 +77,7 @@ class UpdatePreferencesRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<GetPreferencesResult, CostOptimizationHubError> GetPreferencesOutcome;
 typedef Aws::Utils::Outcome<GetRecommendationResult, CostOptimizationHubError> GetRecommendationOutcome;
+typedef Aws::Utils::Outcome<ListEfficiencyMetricsResult, CostOptimizationHubError> ListEfficiencyMetricsOutcome;
 typedef Aws::Utils::Outcome<ListEnrollmentStatusesResult, CostOptimizationHubError> ListEnrollmentStatusesOutcome;
 typedef Aws::Utils::Outcome<ListRecommendationSummariesResult, CostOptimizationHubError> ListRecommendationSummariesOutcome;
 typedef Aws::Utils::Outcome<ListRecommendationsResult, CostOptimizationHubError> ListRecommendationsOutcome;
@@ -85,6 +88,7 @@ typedef Aws::Utils::Outcome<UpdatePreferencesResult, CostOptimizationHubError> U
 /* Service model Outcome callable definitions */
 typedef std::future<GetPreferencesOutcome> GetPreferencesOutcomeCallable;
 typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
+typedef std::future<ListEfficiencyMetricsOutcome> ListEfficiencyMetricsOutcomeCallable;
 typedef std::future<ListEnrollmentStatusesOutcome> ListEnrollmentStatusesOutcomeCallable;
 typedef std::future<ListRecommendationSummariesOutcome> ListRecommendationSummariesOutcomeCallable;
 typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
@@ -102,6 +106,9 @@ typedef std::function<void(const CostOptimizationHubClient*, const Model::GetPre
 typedef std::function<void(const CostOptimizationHubClient*, const Model::GetRecommendationRequest&, const Model::GetRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRecommendationResponseReceivedHandler;
+typedef std::function<void(const CostOptimizationHubClient*, const Model::ListEfficiencyMetricsRequest&,
+                           const Model::ListEfficiencyMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEfficiencyMetricsResponseReceivedHandler;
 typedef std::function<void(const CostOptimizationHubClient*, const Model::ListEnrollmentStatusesRequest&,
                            const Model::ListEnrollmentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEnrollmentStatusesResponseReceivedHandler;

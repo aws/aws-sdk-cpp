@@ -36,6 +36,24 @@ class BatchCreateRumMetricDefinitionsError {
 
   ///@{
   /**
+   * <p>The metric definition that caused this error.</p>
+   */
+  inline const MetricDefinitionRequest& GetMetricDefinition() const { return m_metricDefinition; }
+  inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
+  template <typename MetricDefinitionT = MetricDefinitionRequest>
+  void SetMetricDefinition(MetricDefinitionT&& value) {
+    m_metricDefinitionHasBeenSet = true;
+    m_metricDefinition = std::forward<MetricDefinitionT>(value);
+  }
+  template <typename MetricDefinitionT = MetricDefinitionRequest>
+  BatchCreateRumMetricDefinitionsError& WithMetricDefinition(MetricDefinitionT&& value) {
+    SetMetricDefinition(std::forward<MetricDefinitionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error code.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
@@ -69,33 +87,15 @@ class BatchCreateRumMetricDefinitionsError {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The metric definition that caused this error.</p>
-   */
-  inline const MetricDefinitionRequest& GetMetricDefinition() const { return m_metricDefinition; }
-  inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
-  template <typename MetricDefinitionT = MetricDefinitionRequest>
-  void SetMetricDefinition(MetricDefinitionT&& value) {
-    m_metricDefinitionHasBeenSet = true;
-    m_metricDefinition = std::forward<MetricDefinitionT>(value);
-  }
-  template <typename MetricDefinitionT = MetricDefinitionRequest>
-  BatchCreateRumMetricDefinitionsError& WithMetricDefinition(MetricDefinitionT&& value) {
-    SetMetricDefinition(std::forward<MetricDefinitionT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  MetricDefinitionRequest m_metricDefinition;
+  bool m_metricDefinitionHasBeenSet = false;
+
   Aws::String m_errorCode;
   bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
   bool m_errorMessageHasBeenSet = false;
-
-  MetricDefinitionRequest m_metricDefinition;
-  bool m_metricDefinitionHasBeenSet = false;
 };
 
 }  // namespace Model

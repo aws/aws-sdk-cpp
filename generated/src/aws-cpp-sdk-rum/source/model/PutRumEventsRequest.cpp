@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String PutRumEventsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_aliasHasBeenSet) {
-    payload.WithString("Alias", m_alias);
+  if (m_batchIdHasBeenSet) {
+    payload.WithString("BatchId", m_batchId);
   }
 
   if (m_appMonitorDetailsHasBeenSet) {
     payload.WithObject("AppMonitorDetails", m_appMonitorDetails.Jsonize());
   }
 
-  if (m_batchIdHasBeenSet) {
-    payload.WithString("BatchId", m_batchId);
+  if (m_userDetailsHasBeenSet) {
+    payload.WithObject("UserDetails", m_userDetails.Jsonize());
   }
 
   if (m_rumEventsHasBeenSet) {
@@ -35,8 +35,8 @@ Aws::String PutRumEventsRequest::SerializePayload() const {
     payload.WithArray("RumEvents", std::move(rumEventsJsonList));
   }
 
-  if (m_userDetailsHasBeenSet) {
-    payload.WithObject("UserDetails", m_userDetails.Jsonize());
+  if (m_aliasHasBeenSet) {
+    payload.WithString("Alias", m_alias);
   }
 
   return payload.View().WriteReadable();

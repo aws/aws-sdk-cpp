@@ -115,6 +115,24 @@ class CreateVpnConnectionRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+   */
+  inline const Aws::String& GetVpnConcentratorId() const { return m_vpnConcentratorId; }
+  inline bool VpnConcentratorIdHasBeenSet() const { return m_vpnConcentratorIdHasBeenSet; }
+  template <typename VpnConcentratorIdT = Aws::String>
+  void SetVpnConcentratorId(VpnConcentratorIdT&& value) {
+    m_vpnConcentratorIdHasBeenSet = true;
+    m_vpnConcentratorId = std::forward<VpnConcentratorIdT>(value);
+  }
+  template <typename VpnConcentratorIdT = Aws::String>
+  CreateVpnConnectionRequest& WithVpnConcentratorId(VpnConcentratorIdT&& value) {
+    SetVpnConcentratorId(std::forward<VpnConcentratorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to apply to the VPN connection.</p>
    */
   inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
@@ -205,6 +223,9 @@ class CreateVpnConnectionRequest : public EC2Request {
 
   Aws::String m_transitGatewayId;
   bool m_transitGatewayIdHasBeenSet = false;
+
+  Aws::String m_vpnConcentratorId;
+  bool m_vpnConcentratorIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_tagSpecificationsHasBeenSet = false;

@@ -33,9 +33,9 @@ class StartReportCreationRequest : public ResourceGroupsTaggingAPIRequest {
   ///@{
   /**
    * <p>The name of the Amazon S3 bucket where the report will be stored; for
-   * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
-   * S3 bucket requirements, including an example bucket policy, see the example S3
-   * bucket policy on this page.</p>
+   * example:</p> <p> <code>amzn-s3-demo-bucket</code> </p> <p>For more information
+   * on S3 bucket requirements, including an example bucket policy, see the example
+   * Amazon S3 bucket policy on this page.</p>
    */
   inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
   inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }

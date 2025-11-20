@@ -133,6 +133,13 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator=(const Aws::A
     m_encryptionKeyType = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("EncryptionKeyType"));
     m_encryptionKeyTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScanResults")) {
+    Aws::Utils::Array<JsonView> scanResultsJsonList = jsonValue.GetArray("ScanResults");
+    for (unsigned scanResultsIndex = 0; scanResultsIndex < scanResultsJsonList.GetLength(); ++scanResultsIndex) {
+      m_scanResults.push_back(scanResultsJsonList[scanResultsIndex].AsObject());
+    }
+    m_scanResultsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

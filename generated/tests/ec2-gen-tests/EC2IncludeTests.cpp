@@ -170,7 +170,11 @@
 #include <aws/ec2/model/AutoAcceptSharedAssociationsValue.h>
 #include <aws/ec2/model/AutoAcceptSharedAttachmentsValue.h>
 #include <aws/ec2/model/AutoPlacement.h>
+#include <aws/ec2/model/AutoProvisionZonesState.h>
+#include <aws/ec2/model/AutoScalingIpsState.h>
+#include <aws/ec2/model/AvailabilityMode.h>
 #include <aws/ec2/model/AvailabilityZone.h>
+#include <aws/ec2/model/AvailabilityZoneAddress.h>
 #include <aws/ec2/model/AvailabilityZoneMessage.h>
 #include <aws/ec2/model/AvailabilityZoneOptInStatus.h>
 #include <aws/ec2/model/AvailabilityZoneState.h>
@@ -387,6 +391,8 @@
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenRequest.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
+#include <aws/ec2/model/CreateIpamPolicyRequest.h>
+#include <aws/ec2/model/CreateIpamPolicyResponse.h>
 #include <aws/ec2/model/CreateIpamPoolRequest.h>
 #include <aws/ec2/model/CreateIpamPoolResponse.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
@@ -535,6 +541,8 @@
 #include <aws/ec2/model/CreateVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/CreateVpcRequest.h>
 #include <aws/ec2/model/CreateVpcResponse.h>
+#include <aws/ec2/model/CreateVpnConcentratorRequest.h>
+#include <aws/ec2/model/CreateVpnConcentratorResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionRequest.h>
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionRouteRequest.h>
@@ -590,6 +598,8 @@
 #include <aws/ec2/model/DeleteInternetGatewayRequest.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenResponse.h>
+#include <aws/ec2/model/DeleteIpamPolicyRequest.h>
+#include <aws/ec2/model/DeleteIpamPolicyResponse.h>
 #include <aws/ec2/model/DeleteIpamPoolRequest.h>
 #include <aws/ec2/model/DeleteIpamPoolResponse.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
@@ -713,6 +723,8 @@
 #include <aws/ec2/model/DeleteVpcPeeringConnectionRequest.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DeleteVpcRequest.h>
+#include <aws/ec2/model/DeleteVpnConcentratorRequest.h>
+#include <aws/ec2/model/DeleteVpnConcentratorResponse.h>
 #include <aws/ec2/model/DeleteVpnConnectionRequest.h>
 #include <aws/ec2/model/DeleteVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/DeleteVpnGatewayRequest.h>
@@ -883,6 +895,8 @@
 #include <aws/ec2/model/DescribeIpamByoasnResponse.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensRequest.h>
 #include <aws/ec2/model/DescribeIpamExternalResourceVerificationTokensResponse.h>
+#include <aws/ec2/model/DescribeIpamPoliciesRequest.h>
+#include <aws/ec2/model/DescribeIpamPoliciesResponse.h>
 #include <aws/ec2/model/DescribeIpamPoolsRequest.h>
 #include <aws/ec2/model/DescribeIpamPoolsResponse.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolverTargetsRequest.h>
@@ -1091,6 +1105,8 @@
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsRequest.h>
+#include <aws/ec2/model/DescribeVpnConcentratorsResponse.h>
 #include <aws/ec2/model/DescribeVpnConnectionsRequest.h>
 #include <aws/ec2/model/DescribeVpnConnectionsResponse.h>
 #include <aws/ec2/model/DescribeVpnGatewaysRequest.h>
@@ -1145,6 +1161,8 @@
 #include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
+#include <aws/ec2/model/DisableIpamPolicyRequest.h>
+#include <aws/ec2/model/DisableIpamPolicyResponse.h>
 #include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
 #include <aws/ec2/model/DisableRouteServerPropagationResponse.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
@@ -1269,6 +1287,8 @@
 #include <aws/ec2/model/EnableInstanceSqlHaStandbyDetectionsResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
+#include <aws/ec2/model/EnableIpamPolicyRequest.h>
+#include <aws/ec2/model/EnableIpamPolicyResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingRequest.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingResponse.h>
 #include <aws/ec2/model/EnableRouteServerPropagationRequest.h>
@@ -1400,6 +1420,8 @@
 #include <aws/ec2/model/GetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/GetEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/GetEnabledIpamPolicyRequest.h>
+#include <aws/ec2/model/GetEnabledIpamPolicyResponse.h>
 #include <aws/ec2/model/GetFlowLogsIntegrationTemplateRequest.h>
 #include <aws/ec2/model/GetFlowLogsIntegrationTemplateResponse.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationRequest.h>
@@ -1426,6 +1448,10 @@
 #include <aws/ec2/model/GetIpamDiscoveredPublicAddressesResponse.h>
 #include <aws/ec2/model/GetIpamDiscoveredResourceCidrsRequest.h>
 #include <aws/ec2/model/GetIpamDiscoveredResourceCidrsResponse.h>
+#include <aws/ec2/model/GetIpamPolicyAllocationRulesRequest.h>
+#include <aws/ec2/model/GetIpamPolicyAllocationRulesResponse.h>
+#include <aws/ec2/model/GetIpamPolicyOrganizationTargetsRequest.h>
+#include <aws/ec2/model/GetIpamPolicyOrganizationTargetsResponse.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsRequest.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsResponse.h>
 #include <aws/ec2/model/GetIpamPoolCidrsRequest.h>
@@ -1678,6 +1704,14 @@
 #include <aws/ec2/model/IpamOperatingRegion.h>
 #include <aws/ec2/model/IpamOrganizationalUnitExclusion.h>
 #include <aws/ec2/model/IpamOverlapStatus.h>
+#include <aws/ec2/model/IpamPolicy.h>
+#include <aws/ec2/model/IpamPolicyAllocationRule.h>
+#include <aws/ec2/model/IpamPolicyAllocationRuleRequest.h>
+#include <aws/ec2/model/IpamPolicyDocument.h>
+#include <aws/ec2/model/IpamPolicyManagedBy.h>
+#include <aws/ec2/model/IpamPolicyOrganizationTarget.h>
+#include <aws/ec2/model/IpamPolicyResourceType.h>
+#include <aws/ec2/model/IpamPolicyState.h>
 #include <aws/ec2/model/IpamPool.h>
 #include <aws/ec2/model/IpamPoolAllocation.h>
 #include <aws/ec2/model/IpamPoolAllocationResourceType.h>
@@ -1903,6 +1937,8 @@
 #include <aws/ec2/model/ModifyInstanceNetworkPerformanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
+#include <aws/ec2/model/ModifyIpamPolicyAllocationRulesRequest.h>
+#include <aws/ec2/model/ModifyIpamPolicyAllocationRulesResponse.h>
 #include <aws/ec2/model/ModifyIpamPoolRequest.h>
 #include <aws/ec2/model/ModifyIpamPoolResponse.h>
 #include <aws/ec2/model/ModifyIpamPrefixListResolverRequest.h>
@@ -2664,6 +2700,8 @@
 #include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
 #include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcTenancy.h>
+#include <aws/ec2/model/VpnConcentrator.h>
+#include <aws/ec2/model/VpnConcentratorType.h>
 #include <aws/ec2/model/VpnConnection.h>
 #include <aws/ec2/model/VpnConnectionDeviceType.h>
 #include <aws/ec2/model/VpnConnectionOptions.h>

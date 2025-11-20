@@ -24,6 +24,7 @@ static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int SCAN_ELIGIBILITY_EXPIRED_HASH = HashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
 static const int FINDINGS_UNAVAILABLE_HASH = HashingUtils::HashString("FINDINGS_UNAVAILABLE");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
+static const int IMAGE_ARCHIVED_HASH = HashingUtils::HashString("IMAGE_ARCHIVED");
 
 ScanStatus GetScanStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ ScanStatus GetScanStatusForName(const Aws::String& name) {
     return ScanStatus::FINDINGS_UNAVAILABLE;
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return ScanStatus::LIMIT_EXCEEDED;
+  } else if (hashCode == IMAGE_ARCHIVED_HASH) {
+    return ScanStatus::IMAGE_ARCHIVED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForScanStatus(ScanStatus enumValue) {
       return "FINDINGS_UNAVAILABLE";
     case ScanStatus::LIMIT_EXCEEDED:
       return "LIMIT_EXCEEDED";
+    case ScanStatus::IMAGE_ARCHIVED:
+      return "IMAGE_ARCHIVED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

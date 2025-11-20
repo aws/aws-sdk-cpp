@@ -118,6 +118,53 @@ class AssociateNatGatewayAddressRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only: The Availability Zone where you want to
+   * associate an Elastic IP address (EIP). The regional NAT gateway uses a separate
+   * EIP in each AZ to handle outbound NAT traffic from that AZ.</p> <p>A regional
+   * NAT gateway is a single NAT Gateway that works across multiple availability
+   * zones (AZs) in your VPC, providing redundancy, scalability and availability
+   * across all the AZs in a Region.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  AssociateNatGatewayAddressRequest& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only: The ID of the Availability Zone where you
+   * want to associate an Elastic IP address (EIP). The regional NAT gateway uses a
+   * separate EIP in each AZ to handle outbound NAT traffic from that AZ. Use this
+   * instead of AvailabilityZone for consistent identification of AZs across Amazon
+   * Web Services Regions. </p> <p>A regional NAT gateway is a single NAT Gateway
+   * that works across multiple availability zones (AZs) in your VPC, providing
+   * redundancy, scalability and availability across all the AZs in a Region.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  AssociateNatGatewayAddressRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_natGatewayId;
   bool m_natGatewayIdHasBeenSet = false;
@@ -130,6 +177,12 @@ class AssociateNatGatewayAddressRequest : public EC2Request {
 
   bool m_dryRun{false};
   bool m_dryRunHasBeenSet = false;
+
+  Aws::String m_availabilityZone;
+  bool m_availabilityZoneHasBeenSet = false;
+
+  Aws::String m_availabilityZoneId;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

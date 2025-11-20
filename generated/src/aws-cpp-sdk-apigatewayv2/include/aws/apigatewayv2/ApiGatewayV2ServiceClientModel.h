@@ -27,6 +27,10 @@
 #include <aws/apigatewayv2/model/CreateIntegrationResponseResult.h>
 #include <aws/apigatewayv2/model/CreateIntegrationResult.h>
 #include <aws/apigatewayv2/model/CreateModelResult.h>
+#include <aws/apigatewayv2/model/CreatePortalProductResult.h>
+#include <aws/apigatewayv2/model/CreatePortalResult.h>
+#include <aws/apigatewayv2/model/CreateProductPageResult.h>
+#include <aws/apigatewayv2/model/CreateProductRestEndpointPageResult.h>
 #include <aws/apigatewayv2/model/CreateRouteResponseResult.h>
 #include <aws/apigatewayv2/model/CreateRouteResult.h>
 #include <aws/apigatewayv2/model/CreateRoutingRuleResult.h>
@@ -53,6 +57,11 @@
 #include <aws/apigatewayv2/model/GetModelResult.h>
 #include <aws/apigatewayv2/model/GetModelTemplateResult.h>
 #include <aws/apigatewayv2/model/GetModelsResult.h>
+#include <aws/apigatewayv2/model/GetPortalProductResult.h>
+#include <aws/apigatewayv2/model/GetPortalProductSharingPolicyResult.h>
+#include <aws/apigatewayv2/model/GetPortalResult.h>
+#include <aws/apigatewayv2/model/GetProductPageResult.h>
+#include <aws/apigatewayv2/model/GetProductRestEndpointPageResult.h>
 #include <aws/apigatewayv2/model/GetRouteResponseResult.h>
 #include <aws/apigatewayv2/model/GetRouteResponsesResult.h>
 #include <aws/apigatewayv2/model/GetRouteResult.h>
@@ -65,7 +74,16 @@
 #include <aws/apigatewayv2/model/GetVpcLinksRequest.h>
 #include <aws/apigatewayv2/model/GetVpcLinksResult.h>
 #include <aws/apigatewayv2/model/ImportApiResult.h>
+#include <aws/apigatewayv2/model/ListPortalProductsRequest.h>
+#include <aws/apigatewayv2/model/ListPortalProductsResult.h>
+#include <aws/apigatewayv2/model/ListPortalsRequest.h>
+#include <aws/apigatewayv2/model/ListPortalsResult.h>
+#include <aws/apigatewayv2/model/ListProductPagesResult.h>
+#include <aws/apigatewayv2/model/ListProductRestEndpointPagesResult.h>
 #include <aws/apigatewayv2/model/ListRoutingRulesResult.h>
+#include <aws/apigatewayv2/model/PreviewPortalResult.h>
+#include <aws/apigatewayv2/model/PublishPortalResult.h>
+#include <aws/apigatewayv2/model/PutPortalProductSharingPolicyResult.h>
 #include <aws/apigatewayv2/model/PutRoutingRuleResult.h>
 #include <aws/apigatewayv2/model/ReimportApiResult.h>
 #include <aws/apigatewayv2/model/TagResourceResult.h>
@@ -77,6 +95,10 @@
 #include <aws/apigatewayv2/model/UpdateIntegrationResponseResult.h>
 #include <aws/apigatewayv2/model/UpdateIntegrationResult.h>
 #include <aws/apigatewayv2/model/UpdateModelResult.h>
+#include <aws/apigatewayv2/model/UpdatePortalProductResult.h>
+#include <aws/apigatewayv2/model/UpdatePortalResult.h>
+#include <aws/apigatewayv2/model/UpdateProductPageResult.h>
+#include <aws/apigatewayv2/model/UpdateProductRestEndpointPageResult.h>
 #include <aws/apigatewayv2/model/UpdateRouteResponseResult.h>
 #include <aws/apigatewayv2/model/UpdateRouteResult.h>
 #include <aws/apigatewayv2/model/UpdateStageResult.h>
@@ -123,6 +145,10 @@ class CreateDomainNameRequest;
 class CreateIntegrationRequest;
 class CreateIntegrationResponseRequest;
 class CreateModelRequest;
+class CreatePortalRequest;
+class CreatePortalProductRequest;
+class CreateProductPageRequest;
+class CreateProductRestEndpointPageRequest;
 class CreateRouteRequest;
 class CreateRouteResponseRequest;
 class CreateRoutingRuleRequest;
@@ -138,6 +164,11 @@ class DeleteDomainNameRequest;
 class DeleteIntegrationRequest;
 class DeleteIntegrationResponseRequest;
 class DeleteModelRequest;
+class DeletePortalRequest;
+class DeletePortalProductRequest;
+class DeletePortalProductSharingPolicyRequest;
+class DeleteProductPageRequest;
+class DeleteProductRestEndpointPageRequest;
 class DeleteRouteRequest;
 class DeleteRouteRequestParameterRequest;
 class DeleteRouteResponseRequest;
@@ -145,6 +176,7 @@ class DeleteRouteSettingsRequest;
 class DeleteRoutingRuleRequest;
 class DeleteStageRequest;
 class DeleteVpcLinkRequest;
+class DisablePortalRequest;
 class ExportApiRequest;
 class GetApiRequest;
 class GetApiMappingRequest;
@@ -163,6 +195,11 @@ class GetIntegrationsRequest;
 class GetModelRequest;
 class GetModelTemplateRequest;
 class GetModelsRequest;
+class GetPortalRequest;
+class GetPortalProductRequest;
+class GetPortalProductSharingPolicyRequest;
+class GetProductPageRequest;
+class GetProductRestEndpointPageRequest;
 class GetRouteRequest;
 class GetRouteResponseRequest;
 class GetRouteResponsesRequest;
@@ -174,7 +211,14 @@ class GetTagsRequest;
 class GetVpcLinkRequest;
 class GetVpcLinksRequest;
 class ImportApiRequest;
+class ListPortalProductsRequest;
+class ListPortalsRequest;
+class ListProductPagesRequest;
+class ListProductRestEndpointPagesRequest;
 class ListRoutingRulesRequest;
+class PreviewPortalRequest;
+class PublishPortalRequest;
+class PutPortalProductSharingPolicyRequest;
 class PutRoutingRuleRequest;
 class ReimportApiRequest;
 class ResetAuthorizersCacheRequest;
@@ -188,6 +232,10 @@ class UpdateDomainNameRequest;
 class UpdateIntegrationRequest;
 class UpdateIntegrationResponseRequest;
 class UpdateModelRequest;
+class UpdatePortalRequest;
+class UpdatePortalProductRequest;
+class UpdateProductPageRequest;
+class UpdateProductRestEndpointPageRequest;
 class UpdateRouteRequest;
 class UpdateRouteResponseRequest;
 class UpdateStageRequest;
@@ -203,6 +251,10 @@ typedef Aws::Utils::Outcome<CreateDomainNameResult, ApiGatewayV2Error> CreateDom
 typedef Aws::Utils::Outcome<CreateIntegrationResult, ApiGatewayV2Error> CreateIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateIntegrationResponseResult, ApiGatewayV2Error> CreateIntegrationResponseOutcome;
 typedef Aws::Utils::Outcome<CreateModelResult, ApiGatewayV2Error> CreateModelOutcome;
+typedef Aws::Utils::Outcome<CreatePortalResult, ApiGatewayV2Error> CreatePortalOutcome;
+typedef Aws::Utils::Outcome<CreatePortalProductResult, ApiGatewayV2Error> CreatePortalProductOutcome;
+typedef Aws::Utils::Outcome<CreateProductPageResult, ApiGatewayV2Error> CreateProductPageOutcome;
+typedef Aws::Utils::Outcome<CreateProductRestEndpointPageResult, ApiGatewayV2Error> CreateProductRestEndpointPageOutcome;
 typedef Aws::Utils::Outcome<CreateRouteResult, ApiGatewayV2Error> CreateRouteOutcome;
 typedef Aws::Utils::Outcome<CreateRouteResponseResult, ApiGatewayV2Error> CreateRouteResponseOutcome;
 typedef Aws::Utils::Outcome<CreateRoutingRuleResult, ApiGatewayV2Error> CreateRoutingRuleOutcome;
@@ -218,6 +270,11 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteDomainNameOu
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteIntegrationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteIntegrationResponseOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteModelOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeletePortalOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeletePortalProductOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeletePortalProductSharingPolicyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteProductPageOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteProductRestEndpointPageOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteRequestParameterOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteResponseOutcome;
@@ -225,6 +282,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteSetting
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRoutingRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteStageOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcLinkResult, ApiGatewayV2Error> DeleteVpcLinkOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DisablePortalOutcome;
 typedef Aws::Utils::Outcome<ExportApiResult, ApiGatewayV2Error> ExportApiOutcome;
 typedef Aws::Utils::Outcome<GetApiResult, ApiGatewayV2Error> GetApiOutcome;
 typedef Aws::Utils::Outcome<GetApiMappingResult, ApiGatewayV2Error> GetApiMappingOutcome;
@@ -243,6 +301,11 @@ typedef Aws::Utils::Outcome<GetIntegrationsResult, ApiGatewayV2Error> GetIntegra
 typedef Aws::Utils::Outcome<GetModelResult, ApiGatewayV2Error> GetModelOutcome;
 typedef Aws::Utils::Outcome<GetModelTemplateResult, ApiGatewayV2Error> GetModelTemplateOutcome;
 typedef Aws::Utils::Outcome<GetModelsResult, ApiGatewayV2Error> GetModelsOutcome;
+typedef Aws::Utils::Outcome<GetPortalResult, ApiGatewayV2Error> GetPortalOutcome;
+typedef Aws::Utils::Outcome<GetPortalProductResult, ApiGatewayV2Error> GetPortalProductOutcome;
+typedef Aws::Utils::Outcome<GetPortalProductSharingPolicyResult, ApiGatewayV2Error> GetPortalProductSharingPolicyOutcome;
+typedef Aws::Utils::Outcome<GetProductPageResult, ApiGatewayV2Error> GetProductPageOutcome;
+typedef Aws::Utils::Outcome<GetProductRestEndpointPageResult, ApiGatewayV2Error> GetProductRestEndpointPageOutcome;
 typedef Aws::Utils::Outcome<GetRouteResult, ApiGatewayV2Error> GetRouteOutcome;
 typedef Aws::Utils::Outcome<GetRouteResponseResult, ApiGatewayV2Error> GetRouteResponseOutcome;
 typedef Aws::Utils::Outcome<GetRouteResponsesResult, ApiGatewayV2Error> GetRouteResponsesOutcome;
@@ -254,7 +317,14 @@ typedef Aws::Utils::Outcome<GetTagsResult, ApiGatewayV2Error> GetTagsOutcome;
 typedef Aws::Utils::Outcome<GetVpcLinkResult, ApiGatewayV2Error> GetVpcLinkOutcome;
 typedef Aws::Utils::Outcome<GetVpcLinksResult, ApiGatewayV2Error> GetVpcLinksOutcome;
 typedef Aws::Utils::Outcome<ImportApiResult, ApiGatewayV2Error> ImportApiOutcome;
+typedef Aws::Utils::Outcome<ListPortalProductsResult, ApiGatewayV2Error> ListPortalProductsOutcome;
+typedef Aws::Utils::Outcome<ListPortalsResult, ApiGatewayV2Error> ListPortalsOutcome;
+typedef Aws::Utils::Outcome<ListProductPagesResult, ApiGatewayV2Error> ListProductPagesOutcome;
+typedef Aws::Utils::Outcome<ListProductRestEndpointPagesResult, ApiGatewayV2Error> ListProductRestEndpointPagesOutcome;
 typedef Aws::Utils::Outcome<ListRoutingRulesResult, ApiGatewayV2Error> ListRoutingRulesOutcome;
+typedef Aws::Utils::Outcome<PreviewPortalResult, ApiGatewayV2Error> PreviewPortalOutcome;
+typedef Aws::Utils::Outcome<PublishPortalResult, ApiGatewayV2Error> PublishPortalOutcome;
+typedef Aws::Utils::Outcome<PutPortalProductSharingPolicyResult, ApiGatewayV2Error> PutPortalProductSharingPolicyOutcome;
 typedef Aws::Utils::Outcome<PutRoutingRuleResult, ApiGatewayV2Error> PutRoutingRuleOutcome;
 typedef Aws::Utils::Outcome<ReimportApiResult, ApiGatewayV2Error> ReimportApiOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> ResetAuthorizersCacheOutcome;
@@ -268,6 +338,10 @@ typedef Aws::Utils::Outcome<UpdateDomainNameResult, ApiGatewayV2Error> UpdateDom
 typedef Aws::Utils::Outcome<UpdateIntegrationResult, ApiGatewayV2Error> UpdateIntegrationOutcome;
 typedef Aws::Utils::Outcome<UpdateIntegrationResponseResult, ApiGatewayV2Error> UpdateIntegrationResponseOutcome;
 typedef Aws::Utils::Outcome<UpdateModelResult, ApiGatewayV2Error> UpdateModelOutcome;
+typedef Aws::Utils::Outcome<UpdatePortalResult, ApiGatewayV2Error> UpdatePortalOutcome;
+typedef Aws::Utils::Outcome<UpdatePortalProductResult, ApiGatewayV2Error> UpdatePortalProductOutcome;
+typedef Aws::Utils::Outcome<UpdateProductPageResult, ApiGatewayV2Error> UpdateProductPageOutcome;
+typedef Aws::Utils::Outcome<UpdateProductRestEndpointPageResult, ApiGatewayV2Error> UpdateProductRestEndpointPageOutcome;
 typedef Aws::Utils::Outcome<UpdateRouteResult, ApiGatewayV2Error> UpdateRouteOutcome;
 typedef Aws::Utils::Outcome<UpdateRouteResponseResult, ApiGatewayV2Error> UpdateRouteResponseOutcome;
 typedef Aws::Utils::Outcome<UpdateStageResult, ApiGatewayV2Error> UpdateStageOutcome;
@@ -283,6 +357,10 @@ typedef std::future<CreateDomainNameOutcome> CreateDomainNameOutcomeCallable;
 typedef std::future<CreateIntegrationOutcome> CreateIntegrationOutcomeCallable;
 typedef std::future<CreateIntegrationResponseOutcome> CreateIntegrationResponseOutcomeCallable;
 typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
+typedef std::future<CreatePortalOutcome> CreatePortalOutcomeCallable;
+typedef std::future<CreatePortalProductOutcome> CreatePortalProductOutcomeCallable;
+typedef std::future<CreateProductPageOutcome> CreateProductPageOutcomeCallable;
+typedef std::future<CreateProductRestEndpointPageOutcome> CreateProductRestEndpointPageOutcomeCallable;
 typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
 typedef std::future<CreateRouteResponseOutcome> CreateRouteResponseOutcomeCallable;
 typedef std::future<CreateRoutingRuleOutcome> CreateRoutingRuleOutcomeCallable;
@@ -298,6 +376,11 @@ typedef std::future<DeleteDomainNameOutcome> DeleteDomainNameOutcomeCallable;
 typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
 typedef std::future<DeleteIntegrationResponseOutcome> DeleteIntegrationResponseOutcomeCallable;
 typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
+typedef std::future<DeletePortalOutcome> DeletePortalOutcomeCallable;
+typedef std::future<DeletePortalProductOutcome> DeletePortalProductOutcomeCallable;
+typedef std::future<DeletePortalProductSharingPolicyOutcome> DeletePortalProductSharingPolicyOutcomeCallable;
+typedef std::future<DeleteProductPageOutcome> DeleteProductPageOutcomeCallable;
+typedef std::future<DeleteProductRestEndpointPageOutcome> DeleteProductRestEndpointPageOutcomeCallable;
 typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
 typedef std::future<DeleteRouteRequestParameterOutcome> DeleteRouteRequestParameterOutcomeCallable;
 typedef std::future<DeleteRouteResponseOutcome> DeleteRouteResponseOutcomeCallable;
@@ -305,6 +388,7 @@ typedef std::future<DeleteRouteSettingsOutcome> DeleteRouteSettingsOutcomeCallab
 typedef std::future<DeleteRoutingRuleOutcome> DeleteRoutingRuleOutcomeCallable;
 typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
 typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
+typedef std::future<DisablePortalOutcome> DisablePortalOutcomeCallable;
 typedef std::future<ExportApiOutcome> ExportApiOutcomeCallable;
 typedef std::future<GetApiOutcome> GetApiOutcomeCallable;
 typedef std::future<GetApiMappingOutcome> GetApiMappingOutcomeCallable;
@@ -323,6 +407,11 @@ typedef std::future<GetIntegrationsOutcome> GetIntegrationsOutcomeCallable;
 typedef std::future<GetModelOutcome> GetModelOutcomeCallable;
 typedef std::future<GetModelTemplateOutcome> GetModelTemplateOutcomeCallable;
 typedef std::future<GetModelsOutcome> GetModelsOutcomeCallable;
+typedef std::future<GetPortalOutcome> GetPortalOutcomeCallable;
+typedef std::future<GetPortalProductOutcome> GetPortalProductOutcomeCallable;
+typedef std::future<GetPortalProductSharingPolicyOutcome> GetPortalProductSharingPolicyOutcomeCallable;
+typedef std::future<GetProductPageOutcome> GetProductPageOutcomeCallable;
+typedef std::future<GetProductRestEndpointPageOutcome> GetProductRestEndpointPageOutcomeCallable;
 typedef std::future<GetRouteOutcome> GetRouteOutcomeCallable;
 typedef std::future<GetRouteResponseOutcome> GetRouteResponseOutcomeCallable;
 typedef std::future<GetRouteResponsesOutcome> GetRouteResponsesOutcomeCallable;
@@ -334,7 +423,14 @@ typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
 typedef std::future<GetVpcLinkOutcome> GetVpcLinkOutcomeCallable;
 typedef std::future<GetVpcLinksOutcome> GetVpcLinksOutcomeCallable;
 typedef std::future<ImportApiOutcome> ImportApiOutcomeCallable;
+typedef std::future<ListPortalProductsOutcome> ListPortalProductsOutcomeCallable;
+typedef std::future<ListPortalsOutcome> ListPortalsOutcomeCallable;
+typedef std::future<ListProductPagesOutcome> ListProductPagesOutcomeCallable;
+typedef std::future<ListProductRestEndpointPagesOutcome> ListProductRestEndpointPagesOutcomeCallable;
 typedef std::future<ListRoutingRulesOutcome> ListRoutingRulesOutcomeCallable;
+typedef std::future<PreviewPortalOutcome> PreviewPortalOutcomeCallable;
+typedef std::future<PublishPortalOutcome> PublishPortalOutcomeCallable;
+typedef std::future<PutPortalProductSharingPolicyOutcome> PutPortalProductSharingPolicyOutcomeCallable;
 typedef std::future<PutRoutingRuleOutcome> PutRoutingRuleOutcomeCallable;
 typedef std::future<ReimportApiOutcome> ReimportApiOutcomeCallable;
 typedef std::future<ResetAuthorizersCacheOutcome> ResetAuthorizersCacheOutcomeCallable;
@@ -348,6 +444,10 @@ typedef std::future<UpdateDomainNameOutcome> UpdateDomainNameOutcomeCallable;
 typedef std::future<UpdateIntegrationOutcome> UpdateIntegrationOutcomeCallable;
 typedef std::future<UpdateIntegrationResponseOutcome> UpdateIntegrationResponseOutcomeCallable;
 typedef std::future<UpdateModelOutcome> UpdateModelOutcomeCallable;
+typedef std::future<UpdatePortalOutcome> UpdatePortalOutcomeCallable;
+typedef std::future<UpdatePortalProductOutcome> UpdatePortalProductOutcomeCallable;
+typedef std::future<UpdateProductPageOutcome> UpdateProductPageOutcomeCallable;
+typedef std::future<UpdateProductRestEndpointPageOutcome> UpdateProductRestEndpointPageOutcomeCallable;
 typedef std::future<UpdateRouteOutcome> UpdateRouteOutcomeCallable;
 typedef std::future<UpdateRouteResponseOutcome> UpdateRouteResponseOutcomeCallable;
 typedef std::future<UpdateStageOutcome> UpdateStageOutcomeCallable;
@@ -382,6 +482,19 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::CreateIntegra
 typedef std::function<void(const ApiGatewayV2Client*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateModelResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::CreatePortalRequest&, const Model::CreatePortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::CreatePortalProductRequest&, const Model::CreatePortalProductOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePortalProductResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::CreateProductPageRequest&, const Model::CreateProductPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateProductPageResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::CreateProductRestEndpointPageRequest&,
+                           const Model::CreateProductRestEndpointPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateProductRestEndpointPageResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::CreateRouteRequest&, const Model::CreateRouteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateRouteResponseReceivedHandler;
@@ -427,6 +540,23 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteIntegra
 typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteModelResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DeletePortalRequest&, const Model::DeletePortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DeletePortalProductRequest&, const Model::DeletePortalProductOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePortalProductResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DeletePortalProductSharingPolicyRequest&,
+                           const Model::DeletePortalProductSharingPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePortalProductSharingPolicyResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteProductPageRequest&, const Model::DeleteProductPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProductPageResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteProductRestEndpointPageRequest&,
+                           const Model::DeleteProductRestEndpointPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProductRestEndpointPageResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteRouteRequest&, const Model::DeleteRouteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRouteResponseReceivedHandler;
@@ -448,6 +578,9 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteStageRe
 typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcLinkResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::DisablePortalRequest&, const Model::DisablePortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisablePortalResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::ExportApiRequest&, Model::ExportApiOutcome,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExportApiResponseReceivedHandler;
@@ -502,6 +635,22 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::GetModelTempl
 typedef std::function<void(const ApiGatewayV2Client*, const Model::GetModelsRequest&, const Model::GetModelsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetModelsResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::GetPortalRequest&, const Model::GetPortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::GetPortalProductRequest&, const Model::GetPortalProductOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPortalProductResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::GetPortalProductSharingPolicyRequest&,
+                           const Model::GetPortalProductSharingPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPortalProductSharingPolicyResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::GetProductPageRequest&, const Model::GetProductPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProductPageResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::GetProductRestEndpointPageRequest&,
+                           const Model::GetProductRestEndpointPageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProductRestEndpointPageResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::GetRouteRequest&, const Model::GetRouteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRouteResponseReceivedHandler;
@@ -535,9 +684,32 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::GetVpcLinksRe
 typedef std::function<void(const ApiGatewayV2Client*, const Model::ImportApiRequest&, const Model::ImportApiOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportApiResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::ListPortalProductsRequest&, const Model::ListPortalProductsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPortalProductsResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::ListPortalsRequest&, const Model::ListPortalsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPortalsResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::ListProductPagesRequest&, const Model::ListProductPagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProductPagesResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::ListProductRestEndpointPagesRequest&,
+                           const Model::ListProductRestEndpointPagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProductRestEndpointPagesResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::ListRoutingRulesRequest&, const Model::ListRoutingRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRoutingRulesResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::PreviewPortalRequest&, const Model::PreviewPortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PreviewPortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::PublishPortalRequest&, const Model::PublishPortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PublishPortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::PutPortalProductSharingPolicyRequest&,
+                           const Model::PutPortalProductSharingPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutPortalProductSharingPolicyResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::PutRoutingRuleRequest&, const Model::PutRoutingRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutRoutingRuleResponseReceivedHandler;
@@ -577,6 +749,19 @@ typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateIntegra
 typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateModelRequest&, const Model::UpdateModelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateModelResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdatePortalRequest&, const Model::UpdatePortalOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePortalResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdatePortalProductRequest&, const Model::UpdatePortalProductOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePortalProductResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateProductPageRequest&, const Model::UpdateProductPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProductPageResponseReceivedHandler;
+typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateProductRestEndpointPageRequest&,
+                           const Model::UpdateProductRestEndpointPageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProductRestEndpointPageResponseReceivedHandler;
 typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateRouteRequest&, const Model::UpdateRouteOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRouteResponseReceivedHandler;

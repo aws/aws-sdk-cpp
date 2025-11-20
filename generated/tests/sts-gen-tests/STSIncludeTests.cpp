@@ -37,6 +37,8 @@
 #include <aws/sts/model/GetFederationTokenResult.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenResult.h>
+#include <aws/sts/model/GetWebIdentityTokenRequest.h>
+#include <aws/sts/model/GetWebIdentityTokenResult.h>
 #include <aws/sts/model/PolicyDescriptorType.h>
 #include <aws/sts/model/ProvidedContext.h>
 #include <aws/sts/model/ResponseMetadata.h>

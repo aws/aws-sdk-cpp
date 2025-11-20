@@ -17,6 +17,8 @@ namespace ListBillScenariosFilterNameMapper {
 
 static const int STATUS_HASH = HashingUtils::HashString("STATUS");
 static const int NAME_HASH = HashingUtils::HashString("NAME");
+static const int GROUP_SHARING_PREFERENCE_HASH = HashingUtils::HashString("GROUP_SHARING_PREFERENCE");
+static const int COST_CATEGORY_ARN_HASH = HashingUtils::HashString("COST_CATEGORY_ARN");
 
 ListBillScenariosFilterName GetListBillScenariosFilterNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ ListBillScenariosFilterName GetListBillScenariosFilterNameForName(const Aws::Str
     return ListBillScenariosFilterName::STATUS;
   } else if (hashCode == NAME_HASH) {
     return ListBillScenariosFilterName::NAME;
+  } else if (hashCode == GROUP_SHARING_PREFERENCE_HASH) {
+    return ListBillScenariosFilterName::GROUP_SHARING_PREFERENCE;
+  } else if (hashCode == COST_CATEGORY_ARN_HASH) {
+    return ListBillScenariosFilterName::COST_CATEGORY_ARN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForListBillScenariosFilterName(ListBillScenariosFilterName en
       return "STATUS";
     case ListBillScenariosFilterName::NAME:
       return "NAME";
+    case ListBillScenariosFilterName::GROUP_SHARING_PREFERENCE:
+      return "GROUP_SHARING_PREFERENCE";
+    case ListBillScenariosFilterName::COST_CATEGORY_ARN:
+      return "COST_CATEGORY_ARN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

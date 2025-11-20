@@ -9,9 +9,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/SetGatewayBridgeSourceRequest.h>
+#include <aws/mediaconnect/model/State.h>
 
 #include <utility>
 
@@ -413,6 +415,43 @@ class SetSourceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to enable or disable router integration when setting a flow
+   * source.</p>
+   */
+  inline State GetRouterIntegrationState() const { return m_routerIntegrationState; }
+  inline bool RouterIntegrationStateHasBeenSet() const { return m_routerIntegrationStateHasBeenSet; }
+  inline void SetRouterIntegrationState(State value) {
+    m_routerIntegrationStateHasBeenSet = true;
+    m_routerIntegrationState = value;
+  }
+  inline SetSourceRequest& WithRouterIntegrationState(State value) {
+    SetRouterIntegrationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The decryption configuration for the flow source when router integration is
+   * enabled. Specifies how the source content should be decrypted when router
+   * integration is used.</p>
+   */
+  inline const FlowTransitEncryption& GetRouterIntegrationTransitDecryption() const { return m_routerIntegrationTransitDecryption; }
+  inline bool RouterIntegrationTransitDecryptionHasBeenSet() const { return m_routerIntegrationTransitDecryptionHasBeenSet; }
+  template <typename RouterIntegrationTransitDecryptionT = FlowTransitEncryption>
+  void SetRouterIntegrationTransitDecryption(RouterIntegrationTransitDecryptionT&& value) {
+    m_routerIntegrationTransitDecryptionHasBeenSet = true;
+    m_routerIntegrationTransitDecryption = std::forward<RouterIntegrationTransitDecryptionT>(value);
+  }
+  template <typename RouterIntegrationTransitDecryptionT = FlowTransitEncryption>
+  SetSourceRequest& WithRouterIntegrationTransitDecryption(RouterIntegrationTransitDecryptionT&& value) {
+    SetRouterIntegrationTransitDecryption(std::forward<RouterIntegrationTransitDecryptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Encryption m_decryption;
   bool m_decryptionHasBeenSet = false;
@@ -473,6 +512,12 @@ class SetSourceRequest {
 
   Aws::Map<Aws::String, Aws::String> m_sourceTags;
   bool m_sourceTagsHasBeenSet = false;
+
+  State m_routerIntegrationState{State::NOT_SET};
+  bool m_routerIntegrationStateHasBeenSet = false;
+
+  FlowTransitEncryption m_routerIntegrationTransitDecryption;
+  bool m_routerIntegrationTransitDecryptionHasBeenSet = false;
 };
 
 }  // namespace Model

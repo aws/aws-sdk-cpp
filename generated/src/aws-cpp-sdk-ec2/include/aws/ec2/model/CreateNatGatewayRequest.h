@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/AvailabilityMode.h>
+#include <aws/ec2/model/AvailabilityZoneAddress.h>
 #include <aws/ec2/model/ConnectivityType.h>
 #include <aws/ec2/model/TagSpecification.h>
 
@@ -36,6 +38,30 @@ class CreateNatGatewayRequest : public EC2Request {
   AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
  public:
+  ///@{
+  /**
+   * <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT
+   * gateway. Defaults to <code>zonal</code>.</p> <p>A zonal NAT gateway is a NAT
+   * Gateway that provides redundancy and scalability within a single availability
+   * zone. A regional NAT gateway is a single NAT Gateway that works across multiple
+   * availability zones (AZs) in your VPC, providing redundancy, scalability and
+   * availability across all the AZs in a Region.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+   * NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User
+   * Guide</i>.</p>
+   */
+  inline AvailabilityMode GetAvailabilityMode() const { return m_availabilityMode; }
+  inline bool AvailabilityModeHasBeenSet() const { return m_availabilityModeHasBeenSet; }
+  inline void SetAvailabilityMode(AvailabilityMode value) {
+    m_availabilityModeHasBeenSet = true;
+    m_availabilityMode = value;
+  }
+  inline CreateNatGatewayRequest& WithAvailabilityMode(AvailabilityMode value) {
+    SetAvailabilityMode(value);
+    return *this;
+  }
+  ///@}
+
   ///@{
   /**
    * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
@@ -111,6 +137,60 @@ class CreateNatGatewayRequest : public EC2Request {
   template <typename SubnetIdT = Aws::String>
   CreateNatGatewayRequest& WithSubnetId(SubnetIdT&& value) {
     SetSubnetId(std::forward<SubnetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+   */
+  inline const Aws::String& GetVpcId() const { return m_vpcId; }
+  inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+  template <typename VpcIdT = Aws::String>
+  void SetVpcId(VpcIdT&& value) {
+    m_vpcIdHasBeenSet = true;
+    m_vpcId = std::forward<VpcIdT>(value);
+  }
+  template <typename VpcIdT = Aws::String>
+  CreateNatGatewayRequest& WithVpcId(VpcIdT&& value) {
+    SetVpcId(std::forward<VpcIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only: Specifies which Availability Zones you want
+   * the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each
+   * AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from
+   * their respective AZs. If not specified, the NAT gateway will automatically
+   * expand to new AZs and associate EIPs upon detection of an elastic network
+   * interface. If you specify this parameter, auto-expansion is disabled and you
+   * must manually manage AZ coverage.</p> <p>A regional NAT gateway is a single NAT
+   * Gateway that works across multiple availability zones (AZs) in your VPC,
+   * providing redundancy, scalability and availability across all the AZs in a
+   * Region.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+   * NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User
+   * Guide</i>.</p>
+   */
+  inline const Aws::Vector<AvailabilityZoneAddress>& GetAvailabilityZoneAddresses() const { return m_availabilityZoneAddresses; }
+  inline bool AvailabilityZoneAddressesHasBeenSet() const { return m_availabilityZoneAddressesHasBeenSet; }
+  template <typename AvailabilityZoneAddressesT = Aws::Vector<AvailabilityZoneAddress>>
+  void SetAvailabilityZoneAddresses(AvailabilityZoneAddressesT&& value) {
+    m_availabilityZoneAddressesHasBeenSet = true;
+    m_availabilityZoneAddresses = std::forward<AvailabilityZoneAddressesT>(value);
+  }
+  template <typename AvailabilityZoneAddressesT = Aws::Vector<AvailabilityZoneAddress>>
+  CreateNatGatewayRequest& WithAvailabilityZoneAddresses(AvailabilityZoneAddressesT&& value) {
+    SetAvailabilityZoneAddresses(std::forward<AvailabilityZoneAddressesT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneAddressesT = AvailabilityZoneAddress>
+  CreateNatGatewayRequest& AddAvailabilityZoneAddresses(AvailabilityZoneAddressesT&& value) {
+    m_availabilityZoneAddressesHasBeenSet = true;
+    m_availabilityZoneAddresses.emplace_back(std::forward<AvailabilityZoneAddressesT>(value));
     return *this;
   }
   ///@}
@@ -248,6 +328,9 @@ class CreateNatGatewayRequest : public EC2Request {
   }
   ///@}
  private:
+  AvailabilityMode m_availabilityMode{AvailabilityMode::NOT_SET};
+  bool m_availabilityModeHasBeenSet = false;
+
   Aws::String m_allocationId;
   bool m_allocationIdHasBeenSet = false;
 
@@ -259,6 +342,12 @@ class CreateNatGatewayRequest : public EC2Request {
 
   Aws::String m_subnetId;
   bool m_subnetIdHasBeenSet = false;
+
+  Aws::String m_vpcId;
+  bool m_vpcIdHasBeenSet = false;
+
+  Aws::Vector<AvailabilityZoneAddress> m_availabilityZoneAddresses;
+  bool m_availabilityZoneAddressesHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_tagSpecificationsHasBeenSet = false;

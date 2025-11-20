@@ -11,6 +11,7 @@
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
 #include <aws/bedrock-runtime/model/ReasoningContentBlock.h>
+#include <aws/bedrock-runtime/model/SearchResultBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/VideoBlock.h>
@@ -233,6 +234,24 @@ class ContentBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Search result to include in the message.</p>
+   */
+  inline const SearchResultBlock& GetSearchResult() const { return m_searchResult; }
+  inline bool SearchResultHasBeenSet() const { return m_searchResultHasBeenSet; }
+  template <typename SearchResultT = SearchResultBlock>
+  void SetSearchResult(SearchResultT&& value) {
+    m_searchResultHasBeenSet = true;
+    m_searchResult = std::forward<SearchResultT>(value);
+  }
+  template <typename SearchResultT = SearchResultBlock>
+  ContentBlock& WithSearchResult(SearchResultT&& value) {
+    SetSearchResult(std::forward<SearchResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_text;
   bool m_textHasBeenSet = false;
@@ -263,6 +282,9 @@ class ContentBlock {
 
   CitationsContentBlock m_citationsContent;
   bool m_citationsContentHasBeenSet = false;
+
+  SearchResultBlock m_searchResult;
+  bool m_searchResultHasBeenSet = false;
 };
 
 }  // namespace Model

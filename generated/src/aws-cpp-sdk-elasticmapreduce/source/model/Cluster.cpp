@@ -171,6 +171,10 @@ Cluster& Cluster::operator=(JsonView jsonValue) {
     m_extendedSupport = jsonValue.GetBool("ExtendedSupport");
     m_extendedSupportHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MonitoringConfiguration")) {
+    m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
+    m_monitoringConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -331,6 +335,10 @@ JsonValue Cluster::Jsonize() const {
 
   if (m_extendedSupportHasBeenSet) {
     payload.WithBool("ExtendedSupport", m_extendedSupport);
+  }
+
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
   }
 
   return payload;

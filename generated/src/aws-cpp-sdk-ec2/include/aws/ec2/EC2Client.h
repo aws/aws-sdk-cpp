@@ -3106,6 +3106,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Creates an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
+   * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
+   * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
+   * service will use to get IP addresses. A single policy can have multiple rules
+   * and be applied to multiple Amazon Web Services Regions. If the IPAM pool run out
+   * of addresses then the services fallback to Amazon-provided IP addresses. A
+   * policy can be applied to an individual Amazon Web Services account or an entity
+   * within Amazon Web Services Organizations.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+   * public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIpamPolicyOutcome CreateIpamPolicy(const Model::CreateIpamPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIpamPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateIpamPolicyRequestT = Model::CreateIpamPolicyRequest>
+  Model::CreateIpamPolicyOutcomeCallable CreateIpamPolicyCallable(const CreateIpamPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateIpamPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIpamPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateIpamPolicyRequestT = Model::CreateIpamPolicyRequest>
+  void CreateIpamPolicyAsync(const CreateIpamPolicyRequestT& request, const CreateIpamPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateIpamPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
    * a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to
    * organize your IP addresses according to your routing and security needs. For
@@ -3692,14 +3728,14 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
    * API Reference</a></p>
    */
-  virtual Model::CreateNatGatewayOutcome CreateNatGateway(const Model::CreateNatGatewayRequest& request) const;
+  virtual Model::CreateNatGatewayOutcome CreateNatGateway(const Model::CreateNatGatewayRequest& request = {}) const;
 
   /**
    * A Callable wrapper for CreateNatGateway that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename CreateNatGatewayRequestT = Model::CreateNatGatewayRequest>
-  Model::CreateNatGatewayOutcomeCallable CreateNatGatewayCallable(const CreateNatGatewayRequestT& request) const {
+  Model::CreateNatGatewayOutcomeCallable CreateNatGatewayCallable(const CreateNatGatewayRequestT& request = {}) const {
     return SubmitCallable(&EC2Client::CreateNatGateway, request);
   }
 
@@ -3708,8 +3744,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * has finished.
    */
   template <typename CreateNatGatewayRequestT = Model::CreateNatGatewayRequest>
-  void CreateNatGatewayAsync(const CreateNatGatewayRequestT& request, const CreateNatGatewayResponseReceivedHandler& handler,
-                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void CreateNatGatewayAsync(const CreateNatGatewayResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const CreateNatGatewayRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::CreateNatGateway, request, handler, context);
   }
 
@@ -5502,6 +5539,33 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Creates a VPN concentrator that aggregates multiple VPN connections to a
+   * transit gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateVpnConcentratorOutcome CreateVpnConcentrator(const Model::CreateVpnConcentratorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateVpnConcentrator that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateVpnConcentratorRequestT = Model::CreateVpnConcentratorRequest>
+  Model::CreateVpnConcentratorOutcomeCallable CreateVpnConcentratorCallable(const CreateVpnConcentratorRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateVpnConcentrator, request);
+  }
+
+  /**
+   * An Async wrapper for CreateVpnConcentrator that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateVpnConcentratorRequestT = Model::CreateVpnConcentratorRequest>
+  void CreateVpnConcentratorAsync(const CreateVpnConcentratorRequestT& request, const CreateVpnConcentratorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateVpnConcentrator, request, handler, context);
+  }
+
+  /**
    * <p>Creates a VPN connection between an existing virtual private gateway or
    * transit gateway and a customer gateway. The supported connection type is
    * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
@@ -6147,6 +6211,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
       const DeleteIpamExternalResourceVerificationTokenResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteIpamExternalResourceVerificationToken, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
+   * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
+   * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
+   * service will use to get IP addresses. A single policy can have multiple rules
+   * and be applied to multiple Amazon Web Services Regions. If the IPAM pool run out
+   * of addresses then the services fallback to Amazon-provided IP addresses. A
+   * policy can be applied to an individual Amazon Web Services account or an entity
+   * within Amazon Web Services Organizations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIpamPolicyOutcome DeleteIpamPolicy(const Model::DeleteIpamPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIpamPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteIpamPolicyRequestT = Model::DeleteIpamPolicyRequest>
+  Model::DeleteIpamPolicyOutcomeCallable DeleteIpamPolicyCallable(const DeleteIpamPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteIpamPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIpamPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteIpamPolicyRequestT = Model::DeleteIpamPolicyRequest>
+  void DeleteIpamPolicyAsync(const DeleteIpamPolicyRequestT& request, const DeleteIpamPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteIpamPolicy, request, handler, context);
   }
 
   /**
@@ -8095,6 +8192,32 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                        const DeleteVpcPeeringConnectionResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteVpcPeeringConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified VPN concentrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVpnConcentratorOutcome DeleteVpnConcentrator(const Model::DeleteVpnConcentratorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVpnConcentrator that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteVpnConcentratorRequestT = Model::DeleteVpnConcentratorRequest>
+  Model::DeleteVpnConcentratorOutcomeCallable DeleteVpnConcentratorCallable(const DeleteVpnConcentratorRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteVpnConcentrator, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVpnConcentrator that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteVpnConcentratorRequestT = Model::DeleteVpnConcentratorRequest>
+  void DeleteVpnConcentratorAsync(const DeleteVpnConcentratorRequestT& request, const DeleteVpnConcentratorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteVpnConcentrator, request, handler, context);
   }
 
   /**
@@ -10873,7 +10996,7 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>Describe verification tokens. A verification token is an Amazon Web
+   * <p>Describe verification tokens.</p> <p>A verification token is an Amazon Web
    * Services-generated random value that you can use to prove ownership of an
    * external resource. For example, you can use a verification token to validate
    * that you control a public IP address range when you bring an IP address range to
@@ -10904,6 +11027,41 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
       const DescribeIpamExternalResourceVerificationTokensRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeIpamExternalResourceVerificationTokens, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more IPAM policies.</p> <p>An IPAM policy is a set of rules
+   * that define how public IPv4 addresses from IPAM pools are allocated to Amazon
+   * Web Services resources. Each rule maps an Amazon Web Services service to IPAM
+   * pools that the service will use to get IP addresses. A single policy can have
+   * multiple rules and be applied to multiple Amazon Web Services Regions. If the
+   * IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+   * addresses. A policy can be applied to an individual Amazon Web Services account
+   * or an entity within Amazon Web Services Organizations.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeIpamPoliciesOutcome DescribeIpamPolicies(const Model::DescribeIpamPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeIpamPolicies that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeIpamPoliciesRequestT = Model::DescribeIpamPoliciesRequest>
+  Model::DescribeIpamPoliciesOutcomeCallable DescribeIpamPoliciesCallable(const DescribeIpamPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeIpamPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeIpamPolicies that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeIpamPoliciesRequestT = Model::DescribeIpamPoliciesRequest>
+  void DescribeIpamPoliciesAsync(const DescribeIpamPoliciesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const DescribeIpamPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeIpamPolicies, request, handler, context);
   }
 
   /**
@@ -14291,6 +14449,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Describes one or more of your VPN concentrators.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeVpnConcentratorsOutcome DescribeVpnConcentrators(const Model::DescribeVpnConcentratorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeVpnConcentrators that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeVpnConcentratorsRequestT = Model::DescribeVpnConcentratorsRequest>
+  Model::DescribeVpnConcentratorsOutcomeCallable DescribeVpnConcentratorsCallable(
+      const DescribeVpnConcentratorsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeVpnConcentrators, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeVpnConcentrators that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeVpnConcentratorsRequestT = Model::DescribeVpnConcentratorsRequest>
+  void DescribeVpnConcentratorsAsync(const DescribeVpnConcentratorsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeVpnConcentratorsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeVpnConcentrators, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more of your VPN connections.</p> <p>For more information,
    * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
    * Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
@@ -14968,6 +15155,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                                 const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DisableIpamOrganizationAdminAccount, request, handler, context);
+  }
+
+  /**
+   * <p>Disables an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
+   * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
+   * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
+   * service will use to get IP addresses. A single policy can have multiple rules
+   * and be applied to multiple Amazon Web Services Regions. If the IPAM pool run out
+   * of addresses then the services fallback to Amazon-provided IP addresses. A
+   * policy can be applied to an individual Amazon Web Services account or an entity
+   * within Amazon Web Services Organizations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableIpamPolicyOutcome DisableIpamPolicy(const Model::DisableIpamPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisableIpamPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisableIpamPolicyRequestT = Model::DisableIpamPolicyRequest>
+  Model::DisableIpamPolicyOutcomeCallable DisableIpamPolicyCallable(const DisableIpamPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::DisableIpamPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DisableIpamPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DisableIpamPolicyRequestT = Model::DisableIpamPolicyRequest>
+  void DisableIpamPolicyAsync(const DisableIpamPolicyRequestT& request, const DisableIpamPolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DisableIpamPolicy, request, handler, context);
   }
 
   /**
@@ -16266,6 +16486,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Enables an IPAM policy.</p> <p>An IPAM policy is a set of rules that define
+   * how public IPv4 addresses from IPAM pools are allocated to Amazon Web Services
+   * resources. Each rule maps an Amazon Web Services service to IPAM pools that the
+   * service will use to get IP addresses. A single policy can have multiple rules
+   * and be applied to multiple Amazon Web Services Regions. If the IPAM pool run out
+   * of addresses then the services fallback to Amazon-provided IP addresses. A
+   * policy can be applied to an individual Amazon Web Services account or an entity
+   * within Amazon Web Services Organizations.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+   * public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableIpamPolicyOutcome EnableIpamPolicy(const Model::EnableIpamPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for EnableIpamPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename EnableIpamPolicyRequestT = Model::EnableIpamPolicyRequest>
+  Model::EnableIpamPolicyOutcomeCallable EnableIpamPolicyCallable(const EnableIpamPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::EnableIpamPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for EnableIpamPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename EnableIpamPolicyRequestT = Model::EnableIpamPolicyRequest>
+  void EnableIpamPolicyAsync(const EnableIpamPolicyRequestT& request, const EnableIpamPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::EnableIpamPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Establishes a trust relationship between Reachability Analyzer and
    * Organizations. This operation must be performed by the management account for
    * the organization.</p> <p>After you establish a trust relationship, a user in the
@@ -17243,6 +17499,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Gets the enabled IPAM policy.</p> <p>An IPAM policy is a set of rules that
+   * define how public IPv4 addresses from IPAM pools are allocated to Amazon Web
+   * Services resources. Each rule maps an Amazon Web Services service to IPAM pools
+   * that the service will use to get IP addresses. A single policy can have multiple
+   * rules and be applied to multiple Amazon Web Services Regions. If the IPAM pool
+   * run out of addresses then the services fallback to Amazon-provided IP addresses.
+   * A policy can be applied to an individual Amazon Web Services account or an
+   * entity within Amazon Web Services Organizations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEnabledIpamPolicyOutcome GetEnabledIpamPolicy(const Model::GetEnabledIpamPolicyRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetEnabledIpamPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetEnabledIpamPolicyRequestT = Model::GetEnabledIpamPolicyRequest>
+  Model::GetEnabledIpamPolicyOutcomeCallable GetEnabledIpamPolicyCallable(const GetEnabledIpamPolicyRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::GetEnabledIpamPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetEnabledIpamPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetEnabledIpamPolicyRequestT = Model::GetEnabledIpamPolicyRequest>
+  void GetEnabledIpamPolicyAsync(const GetEnabledIpamPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const GetEnabledIpamPolicyRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::GetEnabledIpamPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Generates a CloudFormation template that streamlines and automates the
    * integration of VPC flow logs with Amazon Athena. This make it easier for you to
    * query and gain insights from VPC flow logs data. Based on the information that
@@ -17675,6 +17965,85 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                            const GetIpamDiscoveredResourceCidrsResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetIpamDiscoveredResourceCidrs, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the allocation rules for an IPAM policy.</p> <p>An IPAM policy is a set
+   * of rules that define how public IPv4 addresses from IPAM pools are allocated to
+   * Amazon Web Services resources. Each rule maps an Amazon Web Services service to
+   * IPAM pools that the service will use to get IP addresses. A single policy can
+   * have multiple rules and be applied to multiple Amazon Web Services Regions. If
+   * the IPAM pool run out of addresses then the services fallback to Amazon-provided
+   * IP addresses. A policy can be applied to an individual Amazon Web Services
+   * account or an entity within Amazon Web Services Organizations.</p> <p>Allocation
+   * rules are optional configurations within an IPAM policy that map Amazon Web
+   * Services resource types to specific IPAM pools. If no rules are defined, the
+   * resource types default to using Amazon-provided IP addresses.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamPolicyAllocationRulesOutcome GetIpamPolicyAllocationRules(
+      const Model::GetIpamPolicyAllocationRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamPolicyAllocationRules that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetIpamPolicyAllocationRulesRequestT = Model::GetIpamPolicyAllocationRulesRequest>
+  Model::GetIpamPolicyAllocationRulesOutcomeCallable GetIpamPolicyAllocationRulesCallable(
+      const GetIpamPolicyAllocationRulesRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamPolicyAllocationRules, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamPolicyAllocationRules that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIpamPolicyAllocationRulesRequestT = Model::GetIpamPolicyAllocationRulesRequest>
+  void GetIpamPolicyAllocationRulesAsync(const GetIpamPolicyAllocationRulesRequestT& request,
+                                         const GetIpamPolicyAllocationRulesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamPolicyAllocationRules, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the Amazon Web Services Organizations targets for an IPAM policy.</p>
+   * <p>An IPAM policy is a set of rules that define how public IPv4 addresses from
+   * IPAM pools are allocated to Amazon Web Services resources. Each rule maps an
+   * Amazon Web Services service to IPAM pools that the service will use to get IP
+   * addresses. A single policy can have multiple rules and be applied to multiple
+   * Amazon Web Services Regions. If the IPAM pool run out of addresses then the
+   * services fallback to Amazon-provided IP addresses. A policy can be applied to an
+   * individual Amazon Web Services account or an entity within Amazon Web Services
+   * Organizations.</p> <p>A target can be an individual Amazon Web Services account
+   * or an entity within an Amazon Web Services Organization to which an IPAM policy
+   * can be applied.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIpamPolicyOrganizationTargetsOutcome GetIpamPolicyOrganizationTargets(
+      const Model::GetIpamPolicyOrganizationTargetsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIpamPolicyOrganizationTargets that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetIpamPolicyOrganizationTargetsRequestT = Model::GetIpamPolicyOrganizationTargetsRequest>
+  Model::GetIpamPolicyOrganizationTargetsOutcomeCallable GetIpamPolicyOrganizationTargetsCallable(
+      const GetIpamPolicyOrganizationTargetsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetIpamPolicyOrganizationTargets, request);
+  }
+
+  /**
+   * An Async wrapper for GetIpamPolicyOrganizationTargets that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetIpamPolicyOrganizationTargetsRequestT = Model::GetIpamPolicyOrganizationTargetsRequest>
+  void GetIpamPolicyOrganizationTargetsAsync(const GetIpamPolicyOrganizationTargetsRequestT& request,
+                                             const GetIpamPolicyOrganizationTargetsResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetIpamPolicyOrganizationTargets, request, handler, context);
   }
 
   /**
@@ -20034,6 +20403,46 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void ModifyIpamAsync(const ModifyIpamRequestT& request, const ModifyIpamResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyIpam, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the allocation rules in an IPAM policy.</p> <p>An IPAM policy is a
+   * set of rules that define how public IPv4 addresses from IPAM pools are allocated
+   * to Amazon Web Services resources. Each rule maps an Amazon Web Services service
+   * to IPAM pools that the service will use to get IP addresses. A single policy can
+   * have multiple rules and be applied to multiple Amazon Web Services Regions. If
+   * the IPAM pool run out of addresses then the services fallback to Amazon-provided
+   * IP addresses. A policy can be applied to an individual Amazon Web Services
+   * account or an entity within Amazon Web Services Organizations.</p> <p>Allocation
+   * rules are optional configurations within an IPAM policy that map Amazon Web
+   * Services resource types to specific IPAM pools. If no rules are defined, the
+   * resource types default to using Amazon-provided IP addresses.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyIpamPolicyAllocationRulesOutcome ModifyIpamPolicyAllocationRules(
+      const Model::ModifyIpamPolicyAllocationRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyIpamPolicyAllocationRules that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyIpamPolicyAllocationRulesRequestT = Model::ModifyIpamPolicyAllocationRulesRequest>
+  Model::ModifyIpamPolicyAllocationRulesOutcomeCallable ModifyIpamPolicyAllocationRulesCallable(
+      const ModifyIpamPolicyAllocationRulesRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyIpamPolicyAllocationRules, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyIpamPolicyAllocationRules that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ModifyIpamPolicyAllocationRulesRequestT = Model::ModifyIpamPolicyAllocationRulesRequest>
+  void ModifyIpamPolicyAllocationRulesAsync(const ModifyIpamPolicyAllocationRulesRequestT& request,
+                                            const ModifyIpamPolicyAllocationRulesResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyIpamPolicyAllocationRules, request, handler, context);
   }
 
   /**

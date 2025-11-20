@@ -16,11 +16,14 @@ namespace Model {
 namespace RuleTypeMapper {
 
 static const int METADATA_FORM_ENFORCEMENT_HASH = HashingUtils::HashString("METADATA_FORM_ENFORCEMENT");
+static const int GLOSSARY_TERM_ENFORCEMENT_HASH = HashingUtils::HashString("GLOSSARY_TERM_ENFORCEMENT");
 
 RuleType GetRuleTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == METADATA_FORM_ENFORCEMENT_HASH) {
     return RuleType::METADATA_FORM_ENFORCEMENT;
+  } else if (hashCode == GLOSSARY_TERM_ENFORCEMENT_HASH) {
+    return RuleType::GLOSSARY_TERM_ENFORCEMENT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForRuleType(RuleType enumValue) {
       return {};
     case RuleType::METADATA_FORM_ENFORCEMENT:
       return "METADATA_FORM_ENFORCEMENT";
+    case RuleType::GLOSSARY_TERM_ENFORCEMENT:
+      return "GLOSSARY_TERM_ENFORCEMENT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

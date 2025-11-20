@@ -27,7 +27,7 @@ namespace Model {
  * impacted resource, find the <a
  * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
  * field in the returned exception. Contact <a
- * href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request
+ * href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request
  * a quota increase.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RequestLimitExceeded">AWS
  * API Reference</a></p>

@@ -179,15 +179,19 @@ class PutSecretValueRequest : public SecretsManagerRequest {
 
   ///@{
   /**
-   * <p>A unique identifier that indicates the source of the request. For
-   * cross-account rotation (when you rotate a secret in one account by using a
-   * Lambda rotation function in another account) and the Lambda rotation function
-   * assumes an IAM role to call Secrets Manager, Secrets Manager validates the
-   * identity with the rotation token. For more information, see <a
+   * <p>A unique identifier that indicates the source of the request. Required for
+   * secret rotations using an IAM assumed role or cross-account rotation, in which
+   * you rotate a secret in one account by using a Lambda rotation function in
+   * another account. In both cases, the rotation function assumes an IAM role to
+   * call Secrets Manager, and then Secrets Manager validates the identity using the
+   * token. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">How
-   * rotation works</a>.</p> <p>Sensitive: This field contains sensitive information,
-   * so the service does not include it in CloudTrail log entries. If you create your
-   * own log entries, you must also avoid logging the information in this field.</p>
+   * rotation works</a> and <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda">Rotation
+   * by Lambda functions</a>.</p> <p>Sensitive: This field contains sensitive
+   * information, so the service does not include it in CloudTrail log entries. If
+   * you create your own log entries, you must also avoid logging the information in
+   * this field.</p>
    */
   inline const Aws::String& GetRotationToken() const { return m_rotationToken; }
   inline bool RotationTokenHasBeenSet() const { return m_rotationTokenHasBeenSet; }

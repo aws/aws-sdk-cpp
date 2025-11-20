@@ -154,8 +154,8 @@ class CreateRepositoryCreationTemplateRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>Creates a repository creation template with a list of filters that define
-   * which image tags can override the default image tag mutability setting.</p>
+   * <p>A list of filters that specify which image tags should be excluded from the
+   * repository creation template's image tag mutability setting.</p>
    */
   inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const {
     return m_imageTagMutabilityExclusionFilters;

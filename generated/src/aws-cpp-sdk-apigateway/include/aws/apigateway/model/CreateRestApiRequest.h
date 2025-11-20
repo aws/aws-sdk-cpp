@@ -7,7 +7,9 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/ApiKeySourceType.h>
+#include <aws/apigateway/model/EndpointAccessMode.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
+#include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -255,6 +257,40 @@ class CreateRestApiRequest : public APIGatewayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Transport Layer Security (TLS) version + cipher suite for this RestApi.
+   * </p>
+   */
+  inline SecurityPolicy GetSecurityPolicy() const { return m_securityPolicy; }
+  inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
+  inline void SetSecurityPolicy(SecurityPolicy value) {
+    m_securityPolicyHasBeenSet = true;
+    m_securityPolicy = value;
+  }
+  inline CreateRestApiRequest& WithSecurityPolicy(SecurityPolicy value) {
+    SetSecurityPolicy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The endpoint access mode of the RestApi. Only available for RestApis that
+   * use security policies that start with <code>SecurityPolicy_</code>.</p>
+   */
+  inline EndpointAccessMode GetEndpointAccessMode() const { return m_endpointAccessMode; }
+  inline bool EndpointAccessModeHasBeenSet() const { return m_endpointAccessModeHasBeenSet; }
+  inline void SetEndpointAccessMode(EndpointAccessMode value) {
+    m_endpointAccessModeHasBeenSet = true;
+    m_endpointAccessMode = value;
+  }
+  inline CreateRestApiRequest& WithEndpointAccessMode(EndpointAccessMode value) {
+    SetEndpointAccessMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -288,6 +324,12 @@ class CreateRestApiRequest : public APIGatewayRequest {
 
   bool m_disableExecuteApiEndpoint{false};
   bool m_disableExecuteApiEndpointHasBeenSet = false;
+
+  SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
+  bool m_securityPolicyHasBeenSet = false;
+
+  EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
+  bool m_endpointAccessModeHasBeenSet = false;
 };
 
 }  // namespace Model

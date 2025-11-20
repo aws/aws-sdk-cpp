@@ -177,6 +177,10 @@ Aws::String RunJobFlowRequest::SerializePayload() const {
     payload.WithBool("ExtendedSupport", m_extendedSupport);
   }
 
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

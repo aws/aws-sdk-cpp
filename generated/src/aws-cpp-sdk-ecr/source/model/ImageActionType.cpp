@@ -16,11 +16,14 @@ namespace Model {
 namespace ImageActionTypeMapper {
 
 static const int EXPIRE_HASH = HashingUtils::HashString("EXPIRE");
+static const int TRANSITION_HASH = HashingUtils::HashString("TRANSITION");
 
 ImageActionType GetImageActionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == EXPIRE_HASH) {
     return ImageActionType::EXPIRE;
+  } else if (hashCode == TRANSITION_HASH) {
+    return ImageActionType::TRANSITION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForImageActionType(ImageActionType enumValue) {
       return {};
     case ImageActionType::EXPIRE:
       return "EXPIRE";
+    case ImageActionType::TRANSITION:
+      return "TRANSITION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

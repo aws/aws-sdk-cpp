@@ -13,6 +13,7 @@
 #include <aws/elasticmapreduce/model/Ec2InstanceAttributes.h>
 #include <aws/elasticmapreduce/model/InstanceCollectionType.h>
 #include <aws/elasticmapreduce/model/KerberosAttributes.h>
+#include <aws/elasticmapreduce/model/MonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/PlacementGroupConfig.h>
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
@@ -736,6 +737,24 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains Cloudwatch log configuration metadata and settings.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
+  inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  void SetMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    m_monitoringConfigurationHasBeenSet = true;
+    m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value);
+  }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  Cluster& WithMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -841,6 +860,9 @@ class Cluster {
 
   bool m_extendedSupport{false};
   bool m_extendedSupportHasBeenSet = false;
+
+  MonitoringConfiguration m_monitoringConfiguration;
+  bool m_monitoringConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

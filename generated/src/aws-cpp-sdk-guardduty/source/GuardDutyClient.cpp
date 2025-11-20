@@ -59,6 +59,7 @@
 #include <aws/guardduty/model/GetIPSetRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/GetMalwareProtectionPlanRequest.h>
+#include <aws/guardduty/model/GetMalwareScanRequest.h>
 #include <aws/guardduty/model/GetMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
@@ -76,6 +77,7 @@
 #include <aws/guardduty/model/ListIPSetsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
+#include <aws/guardduty/model/ListMalwareScansRequest.h>
 #include <aws/guardduty/model/ListMembersRequest.h>
 #include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/guardduty/model/ListPublishingDestinationsRequest.h>
@@ -1668,6 +1670,42 @@ GetMalwareProtectionPlanOutcome GuardDutyClient::GetMalwareProtectionPlan(const 
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetMalwareScanOutcome GuardDutyClient::GetMalwareScan(const GetMalwareScanRequest& request) const {
+  AWS_OPERATION_GUARD(GetMalwareScan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ScanIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMalwareScan", "Required field: ScanId, is not set");
+    return GetMalwareScanOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [ScanId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMalwareScan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetMalwareScan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMalwareScan",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetMalwareScanOutcome>(
+      [&]() -> GetMalwareScanOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScanId());
+        return GetMalwareScanOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const {
   AWS_OPERATION_GUARD(GetMalwareScanSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMalwareScanSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2281,6 +2319,36 @@ ListMalwareProtectionPlansOutcome GuardDutyClient::ListMalwareProtectionPlans(co
         endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan");
         return ListMalwareProtectionPlansOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListMalwareScansOutcome GuardDutyClient::ListMalwareScans(const ListMalwareScansRequest& request) const {
+  AWS_OPERATION_GUARD(ListMalwareScans);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMalwareScans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMalwareScans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMalwareScans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMalwareScans",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMalwareScansOutcome>(
+      [&]() -> ListMalwareScansOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMalwareScans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan");
+        return ListMalwareScansOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

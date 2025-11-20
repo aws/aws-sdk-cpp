@@ -248,6 +248,90 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves information about multiple router inputs in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetRouterInputOutcome BatchGetRouterInput(const Model::BatchGetRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetRouterInputRequestT = Model::BatchGetRouterInputRequest>
+  Model::BatchGetRouterInputOutcomeCallable BatchGetRouterInputCallable(const BatchGetRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::BatchGetRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename BatchGetRouterInputRequestT = Model::BatchGetRouterInputRequest>
+  void BatchGetRouterInputAsync(const BatchGetRouterInputRequestT& request, const BatchGetRouterInputResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::BatchGetRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about multiple router network interfaces in AWS
+   * Elemental MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetRouterNetworkInterfaceOutcome BatchGetRouterNetworkInterface(
+      const Model::BatchGetRouterNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetRouterNetworkInterface that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetRouterNetworkInterfaceRequestT = Model::BatchGetRouterNetworkInterfaceRequest>
+  Model::BatchGetRouterNetworkInterfaceOutcomeCallable BatchGetRouterNetworkInterfaceCallable(
+      const BatchGetRouterNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::BatchGetRouterNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetRouterNetworkInterface that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename BatchGetRouterNetworkInterfaceRequestT = Model::BatchGetRouterNetworkInterfaceRequest>
+  void BatchGetRouterNetworkInterfaceAsync(const BatchGetRouterNetworkInterfaceRequestT& request,
+                                           const BatchGetRouterNetworkInterfaceResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::BatchGetRouterNetworkInterface, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about multiple router outputs in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetRouterOutputOutcome BatchGetRouterOutput(const Model::BatchGetRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetRouterOutputRequestT = Model::BatchGetRouterOutputRequest>
+  Model::BatchGetRouterOutputOutcomeCallable BatchGetRouterOutputCallable(const BatchGetRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::BatchGetRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetRouterOutput that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetRouterOutputRequestT = Model::BatchGetRouterOutputRequest>
+  void BatchGetRouterOutputAsync(const BatchGetRouterOutputRequestT& request, const BatchGetRouterOutputResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::BatchGetRouterOutput, request, handler, context);
+  }
+
+  /**
    * <p> Creates a new bridge. The request must include one source.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">AWS
@@ -327,6 +411,90 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Creates a new router input in AWS Elemental MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRouterInputOutcome CreateRouterInput(const Model::CreateRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRouterInputRequestT = Model::CreateRouterInputRequest>
+  Model::CreateRouterInputOutcomeCallable CreateRouterInputCallable(const CreateRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::CreateRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateRouterInputRequestT = Model::CreateRouterInputRequest>
+  void CreateRouterInputAsync(const CreateRouterInputRequestT& request, const CreateRouterInputResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::CreateRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new router network interface in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRouterNetworkInterfaceOutcome CreateRouterNetworkInterface(
+      const Model::CreateRouterNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRouterNetworkInterface that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateRouterNetworkInterfaceRequestT = Model::CreateRouterNetworkInterfaceRequest>
+  Model::CreateRouterNetworkInterfaceOutcomeCallable CreateRouterNetworkInterfaceCallable(
+      const CreateRouterNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::CreateRouterNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRouterNetworkInterface that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRouterNetworkInterfaceRequestT = Model::CreateRouterNetworkInterfaceRequest>
+  void CreateRouterNetworkInterfaceAsync(const CreateRouterNetworkInterfaceRequestT& request,
+                                         const CreateRouterNetworkInterfaceResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::CreateRouterNetworkInterface, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new router output in AWS Elemental MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRouterOutputOutcome CreateRouterOutput(const Model::CreateRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRouterOutputRequestT = Model::CreateRouterOutputRequest>
+  Model::CreateRouterOutputOutcomeCallable CreateRouterOutputCallable(const CreateRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::CreateRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateRouterOutputRequestT = Model::CreateRouterOutputRequest>
+  void CreateRouterOutputAsync(const CreateRouterOutputRequestT& request, const CreateRouterOutputResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::CreateRouterOutput, request, handler, context);
+  }
+
+  /**
    * <p> Deletes a bridge. Before you can delete a bridge, you must stop the
    * bridge.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">AWS
@@ -402,6 +570,90 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   void DeleteGatewayAsync(const DeleteGatewayRequestT& request, const DeleteGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::DeleteGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a router input from AWS Elemental MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRouterInputOutcome DeleteRouterInput(const Model::DeleteRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRouterInputRequestT = Model::DeleteRouterInputRequest>
+  Model::DeleteRouterInputOutcomeCallable DeleteRouterInputCallable(const DeleteRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DeleteRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteRouterInputRequestT = Model::DeleteRouterInputRequest>
+  void DeleteRouterInputAsync(const DeleteRouterInputRequestT& request, const DeleteRouterInputResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DeleteRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a router network interface from AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRouterNetworkInterfaceOutcome DeleteRouterNetworkInterface(
+      const Model::DeleteRouterNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRouterNetworkInterface that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteRouterNetworkInterfaceRequestT = Model::DeleteRouterNetworkInterfaceRequest>
+  Model::DeleteRouterNetworkInterfaceOutcomeCallable DeleteRouterNetworkInterfaceCallable(
+      const DeleteRouterNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DeleteRouterNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRouterNetworkInterface that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRouterNetworkInterfaceRequestT = Model::DeleteRouterNetworkInterfaceRequest>
+  void DeleteRouterNetworkInterfaceAsync(const DeleteRouterNetworkInterfaceRequestT& request,
+                                         const DeleteRouterNetworkInterfaceResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DeleteRouterNetworkInterface, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a router output from AWS Elemental MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRouterOutputOutcome DeleteRouterOutput(const Model::DeleteRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRouterOutputRequestT = Model::DeleteRouterOutputRequest>
+  Model::DeleteRouterOutputOutcomeCallable DeleteRouterOutputCallable(const DeleteRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DeleteRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteRouterOutputRequestT = Model::DeleteRouterOutputRequest>
+  void DeleteRouterOutputAsync(const DeleteRouterOutputRequestT& request, const DeleteRouterOutputResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DeleteRouterOutput, request, handler, context);
   }
 
   /**
@@ -660,6 +912,145 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves information about a specific router input in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRouterInputOutcome GetRouterInput(const Model::GetRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRouterInput that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRouterInputRequestT = Model::GetRouterInputRequest>
+  Model::GetRouterInputOutcomeCallable GetRouterInputCallable(const GetRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for GetRouterInput that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRouterInputRequestT = Model::GetRouterInputRequest>
+  void GetRouterInputAsync(const GetRouterInputRequestT& request, const GetRouterInputResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed metadata information about a specific router input source,
+   * including stream details and connection state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputSourceMetadata">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRouterInputSourceMetadataOutcome GetRouterInputSourceMetadata(
+      const Model::GetRouterInputSourceMetadataRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRouterInputSourceMetadata that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetRouterInputSourceMetadataRequestT = Model::GetRouterInputSourceMetadataRequest>
+  Model::GetRouterInputSourceMetadataOutcomeCallable GetRouterInputSourceMetadataCallable(
+      const GetRouterInputSourceMetadataRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetRouterInputSourceMetadata, request);
+  }
+
+  /**
+   * An Async wrapper for GetRouterInputSourceMetadata that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRouterInputSourceMetadataRequestT = Model::GetRouterInputSourceMetadataRequest>
+  void GetRouterInputSourceMetadataAsync(const GetRouterInputSourceMetadataRequestT& request,
+                                         const GetRouterInputSourceMetadataResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetRouterInputSourceMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the thumbnail for a router input in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputThumbnail">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRouterInputThumbnailOutcome GetRouterInputThumbnail(const Model::GetRouterInputThumbnailRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRouterInputThumbnail that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRouterInputThumbnailRequestT = Model::GetRouterInputThumbnailRequest>
+  Model::GetRouterInputThumbnailOutcomeCallable GetRouterInputThumbnailCallable(const GetRouterInputThumbnailRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetRouterInputThumbnail, request);
+  }
+
+  /**
+   * An Async wrapper for GetRouterInputThumbnail that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRouterInputThumbnailRequestT = Model::GetRouterInputThumbnailRequest>
+  void GetRouterInputThumbnailAsync(const GetRouterInputThumbnailRequestT& request,
+                                    const GetRouterInputThumbnailResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetRouterInputThumbnail, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific router network interface in AWS
+   * Elemental MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRouterNetworkInterfaceOutcome GetRouterNetworkInterface(const Model::GetRouterNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRouterNetworkInterface that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRouterNetworkInterfaceRequestT = Model::GetRouterNetworkInterfaceRequest>
+  Model::GetRouterNetworkInterfaceOutcomeCallable GetRouterNetworkInterfaceCallable(
+      const GetRouterNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetRouterNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for GetRouterNetworkInterface that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRouterNetworkInterfaceRequestT = Model::GetRouterNetworkInterfaceRequest>
+  void GetRouterNetworkInterfaceAsync(const GetRouterNetworkInterfaceRequestT& request,
+                                      const GetRouterNetworkInterfaceResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetRouterNetworkInterface, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific router output in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRouterOutputOutcome GetRouterOutput(const Model::GetRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRouterOutput that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRouterOutputRequestT = Model::GetRouterOutputRequest>
+  Model::GetRouterOutputOutcomeCallable GetRouterOutputCallable(const GetRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for GetRouterOutput that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRouterOutputRequestT = Model::GetRouterOutputRequest>
+  void GetRouterOutputAsync(const GetRouterOutputRequestT& request, const GetRouterOutputResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetRouterOutput, request, handler, context);
+  }
+
+  /**
    * <p> Grants entitlements to an existing flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">AWS
    * API Reference</a></p>
@@ -885,7 +1276,124 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> List all tags on a MediaConnect resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves a list of router inputs in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterInputs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRouterInputsOutcome ListRouterInputs(const Model::ListRouterInputsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRouterInputs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRouterInputsRequestT = Model::ListRouterInputsRequest>
+  Model::ListRouterInputsOutcomeCallable ListRouterInputsCallable(const ListRouterInputsRequestT& request = {}) const {
+    return SubmitCallable(&MediaConnectClient::ListRouterInputs, request);
+  }
+
+  /**
+   * An Async wrapper for ListRouterInputs that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRouterInputsRequestT = Model::ListRouterInputsRequest>
+  void ListRouterInputsAsync(const ListRouterInputsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListRouterInputsRequestT& request = {}) const {
+    return SubmitAsync(&MediaConnectClient::ListRouterInputs, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of router network interfaces in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterNetworkInterfaces">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRouterNetworkInterfacesOutcome ListRouterNetworkInterfaces(
+      const Model::ListRouterNetworkInterfacesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRouterNetworkInterfaces that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRouterNetworkInterfacesRequestT = Model::ListRouterNetworkInterfacesRequest>
+  Model::ListRouterNetworkInterfacesOutcomeCallable ListRouterNetworkInterfacesCallable(
+      const ListRouterNetworkInterfacesRequestT& request = {}) const {
+    return SubmitCallable(&MediaConnectClient::ListRouterNetworkInterfaces, request);
+  }
+
+  /**
+   * An Async wrapper for ListRouterNetworkInterfaces that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRouterNetworkInterfacesRequestT = Model::ListRouterNetworkInterfacesRequest>
+  void ListRouterNetworkInterfacesAsync(const ListRouterNetworkInterfacesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const ListRouterNetworkInterfacesRequestT& request = {}) const {
+    return SubmitAsync(&MediaConnectClient::ListRouterNetworkInterfaces, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of router outputs in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterOutputs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRouterOutputsOutcome ListRouterOutputs(const Model::ListRouterOutputsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRouterOutputs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRouterOutputsRequestT = Model::ListRouterOutputsRequest>
+  Model::ListRouterOutputsOutcomeCallable ListRouterOutputsCallable(const ListRouterOutputsRequestT& request = {}) const {
+    return SubmitCallable(&MediaConnectClient::ListRouterOutputs, request);
+  }
+
+  /**
+   * An Async wrapper for ListRouterOutputs that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRouterOutputsRequestT = Model::ListRouterOutputsRequest>
+  void ListRouterOutputsAsync(const ListRouterOutputsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListRouterOutputsRequestT& request = {}) const {
+    return SubmitAsync(&MediaConnectClient::ListRouterOutputs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the tags associated with a global resource in AWS Elemental
+   * MediaConnect. The API supports the following global resources: router inputs,
+   * router outputs and router network interfaces. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForGlobalResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForGlobalResourceOutcome ListTagsForGlobalResource(const Model::ListTagsForGlobalResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForGlobalResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForGlobalResourceRequestT = Model::ListTagsForGlobalResourceRequest>
+  Model::ListTagsForGlobalResourceOutcomeCallable ListTagsForGlobalResourceCallable(
+      const ListTagsForGlobalResourceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::ListTagsForGlobalResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForGlobalResource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTagsForGlobalResourceRequestT = Model::ListTagsForGlobalResourceRequest>
+  void ListTagsForGlobalResourceAsync(const ListTagsForGlobalResourceRequestT& request,
+                                      const ListTagsForGlobalResourceResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::ListTagsForGlobalResource, request, handler, context);
+  }
+
+  /**
+   * <p> List all tags on a MediaConnect resource in the current
+   * region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -1106,6 +1614,60 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Restarts a router input. This operation can be used to recover from errors or
+   * refresh the input state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestartRouterInputOutcome RestartRouterInput(const Model::RestartRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestartRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestartRouterInputRequestT = Model::RestartRouterInputRequest>
+  Model::RestartRouterInputOutcomeCallable RestartRouterInputCallable(const RestartRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::RestartRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for RestartRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RestartRouterInputRequestT = Model::RestartRouterInputRequest>
+  void RestartRouterInputAsync(const RestartRouterInputRequestT& request, const RestartRouterInputResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::RestartRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Restarts a router output. This operation can be used to recover from errors
+   * or refresh the output state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestartRouterOutputOutcome RestartRouterOutput(const Model::RestartRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestartRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RestartRouterOutputRequestT = Model::RestartRouterOutputRequest>
+  Model::RestartRouterOutputOutcomeCallable RestartRouterOutputCallable(const RestartRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::RestartRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for RestartRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RestartRouterOutputRequestT = Model::RestartRouterOutputRequest>
+  void RestartRouterOutputAsync(const RestartRouterOutputRequestT& request, const RestartRouterOutputResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::RestartRouterOutput, request, handler, context);
+  }
+
+  /**
    * <p> Revokes an entitlement from a flow. Once an entitlement is revoked, the
    * content becomes unavailable to the subscriber and the associated output is
    * removed.</p><p><h3>See Also:</h3>   <a
@@ -1159,6 +1721,60 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Starts a router input in AWS Elemental MediaConnect.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRouterInputOutcome StartRouterInput(const Model::StartRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartRouterInputRequestT = Model::StartRouterInputRequest>
+  Model::StartRouterInputOutcomeCallable StartRouterInputCallable(const StartRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::StartRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for StartRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartRouterInputRequestT = Model::StartRouterInputRequest>
+  void StartRouterInputAsync(const StartRouterInputRequestT& request, const StartRouterInputResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::StartRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a router output in AWS Elemental MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRouterOutputOutcome StartRouterOutput(const Model::StartRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartRouterOutputRequestT = Model::StartRouterOutputRequest>
+  Model::StartRouterOutputOutcomeCallable StartRouterOutputCallable(const StartRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::StartRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for StartRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartRouterOutputRequestT = Model::StartRouterOutputRequest>
+  void StartRouterOutputAsync(const StartRouterOutputRequestT& request, const StartRouterOutputResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::StartRouterOutput, request, handler, context);
+  }
+
+  /**
    * <p> Stops a flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">AWS
    * API Reference</a></p>
@@ -1184,11 +1800,92 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> Associates the specified tags to a resource with the specified
-   * <code>resourceArn</code>. If existing tags on a resource are not specified in
-   * the request parameters, they are not changed. When a resource is deleted, the
-   * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+   * <p>Stops a router input in AWS Elemental MediaConnect.</p><p><h3>See Also:</h3>
    * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopRouterInputOutcome StopRouterInput(const Model::StopRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopRouterInput that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StopRouterInputRequestT = Model::StopRouterInputRequest>
+  Model::StopRouterInputOutcomeCallable StopRouterInputCallable(const StopRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::StopRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for StopRouterInput that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StopRouterInputRequestT = Model::StopRouterInputRequest>
+  void StopRouterInputAsync(const StopRouterInputRequestT& request, const StopRouterInputResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::StopRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a router output in AWS Elemental MediaConnect.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopRouterOutputOutcome StopRouterOutput(const Model::StopRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopRouterOutputRequestT = Model::StopRouterOutputRequest>
+  Model::StopRouterOutputOutcomeCallable StopRouterOutputCallable(const StopRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::StopRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for StopRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopRouterOutputRequestT = Model::StopRouterOutputRequest>
+  void StopRouterOutputAsync(const StopRouterOutputRequestT& request, const StopRouterOutputResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::StopRouterOutput, request, handler, context);
+  }
+
+  /**
+   * <p>Adds tags to a global resource in AWS Elemental MediaConnect. The API
+   * supports the following global resources: router inputs, router outputs and
+   * router network interfaces. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagGlobalResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagGlobalResourceOutcome TagGlobalResource(const Model::TagGlobalResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagGlobalResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename TagGlobalResourceRequestT = Model::TagGlobalResourceRequest>
+  Model::TagGlobalResourceOutcomeCallable TagGlobalResourceCallable(const TagGlobalResourceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::TagGlobalResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagGlobalResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename TagGlobalResourceRequestT = Model::TagGlobalResourceRequest>
+  void TagGlobalResourceAsync(const TagGlobalResourceRequestT& request, const TagGlobalResourceResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::TagGlobalResource, request, handler, context);
+  }
+
+  /**
+   * <p> Associates the specified tags to a resource with the specified
+   * <code>resourceArn</code> in the current region. If existing tags on a resource
+   * are not specified in the request parameters, they are not changed. When a
+   * resource is deleted, the tags associated with that resource are deleted as
+   * well.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">AWS
    * API Reference</a></p>
    */
@@ -1213,7 +1910,62 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Associates a router input with a router output in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TakeRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TakeRouterInputOutcome TakeRouterInput(const Model::TakeRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for TakeRouterInput that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TakeRouterInputRequestT = Model::TakeRouterInputRequest>
+  Model::TakeRouterInputOutcomeCallable TakeRouterInputCallable(const TakeRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::TakeRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for TakeRouterInput that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TakeRouterInputRequestT = Model::TakeRouterInputRequest>
+  void TakeRouterInputAsync(const TakeRouterInputRequestT& request, const TakeRouterInputResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::TakeRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Removes tags from a global resource in AWS Elemental MediaConnect. The API
+   * supports the following global resources: router inputs, router outputs and
+   * router network interfaces. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagGlobalResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagGlobalResourceOutcome UntagGlobalResource(const Model::UntagGlobalResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagGlobalResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UntagGlobalResourceRequestT = Model::UntagGlobalResourceRequest>
+  Model::UntagGlobalResourceOutcomeCallable UntagGlobalResourceCallable(const UntagGlobalResourceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UntagGlobalResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagGlobalResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UntagGlobalResourceRequestT = Model::UntagGlobalResourceRequest>
+  void UntagGlobalResourceAsync(const UntagGlobalResourceRequestT& request, const UntagGlobalResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UntagGlobalResource, request, handler, context);
+  }
+
+  /**
+   * <p> Deletes specified tags from a resource in the current region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">AWS
    * API Reference</a></p>
    */
@@ -1496,6 +2248,90 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   void UpdateGatewayInstanceAsync(const UpdateGatewayInstanceRequestT& request, const UpdateGatewayInstanceResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::UpdateGatewayInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing router input in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterInput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRouterInputOutcome UpdateRouterInput(const Model::UpdateRouterInputRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRouterInput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRouterInputRequestT = Model::UpdateRouterInputRequest>
+  Model::UpdateRouterInputOutcomeCallable UpdateRouterInputCallable(const UpdateRouterInputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UpdateRouterInput, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRouterInput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRouterInputRequestT = Model::UpdateRouterInputRequest>
+  void UpdateRouterInputAsync(const UpdateRouterInputRequestT& request, const UpdateRouterInputResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UpdateRouterInput, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing router network interface in AWS
+   * Elemental MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterNetworkInterface">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRouterNetworkInterfaceOutcome UpdateRouterNetworkInterface(
+      const Model::UpdateRouterNetworkInterfaceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRouterNetworkInterface that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateRouterNetworkInterfaceRequestT = Model::UpdateRouterNetworkInterfaceRequest>
+  Model::UpdateRouterNetworkInterfaceOutcomeCallable UpdateRouterNetworkInterfaceCallable(
+      const UpdateRouterNetworkInterfaceRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UpdateRouterNetworkInterface, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRouterNetworkInterface that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRouterNetworkInterfaceRequestT = Model::UpdateRouterNetworkInterfaceRequest>
+  void UpdateRouterNetworkInterfaceAsync(const UpdateRouterNetworkInterfaceRequestT& request,
+                                         const UpdateRouterNetworkInterfaceResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UpdateRouterNetworkInterface, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing router output in AWS Elemental
+   * MediaConnect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterOutput">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRouterOutputOutcome UpdateRouterOutput(const Model::UpdateRouterOutputRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRouterOutput that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRouterOutputRequestT = Model::UpdateRouterOutputRequest>
+  Model::UpdateRouterOutputOutcomeCallable UpdateRouterOutputCallable(const UpdateRouterOutputRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UpdateRouterOutput, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRouterOutput that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRouterOutputRequestT = Model::UpdateRouterOutputRequest>
+  void UpdateRouterOutputAsync(const UpdateRouterOutputRequestT& request, const UpdateRouterOutputResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UpdateRouterOutput, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

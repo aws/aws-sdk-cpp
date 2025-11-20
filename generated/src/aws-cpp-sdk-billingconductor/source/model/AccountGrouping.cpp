@@ -29,6 +29,10 @@ AccountGrouping& AccountGrouping::operator=(JsonView jsonValue) {
     m_autoAssociate = jsonValue.GetBool("AutoAssociate");
     m_autoAssociateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResponsibilityTransferArn")) {
+    m_responsibilityTransferArn = jsonValue.GetString("ResponsibilityTransferArn");
+    m_responsibilityTransferArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue AccountGrouping::Jsonize() const {
 
   if (m_autoAssociateHasBeenSet) {
     payload.WithBool("AutoAssociate", m_autoAssociate);
+  }
+
+  if (m_responsibilityTransferArnHasBeenSet) {
+    payload.WithString("ResponsibilityTransferArn", m_responsibilityTransferArn);
   }
 
   return payload;
