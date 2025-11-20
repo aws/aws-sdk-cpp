@@ -8,6 +8,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -405,8 +406,8 @@ namespace Aws
             if (handle->GetChecksum().empty() && !isRetry) {
                 if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
                     fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
-                } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
-                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
+                } else{
+                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
                 }
             }
 
