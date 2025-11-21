@@ -120,11 +120,11 @@ The aws-sdk-cpp port in vcpkg is kept up to date by Microsoft team members and c
 
 ### Building aws-sdk-cpp - Using Conan
 
-You can install pre-built binaries for aws-sdk-cpp or build it from source using [Conan](https://conan.io/). Use the following command:
+You can download and install aws-sdk-cpp using [Conan](https://conan.io/). Use the following command:
 
-    conan install --requires="aws-sdk-cpp/[*]" --build=missing
+    conan install --requires="aws-sdk-cpp/[*]" --build="aws-*"
 
-The aws-sdk-cpp Conan recipe is kept up to date by Conan maintainers and community contributors.
+The aws-sdk-cpp Conan recipe is kept up to date by JFrog's Conan team members and community contributors.
 If the version is out of date, please [create an issue or pull request](https://github.com/conan-io/conan-center-index) on the ConanCenterIndex repository.
 
 # Maintenance and support for SDK major versions
