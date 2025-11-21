@@ -30,8 +30,8 @@ class ListHandshakesForAccountResult {
 
   ///@{
   /**
-   * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-   * that is associated with the specified account.</p>
+   * <p>An array of <code>Handshake</code>objects. Contains details for a
+   * handshake.</p>
    */
   inline const Aws::Vector<Handshake>& GetHandshakes() const { return m_handshakes; }
   template <typename HandshakesT = Aws::Vector<Handshake>>

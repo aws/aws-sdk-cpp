@@ -177,6 +177,45 @@ class NatGatewayAddress {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone where this Elastic IP address (EIP) is being used to
+   * handle outbound NAT traffic.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  NatGatewayAddress& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being
+   * used to handle outbound NAT traffic. Use this instead of AvailabilityZone for
+   * consistent identification of AZs across Amazon Web Services Regions.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  NatGatewayAddress& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_allocationId;
   bool m_allocationIdHasBeenSet = false;
@@ -201,6 +240,12 @@ class NatGatewayAddress {
 
   NatGatewayAddressStatus m_status{NatGatewayAddressStatus::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  Aws::String m_availabilityZone;
+  bool m_availabilityZoneHasBeenSet = false;
+
+  Aws::String m_availabilityZoneId;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

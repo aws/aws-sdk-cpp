@@ -71,8 +71,8 @@ class ListWorkflowExecutionsResult {
 
   ///@{
   /**
-   * <p>The resource ARN of the image build version for which you requested a list of
-   * workflow runtime details.</p>
+   * <p>The resource Amazon Resource Name (ARN) of the image build version for which
+   * you requested a list of workflow runtime details.</p>
    */
   inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
   template <typename ImageBuildVersionArnT = Aws::String>

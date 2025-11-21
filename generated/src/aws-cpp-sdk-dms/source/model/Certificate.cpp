@@ -59,6 +59,10 @@ Certificate& Certificate::operator=(JsonView jsonValue) {
     m_keyLength = jsonValue.GetInteger("KeyLength");
     m_keyLengthHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KmsKeyId")) {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +107,10 @@ JsonValue Certificate::Jsonize() const {
 
   if (m_keyLengthHasBeenSet) {
     payload.WithInteger("KeyLength", m_keyLength);
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
   return payload;

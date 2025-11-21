@@ -20,7 +20,8 @@ namespace BillingConductor {
 namespace Model {
 
 /**
- * <p>The presentation configuration of the custom line item</p><p><h3>See
+ * <p> An object that defines how custom line item charges are presented in the
+ * bill, containing specifications for service presentation. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/PresentationObject">AWS
  * API Reference</a></p>
@@ -34,7 +35,9 @@ class PresentationObject {
 
   ///@{
   /**
-   * <p>This defines the service of where the custom line item is presented</p>
+   * <p> The service under which the custom line item charges will be presented. Must
+   * be a string between 1 and 128 characters matching the pattern
+   * "<code>^[a-zA-Z0-9]+$</code>". </p>
    */
   inline const Aws::String& GetService() const { return m_service; }
   inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }

@@ -91,6 +91,10 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator=(JsonVi
     m_preferredFileServerIpv6 = jsonValue.GetString("PreferredFileServerIpv6");
     m_preferredFileServerIpv6HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FsrmConfiguration")) {
+    m_fsrmConfiguration = jsonValue.GetObject("FsrmConfiguration");
+    m_fsrmConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -171,6 +175,10 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const {
 
   if (m_preferredFileServerIpv6HasBeenSet) {
     payload.WithString("PreferredFileServerIpv6", m_preferredFileServerIpv6);
+  }
+
+  if (m_fsrmConfigurationHasBeenSet) {
+    payload.WithObject("FsrmConfiguration", m_fsrmConfiguration.Jsonize());
   }
 
   return payload;

@@ -241,6 +241,7 @@
 #include <aws/dms/model/KafkaSslEndpointIdentificationAlgorithm.h>
 #include <aws/dms/model/KerberosAuthenticationSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/LakehouseSettings.h>
 #include <aws/dms/model/Limitation.h>
 #include <aws/dms/model/ListTagsForResourceRequest.h>
 #include <aws/dms/model/ListTagsForResourceResult.h>

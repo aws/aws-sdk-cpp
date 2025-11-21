@@ -129,6 +129,10 @@ Input& Input::operator=(JsonView jsonValue) {
     }
     m_sdiSourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("routerSettings")) {
+    m_routerSettings = jsonValue.GetObject("routerSettings");
+    m_routerSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -253,6 +257,10 @@ JsonValue Input::Jsonize() const {
       sdiSourcesJsonList[sdiSourcesIndex].AsString(m_sdiSources[sdiSourcesIndex]);
     }
     payload.WithArray("sdiSources", std::move(sdiSourcesJsonList));
+  }
+
+  if (m_routerSettingsHasBeenSet) {
+    payload.WithObject("routerSettings", m_routerSettings.Jsonize());
   }
 
   return payload;

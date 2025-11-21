@@ -25,6 +25,7 @@ static const int KmsError_HASH = HashingUtils::HashString("KmsError");
 static const int UpstreamAccessDenied_HASH = HashingUtils::HashString("UpstreamAccessDenied");
 static const int UpstreamTooManyRequests_HASH = HashingUtils::HashString("UpstreamTooManyRequests");
 static const int UpstreamUnavailable_HASH = HashingUtils::HashString("UpstreamUnavailable");
+static const int ImageInaccessible_HASH = HashingUtils::HashString("ImageInaccessible");
 
 ImageFailureCode GetImageFailureCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ ImageFailureCode GetImageFailureCodeForName(const Aws::String& name) {
     return ImageFailureCode::UpstreamTooManyRequests;
   } else if (hashCode == UpstreamUnavailable_HASH) {
     return ImageFailureCode::UpstreamUnavailable;
+  } else if (hashCode == ImageInaccessible_HASH) {
+    return ImageFailureCode::ImageInaccessible;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForImageFailureCode(ImageFailureCode enumValue) {
       return "UpstreamTooManyRequests";
     case ImageFailureCode::UpstreamUnavailable:
       return "UpstreamUnavailable";
+    case ImageFailureCode::ImageInaccessible:
+      return "ImageInaccessible";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

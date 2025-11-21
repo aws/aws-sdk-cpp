@@ -29,6 +29,10 @@ DescribeSecretResult& DescribeSecretResult::operator=(const Aws::AmazonWebServic
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = jsonValue.GetString("Type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
@@ -48,6 +52,18 @@ DescribeSecretResult& DescribeSecretResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("RotationRules")) {
     m_rotationRules = jsonValue.GetObject("RotationRules");
     m_rotationRulesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExternalSecretRotationMetadata")) {
+    Aws::Utils::Array<JsonView> externalSecretRotationMetadataJsonList = jsonValue.GetArray("ExternalSecretRotationMetadata");
+    for (unsigned externalSecretRotationMetadataIndex = 0;
+         externalSecretRotationMetadataIndex < externalSecretRotationMetadataJsonList.GetLength(); ++externalSecretRotationMetadataIndex) {
+      m_externalSecretRotationMetadata.push_back(externalSecretRotationMetadataJsonList[externalSecretRotationMetadataIndex].AsObject());
+    }
+    m_externalSecretRotationMetadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExternalSecretRotationRoleArn")) {
+    m_externalSecretRotationRoleArn = jsonValue.GetString("ExternalSecretRotationRoleArn");
+    m_externalSecretRotationRoleArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("LastRotatedDate")) {
     m_lastRotatedDate = jsonValue.GetDouble("LastRotatedDate");

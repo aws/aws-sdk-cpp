@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class RuleType { NOT_SET, METADATA_FORM_ENFORCEMENT };
+enum class RuleType { NOT_SET, METADATA_FORM_ENFORCEMENT, GLOSSARY_TERM_ENFORCEMENT };
 
 namespace RuleTypeMapper {
 AWS_DATAZONE_API RuleType GetRuleTypeForName(const Aws::String& name);

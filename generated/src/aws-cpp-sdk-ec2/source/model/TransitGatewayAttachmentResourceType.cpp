@@ -17,6 +17,7 @@ namespace TransitGatewayAttachmentResourceTypeMapper {
 
 static const int vpc_HASH = HashingUtils::HashString("vpc");
 static const int vpn_HASH = HashingUtils::HashString("vpn");
+static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentrator");
 static const int direct_connect_gateway_HASH = HashingUtils::HashString("direct-connect-gateway");
 static const int connect_HASH = HashingUtils::HashString("connect");
 static const int peering_HASH = HashingUtils::HashString("peering");
@@ -29,6 +30,8 @@ TransitGatewayAttachmentResourceType GetTransitGatewayAttachmentResourceTypeForN
     return TransitGatewayAttachmentResourceType::vpc;
   } else if (hashCode == vpn_HASH) {
     return TransitGatewayAttachmentResourceType::vpn;
+  } else if (hashCode == vpn_concentrator_HASH) {
+    return TransitGatewayAttachmentResourceType::vpn_concentrator;
   } else if (hashCode == direct_connect_gateway_HASH) {
     return TransitGatewayAttachmentResourceType::direct_connect_gateway;
   } else if (hashCode == connect_HASH) {
@@ -57,6 +60,8 @@ Aws::String GetNameForTransitGatewayAttachmentResourceType(TransitGatewayAttachm
       return "vpc";
     case TransitGatewayAttachmentResourceType::vpn:
       return "vpn";
+    case TransitGatewayAttachmentResourceType::vpn_concentrator:
+      return "vpn-concentrator";
     case TransitGatewayAttachmentResourceType::direct_connect_gateway:
       return "direct-connect-gateway";
     case TransitGatewayAttachmentResourceType::connect:

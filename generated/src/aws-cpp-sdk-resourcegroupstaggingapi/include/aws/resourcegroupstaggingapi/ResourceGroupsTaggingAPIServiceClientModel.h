@@ -28,6 +28,8 @@
 #include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
 #include <aws/resourcegroupstaggingapi/model/GetTagKeysResult.h>
 #include <aws/resourcegroupstaggingapi/model/GetTagValuesResult.h>
+#include <aws/resourcegroupstaggingapi/model/ListRequiredTagsRequest.h>
+#include <aws/resourcegroupstaggingapi/model/ListRequiredTagsResult.h>
 #include <aws/resourcegroupstaggingapi/model/StartReportCreationResult.h>
 #include <aws/resourcegroupstaggingapi/model/TagResourcesResult.h>
 #include <aws/resourcegroupstaggingapi/model/UntagResourcesResult.h>
@@ -69,6 +71,7 @@ class GetComplianceSummaryRequest;
 class GetResourcesRequest;
 class GetTagKeysRequest;
 class GetTagValuesRequest;
+class ListRequiredTagsRequest;
 class StartReportCreationRequest;
 class TagResourcesRequest;
 class UntagResourcesRequest;
@@ -80,6 +83,7 @@ typedef Aws::Utils::Outcome<GetComplianceSummaryResult, ResourceGroupsTaggingAPI
 typedef Aws::Utils::Outcome<GetResourcesResult, ResourceGroupsTaggingAPIError> GetResourcesOutcome;
 typedef Aws::Utils::Outcome<GetTagKeysResult, ResourceGroupsTaggingAPIError> GetTagKeysOutcome;
 typedef Aws::Utils::Outcome<GetTagValuesResult, ResourceGroupsTaggingAPIError> GetTagValuesOutcome;
+typedef Aws::Utils::Outcome<ListRequiredTagsResult, ResourceGroupsTaggingAPIError> ListRequiredTagsOutcome;
 typedef Aws::Utils::Outcome<StartReportCreationResult, ResourceGroupsTaggingAPIError> StartReportCreationOutcome;
 typedef Aws::Utils::Outcome<TagResourcesResult, ResourceGroupsTaggingAPIError> TagResourcesOutcome;
 typedef Aws::Utils::Outcome<UntagResourcesResult, ResourceGroupsTaggingAPIError> UntagResourcesOutcome;
@@ -91,6 +95,7 @@ typedef std::future<GetComplianceSummaryOutcome> GetComplianceSummaryOutcomeCall
 typedef std::future<GetResourcesOutcome> GetResourcesOutcomeCallable;
 typedef std::future<GetTagKeysOutcome> GetTagKeysOutcomeCallable;
 typedef std::future<GetTagValuesOutcome> GetTagValuesOutcomeCallable;
+typedef std::future<ListRequiredTagsOutcome> ListRequiredTagsOutcomeCallable;
 typedef std::future<StartReportCreationOutcome> StartReportCreationOutcomeCallable;
 typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
@@ -115,6 +120,9 @@ typedef std::function<void(const ResourceGroupsTaggingAPIClient*, const Model::G
 typedef std::function<void(const ResourceGroupsTaggingAPIClient*, const Model::GetTagValuesRequest&, const Model::GetTagValuesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTagValuesResponseReceivedHandler;
+typedef std::function<void(const ResourceGroupsTaggingAPIClient*, const Model::ListRequiredTagsRequest&,
+                           const Model::ListRequiredTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRequiredTagsResponseReceivedHandler;
 typedef std::function<void(const ResourceGroupsTaggingAPIClient*, const Model::StartReportCreationRequest&,
                            const Model::StartReportCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartReportCreationResponseReceivedHandler;

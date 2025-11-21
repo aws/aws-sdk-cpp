@@ -15,6 +15,7 @@
 #include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/LakehouseSettings.h>
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/MySQLSettings.h>
@@ -380,6 +381,25 @@ class Endpoint {
 
   ///@{
   /**
+   * <p>Indicates whether the endpoint is read-only. When set to <code>true</code>,
+   * this endpoint is managed by DMS as part of a zero-ETL integration and cannot be
+   * modified or deleted directly. You can only modify or delete read-only endpoints
+   * through their associated zero-ETL integration.</p>
+   */
+  inline bool GetIsReadOnly() const { return m_isReadOnly; }
+  inline bool IsReadOnlyHasBeenSet() const { return m_isReadOnlyHasBeenSet; }
+  inline void SetIsReadOnly(bool value) {
+    m_isReadOnlyHasBeenSet = true;
+    m_isReadOnly = value;
+  }
+  inline Endpoint& WithIsReadOnly(bool value) {
+    SetIsReadOnly(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The settings for the DynamoDB target endpoint. For more information, see the
    * <code>DynamoDBSettings</code> structure.</p>
    */
@@ -733,6 +753,26 @@ class Endpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings in JSON format for the target Lakehouse endpoint. This parameter
+   * applies to endpoints that are automatically created by DMS for a Lakehouse data
+   * warehouse as part of a zero-ETL integration.</p>
+   */
+  inline const LakehouseSettings& GetLakehouseSettings() const { return m_lakehouseSettings; }
+  inline bool LakehouseSettingsHasBeenSet() const { return m_lakehouseSettingsHasBeenSet; }
+  template <typename LakehouseSettingsT = LakehouseSettings>
+  void SetLakehouseSettings(LakehouseSettingsT&& value) {
+    m_lakehouseSettingsHasBeenSet = true;
+    m_lakehouseSettings = std::forward<LakehouseSettingsT>(value);
+  }
+  template <typename LakehouseSettingsT = LakehouseSettings>
+  Endpoint& WithLakehouseSettings(LakehouseSettingsT&& value) {
+    SetLakehouseSettings(std::forward<LakehouseSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_endpointIdentifier;
   bool m_endpointIdentifierHasBeenSet = false;
@@ -784,6 +824,9 @@ class Endpoint {
 
   Aws::String m_externalId;
   bool m_externalIdHasBeenSet = false;
+
+  bool m_isReadOnly{false};
+  bool m_isReadOnlyHasBeenSet = false;
 
   DynamoDbSettings m_dynamoDbSettings;
   bool m_dynamoDbSettingsHasBeenSet = false;
@@ -841,6 +884,9 @@ class Endpoint {
 
   TimestreamSettings m_timestreamSettings;
   bool m_timestreamSettingsHasBeenSet = false;
+
+  LakehouseSettings m_lakehouseSettings;
+  bool m_lakehouseSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

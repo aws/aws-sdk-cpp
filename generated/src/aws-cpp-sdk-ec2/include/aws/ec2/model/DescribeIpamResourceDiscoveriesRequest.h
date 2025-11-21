@@ -79,8 +79,7 @@ class DescribeIpamResourceDiscoveriesRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>Specify the pagination token from a previous request to retrieve the next
-   * page of results.</p>
+   * <p>The token for the next page of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

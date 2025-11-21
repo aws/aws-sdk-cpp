@@ -19,6 +19,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/s3/S3ServiceClientModel.h>
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/model/AbacStatus.h>
 #include <aws/s3/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <aws/s3/model/AbortMultipartUploadResult.h>
@@ -32,7 +33,9 @@
 #include <aws/s3/model/AnalyticsS3BucketDestination.h>
 #include <aws/s3/model/AnalyticsS3ExportFileFormat.h>
 #include <aws/s3/model/ArchiveStatus.h>
+#include <aws/s3/model/BlockedEncryptionTypes.h>
 #include <aws/s3/model/Bucket.h>
+#include <aws/s3/model/BucketAbacStatus.h>
 #include <aws/s3/model/BucketAccelerateStatus.h>
 #include <aws/s3/model/BucketCannedACL.h>
 #include <aws/s3/model/BucketInfo.h>
@@ -105,6 +108,7 @@
 #include <aws/s3/model/EncodingType.h>
 #include <aws/s3/model/Encryption.h>
 #include <aws/s3/model/EncryptionConfiguration.h>
+#include <aws/s3/model/EncryptionType.h>
 #include <aws/s3/model/Error.h>
 #include <aws/s3/model/ErrorDetails.h>
 #include <aws/s3/model/ErrorDocument.h>
@@ -118,6 +122,8 @@
 #include <aws/s3/model/FileHeaderInfo.h>
 #include <aws/s3/model/FilterRule.h>
 #include <aws/s3/model/FilterRuleName.h>
+#include <aws/s3/model/GetBucketAbacRequest.h>
+#include <aws/s3/model/GetBucketAbacResult.h>
 #include <aws/s3/model/GetBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/GetBucketAccelerateConfigurationResult.h>
 #include <aws/s3/model/GetBucketAclRequest.h>
@@ -305,6 +311,7 @@
 #include <aws/s3/model/ProgressEvent.h>
 #include <aws/s3/model/Protocol.h>
 #include <aws/s3/model/PublicAccessBlockConfiguration.h>
+#include <aws/s3/model/PutBucketAbacRequest.h>
 #include <aws/s3/model/PutBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/PutBucketAclRequest.h>
 #include <aws/s3/model/PutBucketAnalyticsConfigurationRequest.h>

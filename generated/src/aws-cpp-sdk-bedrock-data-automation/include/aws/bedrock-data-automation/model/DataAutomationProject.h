@@ -8,6 +8,7 @@
 #include <aws/bedrock-data-automation/model/CustomOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStatus.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
 #include <aws/bedrock-data-automation/model/OverrideConfiguration.h>
 #include <aws/bedrock-data-automation/model/StandardOutputConfiguration.h>
 #include <aws/core/utils/DateTime.h>
@@ -113,6 +114,20 @@ class DataAutomationProject {
   }
   inline DataAutomationProject& WithProjectStage(DataAutomationProjectStage value) {
     SetProjectStage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline DataAutomationProjectType GetProjectType() const { return m_projectType; }
+  inline bool ProjectTypeHasBeenSet() const { return m_projectTypeHasBeenSet; }
+  inline void SetProjectType(DataAutomationProjectType value) {
+    m_projectTypeHasBeenSet = true;
+    m_projectType = value;
+  }
+  inline DataAutomationProject& WithProjectType(DataAutomationProjectType value) {
+    SetProjectType(value);
     return *this;
   }
   ///@}
@@ -247,6 +262,9 @@ class DataAutomationProject {
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
   bool m_projectStageHasBeenSet = false;
+
+  DataAutomationProjectType m_projectType{DataAutomationProjectType::NOT_SET};
+  bool m_projectTypeHasBeenSet = false;
 
   Aws::String m_projectDescription;
   bool m_projectDescriptionHasBeenSet = false;

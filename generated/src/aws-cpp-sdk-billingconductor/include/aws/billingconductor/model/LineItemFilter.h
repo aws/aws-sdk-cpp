@@ -26,7 +26,7 @@ namespace Model {
  * <p>A representation of the line item filter for your custom line item. You can
  * use line item filters to include or exclude specific resource values from the
  * billing group's total cost. For example, if you create a custom line item and
- * you want to filter out a value, such as Savings Plan discounts, you can update
+ * you want to filter out a value, such as Savings Plans discounts, you can update
  * <code>LineItemFilter</code> to exclude it.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/LineItemFilter">AWS
  * API Reference</a></p>
@@ -75,7 +75,7 @@ class LineItemFilter {
   ///@{
   /**
    * <p>The values of the line item filter. This specifies the values to filter on.
-   * Currently, you can only exclude Savings Plan discounts.</p>
+   * Currently, you can only exclude Savings Plans discounts.</p>
    */
   inline const Aws::Vector<LineItemFilterValue>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

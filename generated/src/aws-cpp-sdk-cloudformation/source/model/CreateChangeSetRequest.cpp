@@ -138,6 +138,10 @@ Aws::String CreateChangeSetRequest::SerializePayload() const {
     ss << "ImportExistingResources=" << std::boolalpha << m_importExistingResources << "&";
   }
 
+  if (m_deploymentModeHasBeenSet) {
+    ss << "DeploymentMode=" << StringUtils::URLEncode(DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode)) << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

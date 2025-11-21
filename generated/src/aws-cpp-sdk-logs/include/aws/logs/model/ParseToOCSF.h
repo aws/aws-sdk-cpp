@@ -25,9 +25,8 @@ namespace Model {
  * <p>This processor converts logs into <a href="https://ocsf.io">Open
  * Cybersecurity Schema Framework (OCSF)</a> events.</p> <p>For more information
  * about this processor including examples, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseToOCSF">
- * parseToOSCF</a> in the <i>CloudWatch Logs User Guide</i>.</p><p><h3>See
- * Also:</h3>   <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseToOCSF">parseToOCSF</a>
+ * in the <i>CloudWatch Logs User Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ParseToOCSF">AWS
  * API Reference</a></p>
  */
@@ -90,6 +89,26 @@ class ParseToOCSF {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Identifies the specific release of the Open Cybersecurity Schema Framework
+   * (OCSF) transformer being used to parse OCSF data. Defaults to the latest version
+   * if not specified. Does not automatically update.</p>
+   */
+  inline const Aws::String& GetMappingVersion() const { return m_mappingVersion; }
+  inline bool MappingVersionHasBeenSet() const { return m_mappingVersionHasBeenSet; }
+  template <typename MappingVersionT = Aws::String>
+  void SetMappingVersion(MappingVersionT&& value) {
+    m_mappingVersionHasBeenSet = true;
+    m_mappingVersion = std::forward<MappingVersionT>(value);
+  }
+  template <typename MappingVersionT = Aws::String>
+  ParseToOCSF& WithMappingVersion(MappingVersionT&& value) {
+    SetMappingVersion(std::forward<MappingVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_source;
   bool m_sourceHasBeenSet = false;
@@ -99,6 +118,9 @@ class ParseToOCSF {
 
   OCSFVersion m_ocsfVersion{OCSFVersion::NOT_SET};
   bool m_ocsfVersionHasBeenSet = false;
+
+  Aws::String m_mappingVersion;
+  bool m_mappingVersionHasBeenSet = false;
 };
 
 }  // namespace Model

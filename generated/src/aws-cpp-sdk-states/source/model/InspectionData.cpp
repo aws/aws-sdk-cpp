@@ -58,6 +58,38 @@ InspectionData& InspectionData::operator=(JsonView jsonValue) {
     m_variables = jsonValue.GetString("variables");
     m_variablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    m_errorDetails = jsonValue.GetObject("errorDetails");
+    m_errorDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("afterItemsPath")) {
+    m_afterItemsPath = jsonValue.GetString("afterItemsPath");
+    m_afterItemsPathHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("afterItemSelector")) {
+    m_afterItemSelector = jsonValue.GetString("afterItemSelector");
+    m_afterItemSelectorHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("afterItemBatcher")) {
+    m_afterItemBatcher = jsonValue.GetString("afterItemBatcher");
+    m_afterItemBatcherHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("afterItemsPointer")) {
+    m_afterItemsPointer = jsonValue.GetString("afterItemsPointer");
+    m_afterItemsPointerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("toleratedFailureCount")) {
+    m_toleratedFailureCount = jsonValue.GetInteger("toleratedFailureCount");
+    m_toleratedFailureCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("toleratedFailurePercentage")) {
+    m_toleratedFailurePercentage = jsonValue.GetDouble("toleratedFailurePercentage");
+    m_toleratedFailurePercentageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxConcurrency")) {
+    m_maxConcurrency = jsonValue.GetInteger("maxConcurrency");
+    m_maxConcurrencyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +134,38 @@ JsonValue InspectionData::Jsonize() const {
 
   if (m_variablesHasBeenSet) {
     payload.WithString("variables", m_variables);
+  }
+
+  if (m_errorDetailsHasBeenSet) {
+    payload.WithObject("errorDetails", m_errorDetails.Jsonize());
+  }
+
+  if (m_afterItemsPathHasBeenSet) {
+    payload.WithString("afterItemsPath", m_afterItemsPath);
+  }
+
+  if (m_afterItemSelectorHasBeenSet) {
+    payload.WithString("afterItemSelector", m_afterItemSelector);
+  }
+
+  if (m_afterItemBatcherHasBeenSet) {
+    payload.WithString("afterItemBatcher", m_afterItemBatcher);
+  }
+
+  if (m_afterItemsPointerHasBeenSet) {
+    payload.WithString("afterItemsPointer", m_afterItemsPointer);
+  }
+
+  if (m_toleratedFailureCountHasBeenSet) {
+    payload.WithInteger("toleratedFailureCount", m_toleratedFailureCount);
+  }
+
+  if (m_toleratedFailurePercentageHasBeenSet) {
+    payload.WithDouble("toleratedFailurePercentage", m_toleratedFailurePercentage);
+  }
+
+  if (m_maxConcurrencyHasBeenSet) {
+    payload.WithInteger("maxConcurrency", m_maxConcurrency);
   }
 
   return payload;

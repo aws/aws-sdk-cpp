@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/EndpointStatus.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/MetricsConfig.h>
 #include <aws/sagemaker/model/PendingDeploymentSummary.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
 
@@ -329,6 +330,23 @@ class DescribeEndpointResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration parameters for utilization metrics.</p>
+   */
+  inline const MetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
+  template <typename MetricsConfigT = MetricsConfig>
+  void SetMetricsConfig(MetricsConfigT&& value) {
+    m_metricsConfigHasBeenSet = true;
+    m_metricsConfig = std::forward<MetricsConfigT>(value);
+  }
+  template <typename MetricsConfigT = MetricsConfig>
+  DescribeEndpointResult& WithMetricsConfig(MetricsConfigT&& value) {
+    SetMetricsConfig(std::forward<MetricsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -384,6 +402,9 @@ class DescribeEndpointResult {
 
   Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
   bool m_shadowProductionVariantsHasBeenSet = false;
+
+  MetricsConfig m_metricsConfig;
+  bool m_metricsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -18,25 +18,9 @@ namespace Model {
 AppMonitor::AppMonitor(JsonView jsonValue) { *this = jsonValue; }
 
 AppMonitor& AppMonitor::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AppMonitorConfiguration")) {
-    m_appMonitorConfiguration = jsonValue.GetObject("AppMonitorConfiguration");
-    m_appMonitorConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Created")) {
-    m_created = jsonValue.GetString("Created");
-    m_createdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CustomEvents")) {
-    m_customEvents = jsonValue.GetObject("CustomEvents");
-    m_customEventsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DataStorage")) {
-    m_dataStorage = jsonValue.GetObject("DataStorage");
-    m_dataStorageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeobfuscationConfiguration")) {
-    m_deobfuscationConfiguration = jsonValue.GetObject("DeobfuscationConfiguration");
-    m_deobfuscationConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("Name")) {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Domain")) {
     m_domain = jsonValue.GetString("Domain");
@@ -53,17 +37,13 @@ AppMonitor& AppMonitor::operator=(JsonView jsonValue) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Created")) {
+    m_created = jsonValue.GetString("Created");
+    m_createdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LastModified")) {
     m_lastModified = jsonValue.GetString("LastModified");
     m_lastModifiedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Name")) {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("State")) {
-    m_state = StateEnumMapper::GetStateEnumForName(jsonValue.GetString("State"));
-    m_stateHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -72,30 +52,38 @@ AppMonitor& AppMonitor::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("State")) {
+    m_state = StateEnumMapper::GetStateEnumForName(jsonValue.GetString("State"));
+    m_stateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AppMonitorConfiguration")) {
+    m_appMonitorConfiguration = jsonValue.GetObject("AppMonitorConfiguration");
+    m_appMonitorConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataStorage")) {
+    m_dataStorage = jsonValue.GetObject("DataStorage");
+    m_dataStorageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CustomEvents")) {
+    m_customEvents = jsonValue.GetObject("CustomEvents");
+    m_customEventsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DeobfuscationConfiguration")) {
+    m_deobfuscationConfiguration = jsonValue.GetObject("DeobfuscationConfiguration");
+    m_deobfuscationConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Platform")) {
+    m_platform = AppMonitorPlatformMapper::GetAppMonitorPlatformForName(jsonValue.GetString("Platform"));
+    m_platformHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AppMonitor::Jsonize() const {
   JsonValue payload;
 
-  if (m_appMonitorConfigurationHasBeenSet) {
-    payload.WithObject("AppMonitorConfiguration", m_appMonitorConfiguration.Jsonize());
-  }
-
-  if (m_createdHasBeenSet) {
-    payload.WithString("Created", m_created);
-  }
-
-  if (m_customEventsHasBeenSet) {
-    payload.WithObject("CustomEvents", m_customEvents.Jsonize());
-  }
-
-  if (m_dataStorageHasBeenSet) {
-    payload.WithObject("DataStorage", m_dataStorage.Jsonize());
-  }
-
-  if (m_deobfuscationConfigurationHasBeenSet) {
-    payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   if (m_domainHasBeenSet) {
@@ -114,16 +102,12 @@ JsonValue AppMonitor::Jsonize() const {
     payload.WithString("Id", m_id);
   }
 
+  if (m_createdHasBeenSet) {
+    payload.WithString("Created", m_created);
+  }
+
   if (m_lastModifiedHasBeenSet) {
     payload.WithString("LastModified", m_lastModified);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
-  if (m_stateHasBeenSet) {
-    payload.WithString("State", StateEnumMapper::GetNameForStateEnum(m_state));
   }
 
   if (m_tagsHasBeenSet) {
@@ -132,6 +116,30 @@ JsonValue AppMonitor::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", StateEnumMapper::GetNameForStateEnum(m_state));
+  }
+
+  if (m_appMonitorConfigurationHasBeenSet) {
+    payload.WithObject("AppMonitorConfiguration", m_appMonitorConfiguration.Jsonize());
+  }
+
+  if (m_dataStorageHasBeenSet) {
+    payload.WithObject("DataStorage", m_dataStorage.Jsonize());
+  }
+
+  if (m_customEventsHasBeenSet) {
+    payload.WithObject("CustomEvents", m_customEvents.Jsonize());
+  }
+
+  if (m_deobfuscationConfigurationHasBeenSet) {
+    payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+  }
+
+  if (m_platformHasBeenSet) {
+    payload.WithString("Platform", AppMonitorPlatformMapper::GetNameForAppMonitorPlatform(m_platform));
   }
 
   return payload;

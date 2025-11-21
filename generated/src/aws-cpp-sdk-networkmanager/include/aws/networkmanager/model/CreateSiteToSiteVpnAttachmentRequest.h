@@ -70,6 +70,25 @@ class CreateSiteToSiteVpnAttachmentRequest : public NetworkManagerRequest {
 
   ///@{
   /**
+   * <p>The routing policy label to apply to the Site-to-Site VPN attachment for
+   * traffic routing decisions.</p>
+   */
+  inline const Aws::String& GetRoutingPolicyLabel() const { return m_routingPolicyLabel; }
+  inline bool RoutingPolicyLabelHasBeenSet() const { return m_routingPolicyLabelHasBeenSet; }
+  template <typename RoutingPolicyLabelT = Aws::String>
+  void SetRoutingPolicyLabel(RoutingPolicyLabelT&& value) {
+    m_routingPolicyLabelHasBeenSet = true;
+    m_routingPolicyLabel = std::forward<RoutingPolicyLabelT>(value);
+  }
+  template <typename RoutingPolicyLabelT = Aws::String>
+  CreateSiteToSiteVpnAttachmentRequest& WithRoutingPolicyLabel(RoutingPolicyLabelT&& value) {
+    SetRoutingPolicyLabel(std::forward<RoutingPolicyLabelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags associated with the request.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -115,6 +134,9 @@ class CreateSiteToSiteVpnAttachmentRequest : public NetworkManagerRequest {
 
   Aws::String m_vpnConnectionArn;
   bool m_vpnConnectionArnHasBeenSet = false;
+
+  Aws::String m_routingPolicyLabel;
+  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;

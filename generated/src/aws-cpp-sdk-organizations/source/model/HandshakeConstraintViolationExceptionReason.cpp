@@ -28,6 +28,10 @@ static const int ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH =
 static const int ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH =
     HashingUtils::HashString("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
 static const int MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
+static const int RESPONSIBILITY_TRANSFER_ALREADY_EXISTS_HASH = HashingUtils::HashString("RESPONSIBILITY_TRANSFER_ALREADY_EXISTS");
+static const int SOURCE_AND_TARGET_CANNOT_MATCH_HASH = HashingUtils::HashString("SOURCE_AND_TARGET_CANNOT_MATCH");
+static const int UNUSED_PREPAYMENT_BALANCE_HASH = HashingUtils::HashString("UNUSED_PREPAYMENT_BALANCE");
+static const int LEGACY_PERMISSIONS_STILL_IN_USE_HASH = HashingUtils::HashString("LEGACY_PERMISSIONS_STILL_IN_USE");
 
 HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +55,14 @@ HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExcep
     return HandshakeConstraintViolationExceptionReason::ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED;
   } else if (hashCode == MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH) {
     return HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED;
+  } else if (hashCode == RESPONSIBILITY_TRANSFER_ALREADY_EXISTS_HASH) {
+    return HandshakeConstraintViolationExceptionReason::RESPONSIBILITY_TRANSFER_ALREADY_EXISTS;
+  } else if (hashCode == SOURCE_AND_TARGET_CANNOT_MATCH_HASH) {
+    return HandshakeConstraintViolationExceptionReason::SOURCE_AND_TARGET_CANNOT_MATCH;
+  } else if (hashCode == UNUSED_PREPAYMENT_BALANCE_HASH) {
+    return HandshakeConstraintViolationExceptionReason::UNUSED_PREPAYMENT_BALANCE;
+  } else if (hashCode == LEGACY_PERMISSIONS_STILL_IN_USE_HASH) {
+    return HandshakeConstraintViolationExceptionReason::LEGACY_PERMISSIONS_STILL_IN_USE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -85,6 +97,14 @@ Aws::String GetNameForHandshakeConstraintViolationExceptionReason(HandshakeConst
       return "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED";
     case HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED:
       return "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED";
+    case HandshakeConstraintViolationExceptionReason::RESPONSIBILITY_TRANSFER_ALREADY_EXISTS:
+      return "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS";
+    case HandshakeConstraintViolationExceptionReason::SOURCE_AND_TARGET_CANNOT_MATCH:
+      return "SOURCE_AND_TARGET_CANNOT_MATCH";
+    case HandshakeConstraintViolationExceptionReason::UNUSED_PREPAYMENT_BALANCE:
+      return "UNUSED_PREPAYMENT_BALANCE";
+    case HandshakeConstraintViolationExceptionReason::LEGACY_PERMISSIONS_STILL_IN_USE:
+      return "LEGACY_PERMISSIONS_STILL_IN_USE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LicenseManager {
 namespace Model {
-enum class ReportType { NOT_SET, LicenseConfigurationSummaryReport, LicenseConfigurationUsageReport };
+enum class ReportType { NOT_SET, LicenseConfigurationSummaryReport, LicenseConfigurationUsageReport, LicenseAssetGroupUsageReport };
 
 namespace ReportTypeMapper {
 AWS_LICENSEMANAGER_API ReportType GetReportTypeForName(const Aws::String& name);

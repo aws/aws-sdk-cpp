@@ -79,6 +79,35 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator=(JsonView jsonValue) 
     m_securityGroupReferencingSupport = jsonValue.GetBool("SecurityGroupReferencingSupport");
     m_securityGroupReferencingSupportHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RoutingPolicyDirection")) {
+    m_routingPolicyDirection =
+        RoutingPolicyDirectionMapper::GetRoutingPolicyDirectionForName(jsonValue.GetString("RoutingPolicyDirection"));
+    m_routingPolicyDirectionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoutingPolicy")) {
+    m_routingPolicy = jsonValue.GetString("RoutingPolicy");
+    m_routingPolicyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PeerEdgeLocations")) {
+    Aws::Utils::Array<JsonView> peerEdgeLocationsJsonList = jsonValue.GetArray("PeerEdgeLocations");
+    for (unsigned peerEdgeLocationsIndex = 0; peerEdgeLocationsIndex < peerEdgeLocationsJsonList.GetLength(); ++peerEdgeLocationsIndex) {
+      m_peerEdgeLocations.push_back(peerEdgeLocationsJsonList[peerEdgeLocationsIndex].AsString());
+    }
+    m_peerEdgeLocationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AttachmentId")) {
+    m_attachmentId = jsonValue.GetString("AttachmentId");
+    m_attachmentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoutingPolicyAssociationDetails")) {
+    Aws::Utils::Array<JsonView> routingPolicyAssociationDetailsJsonList = jsonValue.GetArray("RoutingPolicyAssociationDetails");
+    for (unsigned routingPolicyAssociationDetailsIndex = 0;
+         routingPolicyAssociationDetailsIndex < routingPolicyAssociationDetailsJsonList.GetLength();
+         ++routingPolicyAssociationDetailsIndex) {
+      m_routingPolicyAssociationDetails.push_back(routingPolicyAssociationDetailsJsonList[routingPolicyAssociationDetailsIndex].AsObject());
+    }
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -149,6 +178,37 @@ JsonValue CoreNetworkChangeValues::Jsonize() const {
 
   if (m_securityGroupReferencingSupportHasBeenSet) {
     payload.WithBool("SecurityGroupReferencingSupport", m_securityGroupReferencingSupport);
+  }
+
+  if (m_routingPolicyDirectionHasBeenSet) {
+    payload.WithString("RoutingPolicyDirection", RoutingPolicyDirectionMapper::GetNameForRoutingPolicyDirection(m_routingPolicyDirection));
+  }
+
+  if (m_routingPolicyHasBeenSet) {
+    payload.WithString("RoutingPolicy", m_routingPolicy);
+  }
+
+  if (m_peerEdgeLocationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> peerEdgeLocationsJsonList(m_peerEdgeLocations.size());
+    for (unsigned peerEdgeLocationsIndex = 0; peerEdgeLocationsIndex < peerEdgeLocationsJsonList.GetLength(); ++peerEdgeLocationsIndex) {
+      peerEdgeLocationsJsonList[peerEdgeLocationsIndex].AsString(m_peerEdgeLocations[peerEdgeLocationsIndex]);
+    }
+    payload.WithArray("PeerEdgeLocations", std::move(peerEdgeLocationsJsonList));
+  }
+
+  if (m_attachmentIdHasBeenSet) {
+    payload.WithString("AttachmentId", m_attachmentId);
+  }
+
+  if (m_routingPolicyAssociationDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> routingPolicyAssociationDetailsJsonList(m_routingPolicyAssociationDetails.size());
+    for (unsigned routingPolicyAssociationDetailsIndex = 0;
+         routingPolicyAssociationDetailsIndex < routingPolicyAssociationDetailsJsonList.GetLength();
+         ++routingPolicyAssociationDetailsIndex) {
+      routingPolicyAssociationDetailsJsonList[routingPolicyAssociationDetailsIndex].AsObject(
+          m_routingPolicyAssociationDetails[routingPolicyAssociationDetailsIndex].Jsonize());
+    }
+    payload.WithArray("RoutingPolicyAssociationDetails", std::move(routingPolicyAssociationDetailsJsonList));
   }
 
   return payload;

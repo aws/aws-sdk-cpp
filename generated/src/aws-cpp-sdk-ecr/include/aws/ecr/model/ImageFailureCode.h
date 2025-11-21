@@ -21,7 +21,8 @@ enum class ImageFailureCode {
   KmsError,
   UpstreamAccessDenied,
   UpstreamTooManyRequests,
-  UpstreamUnavailable
+  UpstreamUnavailable,
+  ImageInaccessible
 };
 
 namespace ImageFailureCodeMapper {

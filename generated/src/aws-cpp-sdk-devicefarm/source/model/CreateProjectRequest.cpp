@@ -27,6 +27,19 @@ Aws::String CreateProjectRequest::SerializePayload() const {
     payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
   }
 
+  if (m_environmentVariablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+    for (unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength();
+         ++environmentVariablesIndex) {
+      environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+    }
+    payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
+  }
+
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("executionRoleArn", m_executionRoleArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

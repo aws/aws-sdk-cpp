@@ -1870,6 +1870,33 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p> Launches a specified number of instances in an Auto Scaling group. Returns
+   * instance IDs and other details if launch is successful or error details if
+   * launch is unsuccessful. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchInstances">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::LaunchInstancesOutcome LaunchInstances(const Model::LaunchInstancesRequest& request) const;
+
+  /**
+   * A Callable wrapper for LaunchInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename LaunchInstancesRequestT = Model::LaunchInstancesRequest>
+  Model::LaunchInstancesOutcomeCallable LaunchInstancesCallable(const LaunchInstancesRequestT& request) const {
+    return SubmitCallable(&AutoScalingClient::LaunchInstances, request);
+  }
+
+  /**
+   * An Async wrapper for LaunchInstances that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename LaunchInstancesRequestT = Model::LaunchInstancesRequest>
+  void LaunchInstancesAsync(const LaunchInstancesRequestT& request, const LaunchInstancesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AutoScalingClient::LaunchInstances, request, handler, context);
+  }
+
+  /**
    * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
    * <p>Lifecycle hooks let you create solutions that are aware of events in the Auto
    * Scaling instance lifecycle, and then perform a custom action on instances when

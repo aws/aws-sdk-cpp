@@ -18,6 +18,8 @@ namespace PerObjectSyncStatusMapper {
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
 static const int CAPACITY_CONSTRAINED_HASH = HashingUtils::HashString("CAPACITY_CONSTRAINED");
+static const int NOT_SUBSCRIBED_HASH = HashingUtils::HashString("NOT_SUBSCRIBED");
+static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 PerObjectSyncStatus GetPerObjectSyncStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ PerObjectSyncStatus GetPerObjectSyncStatusForName(const Aws::String& name) {
     return PerObjectSyncStatus::IN_SYNC;
   } else if (hashCode == CAPACITY_CONSTRAINED_HASH) {
     return PerObjectSyncStatus::CAPACITY_CONSTRAINED;
+  } else if (hashCode == NOT_SUBSCRIBED_HASH) {
+    return PerObjectSyncStatus::NOT_SUBSCRIBED;
+  } else if (hashCode == DEPRECATED_HASH) {
+    return PerObjectSyncStatus::DEPRECATED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForPerObjectSyncStatus(PerObjectSyncStatus enumValue) {
       return "IN_SYNC";
     case PerObjectSyncStatus::CAPACITY_CONSTRAINED:
       return "CAPACITY_CONSTRAINED";
+    case PerObjectSyncStatus::NOT_SUBSCRIBED:
+      return "NOT_SUBSCRIBED";
+    case PerObjectSyncStatus::DEPRECATED:
+      return "DEPRECATED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

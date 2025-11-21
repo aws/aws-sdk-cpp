@@ -16,11 +16,14 @@ namespace Model {
 namespace OCSFVersionMapper {
 
 static const int V1_1_HASH = HashingUtils::HashString("V1.1");
+static const int V1_5_HASH = HashingUtils::HashString("V1.5");
 
 OCSFVersion GetOCSFVersionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == V1_1_HASH) {
     return OCSFVersion::V1_1;
+  } else if (hashCode == V1_5_HASH) {
+    return OCSFVersion::V1_5;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForOCSFVersion(OCSFVersion enumValue) {
       return {};
     case OCSFVersion::V1_1:
       return "V1.1";
+    case OCSFVersion::V1_5:
+      return "V1.5";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

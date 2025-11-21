@@ -31,6 +31,10 @@ Aws::String ListRuleGroupsRequest::SerializePayload() const {
     payload.WithString("ManagedType", ResourceManagedTypeMapper::GetNameForResourceManagedType(m_managedType));
   }
 
+  if (m_subscriptionStatusHasBeenSet) {
+    payload.WithString("SubscriptionStatus", SubscriptionStatusMapper::GetNameForSubscriptionStatus(m_subscriptionStatus));
+  }
+
   if (m_typeHasBeenSet) {
     payload.WithString("Type", RuleGroupTypeMapper::GetNameForRuleGroupType(m_type));
   }

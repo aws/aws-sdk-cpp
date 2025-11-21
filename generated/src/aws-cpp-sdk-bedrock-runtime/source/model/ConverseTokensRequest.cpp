@@ -32,6 +32,14 @@ ConverseTokensRequest& ConverseTokensRequest::operator=(JsonView jsonValue) {
     }
     m_systemHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("toolConfig")) {
+    m_toolConfig = jsonValue.GetObject("toolConfig");
+    m_toolConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalModelRequestFields")) {
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+    m_additionalModelRequestFieldsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +60,16 @@ JsonValue ConverseTokensRequest::Jsonize() const {
       systemJsonList[systemIndex].AsObject(m_system[systemIndex].Jsonize());
     }
     payload.WithArray("system", std::move(systemJsonList));
+  }
+
+  if (m_toolConfigHasBeenSet) {
+    payload.WithObject("toolConfig", m_toolConfig.Jsonize());
+  }
+
+  if (m_additionalModelRequestFieldsHasBeenSet) {
+    if (!m_additionalModelRequestFields.View().IsNull()) {
+      payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
   }
 
   return payload;

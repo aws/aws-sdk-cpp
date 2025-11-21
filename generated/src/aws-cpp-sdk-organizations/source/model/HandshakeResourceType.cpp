@@ -23,6 +23,12 @@ static const int MASTER_EMAIL_HASH = HashingUtils::HashString("MASTER_EMAIL");
 static const int MASTER_NAME_HASH = HashingUtils::HashString("MASTER_NAME");
 static const int NOTES_HASH = HashingUtils::HashString("NOTES");
 static const int PARENT_HANDSHAKE_HASH = HashingUtils::HashString("PARENT_HANDSHAKE");
+static const int RESPONSIBILITY_TRANSFER_HASH = HashingUtils::HashString("RESPONSIBILITY_TRANSFER");
+static const int TRANSFER_START_TIMESTAMP_HASH = HashingUtils::HashString("TRANSFER_START_TIMESTAMP");
+static const int TRANSFER_TYPE_HASH = HashingUtils::HashString("TRANSFER_TYPE");
+static const int MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT");
+static const int MANAGEMENT_EMAIL_HASH = HashingUtils::HashString("MANAGEMENT_EMAIL");
+static const int MANAGEMENT_NAME_HASH = HashingUtils::HashString("MANAGEMENT_NAME");
 
 HandshakeResourceType GetHandshakeResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +48,18 @@ HandshakeResourceType GetHandshakeResourceTypeForName(const Aws::String& name) {
     return HandshakeResourceType::NOTES;
   } else if (hashCode == PARENT_HANDSHAKE_HASH) {
     return HandshakeResourceType::PARENT_HANDSHAKE;
+  } else if (hashCode == RESPONSIBILITY_TRANSFER_HASH) {
+    return HandshakeResourceType::RESPONSIBILITY_TRANSFER;
+  } else if (hashCode == TRANSFER_START_TIMESTAMP_HASH) {
+    return HandshakeResourceType::TRANSFER_START_TIMESTAMP;
+  } else if (hashCode == TRANSFER_TYPE_HASH) {
+    return HandshakeResourceType::TRANSFER_TYPE;
+  } else if (hashCode == MANAGEMENT_ACCOUNT_HASH) {
+    return HandshakeResourceType::MANAGEMENT_ACCOUNT;
+  } else if (hashCode == MANAGEMENT_EMAIL_HASH) {
+    return HandshakeResourceType::MANAGEMENT_EMAIL;
+  } else if (hashCode == MANAGEMENT_NAME_HASH) {
+    return HandshakeResourceType::MANAGEMENT_NAME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +90,18 @@ Aws::String GetNameForHandshakeResourceType(HandshakeResourceType enumValue) {
       return "NOTES";
     case HandshakeResourceType::PARENT_HANDSHAKE:
       return "PARENT_HANDSHAKE";
+    case HandshakeResourceType::RESPONSIBILITY_TRANSFER:
+      return "RESPONSIBILITY_TRANSFER";
+    case HandshakeResourceType::TRANSFER_START_TIMESTAMP:
+      return "TRANSFER_START_TIMESTAMP";
+    case HandshakeResourceType::TRANSFER_TYPE:
+      return "TRANSFER_TYPE";
+    case HandshakeResourceType::MANAGEMENT_ACCOUNT:
+      return "MANAGEMENT_ACCOUNT";
+    case HandshakeResourceType::MANAGEMENT_EMAIL:
+      return "MANAGEMENT_EMAIL";
+    case HandshakeResourceType::MANAGEMENT_NAME:
+      return "MANAGEMENT_NAME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -44,5 +44,11 @@ Aws::Http::HeaderValueCollection InvokeWithResponseStreamRequest::GetRequestSpec
     ss.str("");
   }
 
+  if (m_tenantIdHasBeenSet) {
+    ss << m_tenantId;
+    headers.emplace("x-amz-tenant-id", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }

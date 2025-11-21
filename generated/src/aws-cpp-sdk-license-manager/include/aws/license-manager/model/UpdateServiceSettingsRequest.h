@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManagerRequest.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/OrganizationConfiguration.h>
@@ -102,6 +103,30 @@ class UpdateServiceSettingsRequest : public LicenseManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Cross region discovery enabled source regions.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetEnabledDiscoverySourceRegions() const { return m_enabledDiscoverySourceRegions; }
+  inline bool EnabledDiscoverySourceRegionsHasBeenSet() const { return m_enabledDiscoverySourceRegionsHasBeenSet; }
+  template <typename EnabledDiscoverySourceRegionsT = Aws::Vector<Aws::String>>
+  void SetEnabledDiscoverySourceRegions(EnabledDiscoverySourceRegionsT&& value) {
+    m_enabledDiscoverySourceRegionsHasBeenSet = true;
+    m_enabledDiscoverySourceRegions = std::forward<EnabledDiscoverySourceRegionsT>(value);
+  }
+  template <typename EnabledDiscoverySourceRegionsT = Aws::Vector<Aws::String>>
+  UpdateServiceSettingsRequest& WithEnabledDiscoverySourceRegions(EnabledDiscoverySourceRegionsT&& value) {
+    SetEnabledDiscoverySourceRegions(std::forward<EnabledDiscoverySourceRegionsT>(value));
+    return *this;
+  }
+  template <typename EnabledDiscoverySourceRegionsT = Aws::String>
+  UpdateServiceSettingsRequest& AddEnabledDiscoverySourceRegions(EnabledDiscoverySourceRegionsT&& value) {
+    m_enabledDiscoverySourceRegionsHasBeenSet = true;
+    m_enabledDiscoverySourceRegions.emplace_back(std::forward<EnabledDiscoverySourceRegionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3BucketArn;
   bool m_s3BucketArnHasBeenSet = false;
@@ -114,6 +139,9 @@ class UpdateServiceSettingsRequest : public LicenseManagerRequest {
 
   bool m_enableCrossAccountsDiscovery{false};
   bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_enabledDiscoverySourceRegions;
+  bool m_enabledDiscoverySourceRegionsHasBeenSet = false;
 };
 
 }  // namespace Model

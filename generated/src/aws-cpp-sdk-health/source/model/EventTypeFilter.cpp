@@ -41,6 +41,21 @@ EventTypeFilter& EventTypeFilter::operator=(JsonView jsonValue) {
     }
     m_eventTypeCategoriesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("actionabilities")) {
+    Aws::Utils::Array<JsonView> actionabilitiesJsonList = jsonValue.GetArray("actionabilities");
+    for (unsigned actionabilitiesIndex = 0; actionabilitiesIndex < actionabilitiesJsonList.GetLength(); ++actionabilitiesIndex) {
+      m_actionabilities.push_back(
+          EventTypeActionabilityMapper::GetEventTypeActionabilityForName(actionabilitiesJsonList[actionabilitiesIndex].AsString()));
+    }
+    m_actionabilitiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("personas")) {
+    Aws::Utils::Array<JsonView> personasJsonList = jsonValue.GetArray("personas");
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      m_personas.push_back(EventTypePersonaMapper::GetEventTypePersonaForName(personasJsonList[personasIndex].AsString()));
+    }
+    m_personasHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +86,23 @@ JsonValue EventTypeFilter::Jsonize() const {
           EventTypeCategoryMapper::GetNameForEventTypeCategory(m_eventTypeCategories[eventTypeCategoriesIndex]));
     }
     payload.WithArray("eventTypeCategories", std::move(eventTypeCategoriesJsonList));
+  }
+
+  if (m_actionabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> actionabilitiesJsonList(m_actionabilities.size());
+    for (unsigned actionabilitiesIndex = 0; actionabilitiesIndex < actionabilitiesJsonList.GetLength(); ++actionabilitiesIndex) {
+      actionabilitiesJsonList[actionabilitiesIndex].AsString(
+          EventTypeActionabilityMapper::GetNameForEventTypeActionability(m_actionabilities[actionabilitiesIndex]));
+    }
+    payload.WithArray("actionabilities", std::move(actionabilitiesJsonList));
+  }
+
+  if (m_personasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> personasJsonList(m_personas.size());
+    for (unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex) {
+      personasJsonList[personasIndex].AsString(EventTypePersonaMapper::GetNameForEventTypePersona(m_personas[personasIndex]));
+    }
+    payload.WithArray("personas", std::move(personasJsonList));
   }
 
   return payload;

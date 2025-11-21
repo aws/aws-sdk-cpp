@@ -44,6 +44,23 @@ class GetVpcEndpointServiceNameResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The VPC connection endpoint for the cluster.</p>
+   */
+  inline const Aws::String& GetClusterVpcEndpoint() const { return m_clusterVpcEndpoint; }
+  template <typename ClusterVpcEndpointT = Aws::String>
+  void SetClusterVpcEndpoint(ClusterVpcEndpointT&& value) {
+    m_clusterVpcEndpointHasBeenSet = true;
+    m_clusterVpcEndpoint = std::forward<ClusterVpcEndpointT>(value);
+  }
+  template <typename ClusterVpcEndpointT = Aws::String>
+  GetVpcEndpointServiceNameResult& WithClusterVpcEndpoint(ClusterVpcEndpointT&& value) {
+    SetClusterVpcEndpoint(std::forward<ClusterVpcEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -60,6 +77,9 @@ class GetVpcEndpointServiceNameResult {
  private:
   Aws::String m_serviceName;
   bool m_serviceNameHasBeenSet = false;
+
+  Aws::String m_clusterVpcEndpoint;
+  bool m_clusterVpcEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

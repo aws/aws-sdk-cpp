@@ -80,5 +80,9 @@ Aws::String ConverseStreamRequest::SerializePayload() const {
     payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
   }
 
+  if (m_serviceTierHasBeenSet) {
+    payload.WithObject("serviceTier", m_serviceTier.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

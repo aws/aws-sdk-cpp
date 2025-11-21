@@ -46,6 +46,8 @@ class DescribeEffectivePolicyRequest : public OrganizationsRequest {
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline EffectivePolicyType GetPolicyType() const { return m_policyType; }

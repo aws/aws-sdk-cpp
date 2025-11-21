@@ -23,6 +23,10 @@ Aws::String CreateSiteToSiteVpnAttachmentRequest::SerializePayload() const {
     payload.WithString("VpnConnectionArn", m_vpnConnectionArn);
   }
 
+  if (m_routingPolicyLabelHasBeenSet) {
+    payload.WithString("RoutingPolicyLabel", m_routingPolicyLabel);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

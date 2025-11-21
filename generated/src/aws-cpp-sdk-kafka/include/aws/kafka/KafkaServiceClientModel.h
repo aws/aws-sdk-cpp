@@ -39,6 +39,8 @@
 #include <aws/kafka/model/DescribeConfigurationResult.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionResult.h>
 #include <aws/kafka/model/DescribeReplicatorResult.h>
+#include <aws/kafka/model/DescribeTopicPartitionsResult.h>
+#include <aws/kafka/model/DescribeTopicResult.h>
 #include <aws/kafka/model/DescribeVpcConnectionResult.h>
 #include <aws/kafka/model/GetBootstrapBrokersResult.h>
 #include <aws/kafka/model/GetClusterPolicyResult.h>
@@ -61,6 +63,7 @@
 #include <aws/kafka/model/ListReplicatorsResult.h>
 #include <aws/kafka/model/ListScramSecretsResult.h>
 #include <aws/kafka/model/ListTagsForResourceResult.h>
+#include <aws/kafka/model/ListTopicsResult.h>
 #include <aws/kafka/model/ListVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListVpcConnectionsResult.h>
 #include <aws/kafka/model/PutClusterPolicyResult.h>
@@ -130,6 +133,8 @@ class DescribeClusterV2Request;
 class DescribeConfigurationRequest;
 class DescribeConfigurationRevisionRequest;
 class DescribeReplicatorRequest;
+class DescribeTopicRequest;
+class DescribeTopicPartitionsRequest;
 class DescribeVpcConnectionRequest;
 class GetBootstrapBrokersRequest;
 class GetClusterPolicyRequest;
@@ -146,6 +151,7 @@ class ListNodesRequest;
 class ListReplicatorsRequest;
 class ListScramSecretsRequest;
 class ListTagsForResourceRequest;
+class ListTopicsRequest;
 class ListVpcConnectionsRequest;
 class PutClusterPolicyRequest;
 class RebootBrokerRequest;
@@ -186,6 +192,8 @@ typedef Aws::Utils::Outcome<DescribeClusterV2Result, KafkaError> DescribeCluster
 typedef Aws::Utils::Outcome<DescribeConfigurationResult, KafkaError> DescribeConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, KafkaError> DescribeConfigurationRevisionOutcome;
 typedef Aws::Utils::Outcome<DescribeReplicatorResult, KafkaError> DescribeReplicatorOutcome;
+typedef Aws::Utils::Outcome<DescribeTopicResult, KafkaError> DescribeTopicOutcome;
+typedef Aws::Utils::Outcome<DescribeTopicPartitionsResult, KafkaError> DescribeTopicPartitionsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcConnectionResult, KafkaError> DescribeVpcConnectionOutcome;
 typedef Aws::Utils::Outcome<GetBootstrapBrokersResult, KafkaError> GetBootstrapBrokersOutcome;
 typedef Aws::Utils::Outcome<GetClusterPolicyResult, KafkaError> GetClusterPolicyOutcome;
@@ -202,6 +210,7 @@ typedef Aws::Utils::Outcome<ListNodesResult, KafkaError> ListNodesOutcome;
 typedef Aws::Utils::Outcome<ListReplicatorsResult, KafkaError> ListReplicatorsOutcome;
 typedef Aws::Utils::Outcome<ListScramSecretsResult, KafkaError> ListScramSecretsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, KafkaError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListTopicsResult, KafkaError> ListTopicsOutcome;
 typedef Aws::Utils::Outcome<ListVpcConnectionsResult, KafkaError> ListVpcConnectionsOutcome;
 typedef Aws::Utils::Outcome<PutClusterPolicyResult, KafkaError> PutClusterPolicyOutcome;
 typedef Aws::Utils::Outcome<RebootBrokerResult, KafkaError> RebootBrokerOutcome;
@@ -242,6 +251,8 @@ typedef std::future<DescribeClusterV2Outcome> DescribeClusterV2OutcomeCallable;
 typedef std::future<DescribeConfigurationOutcome> DescribeConfigurationOutcomeCallable;
 typedef std::future<DescribeConfigurationRevisionOutcome> DescribeConfigurationRevisionOutcomeCallable;
 typedef std::future<DescribeReplicatorOutcome> DescribeReplicatorOutcomeCallable;
+typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
+typedef std::future<DescribeTopicPartitionsOutcome> DescribeTopicPartitionsOutcomeCallable;
 typedef std::future<DescribeVpcConnectionOutcome> DescribeVpcConnectionOutcomeCallable;
 typedef std::future<GetBootstrapBrokersOutcome> GetBootstrapBrokersOutcomeCallable;
 typedef std::future<GetClusterPolicyOutcome> GetClusterPolicyOutcomeCallable;
@@ -258,6 +269,7 @@ typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
 typedef std::future<ListReplicatorsOutcome> ListReplicatorsOutcomeCallable;
 typedef std::future<ListScramSecretsOutcome> ListScramSecretsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
 typedef std::future<ListVpcConnectionsOutcome> ListVpcConnectionsOutcomeCallable;
 typedef std::future<PutClusterPolicyOutcome> PutClusterPolicyOutcomeCallable;
 typedef std::future<RebootBrokerOutcome> RebootBrokerOutcomeCallable;
@@ -341,6 +353,12 @@ typedef std::function<void(const KafkaClient*, const Model::DescribeConfiguratio
 typedef std::function<void(const KafkaClient*, const Model::DescribeReplicatorRequest&, const Model::DescribeReplicatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeReplicatorResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::DescribeTopicRequest&, const Model::DescribeTopicOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTopicResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::DescribeTopicPartitionsRequest&, const Model::DescribeTopicPartitionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTopicPartitionsResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::DescribeVpcConnectionRequest&, const Model::DescribeVpcConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeVpcConnectionResponseReceivedHandler;
@@ -389,6 +407,9 @@ typedef std::function<void(const KafkaClient*, const Model::ListScramSecretsRequ
 typedef std::function<void(const KafkaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTopicsResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::ListVpcConnectionsRequest&, const Model::ListVpcConnectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVpcConnectionsResponseReceivedHandler;

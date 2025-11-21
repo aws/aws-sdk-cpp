@@ -33,9 +33,9 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>The start time for the service states query. Only service states from this
-   * time onward will be included. Specify the time as the number of milliseconds
-   * since January 1, 1970, 00:00:00 UTC.</p>
+   * <p>The start of the time period to retrieve service state information for. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code>.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -53,9 +53,9 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>The end time for the service states query. Only service states before this
-   * time will be included. Specify the time as the number of milliseconds since
-   * January 1, 1970, 00:00:00 UTC.</p>
+   * <p>The end of the time period to retrieve service state information for. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code>.</p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -73,8 +73,8 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>The maximum number of service states to return in a single request. Valid
-   * range is 1 to 100. If not specified, defaults to 50.</p>
+   * <p>The maximum number of service states to return in one operation. If you omit
+   * this parameter, the default of 20 is used.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -90,8 +90,8 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use this token to retrieve additional
-   * pages of service states when the result set is large.</p>
+   * <p>Include this value, if it was returned by the previous operation, to get the
+   * next set of service states.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -109,10 +109,9 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>Specifies whether to include service states from linked AWS accounts in the
-   * results. Set to <code>true</code> to include linked accounts, or
-   * <code>false</code> to only include the current account. Defaults to
-   * <code>false</code>.</p>
+   * <p>If you are using this operation in a monitoring account, specify
+   * <code>true</code> to include service states from source accounts in the returned
+   * data.</p>
    */
   inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
   inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
@@ -128,9 +127,8 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>The AWS account ID to filter service states. If specified, only service
-   * states from this account will be returned. If not specified, service states from
-   * the current account (and linked accounts if enabled) are returned.</p>
+   * <p>The Amazon Web Services account ID to filter service states by. Use this to
+   * limit results to services from a specific account.</p>
    */
   inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
   inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -148,8 +146,8 @@ class ListServiceStatesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>An array of attribute filters to narrow down the service states returned.
-   * Each filter specifies an attribute name and the values to match against.</p>
+   * <p>A list of attribute filters to narrow down the services. You can filter by
+   * platform, environment, or other service attributes.</p>
    */
   inline const Aws::Vector<AttributeFilter>& GetAttributeFilters() const { return m_attributeFilters; }
   inline bool AttributeFiltersHasBeenSet() const { return m_attributeFiltersHasBeenSet; }

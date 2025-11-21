@@ -23,6 +23,8 @@
 #include <aws/braket/model/CancelQuantumTaskResult.h>
 #include <aws/braket/model/CreateJobResult.h>
 #include <aws/braket/model/CreateQuantumTaskResult.h>
+#include <aws/braket/model/CreateSpendingLimitResult.h>
+#include <aws/braket/model/DeleteSpendingLimitResult.h>
 #include <aws/braket/model/GetDeviceResult.h>
 #include <aws/braket/model/GetJobResult.h>
 #include <aws/braket/model/GetQuantumTaskResult.h>
@@ -30,8 +32,11 @@
 #include <aws/braket/model/SearchDevicesResult.h>
 #include <aws/braket/model/SearchJobsResult.h>
 #include <aws/braket/model/SearchQuantumTasksResult.h>
+#include <aws/braket/model/SearchSpendingLimitsRequest.h>
+#include <aws/braket/model/SearchSpendingLimitsResult.h>
 #include <aws/braket/model/TagResourceResult.h>
 #include <aws/braket/model/UntagResourceResult.h>
+#include <aws/braket/model/UpdateSpendingLimitResult.h>
 /* End of service model headers required in BraketClient header */
 
 namespace Aws {
@@ -69,6 +74,8 @@ class CancelJobRequest;
 class CancelQuantumTaskRequest;
 class CreateJobRequest;
 class CreateQuantumTaskRequest;
+class CreateSpendingLimitRequest;
+class DeleteSpendingLimitRequest;
 class GetDeviceRequest;
 class GetJobRequest;
 class GetQuantumTaskRequest;
@@ -76,8 +83,10 @@ class ListTagsForResourceRequest;
 class SearchDevicesRequest;
 class SearchJobsRequest;
 class SearchQuantumTasksRequest;
+class SearchSpendingLimitsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateSpendingLimitRequest;
 /* End of service model forward declarations required in BraketClient header */
 
 /* Service model Outcome class definitions */
@@ -85,6 +94,8 @@ typedef Aws::Utils::Outcome<CancelJobResult, BraketError> CancelJobOutcome;
 typedef Aws::Utils::Outcome<CancelQuantumTaskResult, BraketError> CancelQuantumTaskOutcome;
 typedef Aws::Utils::Outcome<CreateJobResult, BraketError> CreateJobOutcome;
 typedef Aws::Utils::Outcome<CreateQuantumTaskResult, BraketError> CreateQuantumTaskOutcome;
+typedef Aws::Utils::Outcome<CreateSpendingLimitResult, BraketError> CreateSpendingLimitOutcome;
+typedef Aws::Utils::Outcome<DeleteSpendingLimitResult, BraketError> DeleteSpendingLimitOutcome;
 typedef Aws::Utils::Outcome<GetDeviceResult, BraketError> GetDeviceOutcome;
 typedef Aws::Utils::Outcome<GetJobResult, BraketError> GetJobOutcome;
 typedef Aws::Utils::Outcome<GetQuantumTaskResult, BraketError> GetQuantumTaskOutcome;
@@ -92,8 +103,10 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, BraketError> ListTagsForR
 typedef Aws::Utils::Outcome<SearchDevicesResult, BraketError> SearchDevicesOutcome;
 typedef Aws::Utils::Outcome<SearchJobsResult, BraketError> SearchJobsOutcome;
 typedef Aws::Utils::Outcome<SearchQuantumTasksResult, BraketError> SearchQuantumTasksOutcome;
+typedef Aws::Utils::Outcome<SearchSpendingLimitsResult, BraketError> SearchSpendingLimitsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BraketError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BraketError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateSpendingLimitResult, BraketError> UpdateSpendingLimitOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -101,6 +114,8 @@ typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
 typedef std::future<CancelQuantumTaskOutcome> CancelQuantumTaskOutcomeCallable;
 typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
 typedef std::future<CreateQuantumTaskOutcome> CreateQuantumTaskOutcomeCallable;
+typedef std::future<CreateSpendingLimitOutcome> CreateSpendingLimitOutcomeCallable;
+typedef std::future<DeleteSpendingLimitOutcome> DeleteSpendingLimitOutcomeCallable;
 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
 typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 typedef std::future<GetQuantumTaskOutcome> GetQuantumTaskOutcomeCallable;
@@ -108,8 +123,10 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<SearchDevicesOutcome> SearchDevicesOutcomeCallable;
 typedef std::future<SearchJobsOutcome> SearchJobsOutcomeCallable;
 typedef std::future<SearchQuantumTasksOutcome> SearchQuantumTasksOutcomeCallable;
+typedef std::future<SearchSpendingLimitsOutcome> SearchSpendingLimitsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateSpendingLimitOutcome> UpdateSpendingLimitOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -128,6 +145,12 @@ typedef std::function<void(const BraketClient*, const Model::CreateJobRequest&, 
 typedef std::function<void(const BraketClient*, const Model::CreateQuantumTaskRequest&, const Model::CreateQuantumTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateQuantumTaskResponseReceivedHandler;
+typedef std::function<void(const BraketClient*, const Model::CreateSpendingLimitRequest&, const Model::CreateSpendingLimitOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSpendingLimitResponseReceivedHandler;
+typedef std::function<void(const BraketClient*, const Model::DeleteSpendingLimitRequest&, const Model::DeleteSpendingLimitOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSpendingLimitResponseReceivedHandler;
 typedef std::function<void(const BraketClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeviceResponseReceivedHandler;
@@ -149,12 +172,18 @@ typedef std::function<void(const BraketClient*, const Model::SearchJobsRequest&,
 typedef std::function<void(const BraketClient*, const Model::SearchQuantumTasksRequest&, const Model::SearchQuantumTasksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchQuantumTasksResponseReceivedHandler;
+typedef std::function<void(const BraketClient*, const Model::SearchSpendingLimitsRequest&, const Model::SearchSpendingLimitsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchSpendingLimitsResponseReceivedHandler;
 typedef std::function<void(const BraketClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
 typedef std::function<void(const BraketClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const BraketClient*, const Model::UpdateSpendingLimitRequest&, const Model::UpdateSpendingLimitOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSpendingLimitResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Braket
 }  // namespace Aws

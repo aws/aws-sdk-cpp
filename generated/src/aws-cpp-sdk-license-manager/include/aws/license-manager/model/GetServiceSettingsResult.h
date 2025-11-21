@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/OrganizationConfiguration.h>
+#include <aws/license-manager/model/ServiceStatus.h>
 
 #include <utility>
 
@@ -114,6 +116,63 @@ class GetServiceSettingsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Cross region discovery home region.</p>
+   */
+  inline const Aws::String& GetCrossRegionDiscoveryHomeRegion() const { return m_crossRegionDiscoveryHomeRegion; }
+  template <typename CrossRegionDiscoveryHomeRegionT = Aws::String>
+  void SetCrossRegionDiscoveryHomeRegion(CrossRegionDiscoveryHomeRegionT&& value) {
+    m_crossRegionDiscoveryHomeRegionHasBeenSet = true;
+    m_crossRegionDiscoveryHomeRegion = std::forward<CrossRegionDiscoveryHomeRegionT>(value);
+  }
+  template <typename CrossRegionDiscoveryHomeRegionT = Aws::String>
+  GetServiceSettingsResult& WithCrossRegionDiscoveryHomeRegion(CrossRegionDiscoveryHomeRegionT&& value) {
+    SetCrossRegionDiscoveryHomeRegion(std::forward<CrossRegionDiscoveryHomeRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Cross region discovery source regions.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCrossRegionDiscoverySourceRegions() const { return m_crossRegionDiscoverySourceRegions; }
+  template <typename CrossRegionDiscoverySourceRegionsT = Aws::Vector<Aws::String>>
+  void SetCrossRegionDiscoverySourceRegions(CrossRegionDiscoverySourceRegionsT&& value) {
+    m_crossRegionDiscoverySourceRegionsHasBeenSet = true;
+    m_crossRegionDiscoverySourceRegions = std::forward<CrossRegionDiscoverySourceRegionsT>(value);
+  }
+  template <typename CrossRegionDiscoverySourceRegionsT = Aws::Vector<Aws::String>>
+  GetServiceSettingsResult& WithCrossRegionDiscoverySourceRegions(CrossRegionDiscoverySourceRegionsT&& value) {
+    SetCrossRegionDiscoverySourceRegions(std::forward<CrossRegionDiscoverySourceRegionsT>(value));
+    return *this;
+  }
+  template <typename CrossRegionDiscoverySourceRegionsT = Aws::String>
+  GetServiceSettingsResult& AddCrossRegionDiscoverySourceRegions(CrossRegionDiscoverySourceRegionsT&& value) {
+    m_crossRegionDiscoverySourceRegionsHasBeenSet = true;
+    m_crossRegionDiscoverySourceRegions.emplace_back(std::forward<CrossRegionDiscoverySourceRegionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Service status.</p>
+   */
+  inline const ServiceStatus& GetServiceStatus() const { return m_serviceStatus; }
+  template <typename ServiceStatusT = ServiceStatus>
+  void SetServiceStatus(ServiceStatusT&& value) {
+    m_serviceStatusHasBeenSet = true;
+    m_serviceStatus = std::forward<ServiceStatusT>(value);
+  }
+  template <typename ServiceStatusT = ServiceStatus>
+  GetServiceSettingsResult& WithServiceStatus(ServiceStatusT&& value) {
+    SetServiceStatus(std::forward<ServiceStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -142,6 +201,15 @@ class GetServiceSettingsResult {
 
   Aws::String m_licenseManagerResourceShareArn;
   bool m_licenseManagerResourceShareArnHasBeenSet = false;
+
+  Aws::String m_crossRegionDiscoveryHomeRegion;
+  bool m_crossRegionDiscoveryHomeRegionHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_crossRegionDiscoverySourceRegions;
+  bool m_crossRegionDiscoverySourceRegionsHasBeenSet = false;
+
+  ServiceStatus m_serviceStatus;
+  bool m_serviceStatusHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

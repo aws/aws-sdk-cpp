@@ -17,6 +17,7 @@ namespace ResourceTypeMapper {
 
 static const int EBS_SNAPSHOT_HASH = HashingUtils::HashString("EBS_SNAPSHOT");
 static const int EC2_IMAGE_HASH = HashingUtils::HashString("EC2_IMAGE");
+static const int EBS_VOLUME_HASH = HashingUtils::HashString("EBS_VOLUME");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::EBS_SNAPSHOT;
   } else if (hashCode == EC2_IMAGE_HASH) {
     return ResourceType::EC2_IMAGE;
+  } else if (hashCode == EBS_VOLUME_HASH) {
+    return ResourceType::EBS_VOLUME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "EBS_SNAPSHOT";
     case ResourceType::EC2_IMAGE:
       return "EC2_IMAGE";
+    case ResourceType::EBS_VOLUME:
+      return "EBS_VOLUME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

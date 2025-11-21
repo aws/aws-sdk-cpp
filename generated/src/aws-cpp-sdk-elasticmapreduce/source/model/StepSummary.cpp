@@ -38,6 +38,14 @@ StepSummary& StepSummary::operator=(JsonView jsonValue) {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LogUri")) {
+    m_logUri = jsonValue.GetString("LogUri");
+    m_logUriHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EncryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +70,14 @@ JsonValue StepSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithObject("Status", m_status.Jsonize());
+  }
+
+  if (m_logUriHasBeenSet) {
+    payload.WithString("LogUri", m_logUri);
+  }
+
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;

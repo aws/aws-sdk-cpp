@@ -41,6 +41,24 @@ GetServiceSettingsResult& GetServiceSettingsResult::operator=(const Aws::AmazonW
     m_licenseManagerResourceShareArn = jsonValue.GetString("LicenseManagerResourceShareArn");
     m_licenseManagerResourceShareArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CrossRegionDiscoveryHomeRegion")) {
+    m_crossRegionDiscoveryHomeRegion = jsonValue.GetString("CrossRegionDiscoveryHomeRegion");
+    m_crossRegionDiscoveryHomeRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossRegionDiscoverySourceRegions")) {
+    Aws::Utils::Array<JsonView> crossRegionDiscoverySourceRegionsJsonList = jsonValue.GetArray("CrossRegionDiscoverySourceRegions");
+    for (unsigned crossRegionDiscoverySourceRegionsIndex = 0;
+         crossRegionDiscoverySourceRegionsIndex < crossRegionDiscoverySourceRegionsJsonList.GetLength();
+         ++crossRegionDiscoverySourceRegionsIndex) {
+      m_crossRegionDiscoverySourceRegions.push_back(
+          crossRegionDiscoverySourceRegionsJsonList[crossRegionDiscoverySourceRegionsIndex].AsString());
+    }
+    m_crossRegionDiscoverySourceRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ServiceStatus")) {
+    m_serviceStatus = jsonValue.GetObject("ServiceStatus");
+    m_serviceStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

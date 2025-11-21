@@ -50,8 +50,7 @@ class RetrieveMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The namespace to filter memory records by. If specified, only memory records
-   * in this namespace are searched.</p>
+   * <p>The namespace to filter memory records by.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -107,8 +106,8 @@ class RetrieveMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return in a single call. Minimum value of 1,
-   * maximum value of 100. Default is 20.</p>
+   * <p>The maximum number of results to return in a single call. The default value
+   * is 20.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

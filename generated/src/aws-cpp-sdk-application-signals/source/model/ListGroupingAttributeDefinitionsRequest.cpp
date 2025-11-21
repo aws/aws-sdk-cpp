@@ -24,4 +24,16 @@ void ListGroupingAttributeDefinitionsRequest::AddQueryStringParameters(URI& uri)
     uri.AddQueryStringParameter("NextToken", ss.str());
     ss.str("");
   }
+
+  if (m_awsAccountIdHasBeenSet) {
+    ss << m_awsAccountId;
+    uri.AddQueryStringParameter("AwsAccountId", ss.str());
+    ss.str("");
+  }
+
+  if (m_includeLinkedAccountsHasBeenSet) {
+    ss << m_includeLinkedAccounts;
+    uri.AddQueryStringParameter("IncludeLinkedAccounts", ss.str());
+    ss.str("");
+  }
 }

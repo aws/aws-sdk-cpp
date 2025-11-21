@@ -84,6 +84,22 @@ RestApi& RestApi::operator=(JsonView jsonValue) {
     m_rootResourceId = jsonValue.GetString("rootResourceId");
     m_rootResourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("securityPolicy")) {
+    m_securityPolicy = SecurityPolicyMapper::GetSecurityPolicyForName(jsonValue.GetString("securityPolicy"));
+    m_securityPolicyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endpointAccessMode")) {
+    m_endpointAccessMode = EndpointAccessModeMapper::GetEndpointAccessModeForName(jsonValue.GetString("endpointAccessMode"));
+    m_endpointAccessModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiStatus")) {
+    m_apiStatus = ApiStatusMapper::GetApiStatusForName(jsonValue.GetString("apiStatus"));
+    m_apiStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiStatusMessage")) {
+    m_apiStatusMessage = jsonValue.GetString("apiStatusMessage");
+    m_apiStatusMessageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -156,6 +172,22 @@ JsonValue RestApi::Jsonize() const {
 
   if (m_rootResourceIdHasBeenSet) {
     payload.WithString("rootResourceId", m_rootResourceId);
+  }
+
+  if (m_securityPolicyHasBeenSet) {
+    payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
+  }
+
+  if (m_endpointAccessModeHasBeenSet) {
+    payload.WithString("endpointAccessMode", EndpointAccessModeMapper::GetNameForEndpointAccessMode(m_endpointAccessMode));
+  }
+
+  if (m_apiStatusHasBeenSet) {
+    payload.WithString("apiStatus", ApiStatusMapper::GetNameForApiStatus(m_apiStatus));
+  }
+
+  if (m_apiStatusMessageHasBeenSet) {
+    payload.WithString("apiStatusMessage", m_apiStatusMessage);
   }
 
   return payload;

@@ -88,6 +88,12 @@ InstanceRefresh& InstanceRefresh::operator=(const XmlNode& xmlNode) {
       m_rollbackDetails = rollbackDetailsNode;
       m_rollbackDetailsHasBeenSet = true;
     }
+    XmlNode strategyNode = resultNode.FirstChild("Strategy");
+    if (!strategyNode.IsNull()) {
+      m_strategy = RefreshStrategyMapper::GetRefreshStrategyForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(strategyNode.GetText()).c_str()));
+      m_strategyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -153,6 +159,11 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
     rollbackDetailsLocationAndMemberSs << location << index << locationValue << ".RollbackDetails";
     m_rollbackDetails.OutputToStream(oStream, rollbackDetailsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_strategyHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Strategy=" << StringUtils::URLEncode(RefreshStrategyMapper::GetNameForRefreshStrategy(m_strategy)) << "&";
+  }
 }
 
 void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -201,6 +212,9 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
     Aws::String rollbackDetailsLocationAndMember(location);
     rollbackDetailsLocationAndMember += ".RollbackDetails";
     m_rollbackDetails.OutputToStream(oStream, rollbackDetailsLocationAndMember.c_str());
+  }
+  if (m_strategyHasBeenSet) {
+    oStream << location << ".Strategy=" << StringUtils::URLEncode(RefreshStrategyMapper::GetNameForRefreshStrategy(m_strategy)) << "&";
   }
 }
 

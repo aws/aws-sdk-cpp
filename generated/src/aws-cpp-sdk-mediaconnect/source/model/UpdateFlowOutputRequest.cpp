@@ -98,5 +98,13 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const {
     payload.WithInteger("ndiSpeedHqQuality", m_ndiSpeedHqQuality);
   }
 
+  if (m_routerIntegrationStateHasBeenSet) {
+    payload.WithString("routerIntegrationState", StateMapper::GetNameForState(m_routerIntegrationState));
+  }
+
+  if (m_routerIntegrationTransitEncryptionHasBeenSet) {
+    payload.WithObject("routerIntegrationTransitEncryption", m_routerIntegrationTransitEncryption.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

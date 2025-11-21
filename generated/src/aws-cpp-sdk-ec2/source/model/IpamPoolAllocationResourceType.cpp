@@ -21,6 +21,7 @@ static const int ec2_public_ipv4_pool_HASH = HashingUtils::HashString("ec2-publi
 static const int custom_HASH = HashingUtils::HashString("custom");
 static const int subnet_HASH = HashingUtils::HashString("subnet");
 static const int eip_HASH = HashingUtils::HashString("eip");
+static const int anycast_ip_list_HASH = HashingUtils::HashString("anycast-ip-list");
 
 IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aw
     return IpamPoolAllocationResourceType::subnet;
   } else if (hashCode == eip_HASH) {
     return IpamPoolAllocationResourceType::eip;
+  } else if (hashCode == anycast_ip_list_HASH) {
+    return IpamPoolAllocationResourceType::anycast_ip_list;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForIpamPoolAllocationResourceType(IpamPoolAllocationResourceT
       return "subnet";
     case IpamPoolAllocationResourceType::eip:
       return "eip";
+    case IpamPoolAllocationResourceType::anycast_ip_list:
+      return "anycast-ip-list";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

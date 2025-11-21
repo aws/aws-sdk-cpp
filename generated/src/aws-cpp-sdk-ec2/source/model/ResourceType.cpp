@@ -81,6 +81,7 @@ static const int transit_gateway_attachment_HASH = HashingUtils::HashString("tra
 static const int transit_gateway_connect_peer_HASH = HashingUtils::HashString("transit-gateway-connect-peer");
 static const int transit_gateway_multicast_domain_HASH = HashingUtils::HashString("transit-gateway-multicast-domain");
 static const int transit_gateway_policy_table_HASH = HashingUtils::HashString("transit-gateway-policy-table");
+static const int transit_gateway_metering_policy_HASH = HashingUtils::HashString("transit-gateway-metering-policy");
 static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
 static const int transit_gateway_route_table_announcement_HASH = HashingUtils::HashString("transit-gateway-route-table-announcement");
 static const int volume_HASH = HashingUtils::HashString("volume");
@@ -103,6 +104,7 @@ static const int verified_access_policy_HASH = HashingUtils::HashString("verifie
 static const int verified_access_trust_provider_HASH = HashingUtils::HashString("verified-access-trust-provider");
 static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
 static const int vpc_block_public_access_exclusion_HASH = HashingUtils::HashString("vpc-block-public-access-exclusion");
+static const int vpc_encryption_control_HASH = HashingUtils::HashString("vpc-encryption-control");
 static const int route_server_HASH = HashingUtils::HashString("route-server");
 static const int route_server_endpoint_HASH = HashingUtils::HashString("route-server-endpoint");
 static const int route_server_peer_HASH = HashingUtils::HashString("route-server-peer");
@@ -114,8 +116,10 @@ static const int ipam_external_resource_verification_token_HASH = HashingUtils::
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modification-task");
 static const int ipam_prefix_list_resolver_HASH = HashingUtils::HashString("ipam-prefix-list-resolver");
+static const int ipam_policy_HASH = HashingUtils::HashString("ipam-policy");
 static const int ipam_prefix_list_resolver_target_HASH = HashingUtils::HashString("ipam-prefix-list-resolver-target");
 static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
+static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentrator");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -249,6 +253,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::transit_gateway_multicast_domain;
   } else if (hashCode == transit_gateway_policy_table_HASH) {
     return ResourceType::transit_gateway_policy_table;
+  } else if (hashCode == transit_gateway_metering_policy_HASH) {
+    return ResourceType::transit_gateway_metering_policy;
   } else if (hashCode == transit_gateway_route_table_HASH) {
     return ResourceType::transit_gateway_route_table;
   } else if (hashCode == transit_gateway_route_table_announcement_HASH) {
@@ -293,6 +299,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::vpn_connection_device_type;
   } else if (hashCode == vpc_block_public_access_exclusion_HASH) {
     return ResourceType::vpc_block_public_access_exclusion;
+  } else if (hashCode == vpc_encryption_control_HASH) {
+    return ResourceType::vpc_encryption_control;
   } else if (hashCode == route_server_HASH) {
     return ResourceType::route_server;
   } else if (hashCode == route_server_endpoint_HASH) {
@@ -315,10 +323,14 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::mac_modification_task;
   } else if (hashCode == ipam_prefix_list_resolver_HASH) {
     return ResourceType::ipam_prefix_list_resolver;
+  } else if (hashCode == ipam_policy_HASH) {
+    return ResourceType::ipam_policy;
   } else if (hashCode == ipam_prefix_list_resolver_target_HASH) {
     return ResourceType::ipam_prefix_list_resolver_target;
   } else if (hashCode == capacity_manager_data_export_HASH) {
     return ResourceType::capacity_manager_data_export;
+  } else if (hashCode == vpn_concentrator_HASH) {
+    return ResourceType::vpn_concentrator;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -463,6 +475,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "transit-gateway-multicast-domain";
     case ResourceType::transit_gateway_policy_table:
       return "transit-gateway-policy-table";
+    case ResourceType::transit_gateway_metering_policy:
+      return "transit-gateway-metering-policy";
     case ResourceType::transit_gateway_route_table:
       return "transit-gateway-route-table";
     case ResourceType::transit_gateway_route_table_announcement:
@@ -507,6 +521,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "vpn-connection-device-type";
     case ResourceType::vpc_block_public_access_exclusion:
       return "vpc-block-public-access-exclusion";
+    case ResourceType::vpc_encryption_control:
+      return "vpc-encryption-control";
     case ResourceType::route_server:
       return "route-server";
     case ResourceType::route_server_endpoint:
@@ -529,10 +545,14 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "mac-modification-task";
     case ResourceType::ipam_prefix_list_resolver:
       return "ipam-prefix-list-resolver";
+    case ResourceType::ipam_policy:
+      return "ipam-policy";
     case ResourceType::ipam_prefix_list_resolver_target:
       return "ipam-prefix-list-resolver-target";
     case ResourceType::capacity_manager_data_export:
       return "capacity-manager-data-export";
+    case ResourceType::vpn_concentrator:
+      return "vpn-concentrator";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

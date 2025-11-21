@@ -133,6 +133,10 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const {
     m_capacityReservationSpecification.OutputToStream(ss, "CapacityReservationSpecification");
   }
 
+  if (m_instanceLifecyclePolicyHasBeenSet) {
+    m_instanceLifecyclePolicy.OutputToStream(ss, "InstanceLifecyclePolicy");
+  }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

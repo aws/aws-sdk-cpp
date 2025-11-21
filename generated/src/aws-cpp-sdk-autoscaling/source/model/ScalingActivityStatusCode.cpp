@@ -28,6 +28,9 @@ static const int Successful_HASH = HashingUtils::HashString("Successful");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
 static const int WaitingForConnectionDraining_HASH = HashingUtils::HashString("WaitingForConnectionDraining");
+static const int WaitingForInPlaceUpdateToStart_HASH = HashingUtils::HashString("WaitingForInPlaceUpdateToStart");
+static const int WaitingForInPlaceUpdateToFinalize_HASH = HashingUtils::HashString("WaitingForInPlaceUpdateToFinalize");
+static const int InPlaceUpdateInProgress_HASH = HashingUtils::HashString("InPlaceUpdateInProgress");
 
 ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +60,12 @@ ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String&
     return ScalingActivityStatusCode::Cancelled;
   } else if (hashCode == WaitingForConnectionDraining_HASH) {
     return ScalingActivityStatusCode::WaitingForConnectionDraining;
+  } else if (hashCode == WaitingForInPlaceUpdateToStart_HASH) {
+    return ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart;
+  } else if (hashCode == WaitingForInPlaceUpdateToFinalize_HASH) {
+    return ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize;
+  } else if (hashCode == InPlaceUpdateInProgress_HASH) {
+    return ScalingActivityStatusCode::InPlaceUpdateInProgress;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +106,12 @@ Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode enumVa
       return "Cancelled";
     case ScalingActivityStatusCode::WaitingForConnectionDraining:
       return "WaitingForConnectionDraining";
+    case ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart:
+      return "WaitingForInPlaceUpdateToStart";
+    case ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize:
+      return "WaitingForInPlaceUpdateToFinalize";
+    case ScalingActivityStatusCode::InPlaceUpdateInProgress:
+      return "InPlaceUpdateInProgress";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
