@@ -18,24 +18,9 @@ namespace Model {
 StatementData::StatementData(JsonView jsonValue) { *this = jsonValue; }
 
 StatementData& StatementData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CreatedAt")) {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("IsBatchStatement")) {
-    m_isBatchStatement = jsonValue.GetBool("IsBatchStatement");
-    m_isBatchStatementHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("QueryParameters")) {
-    Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
-    for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {
-      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
-    }
-    m_queryParametersHasBeenSet = true;
   }
   if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
@@ -48,29 +33,44 @@ StatementData& StatementData::operator=(JsonView jsonValue) {
     }
     m_queryStringsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ResultFormat")) {
-    m_resultFormat = ResultFormatStringMapper::GetResultFormatStringForName(jsonValue.GetString("ResultFormat"));
-    m_resultFormatHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("SecretArn")) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SessionId")) {
-    m_sessionId = jsonValue.GetString("SessionId");
-    m_sessionIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StatementName")) {
-    m_statementName = jsonValue.GetString("StatementName");
-    m_statementNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Status")) {
     m_status = StatusStringMapper::GetStatusStringForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StatementName")) {
+    m_statementName = jsonValue.GetString("StatementName");
+    m_statementNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QueryParameters")) {
+    Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
+    m_queryParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsBatchStatement")) {
+    m_isBatchStatement = jsonValue.GetBool("IsBatchStatement");
+    m_isBatchStatementHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResultFormat")) {
+    m_resultFormat = ResultFormatStringMapper::GetResultFormatStringForName(jsonValue.GetString("ResultFormat"));
+    m_resultFormatHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SessionId")) {
+    m_sessionId = jsonValue.GetString("SessionId");
+    m_sessionIdHasBeenSet = true;
   }
   return *this;
 }
@@ -78,24 +78,8 @@ StatementData& StatementData::operator=(JsonView jsonValue) {
 JsonValue StatementData::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
-  }
-
-  if (m_isBatchStatementHasBeenSet) {
-    payload.WithBool("IsBatchStatement", m_isBatchStatement);
-  }
-
-  if (m_queryParametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
-    for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {
-      queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
-    }
-    payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
   }
 
   if (m_queryStringHasBeenSet) {
@@ -110,28 +94,44 @@ JsonValue StatementData::Jsonize() const {
     payload.WithArray("QueryStrings", std::move(queryStringsJsonList));
   }
 
-  if (m_resultFormatHasBeenSet) {
-    payload.WithString("ResultFormat", ResultFormatStringMapper::GetNameForResultFormatString(m_resultFormat));
-  }
-
   if (m_secretArnHasBeenSet) {
     payload.WithString("SecretArn", m_secretArn);
-  }
-
-  if (m_sessionIdHasBeenSet) {
-    payload.WithString("SessionId", m_sessionId);
-  }
-
-  if (m_statementNameHasBeenSet) {
-    payload.WithString("StatementName", m_statementName);
   }
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", StatusStringMapper::GetNameForStatusString(m_status));
   }
 
+  if (m_statementNameHasBeenSet) {
+    payload.WithString("StatementName", m_statementName);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_queryParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+    for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {
+      queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
+    }
+    payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
+  }
+
+  if (m_isBatchStatementHasBeenSet) {
+    payload.WithBool("IsBatchStatement", m_isBatchStatement);
+  }
+
+  if (m_resultFormatHasBeenSet) {
+    payload.WithString("ResultFormat", ResultFormatStringMapper::GetNameForResultFormatString(m_resultFormat));
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
   return payload;

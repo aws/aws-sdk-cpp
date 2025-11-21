@@ -27,6 +27,7 @@
 #include <aws/secretsmanager/model/DeleteSecretResult.h>
 #include <aws/secretsmanager/model/DescribeSecretRequest.h>
 #include <aws/secretsmanager/model/DescribeSecretResult.h>
+#include <aws/secretsmanager/model/ExternalSecretRotationMetadataItem.h>
 #include <aws/secretsmanager/model/Filter.h>
 #include <aws/secretsmanager/model/FilterNameStringType.h>
 #include <aws/secretsmanager/model/GetRandomPasswordRequest.h>

@@ -45,5 +45,9 @@ Aws::Http::HeaderValueCollection InvokeModelWithResponseStreamRequest::GetReques
                     PerformanceConfigLatencyMapper::GetNameForPerformanceConfigLatency(m_performanceConfigLatency));
   }
 
+  if (m_serviceTierHasBeenSet && m_serviceTier != ServiceTierType::NOT_SET) {
+    headers.emplace("x-amzn-bedrock-service-tier", ServiceTierTypeMapper::GetNameForServiceTierType(m_serviceTier));
+  }
+
   return headers;
 }

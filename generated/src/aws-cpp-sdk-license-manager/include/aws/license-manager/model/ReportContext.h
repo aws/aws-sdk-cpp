@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -57,9 +58,79 @@ class ReportContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Amazon Resource Names (ARNs) of the license asset groups to include in the
+   * report.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLicenseAssetGroupArns() const { return m_licenseAssetGroupArns; }
+  inline bool LicenseAssetGroupArnsHasBeenSet() const { return m_licenseAssetGroupArnsHasBeenSet; }
+  template <typename LicenseAssetGroupArnsT = Aws::Vector<Aws::String>>
+  void SetLicenseAssetGroupArns(LicenseAssetGroupArnsT&& value) {
+    m_licenseAssetGroupArnsHasBeenSet = true;
+    m_licenseAssetGroupArns = std::forward<LicenseAssetGroupArnsT>(value);
+  }
+  template <typename LicenseAssetGroupArnsT = Aws::Vector<Aws::String>>
+  ReportContext& WithLicenseAssetGroupArns(LicenseAssetGroupArnsT&& value) {
+    SetLicenseAssetGroupArns(std::forward<LicenseAssetGroupArnsT>(value));
+    return *this;
+  }
+  template <typename LicenseAssetGroupArnsT = Aws::String>
+  ReportContext& AddLicenseAssetGroupArns(LicenseAssetGroupArnsT&& value) {
+    m_licenseAssetGroupArnsHasBeenSet = true;
+    m_licenseAssetGroupArns.emplace_back(std::forward<LicenseAssetGroupArnsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Start date for the report data collection period.</p>
+   */
+  inline const Aws::Utils::DateTime& GetReportStartDate() const { return m_reportStartDate; }
+  inline bool ReportStartDateHasBeenSet() const { return m_reportStartDateHasBeenSet; }
+  template <typename ReportStartDateT = Aws::Utils::DateTime>
+  void SetReportStartDate(ReportStartDateT&& value) {
+    m_reportStartDateHasBeenSet = true;
+    m_reportStartDate = std::forward<ReportStartDateT>(value);
+  }
+  template <typename ReportStartDateT = Aws::Utils::DateTime>
+  ReportContext& WithReportStartDate(ReportStartDateT&& value) {
+    SetReportStartDate(std::forward<ReportStartDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>End date for the report data collection period.</p>
+   */
+  inline const Aws::Utils::DateTime& GetReportEndDate() const { return m_reportEndDate; }
+  inline bool ReportEndDateHasBeenSet() const { return m_reportEndDateHasBeenSet; }
+  template <typename ReportEndDateT = Aws::Utils::DateTime>
+  void SetReportEndDate(ReportEndDateT&& value) {
+    m_reportEndDateHasBeenSet = true;
+    m_reportEndDate = std::forward<ReportEndDateT>(value);
+  }
+  template <typename ReportEndDateT = Aws::Utils::DateTime>
+  ReportContext& WithReportEndDate(ReportEndDateT&& value) {
+    SetReportEndDate(std::forward<ReportEndDateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_licenseConfigurationArns;
   bool m_licenseConfigurationArnsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_licenseAssetGroupArns;
+  bool m_licenseAssetGroupArnsHasBeenSet = false;
+
+  Aws::Utils::DateTime m_reportStartDate{};
+  bool m_reportStartDateHasBeenSet = false;
+
+  Aws::Utils::DateTime m_reportEndDate{};
+  bool m_reportEndDateHasBeenSet = false;
 };
 
 }  // namespace Model

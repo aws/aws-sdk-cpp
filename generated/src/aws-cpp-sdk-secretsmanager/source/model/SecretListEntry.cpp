@@ -26,6 +26,10 @@ SecretListEntry& SecretListEntry::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = jsonValue.GetString("Type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
@@ -45,6 +49,18 @@ SecretListEntry& SecretListEntry::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("RotationRules")) {
     m_rotationRules = jsonValue.GetObject("RotationRules");
     m_rotationRulesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExternalSecretRotationMetadata")) {
+    Aws::Utils::Array<JsonView> externalSecretRotationMetadataJsonList = jsonValue.GetArray("ExternalSecretRotationMetadata");
+    for (unsigned externalSecretRotationMetadataIndex = 0;
+         externalSecretRotationMetadataIndex < externalSecretRotationMetadataJsonList.GetLength(); ++externalSecretRotationMetadataIndex) {
+      m_externalSecretRotationMetadata.push_back(externalSecretRotationMetadataJsonList[externalSecretRotationMetadataIndex].AsObject());
+    }
+    m_externalSecretRotationMetadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExternalSecretRotationRoleArn")) {
+    m_externalSecretRotationRoleArn = jsonValue.GetString("ExternalSecretRotationRoleArn");
+    m_externalSecretRotationRoleArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("LastRotatedDate")) {
     m_lastRotatedDate = jsonValue.GetDouble("LastRotatedDate");
@@ -113,6 +129,10 @@ JsonValue SecretListEntry::Jsonize() const {
     payload.WithString("Name", m_name);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
   }
@@ -131,6 +151,20 @@ JsonValue SecretListEntry::Jsonize() const {
 
   if (m_rotationRulesHasBeenSet) {
     payload.WithObject("RotationRules", m_rotationRules.Jsonize());
+  }
+
+  if (m_externalSecretRotationMetadataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> externalSecretRotationMetadataJsonList(m_externalSecretRotationMetadata.size());
+    for (unsigned externalSecretRotationMetadataIndex = 0;
+         externalSecretRotationMetadataIndex < externalSecretRotationMetadataJsonList.GetLength(); ++externalSecretRotationMetadataIndex) {
+      externalSecretRotationMetadataJsonList[externalSecretRotationMetadataIndex].AsObject(
+          m_externalSecretRotationMetadata[externalSecretRotationMetadataIndex].Jsonize());
+    }
+    payload.WithArray("ExternalSecretRotationMetadata", std::move(externalSecretRotationMetadataJsonList));
+  }
+
+  if (m_externalSecretRotationRoleArnHasBeenSet) {
+    payload.WithString("ExternalSecretRotationRoleArn", m_externalSecretRotationRoleArn);
   }
 
   if (m_lastRotatedDateHasBeenSet) {

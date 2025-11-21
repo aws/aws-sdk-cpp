@@ -64,6 +64,32 @@
                 "target": "com.amazonaws.backup#AdvancedBackupSetting"
             }
         },
+        "com.amazonaws.backup#AggregatedScanResult": {
+            "type": "structure",
+            "members": {
+                "FailedScan": {
+                    "target": "com.amazonaws.backup#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A Boolean value indicating whether any of the aggregated scans failed.</p>"
+                    }
+                },
+                "Findings": {
+                    "target": "com.amazonaws.backup#ScanFindings",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of findings discovered across all aggregated scans.</p>"
+                    }
+                },
+                "LastComputed": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp when the aggregated scan result was last computed, in Unix format and Coordinated Universal Time (UTC).</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains aggregated scan results across multiple scan operations, providing a summary of scan status and findings.</p>"
+            }
+        },
         "com.amazonaws.backup#AggregationPeriod": {
             "type": "enum",
             "members": {
@@ -627,6 +653,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Contains a list of <code>BackupOptions</code> for each resource type.</p>"
                     }
+                },
+                "ScanSettings": {
+                    "target": "com.amazonaws.backup#ScanSettings",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>"
+                    }
                 }
             },
             "traits": {
@@ -654,6 +686,12 @@
                     "target": "com.amazonaws.backup#AdvancedBackupSettings",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings\n         are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>"
+                    }
+                },
+                "ScanSettings": {
+                    "target": "com.amazonaws.backup#ScanSettings",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>"
                     }
                 }
             },
@@ -846,6 +884,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>IndexActions is an array you use to specify how backup data should \n         be indexed.</p>\n         <p>eEach BackupRule can have 0 or 1 IndexAction, as each backup can have up \n         to one index associated with it.</p>\n         <p>Within the array is ResourceType. Only one will be accepted for each BackupRule.</p>"
                     }
+                },
+                "ScanActions": {
+                    "target": "com.amazonaws.backup#ScanActions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>"
+                    }
                 }
             },
             "traits": {
@@ -927,6 +971,12 @@
                     "target": "com.amazonaws.backup#IndexActions",
                     "traits": {
                         "smithy.api#documentation": "<p>There can up to one IndexAction in each BackupRule, as each backup \n         can have 0 or 1 backup index associated with it.</p>\n         <p>Within the array is ResourceTypes. Only 1 resource type will \n         be accepted for each BackupRule. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>EBS</code> for Amazon Elastic Block Store</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "ScanActions": {
+                    "target": "com.amazonaws.backup#ScanActions",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>"
                     }
                 }
             },
@@ -1288,6 +1338,12 @@
             "type": "string",
             "traits": {
                 "smithy.api#pattern": "^[a-zA-Z0-9\\-\\_]{2,50}$"
+            }
+        },
+        "com.amazonaws.backup#BackupVaultNameOrWildcard": {
+            "type": "string",
+            "traits": {
+                "smithy.api#pattern": "^(\\*|[a-zA-Z0-9\\-\\_]{2,50})$"
             }
         },
         "com.amazonaws.backup#Boolean": {
@@ -2655,7 +2711,7 @@
                 "ReportSetting": {
                     "target": "com.amazonaws.backup#ReportSetting",
                     "traits": {
-                        "smithy.api#documentation": "<p>Identifies the report template for the report. Reports are built using a report\n         template. The report templates are:</p>\n         <p>\n            <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |\n            COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>\n         </p>\n         <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or\n            <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report\n         coverage by Amazon Web Services Regions and frameworks.</p>",
+                        "smithy.api#documentation": "<p>Identifies the report template for the report. Reports are built using a report\n         template. The report templates are:</p>\n         <p>\n            <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |\n            COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT </code>\n         </p>\n         <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or\n            <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report\n         coverage by Amazon Web Services Regions and frameworks.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -3013,6 +3069,101 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.backup#CreateTieringConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#CreateTieringConfigurationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#CreateTieringConfigurationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#AlreadyExistsException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#LimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Creates a tiering configuration.</p>\n         <p>A tiering configuration enables automatic movement of backup data to a lower-cost storage tier based on the age of backed-up objects in the backup vault.</p>\n         <p>Each vault can only have one vault-specific tiering configuration, in addition to any global configuration that applies to all vaults.</p>",
+                "smithy.api#http": {
+                    "method": "PUT",
+                    "uri": "/tiering-configurations",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#CreateTieringConfigurationInput": {
+            "type": "structure",
+            "members": {
+                "TieringConfiguration": {
+                    "target": "com.amazonaws.backup#TieringConfigurationInputForCreate",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A tiering configuration must contain a unique <code>TieringConfigurationName</code> string\n         you create and must contain a <code>BackupVaultName</code> and <code>ResourceSelection</code>.\n         You may optionally include a <code>CreatorRequestId</code> string.</p>\n         <p>The <code>TieringConfigurationName</code> is a unique string that is the name of the\n         tiering configuration. This cannot be changed after creation, and it must consist of only\n         alphanumeric characters and underscores.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TieringConfigurationTags": {
+                    "target": "com.amazonaws.backup#Tags",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The tags to assign to the tiering configuration.</p>"
+                    }
+                },
+                "CreatorRequestId": {
+                    "target": "com.amazonaws.backup#CreatorRequestId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This is a unique string that identifies the request and\n         allows failed requests to be retried without the risk of running\n         the operation twice. This parameter is optional. If used, this\n         parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>",
+                        "smithy.api#idempotencyToken": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#CreateTieringConfigurationOutput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationArn": {
+                    "target": "com.amazonaws.backup#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies the created\n         tiering configuration.</p>"
+                    }
+                },
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This unique string is the name of the tiering configuration.</p>\n         <p>The name cannot be changed after creation. The name consists of only\n         alphanumeric characters and underscores. Maximum length is 200.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was created, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>CreationTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.backup#CreatorRequestId": {
+            "type": "string"
+        },
         "com.amazonaws.backup#CronExpression": {
             "type": "string"
         },
@@ -3057,6 +3208,9 @@
                     "target": "com.amazonaws.backup#CreateRestoreTestingSelection"
                 },
                 {
+                    "target": "com.amazonaws.backup#CreateTieringConfiguration"
+                },
+                {
                     "target": "com.amazonaws.backup#DeleteBackupPlan"
                 },
                 {
@@ -3090,6 +3244,9 @@
                     "target": "com.amazonaws.backup#DeleteRestoreTestingSelection"
                 },
                 {
+                    "target": "com.amazonaws.backup#DeleteTieringConfiguration"
+                },
+                {
                     "target": "com.amazonaws.backup#DescribeBackupJob"
                 },
                 {
@@ -3121,6 +3278,9 @@
                 },
                 {
                     "target": "com.amazonaws.backup#DescribeRestoreJob"
+                },
+                {
+                    "target": "com.amazonaws.backup#DescribeScanJob"
                 },
                 {
                     "target": "com.amazonaws.backup#DisassociateBackupVaultMpaApprovalTeam"
@@ -3175,6 +3335,9 @@
                 },
                 {
                     "target": "com.amazonaws.backup#GetSupportedResourceTypes"
+                },
+                {
+                    "target": "com.amazonaws.backup#GetTieringConfiguration"
                 },
                 {
                     "target": "com.amazonaws.backup#ListBackupJobs"
@@ -3252,7 +3415,16 @@
                     "target": "com.amazonaws.backup#ListRestoreTestingSelections"
                 },
                 {
+                    "target": "com.amazonaws.backup#ListScanJobs"
+                },
+                {
+                    "target": "com.amazonaws.backup#ListScanJobSummaries"
+                },
+                {
                     "target": "com.amazonaws.backup#ListTags"
+                },
+                {
+                    "target": "com.amazonaws.backup#ListTieringConfigurations"
                 },
                 {
                     "target": "com.amazonaws.backup#PutBackupVaultAccessPolicy"
@@ -3280,6 +3452,9 @@
                 },
                 {
                     "target": "com.amazonaws.backup#StartRestoreJob"
+                },
+                {
+                    "target": "com.amazonaws.backup#StartScanJob"
                 },
                 {
                     "target": "com.amazonaws.backup#StopBackupJob"
@@ -3316,6 +3491,9 @@
                 },
                 {
                     "target": "com.amazonaws.backup#UpdateRestoreTestingSelection"
+                },
+                {
+                    "target": "com.amazonaws.backup#UpdateTieringConfiguration"
                 }
             ],
             "traits": {
@@ -4829,6 +5007,61 @@
                 "smithy.api#input": {}
             }
         },
+        "com.amazonaws.backup#DeleteTieringConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#DeleteTieringConfigurationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#DeleteTieringConfigurationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Deletes the tiering configuration specified by a tiering configuration name.</p>",
+                "smithy.api#http": {
+                    "method": "DELETE",
+                    "uri": "/tiering-configurations/{TieringConfigurationName}",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#DeleteTieringConfigurationInput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique name of a tiering configuration.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#DeleteTieringConfigurationOutput": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.backup#DependencyFailureException": {
             "type": "structure",
             "members": {
@@ -5834,6 +6067,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>"
                     }
+                },
+                "ScanResults": {
+                    "target": "com.amazonaws.backup#ScanResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code>\n         </p>"
+                    }
                 }
             },
             "traits": {
@@ -6199,6 +6438,196 @@
                     "target": "com.amazonaws.backup#string",
                     "traits": {
                         "smithy.api#documentation": "<p>This is the unique identifier of the parent restore job for the selected restore job.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.backup#DescribeScanJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#DescribeScanJobInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#DescribeScanJobOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns scan job details for the specified ScanJobID.</p>",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/scan/jobs/{ScanJobId}",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#DescribeScanJobInput": {
+            "type": "structure",
+            "members": {
+                "ScanJobId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Uniquely identifies a request to Backup to scan a resource.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#DescribeScanJobOutput": {
+            "type": "structure",
+            "members": {
+                "AccountId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns the account ID that owns the scan job.</p>\n         <p>Pattern: <code>^[0-9]{12}$</code>\n         </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,\n            <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>\n         </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a logical container where backups are stored. Backup vaults are identified by names that are \n         unique to the account used to create them and the Amazon Web Services Region where they are created.</p>\n         <p>Pattern: <code>^[a-zA-Z0-9\\-\\_\\.]{2,50}$</code>\n         </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CompletionDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that a backup index finished creation, in Unix format and Coordinated\n         Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds.\n         For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087\n         AM.</p>"
+                    }
+                },
+                "CreatedBy": {
+                    "target": "com.amazonaws.backup#ScanJobCreator",
+                    "traits": {
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreationDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that a backup index finished creation, in Unix format and Coordinated\n         Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.\n         For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087\n         AM.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "IamRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,\n            <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scanning engine used for the corresponding scan job. Currently only <code>GUARDUTY</code> is supported.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the target recovery point for scanning.; for example, \n      <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the source resource of the corresponding recovery point ARN.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The non-unique name of the resource that belongs to the specified backup.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceType": {
+                    "target": "com.amazonaws.backup#ScanResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of Amazon Web Services Resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume.</p>\n         <p>Pattern: <code>^[a-zA-Z0-9\\-\\_\\.]{1,50}$</code>\n         </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanBaseRecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the base recovery point for scanning. This field will only be populated when an incremental scan job has taken place.</p>"
+                    }
+                },
+                "ScanId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scan ID generated by Amazon GuardDuty for the corresponding Scan Job ID request from Backup.</p>"
+                    }
+                },
+                "ScanJobId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scan job ID that uniquely identified the request to Backup.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanMode": {
+                    "target": "com.amazonaws.backup#ScanMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the scan type used for the scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanResult": {
+                    "target": "com.amazonaws.backup#ScanResultInfo",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      Contains the <code>ScanResultsStatus</code> for the scanning job and returns <code>THREATS_FOUND</code> or <code>NO_THREATS_FOUND</code> for completed jobs.</p>"
+                    }
+                },
+                "ScannerRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the scanner IAM role ARN used to for the scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "State": {
+                    "target": "com.amazonaws.backup#ScanState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current state of a scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "StatusMessage": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A detailed message explaining the status of the job to back up a resource.</p>"
                     }
                 }
             },
@@ -7694,6 +8123,68 @@
                     "target": "com.amazonaws.backup#ResourceTypes",
                     "traits": {
                         "smithy.api#documentation": "<p>Contains a string with the supported Amazon Web Services resource types:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Aurora</code> for Amazon Aurora</p>\n            </li>\n            <li>\n               <p>\n                  <code>CloudFormation</code> for CloudFormation</p>\n            </li>\n            <li>\n               <p>\n                  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>\n            </li>\n            <li>\n               <p>\n                  <code>DynamoDB</code> for Amazon DynamoDB</p>\n            </li>\n            <li>\n               <p>\n                  <code>EBS</code> for Amazon Elastic Block Store</p>\n            </li>\n            <li>\n               <p>\n                  <code>EC2</code> for Amazon Elastic Compute Cloud</p>\n            </li>\n            <li>\n               <p>\n                  <code>EFS</code> for Amazon Elastic File System</p>\n            </li>\n            <li>\n               <p>\n                  <code>FSx</code> for Amazon FSx</p>\n            </li>\n            <li>\n               <p>\n                  <code>Neptune</code> for Amazon Neptune</p>\n            </li>\n            <li>\n               <p>\n                  <code>RDS</code> for Amazon Relational Database Service</p>\n            </li>\n            <li>\n               <p>\n                  <code>Redshift</code> for Amazon Redshift</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p>\n            </li>\n            <li>\n               <p>\n                  <code>SAP HANA on Amazon EC2</code> for SAP HANA databases \n            on Amazon Elastic Compute Cloud instances</p>\n            </li>\n            <li>\n               <p>\n                  <code>Storage Gateway</code> for Storage Gateway</p>\n            </li>\n            <li>\n               <p>\n                  <code>Timestream</code> for Amazon Timestream</p>\n            </li>\n            <li>\n               <p>\n                  <code>VirtualMachine</code> for VMware virtual machines</p>\n            </li>\n         </ul>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.backup#GetTieringConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#GetTieringConfigurationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#GetTieringConfigurationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns <code>TieringConfiguration</code> details for the specified\n         <code>TieringConfigurationName</code>. The details are the body of a tiering configuration\n         in JSON format, in addition to configuration metadata.</p>",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/tiering-configurations/{TieringConfigurationName}",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#GetTieringConfigurationInput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique name of a tiering configuration.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#GetTieringConfigurationOutput": {
+            "type": "structure",
+            "members": {
+                "TieringConfiguration": {
+                    "target": "com.amazonaws.backup#TieringConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the body of a tiering configuration. Includes <code>TieringConfigurationName</code>.</p>"
                     }
                 }
             },
@@ -9980,7 +10471,7 @@
                 "ByStatus": {
                     "target": "com.amazonaws.backup#string",
                     "traits": {
-                        "smithy.api#documentation": "<p>Returns only report jobs that are in the specified status. The statuses are:</p>\n         <p>\n            <code>CREATED | RUNNING | COMPLETED | FAILED</code>\n         </p>",
+                        "smithy.api#documentation": "<p>Returns only report jobs that are in the specified status. The statuses are:</p>\n         <p>\n            <code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code>\n         </p>\n         <p> Please note that only scanning jobs finish with state completed with issues. \n            For backup jobs this is a console interpretation of a job that finishes in \n            completed state and has a status message.</p>",
                         "smithy.api#httpQuery": "Status"
                     }
                 },
@@ -10716,6 +11207,281 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.backup#ListScanJobSummaries": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#ListScanJobSummariesInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#ListScanJobSummariesOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>This is a request for a summary of scan jobs created or running within the most recent 30 days.</p>",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/audit/scan-job-summaries",
+                    "code": 200
+                },
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "ScanJobSummaries",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.backup#ListScanJobSummariesInput": {
+            "type": "structure",
+            "members": {
+                "AccountId": {
+                    "target": "com.amazonaws.backup#AccountId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns the job count for the specified account.</p>\n         <p>If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.</p>\n         <p>Root, admin, and delegated administrator accounts can use the value <code>ANY</code> to return job counts from every account in the organization.</p>\n         <p>\n            <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated organization, then returns the sum.</p>",
+                        "smithy.api#httpQuery": "AccountId"
+                    }
+                },
+                "ResourceType": {
+                    "target": "com.amazonaws.backup#ResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns the job count for the specified resource type. Use request \n         <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>\n         <p>The the value <code>ANY</code> returns count of all resource types.</p>\n         <p>\n            <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>",
+                        "smithy.api#httpQuery": "ResourceType"
+                    }
+                },
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified malware scanner. \n         Currently the only MalwareScanner is <code>GUARDDUTY</code>. But the field also supports <code>ANY</code>, and <code>AGGREGATE_ALL</code>.</p>",
+                        "smithy.api#httpQuery": "MalwareScanner"
+                    }
+                },
+                "ScanResultStatus": {
+                    "target": "com.amazonaws.backup#ScanResultStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified scan results.</p>",
+                        "smithy.api#httpQuery": "ScanResultStatus"
+                    }
+                },
+                "State": {
+                    "target": "com.amazonaws.backup#ScanJobStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified scanning job state.</p>",
+                        "smithy.api#httpQuery": "State"
+                    }
+                },
+                "AggregationPeriod": {
+                    "target": "com.amazonaws.backup#AggregationPeriod",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The period for the returned results.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ONE_DAY</code>The daily job count for the prior 1 day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SEVEN_DAYS</code>The daily job count for the prior 7 days.</p>\n            </li>\n            <li>\n               <p>\n                  <code>FOURTEEN_DAYS</code>The daily job count for the prior 14 days.</p>\n            </li>\n         </ul>",
+                        "smithy.api#httpQuery": "AggregationPeriod"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.backup#MaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of items to be returned.</p>\n         <p>The value is an integer. Range of accepted values is from 1 to 500.</p>",
+                        "smithy.api#httpQuery": "MaxResults"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request is made to \n         return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items\n         in your list starting at the location pointed to by the next token.</p>",
+                        "smithy.api#httpQuery": "NextToken"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#ListScanJobSummariesOutput": {
+            "type": "structure",
+            "members": {
+                "ScanJobSummaries": {
+                    "target": "com.amazonaws.backup#ScanJobSummaryList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The summary information.</p>"
+                    }
+                },
+                "AggregationPeriod": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The period for the returned results.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ONE_DAY</code>The daily job count for the prior 1 day.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SEVEN_DAYS</code>The daily job count for the prior 7 days.</p>\n            </li>\n            <li>\n               <p>\n                  <code>FOURTEEN_DAYS</code>The daily job count for the prior 14 days.</p>\n            </li>\n         </ul>\n         <p>Valid Values: <code>'ONE_DAY'</code> | <code>'SEVEN_DAYS'</code> | <code>'FOURTEEN_DAYS'</code>\n         </p>"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request is made to \n         return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items\n         in your list starting at the location pointed to by the next token.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.backup#ListScanJobs": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#ListScanJobsInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#ListScanJobsOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns a list of existing scan jobs for an authenticated account for the last 30 days.</p>",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/scan/jobs",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {},
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "ScanJobs",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.backup#ListScanJobsInput": {
+            "type": "structure",
+            "members": {
+                "ByAccountId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>\n         <p>If used from an Amazon Web Services Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>\n         <p>Pattern: <code>^[0-9]{12}$</code>\n         </p>",
+                        "smithy.api#httpQuery": "ByAccountId"
+                    }
+                },
+                "ByBackupVaultName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only scan jobs that will be stored in the specified backup vault. \n         Backup vaults are identified by names that are unique to the account \n         used to create them and the Amazon Web Services Region where they are created.</p>\n         <p>Pattern: <code>^[a-zA-Z0-9\\-\\_\\.]{2,50}$</code>\n         </p>",
+                        "smithy.api#httpQuery": "ByBackupVaultName"
+                    }
+                },
+                "ByCompleteAfter": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only scan jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>",
+                        "smithy.api#httpQuery": "ByCompleteAfter"
+                    }
+                },
+                "ByCompleteBefore": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>",
+                        "smithy.api#httpQuery": "ByCompleteBefore"
+                    }
+                },
+                "ByMalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified malware scanner. Currently only supports <code>GUARDDUTY</code>.</p>",
+                        "smithy.api#httpQuery": "ByMalwareScanner"
+                    }
+                },
+                "ByRecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs that are ran against the specified recovery point.</p>",
+                        "smithy.api#httpQuery": "ByRecoveryPointArn"
+                    }
+                },
+                "ByResourceArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only scan jobs that match the specified resource Amazon Resource Name (ARN).</p>",
+                        "smithy.api#httpQuery": "ByResourceArn"
+                    }
+                },
+                "ByResourceType": {
+                    "target": "com.amazonaws.backup#ScanResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns restore testing selections by the specified restore testing \n         plan name.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>EBS</code>for Amazon Elastic Block Store</p>\n            </li>\n            <li>\n               <p>\n                  <code>EC2</code>for Amazon Elastic Compute Cloud</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>for Amazon Simple Storage Service (Amazon S3)</p>\n            </li>\n         </ul>\n         <p>Pattern: <code>^[a-zA-Z0-9\\-\\_\\.]{1,50}$</code>\n         </p>",
+                        "smithy.api#httpQuery": "ByResourceType"
+                    }
+                },
+                "ByScanResultStatus": {
+                    "target": "com.amazonaws.backup#ScanResultStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified scan results:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>THREATS_FOUND</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_THREATS_FOUND</code>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#httpQuery": "ByScanResultStatus"
+                    }
+                },
+                "ByState": {
+                    "target": "com.amazonaws.backup#ScanState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Returns only the scan jobs for the specified scanning job state.</p>",
+                        "smithy.api#httpQuery": "ByState"
+                    }
+                },
+                "MaxResults": {
+                    "target": "com.amazonaws.backup#ListScanJobsInputMaxResultsInteger",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of items to be returned.</p>\n         <p>Valid Range: Minimum value of 1. Maximum value of 1000.</p>",
+                        "smithy.api#httpQuery": "MaxResults"
+                    }
+                },
+                "NextToken": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request is made to \n         return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items\n         in your list starting at the location pointed to by the next token.</p>",
+                        "smithy.api#httpQuery": "NextToken"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#ListScanJobsInputMaxResultsInteger": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 1000
+                }
+            }
+        },
+        "com.amazonaws.backup#ListScanJobsOutput": {
+            "type": "structure",
+            "members": {
+                "NextToken": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request is made to \n         return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items\n         in your list starting at the location pointed to by the next token.</p>"
+                    }
+                },
+                "ScanJobs": {
+                    "target": "com.amazonaws.backup#ScanJobs",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of structures containing metadata about your scan jobs returned in JSON format.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.backup#ListTags": {
             "type": "operation",
             "input": {
@@ -10803,6 +11569,80 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.backup#ListTieringConfigurations": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#ListTieringConfigurationsInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#ListTieringConfigurationsOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Returns a list of tiering configurations.</p>",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/tiering-configurations",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {},
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "TieringConfigurations",
+                    "pageSize": "MaxResults"
+                }
+            }
+        },
+        "com.amazonaws.backup#ListTieringConfigurationsInput": {
+            "type": "structure",
+            "members": {
+                "MaxResults": {
+                    "target": "com.amazonaws.backup#MaxResults",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The maximum number of items to be returned.</p>",
+                        "smithy.api#httpQuery": "maxResults"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request\n         is made to return <code>MaxResults</code> number of items, <code>NextToken</code>\n         allows you to return more items in your list starting at the location pointed to by the\n         next token.</p>",
+                        "smithy.api#httpQuery": "nextToken"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#ListTieringConfigurationsOutput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurations": {
+                    "target": "com.amazonaws.backup#TieringConfigurationsList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of tiering configurations returned by the <code>ListTieringConfigurations</code> call.</p>"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.backup#string",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The next item following a partial list of returned items. For example, if a request\n         is made to return <code>MaxResults</code> number of items, <code>NextToken</code>\n         allows you to return more items in your list starting at the location pointed to by the\n         next token.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.backup#Long": {
             "type": "long"
         },
@@ -10810,6 +11650,17 @@
             "type": "long",
             "traits": {
                 "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.backup#MalwareScanner": {
+            "type": "enum",
+            "members": {
+                "GUARDDUTY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "GUARDDUTY"
+                    }
+                }
             }
         },
         "com.amazonaws.backup#MaxFrameworkInputs": {
@@ -11419,6 +12270,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>"
                     }
+                },
+                "AggregatedScanResult": {
+                    "target": "com.amazonaws.backup#AggregatedScanResult",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the latest scanning results against the recovery point and currently include \n      <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -11517,6 +12374,12 @@
                     "target": "com.amazonaws.backup#EncryptionKeyType",
                     "traits": {
                         "smithy.api#documentation": "<p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>"
+                    }
+                },
+                "AggregatedScanResult": {
+                    "target": "com.amazonaws.backup#AggregatedScanResult",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the latest scanning results against the recovery point and currently include \n      <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>"
                     }
                 }
             },
@@ -11903,7 +12766,7 @@
                 "ReportTemplate": {
                     "target": "com.amazonaws.backup#string",
                     "traits": {
-                        "smithy.api#documentation": "<p>Identifies the report template for the report. Reports are built using a report\n         template. The report templates are:</p>\n         <p>\n            <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |\n            COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>\n         </p>",
+                        "smithy.api#documentation": "<p>Identifies the report template for the report. Reports are built using a report\n         template. The report templates are:</p>\n         <p>\n            <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |\n            COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -11986,6 +12849,41 @@
             "traits": {
                 "smithy.api#documentation": "<p>A resource that is required for the action doesn't exist.</p>",
                 "smithy.api#error": "client"
+            }
+        },
+        "com.amazonaws.backup#ResourceSelection": {
+            "type": "structure",
+            "members": {
+                "Resources": {
+                    "target": "com.amazonaws.backup#ResourceArns",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of strings that either contains ARNs of the associated resources\n         or contains a wildcard <code>*</code> to specify all resources.\n         You can specify up to 100 specific resources per tiering configuration.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TieringDownSettingsInDays": {
+                    "target": "com.amazonaws.backup#TieringDownSettingsInDays",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of days after creation within a backup vault that an object can transition to the low cost warm storage tier.\n         Must be a positive integer between 60 and 36500 days.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceType": {
+                    "target": "com.amazonaws.backup#ResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of Amazon Web Services resource; for example, <code>S3</code> for Amazon S3.\n         For tiering configurations, this is currently limited to <code>S3</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This contains metadata about resource selection for tiering configurations.</p>\n         <p>You can specify up to 5 different resource selections per tiering configuration.\n         Data moved to lower-cost tier remains there until deletion (one-way transition).</p>"
+            }
+        },
+        "com.amazonaws.backup#ResourceSelections": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ResourceSelection"
             }
         },
         "com.amazonaws.backup#ResourceType": {
@@ -13041,6 +13939,573 @@
                 }
             }
         },
+        "com.amazonaws.backup#ScanAction": {
+            "type": "structure",
+            "members": {
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The malware scanner to use for the scan action. Currently only <code>GUARDDUTY</code> is supported.</p>"
+                    }
+                },
+                "ScanMode": {
+                    "target": "com.amazonaws.backup#ScanMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scanning mode to use for the scan action.</p>\n         <p>Valid values: <code>FULL_SCAN</code> | <code>INCREMENTAL_SCAN</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Defines a scanning action that specifies the malware scanner and scan mode to use.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanActions": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanAction"
+            }
+        },
+        "com.amazonaws.backup#ScanFinding": {
+            "type": "enum",
+            "members": {
+                "MALWARE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "MALWARE"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanFindings": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanFinding"
+            }
+        },
+        "com.amazonaws.backup#ScanJob": {
+            "type": "structure",
+            "members": {
+                "AccountId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The account ID that owns the scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,\n         <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a logical container where backups are stored. Backup vaults are identified\n         by names that are unique to the account used to create them and the Amazon Web Services\n         Region where they are created.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CompletionDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that a scan job is completed, in Unix format and Coordinated\n         Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds.\n         For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087\n         AM.</p>"
+                    }
+                },
+                "CreatedBy": {
+                    "target": "com.amazonaws.backup#ScanJobCreator",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains identifying information about the creation of a scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreationDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that a scan job is created, in Unix format and Coordinated\n         Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.\n         For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087\n         AM.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "IamRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the IAM role ARN used to create the scan job; for example,\n         <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scanning engine used for the scan job. Currently only <code>GUARDDUTY</code> is supported.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the recovery point being scanned; for example,\n         <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the source resource of the recovery point being scanned.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The non-unique name of the resource that belongs to the specified backup.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceType": {
+                    "target": "com.amazonaws.backup#ScanResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of Amazon Web Services resource being scanned; for example, an Amazon Elastic Block Store\n         (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanBaseRecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the base recovery point for scanning. This field is populated\n         when an incremental scan job has taken place.</p>"
+                    }
+                },
+                "ScanId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scan ID generated by the malware scanner for the corresponding scan job.</p>"
+                    }
+                },
+                "ScanJobId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier that identifies the scan job request to Backup.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanMode": {
+                    "target": "com.amazonaws.backup#ScanMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the scan type use for the scan job.</p>\n         <p>Includes:</p>\n         <p>\n            <code>FULL_SCAN</code> will scan the entire data lineage within the backup.</p>\n         <p>\n            <code>INCREMENTAL_SCAN</code> will scan the data difference between the target recovery point and base recovery point ARN.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanResult": {
+                    "target": "com.amazonaws.backup#ScanResultInfo",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the scan results information, including the status of threats found during scanning.</p>"
+                    }
+                },
+                "ScannerRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the scanner IAM role ARN used for the scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "State": {
+                    "target": "com.amazonaws.backup#ScanState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current state of the scan job.</p>\n         <p>Valid values: <code>CREATED</code> | <code>RUNNING</code> | <code>COMPLETED</code> | \n         <code>COMPLETED_WITH_ISSUES</code> | <code>FAILED</code> | <code>CANCELED</code>.</p>"
+                    }
+                },
+                "StatusMessage": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A detailed message explaining the status of the scan job.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains metadata about a scan job, including information about the scanning process, results, and associated resources.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanJobCreator": {
+            "type": "structure",
+            "members": {
+                "BackupPlanArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,\n         <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupPlanId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the backup plan.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupPlanVersion": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes\n         long. Version IDs cannot be edited.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupRuleId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Uniquely identifies the backup rule that initiated the scan job.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains identifying information about the creation of a scan job, including the backup plan and rule that initiated the scan.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanJobState": {
+            "type": "enum",
+            "members": {
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED"
+                    }
+                },
+                "COMPLETED_WITH_ISSUES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED_WITH_ISSUES"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FAILED"
+                    }
+                },
+                "CANCELED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CANCELED"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanJobStatus": {
+            "type": "enum",
+            "members": {
+                "CREATED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CREATED"
+                    }
+                },
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED"
+                    }
+                },
+                "COMPLETED_WITH_ISSUES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED_WITH_ISSUES"
+                    }
+                },
+                "RUNNING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RUNNING"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FAILED"
+                    }
+                },
+                "CANCELED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CANCELED"
+                    }
+                },
+                "AGGREGATE_ALL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AGGREGATE_ALL"
+                    }
+                },
+                "ANY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ANY"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanJobSummary": {
+            "type": "structure",
+            "members": {
+                "Region": {
+                    "target": "com.amazonaws.backup#Region",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services Region where the scan jobs were executed.</p>"
+                    }
+                },
+                "AccountId": {
+                    "target": "com.amazonaws.backup#AccountId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The account ID that owns the scan jobs included in this summary.</p>"
+                    }
+                },
+                "State": {
+                    "target": "com.amazonaws.backup#ScanJobStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The state of the scan jobs included in this summary.</p>\n         <p>Valid values: <code>CREATED</code> | <code>RUNNING</code> | <code>COMPLETED</code> | \n         <code>COMPLETED_WITH_ISSUES</code> | <code>FAILED</code> | <code>CANCELED</code>.</p>"
+                    }
+                },
+                "ResourceType": {
+                    "target": "com.amazonaws.backup#ResourceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of Amazon Web Services resource for the scan jobs included in this summary.</p>"
+                    }
+                },
+                "Count": {
+                    "target": "com.amazonaws.backup#integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of scan jobs that match the specified criteria.</p>"
+                    }
+                },
+                "StartTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The value of time in number format of a job start time.</p>\n         <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to\n         milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018\n         12:11:30.087 AM.</p>"
+                    }
+                },
+                "EndTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The value of time in number format of a job end time.</p>\n         <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to\n         milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018\n         12:11:30.087 AM.</p>"
+                    }
+                },
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the malware scanner used during the scan job. Currently only supports <code>GUARDDUTY</code>.</p>"
+                    }
+                },
+                "ScanResultStatus": {
+                    "target": "com.amazonaws.backup#ScanResultStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The scan result status for the scan jobs included in this summary.</p>\n         <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains summary information about scan jobs, including counts and metadata for a specific time period and criteria.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanJobSummaryList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanJobSummary"
+            }
+        },
+        "com.amazonaws.backup#ScanJobs": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanJob"
+            }
+        },
+        "com.amazonaws.backup#ScanMode": {
+            "type": "enum",
+            "members": {
+                "FULL_SCAN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FULL_SCAN"
+                    }
+                },
+                "INCREMENTAL_SCAN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "INCREMENTAL_SCAN"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanResourceType": {
+            "type": "enum",
+            "members": {
+                "EBS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EBS"
+                    }
+                },
+                "EC2": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EC2"
+                    }
+                },
+                "S3": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "S3"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanResult": {
+            "type": "structure",
+            "members": {
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The malware scanner used to perform the scan. Currently only <code>GUARDDUTY</code> is supported.</p>"
+                    }
+                },
+                "ScanJobState": {
+                    "target": "com.amazonaws.backup#ScanJobState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The final state of the scan job.</p>\n         <p>Valid values: <code>COMPLETED</code> | <code>FAILED</code> | <code>CANCELED</code>.</p>"
+                    }
+                },
+                "LastScanTimestamp": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp of when the last scan was performed, in Unix format and Coordinated Universal Time (UTC).</p>"
+                    }
+                },
+                "Findings": {
+                    "target": "com.amazonaws.backup#ScanFindings",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of findings discovered during the scan.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the results of a security scan, including scanner information, scan state, and any findings discovered.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanResultInfo": {
+            "type": "structure",
+            "members": {
+                "ScanResultStatus": {
+                    "target": "com.amazonaws.backup#ScanResultStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the scan results.</p>\n         <p>Valid values: <code>THREATS_FOUND</code> | <code>NO_THREATS_FOUND</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains information about the results of a scan job.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanResultStatus": {
+            "type": "enum",
+            "members": {
+                "NO_THREATS_FOUND": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NO_THREATS_FOUND"
+                    }
+                },
+                "THREATS_FOUND": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "THREATS_FOUND"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanResults": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanResult"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 5
+                }
+            }
+        },
+        "com.amazonaws.backup#ScanSetting": {
+            "type": "structure",
+            "members": {
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The malware scanner to use for scanning. Currently only <code>GUARDDUTY</code> is supported.</p>"
+                    }
+                },
+                "ResourceTypes": {
+                    "target": "com.amazonaws.backup#ResourceTypes",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of resource types to be scanned for malware.</p>"
+                    }
+                },
+                "ScannerRoleArn": {
+                    "target": "com.amazonaws.backup#IAMRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the IAM role that the scanner uses to access resources; for example,\n         <code>arn:aws:iam::123456789012:role/ScannerRole</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains configuration settings for malware scanning, including the scanner type, target resource types, and scanner role.</p>"
+            }
+        },
+        "com.amazonaws.backup#ScanSettings": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#ScanSetting"
+            }
+        },
+        "com.amazonaws.backup#ScanState": {
+            "type": "enum",
+            "members": {
+                "CANCELED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CANCELED"
+                    }
+                },
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED"
+                    }
+                },
+                "COMPLETED_WITH_ISSUES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED_WITH_ISSUES"
+                    }
+                },
+                "CREATED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CREATED"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FAILED"
+                    }
+                },
+                "RUNNING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "RUNNING"
+                    }
+                }
+            }
+        },
         "com.amazonaws.backup#ScheduledPlanExecutionMember": {
             "type": "structure",
             "members": {
@@ -13538,6 +15003,128 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.backup#StartScanJob": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#StartScanJobInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#StartScanJobOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#InvalidRequestException"
+                },
+                {
+                    "target": "com.amazonaws.backup#LimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Starts scanning jobs for specific resources.</p>",
+                "smithy.api#http": {
+                    "method": "PUT",
+                    "uri": "/scan/job",
+                    "code": 201
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#StartScanJobInput": {
+            "type": "structure",
+            "members": {
+                "BackupVaultName": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a logical container where backups are stored. Backup vaults are identified by names that \n          are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>\n         <p>Pattern: <code>^[a-zA-Z0-9\\-\\_]{2,50}$</code>\n         </p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "IamRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the IAM role ARN used to create the target recovery point; for example,\n            <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "IdempotencyToken": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A customer-chosen string that you can use to distinguish between otherwise identical\n         calls to <code>StartScanJob</code>. Retrying a successful request with the same idempotency\n         token results in a success message with no action taken.</p>"
+                    }
+                },
+                "MalwareScanner": {
+                    "target": "com.amazonaws.backup#MalwareScanner",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the malware scanner used during the scan job. Currently only supports <code>GUARDDUTY</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point. This is your target recovery point for a full scan. \n         If you are running an incremental scan, this will be your a recovery point which has been created after your base recovery point selection.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanBaseRecoveryPointArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An ARN that uniquely identifies the base recovery point to be used for incremental scanning.</p>"
+                    }
+                },
+                "ScanMode": {
+                    "target": "com.amazonaws.backup#ScanMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the scan type use for the scan job.</p>\n         <p>Includes:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>FULL_SCAN</code> will scan the entire data lineage within the backup.</p>\n            </li>\n            <li>\n               <p>\n                  <code>INCREMENTAL_SCAN</code> will scan the data difference between the target recovery point and base recovery point ARN.</p>\n            </li>\n         </ul>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScannerRoleArn": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specified the IAM scanner role ARN.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#StartScanJobOutput": {
+            "type": "structure",
+            "members": {
+                "CreationDate": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time that a backup job is created, in Unix format and Coordinated Universal\n         Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For\n         example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087\n         AM.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ScanJobId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Uniquely identifies a request to Backup to back up a resource.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.backup#StopBackupJob": {
             "type": "operation",
             "input": {
@@ -13696,6 +15283,172 @@
                 "smithy.api#sensitive": {}
             }
         },
+        "com.amazonaws.backup#TieringConfiguration": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique name of the tiering configuration. This cannot be changed\n         after creation, and it must consist of only alphanumeric characters and underscores.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "TieringConfigurationArn": {
+                    "target": "com.amazonaws.backup#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies the\n         tiering configuration.</p>"
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "com.amazonaws.backup#BackupVaultNameOrWildcard",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the backup vault where the tiering configuration applies.\n         Use <code>*</code> to apply to all backup vaults.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceSelection": {
+                    "target": "com.amazonaws.backup#ResourceSelections",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of resource selection objects that specify which resources\n         are included in the tiering configuration and their tiering settings.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "CreatorRequestId": {
+                    "target": "com.amazonaws.backup#CreatorRequestId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This is a unique string that identifies the request and\n         allows failed requests to be retried without the risk of running\n         the operation twice.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was created, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>CreationTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                },
+                "LastUpdatedTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was updated, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>LastUpdatedTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This contains metadata about a tiering configuration.</p>"
+            }
+        },
+        "com.amazonaws.backup#TieringConfigurationInputForCreate": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique name of the tiering configuration. This cannot be changed\n         after creation, and it must consist of only alphanumeric characters and underscores.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "com.amazonaws.backup#BackupVaultNameOrWildcard",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the backup vault where the tiering configuration applies.\n         Use <code>*</code> to apply to all backup vaults.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ResourceSelection": {
+                    "target": "com.amazonaws.backup#ResourceSelections",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of resource selection objects that specify which resources\n         are included in the tiering configuration and their tiering settings.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This contains metadata about a tiering configuration for create operations.</p>"
+            }
+        },
+        "com.amazonaws.backup#TieringConfigurationInputForUpdate": {
+            "type": "structure",
+            "members": {
+                "ResourceSelection": {
+                    "target": "com.amazonaws.backup#ResourceSelections",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An array of resource selection objects that specify which resources\n         are included in the tiering configuration and their tiering settings.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "com.amazonaws.backup#BackupVaultNameOrWildcard",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the backup vault where the tiering configuration applies.\n         Use <code>*</code> to apply to all backup vaults.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This contains metadata about a tiering configuration for update operations.</p>"
+            }
+        },
+        "com.amazonaws.backup#TieringConfigurationName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#pattern": "^[a-zA-Z0-9_]{1,200}$"
+            }
+        },
+        "com.amazonaws.backup#TieringConfigurationsList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.backup#TieringConfigurationsListMember"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A list of tiering configurations.</p>"
+            }
+        },
+        "com.amazonaws.backup#TieringConfigurationsListMember": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationArn": {
+                    "target": "com.amazonaws.backup#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies the\n         tiering configuration.</p>"
+                    }
+                },
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique name of the tiering configuration.</p>"
+                    }
+                },
+                "BackupVaultName": {
+                    "target": "com.amazonaws.backup#BackupVaultNameOrWildcard",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the backup vault where the tiering configuration applies.\n         Use <code>*</code> to apply to all backup vaults.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was created, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>CreationTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                },
+                "LastUpdatedTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was updated, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>LastUpdatedTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>This contains metadata about a tiering configuration returned in a list.</p>"
+            }
+        },
+        "com.amazonaws.backup#TieringDownSettingsInDays": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 60,
+                    "max": 36500
+                }
+            }
+        },
         "com.amazonaws.backup#Timezone": {
             "type": "string"
         },
@@ -13840,6 +15593,12 @@
                     "target": "com.amazonaws.backup#AdvancedBackupSettings",
                     "traits": {
                         "smithy.api#documentation": "<p>Contains a list of <code>BackupOptions</code> for each resource type.</p>"
+                    }
+                },
+                "ScanSettings": {
+                    "target": "com.amazonaws.backup#ScanSettings",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>"
                     }
                 }
             },
@@ -14541,6 +16300,102 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The time the update completed for the restore \n         testing selection.</p>",
                         "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.backup#UpdateTieringConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.backup#UpdateTieringConfigurationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.backup#UpdateTieringConfigurationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.backup#AlreadyExistsException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.backup#InvalidParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#LimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.backup#MissingParameterValueException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.backup#ServiceUnavailableException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>This request will send changes to your specified tiering\n         configuration. <code>TieringConfigurationName</code>\n         cannot be updated after it is created.</p>\n         <p>\n            <code>ResourceSelection</code> can contain:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Resources</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>TieringDownSettingsInDays</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>ResourceType</code>\n               </p>\n            </li>\n         </ul>",
+                "smithy.api#http": {
+                    "method": "PUT",
+                    "uri": "/tiering-configurations/{TieringConfigurationName}",
+                    "code": 200
+                },
+                "smithy.api#idempotent": {}
+            }
+        },
+        "com.amazonaws.backup#UpdateTieringConfigurationInput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a tiering configuration to update.</p>",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "TieringConfiguration": {
+                    "target": "com.amazonaws.backup#TieringConfigurationInputForUpdate",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the body of a tiering configuration.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.backup#UpdateTieringConfigurationOutput": {
+            "type": "structure",
+            "members": {
+                "TieringConfigurationArn": {
+                    "target": "com.amazonaws.backup#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An Amazon Resource Name (ARN) that uniquely identifies the updated\n         tiering configuration.</p>"
+                    }
+                },
+                "TieringConfigurationName": {
+                    "target": "com.amazonaws.backup#TieringConfigurationName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This unique string is the name of the tiering configuration.</p>"
+                    }
+                },
+                "CreationTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was created, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>CreationTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
+                    }
+                },
+                "LastUpdatedTime": {
+                    "target": "com.amazonaws.backup#timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The date and time a tiering configuration was updated, in Unix format\n         and Coordinated Universal Time (UTC). The value of <code>LastUpdatedTime</code>\n         is accurate to milliseconds. For example, the value 1516925490.087 represents\n         Friday, January 26, 2018 12:11:30.087AM.</p>"
                     }
                 }
             },

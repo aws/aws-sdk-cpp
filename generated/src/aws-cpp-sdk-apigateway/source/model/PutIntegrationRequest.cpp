@@ -84,5 +84,9 @@ Aws::String PutIntegrationRequest::SerializePayload() const {
     payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
   }
 
+  if (m_responseTransferModeHasBeenSet) {
+    payload.WithString("responseTransferMode", ResponseTransferModeMapper::GetNameForResponseTransferMode(m_responseTransferMode));
+  }
+
   return payload.View().WriteReadable();
 }

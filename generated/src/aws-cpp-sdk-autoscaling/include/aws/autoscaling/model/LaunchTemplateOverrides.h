@@ -162,6 +162,30 @@ class LaunchTemplateOverrides {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The ID of the Amazon Machine Image (AMI) to use for instances launched with
+   * this override. When using Instance Refresh with <code>ReplaceRootVolume</code>
+   * strategy, this specifies the AMI for root volume replacement operations. </p>
+   * <p> For <code>ReplaceRootVolume</code> operations: </p> <ul> <li> <p>All
+   * overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p>
+   * </li> <li> <p>The AMI must contain only a single root volume</p> </li> <li>
+   * <p>Root volume replacement doesn't support multi-volume AMIs</p> </li> </ul>
+   */
+  inline const Aws::String& GetImageId() const { return m_imageId; }
+  inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+  template <typename ImageIdT = Aws::String>
+  void SetImageId(ImageIdT&& value) {
+    m_imageIdHasBeenSet = true;
+    m_imageId = std::forward<ImageIdT>(value);
+  }
+  template <typename ImageIdT = Aws::String>
+  LaunchTemplateOverrides& WithImageId(ImageIdT&& value) {
+    SetImageId(std::forward<ImageIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceType;
   bool m_instanceTypeHasBeenSet = false;
@@ -174,6 +198,9 @@ class LaunchTemplateOverrides {
 
   InstanceRequirements m_instanceRequirements;
   bool m_instanceRequirementsHasBeenSet = false;
+
+  Aws::String m_imageId;
+  bool m_imageIdHasBeenSet = false;
 };
 
 }  // namespace Model

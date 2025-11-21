@@ -27,6 +27,10 @@ Aws::String CreateConnectAttachmentRequest::SerializePayload() const {
     payload.WithString("TransportAttachmentId", m_transportAttachmentId);
   }
 
+  if (m_routingPolicyLabelHasBeenSet) {
+    payload.WithString("RoutingPolicyLabel", m_routingPolicyLabel);
+  }
+
   if (m_optionsHasBeenSet) {
     payload.WithObject("Options", m_options.Jsonize());
   }

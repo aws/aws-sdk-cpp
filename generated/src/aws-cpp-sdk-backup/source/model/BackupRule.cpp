@@ -79,6 +79,13 @@ BackupRule& BackupRule::operator=(JsonView jsonValue) {
     }
     m_indexActionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScanActions")) {
+    Aws::Utils::Array<JsonView> scanActionsJsonList = jsonValue.GetArray("ScanActions");
+    for (unsigned scanActionsIndex = 0; scanActionsIndex < scanActionsJsonList.GetLength(); ++scanActionsIndex) {
+      m_scanActions.push_back(scanActionsJsonList[scanActionsIndex].AsObject());
+    }
+    m_scanActionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -147,6 +154,14 @@ JsonValue BackupRule::Jsonize() const {
       indexActionsJsonList[indexActionsIndex].AsObject(m_indexActions[indexActionsIndex].Jsonize());
     }
     payload.WithArray("IndexActions", std::move(indexActionsJsonList));
+  }
+
+  if (m_scanActionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scanActionsJsonList(m_scanActions.size());
+    for (unsigned scanActionsIndex = 0; scanActionsIndex < scanActionsJsonList.GetLength(); ++scanActionsIndex) {
+      scanActionsJsonList[scanActionsIndex].AsObject(m_scanActions[scanActionsIndex].Jsonize());
+    }
+    payload.WithArray("ScanActions", std::move(scanActionsJsonList));
   }
 
   return payload;

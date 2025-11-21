@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
+#include <aws/bedrock-runtime/model/SearchResultBlock.h>
 #include <aws/bedrock-runtime/model/VideoBlock.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -128,6 +129,24 @@ class ToolResultContentBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A tool result that is a search result.</p>
+   */
+  inline const SearchResultBlock& GetSearchResult() const { return m_searchResult; }
+  inline bool SearchResultHasBeenSet() const { return m_searchResultHasBeenSet; }
+  template <typename SearchResultT = SearchResultBlock>
+  void SetSearchResult(SearchResultT&& value) {
+    m_searchResultHasBeenSet = true;
+    m_searchResult = std::forward<SearchResultT>(value);
+  }
+  template <typename SearchResultT = SearchResultBlock>
+  ToolResultContentBlock& WithSearchResult(SearchResultT&& value) {
+    SetSearchResult(std::forward<SearchResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::Document m_json;
   bool m_jsonHasBeenSet = false;
@@ -143,6 +162,9 @@ class ToolResultContentBlock {
 
   VideoBlock m_video;
   bool m_videoHasBeenSet = false;
+
+  SearchResultBlock m_searchResult;
+  bool m_searchResultHasBeenSet = false;
 };
 
 }  // namespace Model

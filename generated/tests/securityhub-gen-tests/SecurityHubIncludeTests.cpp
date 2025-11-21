@@ -706,6 +706,10 @@
 #include <aws/securityhub/model/FindingHistoryUpdateSourceType.h>
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/FindingProviderSeverity.h>
+#include <aws/securityhub/model/FindingsTrendsCompositeFilter.h>
+#include <aws/securityhub/model/FindingsTrendsFilters.h>
+#include <aws/securityhub/model/FindingsTrendsStringField.h>
+#include <aws/securityhub/model/FindingsTrendsStringFilter.h>
 #include <aws/securityhub/model/FirewallPolicyDetails.h>
 #include <aws/securityhub/model/FirewallPolicyStatefulRuleGroupReferencesDetails.h>
 #include <aws/securityhub/model/FirewallPolicyStatelessCustomActionsDetails.h>
@@ -734,6 +738,8 @@
 #include <aws/securityhub/model/GetFindingStatisticsV2Result.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
 #include <aws/securityhub/model/GetFindingsResult.h>
+#include <aws/securityhub/model/GetFindingsTrendsV2Request.h>
+#include <aws/securityhub/model/GetFindingsTrendsV2Result.h>
 #include <aws/securityhub/model/GetFindingsV2Request.h>
 #include <aws/securityhub/model/GetFindingsV2Result.h>
 #include <aws/securityhub/model/GetInsightResultsRequest.h>
@@ -746,10 +752,13 @@
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Request.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Result.h>
+#include <aws/securityhub/model/GetResourcesTrendsV2Request.h>
+#include <aws/securityhub/model/GetResourcesTrendsV2Result.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Result.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionRequest.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionResult.h>
+#include <aws/securityhub/model/GranularityField.h>
 #include <aws/securityhub/model/GroupByField.h>
 #include <aws/securityhub/model/GroupByResult.h>
 #include <aws/securityhub/model/GroupByRule.h>
@@ -886,6 +895,7 @@
 #include <aws/securityhub/model/ResourceSeverityBreakdown.h>
 #include <aws/securityhub/model/ResourceTag.h>
 #include <aws/securityhub/model/ResourcesCompositeFilter.h>
+#include <aws/securityhub/model/ResourcesCount.h>
 #include <aws/securityhub/model/ResourcesDateField.h>
 #include <aws/securityhub/model/ResourcesDateFilter.h>
 #include <aws/securityhub/model/ResourcesFilters.h>
@@ -895,6 +905,12 @@
 #include <aws/securityhub/model/ResourcesNumberFilter.h>
 #include <aws/securityhub/model/ResourcesStringField.h>
 #include <aws/securityhub/model/ResourcesStringFilter.h>
+#include <aws/securityhub/model/ResourcesTrendsCompositeFilter.h>
+#include <aws/securityhub/model/ResourcesTrendsFilters.h>
+#include <aws/securityhub/model/ResourcesTrendsMetricsResult.h>
+#include <aws/securityhub/model/ResourcesTrendsStringField.h>
+#include <aws/securityhub/model/ResourcesTrendsStringFilter.h>
+#include <aws/securityhub/model/ResourcesTrendsValues.h>
 #include <aws/securityhub/model/Result.h>
 #include <aws/securityhub/model/RouteSetDetails.h>
 #include <aws/securityhub/model/RuleGroupDetails.h>
@@ -934,6 +950,7 @@
 #include <aws/securityhub/model/Severity.h>
 #include <aws/securityhub/model/SeverityLabel.h>
 #include <aws/securityhub/model/SeverityRating.h>
+#include <aws/securityhub/model/SeverityTrendsCount.h>
 #include <aws/securityhub/model/SeverityUpdate.h>
 #include <aws/securityhub/model/Signal.h>
 #include <aws/securityhub/model/SoftwarePackage.h>
@@ -973,6 +990,8 @@
 #include <aws/securityhub/model/ThreatIntelIndicatorCategory.h>
 #include <aws/securityhub/model/ThreatIntelIndicatorType.h>
 #include <aws/securityhub/model/ThrottlingException.h>
+#include <aws/securityhub/model/TrendsMetricsResult.h>
+#include <aws/securityhub/model/TrendsValues.h>
 #include <aws/securityhub/model/UnprocessedAutomationRule.h>
 #include <aws/securityhub/model/UnprocessedConfigurationPolicyAssociation.h>
 #include <aws/securityhub/model/UnprocessedErrorCode.h>

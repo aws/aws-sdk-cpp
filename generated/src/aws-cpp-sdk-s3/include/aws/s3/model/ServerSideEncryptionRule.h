@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/model/BlockedEncryptionTypes.h>
 #include <aws/s3/model/ServerSideEncryptionByDefault.h>
 
 #include <utility>
@@ -97,12 +98,46 @@ class ServerSideEncryptionRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent
+   * the upload of new objects encrypted with the specified server-side encryption
+   * type. For example, blocking an encryption type will block
+   * <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>,
+   * multipart upload, and replication requests to the bucket for objects with the
+   * specified encryption type. However, you can continue to read and list any
+   * pre-existing objects already encrypted with the specified encryption type. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking
+   * an encryption type for a general purpose bucket</a>. </p>  <p>Currently,
+   * this parameter only supports blocking or unblocking Server Side Encryption with
+   * Customer Provided Keys (SSE-C). For more information about SSE-C, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using
+   * server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+   */
+  inline const BlockedEncryptionTypes& GetBlockedEncryptionTypes() const { return m_blockedEncryptionTypes; }
+  inline bool BlockedEncryptionTypesHasBeenSet() const { return m_blockedEncryptionTypesHasBeenSet; }
+  template <typename BlockedEncryptionTypesT = BlockedEncryptionTypes>
+  void SetBlockedEncryptionTypes(BlockedEncryptionTypesT&& value) {
+    m_blockedEncryptionTypesHasBeenSet = true;
+    m_blockedEncryptionTypes = std::forward<BlockedEncryptionTypesT>(value);
+  }
+  template <typename BlockedEncryptionTypesT = BlockedEncryptionTypes>
+  ServerSideEncryptionRule& WithBlockedEncryptionTypes(BlockedEncryptionTypesT&& value) {
+    SetBlockedEncryptionTypes(std::forward<BlockedEncryptionTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
   bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
   bool m_bucketKeyEnabledHasBeenSet = false;
+
+  BlockedEncryptionTypes m_blockedEncryptionTypes;
+  bool m_blockedEncryptionTypesHasBeenSet = false;
 };
 
 }  // namespace Model

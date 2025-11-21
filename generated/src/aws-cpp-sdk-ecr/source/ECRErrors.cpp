@@ -31,10 +31,12 @@ AWS_ECR_API InvalidLayerPartException ECRError::GetModeledError() {
 namespace ECRErrorMapper {
 
 static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("ImageDigestDoesNotMatchException");
+static const int EXCLUSION_NOT_FOUND_HASH = HashingUtils::HashString("ExclusionNotFoundException");
 static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int SECRET_NOT_FOUND_HASH = HashingUtils::HashString("SecretNotFoundException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
+static const int IMAGE_ARCHIVED_HASH = HashingUtils::HashString("ImageArchivedException");
 static const int UNSUPPORTED_UPSTREAM_REGISTRY_HASH = HashingUtils::HashString("UnsupportedUpstreamRegistryException");
 static const int UNABLE_TO_ACCESS_SECRET_HASH = HashingUtils::HashString("UnableToAccessSecretException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
@@ -47,12 +49,14 @@ static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("Regi
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int TEMPLATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("TemplateAlreadyExistsException");
 static const int PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH = HashingUtils::HashString("PullThroughCacheRuleNotFoundException");
+static const int IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ImageStorageClassUpdateNotSupportedException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
 static const int TEMPLATE_NOT_FOUND_HASH = HashingUtils::HashString("TemplateNotFoundException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
 static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
 static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
 static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
+static const int BLOCKED_BY_ORGANIZATION_POLICY_HASH = HashingUtils::HashString("BlockedByOrganizationPolicyException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryNotFoundException");
 static const int LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = HashingUtils::HashString("LifecyclePolicyPreviewInProgressException");
@@ -69,12 +73,15 @@ static const int PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS_HASH = HashingUtils::Has
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
 static const int UPLOAD_NOT_FOUND_HASH = HashingUtils::HashString("UploadNotFoundException");
+static const int EXCLUSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ExclusionAlreadyExistsException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
   if (hashCode == IMAGE_DIGEST_DOES_NOT_MATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_DIGEST_DOES_NOT_MATCH), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EXCLUSION_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::EXCLUSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == IMAGE_TAG_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_TAG_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
@@ -83,6 +90,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SECRET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LAYER_INACCESSIBLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYER_INACCESSIBLE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IMAGE_ARCHIVED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_ARCHIVED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNSUPPORTED_UPSTREAM_REGISTRY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNSUPPORTED_UPSTREAM_REGISTRY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNABLE_TO_ACCESS_SECRET_HASH) {
@@ -107,6 +116,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::TEMPLATE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PULL_THROUGH_CACHE_RULE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::PULL_THROUGH_CACHE_RULE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_STORAGE_CLASS_UPDATE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == IMAGE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TEMPLATE_NOT_FOUND_HASH) {
@@ -119,6 +130,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LAYERS_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LAYERS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == BLOCKED_BY_ORGANIZATION_POLICY_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::BLOCKED_BY_ORGANIZATION_POLICY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SERVER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REPOSITORY_NOT_FOUND_HASH) {
@@ -151,6 +164,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER_PART), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UPLOAD_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UPLOAD_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EXCLUSION_ALREADY_EXISTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::EXCLUSION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

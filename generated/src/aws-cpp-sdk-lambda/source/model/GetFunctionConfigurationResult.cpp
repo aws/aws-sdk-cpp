@@ -175,6 +175,10 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
     m_loggingConfig = jsonValue.GetObject("LoggingConfig");
     m_loggingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TenancyConfig")) {
+    m_tenancyConfig = jsonValue.GetObject("TenancyConfig");
+    m_tenancyConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -32,8 +32,8 @@ class PutGroupingConfigurationRequest : public ApplicationSignalsRequest {
   ///@{
   /**
    * <p>An array of grouping attribute definitions that specify how services should
-   * be grouped. Each definition includes the grouping name, source keys, and default
-   * values.</p>
+   * be grouped. Each definition includes a friendly name, source keys to derive the
+   * grouping value from, and an optional default value.</p>
    */
   inline const Aws::Vector<GroupingAttributeDefinition>& GetGroupingAttributeDefinitions() const { return m_groupingAttributeDefinitions; }
   inline bool GroupingAttributeDefinitionsHasBeenSet() const { return m_groupingAttributeDefinitionsHasBeenSet; }

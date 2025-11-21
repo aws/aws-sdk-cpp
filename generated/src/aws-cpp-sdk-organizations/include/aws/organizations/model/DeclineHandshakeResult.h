@@ -29,8 +29,8 @@ class DeclineHandshakeResult {
 
   ///@{
   /**
-   * <p>A structure that contains details about the declined handshake. The state is
-   * updated to show the value <code>DECLINED</code>.</p>
+   * <p>A <code>Handshake</code> object. Contains details for the declined
+   * handshake.</p>
    */
   inline const Handshake& GetHandshake() const { return m_handshake; }
   template <typename HandshakeT = Handshake>

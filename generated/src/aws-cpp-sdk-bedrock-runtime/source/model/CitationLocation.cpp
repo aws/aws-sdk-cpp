@@ -34,6 +34,10 @@ CitationLocation& CitationLocation::operator=(JsonView jsonValue) {
     m_documentChunk = jsonValue.GetObject("documentChunk");
     m_documentChunkHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("searchResultLocation")) {
+    m_searchResultLocation = jsonValue.GetObject("searchResultLocation");
+    m_searchResultLocationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue CitationLocation::Jsonize() const {
 
   if (m_documentChunkHasBeenSet) {
     payload.WithObject("documentChunk", m_documentChunk.Jsonize());
+  }
+
+  if (m_searchResultLocationHasBeenSet) {
+    payload.WithObject("searchResultLocation", m_searchResultLocation.Jsonize());
   }
 
   return payload;

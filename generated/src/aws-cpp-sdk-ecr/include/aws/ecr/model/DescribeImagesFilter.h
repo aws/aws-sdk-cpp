@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/model/ImageStatusFilter.h>
 #include <aws/ecr/model/TagStatus.h>
 
 #include <utility>
@@ -49,9 +50,30 @@ class DescribeImagesFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The image status with which to filter your <a>DescribeImages</a> results.
+   * Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and
+   * <code>ACTIVATING</code>.</p>
+   */
+  inline ImageStatusFilter GetImageStatus() const { return m_imageStatus; }
+  inline bool ImageStatusHasBeenSet() const { return m_imageStatusHasBeenSet; }
+  inline void SetImageStatus(ImageStatusFilter value) {
+    m_imageStatusHasBeenSet = true;
+    m_imageStatus = value;
+  }
+  inline DescribeImagesFilter& WithImageStatus(ImageStatusFilter value) {
+    SetImageStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   TagStatus m_tagStatus{TagStatus::NOT_SET};
   bool m_tagStatusHasBeenSet = false;
+
+  ImageStatusFilter m_imageStatus{ImageStatusFilter::NOT_SET};
+  bool m_imageStatusHasBeenSet = false;
 };
 
 }  // namespace Model

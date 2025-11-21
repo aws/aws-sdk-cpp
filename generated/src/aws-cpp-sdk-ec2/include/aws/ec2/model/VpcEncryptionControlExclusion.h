@@ -20,6 +20,15 @@ class XmlNode;
 namespace EC2 {
 namespace Model {
 
+/**
+ * <p>Describes an exclusion configuration for VPC Encryption Control.</p> <p>For
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+ * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcEncryptionControlExclusion">AWS
+ * API Reference</a></p>
+ */
 class VpcEncryptionControlExclusion {
  public:
   AWS_EC2_API VpcEncryptionControlExclusion() = default;
@@ -30,7 +39,9 @@ class VpcEncryptionControlExclusion {
   AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
   ///@{
-
+  /**
+   * <p>The current state of the exclusion configuration.</p>
+   */
   inline VpcEncryptionControlExclusionState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   inline void SetState(VpcEncryptionControlExclusionState value) {
@@ -44,7 +55,9 @@ class VpcEncryptionControlExclusion {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A message providing additional information about the exclusion state.</p>
+   */
   inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
   inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
   template <typename StateMessageT = Aws::String>

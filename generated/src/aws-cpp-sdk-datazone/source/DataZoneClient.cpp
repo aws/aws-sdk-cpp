@@ -26,6 +26,8 @@
 #include <aws/datazone/model/AddPolicyGrantRequest.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/AssociateGovernedTermsRequest.h>
+#include <aws/datazone/model/BatchGetAttributesMetadataRequest.h>
+#include <aws/datazone/model/BatchPutAttributesMetadataRequest.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/CancelSubscriptionRequest.h>
 #include <aws/datazone/model/CreateAccountPoolRequest.h>
@@ -184,6 +186,7 @@
 #include <aws/datazone/model/UpdateGroupProfileRequest.h>
 #include <aws/datazone/model/UpdateProjectProfileRequest.h>
 #include <aws/datazone/model/UpdateProjectRequest.h>
+#include <aws/datazone/model/UpdateRootDomainUnitOwnerRequest.h>
 #include <aws/datazone/model/UpdateRuleRequest.h>
 #include <aws/datazone/model/UpdateSubscriptionGrantStatusRequest.h>
 #include <aws/datazone/model/UpdateSubscriptionRequestRequest.h>
@@ -591,6 +594,113 @@ AssociateGovernedTermsOutcome DataZoneClient::AssociateGovernedTerms(const Assoc
         endpointResolutionOutcome.GetResult().AddPathSegments("/associate-governed-terms");
         return AssociateGovernedTermsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchGetAttributesMetadataOutcome DataZoneClient::BatchGetAttributesMetadata(const BatchGetAttributesMetadataRequest& request) const {
+  AWS_OPERATION_GUARD(BatchGetAttributesMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAttributesMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AttributeIdentifiersHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: AttributeIdentifiers, is not set");
+    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [AttributeIdentifiers]", false));
+  }
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: DomainIdentifier, is not set");
+    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: EntityIdentifier, is not set");
+    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityIdentifier]", false));
+  }
+  if (!request.EntityTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: EntityType, is not set");
+    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchGetAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchGetAttributesMetadata",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchGetAttributesMetadataOutcome>(
+      [&]() -> BatchGetAttributesMetadataOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAttributesMetadata, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(
+            AttributeEntityTypeMapper::GetNameForAttributeEntityType(request.GetEntityType()));
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes-metadata");
+        return BatchGetAttributesMetadataOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchPutAttributesMetadataOutcome DataZoneClient::BatchPutAttributesMetadata(const BatchPutAttributesMetadataRequest& request) const {
+  AWS_OPERATION_GUARD(BatchPutAttributesMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutAttributesMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: DomainIdentifier, is not set");
+    return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: EntityIdentifier, is not set");
+    return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityIdentifier]", false));
+  }
+  if (!request.EntityTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: EntityType, is not set");
+    return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchPutAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchPutAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchPutAttributesMetadata",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchPutAttributesMetadataOutcome>(
+      [&]() -> BatchPutAttributesMetadataOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutAttributesMetadata, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(
+            AttributeEntityTypeMapper::GetNameForAttributeEntityType(request.GetEntityType()));
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/attributes-metadata");
+        return BatchPutAttributesMetadataOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -7266,6 +7376,43 @@ UpdateProjectProfileOutcome DataZoneClient::UpdateProjectProfile(const UpdatePro
         endpointResolutionOutcome.GetResult().AddPathSegments("/project-profiles/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         return UpdateProjectProfileOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRootDomainUnitOwnerOutcome DataZoneClient::UpdateRootDomainUnitOwner(const UpdateRootDomainUnitOwnerRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateRootDomainUnitOwner);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRootDomainUnitOwner, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRootDomainUnitOwner", "Required field: DomainIdentifier, is not set");
+    return UpdateRootDomainUnitOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [DomainIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRootDomainUnitOwner, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRootDomainUnitOwner, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRootDomainUnitOwner",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRootDomainUnitOwnerOutcome>(
+      [&]() -> UpdateRootDomainUnitOwnerOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRootDomainUnitOwner, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/root-domain-unit-owner");
+        return UpdateRootDomainUnitOwnerOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

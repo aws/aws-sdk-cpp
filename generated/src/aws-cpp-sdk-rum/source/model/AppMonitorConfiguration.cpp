@@ -18,13 +18,9 @@ namespace Model {
 AppMonitorConfiguration::AppMonitorConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 AppMonitorConfiguration& AppMonitorConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AllowCookies")) {
-    m_allowCookies = jsonValue.GetBool("AllowCookies");
-    m_allowCookiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EnableXRay")) {
-    m_enableXRay = jsonValue.GetBool("EnableXRay");
-    m_enableXRayHasBeenSet = true;
+  if (jsonValue.ValueExists("IdentityPoolId")) {
+    m_identityPoolId = jsonValue.GetString("IdentityPoolId");
+    m_identityPoolIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ExcludedPages")) {
     Aws::Utils::Array<JsonView> excludedPagesJsonList = jsonValue.GetArray("ExcludedPages");
@@ -33,21 +29,6 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator=(JsonView jsonValue) 
     }
     m_excludedPagesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("FavoritePages")) {
-    Aws::Utils::Array<JsonView> favoritePagesJsonList = jsonValue.GetArray("FavoritePages");
-    for (unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex) {
-      m_favoritePages.push_back(favoritePagesJsonList[favoritePagesIndex].AsString());
-    }
-    m_favoritePagesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("GuestRoleArn")) {
-    m_guestRoleArn = jsonValue.GetString("GuestRoleArn");
-    m_guestRoleArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("IdentityPoolId")) {
-    m_identityPoolId = jsonValue.GetString("IdentityPoolId");
-    m_identityPoolIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("IncludedPages")) {
     Aws::Utils::Array<JsonView> includedPagesJsonList = jsonValue.GetArray("IncludedPages");
     for (unsigned includedPagesIndex = 0; includedPagesIndex < includedPagesJsonList.GetLength(); ++includedPagesIndex) {
@@ -55,9 +36,24 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator=(JsonView jsonValue) 
     }
     m_includedPagesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FavoritePages")) {
+    Aws::Utils::Array<JsonView> favoritePagesJsonList = jsonValue.GetArray("FavoritePages");
+    for (unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex) {
+      m_favoritePages.push_back(favoritePagesJsonList[favoritePagesIndex].AsString());
+    }
+    m_favoritePagesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SessionSampleRate")) {
     m_sessionSampleRate = jsonValue.GetDouble("SessionSampleRate");
     m_sessionSampleRateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GuestRoleArn")) {
+    m_guestRoleArn = jsonValue.GetString("GuestRoleArn");
+    m_guestRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AllowCookies")) {
+    m_allowCookies = jsonValue.GetBool("AllowCookies");
+    m_allowCookiesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Telemetries")) {
     Aws::Utils::Array<JsonView> telemetriesJsonList = jsonValue.GetArray("Telemetries");
@@ -66,18 +62,18 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator=(JsonView jsonValue) 
     }
     m_telemetriesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EnableXRay")) {
+    m_enableXRay = jsonValue.GetBool("EnableXRay");
+    m_enableXRayHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AppMonitorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_allowCookiesHasBeenSet) {
-    payload.WithBool("AllowCookies", m_allowCookies);
-  }
-
-  if (m_enableXRayHasBeenSet) {
-    payload.WithBool("EnableXRay", m_enableXRay);
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
   if (m_excludedPagesHasBeenSet) {
@@ -88,22 +84,6 @@ JsonValue AppMonitorConfiguration::Jsonize() const {
     payload.WithArray("ExcludedPages", std::move(excludedPagesJsonList));
   }
 
-  if (m_favoritePagesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> favoritePagesJsonList(m_favoritePages.size());
-    for (unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex) {
-      favoritePagesJsonList[favoritePagesIndex].AsString(m_favoritePages[favoritePagesIndex]);
-    }
-    payload.WithArray("FavoritePages", std::move(favoritePagesJsonList));
-  }
-
-  if (m_guestRoleArnHasBeenSet) {
-    payload.WithString("GuestRoleArn", m_guestRoleArn);
-  }
-
-  if (m_identityPoolIdHasBeenSet) {
-    payload.WithString("IdentityPoolId", m_identityPoolId);
-  }
-
   if (m_includedPagesHasBeenSet) {
     Aws::Utils::Array<JsonValue> includedPagesJsonList(m_includedPages.size());
     for (unsigned includedPagesIndex = 0; includedPagesIndex < includedPagesJsonList.GetLength(); ++includedPagesIndex) {
@@ -112,8 +92,24 @@ JsonValue AppMonitorConfiguration::Jsonize() const {
     payload.WithArray("IncludedPages", std::move(includedPagesJsonList));
   }
 
+  if (m_favoritePagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> favoritePagesJsonList(m_favoritePages.size());
+    for (unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex) {
+      favoritePagesJsonList[favoritePagesIndex].AsString(m_favoritePages[favoritePagesIndex]);
+    }
+    payload.WithArray("FavoritePages", std::move(favoritePagesJsonList));
+  }
+
   if (m_sessionSampleRateHasBeenSet) {
     payload.WithDouble("SessionSampleRate", m_sessionSampleRate);
+  }
+
+  if (m_guestRoleArnHasBeenSet) {
+    payload.WithString("GuestRoleArn", m_guestRoleArn);
+  }
+
+  if (m_allowCookiesHasBeenSet) {
+    payload.WithBool("AllowCookies", m_allowCookies);
   }
 
   if (m_telemetriesHasBeenSet) {
@@ -122,6 +118,10 @@ JsonValue AppMonitorConfiguration::Jsonize() const {
       telemetriesJsonList[telemetriesIndex].AsString(TelemetryMapper::GetNameForTelemetry(m_telemetries[telemetriesIndex]));
     }
     payload.WithArray("Telemetries", std::move(telemetriesJsonList));
+  }
+
+  if (m_enableXRayHasBeenSet) {
+    payload.WithBool("EnableXRay", m_enableXRay);
   }
 
   return payload;

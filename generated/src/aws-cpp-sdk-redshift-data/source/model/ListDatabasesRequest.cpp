@@ -23,20 +23,20 @@ Aws::String ListDatabasesRequest::SerializePayload() const {
     payload.WithString("Database", m_database);
   }
 
-  if (m_dbUserHasBeenSet) {
-    payload.WithString("DbUser", m_dbUser);
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("SecretArn", m_secretArn);
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+  if (m_dbUserHasBeenSet) {
+    payload.WithString("DbUser", m_dbUser);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
   }
 
-  if (m_secretArnHasBeenSet) {
-    payload.WithString("SecretArn", m_secretArn);
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   if (m_workgroupNameHasBeenSet) {

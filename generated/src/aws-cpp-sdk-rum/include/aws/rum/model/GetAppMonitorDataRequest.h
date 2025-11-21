@@ -33,6 +33,44 @@ class GetAppMonitorDataRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
+   * <p>The name of the app monitor that collected the data that you want to
+   * retrieve.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetAppMonitorDataRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A structure that defines the time range that you want to retrieve results
+   * from.</p>
+   */
+  inline const TimeRange& GetTimeRange() const { return m_timeRange; }
+  inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
+  template <typename TimeRangeT = TimeRange>
+  void SetTimeRange(TimeRangeT&& value) {
+    m_timeRangeHasBeenSet = true;
+    m_timeRange = std::forward<TimeRangeT>(value);
+  }
+  template <typename TimeRangeT = TimeRange>
+  GetAppMonitorDataRequest& WithTimeRange(TimeRangeT&& value) {
+    SetTimeRange(std::forward<TimeRangeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of structures that you can use to filter the results to those that
    * match one or more sets of key-value pairs that you specify.</p>
    */
@@ -74,25 +112,6 @@ class GetAppMonitorDataRequest : public CloudWatchRUMRequest {
 
   ///@{
   /**
-   * <p>The name of the app monitor that collected the data that you want to
-   * retrieve.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetAppMonitorDataRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Use the token returned by the previous operation to request the next page of
    * results.</p>
    */
@@ -109,40 +128,21 @@ class GetAppMonitorDataRequest : public CloudWatchRUMRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>A structure that defines the time range that you want to retrieve results
-   * from.</p>
-   */
-  inline const TimeRange& GetTimeRange() const { return m_timeRange; }
-  inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
-  template <typename TimeRangeT = TimeRange>
-  void SetTimeRange(TimeRangeT&& value) {
-    m_timeRangeHasBeenSet = true;
-    m_timeRange = std::forward<TimeRangeT>(value);
-  }
-  template <typename TimeRangeT = TimeRange>
-  GetAppMonitorDataRequest& WithTimeRange(TimeRangeT&& value) {
-    SetTimeRange(std::forward<TimeRangeT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+
+  TimeRange m_timeRange;
+  bool m_timeRangeHasBeenSet = false;
+
   Aws::Vector<QueryFilter> m_filters;
   bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
   bool m_maxResultsHasBeenSet = false;
 
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
-
-  TimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 };
 
 }  // namespace Model

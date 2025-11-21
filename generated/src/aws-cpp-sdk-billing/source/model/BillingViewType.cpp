@@ -18,6 +18,8 @@ namespace BillingViewTypeMapper {
 static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
 static const int BILLING_GROUP_HASH = HashingUtils::HashString("BILLING_GROUP");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+static const int BILLING_TRANSFER_HASH = HashingUtils::HashString("BILLING_TRANSFER");
+static const int BILLING_TRANSFER_SHOWBACK_HASH = HashingUtils::HashString("BILLING_TRANSFER_SHOWBACK");
 
 BillingViewType GetBillingViewTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ BillingViewType GetBillingViewTypeForName(const Aws::String& name) {
     return BillingViewType::BILLING_GROUP;
   } else if (hashCode == CUSTOM_HASH) {
     return BillingViewType::CUSTOM;
+  } else if (hashCode == BILLING_TRANSFER_HASH) {
+    return BillingViewType::BILLING_TRANSFER;
+  } else if (hashCode == BILLING_TRANSFER_SHOWBACK_HASH) {
+    return BillingViewType::BILLING_TRANSFER_SHOWBACK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForBillingViewType(BillingViewType enumValue) {
       return "BILLING_GROUP";
     case BillingViewType::CUSTOM:
       return "CUSTOM";
+    case BillingViewType::BILLING_TRANSFER:
+      return "BILLING_TRANSFER";
+    case BillingViewType::BILLING_TRANSFER_SHOWBACK:
+      return "BILLING_TRANSFER_SHOWBACK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

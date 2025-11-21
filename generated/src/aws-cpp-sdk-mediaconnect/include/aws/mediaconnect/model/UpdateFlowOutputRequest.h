@@ -8,9 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <aws/mediaconnect/model/OutputStatus.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
 
@@ -412,6 +414,39 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to enable or disable router integration for this flow
+   * output.</p>
+   */
+  inline State GetRouterIntegrationState() const { return m_routerIntegrationState; }
+  inline bool RouterIntegrationStateHasBeenSet() const { return m_routerIntegrationStateHasBeenSet; }
+  inline void SetRouterIntegrationState(State value) {
+    m_routerIntegrationStateHasBeenSet = true;
+    m_routerIntegrationState = value;
+  }
+  inline UpdateFlowOutputRequest& WithRouterIntegrationState(State value) {
+    SetRouterIntegrationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FlowTransitEncryption& GetRouterIntegrationTransitEncryption() const { return m_routerIntegrationTransitEncryption; }
+  inline bool RouterIntegrationTransitEncryptionHasBeenSet() const { return m_routerIntegrationTransitEncryptionHasBeenSet; }
+  template <typename RouterIntegrationTransitEncryptionT = FlowTransitEncryption>
+  void SetRouterIntegrationTransitEncryption(RouterIntegrationTransitEncryptionT&& value) {
+    m_routerIntegrationTransitEncryptionHasBeenSet = true;
+    m_routerIntegrationTransitEncryption = std::forward<RouterIntegrationTransitEncryptionT>(value);
+  }
+  template <typename RouterIntegrationTransitEncryptionT = FlowTransitEncryption>
+  UpdateFlowOutputRequest& WithRouterIntegrationTransitEncryption(RouterIntegrationTransitEncryptionT&& value) {
+    SetRouterIntegrationTransitEncryption(std::forward<RouterIntegrationTransitEncryptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
   bool m_cidrAllowListHasBeenSet = false;
@@ -472,6 +507,12 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
 
   int m_ndiSpeedHqQuality{0};
   bool m_ndiSpeedHqQualityHasBeenSet = false;
+
+  State m_routerIntegrationState{State::NOT_SET};
+  bool m_routerIntegrationStateHasBeenSet = false;
+
+  FlowTransitEncryption m_routerIntegrationTransitEncryption;
+  bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
 };
 
 }  // namespace Model

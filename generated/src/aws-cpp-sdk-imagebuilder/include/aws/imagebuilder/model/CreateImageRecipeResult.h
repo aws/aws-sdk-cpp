@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+#include <aws/imagebuilder/model/LatestVersionReferences.h>
 
 #include <utility>
 
@@ -77,6 +78,24 @@ class CreateImageRecipeResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resource ARNs with different wildcard variations of semantic
+   * versioning.</p>
+   */
+  inline const LatestVersionReferences& GetLatestVersionReferences() const { return m_latestVersionReferences; }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  void SetLatestVersionReferences(LatestVersionReferencesT&& value) {
+    m_latestVersionReferencesHasBeenSet = true;
+    m_latestVersionReferences = std::forward<LatestVersionReferencesT>(value);
+  }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  CreateImageRecipeResult& WithLatestVersionReferences(LatestVersionReferencesT&& value) {
+    SetLatestVersionReferences(std::forward<LatestVersionReferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;
@@ -86,6 +105,9 @@ class CreateImageRecipeResult {
 
   Aws::String m_imageRecipeArn;
   bool m_imageRecipeArnHasBeenSet = false;
+
+  LatestVersionReferences m_latestVersionReferences;
+  bool m_latestVersionReferencesHasBeenSet = false;
 };
 
 }  // namespace Model

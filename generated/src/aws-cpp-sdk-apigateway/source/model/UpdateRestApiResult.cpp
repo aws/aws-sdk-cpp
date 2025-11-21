@@ -86,6 +86,22 @@ UpdateRestApiResult& UpdateRestApiResult::operator=(const Aws::AmazonWebServiceR
     m_rootResourceId = jsonValue.GetString("rootResourceId");
     m_rootResourceIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("securityPolicy")) {
+    m_securityPolicy = SecurityPolicyMapper::GetSecurityPolicyForName(jsonValue.GetString("securityPolicy"));
+    m_securityPolicyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endpointAccessMode")) {
+    m_endpointAccessMode = EndpointAccessModeMapper::GetEndpointAccessModeForName(jsonValue.GetString("endpointAccessMode"));
+    m_endpointAccessModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiStatus")) {
+    m_apiStatus = ApiStatusMapper::GetApiStatusForName(jsonValue.GetString("apiStatus"));
+    m_apiStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiStatusMessage")) {
+    m_apiStatusMessage = jsonValue.GetString("apiStatusMessage");
+    m_apiStatusMessageHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

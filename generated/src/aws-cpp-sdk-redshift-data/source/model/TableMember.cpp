@@ -22,13 +22,13 @@ TableMember& TableMember::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("schema")) {
-    m_schema = jsonValue.GetString("schema");
-    m_schemaHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("schema")) {
+    m_schema = jsonValue.GetString("schema");
+    m_schemaHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue TableMember::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
-  if (m_schemaHasBeenSet) {
-    payload.WithString("schema", m_schema);
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", m_type);
+  }
+
+  if (m_schemaHasBeenSet) {
+    payload.WithString("schema", m_schema);
   }
 
   return payload;

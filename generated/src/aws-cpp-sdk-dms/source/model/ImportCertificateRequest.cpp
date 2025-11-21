@@ -36,6 +36,10 @@ Aws::String ImportCertificateRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
+  }
+
   return payload.View().WriteReadable();
 }
 

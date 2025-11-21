@@ -41,6 +41,10 @@ LifecyclePolicyPreviewResult& LifecyclePolicyPreviewResult::operator=(JsonView j
     m_appliedRulePriority = jsonValue.GetInteger("appliedRulePriority");
     m_appliedRulePriorityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storageClass")) {
+    m_storageClass = LifecyclePolicyStorageClassMapper::GetLifecyclePolicyStorageClassForName(jsonValue.GetString("storageClass"));
+    m_storageClassHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue LifecyclePolicyPreviewResult::Jsonize() const {
 
   if (m_appliedRulePriorityHasBeenSet) {
     payload.WithInteger("appliedRulePriority", m_appliedRulePriority);
+  }
+
+  if (m_storageClassHasBeenSet) {
+    payload.WithString("storageClass", LifecyclePolicyStorageClassMapper::GetNameForLifecyclePolicyStorageClass(m_storageClass));
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/network-firewall/model/ResourceManagedStatus.h>
 #include <aws/network-firewall/model/ResourceManagedType.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
+#include <aws/network-firewall/model/SubscriptionStatus.h>
 
 #include <utility>
 
@@ -111,6 +112,23 @@ class ListRuleGroupsRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
+   * <p>Filters the results to show only rule groups with the specified subscription
+   * status. Use this to find subscribed or unsubscribed rule groups.</p>
+   */
+  inline SubscriptionStatus GetSubscriptionStatus() const { return m_subscriptionStatus; }
+  inline bool SubscriptionStatusHasBeenSet() const { return m_subscriptionStatusHasBeenSet; }
+  inline void SetSubscriptionStatus(SubscriptionStatus value) {
+    m_subscriptionStatusHasBeenSet = true;
+    m_subscriptionStatus = value;
+  }
+  inline ListRuleGroupsRequest& WithSubscriptionStatus(SubscriptionStatus value) {
+    SetSubscriptionStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the rule group is stateless or stateful. If the rule group
    * is stateless, it contains stateless rules. If it is stateful, it contains
    * stateful rules.</p>
@@ -138,6 +156,9 @@ class ListRuleGroupsRequest : public NetworkFirewallRequest {
 
   ResourceManagedType m_managedType{ResourceManagedType::NOT_SET};
   bool m_managedTypeHasBeenSet = false;
+
+  SubscriptionStatus m_subscriptionStatus{SubscriptionStatus::NOT_SET};
+  bool m_subscriptionStatusHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
   bool m_typeHasBeenSet = false;

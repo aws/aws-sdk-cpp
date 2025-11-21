@@ -21,6 +21,10 @@ static const int CORE_NETWORK_EDGE_HASH = HashingUtils::HashString("CORE_NETWORK
 static const int ATTACHMENT_MAPPING_HASH = HashingUtils::HashString("ATTACHMENT_MAPPING");
 static const int ATTACHMENT_ROUTE_PROPAGATION_HASH = HashingUtils::HashString("ATTACHMENT_ROUTE_PROPAGATION");
 static const int ATTACHMENT_ROUTE_STATIC_HASH = HashingUtils::HashString("ATTACHMENT_ROUTE_STATIC");
+static const int ROUTING_POLICY_HASH = HashingUtils::HashString("ROUTING_POLICY");
+static const int ROUTING_POLICY_SEGMENT_ASSOCIATION_HASH = HashingUtils::HashString("ROUTING_POLICY_SEGMENT_ASSOCIATION");
+static const int ROUTING_POLICY_EDGE_ASSOCIATION_HASH = HashingUtils::HashString("ROUTING_POLICY_EDGE_ASSOCIATION");
+static const int ROUTING_POLICY_ATTACHMENT_ASSOCIATION_HASH = HashingUtils::HashString("ROUTING_POLICY_ATTACHMENT_ASSOCIATION");
 static const int CORE_NETWORK_CONFIGURATION_HASH = HashingUtils::HashString("CORE_NETWORK_CONFIGURATION");
 static const int SEGMENTS_CONFIGURATION_HASH = HashingUtils::HashString("SEGMENTS_CONFIGURATION");
 static const int SEGMENT_ACTIONS_CONFIGURATION_HASH = HashingUtils::HashString("SEGMENT_ACTIONS_CONFIGURATION");
@@ -40,6 +44,14 @@ ChangeType GetChangeTypeForName(const Aws::String& name) {
     return ChangeType::ATTACHMENT_ROUTE_PROPAGATION;
   } else if (hashCode == ATTACHMENT_ROUTE_STATIC_HASH) {
     return ChangeType::ATTACHMENT_ROUTE_STATIC;
+  } else if (hashCode == ROUTING_POLICY_HASH) {
+    return ChangeType::ROUTING_POLICY;
+  } else if (hashCode == ROUTING_POLICY_SEGMENT_ASSOCIATION_HASH) {
+    return ChangeType::ROUTING_POLICY_SEGMENT_ASSOCIATION;
+  } else if (hashCode == ROUTING_POLICY_EDGE_ASSOCIATION_HASH) {
+    return ChangeType::ROUTING_POLICY_EDGE_ASSOCIATION;
+  } else if (hashCode == ROUTING_POLICY_ATTACHMENT_ASSOCIATION_HASH) {
+    return ChangeType::ROUTING_POLICY_ATTACHMENT_ASSOCIATION;
   } else if (hashCode == CORE_NETWORK_CONFIGURATION_HASH) {
     return ChangeType::CORE_NETWORK_CONFIGURATION;
   } else if (hashCode == SEGMENTS_CONFIGURATION_HASH) {
@@ -74,6 +86,14 @@ Aws::String GetNameForChangeType(ChangeType enumValue) {
       return "ATTACHMENT_ROUTE_PROPAGATION";
     case ChangeType::ATTACHMENT_ROUTE_STATIC:
       return "ATTACHMENT_ROUTE_STATIC";
+    case ChangeType::ROUTING_POLICY:
+      return "ROUTING_POLICY";
+    case ChangeType::ROUTING_POLICY_SEGMENT_ASSOCIATION:
+      return "ROUTING_POLICY_SEGMENT_ASSOCIATION";
+    case ChangeType::ROUTING_POLICY_EDGE_ASSOCIATION:
+      return "ROUTING_POLICY_EDGE_ASSOCIATION";
+    case ChangeType::ROUTING_POLICY_ATTACHMENT_ASSOCIATION:
+      return "ROUTING_POLICY_ATTACHMENT_ASSOCIATION";
     case ChangeType::CORE_NETWORK_CONFIGURATION:
       return "CORE_NETWORK_CONFIGURATION";
     case ChangeType::SEGMENTS_CONFIGURATION:

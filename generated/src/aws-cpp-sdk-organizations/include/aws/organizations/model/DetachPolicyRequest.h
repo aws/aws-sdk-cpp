@@ -32,11 +32,11 @@ class DetachPolicyRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the policy you want to detach. You can get the
-   * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
-   * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-   * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
-   * letters, digits, or the underscore character (_).</p>
+   * <p>ID for the policy you want to detach. You can get the ID from the
+   * <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p> <p>The <a
+   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
+   * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+   * or the underscore character (_).</p>
    */
   inline const Aws::String& GetPolicyId() const { return m_policyId; }
   inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
@@ -54,8 +54,8 @@ class DetachPolicyRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the root, OU, or account that you want to
-   * detach the policy from. You can get the ID from the <a>ListRoots</a>,
+   * <p>ID for the root, OU, or account that you want to detach the policy from. You
+   * can get the ID from the <a>ListRoots</a>,
    * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
    * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
    * ID string requires one of the following:</p> <ul> <li> <p> <b>Root</b> - A

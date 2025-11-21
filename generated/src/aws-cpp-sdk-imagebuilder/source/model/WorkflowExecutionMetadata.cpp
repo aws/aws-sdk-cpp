@@ -66,6 +66,10 @@ WorkflowExecutionMetadata& WorkflowExecutionMetadata::operator=(JsonView jsonVal
     m_parallelGroup = jsonValue.GetString("parallelGroup");
     m_parallelGroupHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("retried")) {
+    m_retried = jsonValue.GetBool("retried");
+    m_retriedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue WorkflowExecutionMetadata::Jsonize() const {
 
   if (m_parallelGroupHasBeenSet) {
     payload.WithString("parallelGroup", m_parallelGroup);
+  }
+
+  if (m_retriedHasBeenSet) {
+    payload.WithBool("retried", m_retried);
   }
 
   return payload;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AcceleratorPartitionConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 
 #include <utility>
@@ -124,6 +125,24 @@ class ComputeQuotaResourceConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The accelerator partition configuration for fractional GPU allocation.</p>
+   */
+  inline const AcceleratorPartitionConfig& GetAcceleratorPartition() const { return m_acceleratorPartition; }
+  inline bool AcceleratorPartitionHasBeenSet() const { return m_acceleratorPartitionHasBeenSet; }
+  template <typename AcceleratorPartitionT = AcceleratorPartitionConfig>
+  void SetAcceleratorPartition(AcceleratorPartitionT&& value) {
+    m_acceleratorPartitionHasBeenSet = true;
+    m_acceleratorPartition = std::forward<AcceleratorPartitionT>(value);
+  }
+  template <typename AcceleratorPartitionT = AcceleratorPartitionConfig>
+  ComputeQuotaResourceConfig& WithAcceleratorPartition(AcceleratorPartitionT&& value) {
+    SetAcceleratorPartition(std::forward<AcceleratorPartitionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
   bool m_instanceTypeHasBeenSet = false;
@@ -139,6 +158,9 @@ class ComputeQuotaResourceConfig {
 
   double m_memoryInGiB{0.0};
   bool m_memoryInGiBHasBeenSet = false;
+
+  AcceleratorPartitionConfig m_acceleratorPartition;
+  bool m_acceleratorPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

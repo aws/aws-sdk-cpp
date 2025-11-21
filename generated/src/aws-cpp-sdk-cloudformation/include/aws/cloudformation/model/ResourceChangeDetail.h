@@ -105,7 +105,9 @@ class ResourceChangeDetail {
    * <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the
    * <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's
    * template might have changed. Changes to a nested stack's template aren't visible
-   * to CloudFormation until you run an update on the parent stack.</p> </li> </ul>
+   * to CloudFormation until you run an update on the parent stack.</p> </li> <li>
+   * <p> <code>NoModification</code> entities are changes made to the template that
+   * matches the actual state of the resource.</p> </li> </ul>
    */
   inline ChangeSource GetChangeSource() const { return m_changeSource; }
   inline bool ChangeSourceHasBeenSet() const { return m_changeSourceHasBeenSet; }

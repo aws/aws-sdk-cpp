@@ -83,12 +83,14 @@
 #include <aws/securityhub/model/GetFindingHistoryRequest.h>
 #include <aws/securityhub/model/GetFindingStatisticsV2Request.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
+#include <aws/securityhub/model/GetFindingsTrendsV2Request.h>
 #include <aws/securityhub/model/GetFindingsV2Request.h>
 #include <aws/securityhub/model/GetInsightResultsRequest.h>
 #include <aws/securityhub/model/GetInsightsRequest.h>
 #include <aws/securityhub/model/GetInvitationsCountRequest.h>
 #include <aws/securityhub/model/GetMembersRequest.h>
 #include <aws/securityhub/model/GetResourcesStatisticsV2Request.h>
+#include <aws/securityhub/model/GetResourcesTrendsV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionRequest.h>
 #include <aws/securityhub/model/InviteMembersRequest.h>
@@ -2223,6 +2225,36 @@ GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& requ
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetFindingsTrendsV2Outcome SecurityHubClient::GetFindingsTrendsV2(const GetFindingsTrendsV2Request& request) const {
+  AWS_OPERATION_GUARD(GetFindingsTrendsV2);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsTrendsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFindingsTrendsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetFindingsTrendsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFindingsTrendsV2",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetFindingsTrendsV2Outcome>(
+      [&]() -> GetFindingsTrendsV2Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindingsTrendsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/findingsTrendsv2");
+        return GetFindingsTrendsV2Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetFindingsV2Outcome SecurityHubClient::GetFindingsV2(const GetFindingsV2Request& request) const {
   AWS_OPERATION_GUARD(GetFindingsV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2402,6 +2434,36 @@ GetResourcesStatisticsV2Outcome SecurityHubClient::GetResourcesStatisticsV2(cons
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesv2/statistics");
         return GetResourcesStatisticsV2Outcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetResourcesTrendsV2Outcome SecurityHubClient::GetResourcesTrendsV2(const GetResourcesTrendsV2Request& request) const {
+  AWS_OPERATION_GUARD(GetResourcesTrendsV2);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcesTrendsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetResourcesTrendsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetResourcesTrendsV2, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetResourcesTrendsV2",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetResourcesTrendsV2Outcome>(
+      [&]() -> GetResourcesTrendsV2Outcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcesTrendsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesTrendsv2");
+        return GetResourcesTrendsV2Outcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class FlowLogsResourceType { NOT_SET, VPC, Subnet, NetworkInterface, TransitGateway, TransitGatewayAttachment };
+enum class FlowLogsResourceType { NOT_SET, VPC, Subnet, NetworkInterface, TransitGateway, TransitGatewayAttachment, RegionalNatGateway };
 
 namespace FlowLogsResourceTypeMapper {
 AWS_EC2_API FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name);

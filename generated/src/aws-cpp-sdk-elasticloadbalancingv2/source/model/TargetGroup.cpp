@@ -128,6 +128,12 @@ TargetGroup& TargetGroup::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode targetControlPortNode = resultNode.FirstChild("TargetControlPort");
+    if (!targetControlPortNode.IsNull()) {
+      m_targetControlPort = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetControlPortNode.GetText()).c_str()).c_str());
+      m_targetControlPortHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -215,6 +221,10 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
     oStream << location << index << locationValue << ".IpAddressType="
             << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
+
+  if (m_targetControlPortHasBeenSet) {
+    oStream << location << index << locationValue << ".TargetControlPort=" << m_targetControlPort << "&";
+  }
 }
 
 void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -278,6 +288,9 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if (m_ipAddressTypeHasBeenSet) {
     oStream << location << ".IpAddressType="
             << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
+  }
+  if (m_targetControlPortHasBeenSet) {
+    oStream << location << ".TargetControlPort=" << m_targetControlPort << "&";
   }
 }
 

@@ -8,6 +8,7 @@
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/billing/model/ActiveTimeRange.h>
 #include <aws/billing/model/BillingViewType.h>
+#include <aws/billing/model/StringSearch.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -104,6 +105,31 @@ class ListBillingViewsRequest : public BillingRequest {
 
   ///@{
   /**
+   * <p> Filters the list of billing views by name. You can specify search criteria
+   * to match billing view names based on the search option provided. </p>
+   */
+  inline const Aws::Vector<StringSearch>& GetNames() const { return m_names; }
+  inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+  template <typename NamesT = Aws::Vector<StringSearch>>
+  void SetNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names = std::forward<NamesT>(value);
+  }
+  template <typename NamesT = Aws::Vector<StringSearch>>
+  ListBillingViewsRequest& WithNames(NamesT&& value) {
+    SetNames(std::forward<NamesT>(value));
+    return *this;
+  }
+  template <typename NamesT = StringSearch>
+  ListBillingViewsRequest& AddNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names.emplace_back(std::forward<NamesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The list of owners of the billing view. </p>
    */
   inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
@@ -182,6 +208,9 @@ class ListBillingViewsRequest : public BillingRequest {
 
   Aws::Vector<BillingViewType> m_billingViewTypes;
   bool m_billingViewTypesHasBeenSet = false;
+
+  Aws::Vector<StringSearch> m_names;
+  bool m_namesHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
   bool m_ownerAccountIdHasBeenSet = false;

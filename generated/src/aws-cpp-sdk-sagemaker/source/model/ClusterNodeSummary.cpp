@@ -50,6 +50,10 @@ ClusterNodeSummary& ClusterNodeSummary::operator=(JsonView jsonValue) {
     m_ultraServerInfo = jsonValue.GetObject("UltraServerInfo");
     m_ultraServerInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PrivateDnsHostname")) {
+    m_privateDnsHostname = jsonValue.GetString("PrivateDnsHostname");
+    m_privateDnsHostnameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue ClusterNodeSummary::Jsonize() const {
 
   if (m_ultraServerInfoHasBeenSet) {
     payload.WithObject("UltraServerInfo", m_ultraServerInfo.Jsonize());
+  }
+
+  if (m_privateDnsHostnameHasBeenSet) {
+    payload.WithString("PrivateDnsHostname", m_privateDnsHostname);
   }
 
   return payload;

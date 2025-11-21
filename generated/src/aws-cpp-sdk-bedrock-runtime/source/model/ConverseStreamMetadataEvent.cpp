@@ -34,6 +34,10 @@ ConverseStreamMetadataEvent& ConverseStreamMetadataEvent::operator=(JsonView jso
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("serviceTier")) {
+    m_serviceTier = jsonValue.GetObject("serviceTier");
+    m_serviceTierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ConverseStreamMetadataEvent::Jsonize() const {
 
   if (m_performanceConfigHasBeenSet) {
     payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
+  }
+
+  if (m_serviceTierHasBeenSet) {
+    payload.WithObject("serviceTier", m_serviceTier.Jsonize());
   }
 
   return payload;

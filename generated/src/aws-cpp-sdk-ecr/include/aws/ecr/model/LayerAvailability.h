@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECR {
 namespace Model {
-enum class LayerAvailability { NOT_SET, AVAILABLE, UNAVAILABLE };
+enum class LayerAvailability { NOT_SET, AVAILABLE, UNAVAILABLE, ARCHIVED };
 
 namespace LayerAvailabilityMapper {
 AWS_ECR_API LayerAvailability GetLayerAvailabilityForName(const Aws::String& name);

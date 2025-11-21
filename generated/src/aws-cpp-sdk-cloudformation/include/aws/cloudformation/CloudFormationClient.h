@@ -827,6 +827,46 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   }
 
   /**
+   * <p>Returns CloudFormation events based on flexible query criteria. Groups events
+   * by operation ID, enabling you to focus on individual stack operations during
+   * deployment.</p> <p>An operation is any action performed on a stack, including
+   * stack lifecycle actions (Create, Update, Delete, Rollback), change set creation,
+   * nested stack creation, and automatic rollbacks triggered by failures. Each
+   * operation has a unique identifier (Operation ID) and represents a discrete
+   * change attempt on the stack.</p> <p>Returns different types of events
+   * including:</p> <ul> <li> <p> <b>Progress events</b> - Status updates during
+   * stack operation execution.</p> </li> <li> <p> <b>Validation errors</b> -
+   * Failures from CloudFormation Early Validations.</p> </li> <li> <p>
+   * <b>Provisioning errors</b> - Resource creation and update failures.</p> </li>
+   * <li> <p> <b>Hook invocation errors</b> - Failures from CloudFormation Hook
+   * during stack operations.</p> </li> </ul>  <p>One of
+   * <code>ChangeSetName</code>, <code>OperationId</code> or <code>StackName</code>
+   * must be specified as input.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeEventsRequestT = Model::DescribeEventsRequest>
+  Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const {
+    return SubmitCallable(&CloudFormationClient::DescribeEvents, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeEventsRequestT = Model::DescribeEventsRequest>
+  void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const DescribeEventsRequestT& request = {}) const {
+    return SubmitAsync(&CloudFormationClient::DescribeEvents, request, handler, context);
+  }
+
+  /**
    * <p>Describes a generated template. The output includes details about the
    * progress of the creation of a generated template started by a
    * <code>CreateGeneratedTemplate</code> API action or the update of a generated
@@ -1617,7 +1657,13 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
 
   /**
    * <p>Retrieves detailed information and remediation guidance for a Hook invocation
-   * result.</p><p><h3>See Also:</h3>   <a
+   * result.</p> <p>If the Hook uses a KMS key to encrypt annotations, callers of the
+   * <code>GetHookResult</code> operation must have <code>kms:Decrypt</code>
+   * permissions. For more information, see <a
+   * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-kms-key-policy.html">KMS
+   * key policy and permissions for encrypting CloudFormation Hooks results at
+   * rest</a> in the <i>CloudFormation Hooks User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetHookResult">AWS
    * API Reference</a></p>
    */

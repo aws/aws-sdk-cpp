@@ -54,7 +54,7 @@ class UnlockDelay {
   ///@{
   /**
    * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-   * delay can be measure only in days.</p>
+   * delay can be measured only in days.</p>
    */
   inline UnlockDelayUnit GetUnlockDelayUnit() const { return m_unlockDelayUnit; }
   inline bool UnlockDelayUnitHasBeenSet() const { return m_unlockDelayUnitHasBeenSet; }

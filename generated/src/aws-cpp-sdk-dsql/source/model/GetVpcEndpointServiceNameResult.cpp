@@ -25,6 +25,10 @@ GetVpcEndpointServiceNameResult& GetVpcEndpointServiceNameResult::operator=(cons
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("clusterVpcEndpoint")) {
+    m_clusterVpcEndpoint = jsonValue.GetString("clusterVpcEndpoint");
+    m_clusterVpcEndpointHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

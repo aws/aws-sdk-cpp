@@ -1224,9 +1224,12 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
    * parameter, in addition to having the <code>kinesis:RegisterStreamConsumer</code>
    * permission, you must also have the <code>kinesis:TagResource</code> permission
    * for the consumer that will be registered. Tags will take effect from the
-   * <code>CREATING</code> status of the consumer.</p> <p>You can register up to 20
-   * consumers per stream. A given consumer can only be registered with one stream at
-   * a time.</p> <p>For an example of how to use this operation, see <a
+   * <code>CREATING</code> status of the consumer.</p> <p>With On-demand Advantage
+   * streams, you can register up to 50 consumers per stream to use Enhanced Fan-out.
+   * With On-demand Standard and Provisioned streams, you can register up to 20
+   * consumers per stream to use Enhanced Fan-out. A given consumer can only be
+   * registered with one stream at a time.</p> <p>For an example of how to use this
+   * operation, see <a
    * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
    * Fan-Out Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation
    * has a limit of five transactions per second per account. Also, only 5 consumers

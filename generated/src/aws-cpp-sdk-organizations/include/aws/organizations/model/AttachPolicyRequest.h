@@ -32,11 +32,11 @@ class AttachPolicyRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the policy that you want to attach to the
-   * target. You can get the ID for the policy by calling the <a>ListPolicies</a>
-   * operation.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-   * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
-   * lowercase or uppercase letters, digits, or the underscore character (_).</p>
+   * <p>ID for the policy that you want to attach to the target. You can get the ID
+   * for the policy by calling the <a>ListPolicies</a> operation.</p> <p>The <a
+   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
+   * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+   * or the underscore character (_).</p>
    */
   inline const Aws::String& GetPolicyId() const { return m_policyId; }
   inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
@@ -54,8 +54,8 @@ class AttachPolicyRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the root, OU, or account that you want to
-   * attach the policy to. You can get the ID by calling the <a>ListRoots</a>,
+   * <p>ID for the root, OU, or account that you want to attach the policy to. You
+   * can get the ID by calling the <a>ListRoots</a>,
    * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
    * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
    * ID string requires one of the following:</p> <ul> <li> <p> <b>Root</b> - A

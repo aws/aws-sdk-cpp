@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/InfrastructureOptimization.h>
 #include <aws/ecs/model/InstanceLaunchTemplateUpdate.h>
 #include <aws/ecs/model/PropagateMITags.h>
 
@@ -94,6 +95,25 @@ class UpdateManagedInstancesProviderConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated infrastructure optimization configuration. Changes to this
+   * setting affect how Amazon ECS optimizes instances going forward.</p>
+   */
+  inline const InfrastructureOptimization& GetInfrastructureOptimization() const { return m_infrastructureOptimization; }
+  inline bool InfrastructureOptimizationHasBeenSet() const { return m_infrastructureOptimizationHasBeenSet; }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  void SetInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    m_infrastructureOptimizationHasBeenSet = true;
+    m_infrastructureOptimization = std::forward<InfrastructureOptimizationT>(value);
+  }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  UpdateManagedInstancesProviderConfiguration& WithInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    SetInfrastructureOptimization(std::forward<InfrastructureOptimizationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_infrastructureRoleArn;
   bool m_infrastructureRoleArnHasBeenSet = false;
@@ -103,6 +123,9 @@ class UpdateManagedInstancesProviderConfiguration {
 
   PropagateMITags m_propagateTags{PropagateMITags::NOT_SET};
   bool m_propagateTagsHasBeenSet = false;
+
+  InfrastructureOptimization m_infrastructureOptimization;
+  bool m_infrastructureOptimizationHasBeenSet = false;
 };
 
 }  // namespace Model

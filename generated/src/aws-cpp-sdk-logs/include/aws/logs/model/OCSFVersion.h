@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatchLogs {
 namespace Model {
-enum class OCSFVersion { NOT_SET, V1_1 };
+enum class OCSFVersion { NOT_SET, V1_1, V1_5 };
 
 namespace OCSFVersionMapper {
 AWS_CLOUDWATCHLOGS_API OCSFVersion GetOCSFVersionForName(const Aws::String& name);

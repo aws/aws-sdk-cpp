@@ -36,42 +36,19 @@ class AppMonitorConfiguration {
 
   ///@{
   /**
-   * <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a
-   * session cookie and a user cookie. The cookies allow the RUM web client to
-   * collect data relating to the number of users an application has and the behavior
-   * of the application across a sequence of events. Cookies are stored in the
-   * top-level domain of the current page.</p>
+   * <p>The ID of the Amazon Cognito identity pool that is used to authorize the
+   * sending of data to RUM.</p>
    */
-  inline bool GetAllowCookies() const { return m_allowCookies; }
-  inline bool AllowCookiesHasBeenSet() const { return m_allowCookiesHasBeenSet; }
-  inline void SetAllowCookies(bool value) {
-    m_allowCookiesHasBeenSet = true;
-    m_allowCookies = value;
+  inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
+  inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+  template <typename IdentityPoolIdT = Aws::String>
+  void SetIdentityPoolId(IdentityPoolIdT&& value) {
+    m_identityPoolIdHasBeenSet = true;
+    m_identityPoolId = std::forward<IdentityPoolIdT>(value);
   }
-  inline AppMonitorConfiguration& WithAllowCookies(bool value) {
-    SetAllowCookies(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user
-   * sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP
-   * requests. It also records an X-Ray segment for allowed HTTP requests. You can
-   * see traces and segments from these user sessions in the X-Ray console and the
-   * CloudWatch ServiceLens console. For more information, see <a
-   * href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is
-   * X-Ray?</a> </p>
-   */
-  inline bool GetEnableXRay() const { return m_enableXRay; }
-  inline bool EnableXRayHasBeenSet() const { return m_enableXRayHasBeenSet; }
-  inline void SetEnableXRay(bool value) {
-    m_enableXRayHasBeenSet = true;
-    m_enableXRay = value;
-  }
-  inline AppMonitorConfiguration& WithEnableXRay(bool value) {
-    SetEnableXRay(value);
+  template <typename IdentityPoolIdT = Aws::String>
+  AppMonitorConfiguration& WithIdentityPoolId(IdentityPoolIdT&& value) {
+    SetIdentityPoolId(std::forward<IdentityPoolIdT>(value));
     return *this;
   }
   ///@}
@@ -104,6 +81,33 @@ class AppMonitorConfiguration {
 
   ///@{
   /**
+   * <p>If this app monitor is to collect data from only certain pages in your
+   * application, this structure lists those pages. </p> <p>You can't include both
+   * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
+   * operation.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIncludedPages() const { return m_includedPages; }
+  inline bool IncludedPagesHasBeenSet() const { return m_includedPagesHasBeenSet; }
+  template <typename IncludedPagesT = Aws::Vector<Aws::String>>
+  void SetIncludedPages(IncludedPagesT&& value) {
+    m_includedPagesHasBeenSet = true;
+    m_includedPages = std::forward<IncludedPagesT>(value);
+  }
+  template <typename IncludedPagesT = Aws::Vector<Aws::String>>
+  AppMonitorConfiguration& WithIncludedPages(IncludedPagesT&& value) {
+    SetIncludedPages(std::forward<IncludedPagesT>(value));
+    return *this;
+  }
+  template <typename IncludedPagesT = Aws::String>
+  AppMonitorConfiguration& AddIncludedPages(IncludedPagesT&& value) {
+    m_includedPagesHasBeenSet = true;
+    m_includedPages.emplace_back(std::forward<IncludedPagesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of pages in your application that are to be displayed with a
    * "favorite" icon in the CloudWatch RUM console.</p>
    */
@@ -123,6 +127,27 @@ class AppMonitorConfiguration {
   AppMonitorConfiguration& AddFavoritePages(FavoritePagesT&& value) {
     m_favoritePagesHasBeenSet = true;
     m_favoritePages.emplace_back(std::forward<FavoritePagesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the portion of user sessions to use for RUM data collection.
+   * Choosing a higher portion gives you more data but also incurs more costs.</p>
+   * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
+   * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
+   * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
+   * used, and 10% of sessions will be sampled.</p>
+   */
+  inline double GetSessionSampleRate() const { return m_sessionSampleRate; }
+  inline bool SessionSampleRateHasBeenSet() const { return m_sessionSampleRateHasBeenSet; }
+  inline void SetSessionSampleRate(double value) {
+    m_sessionSampleRateHasBeenSet = true;
+    m_sessionSampleRate = value;
+  }
+  inline AppMonitorConfiguration& WithSessionSampleRate(double value) {
+    SetSessionSampleRate(value);
     return *this;
   }
   ///@}
@@ -161,67 +186,20 @@ class AppMonitorConfiguration {
 
   ///@{
   /**
-   * <p>The ID of the Amazon Cognito identity pool that is used to authorize the
-   * sending of data to RUM.</p>
+   * <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a
+   * session cookie and a user cookie. The cookies allow the RUM web client to
+   * collect data relating to the number of users an application has and the behavior
+   * of the application across a sequence of events. Cookies are stored in the
+   * top-level domain of the current page.</p>
    */
-  inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
-  inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-  template <typename IdentityPoolIdT = Aws::String>
-  void SetIdentityPoolId(IdentityPoolIdT&& value) {
-    m_identityPoolIdHasBeenSet = true;
-    m_identityPoolId = std::forward<IdentityPoolIdT>(value);
+  inline bool GetAllowCookies() const { return m_allowCookies; }
+  inline bool AllowCookiesHasBeenSet() const { return m_allowCookiesHasBeenSet; }
+  inline void SetAllowCookies(bool value) {
+    m_allowCookiesHasBeenSet = true;
+    m_allowCookies = value;
   }
-  template <typename IdentityPoolIdT = Aws::String>
-  AppMonitorConfiguration& WithIdentityPoolId(IdentityPoolIdT&& value) {
-    SetIdentityPoolId(std::forward<IdentityPoolIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>If this app monitor is to collect data from only certain pages in your
-   * application, this structure lists those pages. </p> <p>You can't include both
-   * <code>ExcludedPages</code> and <code>IncludedPages</code> in the same
-   * operation.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetIncludedPages() const { return m_includedPages; }
-  inline bool IncludedPagesHasBeenSet() const { return m_includedPagesHasBeenSet; }
-  template <typename IncludedPagesT = Aws::Vector<Aws::String>>
-  void SetIncludedPages(IncludedPagesT&& value) {
-    m_includedPagesHasBeenSet = true;
-    m_includedPages = std::forward<IncludedPagesT>(value);
-  }
-  template <typename IncludedPagesT = Aws::Vector<Aws::String>>
-  AppMonitorConfiguration& WithIncludedPages(IncludedPagesT&& value) {
-    SetIncludedPages(std::forward<IncludedPagesT>(value));
-    return *this;
-  }
-  template <typename IncludedPagesT = Aws::String>
-  AppMonitorConfiguration& AddIncludedPages(IncludedPagesT&& value) {
-    m_includedPagesHasBeenSet = true;
-    m_includedPages.emplace_back(std::forward<IncludedPagesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the portion of user sessions to use for RUM data collection.
-   * Choosing a higher portion gives you more data but also incurs more costs.</p>
-   * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
-   * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
-   * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
-   * used, and 10% of sessions will be sampled.</p>
-   */
-  inline double GetSessionSampleRate() const { return m_sessionSampleRate; }
-  inline bool SessionSampleRateHasBeenSet() const { return m_sessionSampleRateHasBeenSet; }
-  inline void SetSessionSampleRate(double value) {
-    m_sessionSampleRateHasBeenSet = true;
-    m_sessionSampleRate = value;
-  }
-  inline AppMonitorConfiguration& WithSessionSampleRate(double value) {
-    SetSessionSampleRate(value);
+  inline AppMonitorConfiguration& WithAllowCookies(bool value) {
+    SetAllowCookies(value);
     return *this;
   }
   ///@}
@@ -254,33 +232,55 @@ class AppMonitorConfiguration {
     return *this;
   }
   ///@}
- private:
-  bool m_allowCookies{false};
-  bool m_allowCookiesHasBeenSet = false;
 
-  bool m_enableXRay{false};
-  bool m_enableXRayHasBeenSet = false;
+  ///@{
+  /**
+   * <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user
+   * sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP
+   * requests. It also records an X-Ray segment for allowed HTTP requests. You can
+   * see traces and segments from these user sessions in the X-Ray console and the
+   * CloudWatch ServiceLens console. For more information, see <a
+   * href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is
+   * X-Ray?</a> </p>
+   */
+  inline bool GetEnableXRay() const { return m_enableXRay; }
+  inline bool EnableXRayHasBeenSet() const { return m_enableXRayHasBeenSet; }
+  inline void SetEnableXRay(bool value) {
+    m_enableXRayHasBeenSet = true;
+    m_enableXRay = value;
+  }
+  inline AppMonitorConfiguration& WithEnableXRay(bool value) {
+    SetEnableXRay(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_identityPoolId;
+  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedPages;
   bool m_excludedPagesHasBeenSet = false;
 
-  Aws::Vector<Aws::String> m_favoritePages;
-  bool m_favoritePagesHasBeenSet = false;
-
-  Aws::String m_guestRoleArn;
-  bool m_guestRoleArnHasBeenSet = false;
-
-  Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
-
   Aws::Vector<Aws::String> m_includedPages;
   bool m_includedPagesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_favoritePages;
+  bool m_favoritePagesHasBeenSet = false;
 
   double m_sessionSampleRate{0.0};
   bool m_sessionSampleRateHasBeenSet = false;
 
+  Aws::String m_guestRoleArn;
+  bool m_guestRoleArnHasBeenSet = false;
+
+  bool m_allowCookies{false};
+  bool m_allowCookiesHasBeenSet = false;
+
   Aws::Vector<Telemetry> m_telemetries;
   bool m_telemetriesHasBeenSet = false;
+
+  bool m_enableXRay{false};
+  bool m_enableXRayHasBeenSet = false;
 };
 
 }  // namespace Model

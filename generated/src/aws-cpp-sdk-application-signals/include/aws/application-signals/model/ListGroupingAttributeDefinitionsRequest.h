@@ -35,8 +35,8 @@ class ListGroupingAttributeDefinitionsRequest : public ApplicationSignalsRequest
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use this token to retrieve additional
-   * pages of grouping attribute definitions when the result set is large.</p>
+   * <p>Include this value, if it was returned by the previous operation, to get the
+   * next set of grouping attribute definitions.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -51,9 +51,53 @@ class ListGroupingAttributeDefinitionsRequest : public ApplicationSignalsRequest
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID to retrieve grouping attribute definitions
+   * for. Use this when accessing grouping configurations from a different account in
+   * cross-account monitoring scenarios.</p>
+   */
+  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+  template <typename AwsAccountIdT = Aws::String>
+  void SetAwsAccountId(AwsAccountIdT&& value) {
+    m_awsAccountIdHasBeenSet = true;
+    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  }
+  template <typename AwsAccountIdT = Aws::String>
+  ListGroupingAttributeDefinitionsRequest& WithAwsAccountId(AwsAccountIdT&& value) {
+    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If you are using this operation in a monitoring account, specify
+   * <code>true</code> to include grouping attributes from source accounts in the
+   * returned data.</p>
+   */
+  inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
+  inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+  inline void SetIncludeLinkedAccounts(bool value) {
+    m_includeLinkedAccountsHasBeenSet = true;
+    m_includeLinkedAccounts = value;
+  }
+  inline ListGroupingAttributeDefinitionsRequest& WithIncludeLinkedAccounts(bool value) {
+    SetIncludeLinkedAccounts(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::String m_awsAccountId;
+  bool m_awsAccountIdHasBeenSet = false;
+
+  bool m_includeLinkedAccounts{false};
+  bool m_includeLinkedAccountsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -27,6 +27,15 @@ Aws::String UpdateBillScenarioRequest::SerializePayload() const {
     payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
+  if (m_groupSharingPreferenceHasBeenSet) {
+    payload.WithString("groupSharingPreference",
+                       GroupSharingPreferenceEnumMapper::GetNameForGroupSharingPreferenceEnum(m_groupSharingPreference));
+  }
+
+  if (m_costCategoryGroupSharingPreferenceArnHasBeenSet) {
+    payload.WithString("costCategoryGroupSharingPreferenceArn", m_costCategoryGroupSharingPreferenceArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

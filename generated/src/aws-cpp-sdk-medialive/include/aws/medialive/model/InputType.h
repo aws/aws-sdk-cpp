@@ -25,7 +25,8 @@ enum class InputType {
   SRT_CALLER,
   MULTICAST,
   SMPTE_2110_RECEIVER_GROUP,
-  SDI
+  SDI,
+  MEDIACONNECT_ROUTER
 };
 
 namespace InputTypeMapper {

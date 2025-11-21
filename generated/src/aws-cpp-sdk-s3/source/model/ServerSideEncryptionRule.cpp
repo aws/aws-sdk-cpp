@@ -34,6 +34,11 @@ ServerSideEncryptionRule& ServerSideEncryptionRule::operator=(const XmlNode& xml
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bucketKeyEnabledNode.GetText()).c_str()).c_str());
       m_bucketKeyEnabledHasBeenSet = true;
     }
+    XmlNode blockedEncryptionTypesNode = resultNode.FirstChild("BlockedEncryptionTypes");
+    if (!blockedEncryptionTypesNode.IsNull()) {
+      m_blockedEncryptionTypes = blockedEncryptionTypesNode;
+      m_blockedEncryptionTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -51,6 +56,11 @@ void ServerSideEncryptionRule::AddToNode(XmlNode& parentNode) const {
     ss << std::boolalpha << m_bucketKeyEnabled;
     bucketKeyEnabledNode.SetText(ss.str());
     ss.str("");
+  }
+
+  if (m_blockedEncryptionTypesHasBeenSet) {
+    XmlNode blockedEncryptionTypesNode = parentNode.CreateChildElement("BlockedEncryptionTypes");
+    m_blockedEncryptionTypes.AddToNode(blockedEncryptionTypesNode);
   }
 }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/ModalityProcessingConfiguration.h>
+#include <aws/bedrock-data-automation/model/SensitiveDataConfiguration.h>
 
 #include <utility>
 
@@ -46,9 +47,28 @@ class VideoOverrideConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const SensitiveDataConfiguration& GetSensitiveDataConfiguration() const { return m_sensitiveDataConfiguration; }
+  inline bool SensitiveDataConfigurationHasBeenSet() const { return m_sensitiveDataConfigurationHasBeenSet; }
+  template <typename SensitiveDataConfigurationT = SensitiveDataConfiguration>
+  void SetSensitiveDataConfiguration(SensitiveDataConfigurationT&& value) {
+    m_sensitiveDataConfigurationHasBeenSet = true;
+    m_sensitiveDataConfiguration = std::forward<SensitiveDataConfigurationT>(value);
+  }
+  template <typename SensitiveDataConfigurationT = SensitiveDataConfiguration>
+  VideoOverrideConfiguration& WithSensitiveDataConfiguration(SensitiveDataConfigurationT&& value) {
+    SetSensitiveDataConfiguration(std::forward<SensitiveDataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ModalityProcessingConfiguration m_modalityProcessing;
   bool m_modalityProcessingHasBeenSet = false;
+
+  SensitiveDataConfiguration m_sensitiveDataConfiguration;
+  bool m_sensitiveDataConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

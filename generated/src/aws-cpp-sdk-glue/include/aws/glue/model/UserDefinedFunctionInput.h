@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/FunctionType.h>
 #include <aws/glue/model/PrincipalType.h>
 #include <aws/glue/model/ResourceUri.h>
 
@@ -91,6 +92,22 @@ class UserDefinedFunctionInput {
 
   ///@{
   /**
+   * <p>The type of the function.</p>
+   */
+  inline FunctionType GetFunctionType() const { return m_functionType; }
+  inline bool FunctionTypeHasBeenSet() const { return m_functionTypeHasBeenSet; }
+  inline void SetFunctionType(FunctionType value) {
+    m_functionTypeHasBeenSet = true;
+    m_functionType = value;
+  }
+  inline UserDefinedFunctionInput& WithFunctionType(FunctionType value) {
+    SetFunctionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The owner type.</p>
    */
   inline PrincipalType GetOwnerType() const { return m_ownerType; }
@@ -137,6 +154,9 @@ class UserDefinedFunctionInput {
 
   Aws::String m_ownerName;
   bool m_ownerNameHasBeenSet = false;
+
+  FunctionType m_functionType{FunctionType::NOT_SET};
+  bool m_functionTypeHasBeenSet = false;
 
   PrincipalType m_ownerType{PrincipalType::NOT_SET};
   bool m_ownerTypeHasBeenSet = false;

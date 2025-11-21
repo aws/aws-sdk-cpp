@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class ResourceManagedType { NOT_SET, AWS_MANAGED_THREAT_SIGNATURES, AWS_MANAGED_DOMAIN_LISTS, ACTIVE_THREAT_DEFENSE };
+enum class ResourceManagedType { NOT_SET, AWS_MANAGED_THREAT_SIGNATURES, AWS_MANAGED_DOMAIN_LISTS, ACTIVE_THREAT_DEFENSE, PARTNER_MANAGED };
 
 namespace ResourceManagedTypeMapper {
 AWS_NETWORKFIREWALL_API ResourceManagedType GetResourceManagedTypeForName(const Aws::String& name);

@@ -21,6 +21,7 @@
 /* Service model headers required in BedrockDataAutomationRuntimeClient header */
 #include <aws/bedrock-data-automation-runtime/model/GetDataAutomationStatusResult.h>
 #include <aws/bedrock-data-automation-runtime/model/InvokeDataAutomationAsyncResult.h>
+#include <aws/bedrock-data-automation-runtime/model/InvokeDataAutomationResult.h>
 #include <aws/bedrock-data-automation-runtime/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-data-automation-runtime/model/TagResourceResult.h>
 #include <aws/bedrock-data-automation-runtime/model/UntagResourceResult.h>
@@ -60,6 +61,7 @@ using BedrockDataAutomationRuntimeEndpointProvider =
 namespace Model {
 /* Service model forward declarations required in BedrockDataAutomationRuntimeClient header */
 class GetDataAutomationStatusRequest;
+class InvokeDataAutomationRequest;
 class InvokeDataAutomationAsyncRequest;
 class ListTagsForResourceRequest;
 class TagResourceRequest;
@@ -68,6 +70,7 @@ class UntagResourceRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<GetDataAutomationStatusResult, BedrockDataAutomationRuntimeError> GetDataAutomationStatusOutcome;
+typedef Aws::Utils::Outcome<InvokeDataAutomationResult, BedrockDataAutomationRuntimeError> InvokeDataAutomationOutcome;
 typedef Aws::Utils::Outcome<InvokeDataAutomationAsyncResult, BedrockDataAutomationRuntimeError> InvokeDataAutomationAsyncOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockDataAutomationRuntimeError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BedrockDataAutomationRuntimeError> TagResourceOutcome;
@@ -76,6 +79,7 @@ typedef Aws::Utils::Outcome<UntagResourceResult, BedrockDataAutomationRuntimeErr
 
 /* Service model Outcome callable definitions */
 typedef std::future<GetDataAutomationStatusOutcome> GetDataAutomationStatusOutcomeCallable;
+typedef std::future<InvokeDataAutomationOutcome> InvokeDataAutomationOutcomeCallable;
 typedef std::future<InvokeDataAutomationAsyncOutcome> InvokeDataAutomationAsyncOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -89,6 +93,9 @@ class BedrockDataAutomationRuntimeClient;
 typedef std::function<void(const BedrockDataAutomationRuntimeClient*, const Model::GetDataAutomationStatusRequest&,
                            const Model::GetDataAutomationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataAutomationStatusResponseReceivedHandler;
+typedef std::function<void(const BedrockDataAutomationRuntimeClient*, const Model::InvokeDataAutomationRequest&,
+                           const Model::InvokeDataAutomationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeDataAutomationResponseReceivedHandler;
 typedef std::function<void(const BedrockDataAutomationRuntimeClient*, const Model::InvokeDataAutomationAsyncRequest&,
                            const Model::InvokeDataAutomationAsyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeDataAutomationAsyncResponseReceivedHandler;

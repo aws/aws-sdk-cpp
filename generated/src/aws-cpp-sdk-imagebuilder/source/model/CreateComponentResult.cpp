@@ -32,6 +32,10 @@ CreateComponentResult& CreateComponentResult::operator=(const Aws::AmazonWebServ
     m_componentBuildVersionArn = jsonValue.GetString("componentBuildVersionArn");
     m_componentBuildVersionArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

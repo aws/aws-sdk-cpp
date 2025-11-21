@@ -67,6 +67,23 @@ ResourceChange& ResourceChange::operator=(const XmlNode& xmlNode) {
 
       m_scopeHasBeenSet = true;
     }
+    XmlNode resourceDriftStatusNode = resultNode.FirstChild("ResourceDriftStatus");
+    if (!resourceDriftStatusNode.IsNull()) {
+      m_resourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDriftStatusNode.GetText()).c_str()));
+      m_resourceDriftStatusHasBeenSet = true;
+    }
+    XmlNode resourceDriftIgnoredAttributesNode = resultNode.FirstChild("ResourceDriftIgnoredAttributes");
+    if (!resourceDriftIgnoredAttributesNode.IsNull()) {
+      XmlNode resourceDriftIgnoredAttributesMember = resourceDriftIgnoredAttributesNode.FirstChild("member");
+      m_resourceDriftIgnoredAttributesHasBeenSet = !resourceDriftIgnoredAttributesMember.IsNull();
+      while (!resourceDriftIgnoredAttributesMember.IsNull()) {
+        m_resourceDriftIgnoredAttributes.push_back(resourceDriftIgnoredAttributesMember);
+        resourceDriftIgnoredAttributesMember = resourceDriftIgnoredAttributesMember.NextNode("member");
+      }
+
+      m_resourceDriftIgnoredAttributesHasBeenSet = true;
+    }
     XmlNode detailsNode = resultNode.FirstChild("Details");
     if (!detailsNode.IsNull()) {
       XmlNode detailsMember = detailsNode.FirstChild("member");
@@ -97,6 +114,11 @@ ResourceChange& ResourceChange::operator=(const XmlNode& xmlNode) {
     if (!afterContextNode.IsNull()) {
       m_afterContext = Aws::Utils::Xml::DecodeEscapedXmlText(afterContextNode.GetText());
       m_afterContextHasBeenSet = true;
+    }
+    XmlNode previousDeploymentContextNode = resultNode.FirstChild("PreviousDeploymentContext");
+    if (!previousDeploymentContextNode.IsNull()) {
+      m_previousDeploymentContext = Aws::Utils::Xml::DecodeEscapedXmlText(previousDeploymentContextNode.GetText());
+      m_previousDeploymentContextHasBeenSet = true;
     }
   }
 
@@ -139,6 +161,21 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
     }
   }
 
+  if (m_resourceDriftStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".ResourceDriftStatus="
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_resourceDriftStatus)) << "&";
+  }
+
+  if (m_resourceDriftIgnoredAttributesHasBeenSet) {
+    unsigned resourceDriftIgnoredAttributesIdx = 1;
+    for (auto& item : m_resourceDriftIgnoredAttributes) {
+      Aws::StringStream resourceDriftIgnoredAttributesSs;
+      resourceDriftIgnoredAttributesSs << location << index << locationValue << ".ResourceDriftIgnoredAttributes.member."
+                                       << resourceDriftIgnoredAttributesIdx++;
+      item.OutputToStream(oStream, resourceDriftIgnoredAttributesSs.str().c_str());
+    }
+  }
+
   if (m_detailsHasBeenSet) {
     unsigned detailsIdx = 1;
     for (auto& item : m_details) {
@@ -164,6 +201,11 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if (m_afterContextHasBeenSet) {
     oStream << location << index << locationValue << ".AfterContext=" << StringUtils::URLEncode(m_afterContext.c_str()) << "&";
+  }
+
+  if (m_previousDeploymentContextHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".PreviousDeploymentContext=" << StringUtils::URLEncode(m_previousDeploymentContext.c_str()) << "&";
   }
 }
 
@@ -193,6 +235,18 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
               << StringUtils::URLEncode(ResourceAttributeMapper::GetNameForResourceAttribute(item)) << "&";
     }
   }
+  if (m_resourceDriftStatusHasBeenSet) {
+    oStream << location << ".ResourceDriftStatus="
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_resourceDriftStatus)) << "&";
+  }
+  if (m_resourceDriftIgnoredAttributesHasBeenSet) {
+    unsigned resourceDriftIgnoredAttributesIdx = 1;
+    for (auto& item : m_resourceDriftIgnoredAttributes) {
+      Aws::StringStream resourceDriftIgnoredAttributesSs;
+      resourceDriftIgnoredAttributesSs << location << ".ResourceDriftIgnoredAttributes.member." << resourceDriftIgnoredAttributesIdx++;
+      item.OutputToStream(oStream, resourceDriftIgnoredAttributesSs.str().c_str());
+    }
+  }
   if (m_detailsHasBeenSet) {
     unsigned detailsIdx = 1;
     for (auto& item : m_details) {
@@ -214,6 +268,9 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_afterContextHasBeenSet) {
     oStream << location << ".AfterContext=" << StringUtils::URLEncode(m_afterContext.c_str()) << "&";
+  }
+  if (m_previousDeploymentContextHasBeenSet) {
+    oStream << location << ".PreviousDeploymentContext=" << StringUtils::URLEncode(m_previousDeploymentContext.c_str()) << "&";
   }
 }
 

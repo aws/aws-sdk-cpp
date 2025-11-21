@@ -1,0 +1,108 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/apigatewayv2/ApiGatewayV2Request.h>
+#include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
+
+/**
+ * <p>The request body for the post operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProductRequest">AWS
+ * API Reference</a></p>
+ */
+class CreatePortalProductRequest : public ApiGatewayV2Request {
+ public:
+  AWS_APIGATEWAYV2_API CreatePortalProductRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreatePortalProduct"; }
+
+  AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>A description of the portal product.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreatePortalProductRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the portal product as it appears in a published portal.</p>
+   */
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
+  }
+  template <typename DisplayNameT = Aws::String>
+  CreatePortalProductRequest& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The collection of tags. Each tag element is associated with a given
+   * resource.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreatePortalProductRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreatePortalProductRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_displayName;
+  bool m_displayNameHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

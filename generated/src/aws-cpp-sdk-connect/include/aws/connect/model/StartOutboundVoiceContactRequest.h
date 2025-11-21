@@ -351,6 +351,23 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum time the outbound call will wait for the destination to answer
+   * the call, in seconds </p>
+   */
+  inline int GetRingTimeoutInSeconds() const { return m_ringTimeoutInSeconds; }
+  inline bool RingTimeoutInSecondsHasBeenSet() const { return m_ringTimeoutInSecondsHasBeenSet; }
+  inline void SetRingTimeoutInSeconds(int value) {
+    m_ringTimeoutInSecondsHasBeenSet = true;
+    m_ringTimeoutInSeconds = value;
+  }
+  inline StartOutboundVoiceContactRequest& WithRingTimeoutInSeconds(int value) {
+    SetRingTimeoutInSeconds(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -396,6 +413,9 @@ class StartOutboundVoiceContactRequest : public ConnectRequest {
 
   OutboundStrategy m_outboundStrategy;
   bool m_outboundStrategyHasBeenSet = false;
+
+  int m_ringTimeoutInSeconds{0};
+  bool m_ringTimeoutInSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

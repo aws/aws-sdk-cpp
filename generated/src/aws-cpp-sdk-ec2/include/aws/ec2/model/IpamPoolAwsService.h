@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class IpamPoolAwsService { NOT_SET, ec2 };
+enum class IpamPoolAwsService { NOT_SET, ec2, global_services };
 
 namespace IpamPoolAwsServiceMapper {
 AWS_EC2_API IpamPoolAwsService GetIpamPoolAwsServiceForName(const Aws::String& name);

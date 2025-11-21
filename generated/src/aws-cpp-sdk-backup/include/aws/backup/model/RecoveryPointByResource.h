@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/AggregatedScanResult.h>
 #include <aws/backup/model/EncryptionKeyType.h>
 #include <aws/backup/model/IndexStatus.h>
 #include <aws/backup/model/RecoveryPointStatus.h>
@@ -293,6 +294,26 @@ class RecoveryPointByResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains the latest scanning results against the recovery point and currently
+   * include <code>FailedScan</code>, <code>Findings</code>,
+   * <code>LastComputed</code>.</p>
+   */
+  inline const AggregatedScanResult& GetAggregatedScanResult() const { return m_aggregatedScanResult; }
+  inline bool AggregatedScanResultHasBeenSet() const { return m_aggregatedScanResultHasBeenSet; }
+  template <typename AggregatedScanResultT = AggregatedScanResult>
+  void SetAggregatedScanResult(AggregatedScanResultT&& value) {
+    m_aggregatedScanResultHasBeenSet = true;
+    m_aggregatedScanResult = std::forward<AggregatedScanResultT>(value);
+  }
+  template <typename AggregatedScanResultT = AggregatedScanResult>
+  RecoveryPointByResource& WithAggregatedScanResult(AggregatedScanResultT&& value) {
+    SetAggregatedScanResult(std::forward<AggregatedScanResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_recoveryPointArn;
   bool m_recoveryPointArnHasBeenSet = false;
@@ -335,6 +356,9 @@ class RecoveryPointByResource {
 
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
   bool m_encryptionKeyTypeHasBeenSet = false;
+
+  AggregatedScanResult m_aggregatedScanResult;
+  bool m_aggregatedScanResultHasBeenSet = false;
 };
 
 }  // namespace Model

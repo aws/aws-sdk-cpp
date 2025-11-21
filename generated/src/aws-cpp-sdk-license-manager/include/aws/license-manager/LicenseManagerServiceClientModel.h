@@ -25,6 +25,8 @@
 #include <aws/license-manager/model/CheckoutLicenseResult.h>
 #include <aws/license-manager/model/CreateGrantResult.h>
 #include <aws/license-manager/model/CreateGrantVersionResult.h>
+#include <aws/license-manager/model/CreateLicenseAssetGroupResult.h>
+#include <aws/license-manager/model/CreateLicenseAssetRulesetResult.h>
 #include <aws/license-manager/model/CreateLicenseConfigurationResult.h>
 #include <aws/license-manager/model/CreateLicenseConversionTaskForResourceResult.h>
 #include <aws/license-manager/model/CreateLicenseManagerReportGeneratorResult.h>
@@ -32,6 +34,8 @@
 #include <aws/license-manager/model/CreateLicenseVersionResult.h>
 #include <aws/license-manager/model/CreateTokenResult.h>
 #include <aws/license-manager/model/DeleteGrantResult.h>
+#include <aws/license-manager/model/DeleteLicenseAssetGroupResult.h>
+#include <aws/license-manager/model/DeleteLicenseAssetRulesetResult.h>
 #include <aws/license-manager/model/DeleteLicenseConfigurationResult.h>
 #include <aws/license-manager/model/DeleteLicenseManagerReportGeneratorResult.h>
 #include <aws/license-manager/model/DeleteLicenseResult.h>
@@ -39,6 +43,8 @@
 #include <aws/license-manager/model/ExtendLicenseConsumptionResult.h>
 #include <aws/license-manager/model/GetAccessTokenResult.h>
 #include <aws/license-manager/model/GetGrantResult.h>
+#include <aws/license-manager/model/GetLicenseAssetGroupResult.h>
+#include <aws/license-manager/model/GetLicenseAssetRulesetResult.h>
 #include <aws/license-manager/model/GetLicenseConfigurationResult.h>
 #include <aws/license-manager/model/GetLicenseConversionTaskResult.h>
 #include <aws/license-manager/model/GetLicenseManagerReportGeneratorResult.h>
@@ -46,10 +52,17 @@
 #include <aws/license-manager/model/GetLicenseUsageResult.h>
 #include <aws/license-manager/model/GetServiceSettingsRequest.h>
 #include <aws/license-manager/model/GetServiceSettingsResult.h>
+#include <aws/license-manager/model/ListAssetsForLicenseAssetGroupResult.h>
 #include <aws/license-manager/model/ListAssociationsForLicenseConfigurationResult.h>
 #include <aws/license-manager/model/ListDistributedGrantsRequest.h>
 #include <aws/license-manager/model/ListDistributedGrantsResult.h>
 #include <aws/license-manager/model/ListFailuresForLicenseConfigurationOperationsResult.h>
+#include <aws/license-manager/model/ListLicenseAssetGroupsRequest.h>
+#include <aws/license-manager/model/ListLicenseAssetGroupsResult.h>
+#include <aws/license-manager/model/ListLicenseAssetRulesetsRequest.h>
+#include <aws/license-manager/model/ListLicenseAssetRulesetsResult.h>
+#include <aws/license-manager/model/ListLicenseConfigurationsForOrganizationRequest.h>
+#include <aws/license-manager/model/ListLicenseConfigurationsForOrganizationResult.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsRequest.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsResult.h>
 #include <aws/license-manager/model/ListLicenseConversionTasksRequest.h>
@@ -76,6 +89,8 @@
 #include <aws/license-manager/model/RejectGrantResult.h>
 #include <aws/license-manager/model/TagResourceResult.h>
 #include <aws/license-manager/model/UntagResourceResult.h>
+#include <aws/license-manager/model/UpdateLicenseAssetGroupResult.h>
+#include <aws/license-manager/model/UpdateLicenseAssetRulesetResult.h>
 #include <aws/license-manager/model/UpdateLicenseConfigurationResult.h>
 #include <aws/license-manager/model/UpdateLicenseManagerReportGeneratorResult.h>
 #include <aws/license-manager/model/UpdateLicenseSpecificationsForResourceResult.h>
@@ -121,6 +136,8 @@ class CheckoutLicenseRequest;
 class CreateGrantRequest;
 class CreateGrantVersionRequest;
 class CreateLicenseRequest;
+class CreateLicenseAssetGroupRequest;
+class CreateLicenseAssetRulesetRequest;
 class CreateLicenseConfigurationRequest;
 class CreateLicenseConversionTaskForResourceRequest;
 class CreateLicenseManagerReportGeneratorRequest;
@@ -128,6 +145,8 @@ class CreateLicenseVersionRequest;
 class CreateTokenRequest;
 class DeleteGrantRequest;
 class DeleteLicenseRequest;
+class DeleteLicenseAssetGroupRequest;
+class DeleteLicenseAssetRulesetRequest;
 class DeleteLicenseConfigurationRequest;
 class DeleteLicenseManagerReportGeneratorRequest;
 class DeleteTokenRequest;
@@ -135,15 +154,21 @@ class ExtendLicenseConsumptionRequest;
 class GetAccessTokenRequest;
 class GetGrantRequest;
 class GetLicenseRequest;
+class GetLicenseAssetGroupRequest;
+class GetLicenseAssetRulesetRequest;
 class GetLicenseConfigurationRequest;
 class GetLicenseConversionTaskRequest;
 class GetLicenseManagerReportGeneratorRequest;
 class GetLicenseUsageRequest;
 class GetServiceSettingsRequest;
+class ListAssetsForLicenseAssetGroupRequest;
 class ListAssociationsForLicenseConfigurationRequest;
 class ListDistributedGrantsRequest;
 class ListFailuresForLicenseConfigurationOperationsRequest;
+class ListLicenseAssetGroupsRequest;
+class ListLicenseAssetRulesetsRequest;
 class ListLicenseConfigurationsRequest;
+class ListLicenseConfigurationsForOrganizationRequest;
 class ListLicenseConversionTasksRequest;
 class ListLicenseManagerReportGeneratorsRequest;
 class ListLicenseSpecificationsForResourceRequest;
@@ -160,6 +185,8 @@ class ListUsageForLicenseConfigurationRequest;
 class RejectGrantRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateLicenseAssetGroupRequest;
+class UpdateLicenseAssetRulesetRequest;
 class UpdateLicenseConfigurationRequest;
 class UpdateLicenseManagerReportGeneratorRequest;
 class UpdateLicenseSpecificationsForResourceRequest;
@@ -174,6 +201,8 @@ typedef Aws::Utils::Outcome<CheckoutLicenseResult, LicenseManagerError> Checkout
 typedef Aws::Utils::Outcome<CreateGrantResult, LicenseManagerError> CreateGrantOutcome;
 typedef Aws::Utils::Outcome<CreateGrantVersionResult, LicenseManagerError> CreateGrantVersionOutcome;
 typedef Aws::Utils::Outcome<CreateLicenseResult, LicenseManagerError> CreateLicenseOutcome;
+typedef Aws::Utils::Outcome<CreateLicenseAssetGroupResult, LicenseManagerError> CreateLicenseAssetGroupOutcome;
+typedef Aws::Utils::Outcome<CreateLicenseAssetRulesetResult, LicenseManagerError> CreateLicenseAssetRulesetOutcome;
 typedef Aws::Utils::Outcome<CreateLicenseConfigurationResult, LicenseManagerError> CreateLicenseConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateLicenseConversionTaskForResourceResult, LicenseManagerError>
     CreateLicenseConversionTaskForResourceOutcome;
@@ -182,6 +211,8 @@ typedef Aws::Utils::Outcome<CreateLicenseVersionResult, LicenseManagerError> Cre
 typedef Aws::Utils::Outcome<CreateTokenResult, LicenseManagerError> CreateTokenOutcome;
 typedef Aws::Utils::Outcome<DeleteGrantResult, LicenseManagerError> DeleteGrantOutcome;
 typedef Aws::Utils::Outcome<DeleteLicenseResult, LicenseManagerError> DeleteLicenseOutcome;
+typedef Aws::Utils::Outcome<DeleteLicenseAssetGroupResult, LicenseManagerError> DeleteLicenseAssetGroupOutcome;
+typedef Aws::Utils::Outcome<DeleteLicenseAssetRulesetResult, LicenseManagerError> DeleteLicenseAssetRulesetOutcome;
 typedef Aws::Utils::Outcome<DeleteLicenseConfigurationResult, LicenseManagerError> DeleteLicenseConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteLicenseManagerReportGeneratorResult, LicenseManagerError> DeleteLicenseManagerReportGeneratorOutcome;
 typedef Aws::Utils::Outcome<DeleteTokenResult, LicenseManagerError> DeleteTokenOutcome;
@@ -189,17 +220,24 @@ typedef Aws::Utils::Outcome<ExtendLicenseConsumptionResult, LicenseManagerError>
 typedef Aws::Utils::Outcome<GetAccessTokenResult, LicenseManagerError> GetAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetGrantResult, LicenseManagerError> GetGrantOutcome;
 typedef Aws::Utils::Outcome<GetLicenseResult, LicenseManagerError> GetLicenseOutcome;
+typedef Aws::Utils::Outcome<GetLicenseAssetGroupResult, LicenseManagerError> GetLicenseAssetGroupOutcome;
+typedef Aws::Utils::Outcome<GetLicenseAssetRulesetResult, LicenseManagerError> GetLicenseAssetRulesetOutcome;
 typedef Aws::Utils::Outcome<GetLicenseConfigurationResult, LicenseManagerError> GetLicenseConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetLicenseConversionTaskResult, LicenseManagerError> GetLicenseConversionTaskOutcome;
 typedef Aws::Utils::Outcome<GetLicenseManagerReportGeneratorResult, LicenseManagerError> GetLicenseManagerReportGeneratorOutcome;
 typedef Aws::Utils::Outcome<GetLicenseUsageResult, LicenseManagerError> GetLicenseUsageOutcome;
 typedef Aws::Utils::Outcome<GetServiceSettingsResult, LicenseManagerError> GetServiceSettingsOutcome;
+typedef Aws::Utils::Outcome<ListAssetsForLicenseAssetGroupResult, LicenseManagerError> ListAssetsForLicenseAssetGroupOutcome;
 typedef Aws::Utils::Outcome<ListAssociationsForLicenseConfigurationResult, LicenseManagerError>
     ListAssociationsForLicenseConfigurationOutcome;
 typedef Aws::Utils::Outcome<ListDistributedGrantsResult, LicenseManagerError> ListDistributedGrantsOutcome;
 typedef Aws::Utils::Outcome<ListFailuresForLicenseConfigurationOperationsResult, LicenseManagerError>
     ListFailuresForLicenseConfigurationOperationsOutcome;
+typedef Aws::Utils::Outcome<ListLicenseAssetGroupsResult, LicenseManagerError> ListLicenseAssetGroupsOutcome;
+typedef Aws::Utils::Outcome<ListLicenseAssetRulesetsResult, LicenseManagerError> ListLicenseAssetRulesetsOutcome;
 typedef Aws::Utils::Outcome<ListLicenseConfigurationsResult, LicenseManagerError> ListLicenseConfigurationsOutcome;
+typedef Aws::Utils::Outcome<ListLicenseConfigurationsForOrganizationResult, LicenseManagerError>
+    ListLicenseConfigurationsForOrganizationOutcome;
 typedef Aws::Utils::Outcome<ListLicenseConversionTasksResult, LicenseManagerError> ListLicenseConversionTasksOutcome;
 typedef Aws::Utils::Outcome<ListLicenseManagerReportGeneratorsResult, LicenseManagerError> ListLicenseManagerReportGeneratorsOutcome;
 typedef Aws::Utils::Outcome<ListLicenseSpecificationsForResourceResult, LicenseManagerError> ListLicenseSpecificationsForResourceOutcome;
@@ -216,6 +254,8 @@ typedef Aws::Utils::Outcome<ListUsageForLicenseConfigurationResult, LicenseManag
 typedef Aws::Utils::Outcome<RejectGrantResult, LicenseManagerError> RejectGrantOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, LicenseManagerError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, LicenseManagerError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateLicenseAssetGroupResult, LicenseManagerError> UpdateLicenseAssetGroupOutcome;
+typedef Aws::Utils::Outcome<UpdateLicenseAssetRulesetResult, LicenseManagerError> UpdateLicenseAssetRulesetOutcome;
 typedef Aws::Utils::Outcome<UpdateLicenseConfigurationResult, LicenseManagerError> UpdateLicenseConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateLicenseManagerReportGeneratorResult, LicenseManagerError> UpdateLicenseManagerReportGeneratorOutcome;
 typedef Aws::Utils::Outcome<UpdateLicenseSpecificationsForResourceResult, LicenseManagerError>
@@ -231,6 +271,8 @@ typedef std::future<CheckoutLicenseOutcome> CheckoutLicenseOutcomeCallable;
 typedef std::future<CreateGrantOutcome> CreateGrantOutcomeCallable;
 typedef std::future<CreateGrantVersionOutcome> CreateGrantVersionOutcomeCallable;
 typedef std::future<CreateLicenseOutcome> CreateLicenseOutcomeCallable;
+typedef std::future<CreateLicenseAssetGroupOutcome> CreateLicenseAssetGroupOutcomeCallable;
+typedef std::future<CreateLicenseAssetRulesetOutcome> CreateLicenseAssetRulesetOutcomeCallable;
 typedef std::future<CreateLicenseConfigurationOutcome> CreateLicenseConfigurationOutcomeCallable;
 typedef std::future<CreateLicenseConversionTaskForResourceOutcome> CreateLicenseConversionTaskForResourceOutcomeCallable;
 typedef std::future<CreateLicenseManagerReportGeneratorOutcome> CreateLicenseManagerReportGeneratorOutcomeCallable;
@@ -238,6 +280,8 @@ typedef std::future<CreateLicenseVersionOutcome> CreateLicenseVersionOutcomeCall
 typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
 typedef std::future<DeleteGrantOutcome> DeleteGrantOutcomeCallable;
 typedef std::future<DeleteLicenseOutcome> DeleteLicenseOutcomeCallable;
+typedef std::future<DeleteLicenseAssetGroupOutcome> DeleteLicenseAssetGroupOutcomeCallable;
+typedef std::future<DeleteLicenseAssetRulesetOutcome> DeleteLicenseAssetRulesetOutcomeCallable;
 typedef std::future<DeleteLicenseConfigurationOutcome> DeleteLicenseConfigurationOutcomeCallable;
 typedef std::future<DeleteLicenseManagerReportGeneratorOutcome> DeleteLicenseManagerReportGeneratorOutcomeCallable;
 typedef std::future<DeleteTokenOutcome> DeleteTokenOutcomeCallable;
@@ -245,15 +289,21 @@ typedef std::future<ExtendLicenseConsumptionOutcome> ExtendLicenseConsumptionOut
 typedef std::future<GetAccessTokenOutcome> GetAccessTokenOutcomeCallable;
 typedef std::future<GetGrantOutcome> GetGrantOutcomeCallable;
 typedef std::future<GetLicenseOutcome> GetLicenseOutcomeCallable;
+typedef std::future<GetLicenseAssetGroupOutcome> GetLicenseAssetGroupOutcomeCallable;
+typedef std::future<GetLicenseAssetRulesetOutcome> GetLicenseAssetRulesetOutcomeCallable;
 typedef std::future<GetLicenseConfigurationOutcome> GetLicenseConfigurationOutcomeCallable;
 typedef std::future<GetLicenseConversionTaskOutcome> GetLicenseConversionTaskOutcomeCallable;
 typedef std::future<GetLicenseManagerReportGeneratorOutcome> GetLicenseManagerReportGeneratorOutcomeCallable;
 typedef std::future<GetLicenseUsageOutcome> GetLicenseUsageOutcomeCallable;
 typedef std::future<GetServiceSettingsOutcome> GetServiceSettingsOutcomeCallable;
+typedef std::future<ListAssetsForLicenseAssetGroupOutcome> ListAssetsForLicenseAssetGroupOutcomeCallable;
 typedef std::future<ListAssociationsForLicenseConfigurationOutcome> ListAssociationsForLicenseConfigurationOutcomeCallable;
 typedef std::future<ListDistributedGrantsOutcome> ListDistributedGrantsOutcomeCallable;
 typedef std::future<ListFailuresForLicenseConfigurationOperationsOutcome> ListFailuresForLicenseConfigurationOperationsOutcomeCallable;
+typedef std::future<ListLicenseAssetGroupsOutcome> ListLicenseAssetGroupsOutcomeCallable;
+typedef std::future<ListLicenseAssetRulesetsOutcome> ListLicenseAssetRulesetsOutcomeCallable;
 typedef std::future<ListLicenseConfigurationsOutcome> ListLicenseConfigurationsOutcomeCallable;
+typedef std::future<ListLicenseConfigurationsForOrganizationOutcome> ListLicenseConfigurationsForOrganizationOutcomeCallable;
 typedef std::future<ListLicenseConversionTasksOutcome> ListLicenseConversionTasksOutcomeCallable;
 typedef std::future<ListLicenseManagerReportGeneratorsOutcome> ListLicenseManagerReportGeneratorsOutcomeCallable;
 typedef std::future<ListLicenseSpecificationsForResourceOutcome> ListLicenseSpecificationsForResourceOutcomeCallable;
@@ -270,6 +320,8 @@ typedef std::future<ListUsageForLicenseConfigurationOutcome> ListUsageForLicense
 typedef std::future<RejectGrantOutcome> RejectGrantOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateLicenseAssetGroupOutcome> UpdateLicenseAssetGroupOutcomeCallable;
+typedef std::future<UpdateLicenseAssetRulesetOutcome> UpdateLicenseAssetRulesetOutcomeCallable;
 typedef std::future<UpdateLicenseConfigurationOutcome> UpdateLicenseConfigurationOutcomeCallable;
 typedef std::future<UpdateLicenseManagerReportGeneratorOutcome> UpdateLicenseManagerReportGeneratorOutcomeCallable;
 typedef std::future<UpdateLicenseSpecificationsForResourceOutcome> UpdateLicenseSpecificationsForResourceOutcomeCallable;
@@ -301,6 +353,12 @@ typedef std::function<void(const LicenseManagerClient*, const Model::CreateGrant
 typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseRequest&, const Model::CreateLicenseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLicenseResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseAssetGroupRequest&,
+                           const Model::CreateLicenseAssetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateLicenseAssetGroupResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseAssetRulesetRequest&,
+                           const Model::CreateLicenseAssetRulesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateLicenseAssetRulesetResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::CreateLicenseConfigurationRequest&,
                            const Model::CreateLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLicenseConfigurationResponseReceivedHandler;
@@ -324,6 +382,12 @@ typedef std::function<void(const LicenseManagerClient*, const Model::DeleteGrant
 typedef std::function<void(const LicenseManagerClient*, const Model::DeleteLicenseRequest&, const Model::DeleteLicenseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteLicenseResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::DeleteLicenseAssetGroupRequest&,
+                           const Model::DeleteLicenseAssetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteLicenseAssetGroupResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::DeleteLicenseAssetRulesetRequest&,
+                           const Model::DeleteLicenseAssetRulesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteLicenseAssetRulesetResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::DeleteLicenseConfigurationRequest&,
                            const Model::DeleteLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteLicenseConfigurationResponseReceivedHandler;
@@ -346,6 +410,12 @@ typedef std::function<void(const LicenseManagerClient*, const Model::GetGrantReq
 typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseRequest&, const Model::GetLicenseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLicenseResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseAssetGroupRequest&,
+                           const Model::GetLicenseAssetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetLicenseAssetGroupResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseAssetRulesetRequest&,
+                           const Model::GetLicenseAssetRulesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetLicenseAssetRulesetResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseConfigurationRequest&,
                            const Model::GetLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLicenseConfigurationResponseReceivedHandler;
@@ -362,6 +432,10 @@ typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseU
 typedef std::function<void(const LicenseManagerClient*, const Model::GetServiceSettingsRequest&, const Model::GetServiceSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetServiceSettingsResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::ListAssetsForLicenseAssetGroupRequest&,
+                           const Model::ListAssetsForLicenseAssetGroupOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAssetsForLicenseAssetGroupResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::ListAssociationsForLicenseConfigurationRequest&,
                            const Model::ListAssociationsForLicenseConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -373,9 +447,19 @@ typedef std::function<void(const LicenseManagerClient*, const Model::ListFailure
                            const Model::ListFailuresForLicenseConfigurationOperationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseAssetGroupsRequest&,
+                           const Model::ListLicenseAssetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListLicenseAssetGroupsResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseAssetRulesetsRequest&,
+                           const Model::ListLicenseAssetRulesetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListLicenseAssetRulesetsResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConfigurationsRequest&,
                            const Model::ListLicenseConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLicenseConfigurationsResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConfigurationsForOrganizationRequest&,
+                           const Model::ListLicenseConfigurationsForOrganizationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListLicenseConfigurationsForOrganizationResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConversionTasksRequest&,
                            const Model::ListLicenseConversionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLicenseConversionTasksResponseReceivedHandler;
@@ -429,6 +513,12 @@ typedef std::function<void(const LicenseManagerClient*, const Model::TagResource
 typedef std::function<void(const LicenseManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::UpdateLicenseAssetGroupRequest&,
+                           const Model::UpdateLicenseAssetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLicenseAssetGroupResponseReceivedHandler;
+typedef std::function<void(const LicenseManagerClient*, const Model::UpdateLicenseAssetRulesetRequest&,
+                           const Model::UpdateLicenseAssetRulesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLicenseAssetRulesetResponseReceivedHandler;
 typedef std::function<void(const LicenseManagerClient*, const Model::UpdateLicenseConfigurationRequest&,
                            const Model::UpdateLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLicenseConfigurationResponseReceivedHandler;

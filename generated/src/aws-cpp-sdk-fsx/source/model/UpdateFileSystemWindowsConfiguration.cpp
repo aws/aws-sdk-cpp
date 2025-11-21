@@ -46,6 +46,10 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
     m_diskIopsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FsrmConfiguration")) {
+    m_fsrmConfiguration = jsonValue.GetObject("FsrmConfiguration");
+    m_fsrmConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue UpdateFileSystemWindowsConfiguration::Jsonize() const {
 
   if (m_diskIopsConfigurationHasBeenSet) {
     payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
+  }
+
+  if (m_fsrmConfigurationHasBeenSet) {
+    payload.WithObject("FsrmConfiguration", m_fsrmConfiguration.Jsonize());
   }
 
   return payload;

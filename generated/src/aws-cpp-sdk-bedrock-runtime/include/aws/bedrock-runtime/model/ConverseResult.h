@@ -9,6 +9,7 @@
 #include <aws/bedrock-runtime/model/ConverseOutput.h>
 #include <aws/bedrock-runtime/model/ConverseTrace.h>
 #include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
+#include <aws/bedrock-runtime/model/ServiceTier.h>
 #include <aws/bedrock-runtime/model/StopReason.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/core/utils/Document.h>
@@ -153,6 +154,23 @@ class ConverseResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies the processing tier configuration used for serving the request.</p>
+   */
+  inline const ServiceTier& GetServiceTier() const { return m_serviceTier; }
+  template <typename ServiceTierT = ServiceTier>
+  void SetServiceTier(ServiceTierT&& value) {
+    m_serviceTierHasBeenSet = true;
+    m_serviceTier = std::forward<ServiceTierT>(value);
+  }
+  template <typename ServiceTierT = ServiceTier>
+  ConverseResult& WithServiceTier(ServiceTierT&& value) {
+    SetServiceTier(std::forward<ServiceTierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -187,6 +205,9 @@ class ConverseResult {
 
   PerformanceConfiguration m_performanceConfig;
   bool m_performanceConfigHasBeenSet = false;
+
+  ServiceTier m_serviceTier;
+  bool m_serviceTierHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

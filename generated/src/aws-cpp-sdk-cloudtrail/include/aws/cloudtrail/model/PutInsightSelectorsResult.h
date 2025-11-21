@@ -48,9 +48,11 @@ class PutInsightSelectorsResult {
 
   ///@{
   /**
-   * <p>A JSON string that contains the Insights event types that you want to log on
-   * a trail or event data store. The valid Insights types are
-   * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+   * <p>Contains the Insights types you want to log on a specific category of events
+   * in a trail or event data store. <code>ApiCallRateInsight</code> and
+   * <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field
+   * can specify <code>Management</code> or <code>Data</code> events or both. For
+   * event data store, you can only log Insights for management events only.</p>
    */
   inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const { return m_insightSelectors; }
   template <typename InsightSelectorsT = Aws::Vector<InsightSelector>>

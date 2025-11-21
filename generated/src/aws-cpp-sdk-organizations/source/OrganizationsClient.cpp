@@ -43,6 +43,7 @@
 #include <aws/organizations/model/DescribeOrganizationalUnitRequest.h>
 #include <aws/organizations/model/DescribePolicyRequest.h>
 #include <aws/organizations/model/DescribeResourcePolicyRequest.h>
+#include <aws/organizations/model/DescribeResponsibilityTransferRequest.h>
 #include <aws/organizations/model/DetachPolicyRequest.h>
 #include <aws/organizations/model/DisableAWSServiceAccessRequest.h>
 #include <aws/organizations/model/DisablePolicyTypeRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/organizations/model/EnableAllFeaturesRequest.h>
 #include <aws/organizations/model/EnablePolicyTypeRequest.h>
 #include <aws/organizations/model/InviteAccountToOrganizationRequest.h>
+#include <aws/organizations/model/InviteOrganizationToTransferResponsibilityRequest.h>
 #include <aws/organizations/model/LeaveOrganizationRequest.h>
 #include <aws/organizations/model/ListAWSServiceAccessForOrganizationRequest.h>
 #include <aws/organizations/model/ListAccountsForParentRequest.h>
@@ -62,7 +64,9 @@
 #include <aws/organizations/model/ListEffectivePolicyValidationErrorsRequest.h>
 #include <aws/organizations/model/ListHandshakesForAccountRequest.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>
+#include <aws/organizations/model/ListInboundResponsibilityTransfersRequest.h>
 #include <aws/organizations/model/ListOrganizationalUnitsForParentRequest.h>
+#include <aws/organizations/model/ListOutboundResponsibilityTransfersRequest.h>
 #include <aws/organizations/model/ListParentsRequest.h>
 #include <aws/organizations/model/ListPoliciesForTargetRequest.h>
 #include <aws/organizations/model/ListPoliciesRequest.h>
@@ -74,9 +78,11 @@
 #include <aws/organizations/model/RegisterDelegatedAdministratorRequest.h>
 #include <aws/organizations/model/RemoveAccountFromOrganizationRequest.h>
 #include <aws/organizations/model/TagResourceRequest.h>
+#include <aws/organizations/model/TerminateResponsibilityTransferRequest.h>
 #include <aws/organizations/model/UntagResourceRequest.h>
 #include <aws/organizations/model/UpdateOrganizationalUnitRequest.h>
 #include <aws/organizations/model/UpdatePolicyRequest.h>
+#include <aws/organizations/model/UpdateResponsibilityTransferRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -863,6 +869,36 @@ DescribeResourcePolicyOutcome OrganizationsClient::DescribeResourcePolicy(const 
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeResponsibilityTransferOutcome OrganizationsClient::DescribeResponsibilityTransfer(
+    const DescribeResponsibilityTransferRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeResponsibilityTransfer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeResponsibilityTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeResponsibilityTransfer",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeResponsibilityTransferOutcome>(
+      [&]() -> DescribeResponsibilityTransferOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeResponsibilityTransfer, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DescribeResponsibilityTransferOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DetachPolicyOutcome OrganizationsClient::DetachPolicy(const DetachPolicyRequest& request) const {
   AWS_OPERATION_GUARD(DetachPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1060,6 +1096,37 @@ InviteAccountToOrganizationOutcome OrganizationsClient::InviteAccountToOrganizat
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InviteAccountToOrganization, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return InviteAccountToOrganizationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InviteOrganizationToTransferResponsibilityOutcome OrganizationsClient::InviteOrganizationToTransferResponsibility(
+    const InviteOrganizationToTransferResponsibilityRequest& request) const {
+  AWS_OPERATION_GUARD(InviteOrganizationToTransferResponsibility);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InviteOrganizationToTransferResponsibility, CoreErrors,
+                          CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InviteOrganizationToTransferResponsibility, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InviteOrganizationToTransferResponsibility, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InviteOrganizationToTransferResponsibility",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InviteOrganizationToTransferResponsibilityOutcome>(
+      [&]() -> InviteOrganizationToTransferResponsibilityOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InviteOrganizationToTransferResponsibility, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return InviteOrganizationToTransferResponsibilityOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1421,6 +1488,36 @@ ListHandshakesForOrganizationOutcome OrganizationsClient::ListHandshakesForOrgan
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListInboundResponsibilityTransfersOutcome OrganizationsClient::ListInboundResponsibilityTransfers(
+    const ListInboundResponsibilityTransfersRequest& request) const {
+  AWS_OPERATION_GUARD(ListInboundResponsibilityTransfers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInboundResponsibilityTransfers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListInboundResponsibilityTransfers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListInboundResponsibilityTransfers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListInboundResponsibilityTransfers",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListInboundResponsibilityTransfersOutcome>(
+      [&]() -> ListInboundResponsibilityTransfersOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInboundResponsibilityTransfers, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return ListInboundResponsibilityTransfersOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListOrganizationalUnitsForParentOutcome OrganizationsClient::ListOrganizationalUnitsForParent(
     const ListOrganizationalUnitsForParentRequest& request) const {
   AWS_OPERATION_GUARD(ListOrganizationalUnitsForParent);
@@ -1444,6 +1541,36 @@ ListOrganizationalUnitsForParentOutcome OrganizationsClient::ListOrganizationalU
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationalUnitsForParent, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return ListOrganizationalUnitsForParentOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListOutboundResponsibilityTransfersOutcome OrganizationsClient::ListOutboundResponsibilityTransfers(
+    const ListOutboundResponsibilityTransfersRequest& request) const {
+  AWS_OPERATION_GUARD(ListOutboundResponsibilityTransfers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOutboundResponsibilityTransfers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOutboundResponsibilityTransfers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListOutboundResponsibilityTransfers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOutboundResponsibilityTransfers",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListOutboundResponsibilityTransfersOutcome>(
+      [&]() -> ListOutboundResponsibilityTransfersOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOutboundResponsibilityTransfers, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return ListOutboundResponsibilityTransfersOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1772,6 +1899,36 @@ TagResourceOutcome OrganizationsClient::TagResource(const TagResourceRequest& re
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+TerminateResponsibilityTransferOutcome OrganizationsClient::TerminateResponsibilityTransfer(
+    const TerminateResponsibilityTransferRequest& request) const {
+  AWS_OPERATION_GUARD(TerminateResponsibilityTransfer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateResponsibilityTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TerminateResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, TerminateResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TerminateResponsibilityTransfer",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<TerminateResponsibilityTransferOutcome>(
+      [&]() -> TerminateResponsibilityTransferOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateResponsibilityTransfer, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return TerminateResponsibilityTransferOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 UntagResourceOutcome OrganizationsClient::UntagResource(const UntagResourceRequest& request) const {
   AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1852,6 +2009,36 @@ UpdatePolicyOutcome OrganizationsClient::UpdatePolicy(const UpdatePolicyRequest&
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return UpdatePolicyOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateResponsibilityTransferOutcome OrganizationsClient::UpdateResponsibilityTransfer(
+    const UpdateResponsibilityTransferRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateResponsibilityTransfer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResponsibilityTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateResponsibilityTransfer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateResponsibilityTransfer",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateResponsibilityTransferOutcome>(
+      [&]() -> UpdateResponsibilityTransferOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResponsibilityTransfer, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return UpdateResponsibilityTransferOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

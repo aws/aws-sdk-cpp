@@ -30,6 +30,24 @@ class ListAppMonitorsResult {
 
   ///@{
   /**
+   * <p>A token that you can use in a subsequent operation to retrieve the next set
+   * of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListAppMonitorsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of structures that contain information about the returned app
    * monitors.</p>
    */
@@ -53,24 +71,6 @@ class ListAppMonitorsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>A token that you can use in a subsequent operation to retrieve the next set
-   * of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListAppMonitorsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -85,11 +85,11 @@ class ListAppMonitorsResult {
   }
   ///@}
  private:
-  Aws::Vector<AppMonitorSummary> m_appMonitorSummaries;
-  bool m_appMonitorSummariesHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
+
+  Aws::Vector<AppMonitorSummary> m_appMonitorSummaries;
+  bool m_appMonitorSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

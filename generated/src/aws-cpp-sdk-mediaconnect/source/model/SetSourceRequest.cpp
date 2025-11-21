@@ -106,6 +106,14 @@ SetSourceRequest& SetSourceRequest::operator=(JsonView jsonValue) {
     }
     m_sourceTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("routerIntegrationState")) {
+    m_routerIntegrationState = StateMapper::GetStateForName(jsonValue.GetString("routerIntegrationState"));
+    m_routerIntegrationStateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("routerIntegrationTransitDecryption")) {
+    m_routerIntegrationTransitDecryption = jsonValue.GetObject("routerIntegrationTransitDecryption");
+    m_routerIntegrationTransitDecryptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +209,14 @@ JsonValue SetSourceRequest::Jsonize() const {
       sourceTagsJsonMap.WithString(sourceTagsItem.first, sourceTagsItem.second);
     }
     payload.WithObject("sourceTags", std::move(sourceTagsJsonMap));
+  }
+
+  if (m_routerIntegrationStateHasBeenSet) {
+    payload.WithString("routerIntegrationState", StateMapper::GetNameForState(m_routerIntegrationState));
+  }
+
+  if (m_routerIntegrationTransitDecryptionHasBeenSet) {
+    payload.WithObject("routerIntegrationTransitDecryption", m_routerIntegrationTransitDecryption.Jsonize());
   }
 
   return payload;

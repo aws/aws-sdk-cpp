@@ -27,7 +27,7 @@ namespace Model {
  * <p>For more information, see <a
  * href="https://docs.aws.amazon.com/vpc/latest/ipam/integrate-infoblox-ipam.html">Integrate
  * VPC IPAM with Infoblox infrastructure</a> in the <i>Amazon VPC IPAM User
- * Guide</i>..</p><p><h3>See Also:</h3>   <a
+ * Guide</i>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExternalAuthorityConfiguration">AWS
  * API Reference</a></p>
  */

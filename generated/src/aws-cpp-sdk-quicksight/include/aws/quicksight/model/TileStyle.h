@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/BorderStyle.h>
 
@@ -33,6 +34,24 @@ class TileStyle {
 
   ///@{
   /**
+   * <p>The background color of a tile.</p>
+   */
+  inline const Aws::String& GetBackgroundColor() const { return m_backgroundColor; }
+  inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
+  template <typename BackgroundColorT = Aws::String>
+  void SetBackgroundColor(BackgroundColorT&& value) {
+    m_backgroundColorHasBeenSet = true;
+    m_backgroundColor = std::forward<BackgroundColorT>(value);
+  }
+  template <typename BackgroundColorT = Aws::String>
+  TileStyle& WithBackgroundColor(BackgroundColorT&& value) {
+    SetBackgroundColor(std::forward<BackgroundColorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The border around a tile.</p>
    */
   inline const BorderStyle& GetBorder() const { return m_border; }
@@ -48,9 +67,54 @@ class TileStyle {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The border radius of a tile.</p>
+   */
+  inline const Aws::String& GetBorderRadius() const { return m_borderRadius; }
+  inline bool BorderRadiusHasBeenSet() const { return m_borderRadiusHasBeenSet; }
+  template <typename BorderRadiusT = Aws::String>
+  void SetBorderRadius(BorderRadiusT&& value) {
+    m_borderRadiusHasBeenSet = true;
+    m_borderRadius = std::forward<BorderRadiusT>(value);
+  }
+  template <typename BorderRadiusT = Aws::String>
+  TileStyle& WithBorderRadius(BorderRadiusT&& value) {
+    SetBorderRadius(std::forward<BorderRadiusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The padding of a tile.</p>
+   */
+  inline const Aws::String& GetPadding() const { return m_padding; }
+  inline bool PaddingHasBeenSet() const { return m_paddingHasBeenSet; }
+  template <typename PaddingT = Aws::String>
+  void SetPadding(PaddingT&& value) {
+    m_paddingHasBeenSet = true;
+    m_padding = std::forward<PaddingT>(value);
+  }
+  template <typename PaddingT = Aws::String>
+  TileStyle& WithPadding(PaddingT&& value) {
+    SetPadding(std::forward<PaddingT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_backgroundColor;
+  bool m_backgroundColorHasBeenSet = false;
+
   BorderStyle m_border;
   bool m_borderHasBeenSet = false;
+
+  Aws::String m_borderRadius;
+  bool m_borderRadiusHasBeenSet = false;
+
+  Aws::String m_padding;
+  bool m_paddingHasBeenSet = false;
 };
 
 }  // namespace Model

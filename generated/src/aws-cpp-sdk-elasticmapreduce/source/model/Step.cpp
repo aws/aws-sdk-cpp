@@ -42,6 +42,14 @@ Step& Step::operator=(JsonView jsonValue) {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
     m_executionRoleArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LogUri")) {
+    m_logUri = jsonValue.GetString("LogUri");
+    m_logUriHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EncryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue Step::Jsonize() const {
 
   if (m_executionRoleArnHasBeenSet) {
     payload.WithString("ExecutionRoleArn", m_executionRoleArn);
+  }
+
+  if (m_logUriHasBeenSet) {
+    payload.WithString("LogUri", m_logUri);
+  }
+
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;

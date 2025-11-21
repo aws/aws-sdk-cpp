@@ -8,6 +8,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/CustomOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
 #include <aws/bedrock-data-automation/model/EncryptionConfiguration.h>
 #include <aws/bedrock-data-automation/model/OverrideConfiguration.h>
 #include <aws/bedrock-data-automation/model/StandardOutputConfiguration.h>
@@ -81,6 +82,20 @@ class CreateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
   }
   inline CreateDataAutomationProjectRequest& WithProjectStage(DataAutomationProjectStage value) {
     SetProjectStage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline DataAutomationProjectType GetProjectType() const { return m_projectType; }
+  inline bool ProjectTypeHasBeenSet() const { return m_projectTypeHasBeenSet; }
+  inline void SetProjectType(DataAutomationProjectType value) {
+    m_projectTypeHasBeenSet = true;
+    m_projectType = value;
+  }
+  inline CreateDataAutomationProjectRequest& WithProjectType(DataAutomationProjectType value) {
+    SetProjectType(value);
     return *this;
   }
   ///@}
@@ -195,6 +210,9 @@ class CreateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
   bool m_projectStageHasBeenSet = false;
+
+  DataAutomationProjectType m_projectType{DataAutomationProjectType::NOT_SET};
+  bool m_projectTypeHasBeenSet = false;
 
   StandardOutputConfiguration m_standardOutputConfiguration;
   bool m_standardOutputConfigurationHasBeenSet = false;

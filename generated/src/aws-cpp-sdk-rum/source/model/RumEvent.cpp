@@ -18,17 +18,9 @@ namespace Model {
 RumEvent::RumEvent(JsonView jsonValue) { *this = jsonValue; }
 
 RumEvent& RumEvent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("details")) {
-    m_details = jsonValue.GetString("details");
-    m_detailsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("metadata")) {
-    m_metadata = jsonValue.GetString("metadata");
-    m_metadataHasBeenSet = true;
   }
   if (jsonValue.ValueExists("timestamp")) {
     m_timestamp = jsonValue.GetDouble("timestamp");
@@ -38,22 +30,22 @@ RumEvent& RumEvent::operator=(JsonView jsonValue) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadata")) {
+    m_metadata = jsonValue.GetString("metadata");
+    m_metadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("details")) {
+    m_details = jsonValue.GetString("details");
+    m_detailsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RumEvent::Jsonize() const {
   JsonValue payload;
 
-  if (m_detailsHasBeenSet) {
-    payload.WithString("details", m_details);
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
-  }
-
-  if (m_metadataHasBeenSet) {
-    payload.WithString("metadata", m_metadata);
   }
 
   if (m_timestampHasBeenSet) {
@@ -62,6 +54,14 @@ JsonValue RumEvent::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", m_type);
+  }
+
+  if (m_metadataHasBeenSet) {
+    payload.WithString("metadata", m_metadata);
+  }
+
+  if (m_detailsHasBeenSet) {
+    payload.WithString("details", m_details);
   }
 
   return payload;

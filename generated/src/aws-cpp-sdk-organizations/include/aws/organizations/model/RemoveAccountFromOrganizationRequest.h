@@ -32,9 +32,9 @@ class RemoveAccountFromOrganizationRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the member account that you want to remove from
-   * the organization.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-   * pattern</a> for an account ID string requires exactly 12 digits.</p>
+   * <p>ID for the member account that you want to remove from the organization.</p>
+   * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
+   * account ID string requires exactly 12 digits.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

@@ -66,12 +66,33 @@ class FreeFormLayoutElementBorderStyle {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The border width of a free-form layout element.</p>
+   */
+  inline const Aws::String& GetWidth() const { return m_width; }
+  inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
+  template <typename WidthT = Aws::String>
+  void SetWidth(WidthT&& value) {
+    m_widthHasBeenSet = true;
+    m_width = std::forward<WidthT>(value);
+  }
+  template <typename WidthT = Aws::String>
+  FreeFormLayoutElementBorderStyle& WithWidth(WidthT&& value) {
+    SetWidth(std::forward<WidthT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
   bool m_visibilityHasBeenSet = false;
 
   Aws::String m_color;
   bool m_colorHasBeenSet = false;
+
+  Aws::String m_width;
+  bool m_widthHasBeenSet = false;
 };
 
 }  // namespace Model

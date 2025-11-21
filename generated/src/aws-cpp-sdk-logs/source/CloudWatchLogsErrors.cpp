@@ -46,6 +46,7 @@ namespace CloudWatchLogsErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int OPERATION_ABORTED_HASH = HashingUtils::HashString("OperationAbortedException");
@@ -63,6 +64,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PARAMETER_HASH) {

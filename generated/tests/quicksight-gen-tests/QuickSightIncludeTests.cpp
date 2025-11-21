@@ -844,6 +844,8 @@
 #include <aws/quicksight/model/GridLayoutCanvasSizeOptions.h>
 #include <aws/quicksight/model/GridLayoutConfiguration.h>
 #include <aws/quicksight/model/GridLayoutElement.h>
+#include <aws/quicksight/model/GridLayoutElementBackgroundStyle.h>
+#include <aws/quicksight/model/GridLayoutElementBorderStyle.h>
 #include <aws/quicksight/model/GridLayoutScreenCanvasSizeOptions.h>
 #include <aws/quicksight/model/Group.h>
 #include <aws/quicksight/model/GroupFilterAttribute.h>
@@ -1361,6 +1363,7 @@
 #include <aws/quicksight/model/SharedViewConfigurations.h>
 #include <aws/quicksight/model/SharingModel.h>
 #include <aws/quicksight/model/Sheet.h>
+#include <aws/quicksight/model/SheetBackgroundStyle.h>
 #include <aws/quicksight/model/SheetContentType.h>
 #include <aws/quicksight/model/SheetControlDateTimePickerType.h>
 #include <aws/quicksight/model/SheetControlInfoIconLabelOptions.h>
@@ -1509,6 +1512,7 @@
 #include <aws/quicksight/model/TextControlPlaceholderOptions.h>
 #include <aws/quicksight/model/TextFieldControlDisplayOptions.h>
 #include <aws/quicksight/model/TextQualifier.h>
+#include <aws/quicksight/model/TextTransform.h>
 #include <aws/quicksight/model/TextWrap.h>
 #include <aws/quicksight/model/Theme.h>
 #include <aws/quicksight/model/ThemeAlias.h>
@@ -1734,7 +1738,9 @@
 #include <aws/quicksight/model/VisualOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
 #include <aws/quicksight/model/VisualRole.h>
+#include <aws/quicksight/model/VisualSubtitleFontConfiguration.h>
 #include <aws/quicksight/model/VisualSubtitleLabelOptions.h>
+#include <aws/quicksight/model/VisualTitleFontConfiguration.h>
 #include <aws/quicksight/model/VisualTitleLabelOptions.h>
 #include <aws/quicksight/model/VpcConnectionProperties.h>
 #include <aws/quicksight/model/WaterfallChartAggregatedFieldWells.h>

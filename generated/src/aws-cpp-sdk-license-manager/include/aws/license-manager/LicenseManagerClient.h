@@ -266,6 +266,61 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Creates a license asset group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateLicenseAssetGroupOutcome CreateLicenseAssetGroup(const Model::CreateLicenseAssetGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateLicenseAssetGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateLicenseAssetGroupRequestT = Model::CreateLicenseAssetGroupRequest>
+  Model::CreateLicenseAssetGroupOutcomeCallable CreateLicenseAssetGroupCallable(const CreateLicenseAssetGroupRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::CreateLicenseAssetGroup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateLicenseAssetGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateLicenseAssetGroupRequestT = Model::CreateLicenseAssetGroupRequest>
+  void CreateLicenseAssetGroupAsync(const CreateLicenseAssetGroupRequestT& request,
+                                    const CreateLicenseAssetGroupResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::CreateLicenseAssetGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a license asset ruleset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetRuleset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateLicenseAssetRulesetOutcome CreateLicenseAssetRuleset(const Model::CreateLicenseAssetRulesetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateLicenseAssetRuleset that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateLicenseAssetRulesetRequestT = Model::CreateLicenseAssetRulesetRequest>
+  Model::CreateLicenseAssetRulesetOutcomeCallable CreateLicenseAssetRulesetCallable(
+      const CreateLicenseAssetRulesetRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::CreateLicenseAssetRuleset, request);
+  }
+
+  /**
+   * An Async wrapper for CreateLicenseAssetRuleset that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateLicenseAssetRulesetRequestT = Model::CreateLicenseAssetRulesetRequest>
+  void CreateLicenseAssetRulesetAsync(const CreateLicenseAssetRulesetRequestT& request,
+                                      const CreateLicenseAssetRulesetResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::CreateLicenseAssetRuleset, request, handler, context);
+  }
+
+  /**
    * <p>Creates a license configuration.</p> <p>A license configuration is an
    * abstraction of a customer license agreement that can be consumed and enforced by
    * License Manager. Components include specifications for the license type
@@ -463,6 +518,61 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Deletes a license asset group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteLicenseAssetGroupOutcome DeleteLicenseAssetGroup(const Model::DeleteLicenseAssetGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteLicenseAssetGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteLicenseAssetGroupRequestT = Model::DeleteLicenseAssetGroupRequest>
+  Model::DeleteLicenseAssetGroupOutcomeCallable DeleteLicenseAssetGroupCallable(const DeleteLicenseAssetGroupRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::DeleteLicenseAssetGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteLicenseAssetGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteLicenseAssetGroupRequestT = Model::DeleteLicenseAssetGroupRequest>
+  void DeleteLicenseAssetGroupAsync(const DeleteLicenseAssetGroupRequestT& request,
+                                    const DeleteLicenseAssetGroupResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::DeleteLicenseAssetGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a license asset ruleset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetRuleset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteLicenseAssetRulesetOutcome DeleteLicenseAssetRuleset(const Model::DeleteLicenseAssetRulesetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteLicenseAssetRuleset that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteLicenseAssetRulesetRequestT = Model::DeleteLicenseAssetRulesetRequest>
+  Model::DeleteLicenseAssetRulesetOutcomeCallable DeleteLicenseAssetRulesetCallable(
+      const DeleteLicenseAssetRulesetRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::DeleteLicenseAssetRuleset, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteLicenseAssetRuleset that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteLicenseAssetRulesetRequestT = Model::DeleteLicenseAssetRulesetRequest>
+  void DeleteLicenseAssetRulesetAsync(const DeleteLicenseAssetRulesetRequestT& request,
+                                      const DeleteLicenseAssetRulesetResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::DeleteLicenseAssetRuleset, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified license configuration.</p> <p>You cannot delete a
    * license configuration that is in use.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseConfiguration">AWS
@@ -657,6 +767,59 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Gets a license asset group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLicenseAssetGroupOutcome GetLicenseAssetGroup(const Model::GetLicenseAssetGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLicenseAssetGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetLicenseAssetGroupRequestT = Model::GetLicenseAssetGroupRequest>
+  Model::GetLicenseAssetGroupOutcomeCallable GetLicenseAssetGroupCallable(const GetLicenseAssetGroupRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::GetLicenseAssetGroup, request);
+  }
+
+  /**
+   * An Async wrapper for GetLicenseAssetGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetLicenseAssetGroupRequestT = Model::GetLicenseAssetGroupRequest>
+  void GetLicenseAssetGroupAsync(const GetLicenseAssetGroupRequestT& request, const GetLicenseAssetGroupResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::GetLicenseAssetGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a license asset ruleset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetRuleset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLicenseAssetRulesetOutcome GetLicenseAssetRuleset(const Model::GetLicenseAssetRulesetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLicenseAssetRuleset that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetLicenseAssetRulesetRequestT = Model::GetLicenseAssetRulesetRequest>
+  Model::GetLicenseAssetRulesetOutcomeCallable GetLicenseAssetRulesetCallable(const GetLicenseAssetRulesetRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::GetLicenseAssetRuleset, request);
+  }
+
+  /**
+   * An Async wrapper for GetLicenseAssetRuleset that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetLicenseAssetRulesetRequestT = Model::GetLicenseAssetRulesetRequest>
+  void GetLicenseAssetRulesetAsync(const GetLicenseAssetRulesetRequestT& request,
+                                   const GetLicenseAssetRulesetResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::GetLicenseAssetRuleset, request, handler, context);
+  }
+
+  /**
    * <p>Gets detailed information about the specified license
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">AWS
@@ -797,6 +960,35 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Lists assets for a license asset group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssetsForLicenseAssetGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssetsForLicenseAssetGroupOutcome ListAssetsForLicenseAssetGroup(
+      const Model::ListAssetsForLicenseAssetGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssetsForLicenseAssetGroup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAssetsForLicenseAssetGroupRequestT = Model::ListAssetsForLicenseAssetGroupRequest>
+  Model::ListAssetsForLicenseAssetGroupOutcomeCallable ListAssetsForLicenseAssetGroupCallable(
+      const ListAssetsForLicenseAssetGroupRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::ListAssetsForLicenseAssetGroup, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssetsForLicenseAssetGroup that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAssetsForLicenseAssetGroupRequestT = Model::ListAssetsForLicenseAssetGroupRequest>
+  void ListAssetsForLicenseAssetGroupAsync(const ListAssetsForLicenseAssetGroupRequestT& request,
+                                           const ListAssetsForLicenseAssetGroupResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::ListAssetsForLicenseAssetGroup, request, handler, context);
+  }
+
+  /**
    * <p>Lists the resource associations for the specified license configuration.</p>
    * <p>Resource associations need not consume licenses from a license configuration.
    * For example, an AMI or a stopped instance might not consume a license (depending
@@ -888,6 +1080,61 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Lists license asset groups.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetGroups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListLicenseAssetGroupsOutcome ListLicenseAssetGroups(const Model::ListLicenseAssetGroupsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListLicenseAssetGroups that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListLicenseAssetGroupsRequestT = Model::ListLicenseAssetGroupsRequest>
+  Model::ListLicenseAssetGroupsOutcomeCallable ListLicenseAssetGroupsCallable(const ListLicenseAssetGroupsRequestT& request = {}) const {
+    return SubmitCallable(&LicenseManagerClient::ListLicenseAssetGroups, request);
+  }
+
+  /**
+   * An Async wrapper for ListLicenseAssetGroups that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListLicenseAssetGroupsRequestT = Model::ListLicenseAssetGroupsRequest>
+  void ListLicenseAssetGroupsAsync(const ListLicenseAssetGroupsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListLicenseAssetGroupsRequestT& request = {}) const {
+    return SubmitAsync(&LicenseManagerClient::ListLicenseAssetGroups, request, handler, context);
+  }
+
+  /**
+   * <p>Lists license asset rulesets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetRulesets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListLicenseAssetRulesetsOutcome ListLicenseAssetRulesets(const Model::ListLicenseAssetRulesetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListLicenseAssetRulesets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListLicenseAssetRulesetsRequestT = Model::ListLicenseAssetRulesetsRequest>
+  Model::ListLicenseAssetRulesetsOutcomeCallable ListLicenseAssetRulesetsCallable(
+      const ListLicenseAssetRulesetsRequestT& request = {}) const {
+    return SubmitCallable(&LicenseManagerClient::ListLicenseAssetRulesets, request);
+  }
+
+  /**
+   * An Async wrapper for ListLicenseAssetRulesets that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListLicenseAssetRulesetsRequestT = Model::ListLicenseAssetRulesetsRequest>
+  void ListLicenseAssetRulesetsAsync(const ListLicenseAssetRulesetsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListLicenseAssetRulesetsRequestT& request = {}) const {
+    return SubmitAsync(&LicenseManagerClient::ListLicenseAssetRulesets, request, handler, context);
+  }
+
+  /**
    * <p>Lists the license configurations for your account.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">AWS
@@ -915,6 +1162,36 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const ListLicenseConfigurationsRequestT& request = {}) const {
     return SubmitAsync(&LicenseManagerClient::ListLicenseConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists license configurations for an organization.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurationsForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListLicenseConfigurationsForOrganizationOutcome ListLicenseConfigurationsForOrganization(
+      const Model::ListLicenseConfigurationsForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListLicenseConfigurationsForOrganization that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListLicenseConfigurationsForOrganizationRequestT = Model::ListLicenseConfigurationsForOrganizationRequest>
+  Model::ListLicenseConfigurationsForOrganizationOutcomeCallable ListLicenseConfigurationsForOrganizationCallable(
+      const ListLicenseConfigurationsForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&LicenseManagerClient::ListLicenseConfigurationsForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for ListLicenseConfigurationsForOrganization that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListLicenseConfigurationsForOrganizationRequestT = Model::ListLicenseConfigurationsForOrganizationRequest>
+  void ListLicenseConfigurationsForOrganizationAsync(const ListLicenseConfigurationsForOrganizationResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const ListLicenseConfigurationsForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&LicenseManagerClient::ListLicenseConfigurationsForOrganization, request, handler, context);
   }
 
   /**
@@ -1367,6 +1644,61 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LicenseManagerClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a license asset group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLicenseAssetGroupOutcome UpdateLicenseAssetGroup(const Model::UpdateLicenseAssetGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLicenseAssetGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateLicenseAssetGroupRequestT = Model::UpdateLicenseAssetGroupRequest>
+  Model::UpdateLicenseAssetGroupOutcomeCallable UpdateLicenseAssetGroupCallable(const UpdateLicenseAssetGroupRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::UpdateLicenseAssetGroup, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLicenseAssetGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateLicenseAssetGroupRequestT = Model::UpdateLicenseAssetGroupRequest>
+  void UpdateLicenseAssetGroupAsync(const UpdateLicenseAssetGroupRequestT& request,
+                                    const UpdateLicenseAssetGroupResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::UpdateLicenseAssetGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a license asset ruleset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetRuleset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLicenseAssetRulesetOutcome UpdateLicenseAssetRuleset(const Model::UpdateLicenseAssetRulesetRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLicenseAssetRuleset that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateLicenseAssetRulesetRequestT = Model::UpdateLicenseAssetRulesetRequest>
+  Model::UpdateLicenseAssetRulesetOutcomeCallable UpdateLicenseAssetRulesetCallable(
+      const UpdateLicenseAssetRulesetRequestT& request) const {
+    return SubmitCallable(&LicenseManagerClient::UpdateLicenseAssetRuleset, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLicenseAssetRuleset that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateLicenseAssetRulesetRequestT = Model::UpdateLicenseAssetRulesetRequest>
+  void UpdateLicenseAssetRulesetAsync(const UpdateLicenseAssetRulesetRequestT& request,
+                                      const UpdateLicenseAssetRulesetResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LicenseManagerClient::UpdateLicenseAssetRuleset, request, handler, context);
   }
 
   /**

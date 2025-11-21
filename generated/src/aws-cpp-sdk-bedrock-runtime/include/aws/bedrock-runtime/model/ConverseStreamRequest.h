@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/Message.h>
 #include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
 #include <aws/bedrock-runtime/model/PromptVariableValues.h>
+#include <aws/bedrock-runtime/model/ServiceTier.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
 #include <aws/bedrock-runtime/model/ToolConfiguration.h>
 #include <aws/core/utils/Document.h>
@@ -350,6 +351,24 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the processing tier configuration used for serving the request.</p>
+   */
+  inline const ServiceTier& GetServiceTier() const { return m_serviceTier; }
+  inline bool ServiceTierHasBeenSet() const { return m_serviceTierHasBeenSet; }
+  template <typename ServiceTierT = ServiceTier>
+  void SetServiceTier(ServiceTierT&& value) {
+    m_serviceTierHasBeenSet = true;
+    m_serviceTier = std::forward<ServiceTierT>(value);
+  }
+  template <typename ServiceTierT = ServiceTier>
+  ConverseStreamRequest& WithServiceTier(ServiceTierT&& value) {
+    SetServiceTier(std::forward<ServiceTierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelId;
   bool m_modelIdHasBeenSet = false;
@@ -383,6 +402,9 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
 
   PerformanceConfiguration m_performanceConfig;
   bool m_performanceConfigHasBeenSet = false;
+
+  ServiceTier m_serviceTier;
+  bool m_serviceTierHasBeenSet = false;
   ConverseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 };

@@ -26,6 +26,8 @@ static const int MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString
 static const int DIRECT_CONNECT_GATEWAY_NOT_FOUND_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_NOT_FOUND");
 static const int DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS");
 static const int DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF");
+static const int VPN_EXISTING_ASSOCIATIONS_HASH = HashingUtils::HashString("VPN_EXISTING_ASSOCIATIONS");
+static const int VPC_UNSUPPORTED_FEATURES_HASH = HashingUtils::HashString("VPC_UNSUPPORTED_FEATURES");
 
 AttachmentErrorCode GetAttachmentErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +53,10 @@ AttachmentErrorCode GetAttachmentErrorCodeForName(const Aws::String& name) {
     return AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS;
   } else if (hashCode == DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF_HASH) {
     return AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF;
+  } else if (hashCode == VPN_EXISTING_ASSOCIATIONS_HASH) {
+    return AttachmentErrorCode::VPN_EXISTING_ASSOCIATIONS;
+  } else if (hashCode == VPC_UNSUPPORTED_FEATURES_HASH) {
+    return AttachmentErrorCode::VPC_UNSUPPORTED_FEATURES;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +93,10 @@ Aws::String GetNameForAttachmentErrorCode(AttachmentErrorCode enumValue) {
       return "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS";
     case AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF:
       return "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF";
+    case AttachmentErrorCode::VPN_EXISTING_ASSOCIATIONS:
+      return "VPN_EXISTING_ASSOCIATIONS";
+    case AttachmentErrorCode::VPC_UNSUPPORTED_FEATURES:
+      return "VPC_UNSUPPORTED_FEATURES";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

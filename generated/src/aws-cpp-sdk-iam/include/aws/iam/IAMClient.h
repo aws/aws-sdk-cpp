@@ -85,6 +85,41 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
   /**
+   * <p>Accepts a delegation request, granting the requested temporary access.</p>
+   * <p>Once the delegation request is accepted, it is eligible to send the exchange
+   * token to the partner. The <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html">SendDelegationToken</a>
+   * API has to be explicitly called to send the delegation token. </p> <p>At the
+   * time of acceptance, IAM records the details and the state of the identity that
+   * called this API. This is the identity that gets mapped to the delegated
+   * credential. </p> <p>An accepted request may be rejected before the exchange
+   * token is sent to the partner.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcceptDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AcceptDelegationRequestOutcome AcceptDelegationRequest(const Model::AcceptDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for AcceptDelegationRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AcceptDelegationRequestRequestT = Model::AcceptDelegationRequestRequest>
+  Model::AcceptDelegationRequestOutcomeCallable AcceptDelegationRequestCallable(const AcceptDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::AcceptDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for AcceptDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AcceptDelegationRequestRequestT = Model::AcceptDelegationRequestRequest>
+  void AcceptDelegationRequestAsync(const AcceptDelegationRequestRequestT& request,
+                                    const AcceptDelegationRequestResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::AcceptDelegationRequest, request, handler, context);
+  }
+
+  /**
    * <p>Adds a new client ID (also known as audience) to the list of client IDs
    * already registered for the specified IAM OpenID Connect (OIDC) provider
    * resource.</p> <p>This operation is idempotent; it does not fail or return an
@@ -194,6 +229,49 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   void AddUserToGroupAsync(const AddUserToGroupRequestT& request, const AddUserToGroupResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::AddUserToGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Associates a delegation request with the current identity.</p> <p>If the
+   * partner that created the delegation request has specified the owner account
+   * during creation, only an identity from that owner account can call the
+   * <code>AssociateDelegationRequest</code> API for the specified delegation
+   * request. Once the <code>AssociateDelegationRequest</code> API call is
+   * successful, the ARN of the current calling identity will be stored as the
+   * <code>ownerId</code> of the request. </p> <p>If the partner that created the
+   * delegation request has not specified the owner account during creation, any
+   * caller from any account can call the <code>AssociateDelegationRequest</code> API
+   * for the delegation request. Once this API call is successful, the ARN of the
+   * current calling identity will be stored as the <code>ownerId</code> and the
+   * Amazon Web Services account ID of the current calling identity will be stored as
+   * the <code>ownerAccount</code> of the request. </p> <p> For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AssociateDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateDelegationRequestOutcome AssociateDelegationRequest(
+      const Model::AssociateDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateDelegationRequest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateDelegationRequestRequestT = Model::AssociateDelegationRequestRequest>
+  Model::AssociateDelegationRequestOutcomeCallable AssociateDelegationRequestCallable(
+      const AssociateDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::AssociateDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateDelegationRequestRequestT = Model::AssociateDelegationRequestRequest>
+  void AssociateDelegationRequestAsync(const AssociateDelegationRequestRequestT& request,
+                                       const AssociateDelegationRequestResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::AssociateDelegationRequest, request, handler, context);
   }
 
   /**
@@ -420,8 +498,11 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
-   * <p>This API is currently unavailable for general use.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Creates an IAM delegation request for temporary access delegation.</p>
+   * <p>This API is not available for general use. In order to use this API, a caller
+   * first need to go through an onboarding process described in the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html">partner
+   * onboarding documentation</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateDelegationRequest">AWS
    * API Reference</a></p>
    */
@@ -1916,6 +1997,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Disables the outbound identity federation feature for your Amazon Web
+   * Services account. When disabled, IAM principals in the account cannot use the
+   * <code>GetWebIdentityToken</code> API to obtain JSON Web Tokens (JWTs) for
+   * authentication with external services. This operation does not affect tokens
+   * that were issued before the feature was disabled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOutboundWebIdentityFederation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableOutboundWebIdentityFederationOutcome DisableOutboundWebIdentityFederation(
+      const Model::DisableOutboundWebIdentityFederationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DisableOutboundWebIdentityFederation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DisableOutboundWebIdentityFederationRequestT = Model::DisableOutboundWebIdentityFederationRequest>
+  Model::DisableOutboundWebIdentityFederationOutcomeCallable DisableOutboundWebIdentityFederationCallable(
+      const DisableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::DisableOutboundWebIdentityFederation, request);
+  }
+
+  /**
+   * An Async wrapper for DisableOutboundWebIdentityFederation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DisableOutboundWebIdentityFederationRequestT = Model::DisableOutboundWebIdentityFederationRequest>
+  void DisableOutboundWebIdentityFederationAsync(const DisableOutboundWebIdentityFederationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const DisableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::DisableOutboundWebIdentityFederation, request, handler, context);
+  }
+
+  /**
    * <p>Enables the specified MFA device and associates it with the specified IAM
    * user. When enabled, the MFA device is required for every subsequent login by the
    * IAM user associated with the device.</p><p><h3>See Also:</h3>   <a
@@ -2028,6 +2142,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Enables the outbound identity federation feature for your Amazon Web Services
+   * account. When enabled, IAM principals in your account can use the
+   * <code>GetWebIdentityToken</code> API to obtain JSON Web Tokens (JWTs) for secure
+   * authentication with external services. This operation also generates a unique
+   * issuer URL for your Amazon Web Services account. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOutboundWebIdentityFederation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableOutboundWebIdentityFederationOutcome EnableOutboundWebIdentityFederation(
+      const Model::EnableOutboundWebIdentityFederationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for EnableOutboundWebIdentityFederation that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename EnableOutboundWebIdentityFederationRequestT = Model::EnableOutboundWebIdentityFederationRequest>
+  Model::EnableOutboundWebIdentityFederationOutcomeCallable EnableOutboundWebIdentityFederationCallable(
+      const EnableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::EnableOutboundWebIdentityFederation, request);
+  }
+
+  /**
+   * An Async wrapper for EnableOutboundWebIdentityFederation that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename EnableOutboundWebIdentityFederationRequestT = Model::EnableOutboundWebIdentityFederationRequest>
+  void EnableOutboundWebIdentityFederationAsync(const EnableOutboundWebIdentityFederationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const EnableOutboundWebIdentityFederationRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::EnableOutboundWebIdentityFederation, request, handler, context);
+  }
+
+  /**
    * <p> Generates a credential report for the Amazon Web Services account. For more
    * information about the credential report, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
@@ -2082,14 +2229,14 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * period, permissions required, troubleshooting, and supported Regions see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
    * permissions using service last accessed data</a> in the <i>IAM User
-   * Guide</i>.</p>  <p>The data includes all attempts to access Amazon
+   * Guide</i>.</p>  <p>The data includes all attempts to access Amazon
    * Web Services, not just the successful ones. This includes all attempts that were
    * made using the Amazon Web Services Management Console, the Amazon Web Services
    * API through any of the SDKs, or any of the command line tools. An unexpected
    * entry in the service last accessed data does not mean that an account has been
    * compromised, because the request might have been denied. Refer to your
    * CloudTrail logs as the authoritative source for information about all API calls
-   * and whether they were successful or denied access. For more information, see <a
+   * and whether they were successful or denied access. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
    * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p>
    * <p>This operation returns a <code>JobId</code>. Use this parameter in the <code>
@@ -2141,7 +2288,7 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * Services services, because the management account is not limited by SCPs. If you
    * specify a policy ID in the CLI or API, the policy is ignored. For each service,
    * the report includes data for only the management account.</p> </li> <li> <p>
-   * <b>Account</b> �� When you specify another account entity and a policy ID, the
+   * <b>Account</b> – When you specify another account entity and a policy ID, the
    * resulting report lists all of the services that are allowed by the specified
    * SCP. For each service, the report includes data for only the specified account.
    * This means that other accounts in the organization that are affected by the SCP
@@ -2196,14 +2343,14 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * which action last accessed information is displayed, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-action-last-accessed.html">IAM
    * action last accessed information services and actions</a>.</p>
-   * <p>The service last accessed data includes all attempts to access an Amazon Web
+   * <p>The service last accessed data includes all attempts to access an Amazon Web
    * Services API, not just the successful ones. This includes all attempts that were
    * made using the Amazon Web Services Management Console, the Amazon Web Services
    * API through any of the SDKs, or any of the command line tools. An unexpected
    * entry in the service last accessed data does not mean that your account has been
    * compromised, because the request might have been denied. Refer to your
    * CloudTrail logs as the authoritative source for information about all API calls
-   * and whether they were successful or denied access. For more information, see <a
+   * and whether they were successful or denied access. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
    * IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.</p>
    * <p>The <code>GenerateServiceLastAccessedDetails</code> operation returns a
@@ -2520,6 +2667,41 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Retrieves information about a specific delegation request.</p> <p> If a
+   * delegation request has no owner or owner account,
+   * <code>GetDelegationRequest</code> for that delegation request can be called by
+   * any account. If the owner account is assigned but there is no owner id, only
+   * identities within that owner account can call <code>GetDelegationRequest</code>
+   * for the delegation request. Once the delegation request is fully owned, the
+   * owner of the request gets a default permission to get that delegation request.
+   * For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDelegationRequestOutcome GetDelegationRequest(const Model::GetDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDelegationRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDelegationRequestRequestT = Model::GetDelegationRequestRequest>
+  Model::GetDelegationRequestOutcomeCallable GetDelegationRequestCallable(const GetDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::GetDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for GetDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDelegationRequestRequestT = Model::GetDelegationRequestRequest>
+  void GetDelegationRequestAsync(const GetDelegationRequestRequestT& request, const GetDelegationRequestResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::GetDelegationRequest, request, handler, context);
+  }
+
+  /**
    * <p> Returns a list of IAM users that are in the specified IAM group. You can
    * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.</p><p><h3>See Also:</h3>   <a
@@ -2586,6 +2768,49 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   void GetGroupPolicyAsync(const GetGroupPolicyRequestT& request, const GetGroupPolicyResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::GetGroupPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a human readable summary for a given entity. At this time, the only
+   * supported entity type is <code>delegation-request</code> </p> <p>This method
+   * uses a Large Language Model (LLM) to generate the summary.</p> <p> If a
+   * delegation request has no owner or owner account,
+   * <code>GetHumanReadableSummary</code> for that delegation request can be called
+   * by any account. If the owner account is assigned but there is no owner id, only
+   * identities within that owner account can call
+   * <code>GetHumanReadableSummary</code> for the delegation request to retrieve a
+   * summary of that request. Once the delegation request is fully owned, the owner
+   * of the request gets a default permission to get that delegation request. For
+   * more details, read <a href="">default permissions granted to delegation
+   * requests</a>. These rules are identical to <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+   * API behavior, such that a party who has permissions to call <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html">GetDelegationRequest</a>
+   * for a given delegation request will always be able to retrieve the human
+   * readable summary for that request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetHumanReadableSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetHumanReadableSummaryOutcome GetHumanReadableSummary(const Model::GetHumanReadableSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetHumanReadableSummary that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetHumanReadableSummaryRequestT = Model::GetHumanReadableSummaryRequest>
+  Model::GetHumanReadableSummaryOutcomeCallable GetHumanReadableSummaryCallable(const GetHumanReadableSummaryRequestT& request) const {
+    return SubmitCallable(&IAMClient::GetHumanReadableSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetHumanReadableSummary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetHumanReadableSummaryRequestT = Model::GetHumanReadableSummaryRequest>
+  void GetHumanReadableSummaryAsync(const GetHumanReadableSummaryRequestT& request,
+                                    const GetHumanReadableSummaryResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::GetHumanReadableSummary, request, handler, context);
   }
 
   /**
@@ -2755,6 +2980,40 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                          const GetOrganizationsAccessReportResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::GetOrganizationsAccessReport, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the configuration information for the outbound identity federation
+   * feature in your Amazon Web Services account. The response includes the unique
+   * issuer URL for your Amazon Web Services account and the current enabled/disabled
+   * status of the feature. Use this operation to obtain the issuer URL that you need
+   * to configure trust relationships with external services.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOutboundWebIdentityFederationInfo">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOutboundWebIdentityFederationInfoOutcome GetOutboundWebIdentityFederationInfo(
+      const Model::GetOutboundWebIdentityFederationInfoRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetOutboundWebIdentityFederationInfo that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetOutboundWebIdentityFederationInfoRequestT = Model::GetOutboundWebIdentityFederationInfoRequest>
+  Model::GetOutboundWebIdentityFederationInfoOutcomeCallable GetOutboundWebIdentityFederationInfoCallable(
+      const GetOutboundWebIdentityFederationInfoRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::GetOutboundWebIdentityFederationInfo, request);
+  }
+
+  /**
+   * An Async wrapper for GetOutboundWebIdentityFederationInfo that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetOutboundWebIdentityFederationInfoRequestT = Model::GetOutboundWebIdentityFederationInfoRequest>
+  void GetOutboundWebIdentityFederationInfoAsync(const GetOutboundWebIdentityFederationInfoResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const GetOutboundWebIdentityFederationInfoRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::GetOutboundWebIdentityFederationInfo, request, handler, context);
   }
 
   /**
@@ -3428,6 +3687,38 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                      const ListAttachedUserPoliciesResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::ListAttachedUserPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Lists delegation requests based on the specified criteria.</p> <p>If a
+   * delegation request has no owner, even if it is assigned to a specific account,
+   * it will not be part of the <code>ListDelegationRequests</code> output for that
+   * account.</p> <p> For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListDelegationRequests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDelegationRequestsOutcome ListDelegationRequests(const Model::ListDelegationRequestsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDelegationRequests that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDelegationRequestsRequestT = Model::ListDelegationRequestsRequest>
+  Model::ListDelegationRequestsOutcomeCallable ListDelegationRequestsCallable(const ListDelegationRequestsRequestT& request = {}) const {
+    return SubmitCallable(&IAMClient::ListDelegationRequests, request);
+  }
+
+  /**
+   * An Async wrapper for ListDelegationRequests that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDelegationRequestsRequestT = Model::ListDelegationRequestsRequest>
+  void ListDelegationRequestsAsync(const ListDelegationRequestsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListDelegationRequestsRequestT& request = {}) const {
+    return SubmitAsync(&IAMClient::ListDelegationRequests, request, handler, context);
   }
 
   /**
@@ -4694,6 +4985,39 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Rejects a delegation request, denying the requested temporary access.</p>
+   * <p>Once a request is rejected, it cannot be accepted or updated later. Rejected
+   * requests expire after 7 days.</p> <p>When rejecting a request, an optional
+   * explanation can be added using the <code>Notes</code> request parameter.</p> <p>
+   * For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RejectDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RejectDelegationRequestOutcome RejectDelegationRequest(const Model::RejectDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for RejectDelegationRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RejectDelegationRequestRequestT = Model::RejectDelegationRequestRequest>
+  Model::RejectDelegationRequestOutcomeCallable RejectDelegationRequestCallable(const RejectDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::RejectDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for RejectDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RejectDelegationRequestRequestT = Model::RejectDelegationRequestRequest>
+  void RejectDelegationRequestAsync(const RejectDelegationRequestRequestT& request,
+                                    const RejectDelegationRequestResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::RejectDelegationRequest, request, handler, context);
+  }
+
+  /**
    * <p>Removes the specified client ID (also known as audience) from the list of
    * client IDs registered for the specified IAM OpenID Connect (OIDC) provider
    * resource object.</p> <p>This operation is idempotent; it does not fail or return
@@ -4853,6 +5177,41 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   void ResyncMFADeviceAsync(const ResyncMFADeviceRequestT& request, const ResyncMFADeviceResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::ResyncMFADevice, request, handler, context);
+  }
+
+  /**
+   * <p>Sends the exchange token for an accepted delegation request.</p> <p>The
+   * exchange token is sent to the partner via an asynchronous notification channel,
+   * established by the partner.</p> <p>The delegation request must be in the
+   * <code>ACCEPTED</code> state when calling this API. After the
+   * <code>SendDelegationToken</code> API call is successful, the request transitions
+   * to a <code>FINALIZED</code> state and cannot be rolled back. However, a user may
+   * reject an accepted request before the <code>SendDelegationToken</code> API is
+   * called.</p> <p> For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SendDelegationToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendDelegationTokenOutcome SendDelegationToken(const Model::SendDelegationTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendDelegationToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SendDelegationTokenRequestT = Model::SendDelegationTokenRequest>
+  Model::SendDelegationTokenOutcomeCallable SendDelegationTokenCallable(const SendDelegationTokenRequestT& request) const {
+    return SubmitCallable(&IAMClient::SendDelegationToken, request);
+  }
+
+  /**
+   * An Async wrapper for SendDelegationToken that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SendDelegationTokenRequestT = Model::SendDelegationTokenRequest>
+  void SendDelegationTokenAsync(const SendDelegationTokenRequestT& request, const SendDelegationTokenResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::SendDelegationToken, request, handler, context);
   }
 
   /**
@@ -5809,6 +6168,38 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                    const UpdateAssumeRolePolicyResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMClient::UpdateAssumeRolePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing delegation request with additional information. When the
+   * delegation request is updated, it reaches the <code>PENDING_APPROVAL</code>
+   * state. </p> <p>Once a delegation request has an owner, that owner gets a default
+   * permission to update the delegation request. For more details, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation.html#temporary-delegation-managing-permissions">
+   * Managing Permissions for Delegation Requests</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateDelegationRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDelegationRequestOutcome UpdateDelegationRequest(const Model::UpdateDelegationRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDelegationRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDelegationRequestRequestT = Model::UpdateDelegationRequestRequest>
+  Model::UpdateDelegationRequestOutcomeCallable UpdateDelegationRequestCallable(const UpdateDelegationRequestRequestT& request) const {
+    return SubmitCallable(&IAMClient::UpdateDelegationRequest, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDelegationRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDelegationRequestRequestT = Model::UpdateDelegationRequestRequest>
+  void UpdateDelegationRequestAsync(const UpdateDelegationRequestRequestT& request,
+                                    const UpdateDelegationRequestResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::UpdateDelegationRequest, request, handler, context);
   }
 
   /**

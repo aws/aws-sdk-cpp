@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFormation {
 namespace Model {
-enum class AttributeChangeType { NOT_SET, Add, Remove, Modify };
+enum class AttributeChangeType { NOT_SET, Add, Remove, Modify, SyncWithActual };
 
 namespace AttributeChangeTypeMapper {
 AWS_CLOUDFORMATION_API AttributeChangeType GetAttributeChangeTypeForName(const Aws::String& name);

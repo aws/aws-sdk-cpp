@@ -38,6 +38,10 @@ ComputeQuotaResourceConfig& ComputeQuotaResourceConfig::operator=(JsonView jsonV
     m_memoryInGiB = jsonValue.GetDouble("MemoryInGiB");
     m_memoryInGiBHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceleratorPartition")) {
+    m_acceleratorPartition = jsonValue.GetObject("AcceleratorPartition");
+    m_acceleratorPartitionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue ComputeQuotaResourceConfig::Jsonize() const {
 
   if (m_memoryInGiBHasBeenSet) {
     payload.WithDouble("MemoryInGiB", m_memoryInGiB);
+  }
+
+  if (m_acceleratorPartitionHasBeenSet) {
+    payload.WithObject("AcceleratorPartition", m_acceleratorPartition.Jsonize());
   }
 
   return payload;

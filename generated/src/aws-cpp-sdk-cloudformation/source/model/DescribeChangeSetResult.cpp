@@ -87,6 +87,12 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator=(const Aws::AmazonWeb
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
     }
+    XmlNode stackDriftStatusNode = resultNode.FirstChild("StackDriftStatus");
+    if (!stackDriftStatusNode.IsNull()) {
+      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()));
+      m_stackDriftStatusHasBeenSet = true;
+    }
     XmlNode notificationARNsNode = resultNode.FirstChild("NotificationARNs");
     if (!notificationARNsNode.IsNull()) {
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
@@ -168,6 +174,12 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator=(const Aws::AmazonWeb
       m_importExistingResources = StringUtils::ConvertToBool(
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(importExistingResourcesNode.GetText()).c_str()).c_str());
       m_importExistingResourcesHasBeenSet = true;
+    }
+    XmlNode deploymentModeNode = resultNode.FirstChild("DeploymentMode");
+    if (!deploymentModeNode.IsNull()) {
+      m_deploymentMode = DeploymentModeMapper::GetDeploymentModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentModeNode.GetText()).c_str()));
+      m_deploymentModeHasBeenSet = true;
     }
   }
 

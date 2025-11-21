@@ -39,6 +39,8 @@
 #include <aws/kafka/model/DescribeConfigurationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionRequest.h>
 #include <aws/kafka/model/DescribeReplicatorRequest.h>
+#include <aws/kafka/model/DescribeTopicPartitionsRequest.h>
+#include <aws/kafka/model/DescribeTopicRequest.h>
 #include <aws/kafka/model/DescribeVpcConnectionRequest.h>
 #include <aws/kafka/model/GetBootstrapBrokersRequest.h>
 #include <aws/kafka/model/GetClusterPolicyRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/kafka/model/ListReplicatorsRequest.h>
 #include <aws/kafka/model/ListScramSecretsRequest.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
+#include <aws/kafka/model/ListTopicsRequest.h>
 #include <aws/kafka/model/ListVpcConnectionsRequest.h>
 #include <aws/kafka/model/PutClusterPolicyRequest.h>
 #include <aws/kafka/model/RebootBrokerRequest.h>
@@ -853,6 +856,93 @@ DescribeReplicatorOutcome KafkaClient::DescribeReplicator(const DescribeReplicat
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeTopicOutcome KafkaClient::DescribeTopic(const DescribeTopicRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeTopic);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopic", "Required field: ClusterArn, is not set");
+    return DescribeTopicOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ClusterArn]", false));
+  }
+  if (!request.TopicNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopic", "Required field: TopicName, is not set");
+    return DescribeTopicOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [TopicName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeTopic, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeTopic, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeTopic",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeTopicOutcome>(
+      [&]() -> DescribeTopicOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/topics/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicName());
+        return DescribeTopicOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeTopicPartitionsOutcome KafkaClient::DescribeTopicPartitions(const DescribeTopicPartitionsRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeTopicPartitions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopicPartitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopicPartitions", "Required field: ClusterArn, is not set");
+    return DescribeTopicPartitionsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [ClusterArn]", false));
+  }
+  if (!request.TopicNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopicPartitions", "Required field: TopicName, is not set");
+    return DescribeTopicPartitionsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [TopicName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeTopicPartitions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeTopicPartitions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeTopicPartitions",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeTopicPartitionsOutcome>(
+      [&]() -> DescribeTopicPartitionsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTopicPartitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/topics/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/partitions");
+        return DescribeTopicPartitionsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVpcConnectionRequest& request) const {
   AWS_OPERATION_GUARD(DescribeVpcConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1394,6 +1484,43 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
         endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tags/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         return ListTagsForResourceOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListTopicsOutcome KafkaClient::ListTopics(const ListTopicsRequest& request) const {
+  AWS_OPERATION_GUARD(ListTopics);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTopics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTopics", "Required field: ClusterArn, is not set");
+    return ListTopicsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                "Missing required field [ClusterArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTopics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListTopics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTopics",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListTopicsOutcome>(
+      [&]() -> ListTopicsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTopics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/topics");
+        return ListTopicsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

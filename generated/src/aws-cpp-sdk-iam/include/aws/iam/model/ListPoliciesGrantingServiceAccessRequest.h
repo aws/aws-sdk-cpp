@@ -83,7 +83,7 @@ class ListPoliciesGrantingServiceAccessRequest : public IAMRequest {
    * In the first paragraph, find the service prefix. For example, <code>(service
    * prefix: a4b)</code>. For more information about service namespaces, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
-   * Web Services service namespaces</a> in the <i>Amazon Web Services General
+   * Web Services service namespaces</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetServiceNamespaces() const { return m_serviceNamespaces; }

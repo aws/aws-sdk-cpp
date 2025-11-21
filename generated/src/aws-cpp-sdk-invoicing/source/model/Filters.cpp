@@ -39,6 +39,14 @@ Filters& Filters::operator=(JsonView jsonValue) {
     }
     m_accountsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillSourceAccounts")) {
+    Aws::Utils::Array<JsonView> billSourceAccountsJsonList = jsonValue.GetArray("BillSourceAccounts");
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      m_billSourceAccounts.push_back(billSourceAccountsJsonList[billSourceAccountsIndex].AsString());
+    }
+    m_billSourceAccountsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -67,6 +75,15 @@ JsonValue Filters::Jsonize() const {
       accountsJsonList[accountsIndex].AsString(m_accounts[accountsIndex]);
     }
     payload.WithArray("Accounts", std::move(accountsJsonList));
+  }
+
+  if (m_billSourceAccountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> billSourceAccountsJsonList(m_billSourceAccounts.size());
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      billSourceAccountsJsonList[billSourceAccountsIndex].AsString(m_billSourceAccounts[billSourceAccountsIndex]);
+    }
+    payload.WithArray("BillSourceAccounts", std::move(billSourceAccountsJsonList));
   }
 
   return payload;

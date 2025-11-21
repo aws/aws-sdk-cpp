@@ -58,9 +58,39 @@ class InvoiceUnitRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A list of Amazon Web Services account account IDs that have delegated their
+   * billing responsibility to the receiver account through transfer billing. Unlike
+   * linked accounts, these bill source accounts can be payer accounts from other
+   * organizations that have authorized billing transfer to this account. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetBillSourceAccounts() const { return m_billSourceAccounts; }
+  inline bool BillSourceAccountsHasBeenSet() const { return m_billSourceAccountsHasBeenSet; }
+  template <typename BillSourceAccountsT = Aws::Vector<Aws::String>>
+  void SetBillSourceAccounts(BillSourceAccountsT&& value) {
+    m_billSourceAccountsHasBeenSet = true;
+    m_billSourceAccounts = std::forward<BillSourceAccountsT>(value);
+  }
+  template <typename BillSourceAccountsT = Aws::Vector<Aws::String>>
+  InvoiceUnitRule& WithBillSourceAccounts(BillSourceAccountsT&& value) {
+    SetBillSourceAccounts(std::forward<BillSourceAccountsT>(value));
+    return *this;
+  }
+  template <typename BillSourceAccountsT = Aws::String>
+  InvoiceUnitRule& AddBillSourceAccounts(BillSourceAccountsT&& value) {
+    m_billSourceAccountsHasBeenSet = true;
+    m_billSourceAccounts.emplace_back(std::forward<BillSourceAccountsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_linkedAccounts;
   bool m_linkedAccountsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_billSourceAccounts;
+  bool m_billSourceAccountsHasBeenSet = false;
 };
 
 }  // namespace Model

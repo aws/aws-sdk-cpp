@@ -38,6 +38,7 @@
 #include <aws/application-signals/model/DeleteServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/DependencyGraph.h>
+#include <aws/application-signals/model/DetailLevel.h>
 #include <aws/application-signals/model/Dimension.h>
 #include <aws/application-signals/model/DurationUnit.h>
 #include <aws/application-signals/model/Edge.h>
@@ -53,6 +54,8 @@
 #include <aws/application-signals/model/Interval.h>
 #include <aws/application-signals/model/ListAuditFindingsRequest.h>
 #include <aws/application-signals/model/ListAuditFindingsResult.h>
+#include <aws/application-signals/model/ListEntityEventsRequest.h>
+#include <aws/application-signals/model/ListEntityEventsResult.h>
 #include <aws/application-signals/model/ListGroupingAttributeDefinitionsRequest.h>
 #include <aws/application-signals/model/ListGroupingAttributeDefinitionsResult.h>
 #include <aws/application-signals/model/ListServiceDependenciesRequest.h>

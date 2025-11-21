@@ -71,6 +71,25 @@ class ListDatabasesRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
+   * <p>The name or ARN of the secret that enables access to the database. This
+   * parameter is required when authenticating using Secrets Manager. </p>
+   */
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
+  }
+  template <typename SecretArnT = Aws::String>
+  ListDatabasesRequest& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The database user name. This parameter is required when connecting to a
    * cluster as a database user and authenticating using temporary credentials. </p>
    */
@@ -84,24 +103,6 @@ class ListDatabasesRequest : public RedshiftDataAPIServiceRequest {
   template <typename DbUserT = Aws::String>
   ListDatabasesRequest& WithDbUser(DbUserT&& value) {
     SetDbUser(std::forward<DbUserT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of databases to return in the response. If more databases
-   * exist than fit in one response, then <code>NextToken</code> is returned to page
-   * through the results. </p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListDatabasesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -130,19 +131,18 @@ class ListDatabasesRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the secret that enables access to the database. This
-   * parameter is required when authenticating using Secrets Manager. </p>
+   * <p>The maximum number of databases to return in the response. If more databases
+   * exist than fit in one response, then <code>NextToken</code> is returned to page
+   * through the results. </p>
    */
-  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-  template <typename SecretArnT = Aws::String>
-  void SetSecretArn(SecretArnT&& value) {
-    m_secretArnHasBeenSet = true;
-    m_secretArn = std::forward<SecretArnT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename SecretArnT = Aws::String>
-  ListDatabasesRequest& WithSecretArn(SecretArnT&& value) {
-    SetSecretArn(std::forward<SecretArnT>(value));
+  inline ListDatabasesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -173,17 +173,17 @@ class ListDatabasesRequest : public RedshiftDataAPIServiceRequest {
   Aws::String m_database;
   bool m_databaseHasBeenSet = false;
 
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
+
   Aws::String m_dbUser;
   bool m_dbUserHasBeenSet = false;
-
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
 
-  Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workgroupName;
   bool m_workgroupNameHasBeenSet = false;

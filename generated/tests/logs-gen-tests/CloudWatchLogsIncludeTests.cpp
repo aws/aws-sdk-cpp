@@ -15,6 +15,7 @@
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/AccountPolicy.h>
+#include <aws/logs/model/ActionStatus.h>
 #include <aws/logs/model/AddKeyEntry.h>
 #include <aws/logs/model/AddKeys.h>
 #include <aws/logs/model/Anomaly.h>
@@ -35,6 +36,8 @@
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/CreateLogGroupRequest.h>
 #include <aws/logs/model/CreateLogStreamRequest.h>
+#include <aws/logs/model/CreateScheduledQueryRequest.h>
+#include <aws/logs/model/CreateScheduledQueryResult.h>
 #include <aws/logs/model/DataAlreadyAcceptedException.h>
 #include <aws/logs/model/DataProtectionStatus.h>
 #include <aws/logs/model/DateTimeConverter.h>
@@ -58,6 +61,8 @@
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
 #include <aws/logs/model/DeleteResourcePolicyRequest.h>
 #include <aws/logs/model/DeleteRetentionPolicyRequest.h>
+#include <aws/logs/model/DeleteScheduledQueryRequest.h>
+#include <aws/logs/model/DeleteScheduledQueryResult.h>
 #include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
 #include <aws/logs/model/DeleteTransformerRequest.h>
 #include <aws/logs/model/Delivery.h>
@@ -98,12 +103,14 @@
 #include <aws/logs/model/DescribeSubscriptionFiltersRequest.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/Destination.h>
+#include <aws/logs/model/DestinationConfiguration.h>
 #include <aws/logs/model/DisassociateKmsKeyRequest.h>
 #include <aws/logs/model/Distribution.h>
 #include <aws/logs/model/Entity.h>
 #include <aws/logs/model/EntityRejectionErrorType.h>
 #include <aws/logs/model/EvaluationFrequency.h>
 #include <aws/logs/model/EventSource.h>
+#include <aws/logs/model/ExecutionStatus.h>
 #include <aws/logs/model/ExportTask.h>
 #include <aws/logs/model/ExportTaskExecutionInfo.h>
 #include <aws/logs/model/ExportTaskStatus.h>
@@ -140,6 +147,10 @@
 #include <aws/logs/model/GetLogRecordResult.h>
 #include <aws/logs/model/GetQueryResultsRequest.h>
 #include <aws/logs/model/GetQueryResultsResult.h>
+#include <aws/logs/model/GetScheduledQueryHistoryRequest.h>
+#include <aws/logs/model/GetScheduledQueryHistoryResult.h>
+#include <aws/logs/model/GetScheduledQueryRequest.h>
+#include <aws/logs/model/GetScheduledQueryResult.h>
 #include <aws/logs/model/GetTransformerRequest.h>
 #include <aws/logs/model/GetTransformerResult.h>
 #include <aws/logs/model/Grok.h>
@@ -162,6 +173,8 @@
 #include <aws/logs/model/ListLogGroupsForQueryResult.h>
 #include <aws/logs/model/ListLogGroupsRequest.h>
 #include <aws/logs/model/ListLogGroupsResult.h>
+#include <aws/logs/model/ListScheduledQueriesRequest.h>
+#include <aws/logs/model/ListScheduledQueriesResult.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
 #include <aws/logs/model/ListToMap.h>
@@ -253,7 +266,12 @@
 #include <aws/logs/model/ResourceConfig.h>
 #include <aws/logs/model/ResourcePolicy.h>
 #include <aws/logs/model/ResultField.h>
+#include <aws/logs/model/S3Configuration.h>
 #include <aws/logs/model/S3DeliveryConfiguration.h>
+#include <aws/logs/model/ScheduledQueryDestination.h>
+#include <aws/logs/model/ScheduledQueryDestinationType.h>
+#include <aws/logs/model/ScheduledQueryState.h>
+#include <aws/logs/model/ScheduledQuerySummary.h>
 #include <aws/logs/model/Scope.h>
 #include <aws/logs/model/SearchedLogStream.h>
 #include <aws/logs/model/SplitString.h>
@@ -282,6 +300,7 @@
 #include <aws/logs/model/TestTransformerResult.h>
 #include <aws/logs/model/TooManyTagsException.h>
 #include <aws/logs/model/TransformedLogRecord.h>
+#include <aws/logs/model/TriggerHistoryRecord.h>
 #include <aws/logs/model/TrimString.h>
 #include <aws/logs/model/Type.h>
 #include <aws/logs/model/TypeConverter.h>
@@ -291,6 +310,8 @@
 #include <aws/logs/model/UpdateDeliveryConfigurationRequest.h>
 #include <aws/logs/model/UpdateDeliveryConfigurationResult.h>
 #include <aws/logs/model/UpdateLogAnomalyDetectorRequest.h>
+#include <aws/logs/model/UpdateScheduledQueryRequest.h>
+#include <aws/logs/model/UpdateScheduledQueryResult.h>
 #include <aws/logs/model/UpperCaseString.h>
 
 using CloudWatchLogsIncludeTest = ::testing::Test;

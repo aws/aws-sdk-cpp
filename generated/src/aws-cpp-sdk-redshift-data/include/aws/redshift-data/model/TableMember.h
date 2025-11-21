@@ -51,24 +51,6 @@ class TableMember {
 
   ///@{
   /**
-   * <p>The schema containing the table. </p>
-   */
-  inline const Aws::String& GetSchema() const { return m_schema; }
-  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-  template <typename SchemaT = Aws::String>
-  void SetSchema(SchemaT&& value) {
-    m_schemaHasBeenSet = true;
-    m_schema = std::forward<SchemaT>(value);
-  }
-  template <typename SchemaT = Aws::String>
-  TableMember& WithSchema(SchemaT&& value) {
-    SetSchema(std::forward<SchemaT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE,
    * GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
    */
@@ -85,15 +67,33 @@ class TableMember {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The schema containing the table. </p>
+   */
+  inline const Aws::String& GetSchema() const { return m_schema; }
+  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+  template <typename SchemaT = Aws::String>
+  void SetSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema = std::forward<SchemaT>(value);
+  }
+  template <typename SchemaT = Aws::String>
+  TableMember& WithSchema(SchemaT&& value) {
+    SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
-  Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
-
   Aws::String m_type;
   bool m_typeHasBeenSet = false;
+
+  Aws::String m_schema;
+  bool m_schemaHasBeenSet = false;
 };
 
 }  // namespace Model

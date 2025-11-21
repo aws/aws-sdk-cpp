@@ -32,6 +32,29 @@ class GetStatementResultResult {
 
   ///@{
   /**
+   * <p>The results of the SQL statement in JSON format.</p>
+   */
+  inline const Aws::Vector<Aws::Vector<Field>>& GetRecords() const { return m_records; }
+  template <typename RecordsT = Aws::Vector<Aws::Vector<Field>>>
+  void SetRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records = std::forward<RecordsT>(value);
+  }
+  template <typename RecordsT = Aws::Vector<Aws::Vector<Field>>>
+  GetStatementResultResult& WithRecords(RecordsT&& value) {
+    SetRecords(std::forward<RecordsT>(value));
+    return *this;
+  }
+  template <typename RecordsT = Aws::Vector<Field>>
+  GetStatementResultResult& AddRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records.emplace_back(std::forward<RecordsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The properties (metadata) of a column. </p>
    */
   inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const { return m_columnMetadata; }
@@ -49,6 +72,24 @@ class GetStatementResultResult {
   GetStatementResultResult& AddColumnMetadata(ColumnMetadataT&& value) {
     m_columnMetadataHasBeenSet = true;
     m_columnMetadata.emplace_back(std::forward<ColumnMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total number of rows in the result set returned from a query. You can use
+   * this number to estimate the number of calls to the
+   * <code>GetStatementResult</code> operation needed to page through the results.
+   * </p>
+   */
+  inline long long GetTotalNumRows() const { return m_totalNumRows; }
+  inline void SetTotalNumRows(long long value) {
+    m_totalNumRowsHasBeenSet = true;
+    m_totalNumRows = value;
+  }
+  inline GetStatementResultResult& WithTotalNumRows(long long value) {
+    SetTotalNumRows(value);
     return *this;
   }
   ///@}
@@ -75,47 +116,6 @@ class GetStatementResultResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The results of the SQL statement in JSON format.</p>
-   */
-  inline const Aws::Vector<Aws::Vector<Field>>& GetRecords() const { return m_records; }
-  template <typename RecordsT = Aws::Vector<Aws::Vector<Field>>>
-  void SetRecords(RecordsT&& value) {
-    m_recordsHasBeenSet = true;
-    m_records = std::forward<RecordsT>(value);
-  }
-  template <typename RecordsT = Aws::Vector<Aws::Vector<Field>>>
-  GetStatementResultResult& WithRecords(RecordsT&& value) {
-    SetRecords(std::forward<RecordsT>(value));
-    return *this;
-  }
-  template <typename RecordsT = Aws::Vector<Field>>
-  GetStatementResultResult& AddRecords(RecordsT&& value) {
-    m_recordsHasBeenSet = true;
-    m_records.emplace_back(std::forward<RecordsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The total number of rows in the result set returned from a query. You can use
-   * this number to estimate the number of calls to the
-   * <code>GetStatementResult</code> operation needed to page through the results.
-   * </p>
-   */
-  inline long long GetTotalNumRows() const { return m_totalNumRows; }
-  inline void SetTotalNumRows(long long value) {
-    m_totalNumRowsHasBeenSet = true;
-    m_totalNumRows = value;
-  }
-  inline GetStatementResultResult& WithTotalNumRows(long long value) {
-    SetTotalNumRows(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -130,17 +130,17 @@ class GetStatementResultResult {
   }
   ///@}
  private:
-  Aws::Vector<ColumnMetadata> m_columnMetadata;
-  bool m_columnMetadataHasBeenSet = false;
-
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
   Aws::Vector<Aws::Vector<Field>> m_records;
   bool m_recordsHasBeenSet = false;
 
+  Aws::Vector<ColumnMetadata> m_columnMetadata;
+  bool m_columnMetadataHasBeenSet = false;
+
   long long m_totalNumRows{0};
   bool m_totalNumRowsHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

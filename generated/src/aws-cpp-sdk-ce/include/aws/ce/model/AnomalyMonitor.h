@@ -129,7 +129,17 @@ class AnomalyMonitor {
 
   ///@{
   /**
-   * <p>The possible type values. </p>
+   * <p>The type of the monitor. </p> <p>Set this to <code>DIMENSIONAL</code> for an
+   * Amazon Web Services managed monitor. Amazon Web Services managed monitors
+   * automatically track up to the top 5,000 values by cost within a dimension of
+   * your choosing. Each dimension value is evaluated independently. If you start
+   * incurring cost in a new value of your chosen dimension, it will automatically be
+   * analyzed by an Amazon Web Services managed monitor.</p> <p>Set this to
+   * <code>CUSTOM</code> for a customer managed monitor. Customer managed monitors
+   * let you select specific dimension values that get monitored in aggregate. </p>
+   * <p>For more information about monitor types, see <a
+   * href="https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html#monitor-type-def">Monitor
+   * types</a> in the <i>Billing and Cost Management User Guide</i>.</p>
    */
   inline MonitorType GetMonitorType() const { return m_monitorType; }
   inline bool MonitorTypeHasBeenSet() const { return m_monitorTypeHasBeenSet; }
@@ -145,7 +155,12 @@ class AnomalyMonitor {
 
   ///@{
   /**
-   * <p>The dimensions to evaluate. </p>
+   * <p>For customer managed monitors, do not specify this field.</p> <p>For Amazon
+   * Web Services managed monitors, this field controls which cost dimension is
+   * automatically analyzed by the monitor. For <code>TAG</code> and
+   * <code>COST_CATEGORY </code> dimensions, you must also specify
+   * MonitorSpecification to configure the specific tag or cost category key to
+   * analyze.</p>
    */
   inline MonitorDimension GetMonitorDimension() const { return m_monitorDimension; }
   inline bool MonitorDimensionHasBeenSet() const { return m_monitorDimensionHasBeenSet; }
@@ -160,7 +175,25 @@ class AnomalyMonitor {
   ///@}
 
   ///@{
-
+  /**
+   * <p>An <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+   * object used to control what costs the monitor analyzes for anomalies.</p> <p>For
+   * Amazon Web Services managed monitors:</p> <ul> <li> <p>If MonitorDimension is
+   * <code>SERVICE</code> or <code>LINKED_ACCOUNT</code>, do not specify this
+   * field</p> </li> <li> <p>If MonitorDimension is <code>TAG</code>, set this field
+   * to <code>{ "Tags": { "Key": "your tag key" } }</code> </p> </li> <li> <p>If
+   * MonitorDimension is <code>COST_CATEGORY</code>, set this field to <code>{
+   * "CostCategories": { "Key": "your cost category key" } }</code> </p> </li> </ul>
+   * <p>For customer managed monitors:</p> <ul> <li> <p>To track linked accounts, set
+   * this field to <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT", "Values": [ "your
+   * list of up to 10 account IDs" ] } } </code> </p> </li> <li> <p>To track cost
+   * allocation tags, set this field to <code>{ "Tags": { "Key": "your tag key",
+   * "Values": [ "your list of up to 10 tag values" ] } } </code> </p> </li> <li>
+   * <p>To track cost categories, set this field to<code>{ "CostCategories": { "Key":
+   * "your cost category key", "Values": [ "your cost category value" ] } } </code>
+   * </p> </li> </ul>
+   */
   inline const Expression& GetMonitorSpecification() const { return m_monitorSpecification; }
   inline bool MonitorSpecificationHasBeenSet() const { return m_monitorSpecificationHasBeenSet; }
   template <typename MonitorSpecificationT = Expression>

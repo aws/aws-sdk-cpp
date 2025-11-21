@@ -8,11 +8,13 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Change.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
+#include <aws/cloudformation/model/DeploymentMode.h>
 #include <aws/cloudformation/model/ExecutionStatus.h>
 #include <aws/cloudformation/model/OnStackFailure.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/RollbackConfiguration.h>
+#include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/cloudformation/model/Tag.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -222,6 +224,27 @@ class DescribeChangeSetResult {
   template <typename StatusReasonT = Aws::String>
   DescribeChangeSetResult& WithStatusReason(StatusReasonT&& value) {
     SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The drift status of the stack when the change set was created. Valid
+   * values:</p> <ul> <li> <p> <code>DRIFTED</code> – The stack has drifted from its
+   * last deployment.</p> </li> <li> <p> <code>IN_SYNC</code> – The stack is in sync
+   * with its last deployment.</p> </li> <li> <p> <code>NOT_CHECKED</code> –
+   * CloudFormation doesn’t currently return this value.</p> </li> <li> <p>
+   * <code>UNKNOWN</code> – The drift status could not be determined.</p> </li> </ul>
+   * <p>Only present for drift-aware change sets.</p>
+   */
+  inline StackDriftStatus GetStackDriftStatus() const { return m_stackDriftStatus; }
+  inline void SetStackDriftStatus(StackDriftStatus value) {
+    m_stackDriftStatusHasBeenSet = true;
+    m_stackDriftStatus = value;
+  }
+  inline DescribeChangeSetResult& WithStackDriftStatus(StackDriftStatus value) {
+    SetStackDriftStatus(value);
     return *this;
   }
   ///@}
@@ -460,6 +483,22 @@ class DescribeChangeSetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The deployment mode specified when the change set was created. Valid value is
+   * <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+   */
+  inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
+  inline void SetDeploymentMode(DeploymentMode value) {
+    m_deploymentModeHasBeenSet = true;
+    m_deploymentMode = value;
+  }
+  inline DescribeChangeSetResult& WithDeploymentMode(DeploymentMode value) {
+    SetDeploymentMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -504,6 +543,9 @@ class DescribeChangeSetResult {
   Aws::String m_statusReason;
   bool m_statusReasonHasBeenSet = false;
 
+  StackDriftStatus m_stackDriftStatus{StackDriftStatus::NOT_SET};
+  bool m_stackDriftStatusHasBeenSet = false;
+
   Aws::Vector<Aws::String> m_notificationARNs;
   bool m_notificationARNsHasBeenSet = false;
 
@@ -536,6 +578,9 @@ class DescribeChangeSetResult {
 
   bool m_importExistingResources{false};
   bool m_importExistingResourcesHasBeenSet = false;
+
+  DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+  bool m_deploymentModeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
   bool m_responseMetadataHasBeenSet = false;

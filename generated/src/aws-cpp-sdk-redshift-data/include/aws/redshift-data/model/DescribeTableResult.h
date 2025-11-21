@@ -30,6 +30,23 @@ class DescribeTableResult {
 
   ///@{
   /**
+   * <p>The table name. </p>
+   */
+  inline const Aws::String& GetTableName() const { return m_tableName; }
+  template <typename TableNameT = Aws::String>
+  void SetTableName(TableNameT&& value) {
+    m_tableNameHasBeenSet = true;
+    m_tableName = std::forward<TableNameT>(value);
+  }
+  template <typename TableNameT = Aws::String>
+  DescribeTableResult& WithTableName(TableNameT&& value) {
+    SetTableName(std::forward<TableNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of columns in the table. </p>
    */
   inline const Aws::Vector<ColumnMetadata>& GetColumnList() const { return m_columnList; }
@@ -73,23 +90,6 @@ class DescribeTableResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The table name. </p>
-   */
-  inline const Aws::String& GetTableName() const { return m_tableName; }
-  template <typename TableNameT = Aws::String>
-  void SetTableName(TableNameT&& value) {
-    m_tableNameHasBeenSet = true;
-    m_tableName = std::forward<TableNameT>(value);
-  }
-  template <typename TableNameT = Aws::String>
-  DescribeTableResult& WithTableName(TableNameT&& value) {
-    SetTableName(std::forward<TableNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -104,14 +104,14 @@ class DescribeTableResult {
   }
   ///@}
  private:
+  Aws::String m_tableName;
+  bool m_tableNameHasBeenSet = false;
+
   Aws::Vector<ColumnMetadata> m_columnList;
   bool m_columnListHasBeenSet = false;
 
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
-
-  Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

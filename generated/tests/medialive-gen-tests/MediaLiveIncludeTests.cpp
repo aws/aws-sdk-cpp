@@ -727,6 +727,11 @@
 #include <aws/medialive/model/Route.h>
 #include <aws/medialive/model/RouteCreateRequest.h>
 #include <aws/medialive/model/RouteUpdateRequest.h>
+#include <aws/medialive/model/RouterDestination.h>
+#include <aws/medialive/model/RouterDestinationSettings.h>
+#include <aws/medialive/model/RouterEncryptionType.h>
+#include <aws/medialive/model/RouterInputSettings.h>
+#include <aws/medialive/model/RouterSettings.h>
 #include <aws/medialive/model/RtmpAdMarkers.h>
 #include <aws/medialive/model/RtmpCacheFullBehavior.h>
 #include <aws/medialive/model/RtmpCaptionData.h>
@@ -789,6 +794,7 @@
 #include <aws/medialive/model/Smpte2110ReceiverGroupSdpSettings.h>
 #include <aws/medialive/model/Smpte2110ReceiverGroupSettings.h>
 #include <aws/medialive/model/SmpteTtDestinationSettings.h>
+#include <aws/medialive/model/SpecialRouterSettings.h>
 #include <aws/medialive/model/SrtCallerDecryption.h>
 #include <aws/medialive/model/SrtCallerDecryptionRequest.h>
 #include <aws/medialive/model/SrtCallerSource.h>

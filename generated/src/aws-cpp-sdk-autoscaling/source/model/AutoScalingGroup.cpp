@@ -279,6 +279,11 @@ AutoScalingGroup& AutoScalingGroup::operator=(const XmlNode& xmlNode) {
       m_capacityReservationSpecification = capacityReservationSpecificationNode;
       m_capacityReservationSpecificationHasBeenSet = true;
     }
+    XmlNode instanceLifecyclePolicyNode = resultNode.FirstChild("InstanceLifecyclePolicy");
+    if (!instanceLifecyclePolicyNode.IsNull()) {
+      m_instanceLifecyclePolicy = instanceLifecyclePolicyNode;
+      m_instanceLifecyclePolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -498,6 +503,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     capacityReservationSpecificationLocationAndMemberSs << location << index << locationValue << ".CapacityReservationSpecification";
     m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMemberSs.str().c_str());
   }
+
+  if (m_instanceLifecyclePolicyHasBeenSet) {
+    Aws::StringStream instanceLifecyclePolicyLocationAndMemberSs;
+    instanceLifecyclePolicyLocationAndMemberSs << location << index << locationValue << ".InstanceLifecyclePolicy";
+    m_instanceLifecyclePolicy.OutputToStream(oStream, instanceLifecyclePolicyLocationAndMemberSs.str().c_str());
+  }
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -667,6 +678,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     Aws::String capacityReservationSpecificationLocationAndMember(location);
     capacityReservationSpecificationLocationAndMember += ".CapacityReservationSpecification";
     m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMember.c_str());
+  }
+  if (m_instanceLifecyclePolicyHasBeenSet) {
+    Aws::String instanceLifecyclePolicyLocationAndMember(location);
+    instanceLifecyclePolicyLocationAndMember += ".InstanceLifecyclePolicy";
+    m_instanceLifecyclePolicy.OutputToStream(oStream, instanceLifecyclePolicyLocationAndMember.c_str());
   }
 }
 

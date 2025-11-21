@@ -12,6 +12,7 @@
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
+#include <aws/ec2/model/EncryptionSupport.h>
 #include <aws/ec2/model/MulticastSupportValue.h>
 #include <aws/ec2/model/SecurityGroupReferencingSupportValue.h>
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
@@ -241,6 +242,24 @@ class TransitGatewayOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+   */
+  inline const EncryptionSupport& GetEncryptionSupport() const { return m_encryptionSupport; }
+  inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
+  template <typename EncryptionSupportT = EncryptionSupport>
+  void SetEncryptionSupport(EncryptionSupportT&& value) {
+    m_encryptionSupportHasBeenSet = true;
+    m_encryptionSupport = std::forward<EncryptionSupportT>(value);
+  }
+  template <typename EncryptionSupportT = EncryptionSupport>
+  TransitGatewayOptions& WithEncryptionSupport(EncryptionSupportT&& value) {
+    SetEncryptionSupport(std::forward<EncryptionSupportT>(value));
+    return *this;
+  }
+  ///@}
  private:
   long long m_amazonSideAsn{0};
   bool m_amazonSideAsnHasBeenSet = false;
@@ -274,6 +293,9 @@ class TransitGatewayOptions {
 
   MulticastSupportValue m_multicastSupport{MulticastSupportValue::NOT_SET};
   bool m_multicastSupportHasBeenSet = false;
+
+  EncryptionSupport m_encryptionSupport;
+  bool m_encryptionSupportHasBeenSet = false;
 };
 
 }  // namespace Model

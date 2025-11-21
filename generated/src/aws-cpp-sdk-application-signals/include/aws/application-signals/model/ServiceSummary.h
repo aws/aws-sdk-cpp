@@ -152,8 +152,8 @@ class ServiceSummary {
 
   ///@{
   /**
-   * <p>An array of service groups that this service belongs to, providing a summary
-   * view of the service's organizational context.</p>
+   * <p>An array of service groups that this service belongs to, based on the
+   * configured grouping attributes.</p>
    */
   inline const Aws::Vector<ServiceGroup>& GetServiceGroups() const { return m_serviceGroups; }
   inline bool ServiceGroupsHasBeenSet() const { return m_serviceGroupsHasBeenSet; }

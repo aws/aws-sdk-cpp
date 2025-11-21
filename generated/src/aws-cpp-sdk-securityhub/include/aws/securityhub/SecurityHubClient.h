@@ -593,7 +593,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to complete the authorization based on input parameters.
-   * This API is in preview release and subject to change.</p><p><h3>See Also:</h3>
+   * This API is in public preview and subject to change.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">AWS
    * API Reference</a></p>
@@ -762,7 +762,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to create a connectorV2 based on input parameters. This API
-   * is in preview release and subject to change.</p><p><h3>See Also:</h3>   <a
+   * is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">AWS
    * API Reference</a></p>
    */
@@ -904,8 +904,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to create a ticket in the chosen ITSM based on finding
-   * information for the provided finding metadata UID. This API is in preview
-   * release and subject to change.</p><p><h3>See Also:</h3>   <a
+   * information for the provided finding metadata UID. This API is in public preview
+   * and subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">AWS
    * API Reference</a></p>
    */
@@ -1081,7 +1081,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to delete a connectorV2. This API is in preview release and
+   * <p>Grants permission to delete a connectorV2. This API is in public preview and
    * subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">AWS
    * API Reference</a></p>
@@ -1934,7 +1934,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to retrieve details for a connectorV2 based on connector
-   * id. This API is in preview release and subject to change.</p><p><h3>See
+   * id. This API is in public preview and subject to change.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">AWS
    * API Reference</a></p>
@@ -2116,6 +2116,34 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns findings trend data based on the specified criteria. This operation
+   * helps you analyze patterns and changes in findings over time. This API is in
+   * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFindingsTrendsV2Outcome GetFindingsTrendsV2(const Model::GetFindingsTrendsV2Request& request) const;
+
+  /**
+   * A Callable wrapper for GetFindingsTrendsV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetFindingsTrendsV2RequestT = Model::GetFindingsTrendsV2Request>
+  Model::GetFindingsTrendsV2OutcomeCallable GetFindingsTrendsV2Callable(const GetFindingsTrendsV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetFindingsTrendsV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetFindingsTrendsV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetFindingsTrendsV2RequestT = Model::GetFindingsTrendsV2Request>
+  void GetFindingsTrendsV2Async(const GetFindingsTrendsV2RequestT& request, const GetFindingsTrendsV2ResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetFindingsTrendsV2, request, handler, context);
+  }
+
+  /**
    * <p>Return a list of findings that match the specified criteria.
    * <code>GetFindings</code> and <code>GetFindingsV2</code> both use
    * <code>securityhub:GetFindings</code> in the <code>Action</code> element of an
@@ -2290,6 +2318,34 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                      const GetResourcesStatisticsV2ResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityHubClient::GetResourcesStatisticsV2, request, handler, context);
+  }
+
+  /**
+   * <p>Returns resource trend data based on the specified criteria. This operation
+   * helps you analyze patterns and changes in resource compliance over time. This
+   * API is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourcesTrendsV2Outcome GetResourcesTrendsV2(const Model::GetResourcesTrendsV2Request& request) const;
+
+  /**
+   * A Callable wrapper for GetResourcesTrendsV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourcesTrendsV2RequestT = Model::GetResourcesTrendsV2Request>
+  Model::GetResourcesTrendsV2OutcomeCallable GetResourcesTrendsV2Callable(const GetResourcesTrendsV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetResourcesTrendsV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourcesTrendsV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetResourcesTrendsV2RequestT = Model::GetResourcesTrendsV2Request>
+  void GetResourcesTrendsV2Async(const GetResourcesTrendsV2RequestT& request, const GetResourcesTrendsV2ResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetResourcesTrendsV2, request, handler, context);
   }
 
   /**
@@ -2537,7 +2593,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to retrieve a list of connectorsV2 and their metadata for
-   * the calling account. This API is in preview release and subject to
+   * the calling account. This API is in public preview and subject to
    * change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">AWS
    * API Reference</a></p>
@@ -3038,7 +3094,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Grants permission to update a connectorV2 based on its id and input
-   * parameters. This API is in preview release and subject to change.</p><p><h3>See
+   * parameters. This API is in public preview and subject to change.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">AWS
    * API Reference</a></p>

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudFormation {
 namespace Model {
-enum class StackResourceDriftStatus { NOT_SET, IN_SYNC, MODIFIED, DELETED, NOT_CHECKED, UNKNOWN };
+enum class StackResourceDriftStatus { NOT_SET, IN_SYNC, MODIFIED, DELETED, NOT_CHECKED, UNKNOWN, UNSUPPORTED };
 
 namespace StackResourceDriftStatusMapper {
 AWS_CLOUDFORMATION_API StackResourceDriftStatus GetStackResourceDriftStatusForName(const Aws::String& name);

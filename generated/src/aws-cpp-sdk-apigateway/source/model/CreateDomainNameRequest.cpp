@@ -63,6 +63,10 @@ Aws::String CreateDomainNameRequest::SerializePayload() const {
     payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
   }
 
+  if (m_endpointAccessModeHasBeenSet) {
+    payload.WithString("endpointAccessMode", EndpointAccessModeMapper::GetNameForEndpointAccessMode(m_endpointAccessMode));
+  }
+
   if (m_mutualTlsAuthenticationHasBeenSet) {
     payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
   }

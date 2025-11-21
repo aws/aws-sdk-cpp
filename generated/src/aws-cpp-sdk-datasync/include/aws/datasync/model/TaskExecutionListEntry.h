@@ -57,7 +57,7 @@ class TaskExecutionListEntry {
   ///@{
   /**
    * <p>The status of a task execution. For more information, see <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
    * execution statuses</a>.</p>
    */
   inline TaskExecutionStatus GetStatus() const { return m_status; }

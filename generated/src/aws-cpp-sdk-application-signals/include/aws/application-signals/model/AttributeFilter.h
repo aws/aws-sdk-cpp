@@ -21,8 +21,9 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>Represents a filter for service attributes. Used to narrow down results based
- * on specific attribute names and values.</p><p><h3>See Also:</h3>   <a
+ * <p>A structure that defines a filter for narrowing down results based on
+ * specific attribute values. This can be used to filter services by platform,
+ * environment, or other service characteristics.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AttributeFilter">AWS
  * API Reference</a></p>
  */
@@ -35,8 +36,8 @@ class AttributeFilter {
 
   ///@{
   /**
-   * <p>The name of the attribute to filter on. This corresponds to service metadata
-   * attributes such as environment, team, or custom tags.</p>
+   * <p>The name of the attribute to filter by, such as <code>Platform</code>,
+   * <code>Environment</code>, or <code>BusinessUnit</code>.</p>
    */
   inline const Aws::String& GetAttributeFilterName() const { return m_attributeFilterName; }
   inline bool AttributeFilterNameHasBeenSet() const { return m_attributeFilterNameHasBeenSet; }
@@ -54,9 +55,8 @@ class AttributeFilter {
 
   ///@{
   /**
-   * <p>An array of values to match against the specified attribute. Services with
-   * attribute values matching any of these values will be included in the
-   * results.</p>
+   * <p>An array of values to match for the specified attribute. Services that have
+   * any of these values for the attribute will be included in the results.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAttributeFilterValues() const { return m_attributeFilterValues; }
   inline bool AttributeFilterValuesHasBeenSet() const { return m_attributeFilterValuesHasBeenSet; }

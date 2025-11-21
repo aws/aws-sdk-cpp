@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
+#include <aws/cloudformation/model/AfterValueFrom.h>
 #include <aws/cloudformation/model/AttributeChangeType.h>
+#include <aws/cloudformation/model/BeforeValueFrom.h>
+#include <aws/cloudformation/model/LiveResourceDrift.h>
 #include <aws/cloudformation/model/RequiresRecreation.h>
 #include <aws/cloudformation/model/ResourceAttribute.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -156,10 +159,69 @@ class ResourceTargetDefinition {
 
   ///@{
   /**
+   * <p>Indicates the source of the before value. Valid values:</p> <ul> <li> <p>
+   * <code>ACTUAL_STATE</code> – The before value represents current actual
+   * state.</p> </li> <li> <p> <code>PREVIOUS_DEPLOYMENT_STATE</code> – The before
+   * value represents the previous CloudFormation deployment state.</p> </li> </ul>
+   * <p>Only present for drift-aware change sets.</p>
+   */
+  inline BeforeValueFrom GetBeforeValueFrom() const { return m_beforeValueFrom; }
+  inline bool BeforeValueFromHasBeenSet() const { return m_beforeValueFromHasBeenSet; }
+  inline void SetBeforeValueFrom(BeforeValueFrom value) {
+    m_beforeValueFromHasBeenSet = true;
+    m_beforeValueFrom = value;
+  }
+  inline ResourceTargetDefinition& WithBeforeValueFrom(BeforeValueFrom value) {
+    SetBeforeValueFrom(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the source of the after value. Valid value:</p> <ul> <li> <p>
+   * <code>TEMPLATE</code> – The after value comes from the new template.</p> </li>
+   * </ul> <p>Only present for drift-aware change sets.</p>
+   */
+  inline AfterValueFrom GetAfterValueFrom() const { return m_afterValueFrom; }
+  inline bool AfterValueFromHasBeenSet() const { return m_afterValueFromHasBeenSet; }
+  inline void SetAfterValueFrom(AfterValueFrom value) {
+    m_afterValueFromHasBeenSet = true;
+    m_afterValueFrom = value;
+  }
+  inline ResourceTargetDefinition& WithAfterValueFrom(AfterValueFrom value) {
+    SetAfterValueFrom(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Detailed drift information for the resource property, including actual
+   * values, previous deployment values, and drift detection timestamps.</p>
+   */
+  inline const LiveResourceDrift& GetDrift() const { return m_drift; }
+  inline bool DriftHasBeenSet() const { return m_driftHasBeenSet; }
+  template <typename DriftT = LiveResourceDrift>
+  void SetDrift(DriftT&& value) {
+    m_driftHasBeenSet = true;
+    m_drift = std::forward<DriftT>(value);
+  }
+  template <typename DriftT = LiveResourceDrift>
+  ResourceTargetDefinition& WithDrift(DriftT&& value) {
+    SetDrift(std::forward<DriftT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of change to be made to the property if the change is executed.</p>
    * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
    * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-   * <code>Modify</code> The item will be modified.</p> </li> </ul>
+   * <code>Modify</code> The item will be modified.</p> </li> <li> <p>
+   * <code>SyncWithActual</code> The drift status of this item will be reset but the
+   * item will not be modified.</p> </li> </ul>
    */
   inline AttributeChangeType GetAttributeChangeType() const { return m_attributeChangeType; }
   inline bool AttributeChangeTypeHasBeenSet() const { return m_attributeChangeTypeHasBeenSet; }
@@ -190,6 +252,15 @@ class ResourceTargetDefinition {
 
   Aws::String m_afterValue;
   bool m_afterValueHasBeenSet = false;
+
+  BeforeValueFrom m_beforeValueFrom{BeforeValueFrom::NOT_SET};
+  bool m_beforeValueFromHasBeenSet = false;
+
+  AfterValueFrom m_afterValueFrom{AfterValueFrom::NOT_SET};
+  bool m_afterValueFromHasBeenSet = false;
+
+  LiveResourceDrift m_drift;
+  bool m_driftHasBeenSet = false;
 
   AttributeChangeType m_attributeChangeType{AttributeChangeType::NOT_SET};
   bool m_attributeChangeTypeHasBeenSet = false;

@@ -440,6 +440,39 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Creates a tiering configuration.</p> <p>A tiering configuration enables
+   * automatic movement of backup data to a lower-cost storage tier based on the age
+   * of backed-up objects in the backup vault.</p> <p>Each vault can only have one
+   * vault-specific tiering configuration, in addition to any global configuration
+   * that applies to all vaults.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTieringConfigurationOutcome CreateTieringConfiguration(
+      const Model::CreateTieringConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTieringConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateTieringConfigurationRequestT = Model::CreateTieringConfigurationRequest>
+  Model::CreateTieringConfigurationOutcomeCallable CreateTieringConfigurationCallable(
+      const CreateTieringConfigurationRequestT& request) const {
+    return SubmitCallable(&BackupClient::CreateTieringConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTieringConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateTieringConfigurationRequestT = Model::CreateTieringConfigurationRequest>
+  void CreateTieringConfigurationAsync(const CreateTieringConfigurationRequestT& request,
+                                       const CreateTieringConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::CreateTieringConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a backup plan. A backup plan can only be deleted after all associated
    * selections of resources have been deleted. Deleting a backup plan deletes the
    * current version of a backup plan. Previous versions, if any, will still
@@ -769,6 +802,36 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Deletes the tiering configuration specified by a tiering configuration
+   * name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTieringConfigurationOutcome DeleteTieringConfiguration(
+      const Model::DeleteTieringConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTieringConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteTieringConfigurationRequestT = Model::DeleteTieringConfigurationRequest>
+  Model::DeleteTieringConfigurationOutcomeCallable DeleteTieringConfigurationCallable(
+      const DeleteTieringConfigurationRequestT& request) const {
+    return SubmitCallable(&BackupClient::DeleteTieringConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTieringConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTieringConfigurationRequestT = Model::DeleteTieringConfigurationRequest>
+  void DeleteTieringConfigurationAsync(const DeleteTieringConfigurationRequestT& request,
+                                       const DeleteTieringConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::DeleteTieringConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Returns backup job details for the specified
    * <code>BackupJobId</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">AWS
@@ -1072,6 +1135,32 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   void DescribeRestoreJobAsync(const DescribeRestoreJobRequestT& request, const DescribeRestoreJobResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::DescribeRestoreJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns scan job details for the specified ScanJobID.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeScanJobOutcome DescribeScanJob(const Model::DescribeScanJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeScanJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeScanJobRequestT = Model::DescribeScanJobRequest>
+  Model::DescribeScanJobOutcomeCallable DescribeScanJobCallable(const DescribeScanJobRequestT& request) const {
+    return SubmitCallable(&BackupClient::DescribeScanJob, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeScanJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeScanJobRequestT = Model::DescribeScanJobRequest>
+  void DescribeScanJobAsync(const DescribeScanJobRequestT& request, const DescribeScanJobResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::DescribeScanJob, request, handler, context);
   }
 
   /**
@@ -1601,6 +1690,36 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const GetSupportedResourceTypesRequestT& request = {}) const {
     return SubmitAsync(&BackupClient::GetSupportedResourceTypes, request, handler, context);
+  }
+
+  /**
+   * <p>Returns <code>TieringConfiguration</code> details for the specified
+   * <code>TieringConfigurationName</code>. The details are the body of a tiering
+   * configuration in JSON format, in addition to configuration
+   * metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTieringConfigurationOutcome GetTieringConfiguration(const Model::GetTieringConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTieringConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTieringConfigurationRequestT = Model::GetTieringConfigurationRequest>
+  Model::GetTieringConfigurationOutcomeCallable GetTieringConfigurationCallable(const GetTieringConfigurationRequestT& request) const {
+    return SubmitCallable(&BackupClient::GetTieringConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetTieringConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTieringConfigurationRequestT = Model::GetTieringConfigurationRequest>
+  void GetTieringConfigurationAsync(const GetTieringConfigurationRequestT& request,
+                                    const GetTieringConfigurationResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::GetTieringConfiguration, request, handler, context);
   }
 
   /**
@@ -2330,6 +2449,61 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>This is a request for a summary of scan jobs created or running within the
+   * most recent 30 days.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScanJobSummariesOutcome ListScanJobSummaries(const Model::ListScanJobSummariesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScanJobSummaries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListScanJobSummariesRequestT = Model::ListScanJobSummariesRequest>
+  Model::ListScanJobSummariesOutcomeCallable ListScanJobSummariesCallable(const ListScanJobSummariesRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListScanJobSummaries, request);
+  }
+
+  /**
+   * An Async wrapper for ListScanJobSummaries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListScanJobSummariesRequestT = Model::ListScanJobSummariesRequest>
+  void ListScanJobSummariesAsync(const ListScanJobSummariesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListScanJobSummariesRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListScanJobSummaries, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of existing scan jobs for an authenticated account for the
+   * last 30 days.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScanJobsOutcome ListScanJobs(const Model::ListScanJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListScanJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListScanJobsRequestT = Model::ListScanJobsRequest>
+  Model::ListScanJobsOutcomeCallable ListScanJobsCallable(const ListScanJobsRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListScanJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListScanJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListScanJobsRequestT = Model::ListScanJobsRequest>
+  void ListScanJobsAsync(const ListScanJobsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListScanJobsRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListScanJobs, request, handler, context);
+  }
+
+  /**
    * <p>Returns the tags assigned to the resource, such as a target recovery point,
    * backup plan, or backup vault.</p> <p>This operation returns results depending on
    * the resource type used in the value for <code>resourceArn</code>. For example,
@@ -2365,6 +2539,35 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   void ListTagsAsync(const ListTagsRequestT& request, const ListTagsResponseReceivedHandler& handler,
                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::ListTags, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of tiering configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTieringConfigurationsOutcome ListTieringConfigurations(
+      const Model::ListTieringConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTieringConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTieringConfigurationsRequestT = Model::ListTieringConfigurationsRequest>
+  Model::ListTieringConfigurationsOutcomeCallable ListTieringConfigurationsCallable(
+      const ListTieringConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&BackupClient::ListTieringConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListTieringConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTieringConfigurationsRequestT = Model::ListTieringConfigurationsRequest>
+  void ListTieringConfigurationsAsync(const ListTieringConfigurationsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListTieringConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&BackupClient::ListTieringConfigurations, request, handler, context);
   }
 
   /**
@@ -2638,6 +2841,31 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
   void StartRestoreJobAsync(const StartRestoreJobRequestT& request, const StartRestoreJobResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::StartRestoreJob, request, handler, context);
+  }
+
+  /**
+   * <p>Starts scanning jobs for specific resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartScanJobOutcome StartScanJob(const Model::StartScanJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartScanJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartScanJobRequestT = Model::StartScanJobRequest>
+  Model::StartScanJobOutcomeCallable StartScanJobCallable(const StartScanJobRequestT& request) const {
+    return SubmitCallable(&BackupClient::StartScanJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartScanJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartScanJobRequestT = Model::StartScanJobRequest>
+  void StartScanJobAsync(const StartScanJobRequestT& request, const StartScanJobResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::StartScanJob, request, handler, context);
   }
 
   /**
@@ -3002,6 +3230,40 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
                                           const UpdateRestoreTestingSelectionResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BackupClient::UpdateRestoreTestingSelection, request, handler, context);
+  }
+
+  /**
+   * <p>This request will send changes to your specified tiering configuration.
+   * <code>TieringConfigurationName</code> cannot be updated after it is created.</p>
+   * <p> <code>ResourceSelection</code> can contain:</p> <ul> <li> <p>
+   * <code>Resources</code> </p> </li> <li> <p>
+   * <code>TieringDownSettingsInDays</code> </p> </li> <li> <p>
+   * <code>ResourceType</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTieringConfigurationOutcome UpdateTieringConfiguration(
+      const Model::UpdateTieringConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTieringConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateTieringConfigurationRequestT = Model::UpdateTieringConfigurationRequest>
+  Model::UpdateTieringConfigurationOutcomeCallable UpdateTieringConfigurationCallable(
+      const UpdateTieringConfigurationRequestT& request) const {
+    return SubmitCallable(&BackupClient::UpdateTieringConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTieringConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateTieringConfigurationRequestT = Model::UpdateTieringConfigurationRequest>
+  void UpdateTieringConfigurationAsync(const UpdateTieringConfigurationRequestT& request,
+                                       const UpdateTieringConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BackupClient::UpdateTieringConfiguration, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

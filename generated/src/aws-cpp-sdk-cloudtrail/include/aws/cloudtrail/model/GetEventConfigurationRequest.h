@@ -32,6 +32,25 @@ class GetEventConfigurationRequest : public CloudTrailRequest {
 
   ///@{
   /**
+   * <p>The name of the trail for which you want to retrieve event configuration
+   * settings.</p>
+   */
+  inline const Aws::String& GetTrailName() const { return m_trailName; }
+  inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
+  template <typename TrailNameT = Aws::String>
+  void SetTrailName(TrailNameT&& value) {
+    m_trailNameHasBeenSet = true;
+    m_trailName = std::forward<TrailNameT>(value);
+  }
+  template <typename TrailNameT = Aws::String>
+  GetEventConfigurationRequest& WithTrailName(TrailNameT&& value) {
+    SetTrailName(std::forward<TrailNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data
    * store for which you want to retrieve event configuration settings.</p>
    */
@@ -49,6 +68,9 @@ class GetEventConfigurationRequest : public CloudTrailRequest {
   }
   ///@}
  private:
+  Aws::String m_trailName;
+  bool m_trailNameHasBeenSet = false;
+
   Aws::String m_eventDataStore;
   bool m_eventDataStoreHasBeenSet = false;
 };

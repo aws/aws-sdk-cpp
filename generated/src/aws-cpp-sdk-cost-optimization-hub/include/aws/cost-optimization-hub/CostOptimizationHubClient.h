@@ -143,6 +143,39 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient
   }
 
   /**
+   * <p>Returns cost efficiency metrics aggregated over time and optionally grouped
+   * by a specified dimension. The metrics provide insights into your cost
+   * optimization progress by tracking estimated savings, spending, and measures how
+   * effectively you're optimizing your Cloud resources.</p> <p>The operation
+   * supports both daily and monthly time granularities and allows grouping results
+   * by account ID, Amazon Web Services Region. Results are returned as time-series
+   * data, enabling you to analyze trends in your cost optimization performance over
+   * the specified time period.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEfficiencyMetrics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEfficiencyMetricsOutcome ListEfficiencyMetrics(const Model::ListEfficiencyMetricsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEfficiencyMetrics that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListEfficiencyMetricsRequestT = Model::ListEfficiencyMetricsRequest>
+  Model::ListEfficiencyMetricsOutcomeCallable ListEfficiencyMetricsCallable(const ListEfficiencyMetricsRequestT& request) const {
+    return SubmitCallable(&CostOptimizationHubClient::ListEfficiencyMetrics, request);
+  }
+
+  /**
+   * An Async wrapper for ListEfficiencyMetrics that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEfficiencyMetricsRequestT = Model::ListEfficiencyMetricsRequest>
+  void ListEfficiencyMetricsAsync(const ListEfficiencyMetricsRequestT& request, const ListEfficiencyMetricsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CostOptimizationHubClient::ListEfficiencyMetrics, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the enrollment status for an account. It can also return the list
    * of accounts that are enrolled under the organization.</p><p><h3>See Also:</h3>
    * <a
@@ -233,12 +266,12 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient
 
   /**
    * <p>Updates the enrollment (opt in and opt out) status of an account to the Cost
-   * Optimization Hub service.</p> <p>If the account is a management account or
-   * delegated administrator of an organization, this action can also be used to
-   * enroll member accounts of the organization.</p> <p>You must have the appropriate
-   * permissions to opt in to Cost Optimization Hub and to view its recommendations.
-   * When you opt in, Cost Optimization Hub automatically creates a service-linked
-   * role in your account to access its data.</p><p><h3>See Also:</h3>   <a
+   * Optimization Hub service.</p> <p>If the account is a management account of an
+   * organization, this action can also be used to enroll member accounts of the
+   * organization.</p> <p>You must have the appropriate permissions to opt in to Cost
+   * Optimization Hub and to view its recommendations. When you opt in, Cost
+   * Optimization Hub automatically creates a service-linked role in your account to
+   * access its data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/UpdateEnrollmentStatus">AWS
    * API Reference</a></p>
    */

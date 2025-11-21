@@ -31,7 +31,7 @@ class ListPoliciesGrantingServiceAccessResult {
 
   ///@{
   /**
-   * <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details
+   * <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details
    * about the permissions policies attached to the specified identity (user, group,
    * or role).</p>
    */

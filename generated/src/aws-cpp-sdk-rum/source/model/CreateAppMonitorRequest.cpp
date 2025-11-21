@@ -15,20 +15,8 @@ using namespace Aws::Utils;
 Aws::String CreateAppMonitorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_appMonitorConfigurationHasBeenSet) {
-    payload.WithObject("AppMonitorConfiguration", m_appMonitorConfiguration.Jsonize());
-  }
-
-  if (m_customEventsHasBeenSet) {
-    payload.WithObject("CustomEvents", m_customEvents.Jsonize());
-  }
-
-  if (m_cwLogEnabledHasBeenSet) {
-    payload.WithBool("CwLogEnabled", m_cwLogEnabled);
-  }
-
-  if (m_deobfuscationConfigurationHasBeenSet) {
-    payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   if (m_domainHasBeenSet) {
@@ -43,16 +31,32 @@ Aws::String CreateAppMonitorRequest::SerializePayload() const {
     payload.WithArray("DomainList", std::move(domainListJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_appMonitorConfigurationHasBeenSet) {
+    payload.WithObject("AppMonitorConfiguration", m_appMonitorConfiguration.Jsonize());
+  }
+
+  if (m_cwLogEnabledHasBeenSet) {
+    payload.WithBool("CwLogEnabled", m_cwLogEnabled);
+  }
+
+  if (m_customEventsHasBeenSet) {
+    payload.WithObject("CustomEvents", m_customEvents.Jsonize());
+  }
+
+  if (m_deobfuscationConfigurationHasBeenSet) {
+    payload.WithObject("DeobfuscationConfiguration", m_deobfuscationConfiguration.Jsonize());
+  }
+
+  if (m_platformHasBeenSet) {
+    payload.WithString("Platform", AppMonitorPlatformMapper::GetNameForAppMonitorPlatform(m_platform));
   }
 
   return payload.View().WriteReadable();

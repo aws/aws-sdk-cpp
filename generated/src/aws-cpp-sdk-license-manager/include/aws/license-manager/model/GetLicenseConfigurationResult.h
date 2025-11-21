@@ -343,6 +343,21 @@ class GetLicenseConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>License Expiry.</p>
+   */
+  inline long long GetLicenseExpiry() const { return m_licenseExpiry; }
+  inline void SetLicenseExpiry(long long value) {
+    m_licenseExpiryHasBeenSet = true;
+    m_licenseExpiry = value;
+  }
+  inline GetLicenseConfigurationResult& WithLicenseExpiry(long long value) {
+    SetLicenseExpiry(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -407,6 +422,9 @@ class GetLicenseConfigurationResult {
 
   bool m_disassociateWhenNotFound{false};
   bool m_disassociateWhenNotFoundHasBeenSet = false;
+
+  long long m_licenseExpiry{0};
+  bool m_licenseExpiryHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

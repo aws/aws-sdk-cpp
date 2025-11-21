@@ -28,6 +28,7 @@
 #include <aws/application-signals/model/GetServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/GetServiceResult.h>
 #include <aws/application-signals/model/ListAuditFindingsResult.h>
+#include <aws/application-signals/model/ListEntityEventsResult.h>
 #include <aws/application-signals/model/ListGroupingAttributeDefinitionsRequest.h>
 #include <aws/application-signals/model/ListGroupingAttributeDefinitionsResult.h>
 #include <aws/application-signals/model/ListServiceDependenciesResult.h>
@@ -86,6 +87,7 @@ class DeleteServiceLevelObjectiveRequest;
 class GetServiceRequest;
 class GetServiceLevelObjectiveRequest;
 class ListAuditFindingsRequest;
+class ListEntityEventsRequest;
 class ListGroupingAttributeDefinitionsRequest;
 class ListServiceDependenciesRequest;
 class ListServiceDependentsRequest;
@@ -112,6 +114,7 @@ typedef Aws::Utils::Outcome<DeleteServiceLevelObjectiveResult, ApplicationSignal
 typedef Aws::Utils::Outcome<GetServiceResult, ApplicationSignalsError> GetServiceOutcome;
 typedef Aws::Utils::Outcome<GetServiceLevelObjectiveResult, ApplicationSignalsError> GetServiceLevelObjectiveOutcome;
 typedef Aws::Utils::Outcome<ListAuditFindingsResult, ApplicationSignalsError> ListAuditFindingsOutcome;
+typedef Aws::Utils::Outcome<ListEntityEventsResult, ApplicationSignalsError> ListEntityEventsOutcome;
 typedef Aws::Utils::Outcome<ListGroupingAttributeDefinitionsResult, ApplicationSignalsError> ListGroupingAttributeDefinitionsOutcome;
 typedef Aws::Utils::Outcome<ListServiceDependenciesResult, ApplicationSignalsError> ListServiceDependenciesOutcome;
 typedef Aws::Utils::Outcome<ListServiceDependentsResult, ApplicationSignalsError> ListServiceDependentsOutcome;
@@ -138,6 +141,7 @@ typedef std::future<DeleteServiceLevelObjectiveOutcome> DeleteServiceLevelObject
 typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
 typedef std::future<GetServiceLevelObjectiveOutcome> GetServiceLevelObjectiveOutcomeCallable;
 typedef std::future<ListAuditFindingsOutcome> ListAuditFindingsOutcomeCallable;
+typedef std::future<ListEntityEventsOutcome> ListEntityEventsOutcomeCallable;
 typedef std::future<ListGroupingAttributeDefinitionsOutcome> ListGroupingAttributeDefinitionsOutcomeCallable;
 typedef std::future<ListServiceDependenciesOutcome> ListServiceDependenciesOutcomeCallable;
 typedef std::future<ListServiceDependentsOutcome> ListServiceDependentsOutcomeCallable;
@@ -183,6 +187,9 @@ typedef std::function<void(const ApplicationSignalsClient*, const Model::GetServ
 typedef std::function<void(const ApplicationSignalsClient*, const Model::ListAuditFindingsRequest&, const Model::ListAuditFindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAuditFindingsResponseReceivedHandler;
+typedef std::function<void(const ApplicationSignalsClient*, const Model::ListEntityEventsRequest&, const Model::ListEntityEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEntityEventsResponseReceivedHandler;
 typedef std::function<void(const ApplicationSignalsClient*, const Model::ListGroupingAttributeDefinitionsRequest&,
                            const Model::ListGroupingAttributeDefinitionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

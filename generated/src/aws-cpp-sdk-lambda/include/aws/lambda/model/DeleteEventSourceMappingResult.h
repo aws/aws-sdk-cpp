@@ -650,8 +650,8 @@ class DeleteEventSourceMappingResult {
 
   ///@{
   /**
-   * <p>(Amazon MSK and self-managed Apache Kafka only) The provisioned mode
-   * configuration for the event source. For more information, see <a
+   * <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned
+   * mode configuration for the event source. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
    * mode</a>.</p>
    */

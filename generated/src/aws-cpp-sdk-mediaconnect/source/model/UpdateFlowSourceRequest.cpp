@@ -94,5 +94,13 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const {
     payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
   }
 
+  if (m_routerIntegrationStateHasBeenSet) {
+    payload.WithString("routerIntegrationState", StateMapper::GetNameForState(m_routerIntegrationState));
+  }
+
+  if (m_routerIntegrationTransitDecryptionHasBeenSet) {
+    payload.WithObject("routerIntegrationTransitDecryption", m_routerIntegrationTransitDecryption.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

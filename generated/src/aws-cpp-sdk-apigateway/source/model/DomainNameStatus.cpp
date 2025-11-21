@@ -20,6 +20,7 @@ static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int PENDING_CERTIFICATE_REIMPORT_HASH = HashingUtils::HashString("PENDING_CERTIFICATE_REIMPORT");
 static const int PENDING_OWNERSHIP_VERIFICATION_HASH = HashingUtils::HashString("PENDING_OWNERSHIP_VERIFICATION");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 DomainNameStatus GetDomainNameStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ DomainNameStatus GetDomainNameStatusForName(const Aws::String& name) {
     return DomainNameStatus::PENDING_CERTIFICATE_REIMPORT;
   } else if (hashCode == PENDING_OWNERSHIP_VERIFICATION_HASH) {
     return DomainNameStatus::PENDING_OWNERSHIP_VERIFICATION;
+  } else if (hashCode == FAILED_HASH) {
+    return DomainNameStatus::FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForDomainNameStatus(DomainNameStatus enumValue) {
       return "PENDING_CERTIFICATE_REIMPORT";
     case DomainNameStatus::PENDING_OWNERSHIP_VERIFICATION:
       return "PENDING_OWNERSHIP_VERIFICATION";
+    case DomainNameStatus::FAILED:
+      return "FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

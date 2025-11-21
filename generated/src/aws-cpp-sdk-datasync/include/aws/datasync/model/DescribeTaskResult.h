@@ -61,7 +61,7 @@ class DescribeTaskResult {
   ///@{
   /**
    * <p>The status of your task. For information about what each status means, see <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task
    * statuses</a>.</p>
    */
   inline TaskStatus GetStatus() const { return m_status; }

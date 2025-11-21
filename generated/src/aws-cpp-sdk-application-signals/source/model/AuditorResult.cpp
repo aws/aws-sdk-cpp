@@ -26,6 +26,13 @@ AuditorResult& AuditorResult::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Data")) {
+    Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
+    for (auto& dataItem : dataJsonMap) {
+      m_data[dataItem.first] = dataItem.second.AsString();
+    }
+    m_dataHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Severity")) {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("Severity"));
     m_severityHasBeenSet = true;
@@ -42,6 +49,14 @@ JsonValue AuditorResult::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("Description", m_description);
+  }
+
+  if (m_dataHasBeenSet) {
+    JsonValue dataJsonMap;
+    for (auto& dataItem : m_data) {
+      dataJsonMap.WithString(dataItem.first, dataItem.second);
+    }
+    payload.WithObject("Data", std::move(dataJsonMap));
   }
 
   if (m_severityHasBeenSet) {

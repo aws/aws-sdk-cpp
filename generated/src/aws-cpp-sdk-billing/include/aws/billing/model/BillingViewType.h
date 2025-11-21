@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Billing {
 namespace Model {
-enum class BillingViewType { NOT_SET, PRIMARY, BILLING_GROUP, CUSTOM };
+enum class BillingViewType { NOT_SET, PRIMARY, BILLING_GROUP, CUSTOM, BILLING_TRANSFER, BILLING_TRANSFER_SHOWBACK };
 
 namespace BillingViewTypeMapper {
 AWS_BILLING_API BillingViewType GetBillingViewTypeForName(const Aws::String& name);

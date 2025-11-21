@@ -32,8 +32,9 @@ class ListGroupingAttributeDefinitionsResult {
 
   ///@{
   /**
-   * <p>An array of available grouping attribute definitions that can be used to
-   * create grouping configurations.</p>
+   * <p>An array of structures, where each structure contains information about one
+   * grouping attribute definition, including the grouping name, source keys, and
+   * default values.</p>
    */
   inline const Aws::Vector<GroupingAttributeDefinition>& GetGroupingAttributeDefinitions() const { return m_groupingAttributeDefinitions; }
   template <typename GroupingAttributeDefinitionsT = Aws::Vector<GroupingAttributeDefinition>>
@@ -56,8 +57,8 @@ class ListGroupingAttributeDefinitionsResult {
 
   ///@{
   /**
-   * <p>The timestamp when the grouping attribute definitions were last updated.
-   * Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+   * <p>The timestamp when the grouping configuration was last updated. When used in
+   * a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   template <typename UpdatedAtT = Aws::Utils::DateTime>
@@ -74,9 +75,8 @@ class ListGroupingAttributeDefinitionsResult {
 
   ///@{
   /**
-   * <p>The token to use for retrieving the next page of results. This value is
-   * present only if there are more results available than were returned in the
-   * current response.</p>
+   * <p>Include this value in your next use of this API to get the next set of
+   * grouping attribute definitions.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

@@ -27,6 +27,8 @@
 #include <aws/sagemaker/model/BatchAddClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
+#include <aws/sagemaker/model/BatchRebootClusterNodesResult.h>
+#include <aws/sagemaker/model/BatchReplaceClusterNodesResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
 #include <aws/sagemaker/model/CreateAppImageConfigResult.h>
@@ -440,6 +442,8 @@ class AttachClusterNodeVolumeRequest;
 class BatchAddClusterNodesRequest;
 class BatchDeleteClusterNodesRequest;
 class BatchDescribeModelPackageRequest;
+class BatchRebootClusterNodesRequest;
+class BatchReplaceClusterNodesRequest;
 class CreateActionRequest;
 class CreateAlgorithmRequest;
 class CreateAppRequest;
@@ -814,6 +818,8 @@ typedef Aws::Utils::Outcome<AttachClusterNodeVolumeResult, SageMakerError> Attac
 typedef Aws::Utils::Outcome<BatchAddClusterNodesResult, SageMakerError> BatchAddClusterNodesOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> BatchDeleteClusterNodesOutcome;
 typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
+typedef Aws::Utils::Outcome<BatchRebootClusterNodesResult, SageMakerError> BatchRebootClusterNodesOutcome;
+typedef Aws::Utils::Outcome<BatchReplaceClusterNodesResult, SageMakerError> BatchReplaceClusterNodesOutcome;
 typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
 typedef Aws::Utils::Outcome<CreateAlgorithmResult, SageMakerError> CreateAlgorithmOutcome;
 typedef Aws::Utils::Outcome<CreateAppResult, SageMakerError> CreateAppOutcome;
@@ -1190,6 +1196,8 @@ typedef std::future<AttachClusterNodeVolumeOutcome> AttachClusterNodeVolumeOutco
 typedef std::future<BatchAddClusterNodesOutcome> BatchAddClusterNodesOutcomeCallable;
 typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutcomeCallable;
 typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
+typedef std::future<BatchRebootClusterNodesOutcome> BatchRebootClusterNodesOutcomeCallable;
+typedef std::future<BatchReplaceClusterNodesOutcome> BatchReplaceClusterNodesOutcomeCallable;
 typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
 typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
@@ -1581,6 +1589,12 @@ typedef std::function<void(const SageMakerClient*, const Model::BatchDeleteClust
 typedef std::function<void(const SageMakerClient*, const Model::BatchDescribeModelPackageRequest&,
                            const Model::BatchDescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDescribeModelPackageResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::BatchRebootClusterNodesRequest&,
+                           const Model::BatchRebootClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchRebootClusterNodesResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::BatchReplaceClusterNodesRequest&,
+                           const Model::BatchReplaceClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchReplaceClusterNodesResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateActionResponseReceivedHandler;

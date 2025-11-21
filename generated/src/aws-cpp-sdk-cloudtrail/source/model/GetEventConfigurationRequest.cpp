@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String GetEventConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_trailNameHasBeenSet) {
+    payload.WithString("TrailName", m_trailName);
+  }
+
   if (m_eventDataStoreHasBeenSet) {
     payload.WithString("EventDataStore", m_eventDataStore);
   }

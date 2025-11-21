@@ -8,6 +8,7 @@
 #include <aws/bcm-pricing-calculator/model/BillEstimateCostSummary.h>
 #include <aws/bcm-pricing-calculator/model/BillEstimateStatus.h>
 #include <aws/bcm-pricing-calculator/model/BillInterval.h>
+#include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -177,6 +178,60 @@ class CreateBillEstimateResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The setting for the reserved instance and savings plan group sharing used in
+   * this estimate.</p>
+   */
+  inline GroupSharingPreferenceEnum GetGroupSharingPreference() const { return m_groupSharingPreference; }
+  inline void SetGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    m_groupSharingPreferenceHasBeenSet = true;
+    m_groupSharingPreference = value;
+  }
+  inline CreateBillEstimateResult& WithGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    SetGroupSharingPreference(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The arn of the cost category used in the reserved and prioritized group
+   * sharing.</p>
+   */
+  inline const Aws::String& GetCostCategoryGroupSharingPreferenceArn() const { return m_costCategoryGroupSharingPreferenceArn; }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  void SetCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+    m_costCategoryGroupSharingPreferenceArn = std::forward<CostCategoryGroupSharingPreferenceArnT>(value);
+  }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  CreateBillEstimateResult& WithCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    SetCostCategoryGroupSharingPreferenceArn(std::forward<CostCategoryGroupSharingPreferenceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Timestamp of the effective date of the cost category used in the group
+   * sharing settings.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCostCategoryGroupSharingPreferenceEffectiveDate() const {
+    return m_costCategoryGroupSharingPreferenceEffectiveDate;
+  }
+  template <typename CostCategoryGroupSharingPreferenceEffectiveDateT = Aws::Utils::DateTime>
+  void SetCostCategoryGroupSharingPreferenceEffectiveDate(CostCategoryGroupSharingPreferenceEffectiveDateT&& value) {
+    m_costCategoryGroupSharingPreferenceEffectiveDateHasBeenSet = true;
+    m_costCategoryGroupSharingPreferenceEffectiveDate = std::forward<CostCategoryGroupSharingPreferenceEffectiveDateT>(value);
+  }
+  template <typename CostCategoryGroupSharingPreferenceEffectiveDateT = Aws::Utils::DateTime>
+  CreateBillEstimateResult& WithCostCategoryGroupSharingPreferenceEffectiveDate(CostCategoryGroupSharingPreferenceEffectiveDateT&& value) {
+    SetCostCategoryGroupSharingPreferenceEffectiveDate(std::forward<CostCategoryGroupSharingPreferenceEffectiveDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -214,6 +269,15 @@ class CreateBillEstimateResult {
 
   Aws::Utils::DateTime m_expiresAt{};
   bool m_expiresAtHasBeenSet = false;
+
+  GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
+  bool m_groupSharingPreferenceHasBeenSet = false;
+
+  Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
+
+  Aws::Utils::DateTime m_costCategoryGroupSharingPreferenceEffectiveDate{};
+  bool m_costCategoryGroupSharingPreferenceEffectiveDateHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

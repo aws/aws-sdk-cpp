@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/AuditFinding.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -30,8 +31,47 @@ class ListAuditFindingsResult {
 
   ///@{
   /**
-   * <p>An array of audit findings that match the specified criteria. Each finding
-   * includes details about the issue, affected resources, and auditor results.</p>
+   * <p>The start of the time period that the returned audit findings apply to. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code> </p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  ListAuditFindingsResult& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The end of the time period that the returned audit findings apply to. When
+   * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+   * example, <code>1698778057</code> </p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  ListAuditFindingsResult& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of structures, where each structure contains information about one
+   * audit finding, including the auditor results, severity, and associated metric
+   * and dependency graphs.</p>
    */
   inline const Aws::Vector<AuditFinding>& GetAuditFindings() const { return m_auditFindings; }
   template <typename AuditFindingsT = Aws::Vector<AuditFinding>>
@@ -54,9 +94,8 @@ class ListAuditFindingsResult {
 
   ///@{
   /**
-   * <p>The token to use for retrieving the next page of results. This value is
-   * present only if there are more results available than were returned in the
-   * current response.</p>
+   * <p>Include this value in your next use of this API to get the next set of audit
+   * findings.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
@@ -86,6 +125,12 @@ class ListAuditFindingsResult {
   }
   ///@}
  private:
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_endTime{};
+  bool m_endTimeHasBeenSet = false;
+
   Aws::Vector<AuditFinding> m_auditFindings;
   bool m_auditFindingsHasBeenSet = false;
 

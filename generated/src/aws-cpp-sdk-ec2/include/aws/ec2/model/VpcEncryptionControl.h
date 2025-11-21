@@ -24,6 +24,15 @@ class XmlNode;
 namespace EC2 {
 namespace Model {
 
+/**
+ * <p>Describes the configuration and state of VPC encryption controls.</p> <p>For
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+ * VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcEncryptionControl">AWS
+ * API Reference</a></p>
+ */
 class VpcEncryptionControl {
  public:
   AWS_EC2_API VpcEncryptionControl() = default;
@@ -34,7 +43,9 @@ class VpcEncryptionControl {
   AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
   ///@{
-
+  /**
+   * <p>The ID of the VPC associated with the encryption control configuration.</p>
+   */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
   inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
   template <typename VpcIdT = Aws::String>
@@ -50,7 +61,9 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The ID of the VPC Encryption Control configuration.</p>
+   */
   inline const Aws::String& GetVpcEncryptionControlId() const { return m_vpcEncryptionControlId; }
   inline bool VpcEncryptionControlIdHasBeenSet() const { return m_vpcEncryptionControlIdHasBeenSet; }
   template <typename VpcEncryptionControlIdT = Aws::String>
@@ -66,7 +79,9 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The encryption mode for the VPC Encryption Control configuration.</p>
+   */
   inline VpcEncryptionControlMode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
   inline void SetMode(VpcEncryptionControlMode value) {
@@ -80,7 +95,9 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The current state of the VPC Encryption Control configuration.</p>
+   */
   inline VpcEncryptionControlState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   inline void SetState(VpcEncryptionControlState value) {
@@ -94,7 +111,10 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A message providing additional information about the encryption control
+   * state.</p>
+   */
   inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
   inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
   template <typename StateMessageT = Aws::String>
@@ -110,7 +130,10 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Information about resource exclusions for the VPC Encryption Control
+   * configuration.</p>
+   */
   inline const VpcEncryptionControlExclusions& GetResourceExclusions() const { return m_resourceExclusions; }
   inline bool ResourceExclusionsHasBeenSet() const { return m_resourceExclusionsHasBeenSet; }
   template <typename ResourceExclusionsT = VpcEncryptionControlExclusions>
@@ -126,7 +149,9 @@ class VpcEncryptionControl {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The tags assigned to the VPC Encryption Control configuration.</p>
+   */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Vector<Tag>>

@@ -7,6 +7,8 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/Message.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
+#include <aws/bedrock-runtime/model/ToolConfiguration.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -85,12 +87,57 @@ class ConverseTokensRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The toolConfig of Converse input request to count tokens for. Configuration
+   * information for the tools that the model can use when generating a response.</p>
+   */
+  inline const ToolConfiguration& GetToolConfig() const { return m_toolConfig; }
+  inline bool ToolConfigHasBeenSet() const { return m_toolConfigHasBeenSet; }
+  template <typename ToolConfigT = ToolConfiguration>
+  void SetToolConfig(ToolConfigT&& value) {
+    m_toolConfigHasBeenSet = true;
+    m_toolConfig = std::forward<ToolConfigT>(value);
+  }
+  template <typename ToolConfigT = ToolConfiguration>
+  ConverseTokensRequest& WithToolConfig(ToolConfigT&& value) {
+    SetToolConfig(std::forward<ToolConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The additionalModelRequestFields of Converse input request to count tokens
+   * for. Use this field when you want to pass additional parameters that the model
+   * supports.</p>
+   */
+  inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
+  inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+  template <typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+  void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) {
+    m_additionalModelRequestFieldsHasBeenSet = true;
+    m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value);
+  }
+  template <typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+  ConverseTokensRequest& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) {
+    SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Message> m_messages;
   bool m_messagesHasBeenSet = false;
 
   Aws::Vector<SystemContentBlock> m_system;
   bool m_systemHasBeenSet = false;
+
+  ToolConfiguration m_toolConfig;
+  bool m_toolConfigHasBeenSet = false;
+
+  Aws::Utils::Document m_additionalModelRequestFields;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 
 }  // namespace Model

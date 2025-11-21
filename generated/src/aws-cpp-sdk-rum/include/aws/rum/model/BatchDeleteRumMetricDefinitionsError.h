@@ -35,6 +35,24 @@ class BatchDeleteRumMetricDefinitionsError {
 
   ///@{
   /**
+   * <p>The ID of the metric definition that caused this error.</p>
+   */
+  inline const Aws::String& GetMetricDefinitionId() const { return m_metricDefinitionId; }
+  inline bool MetricDefinitionIdHasBeenSet() const { return m_metricDefinitionIdHasBeenSet; }
+  template <typename MetricDefinitionIdT = Aws::String>
+  void SetMetricDefinitionId(MetricDefinitionIdT&& value) {
+    m_metricDefinitionIdHasBeenSet = true;
+    m_metricDefinitionId = std::forward<MetricDefinitionIdT>(value);
+  }
+  template <typename MetricDefinitionIdT = Aws::String>
+  BatchDeleteRumMetricDefinitionsError& WithMetricDefinitionId(MetricDefinitionIdT&& value) {
+    SetMetricDefinitionId(std::forward<MetricDefinitionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error code.</p>
    */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
@@ -68,33 +86,15 @@ class BatchDeleteRumMetricDefinitionsError {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the metric definition that caused this error.</p>
-   */
-  inline const Aws::String& GetMetricDefinitionId() const { return m_metricDefinitionId; }
-  inline bool MetricDefinitionIdHasBeenSet() const { return m_metricDefinitionIdHasBeenSet; }
-  template <typename MetricDefinitionIdT = Aws::String>
-  void SetMetricDefinitionId(MetricDefinitionIdT&& value) {
-    m_metricDefinitionIdHasBeenSet = true;
-    m_metricDefinitionId = std::forward<MetricDefinitionIdT>(value);
-  }
-  template <typename MetricDefinitionIdT = Aws::String>
-  BatchDeleteRumMetricDefinitionsError& WithMetricDefinitionId(MetricDefinitionIdT&& value) {
-    SetMetricDefinitionId(std::forward<MetricDefinitionIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_metricDefinitionId;
+  bool m_metricDefinitionIdHasBeenSet = false;
+
   Aws::String m_errorCode;
   bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
   bool m_errorMessageHasBeenSet = false;
-
-  Aws::String m_metricDefinitionId;
-  bool m_metricDefinitionIdHasBeenSet = false;
 };
 
 }  // namespace Model

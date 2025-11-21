@@ -26,12 +26,21 @@
 #include <aws/mediaconnect/model/AddFlowOutputsResult.h>
 #include <aws/mediaconnect/model/AddFlowSourcesResult.h>
 #include <aws/mediaconnect/model/AddFlowVpcInterfacesResult.h>
+#include <aws/mediaconnect/model/BatchGetRouterInputResult.h>
+#include <aws/mediaconnect/model/BatchGetRouterNetworkInterfaceResult.h>
+#include <aws/mediaconnect/model/BatchGetRouterOutputResult.h>
 #include <aws/mediaconnect/model/CreateBridgeResult.h>
 #include <aws/mediaconnect/model/CreateFlowResult.h>
 #include <aws/mediaconnect/model/CreateGatewayResult.h>
+#include <aws/mediaconnect/model/CreateRouterInputResult.h>
+#include <aws/mediaconnect/model/CreateRouterNetworkInterfaceResult.h>
+#include <aws/mediaconnect/model/CreateRouterOutputResult.h>
 #include <aws/mediaconnect/model/DeleteBridgeResult.h>
 #include <aws/mediaconnect/model/DeleteFlowResult.h>
 #include <aws/mediaconnect/model/DeleteGatewayResult.h>
+#include <aws/mediaconnect/model/DeleteRouterInputResult.h>
+#include <aws/mediaconnect/model/DeleteRouterNetworkInterfaceResult.h>
+#include <aws/mediaconnect/model/DeleteRouterOutputResult.h>
 #include <aws/mediaconnect/model/DeregisterGatewayInstanceResult.h>
 #include <aws/mediaconnect/model/DescribeBridgeResult.h>
 #include <aws/mediaconnect/model/DescribeFlowResult.h>
@@ -41,6 +50,11 @@
 #include <aws/mediaconnect/model/DescribeGatewayResult.h>
 #include <aws/mediaconnect/model/DescribeOfferingResult.h>
 #include <aws/mediaconnect/model/DescribeReservationResult.h>
+#include <aws/mediaconnect/model/GetRouterInputResult.h>
+#include <aws/mediaconnect/model/GetRouterInputSourceMetadataResult.h>
+#include <aws/mediaconnect/model/GetRouterInputThumbnailResult.h>
+#include <aws/mediaconnect/model/GetRouterNetworkInterfaceResult.h>
+#include <aws/mediaconnect/model/GetRouterOutputResult.h>
 #include <aws/mediaconnect/model/GrantFlowEntitlementsResult.h>
 #include <aws/mediaconnect/model/ListBridgesRequest.h>
 #include <aws/mediaconnect/model/ListBridgesResult.h>
@@ -56,6 +70,13 @@
 #include <aws/mediaconnect/model/ListOfferingsResult.h>
 #include <aws/mediaconnect/model/ListReservationsRequest.h>
 #include <aws/mediaconnect/model/ListReservationsResult.h>
+#include <aws/mediaconnect/model/ListRouterInputsRequest.h>
+#include <aws/mediaconnect/model/ListRouterInputsResult.h>
+#include <aws/mediaconnect/model/ListRouterNetworkInterfacesRequest.h>
+#include <aws/mediaconnect/model/ListRouterNetworkInterfacesResult.h>
+#include <aws/mediaconnect/model/ListRouterOutputsRequest.h>
+#include <aws/mediaconnect/model/ListRouterOutputsResult.h>
+#include <aws/mediaconnect/model/ListTagsForGlobalResourceResult.h>
 #include <aws/mediaconnect/model/ListTagsForResourceResult.h>
 #include <aws/mediaconnect/model/PurchaseOfferingResult.h>
 #include <aws/mediaconnect/model/RemoveBridgeOutputResult.h>
@@ -64,9 +85,16 @@
 #include <aws/mediaconnect/model/RemoveFlowOutputResult.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceResult.h>
 #include <aws/mediaconnect/model/RemoveFlowVpcInterfaceResult.h>
+#include <aws/mediaconnect/model/RestartRouterInputResult.h>
+#include <aws/mediaconnect/model/RestartRouterOutputResult.h>
 #include <aws/mediaconnect/model/RevokeFlowEntitlementResult.h>
 #include <aws/mediaconnect/model/StartFlowResult.h>
+#include <aws/mediaconnect/model/StartRouterInputResult.h>
+#include <aws/mediaconnect/model/StartRouterOutputResult.h>
 #include <aws/mediaconnect/model/StopFlowResult.h>
+#include <aws/mediaconnect/model/StopRouterInputResult.h>
+#include <aws/mediaconnect/model/StopRouterOutputResult.h>
+#include <aws/mediaconnect/model/TakeRouterInputResult.h>
 #include <aws/mediaconnect/model/UpdateBridgeOutputResult.h>
 #include <aws/mediaconnect/model/UpdateBridgeResult.h>
 #include <aws/mediaconnect/model/UpdateBridgeSourceResult.h>
@@ -77,6 +105,9 @@
 #include <aws/mediaconnect/model/UpdateFlowResult.h>
 #include <aws/mediaconnect/model/UpdateFlowSourceResult.h>
 #include <aws/mediaconnect/model/UpdateGatewayInstanceResult.h>
+#include <aws/mediaconnect/model/UpdateRouterInputResult.h>
+#include <aws/mediaconnect/model/UpdateRouterNetworkInterfaceResult.h>
+#include <aws/mediaconnect/model/UpdateRouterOutputResult.h>
 /* End of service model headers required in MediaConnectClient header */
 
 namespace Aws {
@@ -116,12 +147,21 @@ class AddFlowMediaStreamsRequest;
 class AddFlowOutputsRequest;
 class AddFlowSourcesRequest;
 class AddFlowVpcInterfacesRequest;
+class BatchGetRouterInputRequest;
+class BatchGetRouterNetworkInterfaceRequest;
+class BatchGetRouterOutputRequest;
 class CreateBridgeRequest;
 class CreateFlowRequest;
 class CreateGatewayRequest;
+class CreateRouterInputRequest;
+class CreateRouterNetworkInterfaceRequest;
+class CreateRouterOutputRequest;
 class DeleteBridgeRequest;
 class DeleteFlowRequest;
 class DeleteGatewayRequest;
+class DeleteRouterInputRequest;
+class DeleteRouterNetworkInterfaceRequest;
+class DeleteRouterOutputRequest;
 class DeregisterGatewayInstanceRequest;
 class DescribeBridgeRequest;
 class DescribeFlowRequest;
@@ -131,6 +171,11 @@ class DescribeGatewayRequest;
 class DescribeGatewayInstanceRequest;
 class DescribeOfferingRequest;
 class DescribeReservationRequest;
+class GetRouterInputRequest;
+class GetRouterInputSourceMetadataRequest;
+class GetRouterInputThumbnailRequest;
+class GetRouterNetworkInterfaceRequest;
+class GetRouterOutputRequest;
 class GrantFlowEntitlementsRequest;
 class ListBridgesRequest;
 class ListEntitlementsRequest;
@@ -139,6 +184,10 @@ class ListGatewayInstancesRequest;
 class ListGatewaysRequest;
 class ListOfferingsRequest;
 class ListReservationsRequest;
+class ListRouterInputsRequest;
+class ListRouterNetworkInterfacesRequest;
+class ListRouterOutputsRequest;
+class ListTagsForGlobalResourceRequest;
 class ListTagsForResourceRequest;
 class PurchaseOfferingRequest;
 class RemoveBridgeOutputRequest;
@@ -147,10 +196,19 @@ class RemoveFlowMediaStreamRequest;
 class RemoveFlowOutputRequest;
 class RemoveFlowSourceRequest;
 class RemoveFlowVpcInterfaceRequest;
+class RestartRouterInputRequest;
+class RestartRouterOutputRequest;
 class RevokeFlowEntitlementRequest;
 class StartFlowRequest;
+class StartRouterInputRequest;
+class StartRouterOutputRequest;
 class StopFlowRequest;
+class StopRouterInputRequest;
+class StopRouterOutputRequest;
+class TagGlobalResourceRequest;
 class TagResourceRequest;
+class TakeRouterInputRequest;
+class UntagGlobalResourceRequest;
 class UntagResourceRequest;
 class UpdateBridgeRequest;
 class UpdateBridgeOutputRequest;
@@ -162,6 +220,9 @@ class UpdateFlowMediaStreamRequest;
 class UpdateFlowOutputRequest;
 class UpdateFlowSourceRequest;
 class UpdateGatewayInstanceRequest;
+class UpdateRouterInputRequest;
+class UpdateRouterNetworkInterfaceRequest;
+class UpdateRouterOutputRequest;
 /* End of service model forward declarations required in MediaConnectClient header */
 
 /* Service model Outcome class definitions */
@@ -171,12 +232,21 @@ typedef Aws::Utils::Outcome<AddFlowMediaStreamsResult, MediaConnectError> AddFlo
 typedef Aws::Utils::Outcome<AddFlowOutputsResult, MediaConnectError> AddFlowOutputsOutcome;
 typedef Aws::Utils::Outcome<AddFlowSourcesResult, MediaConnectError> AddFlowSourcesOutcome;
 typedef Aws::Utils::Outcome<AddFlowVpcInterfacesResult, MediaConnectError> AddFlowVpcInterfacesOutcome;
+typedef Aws::Utils::Outcome<BatchGetRouterInputResult, MediaConnectError> BatchGetRouterInputOutcome;
+typedef Aws::Utils::Outcome<BatchGetRouterNetworkInterfaceResult, MediaConnectError> BatchGetRouterNetworkInterfaceOutcome;
+typedef Aws::Utils::Outcome<BatchGetRouterOutputResult, MediaConnectError> BatchGetRouterOutputOutcome;
 typedef Aws::Utils::Outcome<CreateBridgeResult, MediaConnectError> CreateBridgeOutcome;
 typedef Aws::Utils::Outcome<CreateFlowResult, MediaConnectError> CreateFlowOutcome;
 typedef Aws::Utils::Outcome<CreateGatewayResult, MediaConnectError> CreateGatewayOutcome;
+typedef Aws::Utils::Outcome<CreateRouterInputResult, MediaConnectError> CreateRouterInputOutcome;
+typedef Aws::Utils::Outcome<CreateRouterNetworkInterfaceResult, MediaConnectError> CreateRouterNetworkInterfaceOutcome;
+typedef Aws::Utils::Outcome<CreateRouterOutputResult, MediaConnectError> CreateRouterOutputOutcome;
 typedef Aws::Utils::Outcome<DeleteBridgeResult, MediaConnectError> DeleteBridgeOutcome;
 typedef Aws::Utils::Outcome<DeleteFlowResult, MediaConnectError> DeleteFlowOutcome;
 typedef Aws::Utils::Outcome<DeleteGatewayResult, MediaConnectError> DeleteGatewayOutcome;
+typedef Aws::Utils::Outcome<DeleteRouterInputResult, MediaConnectError> DeleteRouterInputOutcome;
+typedef Aws::Utils::Outcome<DeleteRouterNetworkInterfaceResult, MediaConnectError> DeleteRouterNetworkInterfaceOutcome;
+typedef Aws::Utils::Outcome<DeleteRouterOutputResult, MediaConnectError> DeleteRouterOutputOutcome;
 typedef Aws::Utils::Outcome<DeregisterGatewayInstanceResult, MediaConnectError> DeregisterGatewayInstanceOutcome;
 typedef Aws::Utils::Outcome<DescribeBridgeResult, MediaConnectError> DescribeBridgeOutcome;
 typedef Aws::Utils::Outcome<DescribeFlowResult, MediaConnectError> DescribeFlowOutcome;
@@ -186,6 +256,11 @@ typedef Aws::Utils::Outcome<DescribeGatewayResult, MediaConnectError> DescribeGa
 typedef Aws::Utils::Outcome<DescribeGatewayInstanceResult, MediaConnectError> DescribeGatewayInstanceOutcome;
 typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaConnectError> DescribeOfferingOutcome;
 typedef Aws::Utils::Outcome<DescribeReservationResult, MediaConnectError> DescribeReservationOutcome;
+typedef Aws::Utils::Outcome<GetRouterInputResult, MediaConnectError> GetRouterInputOutcome;
+typedef Aws::Utils::Outcome<GetRouterInputSourceMetadataResult, MediaConnectError> GetRouterInputSourceMetadataOutcome;
+typedef Aws::Utils::Outcome<GetRouterInputThumbnailResult, MediaConnectError> GetRouterInputThumbnailOutcome;
+typedef Aws::Utils::Outcome<GetRouterNetworkInterfaceResult, MediaConnectError> GetRouterNetworkInterfaceOutcome;
+typedef Aws::Utils::Outcome<GetRouterOutputResult, MediaConnectError> GetRouterOutputOutcome;
 typedef Aws::Utils::Outcome<GrantFlowEntitlementsResult, MediaConnectError> GrantFlowEntitlementsOutcome;
 typedef Aws::Utils::Outcome<ListBridgesResult, MediaConnectError> ListBridgesOutcome;
 typedef Aws::Utils::Outcome<ListEntitlementsResult, MediaConnectError> ListEntitlementsOutcome;
@@ -194,6 +269,10 @@ typedef Aws::Utils::Outcome<ListGatewayInstancesResult, MediaConnectError> ListG
 typedef Aws::Utils::Outcome<ListGatewaysResult, MediaConnectError> ListGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListOfferingsResult, MediaConnectError> ListOfferingsOutcome;
 typedef Aws::Utils::Outcome<ListReservationsResult, MediaConnectError> ListReservationsOutcome;
+typedef Aws::Utils::Outcome<ListRouterInputsResult, MediaConnectError> ListRouterInputsOutcome;
+typedef Aws::Utils::Outcome<ListRouterNetworkInterfacesResult, MediaConnectError> ListRouterNetworkInterfacesOutcome;
+typedef Aws::Utils::Outcome<ListRouterOutputsResult, MediaConnectError> ListRouterOutputsOutcome;
+typedef Aws::Utils::Outcome<ListTagsForGlobalResourceResult, MediaConnectError> ListTagsForGlobalResourceOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConnectError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaConnectError> PurchaseOfferingOutcome;
 typedef Aws::Utils::Outcome<RemoveBridgeOutputResult, MediaConnectError> RemoveBridgeOutputOutcome;
@@ -202,10 +281,19 @@ typedef Aws::Utils::Outcome<RemoveFlowMediaStreamResult, MediaConnectError> Remo
 typedef Aws::Utils::Outcome<RemoveFlowOutputResult, MediaConnectError> RemoveFlowOutputOutcome;
 typedef Aws::Utils::Outcome<RemoveFlowSourceResult, MediaConnectError> RemoveFlowSourceOutcome;
 typedef Aws::Utils::Outcome<RemoveFlowVpcInterfaceResult, MediaConnectError> RemoveFlowVpcInterfaceOutcome;
+typedef Aws::Utils::Outcome<RestartRouterInputResult, MediaConnectError> RestartRouterInputOutcome;
+typedef Aws::Utils::Outcome<RestartRouterOutputResult, MediaConnectError> RestartRouterOutputOutcome;
 typedef Aws::Utils::Outcome<RevokeFlowEntitlementResult, MediaConnectError> RevokeFlowEntitlementOutcome;
 typedef Aws::Utils::Outcome<StartFlowResult, MediaConnectError> StartFlowOutcome;
+typedef Aws::Utils::Outcome<StartRouterInputResult, MediaConnectError> StartRouterInputOutcome;
+typedef Aws::Utils::Outcome<StartRouterOutputResult, MediaConnectError> StartRouterOutputOutcome;
 typedef Aws::Utils::Outcome<StopFlowResult, MediaConnectError> StopFlowOutcome;
+typedef Aws::Utils::Outcome<StopRouterInputResult, MediaConnectError> StopRouterInputOutcome;
+typedef Aws::Utils::Outcome<StopRouterOutputResult, MediaConnectError> StopRouterOutputOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> TagGlobalResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<TakeRouterInputResult, MediaConnectError> TakeRouterInputOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> UntagGlobalResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateBridgeResult, MediaConnectError> UpdateBridgeOutcome;
 typedef Aws::Utils::Outcome<UpdateBridgeOutputResult, MediaConnectError> UpdateBridgeOutputOutcome;
@@ -217,6 +305,9 @@ typedef Aws::Utils::Outcome<UpdateFlowMediaStreamResult, MediaConnectError> Upda
 typedef Aws::Utils::Outcome<UpdateFlowOutputResult, MediaConnectError> UpdateFlowOutputOutcome;
 typedef Aws::Utils::Outcome<UpdateFlowSourceResult, MediaConnectError> UpdateFlowSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateGatewayInstanceResult, MediaConnectError> UpdateGatewayInstanceOutcome;
+typedef Aws::Utils::Outcome<UpdateRouterInputResult, MediaConnectError> UpdateRouterInputOutcome;
+typedef Aws::Utils::Outcome<UpdateRouterNetworkInterfaceResult, MediaConnectError> UpdateRouterNetworkInterfaceOutcome;
+typedef Aws::Utils::Outcome<UpdateRouterOutputResult, MediaConnectError> UpdateRouterOutputOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -226,12 +317,21 @@ typedef std::future<AddFlowMediaStreamsOutcome> AddFlowMediaStreamsOutcomeCallab
 typedef std::future<AddFlowOutputsOutcome> AddFlowOutputsOutcomeCallable;
 typedef std::future<AddFlowSourcesOutcome> AddFlowSourcesOutcomeCallable;
 typedef std::future<AddFlowVpcInterfacesOutcome> AddFlowVpcInterfacesOutcomeCallable;
+typedef std::future<BatchGetRouterInputOutcome> BatchGetRouterInputOutcomeCallable;
+typedef std::future<BatchGetRouterNetworkInterfaceOutcome> BatchGetRouterNetworkInterfaceOutcomeCallable;
+typedef std::future<BatchGetRouterOutputOutcome> BatchGetRouterOutputOutcomeCallable;
 typedef std::future<CreateBridgeOutcome> CreateBridgeOutcomeCallable;
 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
 typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
+typedef std::future<CreateRouterInputOutcome> CreateRouterInputOutcomeCallable;
+typedef std::future<CreateRouterNetworkInterfaceOutcome> CreateRouterNetworkInterfaceOutcomeCallable;
+typedef std::future<CreateRouterOutputOutcome> CreateRouterOutputOutcomeCallable;
 typedef std::future<DeleteBridgeOutcome> DeleteBridgeOutcomeCallable;
 typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
 typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
+typedef std::future<DeleteRouterInputOutcome> DeleteRouterInputOutcomeCallable;
+typedef std::future<DeleteRouterNetworkInterfaceOutcome> DeleteRouterNetworkInterfaceOutcomeCallable;
+typedef std::future<DeleteRouterOutputOutcome> DeleteRouterOutputOutcomeCallable;
 typedef std::future<DeregisterGatewayInstanceOutcome> DeregisterGatewayInstanceOutcomeCallable;
 typedef std::future<DescribeBridgeOutcome> DescribeBridgeOutcomeCallable;
 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
@@ -241,6 +341,11 @@ typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
 typedef std::future<DescribeGatewayInstanceOutcome> DescribeGatewayInstanceOutcomeCallable;
 typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
 typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
+typedef std::future<GetRouterInputOutcome> GetRouterInputOutcomeCallable;
+typedef std::future<GetRouterInputSourceMetadataOutcome> GetRouterInputSourceMetadataOutcomeCallable;
+typedef std::future<GetRouterInputThumbnailOutcome> GetRouterInputThumbnailOutcomeCallable;
+typedef std::future<GetRouterNetworkInterfaceOutcome> GetRouterNetworkInterfaceOutcomeCallable;
+typedef std::future<GetRouterOutputOutcome> GetRouterOutputOutcomeCallable;
 typedef std::future<GrantFlowEntitlementsOutcome> GrantFlowEntitlementsOutcomeCallable;
 typedef std::future<ListBridgesOutcome> ListBridgesOutcomeCallable;
 typedef std::future<ListEntitlementsOutcome> ListEntitlementsOutcomeCallable;
@@ -249,6 +354,10 @@ typedef std::future<ListGatewayInstancesOutcome> ListGatewayInstancesOutcomeCall
 typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
 typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
 typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
+typedef std::future<ListRouterInputsOutcome> ListRouterInputsOutcomeCallable;
+typedef std::future<ListRouterNetworkInterfacesOutcome> ListRouterNetworkInterfacesOutcomeCallable;
+typedef std::future<ListRouterOutputsOutcome> ListRouterOutputsOutcomeCallable;
+typedef std::future<ListTagsForGlobalResourceOutcome> ListTagsForGlobalResourceOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
 typedef std::future<RemoveBridgeOutputOutcome> RemoveBridgeOutputOutcomeCallable;
@@ -257,10 +366,19 @@ typedef std::future<RemoveFlowMediaStreamOutcome> RemoveFlowMediaStreamOutcomeCa
 typedef std::future<RemoveFlowOutputOutcome> RemoveFlowOutputOutcomeCallable;
 typedef std::future<RemoveFlowSourceOutcome> RemoveFlowSourceOutcomeCallable;
 typedef std::future<RemoveFlowVpcInterfaceOutcome> RemoveFlowVpcInterfaceOutcomeCallable;
+typedef std::future<RestartRouterInputOutcome> RestartRouterInputOutcomeCallable;
+typedef std::future<RestartRouterOutputOutcome> RestartRouterOutputOutcomeCallable;
 typedef std::future<RevokeFlowEntitlementOutcome> RevokeFlowEntitlementOutcomeCallable;
 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
+typedef std::future<StartRouterInputOutcome> StartRouterInputOutcomeCallable;
+typedef std::future<StartRouterOutputOutcome> StartRouterOutputOutcomeCallable;
 typedef std::future<StopFlowOutcome> StopFlowOutcomeCallable;
+typedef std::future<StopRouterInputOutcome> StopRouterInputOutcomeCallable;
+typedef std::future<StopRouterOutputOutcome> StopRouterOutputOutcomeCallable;
+typedef std::future<TagGlobalResourceOutcome> TagGlobalResourceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<TakeRouterInputOutcome> TakeRouterInputOutcomeCallable;
+typedef std::future<UntagGlobalResourceOutcome> UntagGlobalResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateBridgeOutcome> UpdateBridgeOutcomeCallable;
 typedef std::future<UpdateBridgeOutputOutcome> UpdateBridgeOutputOutcomeCallable;
@@ -272,6 +390,9 @@ typedef std::future<UpdateFlowMediaStreamOutcome> UpdateFlowMediaStreamOutcomeCa
 typedef std::future<UpdateFlowOutputOutcome> UpdateFlowOutputOutcomeCallable;
 typedef std::future<UpdateFlowSourceOutcome> UpdateFlowSourceOutcomeCallable;
 typedef std::future<UpdateGatewayInstanceOutcome> UpdateGatewayInstanceOutcomeCallable;
+typedef std::future<UpdateRouterInputOutcome> UpdateRouterInputOutcomeCallable;
+typedef std::future<UpdateRouterNetworkInterfaceOutcome> UpdateRouterNetworkInterfaceOutcomeCallable;
+typedef std::future<UpdateRouterOutputOutcome> UpdateRouterOutputOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -296,6 +417,16 @@ typedef std::function<void(const MediaConnectClient*, const Model::AddFlowSource
 typedef std::function<void(const MediaConnectClient*, const Model::AddFlowVpcInterfacesRequest&, const Model::AddFlowVpcInterfacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddFlowVpcInterfacesResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::BatchGetRouterInputRequest&, const Model::BatchGetRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::BatchGetRouterNetworkInterfaceRequest&,
+                           const Model::BatchGetRouterNetworkInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetRouterNetworkInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::BatchGetRouterOutputRequest&, const Model::BatchGetRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::CreateBridgeRequest&, const Model::CreateBridgeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBridgeResponseReceivedHandler;
@@ -305,6 +436,16 @@ typedef std::function<void(const MediaConnectClient*, const Model::CreateFlowReq
 typedef std::function<void(const MediaConnectClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateGatewayResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::CreateRouterInputRequest&, const Model::CreateRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::CreateRouterNetworkInterfaceRequest&,
+                           const Model::CreateRouterNetworkInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRouterNetworkInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::CreateRouterOutputRequest&, const Model::CreateRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::DeleteBridgeRequest&, const Model::DeleteBridgeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBridgeResponseReceivedHandler;
@@ -314,6 +455,16 @@ typedef std::function<void(const MediaConnectClient*, const Model::DeleteFlowReq
 typedef std::function<void(const MediaConnectClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteGatewayResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::DeleteRouterInputRequest&, const Model::DeleteRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::DeleteRouterNetworkInterfaceRequest&,
+                           const Model::DeleteRouterNetworkInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRouterNetworkInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::DeleteRouterOutputRequest&, const Model::DeleteRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::DeregisterGatewayInstanceRequest&,
                            const Model::DeregisterGatewayInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeregisterGatewayInstanceResponseReceivedHandler;
@@ -341,6 +492,22 @@ typedef std::function<void(const MediaConnectClient*, const Model::DescribeOffer
 typedef std::function<void(const MediaConnectClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeReservationResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::GetRouterInputRequest&, const Model::GetRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::GetRouterInputSourceMetadataRequest&,
+                           const Model::GetRouterInputSourceMetadataOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRouterInputSourceMetadataResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::GetRouterInputThumbnailRequest&,
+                           const Model::GetRouterInputThumbnailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRouterInputThumbnailResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::GetRouterNetworkInterfaceRequest&,
+                           const Model::GetRouterNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRouterNetworkInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::GetRouterOutputRequest&, const Model::GetRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::GrantFlowEntitlementsRequest&,
                            const Model::GrantFlowEntitlementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GrantFlowEntitlementsResponseReceivedHandler;
@@ -365,6 +532,18 @@ typedef std::function<void(const MediaConnectClient*, const Model::ListOfferings
 typedef std::function<void(const MediaConnectClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListReservationsResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::ListRouterInputsRequest&, const Model::ListRouterInputsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRouterInputsResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::ListRouterNetworkInterfacesRequest&,
+                           const Model::ListRouterNetworkInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRouterNetworkInterfacesResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::ListRouterOutputsRequest&, const Model::ListRouterOutputsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRouterOutputsResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::ListTagsForGlobalResourceRequest&,
+                           const Model::ListTagsForGlobalResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTagsForGlobalResourceResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -389,18 +568,45 @@ typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowSou
 typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowVpcInterfaceRequest&,
                            const Model::RemoveFlowVpcInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RemoveFlowVpcInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::RestartRouterInputRequest&, const Model::RestartRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RestartRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::RestartRouterOutputRequest&, const Model::RestartRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RestartRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::RevokeFlowEntitlementRequest&,
                            const Model::RevokeFlowEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RevokeFlowEntitlementResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::StartFlowRequest&, const Model::StartFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartFlowResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::StartRouterInputRequest&, const Model::StartRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::StartRouterOutputRequest&, const Model::StartRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartRouterOutputResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::StopFlowRequest&, const Model::StopFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopFlowResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::StopRouterInputRequest&, const Model::StopRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::StopRouterOutputRequest&, const Model::StopRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopRouterOutputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::TagGlobalResourceRequest&, const Model::TagGlobalResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TagGlobalResourceResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::TakeRouterInputRequest&, const Model::TakeRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TakeRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::UntagGlobalResourceRequest&, const Model::UntagGlobalResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UntagGlobalResourceResponseReceivedHandler;
 typedef std::function<void(const MediaConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
@@ -434,6 +640,16 @@ typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowSou
 typedef std::function<void(const MediaConnectClient*, const Model::UpdateGatewayInstanceRequest&,
                            const Model::UpdateGatewayInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateGatewayInstanceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::UpdateRouterInputRequest&, const Model::UpdateRouterInputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRouterInputResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::UpdateRouterNetworkInterfaceRequest&,
+                           const Model::UpdateRouterNetworkInterfaceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRouterNetworkInterfaceResponseReceivedHandler;
+typedef std::function<void(const MediaConnectClient*, const Model::UpdateRouterOutputRequest&, const Model::UpdateRouterOutputOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRouterOutputResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace MediaConnect
 }  // namespace Aws

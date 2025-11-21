@@ -408,7 +408,18 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * <p>Deletes a trail. This operation must be called from the Region in which the
    * trail was created. <code>DeleteTrail</code> cannot be called on the shadow
    * trails (replicated trails in other Regions) of a trail that is enabled in all
-   * Regions.</p><p><h3>See Also:</h3>   <a
+   * Regions.</p>  <p> While deleting a CloudTrail trail is an
+   * irreversible action, CloudTrail does not delete log files in the Amazon S3
+   * bucket for that trail, the Amazon S3 bucket itself, or the CloudWatchlog group
+   * to which the trail delivers events. Deleting a multi-Region trail will stop
+   * logging of events in all Amazon Web Services Regions enabled in your Amazon Web
+   * Services account. Deleting a single-Region trail will stop logging of events in
+   * that Region only. It will not stop logging of events in other Regions even if
+   * the trails in those other Regions have identical names to the deleted trail.
+   * </p> <p>For information about account closure and deletion of CloudTrail trails,
+   * see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-account-closure.html">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-account-closure.html</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">AWS
    * API Reference</a></p>
    */
@@ -686,8 +697,9 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieves the current event configuration settings for the specified event
-   * data store, including details about maximum event size and context key selectors
-   * configured for the event data store.</p><p><h3>See Also:</h3>   <a
+   * data store or trail. The response includes maximum event size configuration, the
+   * context key selectors configured for the event data store, and any aggregation
+   * settings configured for the trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">AWS
    * API Reference</a></p>
    */
@@ -810,15 +822,14 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Describes the settings for the Insights event selectors that you configured
    * for your trail or event data store. <code>GetInsightSelectors</code> shows if
-   * CloudTrail Insights event logging is enabled on the trail or event data store,
-   * and if it is, which Insights types are enabled. If you run
-   * <code>GetInsightSelectors</code> on a trail or event data store that does not
-   * have Insights events enabled, the operation throws the exception
-   * <code>InsightNotEnabledException</code> </p> <p>Specify either the
-   * <code>EventDataStore</code> parameter to get Insights event selectors for an
-   * event data store, or the <code>TrailName</code> parameter to the get Insights
-   * event selectors for a trail. You cannot specify these parameters together.</p>
-   * <p>For more information, see <a
+   * CloudTrail Insights logging is enabled and which Insights types are configured
+   * with corresponding event categories. If you run <code>GetInsightSelectors</code>
+   * on a trail or event data store that does not have Insights events enabled, the
+   * operation throws the exception <code>InsightNotEnabledException</code> </p>
+   * <p>Specify either the <code>EventDataStore</code> parameter to get Insights
+   * event selectors for an event data store, or the <code>TrailName</code> parameter
+   * to the get Insights event selectors for a trail. You cannot specify these
+   * parameters together.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
    * with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
@@ -1095,6 +1106,41 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns Insights events generated on a trail that logs data events. You can
+   * list Insights events that occurred in a Region within the last 90 days.</p>
+   * <p>ListInsightsData supports the following Dimensions for Insights events:</p>
+   * <ul> <li> <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event
+   * source</p> </li> </ul> <p>All dimensions are optional. The default number of
+   * results returned is 50, with a maximum of 50 possible. The response includes a
+   * token that you can use to get the next page of results.</p> <p>The rate of
+   * ListInsightsData requests is limited to two per second, per account, per Region.
+   * If this limit is exceeded, a throttling error occurs.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsData">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInsightsDataOutcome ListInsightsData(const Model::ListInsightsDataRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInsightsData that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInsightsDataRequestT = Model::ListInsightsDataRequest>
+  Model::ListInsightsDataOutcomeCallable ListInsightsDataCallable(const ListInsightsDataRequestT& request) const {
+    return SubmitCallable(&CloudTrailClient::ListInsightsData, request);
+  }
+
+  /**
+   * An Async wrapper for ListInsightsData that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListInsightsDataRequestT = Model::ListInsightsDataRequest>
+  void ListInsightsDataAsync(const ListInsightsDataRequestT& request, const ListInsightsDataResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudTrailClient::ListInsightsData, request, handler, context);
+  }
+
+  /**
    * <p>Returns Insights metrics data for trails that have enabled Insights. The
    * request must include the <code>EventSource</code>, <code>EventName</code>, and
    * <code>InsightType</code> parameters.</p> <p>If the <code>InsightType</code> is
@@ -1104,11 +1150,21 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * <ul> <li> <p>Data points with a period of 60 seconds (1-minute) are available
    * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
    * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
-   * period of 3600 seconds (1 hour) are available for 90 days.</p> </li> </ul>
-   * <p>Access to the <code>ListInsightsMetricData</code> API operation is linked to
-   * the <code>cloudtrail:LookupEvents</code> action. To use this operation, you must
-   * have permissions to perform the <code>cloudtrail:LookupEvents</code>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * period of 3600 seconds (1 hour) are available for 90 days.</p> </li> </ul> <p>To
+   * use <code>ListInsightsMetricData</code> operation, you must have the following
+   * permissions:</p> <ul> <li> <p>If <code>ListInsightsMetricData</code> is invoked
+   * with <code>TrailName</code> parameter, access to the
+   * <code>ListInsightsMetricData</code> API operation is linked to the
+   * <code>cloudtrail:LookupEvents</code> action and
+   * <code>cloudtrail:ListInsightsData</code>. To use this operation, you must have
+   * permissions to perform the <code>cloudtrail:LookupEvents</code> and
+   * <code>cloudtrail:ListInsightsData</code> action on the specific trail.</p> </li>
+   * <li> <p>If <code>ListInsightsMetricData</code> is invoked without
+   * <code>TrailName</code> parameter, access to the
+   * <code>ListInsightsMetricData</code> API operation is linked to the
+   * <code>cloudtrail:LookupEvents</code> action only. To use this operation, you
+   * must have permissions to perform the <code>cloudtrail:LookupEvents</code>
+   * action.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">AWS
    * API Reference</a></p>
    */
@@ -1297,20 +1353,21 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the event configuration settings for the specified event data store.
-   * You can update the maximum event size and context key selectors.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates the event configuration settings for the specified event data store
+   * or trail. This operation supports updating the maximum event size, adding or
+   * modifying context key selectors for event data store, and configuring
+   * aggregation settings for the trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">AWS
    * API Reference</a></p>
    */
-  virtual Model::PutEventConfigurationOutcome PutEventConfiguration(const Model::PutEventConfigurationRequest& request) const;
+  virtual Model::PutEventConfigurationOutcome PutEventConfiguration(const Model::PutEventConfigurationRequest& request = {}) const;
 
   /**
    * A Callable wrapper for PutEventConfiguration that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
-  Model::PutEventConfigurationOutcomeCallable PutEventConfigurationCallable(const PutEventConfigurationRequestT& request) const {
+  Model::PutEventConfigurationOutcomeCallable PutEventConfigurationCallable(const PutEventConfigurationRequestT& request = {}) const {
     return SubmitCallable(&CloudTrailClient::PutEventConfiguration, request);
   }
 
@@ -1319,8 +1376,9 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
    * operation has finished.
    */
   template <typename PutEventConfigurationRequestT = Model::PutEventConfigurationRequest>
-  void PutEventConfigurationAsync(const PutEventConfigurationRequestT& request, const PutEventConfigurationResponseReceivedHandler& handler,
-                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void PutEventConfigurationAsync(const PutEventConfigurationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const PutEventConfigurationRequestT& request = {}) const {
     return SubmitAsync(&CloudTrailClient::PutEventConfiguration, request, handler, context);
   }
 
@@ -1397,24 +1455,35 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lets you enable Insights event logging by specifying the Insights selectors
-   * that you want to enable on an existing trail or event data store. You also use
-   * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
-   * an empty list of Insights types. The valid Insights event types are
-   * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p> <p>To
-   * enable Insights on an event data store, you must specify the ARNs (or ID suffix
-   * of the ARNs) for the source event data store (<code>EventDataStore</code>) and
-   * the destination event data store (<code>InsightsDestination</code>). The source
-   * event data store logs management events and enables Insights. The destination
-   * event data store logs Insights events based upon the management event activity
-   * of the source event data store. The source and destination event data stores
-   * must belong to the same Amazon Web Services account.</p> <p>To log Insights
-   * events for a trail, you must specify the name (<code>TrailName</code>) of the
-   * CloudTrail trail for which you want to change or add Insights selectors.</p>
-   * <p>To log CloudTrail Insights events on API call volume, the trail or event data
-   * store must log <code>write</code> management events. To log CloudTrail Insights
-   * events on API error rate, the trail or event data store must log
-   * <code>read</code> or <code>write</code> management events. You can call
+   * <p>Lets you enable Insights event logging on specific event categories by
+   * specifying the Insights selectors that you want to enable on an existing trail
+   * or event data store. You also use <code>PutInsightSelectors</code> to turn off
+   * Insights event logging, by passing an empty list of Insights types. The valid
+   * Insights event types are <code>ApiErrorRateInsight</code> and
+   * <code>ApiCallRateInsight</code>, and valid EventCategories are
+   * <code>Management</code> and <code>Data</code>.</p>  <p> Insights on data
+   * events are not supported on event data stores. For event data stores, you can
+   * only enable Insights on management events. </p>  <p>To enable Insights on
+   * an event data store, you must specify the ARNs (or ID suffix of the ARNs) for
+   * the source event data store (<code>EventDataStore</code>) and the destination
+   * event data store (<code>InsightsDestination</code>). The source event data store
+   * logs management events and enables Insights. The destination event data store
+   * logs Insights events based upon the management event activity of the source
+   * event data store. The source and destination event data stores must belong to
+   * the same Amazon Web Services account.</p> <p>To log Insights events for a trail,
+   * you must specify the name (<code>TrailName</code>) of the CloudTrail trail for
+   * which you want to change or add Insights selectors.</p> <ul> <li> <p> For
+   * Management events Insights: To log CloudTrail Insights on the API call rate, the
+   * trail or event data store must log <code>write</code> management events. To log
+   * CloudTrail Insights on the API error rate, the trail or event data store must
+   * log <code>read</code> or <code>write</code> management events. </p> </li> <li>
+   * <p> For Data events Insights: To log CloudTrail Insights on the API call rate or
+   * API error rate, the trail must log <code>read</code> or <code>write</code> data
+   * events. Data events Insights are not supported on event data store. </p> </li>
+   * </ul> <p>To log CloudTrail Insights events on API call volume, the trail or
+   * event data store must log <code>write</code> management events. To log
+   * CloudTrail Insights events on API error rate, the trail or event data store must
+   * log <code>read</code> or <code>write</code> management events. You can call
    * <code>GetEventSelectors</code> on a trail to check whether the trail logs
    * management events. You can call <code>GetEventDataStore</code> on an event data
    * store to check whether the event data store logs management events.</p> <p>For

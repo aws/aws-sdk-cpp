@@ -59,6 +59,7 @@
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountResult.h>
 #include <aws/guardduty/model/GetMalwareProtectionPlanResult.h>
+#include <aws/guardduty/model/GetMalwareScanResult.h>
 #include <aws/guardduty/model/GetMalwareScanSettingsResult.h>
 #include <aws/guardduty/model/GetMemberDetectorsResult.h>
 #include <aws/guardduty/model/GetMembersResult.h>
@@ -80,6 +81,8 @@
 #include <aws/guardduty/model/ListInvitationsResult.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansResult.h>
+#include <aws/guardduty/model/ListMalwareScansRequest.h>
+#include <aws/guardduty/model/ListMalwareScansResult.h>
 #include <aws/guardduty/model/ListMembersResult.h>
 #include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/guardduty/model/ListOrganizationAdminAccountsResult.h>
@@ -179,6 +182,7 @@ class GetFindingsStatisticsRequest;
 class GetIPSetRequest;
 class GetInvitationsCountRequest;
 class GetMalwareProtectionPlanRequest;
+class GetMalwareScanRequest;
 class GetMalwareScanSettingsRequest;
 class GetMemberDetectorsRequest;
 class GetMembersRequest;
@@ -196,6 +200,7 @@ class ListFindingsRequest;
 class ListIPSetsRequest;
 class ListInvitationsRequest;
 class ListMalwareProtectionPlansRequest;
+class ListMalwareScansRequest;
 class ListMembersRequest;
 class ListOrganizationAdminAccountsRequest;
 class ListPublishingDestinationsRequest;
@@ -264,6 +269,7 @@ typedef Aws::Utils::Outcome<GetFindingsStatisticsResult, GuardDutyError> GetFind
 typedef Aws::Utils::Outcome<GetIPSetResult, GuardDutyError> GetIPSetOutcome;
 typedef Aws::Utils::Outcome<GetInvitationsCountResult, GuardDutyError> GetInvitationsCountOutcome;
 typedef Aws::Utils::Outcome<GetMalwareProtectionPlanResult, GuardDutyError> GetMalwareProtectionPlanOutcome;
+typedef Aws::Utils::Outcome<GetMalwareScanResult, GuardDutyError> GetMalwareScanOutcome;
 typedef Aws::Utils::Outcome<GetMalwareScanSettingsResult, GuardDutyError> GetMalwareScanSettingsOutcome;
 typedef Aws::Utils::Outcome<GetMemberDetectorsResult, GuardDutyError> GetMemberDetectorsOutcome;
 typedef Aws::Utils::Outcome<GetMembersResult, GuardDutyError> GetMembersOutcome;
@@ -281,6 +287,7 @@ typedef Aws::Utils::Outcome<ListFindingsResult, GuardDutyError> ListFindingsOutc
 typedef Aws::Utils::Outcome<ListIPSetsResult, GuardDutyError> ListIPSetsOutcome;
 typedef Aws::Utils::Outcome<ListInvitationsResult, GuardDutyError> ListInvitationsOutcome;
 typedef Aws::Utils::Outcome<ListMalwareProtectionPlansResult, GuardDutyError> ListMalwareProtectionPlansOutcome;
+typedef Aws::Utils::Outcome<ListMalwareScansResult, GuardDutyError> ListMalwareScansOutcome;
 typedef Aws::Utils::Outcome<ListMembersResult, GuardDutyError> ListMembersOutcome;
 typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, GuardDutyError> ListOrganizationAdminAccountsOutcome;
 typedef Aws::Utils::Outcome<ListPublishingDestinationsResult, GuardDutyError> ListPublishingDestinationsOutcome;
@@ -349,6 +356,7 @@ typedef std::future<GetFindingsStatisticsOutcome> GetFindingsStatisticsOutcomeCa
 typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
 typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
 typedef std::future<GetMalwareProtectionPlanOutcome> GetMalwareProtectionPlanOutcomeCallable;
+typedef std::future<GetMalwareScanOutcome> GetMalwareScanOutcomeCallable;
 typedef std::future<GetMalwareScanSettingsOutcome> GetMalwareScanSettingsOutcomeCallable;
 typedef std::future<GetMemberDetectorsOutcome> GetMemberDetectorsOutcomeCallable;
 typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
@@ -366,6 +374,7 @@ typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
 typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
 typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
 typedef std::future<ListMalwareProtectionPlansOutcome> ListMalwareProtectionPlansOutcomeCallable;
+typedef std::future<ListMalwareScansOutcome> ListMalwareScansOutcomeCallable;
 typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
 typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
 typedef std::future<ListPublishingDestinationsOutcome> ListPublishingDestinationsOutcomeCallable;
@@ -521,6 +530,9 @@ typedef std::function<void(const GuardDutyClient*, const Model::GetInvitationsCo
 typedef std::function<void(const GuardDutyClient*, const Model::GetMalwareProtectionPlanRequest&,
                            const Model::GetMalwareProtectionPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMalwareProtectionPlanResponseReceivedHandler;
+typedef std::function<void(const GuardDutyClient*, const Model::GetMalwareScanRequest&, const Model::GetMalwareScanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMalwareScanResponseReceivedHandler;
 typedef std::function<void(const GuardDutyClient*, const Model::GetMalwareScanSettingsRequest&, const Model::GetMalwareScanSettingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMalwareScanSettingsResponseReceivedHandler;
@@ -572,6 +584,9 @@ typedef std::function<void(const GuardDutyClient*, const Model::ListInvitationsR
 typedef std::function<void(const GuardDutyClient*, const Model::ListMalwareProtectionPlansRequest&,
                            const Model::ListMalwareProtectionPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMalwareProtectionPlansResponseReceivedHandler;
+typedef std::function<void(const GuardDutyClient*, const Model::ListMalwareScansRequest&, const Model::ListMalwareScansOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMalwareScansResponseReceivedHandler;
 typedef std::function<void(const GuardDutyClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMembersResponseReceivedHandler;

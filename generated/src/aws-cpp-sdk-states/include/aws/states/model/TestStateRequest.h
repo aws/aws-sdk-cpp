@@ -8,6 +8,8 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/model/InspectionLevel.h>
+#include <aws/states/model/MockInput.h>
+#include <aws/states/model/TestStateConfiguration.h>
 
 #include <utility>
 
@@ -35,7 +37,7 @@ class TestStateRequest : public SFNRequest {
   /**
    * <p>The <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-   * States Language</a> (ASL) definition of the state.</p>
+   * States Language</a> (ASL) definition of the state or state machine.</p>
    */
   inline const Aws::String& GetDefinition() const { return m_definition; }
   inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
@@ -158,6 +160,83 @@ class TestStateRequest : public SFNRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Denotes the particular state within a state machine definition to be tested.
+   * If this field is specified, the <code>definition</code> must contain a
+   * fully-formed state machine definition.</p>
+   */
+  inline const Aws::String& GetStateName() const { return m_stateName; }
+  inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
+  template <typename StateNameT = Aws::String>
+  void SetStateName(StateNameT&& value) {
+    m_stateNameHasBeenSet = true;
+    m_stateName = std::forward<StateNameT>(value);
+  }
+  template <typename StateNameT = Aws::String>
+  TestStateRequest& WithStateName(StateNameT&& value) {
+    SetStateName(std::forward<StateNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Defines a mocked result or error for the state under test.</p> <p>A mock can
+   * only be specified for Task, Map, or Parallel states. If it is specified for
+   * another state type, an exception will be thrown.</p>
+   */
+  inline const MockInput& GetMock() const { return m_mock; }
+  inline bool MockHasBeenSet() const { return m_mockHasBeenSet; }
+  template <typename MockT = MockInput>
+  void SetMock(MockT&& value) {
+    m_mockHasBeenSet = true;
+    m_mock = std::forward<MockT>(value);
+  }
+  template <typename MockT = MockInput>
+  TestStateRequest& WithMock(MockT&& value) {
+    SetMock(std::forward<MockT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A JSON string representing a valid Context object for the state under test.
+   * This field may only be specified if a mock is specified in the same request.</p>
+   */
+  inline const Aws::String& GetContext() const { return m_context; }
+  inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+  template <typename ContextT = Aws::String>
+  void SetContext(ContextT&& value) {
+    m_contextHasBeenSet = true;
+    m_context = std::forward<ContextT>(value);
+  }
+  template <typename ContextT = Aws::String>
+  TestStateRequest& WithContext(ContextT&& value) {
+    SetContext(std::forward<ContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains configurations for the state under test.</p>
+   */
+  inline const TestStateConfiguration& GetStateConfiguration() const { return m_stateConfiguration; }
+  inline bool StateConfigurationHasBeenSet() const { return m_stateConfigurationHasBeenSet; }
+  template <typename StateConfigurationT = TestStateConfiguration>
+  void SetStateConfiguration(StateConfigurationT&& value) {
+    m_stateConfigurationHasBeenSet = true;
+    m_stateConfiguration = std::forward<StateConfigurationT>(value);
+  }
+  template <typename StateConfigurationT = TestStateConfiguration>
+  TestStateRequest& WithStateConfiguration(StateConfigurationT&& value) {
+    SetStateConfiguration(std::forward<StateConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_definition;
   bool m_definitionHasBeenSet = false;
@@ -176,6 +255,18 @@ class TestStateRequest : public SFNRequest {
 
   Aws::String m_variables;
   bool m_variablesHasBeenSet = false;
+
+  Aws::String m_stateName;
+  bool m_stateNameHasBeenSet = false;
+
+  MockInput m_mock;
+  bool m_mockHasBeenSet = false;
+
+  Aws::String m_context;
+  bool m_contextHasBeenSet = false;
+
+  TestStateConfiguration m_stateConfiguration;
+  bool m_stateConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

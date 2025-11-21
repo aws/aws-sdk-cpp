@@ -31,6 +31,24 @@ class ListInsightsMetricDataResult {
 
   ///@{
   /**
+   * <p>Specifies the ARN of the trail. This is only returned when Insights is
+   * enabled on a trail logging data events. </p>
+   */
+  inline const Aws::String& GetTrailARN() const { return m_trailARN; }
+  template <typename TrailARNT = Aws::String>
+  void SetTrailARN(TrailARNT&& value) {
+    m_trailARNHasBeenSet = true;
+    m_trailARN = std::forward<TrailARNT>(value);
+  }
+  template <typename TrailARNT = Aws::String>
+  ListInsightsMetricDataResult& WithTrailARN(TrailARNT&& value) {
+    SetTrailARN(std::forward<TrailARNT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services service to which the request was made, such as
    * <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
    */
@@ -186,6 +204,9 @@ class ListInsightsMetricDataResult {
   }
   ///@}
  private:
+  Aws::String m_trailARN;
+  bool m_trailARNHasBeenSet = false;
+
   Aws::String m_eventSource;
   bool m_eventSourceHasBeenSet = false;
 

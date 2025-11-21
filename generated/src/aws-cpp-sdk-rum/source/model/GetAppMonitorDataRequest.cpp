@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String GetAppMonitorDataRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_timeRangeHasBeenSet) {
+    payload.WithObject("TimeRange", m_timeRange.Jsonize());
+  }
+
   if (m_filtersHasBeenSet) {
     Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
     for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
@@ -29,10 +33,6 @@ Aws::String GetAppMonitorDataRequest::SerializePayload() const {
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
-  }
-
-  if (m_timeRangeHasBeenSet) {
-    payload.WithObject("TimeRange", m_timeRange.Jsonize());
   }
 
   return payload.View().WriteReadable();

@@ -46,6 +46,15 @@ BillScenarioSummary& BillScenarioSummary::operator=(JsonView jsonValue) {
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("groupSharingPreference")) {
+    m_groupSharingPreference =
+        GroupSharingPreferenceEnumMapper::GetGroupSharingPreferenceEnumForName(jsonValue.GetString("groupSharingPreference"));
+    m_groupSharingPreferenceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("costCategoryGroupSharingPreferenceArn")) {
+    m_costCategoryGroupSharingPreferenceArn = jsonValue.GetString("costCategoryGroupSharingPreferenceArn");
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +87,15 @@ JsonValue BillScenarioSummary::Jsonize() const {
 
   if (m_failureMessageHasBeenSet) {
     payload.WithString("failureMessage", m_failureMessage);
+  }
+
+  if (m_groupSharingPreferenceHasBeenSet) {
+    payload.WithString("groupSharingPreference",
+                       GroupSharingPreferenceEnumMapper::GetNameForGroupSharingPreferenceEnum(m_groupSharingPreference));
+  }
+
+  if (m_costCategoryGroupSharingPreferenceArnHasBeenSet) {
+    payload.WithString("costCategoryGroupSharingPreferenceArn", m_costCategoryGroupSharingPreferenceArn);
   }
 
   return payload;

@@ -20,6 +20,7 @@ enum class IpamPublicAddressAwsService {
   site_to_site_vpn,
   load_balancer,
   global_accelerator,
+  cloudfront,
   other
 };
 

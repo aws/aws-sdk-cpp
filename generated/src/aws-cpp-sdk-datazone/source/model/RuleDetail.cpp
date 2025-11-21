@@ -18,6 +18,10 @@ namespace Model {
 RuleDetail::RuleDetail(JsonView jsonValue) { *this = jsonValue; }
 
 RuleDetail& RuleDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("glossaryTermEnforcementDetail")) {
+    m_glossaryTermEnforcementDetail = jsonValue.GetObject("glossaryTermEnforcementDetail");
+    m_glossaryTermEnforcementDetailHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("metadataFormEnforcementDetail")) {
     m_metadataFormEnforcementDetail = jsonValue.GetObject("metadataFormEnforcementDetail");
     m_metadataFormEnforcementDetailHasBeenSet = true;
@@ -27,6 +31,10 @@ RuleDetail& RuleDetail::operator=(JsonView jsonValue) {
 
 JsonValue RuleDetail::Jsonize() const {
   JsonValue payload;
+
+  if (m_glossaryTermEnforcementDetailHasBeenSet) {
+    payload.WithObject("glossaryTermEnforcementDetail", m_glossaryTermEnforcementDetail.Jsonize());
+  }
 
   if (m_metadataFormEnforcementDetailHasBeenSet) {
     payload.WithObject("metadataFormEnforcementDetail", m_metadataFormEnforcementDetail.Jsonize());

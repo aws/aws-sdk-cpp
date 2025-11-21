@@ -27,6 +27,7 @@
 #include <aws/networkmanager/model/CreateConnectAttachmentResult.h>
 #include <aws/networkmanager/model/CreateConnectPeerResult.h>
 #include <aws/networkmanager/model/CreateConnectionResult.h>
+#include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/CreateCoreNetworkResult.h>
 #include <aws/networkmanager/model/CreateDeviceResult.h>
 #include <aws/networkmanager/model/CreateDirectConnectGatewayAttachmentResult.h>
@@ -42,6 +43,7 @@
 #include <aws/networkmanager/model/DeleteConnectPeerResult.h>
 #include <aws/networkmanager/model/DeleteConnectionResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionResult.h>
+#include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkResult.h>
 #include <aws/networkmanager/model/DeleteDeviceResult.h>
 #include <aws/networkmanager/model/DeleteGlobalNetworkResult.h>
@@ -84,11 +86,14 @@
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsResult.h>
 #include <aws/networkmanager/model/GetTransitGatewayRouteTableAttachmentResult.h>
 #include <aws/networkmanager/model/GetVpcAttachmentResult.h>
+#include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsResult.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsResult.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsResult.h>
+#include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsResult.h>
+#include <aws/networkmanager/model/ListCoreNetworkRoutingInformationResult.h>
 #include <aws/networkmanager/model/ListCoreNetworksRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworksResult.h>
 #include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
@@ -96,10 +101,12 @@
 #include <aws/networkmanager/model/ListPeeringsRequest.h>
 #include <aws/networkmanager/model/ListPeeringsResult.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
+#include <aws/networkmanager/model/PutAttachmentRoutingPolicyLabelResult.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyResult.h>
 #include <aws/networkmanager/model/PutResourcePolicyResult.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayResult.h>
 #include <aws/networkmanager/model/RejectAttachmentResult.h>
+#include <aws/networkmanager/model/RemoveAttachmentRoutingPolicyLabelResult.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionResult.h>
 #include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateResult.h>
 #include <aws/networkmanager/model/StartRouteAnalysisResult.h>
@@ -156,6 +163,7 @@ class CreateConnectAttachmentRequest;
 class CreateConnectPeerRequest;
 class CreateConnectionRequest;
 class CreateCoreNetworkRequest;
+class CreateCoreNetworkPrefixListAssociationRequest;
 class CreateDeviceRequest;
 class CreateDirectConnectGatewayAttachmentRequest;
 class CreateGlobalNetworkRequest;
@@ -170,6 +178,7 @@ class DeleteConnectPeerRequest;
 class DeleteConnectionRequest;
 class DeleteCoreNetworkRequest;
 class DeleteCoreNetworkPolicyVersionRequest;
+class DeleteCoreNetworkPrefixListAssociationRequest;
 class DeleteDeviceRequest;
 class DeleteGlobalNetworkRequest;
 class DeleteLinkRequest;
@@ -210,17 +219,22 @@ class GetTransitGatewayPeeringRequest;
 class GetTransitGatewayRegistrationsRequest;
 class GetTransitGatewayRouteTableAttachmentRequest;
 class GetVpcAttachmentRequest;
+class ListAttachmentRoutingPolicyAssociationsRequest;
 class ListAttachmentsRequest;
 class ListConnectPeersRequest;
 class ListCoreNetworkPolicyVersionsRequest;
+class ListCoreNetworkPrefixListAssociationsRequest;
+class ListCoreNetworkRoutingInformationRequest;
 class ListCoreNetworksRequest;
 class ListOrganizationServiceAccessStatusRequest;
 class ListPeeringsRequest;
 class ListTagsForResourceRequest;
+class PutAttachmentRoutingPolicyLabelRequest;
 class PutCoreNetworkPolicyRequest;
 class PutResourcePolicyRequest;
 class RegisterTransitGatewayRequest;
 class RejectAttachmentRequest;
+class RemoveAttachmentRoutingPolicyLabelRequest;
 class RestoreCoreNetworkPolicyVersionRequest;
 class StartOrganizationServiceAccessUpdateRequest;
 class StartRouteAnalysisRequest;
@@ -247,6 +261,8 @@ typedef Aws::Utils::Outcome<CreateConnectAttachmentResult, NetworkManagerError> 
 typedef Aws::Utils::Outcome<CreateConnectPeerResult, NetworkManagerError> CreateConnectPeerOutcome;
 typedef Aws::Utils::Outcome<CreateConnectionResult, NetworkManagerError> CreateConnectionOutcome;
 typedef Aws::Utils::Outcome<CreateCoreNetworkResult, NetworkManagerError> CreateCoreNetworkOutcome;
+typedef Aws::Utils::Outcome<CreateCoreNetworkPrefixListAssociationResult, NetworkManagerError>
+    CreateCoreNetworkPrefixListAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateDeviceResult, NetworkManagerError> CreateDeviceOutcome;
 typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAttachmentResult, NetworkManagerError> CreateDirectConnectGatewayAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateGlobalNetworkResult, NetworkManagerError> CreateGlobalNetworkOutcome;
@@ -262,6 +278,8 @@ typedef Aws::Utils::Outcome<DeleteConnectPeerResult, NetworkManagerError> Delete
 typedef Aws::Utils::Outcome<DeleteConnectionResult, NetworkManagerError> DeleteConnectionOutcome;
 typedef Aws::Utils::Outcome<DeleteCoreNetworkResult, NetworkManagerError> DeleteCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteCoreNetworkPolicyVersionResult, NetworkManagerError> DeleteCoreNetworkPolicyVersionOutcome;
+typedef Aws::Utils::Outcome<DeleteCoreNetworkPrefixListAssociationResult, NetworkManagerError>
+    DeleteCoreNetworkPrefixListAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteDeviceResult, NetworkManagerError> DeleteDeviceOutcome;
 typedef Aws::Utils::Outcome<DeleteGlobalNetworkResult, NetworkManagerError> DeleteGlobalNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteLinkResult, NetworkManagerError> DeleteLinkOutcome;
@@ -303,17 +321,23 @@ typedef Aws::Utils::Outcome<GetTransitGatewayPeeringResult, NetworkManagerError>
 typedef Aws::Utils::Outcome<GetTransitGatewayRegistrationsResult, NetworkManagerError> GetTransitGatewayRegistrationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayRouteTableAttachmentResult, NetworkManagerError> GetTransitGatewayRouteTableAttachmentOutcome;
 typedef Aws::Utils::Outcome<GetVpcAttachmentResult, NetworkManagerError> GetVpcAttachmentOutcome;
+typedef Aws::Utils::Outcome<ListAttachmentRoutingPolicyAssociationsResult, NetworkManagerError>
+    ListAttachmentRoutingPolicyAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListAttachmentsResult, NetworkManagerError> ListAttachmentsOutcome;
 typedef Aws::Utils::Outcome<ListConnectPeersResult, NetworkManagerError> ListConnectPeersOutcome;
 typedef Aws::Utils::Outcome<ListCoreNetworkPolicyVersionsResult, NetworkManagerError> ListCoreNetworkPolicyVersionsOutcome;
+typedef Aws::Utils::Outcome<ListCoreNetworkPrefixListAssociationsResult, NetworkManagerError> ListCoreNetworkPrefixListAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListCoreNetworkRoutingInformationResult, NetworkManagerError> ListCoreNetworkRoutingInformationOutcome;
 typedef Aws::Utils::Outcome<ListCoreNetworksResult, NetworkManagerError> ListCoreNetworksOutcome;
 typedef Aws::Utils::Outcome<ListOrganizationServiceAccessStatusResult, NetworkManagerError> ListOrganizationServiceAccessStatusOutcome;
 typedef Aws::Utils::Outcome<ListPeeringsResult, NetworkManagerError> ListPeeringsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkManagerError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<PutAttachmentRoutingPolicyLabelResult, NetworkManagerError> PutAttachmentRoutingPolicyLabelOutcome;
 typedef Aws::Utils::Outcome<PutCoreNetworkPolicyResult, NetworkManagerError> PutCoreNetworkPolicyOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, NetworkManagerError> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, NetworkManagerError> RegisterTransitGatewayOutcome;
 typedef Aws::Utils::Outcome<RejectAttachmentResult, NetworkManagerError> RejectAttachmentOutcome;
+typedef Aws::Utils::Outcome<RemoveAttachmentRoutingPolicyLabelResult, NetworkManagerError> RemoveAttachmentRoutingPolicyLabelOutcome;
 typedef Aws::Utils::Outcome<RestoreCoreNetworkPolicyVersionResult, NetworkManagerError> RestoreCoreNetworkPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<StartOrganizationServiceAccessUpdateResult, NetworkManagerError> StartOrganizationServiceAccessUpdateOutcome;
 typedef Aws::Utils::Outcome<StartRouteAnalysisResult, NetworkManagerError> StartRouteAnalysisOutcome;
@@ -340,6 +364,7 @@ typedef std::future<CreateConnectAttachmentOutcome> CreateConnectAttachmentOutco
 typedef std::future<CreateConnectPeerOutcome> CreateConnectPeerOutcomeCallable;
 typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
 typedef std::future<CreateCoreNetworkOutcome> CreateCoreNetworkOutcomeCallable;
+typedef std::future<CreateCoreNetworkPrefixListAssociationOutcome> CreateCoreNetworkPrefixListAssociationOutcomeCallable;
 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
 typedef std::future<CreateDirectConnectGatewayAttachmentOutcome> CreateDirectConnectGatewayAttachmentOutcomeCallable;
 typedef std::future<CreateGlobalNetworkOutcome> CreateGlobalNetworkOutcomeCallable;
@@ -354,6 +379,7 @@ typedef std::future<DeleteConnectPeerOutcome> DeleteConnectPeerOutcomeCallable;
 typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
 typedef std::future<DeleteCoreNetworkOutcome> DeleteCoreNetworkOutcomeCallable;
 typedef std::future<DeleteCoreNetworkPolicyVersionOutcome> DeleteCoreNetworkPolicyVersionOutcomeCallable;
+typedef std::future<DeleteCoreNetworkPrefixListAssociationOutcome> DeleteCoreNetworkPrefixListAssociationOutcomeCallable;
 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 typedef std::future<DeleteGlobalNetworkOutcome> DeleteGlobalNetworkOutcomeCallable;
 typedef std::future<DeleteLinkOutcome> DeleteLinkOutcomeCallable;
@@ -394,17 +420,22 @@ typedef std::future<GetTransitGatewayPeeringOutcome> GetTransitGatewayPeeringOut
 typedef std::future<GetTransitGatewayRegistrationsOutcome> GetTransitGatewayRegistrationsOutcomeCallable;
 typedef std::future<GetTransitGatewayRouteTableAttachmentOutcome> GetTransitGatewayRouteTableAttachmentOutcomeCallable;
 typedef std::future<GetVpcAttachmentOutcome> GetVpcAttachmentOutcomeCallable;
+typedef std::future<ListAttachmentRoutingPolicyAssociationsOutcome> ListAttachmentRoutingPolicyAssociationsOutcomeCallable;
 typedef std::future<ListAttachmentsOutcome> ListAttachmentsOutcomeCallable;
 typedef std::future<ListConnectPeersOutcome> ListConnectPeersOutcomeCallable;
 typedef std::future<ListCoreNetworkPolicyVersionsOutcome> ListCoreNetworkPolicyVersionsOutcomeCallable;
+typedef std::future<ListCoreNetworkPrefixListAssociationsOutcome> ListCoreNetworkPrefixListAssociationsOutcomeCallable;
+typedef std::future<ListCoreNetworkRoutingInformationOutcome> ListCoreNetworkRoutingInformationOutcomeCallable;
 typedef std::future<ListCoreNetworksOutcome> ListCoreNetworksOutcomeCallable;
 typedef std::future<ListOrganizationServiceAccessStatusOutcome> ListOrganizationServiceAccessStatusOutcomeCallable;
 typedef std::future<ListPeeringsOutcome> ListPeeringsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<PutAttachmentRoutingPolicyLabelOutcome> PutAttachmentRoutingPolicyLabelOutcomeCallable;
 typedef std::future<PutCoreNetworkPolicyOutcome> PutCoreNetworkPolicyOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<RegisterTransitGatewayOutcome> RegisterTransitGatewayOutcomeCallable;
 typedef std::future<RejectAttachmentOutcome> RejectAttachmentOutcomeCallable;
+typedef std::future<RemoveAttachmentRoutingPolicyLabelOutcome> RemoveAttachmentRoutingPolicyLabelOutcomeCallable;
 typedef std::future<RestoreCoreNetworkPolicyVersionOutcome> RestoreCoreNetworkPolicyVersionOutcomeCallable;
 typedef std::future<StartOrganizationServiceAccessUpdateOutcome> StartOrganizationServiceAccessUpdateOutcomeCallable;
 typedef std::future<StartRouteAnalysisOutcome> StartRouteAnalysisOutcomeCallable;
@@ -453,6 +484,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::CreateConne
 typedef std::function<void(const NetworkManagerClient*, const Model::CreateCoreNetworkRequest&, const Model::CreateCoreNetworkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCoreNetworkResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::CreateCoreNetworkPrefixListAssociationRequest&,
+                           const Model::CreateCoreNetworkPrefixListAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCoreNetworkPrefixListAssociationResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::CreateDeviceRequest&, const Model::CreateDeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDeviceResponseReceivedHandler;
@@ -499,6 +534,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::DeleteCoreN
                            const Model::DeleteCoreNetworkPolicyVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCoreNetworkPolicyVersionResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::DeleteCoreNetworkPrefixListAssociationRequest&,
+                           const Model::DeleteCoreNetworkPrefixListAssociationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCoreNetworkPrefixListAssociationResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::DeleteDeviceRequest&, const Model::DeleteDeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDeviceResponseReceivedHandler;
@@ -626,6 +665,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitG
 typedef std::function<void(const NetworkManagerClient*, const Model::GetVpcAttachmentRequest&, const Model::GetVpcAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetVpcAttachmentResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListAttachmentRoutingPolicyAssociationsRequest&,
+                           const Model::ListAttachmentRoutingPolicyAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAttachmentRoutingPolicyAssociationsResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::ListAttachmentsRequest&, const Model::ListAttachmentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAttachmentsResponseReceivedHandler;
@@ -636,6 +679,14 @@ typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNet
                            const Model::ListCoreNetworkPolicyVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCoreNetworkPolicyVersionsResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworkPrefixListAssociationsRequest&,
+                           const Model::ListCoreNetworkPrefixListAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCoreNetworkPrefixListAssociationsResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworkRoutingInformationRequest&,
+                           const Model::ListCoreNetworkRoutingInformationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCoreNetworkRoutingInformationResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworksRequest&, const Model::ListCoreNetworksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCoreNetworksResponseReceivedHandler;
@@ -649,6 +700,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::ListPeering
 typedef std::function<void(const NetworkManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::PutAttachmentRoutingPolicyLabelRequest&,
+                           const Model::PutAttachmentRoutingPolicyLabelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAttachmentRoutingPolicyLabelResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::PutCoreNetworkPolicyRequest&,
                            const Model::PutCoreNetworkPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutCoreNetworkPolicyResponseReceivedHandler;
@@ -661,6 +716,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::RegisterTra
 typedef std::function<void(const NetworkManagerClient*, const Model::RejectAttachmentRequest&, const Model::RejectAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RejectAttachmentResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::RemoveAttachmentRoutingPolicyLabelRequest&,
+                           const Model::RemoveAttachmentRoutingPolicyLabelOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RemoveAttachmentRoutingPolicyLabelResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::RestoreCoreNetworkPolicyVersionRequest&,
                            const Model::RestoreCoreNetworkPolicyVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

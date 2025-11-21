@@ -506,6 +506,37 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Removes a principal from the pull time update exclusion list for a registry.
+   * Once removed, Amazon ECR will resume updating the pull time if the specified
+   * principal pulls an image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeregisterPullTimeUpdateExclusionOutcome DeregisterPullTimeUpdateExclusion(
+      const Model::DeregisterPullTimeUpdateExclusionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeregisterPullTimeUpdateExclusion that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeregisterPullTimeUpdateExclusionRequestT = Model::DeregisterPullTimeUpdateExclusionRequest>
+  Model::DeregisterPullTimeUpdateExclusionOutcomeCallable DeregisterPullTimeUpdateExclusionCallable(
+      const DeregisterPullTimeUpdateExclusionRequestT& request) const {
+    return SubmitCallable(&ECRClient::DeregisterPullTimeUpdateExclusion, request);
+  }
+
+  /**
+   * An Async wrapper for DeregisterPullTimeUpdateExclusion that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeregisterPullTimeUpdateExclusionRequestT = Model::DeregisterPullTimeUpdateExclusionRequest>
+  void DeregisterPullTimeUpdateExclusionAsync(const DeregisterPullTimeUpdateExclusionRequestT& request,
+                                              const DeregisterPullTimeUpdateExclusionResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::DeregisterPullTimeUpdateExclusion, request, handler, context);
+  }
+
+  /**
    * <p>Returns the replication status for a specified image.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageReplicationStatus">AWS
@@ -989,6 +1020,33 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Lists the artifacts associated with a specified subject image.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListImageReferrersOutcome ListImageReferrers(const Model::ListImageReferrersRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListImageReferrers that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListImageReferrersRequestT = Model::ListImageReferrersRequest>
+  Model::ListImageReferrersOutcomeCallable ListImageReferrersCallable(const ListImageReferrersRequestT& request) const {
+    return SubmitCallable(&ECRClient::ListImageReferrers, request);
+  }
+
+  /**
+   * An Async wrapper for ListImageReferrers that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListImageReferrersRequestT = Model::ListImageReferrersRequest>
+  void ListImageReferrersAsync(const ListImageReferrersRequestT& request, const ListImageReferrersResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::ListImageReferrers, request, handler, context);
+  }
+
+  /**
    * <p>Lists all the image IDs for the specified repository.</p> <p>You can filter
    * images based on whether or not they are tagged by using the
    * <code>tagStatus</code> filter and specifying either <code>TAGGED</code>,
@@ -1018,6 +1076,36 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void ListImagesAsync(const ListImagesRequestT& request, const ListImagesResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::ListImages, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the IAM principals that are excluded from having their image pull times
+   * recorded.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPullTimeUpdateExclusionsOutcome ListPullTimeUpdateExclusions(
+      const Model::ListPullTimeUpdateExclusionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPullTimeUpdateExclusions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListPullTimeUpdateExclusionsRequestT = Model::ListPullTimeUpdateExclusionsRequest>
+  Model::ListPullTimeUpdateExclusionsOutcomeCallable ListPullTimeUpdateExclusionsCallable(
+      const ListPullTimeUpdateExclusionsRequestT& request = {}) const {
+    return SubmitCallable(&ECRClient::ListPullTimeUpdateExclusions, request);
+  }
+
+  /**
+   * An Async wrapper for ListPullTimeUpdateExclusions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPullTimeUpdateExclusionsRequestT = Model::ListPullTimeUpdateExclusionsRequest>
+  void ListPullTimeUpdateExclusionsAsync(const ListPullTimeUpdateExclusionsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const ListPullTimeUpdateExclusionsRequestT& request = {}) const {
+    return SubmitAsync(&ECRClient::ListPullTimeUpdateExclusions, request, handler, context);
   }
 
   /**
@@ -1303,6 +1391,37 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Adds an IAM principal to the pull time update exclusion list for a registry.
+   * Amazon ECR will not record the pull time if an excluded principal pulls an
+   * image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterPullTimeUpdateExclusionOutcome RegisterPullTimeUpdateExclusion(
+      const Model::RegisterPullTimeUpdateExclusionRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterPullTimeUpdateExclusion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RegisterPullTimeUpdateExclusionRequestT = Model::RegisterPullTimeUpdateExclusionRequest>
+  Model::RegisterPullTimeUpdateExclusionOutcomeCallable RegisterPullTimeUpdateExclusionCallable(
+      const RegisterPullTimeUpdateExclusionRequestT& request) const {
+    return SubmitCallable(&ECRClient::RegisterPullTimeUpdateExclusion, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterPullTimeUpdateExclusion that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RegisterPullTimeUpdateExclusionRequestT = Model::RegisterPullTimeUpdateExclusionRequest>
+  void RegisterPullTimeUpdateExclusionAsync(const RegisterPullTimeUpdateExclusionRequestT& request,
+                                            const RegisterPullTimeUpdateExclusionResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::RegisterPullTimeUpdateExclusion, request, handler, context);
+  }
+
+  /**
    * <p>Applies a repository policy to the specified repository to control access
    * permissions. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
@@ -1445,6 +1564,36 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Transitions an image between storage classes. You can transition images from
+   * Amazon ECR standard storage class to Amazon ECR archival storage class for
+   * long-term storage, or restore archived images back to Amazon ECR
+   * standard.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateImageStorageClassOutcome UpdateImageStorageClass(const Model::UpdateImageStorageClassRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateImageStorageClass that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateImageStorageClassRequestT = Model::UpdateImageStorageClassRequest>
+  Model::UpdateImageStorageClassOutcomeCallable UpdateImageStorageClassCallable(const UpdateImageStorageClassRequestT& request) const {
+    return SubmitCallable(&ECRClient::UpdateImageStorageClass, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateImageStorageClass that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateImageStorageClassRequestT = Model::UpdateImageStorageClassRequest>
+  void UpdateImageStorageClassAsync(const UpdateImageStorageClassRequestT& request,
+                                    const UpdateImageStorageClassResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::UpdateImageStorageClass, request, handler, context);
   }
 
   /**

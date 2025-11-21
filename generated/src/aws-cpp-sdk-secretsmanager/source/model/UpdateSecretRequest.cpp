@@ -40,6 +40,10 @@ Aws::String UpdateSecretRequest::SerializePayload() const {
     payload.WithString("SecretString", m_secretString);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
+  }
+
   return payload.View().WriteReadable();
 }
 

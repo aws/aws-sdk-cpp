@@ -146,7 +146,7 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
 
   /**
    * <p>Returns all the tagged or previously tagged resources that are located in the
-   * specified Amazon Web Services Region for the account.</p> <p>Depending on what
+   * specified Amazon Web Services Region for the account. </p> <p>Depending on what
    * information you want returned, you can also specify the following:</p> <ul> <li>
    * <p> <i>Filters</i> that specify what tags and resource types you want returned.
    * The response includes all tags that are associated with the requested
@@ -160,7 +160,13 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
    * passing the <code>PaginationToken</code> response parameter value as an input to
    * the next request until you recieve a <code>null</code> value. A null value for
    * <code>PaginationToken</code> indicates that there are no more results waiting to
-   * be returned.</p><p><h3>See Also:</h3>   <a
+   * be returned.</p>  <p> <code>GetResources</code> does not return untagged
+   * resources. </p> <p>To find untagged resources in your account, use Amazon Web
+   * Services Resource Explorer with a query that uses <code>tag:none</code>. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">
+   * Search query syntax reference for Resource Explorer</a>. </p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS
    * API Reference</a></p>
    */
@@ -253,14 +259,53 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
   }
 
   /**
+   * <p>Lists the required tags for supported resource types in an Amazon Web
+   * Services account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/ListRequiredTags">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRequiredTagsOutcome ListRequiredTags(const Model::ListRequiredTagsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRequiredTags that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRequiredTagsRequestT = Model::ListRequiredTagsRequest>
+  Model::ListRequiredTagsOutcomeCallable ListRequiredTagsCallable(const ListRequiredTagsRequestT& request = {}) const {
+    return SubmitCallable(&ResourceGroupsTaggingAPIClient::ListRequiredTags, request);
+  }
+
+  /**
+   * An Async wrapper for ListRequiredTags that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRequiredTagsRequestT = Model::ListRequiredTagsRequest>
+  void ListRequiredTagsAsync(const ListRequiredTagsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListRequiredTagsRequestT& request = {}) const {
+    return SubmitAsync(&ResourceGroupsTaggingAPIClient::ListRequiredTags, request, handler, context);
+  }
+
+  /**
    * <p>Generates a report that lists all tagged resources in the accounts across
    * your organization and tells whether each resource is compliant with the
    * effective tag policy. Compliance data is refreshed daily. The report is
    * generated asynchronously.</p> <p>The generated report is saved to the following
    * location:</p> <p>
-   * <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
-   * </p> <p>You can call this operation only from the organization's management
-   * account and from the us-east-1 Region.</p><p><h3>See Also:</h3>   <a
+   * <code>s3://amzn-s3-demo-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
+   * </p> <p>For more information about evaluating resource compliance with tag
+   * policies, including the required permissions, review <a
+   * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org">Permissions
+   * for evaluating organization-wide compliance</a> in the <i>Tagging Amazon Web
+   * Services Resources and Tag Editor</i> user guide. </p> <p>You can call this
+   * operation only from the organization's management account and from the us-east-1
+   * Region.</p> <p>If the account associated with the identity used to call
+   * <code>StartReportCreation</code> is different from the account that owns the
+   * Amazon S3 bucket, there must be a bucket policy attached to the bucket to
+   * provide access. For more information, review <a
+   * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+   * S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services
+   * Resources and Tag Editor</i> user guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">AWS
    * API Reference</a></p>
    */
@@ -302,17 +347,31 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
    * account.</p> </li> <li> <p>To add tags to a resource, you need the necessary
    * permissions for the service that the resource belongs to as well as permissions
    * for adding tags. For more information, see the documentation for each
-   * service.</p> </li> </ul>  <p>Do not store personally identifiable
-   * information (PII) or other confidential or sensitive information in tags. We use
-   * tags to provide you with billing and administration services. Tags are not
-   * intended to be used for private or sensitive data.</p>  <p>
-   * <b>Minimum permissions</b> </p> <p>In addition to the
-   * <code>tag:TagResources</code> permission required by this operation, you must
-   * also have the tagging permission defined by the service that created the
-   * resource. For example, to tag an Amazon EC2 instance using the
+   * service.</p> </li> <li> <p>When you use the <a
+   * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html">Amazon
+   * Web Services Resource Groups Tagging API</a> to update tags for Amazon Web
+   * Services CloudFormation stack sets, Amazon Web Services calls the <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">Amazon
+   * Web Services CloudFormation <code>UpdateStack</code> </a> operation. This
+   * operation may initiate additional resource property updates in addition to the
+   * desired tag updates. To avoid unexpected resource updates, Amazon Web Services
+   * recommends that you only apply or update tags to your CloudFormation stack sets
+   * using Amazon Web Services CloudFormation. </p> </li> </ul>  <p>Do not
+   * store personally identifiable information (PII) or other confidential or
+   * sensitive information in tags. We use tags to provide you with billing and
+   * administration services. Tags are not intended to be used for private or
+   * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+   * addition to the <code>tag:TagResources</code> permission required by this
+   * operation, you must also have the tagging permission defined by the service that
+   * created the resource. For example, to tag an Amazon EC2 instance using the
    * <code>TagResources</code> operation, you must have both of the following
-   * permissions:</p> <ul> <li> <p> <code>tag:TagResource</code> </p> </li> <li> <p>
-   * <code>ec2:CreateTags</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * permissions:</p> <ul> <li> <p> <code>tag:TagResources</code> </p> </li> <li> <p>
+   * <code>ec2:CreateTags</code> </p> </li> </ul>  <p>In addition, some
+   * services might have specific requirements for tagging some types of resources.
+   * For example, to tag an Amazon S3 bucket, you must also have the
+   * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+   * don't work, check the documentation for that service's tagging APIs for more
+   * information.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">AWS
    * API Reference</a></p>
    */
@@ -351,8 +410,13 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
    * also have the remove tags permission defined by the service that created the
    * resource. For example, to remove the tags from an Amazon EC2 instance using the
    * <code>UntagResources</code> operation, you must have both of the following
-   * permissions:</p> <ul> <li> <p> <code>tag:UntagResource</code> </p> </li> <li>
-   * <p> <code>ec2:DeleteTags</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * permissions:</p> <ul> <li> <p> <code>tag:UntagResources</code> </p> </li> <li>
+   * <p> <code>ec2:DeleteTags</code> </p> </li> </ul>  <p>In addition, some
+   * services might have specific requirements for untagging some types of resources.
+   * For example, to untag Amazon Web Services Glue Connection, you must also have
+   * the <code>glue:GetConnection</code> permission. If the expected minimum
+   * permissions don't work, check the documentation for that service's tagging APIs
+   * for more information.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">AWS
    * API Reference</a></p>
    */

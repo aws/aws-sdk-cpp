@@ -305,6 +305,7 @@
 #include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/fsx/model/WindowsFileSystemConfiguration.h>
+#include <aws/fsx/model/WindowsFsrmConfiguration.h>
 
 using FSxIncludeTest = ::testing::Test;
 

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ApplicationSignals {
 namespace Model {
-enum class ChangeEventType { NOT_SET, DEPLOYMENT };
+enum class ChangeEventType { NOT_SET, DEPLOYMENT, CONFIGURATION };
 
 namespace ChangeEventTypeMapper {
 AWS_APPLICATIONSIGNALS_API ChangeEventType GetChangeEventTypeForName(const Aws::String& name);

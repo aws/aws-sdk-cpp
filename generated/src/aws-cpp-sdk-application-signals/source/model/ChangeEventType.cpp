@@ -16,11 +16,14 @@ namespace Model {
 namespace ChangeEventTypeMapper {
 
 static const int DEPLOYMENT_HASH = HashingUtils::HashString("DEPLOYMENT");
+static const int CONFIGURATION_HASH = HashingUtils::HashString("CONFIGURATION");
 
 ChangeEventType GetChangeEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == DEPLOYMENT_HASH) {
     return ChangeEventType::DEPLOYMENT;
+  } else if (hashCode == CONFIGURATION_HASH) {
+    return ChangeEventType::CONFIGURATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForChangeEventType(ChangeEventType enumValue) {
       return {};
     case ChangeEventType::DEPLOYMENT:
       return "DEPLOYMENT";
+    case ChangeEventType::CONFIGURATION:
+      return "CONFIGURATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

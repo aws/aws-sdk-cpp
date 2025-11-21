@@ -49,6 +49,15 @@ UpdateBillScenarioResult& UpdateBillScenarioResult::operator=(const Aws::AmazonW
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("groupSharingPreference")) {
+    m_groupSharingPreference =
+        GroupSharingPreferenceEnumMapper::GetGroupSharingPreferenceEnumForName(jsonValue.GetString("groupSharingPreference"));
+    m_groupSharingPreferenceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("costCategoryGroupSharingPreferenceArn")) {
+    m_costCategoryGroupSharingPreferenceArn = jsonValue.GetString("costCategoryGroupSharingPreferenceArn");
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -28,6 +28,10 @@ GetContainerRecipeResult& GetContainerRecipeResult::operator=(const Aws::AmazonW
     m_containerRecipe = jsonValue.GetObject("containerRecipe");
     m_containerRecipeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

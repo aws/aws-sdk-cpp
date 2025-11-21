@@ -74,6 +74,10 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const {
     payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
   }
 
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

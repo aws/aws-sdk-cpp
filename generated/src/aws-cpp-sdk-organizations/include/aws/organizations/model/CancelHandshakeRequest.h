@@ -32,10 +32,10 @@ class CancelHandshakeRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the handshake that you want to cancel. You can
-   * get the ID from the <a>ListHandshakesForOrganization</a> operation.</p> <p>The
-   * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID
-   * string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+   * <p>ID for the handshake that you want to cancel. You can get the ID from the
+   * <a>ListHandshakesForOrganization</a> operation.</p> <p>The <a
+   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
+   * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
    */
   inline const Aws::String& GetHandshakeId() const { return m_handshakeId; }
   inline bool HandshakeIdHasBeenSet() const { return m_handshakeIdHasBeenSet; }

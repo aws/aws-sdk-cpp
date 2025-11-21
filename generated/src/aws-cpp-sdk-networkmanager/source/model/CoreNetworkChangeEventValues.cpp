@@ -22,6 +22,15 @@ CoreNetworkChangeEventValues& CoreNetworkChangeEventValues::operator=(JsonView j
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
     m_edgeLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PeerEdgeLocation")) {
+    m_peerEdgeLocation = jsonValue.GetString("PeerEdgeLocation");
+    m_peerEdgeLocationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoutingPolicyDirection")) {
+    m_routingPolicyDirection =
+        RoutingPolicyDirectionMapper::GetRoutingPolicyDirectionForName(jsonValue.GetString("RoutingPolicyDirection"));
+    m_routingPolicyDirectionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SegmentName")) {
     m_segmentName = jsonValue.GetString("SegmentName");
     m_segmentNameHasBeenSet = true;
@@ -38,6 +47,15 @@ CoreNetworkChangeEventValues& CoreNetworkChangeEventValues::operator=(JsonView j
     m_cidr = jsonValue.GetString("Cidr");
     m_cidrHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RoutingPolicyAssociationDetails")) {
+    Aws::Utils::Array<JsonView> routingPolicyAssociationDetailsJsonList = jsonValue.GetArray("RoutingPolicyAssociationDetails");
+    for (unsigned routingPolicyAssociationDetailsIndex = 0;
+         routingPolicyAssociationDetailsIndex < routingPolicyAssociationDetailsJsonList.GetLength();
+         ++routingPolicyAssociationDetailsIndex) {
+      m_routingPolicyAssociationDetails.push_back(routingPolicyAssociationDetailsJsonList[routingPolicyAssociationDetailsIndex].AsObject());
+    }
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +64,14 @@ JsonValue CoreNetworkChangeEventValues::Jsonize() const {
 
   if (m_edgeLocationHasBeenSet) {
     payload.WithString("EdgeLocation", m_edgeLocation);
+  }
+
+  if (m_peerEdgeLocationHasBeenSet) {
+    payload.WithString("PeerEdgeLocation", m_peerEdgeLocation);
+  }
+
+  if (m_routingPolicyDirectionHasBeenSet) {
+    payload.WithString("RoutingPolicyDirection", RoutingPolicyDirectionMapper::GetNameForRoutingPolicyDirection(m_routingPolicyDirection));
   }
 
   if (m_segmentNameHasBeenSet) {
@@ -62,6 +88,17 @@ JsonValue CoreNetworkChangeEventValues::Jsonize() const {
 
   if (m_cidrHasBeenSet) {
     payload.WithString("Cidr", m_cidr);
+  }
+
+  if (m_routingPolicyAssociationDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> routingPolicyAssociationDetailsJsonList(m_routingPolicyAssociationDetails.size());
+    for (unsigned routingPolicyAssociationDetailsIndex = 0;
+         routingPolicyAssociationDetailsIndex < routingPolicyAssociationDetailsJsonList.GetLength();
+         ++routingPolicyAssociationDetailsIndex) {
+      routingPolicyAssociationDetailsJsonList[routingPolicyAssociationDetailsIndex].AsObject(
+          m_routingPolicyAssociationDetails[routingPolicyAssociationDetailsIndex].Jsonize());
+    }
+    payload.WithArray("RoutingPolicyAssociationDetails", std::move(routingPolicyAssociationDetailsJsonList));
   }
 
   return payload;

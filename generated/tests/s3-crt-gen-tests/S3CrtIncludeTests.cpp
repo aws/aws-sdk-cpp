@@ -21,6 +21,7 @@
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
 #include <aws/s3-crt/S3ExpressSigner.h>
 #include <aws/s3-crt/S3ExpressSignerProvider.h>
+#include <aws/s3-crt/model/AbacStatus.h>
 #include <aws/s3-crt/model/AbortIncompleteMultipartUpload.h>
 #include <aws/s3-crt/model/AbortMultipartUploadRequest.h>
 #include <aws/s3-crt/model/AbortMultipartUploadResult.h>
@@ -34,7 +35,9 @@
 #include <aws/s3-crt/model/AnalyticsS3BucketDestination.h>
 #include <aws/s3-crt/model/AnalyticsS3ExportFileFormat.h>
 #include <aws/s3-crt/model/ArchiveStatus.h>
+#include <aws/s3-crt/model/BlockedEncryptionTypes.h>
 #include <aws/s3-crt/model/Bucket.h>
+#include <aws/s3-crt/model/BucketAbacStatus.h>
 #include <aws/s3-crt/model/BucketAccelerateStatus.h>
 #include <aws/s3-crt/model/BucketCannedACL.h>
 #include <aws/s3-crt/model/BucketInfo.h>
@@ -107,6 +110,7 @@
 #include <aws/s3-crt/model/EncodingType.h>
 #include <aws/s3-crt/model/Encryption.h>
 #include <aws/s3-crt/model/EncryptionConfiguration.h>
+#include <aws/s3-crt/model/EncryptionType.h>
 #include <aws/s3-crt/model/Error.h>
 #include <aws/s3-crt/model/ErrorDetails.h>
 #include <aws/s3-crt/model/ErrorDocument.h>
@@ -120,6 +124,8 @@
 #include <aws/s3-crt/model/FileHeaderInfo.h>
 #include <aws/s3-crt/model/FilterRule.h>
 #include <aws/s3-crt/model/FilterRuleName.h>
+#include <aws/s3-crt/model/GetBucketAbacRequest.h>
+#include <aws/s3-crt/model/GetBucketAbacResult.h>
 #include <aws/s3-crt/model/GetBucketAccelerateConfigurationRequest.h>
 #include <aws/s3-crt/model/GetBucketAccelerateConfigurationResult.h>
 #include <aws/s3-crt/model/GetBucketAclRequest.h>
@@ -307,6 +313,7 @@
 #include <aws/s3-crt/model/ProgressEvent.h>
 #include <aws/s3-crt/model/Protocol.h>
 #include <aws/s3-crt/model/PublicAccessBlockConfiguration.h>
+#include <aws/s3-crt/model/PutBucketAbacRequest.h>
 #include <aws/s3-crt/model/PutBucketAccelerateConfigurationRequest.h>
 #include <aws/s3-crt/model/PutBucketAclRequest.h>
 #include <aws/s3-crt/model/PutBucketAnalyticsConfigurationRequest.h>

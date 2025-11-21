@@ -83,5 +83,9 @@ Aws::String StartOutboundVoiceContactRequest::SerializePayload() const {
     payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
   }
 
+  if (m_ringTimeoutInSecondsHasBeenSet) {
+    payload.WithInteger("RingTimeoutInSeconds", m_ringTimeoutInSeconds);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/model/ImageStatusFilter.h>
 #include <aws/ecr/model/TagStatus.h>
 
 #include <utility>
@@ -34,9 +35,7 @@ class ListImagesFilter {
 
   ///@{
   /**
-   * <p>The tag status with which to filter your <a>ListImages</a> results. You can
-   * filter results based on whether they are <code>TAGGED</code> or
-   * <code>UNTAGGED</code>.</p>
+   * <p>The tag status with which to filter your <a>ListImages</a> results.</p>
    */
   inline TagStatus GetTagStatus() const { return m_tagStatus; }
   inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
@@ -49,9 +48,30 @@ class ListImagesFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The image status with which to filter your <a>ListImages</a> results. Valid
+   * values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and
+   * <code>ACTIVATING</code>.</p>
+   */
+  inline ImageStatusFilter GetImageStatus() const { return m_imageStatus; }
+  inline bool ImageStatusHasBeenSet() const { return m_imageStatusHasBeenSet; }
+  inline void SetImageStatus(ImageStatusFilter value) {
+    m_imageStatusHasBeenSet = true;
+    m_imageStatus = value;
+  }
+  inline ListImagesFilter& WithImageStatus(ImageStatusFilter value) {
+    SetImageStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   TagStatus m_tagStatus{TagStatus::NOT_SET};
   bool m_tagStatusHasBeenSet = false;
+
+  ImageStatusFilter m_imageStatus{ImageStatusFilter::NOT_SET};
+  bool m_imageStatusHasBeenSet = false;
 };
 
 }  // namespace Model

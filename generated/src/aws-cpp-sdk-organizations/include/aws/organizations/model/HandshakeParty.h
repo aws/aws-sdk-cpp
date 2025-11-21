@@ -21,7 +21,8 @@ namespace Organizations {
 namespace Model {
 
 /**
- * <p>Identifies a participant in a handshake.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains details for a participant in a handshake.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeParty">AWS
  * API Reference</a></p>
  */
@@ -34,9 +35,10 @@ class HandshakeParty {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) for the party.</p> <p>The <a
-   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-   * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+   * <p>ID for the participant: Acccount ID, organization ID, or email address.</p>
+   * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake
+   * ID string requires "h-" followed by from 8 to 32 lowercase letters or
+   * digits.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -54,7 +56,7 @@ class HandshakeParty {
 
   ///@{
   /**
-   * <p>The type of party.</p>
+   * <p>The type of ID for the participant.</p>
    */
   inline HandshakePartyType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

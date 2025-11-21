@@ -9,6 +9,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/ExternalFilteringConfiguration.h>
+#include <aws/lakeformation/model/ServiceIntegrationUnion.h>
 
 #include <utility>
 
@@ -134,6 +135,30 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
 
   ///@{
   /**
+   * <p>A list of service integrations for enabling trusted identity propagation with
+   * external services such as Redshift.</p>
+   */
+  inline const Aws::Vector<ServiceIntegrationUnion>& GetServiceIntegrations() const { return m_serviceIntegrations; }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  void SetServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations = std::forward<ServiceIntegrationsT>(value);
+  }
+  template <typename ServiceIntegrationsT = Aws::Vector<ServiceIntegrationUnion>>
+  DescribeLakeFormationIdentityCenterConfigurationResult& WithServiceIntegrations(ServiceIntegrationsT&& value) {
+    SetServiceIntegrations(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  template <typename ServiceIntegrationsT = ServiceIntegrationUnion>
+  DescribeLakeFormationIdentityCenterConfigurationResult& AddServiceIntegrations(ServiceIntegrationsT&& value) {
+    m_serviceIntegrationsHasBeenSet = true;
+    m_serviceIntegrations.emplace_back(std::forward<ServiceIntegrationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the RAM share.</p>
    */
   inline const Aws::String& GetResourceShare() const { return m_resourceShare; }
@@ -178,6 +203,9 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
 
   Aws::Vector<DataLakePrincipal> m_shareRecipients;
   bool m_shareRecipientsHasBeenSet = false;
+
+  Aws::Vector<ServiceIntegrationUnion> m_serviceIntegrations;
+  bool m_serviceIntegrationsHasBeenSet = false;
 
   Aws::String m_resourceShare;
   bool m_resourceShareHasBeenSet = false;

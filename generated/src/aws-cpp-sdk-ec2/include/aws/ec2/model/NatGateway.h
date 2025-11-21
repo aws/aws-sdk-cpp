@@ -9,6 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/AutoProvisionZonesState.h>
+#include <aws/ec2/model/AutoScalingIpsState.h>
+#include <aws/ec2/model/AvailabilityMode.h>
 #include <aws/ec2/model/ConnectivityType.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
 #include <aws/ec2/model/NatGatewayState.h>
@@ -293,6 +296,97 @@ class NatGateway {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT
+   * gateway.</p> <p>A zonal NAT gateway is a NAT Gateway that provides redundancy
+   * and scalability within a single availability zone. A regional NAT gateway is a
+   * single NAT Gateway that works across multiple availability zones (AZs) in your
+   * VPC, providing redundancy, scalability and availability across all the AZs in a
+   * Region.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+   * NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User
+   * Guide</i>.</p>
+   */
+  inline AvailabilityMode GetAvailabilityMode() const { return m_availabilityMode; }
+  inline bool AvailabilityModeHasBeenSet() const { return m_availabilityModeHasBeenSet; }
+  inline void SetAvailabilityMode(AvailabilityMode value) {
+    m_availabilityModeHasBeenSet = true;
+    m_availabilityMode = value;
+  }
+  inline NatGateway& WithAvailabilityMode(AvailabilityMode value) {
+    SetAvailabilityMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only: Indicates whether Amazon Web Services
+   * automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the
+   * NAT gateway needs more ports due to increased concurrent connections to a single
+   * destination from that AZ.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+   * NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User
+   * Guide</i>.</p>
+   */
+  inline AutoScalingIpsState GetAutoScalingIps() const { return m_autoScalingIps; }
+  inline bool AutoScalingIpsHasBeenSet() const { return m_autoScalingIpsHasBeenSet; }
+  inline void SetAutoScalingIps(AutoScalingIpsState value) {
+    m_autoScalingIpsHasBeenSet = true;
+    m_autoScalingIps = value;
+  }
+  inline NatGateway& WithAutoScalingIps(AutoScalingIpsState value) {
+    SetAutoScalingIps(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only: Indicates whether Amazon Web Services
+   * automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs
+   * in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to
+   * new AZs when you create subnets there, and retracts from AZs where you've
+   * removed all subnets. When disabled, you must manually manage which AZs the NAT
+   * gateway supports and their corresponding EIPs.</p> <p>A regional NAT gateway is
+   * a single NAT Gateway that works across multiple availability zones (AZs) in your
+   * VPC, providing redundancy, scalability and availability across all the AZs in a
+   * Region.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+   * NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User
+   * Guide</i>.</p>
+   */
+  inline AutoProvisionZonesState GetAutoProvisionZones() const { return m_autoProvisionZones; }
+  inline bool AutoProvisionZonesHasBeenSet() const { return m_autoProvisionZonesHasBeenSet; }
+  inline void SetAutoProvisionZones(AutoProvisionZonesState value) {
+    m_autoProvisionZonesHasBeenSet = true;
+    m_autoProvisionZones = value;
+  }
+  inline NatGateway& WithAutoProvisionZones(AutoProvisionZonesState value) {
+    SetAutoProvisionZones(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+   */
+  inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
+  inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
+  template <typename RouteTableIdT = Aws::String>
+  void SetRouteTableId(RouteTableIdT&& value) {
+    m_routeTableIdHasBeenSet = true;
+    m_routeTableId = std::forward<RouteTableIdT>(value);
+  }
+  template <typename RouteTableIdT = Aws::String>
+  NatGateway& WithRouteTableId(RouteTableIdT&& value) {
+    SetRouteTableId(std::forward<RouteTableIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
   bool m_createTimeHasBeenSet = false;
@@ -329,6 +423,18 @@ class NatGateway {
 
   ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
   bool m_connectivityTypeHasBeenSet = false;
+
+  AvailabilityMode m_availabilityMode{AvailabilityMode::NOT_SET};
+  bool m_availabilityModeHasBeenSet = false;
+
+  AutoScalingIpsState m_autoScalingIps{AutoScalingIpsState::NOT_SET};
+  bool m_autoScalingIpsHasBeenSet = false;
+
+  AutoProvisionZonesState m_autoProvisionZones{AutoProvisionZonesState::NOT_SET};
+  bool m_autoProvisionZonesHasBeenSet = false;
+
+  Aws::String m_routeTableId;
+  bool m_routeTableIdHasBeenSet = false;
 };
 
 }  // namespace Model

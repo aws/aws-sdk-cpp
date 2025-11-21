@@ -38,6 +38,11 @@ StackEvent& StackEvent::operator=(const XmlNode& xmlNode) {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
     }
+    XmlNode operationIdNode = resultNode.FirstChild("OperationId");
+    if (!operationIdNode.IsNull()) {
+      m_operationId = Aws::Utils::Xml::DecodeEscapedXmlText(operationIdNode.GetText());
+      m_operationIdHasBeenSet = true;
+    }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if (!logicalResourceIdNode.IsNull()) {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
@@ -137,6 +142,10 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
+  if (m_operationIdHasBeenSet) {
+    oStream << location << index << locationValue << ".OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
+  }
+
   if (m_logicalResourceIdHasBeenSet) {
     oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
@@ -214,6 +223,9 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_stackNameHasBeenSet) {
     oStream << location << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if (m_operationIdHasBeenSet) {
+    oStream << location << ".OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
   }
   if (m_logicalResourceIdHasBeenSet) {
     oStream << location << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";

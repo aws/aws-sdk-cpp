@@ -10,6 +10,7 @@
 #include <aws/autoscaling/model/CapacityReservationSpecification.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
 #include <aws/autoscaling/model/Instance.h>
+#include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
@@ -776,6 +777,27 @@ class AutoScalingGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The instance lifecycle policy applied to this Auto Scaling group. This
+   * policy determines instance behavior when an instance transitions through its
+   * lifecycle states. It provides additional control over graceful instance
+   * management processes. </p>
+   */
+  inline const InstanceLifecyclePolicy& GetInstanceLifecyclePolicy() const { return m_instanceLifecyclePolicy; }
+  inline bool InstanceLifecyclePolicyHasBeenSet() const { return m_instanceLifecyclePolicyHasBeenSet; }
+  template <typename InstanceLifecyclePolicyT = InstanceLifecyclePolicy>
+  void SetInstanceLifecyclePolicy(InstanceLifecyclePolicyT&& value) {
+    m_instanceLifecyclePolicyHasBeenSet = true;
+    m_instanceLifecyclePolicy = std::forward<InstanceLifecyclePolicyT>(value);
+  }
+  template <typename InstanceLifecyclePolicyT = InstanceLifecyclePolicy>
+  AutoScalingGroup& WithInstanceLifecyclePolicy(InstanceLifecyclePolicyT&& value) {
+    SetInstanceLifecyclePolicy(std::forward<InstanceLifecyclePolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_autoScalingGroupName;
   bool m_autoScalingGroupNameHasBeenSet = false;
@@ -890,6 +912,9 @@ class AutoScalingGroup {
 
   CapacityReservationSpecification m_capacityReservationSpecification;
   bool m_capacityReservationSpecificationHasBeenSet = false;
+
+  InstanceLifecyclePolicy m_instanceLifecyclePolicy;
+  bool m_instanceLifecyclePolicyHasBeenSet = false;
 };
 
 }  // namespace Model

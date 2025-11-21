@@ -69,7 +69,9 @@ class HistoryEvent {
 
   ///@{
   /**
-   * <p>The date and time the event occurred.</p>
+   * <p>The date and time the event occurred, expressed in seconds and fractional
+   * milliseconds since the Unix epoch, which is defined as January 1, 1970, at
+   * 00:00:00 Coordinated Universal Time (UTC).</p>
    */
   inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
   inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }

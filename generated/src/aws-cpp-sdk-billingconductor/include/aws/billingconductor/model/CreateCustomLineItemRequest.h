@@ -196,7 +196,9 @@ class CreateCustomLineItemRequest : public BillingConductorRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p> Specifies how the custom line item charges are computed. </p>
+   */
   inline ComputationRuleEnum GetComputationRule() const { return m_computationRule; }
   inline bool ComputationRuleHasBeenSet() const { return m_computationRuleHasBeenSet; }
   inline void SetComputationRule(ComputationRuleEnum value) {
@@ -210,7 +212,11 @@ class CreateCustomLineItemRequest : public BillingConductorRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p> Details controlling how the custom line item charges are presented in the
+   * bill. Contains specifications for which service the charges will be shown under.
+   * </p>
+   */
   inline const PresentationObject& GetPresentationDetails() const { return m_presentationDetails; }
   inline bool PresentationDetailsHasBeenSet() const { return m_presentationDetailsHasBeenSet; }
   template <typename PresentationDetailsT = PresentationObject>

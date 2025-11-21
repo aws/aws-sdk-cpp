@@ -22,6 +22,10 @@ CitationsDelta& CitationsDelta::operator=(JsonView jsonValue) {
     m_title = jsonValue.GetString("title");
     m_titleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("source")) {
+    m_source = jsonValue.GetString("source");
+    m_sourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sourceContent")) {
     Aws::Utils::Array<JsonView> sourceContentJsonList = jsonValue.GetArray("sourceContent");
     for (unsigned sourceContentIndex = 0; sourceContentIndex < sourceContentJsonList.GetLength(); ++sourceContentIndex) {
@@ -41,6 +45,10 @@ JsonValue CitationsDelta::Jsonize() const {
 
   if (m_titleHasBeenSet) {
     payload.WithString("title", m_title);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
   if (m_sourceContentHasBeenSet) {

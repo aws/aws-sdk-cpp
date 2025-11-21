@@ -76,12 +76,35 @@ class AccountGrouping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) that identifies the transfer relationship
+   * owned by the Bill Transfer account (caller account). When specified, the
+   * PrimaryAccountId is no longer required. </p>
+   */
+  inline const Aws::String& GetResponsibilityTransferArn() const { return m_responsibilityTransferArn; }
+  inline bool ResponsibilityTransferArnHasBeenSet() const { return m_responsibilityTransferArnHasBeenSet; }
+  template <typename ResponsibilityTransferArnT = Aws::String>
+  void SetResponsibilityTransferArn(ResponsibilityTransferArnT&& value) {
+    m_responsibilityTransferArnHasBeenSet = true;
+    m_responsibilityTransferArn = std::forward<ResponsibilityTransferArnT>(value);
+  }
+  template <typename ResponsibilityTransferArnT = Aws::String>
+  AccountGrouping& WithResponsibilityTransferArn(ResponsibilityTransferArnT&& value) {
+    SetResponsibilityTransferArn(std::forward<ResponsibilityTransferArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_linkedAccountIds;
   bool m_linkedAccountIdsHasBeenSet = false;
 
   bool m_autoAssociate{false};
   bool m_autoAssociateHasBeenSet = false;
+
+  Aws::String m_responsibilityTransferArn;
+  bool m_responsibilityTransferArnHasBeenSet = false;
 };
 
 }  // namespace Model

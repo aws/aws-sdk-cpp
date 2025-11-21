@@ -56,6 +56,25 @@ class CitationsDelta {
 
   ///@{
   /**
+   * <p>The source from the original search result that provided the cited
+   * content.</p>
+   */
+  inline const Aws::String& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = Aws::String>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = Aws::String>
+  CitationsDelta& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The specific content from the source document that was referenced or cited in
    * the generated response.</p>
    */
@@ -101,6 +120,9 @@ class CitationsDelta {
  private:
   Aws::String m_title;
   bool m_titleHasBeenSet = false;
+
+  Aws::String m_source;
+  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CitationSourceContentDelta> m_sourceContent;
   bool m_sourceContentHasBeenSet = false;

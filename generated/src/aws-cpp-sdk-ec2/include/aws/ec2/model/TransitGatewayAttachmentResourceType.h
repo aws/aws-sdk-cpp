@@ -14,6 +14,7 @@ enum class TransitGatewayAttachmentResourceType {
   NOT_SET,
   vpc,
   vpn,
+  vpn_concentrator,
   direct_connect_gateway,
   connect,
   peering,

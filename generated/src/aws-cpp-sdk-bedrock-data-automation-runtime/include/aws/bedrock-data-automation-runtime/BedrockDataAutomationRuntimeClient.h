@@ -108,6 +108,32 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient
   }
 
   /**
+   * <p>Sync API: Invoke data automation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/InvokeDataAutomation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeDataAutomationOutcome InvokeDataAutomation(const Model::InvokeDataAutomationRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeDataAutomation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename InvokeDataAutomationRequestT = Model::InvokeDataAutomationRequest>
+  Model::InvokeDataAutomationOutcomeCallable InvokeDataAutomationCallable(const InvokeDataAutomationRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationRuntimeClient::InvokeDataAutomation, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeDataAutomation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename InvokeDataAutomationRequestT = Model::InvokeDataAutomationRequest>
+  void InvokeDataAutomationAsync(const InvokeDataAutomationRequestT& request, const InvokeDataAutomationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationRuntimeClient::InvokeDataAutomation, request, handler, context);
+  }
+
+  /**
    * <p>Async API: Invoke data automation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/InvokeDataAutomationAsync">AWS
    * API Reference</a></p>

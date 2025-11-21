@@ -38,6 +38,12 @@ InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamIniti
     m_performanceConfigLatency = PerformanceConfigLatencyMapper::GetPerformanceConfigLatencyForName(performanceConfigLatencyIter->second);
     m_performanceConfigLatencyHasBeenSet = true;
   }
+
+  const auto& serviceTierIter = headers.find("x-amzn-bedrock-service-tier");
+  if (serviceTierIter != headers.end()) {
+    m_serviceTier = ServiceTierTypeMapper::GetServiceTierTypeForName(serviceTierIter->second);
+    m_serviceTierHasBeenSet = true;
+  }
 }
 
 JsonValue InvokeModelWithResponseStreamInitialResponse::Jsonize() const {

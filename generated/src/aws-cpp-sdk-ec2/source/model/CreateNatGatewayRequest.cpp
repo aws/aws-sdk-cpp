@@ -13,6 +13,10 @@ using namespace Aws::Utils;
 Aws::String CreateNatGatewayRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateNatGateway&";
+  if (m_availabilityModeHasBeenSet) {
+    ss << "AvailabilityMode=" << StringUtils::URLEncode(AvailabilityModeMapper::GetNameForAvailabilityMode(m_availabilityMode)) << "&";
+  }
+
   if (m_allocationIdHasBeenSet) {
     ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
@@ -27,6 +31,18 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const {
 
   if (m_subnetIdHasBeenSet) {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if (m_vpcIdHasBeenSet) {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneAddressesHasBeenSet) {
+    unsigned availabilityZoneAddressesCount = 1;
+    for (auto& item : m_availabilityZoneAddresses) {
+      item.OutputToStream(ss, "AvailabilityZoneAddress.", availabilityZoneAddressesCount, "");
+      availabilityZoneAddressesCount++;
+    }
   }
 
   if (m_tagSpecificationsHasBeenSet) {

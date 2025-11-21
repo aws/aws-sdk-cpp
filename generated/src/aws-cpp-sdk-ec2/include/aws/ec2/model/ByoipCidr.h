@@ -173,6 +173,31 @@ class ByoipCidr {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+   * <ul> <li> <p> <code>unicast</code>: IP is advertised from a single location
+   * (regional services like EC2)</p> </li> <li> <p> <code>anycast</code>: IP is
+   * advertised from multiple global locations simultaneously (global services like
+   * CloudFront)</p> </li> </ul> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring
+   * your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User
+   * Guide</i>.</p>
+   */
+  inline const Aws::String& GetAdvertisementType() const { return m_advertisementType; }
+  inline bool AdvertisementTypeHasBeenSet() const { return m_advertisementTypeHasBeenSet; }
+  template <typename AdvertisementTypeT = Aws::String>
+  void SetAdvertisementType(AdvertisementTypeT&& value) {
+    m_advertisementTypeHasBeenSet = true;
+    m_advertisementType = std::forward<AdvertisementTypeT>(value);
+  }
+  template <typename AdvertisementTypeT = Aws::String>
+  ByoipCidr& WithAdvertisementType(AdvertisementTypeT&& value) {
+    SetAdvertisementType(std::forward<AdvertisementTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cidr;
   bool m_cidrHasBeenSet = false;
@@ -191,6 +216,9 @@ class ByoipCidr {
 
   Aws::String m_networkBorderGroup;
   bool m_networkBorderGroupHasBeenSet = false;
+
+  Aws::String m_advertisementType;
+  bool m_advertisementTypeHasBeenSet = false;
 };
 
 }  // namespace Model

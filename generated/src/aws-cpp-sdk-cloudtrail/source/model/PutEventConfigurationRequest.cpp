@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String PutEventConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_trailNameHasBeenSet) {
+    payload.WithString("TrailName", m_trailName);
+  }
+
   if (m_eventDataStoreHasBeenSet) {
     payload.WithString("EventDataStore", m_eventDataStore);
   }
@@ -30,6 +34,16 @@ Aws::String PutEventConfigurationRequest::SerializePayload() const {
       contextKeySelectorsJsonList[contextKeySelectorsIndex].AsObject(m_contextKeySelectors[contextKeySelectorsIndex].Jsonize());
     }
     payload.WithArray("ContextKeySelectors", std::move(contextKeySelectorsJsonList));
+  }
+
+  if (m_aggregationConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> aggregationConfigurationsJsonList(m_aggregationConfigurations.size());
+    for (unsigned aggregationConfigurationsIndex = 0; aggregationConfigurationsIndex < aggregationConfigurationsJsonList.GetLength();
+         ++aggregationConfigurationsIndex) {
+      aggregationConfigurationsJsonList[aggregationConfigurationsIndex].AsObject(
+          m_aggregationConfigurations[aggregationConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("AggregationConfigurations", std::move(aggregationConfigurationsJsonList));
   }
 
   return payload.View().WriteReadable();

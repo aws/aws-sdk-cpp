@@ -223,11 +223,11 @@ class CreateTrailRequest : public CloudTrailRequest {
 
   ///@{
   /**
-   * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-   * The value can be an alias name prefixed by <code>alias/</code>, a fully
-   * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
-   * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
-   * information about multi-Region keys, see <a
+   * <p>Specifies the KMS key ID to use to encrypt the logs and digest files
+   * delivered by CloudTrail. The value can be an alias name prefixed by
+   * <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to
+   * a key, or a globally unique identifier.</p> <p>CloudTrail also supports KMS
+   * multi-Region keys. For more information about multi-Region keys, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
    * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
    * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>

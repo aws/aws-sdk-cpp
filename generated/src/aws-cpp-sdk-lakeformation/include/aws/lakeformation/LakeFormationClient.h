@@ -116,8 +116,10 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
    * <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via
    * <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include
    * <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM
-   * policy attached to such a role would look as follows: </p><p><h3>See Also:</h3>
-   * <a
+   * policy attached to such a role would include the following actions: </p> <ul>
+   * <li> <p>glue:*Database*</p> </li> <li> <p>glue:*Table*</p> </li> <li>
+   * <p>glue:*Partition*</p> </li> <li> <p>glue:*UserDefinedFunction*</p> </li> <li>
+   * <p>lakeformation:GetDataAccess</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">AWS
    * API Reference</a></p>
    */
@@ -429,12 +431,11 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deletes the specified LF-tag given a key name. If the input parameter tag key
-   * was not found, then the operation will throw an exception. When you delete an
-   * LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If
-   * the deleted LF-tag was still assigned to any resource, the tag policy attach to
-   * the deleted LF-tag will no longer be applied to the resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Deletes an LF-tag by its key name. The operation fails if the specified tag
+   * key doesn't exist. When you delete an LF-Tag: </p> <ul> <li> <p>The associated
+   * LF-Tag policy becomes invalid.</p> </li> <li> <p> Resources that had this tag
+   * assigned will no longer have the tag policy applied to them.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">AWS
    * API Reference</a></p>
    */
@@ -1266,8 +1267,10 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
    * <p>Returns a list of the principal permissions on the resource, filtered by the
    * permissions of the caller. For example, if you are granted an ALTER permission,
    * you are able to see only the principal permissions for ALTER.</p> <p>This
-   * operation returns only those permissions that have been explicitly granted.</p>
-   * <p>For information about permissions, see <a
+   * operation returns only those permissions that have been explicitly granted. If
+   * both <code>Principal</code> and <code>Resource</code> parameters are provided,
+   * the response returns effective permissions rather than the explicitly granted
+   * permissions.</p> <p>For information about permissions, see <a
    * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
    * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS

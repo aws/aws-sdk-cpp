@@ -9,6 +9,7 @@
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/CapacityReservationSpecification.h>
+#include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
@@ -605,6 +606,27 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The instance lifecycle policy for the Auto Scaling group. Use this to add,
+   * modify, or remove lifecycle policies that control instance behavior when an
+   * instance transitions through its lifecycle states. Configure retention triggers
+   * to specify when to preserve instances for manual intervention. </p>
+   */
+  inline const InstanceLifecyclePolicy& GetInstanceLifecyclePolicy() const { return m_instanceLifecyclePolicy; }
+  inline bool InstanceLifecyclePolicyHasBeenSet() const { return m_instanceLifecyclePolicyHasBeenSet; }
+  template <typename InstanceLifecyclePolicyT = InstanceLifecyclePolicy>
+  void SetInstanceLifecyclePolicy(InstanceLifecyclePolicyT&& value) {
+    m_instanceLifecyclePolicyHasBeenSet = true;
+    m_instanceLifecyclePolicy = std::forward<InstanceLifecyclePolicyT>(value);
+  }
+  template <typename InstanceLifecyclePolicyT = InstanceLifecyclePolicy>
+  UpdateAutoScalingGroupRequest& WithInstanceLifecyclePolicy(InstanceLifecyclePolicyT&& value) {
+    SetInstanceLifecyclePolicy(std::forward<InstanceLifecyclePolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_autoScalingGroupName;
   bool m_autoScalingGroupNameHasBeenSet = false;
@@ -683,6 +705,9 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
 
   CapacityReservationSpecification m_capacityReservationSpecification;
   bool m_capacityReservationSpecificationHasBeenSet = false;
+
+  InstanceLifecyclePolicy m_instanceLifecyclePolicy;
+  bool m_instanceLifecyclePolicyHasBeenSet = false;
 };
 
 }  // namespace Model

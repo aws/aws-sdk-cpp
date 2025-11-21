@@ -45,6 +45,13 @@ UpdateBackupPlanResult& UpdateBackupPlanResult::operator=(const Aws::AmazonWebSe
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScanSettings")) {
+    Aws::Utils::Array<JsonView> scanSettingsJsonList = jsonValue.GetArray("ScanSettings");
+    for (unsigned scanSettingsIndex = 0; scanSettingsIndex < scanSettingsJsonList.GetLength(); ++scanSettingsIndex) {
+      m_scanSettings.push_back(scanSettingsJsonList[scanSettingsIndex].AsObject());
+    }
+    m_scanSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

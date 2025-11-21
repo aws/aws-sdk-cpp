@@ -43,5 +43,13 @@ Aws::String CreateAnycastIpList2020_05_31Request::SerializePayload() const {
     ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
+  if (m_ipamCidrConfigsHasBeenSet) {
+    XmlNode ipamCidrConfigsParentNode = parentNode.CreateChildElement("IpamCidrConfigs");
+    for (const auto& item : m_ipamCidrConfigs) {
+      XmlNode ipamCidrConfigsNode = ipamCidrConfigsParentNode.CreateChildElement("IpamCidrConfig");
+      item.AddToNode(ipamCidrConfigsNode);
+    }
+  }
+
   return payloadDoc.ConvertToString();
 }

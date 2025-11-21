@@ -28,7 +28,8 @@ class DeleteWorkflowResult {
 
   ///@{
   /**
-   * <p>The ARN of the workflow resource that this request deleted.</p>
+   * <p>The Amazon Resource Name (ARN) of the workflow resource that this request
+   * deleted.</p>
    */
   inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
   template <typename WorkflowBuildVersionArnT = Aws::String>

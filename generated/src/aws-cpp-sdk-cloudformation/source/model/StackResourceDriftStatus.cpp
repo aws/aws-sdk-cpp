@@ -20,6 +20,7 @@ static const int MODIFIED_HASH = HashingUtils::HashString("MODIFIED");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int NOT_CHECKED_HASH = HashingUtils::HashString("NOT_CHECKED");
 static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+static const int UNSUPPORTED_HASH = HashingUtils::HashString("UNSUPPORTED");
 
 StackResourceDriftStatus GetStackResourceDriftStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ StackResourceDriftStatus GetStackResourceDriftStatusForName(const Aws::String& n
     return StackResourceDriftStatus::NOT_CHECKED;
   } else if (hashCode == UNKNOWN_HASH) {
     return StackResourceDriftStatus::UNKNOWN;
+  } else if (hashCode == UNSUPPORTED_HASH) {
+    return StackResourceDriftStatus::UNSUPPORTED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForStackResourceDriftStatus(StackResourceDriftStatus enumValu
       return "NOT_CHECKED";
     case StackResourceDriftStatus::UNKNOWN:
       return "UNKNOWN";
+    case StackResourceDriftStatus::UNSUPPORTED:
+      return "UNSUPPORTED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

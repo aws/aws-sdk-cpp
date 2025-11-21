@@ -23,6 +23,7 @@
 #include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/State.h>
 #include <aws/lambda/model/StateReasonCode.h>
+#include <aws/lambda/model/TenancyConfig.h>
 #include <aws/lambda/model/TracingConfigResponse.h>
 #include <aws/lambda/model/VpcConfigResponse.h>
 
@@ -715,6 +716,25 @@ class UpdateFunctionConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The function's tenant isolation configuration settings. Determines whether
+   * the Lambda function runs on a shared or dedicated infrastructure per unique
+   * tenant.</p>
+   */
+  inline const TenancyConfig& GetTenancyConfig() const { return m_tenancyConfig; }
+  template <typename TenancyConfigT = TenancyConfig>
+  void SetTenancyConfig(TenancyConfigT&& value) {
+    m_tenancyConfigHasBeenSet = true;
+    m_tenancyConfig = std::forward<TenancyConfigT>(value);
+  }
+  template <typename TenancyConfigT = TenancyConfig>
+  UpdateFunctionConfigurationResult& WithTenancyConfig(TenancyConfigT&& value) {
+    SetTenancyConfig(std::forward<TenancyConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -836,6 +856,9 @@ class UpdateFunctionConfigurationResult {
 
   LoggingConfig m_loggingConfig;
   bool m_loggingConfigHasBeenSet = false;
+
+  TenancyConfig m_tenancyConfig;
+  bool m_tenancyConfigHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

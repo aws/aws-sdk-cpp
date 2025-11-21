@@ -93,8 +93,8 @@ class PutImageTagMutabilityRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>Creates or updates a repository with filters that define which image tags can
-   * override the default image tag mutability setting.</p>
+   * <p>A list of filters that specify which image tags should be excluded from the
+   * image tag mutability setting being applied.</p>
    */
   inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const {
     return m_imageTagMutabilityExclusionFilters;

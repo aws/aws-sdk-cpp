@@ -45,7 +45,8 @@ class DeleteComponentResult {
 
   ///@{
   /**
-   * <p>The ARN of the component build version that this request deleted.</p>
+   * <p>The Amazon Resource Name (ARN) of the component build version that this
+   * request deleted.</p>
    */
   inline const Aws::String& GetComponentBuildVersionArn() const { return m_componentBuildVersionArn; }
   template <typename ComponentBuildVersionArnT = Aws::String>

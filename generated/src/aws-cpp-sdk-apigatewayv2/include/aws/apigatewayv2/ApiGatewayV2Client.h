@@ -283,6 +283,114 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Creates a portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreatePortalRequestT = Model::CreatePortalRequest>
+  Model::CreatePortalOutcomeCallable CreatePortalCallable(const CreatePortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::CreatePortal, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreatePortalRequestT = Model::CreatePortalRequest>
+  void CreatePortalAsync(const CreatePortalRequestT& request, const CreatePortalResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::CreatePortal, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePortalProductOutcome CreatePortalProduct(const Model::CreatePortalProductRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePortalProduct that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePortalProductRequestT = Model::CreatePortalProductRequest>
+  Model::CreatePortalProductOutcomeCallable CreatePortalProductCallable(const CreatePortalProductRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::CreatePortalProduct, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePortalProduct that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreatePortalProductRequestT = Model::CreatePortalProductRequest>
+  void CreatePortalProductAsync(const CreatePortalProductRequestT& request, const CreatePortalProductResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::CreatePortalProduct, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new product page for a portal product.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProductPageOutcome CreateProductPage(const Model::CreateProductPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProductPage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateProductPageRequestT = Model::CreateProductPageRequest>
+  Model::CreateProductPageOutcomeCallable CreateProductPageCallable(const CreateProductPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::CreateProductPage, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProductPage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateProductPageRequestT = Model::CreateProductPageRequest>
+  void CreateProductPageAsync(const CreateProductPageRequestT& request, const CreateProductPageResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::CreateProductPage, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a product REST endpoint page for a portal product.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProductRestEndpointPageOutcome CreateProductRestEndpointPage(
+      const Model::CreateProductRestEndpointPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProductRestEndpointPage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateProductRestEndpointPageRequestT = Model::CreateProductRestEndpointPageRequest>
+  Model::CreateProductRestEndpointPageOutcomeCallable CreateProductRestEndpointPageCallable(
+      const CreateProductRestEndpointPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::CreateProductRestEndpointPage, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProductRestEndpointPage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateProductRestEndpointPageRequestT = Model::CreateProductRestEndpointPageRequest>
+  void CreateProductRestEndpointPageAsync(const CreateProductRestEndpointPageRequestT& request,
+                                          const CreateProductRestEndpointPageResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::CreateProductRestEndpointPage, request, handler, context);
+  }
+
+  /**
    * <p>Creates a Route for an API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">AWS
    * API Reference</a></p>
@@ -673,6 +781,142 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Deletes a portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePortalOutcome DeletePortal(const Model::DeletePortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeletePortalRequestT = Model::DeletePortalRequest>
+  Model::DeletePortalOutcomeCallable DeletePortalCallable(const DeletePortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DeletePortal, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeletePortalRequestT = Model::DeletePortalRequest>
+  void DeletePortalAsync(const DeletePortalRequestT& request, const DeletePortalResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DeletePortal, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePortalProductOutcome DeletePortalProduct(const Model::DeletePortalProductRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePortalProduct that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePortalProductRequestT = Model::DeletePortalProductRequest>
+  Model::DeletePortalProductOutcomeCallable DeletePortalProductCallable(const DeletePortalProductRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DeletePortalProduct, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePortalProduct that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeletePortalProductRequestT = Model::DeletePortalProductRequest>
+  void DeletePortalProductAsync(const DeletePortalProductRequestT& request, const DeletePortalProductResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DeletePortalProduct, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the sharing policy for a portal product.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePortalProductSharingPolicyOutcome DeletePortalProductSharingPolicy(
+      const Model::DeletePortalProductSharingPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePortalProductSharingPolicy that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeletePortalProductSharingPolicyRequestT = Model::DeletePortalProductSharingPolicyRequest>
+  Model::DeletePortalProductSharingPolicyOutcomeCallable DeletePortalProductSharingPolicyCallable(
+      const DeletePortalProductSharingPolicyRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DeletePortalProductSharingPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePortalProductSharingPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeletePortalProductSharingPolicyRequestT = Model::DeletePortalProductSharingPolicyRequest>
+  void DeletePortalProductSharingPolicyAsync(const DeletePortalProductSharingPolicyRequestT& request,
+                                             const DeletePortalProductSharingPolicyResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DeletePortalProductSharingPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a product page of a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProductPageOutcome DeleteProductPage(const Model::DeleteProductPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProductPage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteProductPageRequestT = Model::DeleteProductPageRequest>
+  Model::DeleteProductPageOutcomeCallable DeleteProductPageCallable(const DeleteProductPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DeleteProductPage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProductPage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteProductPageRequestT = Model::DeleteProductPageRequest>
+  void DeleteProductPageAsync(const DeleteProductPageRequestT& request, const DeleteProductPageResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DeleteProductPage, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a product REST endpoint page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProductRestEndpointPageOutcome DeleteProductRestEndpointPage(
+      const Model::DeleteProductRestEndpointPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProductRestEndpointPage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteProductRestEndpointPageRequestT = Model::DeleteProductRestEndpointPageRequest>
+  Model::DeleteProductRestEndpointPageOutcomeCallable DeleteProductRestEndpointPageCallable(
+      const DeleteProductRestEndpointPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DeleteProductRestEndpointPage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProductRestEndpointPage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteProductRestEndpointPageRequestT = Model::DeleteProductRestEndpointPageRequest>
+  void DeleteProductRestEndpointPageAsync(const DeleteProductRestEndpointPageRequestT& request,
+                                          const DeleteProductRestEndpointPageResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DeleteProductRestEndpointPage, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a Route.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">AWS
    * API Reference</a></p>
@@ -853,6 +1097,31 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   void DeleteVpcLinkAsync(const DeleteVpcLinkRequestT& request, const DeleteVpcLinkResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApiGatewayV2Client::DeleteVpcLink, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the publication of a portal portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisablePortalOutcome DisablePortal(const Model::DisablePortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisablePortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DisablePortalRequestT = Model::DisablePortalRequest>
+  Model::DisablePortalOutcomeCallable DisablePortalCallable(const DisablePortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::DisablePortal, request);
+  }
+
+  /**
+   * An Async wrapper for DisablePortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DisablePortalRequestT = Model::DisablePortalRequest>
+  void DisablePortalAsync(const DisablePortalRequestT& request, const DisablePortalResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::DisablePortal, request, handler, context);
   }
 
   /**
@@ -1312,6 +1581,140 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Gets a portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPortalOutcome GetPortal(const Model::GetPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetPortalRequestT = Model::GetPortalRequest>
+  Model::GetPortalOutcomeCallable GetPortalCallable(const GetPortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::GetPortal, request);
+  }
+
+  /**
+   * An Async wrapper for GetPortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetPortalRequestT = Model::GetPortalRequest>
+  void GetPortalAsync(const GetPortalRequestT& request, const GetPortalResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::GetPortal, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPortalProductOutcome GetPortalProduct(const Model::GetPortalProductRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPortalProduct that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPortalProductRequestT = Model::GetPortalProductRequest>
+  Model::GetPortalProductOutcomeCallable GetPortalProductCallable(const GetPortalProductRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::GetPortalProduct, request);
+  }
+
+  /**
+   * An Async wrapper for GetPortalProduct that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPortalProductRequestT = Model::GetPortalProductRequest>
+  void GetPortalProductAsync(const GetPortalProductRequestT& request, const GetPortalProductResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::GetPortalProduct, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the sharing policy for a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPortalProductSharingPolicyOutcome GetPortalProductSharingPolicy(
+      const Model::GetPortalProductSharingPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPortalProductSharingPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPortalProductSharingPolicyRequestT = Model::GetPortalProductSharingPolicyRequest>
+  Model::GetPortalProductSharingPolicyOutcomeCallable GetPortalProductSharingPolicyCallable(
+      const GetPortalProductSharingPolicyRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::GetPortalProductSharingPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetPortalProductSharingPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPortalProductSharingPolicyRequestT = Model::GetPortalProductSharingPolicyRequest>
+  void GetPortalProductSharingPolicyAsync(const GetPortalProductSharingPolicyRequestT& request,
+                                          const GetPortalProductSharingPolicyResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::GetPortalProductSharingPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a product page of a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProductPageOutcome GetProductPage(const Model::GetProductPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProductPage that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetProductPageRequestT = Model::GetProductPageRequest>
+  Model::GetProductPageOutcomeCallable GetProductPageCallable(const GetProductPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::GetProductPage, request);
+  }
+
+  /**
+   * An Async wrapper for GetProductPage that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetProductPageRequestT = Model::GetProductPageRequest>
+  void GetProductPageAsync(const GetProductPageRequestT& request, const GetProductPageResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::GetProductPage, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a product REST endpoint page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProductRestEndpointPageOutcome GetProductRestEndpointPage(
+      const Model::GetProductRestEndpointPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProductRestEndpointPage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetProductRestEndpointPageRequestT = Model::GetProductRestEndpointPageRequest>
+  Model::GetProductRestEndpointPageOutcomeCallable GetProductRestEndpointPageCallable(
+      const GetProductRestEndpointPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::GetProductRestEndpointPage, request);
+  }
+
+  /**
+   * An Async wrapper for GetProductRestEndpointPage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetProductRestEndpointPageRequestT = Model::GetProductRestEndpointPageRequest>
+  void GetProductRestEndpointPageAsync(const GetProductRestEndpointPageRequestT& request,
+                                       const GetProductRestEndpointPageResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::GetProductRestEndpointPage, request, handler, context);
+  }
+
+  /**
    * <p>Gets a Route.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">AWS
    * API Reference</a></p>
@@ -1590,6 +1993,115 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Lists portal products.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPortalProductsOutcome ListPortalProducts(const Model::ListPortalProductsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPortalProducts that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPortalProductsRequestT = Model::ListPortalProductsRequest>
+  Model::ListPortalProductsOutcomeCallable ListPortalProductsCallable(const ListPortalProductsRequestT& request = {}) const {
+    return SubmitCallable(&ApiGatewayV2Client::ListPortalProducts, request);
+  }
+
+  /**
+   * An Async wrapper for ListPortalProducts that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListPortalProductsRequestT = Model::ListPortalProductsRequest>
+  void ListPortalProductsAsync(const ListPortalProductsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListPortalProductsRequestT& request = {}) const {
+    return SubmitAsync(&ApiGatewayV2Client::ListPortalProducts, request, handler, context);
+  }
+
+  /**
+   * <p>Lists portals.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPortalsOutcome ListPortals(const Model::ListPortalsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPortals that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListPortalsRequestT = Model::ListPortalsRequest>
+  Model::ListPortalsOutcomeCallable ListPortalsCallable(const ListPortalsRequestT& request = {}) const {
+    return SubmitCallable(&ApiGatewayV2Client::ListPortals, request);
+  }
+
+  /**
+   * An Async wrapper for ListPortals that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListPortalsRequestT = Model::ListPortalsRequest>
+  void ListPortalsAsync(const ListPortalsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const ListPortalsRequestT& request = {}) const {
+    return SubmitAsync(&ApiGatewayV2Client::ListPortals, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the product pages for a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProductPagesOutcome ListProductPages(const Model::ListProductPagesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListProductPages that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListProductPagesRequestT = Model::ListProductPagesRequest>
+  Model::ListProductPagesOutcomeCallable ListProductPagesCallable(const ListProductPagesRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::ListProductPages, request);
+  }
+
+  /**
+   * An Async wrapper for ListProductPages that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListProductPagesRequestT = Model::ListProductPagesRequest>
+  void ListProductPagesAsync(const ListProductPagesRequestT& request, const ListProductPagesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::ListProductPages, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the product REST endpoint pages of a portal product.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProductRestEndpointPagesOutcome ListProductRestEndpointPages(
+      const Model::ListProductRestEndpointPagesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListProductRestEndpointPages that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListProductRestEndpointPagesRequestT = Model::ListProductRestEndpointPagesRequest>
+  Model::ListProductRestEndpointPagesOutcomeCallable ListProductRestEndpointPagesCallable(
+      const ListProductRestEndpointPagesRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::ListProductRestEndpointPages, request);
+  }
+
+  /**
+   * An Async wrapper for ListProductRestEndpointPages that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListProductRestEndpointPagesRequestT = Model::ListProductRestEndpointPagesRequest>
+  void ListProductRestEndpointPagesAsync(const ListProductRestEndpointPagesRequestT& request,
+                                         const ListProductRestEndpointPagesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::ListProductRestEndpointPages, request, handler, context);
+  }
+
+  /**
    * <p>Lists routing rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">AWS
    * API Reference</a></p>
@@ -1613,6 +2125,86 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   void ListRoutingRulesAsync(const ListRoutingRulesRequestT& request, const ListRoutingRulesResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApiGatewayV2Client::ListRoutingRules, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a portal preview.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PreviewPortalOutcome PreviewPortal(const Model::PreviewPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for PreviewPortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PreviewPortalRequestT = Model::PreviewPortalRequest>
+  Model::PreviewPortalOutcomeCallable PreviewPortalCallable(const PreviewPortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::PreviewPortal, request);
+  }
+
+  /**
+   * An Async wrapper for PreviewPortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PreviewPortalRequestT = Model::PreviewPortalRequest>
+  void PreviewPortalAsync(const PreviewPortalRequestT& request, const PreviewPortalResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::PreviewPortal, request, handler, context);
+  }
+
+  /**
+   * <p>Publishes a portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PublishPortalOutcome PublishPortal(const Model::PublishPortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for PublishPortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PublishPortalRequestT = Model::PublishPortalRequest>
+  Model::PublishPortalOutcomeCallable PublishPortalCallable(const PublishPortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::PublishPortal, request);
+  }
+
+  /**
+   * An Async wrapper for PublishPortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PublishPortalRequestT = Model::PublishPortalRequest>
+  void PublishPortalAsync(const PublishPortalRequestT& request, const PublishPortalResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::PublishPortal, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the sharing policy for a portal product.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutPortalProductSharingPolicyOutcome PutPortalProductSharingPolicy(
+      const Model::PutPortalProductSharingPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutPortalProductSharingPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutPortalProductSharingPolicyRequestT = Model::PutPortalProductSharingPolicyRequest>
+  Model::PutPortalProductSharingPolicyOutcomeCallable PutPortalProductSharingPolicyCallable(
+      const PutPortalProductSharingPolicyRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::PutPortalProductSharingPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutPortalProductSharingPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutPortalProductSharingPolicyRequestT = Model::PutPortalProductSharingPolicyRequest>
+  void PutPortalProductSharingPolicyAsync(const PutPortalProductSharingPolicyRequestT& request,
+                                          const PutPortalProductSharingPolicyResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::PutPortalProductSharingPolicy, request, handler, context);
   }
 
   /**
@@ -1948,6 +2540,112 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   void UpdateModelAsync(const UpdateModelRequestT& request, const UpdateModelResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ApiGatewayV2Client::UpdateModel, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a portal.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePortalOutcome UpdatePortal(const Model::UpdatePortalRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePortal that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdatePortalRequestT = Model::UpdatePortalRequest>
+  Model::UpdatePortalOutcomeCallable UpdatePortalCallable(const UpdatePortalRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::UpdatePortal, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePortal that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdatePortalRequestT = Model::UpdatePortalRequest>
+  void UpdatePortalAsync(const UpdatePortalRequestT& request, const UpdatePortalResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::UpdatePortal, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePortalProductOutcome UpdatePortalProduct(const Model::UpdatePortalProductRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePortalProduct that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdatePortalProductRequestT = Model::UpdatePortalProductRequest>
+  Model::UpdatePortalProductOutcomeCallable UpdatePortalProductCallable(const UpdatePortalProductRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::UpdatePortalProduct, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePortalProduct that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdatePortalProductRequestT = Model::UpdatePortalProductRequest>
+  void UpdatePortalProductAsync(const UpdatePortalProductRequestT& request, const UpdatePortalProductResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::UpdatePortalProduct, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a product page of a portal product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProductPageOutcome UpdateProductPage(const Model::UpdateProductPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProductPage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProductPageRequestT = Model::UpdateProductPageRequest>
+  Model::UpdateProductPageOutcomeCallable UpdateProductPageCallable(const UpdateProductPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::UpdateProductPage, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProductPage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateProductPageRequestT = Model::UpdateProductPageRequest>
+  void UpdateProductPageAsync(const UpdateProductPageRequestT& request, const UpdateProductPageResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::UpdateProductPage, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a product REST endpoint page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProductRestEndpointPageOutcome UpdateProductRestEndpointPage(
+      const Model::UpdateProductRestEndpointPageRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProductRestEndpointPage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateProductRestEndpointPageRequestT = Model::UpdateProductRestEndpointPageRequest>
+  Model::UpdateProductRestEndpointPageOutcomeCallable UpdateProductRestEndpointPageCallable(
+      const UpdateProductRestEndpointPageRequestT& request) const {
+    return SubmitCallable(&ApiGatewayV2Client::UpdateProductRestEndpointPage, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProductRestEndpointPage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProductRestEndpointPageRequestT = Model::UpdateProductRestEndpointPageRequest>
+  void UpdateProductRestEndpointPageAsync(const UpdateProductRestEndpointPageRequestT& request,
+                                          const UpdateProductRestEndpointPageResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ApiGatewayV2Client::UpdateProductRestEndpointPage, request, handler, context);
   }
 
   /**

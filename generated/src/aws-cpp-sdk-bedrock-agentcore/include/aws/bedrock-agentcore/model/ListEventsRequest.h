@@ -49,8 +49,7 @@ class ListEventsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The identifier of the session for which to list events. If specified, only
-   * events from this session are returned.</p>
+   * <p>The identifier of the session for which to list events.</p>
    */
   inline const Aws::String& GetSessionId() const { return m_sessionId; }
   inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
@@ -68,8 +67,7 @@ class ListEventsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The identifier of the actor for which to list events. If specified, only
-   * events from this actor are returned.</p>
+   * <p>The identifier of the actor for which to list events.</p>
    */
   inline const Aws::String& GetActorId() const { return m_actorId; }
   inline bool ActorIdHasBeenSet() const { return m_actorIdHasBeenSet; }
@@ -122,8 +120,8 @@ class ListEventsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return in a single call. Minimum value of 1,
-   * maximum value of 100. Default is 20.</p>
+   * <p>The maximum number of results to return in a single call. The default value
+   * is 20.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -1215,8 +1215,10 @@ class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the permissions an account has to configure Amazon
-   * Inspector.</p><p><h3>See Also:</h3>   <a
+   * <p> Lists the permissions an account has to configure Amazon Inspector. If the
+   * account is a member account or standalone account with resources managed by an
+   * Organizations policy, the operation returns fewer permissions. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListAccountPermissions">AWS
    * API Reference</a></p>
    */

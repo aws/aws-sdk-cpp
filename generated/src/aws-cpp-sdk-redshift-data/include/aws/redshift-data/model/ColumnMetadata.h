@@ -33,24 +33,6 @@ class ColumnMetadata {
 
   ///@{
   /**
-   * <p>The default value of the column. </p>
-   */
-  inline const Aws::String& GetColumnDefault() const { return m_columnDefault; }
-  inline bool ColumnDefaultHasBeenSet() const { return m_columnDefaultHasBeenSet; }
-  template <typename ColumnDefaultT = Aws::String>
-  void SetColumnDefault(ColumnDefaultT&& value) {
-    m_columnDefaultHasBeenSet = true;
-    m_columnDefault = std::forward<ColumnDefaultT>(value);
-  }
-  template <typename ColumnDefaultT = Aws::String>
-  ColumnMetadata& WithColumnDefault(ColumnDefaultT&& value) {
-    SetColumnDefault(std::forward<ColumnDefaultT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A value that indicates whether the column is case-sensitive. </p>
    */
   inline bool GetIsCaseSensitive() const { return m_isCaseSensitive; }
@@ -111,22 +93,6 @@ class ColumnMetadata {
   template <typename LabelT = Aws::String>
   ColumnMetadata& WithLabel(LabelT&& value) {
     SetLabel(std::forward<LabelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The length of the column.</p>
-   */
-  inline int GetLength() const { return m_length; }
-  inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-  inline void SetLength(int value) {
-    m_lengthHasBeenSet = true;
-    m_length = value;
-  }
-  inline ColumnMetadata& WithLength(int value) {
-    SetLength(value);
     return *this;
   }
   ///@}
@@ -250,10 +216,41 @@ class ColumnMetadata {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_columnDefault;
-  bool m_columnDefaultHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The length of the column.</p>
+   */
+  inline int GetLength() const { return m_length; }
+  inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
+  inline void SetLength(int value) {
+    m_lengthHasBeenSet = true;
+    m_length = value;
+  }
+  inline ColumnMetadata& WithLength(int value) {
+    SetLength(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default value of the column. </p>
+   */
+  inline const Aws::String& GetColumnDefault() const { return m_columnDefault; }
+  inline bool ColumnDefaultHasBeenSet() const { return m_columnDefaultHasBeenSet; }
+  template <typename ColumnDefaultT = Aws::String>
+  void SetColumnDefault(ColumnDefaultT&& value) {
+    m_columnDefaultHasBeenSet = true;
+    m_columnDefault = std::forward<ColumnDefaultT>(value);
+  }
+  template <typename ColumnDefaultT = Aws::String>
+  ColumnMetadata& WithColumnDefault(ColumnDefaultT&& value) {
+    SetColumnDefault(std::forward<ColumnDefaultT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   bool m_isCaseSensitive{false};
   bool m_isCaseSensitiveHasBeenSet = false;
 
@@ -265,9 +262,6 @@ class ColumnMetadata {
 
   Aws::String m_label;
   bool m_labelHasBeenSet = false;
-
-  int m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -289,6 +283,12 @@ class ColumnMetadata {
 
   Aws::String m_typeName;
   bool m_typeNameHasBeenSet = false;
+
+  int m_length{0};
+  bool m_lengthHasBeenSet = false;
+
+  Aws::String m_columnDefault;
+  bool m_columnDefaultHasBeenSet = false;
 };
 
 }  // namespace Model

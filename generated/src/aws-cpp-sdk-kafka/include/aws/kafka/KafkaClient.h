@@ -625,6 +625,64 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
 
   /**
    *
+      <p>Returns topic details of this topic on a MSK cluster.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopic">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTopicOutcome DescribeTopic(const Model::DescribeTopicRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTopic that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeTopicRequestT = Model::DescribeTopicRequest>
+  Model::DescribeTopicOutcomeCallable DescribeTopicCallable(const DescribeTopicRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DescribeTopic, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTopic that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeTopicRequestT = Model::DescribeTopicRequest>
+  void DescribeTopicAsync(const DescribeTopicRequestT& request, const DescribeTopicResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DescribeTopic, request, handler, context);
+  }
+
+  /**
+   *
+      <p>Returns partition details of this topic on a MSK cluster.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicPartitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTopicPartitionsOutcome DescribeTopicPartitions(const Model::DescribeTopicPartitionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTopicPartitions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeTopicPartitionsRequestT = Model::DescribeTopicPartitionsRequest>
+  Model::DescribeTopicPartitionsOutcomeCallable DescribeTopicPartitionsCallable(const DescribeTopicPartitionsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DescribeTopicPartitions, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTopicPartitions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTopicPartitionsRequestT = Model::DescribeTopicPartitionsRequest>
+  void DescribeTopicPartitionsAsync(const DescribeTopicPartitionsRequestT& request,
+                                    const DescribeTopicPartitionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DescribeTopicPartitions, request, handler, context);
+  }
+
+  /**
+   *
       <p>Returns a description of this MSK VPC connection.</p>
 
    * <p><h3>See Also:</h3>   <a
@@ -1096,6 +1154,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   *
+      <p>List topics in a MSK cluster.</p>
+   <p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTopics that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListTopicsRequestT = Model::ListTopicsRequest>
+  Model::ListTopicsOutcomeCallable ListTopicsCallable(const ListTopicsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::ListTopics, request);
+  }
+
+  /**
+   * An Async wrapper for ListTopics that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListTopicsRequestT = Model::ListTopicsRequest>
+  void ListTopicsAsync(const ListTopicsRequestT& request, const ListTopicsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::ListTopics, request, handler, context);
   }
 
   /**

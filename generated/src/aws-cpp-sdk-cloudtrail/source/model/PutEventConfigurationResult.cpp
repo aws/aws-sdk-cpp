@@ -21,6 +21,10 @@ PutEventConfigurationResult::PutEventConfigurationResult(const Aws::AmazonWebSer
 
 PutEventConfigurationResult& PutEventConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("TrailARN")) {
+    m_trailARN = jsonValue.GetString("TrailARN");
+    m_trailARNHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EventDataStoreArn")) {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
     m_eventDataStoreArnHasBeenSet = true;
@@ -36,6 +40,14 @@ PutEventConfigurationResult& PutEventConfigurationResult::operator=(const Aws::A
       m_contextKeySelectors.push_back(contextKeySelectorsJsonList[contextKeySelectorsIndex].AsObject());
     }
     m_contextKeySelectorsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AggregationConfigurations")) {
+    Aws::Utils::Array<JsonView> aggregationConfigurationsJsonList = jsonValue.GetArray("AggregationConfigurations");
+    for (unsigned aggregationConfigurationsIndex = 0; aggregationConfigurationsIndex < aggregationConfigurationsJsonList.GetLength();
+         ++aggregationConfigurationsIndex) {
+      m_aggregationConfigurations.push_back(aggregationConfigurationsJsonList[aggregationConfigurationsIndex].AsObject());
+    }
+    m_aggregationConfigurationsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

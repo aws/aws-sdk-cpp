@@ -7,6 +7,7 @@
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/bcm-pricing-calculator/model/BillInterval.h>
 #include <aws/bcm-pricing-calculator/model/BillScenarioStatus.h>
+#include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -147,6 +148,40 @@ class CreateBillScenarioResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The setting for the reserved instance and savings plan group sharing used in
+   * this estimate.</p>
+   */
+  inline GroupSharingPreferenceEnum GetGroupSharingPreference() const { return m_groupSharingPreference; }
+  inline void SetGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    m_groupSharingPreferenceHasBeenSet = true;
+    m_groupSharingPreference = value;
+  }
+  inline CreateBillScenarioResult& WithGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    SetGroupSharingPreference(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The arn of the cost category used in the reserved and prioritized group
+   * sharing.</p>
+   */
+  inline const Aws::String& GetCostCategoryGroupSharingPreferenceArn() const { return m_costCategoryGroupSharingPreferenceArn; }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  void SetCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+    m_costCategoryGroupSharingPreferenceArn = std::forward<CostCategoryGroupSharingPreferenceArnT>(value);
+  }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  CreateBillScenarioResult& WithCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    SetCostCategoryGroupSharingPreferenceArn(std::forward<CostCategoryGroupSharingPreferenceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -181,6 +216,12 @@ class CreateBillScenarioResult {
 
   Aws::String m_failureMessage;
   bool m_failureMessageHasBeenSet = false;
+
+  GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
+  bool m_groupSharingPreferenceHasBeenSet = false;
+
+  Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

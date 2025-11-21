@@ -16,11 +16,20 @@ namespace Model {
 namespace MonitorDimensionMapper {
 
 static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+static const int LINKED_ACCOUNT_HASH = HashingUtils::HashString("LINKED_ACCOUNT");
+static const int TAG_HASH = HashingUtils::HashString("TAG");
+static const int COST_CATEGORY_HASH = HashingUtils::HashString("COST_CATEGORY");
 
 MonitorDimension GetMonitorDimensionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == SERVICE_HASH) {
     return MonitorDimension::SERVICE;
+  } else if (hashCode == LINKED_ACCOUNT_HASH) {
+    return MonitorDimension::LINKED_ACCOUNT;
+  } else if (hashCode == TAG_HASH) {
+    return MonitorDimension::TAG;
+  } else if (hashCode == COST_CATEGORY_HASH) {
+    return MonitorDimension::COST_CATEGORY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +46,12 @@ Aws::String GetNameForMonitorDimension(MonitorDimension enumValue) {
       return {};
     case MonitorDimension::SERVICE:
       return "SERVICE";
+    case MonitorDimension::LINKED_ACCOUNT:
+      return "LINKED_ACCOUNT";
+    case MonitorDimension::TAG:
+      return "TAG";
+    case MonitorDimension::COST_CATEGORY:
+      return "COST_CATEGORY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

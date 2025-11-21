@@ -30,6 +30,10 @@ ManagedInstancesProvider& ManagedInstancesProvider::operator=(JsonView jsonValue
     m_propagateTags = PropagateMITagsMapper::GetPropagateMITagsForName(jsonValue.GetString("propagateTags"));
     m_propagateTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("infrastructureOptimization")) {
+    m_infrastructureOptimization = jsonValue.GetObject("infrastructureOptimization");
+    m_infrastructureOptimizationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ManagedInstancesProvider::Jsonize() const {
 
   if (m_propagateTagsHasBeenSet) {
     payload.WithString("propagateTags", PropagateMITagsMapper::GetNameForPropagateMITags(m_propagateTags));
+  }
+
+  if (m_infrastructureOptimizationHasBeenSet) {
+    payload.WithObject("infrastructureOptimization", m_infrastructureOptimization.Jsonize());
   }
 
   return payload;

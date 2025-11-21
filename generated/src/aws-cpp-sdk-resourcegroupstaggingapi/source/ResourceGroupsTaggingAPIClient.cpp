@@ -25,6 +25,7 @@
 #include <aws/resourcegroupstaggingapi/model/GetResourcesRequest.h>
 #include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
 #include <aws/resourcegroupstaggingapi/model/GetTagValuesRequest.h>
+#include <aws/resourcegroupstaggingapi/model/ListRequiredTagsRequest.h>
 #include <aws/resourcegroupstaggingapi/model/StartReportCreationRequest.h>
 #include <aws/resourcegroupstaggingapi/model/TagResourcesRequest.h>
 #include <aws/resourcegroupstaggingapi/model/UntagResourcesRequest.h>
@@ -291,6 +292,35 @@ GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagVal
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTagValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return GetTagValuesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRequiredTagsOutcome ResourceGroupsTaggingAPIClient::ListRequiredTags(const ListRequiredTagsRequest& request) const {
+  AWS_OPERATION_GUARD(ListRequiredTags);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRequiredTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRequiredTags, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRequiredTags, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRequiredTags",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRequiredTagsOutcome>(
+      [&]() -> ListRequiredTagsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRequiredTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return ListRequiredTagsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -89,6 +89,63 @@ class CloudWatchLogOptionsSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable BGP logging for the VPN connection. Default value
+   * is <code>False</code>.</p> <p>Valid values: <code>True</code> |
+   * <code>False</code> </p>
+   */
+  inline bool GetBgpLogEnabled() const { return m_bgpLogEnabled; }
+  inline bool BgpLogEnabledHasBeenSet() const { return m_bgpLogEnabledHasBeenSet; }
+  inline void SetBgpLogEnabled(bool value) {
+    m_bgpLogEnabledHasBeenSet = true;
+    m_bgpLogEnabled = value;
+  }
+  inline CloudWatchLogOptionsSpecification& WithBgpLogEnabled(bool value) {
+    SetBgpLogEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the CloudWatch log group where BGP logs
+   * will be sent.</p>
+   */
+  inline const Aws::String& GetBgpLogGroupArn() const { return m_bgpLogGroupArn; }
+  inline bool BgpLogGroupArnHasBeenSet() const { return m_bgpLogGroupArnHasBeenSet; }
+  template <typename BgpLogGroupArnT = Aws::String>
+  void SetBgpLogGroupArn(BgpLogGroupArnT&& value) {
+    m_bgpLogGroupArnHasBeenSet = true;
+    m_bgpLogGroupArn = std::forward<BgpLogGroupArnT>(value);
+  }
+  template <typename BgpLogGroupArnT = Aws::String>
+  CloudWatchLogOptionsSpecification& WithBgpLogGroupArn(BgpLogGroupArnT&& value) {
+    SetBgpLogGroupArn(std::forward<BgpLogGroupArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The desired output format for BGP logs to be sent to CloudWatch. Default
+   * format is <code>json</code>.</p> <p>Valid values: <code>json</code> |
+   * <code>text</code> </p>
+   */
+  inline const Aws::String& GetBgpLogOutputFormat() const { return m_bgpLogOutputFormat; }
+  inline bool BgpLogOutputFormatHasBeenSet() const { return m_bgpLogOutputFormatHasBeenSet; }
+  template <typename BgpLogOutputFormatT = Aws::String>
+  void SetBgpLogOutputFormat(BgpLogOutputFormatT&& value) {
+    m_bgpLogOutputFormatHasBeenSet = true;
+    m_bgpLogOutputFormat = std::forward<BgpLogOutputFormatT>(value);
+  }
+  template <typename BgpLogOutputFormatT = Aws::String>
+  CloudWatchLogOptionsSpecification& WithBgpLogOutputFormat(BgpLogOutputFormatT&& value) {
+    SetBgpLogOutputFormat(std::forward<BgpLogOutputFormatT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_logEnabled{false};
   bool m_logEnabledHasBeenSet = false;
@@ -98,6 +155,15 @@ class CloudWatchLogOptionsSpecification {
 
   Aws::String m_logOutputFormat;
   bool m_logOutputFormatHasBeenSet = false;
+
+  bool m_bgpLogEnabled{false};
+  bool m_bgpLogEnabledHasBeenSet = false;
+
+  Aws::String m_bgpLogGroupArn;
+  bool m_bgpLogGroupArnHasBeenSet = false;
+
+  Aws::String m_bgpLogOutputFormat;
+  bool m_bgpLogOutputFormatHasBeenSet = false;
 };
 
 }  // namespace Model

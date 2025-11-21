@@ -15,24 +15,12 @@ using namespace Aws::Utils;
 Aws::String ListStatementsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clusterIdentifierHasBeenSet) {
-    payload.WithString("ClusterIdentifier", m_clusterIdentifier);
-  }
-
-  if (m_databaseHasBeenSet) {
-    payload.WithString("Database", m_database);
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
   }
 
-  if (m_roleLevelHasBeenSet) {
-    payload.WithBool("RoleLevel", m_roleLevel);
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   if (m_statementNameHasBeenSet) {
@@ -41,6 +29,18 @@ Aws::String ListStatementsRequest::SerializePayload() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", StatusStringMapper::GetNameForStatusString(m_status));
+  }
+
+  if (m_roleLevelHasBeenSet) {
+    payload.WithBool("RoleLevel", m_roleLevel);
+  }
+
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
+  }
+
+  if (m_clusterIdentifierHasBeenSet) {
+    payload.WithString("ClusterIdentifier", m_clusterIdentifier);
   }
 
   if (m_workgroupNameHasBeenSet) {

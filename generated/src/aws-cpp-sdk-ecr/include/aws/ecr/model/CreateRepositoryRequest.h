@@ -128,8 +128,8 @@ class CreateRepositoryRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>Creates a repository with a list of filters that define which image tags can
-   * override the default image tag mutability setting.</p>
+   * <p>A list of filters that specify which image tags should be excluded from the
+   * repository's image tag mutability setting.</p>
    */
   inline const Aws::Vector<ImageTagMutabilityExclusionFilter>& GetImageTagMutabilityExclusionFilters() const {
     return m_imageTagMutabilityExclusionFilters;
@@ -155,9 +155,12 @@ class CreateRepositoryRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>The image scanning configuration for the repository. This determines whether
-   * images are scanned for known vulnerabilities after being pushed to the
-   * repository.</p>
+   *  <p>The <code>imageScanningConfiguration</code> parameter is being
+   * deprecated, in favor of specifying the image scanning configuration at the
+   * registry level. For more information, see
+   * <code>PutRegistryScanningConfiguration</code>.</p>  <p>The image
+   * scanning configuration for the repository. This determines whether images are
+   * scanned for known vulnerabilities after being pushed to the repository.</p>
    */
   inline const ImageScanningConfiguration& GetImageScanningConfiguration() const { return m_imageScanningConfiguration; }
   inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }

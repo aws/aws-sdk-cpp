@@ -17,6 +17,7 @@ namespace ReportTypeMapper {
 
 static const int LicenseConfigurationSummaryReport_HASH = HashingUtils::HashString("LicenseConfigurationSummaryReport");
 static const int LicenseConfigurationUsageReport_HASH = HashingUtils::HashString("LicenseConfigurationUsageReport");
+static const int LicenseAssetGroupUsageReport_HASH = HashingUtils::HashString("LicenseAssetGroupUsageReport");
 
 ReportType GetReportTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ReportType GetReportTypeForName(const Aws::String& name) {
     return ReportType::LicenseConfigurationSummaryReport;
   } else if (hashCode == LicenseConfigurationUsageReport_HASH) {
     return ReportType::LicenseConfigurationUsageReport;
+  } else if (hashCode == LicenseAssetGroupUsageReport_HASH) {
+    return ReportType::LicenseAssetGroupUsageReport;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForReportType(ReportType enumValue) {
       return "LicenseConfigurationSummaryReport";
     case ReportType::LicenseConfigurationUsageReport:
       return "LicenseConfigurationUsageReport";
+    case ReportType::LicenseAssetGroupUsageReport:
+      return "LicenseAssetGroupUsageReport";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

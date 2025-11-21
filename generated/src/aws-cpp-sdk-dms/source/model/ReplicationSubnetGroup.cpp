@@ -49,6 +49,10 @@ ReplicationSubnetGroup& ReplicationSubnetGroup::operator=(JsonView jsonValue) {
     }
     m_supportedNetworkTypesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IsReadOnly")) {
+    m_isReadOnly = jsonValue.GetBool("IsReadOnly");
+    m_isReadOnlyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue ReplicationSubnetGroup::Jsonize() const {
       supportedNetworkTypesJsonList[supportedNetworkTypesIndex].AsString(m_supportedNetworkTypes[supportedNetworkTypesIndex]);
     }
     payload.WithArray("SupportedNetworkTypes", std::move(supportedNetworkTypesJsonList));
+  }
+
+  if (m_isReadOnlyHasBeenSet) {
+    payload.WithBool("IsReadOnly", m_isReadOnly);
   }
 
   return payload;

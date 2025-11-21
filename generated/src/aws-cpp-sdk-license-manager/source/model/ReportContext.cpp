@@ -26,6 +26,22 @@ ReportContext& ReportContext::operator=(JsonView jsonValue) {
     }
     m_licenseConfigurationArnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("licenseAssetGroupArns")) {
+    Aws::Utils::Array<JsonView> licenseAssetGroupArnsJsonList = jsonValue.GetArray("licenseAssetGroupArns");
+    for (unsigned licenseAssetGroupArnsIndex = 0; licenseAssetGroupArnsIndex < licenseAssetGroupArnsJsonList.GetLength();
+         ++licenseAssetGroupArnsIndex) {
+      m_licenseAssetGroupArns.push_back(licenseAssetGroupArnsJsonList[licenseAssetGroupArnsIndex].AsString());
+    }
+    m_licenseAssetGroupArnsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reportStartDate")) {
+    m_reportStartDate = jsonValue.GetDouble("reportStartDate");
+    m_reportStartDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reportEndDate")) {
+    m_reportEndDate = jsonValue.GetDouble("reportEndDate");
+    m_reportEndDateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -39,6 +55,23 @@ JsonValue ReportContext::Jsonize() const {
       licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
     }
     payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
+  }
+
+  if (m_licenseAssetGroupArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> licenseAssetGroupArnsJsonList(m_licenseAssetGroupArns.size());
+    for (unsigned licenseAssetGroupArnsIndex = 0; licenseAssetGroupArnsIndex < licenseAssetGroupArnsJsonList.GetLength();
+         ++licenseAssetGroupArnsIndex) {
+      licenseAssetGroupArnsJsonList[licenseAssetGroupArnsIndex].AsString(m_licenseAssetGroupArns[licenseAssetGroupArnsIndex]);
+    }
+    payload.WithArray("licenseAssetGroupArns", std::move(licenseAssetGroupArnsJsonList));
+  }
+
+  if (m_reportStartDateHasBeenSet) {
+    payload.WithDouble("reportStartDate", m_reportStartDate.SecondsWithMSPrecision());
+  }
+
+  if (m_reportEndDateHasBeenSet) {
+    payload.WithDouble("reportEndDate", m_reportEndDate.SecondsWithMSPrecision());
   }
 
   return payload;

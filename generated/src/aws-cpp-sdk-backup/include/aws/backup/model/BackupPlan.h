@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/BackupRule.h>
+#include <aws/backup/model/ScanSetting.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -106,6 +107,31 @@ class BackupPlan {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains your scanning configuration for the backup plan and includes the
+   * Malware scanner, your selected resources, and scanner role.</p>
+   */
+  inline const Aws::Vector<ScanSetting>& GetScanSettings() const { return m_scanSettings; }
+  inline bool ScanSettingsHasBeenSet() const { return m_scanSettingsHasBeenSet; }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  void SetScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings = std::forward<ScanSettingsT>(value);
+  }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  BackupPlan& WithScanSettings(ScanSettingsT&& value) {
+    SetScanSettings(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  template <typename ScanSettingsT = ScanSetting>
+  BackupPlan& AddScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings.emplace_back(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_backupPlanName;
   bool m_backupPlanNameHasBeenSet = false;
@@ -115,6 +141,9 @@ class BackupPlan {
 
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
   bool m_advancedBackupSettingsHasBeenSet = false;
+
+  Aws::Vector<ScanSetting> m_scanSettings;
+  bool m_scanSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

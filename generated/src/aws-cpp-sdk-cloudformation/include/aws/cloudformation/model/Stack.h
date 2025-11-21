@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/DeletionMode.h>
 #include <aws/cloudformation/model/DetailedStatus.h>
+#include <aws/cloudformation/model/OperationEntry.h>
 #include <aws/cloudformation/model/Output.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/RollbackConfiguration.h>
@@ -548,6 +549,30 @@ class Stack {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the most recent operations performed on this stack.</p>
+   */
+  inline const Aws::Vector<OperationEntry>& GetLastOperations() const { return m_lastOperations; }
+  inline bool LastOperationsHasBeenSet() const { return m_lastOperationsHasBeenSet; }
+  template <typename LastOperationsT = Aws::Vector<OperationEntry>>
+  void SetLastOperations(LastOperationsT&& value) {
+    m_lastOperationsHasBeenSet = true;
+    m_lastOperations = std::forward<LastOperationsT>(value);
+  }
+  template <typename LastOperationsT = Aws::Vector<OperationEntry>>
+  Stack& WithLastOperations(LastOperationsT&& value) {
+    SetLastOperations(std::forward<LastOperationsT>(value));
+    return *this;
+  }
+  template <typename LastOperationsT = OperationEntry>
+  Stack& AddLastOperations(LastOperationsT&& value) {
+    m_lastOperationsHasBeenSet = true;
+    m_lastOperations.emplace_back(std::forward<LastOperationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackId;
   bool m_stackIdHasBeenSet = false;
@@ -623,6 +648,9 @@ class Stack {
 
   DetailedStatus m_detailedStatus{DetailedStatus::NOT_SET};
   bool m_detailedStatusHasBeenSet = false;
+
+  Aws::Vector<OperationEntry> m_lastOperations;
+  bool m_lastOperationsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -52,19 +52,38 @@ class ListTablesRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>A database name. The connected database is specified when you connect with
-   * your authentication credentials. </p>
+   * <p>The name or ARN of the secret that enables access to the database. This
+   * parameter is required when authenticating using Secrets Manager. </p>
    */
-  inline const Aws::String& GetConnectedDatabase() const { return m_connectedDatabase; }
-  inline bool ConnectedDatabaseHasBeenSet() const { return m_connectedDatabaseHasBeenSet; }
-  template <typename ConnectedDatabaseT = Aws::String>
-  void SetConnectedDatabase(ConnectedDatabaseT&& value) {
-    m_connectedDatabaseHasBeenSet = true;
-    m_connectedDatabase = std::forward<ConnectedDatabaseT>(value);
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
   }
-  template <typename ConnectedDatabaseT = Aws::String>
-  ListTablesRequest& WithConnectedDatabase(ConnectedDatabaseT&& value) {
-    SetConnectedDatabase(std::forward<ConnectedDatabaseT>(value));
+  template <typename SecretArnT = Aws::String>
+  ListTablesRequest& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The database user name. This parameter is required when connecting to a
+   * cluster as a database user and authenticating using temporary credentials. </p>
+   */
+  inline const Aws::String& GetDbUser() const { return m_dbUser; }
+  inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
+  template <typename DbUserT = Aws::String>
+  void SetDbUser(DbUserT&& value) {
+    m_dbUserHasBeenSet = true;
+    m_dbUser = std::forward<DbUserT>(value);
+  }
+  template <typename DbUserT = Aws::String>
+  ListTablesRequest& WithDbUser(DbUserT&& value) {
+    SetDbUser(std::forward<DbUserT>(value));
     return *this;
   }
   ///@}
@@ -91,59 +110,19 @@ class ListTablesRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The database user name. This parameter is required when connecting to a
-   * cluster as a database user and authenticating using temporary credentials. </p>
+   * <p>A database name. The connected database is specified when you connect with
+   * your authentication credentials. </p>
    */
-  inline const Aws::String& GetDbUser() const { return m_dbUser; }
-  inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
-  template <typename DbUserT = Aws::String>
-  void SetDbUser(DbUserT&& value) {
-    m_dbUserHasBeenSet = true;
-    m_dbUser = std::forward<DbUserT>(value);
+  inline const Aws::String& GetConnectedDatabase() const { return m_connectedDatabase; }
+  inline bool ConnectedDatabaseHasBeenSet() const { return m_connectedDatabaseHasBeenSet; }
+  template <typename ConnectedDatabaseT = Aws::String>
+  void SetConnectedDatabase(ConnectedDatabaseT&& value) {
+    m_connectedDatabaseHasBeenSet = true;
+    m_connectedDatabase = std::forward<ConnectedDatabaseT>(value);
   }
-  template <typename DbUserT = Aws::String>
-  ListTablesRequest& WithDbUser(DbUserT&& value) {
-    SetDbUser(std::forward<DbUserT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of tables to return in the response. If more tables exist
-   * than fit in one response, then <code>NextToken</code> is returned to page
-   * through the results. </p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListTablesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A value that indicates the starting point for the next set of response
-   * records in a subsequent request. If a value is returned in a response, you can
-   * retrieve the next set of records by providing this returned NextToken value in
-   * the next NextToken parameter and retrying the command. If the NextToken field is
-   * empty, all response records have been retrieved for the request. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListTablesRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  template <typename ConnectedDatabaseT = Aws::String>
+  ListTablesRequest& WithConnectedDatabase(ConnectedDatabaseT&& value) {
+    SetConnectedDatabase(std::forward<ConnectedDatabaseT>(value));
     return *this;
   }
   ///@}
@@ -173,25 +152,6 @@ class ListTablesRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The name or ARN of the secret that enables access to the database. This
-   * parameter is required when authenticating using Secrets Manager. </p>
-   */
-  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-  template <typename SecretArnT = Aws::String>
-  void SetSecretArn(SecretArnT&& value) {
-    m_secretArnHasBeenSet = true;
-    m_secretArn = std::forward<SecretArnT>(value);
-  }
-  template <typename SecretArnT = Aws::String>
-  ListTablesRequest& WithSecretArn(SecretArnT&& value) {
-    SetSecretArn(std::forward<SecretArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A pattern to filter results by table name. Within a table pattern, "%" means
    * match any substring of 0 or more characters and "_" means match any one
    * character. Only table name entries matching the search pattern are returned. If
@@ -209,6 +169,46 @@ class ListTablesRequest : public RedshiftDataAPIServiceRequest {
   template <typename TablePatternT = Aws::String>
   ListTablesRequest& WithTablePattern(TablePatternT&& value) {
     SetTablePattern(std::forward<TablePatternT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A value that indicates the starting point for the next set of response
+   * records in a subsequent request. If a value is returned in a response, you can
+   * retrieve the next set of records by providing this returned NextToken value in
+   * the next NextToken parameter and retrying the command. If the NextToken field is
+   * empty, all response records have been retrieved for the request. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTablesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of tables to return in the response. If more tables exist
+   * than fit in one response, then <code>NextToken</code> is returned to page
+   * through the results. </p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListTablesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -236,29 +236,29 @@ class ListTablesRequest : public RedshiftDataAPIServiceRequest {
   Aws::String m_clusterIdentifier;
   bool m_clusterIdentifierHasBeenSet = false;
 
-  Aws::String m_connectedDatabase;
-  bool m_connectedDatabaseHasBeenSet = false;
-
-  Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
+  Aws::String m_secretArn;
+  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
   bool m_dbUserHasBeenSet = false;
 
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
+  Aws::String m_database;
+  bool m_databaseHasBeenSet = false;
 
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
+  Aws::String m_connectedDatabase;
+  bool m_connectedDatabaseHasBeenSet = false;
 
   Aws::String m_schemaPattern;
   bool m_schemaPatternHasBeenSet = false;
 
-  Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
-
   Aws::String m_tablePattern;
   bool m_tablePatternHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workgroupName;
   bool m_workgroupNameHasBeenSet = false;

@@ -354,6 +354,24 @@ class Contact {
 
   ///@{
   /**
+   * <p>The timestamp when ringing started for a campaign call.</p>
+   */
+  inline const Aws::Utils::DateTime& GetRingStartTimestamp() const { return m_ringStartTimestamp; }
+  inline bool RingStartTimestampHasBeenSet() const { return m_ringStartTimestampHasBeenSet; }
+  template <typename RingStartTimestampT = Aws::Utils::DateTime>
+  void SetRingStartTimestamp(RingStartTimestampT&& value) {
+    m_ringStartTimestampHasBeenSet = true;
+    m_ringStartTimestamp = std::forward<RingStartTimestampT>(value);
+  }
+  template <typename RingStartTimestampT = Aws::Utils::DateTime>
+  Contact& WithRingStartTimestamp(RingStartTimestampT&& value) {
+    SetRingStartTimestamp(std::forward<RingStartTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Total pause count for a contact.</p>
    */
   inline int GetTotalPauseCount() const { return m_totalPauseCount; }
@@ -972,6 +990,9 @@ class Contact {
 
   Aws::Utils::DateTime m_lastResumedTimestamp{};
   bool m_lastResumedTimestampHasBeenSet = false;
+
+  Aws::Utils::DateTime m_ringStartTimestamp{};
+  bool m_ringStartTimestampHasBeenSet = false;
 
   int m_totalPauseCount{0};
   bool m_totalPauseCountHasBeenSet = false;

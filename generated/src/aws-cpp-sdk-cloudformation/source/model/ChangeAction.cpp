@@ -20,6 +20,7 @@ static const int Modify_HASH = HashingUtils::HashString("Modify");
 static const int Remove_HASH = HashingUtils::HashString("Remove");
 static const int Import_HASH = HashingUtils::HashString("Import");
 static const int Dynamic_HASH = HashingUtils::HashString("Dynamic");
+static const int SyncWithActual_HASH = HashingUtils::HashString("SyncWithActual");
 
 ChangeAction GetChangeActionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ChangeAction GetChangeActionForName(const Aws::String& name) {
     return ChangeAction::Import;
   } else if (hashCode == Dynamic_HASH) {
     return ChangeAction::Dynamic;
+  } else if (hashCode == SyncWithActual_HASH) {
+    return ChangeAction::SyncWithActual;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForChangeAction(ChangeAction enumValue) {
       return "Import";
     case ChangeAction::Dynamic:
       return "Dynamic";
+    case ChangeAction::SyncWithActual:
+      return "SyncWithActual";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

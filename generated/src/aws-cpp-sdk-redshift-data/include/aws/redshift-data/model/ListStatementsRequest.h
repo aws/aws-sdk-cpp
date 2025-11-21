@@ -33,63 +33,6 @@ class ListStatementsRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>The cluster identifier. Only statements that ran on this cluster are
-   * returned. When providing <code>ClusterIdentifier</code>, then
-   * <code>WorkgroupName</code> can't be specified.</p>
-   */
-  inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
-  inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-  template <typename ClusterIdentifierT = Aws::String>
-  void SetClusterIdentifier(ClusterIdentifierT&& value) {
-    m_clusterIdentifierHasBeenSet = true;
-    m_clusterIdentifier = std::forward<ClusterIdentifierT>(value);
-  }
-  template <typename ClusterIdentifierT = Aws::String>
-  ListStatementsRequest& WithClusterIdentifier(ClusterIdentifierT&& value) {
-    SetClusterIdentifier(std::forward<ClusterIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the database when listing statements run against a
-   * <code>ClusterIdentifier</code> or <code>WorkgroupName</code>. </p>
-   */
-  inline const Aws::String& GetDatabase() const { return m_database; }
-  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-  template <typename DatabaseT = Aws::String>
-  void SetDatabase(DatabaseT&& value) {
-    m_databaseHasBeenSet = true;
-    m_database = std::forward<DatabaseT>(value);
-  }
-  template <typename DatabaseT = Aws::String>
-  ListStatementsRequest& WithDatabase(DatabaseT&& value) {
-    SetDatabase(std::forward<DatabaseT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of SQL statements to return in the response. If more SQL
-   * statements exist than fit in one response, then <code>NextToken</code> is
-   * returned to page through the results. </p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListStatementsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A value that indicates the starting point for the next set of response
    * records in a subsequent request. If a value is returned in a response, you can
    * retrieve the next set of records by providing this returned NextToken value in
@@ -112,19 +55,18 @@ class ListStatementsRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
-   * <p>A value that filters which statements to return in the response. If true, all
-   * statements run by the caller's IAM role are returned. If false, only statements
-   * run by the caller's IAM role in the current IAM session are returned. The
-   * default is true. </p>
+   * <p>The maximum number of SQL statements to return in the response. If more SQL
+   * statements exist than fit in one response, then <code>NextToken</code> is
+   * returned to page through the results. </p>
    */
-  inline bool GetRoleLevel() const { return m_roleLevel; }
-  inline bool RoleLevelHasBeenSet() const { return m_roleLevelHasBeenSet; }
-  inline void SetRoleLevel(bool value) {
-    m_roleLevelHasBeenSet = true;
-    m_roleLevel = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListStatementsRequest& WithRoleLevel(bool value) {
-    SetRoleLevel(value);
+  inline ListStatementsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -178,6 +120,64 @@ class ListStatementsRequest : public RedshiftDataAPIServiceRequest {
 
   ///@{
   /**
+   * <p>A value that filters which statements to return in the response. If true, all
+   * statements run by the caller's IAM role are returned. If false, only statements
+   * run by the caller's IAM role in the current IAM session are returned. The
+   * default is true. </p>
+   */
+  inline bool GetRoleLevel() const { return m_roleLevel; }
+  inline bool RoleLevelHasBeenSet() const { return m_roleLevelHasBeenSet; }
+  inline void SetRoleLevel(bool value) {
+    m_roleLevelHasBeenSet = true;
+    m_roleLevel = value;
+  }
+  inline ListStatementsRequest& WithRoleLevel(bool value) {
+    SetRoleLevel(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the database when listing statements run against a
+   * <code>ClusterIdentifier</code> or <code>WorkgroupName</code>. </p>
+   */
+  inline const Aws::String& GetDatabase() const { return m_database; }
+  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+  template <typename DatabaseT = Aws::String>
+  void SetDatabase(DatabaseT&& value) {
+    m_databaseHasBeenSet = true;
+    m_database = std::forward<DatabaseT>(value);
+  }
+  template <typename DatabaseT = Aws::String>
+  ListStatementsRequest& WithDatabase(DatabaseT&& value) {
+    SetDatabase(std::forward<DatabaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cluster identifier. Only statements that ran on this cluster are
+   * returned. When providing <code>ClusterIdentifier</code>, then
+   * <code>WorkgroupName</code> can't be specified.</p>
+   */
+  inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
+  inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+  template <typename ClusterIdentifierT = Aws::String>
+  void SetClusterIdentifier(ClusterIdentifierT&& value) {
+    m_clusterIdentifierHasBeenSet = true;
+    m_clusterIdentifier = std::forward<ClusterIdentifierT>(value);
+  }
+  template <typename ClusterIdentifierT = Aws::String>
+  ListStatementsRequest& WithClusterIdentifier(ClusterIdentifierT&& value) {
+    SetClusterIdentifier(std::forward<ClusterIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements
    * that ran on this workgroup are returned. When providing
    * <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be
@@ -197,26 +197,26 @@ class ListStatementsRequest : public RedshiftDataAPIServiceRequest {
   }
   ///@}
  private:
-  Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
-
-  Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
-
-  int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
-
   Aws::String m_nextToken;
   bool m_nextTokenHasBeenSet = false;
 
-  bool m_roleLevel{false};
-  bool m_roleLevelHasBeenSet = false;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_statementName;
   bool m_statementNameHasBeenSet = false;
 
   StatusString m_status{StatusString::NOT_SET};
   bool m_statusHasBeenSet = false;
+
+  bool m_roleLevel{false};
+  bool m_roleLevelHasBeenSet = false;
+
+  Aws::String m_database;
+  bool m_databaseHasBeenSet = false;
+
+  Aws::String m_clusterIdentifier;
+  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_workgroupName;
   bool m_workgroupNameHasBeenSet = false;

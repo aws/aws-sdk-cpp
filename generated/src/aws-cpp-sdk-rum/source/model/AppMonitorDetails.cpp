@@ -18,13 +18,13 @@ namespace Model {
 AppMonitorDetails::AppMonitorDetails(JsonView jsonValue) { *this = jsonValue; }
 
 AppMonitorDetails& AppMonitorDetails::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
   }
   if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
@@ -36,12 +36,12 @@ AppMonitorDetails& AppMonitorDetails::operator=(JsonView jsonValue) {
 JsonValue AppMonitorDetails::Jsonize() const {
   JsonValue payload;
 
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   if (m_versionHasBeenSet) {

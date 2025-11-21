@@ -16,11 +16,14 @@ namespace Model {
 namespace IpamPoolAwsServiceMapper {
 
 static const int ec2_HASH = HashingUtils::HashString("ec2");
+static const int global_services_HASH = HashingUtils::HashString("global-services");
 
 IpamPoolAwsService GetIpamPoolAwsServiceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ec2_HASH) {
     return IpamPoolAwsService::ec2;
+  } else if (hashCode == global_services_HASH) {
+    return IpamPoolAwsService::global_services;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForIpamPoolAwsService(IpamPoolAwsService enumValue) {
       return {};
     case IpamPoolAwsService::ec2:
       return "ec2";
+    case IpamPoolAwsService::global_services:
+      return "global-services";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

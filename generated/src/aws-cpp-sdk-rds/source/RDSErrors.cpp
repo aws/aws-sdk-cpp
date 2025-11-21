@@ -27,6 +27,7 @@ static const int IAM_ROLE_MISSING_PERMISSIONS_FAULT_HASH = HashingUtils::HashStr
 static const int D_B_INSTANCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceNotFound");
 static const int OPTION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("OptionGroupQuotaExceededFault");
 static const int D_B_LOG_FILE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBLogFileNotFoundFault");
+static const int VPC_ENCRYPTION_CONTROL_VIOLATION_HASH = HashingUtils::HashString("VpcEncryptionControlViolationException");
 static const int INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSnapshotState");
 static const int SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SharedSnapshotQuotaExceeded");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
@@ -207,6 +208,9 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
     return true;
   } else if (hashCode == D_B_LOG_FILE_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_LOG_FILE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == VPC_ENCRYPTION_CONTROL_VIOLATION_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::VPC_ENCRYPTION_CONTROL_VIOLATION), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_D_B_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
@@ -559,15 +563,15 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error) {
   } else if (hashCode == D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
-  } else if (hashCode == D_B_PROXY_ALREADY_EXISTS_FAULT_HASH) {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
   }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error) {
-  if (hashCode == INSTANCE_QUOTA_EXCEEDED_FAULT_HASH) {
+  if (hashCode == D_B_PROXY_ALREADY_EXISTS_FAULT_HASH) {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  } else if (hashCode == INSTANCE_QUOTA_EXCEEDED_FAULT_HASH) {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   } else if (hashCode == GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH) {

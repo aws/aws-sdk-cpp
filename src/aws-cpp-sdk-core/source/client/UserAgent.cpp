@@ -38,7 +38,7 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED, "b"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED, "c"},
     {UserAgentFeature::ACCOUNT_ID_MODE_PREFERRED, "P"},
-    {UserAgentFeature::ACCOUNT_ID_MODE_DISABLED , "Q"},
+    {UserAgentFeature::ACCOUNT_ID_MODE_DISABLED, "Q"},
     {UserAgentFeature::ACCOUNT_ID_MODE_REQUIRED, "R"},
     {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
@@ -52,6 +52,7 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::CREDENTIALS_SSO, "s"},
     {UserAgentFeature::CREDENTIALS_SSO_LEGACY, "u"},
     {UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE, "p"},
+    {UserAgentFeature::CREDENTIALS_LOGIN, "AD"},
     {UserAgentFeature::PROTOCOL_RPC_V2_CBOR, "M"},
 };
 

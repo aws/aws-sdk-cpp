@@ -182,6 +182,24 @@ class ClusterNodeSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+   */
+  inline const Aws::String& GetPrivateDnsHostname() const { return m_privateDnsHostname; }
+  inline bool PrivateDnsHostnameHasBeenSet() const { return m_privateDnsHostnameHasBeenSet; }
+  template <typename PrivateDnsHostnameT = Aws::String>
+  void SetPrivateDnsHostname(PrivateDnsHostnameT&& value) {
+    m_privateDnsHostnameHasBeenSet = true;
+    m_privateDnsHostname = std::forward<PrivateDnsHostnameT>(value);
+  }
+  template <typename PrivateDnsHostnameT = Aws::String>
+  ClusterNodeSummary& WithPrivateDnsHostname(PrivateDnsHostnameT&& value) {
+    SetPrivateDnsHostname(std::forward<PrivateDnsHostnameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceGroupName;
   bool m_instanceGroupNameHasBeenSet = false;
@@ -206,6 +224,9 @@ class ClusterNodeSummary {
 
   UltraServerInfo m_ultraServerInfo;
   bool m_ultraServerInfoHasBeenSet = false;
+
+  Aws::String m_privateDnsHostname;
+  bool m_privateDnsHostnameHasBeenSet = false;
 };
 
 }  // namespace Model

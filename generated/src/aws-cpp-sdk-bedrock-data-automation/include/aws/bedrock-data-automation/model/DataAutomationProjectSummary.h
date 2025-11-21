@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -65,6 +66,20 @@ class DataAutomationProjectSummary {
 
   ///@{
 
+  inline DataAutomationProjectType GetProjectType() const { return m_projectType; }
+  inline bool ProjectTypeHasBeenSet() const { return m_projectTypeHasBeenSet; }
+  inline void SetProjectType(DataAutomationProjectType value) {
+    m_projectTypeHasBeenSet = true;
+    m_projectType = value;
+  }
+  inline DataAutomationProjectSummary& WithProjectType(DataAutomationProjectType value) {
+    SetProjectType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetProjectName() const { return m_projectName; }
   inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
   template <typename ProjectNameT = Aws::String>
@@ -100,6 +115,9 @@ class DataAutomationProjectSummary {
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
   bool m_projectStageHasBeenSet = false;
+
+  DataAutomationProjectType m_projectType{DataAutomationProjectType::NOT_SET};
+  bool m_projectTypeHasBeenSet = false;
 
   Aws::String m_projectName;
   bool m_projectNameHasBeenSet = false;

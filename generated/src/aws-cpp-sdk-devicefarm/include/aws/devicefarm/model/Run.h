@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/Counters.h>
@@ -14,6 +15,7 @@
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/devicefarm/model/DeviceSelectionResult.h>
+#include <aws/devicefarm/model/EnvironmentVariable.h>
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/devicefarm/model/ExecutionResultCode.h>
 #include <aws/devicefarm/model/ExecutionStatus.h>
@@ -646,6 +648,48 @@ class Run {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IAM role associated with the run.</p>
+   */
+  inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+  inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+  template <typename ExecutionRoleArnT = Aws::String>
+  void SetExecutionRoleArn(ExecutionRoleArnT&& value) {
+    m_executionRoleArnHasBeenSet = true;
+    m_executionRoleArn = std::forward<ExecutionRoleArnT>(value);
+  }
+  template <typename ExecutionRoleArnT = Aws::String>
+  Run& WithExecutionRoleArn(ExecutionRoleArnT&& value) {
+    SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Environment variables associated with the run.</p>
+   */
+  inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const { return m_environmentVariables; }
+  inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  void SetEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables = std::forward<EnvironmentVariablesT>(value);
+  }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  Run& WithEnvironmentVariables(EnvironmentVariablesT&& value) {
+    SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  template <typename EnvironmentVariablesT = EnvironmentVariable>
+  Run& AddEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables.emplace_back(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -745,6 +789,12 @@ class Run {
 
   VpcConfig m_vpcConfig;
   bool m_vpcConfigHasBeenSet = false;
+
+  Aws::String m_executionRoleArn;
+  bool m_executionRoleArnHasBeenSet = false;
+
+  Aws::Vector<EnvironmentVariable> m_environmentVariables;
+  bool m_environmentVariablesHasBeenSet = false;
 };
 
 }  // namespace Model

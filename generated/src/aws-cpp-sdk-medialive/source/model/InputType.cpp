@@ -29,6 +29,7 @@ static const int SRT_CALLER_HASH = HashingUtils::HashString("SRT_CALLER");
 static const int MULTICAST_HASH = HashingUtils::HashString("MULTICAST");
 static const int SMPTE_2110_RECEIVER_GROUP_HASH = HashingUtils::HashString("SMPTE_2110_RECEIVER_GROUP");
 static const int SDI_HASH = HashingUtils::HashString("SDI");
+static const int MEDIACONNECT_ROUTER_HASH = HashingUtils::HashString("MEDIACONNECT_ROUTER");
 
 InputType GetInputTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ InputType GetInputTypeForName(const Aws::String& name) {
     return InputType::SMPTE_2110_RECEIVER_GROUP;
   } else if (hashCode == SDI_HASH) {
     return InputType::SDI;
+  } else if (hashCode == MEDIACONNECT_ROUTER_HASH) {
+    return InputType::MEDIACONNECT_ROUTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForInputType(InputType enumValue) {
       return "SMPTE_2110_RECEIVER_GROUP";
     case InputType::SDI:
       return "SDI";
+    case InputType::MEDIACONNECT_ROUTER:
+      return "MEDIACONNECT_ROUTER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

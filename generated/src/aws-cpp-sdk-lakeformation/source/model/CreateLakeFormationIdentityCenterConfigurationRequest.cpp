@@ -35,5 +35,14 @@ Aws::String CreateLakeFormationIdentityCenterConfigurationRequest::SerializePayl
     payload.WithArray("ShareRecipients", std::move(shareRecipientsJsonList));
   }
 
+  if (m_serviceIntegrationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> serviceIntegrationsJsonList(m_serviceIntegrations.size());
+    for (unsigned serviceIntegrationsIndex = 0; serviceIntegrationsIndex < serviceIntegrationsJsonList.GetLength();
+         ++serviceIntegrationsIndex) {
+      serviceIntegrationsJsonList[serviceIntegrationsIndex].AsObject(m_serviceIntegrations[serviceIntegrationsIndex].Jsonize());
+    }
+    payload.WithArray("ServiceIntegrations", std::move(serviceIntegrationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

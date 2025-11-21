@@ -10,6 +10,7 @@
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <aws/devicefarm/model/DeviceProxy.h>
+#include <aws/devicefarm/model/EnvironmentVariable.h>
 #include <aws/devicefarm/model/Location.h>
 #include <aws/devicefarm/model/Radios.h>
 
@@ -234,6 +235,48 @@ class ScheduleRunConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Environment variables associated with the run.</p>
+   */
+  inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const { return m_environmentVariables; }
+  inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  void SetEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables = std::forward<EnvironmentVariablesT>(value);
+  }
+  template <typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+  ScheduleRunConfiguration& WithEnvironmentVariables(EnvironmentVariablesT&& value) {
+    SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  template <typename EnvironmentVariablesT = EnvironmentVariable>
+  ScheduleRunConfiguration& AddEnvironmentVariables(EnvironmentVariablesT&& value) {
+    m_environmentVariablesHasBeenSet = true;
+    m_environmentVariables.emplace_back(std::forward<EnvironmentVariablesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An IAM role to be assumed by the test host for the run.</p>
+   */
+  inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+  inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+  template <typename ExecutionRoleArnT = Aws::String>
+  void SetExecutionRoleArn(ExecutionRoleArnT&& value) {
+    m_executionRoleArnHasBeenSet = true;
+    m_executionRoleArn = std::forward<ExecutionRoleArnT>(value);
+  }
+  template <typename ExecutionRoleArnT = Aws::String>
+  ScheduleRunConfiguration& WithExecutionRoleArn(ExecutionRoleArnT&& value) {
+    SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_extraDataPackageArn;
   bool m_extraDataPackageArnHasBeenSet = false;
@@ -264,6 +307,12 @@ class ScheduleRunConfiguration {
 
   BillingMethod m_billingMethod{BillingMethod::NOT_SET};
   bool m_billingMethodHasBeenSet = false;
+
+  Aws::Vector<EnvironmentVariable> m_environmentVariables;
+  bool m_environmentVariablesHasBeenSet = false;
+
+  Aws::String m_executionRoleArn;
+  bool m_executionRoleArnHasBeenSet = false;
 };
 
 }  // namespace Model

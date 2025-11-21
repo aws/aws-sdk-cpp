@@ -22,6 +22,10 @@ ListImagesFilter& ListImagesFilter::operator=(JsonView jsonValue) {
     m_tagStatus = TagStatusMapper::GetTagStatusForName(jsonValue.GetString("tagStatus"));
     m_tagStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageStatus")) {
+    m_imageStatus = ImageStatusFilterMapper::GetImageStatusFilterForName(jsonValue.GetString("imageStatus"));
+    m_imageStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ListImagesFilter::Jsonize() const {
 
   if (m_tagStatusHasBeenSet) {
     payload.WithString("tagStatus", TagStatusMapper::GetNameForTagStatus(m_tagStatus));
+  }
+
+  if (m_imageStatusHasBeenSet) {
+    payload.WithString("imageStatus", ImageStatusFilterMapper::GetNameForImageStatusFilter(m_imageStatus));
   }
 
   return payload;

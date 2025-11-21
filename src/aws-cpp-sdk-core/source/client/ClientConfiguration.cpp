@@ -53,6 +53,8 @@ static const char* AWS_IAM_ROLE_SESSION_NAME_ENV_VAR_COMPAT = "AWS_IAM_ROLE_SESS
 static const char* AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION = "role_session_name";
 static const char* AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR = "AWS_WEB_IDENTITY_TOKEN_FILE";
 static const char* AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION = "web_identity_token_file";
+static const char* AWS_LOGIN_SESSION_FILE_OPTION = "login_session";
+static const char* AWS_LOGIN_CACHE_DIRECTORY_ENV_VAR = "AWS_LOGIN_CACHE_DIRECTORY";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -357,6 +359,12 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
             AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR, config.profileName, AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
             {}, /* allowed values */
             "" /* default value */, [](const Aws::String& envValue) -> Aws::String { return envValue; });
+
+    config.credentialProviderConfig.loginCredentialProviderConfig.loginSession =
+        Aws::Config::GetCachedConfigValue(config.profileName, AWS_LOGIN_SESSION_FILE_OPTION);
+
+    config.credentialProviderConfig.loginCredentialProviderConfig.loginCacheOverride =
+        Aws::Environment::GetEnv(AWS_LOGIN_CACHE_DIRECTORY_ENV_VAR);
 }
 
 ClientConfiguration::ClientConfiguration()

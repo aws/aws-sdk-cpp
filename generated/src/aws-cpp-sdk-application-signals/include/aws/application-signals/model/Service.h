@@ -127,7 +127,7 @@ class Service {
   ///@{
   /**
    * <p>An array of service groups that this service belongs to, based on the
-   * configured grouping rules.</p>
+   * configured grouping attributes.</p>
    */
   inline const Aws::Vector<ServiceGroup>& GetServiceGroups() const { return m_serviceGroups; }
   inline bool ServiceGroupsHasBeenSet() const { return m_serviceGroupsHasBeenSet; }

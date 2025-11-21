@@ -18,6 +18,7 @@
 #include <aws/cloudtrail/model/AddTagsResult.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <aws/cloudtrail/model/AdvancedFieldSelector.h>
+#include <aws/cloudtrail/model/AggregationConfiguration.h>
 #include <aws/cloudtrail/model/BillingMode.h>
 #include <aws/cloudtrail/model/CancelQueryRequest.h>
 #include <aws/cloudtrail/model/CancelQueryResult.h>
@@ -60,6 +61,7 @@
 #include <aws/cloudtrail/model/EnableFederationResult.h>
 #include <aws/cloudtrail/model/Event.h>
 #include <aws/cloudtrail/model/EventCategory.h>
+#include <aws/cloudtrail/model/EventCategoryAggregation.h>
 #include <aws/cloudtrail/model/EventDataStore.h>
 #include <aws/cloudtrail/model/EventDataStoreStatus.h>
 #include <aws/cloudtrail/model/EventSelector.h>
@@ -108,6 +110,10 @@
 #include <aws/cloudtrail/model/ListImportFailuresResult.h>
 #include <aws/cloudtrail/model/ListImportsRequest.h>
 #include <aws/cloudtrail/model/ListImportsResult.h>
+#include <aws/cloudtrail/model/ListInsightsDataDimensionKey.h>
+#include <aws/cloudtrail/model/ListInsightsDataRequest.h>
+#include <aws/cloudtrail/model/ListInsightsDataResult.h>
+#include <aws/cloudtrail/model/ListInsightsDataType.h>
 #include <aws/cloudtrail/model/ListInsightsMetricDataRequest.h>
 #include <aws/cloudtrail/model/ListInsightsMetricDataResult.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
@@ -156,6 +162,7 @@
 #include <aws/cloudtrail/model/SearchSampleQueriesResult.h>
 #include <aws/cloudtrail/model/SearchSampleQueriesSearchResult.h>
 #include <aws/cloudtrail/model/SourceConfig.h>
+#include <aws/cloudtrail/model/SourceEventCategory.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshRequest.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshResult.h>
 #include <aws/cloudtrail/model/StartEventDataStoreIngestionRequest.h>
@@ -173,6 +180,7 @@
 #include <aws/cloudtrail/model/StopLoggingRequest.h>
 #include <aws/cloudtrail/model/StopLoggingResult.h>
 #include <aws/cloudtrail/model/Tag.h>
+#include <aws/cloudtrail/model/Template.h>
 #include <aws/cloudtrail/model/Trail.h>
 #include <aws/cloudtrail/model/TrailInfo.h>
 #include <aws/cloudtrail/model/Type.h>

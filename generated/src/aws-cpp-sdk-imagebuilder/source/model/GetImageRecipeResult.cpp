@@ -28,6 +28,10 @@ GetImageRecipeResult& GetImageRecipeResult::operator=(const Aws::AmazonWebServic
     m_imageRecipe = jsonValue.GetObject("imageRecipe");
     m_imageRecipeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

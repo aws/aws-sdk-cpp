@@ -257,6 +257,42 @@ class FreeFormLayoutElement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The border radius of a free-form layout element.</p>
+   */
+  inline const Aws::String& GetBorderRadius() const { return m_borderRadius; }
+  inline bool BorderRadiusHasBeenSet() const { return m_borderRadiusHasBeenSet; }
+  template <typename BorderRadiusT = Aws::String>
+  void SetBorderRadius(BorderRadiusT&& value) {
+    m_borderRadiusHasBeenSet = true;
+    m_borderRadius = std::forward<BorderRadiusT>(value);
+  }
+  template <typename BorderRadiusT = Aws::String>
+  FreeFormLayoutElement& WithBorderRadius(BorderRadiusT&& value) {
+    SetBorderRadius(std::forward<BorderRadiusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The padding of a free-form layout element.</p>
+   */
+  inline const Aws::String& GetPadding() const { return m_padding; }
+  inline bool PaddingHasBeenSet() const { return m_paddingHasBeenSet; }
+  template <typename PaddingT = Aws::String>
+  void SetPadding(PaddingT&& value) {
+    m_paddingHasBeenSet = true;
+    m_padding = std::forward<PaddingT>(value);
+  }
+  template <typename PaddingT = Aws::String>
+  FreeFormLayoutElement& WithPadding(PaddingT&& value) {
+    SetPadding(std::forward<PaddingT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_elementId;
   bool m_elementIdHasBeenSet = false;
@@ -293,6 +329,12 @@ class FreeFormLayoutElement {
 
   LoadingAnimation m_loadingAnimation;
   bool m_loadingAnimationHasBeenSet = false;
+
+  Aws::String m_borderRadius;
+  bool m_borderRadiusHasBeenSet = false;
+
+  Aws::String m_padding;
+  bool m_paddingHasBeenSet = false;
 };
 
 }  // namespace Model

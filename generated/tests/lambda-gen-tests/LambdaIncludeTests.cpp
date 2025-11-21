@@ -245,6 +245,8 @@
 #include <aws/lambda/model/SystemLogLevel.h>
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/TagsError.h>
+#include <aws/lambda/model/TenancyConfig.h>
+#include <aws/lambda/model/TenantIsolationMode.h>
 #include <aws/lambda/model/ThrottleReason.h>
 #include <aws/lambda/model/TooManyRequestsException.h>
 #include <aws/lambda/model/TracingConfig.h>

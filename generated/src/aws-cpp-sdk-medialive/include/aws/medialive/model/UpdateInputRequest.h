@@ -14,6 +14,7 @@
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
 #include <aws/medialive/model/MulticastSettingsUpdateRequest.h>
 #include <aws/medialive/model/Smpte2110ReceiverGroupSettings.h>
+#include <aws/medialive/model/SpecialRouterSettings.h>
 #include <aws/medialive/model/SrtSettingsRequest.h>
 
 #include <utility>
@@ -300,6 +301,29 @@ Only specify sources for PULL type Inputs. Leave
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * When using MediaConnect Router as the source of a MediaLive input there's a
+   * special handoff that occurs when a router output
+is created. This group of
+   * settings is set on your behalf by the MediaConnect Router service using this set
+   * of settings. This
+setting object can only by used by that service.
+   */
+  inline const SpecialRouterSettings& GetSpecialRouterSettings() const { return m_specialRouterSettings; }
+  inline bool SpecialRouterSettingsHasBeenSet() const { return m_specialRouterSettingsHasBeenSet; }
+  template <typename SpecialRouterSettingsT = SpecialRouterSettings>
+  void SetSpecialRouterSettings(SpecialRouterSettingsT&& value) {
+    m_specialRouterSettingsHasBeenSet = true;
+    m_specialRouterSettings = std::forward<SpecialRouterSettingsT>(value);
+  }
+  template <typename SpecialRouterSettingsT = SpecialRouterSettings>
+  UpdateInputRequest& WithSpecialRouterSettings(SpecialRouterSettingsT&& value) {
+    SetSpecialRouterSettings(std::forward<SpecialRouterSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<InputDestinationRequest> m_destinations;
   bool m_destinationsHasBeenSet = false;
@@ -336,6 +360,9 @@ Only specify sources for PULL type Inputs. Leave
 
   Aws::Vector<Aws::String> m_sdiSources;
   bool m_sdiSourcesHasBeenSet = false;
+
+  SpecialRouterSettings m_specialRouterSettings;
+  bool m_specialRouterSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,6 +33,11 @@ RollbackStackResult& RollbackStackResult::operator=(const Aws::AmazonWebServiceR
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
     }
+    XmlNode operationIdNode = resultNode.FirstChild("OperationId");
+    if (!operationIdNode.IsNull()) {
+      m_operationId = Aws::Utils::Xml::DecodeEscapedXmlText(operationIdNode.GetText());
+      m_operationIdHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

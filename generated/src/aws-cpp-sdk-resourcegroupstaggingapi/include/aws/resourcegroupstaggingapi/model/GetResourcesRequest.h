@@ -58,10 +58,13 @@ class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest {
    * only those resources that have tags with the specified keys and, if included,
    * the specified values. Each <code>TagFilter</code> must contain a key with values
    * optional. A request can include up to 50 keys, and each key can include up to 20
-   * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
-   * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
-   * includes all resources that are currently tagged or ever had a tag. Resources
-   * that currently don't have tags are shown with an empty tag set, like this:
+   * values. </p> <p>You can't specify both this parameter and the
+   * <code>ResourceArnList</code> parameter in the same request. If you do, you get
+   * an <code>Invalid Parameter</code> exception.</p> <p>Note the following when
+   * deciding how to use TagFilters:</p> <ul> <li> <p>If you <i>don't</i> specify a
+   * <code>TagFilter</code>, the response includes all resources that are currently
+   * tagged or ever had a tag. Resources that were previously tagged, <i>but do not
+   * currently</i> have tags, are shown with an empty tag set, like this:
    * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
    * in a single request, the response returns only those resources that satisfy all
    * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
@@ -69,9 +72,9 @@ class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest {
    * specified values for that key.</p> </li> <li> <p>If you don't specify a value
    * for a key, the response returns all resources that are tagged with that key,
    * with any or no value.</p> <p>For example, for the following filters:
-   * <code>filter1= {keyA,{value1}}</code>,
-   * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
-   * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+   * <code>filter1= {key1,{value1}}</code>,
+   * <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3=
+   * {key3}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
    * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
    * <code>GetResources({filter2})</code> returns resources tagged with
    * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
@@ -156,18 +159,26 @@ class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest {
   /**
    * <p>Specifies the resource types that you want included in the response. The
    * format of each resource type is <code>service[:resourceType]</code>. For
-   * example, specifying a resource type of <code>ec2</code> returns all Amazon EC2
+   * example, specifying a service of <code>ec2</code> returns all Amazon EC2
    * resources (which includes EC2 instances). Specifying a resource type of
-   * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
-   * each service name and resource type is the same as that embedded in a resource's
-   * Amazon Resource Name (ARN). For the list of services whose resources you can use
-   * in this parameter, see <a
+   * <code>ec2:instance</code> returns only EC2 instances. </p> <p>You can't specify
+   * both this parameter and the <code>ResourceArnList</code> parameter in the same
+   * request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+   * <p>The string for each service name and resource type is the same as that
+   * embedded in a resource's Amazon Resource Name (ARN).</p>  <p>For the list
+   * of services whose resources you can tag using the Resource Groups Tagging API,
+   * see <a
    * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
-   * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
-   * multiple resource types by using an array. The array can include up to 100
-   * items. Note that the length constraint requirement applies to each resource type
-   * filter. For example, the following string would limit the response to only
-   * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+   * that support the Resource Groups Tagging API</a>. If an Amazon Web Services
+   * service isn't listed on that page, you might still be able to tag that service's
+   * resources by using that service's native tagging operations instead of using
+   * Resource Groups Tagging API operations. All tagged resources, whether the
+   * tagging used the Resource Groups Tagging API or not, are returned by the
+   * <code>Get*</code> operation.</p>  <p>You can specify multiple resource
+   * types by using an array. The array can include up to 100 items. Note that the
+   * length constraint requirement applies to each resource type filter. For example,
+   * the following string would limit the response to only Amazon EC2 instances,
+   * Amazon S3 buckets, or any Audit Manager resource:</p> <p>
    * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
    */
   inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const { return m_resourceTypeFilters; }
@@ -231,13 +242,18 @@ class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest {
   ///@{
   /**
    * <p>Specifies a list of ARNs of resources for which you want to retrieve tag
-   * data. You can't specify both this parameter and any of the pagination parameters
+   * data.</p> <p>You can't specify both this parameter and the
+   * <code>ResourceTypeFilters</code> parameter in the same request. If you do, you
+   * get an <code>Invalid Parameter</code> exception.</p> <p>You can't specify both
+   * this parameter and the <code>TagFilters</code> parameter in the same request. If
+   * you do, you get an <code>Invalid Parameter</code> exception.</p> <p>You can't
+   * specify both this parameter and any of the pagination parameters
    * (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
-   * <code>PaginationToken</code>) in the same request. If you specify both, you get
-   * an <code>Invalid Parameter</code> exception.</p> <p>If a resource specified by
-   * this parameter doesn't exist, it doesn't generate an error; it simply isn't
-   * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
-   * identifies a resource. For more information, see <a
+   * <code>PaginationToken</code>) in the same request. If you do, you get an
+   * <code>Invalid Parameter</code> exception.</p> <p>If a resource specified by this
+   * parameter doesn't exist, it doesn't generate an error; it simply isn't included
+   * in the response.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a
+   * resource. For more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
    * <i>Amazon Web Services General Reference</i>.</p>

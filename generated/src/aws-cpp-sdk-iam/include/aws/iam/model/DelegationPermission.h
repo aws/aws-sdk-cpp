@@ -22,7 +22,8 @@ namespace IAM {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p>Contains information about the permissions being delegated in a delegation
+ * request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DelegationPermission">AWS
  * API Reference</a></p>
  */
@@ -36,7 +37,11 @@ class DelegationPermission {
   AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
   ///@{
-
+  /**
+   * <p>This ARN maps to a pre-registered policy content for this partner. See the <a
+   * href="">partner onboarding documentation</a> to understand how to create a
+   * delegation template.</p>
+   */
   inline const Aws::String& GetPolicyTemplateArn() const { return m_policyTemplateArn; }
   inline bool PolicyTemplateArnHasBeenSet() const { return m_policyTemplateArnHasBeenSet; }
   template <typename PolicyTemplateArnT = Aws::String>
@@ -53,7 +58,8 @@ class DelegationPermission {
 
   ///@{
   /**
-   * <p/>
+   * <p>A list of policy parameters that define the scope and constraints of the
+   * delegated permissions.</p>
    */
   inline const Aws::Vector<PolicyParameter>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

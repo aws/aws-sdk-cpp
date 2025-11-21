@@ -73,6 +73,18 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_lambdaDetails = jsonValue.GetObject("lambdaDetails");
     m_lambdaDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ebsSnapshotDetails")) {
+    m_ebsSnapshotDetails = jsonValue.GetObject("ebsSnapshotDetails");
+    m_ebsSnapshotDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ec2ImageDetails")) {
+    m_ec2ImageDetails = jsonValue.GetObject("ec2ImageDetails");
+    m_ec2ImageDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recoveryPointDetails")) {
+    m_recoveryPointDetails = jsonValue.GetObject("recoveryPointDetails");
+    m_recoveryPointDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +145,18 @@ JsonValue Resource::Jsonize() const {
 
   if (m_lambdaDetailsHasBeenSet) {
     payload.WithObject("lambdaDetails", m_lambdaDetails.Jsonize());
+  }
+
+  if (m_ebsSnapshotDetailsHasBeenSet) {
+    payload.WithObject("ebsSnapshotDetails", m_ebsSnapshotDetails.Jsonize());
+  }
+
+  if (m_ec2ImageDetailsHasBeenSet) {
+    payload.WithObject("ec2ImageDetails", m_ec2ImageDetails.Jsonize());
+  }
+
+  if (m_recoveryPointDetailsHasBeenSet) {
+    payload.WithObject("recoveryPointDetails", m_recoveryPointDetails.Jsonize());
   }
 
   return payload;

@@ -62,10 +62,11 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   /**
    * <p>The protocol to use for routing traffic to the targets. For Application Load
    * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-   * Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway
-   * Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be
-   * associated with a TCP_UDP target group. If the target is a Lambda function, this
-   * parameter does not apply.</p>
+   * Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or
+   * TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A
+   * TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC
+   * listener must be associated with a TCP_QUIC target group. If the target is a
+   * Lambda function, this parameter does not apply.</p>
    */
   inline ProtocolEnum GetProtocol() const { return m_protocol; }
   inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -145,8 +146,8 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
    * For Application Load Balancers, the default is HTTP. For Network Load Balancers
    * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
    * supported for health checks if the protocol of the target group is HTTP or
-   * HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health
-   * checks.</p>
+   * HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not
+   * supported for health checks.</p>
    */
   inline ProtocolEnum GetHealthCheckProtocol() const { return m_healthCheckProtocol; }
   inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
@@ -163,10 +164,10 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   ///@{
   /**
    * <p>The port the load balancer uses when performing health checks on targets. If
-   * the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is
-   * <code>traffic-port</code>, which is the port on which each target receives
-   * traffic from the load balancer. If the protocol is GENEVE, the default is port
-   * 80.</p>
+   * the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the
+   * default is <code>traffic-port</code>, which is the port on which each target
+   * receives traffic from the load balancer. If the protocol is GENEVE, the default
+   * is port 80.</p>
    */
   inline const Aws::String& GetHealthCheckPort() const { return m_healthCheckPort; }
   inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
@@ -227,9 +228,9 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   /**
    * <p>The approximate amount of time, in seconds, between health checks of an
    * individual target. The range is 5-300. If the target group protocol is TCP, TLS,
-   * UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group
-   * protocol is GENEVE, the default is 10 seconds. If the target type is
-   * <code>lambda</code>, the default is 35 seconds.</p>
+   * UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the
+   * target group protocol is GENEVE, the default is 10 seconds. If the target type
+   * is <code>lambda</code>, the default is 35 seconds.</p>
    */
   inline int GetHealthCheckIntervalSeconds() const { return m_healthCheckIntervalSeconds; }
   inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
@@ -288,9 +289,9 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   /**
    * <p>The number of consecutive health check failures required before considering a
    * target unhealthy. The range is 2-10. If the target group protocol is TCP,
-   * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
-   * protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>,
-   * the default is 5.</p>
+   * TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target
+   * groups with a protocol of GENEVE, the default is 2. If the target type is
+   * <code>lambda</code>, the default is 5.</p>
    */
   inline int GetUnhealthyThresholdCount() const { return m_unhealthyThresholdCount; }
   inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
@@ -308,9 +309,9 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
   /**
    * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
    * successful response from a target. For target groups with a protocol of TCP,
-   * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
-   * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
-   * GENEVE, the range is 200-399.</p>
+   * TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups
+   * with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a
+   * protocol of GENEVE, the range is 200-399.</p>
    */
   inline const Matcher& GetMatcher() const { return m_matcher; }
   inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
@@ -391,6 +392,23 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The port on which the target control agent and application load balancer
+   * exchange management traffic for the target optimizer feature.</p>
+   */
+  inline int GetTargetControlPort() const { return m_targetControlPort; }
+  inline bool TargetControlPortHasBeenSet() const { return m_targetControlPortHasBeenSet; }
+  inline void SetTargetControlPort(int value) {
+    m_targetControlPortHasBeenSet = true;
+    m_targetControlPort = value;
+  }
+  inline CreateTargetGroupRequest& WithTargetControlPort(int value) {
+    SetTargetControlPort(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -442,6 +460,9 @@ class CreateTargetGroupRequest : public ElasticLoadBalancingv2Request {
 
   TargetGroupIpAddressTypeEnum m_ipAddressType{TargetGroupIpAddressTypeEnum::NOT_SET};
   bool m_ipAddressTypeHasBeenSet = false;
+
+  int m_targetControlPort{0};
+  bool m_targetControlPortHasBeenSet = false;
 };
 
 }  // namespace Model

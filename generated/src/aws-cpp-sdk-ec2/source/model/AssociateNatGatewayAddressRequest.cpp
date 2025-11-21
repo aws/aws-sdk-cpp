@@ -37,6 +37,14 @@ Aws::String AssociateNatGatewayAddressRequest::SerializePayload() const {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if (m_availabilityZoneHasBeenSet) {
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

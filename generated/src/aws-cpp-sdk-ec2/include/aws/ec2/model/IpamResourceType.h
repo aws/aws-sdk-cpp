@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class IpamResourceType { NOT_SET, vpc, subnet, eip, public_ipv4_pool, ipv6_pool, eni };
+enum class IpamResourceType { NOT_SET, vpc, subnet, eip, public_ipv4_pool, ipv6_pool, eni, anycast_ip_list };
 
 namespace IpamResourceTypeMapper {
 AWS_EC2_API IpamResourceType GetIpamResourceTypeForName(const Aws::String& name);

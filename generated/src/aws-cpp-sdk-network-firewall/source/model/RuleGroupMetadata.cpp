@@ -26,6 +26,10 @@ RuleGroupMetadata& RuleGroupMetadata::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VendorName")) {
+    m_vendorName = jsonValue.GetString("VendorName");
+    m_vendorNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RuleGroupMetadata::Jsonize() const {
 
   if (m_arnHasBeenSet) {
     payload.WithString("Arn", m_arn);
+  }
+
+  if (m_vendorNameHasBeenSet) {
+    payload.WithString("VendorName", m_vendorName);
   }
 
   return payload;

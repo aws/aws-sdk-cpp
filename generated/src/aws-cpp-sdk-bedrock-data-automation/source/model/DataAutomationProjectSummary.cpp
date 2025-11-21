@@ -26,6 +26,10 @@ DataAutomationProjectSummary& DataAutomationProjectSummary::operator=(JsonView j
     m_projectStage = DataAutomationProjectStageMapper::GetDataAutomationProjectStageForName(jsonValue.GetString("projectStage"));
     m_projectStageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("projectType")) {
+    m_projectType = DataAutomationProjectTypeMapper::GetDataAutomationProjectTypeForName(jsonValue.GetString("projectType"));
+    m_projectTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("projectName")) {
     m_projectName = jsonValue.GetString("projectName");
     m_projectNameHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue DataAutomationProjectSummary::Jsonize() const {
 
   if (m_projectStageHasBeenSet) {
     payload.WithString("projectStage", DataAutomationProjectStageMapper::GetNameForDataAutomationProjectStage(m_projectStage));
+  }
+
+  if (m_projectTypeHasBeenSet) {
+    payload.WithString("projectType", DataAutomationProjectTypeMapper::GetNameForDataAutomationProjectType(m_projectType));
   }
 
   if (m_projectNameHasBeenSet) {

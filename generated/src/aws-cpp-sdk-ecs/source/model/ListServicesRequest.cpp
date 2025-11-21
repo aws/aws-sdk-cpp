@@ -35,6 +35,10 @@ Aws::String ListServicesRequest::SerializePayload() const {
     payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
   }
 
+  if (m_resourceManagementTypeHasBeenSet) {
+    payload.WithString("resourceManagementType", ResourceManagementTypeMapper::GetNameForResourceManagementType(m_resourceManagementType));
+  }
+
   return payload.View().WriteReadable();
 }
 

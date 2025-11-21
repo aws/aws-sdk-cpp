@@ -37,6 +37,10 @@ TelephonyChannelSubtypeParameters& TelephonyChannelSubtypeParameters::operator=(
     m_answerMachineDetectionConfig = jsonValue.GetObject("answerMachineDetectionConfig");
     m_answerMachineDetectionConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ringTimeout")) {
+    m_ringTimeout = jsonValue.GetInteger("ringTimeout");
+    m_ringTimeoutHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue TelephonyChannelSubtypeParameters::Jsonize() const {
 
   if (m_answerMachineDetectionConfigHasBeenSet) {
     payload.WithObject("answerMachineDetectionConfig", m_answerMachineDetectionConfig.Jsonize());
+  }
+
+  if (m_ringTimeoutHasBeenSet) {
+    payload.WithInteger("ringTimeout", m_ringTimeout);
   }
 
   return payload;

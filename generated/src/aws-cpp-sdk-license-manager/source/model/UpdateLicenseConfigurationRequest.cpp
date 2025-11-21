@@ -61,6 +61,10 @@ Aws::String UpdateLicenseConfigurationRequest::SerializePayload() const {
     payload.WithBool("DisassociateWhenNotFound", m_disassociateWhenNotFound);
   }
 
+  if (m_licenseExpiryHasBeenSet) {
+    payload.WithInt64("LicenseExpiry", m_licenseExpiry);
+  }
+
   return payload.View().WriteReadable();
 }
 

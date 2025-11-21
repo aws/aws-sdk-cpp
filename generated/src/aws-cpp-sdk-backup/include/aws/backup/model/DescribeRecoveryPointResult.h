@@ -11,10 +11,12 @@
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
 #include <aws/backup/model/RecoveryPointStatus.h>
+#include <aws/backup/model/ScanResult.h>
 #include <aws/backup/model/StorageClass.h>
 #include <aws/backup/model/VaultType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -582,6 +584,31 @@ class DescribeRecoveryPointResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Contains the latest scanning results against the recovery point and currently
+   * include <code>MalwareScanner</code>, <code>ScanJobState</code>,
+   * <code>Findings</code>, and <code>LastScanTimestamp</code> </p>
+   */
+  inline const Aws::Vector<ScanResult>& GetScanResults() const { return m_scanResults; }
+  template <typename ScanResultsT = Aws::Vector<ScanResult>>
+  void SetScanResults(ScanResultsT&& value) {
+    m_scanResultsHasBeenSet = true;
+    m_scanResults = std::forward<ScanResultsT>(value);
+  }
+  template <typename ScanResultsT = Aws::Vector<ScanResult>>
+  DescribeRecoveryPointResult& WithScanResults(ScanResultsT&& value) {
+    SetScanResults(std::forward<ScanResultsT>(value));
+    return *this;
+  }
+  template <typename ScanResultsT = ScanResult>
+  DescribeRecoveryPointResult& AddScanResults(ScanResultsT&& value) {
+    m_scanResultsHasBeenSet = true;
+    m_scanResults.emplace_back(std::forward<ScanResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -679,6 +706,9 @@ class DescribeRecoveryPointResult {
 
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
   bool m_encryptionKeyTypeHasBeenSet = false;
+
+  Aws::Vector<ScanResult> m_scanResults;
+  bool m_scanResultsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -35,24 +35,6 @@ class RumEvent {
 
   ///@{
   /**
-   * <p>A string containing details about the event.</p>
-   */
-  inline const Aws::String& GetDetails() const { return m_details; }
-  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-  template <typename DetailsT = Aws::String>
-  void SetDetails(DetailsT&& value) {
-    m_detailsHasBeenSet = true;
-    m_details = std::forward<DetailsT>(value);
-  }
-  template <typename DetailsT = Aws::String>
-  RumEvent& WithDetails(DetailsT&& value) {
-    SetDetails(std::forward<DetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A unique ID for this event.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -65,27 +47,6 @@ class RumEvent {
   template <typename IdT = Aws::String>
   RumEvent& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Metadata about this event, which contains a JSON serialization of the
-   * identity of the user for this session. The user information comes from
-   * information such as the HTTP user-agent request header and document
-   * interface.</p>
-   */
-  inline const Aws::String& GetMetadata() const { return m_metadata; }
-  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-  template <typename MetadataT = Aws::String>
-  void SetMetadata(MetadataT&& value) {
-    m_metadataHasBeenSet = true;
-    m_metadata = std::forward<MetadataT>(value);
-  }
-  template <typename MetadataT = Aws::String>
-  RumEvent& WithMetadata(MetadataT&& value) {
-    SetMetadata(std::forward<MetadataT>(value));
     return *this;
   }
   ///@}
@@ -126,21 +87,60 @@ class RumEvent {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Metadata about this event, which contains a JSON serialization of the
+   * identity of the user for this session. The user information comes from
+   * information such as the HTTP user-agent request header and document
+   * interface.</p>
+   */
+  inline const Aws::String& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::String>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::String>
+  RumEvent& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A string containing details about the event.</p>
+   */
+  inline const Aws::String& GetDetails() const { return m_details; }
+  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+  template <typename DetailsT = Aws::String>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
+  }
+  template <typename DetailsT = Aws::String>
+  RumEvent& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
-
-  Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
   bool m_timestampHasBeenSet = false;
 
   Aws::String m_type;
   bool m_typeHasBeenSet = false;
+
+  Aws::String m_metadata;
+  bool m_metadataHasBeenSet = false;
+
+  Aws::String m_details;
+  bool m_detailsHasBeenSet = false;
 };
 
 }  // namespace Model

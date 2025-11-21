@@ -77,6 +77,10 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator=(const Aws:
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
     m_enableNetworkIsolationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricsConfig")) {
+    m_metricsConfig = jsonValue.GetObject("MetricsConfig");
+    m_metricsConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

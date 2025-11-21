@@ -29,7 +29,11 @@
 #include <aws/braket/model/CreateJobResult.h>
 #include <aws/braket/model/CreateQuantumTaskRequest.h>
 #include <aws/braket/model/CreateQuantumTaskResult.h>
+#include <aws/braket/model/CreateSpendingLimitRequest.h>
+#include <aws/braket/model/CreateSpendingLimitResult.h>
 #include <aws/braket/model/DataSource.h>
+#include <aws/braket/model/DeleteSpendingLimitRequest.h>
+#include <aws/braket/model/DeleteSpendingLimitResult.h>
 #include <aws/braket/model/DeviceConfig.h>
 #include <aws/braket/model/DeviceQueueInfo.h>
 #include <aws/braket/model/DeviceStatus.h>
@@ -77,10 +81,18 @@
 #include <aws/braket/model/SearchQuantumTasksFilterOperator.h>
 #include <aws/braket/model/SearchQuantumTasksRequest.h>
 #include <aws/braket/model/SearchQuantumTasksResult.h>
+#include <aws/braket/model/SearchSpendingLimitsFilter.h>
+#include <aws/braket/model/SearchSpendingLimitsFilterOperator.h>
+#include <aws/braket/model/SearchSpendingLimitsRequest.h>
+#include <aws/braket/model/SearchSpendingLimitsResult.h>
+#include <aws/braket/model/SpendingLimitSummary.h>
 #include <aws/braket/model/TagResourceRequest.h>
 #include <aws/braket/model/TagResourceResult.h>
+#include <aws/braket/model/TimePeriod.h>
 #include <aws/braket/model/UntagResourceRequest.h>
 #include <aws/braket/model/UntagResourceResult.h>
+#include <aws/braket/model/UpdateSpendingLimitRequest.h>
+#include <aws/braket/model/UpdateSpendingLimitResult.h>
 #include <aws/braket/model/ValidationException.h>
 #include <aws/braket/model/ValidationExceptionReason.h>
 

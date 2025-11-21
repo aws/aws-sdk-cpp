@@ -19,6 +19,7 @@ static const int INVITE_HASH = HashingUtils::HashString("INVITE");
 static const int ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("ENABLE_ALL_FEATURES");
 static const int APPROVE_ALL_FEATURES_HASH = HashingUtils::HashString("APPROVE_ALL_FEATURES");
 static const int ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH = HashingUtils::HashString("ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE");
+static const int TRANSFER_RESPONSIBILITY_HASH = HashingUtils::HashString("TRANSFER_RESPONSIBILITY");
 
 ActionType GetActionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ActionType GetActionTypeForName(const Aws::String& name) {
     return ActionType::APPROVE_ALL_FEATURES;
   } else if (hashCode == ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH) {
     return ActionType::ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE;
+  } else if (hashCode == TRANSFER_RESPONSIBILITY_HASH) {
+    return ActionType::TRANSFER_RESPONSIBILITY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForActionType(ActionType enumValue) {
       return "APPROVE_ALL_FEATURES";
     case ActionType::ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE:
       return "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE";
+    case ActionType::TRANSFER_RESPONSIBILITY:
+      return "TRANSFER_RESPONSIBILITY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

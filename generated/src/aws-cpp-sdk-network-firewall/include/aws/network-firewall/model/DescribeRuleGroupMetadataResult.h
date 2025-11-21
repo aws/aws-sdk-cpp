@@ -157,6 +157,59 @@ class DescribeRuleGroupMetadataResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the Amazon Web Services Marketplace vendor that provides this
+   * rule group.</p>
+   */
+  inline const Aws::String& GetVendorName() const { return m_vendorName; }
+  template <typename VendorNameT = Aws::String>
+  void SetVendorName(VendorNameT&& value) {
+    m_vendorNameHasBeenSet = true;
+    m_vendorName = std::forward<VendorNameT>(value);
+  }
+  template <typename VendorNameT = Aws::String>
+  DescribeRuleGroupMetadataResult& WithVendorName(VendorNameT&& value) {
+    SetVendorName(std::forward<VendorNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier for the product listing associated with this rule
+   * group.</p>
+   */
+  inline const Aws::String& GetProductId() const { return m_productId; }
+  template <typename ProductIdT = Aws::String>
+  void SetProductId(ProductIdT&& value) {
+    m_productIdHasBeenSet = true;
+    m_productId = std::forward<ProductIdT>(value);
+  }
+  template <typename ProductIdT = Aws::String>
+  DescribeRuleGroupMetadataResult& WithProductId(ProductIdT&& value) {
+    SetProductId(std::forward<ProductIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The display name of the product listing for this rule group.</p>
+   */
+  inline const Aws::String& GetListingName() const { return m_listingName; }
+  template <typename ListingNameT = Aws::String>
+  void SetListingName(ListingNameT&& value) {
+    m_listingNameHasBeenSet = true;
+    m_listingName = std::forward<ListingNameT>(value);
+  }
+  template <typename ListingNameT = Aws::String>
+  DescribeRuleGroupMetadataResult& WithListingName(ListingNameT&& value) {
+    SetListingName(std::forward<ListingNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -191,6 +244,15 @@ class DescribeRuleGroupMetadataResult {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_lastModifiedTimeHasBeenSet = false;
+
+  Aws::String m_vendorName;
+  bool m_vendorNameHasBeenSet = false;
+
+  Aws::String m_productId;
+  bool m_productIdHasBeenSet = false;
+
+  Aws::String m_listingName;
+  bool m_listingNameHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

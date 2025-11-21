@@ -55,6 +55,23 @@ ResourceTargetDefinition& ResourceTargetDefinition::operator=(const XmlNode& xml
       m_afterValue = Aws::Utils::Xml::DecodeEscapedXmlText(afterValueNode.GetText());
       m_afterValueHasBeenSet = true;
     }
+    XmlNode beforeValueFromNode = resultNode.FirstChild("BeforeValueFrom");
+    if (!beforeValueFromNode.IsNull()) {
+      m_beforeValueFrom = BeforeValueFromMapper::GetBeforeValueFromForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(beforeValueFromNode.GetText()).c_str()));
+      m_beforeValueFromHasBeenSet = true;
+    }
+    XmlNode afterValueFromNode = resultNode.FirstChild("AfterValueFrom");
+    if (!afterValueFromNode.IsNull()) {
+      m_afterValueFrom = AfterValueFromMapper::GetAfterValueFromForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(afterValueFromNode.GetText()).c_str()));
+      m_afterValueFromHasBeenSet = true;
+    }
+    XmlNode driftNode = resultNode.FirstChild("Drift");
+    if (!driftNode.IsNull()) {
+      m_drift = driftNode;
+      m_driftHasBeenSet = true;
+    }
     XmlNode attributeChangeTypeNode = resultNode.FirstChild("AttributeChangeType");
     if (!attributeChangeTypeNode.IsNull()) {
       m_attributeChangeType = AttributeChangeTypeMapper::GetAttributeChangeTypeForName(
@@ -94,6 +111,22 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
     oStream << location << index << locationValue << ".AfterValue=" << StringUtils::URLEncode(m_afterValue.c_str()) << "&";
   }
 
+  if (m_beforeValueFromHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".BeforeValueFrom=" << StringUtils::URLEncode(BeforeValueFromMapper::GetNameForBeforeValueFrom(m_beforeValueFrom)) << "&";
+  }
+
+  if (m_afterValueFromHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".AfterValueFrom=" << StringUtils::URLEncode(AfterValueFromMapper::GetNameForAfterValueFrom(m_afterValueFrom)) << "&";
+  }
+
+  if (m_driftHasBeenSet) {
+    Aws::StringStream driftLocationAndMemberSs;
+    driftLocationAndMemberSs << location << index << locationValue << ".Drift";
+    m_drift.OutputToStream(oStream, driftLocationAndMemberSs.str().c_str());
+  }
+
   if (m_attributeChangeTypeHasBeenSet) {
     oStream << location << index << locationValue << ".AttributeChangeType="
             << StringUtils::URLEncode(AttributeChangeTypeMapper::GetNameForAttributeChangeType(m_attributeChangeType)) << "&";
@@ -120,6 +153,19 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
   }
   if (m_afterValueHasBeenSet) {
     oStream << location << ".AfterValue=" << StringUtils::URLEncode(m_afterValue.c_str()) << "&";
+  }
+  if (m_beforeValueFromHasBeenSet) {
+    oStream << location
+            << ".BeforeValueFrom=" << StringUtils::URLEncode(BeforeValueFromMapper::GetNameForBeforeValueFrom(m_beforeValueFrom)) << "&";
+  }
+  if (m_afterValueFromHasBeenSet) {
+    oStream << location << ".AfterValueFrom=" << StringUtils::URLEncode(AfterValueFromMapper::GetNameForAfterValueFrom(m_afterValueFrom))
+            << "&";
+  }
+  if (m_driftHasBeenSet) {
+    Aws::String driftLocationAndMember(location);
+    driftLocationAndMember += ".Drift";
+    m_drift.OutputToStream(oStream, driftLocationAndMember.c_str());
   }
   if (m_attributeChangeTypeHasBeenSet) {
     oStream << location << ".AttributeChangeType="

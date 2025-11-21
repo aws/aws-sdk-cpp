@@ -92,6 +92,10 @@ Integration& Integration::operator=(JsonView jsonValue) {
     m_tlsConfig = jsonValue.GetObject("tlsConfig");
     m_tlsConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("responseTransferMode")) {
+    m_responseTransferMode = ResponseTransferModeMapper::GetResponseTransferModeForName(jsonValue.GetString("responseTransferMode"));
+    m_responseTransferModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -173,6 +177,10 @@ JsonValue Integration::Jsonize() const {
 
   if (m_tlsConfigHasBeenSet) {
     payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
+  }
+
+  if (m_responseTransferModeHasBeenSet) {
+    payload.WithString("responseTransferMode", ResponseTransferModeMapper::GetNameForResponseTransferMode(m_responseTransferMode));
   }
 
   return payload;

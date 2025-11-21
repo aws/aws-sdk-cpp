@@ -21,8 +21,8 @@ namespace ECR {
 namespace Model {
 
 /**
- * <p>Overrides the default image tag mutability setting of the repository for
- * image tags that match the specified filters.</p><p><h3>See Also:</h3>   <a
+ * <p>A filter that specifies which image tags should be excluded from the
+ * repository's image tag mutability setting.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageTagMutabilityExclusionFilter">AWS
  * API Reference</a></p>
  */
@@ -35,8 +35,8 @@ class ImageTagMutabilityExclusionFilter {
 
   ///@{
   /**
-   * <p>Specifies the type of filter to use for excluding image tags from the
-   * repository's mutability setting.</p>
+   * <p>The type of filter to apply for excluding image tags from mutability
+   * settings.</p>
    */
   inline ImageTagMutabilityExclusionFilterType GetFilterType() const { return m_filterType; }
   inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
@@ -52,8 +52,8 @@ class ImageTagMutabilityExclusionFilter {
 
   ///@{
   /**
-   * <p>The value to use when filtering image tags. Must be either a regular
-   * expression pattern or a tag prefix value based on the specified filter type.</p>
+   * <p>The filter value used to match image tags for exclusion from mutability
+   * settings.</p>
    */
   inline const Aws::String& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
