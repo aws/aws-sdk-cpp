@@ -150,6 +150,18 @@ Run& Run::operator=(JsonView jsonValue) {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
     m_vpcConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("executionRoleArn")) {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+    m_executionRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("environmentVariables")) {
+    Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
+    for (unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength();
+         ++environmentVariablesIndex) {
+      m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -286,6 +298,19 @@ JsonValue Run::Jsonize() const {
 
   if (m_vpcConfigHasBeenSet) {
     payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+  }
+
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("executionRoleArn", m_executionRoleArn);
+  }
+
+  if (m_environmentVariablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+    for (unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength();
+         ++environmentVariablesIndex) {
+      environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+    }
+    payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
   }
 
   return payload;

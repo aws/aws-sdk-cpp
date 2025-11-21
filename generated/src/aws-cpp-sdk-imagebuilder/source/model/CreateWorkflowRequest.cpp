@@ -59,5 +59,9 @@ Aws::String CreateWorkflowRequest::SerializePayload() const {
     payload.WithString("type", WorkflowTypeMapper::GetNameForWorkflowType(m_type));
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }

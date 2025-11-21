@@ -19,7 +19,9 @@
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/PropagateTags.h>
+#include <aws/ecs/model/ResourceManagementType.h>
 #include <aws/ecs/model/SchedulingStrategy.h>
+#include <aws/ecs/model/ServiceCurrentRevisionSummary.h>
 #include <aws/ecs/model/ServiceEvent.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/Tag.h>
@@ -481,6 +483,48 @@ class Service {
 
   ///@{
   /**
+   * <p>The ARN of the current service deployment.</p>
+   */
+  inline const Aws::String& GetCurrentServiceDeployment() const { return m_currentServiceDeployment; }
+  inline bool CurrentServiceDeploymentHasBeenSet() const { return m_currentServiceDeploymentHasBeenSet; }
+  template <typename CurrentServiceDeploymentT = Aws::String>
+  void SetCurrentServiceDeployment(CurrentServiceDeploymentT&& value) {
+    m_currentServiceDeploymentHasBeenSet = true;
+    m_currentServiceDeployment = std::forward<CurrentServiceDeploymentT>(value);
+  }
+  template <typename CurrentServiceDeploymentT = Aws::String>
+  Service& WithCurrentServiceDeployment(CurrentServiceDeploymentT&& value) {
+    SetCurrentServiceDeployment(std::forward<CurrentServiceDeploymentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of the service revisions.</p>
+   */
+  inline const Aws::Vector<ServiceCurrentRevisionSummary>& GetCurrentServiceRevisions() const { return m_currentServiceRevisions; }
+  inline bool CurrentServiceRevisionsHasBeenSet() const { return m_currentServiceRevisionsHasBeenSet; }
+  template <typename CurrentServiceRevisionsT = Aws::Vector<ServiceCurrentRevisionSummary>>
+  void SetCurrentServiceRevisions(CurrentServiceRevisionsT&& value) {
+    m_currentServiceRevisionsHasBeenSet = true;
+    m_currentServiceRevisions = std::forward<CurrentServiceRevisionsT>(value);
+  }
+  template <typename CurrentServiceRevisionsT = Aws::Vector<ServiceCurrentRevisionSummary>>
+  Service& WithCurrentServiceRevisions(CurrentServiceRevisionsT&& value) {
+    SetCurrentServiceRevisions(std::forward<CurrentServiceRevisionsT>(value));
+    return *this;
+  }
+  template <typename CurrentServiceRevisionsT = ServiceCurrentRevisionSummary>
+  Service& AddCurrentServiceRevisions(CurrentServiceRevisionsT&& value) {
+    m_currentServiceRevisionsHasBeenSet = true;
+    m_currentServiceRevisions.emplace_back(std::forward<CurrentServiceRevisionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The placement constraints for the tasks in the service.</p>
    */
   inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const { return m_placementConstraints; }
@@ -754,6 +798,24 @@ class Service {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Identifies whether an ECS Service is an Express Service managed by ECS, or
+   * managed by the customer. The valid values are <code>ECS</code> and
+   * <code>CUSTOMER</code> </p>
+   */
+  inline ResourceManagementType GetResourceManagementType() const { return m_resourceManagementType; }
+  inline bool ResourceManagementTypeHasBeenSet() const { return m_resourceManagementTypeHasBeenSet; }
+  inline void SetResourceManagementType(ResourceManagementType value) {
+    m_resourceManagementTypeHasBeenSet = true;
+    m_resourceManagementType = value;
+  }
+  inline Service& WithResourceManagementType(ResourceManagementType value) {
+    SetResourceManagementType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceArn;
   bool m_serviceArnHasBeenSet = false;
@@ -815,6 +877,12 @@ class Service {
   Aws::Utils::DateTime m_createdAt{};
   bool m_createdAtHasBeenSet = false;
 
+  Aws::String m_currentServiceDeployment;
+  bool m_currentServiceDeploymentHasBeenSet = false;
+
+  Aws::Vector<ServiceCurrentRevisionSummary> m_currentServiceRevisions;
+  bool m_currentServiceRevisionsHasBeenSet = false;
+
   Aws::Vector<PlacementConstraint> m_placementConstraints;
   bool m_placementConstraintsHasBeenSet = false;
 
@@ -850,6 +918,9 @@ class Service {
 
   AvailabilityZoneRebalancing m_availabilityZoneRebalancing{AvailabilityZoneRebalancing::NOT_SET};
   bool m_availabilityZoneRebalancingHasBeenSet = false;
+
+  ResourceManagementType m_resourceManagementType{ResourceManagementType::NOT_SET};
+  bool m_resourceManagementTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -25,6 +25,34 @@ Typography& Typography::operator=(JsonView jsonValue) {
     }
     m_fontFamiliesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AxisTitleFontConfiguration")) {
+    m_axisTitleFontConfiguration = jsonValue.GetObject("AxisTitleFontConfiguration");
+    m_axisTitleFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AxisLabelFontConfiguration")) {
+    m_axisLabelFontConfiguration = jsonValue.GetObject("AxisLabelFontConfiguration");
+    m_axisLabelFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LegendTitleFontConfiguration")) {
+    m_legendTitleFontConfiguration = jsonValue.GetObject("LegendTitleFontConfiguration");
+    m_legendTitleFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LegendValueFontConfiguration")) {
+    m_legendValueFontConfiguration = jsonValue.GetObject("LegendValueFontConfiguration");
+    m_legendValueFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataLabelFontConfiguration")) {
+    m_dataLabelFontConfiguration = jsonValue.GetObject("DataLabelFontConfiguration");
+    m_dataLabelFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VisualTitleFontConfiguration")) {
+    m_visualTitleFontConfiguration = jsonValue.GetObject("VisualTitleFontConfiguration");
+    m_visualTitleFontConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VisualSubtitleFontConfiguration")) {
+    m_visualSubtitleFontConfiguration = jsonValue.GetObject("VisualSubtitleFontConfiguration");
+    m_visualSubtitleFontConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +65,34 @@ JsonValue Typography::Jsonize() const {
       fontFamiliesJsonList[fontFamiliesIndex].AsObject(m_fontFamilies[fontFamiliesIndex].Jsonize());
     }
     payload.WithArray("FontFamilies", std::move(fontFamiliesJsonList));
+  }
+
+  if (m_axisTitleFontConfigurationHasBeenSet) {
+    payload.WithObject("AxisTitleFontConfiguration", m_axisTitleFontConfiguration.Jsonize());
+  }
+
+  if (m_axisLabelFontConfigurationHasBeenSet) {
+    payload.WithObject("AxisLabelFontConfiguration", m_axisLabelFontConfiguration.Jsonize());
+  }
+
+  if (m_legendTitleFontConfigurationHasBeenSet) {
+    payload.WithObject("LegendTitleFontConfiguration", m_legendTitleFontConfiguration.Jsonize());
+  }
+
+  if (m_legendValueFontConfigurationHasBeenSet) {
+    payload.WithObject("LegendValueFontConfiguration", m_legendValueFontConfiguration.Jsonize());
+  }
+
+  if (m_dataLabelFontConfigurationHasBeenSet) {
+    payload.WithObject("DataLabelFontConfiguration", m_dataLabelFontConfiguration.Jsonize());
+  }
+
+  if (m_visualTitleFontConfigurationHasBeenSet) {
+    payload.WithObject("VisualTitleFontConfiguration", m_visualTitleFontConfiguration.Jsonize());
+  }
+
+  if (m_visualSubtitleFontConfigurationHasBeenSet) {
+    payload.WithObject("VisualSubtitleFontConfiguration", m_visualSubtitleFontConfiguration.Jsonize());
   }
 
   return payload;

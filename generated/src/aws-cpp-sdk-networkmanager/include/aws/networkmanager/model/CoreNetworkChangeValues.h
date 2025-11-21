@@ -7,6 +7,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/RoutingPolicyAssociationDetail.h>
+#include <aws/networkmanager/model/RoutingPolicyDirection.h>
 #include <aws/networkmanager/model/ServiceInsertionAction.h>
 
 #include <utility>
@@ -268,6 +270,110 @@ class CoreNetworkChangeValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The routing policy direction (inbound/outbound) in a core network change
+   * event.</p>
+   */
+  inline RoutingPolicyDirection GetRoutingPolicyDirection() const { return m_routingPolicyDirection; }
+  inline bool RoutingPolicyDirectionHasBeenSet() const { return m_routingPolicyDirectionHasBeenSet; }
+  inline void SetRoutingPolicyDirection(RoutingPolicyDirection value) {
+    m_routingPolicyDirectionHasBeenSet = true;
+    m_routingPolicyDirection = value;
+  }
+  inline CoreNetworkChangeValues& WithRoutingPolicyDirection(RoutingPolicyDirection value) {
+    SetRoutingPolicyDirection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The routing policy configuration in the core network change values.</p>
+   */
+  inline const Aws::String& GetRoutingPolicy() const { return m_routingPolicy; }
+  inline bool RoutingPolicyHasBeenSet() const { return m_routingPolicyHasBeenSet; }
+  template <typename RoutingPolicyT = Aws::String>
+  void SetRoutingPolicy(RoutingPolicyT&& value) {
+    m_routingPolicyHasBeenSet = true;
+    m_routingPolicy = std::forward<RoutingPolicyT>(value);
+  }
+  template <typename RoutingPolicyT = Aws::String>
+  CoreNetworkChangeValues& WithRoutingPolicy(RoutingPolicyT&& value) {
+    SetRoutingPolicy(std::forward<RoutingPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The edge locations of peers in the core network change values.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPeerEdgeLocations() const { return m_peerEdgeLocations; }
+  inline bool PeerEdgeLocationsHasBeenSet() const { return m_peerEdgeLocationsHasBeenSet; }
+  template <typename PeerEdgeLocationsT = Aws::Vector<Aws::String>>
+  void SetPeerEdgeLocations(PeerEdgeLocationsT&& value) {
+    m_peerEdgeLocationsHasBeenSet = true;
+    m_peerEdgeLocations = std::forward<PeerEdgeLocationsT>(value);
+  }
+  template <typename PeerEdgeLocationsT = Aws::Vector<Aws::String>>
+  CoreNetworkChangeValues& WithPeerEdgeLocations(PeerEdgeLocationsT&& value) {
+    SetPeerEdgeLocations(std::forward<PeerEdgeLocationsT>(value));
+    return *this;
+  }
+  template <typename PeerEdgeLocationsT = Aws::String>
+  CoreNetworkChangeValues& AddPeerEdgeLocations(PeerEdgeLocationsT&& value) {
+    m_peerEdgeLocationsHasBeenSet = true;
+    m_peerEdgeLocations.emplace_back(std::forward<PeerEdgeLocationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The attachment identifier in the core network change values.</p>
+   */
+  inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+  inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+  template <typename AttachmentIdT = Aws::String>
+  void SetAttachmentId(AttachmentIdT&& value) {
+    m_attachmentIdHasBeenSet = true;
+    m_attachmentId = std::forward<AttachmentIdT>(value);
+  }
+  template <typename AttachmentIdT = Aws::String>
+  CoreNetworkChangeValues& WithAttachmentId(AttachmentIdT&& value) {
+    SetAttachmentId(std::forward<AttachmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The names of the routing policies and other association details in the core
+   * network change values.</p>
+   */
+  inline const Aws::Vector<RoutingPolicyAssociationDetail>& GetRoutingPolicyAssociationDetails() const {
+    return m_routingPolicyAssociationDetails;
+  }
+  inline bool RoutingPolicyAssociationDetailsHasBeenSet() const { return m_routingPolicyAssociationDetailsHasBeenSet; }
+  template <typename RoutingPolicyAssociationDetailsT = Aws::Vector<RoutingPolicyAssociationDetail>>
+  void SetRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+    m_routingPolicyAssociationDetails = std::forward<RoutingPolicyAssociationDetailsT>(value);
+  }
+  template <typename RoutingPolicyAssociationDetailsT = Aws::Vector<RoutingPolicyAssociationDetail>>
+  CoreNetworkChangeValues& WithRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    SetRoutingPolicyAssociationDetails(std::forward<RoutingPolicyAssociationDetailsT>(value));
+    return *this;
+  }
+  template <typename RoutingPolicyAssociationDetailsT = RoutingPolicyAssociationDetail>
+  CoreNetworkChangeValues& AddRoutingPolicyAssociationDetails(RoutingPolicyAssociationDetailsT&& value) {
+    m_routingPolicyAssociationDetailsHasBeenSet = true;
+    m_routingPolicyAssociationDetails.emplace_back(std::forward<RoutingPolicyAssociationDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_segmentName;
   bool m_segmentNameHasBeenSet = false;
@@ -304,6 +410,21 @@ class CoreNetworkChangeValues {
 
   bool m_securityGroupReferencingSupport{false};
   bool m_securityGroupReferencingSupportHasBeenSet = false;
+
+  RoutingPolicyDirection m_routingPolicyDirection{RoutingPolicyDirection::NOT_SET};
+  bool m_routingPolicyDirectionHasBeenSet = false;
+
+  Aws::String m_routingPolicy;
+  bool m_routingPolicyHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_peerEdgeLocations;
+  bool m_peerEdgeLocationsHasBeenSet = false;
+
+  Aws::String m_attachmentId;
+  bool m_attachmentIdHasBeenSet = false;
+
+  Aws::Vector<RoutingPolicyAssociationDetail> m_routingPolicyAssociationDetails;
+  bool m_routingPolicyAssociationDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

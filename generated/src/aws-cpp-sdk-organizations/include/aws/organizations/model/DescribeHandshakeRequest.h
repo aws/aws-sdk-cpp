@@ -32,10 +32,7 @@ class DescribeHandshakeRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the handshake that you want information about.
-   * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
-   * or from a call to <a>ListHandshakesForAccount</a> or
-   * <a>ListHandshakesForOrganization</a>.</p> <p>The <a
+   * <p>ID for the handshake that you want information about.</p> <p>The <a
    * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
    * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
    */

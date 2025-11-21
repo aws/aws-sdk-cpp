@@ -166,6 +166,8 @@
 #include <aws/ec2/model/CreateTrafficMirrorTargetResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayConnectResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayMeteringPolicyEntryResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableResponse.h>
@@ -184,6 +186,7 @@
 #include <aws/ec2/model/CreateVolumeRequest.h>
 #include <aws/ec2/model/CreateVolumeResponse.h>
 #include <aws/ec2/model/CreateVpcBlockPublicAccessExclusionResponse.h>
+#include <aws/ec2/model/CreateVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/CreateVpcEndpointConnectionNotificationResponse.h>
 #include <aws/ec2/model/CreateVpcEndpointResponse.h>
 #include <aws/ec2/model/CreateVpcEndpointServiceConfigurationRequest.h>
@@ -248,6 +251,8 @@
 #include <aws/ec2/model/DeleteTrafficMirrorTargetResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayConnectResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyEntryResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableResponse.h>
@@ -262,6 +267,7 @@
 #include <aws/ec2/model/DeleteVerifiedAccessInstanceResponse.h>
 #include <aws/ec2/model/DeleteVerifiedAccessTrustProviderResponse.h>
 #include <aws/ec2/model/DeleteVpcBlockPublicAccessExclusionResponse.h>
+#include <aws/ec2/model/DeleteVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointConnectionNotificationsResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointServiceConfigurationsResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
@@ -547,6 +553,8 @@
 #include <aws/ec2/model/DescribeTransitGatewayConnectPeersResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayConnectsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayConnectsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayMeteringPoliciesRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayMeteringPoliciesResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
@@ -589,6 +597,8 @@
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkRequest.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkResponse.h>
+#include <aws/ec2/model/DescribeVpcEncryptionControlsRequest.h>
+#include <aws/ec2/model/DescribeVpcEncryptionControlsResponse.h>
 #include <aws/ec2/model/DescribeVpcEndpointAssociationsRequest.h>
 #include <aws/ec2/model/DescribeVpcEndpointAssociationsResponse.h>
 #include <aws/ec2/model/DescribeVpcEndpointConnectionNotificationsRequest.h>
@@ -756,6 +766,7 @@
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayMeteringPolicyEntriesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesResponse.h>
@@ -765,6 +776,7 @@
 #include <aws/ec2/model/GetVerifiedAccessEndpointPolicyResponse.h>
 #include <aws/ec2/model/GetVerifiedAccessEndpointTargetsResponse.h>
 #include <aws/ec2/model/GetVerifiedAccessGroupPolicyResponse.h>
+#include <aws/ec2/model/GetVpcResourcesBlockingEncryptionEnforcementResponse.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationResponse.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesResponse.h>
@@ -781,6 +793,8 @@
 #include <aws/ec2/model/ListImagesInRecycleBinResponse.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinResponse.h>
+#include <aws/ec2/model/ListVolumesInRecycleBinRequest.h>
+#include <aws/ec2/model/ListVolumesInRecycleBinResponse.h>
 #include <aws/ec2/model/LockSnapshotResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
@@ -826,6 +840,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentResponse.h>
@@ -839,6 +854,7 @@
 #include <aws/ec2/model/ModifyVolumeResponse.h>
 #include <aws/ec2/model/ModifyVpcBlockPublicAccessExclusionResponse.h>
 #include <aws/ec2/model/ModifyVpcBlockPublicAccessOptionsResponse.h>
+#include <aws/ec2/model/ModifyVpcEncryptionControlResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationResponse.h>
@@ -896,6 +912,7 @@
 #include <aws/ec2/model/RestoreManagedPrefixListVersionResponse.h>
 #include <aws/ec2/model/RestoreSnapshotFromRecycleBinResponse.h>
 #include <aws/ec2/model/RestoreSnapshotTierResponse.h>
+#include <aws/ec2/model/RestoreVolumeFromRecycleBinResponse.h>
 #include <aws/ec2/model/RevokeClientVpnIngressResponse.h>
 #include <aws/ec2/model/RevokeSecurityGroupEgressResponse.h>
 #include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
@@ -1092,6 +1109,8 @@ class CreateTrafficMirrorTargetRequest;
 class CreateTransitGatewayRequest;
 class CreateTransitGatewayConnectRequest;
 class CreateTransitGatewayConnectPeerRequest;
+class CreateTransitGatewayMeteringPolicyRequest;
+class CreateTransitGatewayMeteringPolicyEntryRequest;
 class CreateTransitGatewayMulticastDomainRequest;
 class CreateTransitGatewayPeeringAttachmentRequest;
 class CreateTransitGatewayPolicyTableRequest;
@@ -1107,6 +1126,7 @@ class CreateVerifiedAccessTrustProviderRequest;
 class CreateVolumeRequest;
 class CreateVpcRequest;
 class CreateVpcBlockPublicAccessExclusionRequest;
+class CreateVpcEncryptionControlRequest;
 class CreateVpcEndpointRequest;
 class CreateVpcEndpointConnectionNotificationRequest;
 class CreateVpcEndpointServiceConfigurationRequest;
@@ -1179,6 +1199,8 @@ class DeleteTrafficMirrorTargetRequest;
 class DeleteTransitGatewayRequest;
 class DeleteTransitGatewayConnectRequest;
 class DeleteTransitGatewayConnectPeerRequest;
+class DeleteTransitGatewayMeteringPolicyRequest;
+class DeleteTransitGatewayMeteringPolicyEntryRequest;
 class DeleteTransitGatewayMulticastDomainRequest;
 class DeleteTransitGatewayPeeringAttachmentRequest;
 class DeleteTransitGatewayPolicyTableRequest;
@@ -1194,6 +1216,7 @@ class DeleteVerifiedAccessTrustProviderRequest;
 class DeleteVolumeRequest;
 class DeleteVpcRequest;
 class DeleteVpcBlockPublicAccessExclusionRequest;
+class DeleteVpcEncryptionControlRequest;
 class DeleteVpcEndpointConnectionNotificationsRequest;
 class DeleteVpcEndpointServiceConfigurationsRequest;
 class DeleteVpcEndpointsRequest;
@@ -1356,6 +1379,7 @@ class DescribeTrafficMirrorTargetsRequest;
 class DescribeTransitGatewayAttachmentsRequest;
 class DescribeTransitGatewayConnectPeersRequest;
 class DescribeTransitGatewayConnectsRequest;
+class DescribeTransitGatewayMeteringPoliciesRequest;
 class DescribeTransitGatewayMulticastDomainsRequest;
 class DescribeTransitGatewayPeeringAttachmentsRequest;
 class DescribeTransitGatewayPolicyTablesRequest;
@@ -1378,6 +1402,7 @@ class DescribeVpcBlockPublicAccessExclusionsRequest;
 class DescribeVpcBlockPublicAccessOptionsRequest;
 class DescribeVpcClassicLinkRequest;
 class DescribeVpcClassicLinkDnsSupportRequest;
+class DescribeVpcEncryptionControlsRequest;
 class DescribeVpcEndpointAssociationsRequest;
 class DescribeVpcEndpointConnectionNotificationsRequest;
 class DescribeVpcEndpointConnectionsRequest;
@@ -1517,6 +1542,7 @@ class GetSnapshotBlockPublicAccessStateRequest;
 class GetSpotPlacementScoresRequest;
 class GetSubnetCidrReservationsRequest;
 class GetTransitGatewayAttachmentPropagationsRequest;
+class GetTransitGatewayMeteringPolicyEntriesRequest;
 class GetTransitGatewayMulticastDomainAssociationsRequest;
 class GetTransitGatewayPolicyTableAssociationsRequest;
 class GetTransitGatewayPolicyTableEntriesRequest;
@@ -1526,6 +1552,7 @@ class GetTransitGatewayRouteTablePropagationsRequest;
 class GetVerifiedAccessEndpointPolicyRequest;
 class GetVerifiedAccessEndpointTargetsRequest;
 class GetVerifiedAccessGroupPolicyRequest;
+class GetVpcResourcesBlockingEncryptionEnforcementRequest;
 class GetVpnConnectionDeviceSampleConfigurationRequest;
 class GetVpnConnectionDeviceTypesRequest;
 class GetVpnTunnelReplacementStatusRequest;
@@ -1537,6 +1564,7 @@ class ImportSnapshotRequest;
 class ImportVolumeRequest;
 class ListImagesInRecycleBinRequest;
 class ListSnapshotsInRecycleBinRequest;
+class ListVolumesInRecycleBinRequest;
 class LockSnapshotRequest;
 class ModifyAddressAttributeRequest;
 class ModifyAvailabilityZoneGroupRequest;
@@ -1588,6 +1616,7 @@ class ModifyTrafficMirrorFilterNetworkServicesRequest;
 class ModifyTrafficMirrorFilterRuleRequest;
 class ModifyTrafficMirrorSessionRequest;
 class ModifyTransitGatewayRequest;
+class ModifyTransitGatewayMeteringPolicyRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
 class ModifyTransitGatewayVpcAttachmentRequest;
 class ModifyVerifiedAccessEndpointRequest;
@@ -1602,6 +1631,7 @@ class ModifyVolumeAttributeRequest;
 class ModifyVpcAttributeRequest;
 class ModifyVpcBlockPublicAccessExclusionRequest;
 class ModifyVpcBlockPublicAccessOptionsRequest;
+class ModifyVpcEncryptionControlRequest;
 class ModifyVpcEndpointRequest;
 class ModifyVpcEndpointConnectionNotificationRequest;
 class ModifyVpcEndpointServiceConfigurationRequest;
@@ -1663,6 +1693,7 @@ class RestoreImageFromRecycleBinRequest;
 class RestoreManagedPrefixListVersionRequest;
 class RestoreSnapshotFromRecycleBinRequest;
 class RestoreSnapshotTierRequest;
+class RestoreVolumeFromRecycleBinRequest;
 class RevokeClientVpnIngressRequest;
 class RevokeSecurityGroupEgressRequest;
 class RevokeSecurityGroupIngressRequest;
@@ -1833,6 +1864,8 @@ typedef Aws::Utils::Outcome<CreateTrafficMirrorTargetResponse, EC2Error> CreateT
 typedef Aws::Utils::Outcome<CreateTransitGatewayResponse, EC2Error> CreateTransitGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayConnectResponse, EC2Error> CreateTransitGatewayConnectOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayConnectPeerResponse, EC2Error> CreateTransitGatewayConnectPeerOutcome;
+typedef Aws::Utils::Outcome<CreateTransitGatewayMeteringPolicyResponse, EC2Error> CreateTransitGatewayMeteringPolicyOutcome;
+typedef Aws::Utils::Outcome<CreateTransitGatewayMeteringPolicyEntryResponse, EC2Error> CreateTransitGatewayMeteringPolicyEntryOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayMulticastDomainResponse, EC2Error> CreateTransitGatewayMulticastDomainOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPeeringAttachmentResponse, EC2Error> CreateTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableResponse, EC2Error> CreateTransitGatewayPolicyTableOutcome;
@@ -1848,6 +1881,7 @@ typedef Aws::Utils::Outcome<CreateVerifiedAccessTrustProviderResponse, EC2Error>
 typedef Aws::Utils::Outcome<CreateVolumeResponse, EC2Error> CreateVolumeOutcome;
 typedef Aws::Utils::Outcome<CreateVpcResponse, EC2Error> CreateVpcOutcome;
 typedef Aws::Utils::Outcome<CreateVpcBlockPublicAccessExclusionResponse, EC2Error> CreateVpcBlockPublicAccessExclusionOutcome;
+typedef Aws::Utils::Outcome<CreateVpcEncryptionControlResponse, EC2Error> CreateVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<CreateVpcEndpointResponse, EC2Error> CreateVpcEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateVpcEndpointConnectionNotificationResponse, EC2Error> CreateVpcEndpointConnectionNotificationOutcome;
 typedef Aws::Utils::Outcome<CreateVpcEndpointServiceConfigurationResponse, EC2Error> CreateVpcEndpointServiceConfigurationOutcome;
@@ -1922,6 +1956,8 @@ typedef Aws::Utils::Outcome<DeleteTrafficMirrorTargetResponse, EC2Error> DeleteT
 typedef Aws::Utils::Outcome<DeleteTransitGatewayResponse, EC2Error> DeleteTransitGatewayOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectResponse, EC2Error> DeleteTransitGatewayConnectOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectPeerResponse, EC2Error> DeleteTransitGatewayConnectPeerOutcome;
+typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyResponse, EC2Error> DeleteTransitGatewayMeteringPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyEntryResponse, EC2Error> DeleteTransitGatewayMeteringPolicyEntryOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMulticastDomainResponse, EC2Error> DeleteTransitGatewayMulticastDomainOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPeeringAttachmentResponse, EC2Error> DeleteTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableResponse, EC2Error> DeleteTransitGatewayPolicyTableOutcome;
@@ -1937,6 +1973,7 @@ typedef Aws::Utils::Outcome<DeleteVerifiedAccessTrustProviderResponse, EC2Error>
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVolumeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpcOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcBlockPublicAccessExclusionResponse, EC2Error> DeleteVpcBlockPublicAccessExclusionOutcome;
+typedef Aws::Utils::Outcome<DeleteVpcEncryptionControlResponse, EC2Error> DeleteVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcEndpointConnectionNotificationsResponse, EC2Error> DeleteVpcEndpointConnectionNotificationsOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcEndpointServiceConfigurationsResponse, EC2Error> DeleteVpcEndpointServiceConfigurationsOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcEndpointsResponse, EC2Error> DeleteVpcEndpointsOutcome;
@@ -2107,6 +2144,7 @@ typedef Aws::Utils::Outcome<DescribeTrafficMirrorTargetsResponse, EC2Error> Desc
 typedef Aws::Utils::Outcome<DescribeTransitGatewayAttachmentsResponse, EC2Error> DescribeTransitGatewayAttachmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayConnectPeersResponse, EC2Error> DescribeTransitGatewayConnectPeersOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayConnectsResponse, EC2Error> DescribeTransitGatewayConnectsOutcome;
+typedef Aws::Utils::Outcome<DescribeTransitGatewayMeteringPoliciesResponse, EC2Error> DescribeTransitGatewayMeteringPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayMulticastDomainsResponse, EC2Error> DescribeTransitGatewayMulticastDomainsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayPeeringAttachmentsResponse, EC2Error> DescribeTransitGatewayPeeringAttachmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayPolicyTablesResponse, EC2Error> DescribeTransitGatewayPolicyTablesOutcome;
@@ -2131,6 +2169,7 @@ typedef Aws::Utils::Outcome<DescribeVpcBlockPublicAccessExclusionsResponse, EC2E
 typedef Aws::Utils::Outcome<DescribeVpcBlockPublicAccessOptionsResponse, EC2Error> DescribeVpcBlockPublicAccessOptionsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcClassicLinkResponse, EC2Error> DescribeVpcClassicLinkOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcClassicLinkDnsSupportResponse, EC2Error> DescribeVpcClassicLinkDnsSupportOutcome;
+typedef Aws::Utils::Outcome<DescribeVpcEncryptionControlsResponse, EC2Error> DescribeVpcEncryptionControlsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcEndpointAssociationsResponse, EC2Error> DescribeVpcEndpointAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcEndpointConnectionNotificationsResponse, EC2Error> DescribeVpcEndpointConnectionNotificationsOutcome;
 typedef Aws::Utils::Outcome<DescribeVpcEndpointConnectionsResponse, EC2Error> DescribeVpcEndpointConnectionsOutcome;
@@ -2277,6 +2316,7 @@ typedef Aws::Utils::Outcome<GetSnapshotBlockPublicAccessStateResponse, EC2Error>
 typedef Aws::Utils::Outcome<GetSpotPlacementScoresResponse, EC2Error> GetSpotPlacementScoresOutcome;
 typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
+typedef Aws::Utils::Outcome<GetTransitGatewayMeteringPolicyEntriesResponse, EC2Error> GetTransitGatewayMeteringPolicyEntriesOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error>
     GetTransitGatewayMulticastDomainAssociationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayPolicyTableAssociationsResponse, EC2Error> GetTransitGatewayPolicyTableAssociationsOutcome;
@@ -2287,6 +2327,8 @@ typedef Aws::Utils::Outcome<GetTransitGatewayRouteTablePropagationsResponse, EC2
 typedef Aws::Utils::Outcome<GetVerifiedAccessEndpointPolicyResponse, EC2Error> GetVerifiedAccessEndpointPolicyOutcome;
 typedef Aws::Utils::Outcome<GetVerifiedAccessEndpointTargetsResponse, EC2Error> GetVerifiedAccessEndpointTargetsOutcome;
 typedef Aws::Utils::Outcome<GetVerifiedAccessGroupPolicyResponse, EC2Error> GetVerifiedAccessGroupPolicyOutcome;
+typedef Aws::Utils::Outcome<GetVpcResourcesBlockingEncryptionEnforcementResponse, EC2Error>
+    GetVpcResourcesBlockingEncryptionEnforcementOutcome;
 typedef Aws::Utils::Outcome<GetVpnConnectionDeviceSampleConfigurationResponse, EC2Error> GetVpnConnectionDeviceSampleConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetVpnConnectionDeviceTypesResponse, EC2Error> GetVpnConnectionDeviceTypesOutcome;
 typedef Aws::Utils::Outcome<GetVpnTunnelReplacementStatusResponse, EC2Error> GetVpnTunnelReplacementStatusOutcome;
@@ -2299,6 +2341,7 @@ typedef Aws::Utils::Outcome<ImportSnapshotResponse, EC2Error> ImportSnapshotOutc
 typedef Aws::Utils::Outcome<ImportVolumeResponse, EC2Error> ImportVolumeOutcome;
 typedef Aws::Utils::Outcome<ListImagesInRecycleBinResponse, EC2Error> ListImagesInRecycleBinOutcome;
 typedef Aws::Utils::Outcome<ListSnapshotsInRecycleBinResponse, EC2Error> ListSnapshotsInRecycleBinOutcome;
+typedef Aws::Utils::Outcome<ListVolumesInRecycleBinResponse, EC2Error> ListVolumesInRecycleBinOutcome;
 typedef Aws::Utils::Outcome<LockSnapshotResponse, EC2Error> LockSnapshotOutcome;
 typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
 typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
@@ -2351,6 +2394,7 @@ typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterNetworkServicesResponse, EC
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterRuleResponse, EC2Error> ModifyTrafficMirrorFilterRuleOutcome;
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorSessionResponse, EC2Error> ModifyTrafficMirrorSessionOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayResponse, EC2Error> ModifyTransitGatewayOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayVpcAttachmentResponse, EC2Error> ModifyTransitGatewayVpcAttachmentOutcome;
 typedef Aws::Utils::Outcome<ModifyVerifiedAccessEndpointResponse, EC2Error> ModifyVerifiedAccessEndpointOutcome;
@@ -2366,6 +2410,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyVolumeAttributeOutcom
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyVpcAttributeOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcBlockPublicAccessExclusionResponse, EC2Error> ModifyVpcBlockPublicAccessExclusionOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcBlockPublicAccessOptionsResponse, EC2Error> ModifyVpcBlockPublicAccessOptionsOutcome;
+typedef Aws::Utils::Outcome<ModifyVpcEncryptionControlResponse, EC2Error> ModifyVpcEncryptionControlOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, EC2Error> ModifyVpcEndpointOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointConnectionNotificationResponse, EC2Error> ModifyVpcEndpointConnectionNotificationOutcome;
 typedef Aws::Utils::Outcome<ModifyVpcEndpointServiceConfigurationResponse, EC2Error> ModifyVpcEndpointServiceConfigurationOutcome;
@@ -2433,6 +2478,7 @@ typedef Aws::Utils::Outcome<RestoreImageFromRecycleBinResponse, EC2Error> Restor
 typedef Aws::Utils::Outcome<RestoreManagedPrefixListVersionResponse, EC2Error> RestoreManagedPrefixListVersionOutcome;
 typedef Aws::Utils::Outcome<RestoreSnapshotFromRecycleBinResponse, EC2Error> RestoreSnapshotFromRecycleBinOutcome;
 typedef Aws::Utils::Outcome<RestoreSnapshotTierResponse, EC2Error> RestoreSnapshotTierOutcome;
+typedef Aws::Utils::Outcome<RestoreVolumeFromRecycleBinResponse, EC2Error> RestoreVolumeFromRecycleBinOutcome;
 typedef Aws::Utils::Outcome<RevokeClientVpnIngressResponse, EC2Error> RevokeClientVpnIngressOutcome;
 typedef Aws::Utils::Outcome<RevokeSecurityGroupEgressResponse, EC2Error> RevokeSecurityGroupEgressOutcome;
 typedef Aws::Utils::Outcome<RevokeSecurityGroupIngressResponse, EC2Error> RevokeSecurityGroupIngressOutcome;
@@ -2601,6 +2647,8 @@ typedef std::future<CreateTrafficMirrorTargetOutcome> CreateTrafficMirrorTargetO
 typedef std::future<CreateTransitGatewayOutcome> CreateTransitGatewayOutcomeCallable;
 typedef std::future<CreateTransitGatewayConnectOutcome> CreateTransitGatewayConnectOutcomeCallable;
 typedef std::future<CreateTransitGatewayConnectPeerOutcome> CreateTransitGatewayConnectPeerOutcomeCallable;
+typedef std::future<CreateTransitGatewayMeteringPolicyOutcome> CreateTransitGatewayMeteringPolicyOutcomeCallable;
+typedef std::future<CreateTransitGatewayMeteringPolicyEntryOutcome> CreateTransitGatewayMeteringPolicyEntryOutcomeCallable;
 typedef std::future<CreateTransitGatewayMulticastDomainOutcome> CreateTransitGatewayMulticastDomainOutcomeCallable;
 typedef std::future<CreateTransitGatewayPeeringAttachmentOutcome> CreateTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<CreateTransitGatewayPolicyTableOutcome> CreateTransitGatewayPolicyTableOutcomeCallable;
@@ -2616,6 +2664,7 @@ typedef std::future<CreateVerifiedAccessTrustProviderOutcome> CreateVerifiedAcce
 typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
 typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
 typedef std::future<CreateVpcBlockPublicAccessExclusionOutcome> CreateVpcBlockPublicAccessExclusionOutcomeCallable;
+typedef std::future<CreateVpcEncryptionControlOutcome> CreateVpcEncryptionControlOutcomeCallable;
 typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
 typedef std::future<CreateVpcEndpointConnectionNotificationOutcome> CreateVpcEndpointConnectionNotificationOutcomeCallable;
 typedef std::future<CreateVpcEndpointServiceConfigurationOutcome> CreateVpcEndpointServiceConfigurationOutcomeCallable;
@@ -2689,6 +2738,8 @@ typedef std::future<DeleteTrafficMirrorTargetOutcome> DeleteTrafficMirrorTargetO
 typedef std::future<DeleteTransitGatewayOutcome> DeleteTransitGatewayOutcomeCallable;
 typedef std::future<DeleteTransitGatewayConnectOutcome> DeleteTransitGatewayConnectOutcomeCallable;
 typedef std::future<DeleteTransitGatewayConnectPeerOutcome> DeleteTransitGatewayConnectPeerOutcomeCallable;
+typedef std::future<DeleteTransitGatewayMeteringPolicyOutcome> DeleteTransitGatewayMeteringPolicyOutcomeCallable;
+typedef std::future<DeleteTransitGatewayMeteringPolicyEntryOutcome> DeleteTransitGatewayMeteringPolicyEntryOutcomeCallable;
 typedef std::future<DeleteTransitGatewayMulticastDomainOutcome> DeleteTransitGatewayMulticastDomainOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPeeringAttachmentOutcome> DeleteTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPolicyTableOutcome> DeleteTransitGatewayPolicyTableOutcomeCallable;
@@ -2704,6 +2755,7 @@ typedef std::future<DeleteVerifiedAccessTrustProviderOutcome> DeleteVerifiedAcce
 typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
 typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
 typedef std::future<DeleteVpcBlockPublicAccessExclusionOutcome> DeleteVpcBlockPublicAccessExclusionOutcomeCallable;
+typedef std::future<DeleteVpcEncryptionControlOutcome> DeleteVpcEncryptionControlOutcomeCallable;
 typedef std::future<DeleteVpcEndpointConnectionNotificationsOutcome> DeleteVpcEndpointConnectionNotificationsOutcomeCallable;
 typedef std::future<DeleteVpcEndpointServiceConfigurationsOutcome> DeleteVpcEndpointServiceConfigurationsOutcomeCallable;
 typedef std::future<DeleteVpcEndpointsOutcome> DeleteVpcEndpointsOutcomeCallable;
@@ -2868,6 +2920,7 @@ typedef std::future<DescribeTrafficMirrorTargetsOutcome> DescribeTrafficMirrorTa
 typedef std::future<DescribeTransitGatewayAttachmentsOutcome> DescribeTransitGatewayAttachmentsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayConnectPeersOutcome> DescribeTransitGatewayConnectPeersOutcomeCallable;
 typedef std::future<DescribeTransitGatewayConnectsOutcome> DescribeTransitGatewayConnectsOutcomeCallable;
+typedef std::future<DescribeTransitGatewayMeteringPoliciesOutcome> DescribeTransitGatewayMeteringPoliciesOutcomeCallable;
 typedef std::future<DescribeTransitGatewayMulticastDomainsOutcome> DescribeTransitGatewayMulticastDomainsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayPeeringAttachmentsOutcome> DescribeTransitGatewayPeeringAttachmentsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayPolicyTablesOutcome> DescribeTransitGatewayPolicyTablesOutcomeCallable;
@@ -2891,6 +2944,7 @@ typedef std::future<DescribeVpcBlockPublicAccessExclusionsOutcome> DescribeVpcBl
 typedef std::future<DescribeVpcBlockPublicAccessOptionsOutcome> DescribeVpcBlockPublicAccessOptionsOutcomeCallable;
 typedef std::future<DescribeVpcClassicLinkOutcome> DescribeVpcClassicLinkOutcomeCallable;
 typedef std::future<DescribeVpcClassicLinkDnsSupportOutcome> DescribeVpcClassicLinkDnsSupportOutcomeCallable;
+typedef std::future<DescribeVpcEncryptionControlsOutcome> DescribeVpcEncryptionControlsOutcomeCallable;
 typedef std::future<DescribeVpcEndpointAssociationsOutcome> DescribeVpcEndpointAssociationsOutcomeCallable;
 typedef std::future<DescribeVpcEndpointConnectionNotificationsOutcome> DescribeVpcEndpointConnectionNotificationsOutcomeCallable;
 typedef std::future<DescribeVpcEndpointConnectionsOutcome> DescribeVpcEndpointConnectionsOutcomeCallable;
@@ -3030,6 +3084,7 @@ typedef std::future<GetSnapshotBlockPublicAccessStateOutcome> GetSnapshotBlockPu
 typedef std::future<GetSpotPlacementScoresOutcome> GetSpotPlacementScoresOutcomeCallable;
 typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
 typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
+typedef std::future<GetTransitGatewayMeteringPolicyEntriesOutcome> GetTransitGatewayMeteringPolicyEntriesOutcomeCallable;
 typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
 typedef std::future<GetTransitGatewayPolicyTableAssociationsOutcome> GetTransitGatewayPolicyTableAssociationsOutcomeCallable;
 typedef std::future<GetTransitGatewayPolicyTableEntriesOutcome> GetTransitGatewayPolicyTableEntriesOutcomeCallable;
@@ -3039,6 +3094,7 @@ typedef std::future<GetTransitGatewayRouteTablePropagationsOutcome> GetTransitGa
 typedef std::future<GetVerifiedAccessEndpointPolicyOutcome> GetVerifiedAccessEndpointPolicyOutcomeCallable;
 typedef std::future<GetVerifiedAccessEndpointTargetsOutcome> GetVerifiedAccessEndpointTargetsOutcomeCallable;
 typedef std::future<GetVerifiedAccessGroupPolicyOutcome> GetVerifiedAccessGroupPolicyOutcomeCallable;
+typedef std::future<GetVpcResourcesBlockingEncryptionEnforcementOutcome> GetVpcResourcesBlockingEncryptionEnforcementOutcomeCallable;
 typedef std::future<GetVpnConnectionDeviceSampleConfigurationOutcome> GetVpnConnectionDeviceSampleConfigurationOutcomeCallable;
 typedef std::future<GetVpnConnectionDeviceTypesOutcome> GetVpnConnectionDeviceTypesOutcomeCallable;
 typedef std::future<GetVpnTunnelReplacementStatusOutcome> GetVpnTunnelReplacementStatusOutcomeCallable;
@@ -3050,6 +3106,7 @@ typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
 typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
 typedef std::future<ListImagesInRecycleBinOutcome> ListImagesInRecycleBinOutcomeCallable;
 typedef std::future<ListSnapshotsInRecycleBinOutcome> ListSnapshotsInRecycleBinOutcomeCallable;
+typedef std::future<ListVolumesInRecycleBinOutcome> ListVolumesInRecycleBinOutcomeCallable;
 typedef std::future<LockSnapshotOutcome> LockSnapshotOutcomeCallable;
 typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
 typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
@@ -3101,6 +3158,7 @@ typedef std::future<ModifyTrafficMirrorFilterNetworkServicesOutcome> ModifyTraff
 typedef std::future<ModifyTrafficMirrorFilterRuleOutcome> ModifyTrafficMirrorFilterRuleOutcomeCallable;
 typedef std::future<ModifyTrafficMirrorSessionOutcome> ModifyTrafficMirrorSessionOutcomeCallable;
 typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCallable;
+typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<ModifyTransitGatewayVpcAttachmentOutcome> ModifyTransitGatewayVpcAttachmentOutcomeCallable;
 typedef std::future<ModifyVerifiedAccessEndpointOutcome> ModifyVerifiedAccessEndpointOutcomeCallable;
@@ -3116,6 +3174,7 @@ typedef std::future<ModifyVolumeAttributeOutcome> ModifyVolumeAttributeOutcomeCa
 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
 typedef std::future<ModifyVpcBlockPublicAccessExclusionOutcome> ModifyVpcBlockPublicAccessExclusionOutcomeCallable;
 typedef std::future<ModifyVpcBlockPublicAccessOptionsOutcome> ModifyVpcBlockPublicAccessOptionsOutcomeCallable;
+typedef std::future<ModifyVpcEncryptionControlOutcome> ModifyVpcEncryptionControlOutcomeCallable;
 typedef std::future<ModifyVpcEndpointOutcome> ModifyVpcEndpointOutcomeCallable;
 typedef std::future<ModifyVpcEndpointConnectionNotificationOutcome> ModifyVpcEndpointConnectionNotificationOutcomeCallable;
 typedef std::future<ModifyVpcEndpointServiceConfigurationOutcome> ModifyVpcEndpointServiceConfigurationOutcomeCallable;
@@ -3177,6 +3236,7 @@ typedef std::future<RestoreImageFromRecycleBinOutcome> RestoreImageFromRecycleBi
 typedef std::future<RestoreManagedPrefixListVersionOutcome> RestoreManagedPrefixListVersionOutcomeCallable;
 typedef std::future<RestoreSnapshotFromRecycleBinOutcome> RestoreSnapshotFromRecycleBinOutcomeCallable;
 typedef std::future<RestoreSnapshotTierOutcome> RestoreSnapshotTierOutcomeCallable;
+typedef std::future<RestoreVolumeFromRecycleBinOutcome> RestoreVolumeFromRecycleBinOutcomeCallable;
 typedef std::future<RevokeClientVpnIngressOutcome> RevokeClientVpnIngressOutcomeCallable;
 typedef std::future<RevokeSecurityGroupEgressOutcome> RevokeSecurityGroupEgressOutcomeCallable;
 typedef std::future<RevokeSecurityGroupIngressOutcome> RevokeSecurityGroupIngressOutcomeCallable;
@@ -3660,6 +3720,14 @@ typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayCo
                            const Model::CreateTransitGatewayConnectPeerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTransitGatewayConnectPeerResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMeteringPolicyRequest&,
+                           const Model::CreateTransitGatewayMeteringPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTransitGatewayMeteringPolicyResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMeteringPolicyEntryRequest&,
+                           const Model::CreateTransitGatewayMeteringPolicyEntryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTransitGatewayMeteringPolicyEntryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMulticastDomainRequest&,
                            const Model::CreateTransitGatewayMulticastDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -3716,6 +3784,9 @@ typedef std::function<void(const EC2Client*, const Model::CreateVpcBlockPublicAc
                            const Model::CreateVpcBlockPublicAccessExclusionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpcBlockPublicAccessExclusionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateVpcEncryptionControlRequest&,
+                           const Model::CreateVpcEncryptionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateVpcEncryptionControlResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateVpcEndpointRequest&, const Model::CreateVpcEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpcEndpointResponseReceivedHandler;
@@ -3954,6 +4025,14 @@ typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayCo
                            const Model::DeleteTransitGatewayConnectPeerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransitGatewayConnectPeerResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMeteringPolicyRequest&,
+                           const Model::DeleteTransitGatewayMeteringPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTransitGatewayMeteringPolicyResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMeteringPolicyEntryRequest&,
+                           const Model::DeleteTransitGatewayMeteringPolicyEntryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTransitGatewayMeteringPolicyEntryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMulticastDomainRequest&,
                            const Model::DeleteTransitGatewayMulticastDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4010,6 +4089,9 @@ typedef std::function<void(const EC2Client*, const Model::DeleteVpcBlockPublicAc
                            const Model::DeleteVpcBlockPublicAccessExclusionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcBlockPublicAccessExclusionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteVpcEncryptionControlRequest&,
+                           const Model::DeleteVpcEncryptionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteVpcEncryptionControlResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteVpcEndpointConnectionNotificationsRequest&,
                            const Model::DeleteVpcEndpointConnectionNotificationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4565,6 +4647,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeTransitGateway
                            const Model::DescribeTransitGatewayConnectsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTransitGatewayConnectsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayMeteringPoliciesRequest&,
+                           const Model::DescribeTransitGatewayMeteringPoliciesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTransitGatewayMeteringPoliciesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayMulticastDomainsRequest&,
                            const Model::DescribeTransitGatewayMulticastDomainsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4647,6 +4733,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeVpcClassicLink
                            const Model::DescribeVpcClassicLinkDnsSupportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeVpcClassicLinkDnsSupportResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeVpcEncryptionControlsRequest&,
+                           const Model::DescribeVpcEncryptionControlsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeVpcEncryptionControlsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeVpcEndpointAssociationsRequest&,
                            const Model::DescribeVpcEndpointAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5134,6 +5224,10 @@ typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttac
                            const Model::GetTransitGatewayAttachmentPropagationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMeteringPolicyEntriesRequest&,
+                           const Model::GetTransitGatewayMeteringPolicyEntriesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTransitGatewayMeteringPolicyEntriesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&,
                            const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5170,6 +5264,10 @@ typedef std::function<void(const EC2Client*, const Model::GetVerifiedAccessGroup
                            const Model::GetVerifiedAccessGroupPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetVerifiedAccessGroupPolicyResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetVpcResourcesBlockingEncryptionEnforcementRequest&,
+                           const Model::GetVpcResourcesBlockingEncryptionEnforcementOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetVpcResourcesBlockingEncryptionEnforcementResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetVpnConnectionDeviceSampleConfigurationRequest&,
                            const Model::GetVpnConnectionDeviceSampleConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5206,6 +5304,9 @@ typedef std::function<void(const EC2Client*, const Model::ListImagesInRecycleBin
 typedef std::function<void(const EC2Client*, const Model::ListSnapshotsInRecycleBinRequest&, const Model::ListSnapshotsInRecycleBinOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSnapshotsInRecycleBinResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ListVolumesInRecycleBinRequest&, const Model::ListVolumesInRecycleBinOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListVolumesInRecycleBinResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::LockSnapshotRequest&, const Model::LockSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     LockSnapshotResponseReceivedHandler;
@@ -5376,6 +5477,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTrafficMirrorSes
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayRequest&, const Model::ModifyTransitGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayMeteringPolicyRequest&,
+                           const Model::ModifyTransitGatewayMeteringPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayMeteringPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPrefixListReferenceRequest&,
                            const Model::ModifyTransitGatewayPrefixListReferenceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5428,6 +5533,9 @@ typedef std::function<void(const EC2Client*, const Model::ModifyVpcBlockPublicAc
                            const Model::ModifyVpcBlockPublicAccessOptionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyVpcBlockPublicAccessOptionsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyVpcEncryptionControlRequest&,
+                           const Model::ModifyVpcEncryptionControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyVpcEncryptionControlResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointRequest&, const Model::ModifyVpcEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyVpcEndpointResponseReceivedHandler;
@@ -5634,6 +5742,9 @@ typedef std::function<void(const EC2Client*, const Model::RestoreSnapshotFromRec
 typedef std::function<void(const EC2Client*, const Model::RestoreSnapshotTierRequest&, const Model::RestoreSnapshotTierOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RestoreSnapshotTierResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::RestoreVolumeFromRecycleBinRequest&,
+                           const Model::RestoreVolumeFromRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RestoreVolumeFromRecycleBinResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::RevokeClientVpnIngressRequest&, const Model::RevokeClientVpnIngressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RevokeClientVpnIngressResponseReceivedHandler;

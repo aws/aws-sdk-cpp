@@ -91,7 +91,7 @@ class WorkflowStepExecution {
 
   ///@{
   /**
-   * <p>The ARN of the workflow resource that ran.</p>
+   * <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
    */
   inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
   inline bool WorkflowBuildVersionArnHasBeenSet() const { return m_workflowBuildVersionArnHasBeenSet; }

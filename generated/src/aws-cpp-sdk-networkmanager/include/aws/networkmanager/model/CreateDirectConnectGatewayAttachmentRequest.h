@@ -70,6 +70,25 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
 
   ///@{
   /**
+   * <p>The routing policy label to apply to the Direct Connect Gateway attachment
+   * for traffic routing decisions.</p>
+   */
+  inline const Aws::String& GetRoutingPolicyLabel() const { return m_routingPolicyLabel; }
+  inline bool RoutingPolicyLabelHasBeenSet() const { return m_routingPolicyLabelHasBeenSet; }
+  template <typename RoutingPolicyLabelT = Aws::String>
+  void SetRoutingPolicyLabel(RoutingPolicyLabelT&& value) {
+    m_routingPolicyLabelHasBeenSet = true;
+    m_routingPolicyLabel = std::forward<RoutingPolicyLabelT>(value);
+  }
+  template <typename RoutingPolicyLabelT = Aws::String>
+  CreateDirectConnectGatewayAttachmentRequest& WithRoutingPolicyLabel(RoutingPolicyLabelT&& value) {
+    SetRoutingPolicyLabel(std::forward<RoutingPolicyLabelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>One or more core network edge locations that the Direct Connect gateway
    * attachment is associated with. </p>
    */
@@ -141,6 +160,9 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
 
   Aws::String m_directConnectGatewayArn;
   bool m_directConnectGatewayArnHasBeenSet = false;
+
+  Aws::String m_routingPolicyLabel;
+  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
   bool m_edgeLocationsHasBeenSet = false;

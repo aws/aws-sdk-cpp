@@ -21,6 +21,10 @@ DescribeTableResult::DescribeTableResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeTableResult& DescribeTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("TableName")) {
+    m_tableName = jsonValue.GetString("TableName");
+    m_tableNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ColumnList")) {
     Aws::Utils::Array<JsonView> columnListJsonList = jsonValue.GetArray("ColumnList");
     for (unsigned columnListIndex = 0; columnListIndex < columnListJsonList.GetLength(); ++columnListIndex) {
@@ -31,10 +35,6 @@ DescribeTableResult& DescribeTableResult::operator=(const Aws::AmazonWebServiceR
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TableName")) {
-    m_tableName = jsonValue.GetString("TableName");
-    m_tableNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

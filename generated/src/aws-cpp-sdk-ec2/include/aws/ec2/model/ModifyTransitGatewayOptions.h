@@ -12,6 +12,7 @@
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
+#include <aws/ec2/model/EncryptionSupportOptionValue.h>
 #include <aws/ec2/model/SecurityGroupReferencingSupportValue.h>
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
 
@@ -253,6 +254,22 @@ class ModifyTransitGatewayOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enable or disable encryption support for VPC Encryption Control.</p>
+   */
+  inline EncryptionSupportOptionValue GetEncryptionSupport() const { return m_encryptionSupport; }
+  inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
+  inline void SetEncryptionSupport(EncryptionSupportOptionValue value) {
+    m_encryptionSupportHasBeenSet = true;
+    m_encryptionSupport = value;
+  }
+  inline ModifyTransitGatewayOptions& WithEncryptionSupport(EncryptionSupportOptionValue value) {
+    SetEncryptionSupport(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_addTransitGatewayCidrBlocks;
   bool m_addTransitGatewayCidrBlocksHasBeenSet = false;
@@ -286,6 +303,9 @@ class ModifyTransitGatewayOptions {
 
   long long m_amazonSideAsn{0};
   bool m_amazonSideAsnHasBeenSet = false;
+
+  EncryptionSupportOptionValue m_encryptionSupport{EncryptionSupportOptionValue::NOT_SET};
+  bool m_encryptionSupportHasBeenSet = false;
 };
 
 }  // namespace Model

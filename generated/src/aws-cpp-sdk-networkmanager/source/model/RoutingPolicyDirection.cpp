@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/networkmanager/model/RoutingPolicyDirection.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+namespace RoutingPolicyDirectionMapper {
+
+static const int inbound_HASH = HashingUtils::HashString("inbound");
+static const int outbound_HASH = HashingUtils::HashString("outbound");
+
+RoutingPolicyDirection GetRoutingPolicyDirectionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == inbound_HASH) {
+    return RoutingPolicyDirection::inbound;
+  } else if (hashCode == outbound_HASH) {
+    return RoutingPolicyDirection::outbound;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RoutingPolicyDirection>(hashCode);
+  }
+
+  return RoutingPolicyDirection::NOT_SET;
+}
+
+Aws::String GetNameForRoutingPolicyDirection(RoutingPolicyDirection enumValue) {
+  switch (enumValue) {
+    case RoutingPolicyDirection::NOT_SET:
+      return {};
+    case RoutingPolicyDirection::inbound:
+      return "inbound";
+    case RoutingPolicyDirection::outbound:
+      return "outbound";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace RoutingPolicyDirectionMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

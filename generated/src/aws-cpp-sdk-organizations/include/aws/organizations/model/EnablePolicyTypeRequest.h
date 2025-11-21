@@ -33,8 +33,8 @@ class EnablePolicyTypeRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the root in which you want to enable a policy
-   * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
+   * <p>ID for the root in which you want to enable a policy type. You can get the ID
+   * from the <a>ListRoots</a> operation.</p> <p>The <a
    * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
    * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
    */
@@ -71,6 +71,8 @@ class EnablePolicyTypeRequest : public OrganizationsRequest {
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline PolicyType GetPolicyType() const { return m_policyType; }

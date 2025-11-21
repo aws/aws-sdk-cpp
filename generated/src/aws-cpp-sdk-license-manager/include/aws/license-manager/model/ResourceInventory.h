@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/ResourceType.h>
 
@@ -137,6 +138,121 @@ class ResourceInventory {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>List of Marketplace product codes associated with the resource.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMarketplaceProductCodes() const { return m_marketplaceProductCodes; }
+  inline bool MarketplaceProductCodesHasBeenSet() const { return m_marketplaceProductCodesHasBeenSet; }
+  template <typename MarketplaceProductCodesT = Aws::Vector<Aws::String>>
+  void SetMarketplaceProductCodes(MarketplaceProductCodesT&& value) {
+    m_marketplaceProductCodesHasBeenSet = true;
+    m_marketplaceProductCodes = std::forward<MarketplaceProductCodesT>(value);
+  }
+  template <typename MarketplaceProductCodesT = Aws::Vector<Aws::String>>
+  ResourceInventory& WithMarketplaceProductCodes(MarketplaceProductCodesT&& value) {
+    SetMarketplaceProductCodes(std::forward<MarketplaceProductCodesT>(value));
+    return *this;
+  }
+  template <typename MarketplaceProductCodesT = Aws::String>
+  ResourceInventory& AddMarketplaceProductCodes(MarketplaceProductCodesT&& value) {
+    m_marketplaceProductCodesHasBeenSet = true;
+    m_marketplaceProductCodes.emplace_back(std::forward<MarketplaceProductCodesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Usage operation value that corresponds to the license type for billing
+   * purposes.</p>
+   */
+  inline const Aws::String& GetUsageOperation() const { return m_usageOperation; }
+  inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
+  template <typename UsageOperationT = Aws::String>
+  void SetUsageOperation(UsageOperationT&& value) {
+    m_usageOperationHasBeenSet = true;
+    m_usageOperation = std::forward<UsageOperationT>(value);
+  }
+  template <typename UsageOperationT = Aws::String>
+  ResourceInventory& WithUsageOperation(UsageOperationT&& value) {
+    SetUsageOperation(std::forward<UsageOperationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+   */
+  inline const Aws::String& GetAmiId() const { return m_amiId; }
+  inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
+  template <typename AmiIdT = Aws::String>
+  void SetAmiId(AmiIdT&& value) {
+    m_amiIdHasBeenSet = true;
+    m_amiId = std::forward<AmiIdT>(value);
+  }
+  template <typename AmiIdT = Aws::String>
+  ResourceInventory& WithAmiId(AmiIdT&& value) {
+    SetAmiId(std::forward<AmiIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Dedicated Host ID where the resource is running.</p>
+   */
+  inline const Aws::String& GetHostId() const { return m_hostId; }
+  inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
+  template <typename HostIdT = Aws::String>
+  void SetHostId(HostIdT&& value) {
+    m_hostIdHasBeenSet = true;
+    m_hostId = std::forward<HostIdT>(value);
+  }
+  template <typename HostIdT = Aws::String>
+  ResourceInventory& WithHostId(HostIdT&& value) {
+    SetHostId(std::forward<HostIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Region where the resource is located.</p>
+   */
+  inline const Aws::String& GetRegion() const { return m_region; }
+  inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+  template <typename RegionT = Aws::String>
+  void SetRegion(RegionT&& value) {
+    m_regionHasBeenSet = true;
+    m_region = std::forward<RegionT>(value);
+  }
+  template <typename RegionT = Aws::String>
+  ResourceInventory& WithRegion(RegionT&& value) {
+    SetRegion(std::forward<RegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>EC2 instance type of the resource.</p>
+   */
+  inline const Aws::String& GetInstanceType() const { return m_instanceType; }
+  inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+  template <typename InstanceTypeT = Aws::String>
+  void SetInstanceType(InstanceTypeT&& value) {
+    m_instanceTypeHasBeenSet = true;
+    m_instanceType = std::forward<InstanceTypeT>(value);
+  }
+  template <typename InstanceTypeT = Aws::String>
+  ResourceInventory& WithInstanceType(InstanceTypeT&& value) {
+    SetInstanceType(std::forward<InstanceTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceId;
   bool m_resourceIdHasBeenSet = false;
@@ -155,6 +271,24 @@ class ResourceInventory {
 
   Aws::String m_resourceOwningAccountId;
   bool m_resourceOwningAccountIdHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_marketplaceProductCodes;
+  bool m_marketplaceProductCodesHasBeenSet = false;
+
+  Aws::String m_usageOperation;
+  bool m_usageOperationHasBeenSet = false;
+
+  Aws::String m_amiId;
+  bool m_amiIdHasBeenSet = false;
+
+  Aws::String m_hostId;
+  bool m_hostIdHasBeenSet = false;
+
+  Aws::String m_region;
+  bool m_regionHasBeenSet = false;
+
+  Aws::String m_instanceType;
+  bool m_instanceTypeHasBeenSet = false;
 };
 
 }  // namespace Model

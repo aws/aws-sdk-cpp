@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/GridLayoutElementBackgroundStyle.h>
+#include <aws/quicksight/model/GridLayoutElementBorderStyle.h>
 #include <aws/quicksight/model/LayoutElementType.h>
+#include <aws/quicksight/model/LoadingAnimation.h>
 
 #include <utility>
 
@@ -129,6 +132,113 @@ class GridLayoutElement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The border style configuration of a grid layout element.</p>
+   */
+  inline const GridLayoutElementBorderStyle& GetBorderStyle() const { return m_borderStyle; }
+  inline bool BorderStyleHasBeenSet() const { return m_borderStyleHasBeenSet; }
+  template <typename BorderStyleT = GridLayoutElementBorderStyle>
+  void SetBorderStyle(BorderStyleT&& value) {
+    m_borderStyleHasBeenSet = true;
+    m_borderStyle = std::forward<BorderStyleT>(value);
+  }
+  template <typename BorderStyleT = GridLayoutElementBorderStyle>
+  GridLayoutElement& WithBorderStyle(BorderStyleT&& value) {
+    SetBorderStyle(std::forward<BorderStyleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The border style configuration of a grid layout element. This border style is
+   * used when the element is selected.</p>
+   */
+  inline const GridLayoutElementBorderStyle& GetSelectedBorderStyle() const { return m_selectedBorderStyle; }
+  inline bool SelectedBorderStyleHasBeenSet() const { return m_selectedBorderStyleHasBeenSet; }
+  template <typename SelectedBorderStyleT = GridLayoutElementBorderStyle>
+  void SetSelectedBorderStyle(SelectedBorderStyleT&& value) {
+    m_selectedBorderStyleHasBeenSet = true;
+    m_selectedBorderStyle = std::forward<SelectedBorderStyleT>(value);
+  }
+  template <typename SelectedBorderStyleT = GridLayoutElementBorderStyle>
+  GridLayoutElement& WithSelectedBorderStyle(SelectedBorderStyleT&& value) {
+    SetSelectedBorderStyle(std::forward<SelectedBorderStyleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The background style configuration of a grid layout element.</p>
+   */
+  inline const GridLayoutElementBackgroundStyle& GetBackgroundStyle() const { return m_backgroundStyle; }
+  inline bool BackgroundStyleHasBeenSet() const { return m_backgroundStyleHasBeenSet; }
+  template <typename BackgroundStyleT = GridLayoutElementBackgroundStyle>
+  void SetBackgroundStyle(BackgroundStyleT&& value) {
+    m_backgroundStyleHasBeenSet = true;
+    m_backgroundStyle = std::forward<BackgroundStyleT>(value);
+  }
+  template <typename BackgroundStyleT = GridLayoutElementBackgroundStyle>
+  GridLayoutElement& WithBackgroundStyle(BackgroundStyleT&& value) {
+    SetBackgroundStyle(std::forward<BackgroundStyleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const LoadingAnimation& GetLoadingAnimation() const { return m_loadingAnimation; }
+  inline bool LoadingAnimationHasBeenSet() const { return m_loadingAnimationHasBeenSet; }
+  template <typename LoadingAnimationT = LoadingAnimation>
+  void SetLoadingAnimation(LoadingAnimationT&& value) {
+    m_loadingAnimationHasBeenSet = true;
+    m_loadingAnimation = std::forward<LoadingAnimationT>(value);
+  }
+  template <typename LoadingAnimationT = LoadingAnimation>
+  GridLayoutElement& WithLoadingAnimation(LoadingAnimationT&& value) {
+    SetLoadingAnimation(std::forward<LoadingAnimationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The border radius of a grid layout element.</p>
+   */
+  inline const Aws::String& GetBorderRadius() const { return m_borderRadius; }
+  inline bool BorderRadiusHasBeenSet() const { return m_borderRadiusHasBeenSet; }
+  template <typename BorderRadiusT = Aws::String>
+  void SetBorderRadius(BorderRadiusT&& value) {
+    m_borderRadiusHasBeenSet = true;
+    m_borderRadius = std::forward<BorderRadiusT>(value);
+  }
+  template <typename BorderRadiusT = Aws::String>
+  GridLayoutElement& WithBorderRadius(BorderRadiusT&& value) {
+    SetBorderRadius(std::forward<BorderRadiusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The padding of a grid layout element.</p>
+   */
+  inline const Aws::String& GetPadding() const { return m_padding; }
+  inline bool PaddingHasBeenSet() const { return m_paddingHasBeenSet; }
+  template <typename PaddingT = Aws::String>
+  void SetPadding(PaddingT&& value) {
+    m_paddingHasBeenSet = true;
+    m_padding = std::forward<PaddingT>(value);
+  }
+  template <typename PaddingT = Aws::String>
+  GridLayoutElement& WithPadding(PaddingT&& value) {
+    SetPadding(std::forward<PaddingT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_elementId;
   bool m_elementIdHasBeenSet = false;
@@ -147,6 +257,24 @@ class GridLayoutElement {
 
   int m_rowSpan{0};
   bool m_rowSpanHasBeenSet = false;
+
+  GridLayoutElementBorderStyle m_borderStyle;
+  bool m_borderStyleHasBeenSet = false;
+
+  GridLayoutElementBorderStyle m_selectedBorderStyle;
+  bool m_selectedBorderStyleHasBeenSet = false;
+
+  GridLayoutElementBackgroundStyle m_backgroundStyle;
+  bool m_backgroundStyleHasBeenSet = false;
+
+  LoadingAnimation m_loadingAnimation;
+  bool m_loadingAnimationHasBeenSet = false;
+
+  Aws::String m_borderRadius;
+  bool m_borderRadiusHasBeenSet = false;
+
+  Aws::String m_padding;
+  bool m_paddingHasBeenSet = false;
 };
 
 }  // namespace Model

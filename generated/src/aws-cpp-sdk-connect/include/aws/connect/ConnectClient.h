@@ -7103,11 +7103,13 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
    * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
    * which means that they do not dial the contact. If the flow places an outbound
    * call to a contact, and then puts the contact in queue, the call is then routed
-   * to the agent, like any other inbound case.</p> <p>There is a 60-second dialing
-   * timeout for this operation. If the call is not connected after 60 seconds, it
-   * fails.</p>  <p>UK numbers with a 447 prefix are not allowed by default.
-   * Before you can dial these UK mobile numbers, you must submit a service quota
-   * increase request. For more information, see <a
+   * to the agent, like any other inbound case.</p> <p>Dialing timeout for this
+   * operation can be configured with the “RingTimeoutInSeconds” parameter. If not
+   * specified, the default dialing timeout will be 60 seconds which means if the
+   * call is not connected within 60 seconds, it fails.</p>  <p>UK numbers with
+   * a 447 prefix are not allowed by default. Before you can dial these UK mobile
+   * numbers, you must submit a service quota increase request. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
    * </p>   <p>Campaign calls are not allowed by default. Before you can

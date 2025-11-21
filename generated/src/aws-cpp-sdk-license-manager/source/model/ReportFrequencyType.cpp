@@ -18,6 +18,7 @@ namespace ReportFrequencyTypeMapper {
 static const int DAY_HASH = HashingUtils::HashString("DAY");
 static const int WEEK_HASH = HashingUtils::HashString("WEEK");
 static const int MONTH_HASH = HashingUtils::HashString("MONTH");
+static const int ONE_TIME_HASH = HashingUtils::HashString("ONE_TIME");
 
 ReportFrequencyType GetReportFrequencyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ReportFrequencyType GetReportFrequencyTypeForName(const Aws::String& name) {
     return ReportFrequencyType::WEEK;
   } else if (hashCode == MONTH_HASH) {
     return ReportFrequencyType::MONTH;
+  } else if (hashCode == ONE_TIME_HASH) {
+    return ReportFrequencyType::ONE_TIME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForReportFrequencyType(ReportFrequencyType enumValue) {
       return "WEEK";
     case ReportFrequencyType::MONTH:
       return "MONTH";
+    case ReportFrequencyType::ONE_TIME:
+      return "ONE_TIME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

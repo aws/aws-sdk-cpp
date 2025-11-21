@@ -32,6 +32,10 @@ CreateImageRecipeResult& CreateImageRecipeResult::operator=(const Aws::AmazonWeb
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
     m_imageRecipeArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestVersionReferences")) {
+    m_latestVersionReferences = jsonValue.GetObject("latestVersionReferences");
+    m_latestVersionReferencesHasBeenSet = true;
+  }
 
   return *this;
 }

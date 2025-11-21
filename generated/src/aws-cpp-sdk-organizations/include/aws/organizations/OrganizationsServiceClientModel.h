@@ -41,11 +41,13 @@
 #include <aws/organizations/model/DescribePolicyResult.h>
 #include <aws/organizations/model/DescribeResourcePolicyRequest.h>
 #include <aws/organizations/model/DescribeResourcePolicyResult.h>
+#include <aws/organizations/model/DescribeResponsibilityTransferResult.h>
 #include <aws/organizations/model/DisablePolicyTypeResult.h>
 #include <aws/organizations/model/EnableAllFeaturesRequest.h>
 #include <aws/organizations/model/EnableAllFeaturesResult.h>
 #include <aws/organizations/model/EnablePolicyTypeResult.h>
 #include <aws/organizations/model/InviteAccountToOrganizationResult.h>
+#include <aws/organizations/model/InviteOrganizationToTransferResponsibilityResult.h>
 #include <aws/organizations/model/LeaveOrganizationRequest.h>
 #include <aws/organizations/model/ListAWSServiceAccessForOrganizationRequest.h>
 #include <aws/organizations/model/ListAWSServiceAccessForOrganizationResult.h>
@@ -64,7 +66,9 @@
 #include <aws/organizations/model/ListHandshakesForAccountResult.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationResult.h>
+#include <aws/organizations/model/ListInboundResponsibilityTransfersResult.h>
 #include <aws/organizations/model/ListOrganizationalUnitsForParentResult.h>
+#include <aws/organizations/model/ListOutboundResponsibilityTransfersResult.h>
 #include <aws/organizations/model/ListParentsResult.h>
 #include <aws/organizations/model/ListPoliciesForTargetResult.h>
 #include <aws/organizations/model/ListPoliciesResult.h>
@@ -73,8 +77,10 @@
 #include <aws/organizations/model/ListTagsForResourceResult.h>
 #include <aws/organizations/model/ListTargetsForPolicyResult.h>
 #include <aws/organizations/model/PutResourcePolicyResult.h>
+#include <aws/organizations/model/TerminateResponsibilityTransferResult.h>
 #include <aws/organizations/model/UpdateOrganizationalUnitResult.h>
 #include <aws/organizations/model/UpdatePolicyResult.h>
+#include <aws/organizations/model/UpdateResponsibilityTransferResult.h>
 /* End of service model headers required in OrganizationsClient header */
 
 namespace Aws {
@@ -131,6 +137,7 @@ class DescribeOrganizationRequest;
 class DescribeOrganizationalUnitRequest;
 class DescribePolicyRequest;
 class DescribeResourcePolicyRequest;
+class DescribeResponsibilityTransferRequest;
 class DetachPolicyRequest;
 class DisableAWSServiceAccessRequest;
 class DisablePolicyTypeRequest;
@@ -138,6 +145,7 @@ class EnableAWSServiceAccessRequest;
 class EnableAllFeaturesRequest;
 class EnablePolicyTypeRequest;
 class InviteAccountToOrganizationRequest;
+class InviteOrganizationToTransferResponsibilityRequest;
 class LeaveOrganizationRequest;
 class ListAWSServiceAccessForOrganizationRequest;
 class ListAccountsRequest;
@@ -150,7 +158,9 @@ class ListDelegatedServicesForAccountRequest;
 class ListEffectivePolicyValidationErrorsRequest;
 class ListHandshakesForAccountRequest;
 class ListHandshakesForOrganizationRequest;
+class ListInboundResponsibilityTransfersRequest;
 class ListOrganizationalUnitsForParentRequest;
+class ListOutboundResponsibilityTransfersRequest;
 class ListParentsRequest;
 class ListPoliciesRequest;
 class ListPoliciesForTargetRequest;
@@ -162,9 +172,11 @@ class PutResourcePolicyRequest;
 class RegisterDelegatedAdministratorRequest;
 class RemoveAccountFromOrganizationRequest;
 class TagResourceRequest;
+class TerminateResponsibilityTransferRequest;
 class UntagResourceRequest;
 class UpdateOrganizationalUnitRequest;
 class UpdatePolicyRequest;
+class UpdateResponsibilityTransferRequest;
 /* End of service model forward declarations required in OrganizationsClient header */
 
 /* Service model Outcome class definitions */
@@ -191,6 +203,7 @@ typedef Aws::Utils::Outcome<DescribeOrganizationResult, OrganizationsError> Desc
 typedef Aws::Utils::Outcome<DescribeOrganizationalUnitResult, OrganizationsError> DescribeOrganizationalUnitOutcome;
 typedef Aws::Utils::Outcome<DescribePolicyResult, OrganizationsError> DescribePolicyOutcome;
 typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, OrganizationsError> DescribeResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<DescribeResponsibilityTransferResult, OrganizationsError> DescribeResponsibilityTransferOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DetachPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DisableAWSServiceAccessOutcome;
 typedef Aws::Utils::Outcome<DisablePolicyTypeResult, OrganizationsError> DisablePolicyTypeOutcome;
@@ -198,6 +211,8 @@ typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> EnableAWSServiceA
 typedef Aws::Utils::Outcome<EnableAllFeaturesResult, OrganizationsError> EnableAllFeaturesOutcome;
 typedef Aws::Utils::Outcome<EnablePolicyTypeResult, OrganizationsError> EnablePolicyTypeOutcome;
 typedef Aws::Utils::Outcome<InviteAccountToOrganizationResult, OrganizationsError> InviteAccountToOrganizationOutcome;
+typedef Aws::Utils::Outcome<InviteOrganizationToTransferResponsibilityResult, OrganizationsError>
+    InviteOrganizationToTransferResponsibilityOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> LeaveOrganizationOutcome;
 typedef Aws::Utils::Outcome<ListAWSServiceAccessForOrganizationResult, OrganizationsError> ListAWSServiceAccessForOrganizationOutcome;
 typedef Aws::Utils::Outcome<ListAccountsResult, OrganizationsError> ListAccountsOutcome;
@@ -210,7 +225,9 @@ typedef Aws::Utils::Outcome<ListDelegatedServicesForAccountResult, Organizations
 typedef Aws::Utils::Outcome<ListEffectivePolicyValidationErrorsResult, OrganizationsError> ListEffectivePolicyValidationErrorsOutcome;
 typedef Aws::Utils::Outcome<ListHandshakesForAccountResult, OrganizationsError> ListHandshakesForAccountOutcome;
 typedef Aws::Utils::Outcome<ListHandshakesForOrganizationResult, OrganizationsError> ListHandshakesForOrganizationOutcome;
+typedef Aws::Utils::Outcome<ListInboundResponsibilityTransfersResult, OrganizationsError> ListInboundResponsibilityTransfersOutcome;
 typedef Aws::Utils::Outcome<ListOrganizationalUnitsForParentResult, OrganizationsError> ListOrganizationalUnitsForParentOutcome;
+typedef Aws::Utils::Outcome<ListOutboundResponsibilityTransfersResult, OrganizationsError> ListOutboundResponsibilityTransfersOutcome;
 typedef Aws::Utils::Outcome<ListParentsResult, OrganizationsError> ListParentsOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, OrganizationsError> ListPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesForTargetResult, OrganizationsError> ListPoliciesForTargetOutcome;
@@ -222,9 +239,11 @@ typedef Aws::Utils::Outcome<PutResourcePolicyResult, OrganizationsError> PutReso
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> RegisterDelegatedAdministratorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> RemoveAccountFromOrganizationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<TerminateResponsibilityTransferResult, OrganizationsError> TerminateResponsibilityTransferOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateOrganizationalUnitResult, OrganizationsError> UpdateOrganizationalUnitOutcome;
 typedef Aws::Utils::Outcome<UpdatePolicyResult, OrganizationsError> UpdatePolicyOutcome;
+typedef Aws::Utils::Outcome<UpdateResponsibilityTransferResult, OrganizationsError> UpdateResponsibilityTransferOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -251,6 +270,7 @@ typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCall
 typedef std::future<DescribeOrganizationalUnitOutcome> DescribeOrganizationalUnitOutcomeCallable;
 typedef std::future<DescribePolicyOutcome> DescribePolicyOutcomeCallable;
 typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
+typedef std::future<DescribeResponsibilityTransferOutcome> DescribeResponsibilityTransferOutcomeCallable;
 typedef std::future<DetachPolicyOutcome> DetachPolicyOutcomeCallable;
 typedef std::future<DisableAWSServiceAccessOutcome> DisableAWSServiceAccessOutcomeCallable;
 typedef std::future<DisablePolicyTypeOutcome> DisablePolicyTypeOutcomeCallable;
@@ -258,6 +278,7 @@ typedef std::future<EnableAWSServiceAccessOutcome> EnableAWSServiceAccessOutcome
 typedef std::future<EnableAllFeaturesOutcome> EnableAllFeaturesOutcomeCallable;
 typedef std::future<EnablePolicyTypeOutcome> EnablePolicyTypeOutcomeCallable;
 typedef std::future<InviteAccountToOrganizationOutcome> InviteAccountToOrganizationOutcomeCallable;
+typedef std::future<InviteOrganizationToTransferResponsibilityOutcome> InviteOrganizationToTransferResponsibilityOutcomeCallable;
 typedef std::future<LeaveOrganizationOutcome> LeaveOrganizationOutcomeCallable;
 typedef std::future<ListAWSServiceAccessForOrganizationOutcome> ListAWSServiceAccessForOrganizationOutcomeCallable;
 typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
@@ -270,7 +291,9 @@ typedef std::future<ListDelegatedServicesForAccountOutcome> ListDelegatedService
 typedef std::future<ListEffectivePolicyValidationErrorsOutcome> ListEffectivePolicyValidationErrorsOutcomeCallable;
 typedef std::future<ListHandshakesForAccountOutcome> ListHandshakesForAccountOutcomeCallable;
 typedef std::future<ListHandshakesForOrganizationOutcome> ListHandshakesForOrganizationOutcomeCallable;
+typedef std::future<ListInboundResponsibilityTransfersOutcome> ListInboundResponsibilityTransfersOutcomeCallable;
 typedef std::future<ListOrganizationalUnitsForParentOutcome> ListOrganizationalUnitsForParentOutcomeCallable;
+typedef std::future<ListOutboundResponsibilityTransfersOutcome> ListOutboundResponsibilityTransfersOutcomeCallable;
 typedef std::future<ListParentsOutcome> ListParentsOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
 typedef std::future<ListPoliciesForTargetOutcome> ListPoliciesForTargetOutcomeCallable;
@@ -282,9 +305,11 @@ typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<RegisterDelegatedAdministratorOutcome> RegisterDelegatedAdministratorOutcomeCallable;
 typedef std::future<RemoveAccountFromOrganizationOutcome> RemoveAccountFromOrganizationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<TerminateResponsibilityTransferOutcome> TerminateResponsibilityTransferOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateOrganizationalUnitOutcome> UpdateOrganizationalUnitOutcomeCallable;
 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
+typedef std::future<UpdateResponsibilityTransferOutcome> UpdateResponsibilityTransferOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -361,6 +386,10 @@ typedef std::function<void(const OrganizationsClient*, const Model::DescribePoli
 typedef std::function<void(const OrganizationsClient*, const Model::DescribeResourcePolicyRequest&,
                            const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::DescribeResponsibilityTransferRequest&,
+                           const Model::DescribeResponsibilityTransferOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeResponsibilityTransferResponseReceivedHandler;
 typedef std::function<void(const OrganizationsClient*, const Model::DetachPolicyRequest&, const Model::DetachPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DetachPolicyResponseReceivedHandler;
@@ -382,6 +411,10 @@ typedef std::function<void(const OrganizationsClient*, const Model::EnablePolicy
 typedef std::function<void(const OrganizationsClient*, const Model::InviteAccountToOrganizationRequest&,
                            const Model::InviteAccountToOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InviteAccountToOrganizationResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::InviteOrganizationToTransferResponsibilityRequest&,
+                           const Model::InviteOrganizationToTransferResponsibilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InviteOrganizationToTransferResponsibilityResponseReceivedHandler;
 typedef std::function<void(const OrganizationsClient*, const Model::LeaveOrganizationRequest&, const Model::LeaveOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     LeaveOrganizationResponseReceivedHandler;
@@ -423,10 +456,18 @@ typedef std::function<void(const OrganizationsClient*, const Model::ListHandshak
                            const Model::ListHandshakesForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHandshakesForOrganizationResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::ListInboundResponsibilityTransfersRequest&,
+                           const Model::ListInboundResponsibilityTransfersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListInboundResponsibilityTransfersResponseReceivedHandler;
 typedef std::function<void(const OrganizationsClient*, const Model::ListOrganizationalUnitsForParentRequest&,
                            const Model::ListOrganizationalUnitsForParentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListOrganizationalUnitsForParentResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::ListOutboundResponsibilityTransfersRequest&,
+                           const Model::ListOutboundResponsibilityTransfersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOutboundResponsibilityTransfersResponseReceivedHandler;
 typedef std::function<void(const OrganizationsClient*, const Model::ListParentsRequest&, const Model::ListParentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListParentsResponseReceivedHandler;
@@ -462,6 +503,10 @@ typedef std::function<void(const OrganizationsClient*, const Model::RemoveAccoun
 typedef std::function<void(const OrganizationsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::TerminateResponsibilityTransferRequest&,
+                           const Model::TerminateResponsibilityTransferOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TerminateResponsibilityTransferResponseReceivedHandler;
 typedef std::function<void(const OrganizationsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
@@ -471,6 +516,10 @@ typedef std::function<void(const OrganizationsClient*, const Model::UpdateOrgani
 typedef std::function<void(const OrganizationsClient*, const Model::UpdatePolicyRequest&, const Model::UpdatePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePolicyResponseReceivedHandler;
+typedef std::function<void(const OrganizationsClient*, const Model::UpdateResponsibilityTransferRequest&,
+                           const Model::UpdateResponsibilityTransferOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateResponsibilityTransferResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Organizations
 }  // namespace Aws

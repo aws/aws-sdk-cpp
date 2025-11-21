@@ -26,6 +26,10 @@ SheetStyle& SheetStyle::operator=(JsonView jsonValue) {
     m_tileLayout = jsonValue.GetObject("TileLayout");
     m_tileLayoutHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Background")) {
+    m_background = jsonValue.GetObject("Background");
+    m_backgroundHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue SheetStyle::Jsonize() const {
 
   if (m_tileLayoutHasBeenSet) {
     payload.WithObject("TileLayout", m_tileLayout.Jsonize());
+  }
+
+  if (m_backgroundHasBeenSet) {
+    payload.WithObject("Background", m_background.Jsonize());
   }
 
   return payload;

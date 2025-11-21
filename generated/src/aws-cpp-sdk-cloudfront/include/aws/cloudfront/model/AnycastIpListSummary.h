@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/IpAddressType.h>
+#include <aws/cloudfront/model/IpamConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -175,6 +176,25 @@ class AnycastIpListSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IPAM configuration for the Anycast static IP list, that contains the
+   * quantity and list of IPAM CIDR configurations.</p>
+   */
+  inline const IpamConfig& GetIpamConfig() const { return m_ipamConfig; }
+  inline bool IpamConfigHasBeenSet() const { return m_ipamConfigHasBeenSet; }
+  template <typename IpamConfigT = IpamConfig>
+  void SetIpamConfig(IpamConfigT&& value) {
+    m_ipamConfigHasBeenSet = true;
+    m_ipamConfig = std::forward<IpamConfigT>(value);
+  }
+  template <typename IpamConfigT = IpamConfig>
+  AnycastIpListSummary& WithIpamConfig(IpamConfigT&& value) {
+    SetIpamConfig(std::forward<IpamConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -199,6 +219,9 @@ class AnycastIpListSummary {
 
   Aws::String m_eTag;
   bool m_eTagHasBeenSet = false;
+
+  IpamConfig m_ipamConfig;
+  bool m_ipamConfigHasBeenSet = false;
 };
 
 }  // namespace Model

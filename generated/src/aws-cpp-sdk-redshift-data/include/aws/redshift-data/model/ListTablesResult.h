@@ -30,27 +30,6 @@ class ListTablesResult {
 
   ///@{
   /**
-   * <p>A value that indicates the starting point for the next set of response
-   * records in a subsequent request. If a value is returned in a response, you can
-   * retrieve the next set of records by providing this returned NextToken value in
-   * the next NextToken parameter and retrying the command. If the NextToken field is
-   * empty, all response records have been retrieved for the request. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListTablesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The tables that match the request pattern. </p>
    */
   inline const Aws::Vector<TableMember>& GetTables() const { return m_tables; }
@@ -73,6 +52,27 @@ class ListTablesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A value that indicates the starting point for the next set of response
+   * records in a subsequent request. If a value is returned in a response, you can
+   * retrieve the next set of records by providing this returned NextToken value in
+   * the next NextToken parameter and retrying the command. If the NextToken field is
+   * empty, all response records have been retrieved for the request. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTablesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -87,11 +87,11 @@ class ListTablesResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
   Aws::Vector<TableMember> m_tables;
   bool m_tablesHasBeenSet = false;
+
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

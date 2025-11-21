@@ -23,6 +23,7 @@ static const int relational_database_service_HASH = HashingUtils::HashString("re
 static const int site_to_site_vpn_HASH = HashingUtils::HashString("site-to-site-vpn");
 static const int load_balancer_HASH = HashingUtils::HashString("load-balancer");
 static const int global_accelerator_HASH = HashingUtils::HashString("global-accelerator");
+static const int cloudfront_HASH = HashingUtils::HashString("cloudfront");
 static const int other_HASH = HashingUtils::HashString("other");
 
 IpamPublicAddressAwsService GetIpamPublicAddressAwsServiceForName(const Aws::String& name) {
@@ -43,6 +44,8 @@ IpamPublicAddressAwsService GetIpamPublicAddressAwsServiceForName(const Aws::Str
     return IpamPublicAddressAwsService::load_balancer;
   } else if (hashCode == global_accelerator_HASH) {
     return IpamPublicAddressAwsService::global_accelerator;
+  } else if (hashCode == cloudfront_HASH) {
+    return IpamPublicAddressAwsService::cloudfront;
   } else if (hashCode == other_HASH) {
     return IpamPublicAddressAwsService::other;
   }
@@ -75,6 +78,8 @@ Aws::String GetNameForIpamPublicAddressAwsService(IpamPublicAddressAwsService en
       return "load-balancer";
     case IpamPublicAddressAwsService::global_accelerator:
       return "global-accelerator";
+    case IpamPublicAddressAwsService::cloudfront:
+      return "cloudfront";
     case IpamPublicAddressAwsService::other:
       return "other";
     default:

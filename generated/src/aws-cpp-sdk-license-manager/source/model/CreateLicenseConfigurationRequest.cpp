@@ -64,6 +64,10 @@ Aws::String CreateLicenseConfigurationRequest::SerializePayload() const {
     payload.WithArray("ProductInformationList", std::move(productInformationListJsonList));
   }
 
+  if (m_licenseExpiryHasBeenSet) {
+    payload.WithInt64("LicenseExpiry", m_licenseExpiry);
+  }
+
   return payload.View().WriteReadable();
 }
 

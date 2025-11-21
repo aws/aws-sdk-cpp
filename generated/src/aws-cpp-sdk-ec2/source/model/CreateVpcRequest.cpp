@@ -45,6 +45,10 @@ Aws::String CreateVpcRequest::SerializePayload() const {
     ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
   }
 
+  if (m_vpcEncryptionControlHasBeenSet) {
+    m_vpcEncryptionControl.OutputToStream(ss, "VpcEncryptionControl");
+  }
+
   if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
     for (auto& item : m_tagSpecifications) {

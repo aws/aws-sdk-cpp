@@ -23,9 +23,8 @@ namespace ApplicationSignals {
 namespace Model {
 
 /**
- * <p>A union type that represents different types of entities that can be audited,
- * such as services, SLOs, service operations, or canaries.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>A union structure that contains the specific entity information for different
+ * types of audit targets.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/AuditTargetEntity">AWS
  * API Reference</a></p>
  */
@@ -56,8 +55,8 @@ class AuditTargetEntity {
 
   ///@{
   /**
-   * <p>Service Level Objective entity information when the audit target is an
-   * SLO.</p>
+   * <p>SLO entity information when the audit target is a service level
+   * objective.</p>
    */
   inline const ServiceLevelObjectiveEntity& GetSlo() const { return m_slo; }
   inline bool SloHasBeenSet() const { return m_sloHasBeenSet; }
@@ -76,7 +75,7 @@ class AuditTargetEntity {
   ///@{
   /**
    * <p>Service operation entity information when the audit target is a specific
-   * operation within a service.</p>
+   * service operation.</p>
    */
   inline const ServiceOperationEntity& GetServiceOperation() const { return m_serviceOperation; }
   inline bool ServiceOperationHasBeenSet() const { return m_serviceOperationHasBeenSet; }

@@ -23,6 +23,10 @@ Aws::String CreateDirectConnectGatewayAttachmentRequest::SerializePayload() cons
     payload.WithString("DirectConnectGatewayArn", m_directConnectGatewayArn);
   }
 
+  if (m_routingPolicyLabelHasBeenSet) {
+    payload.WithString("RoutingPolicyLabel", m_routingPolicyLabel);
+  }
+
   if (m_edgeLocationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> edgeLocationsJsonList(m_edgeLocations.size());
     for (unsigned edgeLocationsIndex = 0; edgeLocationsIndex < edgeLocationsJsonList.GetLength(); ++edgeLocationsIndex) {

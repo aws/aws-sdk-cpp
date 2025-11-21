@@ -47,6 +47,11 @@
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
 #include <aws/bedrock-agentcore/model/Event.h>
 #include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
+#include <aws/bedrock-agentcore/model/ExtractionJob.h>
+#include <aws/bedrock-agentcore/model/ExtractionJobFilterInput.h>
+#include <aws/bedrock-agentcore/model/ExtractionJobMessages.h>
+#include <aws/bedrock-agentcore/model/ExtractionJobMetadata.h>
+#include <aws/bedrock-agentcore/model/ExtractionJobStatus.h>
 #include <aws/bedrock-agentcore/model/FilterInput.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardResult.h>
@@ -83,6 +88,8 @@
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsResult.h>
 #include <aws/bedrock-agentcore/model/ListEventsRequest.h>
 #include <aws/bedrock-agentcore/model/ListEventsResult.h>
+#include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsRequest.h>
+#include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsResult.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
@@ -96,6 +103,7 @@
 #include <aws/bedrock-agentcore/model/MemoryRecordStatus.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordSummary.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordUpdateInput.h>
+#include <aws/bedrock-agentcore/model/MessageMetadata.h>
 #include <aws/bedrock-agentcore/model/MetadataValue.h>
 #include <aws/bedrock-agentcore/model/Oauth2FlowType.h>
 #include <aws/bedrock-agentcore/model/OperatorType.h>
@@ -114,6 +122,8 @@
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionResult.h>
+#include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
+#include <aws/bedrock-agentcore/model/StartMemoryExtractionJobResult.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionRequest.h>

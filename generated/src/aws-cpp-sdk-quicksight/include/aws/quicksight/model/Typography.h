@@ -7,6 +7,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/Font.h>
+#include <aws/quicksight/model/FontConfiguration.h>
+#include <aws/quicksight/model/VisualSubtitleFontConfiguration.h>
+#include <aws/quicksight/model/VisualTitleFontConfiguration.h>
 
 #include <utility>
 
@@ -55,9 +58,146 @@ class Typography {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const FontConfiguration& GetAxisTitleFontConfiguration() const { return m_axisTitleFontConfiguration; }
+  inline bool AxisTitleFontConfigurationHasBeenSet() const { return m_axisTitleFontConfigurationHasBeenSet; }
+  template <typename AxisTitleFontConfigurationT = FontConfiguration>
+  void SetAxisTitleFontConfiguration(AxisTitleFontConfigurationT&& value) {
+    m_axisTitleFontConfigurationHasBeenSet = true;
+    m_axisTitleFontConfiguration = std::forward<AxisTitleFontConfigurationT>(value);
+  }
+  template <typename AxisTitleFontConfigurationT = FontConfiguration>
+  Typography& WithAxisTitleFontConfiguration(AxisTitleFontConfigurationT&& value) {
+    SetAxisTitleFontConfiguration(std::forward<AxisTitleFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FontConfiguration& GetAxisLabelFontConfiguration() const { return m_axisLabelFontConfiguration; }
+  inline bool AxisLabelFontConfigurationHasBeenSet() const { return m_axisLabelFontConfigurationHasBeenSet; }
+  template <typename AxisLabelFontConfigurationT = FontConfiguration>
+  void SetAxisLabelFontConfiguration(AxisLabelFontConfigurationT&& value) {
+    m_axisLabelFontConfigurationHasBeenSet = true;
+    m_axisLabelFontConfiguration = std::forward<AxisLabelFontConfigurationT>(value);
+  }
+  template <typename AxisLabelFontConfigurationT = FontConfiguration>
+  Typography& WithAxisLabelFontConfiguration(AxisLabelFontConfigurationT&& value) {
+    SetAxisLabelFontConfiguration(std::forward<AxisLabelFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FontConfiguration& GetLegendTitleFontConfiguration() const { return m_legendTitleFontConfiguration; }
+  inline bool LegendTitleFontConfigurationHasBeenSet() const { return m_legendTitleFontConfigurationHasBeenSet; }
+  template <typename LegendTitleFontConfigurationT = FontConfiguration>
+  void SetLegendTitleFontConfiguration(LegendTitleFontConfigurationT&& value) {
+    m_legendTitleFontConfigurationHasBeenSet = true;
+    m_legendTitleFontConfiguration = std::forward<LegendTitleFontConfigurationT>(value);
+  }
+  template <typename LegendTitleFontConfigurationT = FontConfiguration>
+  Typography& WithLegendTitleFontConfiguration(LegendTitleFontConfigurationT&& value) {
+    SetLegendTitleFontConfiguration(std::forward<LegendTitleFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FontConfiguration& GetLegendValueFontConfiguration() const { return m_legendValueFontConfiguration; }
+  inline bool LegendValueFontConfigurationHasBeenSet() const { return m_legendValueFontConfigurationHasBeenSet; }
+  template <typename LegendValueFontConfigurationT = FontConfiguration>
+  void SetLegendValueFontConfiguration(LegendValueFontConfigurationT&& value) {
+    m_legendValueFontConfigurationHasBeenSet = true;
+    m_legendValueFontConfiguration = std::forward<LegendValueFontConfigurationT>(value);
+  }
+  template <typename LegendValueFontConfigurationT = FontConfiguration>
+  Typography& WithLegendValueFontConfiguration(LegendValueFontConfigurationT&& value) {
+    SetLegendValueFontConfiguration(std::forward<LegendValueFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const FontConfiguration& GetDataLabelFontConfiguration() const { return m_dataLabelFontConfiguration; }
+  inline bool DataLabelFontConfigurationHasBeenSet() const { return m_dataLabelFontConfigurationHasBeenSet; }
+  template <typename DataLabelFontConfigurationT = FontConfiguration>
+  void SetDataLabelFontConfiguration(DataLabelFontConfigurationT&& value) {
+    m_dataLabelFontConfigurationHasBeenSet = true;
+    m_dataLabelFontConfiguration = std::forward<DataLabelFontConfigurationT>(value);
+  }
+  template <typename DataLabelFontConfigurationT = FontConfiguration>
+  Typography& WithDataLabelFontConfiguration(DataLabelFontConfigurationT&& value) {
+    SetDataLabelFontConfiguration(std::forward<DataLabelFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configures the display properties of the visual title.</p>
+   */
+  inline const VisualTitleFontConfiguration& GetVisualTitleFontConfiguration() const { return m_visualTitleFontConfiguration; }
+  inline bool VisualTitleFontConfigurationHasBeenSet() const { return m_visualTitleFontConfigurationHasBeenSet; }
+  template <typename VisualTitleFontConfigurationT = VisualTitleFontConfiguration>
+  void SetVisualTitleFontConfiguration(VisualTitleFontConfigurationT&& value) {
+    m_visualTitleFontConfigurationHasBeenSet = true;
+    m_visualTitleFontConfiguration = std::forward<VisualTitleFontConfigurationT>(value);
+  }
+  template <typename VisualTitleFontConfigurationT = VisualTitleFontConfiguration>
+  Typography& WithVisualTitleFontConfiguration(VisualTitleFontConfigurationT&& value) {
+    SetVisualTitleFontConfiguration(std::forward<VisualTitleFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configures the display properties of the visual sub-title.</p>
+   */
+  inline const VisualSubtitleFontConfiguration& GetVisualSubtitleFontConfiguration() const { return m_visualSubtitleFontConfiguration; }
+  inline bool VisualSubtitleFontConfigurationHasBeenSet() const { return m_visualSubtitleFontConfigurationHasBeenSet; }
+  template <typename VisualSubtitleFontConfigurationT = VisualSubtitleFontConfiguration>
+  void SetVisualSubtitleFontConfiguration(VisualSubtitleFontConfigurationT&& value) {
+    m_visualSubtitleFontConfigurationHasBeenSet = true;
+    m_visualSubtitleFontConfiguration = std::forward<VisualSubtitleFontConfigurationT>(value);
+  }
+  template <typename VisualSubtitleFontConfigurationT = VisualSubtitleFontConfiguration>
+  Typography& WithVisualSubtitleFontConfiguration(VisualSubtitleFontConfigurationT&& value) {
+    SetVisualSubtitleFontConfiguration(std::forward<VisualSubtitleFontConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Font> m_fontFamilies;
   bool m_fontFamiliesHasBeenSet = false;
+
+  FontConfiguration m_axisTitleFontConfiguration;
+  bool m_axisTitleFontConfigurationHasBeenSet = false;
+
+  FontConfiguration m_axisLabelFontConfiguration;
+  bool m_axisLabelFontConfigurationHasBeenSet = false;
+
+  FontConfiguration m_legendTitleFontConfiguration;
+  bool m_legendTitleFontConfigurationHasBeenSet = false;
+
+  FontConfiguration m_legendValueFontConfiguration;
+  bool m_legendValueFontConfigurationHasBeenSet = false;
+
+  FontConfiguration m_dataLabelFontConfiguration;
+  bool m_dataLabelFontConfigurationHasBeenSet = false;
+
+  VisualTitleFontConfiguration m_visualTitleFontConfiguration;
+  bool m_visualTitleFontConfigurationHasBeenSet = false;
+
+  VisualSubtitleFontConfiguration m_visualSubtitleFontConfiguration;
+  bool m_visualSubtitleFontConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

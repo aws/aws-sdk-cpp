@@ -39,6 +39,22 @@ CloudWatchLogOptions& CloudWatchLogOptions::operator=(const XmlNode& xmlNode) {
       m_logOutputFormat = Aws::Utils::Xml::DecodeEscapedXmlText(logOutputFormatNode.GetText());
       m_logOutputFormatHasBeenSet = true;
     }
+    XmlNode bgpLogEnabledNode = resultNode.FirstChild("bgpLogEnabled");
+    if (!bgpLogEnabledNode.IsNull()) {
+      m_bgpLogEnabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bgpLogEnabledNode.GetText()).c_str()).c_str());
+      m_bgpLogEnabledHasBeenSet = true;
+    }
+    XmlNode bgpLogGroupArnNode = resultNode.FirstChild("bgpLogGroupArn");
+    if (!bgpLogGroupArnNode.IsNull()) {
+      m_bgpLogGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(bgpLogGroupArnNode.GetText());
+      m_bgpLogGroupArnHasBeenSet = true;
+    }
+    XmlNode bgpLogOutputFormatNode = resultNode.FirstChild("bgpLogOutputFormat");
+    if (!bgpLogOutputFormatNode.IsNull()) {
+      m_bgpLogOutputFormat = Aws::Utils::Xml::DecodeEscapedXmlText(bgpLogOutputFormatNode.GetText());
+      m_bgpLogOutputFormatHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -56,6 +72,18 @@ void CloudWatchLogOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   if (m_logOutputFormatHasBeenSet) {
     oStream << location << index << locationValue << ".LogOutputFormat=" << StringUtils::URLEncode(m_logOutputFormat.c_str()) << "&";
   }
+
+  if (m_bgpLogEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".BgpLogEnabled=" << std::boolalpha << m_bgpLogEnabled << "&";
+  }
+
+  if (m_bgpLogGroupArnHasBeenSet) {
+    oStream << location << index << locationValue << ".BgpLogGroupArn=" << StringUtils::URLEncode(m_bgpLogGroupArn.c_str()) << "&";
+  }
+
+  if (m_bgpLogOutputFormatHasBeenSet) {
+    oStream << location << index << locationValue << ".BgpLogOutputFormat=" << StringUtils::URLEncode(m_bgpLogOutputFormat.c_str()) << "&";
+  }
 }
 
 void CloudWatchLogOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -67,6 +95,15 @@ void CloudWatchLogOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if (m_logOutputFormatHasBeenSet) {
     oStream << location << ".LogOutputFormat=" << StringUtils::URLEncode(m_logOutputFormat.c_str()) << "&";
+  }
+  if (m_bgpLogEnabledHasBeenSet) {
+    oStream << location << ".BgpLogEnabled=" << std::boolalpha << m_bgpLogEnabled << "&";
+  }
+  if (m_bgpLogGroupArnHasBeenSet) {
+    oStream << location << ".BgpLogGroupArn=" << StringUtils::URLEncode(m_bgpLogGroupArn.c_str()) << "&";
+  }
+  if (m_bgpLogOutputFormatHasBeenSet) {
+    oStream << location << ".BgpLogOutputFormat=" << StringUtils::URLEncode(m_bgpLogOutputFormat.c_str()) << "&";
   }
 }
 

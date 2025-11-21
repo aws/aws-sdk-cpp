@@ -28,7 +28,7 @@ class DeleteLifecyclePolicyResult {
 
   ///@{
   /**
-   * <p>The ARN of the lifecycle policy that was deleted.</p>
+   * <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
    */
   inline const Aws::String& GetLifecyclePolicyArn() const { return m_lifecyclePolicyArn; }
   template <typename LifecyclePolicyArnT = Aws::String>

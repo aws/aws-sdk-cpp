@@ -30,7 +30,7 @@ namespace ElasticLoadBalancingv2 {
  * following load balancer types:</p> <ul> <li> <p>Application Load Balancer -
  * Operates at the application layer (layer 7) and supports HTTP and HTTPS.</p>
  * </li> <li> <p>Network Load Balancer - Operates at the transport layer (layer 4)
- * and supports TCP, TLS, and UDP.</p> </li> <li> <p>Gateway Load Balancer -
+ * and supports TCP, TLS, UDP, and QUIC.</p> </li> <li> <p>Gateway Load Balancer -
  * Operates at the network layer (layer 3).</p> </li> </ul> <p>For more
  * information, see the <a
  * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic

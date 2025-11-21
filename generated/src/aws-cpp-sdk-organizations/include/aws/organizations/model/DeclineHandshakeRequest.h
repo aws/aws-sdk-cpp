@@ -32,8 +32,8 @@ class DeclineHandshakeRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the handshake that you want to decline. You can
-   * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
+   * <p>ID for the handshake that you want to decline. You can get the ID from the
+   * <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
    * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
    * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
    */

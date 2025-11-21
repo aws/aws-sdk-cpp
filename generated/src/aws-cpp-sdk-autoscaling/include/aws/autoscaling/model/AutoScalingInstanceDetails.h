@@ -199,6 +199,32 @@ class AutoScalingInstanceDetails {
 
   ///@{
   /**
+   * <p> The ID of the Amazon Machine Image (AMI) associated with the instance. This
+   * field shows the current AMI ID of the instance's root volume. It may differ from
+   * the original AMI used when the instance was first launched. </p> <p> This field
+   * appears for: </p> <ul> <li> <p>Instances with root volume replacements through
+   * Instance Refresh</p> </li> <li> <p>Instances launched with AMI overrides </p>
+   * </li> </ul> <p>This field won't appear for:</p> <ul> <li> <p>Existing instances
+   * launched from Launch Templates without overrides</p> </li> <li> <p>Existing
+   * instances that didn’t have their root volume replaced through Instance
+   * Refresh</p> </li> </ul>
+   */
+  inline const Aws::String& GetImageId() const { return m_imageId; }
+  inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+  template <typename ImageIdT = Aws::String>
+  void SetImageId(ImageIdT&& value) {
+    m_imageIdHasBeenSet = true;
+    m_imageId = std::forward<ImageIdT>(value);
+  }
+  template <typename ImageIdT = Aws::String>
+  AutoScalingInstanceDetails& WithImageId(ImageIdT&& value) {
+    SetImageId(std::forward<ImageIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the instance is protected from termination by Amazon EC2
    * Auto Scaling when scaling in.</p>
    */
@@ -256,6 +282,9 @@ class AutoScalingInstanceDetails {
 
   LaunchTemplateSpecification m_launchTemplate;
   bool m_launchTemplateHasBeenSet = false;
+
+  Aws::String m_imageId;
+  bool m_imageIdHasBeenSet = false;
 
   bool m_protectedFromScaleIn{false};
   bool m_protectedFromScaleInHasBeenSet = false;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class IpamPoolAllocationResourceType { NOT_SET, ipam_pool, vpc, ec2_public_ipv4_pool, custom, subnet, eip };
+enum class IpamPoolAllocationResourceType { NOT_SET, ipam_pool, vpc, ec2_public_ipv4_pool, custom, subnet, eip, anycast_ip_list };
 
 namespace IpamPoolAllocationResourceTypeMapper {
 AWS_EC2_API IpamPoolAllocationResourceType GetIpamPoolAllocationResourceTypeForName(const Aws::String& name);

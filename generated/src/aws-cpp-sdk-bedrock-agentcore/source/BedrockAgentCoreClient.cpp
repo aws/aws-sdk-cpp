@@ -29,11 +29,13 @@
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListEventsRequest.h>
+#include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
+#include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopRuntimeSessionRequest.h>
@@ -1073,6 +1075,43 @@ ListEventsOutcome BedrockAgentCoreClient::ListEvents(const ListEventsRequest& re
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListMemoryExtractionJobsOutcome BedrockAgentCoreClient::ListMemoryExtractionJobs(const ListMemoryExtractionJobsRequest& request) const {
+  AWS_OPERATION_GUARD(ListMemoryExtractionJobs);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemoryExtractionJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MemoryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListMemoryExtractionJobs", "Required field: MemoryId, is not set");
+    return ListMemoryExtractionJobsOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMemoryExtractionJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMemoryExtractionJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMemoryExtractionJobs",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMemoryExtractionJobsOutcome>(
+      [&]() -> ListMemoryExtractionJobsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMemoryExtractionJobs, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/extractionJobs");
+        return ListMemoryExtractionJobsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListMemoryRecordsOutcome BedrockAgentCoreClient::ListMemoryRecords(const ListMemoryRecordsRequest& request) const {
   AWS_OPERATION_GUARD(ListMemoryRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1260,6 +1299,43 @@ StartCodeInterpreterSessionOutcome BedrockAgentCoreClient::StartCodeInterpreterS
         endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/start");
         return StartCodeInterpreterSessionOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartMemoryExtractionJobOutcome BedrockAgentCoreClient::StartMemoryExtractionJob(const StartMemoryExtractionJobRequest& request) const {
+  AWS_OPERATION_GUARD(StartMemoryExtractionJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMemoryExtractionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MemoryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartMemoryExtractionJob", "Required field: MemoryId, is not set");
+    return StartMemoryExtractionJobOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartMemoryExtractionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartMemoryExtractionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartMemoryExtractionJob",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartMemoryExtractionJobOutcome>(
+      [&]() -> StartMemoryExtractionJobOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMemoryExtractionJob, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/extractionJobs/start");
+        return StartMemoryExtractionJobOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

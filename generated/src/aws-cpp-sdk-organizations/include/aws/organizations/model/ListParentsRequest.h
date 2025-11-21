@@ -32,15 +32,14 @@ class ListParentsRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The unique identifier (ID) of the OU or account whose parent containers you
-   * want to list. Don't specify a root.</p> <p>The <a
-   * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
-   * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
-   * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-   * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
-   * letters or digits (the ID of the root that contains the OU). This string is
-   * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
-   * digits.</p> </li> </ul>
+   * <p>ID for the OU or account whose parent containers you want to list. Don't
+   * specify a root.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+   * pattern</a> for a child ID string requires one of the following:</p> <ul> <li>
+   * <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> <li>
+   * <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed
+   * by from 4 to 32 lowercase letters or digits (the ID of the root that contains
+   * the OU). This string is followed by a second "-" dash and from 8 to 32
+   * additional lowercase letters or digits.</p> </li> </ul>
    */
   inline const Aws::String& GetChildId() const { return m_childId; }
   inline bool ChildIdHasBeenSet() const { return m_childIdHasBeenSet; }
@@ -80,15 +79,9 @@ class ListParentsRequest : public OrganizationsRequest {
 
   ///@{
   /**
-   * <p>The total number of results that you want included on each page of the
-   * response. If you do not include this parameter, it defaults to a value that is
-   * specific to the operation. If additional items exist beyond the maximum you
-   * specify, the <code>NextToken</code> response element is present and has a value
-   * (is not null). Include that value as the <code>NextToken</code> request
-   * parameter in the next call to the operation to get the next part of the results.
-   * Note that Organizations might return fewer results than the maximum even when
-   * there are more results available. You should check <code>NextToken</code> after
-   * every operation to ensure that you receive all of the results.</p>
+   * <p>The maximum number of items to return in the response. If more results exist
+   * than the specified <code>MaxResults</code> value, a token is included in the
+   * response so that you can retrieve the remaining results.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
