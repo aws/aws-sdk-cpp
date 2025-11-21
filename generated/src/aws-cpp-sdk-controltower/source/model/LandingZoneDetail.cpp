@@ -22,10 +22,6 @@ LandingZoneDetail& LandingZoneDetail::operator=(JsonView jsonValue) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("manifest")) {
-    m_manifest = jsonValue.GetObject("manifest");
-    m_manifestHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("remediationTypes")) {
     Aws::Utils::Array<JsonView> remediationTypesJsonList = jsonValue.GetArray("remediationTypes");
     for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
@@ -50,6 +46,10 @@ LandingZoneDetail& LandingZoneDetail::operator=(JsonView jsonValue) {
     m_driftStatus = jsonValue.GetObject("driftStatus");
     m_driftStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("manifest")) {
+    m_manifest = jsonValue.GetObject("manifest");
+    m_manifestHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -58,12 +58,6 @@ JsonValue LandingZoneDetail::Jsonize() const {
 
   if (m_versionHasBeenSet) {
     payload.WithString("version", m_version);
-  }
-
-  if (m_manifestHasBeenSet) {
-    if (!m_manifest.View().IsNull()) {
-      payload.WithObject("manifest", JsonValue(m_manifest.View()));
-    }
   }
 
   if (m_remediationTypesHasBeenSet) {
@@ -89,6 +83,12 @@ JsonValue LandingZoneDetail::Jsonize() const {
 
   if (m_driftStatusHasBeenSet) {
     payload.WithObject("driftStatus", m_driftStatus.Jsonize());
+  }
+
+  if (m_manifestHasBeenSet) {
+    if (!m_manifest.View().IsNull()) {
+      payload.WithObject("manifest", JsonValue(m_manifest.View()));
+    }
   }
 
   return payload;

@@ -179,7 +179,7 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) A
    * configuration object that specifies the destination of an event after Lambda
    * processes it.</p>
    */
@@ -199,8 +199,9 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
-   * age. The default value is infinite (-1).</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
+   * Discard records older than the specified age. The default value is infinite
+   * (-1).</p>
    */
   inline int GetMaximumRecordAgeInSeconds() const { return m_maximumRecordAgeInSeconds; }
   inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
@@ -216,8 +217,8 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
-   * the batch in two and retry.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) If the
+   * function returns an error, split the batch in two and retry.</p>
    */
   inline bool GetBisectBatchOnFunctionError() const { return m_bisectBatchOnFunctionError; }
   inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
@@ -233,9 +234,10 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
-   * number of retries. The default value is infinite (-1). When set to infinite
-   * (-1), failed records are retried until the record expires.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
+   * Discard records after the specified number of retries. The default value is
+   * infinite (-1). When set to infinite (-1), failed records are retried until the
+   * record expires.</p>
    */
   inline int GetMaximumRetryAttempts() const { return m_maximumRetryAttempts; }
   inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
@@ -311,8 +313,9 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
-   * enums applied to the event source mapping.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon
+   * SQS) A list of current response type enums applied to the event source
+   * mapping.</p>
    */
   inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const { return m_functionResponseTypes; }
   inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }

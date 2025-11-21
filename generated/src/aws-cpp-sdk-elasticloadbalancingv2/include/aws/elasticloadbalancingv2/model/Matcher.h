@@ -44,7 +44,7 @@ class Matcher {
    * Load Balancers, you can specify values between 200 and 599, with the default
    * value being 200-399. You can specify multiple values (for example, "200,202") or
    * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
-   * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+   * this must be "200��399".</p> <p>Note that when using shorthand syntax, some
    * values such as commas need to be escaped.</p>
    */
   inline const Aws::String& GetHttpCode() const { return m_httpCode; }

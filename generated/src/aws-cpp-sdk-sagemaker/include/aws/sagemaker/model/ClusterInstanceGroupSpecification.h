@@ -7,8 +7,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterCapacityRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
+#include <aws/sagemaker/model/ClusterKubernetesConfig.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <aws/sagemaker/model/ScheduledUpdateConfig.h>
@@ -52,6 +54,28 @@ class ClusterInstanceGroupSpecification {
   }
   inline ClusterInstanceGroupSpecification& WithInstanceCount(int value) {
     SetInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Defines the minimum number of instances required for an instance group to
+   * become <code>InService</code>. If this threshold isn't met within 3 hours, the
+   * instance group rolls back to its previous state - zero instances for new
+   * instance groups, or previous settings for existing instance groups.
+   * <code>MinInstanceCount</code> only affects the initial transition to
+   * <code>InService</code> and does not guarantee maintaining this minimum
+   * afterward. </p>
+   */
+  inline int GetMinInstanceCount() const { return m_minInstanceCount; }
+  inline bool MinInstanceCountHasBeenSet() const { return m_minInstanceCountHasBeenSet; }
+  inline void SetMinInstanceCount(int value) {
+    m_minInstanceCountHasBeenSet = true;
+    m_minInstanceCount = value;
+  }
+  inline ClusterInstanceGroupSpecification& WithMinInstanceCount(int value) {
+    SetMinInstanceCount(value);
     return *this;
   }
   ///@}
@@ -315,9 +339,51 @@ class ClusterInstanceGroupSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the Kubernetes configuration for the instance group. You describe
+   * what you want the labels and taints to look like, and the cluster works to
+   * reconcile the actual state with the declared state for nodes in this instance
+   * group. </p>
+   */
+  inline const ClusterKubernetesConfig& GetKubernetesConfig() const { return m_kubernetesConfig; }
+  inline bool KubernetesConfigHasBeenSet() const { return m_kubernetesConfigHasBeenSet; }
+  template <typename KubernetesConfigT = ClusterKubernetesConfig>
+  void SetKubernetesConfig(KubernetesConfigT&& value) {
+    m_kubernetesConfigHasBeenSet = true;
+    m_kubernetesConfig = std::forward<KubernetesConfigT>(value);
+  }
+  template <typename KubernetesConfigT = ClusterKubernetesConfig>
+  ClusterInstanceGroupSpecification& WithKubernetesConfig(KubernetesConfigT&& value) {
+    SetKubernetesConfig(std::forward<KubernetesConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the capacity requirements for the instance group.</p>
+   */
+  inline const ClusterCapacityRequirements& GetCapacityRequirements() const { return m_capacityRequirements; }
+  inline bool CapacityRequirementsHasBeenSet() const { return m_capacityRequirementsHasBeenSet; }
+  template <typename CapacityRequirementsT = ClusterCapacityRequirements>
+  void SetCapacityRequirements(CapacityRequirementsT&& value) {
+    m_capacityRequirementsHasBeenSet = true;
+    m_capacityRequirements = std::forward<CapacityRequirementsT>(value);
+  }
+  template <typename CapacityRequirementsT = ClusterCapacityRequirements>
+  ClusterInstanceGroupSpecification& WithCapacityRequirements(CapacityRequirementsT&& value) {
+    SetCapacityRequirements(std::forward<CapacityRequirementsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_instanceCount{0};
   bool m_instanceCountHasBeenSet = false;
+
+  int m_minInstanceCount{0};
+  bool m_minInstanceCountHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
   bool m_instanceGroupNameHasBeenSet = false;
@@ -351,6 +417,12 @@ class ClusterInstanceGroupSpecification {
 
   Aws::String m_imageId;
   bool m_imageIdHasBeenSet = false;
+
+  ClusterKubernetesConfig m_kubernetesConfig;
+  bool m_kubernetesConfigHasBeenSet = false;
+
+  ClusterCapacityRequirements m_capacityRequirements;
+  bool m_capacityRequirementsHasBeenSet = false;
 };
 
 }  // namespace Model

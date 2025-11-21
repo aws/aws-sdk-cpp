@@ -131,11 +131,14 @@
 #include <aws/connect/model/ContactFilter.h>
 #include <aws/connect/model/ContactFlow.h>
 #include <aws/connect/model/ContactFlowModule.h>
+#include <aws/connect/model/ContactFlowModuleAliasInfo.h>
+#include <aws/connect/model/ContactFlowModuleAliasSummary.h>
 #include <aws/connect/model/ContactFlowModuleSearchCriteria.h>
 #include <aws/connect/model/ContactFlowModuleSearchFilter.h>
 #include <aws/connect/model/ContactFlowModuleState.h>
 #include <aws/connect/model/ContactFlowModuleStatus.h>
 #include <aws/connect/model/ContactFlowModuleSummary.h>
+#include <aws/connect/model/ContactFlowModuleVersionSummary.h>
 #include <aws/connect/model/ContactFlowSearchCriteria.h>
 #include <aws/connect/model/ContactFlowSearchFilter.h>
 #include <aws/connect/model/ContactFlowState.h>
@@ -160,8 +163,12 @@
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
+#include <aws/connect/model/CreateContactFlowModuleAliasRequest.h>
+#include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
+#include <aws/connect/model/CreateContactFlowModuleVersionRequest.h>
+#include <aws/connect/model/CreateContactFlowModuleVersionResult.h>
 #include <aws/connect/model/CreateContactFlowRequest.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateContactFlowVersionRequest.h>
@@ -239,8 +246,12 @@
 #include <aws/connect/model/DeleteAttachedFileRequest.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
 #include <aws/connect/model/DeleteContactEvaluationRequest.h>
+#include <aws/connect/model/DeleteContactFlowModuleAliasRequest.h>
+#include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
+#include <aws/connect/model/DeleteContactFlowModuleVersionRequest.h>
+#include <aws/connect/model/DeleteContactFlowModuleVersionResult.h>
 #include <aws/connect/model/DeleteContactFlowRequest.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowVersionRequest.h>
@@ -280,6 +291,8 @@
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationRequest.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
+#include <aws/connect/model/DescribeContactFlowModuleAliasRequest.h>
+#include <aws/connect/model/DescribeContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DescribeContactFlowModuleRequest.h>
 #include <aws/connect/model/DescribeContactFlowModuleResult.h>
 #include <aws/connect/model/DescribeContactFlowRequest.h>
@@ -445,6 +458,7 @@
 #include <aws/connect/model/EventSourceName.h>
 #include <aws/connect/model/Expiry.h>
 #include <aws/connect/model/Expression.h>
+#include <aws/connect/model/ExternalInvocationConfiguration.h>
 #include <aws/connect/model/FailedRequest.h>
 #include <aws/connect/model/FailureReasonCode.h>
 #include <aws/connect/model/FieldValue.h>
@@ -558,6 +572,10 @@
 #include <aws/connect/model/ListCondition.h>
 #include <aws/connect/model/ListContactEvaluationsRequest.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
+#include <aws/connect/model/ListContactFlowModuleAliasesRequest.h>
+#include <aws/connect/model/ListContactFlowModuleAliasesResult.h>
+#include <aws/connect/model/ListContactFlowModuleVersionsRequest.h>
+#include <aws/connect/model/ListContactFlowModuleVersionsResult.h>
 #include <aws/connect/model/ListContactFlowModulesRequest.h>
 #include <aws/connect/model/ListContactFlowModulesResult.h>
 #include <aws/connect/model/ListContactFlowVersionsRequest.h>
@@ -977,6 +995,8 @@
 #include <aws/connect/model/UpdateContactFlowContentResult.h>
 #include <aws/connect/model/UpdateContactFlowMetadataRequest.h>
 #include <aws/connect/model/UpdateContactFlowMetadataResult.h>
+#include <aws/connect/model/UpdateContactFlowModuleAliasRequest.h>
+#include <aws/connect/model/UpdateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleContentRequest.h>
 #include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleMetadataRequest.h>

@@ -52,27 +52,6 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-   * resources. For examples, review <a
-   * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-   * your landing zone</a>. </p>
-   */
-  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
-  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-  template <typename ManifestT = Aws::Utils::Document>
-  void SetManifest(ManifestT&& value) {
-    m_manifestHasBeenSet = true;
-    m_manifest = std::forward<ManifestT>(value);
-  }
-  template <typename ManifestT = Aws::Utils::Document>
-  CreateLandingZoneRequest& WithManifest(ManifestT&& value) {
-    SetManifest(std::forward<ManifestT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies the types of remediation actions to apply when creating the landing
    * zone, such as automatic drift correction or compliance enforcement.</p>
    */
@@ -118,18 +97,39 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+   * resources. For examples, review <a
+   * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+   * your landing zone</a>. </p>
+   */
+  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
+  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
+  template <typename ManifestT = Aws::Utils::Document>
+  void SetManifest(ManifestT&& value) {
+    m_manifestHasBeenSet = true;
+    m_manifest = std::forward<ManifestT>(value);
+  }
+  template <typename ManifestT = Aws::Utils::Document>
+  CreateLandingZoneRequest& WithManifest(ManifestT&& value) {
+    SetManifest(std::forward<ManifestT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_version;
   bool m_versionHasBeenSet = false;
-
-  Aws::Utils::Document m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
   bool m_remediationTypesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  Aws::Utils::Document m_manifest;
+  bool m_manifestHasBeenSet = false;
 };
 
 }  // namespace Model

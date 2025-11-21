@@ -74,6 +74,14 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator=(JsonView
     m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
     m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MonitoringConfiguration")) {
+    m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
+    m_monitoringConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EngineConfiguration")) {
+    m_engineConfiguration = jsonValue.GetObject("EngineConfiguration");
+    m_engineConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +142,14 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const {
 
   if (m_queryResultsS3AccessGrantsConfigurationHasBeenSet) {
     payload.WithObject("QueryResultsS3AccessGrantsConfiguration", m_queryResultsS3AccessGrantsConfiguration.Jsonize());
+  }
+
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
+  if (m_engineConfigurationHasBeenSet) {
+    payload.WithObject("EngineConfiguration", m_engineConfiguration.Jsonize());
   }
 
   return payload;

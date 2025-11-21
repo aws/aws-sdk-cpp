@@ -43,5 +43,9 @@ Aws::String CreateStreamRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_streamStorageConfigurationHasBeenSet) {
+    payload.WithObject("StreamStorageConfiguration", m_streamStorageConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

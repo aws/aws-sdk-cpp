@@ -26,6 +26,10 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_targetCount = jsonValue.GetInteger("TargetCount");
     m_targetCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MinCount")) {
+    m_minCount = jsonValue.GetInteger("MinCount");
+    m_minCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("InstanceGroupName")) {
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
     m_instanceGroupNameHasBeenSet = true;
@@ -91,6 +95,22 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_desiredImageId = jsonValue.GetString("DesiredImageId");
     m_desiredImageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ActiveOperations")) {
+    Aws::Map<Aws::String, JsonView> activeOperationsJsonMap = jsonValue.GetObject("ActiveOperations").GetAllObjects();
+    for (auto& activeOperationsItem : activeOperationsJsonMap) {
+      m_activeOperations[ActiveClusterOperationNameMapper::GetActiveClusterOperationNameForName(activeOperationsItem.first)] =
+          activeOperationsItem.second.AsInteger();
+    }
+    m_activeOperationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("KubernetesConfig")) {
+    m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
+    m_kubernetesConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CapacityRequirements")) {
+    m_capacityRequirements = jsonValue.GetObject("CapacityRequirements");
+    m_capacityRequirementsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TargetStateCount")) {
     m_targetStateCount = jsonValue.GetInteger("TargetStateCount");
     m_targetStateCountHasBeenSet = true;
@@ -115,6 +135,10 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_targetCountHasBeenSet) {
     payload.WithInteger("TargetCount", m_targetCount);
+  }
+
+  if (m_minCountHasBeenSet) {
+    payload.WithInteger("MinCount", m_minCount);
   }
 
   if (m_instanceGroupNameHasBeenSet) {
@@ -182,6 +206,23 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_desiredImageIdHasBeenSet) {
     payload.WithString("DesiredImageId", m_desiredImageId);
+  }
+
+  if (m_activeOperationsHasBeenSet) {
+    JsonValue activeOperationsJsonMap;
+    for (auto& activeOperationsItem : m_activeOperations) {
+      activeOperationsJsonMap.WithInteger(
+          ActiveClusterOperationNameMapper::GetNameForActiveClusterOperationName(activeOperationsItem.first), activeOperationsItem.second);
+    }
+    payload.WithObject("ActiveOperations", std::move(activeOperationsJsonMap));
+  }
+
+  if (m_kubernetesConfigHasBeenSet) {
+    payload.WithObject("KubernetesConfig", m_kubernetesConfig.Jsonize());
+  }
+
+  if (m_capacityRequirementsHasBeenSet) {
+    payload.WithObject("CapacityRequirements", m_capacityRequirements.Jsonize());
   }
 
   if (m_targetStateCountHasBeenSet) {

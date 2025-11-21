@@ -37,6 +37,8 @@
 #include <aws/athena/model/CapacityAssignmentConfiguration.h>
 #include <aws/athena/model/CapacityReservation.h>
 #include <aws/athena/model/CapacityReservationStatus.h>
+#include <aws/athena/model/Classification.h>
+#include <aws/athena/model/CloudWatchLoggingConfiguration.h>
 #include <aws/athena/model/Column.h>
 #include <aws/athena/model/ColumnInfo.h>
 #include <aws/athena/model/ColumnNullable.h>
@@ -110,6 +112,10 @@
 #include <aws/athena/model/GetQueryResultsResult.h>
 #include <aws/athena/model/GetQueryRuntimeStatisticsRequest.h>
 #include <aws/athena/model/GetQueryRuntimeStatisticsResult.h>
+#include <aws/athena/model/GetResourceDashboardRequest.h>
+#include <aws/athena/model/GetResourceDashboardResult.h>
+#include <aws/athena/model/GetSessionEndpointRequest.h>
+#include <aws/athena/model/GetSessionEndpointResult.h>
 #include <aws/athena/model/GetSessionRequest.h>
 #include <aws/athena/model/GetSessionResult.h>
 #include <aws/athena/model/GetSessionStatusRequest.h>
@@ -154,9 +160,11 @@
 #include <aws/athena/model/ListTagsForResourceResult.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
 #include <aws/athena/model/ListWorkGroupsResult.h>
+#include <aws/athena/model/ManagedLoggingConfiguration.h>
 #include <aws/athena/model/ManagedQueryResultsConfiguration.h>
 #include <aws/athena/model/ManagedQueryResultsConfigurationUpdates.h>
 #include <aws/athena/model/ManagedQueryResultsEncryptionConfiguration.h>
+#include <aws/athena/model/MonitoringConfiguration.h>
 #include <aws/athena/model/NamedQuery.h>
 #include <aws/athena/model/NotebookMetadata.h>
 #include <aws/athena/model/NotebookSessionSummary.h>
@@ -187,6 +195,7 @@
 #include <aws/athena/model/ResultSetMetadata.h>
 #include <aws/athena/model/Row.h>
 #include <aws/athena/model/S3AclOption.h>
+#include <aws/athena/model/S3LoggingConfiguration.h>
 #include <aws/athena/model/SessionConfiguration.h>
 #include <aws/athena/model/SessionState.h>
 #include <aws/athena/model/SessionStatistics.h>

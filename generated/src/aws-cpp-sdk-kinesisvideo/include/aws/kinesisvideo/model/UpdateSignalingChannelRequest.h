@@ -69,7 +69,9 @@ class UpdateSignalingChannelRequest : public KinesisVideoRequest {
   ///@{
   /**
    * <p>The structure containing the configuration for the <code>SINGLE_MASTER</code>
-   * type of the signaling channel that you want to update. </p>
+   * type of the signaling channel that you want to update. This parameter and the
+   * channel message's time-to-live are required for channels with the
+   * <code>SINGLE_MASTER</code> channel type.</p>
    */
   inline const SingleMasterConfiguration& GetSingleMasterConfiguration() const { return m_singleMasterConfiguration; }
   inline bool SingleMasterConfigurationHasBeenSet() const { return m_singleMasterConfigurationHasBeenSet; }

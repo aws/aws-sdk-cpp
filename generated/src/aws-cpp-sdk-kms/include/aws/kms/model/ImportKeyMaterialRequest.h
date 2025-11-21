@@ -171,6 +171,11 @@ class ImportKeyMaterialRequest : public KMSRequest {
    * KMS key, and this parameter is omitted, the parameter defaults to
    * <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this
    * parameter is omitted then the parameter defaults to
+   * <code>EXISTING_KEY_MATERIAL</code>.</p> <p>For multi-Region keys, you must first
+   * import new key material into the primary Region key. You should use the
+   * <code>NEW_KEY_MATERIAL</code> import type when importing key material into the
+   * primary Region key. Then, you can import the same key material into the replica
+   * Region key. The import type for the replica Region key should be
    * <code>EXISTING_KEY_MATERIAL</code>.</p>
    */
   inline ImportType GetImportType() const { return m_importType; }

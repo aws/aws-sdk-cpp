@@ -418,6 +418,24 @@ class PutIntegrationRequest : public APIGatewayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The ALB or NLB listener to send the request to. </p>
+   */
+  inline const Aws::String& GetIntegrationTarget() const { return m_integrationTarget; }
+  inline bool IntegrationTargetHasBeenSet() const { return m_integrationTargetHasBeenSet; }
+  template <typename IntegrationTargetT = Aws::String>
+  void SetIntegrationTarget(IntegrationTargetT&& value) {
+    m_integrationTargetHasBeenSet = true;
+    m_integrationTarget = std::forward<IntegrationTargetT>(value);
+  }
+  template <typename IntegrationTargetT = Aws::String>
+  PutIntegrationRequest& WithIntegrationTarget(IntegrationTargetT&& value) {
+    SetIntegrationTarget(std::forward<IntegrationTargetT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_restApiId;
   bool m_restApiIdHasBeenSet = false;
@@ -472,6 +490,9 @@ class PutIntegrationRequest : public APIGatewayRequest {
 
   ResponseTransferMode m_responseTransferMode{ResponseTransferMode::NOT_SET};
   bool m_responseTransferModeHasBeenSet = false;
+
+  Aws::String m_integrationTarget;
+  bool m_integrationTargetHasBeenSet = false;
 };
 
 }  // namespace Model

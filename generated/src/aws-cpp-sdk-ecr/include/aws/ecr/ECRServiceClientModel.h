@@ -34,9 +34,12 @@
 #include <aws/ecr/model/DeleteRepositoryCreationTemplateResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
+#include <aws/ecr/model/DeleteSigningConfigurationRequest.h>
+#include <aws/ecr/model/DeleteSigningConfigurationResult.h>
 #include <aws/ecr/model/DeregisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusResult.h>
 #include <aws/ecr/model/DescribeImageScanFindingsResult.h>
+#include <aws/ecr/model/DescribeImageSigningStatusResult.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesRequest.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesResult.h>
@@ -57,6 +60,8 @@
 #include <aws/ecr/model/GetRegistryScanningConfigurationRequest.h>
 #include <aws/ecr/model/GetRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/GetRepositoryPolicyResult.h>
+#include <aws/ecr/model/GetSigningConfigurationRequest.h>
+#include <aws/ecr/model/GetSigningConfigurationResult.h>
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
 #include <aws/ecr/model/ListImageReferrersResult.h>
 #include <aws/ecr/model/ListImagesResult.h>
@@ -72,6 +77,7 @@
 #include <aws/ecr/model/PutRegistryScanningConfigurationRequest.h>
 #include <aws/ecr/model/PutRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/PutReplicationConfigurationResult.h>
+#include <aws/ecr/model/PutSigningConfigurationResult.h>
 #include <aws/ecr/model/RegisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
 #include <aws/ecr/model/StartImageScanResult.h>
@@ -130,9 +136,11 @@ class DeleteRegistryPolicyRequest;
 class DeleteRepositoryRequest;
 class DeleteRepositoryCreationTemplateRequest;
 class DeleteRepositoryPolicyRequest;
+class DeleteSigningConfigurationRequest;
 class DeregisterPullTimeUpdateExclusionRequest;
 class DescribeImageReplicationStatusRequest;
 class DescribeImageScanFindingsRequest;
+class DescribeImageSigningStatusRequest;
 class DescribeImagesRequest;
 class DescribePullThroughCacheRulesRequest;
 class DescribeRegistryRequest;
@@ -146,6 +154,7 @@ class GetLifecyclePolicyPreviewRequest;
 class GetRegistryPolicyRequest;
 class GetRegistryScanningConfigurationRequest;
 class GetRepositoryPolicyRequest;
+class GetSigningConfigurationRequest;
 class InitiateLayerUploadRequest;
 class ListImageReferrersRequest;
 class ListImagesRequest;
@@ -159,6 +168,7 @@ class PutLifecyclePolicyRequest;
 class PutRegistryPolicyRequest;
 class PutRegistryScanningConfigurationRequest;
 class PutReplicationConfigurationRequest;
+class PutSigningConfigurationRequest;
 class RegisterPullTimeUpdateExclusionRequest;
 class SetRepositoryPolicyRequest;
 class StartImageScanRequest;
@@ -187,9 +197,11 @@ typedef Aws::Utils::Outcome<DeleteRegistryPolicyResult, ECRError> DeleteRegistry
 typedef Aws::Utils::Outcome<DeleteRepositoryResult, ECRError> DeleteRepositoryOutcome;
 typedef Aws::Utils::Outcome<DeleteRepositoryCreationTemplateResult, ECRError> DeleteRepositoryCreationTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, ECRError> DeleteRepositoryPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteSigningConfigurationResult, ECRError> DeleteSigningConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeregisterPullTimeUpdateExclusionResult, ECRError> DeregisterPullTimeUpdateExclusionOutcome;
 typedef Aws::Utils::Outcome<DescribeImageReplicationStatusResult, ECRError> DescribeImageReplicationStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeImageScanFindingsResult, ECRError> DescribeImageScanFindingsOutcome;
+typedef Aws::Utils::Outcome<DescribeImageSigningStatusResult, ECRError> DescribeImageSigningStatusOutcome;
 typedef Aws::Utils::Outcome<DescribeImagesResult, ECRError> DescribeImagesOutcome;
 typedef Aws::Utils::Outcome<DescribePullThroughCacheRulesResult, ECRError> DescribePullThroughCacheRulesOutcome;
 typedef Aws::Utils::Outcome<DescribeRegistryResult, ECRError> DescribeRegistryOutcome;
@@ -203,6 +215,7 @@ typedef Aws::Utils::Outcome<GetLifecyclePolicyPreviewResult, ECRError> GetLifecy
 typedef Aws::Utils::Outcome<GetRegistryPolicyResult, ECRError> GetRegistryPolicyOutcome;
 typedef Aws::Utils::Outcome<GetRegistryScanningConfigurationResult, ECRError> GetRegistryScanningConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, ECRError> GetRepositoryPolicyOutcome;
+typedef Aws::Utils::Outcome<GetSigningConfigurationResult, ECRError> GetSigningConfigurationOutcome;
 typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRError> InitiateLayerUploadOutcome;
 typedef Aws::Utils::Outcome<ListImageReferrersResult, ECRError> ListImageReferrersOutcome;
 typedef Aws::Utils::Outcome<ListImagesResult, ECRError> ListImagesOutcome;
@@ -216,6 +229,7 @@ typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, ECRError> PutLifecyclePoli
 typedef Aws::Utils::Outcome<PutRegistryPolicyResult, ECRError> PutRegistryPolicyOutcome;
 typedef Aws::Utils::Outcome<PutRegistryScanningConfigurationResult, ECRError> PutRegistryScanningConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutReplicationConfigurationResult, ECRError> PutReplicationConfigurationOutcome;
+typedef Aws::Utils::Outcome<PutSigningConfigurationResult, ECRError> PutSigningConfigurationOutcome;
 typedef Aws::Utils::Outcome<RegisterPullTimeUpdateExclusionResult, ECRError> RegisterPullTimeUpdateExclusionOutcome;
 typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, ECRError> SetRepositoryPolicyOutcome;
 typedef Aws::Utils::Outcome<StartImageScanResult, ECRError> StartImageScanOutcome;
@@ -244,9 +258,11 @@ typedef std::future<DeleteRegistryPolicyOutcome> DeleteRegistryPolicyOutcomeCall
 typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
 typedef std::future<DeleteRepositoryCreationTemplateOutcome> DeleteRepositoryCreationTemplateOutcomeCallable;
 typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
+typedef std::future<DeleteSigningConfigurationOutcome> DeleteSigningConfigurationOutcomeCallable;
 typedef std::future<DeregisterPullTimeUpdateExclusionOutcome> DeregisterPullTimeUpdateExclusionOutcomeCallable;
 typedef std::future<DescribeImageReplicationStatusOutcome> DescribeImageReplicationStatusOutcomeCallable;
 typedef std::future<DescribeImageScanFindingsOutcome> DescribeImageScanFindingsOutcomeCallable;
+typedef std::future<DescribeImageSigningStatusOutcome> DescribeImageSigningStatusOutcomeCallable;
 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
 typedef std::future<DescribePullThroughCacheRulesOutcome> DescribePullThroughCacheRulesOutcomeCallable;
 typedef std::future<DescribeRegistryOutcome> DescribeRegistryOutcomeCallable;
@@ -260,6 +276,7 @@ typedef std::future<GetLifecyclePolicyPreviewOutcome> GetLifecyclePolicyPreviewO
 typedef std::future<GetRegistryPolicyOutcome> GetRegistryPolicyOutcomeCallable;
 typedef std::future<GetRegistryScanningConfigurationOutcome> GetRegistryScanningConfigurationOutcomeCallable;
 typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
+typedef std::future<GetSigningConfigurationOutcome> GetSigningConfigurationOutcomeCallable;
 typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
 typedef std::future<ListImageReferrersOutcome> ListImageReferrersOutcomeCallable;
 typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
@@ -273,6 +290,7 @@ typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable
 typedef std::future<PutRegistryPolicyOutcome> PutRegistryPolicyOutcomeCallable;
 typedef std::future<PutRegistryScanningConfigurationOutcome> PutRegistryScanningConfigurationOutcomeCallable;
 typedef std::future<PutReplicationConfigurationOutcome> PutReplicationConfigurationOutcomeCallable;
+typedef std::future<PutSigningConfigurationOutcome> PutSigningConfigurationOutcomeCallable;
 typedef std::future<RegisterPullTimeUpdateExclusionOutcome> RegisterPullTimeUpdateExclusionOutcomeCallable;
 typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
 typedef std::future<StartImageScanOutcome> StartImageScanOutcomeCallable;
@@ -335,6 +353,9 @@ typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryCreati
 typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRepositoryPolicyResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::DeleteSigningConfigurationRequest&,
+                           const Model::DeleteSigningConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSigningConfigurationResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::DeregisterPullTimeUpdateExclusionRequest&,
                            const Model::DeregisterPullTimeUpdateExclusionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -346,6 +367,9 @@ typedef std::function<void(const ECRClient*, const Model::DescribeImageReplicati
 typedef std::function<void(const ECRClient*, const Model::DescribeImageScanFindingsRequest&, const Model::DescribeImageScanFindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeImageScanFindingsResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::DescribeImageSigningStatusRequest&,
+                           const Model::DescribeImageSigningStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeImageSigningStatusResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeImagesResponseReceivedHandler;
@@ -388,6 +412,9 @@ typedef std::function<void(const ECRClient*, const Model::GetRegistryScanningCon
 typedef std::function<void(const ECRClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRepositoryPolicyResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::GetSigningConfigurationRequest&, const Model::GetSigningConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSigningConfigurationResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InitiateLayerUploadResponseReceivedHandler;
@@ -430,6 +457,9 @@ typedef std::function<void(const ECRClient*, const Model::PutRegistryScanningCon
 typedef std::function<void(const ECRClient*, const Model::PutReplicationConfigurationRequest&,
                            const Model::PutReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutReplicationConfigurationResponseReceivedHandler;
+typedef std::function<void(const ECRClient*, const Model::PutSigningConfigurationRequest&, const Model::PutSigningConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutSigningConfigurationResponseReceivedHandler;
 typedef std::function<void(const ECRClient*, const Model::RegisterPullTimeUpdateExclusionRequest&,
                            const Model::RegisterPullTimeUpdateExclusionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

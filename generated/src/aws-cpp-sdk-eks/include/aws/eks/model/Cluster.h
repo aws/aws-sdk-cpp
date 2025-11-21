@@ -15,6 +15,7 @@
 #include <aws/eks/model/ClusterStatus.h>
 #include <aws/eks/model/ComputeConfigResponse.h>
 #include <aws/eks/model/ConnectorConfigResponse.h>
+#include <aws/eks/model/ControlPlaneScalingConfig.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <aws/eks/model/Identity.h>
 #include <aws/eks/model/KubernetesNetworkConfigResponse.h>
@@ -581,6 +582,25 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The control plane scaling tier configuration. For more information, see EKS
+   * Provisioned Control Plane in the Amazon EKS User Guide.</p>
+   */
+  inline const ControlPlaneScalingConfig& GetControlPlaneScalingConfig() const { return m_controlPlaneScalingConfig; }
+  inline bool ControlPlaneScalingConfigHasBeenSet() const { return m_controlPlaneScalingConfigHasBeenSet; }
+  template <typename ControlPlaneScalingConfigT = ControlPlaneScalingConfig>
+  void SetControlPlaneScalingConfig(ControlPlaneScalingConfigT&& value) {
+    m_controlPlaneScalingConfigHasBeenSet = true;
+    m_controlPlaneScalingConfig = std::forward<ControlPlaneScalingConfigT>(value);
+  }
+  template <typename ControlPlaneScalingConfigT = ControlPlaneScalingConfig>
+  Cluster& WithControlPlaneScalingConfig(ControlPlaneScalingConfigT&& value) {
+    SetControlPlaneScalingConfig(std::forward<ControlPlaneScalingConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
@@ -662,6 +682,9 @@ class Cluster {
 
   bool m_deletionProtection{false};
   bool m_deletionProtectionHasBeenSet = false;
+
+  ControlPlaneScalingConfig m_controlPlaneScalingConfig;
+  bool m_controlPlaneScalingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

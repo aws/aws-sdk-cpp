@@ -33,6 +33,10 @@ Aws::String CreateOptimizationJobRequest::SerializePayload() const {
         OptimizationJobDeploymentInstanceTypeMapper::GetNameForOptimizationJobDeploymentInstanceType(m_deploymentInstanceType));
   }
 
+  if (m_maxInstanceCountHasBeenSet) {
+    payload.WithInteger("MaxInstanceCount", m_maxInstanceCount);
+  }
+
   if (m_optimizationEnvironmentHasBeenSet) {
     JsonValue optimizationEnvironmentJsonMap;
     for (auto& optimizationEnvironmentItem : m_optimizationEnvironment) {

@@ -38,6 +38,10 @@ RegisteredUserEmbeddingExperienceConfiguration& RegisteredUserEmbeddingExperienc
     m_generativeQnA = jsonValue.GetObject("GenerativeQnA");
     m_generativeQnAHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("QuickChat")) {
+    m_quickChat = jsonValue.GetObject("QuickChat");
+    m_quickChatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue RegisteredUserEmbeddingExperienceConfiguration::Jsonize() const {
 
   if (m_generativeQnAHasBeenSet) {
     payload.WithObject("GenerativeQnA", m_generativeQnA.Jsonize());
+  }
+
+  if (m_quickChatHasBeenSet) {
+    payload.WithObject("QuickChat", m_quickChat.Jsonize());
   }
 
   return payload;

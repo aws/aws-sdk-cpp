@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>The recorder configuration consists of the local
- * <code>MediaSourceConfig</code> details that are used as credentials to accesss
+ * <code>MediaSourceConfig</code> details that are used as credentials to access
  * the local media files streamed on the camera. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/RecorderConfig">AWS
  * API Reference</a></p>

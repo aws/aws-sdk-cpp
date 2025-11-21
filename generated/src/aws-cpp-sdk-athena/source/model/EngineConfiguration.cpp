@@ -44,6 +44,13 @@ EngineConfiguration& EngineConfiguration::operator=(JsonView jsonValue) {
     }
     m_sparkPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Classifications")) {
+    Aws::Utils::Array<JsonView> classificationsJsonList = jsonValue.GetArray("Classifications");
+    for (unsigned classificationsIndex = 0; classificationsIndex < classificationsJsonList.GetLength(); ++classificationsIndex) {
+      m_classifications.push_back(classificationsJsonList[classificationsIndex].AsObject());
+    }
+    m_classificationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -76,6 +83,14 @@ JsonValue EngineConfiguration::Jsonize() const {
       sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
     }
     payload.WithObject("SparkProperties", std::move(sparkPropertiesJsonMap));
+  }
+
+  if (m_classificationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> classificationsJsonList(m_classifications.size());
+    for (unsigned classificationsIndex = 0; classificationsIndex < classificationsJsonList.GetLength(); ++classificationsIndex) {
+      classificationsJsonList[classificationsIndex].AsObject(m_classifications[classificationsIndex].Jsonize());
+    }
+    payload.WithArray("Classifications", std::move(classificationsJsonList));
   }
 
   return payload;

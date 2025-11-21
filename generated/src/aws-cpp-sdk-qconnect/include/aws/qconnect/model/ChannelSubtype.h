@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QConnect {
 namespace Model {
-enum class ChannelSubtype { NOT_SET, EMAIL, SMS };
+enum class ChannelSubtype { NOT_SET, EMAIL, SMS, WHATSAPP, PUSH };
 
 namespace ChannelSubtypeMapper {
 AWS_QCONNECT_API ChannelSubtype GetChannelSubtypeForName(const Aws::String& name);

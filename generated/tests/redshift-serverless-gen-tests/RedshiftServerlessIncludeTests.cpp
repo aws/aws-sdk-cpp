@@ -86,6 +86,8 @@
 #include <aws/redshift-serverless/model/GetUsageLimitResult.h>
 #include <aws/redshift-serverless/model/GetWorkgroupRequest.h>
 #include <aws/redshift-serverless/model/GetWorkgroupResult.h>
+#include <aws/redshift-serverless/model/LakehouseIdcRegistration.h>
+#include <aws/redshift-serverless/model/LakehouseRegistration.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsRequest.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsResult.h>
 #include <aws/redshift-serverless/model/ListEndpointAccessRequest.h>
@@ -161,6 +163,8 @@
 #include <aws/redshift-serverless/model/UpdateCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessRequest.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessResult.h>
+#include <aws/redshift-serverless/model/UpdateLakehouseConfigurationRequest.h>
+#include <aws/redshift-serverless/model/UpdateLakehouseConfigurationResult.h>
 #include <aws/redshift-serverless/model/UpdateNamespaceRequest.h>
 #include <aws/redshift-serverless/model/UpdateNamespaceResult.h>
 #include <aws/redshift-serverless/model/UpdateScheduledActionRequest.h>

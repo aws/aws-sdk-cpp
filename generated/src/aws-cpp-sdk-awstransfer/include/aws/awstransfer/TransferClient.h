@@ -271,7 +271,11 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a web app based on specified parameters, and returns the ID for the
-   * new web app.</p><p><h3>See Also:</h3>   <a
+   * new web app. You can configure the web app to be publicly accessible or hosted
+   * within a VPC.</p> <p>For more information about using VPC endpoints with
+   * Transfer Family, see <a
+   * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+   * a Transfer Family web app in a VPC</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">AWS
    * API Reference</a></p>
    */
@@ -929,8 +933,12 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes the web app that's identified by
-   * <code>WebAppId</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the web app that's identified by <code>WebAppId</code>. The
+   * response includes endpoint configuration details such as whether the web app is
+   * publicly accessible or VPC hosted.</p> <p>For more information about using VPC
+   * endpoints with Transfer Family, see <a
+   * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+   * a Transfer Family web app in a VPC</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">AWS
    * API Reference</a></p>
    */
@@ -1454,7 +1462,11 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Lists all web apps associated with your Amazon Web Services account for your
-   * current region.</p><p><h3>See Also:</h3>   <a
+   * current region. The response includes the endpoint type for each web app,
+   * showing whether it is publicly accessible or VPC hosted.</p> <p>For more
+   * information about using VPC endpoints with Transfer Family, see <a
+   * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+   * a Transfer Family web app in a VPC</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">AWS
    * API Reference</a></p>
    */
@@ -2122,7 +2134,10 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Assigns new properties to a web app. You can modify the access point,
-   * identity provider details, and the web app units.</p><p><h3>See Also:</h3>   <a
+   * identity provider details, endpoint configuration, and the web app units.</p>
+   * <p>For more information about using VPC endpoints with Transfer Family, see <a
+   * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+   * a Transfer Family web app in a VPC</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">AWS
    * API Reference</a></p>
    */

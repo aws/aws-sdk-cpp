@@ -22,6 +22,10 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
     m_instanceCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MinInstanceCount")) {
+    m_minInstanceCount = jsonValue.GetInteger("MinInstanceCount");
+    m_minInstanceCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("InstanceGroupName")) {
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
     m_instanceGroupNameHasBeenSet = true;
@@ -75,6 +79,14 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_imageId = jsonValue.GetString("ImageId");
     m_imageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KubernetesConfig")) {
+    m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
+    m_kubernetesConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CapacityRequirements")) {
+    m_capacityRequirements = jsonValue.GetObject("CapacityRequirements");
+    m_capacityRequirementsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +95,10 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_instanceCountHasBeenSet) {
     payload.WithInteger("InstanceCount", m_instanceCount);
+  }
+
+  if (m_minInstanceCountHasBeenSet) {
+    payload.WithInteger("MinInstanceCount", m_minInstanceCount);
   }
 
   if (m_instanceGroupNameHasBeenSet) {
@@ -138,6 +154,14 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_imageIdHasBeenSet) {
     payload.WithString("ImageId", m_imageId);
+  }
+
+  if (m_kubernetesConfigHasBeenSet) {
+    payload.WithObject("KubernetesConfig", m_kubernetesConfig.Jsonize());
+  }
+
+  if (m_capacityRequirementsHasBeenSet) {
+    payload.WithObject("CapacityRequirements", m_capacityRequirements.Jsonize());
   }
 
   return payload;

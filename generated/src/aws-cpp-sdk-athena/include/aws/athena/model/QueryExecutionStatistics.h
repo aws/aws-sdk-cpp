@@ -197,6 +197,23 @@ class QueryExecutionStatistics {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of Data Processing Units (DPUs) that Athena used to run the
+   * query.</p>
+   */
+  inline double GetDpuCount() const { return m_dpuCount; }
+  inline bool DpuCountHasBeenSet() const { return m_dpuCountHasBeenSet; }
+  inline void SetDpuCount(double value) {
+    m_dpuCountHasBeenSet = true;
+    m_dpuCount = value;
+  }
+  inline QueryExecutionStatistics& WithDpuCount(double value) {
+    SetDpuCount(value);
+    return *this;
+  }
+  ///@}
  private:
   long long m_engineExecutionTimeInMillis{0};
   bool m_engineExecutionTimeInMillisHasBeenSet = false;
@@ -224,6 +241,9 @@ class QueryExecutionStatistics {
 
   ResultReuseInformation m_resultReuseInformation;
   bool m_resultReuseInformationHasBeenSet = false;
+
+  double m_dpuCount{0.0};
+  bool m_dpuCountHasBeenSet = false;
 };
 
 }  // namespace Model

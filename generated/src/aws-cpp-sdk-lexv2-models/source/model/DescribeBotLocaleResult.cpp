@@ -100,6 +100,11 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator=(const Aws::AmazonWeb
     m_generativeAISettings = jsonValue.GetObject("generativeAISettings");
     m_generativeAISettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("speechDetectionSensitivity")) {
+    m_speechDetectionSensitivity =
+        SpeechDetectionSensitivityMapper::GetSpeechDetectionSensitivityForName(jsonValue.GetString("speechDetectionSensitivity"));
+    m_speechDetectionSensitivityHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -7,9 +7,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/CrossRegionS3RestoreSourcesAccess.h>
+#include <aws/odb/model/KmsAccess.h>
 #include <aws/odb/model/ManagedS3BackupAccess.h>
 #include <aws/odb/model/S3Access.h>
 #include <aws/odb/model/ServiceNetworkEndpoint.h>
+#include <aws/odb/model/StsAccess.h>
 #include <aws/odb/model/ZeroEtlAccess.h>
 
 #include <utility>
@@ -168,6 +171,71 @@ class ManagedServices {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Security Token Service (STS) access configuration for
+   * managed services.</p>
+   */
+  inline const StsAccess& GetStsAccess() const { return m_stsAccess; }
+  inline bool StsAccessHasBeenSet() const { return m_stsAccessHasBeenSet; }
+  template <typename StsAccessT = StsAccess>
+  void SetStsAccess(StsAccessT&& value) {
+    m_stsAccessHasBeenSet = true;
+    m_stsAccess = std::forward<StsAccessT>(value);
+  }
+  template <typename StsAccessT = StsAccess>
+  ManagedServices& WithStsAccess(StsAccessT&& value) {
+    SetStsAccess(std::forward<StsAccessT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Key Management Service (KMS) access configuration for
+   * managed services.</p>
+   */
+  inline const KmsAccess& GetKmsAccess() const { return m_kmsAccess; }
+  inline bool KmsAccessHasBeenSet() const { return m_kmsAccessHasBeenSet; }
+  template <typename KmsAccessT = KmsAccess>
+  void SetKmsAccess(KmsAccessT&& value) {
+    m_kmsAccessHasBeenSet = true;
+    m_kmsAccess = std::forward<KmsAccessT>(value);
+  }
+  template <typename KmsAccessT = KmsAccess>
+  ManagedServices& WithKmsAccess(KmsAccessT&& value) {
+    SetKmsAccess(std::forward<KmsAccessT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The access configuration for the cross-Region Amazon S3 database restore
+   * source.</p>
+   */
+  inline const Aws::Vector<CrossRegionS3RestoreSourcesAccess>& GetCrossRegionS3RestoreSourcesAccess() const {
+    return m_crossRegionS3RestoreSourcesAccess;
+  }
+  inline bool CrossRegionS3RestoreSourcesAccessHasBeenSet() const { return m_crossRegionS3RestoreSourcesAccessHasBeenSet; }
+  template <typename CrossRegionS3RestoreSourcesAccessT = Aws::Vector<CrossRegionS3RestoreSourcesAccess>>
+  void SetCrossRegionS3RestoreSourcesAccess(CrossRegionS3RestoreSourcesAccessT&& value) {
+    m_crossRegionS3RestoreSourcesAccessHasBeenSet = true;
+    m_crossRegionS3RestoreSourcesAccess = std::forward<CrossRegionS3RestoreSourcesAccessT>(value);
+  }
+  template <typename CrossRegionS3RestoreSourcesAccessT = Aws::Vector<CrossRegionS3RestoreSourcesAccess>>
+  ManagedServices& WithCrossRegionS3RestoreSourcesAccess(CrossRegionS3RestoreSourcesAccessT&& value) {
+    SetCrossRegionS3RestoreSourcesAccess(std::forward<CrossRegionS3RestoreSourcesAccessT>(value));
+    return *this;
+  }
+  template <typename CrossRegionS3RestoreSourcesAccessT = CrossRegionS3RestoreSourcesAccess>
+  ManagedServices& AddCrossRegionS3RestoreSourcesAccess(CrossRegionS3RestoreSourcesAccessT&& value) {
+    m_crossRegionS3RestoreSourcesAccessHasBeenSet = true;
+    m_crossRegionS3RestoreSourcesAccess.emplace_back(std::forward<CrossRegionS3RestoreSourcesAccessT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceNetworkArn;
   bool m_serviceNetworkArnHasBeenSet = false;
@@ -189,6 +257,15 @@ class ManagedServices {
 
   S3Access m_s3Access;
   bool m_s3AccessHasBeenSet = false;
+
+  StsAccess m_stsAccess;
+  bool m_stsAccessHasBeenSet = false;
+
+  KmsAccess m_kmsAccess;
+  bool m_kmsAccessHasBeenSet = false;
+
+  Aws::Vector<CrossRegionS3RestoreSourcesAccess> m_crossRegionS3RestoreSourcesAccess;
+  bool m_crossRegionS3RestoreSourcesAccessHasBeenSet = false;
 };
 
 }  // namespace Model

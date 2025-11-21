@@ -7,7 +7,10 @@
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/EngineConfiguration.h>
+#include <aws/athena/model/MonitoringConfiguration.h>
+#include <aws/athena/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -88,6 +91,45 @@ class StartSessionRequest : public AthenaRequest {
 
   ///@{
   /**
+   * <p>The ARN of the execution role used to access user resources for Spark
+   * sessions and Identity Center enabled workgroups. This property applies only to
+   * Spark enabled workgroups and Identity Center enabled workgroups.</p>
+   */
+  inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
+  inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
+  template <typename ExecutionRoleT = Aws::String>
+  void SetExecutionRole(ExecutionRoleT&& value) {
+    m_executionRoleHasBeenSet = true;
+    m_executionRole = std::forward<ExecutionRoleT>(value);
+  }
+  template <typename ExecutionRoleT = Aws::String>
+  StartSessionRequest& WithExecutionRole(ExecutionRoleT&& value) {
+    SetExecutionRole(std::forward<ExecutionRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains the configuration settings for managed log persistence, delivering
+   * logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
+  inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  void SetMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    m_monitoringConfigurationHasBeenSet = true;
+    m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value);
+  }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  StartSessionRequest& WithMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The notebook version. This value is supplied automatically for notebook
    * sessions in the Athena console and is not required for programmatic session
    * access. The only valid notebook version is <code>Athena notebook version
@@ -150,6 +192,46 @@ class StartSessionRequest : public AthenaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of comma separated tags to add to the session that is created.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  StartSessionRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  StartSessionRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Copies the tags from the Workgroup to the Session when.</p>
+   */
+  inline bool GetCopyWorkGroupTags() const { return m_copyWorkGroupTags; }
+  inline bool CopyWorkGroupTagsHasBeenSet() const { return m_copyWorkGroupTagsHasBeenSet; }
+  inline void SetCopyWorkGroupTags(bool value) {
+    m_copyWorkGroupTagsHasBeenSet = true;
+    m_copyWorkGroupTags = value;
+  }
+  inline StartSessionRequest& WithCopyWorkGroupTags(bool value) {
+    SetCopyWorkGroupTags(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;
@@ -160,6 +242,12 @@ class StartSessionRequest : public AthenaRequest {
   EngineConfiguration m_engineConfiguration;
   bool m_engineConfigurationHasBeenSet = false;
 
+  Aws::String m_executionRole;
+  bool m_executionRoleHasBeenSet = false;
+
+  MonitoringConfiguration m_monitoringConfiguration;
+  bool m_monitoringConfigurationHasBeenSet = false;
+
   Aws::String m_notebookVersion;
   bool m_notebookVersionHasBeenSet = false;
 
@@ -168,6 +256,12 @@ class StartSessionRequest : public AthenaRequest {
 
   Aws::String m_clientRequestToken;
   bool m_clientRequestTokenHasBeenSet = false;
+
+  Aws::Vector<Tag> m_tags;
+  bool m_tagsHasBeenSet = false;
+
+  bool m_copyWorkGroupTags{false};
+  bool m_copyWorkGroupTagsHasBeenSet = false;
 };
 
 }  // namespace Model

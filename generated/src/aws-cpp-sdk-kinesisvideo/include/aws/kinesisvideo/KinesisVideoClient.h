@@ -446,6 +446,39 @@ class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves the current storage configuration for the specified Kinesis video
+   * stream.</p> <p>In the request, you must specify either the
+   * <code>StreamName</code> or the <code>StreamARN</code>.</p> <p>You must have
+   * permissions for the <code>KinesisVideo:DescribeStreamStorageConfiguration</code>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStreamStorageConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeStreamStorageConfigurationOutcome DescribeStreamStorageConfiguration(
+      const Model::DescribeStreamStorageConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeStreamStorageConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeStreamStorageConfigurationRequestT = Model::DescribeStreamStorageConfigurationRequest>
+  Model::DescribeStreamStorageConfigurationOutcomeCallable DescribeStreamStorageConfigurationCallable(
+      const DescribeStreamStorageConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&KinesisVideoClient::DescribeStreamStorageConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeStreamStorageConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeStreamStorageConfigurationRequestT = Model::DescribeStreamStorageConfigurationRequest>
+  void DescribeStreamStorageConfigurationAsync(const DescribeStreamStorageConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const DescribeStreamStorageConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&KinesisVideoClient::DescribeStreamStorageConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Gets an endpoint for a specified stream for either reading or writing. Use
    * this endpoint in your application to read from the specified stream (using the
    * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
@@ -485,12 +518,14 @@ class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClien
    * <code>Protocols</code> is used to determine the communication mechanism. For
    * example, if you specify <code>WSS</code> as the protocol, this API produces a
    * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
-   * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
-   * messaging permissions. A <code>MASTER</code> role results in this API generating
-   * an endpoint that a client can use to communicate with any of the viewers on the
-   * channel. A <code>VIEWER</code> role results in this API generating an endpoint
-   * that a client can use to communicate only with a <code>MASTER</code>.
-   * </p><p><h3>See Also:</h3>   <a
+   * this API generates an HTTPS endpoint. If you specify <code>WEBRTC</code> as the
+   * protocol, but the signaling channel isn't configured for ingestion, you will
+   * receive the error <code>InvalidArgumentException</code>.</p> <p>
+   * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
+   * role results in this API generating an endpoint that a client can use to
+   * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
+   * results in this API generating an endpoint that a client can use to communicate
+   * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
    * API Reference</a></p>
    */
@@ -1031,6 +1066,41 @@ class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClien
   void UpdateStreamAsync(const UpdateStreamRequestT& request, const UpdateStreamResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisVideoClient::UpdateStream, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the storage configuration for an existing Kinesis video stream.</p>
+   * <p>This operation allows you to modify the storage tier settings for a stream,
+   * enabling you to optimize storage costs and performance based on your access
+   * patterns.</p> <p> <code>UpdateStreamStorageConfiguration</code> is an
+   * asynchronous operation.</p> <p>You must have permissions for the
+   * <code>KinesisVideo:UpdateStreamStorageConfiguration</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStreamStorageConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateStreamStorageConfigurationOutcome UpdateStreamStorageConfiguration(
+      const Model::UpdateStreamStorageConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateStreamStorageConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateStreamStorageConfigurationRequestT = Model::UpdateStreamStorageConfigurationRequest>
+  Model::UpdateStreamStorageConfigurationOutcomeCallable UpdateStreamStorageConfigurationCallable(
+      const UpdateStreamStorageConfigurationRequestT& request) const {
+    return SubmitCallable(&KinesisVideoClient::UpdateStreamStorageConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateStreamStorageConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateStreamStorageConfigurationRequestT = Model::UpdateStreamStorageConfigurationRequest>
+  void UpdateStreamStorageConfigurationAsync(const UpdateStreamStorageConfigurationRequestT& request,
+                                             const UpdateStreamStorageConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisVideoClient::UpdateStreamStorageConfiguration, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

@@ -39,5 +39,13 @@ Aws::String CreateContactFlowModuleRequest::SerializePayload() const {
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_settingsHasBeenSet) {
+    payload.WithString("Settings", m_settings);
+  }
+
+  if (m_externalInvocationConfigurationHasBeenSet) {
+    payload.WithObject("ExternalInvocationConfiguration", m_externalInvocationConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

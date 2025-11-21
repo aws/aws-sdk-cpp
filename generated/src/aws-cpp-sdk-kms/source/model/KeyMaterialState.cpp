@@ -18,6 +18,7 @@ namespace KeyMaterialStateMapper {
 static const int NON_CURRENT_HASH = HashingUtils::HashString("NON_CURRENT");
 static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
 static const int PENDING_ROTATION_HASH = HashingUtils::HashString("PENDING_ROTATION");
+static const int PENDING_MULTI_REGION_IMPORT_AND_ROTATION_HASH = HashingUtils::HashString("PENDING_MULTI_REGION_IMPORT_AND_ROTATION");
 
 KeyMaterialState GetKeyMaterialStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ KeyMaterialState GetKeyMaterialStateForName(const Aws::String& name) {
     return KeyMaterialState::CURRENT;
   } else if (hashCode == PENDING_ROTATION_HASH) {
     return KeyMaterialState::PENDING_ROTATION;
+  } else if (hashCode == PENDING_MULTI_REGION_IMPORT_AND_ROTATION_HASH) {
+    return KeyMaterialState::PENDING_MULTI_REGION_IMPORT_AND_ROTATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForKeyMaterialState(KeyMaterialState enumValue) {
       return "CURRENT";
     case KeyMaterialState::PENDING_ROTATION:
       return "PENDING_ROTATION";
+    case KeyMaterialState::PENDING_MULTI_REGION_IMPORT_AND_ROTATION:
+      return "PENDING_MULTI_REGION_IMPORT_AND_ROTATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

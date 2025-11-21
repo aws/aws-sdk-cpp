@@ -876,6 +876,36 @@ class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Deletes the account-level enforced guardrail configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteEnforcedGuardrailConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteEnforcedGuardrailConfigurationOutcome DeleteEnforcedGuardrailConfiguration(
+      const Model::DeleteEnforcedGuardrailConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteEnforcedGuardrailConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteEnforcedGuardrailConfigurationRequestT = Model::DeleteEnforcedGuardrailConfigurationRequest>
+  Model::DeleteEnforcedGuardrailConfigurationOutcomeCallable DeleteEnforcedGuardrailConfigurationCallable(
+      const DeleteEnforcedGuardrailConfigurationRequestT& request) const {
+    return SubmitCallable(&BedrockClient::DeleteEnforcedGuardrailConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteEnforcedGuardrailConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteEnforcedGuardrailConfigurationRequestT = Model::DeleteEnforcedGuardrailConfigurationRequest>
+  void DeleteEnforcedGuardrailConfigurationAsync(const DeleteEnforcedGuardrailConfigurationRequestT& request,
+                                                 const DeleteEnforcedGuardrailConfigurationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::DeleteEnforcedGuardrailConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Delete the model access agreement for the specified model.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">AWS
@@ -2097,6 +2127,36 @@ class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Lists the account-level enforced guardrail configurations.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEnforcedGuardrailsConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEnforcedGuardrailsConfigurationOutcome ListEnforcedGuardrailsConfiguration(
+      const Model::ListEnforcedGuardrailsConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListEnforcedGuardrailsConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListEnforcedGuardrailsConfigurationRequestT = Model::ListEnforcedGuardrailsConfigurationRequest>
+  Model::ListEnforcedGuardrailsConfigurationOutcomeCallable ListEnforcedGuardrailsConfigurationCallable(
+      const ListEnforcedGuardrailsConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::ListEnforcedGuardrailsConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for ListEnforcedGuardrailsConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListEnforcedGuardrailsConfigurationRequestT = Model::ListEnforcedGuardrailsConfigurationRequest>
+  void ListEnforcedGuardrailsConfigurationAsync(const ListEnforcedGuardrailsConfigurationResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const ListEnforcedGuardrailsConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::ListEnforcedGuardrailsConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Lists all existing evaluation jobs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">AWS
    * API Reference</a></p>
@@ -2530,6 +2590,36 @@ class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public 
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the account-level enforced guardrail configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutEnforcedGuardrailConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutEnforcedGuardrailConfigurationOutcome PutEnforcedGuardrailConfiguration(
+      const Model::PutEnforcedGuardrailConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutEnforcedGuardrailConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename PutEnforcedGuardrailConfigurationRequestT = Model::PutEnforcedGuardrailConfigurationRequest>
+  Model::PutEnforcedGuardrailConfigurationOutcomeCallable PutEnforcedGuardrailConfigurationCallable(
+      const PutEnforcedGuardrailConfigurationRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutEnforcedGuardrailConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutEnforcedGuardrailConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutEnforcedGuardrailConfigurationRequestT = Model::PutEnforcedGuardrailConfigurationRequest>
+  void PutEnforcedGuardrailConfigurationAsync(const PutEnforcedGuardrailConfigurationRequestT& request,
+                                              const PutEnforcedGuardrailConfigurationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutEnforcedGuardrailConfiguration, request, handler, context);
   }
 
   /**

@@ -8,6 +8,7 @@
 #include <aws/lexv2-models/LexModelsV2Request.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
+#include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/VoiceSettings.h>
 
 #include <utility>
@@ -162,6 +163,24 @@ class UpdateBotLocaleRequest : public LexModelsV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The new sensitivity level for voice activity detection (VAD) in the bot
+   * locale. This setting helps optimize speech recognition accuracy by adjusting how
+   * the system responds to background noise during voice interactions.</p>
+   */
+  inline SpeechDetectionSensitivity GetSpeechDetectionSensitivity() const { return m_speechDetectionSensitivity; }
+  inline bool SpeechDetectionSensitivityHasBeenSet() const { return m_speechDetectionSensitivityHasBeenSet; }
+  inline void SetSpeechDetectionSensitivity(SpeechDetectionSensitivity value) {
+    m_speechDetectionSensitivityHasBeenSet = true;
+    m_speechDetectionSensitivity = value;
+  }
+  inline UpdateBotLocaleRequest& WithSpeechDetectionSensitivity(SpeechDetectionSensitivity value) {
+    SetSpeechDetectionSensitivity(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_botId;
   bool m_botIdHasBeenSet = false;
@@ -183,6 +202,9 @@ class UpdateBotLocaleRequest : public LexModelsV2Request {
 
   GenerativeAISettings m_generativeAISettings;
   bool m_generativeAISettingsHasBeenSet = false;
+
+  SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
+  bool m_speechDetectionSensitivityHasBeenSet = false;
 };
 
 }  // namespace Model

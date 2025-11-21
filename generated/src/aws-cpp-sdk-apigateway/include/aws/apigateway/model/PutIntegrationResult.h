@@ -404,6 +404,23 @@ class PutIntegrationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The ALB or NLB listener to send the request to. </p>
+   */
+  inline const Aws::String& GetIntegrationTarget() const { return m_integrationTarget; }
+  template <typename IntegrationTargetT = Aws::String>
+  void SetIntegrationTarget(IntegrationTargetT&& value) {
+    m_integrationTargetHasBeenSet = true;
+    m_integrationTarget = std::forward<IntegrationTargetT>(value);
+  }
+  template <typename IntegrationTargetT = Aws::String>
+  PutIntegrationResult& WithIntegrationTarget(IntegrationTargetT&& value) {
+    SetIntegrationTarget(std::forward<IntegrationTargetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -465,6 +482,9 @@ class PutIntegrationResult {
 
   ResponseTransferMode m_responseTransferMode{ResponseTransferMode::NOT_SET};
   bool m_responseTransferModeHasBeenSet = false;
+
+  Aws::String m_integrationTarget;
+  bool m_integrationTargetHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

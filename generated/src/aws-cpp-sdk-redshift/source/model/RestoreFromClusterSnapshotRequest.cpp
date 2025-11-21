@@ -187,6 +187,14 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const {
     ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
+  if (m_catalogNameHasBeenSet) {
+    ss << "CatalogName=" << StringUtils::URLEncode(m_catalogName.c_str()) << "&";
+  }
+
+  if (m_redshiftIdcApplicationArnHasBeenSet) {
+    ss << "RedshiftIdcApplicationArn=" << StringUtils::URLEncode(m_redshiftIdcApplicationArn.c_str()) << "&";
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

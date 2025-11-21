@@ -85,6 +85,12 @@ RedshiftIdcApplication& RedshiftIdcApplication::operator=(const XmlNode& xmlNode
 
       m_serviceIntegrationsHasBeenSet = true;
     }
+    XmlNode applicationTypeNode = resultNode.FirstChild("ApplicationType");
+    if (!applicationTypeNode.IsNull()) {
+      m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applicationTypeNode.GetText()).c_str()));
+      m_applicationTypeHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
@@ -167,6 +173,11 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
     }
   }
 
+  if (m_applicationTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ApplicationType=" << StringUtils::URLEncode(ApplicationTypeMapper::GetNameForApplicationType(m_applicationType)) << "&";
+  }
+
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;
     for (auto& item : m_tags) {
@@ -225,6 +236,10 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
       serviceIntegrationsSs << location << ".ServiceIntegrations.member." << serviceIntegrationsIdx++;
       item.OutputToStream(oStream, serviceIntegrationsSs.str().c_str());
     }
+  }
+  if (m_applicationTypeHasBeenSet) {
+    oStream << location
+            << ".ApplicationType=" << StringUtils::URLEncode(ApplicationTypeMapper::GetNameForApplicationType(m_applicationType)) << "&";
   }
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;

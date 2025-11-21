@@ -45,6 +45,10 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
     m_notebookVersion = jsonValue.GetString("NotebookVersion");
     m_notebookVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MonitoringConfiguration")) {
+    m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
+    m_monitoringConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SessionConfiguration")) {
     m_sessionConfiguration = jsonValue.GetObject("SessionConfiguration");
     m_sessionConfigurationHasBeenSet = true;

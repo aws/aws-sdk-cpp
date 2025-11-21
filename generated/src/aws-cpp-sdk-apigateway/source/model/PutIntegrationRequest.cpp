@@ -88,5 +88,9 @@ Aws::String PutIntegrationRequest::SerializePayload() const {
     payload.WithString("responseTransferMode", ResponseTransferModeMapper::GetNameForResponseTransferMode(m_responseTransferMode));
   }
 
+  if (m_integrationTargetHasBeenSet) {
+    payload.WithString("integrationTarget", m_integrationTarget);
+  }
+
   return payload.View().WriteReadable();
 }

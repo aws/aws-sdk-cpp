@@ -1666,6 +1666,37 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
   }
 
   /**
+   * <p>Modifies the lakehouse configuration for a namespace. This operation allows
+   * you to manage Amazon Redshift federated permissions and Amazon Web Services IAM
+   * Identity Center trusted identity propagation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLakehouseConfigurationOutcome UpdateLakehouseConfiguration(
+      const Model::UpdateLakehouseConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLakehouseConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateLakehouseConfigurationRequestT = Model::UpdateLakehouseConfigurationRequest>
+  Model::UpdateLakehouseConfigurationOutcomeCallable UpdateLakehouseConfigurationCallable(
+      const UpdateLakehouseConfigurationRequestT& request) const {
+    return SubmitCallable(&RedshiftServerlessClient::UpdateLakehouseConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLakehouseConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateLakehouseConfigurationRequestT = Model::UpdateLakehouseConfigurationRequest>
+  void UpdateLakehouseConfigurationAsync(const UpdateLakehouseConfigurationRequestT& request,
+                                         const UpdateLakehouseConfigurationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftServerlessClient::UpdateLakehouseConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Updates a namespace with the specified settings. Unless required, you can't
    * update multiple parameters in one request. For example, you must specify both
    * <code>adminUsername</code> and <code>adminUserPassword</code> to update either

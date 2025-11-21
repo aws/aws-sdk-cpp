@@ -506,6 +506,41 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Deletes the registry's signing configuration. Images pushed after deletion of
+   * the signing configuration will no longer be automatically signed.</p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+   * signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+   *  <p>Deleting the signing configuration does not affect existing image
+   * signatures.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSigningConfigurationOutcome DeleteSigningConfiguration(
+      const Model::DeleteSigningConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteSigningConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteSigningConfigurationRequestT = Model::DeleteSigningConfigurationRequest>
+  Model::DeleteSigningConfigurationOutcomeCallable DeleteSigningConfigurationCallable(
+      const DeleteSigningConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&ECRClient::DeleteSigningConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSigningConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSigningConfigurationRequestT = Model::DeleteSigningConfigurationRequest>
+  void DeleteSigningConfigurationAsync(const DeleteSigningConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const DeleteSigningConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&ECRClient::DeleteSigningConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Removes a principal from the pull time update exclusion list for a registry.
    * Once removed, Amazon ECR will resume updating the pull time if the specified
    * principal pulls an image.</p><p><h3>See Also:</h3>   <a
@@ -593,6 +628,40 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                       const DescribeImageScanFindingsResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::DescribeImageScanFindings, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the signing status for a specified image. If the image matched
+   * signing rules that reference different signing profiles, a status is returned
+   * for each profile.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+   * signing</a> in the <i>Amazon Elastic Container Registry User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeImageSigningStatusOutcome DescribeImageSigningStatus(
+      const Model::DescribeImageSigningStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeImageSigningStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeImageSigningStatusRequestT = Model::DescribeImageSigningStatusRequest>
+  Model::DescribeImageSigningStatusOutcomeCallable DescribeImageSigningStatusCallable(
+      const DescribeImageSigningStatusRequestT& request) const {
+    return SubmitCallable(&ECRClient::DescribeImageSigningStatus, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeImageSigningStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeImageSigningStatusRequestT = Model::DescribeImageSigningStatusRequest>
+  void DescribeImageSigningStatusAsync(const DescribeImageSigningStatusRequestT& request,
+                                       const DescribeImageSigningStatusResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::DescribeImageSigningStatus, request, handler, context);
   }
 
   /**
@@ -984,6 +1053,38 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void GetRepositoryPolicyAsync(const GetRepositoryPolicyRequestT& request, const GetRepositoryPolicyResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::GetRepositoryPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the registry's signing configuration, which defines rules for
+   * automatically signing images using Amazon Web Services Signer.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+   * signing</a> in the <i>Amazon Elastic Container Registry User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSigningConfigurationOutcome GetSigningConfiguration(const Model::GetSigningConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetSigningConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSigningConfigurationRequestT = Model::GetSigningConfigurationRequest>
+  Model::GetSigningConfigurationOutcomeCallable GetSigningConfigurationCallable(const GetSigningConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&ECRClient::GetSigningConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetSigningConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSigningConfigurationRequestT = Model::GetSigningConfigurationRequest>
+  void GetSigningConfigurationAsync(const GetSigningConfigurationResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const GetSigningConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&ECRClient::GetSigningConfiguration, request, handler, context);
   }
 
   /**
@@ -1388,6 +1489,41 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                         const PutReplicationConfigurationResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::PutReplicationConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates the registry's signing configuration, which defines rules
+   * for automatically signing images with Amazon Web Services Signer.</p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+   * signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+   *  <p>To successfully generate a signature, the IAM principal pushing images
+   * must have permission to sign payloads with the Amazon Web Services Signer
+   * signing profile referenced in the signing configuration.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutSigningConfigurationOutcome PutSigningConfiguration(const Model::PutSigningConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutSigningConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutSigningConfigurationRequestT = Model::PutSigningConfigurationRequest>
+  Model::PutSigningConfigurationOutcomeCallable PutSigningConfigurationCallable(const PutSigningConfigurationRequestT& request) const {
+    return SubmitCallable(&ECRClient::PutSigningConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutSigningConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutSigningConfigurationRequestT = Model::PutSigningConfigurationRequest>
+  void PutSigningConfigurationAsync(const PutSigningConfigurationRequestT& request,
+                                    const PutSigningConfigurationResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::PutSigningConfiguration, request, handler, context);
   }
 
   /**

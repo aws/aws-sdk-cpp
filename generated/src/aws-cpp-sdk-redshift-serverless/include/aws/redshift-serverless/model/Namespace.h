@@ -94,6 +94,25 @@ class Namespace {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the
+   * namespace enabled with Amazon Redshift federated permissions.</p>
+   */
+  inline const Aws::String& GetCatalogArn() const { return m_catalogArn; }
+  inline bool CatalogArnHasBeenSet() const { return m_catalogArnHasBeenSet; }
+  template <typename CatalogArnT = Aws::String>
+  void SetCatalogArn(CatalogArnT&& value) {
+    m_catalogArnHasBeenSet = true;
+    m_catalogArn = std::forward<CatalogArnT>(value);
+  }
+  template <typename CatalogArnT = Aws::String>
+  Namespace& WithCatalogArn(CatalogArnT&& value) {
+    SetCatalogArn(std::forward<CatalogArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date of when the namespace was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
@@ -186,6 +205,26 @@ class Namespace {
   template <typename KmsKeyIdT = Aws::String>
   Namespace& WithKmsKeyId(KmsKeyIdT&& value) {
     SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the lakehouse registration for the namespace. Indicates whether
+   * the namespace is successfully registered with Amazon Redshift federated
+   * permissions.</p>
+   */
+  inline const Aws::String& GetLakehouseRegistrationStatus() const { return m_lakehouseRegistrationStatus; }
+  inline bool LakehouseRegistrationStatusHasBeenSet() const { return m_lakehouseRegistrationStatusHasBeenSet; }
+  template <typename LakehouseRegistrationStatusT = Aws::String>
+  void SetLakehouseRegistrationStatus(LakehouseRegistrationStatusT&& value) {
+    m_lakehouseRegistrationStatusHasBeenSet = true;
+    m_lakehouseRegistrationStatus = std::forward<LakehouseRegistrationStatusT>(value);
+  }
+  template <typename LakehouseRegistrationStatusT = Aws::String>
+  Namespace& WithLakehouseRegistrationStatus(LakehouseRegistrationStatusT&& value) {
+    SetLakehouseRegistrationStatus(std::forward<LakehouseRegistrationStatusT>(value));
     return *this;
   }
   ///@}
@@ -297,6 +336,9 @@ class Namespace {
   Aws::String m_adminUsername;
   bool m_adminUsernameHasBeenSet = false;
 
+  Aws::String m_catalogArn;
+  bool m_catalogArnHasBeenSet = false;
+
   Aws::Utils::DateTime m_creationDate{};
   bool m_creationDateHasBeenSet = false;
 
@@ -311,6 +353,9 @@ class Namespace {
 
   Aws::String m_kmsKeyId;
   bool m_kmsKeyIdHasBeenSet = false;
+
+  Aws::String m_lakehouseRegistrationStatus;
+  bool m_lakehouseRegistrationStatusHasBeenSet = false;
 
   Aws::Vector<LogExport> m_logExports;
   bool m_logExportsHasBeenSet = false;

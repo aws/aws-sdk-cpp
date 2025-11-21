@@ -181,6 +181,9 @@ class DkimAttributes {
    * <p> <code>AWS_SES_CA_CENTRAL_1</code> – Indicates that DKIM was configured for
    * the identity by replicating signing attributes from a parent identity in Canada
    * (Central) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
+   * <code>AWS_SES_CA_WEST_1</code> – Indicates that DKIM was configured for the
+   * identity by replicating signing attributes from a parent identity in Canada
+   * (Calgary) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
    * <code>AWS_SES_AP_SOUTHEAST_1</code> – Indicates that DKIM was configured for the
    * identity by replicating signing attributes from a parent identity in Asia
    * Pacific (Singapore) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
@@ -190,6 +193,9 @@ class DkimAttributes {
    * <p> <code>AWS_SES_AP_SOUTHEAST_3</code> – Indicates that DKIM was configured for
    * the identity by replicating signing attributes from a parent identity in Asia
    * Pacific (Jakarta) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
+   * <p> <code>AWS_SES_AP_SOUTHEAST_5</code> – Indicates that DKIM was configured for
+   * the identity by replicating signing attributes from a parent identity in Asia
+   * Pacific (Malaysia) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
    * <p> <code>AWS_SES_EU_CENTRAL_1</code> – Indicates that DKIM was configured for
    * the identity by replicating signing attributes from a parent identity in Europe
    * (Frankfurt) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>

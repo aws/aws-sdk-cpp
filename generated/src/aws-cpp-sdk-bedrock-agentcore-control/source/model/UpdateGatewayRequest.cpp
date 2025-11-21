@@ -47,6 +47,16 @@ Aws::String UpdateGatewayRequest::SerializePayload() const {
     payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
+  if (m_interceptorConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> interceptorConfigurationsJsonList(m_interceptorConfigurations.size());
+    for (unsigned interceptorConfigurationsIndex = 0; interceptorConfigurationsIndex < interceptorConfigurationsJsonList.GetLength();
+         ++interceptorConfigurationsIndex) {
+      interceptorConfigurationsJsonList[interceptorConfigurationsIndex].AsObject(
+          m_interceptorConfigurations[interceptorConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("interceptorConfigurations", std::move(interceptorConfigurationsJsonList));
+  }
+
   if (m_exceptionLevelHasBeenSet) {
     payload.WithString("exceptionLevel", ExceptionLevelMapper::GetNameForExceptionLevel(m_exceptionLevel));
   }

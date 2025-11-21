@@ -3870,6 +3870,37 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Modifies the lakehouse configuration for a cluster. This operation allows you
+   * to manage Amazon Redshift federated permissions and Amazon Web Services IAM
+   * Identity Center trusted identity propagation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyLakehouseConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyLakehouseConfigurationOutcome ModifyLakehouseConfiguration(
+      const Model::ModifyLakehouseConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyLakehouseConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyLakehouseConfigurationRequestT = Model::ModifyLakehouseConfigurationRequest>
+  Model::ModifyLakehouseConfigurationOutcomeCallable ModifyLakehouseConfigurationCallable(
+      const ModifyLakehouseConfigurationRequestT& request) const {
+    return SubmitCallable(&RedshiftClient::ModifyLakehouseConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyLakehouseConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyLakehouseConfigurationRequestT = Model::ModifyLakehouseConfigurationRequest>
+  void ModifyLakehouseConfigurationAsync(const ModifyLakehouseConfigurationRequestT& request,
+                                         const ModifyLakehouseConfigurationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftClient::ModifyLakehouseConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Changes an existing Amazon Redshift IAM Identity Center
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">AWS

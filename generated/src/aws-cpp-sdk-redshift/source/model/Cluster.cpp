@@ -389,6 +389,16 @@ Cluster& Cluster::operator=(const XmlNode& xmlNode) {
       m_multiAZSecondary = multiAZSecondaryNode;
       m_multiAZSecondaryHasBeenSet = true;
     }
+    XmlNode lakehouseRegistrationStatusNode = resultNode.FirstChild("LakehouseRegistrationStatus");
+    if (!lakehouseRegistrationStatusNode.IsNull()) {
+      m_lakehouseRegistrationStatus = Aws::Utils::Xml::DecodeEscapedXmlText(lakehouseRegistrationStatusNode.GetText());
+      m_lakehouseRegistrationStatusHasBeenSet = true;
+    }
+    XmlNode catalogArnNode = resultNode.FirstChild("CatalogArn");
+    if (!catalogArnNode.IsNull()) {
+      m_catalogArn = Aws::Utils::Xml::DecodeEscapedXmlText(catalogArnNode.GetText());
+      m_catalogArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -719,6 +729,15 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
     multiAZSecondaryLocationAndMemberSs << location << index << locationValue << ".MultiAZSecondary";
     m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMemberSs.str().c_str());
   }
+
+  if (m_lakehouseRegistrationStatusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".LakehouseRegistrationStatus=" << StringUtils::URLEncode(m_lakehouseRegistrationStatus.c_str()) << "&";
+  }
+
+  if (m_catalogArnHasBeenSet) {
+    oStream << location << index << locationValue << ".CatalogArn=" << StringUtils::URLEncode(m_catalogArn.c_str()) << "&";
+  }
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -973,6 +992,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const 
     Aws::String multiAZSecondaryLocationAndMember(location);
     multiAZSecondaryLocationAndMember += ".MultiAZSecondary";
     m_multiAZSecondary.OutputToStream(oStream, multiAZSecondaryLocationAndMember.c_str());
+  }
+  if (m_lakehouseRegistrationStatusHasBeenSet) {
+    oStream << location << ".LakehouseRegistrationStatus=" << StringUtils::URLEncode(m_lakehouseRegistrationStatus.c_str()) << "&";
+  }
+  if (m_catalogArnHasBeenSet) {
+    oStream << location << ".CatalogArn=" << StringUtils::URLEncode(m_catalogArn.c_str()) << "&";
   }
 }
 

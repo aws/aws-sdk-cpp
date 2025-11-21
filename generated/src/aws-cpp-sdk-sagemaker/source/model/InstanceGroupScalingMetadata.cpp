@@ -26,6 +26,10 @@ InstanceGroupScalingMetadata& InstanceGroupScalingMetadata::operator=(JsonView j
     m_targetCount = jsonValue.GetInteger("TargetCount");
     m_targetCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MinCount")) {
+    m_minCount = jsonValue.GetInteger("MinCount");
+    m_minCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("FailureMessage")) {
     m_failureMessage = jsonValue.GetString("FailureMessage");
     m_failureMessageHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue InstanceGroupScalingMetadata::Jsonize() const {
 
   if (m_targetCountHasBeenSet) {
     payload.WithInteger("TargetCount", m_targetCount);
+  }
+
+  if (m_minCountHasBeenSet) {
+    payload.WithInteger("MinCount", m_minCount);
   }
 
   if (m_failureMessageHasBeenSet) {

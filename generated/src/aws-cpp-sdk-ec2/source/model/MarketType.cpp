@@ -17,6 +17,7 @@ namespace MarketTypeMapper {
 
 static const int spot_HASH = HashingUtils::HashString("spot");
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
+static const int interruptible_capacity_reservation_HASH = HashingUtils::HashString("interruptible-capacity-reservation");
 
 MarketType GetMarketTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ MarketType GetMarketTypeForName(const Aws::String& name) {
     return MarketType::spot;
   } else if (hashCode == capacity_block_HASH) {
     return MarketType::capacity_block;
+  } else if (hashCode == interruptible_capacity_reservation_HASH) {
+    return MarketType::interruptible_capacity_reservation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForMarketType(MarketType enumValue) {
       return "spot";
     case MarketType::capacity_block:
       return "capacity-block";
+    case MarketType::interruptible_capacity_reservation:
+      return "interruptible-capacity-reservation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

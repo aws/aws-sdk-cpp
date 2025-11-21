@@ -323,6 +323,7 @@
 #include <aws/lexv2-models/model/IntentClassificationTestResults.h>
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/IntentConfirmationSetting.h>
+#include <aws/lexv2-models/model/IntentDisambiguationSettings.h>
 #include <aws/lexv2-models/model/IntentFilter.h>
 #include <aws/lexv2-models/model/IntentFilterName.h>
 #include <aws/lexv2-models/model/IntentFilterOperator.h>
@@ -479,6 +480,7 @@
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/lexv2-models/model/SortOrder.h>
 #include <aws/lexv2-models/model/Specifications.h>
+#include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/StartBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartBotResourceGenerationRequest.h>

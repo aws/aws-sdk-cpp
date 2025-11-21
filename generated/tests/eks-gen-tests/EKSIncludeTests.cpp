@@ -63,6 +63,7 @@
 #include <aws/eks/model/ConnectorConfigResponse.h>
 #include <aws/eks/model/ControlPlanePlacementRequest.h>
 #include <aws/eks/model/ControlPlanePlacementResponse.h>
+#include <aws/eks/model/ControlPlaneScalingConfig.h>
 #include <aws/eks/model/CreateAccessConfigRequest.h>
 #include <aws/eks/model/CreateAccessEntryRequest.h>
 #include <aws/eks/model/CreateAccessEntryResult.h>
@@ -210,6 +211,7 @@
 #include <aws/eks/model/PodIdentityAssociation.h>
 #include <aws/eks/model/PodIdentityAssociationSummary.h>
 #include <aws/eks/model/Provider.h>
+#include <aws/eks/model/ProvisionedControlPlaneTier.h>
 #include <aws/eks/model/RegisterClusterRequest.h>
 #include <aws/eks/model/RegisterClusterResult.h>
 #include <aws/eks/model/RemoteAccessConfig.h>

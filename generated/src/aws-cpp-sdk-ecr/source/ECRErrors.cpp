@@ -44,6 +44,7 @@ static const int SCAN_NOT_FOUND_HASH = HashingUtils::HashString("ScanNotFoundExc
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
 static const int LIFECYCLE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyNotFoundException");
 static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyPreviewNotFoundException");
+static const int SIGNING_CONFIGURATION_NOT_FOUND_HASH = HashingUtils::HashString("SigningConfigurationNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int REGISTRY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RegistryPolicyNotFoundException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
@@ -106,6 +107,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIFECYCLE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIFECYCLE_POLICY_PREVIEW_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SIGNING_CONFIGURATION_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::SIGNING_CONFIGURATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REGISTRY_POLICY_NOT_FOUND_HASH) {

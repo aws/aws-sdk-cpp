@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/EmailMessageTemplateContent.h>
+#include <aws/qconnect/model/PushMessageTemplateContent.h>
 #include <aws/qconnect/model/SMSMessageTemplateContent.h>
+#include <aws/qconnect/model/WhatsAppMessageTemplateContent.h>
 
 #include <utility>
 
@@ -69,12 +71,53 @@ class MessageTemplateContentProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The content of the message template that applies to the WHATSAPP channel
+   * subtype.</p>
+   */
+  inline const WhatsAppMessageTemplateContent& GetWhatsApp() const { return m_whatsApp; }
+  inline bool WhatsAppHasBeenSet() const { return m_whatsAppHasBeenSet; }
+  template <typename WhatsAppT = WhatsAppMessageTemplateContent>
+  void SetWhatsApp(WhatsAppT&& value) {
+    m_whatsAppHasBeenSet = true;
+    m_whatsApp = std::forward<WhatsAppT>(value);
+  }
+  template <typename WhatsAppT = WhatsAppMessageTemplateContent>
+  MessageTemplateContentProvider& WithWhatsApp(WhatsAppT&& value) {
+    SetWhatsApp(std::forward<WhatsAppT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const PushMessageTemplateContent& GetPush() const { return m_push; }
+  inline bool PushHasBeenSet() const { return m_pushHasBeenSet; }
+  template <typename PushT = PushMessageTemplateContent>
+  void SetPush(PushT&& value) {
+    m_pushHasBeenSet = true;
+    m_push = std::forward<PushT>(value);
+  }
+  template <typename PushT = PushMessageTemplateContent>
+  MessageTemplateContentProvider& WithPush(PushT&& value) {
+    SetPush(std::forward<PushT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EmailMessageTemplateContent m_email;
   bool m_emailHasBeenSet = false;
 
   SMSMessageTemplateContent m_sms;
   bool m_smsHasBeenSet = false;
+
+  WhatsAppMessageTemplateContent m_whatsApp;
+  bool m_whatsAppHasBeenSet = false;
+
+  PushMessageTemplateContent m_push;
+  bool m_pushHasBeenSet = false;
 };
 
 }  // namespace Model

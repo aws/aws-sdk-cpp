@@ -19,5 +19,9 @@ Aws::String UpdateContactFlowModuleContentRequest::SerializePayload() const {
     payload.WithString("Content", m_content);
   }
 
+  if (m_settingsHasBeenSet) {
+    payload.WithString("Settings", m_settings);
+  }
+
   return payload.View().WriteReadable();
 }

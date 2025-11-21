@@ -71,7 +71,8 @@ class CreateSignalingChannelRequest : public KinesisVideoRequest {
   ///@{
   /**
    * <p>A structure containing the configuration for the <code>SINGLE_MASTER</code>
-   * channel type. </p>
+   * channel type. The default configuration for the channel message's time to live
+   * is 60 seconds (1 minute).</p>
    */
   inline const SingleMasterConfiguration& GetSingleMasterConfiguration() const { return m_singleMasterConfiguration; }
   inline bool SingleMasterConfigurationHasBeenSet() const { return m_singleMasterConfigurationHasBeenSet; }

@@ -18,6 +18,8 @@
 #include <aws/ec2/model/CapacityReservationType.h>
 #include <aws/ec2/model/EndDateType.h>
 #include <aws/ec2/model/InstanceMatchCriteria.h>
+#include <aws/ec2/model/InterruptibleCapacityAllocation.h>
+#include <aws/ec2/model/InterruptionInfo.h>
 #include <aws/ec2/model/Tag.h>
 
 #include <utility>
@@ -609,6 +611,62 @@ class CapacityReservation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Indicates whether this Capacity Reservation is interruptible, meaning
+   * instances may be terminated when the owner reclaims capacity. </p>
+   */
+  inline bool GetInterruptible() const { return m_interruptible; }
+  inline bool InterruptibleHasBeenSet() const { return m_interruptibleHasBeenSet; }
+  inline void SetInterruptible(bool value) {
+    m_interruptibleHasBeenSet = true;
+    m_interruptible = value;
+  }
+  inline CapacityReservation& WithInterruptible(bool value) {
+    SetInterruptible(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Contains allocation details for interruptible reservations, including
+   * current allocated instances and target instance counts within the
+   * interruptibleCapacityAllocation object. </p>
+   */
+  inline const InterruptibleCapacityAllocation& GetInterruptibleCapacityAllocation() const { return m_interruptibleCapacityAllocation; }
+  inline bool InterruptibleCapacityAllocationHasBeenSet() const { return m_interruptibleCapacityAllocationHasBeenSet; }
+  template <typename InterruptibleCapacityAllocationT = InterruptibleCapacityAllocation>
+  void SetInterruptibleCapacityAllocation(InterruptibleCapacityAllocationT&& value) {
+    m_interruptibleCapacityAllocationHasBeenSet = true;
+    m_interruptibleCapacityAllocation = std::forward<InterruptibleCapacityAllocationT>(value);
+  }
+  template <typename InterruptibleCapacityAllocationT = InterruptibleCapacityAllocation>
+  CapacityReservation& WithInterruptibleCapacityAllocation(InterruptibleCapacityAllocationT&& value) {
+    SetInterruptibleCapacityAllocation(std::forward<InterruptibleCapacityAllocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Information about the interruption configuration and association with the
+   * source reservation for interruptible Capacity Reservations. </p>
+   */
+  inline const InterruptionInfo& GetInterruptionInfo() const { return m_interruptionInfo; }
+  inline bool InterruptionInfoHasBeenSet() const { return m_interruptionInfoHasBeenSet; }
+  template <typename InterruptionInfoT = InterruptionInfo>
+  void SetInterruptionInfo(InterruptionInfoT&& value) {
+    m_interruptionInfoHasBeenSet = true;
+    m_interruptionInfo = std::forward<InterruptionInfoT>(value);
+  }
+  template <typename InterruptionInfoT = InterruptionInfo>
+  CapacityReservation& WithInterruptionInfo(InterruptionInfoT&& value) {
+    SetInterruptionInfo(std::forward<InterruptionInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityReservationId;
   bool m_capacityReservationIdHasBeenSet = false;
@@ -693,6 +751,15 @@ class CapacityReservation {
 
   Aws::String m_capacityBlockId;
   bool m_capacityBlockIdHasBeenSet = false;
+
+  bool m_interruptible{false};
+  bool m_interruptibleHasBeenSet = false;
+
+  InterruptibleCapacityAllocation m_interruptibleCapacityAllocation;
+  bool m_interruptibleCapacityAllocationHasBeenSet = false;
+
+  InterruptionInfo m_interruptionInfo;
+  bool m_interruptionInfoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -17,6 +17,7 @@ namespace AuthorizerTypeMapper {
 
 static const int CUSTOM_JWT_HASH = HashingUtils::HashString("CUSTOM_JWT");
 static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 AuthorizerType GetAuthorizerTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AuthorizerType GetAuthorizerTypeForName(const Aws::String& name) {
     return AuthorizerType::CUSTOM_JWT;
   } else if (hashCode == AWS_IAM_HASH) {
     return AuthorizerType::AWS_IAM;
+  } else if (hashCode == NONE_HASH) {
+    return AuthorizerType::NONE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAuthorizerType(AuthorizerType enumValue) {
       return "CUSTOM_JWT";
     case AuthorizerType::AWS_IAM:
       return "AWS_IAM";
+    case AuthorizerType::NONE:
+      return "NONE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

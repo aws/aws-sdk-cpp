@@ -77,6 +77,7 @@
 #include <aws/redshift-serverless/model/UntagResourceRequest.h>
 #include <aws/redshift-serverless/model/UpdateCustomDomainAssociationRequest.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessRequest.h>
+#include <aws/redshift-serverless/model/UpdateLakehouseConfigurationRequest.h>
 #include <aws/redshift-serverless/model/UpdateNamespaceRequest.h>
 #include <aws/redshift-serverless/model/UpdateScheduledActionRequest.h>
 #include <aws/redshift-serverless/model/UpdateSnapshotCopyConfigurationRequest.h>
@@ -1860,6 +1861,36 @@ UpdateEndpointAccessOutcome RedshiftServerlessClient::UpdateEndpointAccess(const
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return UpdateEndpointAccessOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateLakehouseConfigurationOutcome RedshiftServerlessClient::UpdateLakehouseConfiguration(
+    const UpdateLakehouseConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateLakehouseConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLakehouseConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateLakehouseConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateLakehouseConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateLakehouseConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateLakehouseConfigurationOutcome>(
+      [&]() -> UpdateLakehouseConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLakehouseConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return UpdateLakehouseConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

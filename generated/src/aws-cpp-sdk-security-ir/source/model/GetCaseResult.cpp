@@ -117,6 +117,13 @@ GetCaseResult& GetCaseResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     m_closedDate = jsonValue.GetDouble("closedDate");
     m_closedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("caseMetadata")) {
+    Aws::Utils::Array<JsonView> caseMetadataJsonList = jsonValue.GetArray("caseMetadata");
+    for (unsigned caseMetadataIndex = 0; caseMetadataIndex < caseMetadataJsonList.GetLength(); ++caseMetadataIndex) {
+      m_caseMetadata.push_back(caseMetadataJsonList[caseMetadataIndex].AsObject());
+    }
+    m_caseMetadataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -22,6 +22,10 @@ OptimizationJobModelSource& OptimizationJobModelSource::operator=(JsonView jsonV
     m_s3 = jsonValue.GetObject("S3");
     m_s3HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SageMakerModel")) {
+    m_sageMakerModel = jsonValue.GetObject("SageMakerModel");
+    m_sageMakerModelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue OptimizationJobModelSource::Jsonize() const {
 
   if (m_s3HasBeenSet) {
     payload.WithObject("S3", m_s3.Jsonize());
+  }
+
+  if (m_sageMakerModelHasBeenSet) {
+    payload.WithObject("SageMakerModel", m_sageMakerModel.Jsonize());
   }
 
   return payload;

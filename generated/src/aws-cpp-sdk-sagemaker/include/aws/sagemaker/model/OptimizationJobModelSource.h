@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/OptimizationJobModelSourceS3.h>
+#include <aws/sagemaker/model/OptimizationSageMakerModel.h>
 
 #include <utility>
 
@@ -50,9 +51,31 @@ class OptimizationJobModelSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of an existing SageMaker model to optimize with an optimization
+   * job.</p>
+   */
+  inline const OptimizationSageMakerModel& GetSageMakerModel() const { return m_sageMakerModel; }
+  inline bool SageMakerModelHasBeenSet() const { return m_sageMakerModelHasBeenSet; }
+  template <typename SageMakerModelT = OptimizationSageMakerModel>
+  void SetSageMakerModel(SageMakerModelT&& value) {
+    m_sageMakerModelHasBeenSet = true;
+    m_sageMakerModel = std::forward<SageMakerModelT>(value);
+  }
+  template <typename SageMakerModelT = OptimizationSageMakerModel>
+  OptimizationJobModelSource& WithSageMakerModel(SageMakerModelT&& value) {
+    SetSageMakerModel(std::forward<SageMakerModelT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OptimizationJobModelSourceS3 m_s3;
   bool m_s3HasBeenSet = false;
+
+  OptimizationSageMakerModel m_sageMakerModel;
+  bool m_sageMakerModelHasBeenSet = false;
 };
 
 }  // namespace Model

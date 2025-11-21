@@ -20,6 +20,7 @@
 
 /* Service model headers required in OdbClient header */
 #include <aws/odb/model/AcceptMarketplaceRegistrationResult.h>
+#include <aws/odb/model/AssociateIamRoleToResourceResult.h>
 #include <aws/odb/model/CreateCloudAutonomousVmClusterResult.h>
 #include <aws/odb/model/CreateCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/CreateCloudVmClusterResult.h>
@@ -30,6 +31,7 @@
 #include <aws/odb/model/DeleteCloudVmClusterResult.h>
 #include <aws/odb/model/DeleteOdbNetworkResult.h>
 #include <aws/odb/model/DeleteOdbPeeringConnectionResult.h>
+#include <aws/odb/model/DisassociateIamRoleFromResourceResult.h>
 #include <aws/odb/model/GetCloudAutonomousVmClusterResult.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureUnallocatedResourcesResult.h>
@@ -103,6 +105,7 @@ using OdbEndpointProvider = Aws::odb::Endpoint::OdbEndpointProvider;
 namespace Model {
 /* Service model forward declarations required in OdbClient header */
 class AcceptMarketplaceRegistrationRequest;
+class AssociateIamRoleToResourceRequest;
 class CreateCloudAutonomousVmClusterRequest;
 class CreateCloudExadataInfrastructureRequest;
 class CreateCloudVmClusterRequest;
@@ -113,6 +116,7 @@ class DeleteCloudExadataInfrastructureRequest;
 class DeleteCloudVmClusterRequest;
 class DeleteOdbNetworkRequest;
 class DeleteOdbPeeringConnectionRequest;
+class DisassociateIamRoleFromResourceRequest;
 class GetCloudAutonomousVmClusterRequest;
 class GetCloudExadataInfrastructureRequest;
 class GetCloudExadataInfrastructureUnallocatedResourcesRequest;
@@ -147,6 +151,7 @@ class UpdateOdbPeeringConnectionRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AcceptMarketplaceRegistrationResult, OdbError> AcceptMarketplaceRegistrationOutcome;
+typedef Aws::Utils::Outcome<AssociateIamRoleToResourceResult, OdbError> AssociateIamRoleToResourceOutcome;
 typedef Aws::Utils::Outcome<CreateCloudAutonomousVmClusterResult, OdbError> CreateCloudAutonomousVmClusterOutcome;
 typedef Aws::Utils::Outcome<CreateCloudExadataInfrastructureResult, OdbError> CreateCloudExadataInfrastructureOutcome;
 typedef Aws::Utils::Outcome<CreateCloudVmClusterResult, OdbError> CreateCloudVmClusterOutcome;
@@ -157,6 +162,7 @@ typedef Aws::Utils::Outcome<DeleteCloudExadataInfrastructureResult, OdbError> De
 typedef Aws::Utils::Outcome<DeleteCloudVmClusterResult, OdbError> DeleteCloudVmClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteOdbNetworkResult, OdbError> DeleteOdbNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteOdbPeeringConnectionResult, OdbError> DeleteOdbPeeringConnectionOutcome;
+typedef Aws::Utils::Outcome<DisassociateIamRoleFromResourceResult, OdbError> DisassociateIamRoleFromResourceOutcome;
 typedef Aws::Utils::Outcome<GetCloudAutonomousVmClusterResult, OdbError> GetCloudAutonomousVmClusterOutcome;
 typedef Aws::Utils::Outcome<GetCloudExadataInfrastructureResult, OdbError> GetCloudExadataInfrastructureOutcome;
 typedef Aws::Utils::Outcome<GetCloudExadataInfrastructureUnallocatedResourcesResult, OdbError>
@@ -192,6 +198,7 @@ typedef Aws::Utils::Outcome<UpdateOdbPeeringConnectionResult, OdbError> UpdateOd
 
 /* Service model Outcome callable definitions */
 typedef std::future<AcceptMarketplaceRegistrationOutcome> AcceptMarketplaceRegistrationOutcomeCallable;
+typedef std::future<AssociateIamRoleToResourceOutcome> AssociateIamRoleToResourceOutcomeCallable;
 typedef std::future<CreateCloudAutonomousVmClusterOutcome> CreateCloudAutonomousVmClusterOutcomeCallable;
 typedef std::future<CreateCloudExadataInfrastructureOutcome> CreateCloudExadataInfrastructureOutcomeCallable;
 typedef std::future<CreateCloudVmClusterOutcome> CreateCloudVmClusterOutcomeCallable;
@@ -202,6 +209,7 @@ typedef std::future<DeleteCloudExadataInfrastructureOutcome> DeleteCloudExadataI
 typedef std::future<DeleteCloudVmClusterOutcome> DeleteCloudVmClusterOutcomeCallable;
 typedef std::future<DeleteOdbNetworkOutcome> DeleteOdbNetworkOutcomeCallable;
 typedef std::future<DeleteOdbPeeringConnectionOutcome> DeleteOdbPeeringConnectionOutcomeCallable;
+typedef std::future<DisassociateIamRoleFromResourceOutcome> DisassociateIamRoleFromResourceOutcomeCallable;
 typedef std::future<GetCloudAutonomousVmClusterOutcome> GetCloudAutonomousVmClusterOutcomeCallable;
 typedef std::future<GetCloudExadataInfrastructureOutcome> GetCloudExadataInfrastructureOutcomeCallable;
 typedef std::future<GetCloudExadataInfrastructureUnallocatedResourcesOutcome>
@@ -243,6 +251,9 @@ typedef std::function<void(const OdbClient*, const Model::AcceptMarketplaceRegis
                            const Model::AcceptMarketplaceRegistrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AcceptMarketplaceRegistrationResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::AssociateIamRoleToResourceRequest&,
+                           const Model::AssociateIamRoleToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateIamRoleToResourceResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::CreateCloudAutonomousVmClusterRequest&,
                            const Model::CreateCloudAutonomousVmClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -277,6 +288,10 @@ typedef std::function<void(const OdbClient*, const Model::DeleteOdbNetworkReques
 typedef std::function<void(const OdbClient*, const Model::DeleteOdbPeeringConnectionRequest&,
                            const Model::DeleteOdbPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteOdbPeeringConnectionResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::DisassociateIamRoleFromResourceRequest&,
+                           const Model::DisassociateIamRoleFromResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateIamRoleFromResourceResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::GetCloudAutonomousVmClusterRequest&,
                            const Model::GetCloudAutonomousVmClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCloudAutonomousVmClusterResponseReceivedHandler;

@@ -54,6 +54,7 @@ static const int MEMBER_MAX_LENGTH_HASH = HashingUtils::HashString("MEMBER_MAX_L
 static const int MEMBER_INVALID_ENUM_VALUE_HASH = HashingUtils::HashString("MEMBER_INVALID_ENUM_VALUE");
 static const int MEMBER_DOES_NOT_MATCH_PATTERN_HASH = HashingUtils::HashString("MEMBER_DOES_NOT_MATCH_PATTERN");
 static const int INVALID_MANIFEST_FILTER_HASH = HashingUtils::HashString("INVALID_MANIFEST_FILTER");
+static const int INVALID_DRM_SETTINGS_HASH = HashingUtils::HashString("INVALID_DRM_SETTINGS");
 static const int INVALID_TIME_DELAY_SECONDS_HASH = HashingUtils::HashString("INVALID_TIME_DELAY_SECONDS");
 static const int END_TIME_EARLIER_THAN_START_TIME_HASH = HashingUtils::HashString("END_TIME_EARLIER_THAN_START_TIME");
 static const int TS_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH = HashingUtils::HashString("TS_CONTAINER_TYPE_WITH_DASH_MANIFEST");
@@ -195,6 +196,8 @@ ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& nam
     return ValidationExceptionType::MEMBER_DOES_NOT_MATCH_PATTERN;
   } else if (hashCode == INVALID_MANIFEST_FILTER_HASH) {
     return ValidationExceptionType::INVALID_MANIFEST_FILTER;
+  } else if (hashCode == INVALID_DRM_SETTINGS_HASH) {
+    return ValidationExceptionType::INVALID_DRM_SETTINGS;
   } else if (hashCode == INVALID_TIME_DELAY_SECONDS_HASH) {
     return ValidationExceptionType::INVALID_TIME_DELAY_SECONDS;
   } else if (hashCode == END_TIME_EARLIER_THAN_START_TIME_HASH) {
@@ -385,6 +388,8 @@ Aws::String GetNameForValidationExceptionType(ValidationExceptionType enumValue)
       return "MEMBER_DOES_NOT_MATCH_PATTERN";
     case ValidationExceptionType::INVALID_MANIFEST_FILTER:
       return "INVALID_MANIFEST_FILTER";
+    case ValidationExceptionType::INVALID_DRM_SETTINGS:
+      return "INVALID_DRM_SETTINGS";
     case ValidationExceptionType::INVALID_TIME_DELAY_SECONDS:
       return "INVALID_TIME_DELAY_SECONDS";
     case ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME:

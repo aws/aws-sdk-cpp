@@ -21,6 +21,7 @@
 #include <aws/redshift/model/ActionType.h>
 #include <aws/redshift/model/AddPartnerRequest.h>
 #include <aws/redshift/model/AddPartnerResult.h>
+#include <aws/redshift/model/ApplicationType.h>
 #include <aws/redshift/model/AquaConfiguration.h>
 #include <aws/redshift/model/AquaConfigurationStatus.h>
 #include <aws/redshift/model/AquaStatus.h>
@@ -60,6 +61,7 @@
 #include <aws/redshift/model/ClusterSnapshotCopyStatus.h>
 #include <aws/redshift/model/ClusterSubnetGroup.h>
 #include <aws/redshift/model/ClusterVersion.h>
+#include <aws/redshift/model/Connect.h>
 #include <aws/redshift/model/CopyClusterSnapshotRequest.h>
 #include <aws/redshift/model/CopyClusterSnapshotResult.h>
 #include <aws/redshift/model/CreateAuthenticationProfileRequest.h>
@@ -264,6 +266,8 @@
 #include <aws/redshift/model/IntegrationError.h>
 #include <aws/redshift/model/LakeFormationQuery.h>
 #include <aws/redshift/model/LakeFormationScopeUnion.h>
+#include <aws/redshift/model/LakehouseIdcRegistration.h>
+#include <aws/redshift/model/LakehouseRegistration.h>
 #include <aws/redshift/model/ListRecommendationsRequest.h>
 #include <aws/redshift/model/ListRecommendationsResult.h>
 #include <aws/redshift/model/LogDestinationType.h>
@@ -296,6 +300,8 @@
 #include <aws/redshift/model/ModifyEventSubscriptionResult.h>
 #include <aws/redshift/model/ModifyIntegrationRequest.h>
 #include <aws/redshift/model/ModifyIntegrationResult.h>
+#include <aws/redshift/model/ModifyLakehouseConfigurationRequest.h>
+#include <aws/redshift/model/ModifyLakehouseConfigurationResult.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationRequest.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationResult.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
@@ -335,6 +341,7 @@
 #include <aws/redshift/model/RecommendedActionType.h>
 #include <aws/redshift/model/RecurringCharge.h>
 #include <aws/redshift/model/RedshiftIdcApplication.h>
+#include <aws/redshift/model/RedshiftScopeUnion.h>
 #include <aws/redshift/model/ReferenceLink.h>
 #include <aws/redshift/model/RegisterNamespaceRequest.h>
 #include <aws/redshift/model/RegisterNamespaceResult.h>

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/ChannelSubtype.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfiguration.h>
 
 #include <utility>
 
@@ -126,6 +127,24 @@ class MessageTemplateSummary {
 
   ///@{
   /**
+   * <p>The channel this message template applies to.</p>
+   */
+  inline const Aws::String& GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  template <typename ChannelT = Aws::String>
+  void SetChannel(ChannelT&& value) {
+    m_channelHasBeenSet = true;
+    m_channel = std::forward<ChannelT>(value);
+  }
+  template <typename ChannelT = Aws::String>
+  MessageTemplateSummary& WithChannel(ChannelT&& value) {
+    SetChannel(std::forward<ChannelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The channel subtype this message template applies to.</p>
    */
   inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
@@ -191,6 +210,22 @@ class MessageTemplateSummary {
   template <typename LastModifiedByT = Aws::String>
   MessageTemplateSummary& WithLastModifiedBy(LastModifiedByT&& value) {
     SetLastModifiedBy(std::forward<LastModifiedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const MessageTemplateSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+  inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+  template <typename SourceConfigurationT = MessageTemplateSourceConfiguration>
+  void SetSourceConfiguration(SourceConfigurationT&& value) {
+    m_sourceConfigurationHasBeenSet = true;
+    m_sourceConfiguration = std::forward<SourceConfigurationT>(value);
+  }
+  template <typename SourceConfigurationT = MessageTemplateSourceConfiguration>
+  MessageTemplateSummary& WithSourceConfiguration(SourceConfigurationT&& value) {
+    SetSourceConfiguration(std::forward<SourceConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -268,6 +303,9 @@ class MessageTemplateSummary {
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
+  Aws::String m_channel;
+  bool m_channelHasBeenSet = false;
+
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
   bool m_channelSubtypeHasBeenSet = false;
 
@@ -279,6 +317,9 @@ class MessageTemplateSummary {
 
   Aws::String m_lastModifiedBy;
   bool m_lastModifiedByHasBeenSet = false;
+
+  MessageTemplateSourceConfiguration m_sourceConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
 
   long long m_activeVersionNumber{0};
   bool m_activeVersionNumberHasBeenSet = false;

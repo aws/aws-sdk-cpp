@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class InstanceLifecycleType { NOT_SET, spot, scheduled, capacity_block };
+enum class InstanceLifecycleType { NOT_SET, spot, scheduled, capacity_block, interruptible_capacity_reservation };
 
 namespace InstanceLifecycleTypeMapper {
 AWS_EC2_API InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name);

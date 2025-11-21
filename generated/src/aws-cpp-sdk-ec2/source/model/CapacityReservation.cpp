@@ -189,6 +189,22 @@ CapacityReservation& CapacityReservation::operator=(const XmlNode& xmlNode) {
       m_capacityBlockId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockIdNode.GetText());
       m_capacityBlockIdHasBeenSet = true;
     }
+    XmlNode interruptibleNode = resultNode.FirstChild("interruptible");
+    if (!interruptibleNode.IsNull()) {
+      m_interruptible =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interruptibleNode.GetText()).c_str()).c_str());
+      m_interruptibleHasBeenSet = true;
+    }
+    XmlNode interruptibleCapacityAllocationNode = resultNode.FirstChild("interruptibleCapacityAllocation");
+    if (!interruptibleCapacityAllocationNode.IsNull()) {
+      m_interruptibleCapacityAllocation = interruptibleCapacityAllocationNode;
+      m_interruptibleCapacityAllocationHasBeenSet = true;
+    }
+    XmlNode interruptionInfoNode = resultNode.FirstChild("interruptionInfo");
+    if (!interruptionInfoNode.IsNull()) {
+      m_interruptionInfo = interruptionInfoNode;
+      m_interruptionInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -337,6 +353,22 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if (m_capacityBlockIdHasBeenSet) {
     oStream << location << index << locationValue << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
   }
+
+  if (m_interruptibleHasBeenSet) {
+    oStream << location << index << locationValue << ".Interruptible=" << std::boolalpha << m_interruptible << "&";
+  }
+
+  if (m_interruptibleCapacityAllocationHasBeenSet) {
+    Aws::StringStream interruptibleCapacityAllocationLocationAndMemberSs;
+    interruptibleCapacityAllocationLocationAndMemberSs << location << index << locationValue << ".InterruptibleCapacityAllocation";
+    m_interruptibleCapacityAllocation.OutputToStream(oStream, interruptibleCapacityAllocationLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_interruptionInfoHasBeenSet) {
+    Aws::StringStream interruptionInfoLocationAndMemberSs;
+    interruptionInfoLocationAndMemberSs << location << index << locationValue << ".InterruptionInfo";
+    m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMemberSs.str().c_str());
+  }
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -448,6 +480,19 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if (m_capacityBlockIdHasBeenSet) {
     oStream << location << ".CapacityBlockId=" << StringUtils::URLEncode(m_capacityBlockId.c_str()) << "&";
+  }
+  if (m_interruptibleHasBeenSet) {
+    oStream << location << ".Interruptible=" << std::boolalpha << m_interruptible << "&";
+  }
+  if (m_interruptibleCapacityAllocationHasBeenSet) {
+    Aws::String interruptibleCapacityAllocationLocationAndMember(location);
+    interruptibleCapacityAllocationLocationAndMember += ".InterruptibleCapacityAllocation";
+    m_interruptibleCapacityAllocation.OutputToStream(oStream, interruptibleCapacityAllocationLocationAndMember.c_str());
+  }
+  if (m_interruptionInfoHasBeenSet) {
+    Aws::String interruptionInfoLocationAndMember(location);
+    interruptionInfoLocationAndMember += ".InterruptionInfo";
+    m_interruptionInfo.OutputToStream(oStream, interruptionInfoLocationAndMember.c_str());
   }
 }
 

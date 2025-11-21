@@ -795,6 +795,49 @@ class RestoreFromClusterSnapshotRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Glue Data Catalog that will be associated with the cluster
+   * enabled with Amazon Redshift federated permissions.</p> <p>Constraints:</p> <ul>
+   * <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Can only
+   * contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens
+   * (-).</p> </li> </ul> <p>Pattern: <code>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</code>
+   * </p> <p>Example: <code>my-catalog_01</code> </p>
+   */
+  inline const Aws::String& GetCatalogName() const { return m_catalogName; }
+  inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+  template <typename CatalogNameT = Aws::String>
+  void SetCatalogName(CatalogNameT&& value) {
+    m_catalogNameHasBeenSet = true;
+    m_catalogName = std::forward<CatalogNameT>(value);
+  }
+  template <typename CatalogNameT = Aws::String>
+  RestoreFromClusterSnapshotRequest& WithCatalogName(CatalogNameT&& value) {
+    SetCatalogName(std::forward<CatalogNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used
+   * for enabling Amazon Web Services IAM Identity Center trusted identity
+   * propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+   */
+  inline const Aws::String& GetRedshiftIdcApplicationArn() const { return m_redshiftIdcApplicationArn; }
+  inline bool RedshiftIdcApplicationArnHasBeenSet() const { return m_redshiftIdcApplicationArnHasBeenSet; }
+  template <typename RedshiftIdcApplicationArnT = Aws::String>
+  void SetRedshiftIdcApplicationArn(RedshiftIdcApplicationArnT&& value) {
+    m_redshiftIdcApplicationArnHasBeenSet = true;
+    m_redshiftIdcApplicationArn = std::forward<RedshiftIdcApplicationArnT>(value);
+  }
+  template <typename RedshiftIdcApplicationArnT = Aws::String>
+  RestoreFromClusterSnapshotRequest& WithRedshiftIdcApplicationArn(RedshiftIdcApplicationArnT&& value) {
+    SetRedshiftIdcApplicationArn(std::forward<RedshiftIdcApplicationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
   bool m_clusterIdentifierHasBeenSet = false;
@@ -906,6 +949,12 @@ class RestoreFromClusterSnapshotRequest : public RedshiftRequest {
 
   bool m_multiAZ{false};
   bool m_multiAZHasBeenSet = false;
+
+  Aws::String m_catalogName;
+  bool m_catalogNameHasBeenSet = false;
+
+  Aws::String m_redshiftIdcApplicationArn;
+  bool m_redshiftIdcApplicationArnHasBeenSet = false;
 };
 
 }  // namespace Model

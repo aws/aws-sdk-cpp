@@ -21,6 +21,7 @@
 #include <aws/odb/OdbEndpointProvider.h>
 #include <aws/odb/OdbErrorMarshaller.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
+#include <aws/odb/model/AssociateIamRoleToResourceRequest.h>
 #include <aws/odb/model/CreateCloudAutonomousVmClusterRequest.h>
 #include <aws/odb/model/CreateCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/CreateCloudVmClusterRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/odb/model/DeleteCloudVmClusterRequest.h>
 #include <aws/odb/model/DeleteOdbNetworkRequest.h>
 #include <aws/odb/model/DeleteOdbPeeringConnectionRequest.h>
+#include <aws/odb/model/DisassociateIamRoleFromResourceRequest.h>
 #include <aws/odb/model/GetCloudAutonomousVmClusterRequest.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/GetCloudExadataInfrastructureUnallocatedResourcesRequest.h>
@@ -197,6 +199,35 @@ AcceptMarketplaceRegistrationOutcome OdbClient::AcceptMarketplaceRegistration(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptMarketplaceRegistration, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return AcceptMarketplaceRegistrationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateIamRoleToResourceOutcome OdbClient::AssociateIamRoleToResource(const AssociateIamRoleToResourceRequest& request) const {
+  AWS_OPERATION_GUARD(AssociateIamRoleToResource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateIamRoleToResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateIamRoleToResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateIamRoleToResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateIamRoleToResource",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateIamRoleToResourceOutcome>(
+      [&]() -> AssociateIamRoleToResourceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateIamRoleToResource, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return AssociateIamRoleToResourceOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -491,6 +522,36 @@ DeleteOdbPeeringConnectionOutcome OdbClient::DeleteOdbPeeringConnection(const De
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteOdbPeeringConnection, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return DeleteOdbPeeringConnectionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DisassociateIamRoleFromResourceOutcome OdbClient::DisassociateIamRoleFromResource(
+    const DisassociateIamRoleFromResourceRequest& request) const {
+  AWS_OPERATION_GUARD(DisassociateIamRoleFromResource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateIamRoleFromResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateIamRoleFromResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateIamRoleFromResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateIamRoleFromResource",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateIamRoleFromResourceOutcome>(
+      [&]() -> DisassociateIamRoleFromResourceOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateIamRoleFromResource, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DisassociateIamRoleFromResourceOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

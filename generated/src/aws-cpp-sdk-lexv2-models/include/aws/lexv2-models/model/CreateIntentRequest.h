@@ -61,6 +61,27 @@ class CreateIntentRequest : public LexModelsV2Request {
 
   ///@{
   /**
+   * <p>A display name for the intent. If configured, This name will be shown to
+   * users during Intent Disambiguation instead of the intent name. Display names
+   * should be user-friendly, descriptive and match the intent's purpose to improve
+   * user experience during disambiguation.</p>
+   */
+  inline const Aws::String& GetIntentDisplayName() const { return m_intentDisplayName; }
+  inline bool IntentDisplayNameHasBeenSet() const { return m_intentDisplayNameHasBeenSet; }
+  template <typename IntentDisplayNameT = Aws::String>
+  void SetIntentDisplayName(IntentDisplayNameT&& value) {
+    m_intentDisplayNameHasBeenSet = true;
+    m_intentDisplayName = std::forward<IntentDisplayNameT>(value);
+  }
+  template <typename IntentDisplayNameT = Aws::String>
+  CreateIntentRequest& WithIntentDisplayName(IntentDisplayNameT&& value) {
+    SetIntentDisplayName(std::forward<IntentDisplayNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A description of the intent. Use the description to help identify the intent
    * in lists.</p>
    */
@@ -413,6 +434,9 @@ class CreateIntentRequest : public LexModelsV2Request {
  private:
   Aws::String m_intentName;
   bool m_intentNameHasBeenSet = false;
+
+  Aws::String m_intentDisplayName;
+  bool m_intentDisplayNameHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;

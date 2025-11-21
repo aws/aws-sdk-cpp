@@ -30,6 +30,10 @@ Namespace& Namespace::operator=(JsonView jsonValue) {
     m_adminUsername = jsonValue.GetString("adminUsername");
     m_adminUsernameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("catalogArn")) {
+    m_catalogArn = jsonValue.GetString("catalogArn");
+    m_catalogArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetString("creationDate");
     m_creationDateHasBeenSet = true;
@@ -52,6 +56,10 @@ Namespace& Namespace::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lakehouseRegistrationStatus")) {
+    m_lakehouseRegistrationStatus = jsonValue.GetString("lakehouseRegistrationStatus");
+    m_lakehouseRegistrationStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("logExports")) {
     Aws::Utils::Array<JsonView> logExportsJsonList = jsonValue.GetArray("logExports");
@@ -94,6 +102,10 @@ JsonValue Namespace::Jsonize() const {
     payload.WithString("adminUsername", m_adminUsername);
   }
 
+  if (m_catalogArnHasBeenSet) {
+    payload.WithString("catalogArn", m_catalogArn);
+  }
+
   if (m_creationDateHasBeenSet) {
     payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
@@ -116,6 +128,10 @@ JsonValue Namespace::Jsonize() const {
 
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("kmsKeyId", m_kmsKeyId);
+  }
+
+  if (m_lakehouseRegistrationStatusHasBeenSet) {
+    payload.WithString("lakehouseRegistrationStatus", m_lakehouseRegistrationStatus);
   }
 
   if (m_logExportsHasBeenSet) {

@@ -98,6 +98,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/GatewayInterceptionPoint.h>
+#include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
@@ -131,10 +133,13 @@
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/InterceptorInputConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>

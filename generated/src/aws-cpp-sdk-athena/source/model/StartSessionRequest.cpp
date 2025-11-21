@@ -27,6 +27,14 @@ Aws::String StartSessionRequest::SerializePayload() const {
     payload.WithObject("EngineConfiguration", m_engineConfiguration.Jsonize());
   }
 
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("ExecutionRole", m_executionRole);
+  }
+
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
   if (m_notebookVersionHasBeenSet) {
     payload.WithString("NotebookVersion", m_notebookVersion);
   }
@@ -37,6 +45,18 @@ Aws::String StartSessionRequest::SerializePayload() const {
 
   if (m_clientRequestTokenHasBeenSet) {
     payload.WithString("ClientRequestToken", m_clientRequestToken);
+  }
+
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
+  if (m_copyWorkGroupTagsHasBeenSet) {
+    payload.WithBool("CopyWorkGroupTags", m_copyWorkGroupTags);
   }
 
   return payload.View().WriteReadable();

@@ -19,12 +19,6 @@ Aws::String UpdateLandingZoneRequest::SerializePayload() const {
     payload.WithString("version", m_version);
   }
 
-  if (m_manifestHasBeenSet) {
-    if (!m_manifest.View().IsNull()) {
-      payload.WithObject("manifest", JsonValue(m_manifest.View()));
-    }
-  }
-
   if (m_remediationTypesHasBeenSet) {
     Aws::Utils::Array<JsonValue> remediationTypesJsonList(m_remediationTypes.size());
     for (unsigned remediationTypesIndex = 0; remediationTypesIndex < remediationTypesJsonList.GetLength(); ++remediationTypesIndex) {
@@ -36,6 +30,12 @@ Aws::String UpdateLandingZoneRequest::SerializePayload() const {
 
   if (m_landingZoneIdentifierHasBeenSet) {
     payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
+  }
+
+  if (m_manifestHasBeenSet) {
+    if (!m_manifest.View().IsNull()) {
+      payload.WithObject("manifest", JsonValue(m_manifest.View()));
+    }
   }
 
   return payload.View().WriteReadable();

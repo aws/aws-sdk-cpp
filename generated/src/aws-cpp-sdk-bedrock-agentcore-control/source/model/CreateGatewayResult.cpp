@@ -84,6 +84,14 @@ CreateGatewayResult& CreateGatewayResult::operator=(const Aws::AmazonWebServiceR
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("interceptorConfigurations")) {
+    Aws::Utils::Array<JsonView> interceptorConfigurationsJsonList = jsonValue.GetArray("interceptorConfigurations");
+    for (unsigned interceptorConfigurationsIndex = 0; interceptorConfigurationsIndex < interceptorConfigurationsJsonList.GetLength();
+         ++interceptorConfigurationsIndex) {
+      m_interceptorConfigurations.push_back(interceptorConfigurationsJsonList[interceptorConfigurationsIndex].AsObject());
+    }
+    m_interceptorConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("workloadIdentityDetails")) {
     m_workloadIdentityDetails = jsonValue.GetObject("workloadIdentityDetails");
     m_workloadIdentityDetailsHasBeenSet = true;

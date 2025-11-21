@@ -111,6 +111,7 @@
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayRequest.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
+#include <aws/ec2/model/CreateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/CreateIpamPolicyResponse.h>
 #include <aws/ec2/model/CreateIpamPoolResponse.h>
@@ -935,6 +936,7 @@
 #include <aws/ec2/model/UnlockSnapshotResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessResponse.h>
+#include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
@@ -1058,6 +1060,7 @@ class CreateInstanceConnectEndpointRequest;
 class CreateInstanceEventWindowRequest;
 class CreateInstanceExportTaskRequest;
 class CreateInternetGatewayRequest;
+class CreateInterruptibleCapacityReservationAllocationRequest;
 class CreateIpamRequest;
 class CreateIpamExternalResourceVerificationTokenRequest;
 class CreateIpamPolicyRequest;
@@ -1717,6 +1720,7 @@ class UnassignPrivateNatGatewayAddressRequest;
 class UnlockSnapshotRequest;
 class UnmonitorInstancesRequest;
 class UpdateCapacityManagerOrganizationsAccessRequest;
+class UpdateInterruptibleCapacityReservationAllocationRequest;
 class UpdateSecurityGroupRuleDescriptionsEgressRequest;
 class UpdateSecurityGroupRuleDescriptionsIngressRequest;
 class WithdrawByoipCidrRequest;
@@ -1810,6 +1814,8 @@ typedef Aws::Utils::Outcome<CreateInstanceConnectEndpointResponse, EC2Error> Cre
 typedef Aws::Utils::Outcome<CreateInstanceEventWindowResponse, EC2Error> CreateInstanceEventWindowOutcome;
 typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, EC2Error> CreateInstanceExportTaskOutcome;
 typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, EC2Error> CreateInternetGatewayOutcome;
+typedef Aws::Utils::Outcome<CreateInterruptibleCapacityReservationAllocationResponse, EC2Error>
+    CreateInterruptibleCapacityReservationAllocationOutcome;
 typedef Aws::Utils::Outcome<CreateIpamResponse, EC2Error> CreateIpamOutcome;
 typedef Aws::Utils::Outcome<CreateIpamExternalResourceVerificationTokenResponse, EC2Error>
     CreateIpamExternalResourceVerificationTokenOutcome;
@@ -2503,6 +2509,8 @@ typedef Aws::Utils::Outcome<UnassignPrivateNatGatewayAddressResponse, EC2Error> 
 typedef Aws::Utils::Outcome<UnlockSnapshotResponse, EC2Error> UnlockSnapshotOutcome;
 typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, EC2Error> UnmonitorInstancesOutcome;
 typedef Aws::Utils::Outcome<UpdateCapacityManagerOrganizationsAccessResponse, EC2Error> UpdateCapacityManagerOrganizationsAccessOutcome;
+typedef Aws::Utils::Outcome<UpdateInterruptibleCapacityReservationAllocationResponse, EC2Error>
+    UpdateInterruptibleCapacityReservationAllocationOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
 typedef Aws::Utils::Outcome<WithdrawByoipCidrResponse, EC2Error> WithdrawByoipCidrOutcome;
@@ -2594,6 +2602,8 @@ typedef std::future<CreateInstanceConnectEndpointOutcome> CreateInstanceConnectE
 typedef std::future<CreateInstanceEventWindowOutcome> CreateInstanceEventWindowOutcomeCallable;
 typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
 typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
+typedef std::future<CreateInterruptibleCapacityReservationAllocationOutcome>
+    CreateInterruptibleCapacityReservationAllocationOutcomeCallable;
 typedef std::future<CreateIpamOutcome> CreateIpamOutcomeCallable;
 typedef std::future<CreateIpamExternalResourceVerificationTokenOutcome> CreateIpamExternalResourceVerificationTokenOutcomeCallable;
 typedef std::future<CreateIpamPolicyOutcome> CreateIpamPolicyOutcomeCallable;
@@ -3260,6 +3270,8 @@ typedef std::future<UnassignPrivateNatGatewayAddressOutcome> UnassignPrivateNatG
 typedef std::future<UnlockSnapshotOutcome> UnlockSnapshotOutcomeCallable;
 typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
 typedef std::future<UpdateCapacityManagerOrganizationsAccessOutcome> UpdateCapacityManagerOrganizationsAccessOutcomeCallable;
+typedef std::future<UpdateInterruptibleCapacityReservationAllocationOutcome>
+    UpdateInterruptibleCapacityReservationAllocationOutcomeCallable;
 typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
 typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
 typedef std::future<WithdrawByoipCidrOutcome> WithdrawByoipCidrOutcomeCallable;
@@ -3552,6 +3564,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTa
 typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateInternetGatewayResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateInterruptibleCapacityReservationAllocationRequest&,
+                           const Model::CreateInterruptibleCapacityReservationAllocationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateInterruptibleCapacityReservationAllocationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateIpamRequest&, const Model::CreateIpamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIpamResponseReceivedHandler;
@@ -5822,6 +5838,10 @@ typedef std::function<void(const EC2Client*, const Model::UpdateCapacityManagerO
                            const Model::UpdateCapacityManagerOrganizationsAccessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCapacityManagerOrganizationsAccessResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::UpdateInterruptibleCapacityReservationAllocationRequest&,
+                           const Model::UpdateInterruptibleCapacityReservationAllocationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateInterruptibleCapacityReservationAllocationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&,
                            const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

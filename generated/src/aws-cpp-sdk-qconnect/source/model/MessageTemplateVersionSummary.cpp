@@ -38,6 +38,10 @@ MessageTemplateVersionSummary& MessageTemplateVersionSummary::operator=(JsonView
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = jsonValue.GetString("channel");
+    m_channelHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("channelSubtype")) {
     m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
     m_channelSubtypeHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue MessageTemplateVersionSummary::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", m_channel);
   }
 
   if (m_channelSubtypeHasBeenSet) {

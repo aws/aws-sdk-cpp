@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/AssistedNluMode.h>
+#include <aws/lexv2-models/model/IntentDisambiguationSettings.h>
 
 #include <utility>
 
@@ -68,12 +69,35 @@ class NluImprovementSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object containing specifications for the Intent Disambiguation feature
+   * within the Assisted NLU settings. These settings determine how the bot handles
+   * ambiguous user inputs that could match multiple intents.</p>
+   */
+  inline const IntentDisambiguationSettings& GetIntentDisambiguationSettings() const { return m_intentDisambiguationSettings; }
+  inline bool IntentDisambiguationSettingsHasBeenSet() const { return m_intentDisambiguationSettingsHasBeenSet; }
+  template <typename IntentDisambiguationSettingsT = IntentDisambiguationSettings>
+  void SetIntentDisambiguationSettings(IntentDisambiguationSettingsT&& value) {
+    m_intentDisambiguationSettingsHasBeenSet = true;
+    m_intentDisambiguationSettings = std::forward<IntentDisambiguationSettingsT>(value);
+  }
+  template <typename IntentDisambiguationSettingsT = IntentDisambiguationSettings>
+  NluImprovementSpecification& WithIntentDisambiguationSettings(IntentDisambiguationSettingsT&& value) {
+    SetIntentDisambiguationSettings(std::forward<IntentDisambiguationSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
 
   AssistedNluMode m_assistedNluMode{AssistedNluMode::NOT_SET};
   bool m_assistedNluModeHasBeenSet = false;
+
+  IntentDisambiguationSettings m_intentDisambiguationSettings;
+  bool m_intentDisambiguationSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

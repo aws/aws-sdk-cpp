@@ -87,6 +87,22 @@ class SessionConfiguration {
   ///@}
 
   ///@{
+  /**
+   * <p>The idle timeout in seconds for the session.</p>
+   */
+  inline int GetSessionIdleTimeoutInMinutes() const { return m_sessionIdleTimeoutInMinutes; }
+  inline bool SessionIdleTimeoutInMinutesHasBeenSet() const { return m_sessionIdleTimeoutInMinutesHasBeenSet; }
+  inline void SetSessionIdleTimeoutInMinutes(int value) {
+    m_sessionIdleTimeoutInMinutesHasBeenSet = true;
+    m_sessionIdleTimeoutInMinutes = value;
+  }
+  inline SessionConfiguration& WithSessionIdleTimeoutInMinutes(int value) {
+    SetSessionIdleTimeoutInMinutes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
@@ -110,6 +126,9 @@ class SessionConfiguration {
 
   long long m_idleTimeoutSeconds{0};
   bool m_idleTimeoutSecondsHasBeenSet = false;
+
+  int m_sessionIdleTimeoutInMinutes{0};
+  bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
   bool m_encryptionConfigurationHasBeenSet = false;

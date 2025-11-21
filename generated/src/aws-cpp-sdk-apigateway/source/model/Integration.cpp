@@ -96,6 +96,10 @@ Integration& Integration::operator=(JsonView jsonValue) {
     m_responseTransferMode = ResponseTransferModeMapper::GetResponseTransferModeForName(jsonValue.GetString("responseTransferMode"));
     m_responseTransferModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("integrationTarget")) {
+    m_integrationTarget = jsonValue.GetString("integrationTarget");
+    m_integrationTargetHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -181,6 +185,10 @@ JsonValue Integration::Jsonize() const {
 
   if (m_responseTransferModeHasBeenSet) {
     payload.WithString("responseTransferMode", ResponseTransferModeMapper::GetNameForResponseTransferMode(m_responseTransferMode));
+  }
+
+  if (m_integrationTargetHasBeenSet) {
+    payload.WithString("integrationTarget", m_integrationTarget);
   }
 
   return payload;

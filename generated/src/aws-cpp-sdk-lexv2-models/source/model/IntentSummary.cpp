@@ -26,6 +26,10 @@ IntentSummary& IntentSummary::operator=(JsonView jsonValue) {
     m_intentName = jsonValue.GetString("intentName");
     m_intentNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intentDisplayName")) {
+    m_intentDisplayName = jsonValue.GetString("intentDisplayName");
+    m_intentDisplayNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
@@ -64,6 +68,10 @@ JsonValue IntentSummary::Jsonize() const {
 
   if (m_intentNameHasBeenSet) {
     payload.WithString("intentName", m_intentName);
+  }
+
+  if (m_intentDisplayNameHasBeenSet) {
+    payload.WithString("intentDisplayName", m_intentDisplayName);
   }
 
   if (m_descriptionHasBeenSet) {

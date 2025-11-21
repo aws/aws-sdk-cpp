@@ -22,6 +22,7 @@ static const int CHATBOT_POLICY_HASH = HashingUtils::HashString("CHATBOT_POLICY"
 static const int DECLARATIVE_POLICY_EC2_HASH = HashingUtils::HashString("DECLARATIVE_POLICY_EC2");
 static const int SECURITYHUB_POLICY_HASH = HashingUtils::HashString("SECURITYHUB_POLICY");
 static const int INSPECTOR_POLICY_HASH = HashingUtils::HashString("INSPECTOR_POLICY");
+static const int UPGRADE_ROLLOUT_POLICY_HASH = HashingUtils::HashString("UPGRADE_ROLLOUT_POLICY");
 
 EffectivePolicyType GetEffectivePolicyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ EffectivePolicyType GetEffectivePolicyTypeForName(const Aws::String& name) {
     return EffectivePolicyType::SECURITYHUB_POLICY;
   } else if (hashCode == INSPECTOR_POLICY_HASH) {
     return EffectivePolicyType::INSPECTOR_POLICY;
+  } else if (hashCode == UPGRADE_ROLLOUT_POLICY_HASH) {
+    return EffectivePolicyType::UPGRADE_ROLLOUT_POLICY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForEffectivePolicyType(EffectivePolicyType enumValue) {
       return "SECURITYHUB_POLICY";
     case EffectivePolicyType::INSPECTOR_POLICY:
       return "INSPECTOR_POLICY";
+    case EffectivePolicyType::UPGRADE_ROLLOUT_POLICY:
+      return "UPGRADE_ROLLOUT_POLICY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

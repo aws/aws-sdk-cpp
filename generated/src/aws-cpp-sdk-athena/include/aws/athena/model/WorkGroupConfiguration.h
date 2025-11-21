@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
+#include <aws/athena/model/EngineConfiguration.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/athena/model/IdentityCenterConfiguration.h>
 #include <aws/athena/model/ManagedQueryResultsConfiguration.h>
+#include <aws/athena/model/MonitoringConfiguration.h>
 #include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -93,8 +95,8 @@ class WorkGroupConfiguration {
   ///@{
   /**
    * <p>If set to "true", the settings for the workgroup override client-side
-   * settings. If set to "false", client-side settings are used. For more
-   * information, see <a
+   * settings. If set to "false", client-side settings are used. This property is not
+   * required for Apache Spark enabled workgroups. For more information, see <a
    * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
    * Settings Override Client-Side Settings</a>.</p>
    */
@@ -230,6 +232,41 @@ class WorkGroupConfiguration {
 
   ///@{
   /**
+   * <p>Contains the configuration settings for managed log persistence, delivering
+   * logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
+  inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  void SetMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    m_monitoringConfigurationHasBeenSet = true;
+    m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value);
+  }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  WorkGroupConfiguration& WithMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
+  inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  void SetEngineConfiguration(EngineConfigurationT&& value) {
+    m_engineConfigurationHasBeenSet = true;
+    m_engineConfiguration = std::forward<EngineConfigurationT>(value);
+  }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  WorkGroupConfiguration& WithEngineConfiguration(EngineConfigurationT&& value) {
+    SetEngineConfiguration(std::forward<EngineConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the KMS key that is used to encrypt the user's data stores in
    * Athena. This setting does not apply to Athena SQL workgroups.</p>
    */
@@ -337,6 +374,12 @@ class WorkGroupConfiguration {
 
   Aws::String m_executionRole;
   bool m_executionRoleHasBeenSet = false;
+
+  MonitoringConfiguration m_monitoringConfiguration;
+  bool m_monitoringConfigurationHasBeenSet = false;
+
+  EngineConfiguration m_engineConfiguration;
+  bool m_engineConfigurationHasBeenSet = false;
 
   CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
   bool m_customerContentEncryptionConfigurationHasBeenSet = false;

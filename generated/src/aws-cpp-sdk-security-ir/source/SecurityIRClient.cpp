@@ -33,8 +33,10 @@
 #include <aws/security-ir/model/ListCaseEditsRequest.h>
 #include <aws/security-ir/model/ListCasesRequest.h>
 #include <aws/security-ir/model/ListCommentsRequest.h>
+#include <aws/security-ir/model/ListInvestigationsRequest.h>
 #include <aws/security-ir/model/ListMembershipsRequest.h>
 #include <aws/security-ir/model/ListTagsForResourceRequest.h>
+#include <aws/security-ir/model/SendFeedbackRequest.h>
 #include <aws/security-ir/model/TagResourceRequest.h>
 #include <aws/security-ir/model/UntagResourceRequest.h>
 #include <aws/security-ir/model/UpdateCaseCommentRequest.h>
@@ -624,6 +626,43 @@ ListCommentsOutcome SecurityIRClient::ListComments(const ListCommentsRequest& re
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListInvestigationsOutcome SecurityIRClient::ListInvestigations(const ListInvestigationsRequest& request) const {
+  AWS_OPERATION_GUARD(ListInvestigations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvestigations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListInvestigations", "Required field: CaseId, is not set");
+    return ListInvestigationsOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [CaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListInvestigations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListInvestigations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListInvestigations",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListInvestigationsOutcome>(
+      [&]() -> ListInvestigationsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInvestigations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/cases/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/list-investigations");
+        return ListInvestigationsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListMembershipsOutcome SecurityIRClient::ListMemberships(const ListMembershipsRequest& request) const {
   AWS_OPERATION_GUARD(ListMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -684,6 +723,50 @@ ListTagsForResourceOutcome SecurityIRClient::ListTagsForResource(const ListTagsF
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         return ListTagsForResourceOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendFeedbackOutcome SecurityIRClient::SendFeedback(const SendFeedbackRequest& request) const {
+  AWS_OPERATION_GUARD(SendFeedback);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendFeedback", "Required field: CaseId, is not set");
+    return SendFeedbackOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [CaseId]", false));
+  }
+  if (!request.ResultIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SendFeedback", "Required field: ResultId, is not set");
+    return SendFeedbackOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [ResultId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendFeedback, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendFeedback, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendFeedback",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendFeedbackOutcome>(
+      [&]() -> SendFeedbackOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/cases/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/feedback/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResultId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/send-feedback");
+        return SendFeedbackOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

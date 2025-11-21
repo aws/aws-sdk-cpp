@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
+#include <aws/athena/model/EngineConfiguration.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/athena/model/ManagedQueryResultsConfigurationUpdates.h>
+#include <aws/athena/model/MonitoringConfiguration.h>
 #include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <aws/athena/model/ResultConfigurationUpdates.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -319,6 +321,41 @@ class WorkGroupConfigurationUpdates {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Contains the configuration settings for managed log persistence, delivering
+   * logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+   */
+  inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
+  inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  void SetMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    m_monitoringConfigurationHasBeenSet = true;
+    m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value);
+  }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  WorkGroupConfigurationUpdates& WithMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
+  inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  void SetEngineConfiguration(EngineConfigurationT&& value) {
+    m_engineConfigurationHasBeenSet = true;
+    m_engineConfiguration = std::forward<EngineConfigurationT>(value);
+  }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  WorkGroupConfigurationUpdates& WithEngineConfiguration(EngineConfigurationT&& value) {
+    SetEngineConfiguration(std::forward<EngineConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enforceWorkGroupConfiguration{false};
   bool m_enforceWorkGroupConfigurationHasBeenSet = false;
@@ -361,6 +398,12 @@ class WorkGroupConfigurationUpdates {
 
   QueryResultsS3AccessGrantsConfiguration m_queryResultsS3AccessGrantsConfiguration;
   bool m_queryResultsS3AccessGrantsConfigurationHasBeenSet = false;
+
+  MonitoringConfiguration m_monitoringConfiguration;
+  bool m_monitoringConfigurationHasBeenSet = false;
+
+  EngineConfiguration m_engineConfiguration;
+  bool m_engineConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

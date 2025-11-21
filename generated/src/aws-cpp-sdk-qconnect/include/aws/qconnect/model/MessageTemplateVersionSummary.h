@@ -124,6 +124,24 @@ class MessageTemplateVersionSummary {
 
   ///@{
   /**
+   * <p>The channel of the message template.</p>
+   */
+  inline const Aws::String& GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  template <typename ChannelT = Aws::String>
+  void SetChannel(ChannelT&& value) {
+    m_channelHasBeenSet = true;
+    m_channel = std::forward<ChannelT>(value);
+  }
+  template <typename ChannelT = Aws::String>
+  MessageTemplateVersionSummary& WithChannel(ChannelT&& value) {
+    SetChannel(std::forward<ChannelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The channel subtype this message template applies to.</p>
    */
   inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
@@ -184,6 +202,9 @@ class MessageTemplateVersionSummary {
 
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
+
+  Aws::String m_channel;
+  bool m_channelHasBeenSet = false;
 
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
   bool m_channelSubtypeHasBeenSet = false;

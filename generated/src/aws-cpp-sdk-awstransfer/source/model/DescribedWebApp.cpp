@@ -53,6 +53,14 @@ DescribedWebApp& DescribedWebApp::operator=(JsonView jsonValue) {
     m_webAppEndpointPolicy = WebAppEndpointPolicyMapper::GetWebAppEndpointPolicyForName(jsonValue.GetString("WebAppEndpointPolicy"));
     m_webAppEndpointPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EndpointType")) {
+    m_endpointType = WebAppEndpointTypeMapper::GetWebAppEndpointTypeForName(jsonValue.GetString("EndpointType"));
+    m_endpointTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DescribedEndpointDetails")) {
+    m_describedEndpointDetails = jsonValue.GetObject("DescribedEndpointDetails");
+    m_describedEndpointDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +101,14 @@ JsonValue DescribedWebApp::Jsonize() const {
 
   if (m_webAppEndpointPolicyHasBeenSet) {
     payload.WithString("WebAppEndpointPolicy", WebAppEndpointPolicyMapper::GetNameForWebAppEndpointPolicy(m_webAppEndpointPolicy));
+  }
+
+  if (m_endpointTypeHasBeenSet) {
+    payload.WithString("EndpointType", WebAppEndpointTypeMapper::GetNameForWebAppEndpointType(m_endpointType));
+  }
+
+  if (m_describedEndpointDetailsHasBeenSet) {
+    payload.WithObject("DescribedEndpointDetails", m_describedEndpointDetails.Jsonize());
   }
 
   return payload;

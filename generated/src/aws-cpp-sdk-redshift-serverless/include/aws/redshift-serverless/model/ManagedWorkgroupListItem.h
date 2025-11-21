@@ -22,7 +22,7 @@ namespace RedshiftServerless {
 namespace Model {
 
 /**
- * <p>A collection of Amazon Redshift compute resources managed by AWS
+ * <p>A collection of Amazon Redshift compute resources managed by
  * Glue.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ManagedWorkgroupListItem">AWS
  * API Reference</a></p>
@@ -90,7 +90,7 @@ class ManagedWorkgroupListItem {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data
+   * <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data
    * Catalog.</p>
    */
   inline const Aws::String& GetSourceArn() const { return m_sourceArn; }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/Odb_EXPORTS.h>
+#include <aws/odb/model/OciIdentityDomain.h>
 #include <aws/odb/model/OciOnboardingStatus.h>
 
 #include <utility>
@@ -76,6 +77,24 @@ class GetOciOnboardingStatusResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the
+   * onboarding status response.</p>
+   */
+  inline const OciIdentityDomain& GetOciIdentityDomain() const { return m_ociIdentityDomain; }
+  template <typename OciIdentityDomainT = OciIdentityDomain>
+  void SetOciIdentityDomain(OciIdentityDomainT&& value) {
+    m_ociIdentityDomainHasBeenSet = true;
+    m_ociIdentityDomain = std::forward<OciIdentityDomainT>(value);
+  }
+  template <typename OciIdentityDomainT = OciIdentityDomain>
+  GetOciOnboardingStatusResult& WithOciIdentityDomain(OciIdentityDomainT&& value) {
+    SetOciIdentityDomain(std::forward<OciIdentityDomainT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -98,6 +117,9 @@ class GetOciOnboardingStatusResult {
 
   Aws::String m_newTenancyActivationLink;
   bool m_newTenancyActivationLinkHasBeenSet = false;
+
+  OciIdentityDomain m_ociIdentityDomain;
+  bool m_ociIdentityDomainHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

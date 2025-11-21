@@ -33,6 +33,10 @@ GetOciOnboardingStatusResult& GetOciOnboardingStatusResult::operator=(const Aws:
     m_newTenancyActivationLink = jsonValue.GetString("newTenancyActivationLink");
     m_newTenancyActivationLinkHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ociIdentityDomain")) {
+    m_ociIdentityDomain = jsonValue.GetObject("ociIdentityDomain");
+    m_ociIdentityDomainHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

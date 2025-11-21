@@ -51,6 +51,10 @@ OptimizationJobSummary& OptimizationJobSummary::operator=(JsonView jsonValue) {
         jsonValue.GetString("DeploymentInstanceType"));
     m_deploymentInstanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MaxInstanceCount")) {
+    m_maxInstanceCount = jsonValue.GetInteger("MaxInstanceCount");
+    m_maxInstanceCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OptimizationTypes")) {
     Aws::Utils::Array<JsonView> optimizationTypesJsonList = jsonValue.GetArray("OptimizationTypes");
     for (unsigned optimizationTypesIndex = 0; optimizationTypesIndex < optimizationTypesJsonList.GetLength(); ++optimizationTypesIndex) {
@@ -96,6 +100,10 @@ JsonValue OptimizationJobSummary::Jsonize() const {
     payload.WithString(
         "DeploymentInstanceType",
         OptimizationJobDeploymentInstanceTypeMapper::GetNameForOptimizationJobDeploymentInstanceType(m_deploymentInstanceType));
+  }
+
+  if (m_maxInstanceCountHasBeenSet) {
+    payload.WithInteger("MaxInstanceCount", m_maxInstanceCount);
   }
 
   if (m_optimizationTypesHasBeenSet) {

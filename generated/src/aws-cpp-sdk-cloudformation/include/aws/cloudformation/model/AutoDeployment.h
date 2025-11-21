@@ -6,6 +6,10 @@
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -73,12 +77,42 @@ class AutoDeployment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment
+   * operations. When auto-deployment is triggered, operations will be sequenced to
+   * ensure all dependencies complete successfully before this StackSet's operation
+   * begins.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDependsOn() const { return m_dependsOn; }
+  inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
+  template <typename DependsOnT = Aws::Vector<Aws::String>>
+  void SetDependsOn(DependsOnT&& value) {
+    m_dependsOnHasBeenSet = true;
+    m_dependsOn = std::forward<DependsOnT>(value);
+  }
+  template <typename DependsOnT = Aws::Vector<Aws::String>>
+  AutoDeployment& WithDependsOn(DependsOnT&& value) {
+    SetDependsOn(std::forward<DependsOnT>(value));
+    return *this;
+  }
+  template <typename DependsOnT = Aws::String>
+  AutoDeployment& AddDependsOn(DependsOnT&& value) {
+    m_dependsOnHasBeenSet = true;
+    m_dependsOn.emplace_back(std::forward<DependsOnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
   bool m_enabledHasBeenSet = false;
 
   bool m_retainStacksOnAccountRemoval{false};
   bool m_retainStacksOnAccountRemovalHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_dependsOn;
+  bool m_dependsOnHasBeenSet = false;
 };
 
 }  // namespace Model

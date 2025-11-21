@@ -8,10 +8,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterCapacityType.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
 #include <aws/sagemaker/model/ClusterInstanceStatusDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
+#include <aws/sagemaker/model/ClusterKubernetesConfigNodeDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/UltraServerInfo.h>
 #include <aws/sagemaker/model/VpcConfig.h>
@@ -375,6 +377,45 @@ class ClusterNodeDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes configuration applied to this node, showing both the current
+   * and desired state of labels and taints. The cluster works to reconcile the
+   * actual state with the declared state. </p>
+   */
+  inline const ClusterKubernetesConfigNodeDetails& GetKubernetesConfig() const { return m_kubernetesConfig; }
+  inline bool KubernetesConfigHasBeenSet() const { return m_kubernetesConfigHasBeenSet; }
+  template <typename KubernetesConfigT = ClusterKubernetesConfigNodeDetails>
+  void SetKubernetesConfig(KubernetesConfigT&& value) {
+    m_kubernetesConfigHasBeenSet = true;
+    m_kubernetesConfig = std::forward<KubernetesConfigT>(value);
+  }
+  template <typename KubernetesConfigT = ClusterKubernetesConfigNodeDetails>
+  ClusterNodeDetails& WithKubernetesConfig(KubernetesConfigT&& value) {
+    SetKubernetesConfig(std::forward<KubernetesConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The capacity type of the node. Valid values are <code>OnDemand</code> and
+   * <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an
+   * On-Demand instance. When set to <code>Spot</code>, the node is launched as a
+   * Spot instance. </p>
+   */
+  inline ClusterCapacityType GetCapacityType() const { return m_capacityType; }
+  inline bool CapacityTypeHasBeenSet() const { return m_capacityTypeHasBeenSet; }
+  inline void SetCapacityType(ClusterCapacityType value) {
+    m_capacityTypeHasBeenSet = true;
+    m_capacityType = value;
+  }
+  inline ClusterNodeDetails& WithCapacityType(ClusterCapacityType value) {
+    SetCapacityType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceGroupName;
   bool m_instanceGroupNameHasBeenSet = false;
@@ -429,6 +470,12 @@ class ClusterNodeDetails {
 
   UltraServerInfo m_ultraServerInfo;
   bool m_ultraServerInfoHasBeenSet = false;
+
+  ClusterKubernetesConfigNodeDetails m_kubernetesConfig;
+  bool m_kubernetesConfigHasBeenSet = false;
+
+  ClusterCapacityType m_capacityType{ClusterCapacityType::NOT_SET};
+  bool m_capacityTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,6 +37,18 @@ GetDataAutomationStatusResult& GetDataAutomationStatusResult::operator=(const Aw
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
     m_outputConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobSubmissionTime")) {
+    m_jobSubmissionTime = jsonValue.GetString("jobSubmissionTime");
+    m_jobSubmissionTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("jobCompletionTime")) {
+    m_jobCompletionTime = jsonValue.GetString("jobCompletionTime");
+    m_jobCompletionTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("jobDurationInSeconds")) {
+    m_jobDurationInSeconds = jsonValue.GetInteger("jobDurationInSeconds");
+    m_jobDurationInSecondsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

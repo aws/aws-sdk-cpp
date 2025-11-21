@@ -33,9 +33,11 @@
 #include <aws/security-ir/model/ListCasesRequest.h>
 #include <aws/security-ir/model/ListCasesResult.h>
 #include <aws/security-ir/model/ListCommentsResult.h>
+#include <aws/security-ir/model/ListInvestigationsResult.h>
 #include <aws/security-ir/model/ListMembershipsRequest.h>
 #include <aws/security-ir/model/ListMembershipsResult.h>
 #include <aws/security-ir/model/ListTagsForResourceResult.h>
+#include <aws/security-ir/model/SendFeedbackResult.h>
 #include <aws/security-ir/model/TagResourceResult.h>
 #include <aws/security-ir/model/UntagResourceResult.h>
 #include <aws/security-ir/model/UpdateCaseCommentResult.h>
@@ -89,8 +91,10 @@ class GetMembershipRequest;
 class ListCaseEditsRequest;
 class ListCasesRequest;
 class ListCommentsRequest;
+class ListInvestigationsRequest;
 class ListMembershipsRequest;
 class ListTagsForResourceRequest;
+class SendFeedbackRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateCaseRequest;
@@ -114,8 +118,10 @@ typedef Aws::Utils::Outcome<GetMembershipResult, SecurityIRError> GetMembershipO
 typedef Aws::Utils::Outcome<ListCaseEditsResult, SecurityIRError> ListCaseEditsOutcome;
 typedef Aws::Utils::Outcome<ListCasesResult, SecurityIRError> ListCasesOutcome;
 typedef Aws::Utils::Outcome<ListCommentsResult, SecurityIRError> ListCommentsOutcome;
+typedef Aws::Utils::Outcome<ListInvestigationsResult, SecurityIRError> ListInvestigationsOutcome;
 typedef Aws::Utils::Outcome<ListMembershipsResult, SecurityIRError> ListMembershipsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, SecurityIRError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<SendFeedbackResult, SecurityIRError> SendFeedbackOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, SecurityIRError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, SecurityIRError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateCaseResult, SecurityIRError> UpdateCaseOutcome;
@@ -139,8 +145,10 @@ typedef std::future<GetMembershipOutcome> GetMembershipOutcomeCallable;
 typedef std::future<ListCaseEditsOutcome> ListCaseEditsOutcomeCallable;
 typedef std::future<ListCasesOutcome> ListCasesOutcomeCallable;
 typedef std::future<ListCommentsOutcome> ListCommentsOutcomeCallable;
+typedef std::future<ListInvestigationsOutcome> ListInvestigationsOutcomeCallable;
 typedef std::future<ListMembershipsOutcome> ListMembershipsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<SendFeedbackOutcome> SendFeedbackOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCaseOutcome> UpdateCaseOutcomeCallable;
@@ -195,12 +203,18 @@ typedef std::function<void(const SecurityIRClient*, const Model::ListCasesReques
 typedef std::function<void(const SecurityIRClient*, const Model::ListCommentsRequest&, const Model::ListCommentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCommentsResponseReceivedHandler;
+typedef std::function<void(const SecurityIRClient*, const Model::ListInvestigationsRequest&, const Model::ListInvestigationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListInvestigationsResponseReceivedHandler;
 typedef std::function<void(const SecurityIRClient*, const Model::ListMembershipsRequest&, const Model::ListMembershipsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMembershipsResponseReceivedHandler;
 typedef std::function<void(const SecurityIRClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const SecurityIRClient*, const Model::SendFeedbackRequest&, const Model::SendFeedbackOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendFeedbackResponseReceivedHandler;
 typedef std::function<void(const SecurityIRClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

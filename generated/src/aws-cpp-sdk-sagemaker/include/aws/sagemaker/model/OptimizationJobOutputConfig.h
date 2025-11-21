@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/OptimizationSageMakerModel.h>
 
 #include <utility>
 
@@ -70,12 +71,34 @@ class OptimizationJobOutputConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of a SageMaker model to use as the output destination for an
+   * optimization job.</p>
+   */
+  inline const OptimizationSageMakerModel& GetSageMakerModel() const { return m_sageMakerModel; }
+  inline bool SageMakerModelHasBeenSet() const { return m_sageMakerModelHasBeenSet; }
+  template <typename SageMakerModelT = OptimizationSageMakerModel>
+  void SetSageMakerModel(SageMakerModelT&& value) {
+    m_sageMakerModelHasBeenSet = true;
+    m_sageMakerModel = std::forward<SageMakerModelT>(value);
+  }
+  template <typename SageMakerModelT = OptimizationSageMakerModel>
+  OptimizationJobOutputConfig& WithSageMakerModel(SageMakerModelT&& value) {
+    SetSageMakerModel(std::forward<SageMakerModelT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_kmsKeyId;
   bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_s3OutputLocation;
   bool m_s3OutputLocationHasBeenSet = false;
+
+  OptimizationSageMakerModel m_sageMakerModel;
+  bool m_sageMakerModelHasBeenSet = false;
 };
 
 }  // namespace Model

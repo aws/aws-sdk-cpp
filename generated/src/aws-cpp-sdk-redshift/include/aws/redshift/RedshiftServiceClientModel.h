@@ -161,6 +161,7 @@
 #include <aws/redshift/model/ModifyEndpointAccessResult.h>
 #include <aws/redshift/model/ModifyEventSubscriptionResult.h>
 #include <aws/redshift/model/ModifyIntegrationResult.h>
+#include <aws/redshift/model/ModifyLakehouseConfigurationResult.h>
 #include <aws/redshift/model/ModifyRedshiftIdcApplicationResult.h>
 #include <aws/redshift/model/ModifyScheduledActionResult.h>
 #include <aws/redshift/model/ModifySnapshotCopyRetentionPeriodResult.h>
@@ -335,6 +336,7 @@ class ModifyCustomDomainAssociationRequest;
 class ModifyEndpointAccessRequest;
 class ModifyEventSubscriptionRequest;
 class ModifyIntegrationRequest;
+class ModifyLakehouseConfigurationRequest;
 class ModifyRedshiftIdcApplicationRequest;
 class ModifyScheduledActionRequest;
 class ModifySnapshotCopyRetentionPeriodRequest;
@@ -479,6 +481,7 @@ typedef Aws::Utils::Outcome<ModifyCustomDomainAssociationResult, RedshiftError> 
 typedef Aws::Utils::Outcome<ModifyEndpointAccessResult, RedshiftError> ModifyEndpointAccessOutcome;
 typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, RedshiftError> ModifyEventSubscriptionOutcome;
 typedef Aws::Utils::Outcome<ModifyIntegrationResult, RedshiftError> ModifyIntegrationOutcome;
+typedef Aws::Utils::Outcome<ModifyLakehouseConfigurationResult, RedshiftError> ModifyLakehouseConfigurationOutcome;
 typedef Aws::Utils::Outcome<ModifyRedshiftIdcApplicationResult, RedshiftError> ModifyRedshiftIdcApplicationOutcome;
 typedef Aws::Utils::Outcome<ModifyScheduledActionResult, RedshiftError> ModifyScheduledActionOutcome;
 typedef Aws::Utils::Outcome<ModifySnapshotCopyRetentionPeriodResult, RedshiftError> ModifySnapshotCopyRetentionPeriodOutcome;
@@ -622,6 +625,7 @@ typedef std::future<ModifyCustomDomainAssociationOutcome> ModifyCustomDomainAsso
 typedef std::future<ModifyEndpointAccessOutcome> ModifyEndpointAccessOutcomeCallable;
 typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
 typedef std::future<ModifyIntegrationOutcome> ModifyIntegrationOutcomeCallable;
+typedef std::future<ModifyLakehouseConfigurationOutcome> ModifyLakehouseConfigurationOutcomeCallable;
 typedef std::future<ModifyRedshiftIdcApplicationOutcome> ModifyRedshiftIdcApplicationOutcomeCallable;
 typedef std::future<ModifyScheduledActionOutcome> ModifyScheduledActionOutcomeCallable;
 typedef std::future<ModifySnapshotCopyRetentionPeriodOutcome> ModifySnapshotCopyRetentionPeriodOutcomeCallable;
@@ -1031,6 +1035,10 @@ typedef std::function<void(const RedshiftClient*, const Model::ModifyEventSubscr
 typedef std::function<void(const RedshiftClient*, const Model::ModifyIntegrationRequest&, const Model::ModifyIntegrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyIntegrationResponseReceivedHandler;
+typedef std::function<void(const RedshiftClient*, const Model::ModifyLakehouseConfigurationRequest&,
+                           const Model::ModifyLakehouseConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyLakehouseConfigurationResponseReceivedHandler;
 typedef std::function<void(const RedshiftClient*, const Model::ModifyRedshiftIdcApplicationRequest&,
                            const Model::ModifyRedshiftIdcApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

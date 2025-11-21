@@ -59,5 +59,9 @@ Aws::String UpdateClusterConfigRequest::SerializePayload() const {
     payload.WithBool("deletionProtection", m_deletionProtection);
   }
 
+  if (m_controlPlaneScalingConfigHasBeenSet) {
+    payload.WithObject("controlPlaneScalingConfig", m_controlPlaneScalingConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

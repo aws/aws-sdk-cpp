@@ -14,6 +14,7 @@
 #include <aws/qconnect/model/MessageTemplateAttributeType.h>
 #include <aws/qconnect/model/MessageTemplateAttributes.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfigurationSummary.h>
 
 #include <utility>
 
@@ -125,6 +126,24 @@ class MessageTemplateData {
   template <typename NameT = Aws::String>
   MessageTemplateData& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The channel of the message template.</p>
+   */
+  inline const Aws::String& GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  template <typename ChannelT = Aws::String>
+  void SetChannel(ChannelT&& value) {
+    m_channelHasBeenSet = true;
+    m_channel = std::forward<ChannelT>(value);
+  }
+  template <typename ChannelT = Aws::String>
+  MessageTemplateData& WithChannel(ChannelT&& value) {
+    SetChannel(std::forward<ChannelT>(value));
     return *this;
   }
   ///@}
@@ -259,6 +278,24 @@ class MessageTemplateData {
   ///@}
 
   ///@{
+  /**
+   * <p>The source configuration summary of the message template.</p>
+   */
+  inline const MessageTemplateSourceConfigurationSummary& GetSourceConfigurationSummary() const { return m_sourceConfigurationSummary; }
+  inline bool SourceConfigurationSummaryHasBeenSet() const { return m_sourceConfigurationSummaryHasBeenSet; }
+  template <typename SourceConfigurationSummaryT = MessageTemplateSourceConfigurationSummary>
+  void SetSourceConfigurationSummary(SourceConfigurationSummaryT&& value) {
+    m_sourceConfigurationSummaryHasBeenSet = true;
+    m_sourceConfigurationSummary = std::forward<SourceConfigurationSummaryT>(value);
+  }
+  template <typename SourceConfigurationSummaryT = MessageTemplateSourceConfigurationSummary>
+  MessageTemplateData& WithSourceConfigurationSummary(SourceConfigurationSummaryT&& value) {
+    SetSourceConfigurationSummary(std::forward<SourceConfigurationSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const GroupingConfiguration& GetGroupingConfiguration() const { return m_groupingConfiguration; }
   inline bool GroupingConfigurationHasBeenSet() const { return m_groupingConfigurationHasBeenSet; }
@@ -379,6 +416,9 @@ class MessageTemplateData {
   Aws::String m_name;
   bool m_nameHasBeenSet = false;
 
+  Aws::String m_channel;
+  bool m_channelHasBeenSet = false;
+
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
   bool m_channelSubtypeHasBeenSet = false;
 
@@ -399,6 +439,9 @@ class MessageTemplateData {
 
   Aws::String m_language;
   bool m_languageHasBeenSet = false;
+
+  MessageTemplateSourceConfigurationSummary m_sourceConfigurationSummary;
+  bool m_sourceConfigurationSummaryHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
   bool m_groupingConfigurationHasBeenSet = false;

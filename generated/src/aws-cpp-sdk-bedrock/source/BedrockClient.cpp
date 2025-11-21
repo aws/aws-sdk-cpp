@@ -30,6 +30,7 @@
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyTestCaseRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
+#include <aws/bedrock/model/DeleteEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementRequest.h>
 #include <aws/bedrock/model/DeleteGuardrailRequest.h>
 #include <aws/bedrock/model/DeleteImportedModelRequest.h>
@@ -70,6 +71,7 @@
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestResultsRequest.h>
 #include <aws/bedrock/model/ListCustomModelDeploymentsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
+#include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListFoundationModelAgreementOffersRequest.h>
 #include <aws/bedrock/model/ListFoundationModelsRequest.h>
@@ -84,6 +86,7 @@
 #include <aws/bedrock/model/ListPromptRoutersRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListTagsForResourceRequest.h>
+#include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
@@ -1043,6 +1046,43 @@ DeleteCustomModelDeploymentOutcome BedrockClient::DeleteCustomModelDeployment(co
         endpointResolutionOutcome.GetResult().AddPathSegments("/model-customization/custom-model-deployments/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomModelDeploymentIdentifier());
         return DeleteCustomModelDeploymentOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteEnforcedGuardrailConfigurationOutcome BedrockClient::DeleteEnforcedGuardrailConfiguration(
+    const DeleteEnforcedGuardrailConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteEnforcedGuardrailConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConfigIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteEnforcedGuardrailConfiguration", "Required field: ConfigId, is not set");
+    return DeleteEnforcedGuardrailConfigurationOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteEnforcedGuardrailConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteEnforcedGuardrailConfigurationOutcome>(
+      [&]() -> DeleteEnforcedGuardrailConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEnforcedGuardrailConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/enforcedGuardrailsConfiguration/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
+        return DeleteEnforcedGuardrailConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2542,6 +2582,37 @@ ListCustomModelsOutcome BedrockClient::ListCustomModels(const ListCustomModelsRe
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListEnforcedGuardrailsConfigurationOutcome BedrockClient::ListEnforcedGuardrailsConfiguration(
+    const ListEnforcedGuardrailsConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(ListEnforcedGuardrailsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnforcedGuardrailsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEnforcedGuardrailsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEnforcedGuardrailsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEnforcedGuardrailsConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEnforcedGuardrailsConfigurationOutcome>(
+      [&]() -> ListEnforcedGuardrailsConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnforcedGuardrailsConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/enforcedGuardrailsConfiguration");
+        return ListEnforcedGuardrailsConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListEvaluationJobsOutcome BedrockClient::ListEvaluationJobs(const ListEvaluationJobsRequest& request) const {
   AWS_OPERATION_GUARD(ListEvaluationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEvaluationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2965,6 +3036,37 @@ ListTagsForResourceOutcome BedrockClient::ListTagsForResource(const ListTagsForR
         endpointResolutionOutcome.GetResult().AddPathSegments("/listTagsForResource");
         return ListTagsForResourceOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutEnforcedGuardrailConfigurationOutcome BedrockClient::PutEnforcedGuardrailConfiguration(
+    const PutEnforcedGuardrailConfigurationRequest& request) const {
+  AWS_OPERATION_GUARD(PutEnforcedGuardrailConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutEnforcedGuardrailConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutEnforcedGuardrailConfiguration",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutEnforcedGuardrailConfigurationOutcome>(
+      [&]() -> PutEnforcedGuardrailConfigurationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutEnforcedGuardrailConfiguration, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/enforcedGuardrailsConfiguration");
+        return PutEnforcedGuardrailConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -38,6 +38,10 @@ MessageTemplateSummary& MessageTemplateSummary::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = jsonValue.GetString("channel");
+    m_channelHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("channelSubtype")) {
     m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
     m_channelSubtypeHasBeenSet = true;
@@ -53,6 +57,10 @@ MessageTemplateSummary& MessageTemplateSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("lastModifiedBy")) {
     m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceConfiguration")) {
+    m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
+    m_sourceConfigurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("activeVersionNumber")) {
     m_activeVersionNumber = jsonValue.GetInt64("activeVersionNumber");
@@ -95,6 +103,10 @@ JsonValue MessageTemplateSummary::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", m_channel);
+  }
+
   if (m_channelSubtypeHasBeenSet) {
     payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
   }
@@ -109,6 +121,10 @@ JsonValue MessageTemplateSummary::Jsonize() const {
 
   if (m_lastModifiedByHasBeenSet) {
     payload.WithString("lastModifiedBy", m_lastModifiedBy);
+  }
+
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
   if (m_activeVersionNumberHasBeenSet) {

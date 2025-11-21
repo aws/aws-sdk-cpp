@@ -26,6 +26,10 @@ NluImprovementSpecification& NluImprovementSpecification::operator=(JsonView jso
     m_assistedNluMode = AssistedNluModeMapper::GetAssistedNluModeForName(jsonValue.GetString("assistedNluMode"));
     m_assistedNluModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intentDisambiguationSettings")) {
+    m_intentDisambiguationSettings = jsonValue.GetObject("intentDisambiguationSettings");
+    m_intentDisambiguationSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue NluImprovementSpecification::Jsonize() const {
 
   if (m_assistedNluModeHasBeenSet) {
     payload.WithString("assistedNluMode", AssistedNluModeMapper::GetNameForAssistedNluMode(m_assistedNluMode));
+  }
+
+  if (m_intentDisambiguationSettingsHasBeenSet) {
+    payload.WithObject("intentDisambiguationSettings", m_intentDisambiguationSettings.Jsonize());
   }
 
   return payload;

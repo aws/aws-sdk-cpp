@@ -53,6 +53,8 @@ static const int KubernetesNetworkConfig_HASH = HashingUtils::HashString("Kubern
 static const int RemoteNetworkConfig_HASH = HashingUtils::HashString("RemoteNetworkConfig");
 static const int DeletionProtection_HASH = HashingUtils::HashString("DeletionProtection");
 static const int NodeRepairConfig_HASH = HashingUtils::HashString("NodeRepairConfig");
+static const int UpdatedTier_HASH = HashingUtils::HashString("UpdatedTier");
+static const int PreviousTier_HASH = HashingUtils::HashString("PreviousTier");
 
 UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -132,6 +134,10 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::DeletionProtection;
   } else if (hashCode == NodeRepairConfig_HASH) {
     return UpdateParamType::NodeRepairConfig;
+  } else if (hashCode == UpdatedTier_HASH) {
+    return UpdateParamType::UpdatedTier;
+  } else if (hashCode == PreviousTier_HASH) {
+    return UpdateParamType::PreviousTier;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -222,6 +228,10 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "DeletionProtection";
     case UpdateParamType::NodeRepairConfig:
       return "NodeRepairConfig";
+    case UpdateParamType::UpdatedTier:
+      return "UpdatedTier";
+    case UpdateParamType::PreviousTier:
+      return "PreviousTier";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

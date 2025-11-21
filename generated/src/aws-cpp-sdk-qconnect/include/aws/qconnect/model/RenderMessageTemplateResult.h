@@ -9,6 +9,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/MessageTemplateAttachment.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfigurationSummary.h>
 
 #include <utility>
 
@@ -42,6 +43,23 @@ class RenderMessageTemplateResult {
   template <typename ContentT = MessageTemplateContentProvider>
   RenderMessageTemplateResult& WithContent(ContentT&& value) {
     SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source configuration of the message template.</p>
+   */
+  inline const MessageTemplateSourceConfigurationSummary& GetSourceConfigurationSummary() const { return m_sourceConfigurationSummary; }
+  template <typename SourceConfigurationSummaryT = MessageTemplateSourceConfigurationSummary>
+  void SetSourceConfigurationSummary(SourceConfigurationSummaryT&& value) {
+    m_sourceConfigurationSummaryHasBeenSet = true;
+    m_sourceConfigurationSummary = std::forward<SourceConfigurationSummaryT>(value);
+  }
+  template <typename SourceConfigurationSummaryT = MessageTemplateSourceConfigurationSummary>
+  RenderMessageTemplateResult& WithSourceConfigurationSummary(SourceConfigurationSummaryT&& value) {
+    SetSourceConfigurationSummary(std::forward<SourceConfigurationSummaryT>(value));
     return *this;
   }
   ///@}
@@ -109,6 +127,9 @@ class RenderMessageTemplateResult {
  private:
   MessageTemplateContentProvider m_content;
   bool m_contentHasBeenSet = false;
+
+  MessageTemplateSourceConfigurationSummary m_sourceConfigurationSummary;
+  bool m_sourceConfigurationSummaryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesNotInterpolated;
   bool m_attributesNotInterpolatedHasBeenSet = false;

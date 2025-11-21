@@ -886,6 +886,29 @@ class CreateClusterRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Glue data catalog that will be associated with the cluster
+   * enabled with Amazon Redshift federated permissions.</p> <p>Constraints:</p> <ul>
+   * <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Can only
+   * contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens
+   * (-).</p> </li> </ul> <p>Pattern: <code>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</code>
+   * </p> <p>Example: <code>my-catalog_01</code> </p>
+   */
+  inline const Aws::String& GetCatalogName() const { return m_catalogName; }
+  inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+  template <typename CatalogNameT = Aws::String>
+  void SetCatalogName(CatalogNameT&& value) {
+    m_catalogNameHasBeenSet = true;
+    m_catalogName = std::forward<CatalogNameT>(value);
+  }
+  template <typename CatalogNameT = Aws::String>
+  CreateClusterRequest& WithCatalogName(CatalogNameT&& value) {
+    SetCatalogName(std::forward<CatalogNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBName;
   bool m_dBNameHasBeenSet = false;
@@ -1003,6 +1026,9 @@ class CreateClusterRequest : public RedshiftRequest {
 
   Aws::String m_redshiftIdcApplicationArn;
   bool m_redshiftIdcApplicationArnHasBeenSet = false;
+
+  Aws::String m_catalogName;
+  bool m_catalogNameHasBeenSet = false;
 };
 
 }  // namespace Model

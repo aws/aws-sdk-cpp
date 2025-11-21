@@ -163,6 +163,12 @@ DBCluster& DBCluster::operator=(const XmlNode& xmlNode) {
       m_preferredMaintenanceWindow = Aws::Utils::Xml::DecodeEscapedXmlText(preferredMaintenanceWindowNode.GetText());
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
+    XmlNode upgradeRolloutOrderNode = resultNode.FirstChild("UpgradeRolloutOrder");
+    if (!upgradeRolloutOrderNode.IsNull()) {
+      m_upgradeRolloutOrder = UpgradeRolloutOrderMapper::GetUpgradeRolloutOrderForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(upgradeRolloutOrderNode.GetText()).c_str()));
+      m_upgradeRolloutOrderHasBeenSet = true;
+    }
     XmlNode replicationSourceIdentifierNode = resultNode.FirstChild("ReplicationSourceIdentifier");
     if (!replicationSourceIdentifierNode.IsNull()) {
       m_replicationSourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(replicationSourceIdentifierNode.GetText());
@@ -664,6 +670,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
             << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
 
+  if (m_upgradeRolloutOrderHasBeenSet) {
+    oStream << location << index << locationValue << ".UpgradeRolloutOrder="
+            << StringUtils::URLEncode(UpgradeRolloutOrderMapper::GetNameForUpgradeRolloutOrder(m_upgradeRolloutOrder)) << "&";
+  }
+
   if (m_replicationSourceIdentifierHasBeenSet) {
     oStream << location << index << locationValue
             << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
@@ -1072,6 +1083,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_preferredMaintenanceWindowHasBeenSet) {
     oStream << location << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
+  }
+  if (m_upgradeRolloutOrderHasBeenSet) {
+    oStream << location << ".UpgradeRolloutOrder="
+            << StringUtils::URLEncode(UpgradeRolloutOrderMapper::GetNameForUpgradeRolloutOrder(m_upgradeRolloutOrder)) << "&";
   }
   if (m_replicationSourceIdentifierHasBeenSet) {
     oStream << location << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";

@@ -69,8 +69,9 @@ class UpdateNodegroupVersionRequest : public EKSRequest {
   ///@{
   /**
    * <p>The Kubernetes version to update to. If no version is specified, then the
-   * Kubernetes version of the node group does not change. You can specify the
-   * Kubernetes version of the cluster to update the node group to the latest AMI
+   * node group will be updated to match the cluster's current Kubernetes version,
+   * and the latest available AMI for that version will be used. You can also specify
+   * the Kubernetes version of the cluster to update the node group to the latest AMI
    * version of the cluster's Kubernetes version. If you specify
    * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
    * don't specify <code>version</code>, or the node group update will fail. For more

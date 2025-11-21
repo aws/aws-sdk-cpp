@@ -281,22 +281,22 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
    * Kafka</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
    * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
-   * available only for DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
-   * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
-   * split the batch in two and retry.</p> </li> <li> <p>
-   * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
+   * available for stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed
+   * Apache Kafka):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> – If
+   * the function returns an error, split the batch in two and retry.</p> </li> <li>
+   * <p> <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
    * specified age. The default value is infinite (-1). When set to infinite (-1),
    * failed records are retried until the record expires</p> </li> <li> <p>
    * <code>MaximumRetryAttempts</code> – Discard records after the specified number
    * of retries. The default value is infinite (-1). When set to infinite (-1),
    * failed records are retried until the record expires.</p> </li> <li> <p>
-   * <code>ParallelizationFactor</code> – Process multiple batches from each shard
-   * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
-   * MSK, and self-managed Apache Kafka), the following option is also available:</p>
-   * <ul> <li> <p> <code>OnFailure</code> – Send discarded records to an Amazon SQS
-   * queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a
+   * <code>OnFailure</code> – Send discarded records to an Amazon SQS queue, Amazon
+   * SNS topic, Kafka topic, or Amazon S3 bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-   * a destination</a>.</p> </li> </ul> <p>For information about which configuration
+   * a destination</a>.</p> </li> </ul> <p>The following option is available only for
+   * DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
+   * <code>ParallelizationFactor</code> – Process multiple batches from each shard
+   * concurrently.</p> </li> </ul> <p>For information about which configuration
    * parameters apply to each event source, see the following topics.</p> <ul> <li>
    * <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
@@ -2185,22 +2185,22 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
    * Kafka</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
    * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
-   * available only for DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
-   * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
-   * split the batch in two and retry.</p> </li> <li> <p>
-   * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
+   * available for stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed
+   * Apache Kafka):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> – If
+   * the function returns an error, split the batch in two and retry.</p> </li> <li>
+   * <p> <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
    * specified age. The default value is infinite (-1). When set to infinite (-1),
    * failed records are retried until the record expires</p> </li> <li> <p>
    * <code>MaximumRetryAttempts</code> – Discard records after the specified number
    * of retries. The default value is infinite (-1). When set to infinite (-1),
    * failed records are retried until the record expires.</p> </li> <li> <p>
-   * <code>ParallelizationFactor</code> – Process multiple batches from each shard
-   * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
-   * MSK, and self-managed Apache Kafka), the following option is also available:</p>
-   * <ul> <li> <p> <code>OnFailure</code> – Send discarded records to an Amazon SQS
-   * queue, Amazon SNS topic, or Amazon S3 bucket. For more information, see <a
+   * <code>OnFailure</code> – Send discarded records to an Amazon SQS queue, Amazon
+   * SNS topic, Kafka topic, or Amazon S3 bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-   * a destination</a>.</p> </li> </ul> <p>For information about which configuration
+   * a destination</a>.</p> </li> </ul> <p>The following option is available only for
+   * DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
+   * <code>ParallelizationFactor</code> – Process multiple batches from each shard
+   * concurrently.</p> </li> </ul> <p>For information about which configuration
    * parameters apply to each event source, see the following topics.</p> <ul> <li>
    * <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">

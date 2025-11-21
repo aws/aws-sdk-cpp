@@ -35,6 +35,10 @@ Aws::String CreateMessageTemplateRequest::SerializePayload() const {
     payload.WithString("language", m_language);
   }
 
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+  }
+
   if (m_defaultAttributesHasBeenSet) {
     payload.WithObject("defaultAttributes", m_defaultAttributes.Jsonize());
   }

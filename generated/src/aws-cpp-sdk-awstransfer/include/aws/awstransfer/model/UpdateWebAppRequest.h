@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/UpdateWebAppEndpointDetails.h>
 #include <aws/awstransfer/model/UpdateWebAppIdentityProviderDetails.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -107,6 +108,25 @@ class UpdateWebAppRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated endpoint configuration for the web app. You can modify the
+   * endpoint type and VPC configuration settings.</p>
+   */
+  inline const UpdateWebAppEndpointDetails& GetEndpointDetails() const { return m_endpointDetails; }
+  inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+  template <typename EndpointDetailsT = UpdateWebAppEndpointDetails>
+  void SetEndpointDetails(EndpointDetailsT&& value) {
+    m_endpointDetailsHasBeenSet = true;
+    m_endpointDetails = std::forward<EndpointDetailsT>(value);
+  }
+  template <typename EndpointDetailsT = UpdateWebAppEndpointDetails>
+  UpdateWebAppRequest& WithEndpointDetails(EndpointDetailsT&& value) {
+    SetEndpointDetails(std::forward<EndpointDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_webAppId;
   bool m_webAppIdHasBeenSet = false;
@@ -119,6 +139,9 @@ class UpdateWebAppRequest : public TransferRequest {
 
   WebAppUnits m_webAppUnits;
   bool m_webAppUnitsHasBeenSet = false;
+
+  UpdateWebAppEndpointDetails m_endpointDetails;
+  bool m_endpointDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

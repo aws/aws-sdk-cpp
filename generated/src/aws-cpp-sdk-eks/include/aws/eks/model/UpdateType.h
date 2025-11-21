@@ -26,7 +26,8 @@ enum class UpdateType {
   ZonalShiftConfigUpdate,
   AutoModeUpdate,
   RemoteNetworkConfigUpdate,
-  DeletionProtectionUpdate
+  DeletionProtectionUpdate,
+  ControlPlaneScalingConfigUpdate
 };
 
 namespace UpdateTypeMapper {

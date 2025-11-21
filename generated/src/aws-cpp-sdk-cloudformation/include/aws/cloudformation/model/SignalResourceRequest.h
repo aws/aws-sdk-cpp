@@ -76,10 +76,10 @@ class SignalResourceRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto
-   * Scaling groups, specify the instance ID that you are signaling as the unique ID.
-   * If you send multiple signals to a single resource (such as signaling a wait
-   * condition), each signal requires a different unique ID.</p>
+   * <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2
+   * Auto Scaling groups, specify the instance ID that you are signaling as the
+   * unique ID. If you send multiple signals to a single resource (such as signaling
+   * a wait condition), each signal requires a different unique ID.</p>
    */
   inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
   inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }

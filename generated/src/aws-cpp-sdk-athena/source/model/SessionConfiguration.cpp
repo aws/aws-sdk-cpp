@@ -30,6 +30,10 @@ SessionConfiguration& SessionConfiguration::operator=(JsonView jsonValue) {
     m_idleTimeoutSeconds = jsonValue.GetInt64("IdleTimeoutSeconds");
     m_idleTimeoutSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SessionIdleTimeoutInMinutes")) {
+    m_sessionIdleTimeoutInMinutes = jsonValue.GetInteger("SessionIdleTimeoutInMinutes");
+    m_sessionIdleTimeoutInMinutesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EncryptionConfiguration")) {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue SessionConfiguration::Jsonize() const {
 
   if (m_idleTimeoutSecondsHasBeenSet) {
     payload.WithInt64("IdleTimeoutSeconds", m_idleTimeoutSeconds);
+  }
+
+  if (m_sessionIdleTimeoutInMinutesHasBeenSet) {
+    payload.WithInteger("SessionIdleTimeoutInMinutes", m_sessionIdleTimeoutInMinutes);
   }
 
   if (m_encryptionConfigurationHasBeenSet) {

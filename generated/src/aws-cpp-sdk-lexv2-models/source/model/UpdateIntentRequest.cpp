@@ -19,6 +19,10 @@ Aws::String UpdateIntentRequest::SerializePayload() const {
     payload.WithString("intentName", m_intentName);
   }
 
+  if (m_intentDisplayNameHasBeenSet) {
+    payload.WithString("intentDisplayName", m_intentDisplayName);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }

@@ -30,6 +30,10 @@ OptimizationConfig& OptimizationConfig::operator=(JsonView jsonValue) {
     m_modelShardingConfig = jsonValue.GetObject("ModelShardingConfig");
     m_modelShardingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ModelSpeculativeDecodingConfig")) {
+    m_modelSpeculativeDecodingConfig = jsonValue.GetObject("ModelSpeculativeDecodingConfig");
+    m_modelSpeculativeDecodingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue OptimizationConfig::Jsonize() const {
 
   if (m_modelShardingConfigHasBeenSet) {
     payload.WithObject("ModelShardingConfig", m_modelShardingConfig.Jsonize());
+  }
+
+  if (m_modelSpeculativeDecodingConfigHasBeenSet) {
+    payload.WithObject("ModelSpeculativeDecodingConfig", m_modelSpeculativeDecodingConfig.Jsonize());
   }
 
   return payload;

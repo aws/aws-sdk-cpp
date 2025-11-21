@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisvideo/KinesisVideoRequest.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
+#include <aws/kinesisvideo/model/StreamStorageConfiguration.h>
 
 #include <utility>
 
@@ -32,8 +33,7 @@ class CreateStreamRequest : public KinesisVideoRequest {
   ///@{
   /**
    * <p>The name of the device that is writing to the stream. </p>  <p>In the
-   * current implementation, Kinesis Video Streams does not use this name.</p>
-   *
+   * current implementation, Kinesis Video Streams doesn't use this name.</p>
    */
   inline const Aws::String& GetDeviceName() const { return m_deviceName; }
   inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
@@ -98,8 +98,8 @@ class CreateStreamRequest : public KinesisVideoRequest {
   /**
    * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
    * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-   * default, Kinesis Video-managed key (<code>Amazon Web
-   * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
+   * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+   * <p> For more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
    * </p>
    */
@@ -122,11 +122,11 @@ class CreateStreamRequest : public KinesisVideoRequest {
    * <p>The number of hours that you want to retain the data in the stream. Kinesis
    * Video Streams retains the data in a data store that is associated with the
    * stream.</p> <p>The default value is 0, indicating that the stream does not
-   * persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0,
-   * consumers can still consume the fragments that remain in the service host
-   * buffer, which has a retention time limit of 5 minutes and a retention memory
-   * limit of 200 MB. Fragments are removed from the buffer when either limit is
-   * reached.</p>
+   * persist data. The minimum is 1 hour.</p> <p>When the
+   * <code>DataRetentionInHours</code> value is 0, consumers can still consume the
+   * fragments that remain in the service host buffer, which has a retention time
+   * limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed
+   * from the buffer when either limit is reached.</p>
    */
   inline int GetDataRetentionInHours() const { return m_dataRetentionInHours; }
   inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
@@ -164,6 +164,28 @@ class CreateStreamRequest : public KinesisVideoRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for the stream's storage, including the default storage
+   * tier for stream data. This configuration determines how stream data is stored
+   * and accessed, with different tiers offering varying levels of performance and
+   * cost optimization.</p> <p>If not specified, the stream will use the default
+   * storage configuration with HOT tier for optimal performance.</p>
+   */
+  inline const StreamStorageConfiguration& GetStreamStorageConfiguration() const { return m_streamStorageConfiguration; }
+  inline bool StreamStorageConfigurationHasBeenSet() const { return m_streamStorageConfigurationHasBeenSet; }
+  template <typename StreamStorageConfigurationT = StreamStorageConfiguration>
+  void SetStreamStorageConfiguration(StreamStorageConfigurationT&& value) {
+    m_streamStorageConfigurationHasBeenSet = true;
+    m_streamStorageConfiguration = std::forward<StreamStorageConfigurationT>(value);
+  }
+  template <typename StreamStorageConfigurationT = StreamStorageConfiguration>
+  CreateStreamRequest& WithStreamStorageConfiguration(StreamStorageConfigurationT&& value) {
+    SetStreamStorageConfiguration(std::forward<StreamStorageConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_deviceName;
   bool m_deviceNameHasBeenSet = false;
@@ -182,6 +204,9 @@ class CreateStreamRequest : public KinesisVideoRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  StreamStorageConfiguration m_streamStorageConfiguration;
+  bool m_streamStorageConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

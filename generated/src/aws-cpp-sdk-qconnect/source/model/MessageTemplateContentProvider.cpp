@@ -26,6 +26,14 @@ MessageTemplateContentProvider& MessageTemplateContentProvider::operator=(JsonVi
     m_sms = jsonValue.GetObject("sms");
     m_smsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("whatsApp")) {
+    m_whatsApp = jsonValue.GetObject("whatsApp");
+    m_whatsAppHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("push")) {
+    m_push = jsonValue.GetObject("push");
+    m_pushHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue MessageTemplateContentProvider::Jsonize() const {
 
   if (m_smsHasBeenSet) {
     payload.WithObject("sms", m_sms.Jsonize());
+  }
+
+  if (m_whatsAppHasBeenSet) {
+    payload.WithObject("whatsApp", m_whatsApp.Jsonize());
+  }
+
+  if (m_pushHasBeenSet) {
+    payload.WithObject("push", m_push.Jsonize());
   }
 
   return payload;

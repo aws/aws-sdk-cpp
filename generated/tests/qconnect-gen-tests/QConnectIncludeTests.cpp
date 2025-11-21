@@ -280,6 +280,8 @@
 #include <aws/qconnect/model/MessageTemplateQueryOperator.h>
 #include <aws/qconnect/model/MessageTemplateSearchExpression.h>
 #include <aws/qconnect/model/MessageTemplateSearchResultData.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfiguration.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfigurationSummary.h>
 #include <aws/qconnect/model/MessageTemplateSummary.h>
 #include <aws/qconnect/model/MessageTemplateVersionSummary.h>
 #include <aws/qconnect/model/MessageType.h>
@@ -294,6 +296,12 @@
 #include <aws/qconnect/model/ParsingStrategy.h>
 #include <aws/qconnect/model/Participant.h>
 #include <aws/qconnect/model/Priority.h>
+#include <aws/qconnect/model/PushADMMessageTemplateContent.h>
+#include <aws/qconnect/model/PushAPNSMessageTemplateContent.h>
+#include <aws/qconnect/model/PushBaiduMessageTemplateContent.h>
+#include <aws/qconnect/model/PushFCMMessageTemplateContent.h>
+#include <aws/qconnect/model/PushMessageAction.h>
+#include <aws/qconnect/model/PushMessageTemplateContent.h>
 #include <aws/qconnect/model/PutFeedbackRequest.h>
 #include <aws/qconnect/model/PutFeedbackResult.h>
 #include <aws/qconnect/model/QueryCondition.h>
@@ -410,6 +418,10 @@
 #include <aws/qconnect/model/WebCrawlerConfiguration.h>
 #include <aws/qconnect/model/WebCrawlerLimits.h>
 #include <aws/qconnect/model/WebScopeType.h>
+#include <aws/qconnect/model/WhatsAppMessageTemplateContent.h>
+#include <aws/qconnect/model/WhatsAppMessageTemplateSourceConfiguration.h>
+#include <aws/qconnect/model/WhatsAppMessageTemplateSourceConfigurationSummary.h>
+#include <aws/qconnect/model/WhatsAppSourceConfigurationStatus.h>
 
 using QConnectIncludeTest = ::testing::Test;
 
