@@ -164,15 +164,15 @@ public:
     // Override to verify checksum is being sent
     Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const override
     {
-        std::cout << "=== CompleteMultipartUpload Request ===" << std::endl;
-        std::cout << "Available ChecksumAlgorithm enum values:" << std::endl;
-        std::cout << "ChecksumType: " << (int)request.GetChecksumType() << std::endl;
-        std::cout << "ChecksumCRC32: " << request.GetChecksumCRC32() << std::endl;
-        std::cout << "ChecksumCRC32C: " << request.GetChecksumCRC32C() << std::endl;
-        std::cout << "ChecksumCRC64NVME: " << request.GetChecksumCRC64NVME() << std::endl;
-        std::cout << "ChecksumSHA1: " << request.GetChecksumSHA1() << std::endl;
-        std::cout << "ChecksumSHA256: " << request.GetChecksumSHA256() << std::endl;
-        std::cout << "=======================================" << std::endl;
+        AWS_LOGSTREAM_INFO("TransferTests", "=== CompleteMultipartUpload Request ===");
+        AWS_LOGSTREAM_INFO("TransferTests", "Available ChecksumAlgorithm enum values:");
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumType: " << (int)request.GetChecksumType());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC32: " << request.GetChecksumCRC32());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC32C: " << request.GetChecksumCRC32C());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC64NVME: " << request.GetChecksumCRC64NVME());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumSHA1: " << request.GetChecksumSHA1());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumSHA256: " << request.GetChecksumSHA256());
+        AWS_LOGSTREAM_INFO("TransferTests", "=======================================");
         return S3Client::CompleteMultipartUpload(request);
     }
 

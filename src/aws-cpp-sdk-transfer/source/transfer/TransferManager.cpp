@@ -9,6 +9,8 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -402,14 +404,24 @@ namespace Aws
             bool isRetry = !handle->GetMultiPartId().empty();
             uint64_t sentBytes = 0;
 
-            std::shared_ptr<Aws::Utils::Crypto::Hash> fullObjectHashCalculator;
-            if (handle->GetChecksum().empty() && !isRetry) {
-                if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
-                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
-                } else{
-                    fullObjectHashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
+            const auto fullObjectHashCalculator = [](const std::shared_ptr<TransferHandle>& handle, bool isRetry, S3::Model::ChecksumAlgorithm algorithm) -> std::shared_ptr<Aws::Utils::Crypto::Hash> {
+                if (handle->GetChecksum().empty() && !isRetry) {
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::Sha1>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA256) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::Sha256>("TransferManager");
+                    }
+                    return Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
                 }
-            }
+                return nullptr;
+            }(handle, isRetry, m_transferConfig.checksumAlgorithm);
 
             if (!isRetry) {
               Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
