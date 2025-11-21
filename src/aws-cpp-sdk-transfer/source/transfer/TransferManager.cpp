@@ -832,17 +832,19 @@ namespace Aws
                 return false;
             }
 
-            if (requestedRange.find("bytes=") != 0)
+            const auto requestPrefix = "bytes=";
+            if (requestedRange.substr(0, strlen(requestPrefix)) != requestPrefix)
             {
                 return false;
             }
-            Aws::String requestRange = requestedRange.substr(6);
+            Aws::String requestRange = requestedRange.substr(strlen(requestPrefix));
 
-            if (responseContentRange.find("bytes ") != 0)
+            const auto responsePrefix = "bytes ";
+            if (responseContentRange.substr(0, strlen(responsePrefix)) != responsePrefix)
             {
                 return false;
             }
-            Aws::String responseRange = responseContentRange.substr(6);
+            Aws::String responseRange = responseContentRange.substr(strlen(responsePrefix));
             size_t slashPos = responseRange.find('/');
             if (slashPos != Aws::String::npos)
             {
@@ -1158,32 +1160,32 @@ namespace Aws
                         partState->SetDownloadBuffer(nullptr);
                     }
                     return;
-            }
-
-            if(handle->ShouldContinue())
-            {
-                Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
-                assert(bufferStream);
-
-                Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
-                if (errMsg.empty()) {
-                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
-                } else {
-                    Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
-                                                                   "InternalFailure", errMsg, false);
-                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                            << "] Failed to download object in Bucket: ["
-                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
-                            << "] " << errMsg);
-                    handle->ChangePartToFailed(partState);
-                    handle->SetError(error);
-                    TriggerErrorCallback(handle, error);
                 }
-            }
-            else
-            {
-                handle->ChangePartToFailed(partState);
-            }
+
+                if(handle->ShouldContinue())
+                {
+                    Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
+                    assert(bufferStream);
+
+                    Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
+                    if (errMsg.empty()) {
+                        handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                    } else {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                       "InternalFailure", errMsg, false);
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Failed to download object in Bucket: ["
+                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                                << "] " << errMsg);
+                        handle->ChangePartToFailed(partState);
+                        handle->SetError(error);
+                        TriggerErrorCallback(handle, error);
+                    }
+                }
+                else
+                {
+                    handle->ChangePartToFailed(partState);
+                }
             }
 
             // buffer cleanup
