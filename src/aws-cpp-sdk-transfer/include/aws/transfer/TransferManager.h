@@ -345,6 +345,21 @@ namespace Aws
              */
             Aws::String CombinePartChecksums(const std::shared_ptr<TransferHandle>& handle);
 
+            /**
+             * Generates a temporary file name following SEP pattern: {finalFile}.s3tmp.{uniqueId}
+             * @param finalFileName The final destination file name.
+             * @return The temporary file name.
+             */
+            Aws::String GenerateTempFileName(const Aws::String& finalFileName);
+
+            /**
+             * Renames temporary file to final file after successful validation.
+             * @param tempFile The temporary file path.
+             * @param finalFile The final file path.
+             * @return True if rename was successful, false otherwise.
+             */
+            bool RenameTempFileToFinal(const Aws::String& tempFile, const Aws::String& finalFile);
+
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
             Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;

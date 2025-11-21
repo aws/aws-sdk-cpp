@@ -878,6 +878,7 @@ namespace Aws
                 getObjectOutcome.GetResult().GetBody().flush();
                 
                 // Validate full object checksum if available
+                bool checksumValid = true;
                 if (!handle->GetChecksum().empty()) {
                     const auto& getResult = getObjectOutcome.GetResult();
                     Aws::String actualChecksum;
@@ -896,6 +897,7 @@ namespace Aws
                     }
                     
                     if (!actualChecksum.empty() && actualChecksum != handle->GetChecksum()) {
+                        checksumValid = false;
                         Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
                             Aws::S3::S3Errors::INTERNAL_FAILURE,
                             "ChecksumMismatch", 
@@ -910,6 +912,32 @@ namespace Aws
                         TriggerErrorCallback(handle, checksumError);
                         TriggerTransferStatusUpdatedCallback(handle);
                         return;
+                    }
+                }
+                
+                // Rename temp file to final file if using temporary file pattern
+                if (!handle->GetTargetFilePath().empty() && checksumValid) {
+                    Aws::String tempFile = GenerateTempFileName(handle->GetTargetFilePath());
+                    if (handle->GetTargetFilePath().find(".s3tmp.") != Aws::String::npos) {
+                        // This is a temp file, rename to final
+                        Aws::String finalFile = handle->GetTargetFilePath();
+                        size_t pos = finalFile.find(".s3tmp.");
+                        if (pos != Aws::String::npos) {
+                            finalFile = finalFile.substr(0, pos);
+                            if (!RenameTempFileToFinal(handle->GetTargetFilePath(), finalFile)) {
+                                Aws::Client::AWSError<Aws::S3::S3Errors> renameError(
+                                    Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                    "FileRenameFailure", 
+                                    "Failed to rename temporary file to final destination", 
+                                    false);
+                                handle->ChangePartToFailed(partState);
+                                handle->UpdateStatus(TransferStatus::FAILED);
+                                handle->SetError(renameError);
+                                TriggerErrorCallback(handle, renameError);
+                                TriggerTransferStatusUpdatedCallback(handle);
+                                return;
+                            }
+                        }
                     }
                 }
                 
@@ -1224,11 +1252,13 @@ namespace Aws
                     outcome.GetResult().GetBody().flush();
                     
                     // Validate full object checksum if available
+                    bool checksumValid = true;
                     if (!handle->GetChecksum().empty()) {
                         // Combine part checksums to calculate full object checksum
                         Aws::String calculatedChecksum = CombinePartChecksums(handle);
                         
                         if (!calculatedChecksum.empty() && calculatedChecksum != handle->GetChecksum()) {
+                            checksumValid = false;
                             Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
                                 Aws::S3::S3Errors::INTERNAL_FAILURE,
                                 "ChecksumMismatch", 
@@ -1242,6 +1272,30 @@ namespace Aws
                             TriggerErrorCallback(handle, checksumError);
                             TriggerTransferStatusUpdatedCallback(handle);
                             return;
+                        }
+                    }
+                    
+                    // Rename temp file to final file if using temporary file pattern
+                    if (!handle->GetTargetFilePath().empty() && checksumValid) {
+                        if (handle->GetTargetFilePath().find(".s3tmp.") != Aws::String::npos) {
+                            // This is a temp file, rename to final
+                            Aws::String finalFile = handle->GetTargetFilePath();
+                            size_t pos = finalFile.find(".s3tmp.");
+                            if (pos != Aws::String::npos) {
+                                finalFile = finalFile.substr(0, pos);
+                                if (!RenameTempFileToFinal(handle->GetTargetFilePath(), finalFile)) {
+                                    Aws::Client::AWSError<Aws::S3::S3Errors> renameError(
+                                        Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                        "FileRenameFailure", 
+                                        "Failed to rename temporary file to final destination", 
+                                        false);
+                                    handle->UpdateStatus(TransferStatus::FAILED);
+                                    handle->SetError(renameError);
+                                    TriggerErrorCallback(handle, renameError);
+                                    TriggerTransferStatusUpdatedCallback(handle);
+                                    return;
+                                }
+                            }
                         }
                     }
                     
@@ -1639,6 +1693,31 @@ namespace Aws
             std::stringstream ss;
             ss << std::hex << combinedCrc;
             return ss.str();
+        }
+
+        Aws::String TransferManager::GenerateTempFileName(const Aws::String& finalFileName) {
+            // Generate unique identifier (max 8 chars as per SEP)
+            Aws::String uuid = Aws::Utils::UUID::RandomUUID();
+            Aws::String uniqueId = uuid.length() > 8 ? uuid.substr(0, 8) : uuid;
+            return finalFileName + ".s3tmp." + uniqueId;
+        }
+
+        bool TransferManager::RenameTempFileToFinal(const Aws::String& tempFile, const Aws::String& finalFile) {
+            // Use atomic rename if supported by platform
+            if (std::rename(tempFile.c_str(), finalFile.c_str()) == 0) {
+                return true;
+            }
+            
+            // Fallback strategy for platforms without atomic rename
+            if (Aws::FileSystem::RemoveFileIfExists(finalFile.c_str())) {
+                if (std::rename(tempFile.c_str(), finalFile.c_str()) == 0) {
+                    return true;
+                }
+            }
+            
+            // Clean up temp file on failure
+            Aws::FileSystem::RemoveFileIfExists(tempFile.c_str());
+            return false;
         }
     }
 }
