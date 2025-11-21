@@ -25,6 +25,10 @@ RenderMessageTemplateResult& RenderMessageTemplateResult::operator=(const Aws::A
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceConfigurationSummary")) {
+    m_sourceConfigurationSummary = jsonValue.GetObject("sourceConfigurationSummary");
+    m_sourceConfigurationSummaryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("attributesNotInterpolated")) {
     Aws::Utils::Array<JsonView> attributesNotInterpolatedJsonList = jsonValue.GetArray("attributesNotInterpolated");
     for (unsigned attributesNotInterpolatedIndex = 0; attributesNotInterpolatedIndex < attributesNotInterpolatedJsonList.GetLength();

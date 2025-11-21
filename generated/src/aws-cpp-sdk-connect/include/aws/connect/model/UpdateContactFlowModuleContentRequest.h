@@ -86,6 +86,24 @@ class UpdateContactFlowModuleContentRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Serialized JSON string of the flow module Settings schema.</p>
+   */
+  inline const Aws::String& GetSettings() const { return m_settings; }
+  inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+  template <typename SettingsT = Aws::String>
+  void SetSettings(SettingsT&& value) {
+    m_settingsHasBeenSet = true;
+    m_settings = std::forward<SettingsT>(value);
+  }
+  template <typename SettingsT = Aws::String>
+  UpdateContactFlowModuleContentRequest& WithSettings(SettingsT&& value) {
+    SetSettings(std::forward<SettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -95,6 +113,9 @@ class UpdateContactFlowModuleContentRequest : public ConnectRequest {
 
   Aws::String m_content;
   bool m_contentHasBeenSet = false;
+
+  Aws::String m_settings;
+  bool m_settingsHasBeenSet = false;
 };
 
 }  // namespace Model

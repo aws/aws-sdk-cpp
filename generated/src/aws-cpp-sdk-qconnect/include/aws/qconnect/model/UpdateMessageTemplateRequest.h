@@ -9,6 +9,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/MessageTemplateAttributes.h>
 #include <aws/qconnect/model/MessageTemplateContentProvider.h>
+#include <aws/qconnect/model/MessageTemplateSourceConfiguration.h>
 
 #include <utility>
 
@@ -110,6 +111,25 @@ class UpdateMessageTemplateRequest : public QConnectRequest {
 
   ///@{
   /**
+   * <p>The source configuration of the message template. Only set this argument for
+   * WHATSAPP channel subtype.</p>
+   */
+  inline const MessageTemplateSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+  inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+  template <typename SourceConfigurationT = MessageTemplateSourceConfiguration>
+  void SetSourceConfiguration(SourceConfigurationT&& value) {
+    m_sourceConfigurationHasBeenSet = true;
+    m_sourceConfiguration = std::forward<SourceConfigurationT>(value);
+  }
+  template <typename SourceConfigurationT = MessageTemplateSourceConfiguration>
+  UpdateMessageTemplateRequest& WithSourceConfiguration(SourceConfigurationT&& value) {
+    SetSourceConfiguration(std::forward<SourceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An object that specifies the default values to use for variables in the
    * message template. This object contains different categories of key-value pairs.
    * Each key defines a variable or placeholder in the message template. The
@@ -140,6 +160,9 @@ class UpdateMessageTemplateRequest : public QConnectRequest {
 
   Aws::String m_language;
   bool m_languageHasBeenSet = false;
+
+  MessageTemplateSourceConfiguration m_sourceConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
 
   MessageTemplateAttributes m_defaultAttributes;
   bool m_defaultAttributesHasBeenSet = false;

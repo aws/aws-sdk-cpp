@@ -132,6 +132,10 @@ Cluster& Cluster::operator=(JsonView jsonValue) {
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("controlPlaneScalingConfig")) {
+    m_controlPlaneScalingConfig = jsonValue.GetObject("controlPlaneScalingConfig");
+    m_controlPlaneScalingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -252,6 +256,10 @@ JsonValue Cluster::Jsonize() const {
 
   if (m_deletionProtectionHasBeenSet) {
     payload.WithBool("deletionProtection", m_deletionProtection);
+  }
+
+  if (m_controlPlaneScalingConfigHasBeenSet) {
+    payload.WithObject("controlPlaneScalingConfig", m_controlPlaneScalingConfig.Jsonize());
   }
 
   return payload;

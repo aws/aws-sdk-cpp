@@ -257,13 +257,13 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant
    * and unique. It runs on its own set of Amazon EC2 instances.</p> <p>The cluster
    * control plane is provisioned across multiple Availability Zones and fronted by
-   * an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions
-   * elastic network interfaces in your VPC subnets to provide connectivity from the
-   * control plane instances to the nodes (for example, to support <code>kubectl
-   * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
-   * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
-   * cluster's control plane over the Kubernetes API server endpoint and a
-   * certificate file that is created for your cluster.</p> <p>You can use the
+   * an ELB Network Load Balancer. Amazon EKS also provisions elastic network
+   * interfaces in your VPC subnets to provide connectivity from the control plane
+   * instances to the nodes (for example, to support <code>kubectl exec</code>,
+   * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
+   * run in your Amazon Web Services account and connect to your cluster's control
+   * plane over the Kubernetes API server endpoint and a certificate file that is
+   * created for your cluster.</p> <p>You can use the
    * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
    * parameters to enable or disable public and private access to your cluster's
    * Kubernetes API server endpoint. By default, public access is enabled, and
@@ -412,9 +412,9 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * using launch templates, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
    * managed nodes with launch templates</a>.</p> <p>An Amazon EKS managed node group
-   * is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-   * managed by Amazon Web Services for an Amazon EKS cluster. For more information,
-   * see <a
+   * is an Amazon EC2 Amazon EC2 Auto Scaling group and associated Amazon EC2
+   * instances that are managed by Amazon Web Services for an Amazon EKS cluster. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
    * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
    * types are only supported for commercial Amazon Web Services Regions that support

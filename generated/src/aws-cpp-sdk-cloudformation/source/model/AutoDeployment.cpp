@@ -35,6 +35,17 @@ AutoDeployment& AutoDeployment::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainStacksOnAccountRemovalNode.GetText()).c_str()).c_str());
       m_retainStacksOnAccountRemovalHasBeenSet = true;
     }
+    XmlNode dependsOnNode = resultNode.FirstChild("DependsOn");
+    if (!dependsOnNode.IsNull()) {
+      XmlNode dependsOnMember = dependsOnNode.FirstChild("member");
+      m_dependsOnHasBeenSet = !dependsOnMember.IsNull();
+      while (!dependsOnMember.IsNull()) {
+        m_dependsOn.push_back(dependsOnMember.GetText());
+        dependsOnMember = dependsOnMember.NextNode("member");
+      }
+
+      m_dependsOnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,6 +60,14 @@ void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location,
     oStream << location << index << locationValue << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval
             << "&";
   }
+
+  if (m_dependsOnHasBeenSet) {
+    unsigned dependsOnIdx = 1;
+    for (auto& item : m_dependsOn) {
+      oStream << location << index << locationValue << ".DependsOn.member." << dependsOnIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
 }
 
 void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -57,6 +76,12 @@ void AutoDeployment::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_retainStacksOnAccountRemovalHasBeenSet) {
     oStream << location << ".RetainStacksOnAccountRemoval=" << std::boolalpha << m_retainStacksOnAccountRemoval << "&";
+  }
+  if (m_dependsOnHasBeenSet) {
+    unsigned dependsOnIdx = 1;
+    for (auto& item : m_dependsOn) {
+      oStream << location << ".DependsOn.member." << dependsOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 

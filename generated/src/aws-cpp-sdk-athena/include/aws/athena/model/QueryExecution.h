@@ -84,7 +84,8 @@ class QueryExecution {
    * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
    * query statements, such as <code>CREATE TABLE AS SELECT</code>.
    * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
-   * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
+   * <code>SHOW CREATE TABLE</code>, <code>EXPLAIN</code>, <code>DESCRIBE</code>, or
+   * <code>SHOW TABLES</code>.</p>
    */
   inline StatementType GetStatementType() const { return m_statementType; }
   inline bool StatementTypeHasBeenSet() const { return m_statementTypeHasBeenSet; }

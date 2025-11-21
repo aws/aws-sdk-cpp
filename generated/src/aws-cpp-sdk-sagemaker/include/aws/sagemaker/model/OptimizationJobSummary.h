@@ -179,6 +179,22 @@ class OptimizationJobSummary {
 
   ///@{
   /**
+   * <p>The maximum number of instances to use for the optimization job.</p>
+   */
+  inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
+  inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
+  inline void SetMaxInstanceCount(int value) {
+    m_maxInstanceCountHasBeenSet = true;
+    m_maxInstanceCount = value;
+  }
+  inline OptimizationJobSummary& WithMaxInstanceCount(int value) {
+    SetMaxInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The optimization techniques that are applied by the optimization job.</p>
    */
   inline const Aws::Vector<Aws::String>& GetOptimizationTypes() const { return m_optimizationTypes; }
@@ -224,6 +240,9 @@ class OptimizationJobSummary {
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
   bool m_deploymentInstanceTypeHasBeenSet = false;
+
+  int m_maxInstanceCount{0};
+  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_optimizationTypes;
   bool m_optimizationTypesHasBeenSet = false;

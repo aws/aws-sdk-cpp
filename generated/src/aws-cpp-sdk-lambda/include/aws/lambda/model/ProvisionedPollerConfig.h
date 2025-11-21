@@ -4,7 +4,10 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -69,12 +72,37 @@ class ProvisionedPollerConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>(Amazon MSK and self-managed Apache Kafka) The name of the provisioned poller
+   * group. Use this option to group multiple ESMs within the VPC to share Event
+   * Poller Unit (EPU) capacity. This option is used to optimize Provisioned mode
+   * costs for your ESMs. You can group up to 100 ESMs per poller group and aggregate
+   * maximum pollers across all ESMs in a group cannot exceed 2000.</p>
+   */
+  inline const Aws::String& GetPollerGroupName() const { return m_pollerGroupName; }
+  inline bool PollerGroupNameHasBeenSet() const { return m_pollerGroupNameHasBeenSet; }
+  template <typename PollerGroupNameT = Aws::String>
+  void SetPollerGroupName(PollerGroupNameT&& value) {
+    m_pollerGroupNameHasBeenSet = true;
+    m_pollerGroupName = std::forward<PollerGroupNameT>(value);
+  }
+  template <typename PollerGroupNameT = Aws::String>
+  ProvisionedPollerConfig& WithPollerGroupName(PollerGroupNameT&& value) {
+    SetPollerGroupName(std::forward<PollerGroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_minimumPollers{0};
   bool m_minimumPollersHasBeenSet = false;
 
   int m_maximumPollers{0};
   bool m_maximumPollersHasBeenSet = false;
+
+  Aws::String m_pollerGroupName;
+  bool m_pollerGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model

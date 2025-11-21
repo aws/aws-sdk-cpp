@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/model/Classification.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -138,6 +140,30 @@ class EngineConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration classifications that can be specified for the engine.</p>
+   */
+  inline const Aws::Vector<Classification>& GetClassifications() const { return m_classifications; }
+  inline bool ClassificationsHasBeenSet() const { return m_classificationsHasBeenSet; }
+  template <typename ClassificationsT = Aws::Vector<Classification>>
+  void SetClassifications(ClassificationsT&& value) {
+    m_classificationsHasBeenSet = true;
+    m_classifications = std::forward<ClassificationsT>(value);
+  }
+  template <typename ClassificationsT = Aws::Vector<Classification>>
+  EngineConfiguration& WithClassifications(ClassificationsT&& value) {
+    SetClassifications(std::forward<ClassificationsT>(value));
+    return *this;
+  }
+  template <typename ClassificationsT = Classification>
+  EngineConfiguration& AddClassifications(ClassificationsT&& value) {
+    m_classificationsHasBeenSet = true;
+    m_classifications.emplace_back(std::forward<ClassificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_coordinatorDpuSize{0};
   bool m_coordinatorDpuSizeHasBeenSet = false;
@@ -153,6 +179,9 @@ class EngineConfiguration {
 
   Aws::Map<Aws::String, Aws::String> m_sparkProperties;
   bool m_sparkPropertiesHasBeenSet = false;
+
+  Aws::Vector<Classification> m_classifications;
+  bool m_classificationsHasBeenSet = false;
 };
 
 }  // namespace Model

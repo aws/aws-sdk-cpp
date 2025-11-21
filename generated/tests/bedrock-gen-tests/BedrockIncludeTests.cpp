@@ -14,6 +14,8 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/bedrock/BedrockServiceClientModel.h>
 #include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/bedrock/model/AccountEnforcedGuardrailInferenceInputConfiguration.h>
+#include <aws/bedrock/model/AccountEnforcedGuardrailOutputConfiguration.h>
 #include <aws/bedrock/model/AgreementAvailability.h>
 #include <aws/bedrock/model/AgreementStatus.h>
 #include <aws/bedrock/model/ApplicationType.h>
@@ -112,6 +114,7 @@
 #include <aws/bedrock/model/CancelAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/CloudWatchConfig.h>
 #include <aws/bedrock/model/CommitmentDuration.h>
+#include <aws/bedrock/model/ConfigurationOwner.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyRequest.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/CreateAutomatedReasoningPolicyTestCaseRequest.h>
@@ -166,6 +169,8 @@
 #include <aws/bedrock/model/DeleteCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/DeleteCustomModelRequest.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
+#include <aws/bedrock/model/DeleteEnforcedGuardrailConfigurationRequest.h>
+#include <aws/bedrock/model/DeleteEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementRequest.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementResult.h>
 #include <aws/bedrock/model/DeleteGuardrailRequest.h>
@@ -330,6 +335,7 @@
 #include <aws/bedrock/model/InferenceProfileSummary.h>
 #include <aws/bedrock/model/InferenceProfileType.h>
 #include <aws/bedrock/model/InferenceType.h>
+#include <aws/bedrock/model/InputTags.h>
 #include <aws/bedrock/model/InvocationLogSource.h>
 #include <aws/bedrock/model/InvocationLogsConfig.h>
 #include <aws/bedrock/model/JobStatusDetails.h>
@@ -351,6 +357,8 @@
 #include <aws/bedrock/model/ListCustomModelDeploymentsResult.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsResult.h>
+#include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationRequest.h>
+#include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationResult.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsResult.h>
 #include <aws/bedrock/model/ListFoundationModelAgreementOffersRequest.h>
@@ -414,6 +422,8 @@
 #include <aws/bedrock/model/PromptTemplate.h>
 #include <aws/bedrock/model/ProvisionedModelStatus.h>
 #include <aws/bedrock/model/ProvisionedModelSummary.h>
+#include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
+#include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>

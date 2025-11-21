@@ -50,12 +50,16 @@
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryRequest.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
+#include <aws/ecr/model/DeleteSigningConfigurationRequest.h>
+#include <aws/ecr/model/DeleteSigningConfigurationResult.h>
 #include <aws/ecr/model/DeregisterPullTimeUpdateExclusionRequest.h>
 #include <aws/ecr/model/DeregisterPullTimeUpdateExclusionResult.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusRequest.h>
 #include <aws/ecr/model/DescribeImageReplicationStatusResult.h>
 #include <aws/ecr/model/DescribeImageScanFindingsRequest.h>
 #include <aws/ecr/model/DescribeImageScanFindingsResult.h>
+#include <aws/ecr/model/DescribeImageSigningStatusRequest.h>
+#include <aws/ecr/model/DescribeImageSigningStatusResult.h>
 #include <aws/ecr/model/DescribeImagesFilter.h>
 #include <aws/ecr/model/DescribeImagesRequest.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
@@ -88,6 +92,8 @@
 #include <aws/ecr/model/GetRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/GetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/GetRepositoryPolicyResult.h>
+#include <aws/ecr/model/GetSigningConfigurationRequest.h>
+#include <aws/ecr/model/GetSigningConfigurationResult.h>
 #include <aws/ecr/model/Image.h>
 #include <aws/ecr/model/ImageActionType.h>
 #include <aws/ecr/model/ImageDetail.h>
@@ -101,6 +107,7 @@
 #include <aws/ecr/model/ImageScanFindingsSummary.h>
 #include <aws/ecr/model/ImageScanStatus.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
+#include <aws/ecr/model/ImageSigningStatus.h>
 #include <aws/ecr/model/ImageStatus.h>
 #include <aws/ecr/model/ImageStatusFilter.h>
 #include <aws/ecr/model/ImageTagMutability.h>
@@ -149,6 +156,8 @@
 #include <aws/ecr/model/PutRegistryScanningConfigurationResult.h>
 #include <aws/ecr/model/PutReplicationConfigurationRequest.h>
 #include <aws/ecr/model/PutReplicationConfigurationResult.h>
+#include <aws/ecr/model/PutSigningConfigurationRequest.h>
+#include <aws/ecr/model/PutSigningConfigurationResult.h>
 #include <aws/ecr/model/RCTAppliedFor.h>
 #include <aws/ecr/model/Recommendation.h>
 #include <aws/ecr/model/RegisterPullTimeUpdateExclusionRequest.h>
@@ -177,6 +186,11 @@
 #include <aws/ecr/model/ScoreDetails.h>
 #include <aws/ecr/model/SetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
+#include <aws/ecr/model/SigningConfiguration.h>
+#include <aws/ecr/model/SigningRepositoryFilter.h>
+#include <aws/ecr/model/SigningRepositoryFilterType.h>
+#include <aws/ecr/model/SigningRule.h>
+#include <aws/ecr/model/SigningStatus.h>
 #include <aws/ecr/model/StartImageScanRequest.h>
 #include <aws/ecr/model/StartImageScanResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewRequest.h>

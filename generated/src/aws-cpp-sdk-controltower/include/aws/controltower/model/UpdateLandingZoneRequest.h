@@ -51,29 +51,6 @@ class UpdateLandingZoneRequest : public ControlTowerRequest {
 
   ///@{
   /**
-   * <p>The manifest file (JSON) is a text file that describes your Amazon Web
-   * Services resources. For an example, review <a
-   * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-   * your landing zone</a>. The example manifest file contains each of the available
-   * parameters. The schema for the landing zone's JSON manifest file is not
-   * published, by design.</p>
-   */
-  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
-  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-  template <typename ManifestT = Aws::Utils::Document>
-  void SetManifest(ManifestT&& value) {
-    m_manifestHasBeenSet = true;
-    m_manifest = std::forward<ManifestT>(value);
-  }
-  template <typename ManifestT = Aws::Utils::Document>
-  UpdateLandingZoneRequest& WithManifest(ManifestT&& value) {
-    SetManifest(std::forward<ManifestT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies the types of remediation actions to apply when updating the landing
    * zone configuration.</p>
    */
@@ -113,18 +90,41 @@ class UpdateLandingZoneRequest : public ControlTowerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The manifest file (JSON) is a text file that describes your Amazon Web
+   * Services resources. For an example, review <a
+   * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+   * your landing zone</a>. The example manifest file contains each of the available
+   * parameters. The schema for the landing zone's JSON manifest file is not
+   * published, by design.</p>
+   */
+  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
+  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
+  template <typename ManifestT = Aws::Utils::Document>
+  void SetManifest(ManifestT&& value) {
+    m_manifestHasBeenSet = true;
+    m_manifest = std::forward<ManifestT>(value);
+  }
+  template <typename ManifestT = Aws::Utils::Document>
+  UpdateLandingZoneRequest& WithManifest(ManifestT&& value) {
+    SetManifest(std::forward<ManifestT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_version;
   bool m_versionHasBeenSet = false;
-
-  Aws::Utils::Document m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
   bool m_remediationTypesHasBeenSet = false;
 
   Aws::String m_landingZoneIdentifier;
   bool m_landingZoneIdentifierHasBeenSet = false;
+
+  Aws::Utils::Document m_manifest;
+  bool m_manifestHasBeenSet = false;
 };
 
 }  // namespace Model

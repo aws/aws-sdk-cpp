@@ -129,8 +129,8 @@ class Reservation {
 
   ///@{
   /**
-   * <p>The start date for the serverless reservation. This is the date you specified
-   * for the reservation to start when you created the reservation.</p>
+   * <p>The start date for the serverless reservation. This is the date you created
+   * the reservation.</p>
    */
   inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
   inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }

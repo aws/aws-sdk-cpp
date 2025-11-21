@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ModelSpeculativeDecodingS3DataType { NOT_SET, S3Prefix, ManifestFile };
+
+namespace ModelSpeculativeDecodingS3DataTypeMapper {
+AWS_SAGEMAKER_API ModelSpeculativeDecodingS3DataType GetModelSpeculativeDecodingS3DataTypeForName(const Aws::String& name);
+
+AWS_SAGEMAKER_API Aws::String GetNameForModelSpeculativeDecodingS3DataType(ModelSpeculativeDecodingS3DataType value);
+}  // namespace ModelSpeculativeDecodingS3DataTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

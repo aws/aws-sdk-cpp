@@ -54,6 +54,14 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator=(JsonView jsonValue) {
     m_executionRole = jsonValue.GetString("ExecutionRole");
     m_executionRoleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MonitoringConfiguration")) {
+    m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
+    m_monitoringConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EngineConfiguration")) {
+    m_engineConfiguration = jsonValue.GetObject("EngineConfiguration");
+    m_engineConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CustomerContentEncryptionConfiguration")) {
     m_customerContentEncryptionConfiguration = jsonValue.GetObject("CustomerContentEncryptionConfiguration");
     m_customerContentEncryptionConfigurationHasBeenSet = true;
@@ -110,6 +118,14 @@ JsonValue WorkGroupConfiguration::Jsonize() const {
 
   if (m_executionRoleHasBeenSet) {
     payload.WithString("ExecutionRole", m_executionRole);
+  }
+
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("MonitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
+  if (m_engineConfigurationHasBeenSet) {
+    payload.WithObject("EngineConfiguration", m_engineConfiguration.Jsonize());
   }
 
   if (m_customerContentEncryptionConfigurationHasBeenSet) {

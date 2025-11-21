@@ -122,6 +122,22 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>The maximum number of instances to use for the optimization job.</p>
+   */
+  inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
+  inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
+  inline void SetMaxInstanceCount(int value) {
+    m_maxInstanceCountHasBeenSet = true;
+    m_maxInstanceCount = value;
+  }
+  inline CreateOptimizationJobRequest& WithMaxInstanceCount(int value) {
+    SetMaxInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The environment variables to set in the model container.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetOptimizationEnvironment() const { return m_optimizationEnvironment; }
@@ -260,6 +276,9 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
   bool m_deploymentInstanceTypeHasBeenSet = false;
+
+  int m_maxInstanceCount{0};
+  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_optimizationEnvironment;
   bool m_optimizationEnvironmentHasBeenSet = false;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class AuthorizerType { NOT_SET, CUSTOM_JWT, AWS_IAM };
+enum class AuthorizerType { NOT_SET, CUSTOM_JWT, AWS_IAM, NONE };
 
 namespace AuthorizerTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API AuthorizerType GetAuthorizerTypeForName(const Aws::String& name);

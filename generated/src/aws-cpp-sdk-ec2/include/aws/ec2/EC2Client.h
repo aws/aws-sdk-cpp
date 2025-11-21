@@ -3040,6 +3040,41 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p> Creates an interruptible Capacity Reservation by specifying the number of
+   * unused instances you want to allocate from your source reservation. This helps
+   * you make unused capacity available for other workloads within your account while
+   * maintaining control to reclaim it. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateInterruptibleCapacityReservationAllocationOutcome CreateInterruptibleCapacityReservationAllocation(
+      const Model::CreateInterruptibleCapacityReservationAllocationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateInterruptibleCapacityReservationAllocation that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename CreateInterruptibleCapacityReservationAllocationRequestT = Model::CreateInterruptibleCapacityReservationAllocationRequest>
+  Model::CreateInterruptibleCapacityReservationAllocationOutcomeCallable CreateInterruptibleCapacityReservationAllocationCallable(
+      const CreateInterruptibleCapacityReservationAllocationRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateInterruptibleCapacityReservationAllocation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateInterruptibleCapacityReservationAllocation that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename CreateInterruptibleCapacityReservationAllocationRequestT = Model::CreateInterruptibleCapacityReservationAllocationRequest>
+  void CreateInterruptibleCapacityReservationAllocationAsync(
+      const CreateInterruptibleCapacityReservationAllocationRequestT& request,
+      const CreateInterruptibleCapacityReservationAllocationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateInterruptibleCapacityReservationAllocation, request, handler, context);
+  }
+
+  /**
    * <p>Create an IPAM. Amazon VPC IP Address Manager (IPAM) is a VPC feature that
    * you can use to automate your IP address management workflows including
    * assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
@@ -10625,7 +10660,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
 
   /**
    * <p>Describes the specified attribute of the specified instance. You can specify
-   * only one attribute at a time. </p><p><h3>See Also:</h3>   <a
+   * only one attribute at a time. Available attributes include SQL license exemption
+   * configuration for instances registered with the SQL LE service. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">AWS
    * API Reference</a></p>
    */
@@ -10926,11 +10963,15 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
    * you launch them through their termination. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-   * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul> <p>The Amazon
-   * EC2 API follows an eventual consistency model. This means that the result of an
-   * API command you run that creates or modifies resources might not be immediately
-   * available to all subsequent commands you run. For guidance on how to manage
-   * eventual consistency, see <a
+   * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li> <p> <b>SQL
+   * license exemption monitoring</b> - For instances registered with the SQL LE
+   * service, status includes SQL license exemption monitoring health and processing
+   * status to provide operational visibility into license exemption
+   * functionality.</p> </li> </ul> <p>The Amazon EC2 API follows an eventual
+   * consistency model. This means that the result of an API command you run that
+   * creates or modifies resources might not be immediately available to all
+   * subsequent commands you run. For guidance on how to manage eventual consistency,
+   * see <a
    * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
    * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
    * Guide</i>.</p>  <p>The order of the elements in the response, including
@@ -11075,19 +11116,21 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * that meet the filter criteria. If you do not specify instance IDs or filters,
    * the output includes information for all instances, which can affect performance.
    * We recommend that you use pagination to ensure that the operation returns
-   * quickly and successfully.</p> <p>If you specify an instance ID that is not
-   * valid, an error is returned. If you specify an instance that you do not own, it
-   * is not included in the output.</p> <p>Recently terminated instances might appear
-   * in the returned results. This interval is usually less than one hour.</p> <p>If
-   * you describe instances in the rare case where an Availability Zone is
-   * experiencing a service disruption and you specify instance IDs that are in the
-   * affected zone, or do not specify any instance IDs at all, the call fails. If you
-   * describe instances and specify only instance IDs that are in an unaffected zone,
-   * the call works normally.</p> <p>The Amazon EC2 API follows an eventual
-   * consistency model. This means that the result of an API command you run that
-   * creates or modifies resources might not be immediately available to all
-   * subsequent commands you run. For guidance on how to manage eventual consistency,
-   * see <a
+   * quickly and successfully.</p> <p>The response includes SQL license exemption
+   * status information for instances registered with the SQL LE service, providing
+   * visibility into license exemption configuration and status.</p> <p>If you
+   * specify an instance ID that is not valid, an error is returned. If you specify
+   * an instance that you do not own, it is not included in the output.</p>
+   * <p>Recently terminated instances might appear in the returned results. This
+   * interval is usually less than one hour.</p> <p>If you describe instances in the
+   * rare case where an Availability Zone is experiencing a service disruption and
+   * you specify instance IDs that are in the affected zone, or do not specify any
+   * instance IDs at all, the call fails. If you describe instances and specify only
+   * instance IDs that are in an unaffected zone, the call works normally.</p> <p>The
+   * Amazon EC2 API follows an eventual consistency model. This means that the result
+   * of an API command you run that creates or modifies resources might not be
+   * immediately available to all subsequent commands you run. For guidance on how to
+   * manage eventual consistency, see <a
    * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
    * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
    * Guide</i>.</p>  <p>We strongly recommend using only paginated
@@ -25062,6 +25105,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
       const UpdateCapacityManagerOrganizationsAccessResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::UpdateCapacityManagerOrganizationsAccess, request, handler, context);
+  }
+
+  /**
+   * <p> Modifies the number of instances allocated to an interruptible reservation,
+   * allowing you to add more capacity or reclaim capacity to your source Capacity
+   * Reservation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateInterruptibleCapacityReservationAllocationOutcome UpdateInterruptibleCapacityReservationAllocation(
+      const Model::UpdateInterruptibleCapacityReservationAllocationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateInterruptibleCapacityReservationAllocation that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename UpdateInterruptibleCapacityReservationAllocationRequestT = Model::UpdateInterruptibleCapacityReservationAllocationRequest>
+  Model::UpdateInterruptibleCapacityReservationAllocationOutcomeCallable UpdateInterruptibleCapacityReservationAllocationCallable(
+      const UpdateInterruptibleCapacityReservationAllocationRequestT& request) const {
+    return SubmitCallable(&EC2Client::UpdateInterruptibleCapacityReservationAllocation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateInterruptibleCapacityReservationAllocation that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename UpdateInterruptibleCapacityReservationAllocationRequestT = Model::UpdateInterruptibleCapacityReservationAllocationRequest>
+  void UpdateInterruptibleCapacityReservationAllocationAsync(
+      const UpdateInterruptibleCapacityReservationAllocationRequestT& request,
+      const UpdateInterruptibleCapacityReservationAllocationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::UpdateInterruptibleCapacityReservationAllocation, request, handler, context);
   }
 
   /**

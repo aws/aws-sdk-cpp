@@ -26,6 +26,7 @@
 #include <aws/kinesisvideo/model/CreateSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/CreateStreamRequest.h>
 #include <aws/kinesisvideo/model/CreateStreamResult.h>
+#include <aws/kinesisvideo/model/DefaultStorageTier.h>
 #include <aws/kinesisvideo/model/DeleteEdgeConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DeleteEdgeConfigurationResult.h>
 #include <aws/kinesisvideo/model/DeleteSignalingChannelRequest.h>
@@ -47,6 +48,8 @@
 #include <aws/kinesisvideo/model/DescribeSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/DescribeStreamRequest.h>
 #include <aws/kinesisvideo/model/DescribeStreamResult.h>
+#include <aws/kinesisvideo/model/DescribeStreamStorageConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeStreamStorageConfigurationResult.h>
 #include <aws/kinesisvideo/model/EdgeAgentStatus.h>
 #include <aws/kinesisvideo/model/EdgeConfig.h>
 #include <aws/kinesisvideo/model/Format.h>
@@ -91,6 +94,7 @@
 #include <aws/kinesisvideo/model/StrategyOnFullSize.h>
 #include <aws/kinesisvideo/model/StreamInfo.h>
 #include <aws/kinesisvideo/model/StreamNameCondition.h>
+#include <aws/kinesisvideo/model/StreamStorageConfiguration.h>
 #include <aws/kinesisvideo/model/SyncStatus.h>
 #include <aws/kinesisvideo/model/Tag.h>
 #include <aws/kinesisvideo/model/TagResourceRequest.h>
@@ -114,6 +118,8 @@
 #include <aws/kinesisvideo/model/UpdateSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/UpdateStreamRequest.h>
 #include <aws/kinesisvideo/model/UpdateStreamResult.h>
+#include <aws/kinesisvideo/model/UpdateStreamStorageConfigurationRequest.h>
+#include <aws/kinesisvideo/model/UpdateStreamStorageConfigurationResult.h>
 #include <aws/kinesisvideo/model/UploaderConfig.h>
 #include <aws/kinesisvideo/model/UploaderStatus.h>
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/LakeFormationScopeUnion.h>
+#include <aws/redshift/model/RedshiftScopeUnion.h>
 #include <aws/redshift/model/S3AccessGrantsScopeUnion.h>
 
 #include <utility>
@@ -82,12 +83,39 @@ class ServiceIntegrationsUnion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of scopes set up for Amazon Redshift integration.</p>
+   */
+  inline const Aws::Vector<RedshiftScopeUnion>& GetRedshift() const { return m_redshift; }
+  inline bool RedshiftHasBeenSet() const { return m_redshiftHasBeenSet; }
+  template <typename RedshiftT = Aws::Vector<RedshiftScopeUnion>>
+  void SetRedshift(RedshiftT&& value) {
+    m_redshiftHasBeenSet = true;
+    m_redshift = std::forward<RedshiftT>(value);
+  }
+  template <typename RedshiftT = Aws::Vector<RedshiftScopeUnion>>
+  ServiceIntegrationsUnion& WithRedshift(RedshiftT&& value) {
+    SetRedshift(std::forward<RedshiftT>(value));
+    return *this;
+  }
+  template <typename RedshiftT = RedshiftScopeUnion>
+  ServiceIntegrationsUnion& AddRedshift(RedshiftT&& value) {
+    m_redshiftHasBeenSet = true;
+    m_redshift.emplace_back(std::forward<RedshiftT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<LakeFormationScopeUnion> m_lakeFormation;
   bool m_lakeFormationHasBeenSet = false;
 
   Aws::Vector<S3AccessGrantsScopeUnion> m_s3AccessGrants;
   bool m_s3AccessGrantsHasBeenSet = false;
+
+  Aws::Vector<RedshiftScopeUnion> m_redshift;
+  bool m_redshiftHasBeenSet = false;
 };
 
 }  // namespace Model

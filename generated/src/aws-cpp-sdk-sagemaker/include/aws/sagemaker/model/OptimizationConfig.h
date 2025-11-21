@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/ModelCompilationConfig.h>
 #include <aws/sagemaker/model/ModelQuantizationConfig.h>
 #include <aws/sagemaker/model/ModelShardingConfig.h>
+#include <aws/sagemaker/model/ModelSpeculativeDecodingConfig.h>
 
 #include <utility>
 
@@ -90,6 +91,25 @@ class OptimizationConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings for the model speculative decoding technique that's applied by a
+   * model optimization job.</p>
+   */
+  inline const ModelSpeculativeDecodingConfig& GetModelSpeculativeDecodingConfig() const { return m_modelSpeculativeDecodingConfig; }
+  inline bool ModelSpeculativeDecodingConfigHasBeenSet() const { return m_modelSpeculativeDecodingConfigHasBeenSet; }
+  template <typename ModelSpeculativeDecodingConfigT = ModelSpeculativeDecodingConfig>
+  void SetModelSpeculativeDecodingConfig(ModelSpeculativeDecodingConfigT&& value) {
+    m_modelSpeculativeDecodingConfigHasBeenSet = true;
+    m_modelSpeculativeDecodingConfig = std::forward<ModelSpeculativeDecodingConfigT>(value);
+  }
+  template <typename ModelSpeculativeDecodingConfigT = ModelSpeculativeDecodingConfig>
+  OptimizationConfig& WithModelSpeculativeDecodingConfig(ModelSpeculativeDecodingConfigT&& value) {
+    SetModelSpeculativeDecodingConfig(std::forward<ModelSpeculativeDecodingConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ModelQuantizationConfig m_modelQuantizationConfig;
   bool m_modelQuantizationConfigHasBeenSet = false;
@@ -99,6 +119,9 @@ class OptimizationConfig {
 
   ModelShardingConfig m_modelShardingConfig;
   bool m_modelShardingConfigHasBeenSet = false;
+
+  ModelSpeculativeDecodingConfig m_modelSpeculativeDecodingConfig;
+  bool m_modelSpeculativeDecodingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -1236,6 +1236,45 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of the lakehouse registration for the cluster. Indicates whether
+   * the cluster is successfully registered with Amazon Redshift federated
+   * permissions.</p>
+   */
+  inline const Aws::String& GetLakehouseRegistrationStatus() const { return m_lakehouseRegistrationStatus; }
+  inline bool LakehouseRegistrationStatusHasBeenSet() const { return m_lakehouseRegistrationStatusHasBeenSet; }
+  template <typename LakehouseRegistrationStatusT = Aws::String>
+  void SetLakehouseRegistrationStatus(LakehouseRegistrationStatusT&& value) {
+    m_lakehouseRegistrationStatusHasBeenSet = true;
+    m_lakehouseRegistrationStatus = std::forward<LakehouseRegistrationStatusT>(value);
+  }
+  template <typename LakehouseRegistrationStatusT = Aws::String>
+  Cluster& WithLakehouseRegistrationStatus(LakehouseRegistrationStatusT&& value) {
+    SetLakehouseRegistrationStatus(std::forward<LakehouseRegistrationStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the
+   * cluster enabled with Amazon Redshift federated permissions.</p>
+   */
+  inline const Aws::String& GetCatalogArn() const { return m_catalogArn; }
+  inline bool CatalogArnHasBeenSet() const { return m_catalogArnHasBeenSet; }
+  template <typename CatalogArnT = Aws::String>
+  void SetCatalogArn(CatalogArnT&& value) {
+    m_catalogArnHasBeenSet = true;
+    m_catalogArn = std::forward<CatalogArnT>(value);
+  }
+  template <typename CatalogArnT = Aws::String>
+  Cluster& WithCatalogArn(CatalogArnT&& value) {
+    SetCatalogArn(std::forward<CatalogArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
   bool m_clusterIdentifierHasBeenSet = false;
@@ -1416,6 +1455,12 @@ class Cluster {
 
   SecondaryClusterInfo m_multiAZSecondary;
   bool m_multiAZSecondaryHasBeenSet = false;
+
+  Aws::String m_lakehouseRegistrationStatus;
+  bool m_lakehouseRegistrationStatusHasBeenSet = false;
+
+  Aws::String m_catalogArn;
+  bool m_catalogArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -127,5 +127,13 @@ Aws::String UpdateCaseRequest::SerializePayload() const {
     payload.WithArray("impactedAccountsToDelete", std::move(impactedAccountsToDeleteJsonList));
   }
 
+  if (m_caseMetadataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> caseMetadataJsonList(m_caseMetadata.size());
+    for (unsigned caseMetadataIndex = 0; caseMetadataIndex < caseMetadataJsonList.GetLength(); ++caseMetadataIndex) {
+      caseMetadataJsonList[caseMetadataIndex].AsObject(m_caseMetadata[caseMetadataIndex].Jsonize());
+    }
+    payload.WithArray("caseMetadata", std::move(caseMetadataJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

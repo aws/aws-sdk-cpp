@@ -43,6 +43,7 @@
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyTestCaseResult.h>
 #include <aws/bedrock/model/DeleteCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
+#include <aws/bedrock/model/DeleteEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/DeleteFoundationModelAgreementResult.h>
 #include <aws/bedrock/model/DeleteGuardrailResult.h>
 #include <aws/bedrock/model/DeleteImportedModelResult.h>
@@ -89,6 +90,8 @@
 #include <aws/bedrock/model/ListCustomModelDeploymentsResult.h>
 #include <aws/bedrock/model/ListCustomModelsRequest.h>
 #include <aws/bedrock/model/ListCustomModelsResult.h>
+#include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationRequest.h>
+#include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationResult.h>
 #include <aws/bedrock/model/ListEvaluationJobsRequest.h>
 #include <aws/bedrock/model/ListEvaluationJobsResult.h>
 #include <aws/bedrock/model/ListFoundationModelAgreementOffersResult.h>
@@ -115,6 +118,7 @@
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsResult.h>
 #include <aws/bedrock/model/ListTagsForResourceResult.h>
+#include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
@@ -188,6 +192,7 @@ class DeleteAutomatedReasoningPolicyBuildWorkflowRequest;
 class DeleteAutomatedReasoningPolicyTestCaseRequest;
 class DeleteCustomModelRequest;
 class DeleteCustomModelDeploymentRequest;
+class DeleteEnforcedGuardrailConfigurationRequest;
 class DeleteFoundationModelAgreementRequest;
 class DeleteGuardrailRequest;
 class DeleteImportedModelRequest;
@@ -228,6 +233,7 @@ class ListAutomatedReasoningPolicyTestCasesRequest;
 class ListAutomatedReasoningPolicyTestResultsRequest;
 class ListCustomModelDeploymentsRequest;
 class ListCustomModelsRequest;
+class ListEnforcedGuardrailsConfigurationRequest;
 class ListEvaluationJobsRequest;
 class ListFoundationModelAgreementOffersRequest;
 class ListFoundationModelsRequest;
@@ -242,6 +248,7 @@ class ListModelInvocationJobsRequest;
 class ListPromptRoutersRequest;
 class ListProvisionedModelThroughputsRequest;
 class ListTagsForResourceRequest;
+class PutEnforcedGuardrailConfigurationRequest;
 class PutModelInvocationLoggingConfigurationRequest;
 class PutUseCaseForModelAccessRequest;
 class RegisterMarketplaceModelEndpointRequest;
@@ -287,6 +294,7 @@ typedef Aws::Utils::Outcome<DeleteAutomatedReasoningPolicyBuildWorkflowResult, B
 typedef Aws::Utils::Outcome<DeleteAutomatedReasoningPolicyTestCaseResult, BedrockError> DeleteAutomatedReasoningPolicyTestCaseOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomModelResult, BedrockError> DeleteCustomModelOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomModelDeploymentResult, BedrockError> DeleteCustomModelDeploymentOutcome;
+typedef Aws::Utils::Outcome<DeleteEnforcedGuardrailConfigurationResult, BedrockError> DeleteEnforcedGuardrailConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteFoundationModelAgreementResult, BedrockError> DeleteFoundationModelAgreementOutcome;
 typedef Aws::Utils::Outcome<DeleteGuardrailResult, BedrockError> DeleteGuardrailOutcome;
 typedef Aws::Utils::Outcome<DeleteImportedModelResult, BedrockError> DeleteImportedModelOutcome;
@@ -329,6 +337,7 @@ typedef Aws::Utils::Outcome<ListAutomatedReasoningPolicyTestCasesResult, Bedrock
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPolicyTestResultsResult, BedrockError> ListAutomatedReasoningPolicyTestResultsOutcome;
 typedef Aws::Utils::Outcome<ListCustomModelDeploymentsResult, BedrockError> ListCustomModelDeploymentsOutcome;
 typedef Aws::Utils::Outcome<ListCustomModelsResult, BedrockError> ListCustomModelsOutcome;
+typedef Aws::Utils::Outcome<ListEnforcedGuardrailsConfigurationResult, BedrockError> ListEnforcedGuardrailsConfigurationOutcome;
 typedef Aws::Utils::Outcome<ListEvaluationJobsResult, BedrockError> ListEvaluationJobsOutcome;
 typedef Aws::Utils::Outcome<ListFoundationModelAgreementOffersResult, BedrockError> ListFoundationModelAgreementOffersOutcome;
 typedef Aws::Utils::Outcome<ListFoundationModelsResult, BedrockError> ListFoundationModelsOutcome;
@@ -343,6 +352,7 @@ typedef Aws::Utils::Outcome<ListModelInvocationJobsResult, BedrockError> ListMod
 typedef Aws::Utils::Outcome<ListPromptRoutersResult, BedrockError> ListPromptRoutersOutcome;
 typedef Aws::Utils::Outcome<ListProvisionedModelThroughputsResult, BedrockError> ListProvisionedModelThroughputsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<PutEnforcedGuardrailConfigurationResult, BedrockError> PutEnforcedGuardrailConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutModelInvocationLoggingConfigurationResult, BedrockError> PutModelInvocationLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutUseCaseForModelAccessResult, BedrockError> PutUseCaseForModelAccessOutcome;
 typedef Aws::Utils::Outcome<RegisterMarketplaceModelEndpointResult, BedrockError> RegisterMarketplaceModelEndpointOutcome;
@@ -387,6 +397,7 @@ typedef std::future<DeleteAutomatedReasoningPolicyBuildWorkflowOutcome> DeleteAu
 typedef std::future<DeleteAutomatedReasoningPolicyTestCaseOutcome> DeleteAutomatedReasoningPolicyTestCaseOutcomeCallable;
 typedef std::future<DeleteCustomModelOutcome> DeleteCustomModelOutcomeCallable;
 typedef std::future<DeleteCustomModelDeploymentOutcome> DeleteCustomModelDeploymentOutcomeCallable;
+typedef std::future<DeleteEnforcedGuardrailConfigurationOutcome> DeleteEnforcedGuardrailConfigurationOutcomeCallable;
 typedef std::future<DeleteFoundationModelAgreementOutcome> DeleteFoundationModelAgreementOutcomeCallable;
 typedef std::future<DeleteGuardrailOutcome> DeleteGuardrailOutcomeCallable;
 typedef std::future<DeleteImportedModelOutcome> DeleteImportedModelOutcomeCallable;
@@ -428,6 +439,7 @@ typedef std::future<ListAutomatedReasoningPolicyTestCasesOutcome> ListAutomatedR
 typedef std::future<ListAutomatedReasoningPolicyTestResultsOutcome> ListAutomatedReasoningPolicyTestResultsOutcomeCallable;
 typedef std::future<ListCustomModelDeploymentsOutcome> ListCustomModelDeploymentsOutcomeCallable;
 typedef std::future<ListCustomModelsOutcome> ListCustomModelsOutcomeCallable;
+typedef std::future<ListEnforcedGuardrailsConfigurationOutcome> ListEnforcedGuardrailsConfigurationOutcomeCallable;
 typedef std::future<ListEvaluationJobsOutcome> ListEvaluationJobsOutcomeCallable;
 typedef std::future<ListFoundationModelAgreementOffersOutcome> ListFoundationModelAgreementOffersOutcomeCallable;
 typedef std::future<ListFoundationModelsOutcome> ListFoundationModelsOutcomeCallable;
@@ -442,6 +454,7 @@ typedef std::future<ListModelInvocationJobsOutcome> ListModelInvocationJobsOutco
 typedef std::future<ListPromptRoutersOutcome> ListPromptRoutersOutcomeCallable;
 typedef std::future<ListProvisionedModelThroughputsOutcome> ListProvisionedModelThroughputsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<PutEnforcedGuardrailConfigurationOutcome> PutEnforcedGuardrailConfigurationOutcomeCallable;
 typedef std::future<PutModelInvocationLoggingConfigurationOutcome> PutModelInvocationLoggingConfigurationOutcomeCallable;
 typedef std::future<PutUseCaseForModelAccessOutcome> PutUseCaseForModelAccessOutcomeCallable;
 typedef std::future<RegisterMarketplaceModelEndpointOutcome> RegisterMarketplaceModelEndpointOutcomeCallable;
@@ -546,6 +559,10 @@ typedef std::function<void(const BedrockClient*, const Model::DeleteCustomModelR
 typedef std::function<void(const BedrockClient*, const Model::DeleteCustomModelDeploymentRequest&,
                            const Model::DeleteCustomModelDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCustomModelDeploymentResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::DeleteEnforcedGuardrailConfigurationRequest&,
+                           const Model::DeleteEnforcedGuardrailConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteEnforcedGuardrailConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::DeleteFoundationModelAgreementRequest&,
                            const Model::DeleteFoundationModelAgreementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -685,6 +702,10 @@ typedef std::function<void(const BedrockClient*, const Model::ListCustomModelDep
 typedef std::function<void(const BedrockClient*, const Model::ListCustomModelsRequest&, const Model::ListCustomModelsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCustomModelsResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::ListEnforcedGuardrailsConfigurationRequest&,
+                           const Model::ListEnforcedGuardrailsConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEnforcedGuardrailsConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::ListEvaluationJobsRequest&, const Model::ListEvaluationJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEvaluationJobsResponseReceivedHandler;
@@ -730,6 +751,10 @@ typedef std::function<void(const BedrockClient*, const Model::ListProvisionedMod
 typedef std::function<void(const BedrockClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutEnforcedGuardrailConfigurationRequest&,
+                           const Model::PutEnforcedGuardrailConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutEnforcedGuardrailConfigurationResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutModelInvocationLoggingConfigurationRequest&,
                            const Model::PutModelInvocationLoggingConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

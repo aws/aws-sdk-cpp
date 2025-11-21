@@ -126,6 +126,37 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
+   * <p>Associates an Amazon Web Services Identity and Access Management (IAM)
+   * service role with a specified resource to enable Amazon Web Services service
+   * integration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateIamRoleToResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateIamRoleToResourceOutcome AssociateIamRoleToResource(
+      const Model::AssociateIamRoleToResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateIamRoleToResource that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateIamRoleToResourceRequestT = Model::AssociateIamRoleToResourceRequest>
+  Model::AssociateIamRoleToResourceOutcomeCallable AssociateIamRoleToResourceCallable(
+      const AssociateIamRoleToResourceRequestT& request) const {
+    return SubmitCallable(&OdbClient::AssociateIamRoleToResource, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateIamRoleToResource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateIamRoleToResourceRequestT = Model::AssociateIamRoleToResourceRequest>
+  void AssociateIamRoleToResourceAsync(const AssociateIamRoleToResourceRequestT& request,
+                                       const AssociateIamRoleToResourceResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::AssociateIamRoleToResource, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Autonomous VM cluster in the specified Exadata
    * infrastructure.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudAutonomousVmCluster">AWS
@@ -409,6 +440,37 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient, public Aws::Cli
                                        const DeleteOdbPeeringConnectionResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::DeleteOdbPeeringConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Disassociates an Amazon Web Services Identity and Access Management (IAM)
+   * service role from a specified resource to disable Amazon Web Services service
+   * integration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateIamRoleFromResourceOutcome DisassociateIamRoleFromResource(
+      const Model::DisassociateIamRoleFromResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateIamRoleFromResource that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateIamRoleFromResourceRequestT = Model::DisassociateIamRoleFromResourceRequest>
+  Model::DisassociateIamRoleFromResourceOutcomeCallable DisassociateIamRoleFromResourceCallable(
+      const DisassociateIamRoleFromResourceRequestT& request) const {
+    return SubmitCallable(&OdbClient::DisassociateIamRoleFromResource, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateIamRoleFromResource that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DisassociateIamRoleFromResourceRequestT = Model::DisassociateIamRoleFromResourceRequest>
+  void DisassociateIamRoleFromResourceAsync(const DisassociateIamRoleFromResourceRequestT& request,
+                                            const DisassociateIamRoleFromResourceResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::DisassociateIamRoleFromResource, request, handler, context);
   }
 
   /**

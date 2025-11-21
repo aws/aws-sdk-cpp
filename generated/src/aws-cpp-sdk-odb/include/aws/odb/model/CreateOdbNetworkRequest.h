@@ -7,6 +7,7 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/Access.h>
@@ -236,6 +237,40 @@ class CreateOdbNetworkRequest : public OdbRequest {
 
   ///@{
   /**
+   * <p>The Amazon Web Services Security Token Service (STS) access configuration for
+   * the ODB network.</p>
+   */
+  inline Access GetStsAccess() const { return m_stsAccess; }
+  inline bool StsAccessHasBeenSet() const { return m_stsAccessHasBeenSet; }
+  inline void SetStsAccess(Access value) {
+    m_stsAccessHasBeenSet = true;
+    m_stsAccess = value;
+  }
+  inline CreateOdbNetworkRequest& WithStsAccess(Access value) {
+    SetStsAccess(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Key Management Service (KMS) access configuration for
+   * the ODB network.</p>
+   */
+  inline Access GetKmsAccess() const { return m_kmsAccess; }
+  inline bool KmsAccessHasBeenSet() const { return m_kmsAccessHasBeenSet; }
+  inline void SetKmsAccess(Access value) {
+    m_kmsAccessHasBeenSet = true;
+    m_kmsAccess = value;
+  }
+  inline CreateOdbNetworkRequest& WithKmsAccess(Access value) {
+    SetKmsAccess(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the endpoint policy for Amazon S3 access from the ODB network.</p>
    */
   inline const Aws::String& GetS3PolicyDocument() const { return m_s3PolicyDocument; }
@@ -248,6 +283,68 @@ class CreateOdbNetworkRequest : public OdbRequest {
   template <typename S3PolicyDocumentT = Aws::String>
   CreateOdbNetworkRequest& WithS3PolicyDocument(S3PolicyDocumentT&& value) {
     SetS3PolicyDocument(std::forward<S3PolicyDocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The STS policy document that defines permissions for token service usage
+   * within the ODB network.</p>
+   */
+  inline const Aws::String& GetStsPolicyDocument() const { return m_stsPolicyDocument; }
+  inline bool StsPolicyDocumentHasBeenSet() const { return m_stsPolicyDocumentHasBeenSet; }
+  template <typename StsPolicyDocumentT = Aws::String>
+  void SetStsPolicyDocument(StsPolicyDocumentT&& value) {
+    m_stsPolicyDocumentHasBeenSet = true;
+    m_stsPolicyDocument = std::forward<StsPolicyDocumentT>(value);
+  }
+  template <typename StsPolicyDocumentT = Aws::String>
+  CreateOdbNetworkRequest& WithStsPolicyDocument(StsPolicyDocumentT&& value) {
+    SetStsPolicyDocument(std::forward<StsPolicyDocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The KMS policy document that defines permissions for key usage within the ODB
+   * network.</p>
+   */
+  inline const Aws::String& GetKmsPolicyDocument() const { return m_kmsPolicyDocument; }
+  inline bool KmsPolicyDocumentHasBeenSet() const { return m_kmsPolicyDocumentHasBeenSet; }
+  template <typename KmsPolicyDocumentT = Aws::String>
+  void SetKmsPolicyDocument(KmsPolicyDocumentT&& value) {
+    m_kmsPolicyDocumentHasBeenSet = true;
+    m_kmsPolicyDocument = std::forward<KmsPolicyDocumentT>(value);
+  }
+  template <typename KmsPolicyDocumentT = Aws::String>
+  CreateOdbNetworkRequest& WithKmsPolicyDocument(KmsPolicyDocumentT&& value) {
+    SetKmsPolicyDocument(std::forward<KmsPolicyDocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cross-Region Amazon S3 restore sources to enable for the ODB network.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCrossRegionS3RestoreSourcesToEnable() const { return m_crossRegionS3RestoreSourcesToEnable; }
+  inline bool CrossRegionS3RestoreSourcesToEnableHasBeenSet() const { return m_crossRegionS3RestoreSourcesToEnableHasBeenSet; }
+  template <typename CrossRegionS3RestoreSourcesToEnableT = Aws::Vector<Aws::String>>
+  void SetCrossRegionS3RestoreSourcesToEnable(CrossRegionS3RestoreSourcesToEnableT&& value) {
+    m_crossRegionS3RestoreSourcesToEnableHasBeenSet = true;
+    m_crossRegionS3RestoreSourcesToEnable = std::forward<CrossRegionS3RestoreSourcesToEnableT>(value);
+  }
+  template <typename CrossRegionS3RestoreSourcesToEnableT = Aws::Vector<Aws::String>>
+  CreateOdbNetworkRequest& WithCrossRegionS3RestoreSourcesToEnable(CrossRegionS3RestoreSourcesToEnableT&& value) {
+    SetCrossRegionS3RestoreSourcesToEnable(std::forward<CrossRegionS3RestoreSourcesToEnableT>(value));
+    return *this;
+  }
+  template <typename CrossRegionS3RestoreSourcesToEnableT = Aws::String>
+  CreateOdbNetworkRequest& AddCrossRegionS3RestoreSourcesToEnable(CrossRegionS3RestoreSourcesToEnableT&& value) {
+    m_crossRegionS3RestoreSourcesToEnableHasBeenSet = true;
+    m_crossRegionS3RestoreSourcesToEnable.emplace_back(std::forward<CrossRegionS3RestoreSourcesToEnableT>(value));
     return *this;
   }
   ///@}
@@ -306,8 +403,23 @@ class CreateOdbNetworkRequest : public OdbRequest {
   Access m_zeroEtlAccess{Access::NOT_SET};
   bool m_zeroEtlAccessHasBeenSet = false;
 
+  Access m_stsAccess{Access::NOT_SET};
+  bool m_stsAccessHasBeenSet = false;
+
+  Access m_kmsAccess{Access::NOT_SET};
+  bool m_kmsAccessHasBeenSet = false;
+
   Aws::String m_s3PolicyDocument;
   bool m_s3PolicyDocumentHasBeenSet = false;
+
+  Aws::String m_stsPolicyDocument;
+  bool m_stsPolicyDocumentHasBeenSet = false;
+
+  Aws::String m_kmsPolicyDocument;
+  bool m_kmsPolicyDocumentHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_crossRegionS3RestoreSourcesToEnable;
+  bool m_crossRegionS3RestoreSourcesToEnableHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;

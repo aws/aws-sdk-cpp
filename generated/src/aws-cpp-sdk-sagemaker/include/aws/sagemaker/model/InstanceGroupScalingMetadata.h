@@ -66,6 +66,22 @@ class InstanceGroupScalingMetadata {
 
   ///@{
   /**
+   * <p>Minimum instance count of the instance group.</p>
+   */
+  inline int GetMinCount() const { return m_minCount; }
+  inline bool MinCountHasBeenSet() const { return m_minCountHasBeenSet; }
+  inline void SetMinCount(int value) {
+    m_minCountHasBeenSet = true;
+    m_minCount = value;
+  }
+  inline InstanceGroupScalingMetadata& WithMinCount(int value) {
+    SetMinCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An error message describing why the scaling operation failed, if
    * applicable.</p>
    */
@@ -88,6 +104,9 @@ class InstanceGroupScalingMetadata {
 
   int m_targetCount{0};
   bool m_targetCountHasBeenSet = false;
+
+  int m_minCount{0};
+  bool m_minCountHasBeenSet = false;
 
   Aws::String m_failureMessage;
   bool m_failureMessageHasBeenSet = false;

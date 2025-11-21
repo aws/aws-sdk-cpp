@@ -54,6 +54,10 @@ QueryExecutionStatistics& QueryExecutionStatistics::operator=(JsonView jsonValue
     m_resultReuseInformation = jsonValue.GetObject("ResultReuseInformation");
     m_resultReuseInformationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DpuCount")) {
+    m_dpuCount = jsonValue.GetDouble("DpuCount");
+    m_dpuCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue QueryExecutionStatistics::Jsonize() const {
 
   if (m_resultReuseInformationHasBeenSet) {
     payload.WithObject("ResultReuseInformation", m_resultReuseInformation.Jsonize());
+  }
+
+  if (m_dpuCountHasBeenSet) {
+    payload.WithDouble("DpuCount", m_dpuCount);
   }
 
   return payload;

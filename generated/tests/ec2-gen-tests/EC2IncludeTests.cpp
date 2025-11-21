@@ -389,6 +389,8 @@
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayRequest.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
+#include <aws/ec2/model/CreateInterruptibleCapacityReservationAllocationRequest.h>
+#include <aws/ec2/model/CreateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenRequest.h>
 #include <aws/ec2/model/CreateIpamExternalResourceVerificationTokenResponse.h>
 #include <aws/ec2/model/CreateIpamPolicyRequest.h>
@@ -1704,6 +1706,10 @@
 #include <aws/ec2/model/InternetGatewayAttachment.h>
 #include <aws/ec2/model/InternetGatewayBlockMode.h>
 #include <aws/ec2/model/InternetGatewayExclusionMode.h>
+#include <aws/ec2/model/InterruptibleCapacityAllocation.h>
+#include <aws/ec2/model/InterruptibleCapacityReservationAllocationStatus.h>
+#include <aws/ec2/model/InterruptionInfo.h>
+#include <aws/ec2/model/InterruptionType.h>
 #include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/IpPermission.h>
 #include <aws/ec2/model/IpRange.h>
@@ -2639,6 +2645,8 @@
 #include <aws/ec2/model/UnsuccessfulItemError.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessResponse.h>
+#include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>
+#include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>

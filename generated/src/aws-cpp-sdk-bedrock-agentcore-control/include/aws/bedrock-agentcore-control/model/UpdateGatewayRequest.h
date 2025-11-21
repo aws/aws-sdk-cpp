@@ -9,9 +9,11 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
+#include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -192,6 +194,30 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated interceptor configurations for the gateway.</p>
+   */
+  inline const Aws::Vector<GatewayInterceptorConfiguration>& GetInterceptorConfigurations() const { return m_interceptorConfigurations; }
+  inline bool InterceptorConfigurationsHasBeenSet() const { return m_interceptorConfigurationsHasBeenSet; }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  void SetInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations = std::forward<InterceptorConfigurationsT>(value);
+  }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  UpdateGatewayRequest& WithInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    SetInterceptorConfigurations(std::forward<InterceptorConfigurationsT>(value));
+    return *this;
+  }
+  template <typename InterceptorConfigurationsT = GatewayInterceptorConfiguration>
+  UpdateGatewayRequest& AddInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations.emplace_back(std::forward<InterceptorConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The level of detail in error messages returned when invoking the gateway.</p>
    * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
    * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
@@ -235,6 +261,9 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_kmsKeyArn;
   bool m_kmsKeyArnHasBeenSet = false;
+
+  Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
+  bool m_interceptorConfigurationsHasBeenSet = false;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
   bool m_exceptionLevelHasBeenSet = false;

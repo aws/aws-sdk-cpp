@@ -45,6 +45,17 @@ ServiceIntegrationsUnion& ServiceIntegrationsUnion::operator=(const XmlNode& xml
 
       m_s3AccessGrantsHasBeenSet = true;
     }
+    XmlNode redshiftNode = resultNode.FirstChild("Redshift");
+    if (!redshiftNode.IsNull()) {
+      XmlNode redshiftMember = redshiftNode.FirstChild("member");
+      m_redshiftHasBeenSet = !redshiftMember.IsNull();
+      while (!redshiftMember.IsNull()) {
+        m_redshift.push_back(redshiftMember);
+        redshiftMember = redshiftMember.NextNode("member");
+      }
+
+      m_redshiftHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,6 +80,15 @@ void ServiceIntegrationsUnion::OutputToStream(Aws::OStream& oStream, const char*
       item.OutputToStream(oStream, s3AccessGrantsSs.str().c_str());
     }
   }
+
+  if (m_redshiftHasBeenSet) {
+    unsigned redshiftIdx = 1;
+    for (auto& item : m_redshift) {
+      Aws::StringStream redshiftSs;
+      redshiftSs << location << index << locationValue << ".Redshift.member." << redshiftIdx++;
+      item.OutputToStream(oStream, redshiftSs.str().c_str());
+    }
+  }
 }
 
 void ServiceIntegrationsUnion::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -86,6 +106,14 @@ void ServiceIntegrationsUnion::OutputToStream(Aws::OStream& oStream, const char*
       Aws::StringStream s3AccessGrantsSs;
       s3AccessGrantsSs << location << ".S3AccessGrants.member." << s3AccessGrantsIdx++;
       item.OutputToStream(oStream, s3AccessGrantsSs.str().c_str());
+    }
+  }
+  if (m_redshiftHasBeenSet) {
+    unsigned redshiftIdx = 1;
+    for (auto& item : m_redshift) {
+      Aws::StringStream redshiftSs;
+      redshiftSs << location << ".Redshift.member." << redshiftIdx++;
+      item.OutputToStream(oStream, redshiftSs.str().c_str());
     }
   }
 }

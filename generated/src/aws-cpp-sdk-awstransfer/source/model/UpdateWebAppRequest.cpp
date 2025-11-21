@@ -31,6 +31,10 @@ Aws::String UpdateWebAppRequest::SerializePayload() const {
     payload.WithObject("WebAppUnits", m_webAppUnits.Jsonize());
   }
 
+  if (m_endpointDetailsHasBeenSet) {
+    payload.WithObject("EndpointDetails", m_endpointDetails.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

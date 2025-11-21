@@ -57,6 +57,10 @@ Aws::String CreateRedshiftIdcApplicationRequest::SerializePayload() const {
     }
   }
 
+  if (m_applicationTypeHasBeenSet) {
+    ss << "ApplicationType=" << StringUtils::URLEncode(ApplicationTypeMapper::GetNameForApplicationType(m_applicationType)) << "&";
+  }
+
   if (m_tagsHasBeenSet) {
     if (m_tags.empty()) {
       ss << "Tags=&";

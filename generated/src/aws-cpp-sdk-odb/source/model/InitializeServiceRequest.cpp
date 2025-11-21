@@ -12,7 +12,15 @@ using namespace Aws::odb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String InitializeServiceRequest::SerializePayload() const { return "{}"; }
+Aws::String InitializeServiceRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_ociIdentityDomainHasBeenSet) {
+    payload.WithBool("ociIdentityDomain", m_ociIdentityDomain);
+  }
+
+  return payload.View().WriteReadable();
+}
 
 Aws::Http::HeaderValueCollection InitializeServiceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

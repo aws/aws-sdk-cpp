@@ -56,6 +56,26 @@ class FilterConfiguration {
 
   ///@{
   /**
+   * <p>Optionally specify one or more DRM settings for all of your manifest egress
+   * requests. When you include a DRM setting, note that you cannot use an identical
+   * DRM setting query parameter for this manifest's endpoint URL.</p>
+   */
+  inline const Aws::String& GetDrmSettings() const { return m_drmSettings; }
+  inline bool DrmSettingsHasBeenSet() const { return m_drmSettingsHasBeenSet; }
+  template <typename DrmSettingsT = Aws::String>
+  void SetDrmSettings(DrmSettingsT&& value) {
+    m_drmSettingsHasBeenSet = true;
+    m_drmSettings = std::forward<DrmSettingsT>(value);
+  }
+  template <typename DrmSettingsT = Aws::String>
+  FilterConfiguration& WithDrmSettings(DrmSettingsT&& value) {
+    SetDrmSettings(std::forward<DrmSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optionally specify the start time for all of your manifest egress requests.
    * When you include start time, note that you cannot use start time query
    * parameters for this manifest's endpoint URL.</p>
@@ -135,6 +155,9 @@ class FilterConfiguration {
  private:
   Aws::String m_manifestFilter;
   bool m_manifestFilterHasBeenSet = false;
+
+  Aws::String m_drmSettings;
+  bool m_drmSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
   bool m_startHasBeenSet = false;
