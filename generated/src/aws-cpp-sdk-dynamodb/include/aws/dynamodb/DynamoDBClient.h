@@ -11,8 +11,8 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 
 namespace Aws {
 namespace DynamoDB {
@@ -38,7 +38,7 @@ AWS_DYNAMODB_API extern const char SERVICE_NAME[];
 class AWS_DYNAMODB_API DynamoDBClient
     : Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>,
       smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME, Aws::DynamoDB::DynamoDBClientConfiguration,
-                                       smithy::SigV4AuthSchemeResolver<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                       smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
                                        DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome,
                                        Aws::Client::DynamoDBErrorMarshaller> {
  public:

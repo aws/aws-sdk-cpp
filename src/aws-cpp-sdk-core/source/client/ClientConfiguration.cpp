@@ -190,6 +190,18 @@ Aws::String calculateRegion() {
   return "";
 }
 
+
+Aws::Vector<Aws::String> calculateAuthPreferences() {
+  // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
+  Aws::Vector<Aws::String> res;
+  auto prefs = Aws::Environment::GetEnv("AWS_AUTH_SCHEME_PREFERENCE");
+  Aws::Vector<Aws::String> prefsList  = Aws::Utils::StringUtils::Split(prefs, ',');
+  for (auto& pref : prefsList) {
+    res.push_back(Aws::Utils::StringUtils::Trim(pref.c_str()));
+  }
+  return res;
+}
+
 void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
@@ -253,6 +265,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 
     clientConfig.region = calculateRegion();
     clientConfig.credentialProviderConfig.region = clientConfig.region;
+    clientConfig.authPreferences = calculateAuthPreferences();
 
     // Set the endpoint to interact with EC2 instance's metadata service
     Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
