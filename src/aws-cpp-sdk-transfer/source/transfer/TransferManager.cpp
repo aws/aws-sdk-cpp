@@ -6,6 +6,11 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -399,6 +404,25 @@ namespace Aws
             bool isRetry = !handle->GetMultiPartId().empty();
             uint64_t sentBytes = 0;
 
+            const auto fullObjectHashCalculator = [](const std::shared_ptr<TransferHandle>& handle, bool isRetry, S3::Model::ChecksumAlgorithm algorithm) -> std::shared_ptr<Aws::Utils::Crypto::Hash> {
+                if (handle->GetChecksum().empty() && !isRetry) {
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::Sha1>("TransferManager");
+                    }
+                    if (algorithm == S3::Model::ChecksumAlgorithm::SHA256) {
+                        return Aws::MakeShared<Aws::Utils::Crypto::Sha256>("TransferManager");
+                    }
+                    return Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
+                }
+                return nullptr;
+            }(handle, isRetry, m_transferConfig.checksumAlgorithm);
+
             if (!isRetry) {
               Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
               createMultipartRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
@@ -466,6 +490,10 @@ namespace Aws
                 streamToPut->seekg((partsIter->first - 1) * m_transferConfig.bufferSize);
                 streamToPut->read(reinterpret_cast<char*>(buffer), lengthToWrite);
 
+                if (fullObjectHashCalculator) {
+                    fullObjectHashCalculator->Update(buffer, static_cast<size_t>(lengthToWrite));
+                }
+
                 auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                 auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
@@ -524,6 +552,13 @@ namespace Aws
             {
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 TriggerTransferStatusUpdatedCallback(handle);
+            }
+            else if (fullObjectHashCalculator && handle->GetChecksum().empty()) {
+                // Finalize checksum calculation and set on handle
+                auto hashResult = fullObjectHashCalculator->GetHash();
+                if (hashResult.IsSuccess()) {
+                    handle->SetChecksum(Aws::Utils::HashingUtils::Base64Encode(hashResult.GetResult()));
+                }
             }
         }
 
