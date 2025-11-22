@@ -161,19 +161,52 @@ void WinINetSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& header
 
 uint64_t WinINetSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const
 {
-    AWS_UNREFERENCED_PARAM(isChunked);
     DWORD bytesWritten = 0;
-    if (!InternetWriteFile(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+    uint64_t totalBytesWritten = 0;
+    const char CRLF[] = "\r\n";
+
+    if (isChunked)
     {
-        return 0;
+        Aws::String chunkSizeHexString = StringUtils::ToHexString(bytesRead) + CRLF;
+
+        if (!InternetWriteFile(hHttpRequest, chunkSizeHexString.c_str(), (DWORD)chunkSizeHexString.size(), &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+        if (!InternetWriteFile(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+        if (!InternetWriteFile(hHttpRequest, CRLF, (DWORD)(sizeof(CRLF) - 1), &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
     }
-    return bytesWritten;
+    else
+    {
+        if (!InternetWriteFile(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+    }
+
+    return totalBytesWritten;
 }
 
 uint64_t WinINetSyncHttpClient::FinalizeWriteData(void* hHttpRequest) const
 {
-    AWS_UNREFERENCED_PARAM(hHttpRequest);
-    return 0;
+    DWORD bytesWritten = 0;
+    const char trailingCRLF[] = "0\r\n\r\n";
+    if (!InternetWriteFile(hHttpRequest, trailingCRLF, (DWORD)(sizeof(trailingCRLF) - 1), &bytesWritten))
+    {
+        return 0;
+    }
+
+    return bytesWritten;
 }
 
 bool WinINetSyncHttpClient::DoReceiveResponse(void* hHttpRequest) const
