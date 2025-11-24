@@ -157,6 +157,16 @@ DistributionSummary& DistributionSummary::operator=(const XmlNode& xmlNode) {
       m_anycastIpListId = Aws::Utils::Xml::DecodeEscapedXmlText(anycastIpListIdNode.GetText());
       m_anycastIpListIdHasBeenSet = true;
     }
+    XmlNode viewerMtlsConfigNode = resultNode.FirstChild("ViewerMtlsConfig");
+    if (!viewerMtlsConfigNode.IsNull()) {
+      m_viewerMtlsConfig = viewerMtlsConfigNode;
+      m_viewerMtlsConfigHasBeenSet = true;
+    }
+    XmlNode connectionFunctionAssociationNode = resultNode.FirstChild("ConnectionFunctionAssociation");
+    if (!connectionFunctionAssociationNode.IsNull()) {
+      m_connectionFunctionAssociation = connectionFunctionAssociationNode;
+      m_connectionFunctionAssociationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -291,6 +301,16 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const {
   if (m_anycastIpListIdHasBeenSet) {
     XmlNode anycastIpListIdNode = parentNode.CreateChildElement("AnycastIpListId");
     anycastIpListIdNode.SetText(m_anycastIpListId);
+  }
+
+  if (m_viewerMtlsConfigHasBeenSet) {
+    XmlNode viewerMtlsConfigNode = parentNode.CreateChildElement("ViewerMtlsConfig");
+    m_viewerMtlsConfig.AddToNode(viewerMtlsConfigNode);
+  }
+
+  if (m_connectionFunctionAssociationHasBeenSet) {
+    XmlNode connectionFunctionAssociationNode = parentNode.CreateChildElement("ConnectionFunctionAssociation");
+    m_connectionFunctionAssociation.AddToNode(connectionFunctionAssociationNode);
   }
 }
 

@@ -113,10 +113,10 @@ class OriginAccessControlSummary {
    * <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
    * <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting
    * the <code>Authorization</code> header from the viewer request if necessary.</p>
-   * </li> <li> <p> <code>no-override</code> – If the viewer request doesn't contain
-   * the <code>Authorization</code> header, CloudFront signs the origin request. If
-   * the viewer request contains the <code>Authorization</code> header, CloudFront
-   * doesn't sign the origin request, but instead passes along the
+   * </li> <li> <p> <code>no-override</code> ��� If the viewer request doesn't
+   * contain the <code>Authorization</code> header, CloudFront signs the origin
+   * request. If the viewer request contains the <code>Authorization</code> header,
+   * CloudFront doesn't sign the origin request, but instead passes along the
    * <code>Authorization</code> header that it received in the viewer request.</p>
    * </li> </ul>
    */

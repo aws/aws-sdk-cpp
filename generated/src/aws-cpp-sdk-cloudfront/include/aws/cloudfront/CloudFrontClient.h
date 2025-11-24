@@ -342,6 +342,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConnectionFunction2020_05_31Outcome CreateConnectionFunction2020_05_31(
+      const Model::CreateConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for CreateConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateConnectionFunction2020_05_31RequestT = Model::CreateConnectionFunction2020_05_31Request>
+  Model::CreateConnectionFunction2020_05_31OutcomeCallable CreateConnectionFunction2020_05_31Callable(
+      const CreateConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::CreateConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateConnectionFunction2020_05_31RequestT = Model::CreateConnectionFunction2020_05_31Request>
+  void CreateConnectionFunction2020_05_31Async(const CreateConnectionFunction2020_05_31RequestT& request,
+                                               const CreateConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::CreateConnectionFunction2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Creates a connection group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup2020_05_31">AWS
    * API Reference</a></p>
@@ -1032,6 +1061,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates a trust store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTrustStore2020_05_31Outcome CreateTrustStore2020_05_31(
+      const Model::CreateTrustStore2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for CreateTrustStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateTrustStore2020_05_31RequestT = Model::CreateTrustStore2020_05_31Request>
+  Model::CreateTrustStore2020_05_31OutcomeCallable CreateTrustStore2020_05_31Callable(
+      const CreateTrustStore2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::CreateTrustStore2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTrustStore2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateTrustStore2020_05_31RequestT = Model::CreateTrustStore2020_05_31Request>
+  void CreateTrustStore2020_05_31Async(const CreateTrustStore2020_05_31RequestT& request,
+                                       const CreateTrustStore2020_05_31ResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::CreateTrustStore2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Create an Amazon CloudFront VPC origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin2020_05_31">AWS
    * API Reference</a></p>
@@ -1150,6 +1208,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConnectionFunction2020_05_31Outcome DeleteConnectionFunction2020_05_31(
+      const Model::DeleteConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteConnectionFunction2020_05_31RequestT = Model::DeleteConnectionFunction2020_05_31Request>
+  Model::DeleteConnectionFunction2020_05_31OutcomeCallable DeleteConnectionFunction2020_05_31Callable(
+      const DeleteConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::DeleteConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteConnectionFunction2020_05_31RequestT = Model::DeleteConnectionFunction2020_05_31Request>
+  void DeleteConnectionFunction2020_05_31Async(const DeleteConnectionFunction2020_05_31RequestT& request,
+                                               const DeleteConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::DeleteConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -1718,6 +1805,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Deletes a trust store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTrustStore2020_05_31Outcome DeleteTrustStore2020_05_31(
+      const Model::DeleteTrustStore2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTrustStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteTrustStore2020_05_31RequestT = Model::DeleteTrustStore2020_05_31Request>
+  Model::DeleteTrustStore2020_05_31OutcomeCallable DeleteTrustStore2020_05_31Callable(
+      const DeleteTrustStore2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::DeleteTrustStore2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTrustStore2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTrustStore2020_05_31RequestT = Model::DeleteTrustStore2020_05_31Request>
+  void DeleteTrustStore2020_05_31Async(const DeleteTrustStore2020_05_31RequestT& request,
+                                       const DeleteTrustStore2020_05_31ResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::DeleteTrustStore2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Delete an Amazon CloudFront VPC origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin2020_05_31">AWS
    * API Reference</a></p>
@@ -1743,6 +1859,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                       const DeleteVpcOrigin2020_05_31ResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::DeleteVpcOrigin2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Describes a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeConnectionFunction2020_05_31Outcome DescribeConnectionFunction2020_05_31(
+      const Model::DescribeConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for DescribeConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeConnectionFunction2020_05_31RequestT = Model::DescribeConnectionFunction2020_05_31Request>
+  Model::DescribeConnectionFunction2020_05_31OutcomeCallable DescribeConnectionFunction2020_05_31Callable(
+      const DescribeConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::DescribeConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeConnectionFunction2020_05_31RequestT = Model::DescribeConnectionFunction2020_05_31Request>
+  void DescribeConnectionFunction2020_05_31Async(const DescribeConnectionFunction2020_05_31RequestT& request,
+                                                 const DescribeConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::DescribeConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -2029,6 +2174,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectionFunction2020_05_31Outcome GetConnectionFunction2020_05_31(
+      const Model::GetConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for GetConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetConnectionFunction2020_05_31RequestT = Model::GetConnectionFunction2020_05_31Request>
+  Model::GetConnectionFunction2020_05_31OutcomeCallable GetConnectionFunction2020_05_31Callable(
+      const GetConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::GetConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetConnectionFunction2020_05_31RequestT = Model::GetConnectionFunction2020_05_31Request>
+  void GetConnectionFunction2020_05_31Async(const GetConnectionFunction2020_05_31RequestT& request,
+                                            const GetConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::GetConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -2991,6 +3165,33 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Gets a trust store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTrustStore2020_05_31Outcome GetTrustStore2020_05_31(const Model::GetTrustStore2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for GetTrustStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTrustStore2020_05_31RequestT = Model::GetTrustStore2020_05_31Request>
+  Model::GetTrustStore2020_05_31OutcomeCallable GetTrustStore2020_05_31Callable(const GetTrustStore2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::GetTrustStore2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrustStore2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTrustStore2020_05_31RequestT = Model::GetTrustStore2020_05_31Request>
+  void GetTrustStore2020_05_31Async(const GetTrustStore2020_05_31RequestT& request,
+                                    const GetTrustStore2020_05_31ResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::GetTrustStore2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Get the details of an Amazon CloudFront VPC origin.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin2020_05_31">AWS
@@ -3173,6 +3374,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                              const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::ListConflictingAliases2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Lists connection functions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConnectionFunctions2020_05_31Outcome ListConnectionFunctions2020_05_31(
+      const Model::ListConnectionFunctions2020_05_31Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConnectionFunctions2020_05_31 that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListConnectionFunctions2020_05_31RequestT = Model::ListConnectionFunctions2020_05_31Request>
+  Model::ListConnectionFunctions2020_05_31OutcomeCallable ListConnectionFunctions2020_05_31Callable(
+      const ListConnectionFunctions2020_05_31RequestT& request = {}) const {
+    return SubmitCallable(&CloudFrontClient::ListConnectionFunctions2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for ListConnectionFunctions2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListConnectionFunctions2020_05_31RequestT = Model::ListConnectionFunctions2020_05_31Request>
+  void ListConnectionFunctions2020_05_31Async(const ListConnectionFunctions2020_05_31ResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                              const ListConnectionFunctions2020_05_31RequestT& request = {}) const {
+    return SubmitAsync(&CloudFrontClient::ListConnectionFunctions2020_05_31, request, handler, context);
   }
 
   /**
@@ -3404,6 +3634,38 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Lists distributions by connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDistributionsByConnectionFunction2020_05_31Outcome ListDistributionsByConnectionFunction2020_05_31(
+      const Model::ListDistributionsByConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for ListDistributionsByConnectionFunction2020_05_31 that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename ListDistributionsByConnectionFunction2020_05_31RequestT = Model::ListDistributionsByConnectionFunction2020_05_31Request>
+  Model::ListDistributionsByConnectionFunction2020_05_31OutcomeCallable ListDistributionsByConnectionFunction2020_05_31Callable(
+      const ListDistributionsByConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::ListDistributionsByConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for ListDistributionsByConnectionFunction2020_05_31 that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename ListDistributionsByConnectionFunction2020_05_31RequestT = Model::ListDistributionsByConnectionFunction2020_05_31Request>
+  void ListDistributionsByConnectionFunction2020_05_31Async(
+      const ListDistributionsByConnectionFunction2020_05_31RequestT& request,
+      const ListDistributionsByConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::ListDistributionsByConnectionFunction2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>Lists the distributions by the connection mode that you
    * specify.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode2020_05_31">AWS
@@ -3617,6 +3879,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Lists distributions by trust store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDistributionsByTrustStore2020_05_31Outcome ListDistributionsByTrustStore2020_05_31(
+      const Model::ListDistributionsByTrustStore2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for ListDistributionsByTrustStore2020_05_31 that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListDistributionsByTrustStore2020_05_31RequestT = Model::ListDistributionsByTrustStore2020_05_31Request>
+  Model::ListDistributionsByTrustStore2020_05_31OutcomeCallable ListDistributionsByTrustStore2020_05_31Callable(
+      const ListDistributionsByTrustStore2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::ListDistributionsByTrustStore2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for ListDistributionsByTrustStore2020_05_31 that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListDistributionsByTrustStore2020_05_31RequestT = Model::ListDistributionsByTrustStore2020_05_31Request>
+  void ListDistributionsByTrustStore2020_05_31Async(const ListDistributionsByTrustStore2020_05_31RequestT& request,
+                                                    const ListDistributionsByTrustStore2020_05_31ResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::ListDistributionsByTrustStore2020_05_31, request, handler, context);
   }
 
   /**
@@ -4198,6 +4489,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Lists trust stores.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTrustStores2020_05_31Outcome ListTrustStores2020_05_31(
+      const Model::ListTrustStores2020_05_31Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTrustStores2020_05_31 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTrustStores2020_05_31RequestT = Model::ListTrustStores2020_05_31Request>
+  Model::ListTrustStores2020_05_31OutcomeCallable ListTrustStores2020_05_31Callable(
+      const ListTrustStores2020_05_31RequestT& request = {}) const {
+    return SubmitCallable(&CloudFrontClient::ListTrustStores2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for ListTrustStores2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTrustStores2020_05_31RequestT = Model::ListTrustStores2020_05_31Request>
+  void ListTrustStores2020_05_31Async(const ListTrustStores2020_05_31ResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListTrustStores2020_05_31RequestT& request = {}) const {
+    return SubmitAsync(&CloudFrontClient::ListTrustStores2020_05_31, request, handler, context);
+  }
+
+  /**
    * <p>List the CloudFront VPC origins in your account.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins2020_05_31">AWS
@@ -4224,6 +4544,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                      const ListVpcOrigins2020_05_31RequestT& request = {}) const {
     return SubmitAsync(&CloudFrontClient::ListVpcOrigins2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Publishes a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PublishConnectionFunction2020_05_31Outcome PublishConnectionFunction2020_05_31(
+      const Model::PublishConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for PublishConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PublishConnectionFunction2020_05_31RequestT = Model::PublishConnectionFunction2020_05_31Request>
+  Model::PublishConnectionFunction2020_05_31OutcomeCallable PublishConnectionFunction2020_05_31Callable(
+      const PublishConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::PublishConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for PublishConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PublishConnectionFunction2020_05_31RequestT = Model::PublishConnectionFunction2020_05_31Request>
+  void PublishConnectionFunction2020_05_31Async(const PublishConnectionFunction2020_05_31RequestT& request,
+                                                const PublishConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::PublishConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -4319,6 +4668,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   void TagResource2020_05_31Async(const TagResource2020_05_31RequestT& request, const TagResource2020_05_31ResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::TagResource2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Tests a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TestConnectionFunction2020_05_31Outcome TestConnectionFunction2020_05_31(
+      const Model::TestConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for TestConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename TestConnectionFunction2020_05_31RequestT = Model::TestConnectionFunction2020_05_31Request>
+  Model::TestConnectionFunction2020_05_31OutcomeCallable TestConnectionFunction2020_05_31Callable(
+      const TestConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::TestConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for TestConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename TestConnectionFunction2020_05_31RequestT = Model::TestConnectionFunction2020_05_31Request>
+  void TestConnectionFunction2020_05_31Async(const TestConnectionFunction2020_05_31RequestT& request,
+                                             const TestConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::TestConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -4488,6 +4866,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a connection function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConnectionFunction2020_05_31Outcome UpdateConnectionFunction2020_05_31(
+      const Model::UpdateConnectionFunction2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConnectionFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateConnectionFunction2020_05_31RequestT = Model::UpdateConnectionFunction2020_05_31Request>
+  Model::UpdateConnectionFunction2020_05_31OutcomeCallable UpdateConnectionFunction2020_05_31Callable(
+      const UpdateConnectionFunction2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::UpdateConnectionFunction2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConnectionFunction2020_05_31 that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateConnectionFunction2020_05_31RequestT = Model::UpdateConnectionFunction2020_05_31Request>
+  void UpdateConnectionFunction2020_05_31Async(const UpdateConnectionFunction2020_05_31RequestT& request,
+                                               const UpdateConnectionFunction2020_05_31ResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::UpdateConnectionFunction2020_05_31, request, handler, context);
   }
 
   /**
@@ -5083,6 +5490,35 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                                   const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler,
                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFrontClient::UpdateStreamingDistribution2020_05_31, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a trust store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore2020_05_31">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTrustStore2020_05_31Outcome UpdateTrustStore2020_05_31(
+      const Model::UpdateTrustStore2020_05_31Request& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTrustStore2020_05_31 that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateTrustStore2020_05_31RequestT = Model::UpdateTrustStore2020_05_31Request>
+  Model::UpdateTrustStore2020_05_31OutcomeCallable UpdateTrustStore2020_05_31Callable(
+      const UpdateTrustStore2020_05_31RequestT& request) const {
+    return SubmitCallable(&CloudFrontClient::UpdateTrustStore2020_05_31, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTrustStore2020_05_31 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateTrustStore2020_05_31RequestT = Model::UpdateTrustStore2020_05_31Request>
+  void UpdateTrustStore2020_05_31Async(const UpdateTrustStore2020_05_31RequestT& request,
+                                       const UpdateTrustStore2020_05_31ResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFrontClient::UpdateTrustStore2020_05_31, request, handler, context);
   }
 
   /**

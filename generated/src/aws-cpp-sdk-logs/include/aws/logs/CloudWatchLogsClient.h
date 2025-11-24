@@ -3037,6 +3037,40 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Enables or disables deletion protection for the specified log group. When
+   * enabled on a log group, deletion protection blocks all deletion operations until
+   * it is explicitly disabled.</p> <p>For information about the parameters that are
+   * common to all actions, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+   * Parameters</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogGroupDeletionProtection">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutLogGroupDeletionProtectionOutcome PutLogGroupDeletionProtection(
+      const Model::PutLogGroupDeletionProtectionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutLogGroupDeletionProtection that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutLogGroupDeletionProtectionRequestT = Model::PutLogGroupDeletionProtectionRequest>
+  Model::PutLogGroupDeletionProtectionOutcomeCallable PutLogGroupDeletionProtectionCallable(
+      const PutLogGroupDeletionProtectionRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::PutLogGroupDeletionProtection, request);
+  }
+
+  /**
+   * An Async wrapper for PutLogGroupDeletionProtection that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutLogGroupDeletionProtectionRequestT = Model::PutLogGroupDeletionProtectionRequest>
+  void PutLogGroupDeletionProtectionAsync(const PutLogGroupDeletionProtectionRequestT& request,
+                                          const PutLogGroupDeletionProtectionResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::PutLogGroupDeletionProtection, request, handler, context);
+  }
+
+  /**
    * <p>Creates or updates a metric filter and associates it with the specified log
    * group. With metric filters, you can configure rules to extract metric data from
    * log events ingested through <a

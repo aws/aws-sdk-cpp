@@ -27,6 +27,8 @@
 #include <aws/cloudfront/model/AssociateDistributionTenantWebACL2020_05_31Result.h>
 #include <aws/cloudfront/model/AssociateDistributionWebACL2020_05_31Request.h>
 #include <aws/cloudfront/model/AssociateDistributionWebACL2020_05_31Result.h>
+#include <aws/cloudfront/model/CaCertificatesBundleS3Location.h>
+#include <aws/cloudfront/model/CaCertificatesBundleSource.h>
 #include <aws/cloudfront/model/CacheBehavior.h>
 #include <aws/cloudfront/model/CacheBehaviors.h>
 #include <aws/cloudfront/model/CachePolicy.h>
@@ -49,6 +51,9 @@
 #include <aws/cloudfront/model/CloudFrontOriginAccessIdentitySummary.h>
 #include <aws/cloudfront/model/ConflictingAlias.h>
 #include <aws/cloudfront/model/ConflictingAliasesList.h>
+#include <aws/cloudfront/model/ConnectionFunctionAssociation.h>
+#include <aws/cloudfront/model/ConnectionFunctionSummary.h>
+#include <aws/cloudfront/model/ConnectionFunctionTestResult.h>
 #include <aws/cloudfront/model/ConnectionGroup.h>
 #include <aws/cloudfront/model/ConnectionGroupAssociationFilter.h>
 #include <aws/cloudfront/model/ConnectionGroupSummary.h>
@@ -73,6 +78,8 @@
 #include <aws/cloudfront/model/CreateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateConnectionGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateConnectionGroup2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateContinuousDeploymentPolicy2020_05_31Request.h>
@@ -113,6 +120,8 @@
 #include <aws/cloudfront/model/CreateStreamingDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateTrustStore2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateTrustStore2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateVpcOrigin2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateVpcOrigin2020_05_31Result.h>
 #include <aws/cloudfront/model/CustomErrorResponse.h>
@@ -125,6 +134,7 @@
 #include <aws/cloudfront/model/DeleteAnycastIpList2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteConnectionFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteConnectionGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteContinuousDeploymentPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteDistribution2020_05_31Request.h>
@@ -143,8 +153,11 @@
 #include <aws/cloudfront/model/DeleteResourcePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteTrustStore2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteVpcOrigin2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteVpcOrigin2020_05_31Result.h>
+#include <aws/cloudfront/model/DescribeConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/DescribeConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/DescribeFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DescribeFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/DescribeKeyValueStore2020_05_31Request.h>
@@ -208,6 +221,8 @@
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/GetConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/GetConnectionGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/GetConnectionGroup2020_05_31Result.h>
 #include <aws/cloudfront/model/GetConnectionGroupByRoutingEndpoint2020_05_31Request.h>
@@ -270,6 +285,8 @@
 #include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetTrustStore2020_05_31Request.h>
+#include <aws/cloudfront/model/GetTrustStore2020_05_31Result.h>
 #include <aws/cloudfront/model/GetVpcOrigin2020_05_31Request.h>
 #include <aws/cloudfront/model/GetVpcOrigin2020_05_31Result.h>
 #include <aws/cloudfront/model/GrpcConfig.h>
@@ -308,6 +325,8 @@
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Result.h>
 #include <aws/cloudfront/model/ListConflictingAliases2020_05_31Request.h>
 #include <aws/cloudfront/model/ListConflictingAliases2020_05_31Result.h>
+#include <aws/cloudfront/model/ListConnectionFunctions2020_05_31Request.h>
+#include <aws/cloudfront/model/ListConnectionFunctions2020_05_31Result.h>
 #include <aws/cloudfront/model/ListConnectionGroups2020_05_31Request.h>
 #include <aws/cloudfront/model/ListConnectionGroups2020_05_31Result.h>
 #include <aws/cloudfront/model/ListContinuousDeploymentPolicies2020_05_31Request.h>
@@ -322,6 +341,8 @@
 #include <aws/cloudfront/model/ListDistributionsByAnycastIpListId2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByConnectionMode2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByConnectionMode2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
@@ -334,6 +355,8 @@
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByTrustStore2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByTrustStore2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByVpcOriginId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByVpcOriginId2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Request.h>
@@ -368,6 +391,8 @@
 #include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Result.h>
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Request.h>
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Result.h>
+#include <aws/cloudfront/model/ListTrustStores2020_05_31Request.h>
+#include <aws/cloudfront/model/ListTrustStores2020_05_31Result.h>
 #include <aws/cloudfront/model/ListVpcOrigins2020_05_31Request.h>
 #include <aws/cloudfront/model/ListVpcOrigins2020_05_31Result.h>
 #include <aws/cloudfront/model/LoggingConfig.h>
@@ -417,6 +442,8 @@
 #include <aws/cloudfront/model/PublicKeyConfig.h>
 #include <aws/cloudfront/model/PublicKeyList.h>
 #include <aws/cloudfront/model/PublicKeySummary.h>
+#include <aws/cloudfront/model/PublishConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/PublishConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/PutResourcePolicy2020_05_31Request.h>
@@ -475,10 +502,16 @@
 #include <aws/cloudfront/model/TagResource2020_05_31Request.h>
 #include <aws/cloudfront/model/Tags.h>
 #include <aws/cloudfront/model/TenantConfig.h>
+#include <aws/cloudfront/model/TestConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/TestConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/TestFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/TestFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/TestResult.h>
 #include <aws/cloudfront/model/TrafficConfig.h>
+#include <aws/cloudfront/model/TrustStore.h>
+#include <aws/cloudfront/model/TrustStoreConfig.h>
+#include <aws/cloudfront/model/TrustStoreStatus.h>
+#include <aws/cloudfront/model/TrustStoreSummary.h>
 #include <aws/cloudfront/model/TrustedKeyGroups.h>
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
@@ -488,6 +521,8 @@
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateConnectionFunction2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateConnectionFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateConnectionGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateConnectionGroup2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateContinuousDeploymentPolicy2020_05_31Request.h>
@@ -522,6 +557,8 @@
 #include <aws/cloudfront/model/UpdateResponseHeadersPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateTrustStore2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateTrustStore2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateVpcOrigin2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateVpcOrigin2020_05_31Result.h>
 #include <aws/cloudfront/model/ValidationTokenDetail.h>
@@ -529,6 +566,8 @@
 #include <aws/cloudfront/model/VerifyDnsConfiguration2020_05_31Request.h>
 #include <aws/cloudfront/model/VerifyDnsConfiguration2020_05_31Result.h>
 #include <aws/cloudfront/model/ViewerCertificate.h>
+#include <aws/cloudfront/model/ViewerMtlsConfig.h>
+#include <aws/cloudfront/model/ViewerMtlsMode.h>
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/cloudfront/model/VpcOrigin.h>
 #include <aws/cloudfront/model/VpcOriginConfig.h>
