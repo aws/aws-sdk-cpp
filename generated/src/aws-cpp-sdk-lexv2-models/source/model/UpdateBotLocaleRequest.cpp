@@ -31,5 +31,10 @@ Aws::String UpdateBotLocaleRequest::SerializePayload() const {
     payload.WithObject("generativeAISettings", m_generativeAISettings.Jsonize());
   }
 
+  if (m_speechDetectionSensitivityHasBeenSet) {
+    payload.WithString("speechDetectionSensitivity",
+                       SpeechDetectionSensitivityMapper::GetNameForSpeechDetectionSensitivity(m_speechDetectionSensitivity));
+  }
+
   return payload.View().WriteReadable();
 }

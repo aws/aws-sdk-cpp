@@ -50,6 +50,24 @@ ManagedServices& ManagedServices::operator=(JsonView jsonValue) {
     m_s3Access = jsonValue.GetObject("s3Access");
     m_s3AccessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("stsAccess")) {
+    m_stsAccess = jsonValue.GetObject("stsAccess");
+    m_stsAccessHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsAccess")) {
+    m_kmsAccess = jsonValue.GetObject("kmsAccess");
+    m_kmsAccessHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("crossRegionS3RestoreSourcesAccess")) {
+    Aws::Utils::Array<JsonView> crossRegionS3RestoreSourcesAccessJsonList = jsonValue.GetArray("crossRegionS3RestoreSourcesAccess");
+    for (unsigned crossRegionS3RestoreSourcesAccessIndex = 0;
+         crossRegionS3RestoreSourcesAccessIndex < crossRegionS3RestoreSourcesAccessJsonList.GetLength();
+         ++crossRegionS3RestoreSourcesAccessIndex) {
+      m_crossRegionS3RestoreSourcesAccess.push_back(
+          crossRegionS3RestoreSourcesAccessJsonList[crossRegionS3RestoreSourcesAccessIndex].AsObject());
+    }
+    m_crossRegionS3RestoreSourcesAccessHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +105,25 @@ JsonValue ManagedServices::Jsonize() const {
 
   if (m_s3AccessHasBeenSet) {
     payload.WithObject("s3Access", m_s3Access.Jsonize());
+  }
+
+  if (m_stsAccessHasBeenSet) {
+    payload.WithObject("stsAccess", m_stsAccess.Jsonize());
+  }
+
+  if (m_kmsAccessHasBeenSet) {
+    payload.WithObject("kmsAccess", m_kmsAccess.Jsonize());
+  }
+
+  if (m_crossRegionS3RestoreSourcesAccessHasBeenSet) {
+    Aws::Utils::Array<JsonValue> crossRegionS3RestoreSourcesAccessJsonList(m_crossRegionS3RestoreSourcesAccess.size());
+    for (unsigned crossRegionS3RestoreSourcesAccessIndex = 0;
+         crossRegionS3RestoreSourcesAccessIndex < crossRegionS3RestoreSourcesAccessJsonList.GetLength();
+         ++crossRegionS3RestoreSourcesAccessIndex) {
+      crossRegionS3RestoreSourcesAccessJsonList[crossRegionS3RestoreSourcesAccessIndex].AsObject(
+          m_crossRegionS3RestoreSourcesAccess[crossRegionS3RestoreSourcesAccessIndex].Jsonize());
+    }
+    payload.WithArray("crossRegionS3RestoreSourcesAccess", std::move(crossRegionS3RestoreSourcesAccessJsonList));
   }
 
   return payload;

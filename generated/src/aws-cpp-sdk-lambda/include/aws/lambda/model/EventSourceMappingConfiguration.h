@@ -311,9 +311,9 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event
-   * sources only) A configuration object that specifies the destination of an event
-   * after Lambda processes it.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) A
+   * configuration object that specifies the destination of an event after Lambda
+   * processes it.</p>
    */
   inline const DestinationConfig& GetDestinationConfig() const { return m_destinationConfig; }
   inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
@@ -423,12 +423,12 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
-   * age. The default value is -1, which sets the maximum age to infinite. When the
-   * value is set to infinite, Lambda never discards old records.</p>  <p>The
-   * minimum valid value for maximum record age is 60s. Although values less than 60
-   * and greater than -1 fall within the parameter's absolute range, they are not
-   * allowed</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
+   * Discard records older than the specified age. The default value is -1, which
+   * sets the maximum age to infinite. When the value is set to infinite, Lambda
+   * never discards old records.</p>  <p>The minimum valid value for maximum
+   * record age is 60s. Although values less than 60 and greater than -1 fall within
+   * the parameter's absolute range, they are not allowed</p>
    */
   inline int GetMaximumRecordAgeInSeconds() const { return m_maximumRecordAgeInSeconds; }
   inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
@@ -444,8 +444,9 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
-   * the batch in two and retry. The default value is false.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) If the
+   * function returns an error, split the batch in two and retry. The default value
+   * is false.</p>
    */
   inline bool GetBisectBatchOnFunctionError() const { return m_bisectBatchOnFunctionError; }
   inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
@@ -461,10 +462,11 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
-   * number of retries. The default value is -1, which sets the maximum number of
-   * retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
-   * failed records until the record expires in the event source.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
+   * Discard records after the specified number of retries. The default value is -1,
+   * which sets the maximum number of retries to infinite. When MaximumRetryAttempts
+   * is infinite, Lambda retries failed records until the record expires in the event
+   * source.</p>
    */
   inline int GetMaximumRetryAttempts() const { return m_maximumRetryAttempts; }
   inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
@@ -498,8 +500,9 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
-   * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
-   * enums applied to the event source mapping.</p>
+   * <p>(Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon
+   * SQS) A list of current response type enums applied to the event source
+   * mapping.</p>
    */
   inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const { return m_functionResponseTypes; }
   inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }

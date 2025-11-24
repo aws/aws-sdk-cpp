@@ -17,6 +17,8 @@
 #include <aws/odb/model/AcceptMarketplaceRegistrationRequest.h>
 #include <aws/odb/model/AcceptMarketplaceRegistrationResult.h>
 #include <aws/odb/model/Access.h>
+#include <aws/odb/model/AssociateIamRoleToResourceRequest.h>
+#include <aws/odb/model/AssociateIamRoleToResourceResult.h>
 #include <aws/odb/model/AutonomousVirtualMachineSummary.h>
 #include <aws/odb/model/CloudAutonomousVmCluster.h>
 #include <aws/odb/model/CloudAutonomousVmClusterResourceDetails.h>
@@ -38,6 +40,7 @@
 #include <aws/odb/model/CreateOdbNetworkResult.h>
 #include <aws/odb/model/CreateOdbPeeringConnectionRequest.h>
 #include <aws/odb/model/CreateOdbPeeringConnectionResult.h>
+#include <aws/odb/model/CrossRegionS3RestoreSourcesAccess.h>
 #include <aws/odb/model/CustomerContact.h>
 #include <aws/odb/model/DataCollectionOptions.h>
 #include <aws/odb/model/DayOfWeek.h>
@@ -62,6 +65,8 @@
 #include <aws/odb/model/DeleteOdbNetworkResult.h>
 #include <aws/odb/model/DeleteOdbPeeringConnectionRequest.h>
 #include <aws/odb/model/DeleteOdbPeeringConnectionResult.h>
+#include <aws/odb/model/DisassociateIamRoleFromResourceRequest.h>
+#include <aws/odb/model/DisassociateIamRoleFromResourceResult.h>
 #include <aws/odb/model/DiskRedundancy.h>
 #include <aws/odb/model/ExadataIormConfig.h>
 #include <aws/odb/model/GetCloudAutonomousVmClusterRequest.h>
@@ -83,10 +88,13 @@
 #include <aws/odb/model/GetOdbPeeringConnectionRequest.h>
 #include <aws/odb/model/GetOdbPeeringConnectionResult.h>
 #include <aws/odb/model/GiVersionSummary.h>
+#include <aws/odb/model/IamRole.h>
+#include <aws/odb/model/IamRoleStatus.h>
 #include <aws/odb/model/InitializeServiceRequest.h>
 #include <aws/odb/model/InitializeServiceResult.h>
 #include <aws/odb/model/InternalServerException.h>
 #include <aws/odb/model/IormLifecycleState.h>
+#include <aws/odb/model/KmsAccess.h>
 #include <aws/odb/model/LicenseModel.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesRequest.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesResult.h>
@@ -120,6 +128,7 @@
 #include <aws/odb/model/MonthName.h>
 #include <aws/odb/model/Objective.h>
 #include <aws/odb/model/OciDnsForwardingConfig.h>
+#include <aws/odb/model/OciIdentityDomain.h>
 #include <aws/odb/model/OciOnboardingStatus.h>
 #include <aws/odb/model/OdbNetwork.h>
 #include <aws/odb/model/OdbNetworkSummary.h>
@@ -139,6 +148,8 @@
 #include <aws/odb/model/StartDbNodeResult.h>
 #include <aws/odb/model/StopDbNodeRequest.h>
 #include <aws/odb/model/StopDbNodeResult.h>
+#include <aws/odb/model/StsAccess.h>
+#include <aws/odb/model/SupportedAwsIntegration.h>
 #include <aws/odb/model/SystemVersionSummary.h>
 #include <aws/odb/model/TagResourceRequest.h>
 #include <aws/odb/model/TagResourceResult.h>

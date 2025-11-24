@@ -69,6 +69,10 @@ DescribeOptimizationJobResult& DescribeOptimizationJobResult::operator=(const Aw
         jsonValue.GetString("DeploymentInstanceType"));
     m_deploymentInstanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MaxInstanceCount")) {
+    m_maxInstanceCount = jsonValue.GetInteger("MaxInstanceCount");
+    m_maxInstanceCountHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OptimizationConfigs")) {
     Aws::Utils::Array<JsonView> optimizationConfigsJsonList = jsonValue.GetArray("OptimizationConfigs");
     for (unsigned optimizationConfigsIndex = 0; optimizationConfigsIndex < optimizationConfigsJsonList.GetLength();

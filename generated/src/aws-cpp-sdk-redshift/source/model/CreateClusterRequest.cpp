@@ -203,6 +203,10 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     ss << "RedshiftIdcApplicationArn=" << StringUtils::URLEncode(m_redshiftIdcApplicationArn.c_str()) << "&";
   }
 
+  if (m_catalogNameHasBeenSet) {
+    ss << "CatalogName=" << StringUtils::URLEncode(m_catalogName.c_str()) << "&";
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

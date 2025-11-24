@@ -560,11 +560,11 @@ class KeyMetadata {
   ///@{
   /**
    * <p>Identifies the current key material. This value is present for symmetric
-   * encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric
-   * encryption keys with <code>EXTERNAL</code> origin. These KMS keys support
-   * automatic or on-demand key rotation and can have multiple key materials
-   * associated with them. KMS uses the current key material for both encryption and
-   * decryption, and the non-current key material for decryption operations only.</p>
+   * encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These
+   * KMS keys support automatic or on-demand key rotation and can have multiple key
+   * materials associated with them. KMS uses the current key material for both
+   * encryption and decryption, and the non-current key material for decryption
+   * operations only.</p>
    */
   inline const Aws::String& GetCurrentKeyMaterialId() const { return m_currentKeyMaterialId; }
   inline bool CurrentKeyMaterialIdHasBeenSet() const { return m_currentKeyMaterialIdHasBeenSet; }

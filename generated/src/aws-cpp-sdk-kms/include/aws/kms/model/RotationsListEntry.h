@@ -113,16 +113,24 @@ class RotationsListEntry {
 
   ///@{
   /**
-   * <p>There are three possible values for this field: <code>CURRENT</code>,
-   * <code>NON_CURRENT</code> and <code>PENDING_ROTATION</code>. KMS uses
-   * <code>CURRENT</code> key material for both encryption and decryption and
-   * <code>NON_CURRENT</code> key material only for decryption.
-   * <code>PENDING_ROTATION</code> identifies key material that has been imported for
-   * on-demand key rotation but the rotation hasn't completed. Key material in
-   * <code>PENDING_ROTATION</code> is not permanently associated with the KMS key.
-   * You can delete this key material and import different key material in its place.
-   * The <code>PENDING_ROTATION</code> value is only used in symmetric encryption
-   * keys with imported key material. The other values, <code>CURRENT</code> and
+   * <p>There are four possible values for this field: <code>CURRENT</code>,
+   * <code>NON_CURRENT</code>, <code>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</code>
+   * and <code>PENDING_ROTATION</code>. KMS uses <code>CURRENT</code> key material
+   * for both encryption and decryption and <code>NON_CURRENT</code> key material
+   * only for decryption. <code>PENDING_ROTATION</code> identifies key material that
+   * has been imported for on-demand key rotation but the rotation hasn't completed.
+   * The key material state <code>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</code> is
+   * unique to multi-region, symmetric encryption keys with imported key material. It
+   * indicates key material that has been imported into the primary Region key but
+   * not all of the replica Region keys. When this key material is imported in to all
+   * of the replica Region keys, the key material state will change to
+   * <code>PENDING_ROTATION</code>. Key material in
+   * <code>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</code> or
+   * <code>PENDING_ROTATION</code> state is not permanently associated with the KMS
+   * key. You can delete this key material and import different key material in its
+   * place. The <code>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</code> and
+   * <code>PENDING_ROTATION</code> values are only used in symmetric encryption keys
+   * with imported key material. The other values, <code>CURRENT</code> and
    * <code>NON_CURRENT</code>, are used for all KMS keys that support automatic or
    * on-demand key rotation.</p>
    */

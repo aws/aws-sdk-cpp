@@ -39,6 +39,8 @@
 #include <aws/kinesisvideo/model/DescribeSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/DescribeStreamRequest.h>
 #include <aws/kinesisvideo/model/DescribeStreamResult.h>
+#include <aws/kinesisvideo/model/DescribeStreamStorageConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeStreamStorageConfigurationResult.h>
 #include <aws/kinesisvideo/model/GetDataEndpointResult.h>
 #include <aws/kinesisvideo/model/GetSignalingChannelEndpointResult.h>
 #include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsResult.h>
@@ -62,6 +64,7 @@
 #include <aws/kinesisvideo/model/UpdateNotificationConfigurationResult.h>
 #include <aws/kinesisvideo/model/UpdateSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/UpdateStreamResult.h>
+#include <aws/kinesisvideo/model/UpdateStreamStorageConfigurationResult.h>
 /* End of service model headers required in KinesisVideoClient header */
 
 namespace Aws {
@@ -107,6 +110,7 @@ class DescribeMediaStorageConfigurationRequest;
 class DescribeNotificationConfigurationRequest;
 class DescribeSignalingChannelRequest;
 class DescribeStreamRequest;
+class DescribeStreamStorageConfigurationRequest;
 class GetDataEndpointRequest;
 class GetSignalingChannelEndpointRequest;
 class ListEdgeAgentConfigurationsRequest;
@@ -125,6 +129,7 @@ class UpdateMediaStorageConfigurationRequest;
 class UpdateNotificationConfigurationRequest;
 class UpdateSignalingChannelRequest;
 class UpdateStreamRequest;
+class UpdateStreamStorageConfigurationRequest;
 /* End of service model forward declarations required in KinesisVideoClient header */
 
 /* Service model Outcome class definitions */
@@ -140,6 +145,7 @@ typedef Aws::Utils::Outcome<DescribeMediaStorageConfigurationResult, KinesisVide
 typedef Aws::Utils::Outcome<DescribeNotificationConfigurationResult, KinesisVideoError> DescribeNotificationConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, KinesisVideoError> DescribeSignalingChannelOutcome;
 typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisVideoError> DescribeStreamOutcome;
+typedef Aws::Utils::Outcome<DescribeStreamStorageConfigurationResult, KinesisVideoError> DescribeStreamStorageConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetDataEndpointResult, KinesisVideoError> GetDataEndpointOutcome;
 typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, KinesisVideoError> GetSignalingChannelEndpointOutcome;
 typedef Aws::Utils::Outcome<ListEdgeAgentConfigurationsResult, KinesisVideoError> ListEdgeAgentConfigurationsOutcome;
@@ -158,6 +164,7 @@ typedef Aws::Utils::Outcome<UpdateMediaStorageConfigurationResult, KinesisVideoE
 typedef Aws::Utils::Outcome<UpdateNotificationConfigurationResult, KinesisVideoError> UpdateNotificationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, KinesisVideoError> UpdateSignalingChannelOutcome;
 typedef Aws::Utils::Outcome<UpdateStreamResult, KinesisVideoError> UpdateStreamOutcome;
+typedef Aws::Utils::Outcome<UpdateStreamStorageConfigurationResult, KinesisVideoError> UpdateStreamStorageConfigurationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -173,6 +180,7 @@ typedef std::future<DescribeMediaStorageConfigurationOutcome> DescribeMediaStora
 typedef std::future<DescribeNotificationConfigurationOutcome> DescribeNotificationConfigurationOutcomeCallable;
 typedef std::future<DescribeSignalingChannelOutcome> DescribeSignalingChannelOutcomeCallable;
 typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
+typedef std::future<DescribeStreamStorageConfigurationOutcome> DescribeStreamStorageConfigurationOutcomeCallable;
 typedef std::future<GetDataEndpointOutcome> GetDataEndpointOutcomeCallable;
 typedef std::future<GetSignalingChannelEndpointOutcome> GetSignalingChannelEndpointOutcomeCallable;
 typedef std::future<ListEdgeAgentConfigurationsOutcome> ListEdgeAgentConfigurationsOutcomeCallable;
@@ -191,6 +199,7 @@ typedef std::future<UpdateMediaStorageConfigurationOutcome> UpdateMediaStorageCo
 typedef std::future<UpdateNotificationConfigurationOutcome> UpdateNotificationConfigurationOutcomeCallable;
 typedef std::future<UpdateSignalingChannelOutcome> UpdateSignalingChannelOutcomeCallable;
 typedef std::future<UpdateStreamOutcome> UpdateStreamOutcomeCallable;
+typedef std::future<UpdateStreamStorageConfigurationOutcome> UpdateStreamStorageConfigurationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -237,6 +246,10 @@ typedef std::function<void(const KinesisVideoClient*, const Model::DescribeSigna
 typedef std::function<void(const KinesisVideoClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeStreamResponseReceivedHandler;
+typedef std::function<void(const KinesisVideoClient*, const Model::DescribeStreamStorageConfigurationRequest&,
+                           const Model::DescribeStreamStorageConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeStreamStorageConfigurationResponseReceivedHandler;
 typedef std::function<void(const KinesisVideoClient*, const Model::GetDataEndpointRequest&, const Model::GetDataEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataEndpointResponseReceivedHandler;
@@ -295,6 +308,10 @@ typedef std::function<void(const KinesisVideoClient*, const Model::UpdateSignali
 typedef std::function<void(const KinesisVideoClient*, const Model::UpdateStreamRequest&, const Model::UpdateStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStreamResponseReceivedHandler;
+typedef std::function<void(const KinesisVideoClient*, const Model::UpdateStreamStorageConfigurationRequest&,
+                           const Model::UpdateStreamStorageConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateStreamStorageConfigurationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace KinesisVideo
 }  // namespace Aws

@@ -26,6 +26,10 @@ ProvisionedPollerConfig& ProvisionedPollerConfig::operator=(JsonView jsonValue) 
     m_maximumPollers = jsonValue.GetInteger("MaximumPollers");
     m_maximumPollersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PollerGroupName")) {
+    m_pollerGroupName = jsonValue.GetString("PollerGroupName");
+    m_pollerGroupNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProvisionedPollerConfig::Jsonize() const {
 
   if (m_maximumPollersHasBeenSet) {
     payload.WithInteger("MaximumPollers", m_maximumPollers);
+  }
+
+  if (m_pollerGroupNameHasBeenSet) {
+    payload.WithString("PollerGroupName", m_pollerGroupName);
   }
 
   return payload;

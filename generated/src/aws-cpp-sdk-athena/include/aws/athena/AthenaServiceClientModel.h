@@ -50,6 +50,8 @@
 #include <aws/athena/model/GetQueryExecutionResult.h>
 #include <aws/athena/model/GetQueryResultsResult.h>
 #include <aws/athena/model/GetQueryRuntimeStatisticsResult.h>
+#include <aws/athena/model/GetResourceDashboardResult.h>
+#include <aws/athena/model/GetSessionEndpointResult.h>
 #include <aws/athena/model/GetSessionResult.h>
 #include <aws/athena/model/GetSessionStatusResult.h>
 #include <aws/athena/model/GetTableMetadataResult.h>
@@ -158,7 +160,9 @@ class GetPreparedStatementRequest;
 class GetQueryExecutionRequest;
 class GetQueryResultsRequest;
 class GetQueryRuntimeStatisticsRequest;
+class GetResourceDashboardRequest;
 class GetSessionRequest;
+class GetSessionEndpointRequest;
 class GetSessionStatusRequest;
 class GetTableMetadataRequest;
 class GetWorkGroupRequest;
@@ -229,7 +233,9 @@ typedef Aws::Utils::Outcome<GetPreparedStatementResult, Aws::Athena::AthenaError
 typedef Aws::Utils::Outcome<GetQueryExecutionResult, Aws::Athena::AthenaError> GetQueryExecutionOutcome;
 typedef Aws::Utils::Outcome<GetQueryResultsResult, Aws::Athena::AthenaError> GetQueryResultsOutcome;
 typedef Aws::Utils::Outcome<GetQueryRuntimeStatisticsResult, Aws::Athena::AthenaError> GetQueryRuntimeStatisticsOutcome;
+typedef Aws::Utils::Outcome<GetResourceDashboardResult, Aws::Athena::AthenaError> GetResourceDashboardOutcome;
 typedef Aws::Utils::Outcome<GetSessionResult, Aws::Athena::AthenaError> GetSessionOutcome;
+typedef Aws::Utils::Outcome<GetSessionEndpointResult, Aws::Athena::AthenaError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<GetSessionStatusResult, Aws::Athena::AthenaError> GetSessionStatusOutcome;
 typedef Aws::Utils::Outcome<GetTableMetadataResult, Aws::Athena::AthenaError> GetTableMetadataOutcome;
 typedef Aws::Utils::Outcome<GetWorkGroupResult, Aws::Athena::AthenaError> GetWorkGroupOutcome;
@@ -300,7 +306,9 @@ typedef std::future<GetPreparedStatementOutcome> GetPreparedStatementOutcomeCall
 typedef std::future<GetQueryExecutionOutcome> GetQueryExecutionOutcomeCallable;
 typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
 typedef std::future<GetQueryRuntimeStatisticsOutcome> GetQueryRuntimeStatisticsOutcomeCallable;
+typedef std::future<GetResourceDashboardOutcome> GetResourceDashboardOutcomeCallable;
 typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
+typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<GetSessionStatusOutcome> GetSessionStatusOutcomeCallable;
 typedef std::future<GetTableMetadataOutcome> GetTableMetadataOutcomeCallable;
 typedef std::future<GetWorkGroupOutcome> GetWorkGroupOutcomeCallable;
@@ -438,9 +446,15 @@ typedef std::function<void(const AthenaClient*, const Model::GetQueryResultsRequ
 typedef std::function<void(const AthenaClient*, const Model::GetQueryRuntimeStatisticsRequest&,
                            const Model::GetQueryRuntimeStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQueryRuntimeStatisticsResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::GetResourceDashboardRequest&, const Model::GetResourceDashboardOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourceDashboardResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::GetSessionEndpointRequest&, const Model::GetSessionEndpointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionEndpointResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::GetSessionStatusRequest&, const Model::GetSessionStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionStatusResponseReceivedHandler;

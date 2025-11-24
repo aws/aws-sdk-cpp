@@ -10,7 +10,7 @@
 namespace Aws {
 namespace KMS {
 namespace Model {
-enum class KeyMaterialState { NOT_SET, NON_CURRENT, CURRENT, PENDING_ROTATION };
+enum class KeyMaterialState { NOT_SET, NON_CURRENT, CURRENT, PENDING_ROTATION, PENDING_MULTI_REGION_IMPORT_AND_ROTATION };
 
 namespace KeyMaterialStateMapper {
 AWS_KMS_API KeyMaterialState GetKeyMaterialStateForName(const Aws::String& name);

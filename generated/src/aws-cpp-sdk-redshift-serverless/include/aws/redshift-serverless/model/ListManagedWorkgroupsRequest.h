@@ -69,7 +69,7 @@ class ListManagedWorkgroupsRequest : public RedshiftServerlessRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data
+   * <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data
    * Catalog.</p>
    */
   inline const Aws::String& GetSourceArn() const { return m_sourceArn; }

@@ -45,6 +45,7 @@ enum class RedshiftServerlessErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DRY_RUN,
   INSUFFICIENT_CAPACITY,
   INTERNAL_SERVER,
   INVALID_PAGINATION,

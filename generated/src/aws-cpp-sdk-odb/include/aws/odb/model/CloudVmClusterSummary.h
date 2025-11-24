@@ -12,6 +12,7 @@
 #include <aws/odb/model/DataCollectionOptions.h>
 #include <aws/odb/model/DiskRedundancy.h>
 #include <aws/odb/model/ExadataIormConfig.h>
+#include <aws/odb/model/IamRole.h>
 #include <aws/odb/model/LicenseModel.h>
 #include <aws/odb/model/ResourceStatus.h>
 
@@ -771,6 +772,31 @@ class CloudVmClusterSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Identity and Access Management (IAM) service roles
+   * associated with the VM cluster in the summary information.</p>
+   */
+  inline const Aws::Vector<IamRole>& GetIamRoles() const { return m_iamRoles; }
+  inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
+  template <typename IamRolesT = Aws::Vector<IamRole>>
+  void SetIamRoles(IamRolesT&& value) {
+    m_iamRolesHasBeenSet = true;
+    m_iamRoles = std::forward<IamRolesT>(value);
+  }
+  template <typename IamRolesT = Aws::Vector<IamRole>>
+  CloudVmClusterSummary& WithIamRoles(IamRolesT&& value) {
+    SetIamRoles(std::forward<IamRolesT>(value));
+    return *this;
+  }
+  template <typename IamRolesT = IamRole>
+  CloudVmClusterSummary& AddIamRoles(IamRolesT&& value) {
+    m_iamRolesHasBeenSet = true;
+    m_iamRoles.emplace_back(std::forward<IamRolesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cloudVmClusterId;
   bool m_cloudVmClusterIdHasBeenSet = false;
@@ -891,6 +917,9 @@ class CloudVmClusterSummary {
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
   bool m_computeModelHasBeenSet = false;
+
+  Aws::Vector<IamRole> m_iamRoles;
+  bool m_iamRolesHasBeenSet = false;
 };
 
 }  // namespace Model

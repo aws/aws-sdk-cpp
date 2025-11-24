@@ -7,6 +7,7 @@
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/model/Tag.h>
+#include <aws/awstransfer/model/WebAppEndpointDetails.h>
 #include <aws/awstransfer/model/WebAppEndpointPolicy.h>
 #include <aws/awstransfer/model/WebAppIdentityProviderDetails.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
@@ -141,6 +142,25 @@ class CreateWebAppRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The endpoint configuration for the web app. You can specify whether the web
+   * app endpoint is publicly accessible or hosted within a VPC.</p>
+   */
+  inline const WebAppEndpointDetails& GetEndpointDetails() const { return m_endpointDetails; }
+  inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+  template <typename EndpointDetailsT = WebAppEndpointDetails>
+  void SetEndpointDetails(EndpointDetailsT&& value) {
+    m_endpointDetailsHasBeenSet = true;
+    m_endpointDetails = std::forward<EndpointDetailsT>(value);
+  }
+  template <typename EndpointDetailsT = WebAppEndpointDetails>
+  CreateWebAppRequest& WithEndpointDetails(EndpointDetailsT&& value) {
+    SetEndpointDetails(std::forward<EndpointDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   WebAppIdentityProviderDetails m_identityProviderDetails;
   bool m_identityProviderDetailsHasBeenSet = false;
@@ -156,6 +176,9 @@ class CreateWebAppRequest : public TransferRequest {
 
   WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
   bool m_webAppEndpointPolicyHasBeenSet = false;
+
+  WebAppEndpointDetails m_endpointDetails;
+  bool m_endpointDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

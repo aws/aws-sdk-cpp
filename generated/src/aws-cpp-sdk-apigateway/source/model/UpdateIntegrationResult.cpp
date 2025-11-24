@@ -98,6 +98,10 @@ UpdateIntegrationResult& UpdateIntegrationResult::operator=(const Aws::AmazonWeb
     m_responseTransferMode = ResponseTransferModeMapper::GetResponseTransferModeForName(jsonValue.GetString("responseTransferMode"));
     m_responseTransferModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("integrationTarget")) {
+    m_integrationTarget = jsonValue.GetString("integrationTarget");
+    m_integrationTargetHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

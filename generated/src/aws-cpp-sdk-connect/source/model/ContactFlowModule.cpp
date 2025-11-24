@@ -53,6 +53,26 @@ ContactFlowModule& ContactFlowModule::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FlowModuleContentSha256")) {
+    m_flowModuleContentSha256 = jsonValue.GetString("FlowModuleContentSha256");
+    m_flowModuleContentSha256HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Version")) {
+    m_version = jsonValue.GetInt64("Version");
+    m_versionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VersionDescription")) {
+    m_versionDescription = jsonValue.GetString("VersionDescription");
+    m_versionDescriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Settings")) {
+    m_settings = jsonValue.GetString("Settings");
+    m_settingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExternalInvocationConfiguration")) {
+    m_externalInvocationConfiguration = jsonValue.GetObject("ExternalInvocationConfiguration");
+    m_externalInvocationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +113,26 @@ JsonValue ContactFlowModule::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_flowModuleContentSha256HasBeenSet) {
+    payload.WithString("FlowModuleContentSha256", m_flowModuleContentSha256);
+  }
+
+  if (m_versionHasBeenSet) {
+    payload.WithInt64("Version", m_version);
+  }
+
+  if (m_versionDescriptionHasBeenSet) {
+    payload.WithString("VersionDescription", m_versionDescription);
+  }
+
+  if (m_settingsHasBeenSet) {
+    payload.WithString("Settings", m_settings);
+  }
+
+  if (m_externalInvocationConfigurationHasBeenSet) {
+    payload.WithObject("ExternalInvocationConfiguration", m_externalInvocationConfiguration.Jsonize());
   }
 
   return payload;

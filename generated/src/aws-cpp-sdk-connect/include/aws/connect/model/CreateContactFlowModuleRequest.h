@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ExternalInvocationConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -153,6 +154,42 @@ class CreateContactFlowModuleRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for the flow module.</p>
+   */
+  inline const Aws::String& GetSettings() const { return m_settings; }
+  inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+  template <typename SettingsT = Aws::String>
+  void SetSettings(SettingsT&& value) {
+    m_settingsHasBeenSet = true;
+    m_settings = std::forward<SettingsT>(value);
+  }
+  template <typename SettingsT = Aws::String>
+  CreateContactFlowModuleRequest& WithSettings(SettingsT&& value) {
+    SetSettings(std::forward<SettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The external invocation configuration for the flow module.</p>
+   */
+  inline const ExternalInvocationConfiguration& GetExternalInvocationConfiguration() const { return m_externalInvocationConfiguration; }
+  inline bool ExternalInvocationConfigurationHasBeenSet() const { return m_externalInvocationConfigurationHasBeenSet; }
+  template <typename ExternalInvocationConfigurationT = ExternalInvocationConfiguration>
+  void SetExternalInvocationConfiguration(ExternalInvocationConfigurationT&& value) {
+    m_externalInvocationConfigurationHasBeenSet = true;
+    m_externalInvocationConfiguration = std::forward<ExternalInvocationConfigurationT>(value);
+  }
+  template <typename ExternalInvocationConfigurationT = ExternalInvocationConfiguration>
+  CreateContactFlowModuleRequest& WithExternalInvocationConfiguration(ExternalInvocationConfigurationT&& value) {
+    SetExternalInvocationConfiguration(std::forward<ExternalInvocationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
   bool m_instanceIdHasBeenSet = false;
@@ -171,6 +208,12 @@ class CreateContactFlowModuleRequest : public ConnectRequest {
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_settings;
+  bool m_settingsHasBeenSet = false;
+
+  ExternalInvocationConfiguration m_externalInvocationConfiguration;
+  bool m_externalInvocationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

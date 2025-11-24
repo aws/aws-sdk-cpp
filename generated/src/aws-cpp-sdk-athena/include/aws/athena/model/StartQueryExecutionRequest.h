@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/model/EngineConfiguration.h>
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/athena/model/ResultReuseConfiguration.h>
@@ -184,6 +185,22 @@ class StartQueryExecutionRequest : public AthenaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
+  inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  void SetEngineConfiguration(EngineConfigurationT&& value) {
+    m_engineConfigurationHasBeenSet = true;
+    m_engineConfiguration = std::forward<EngineConfigurationT>(value);
+  }
+  template <typename EngineConfigurationT = EngineConfiguration>
+  StartQueryExecutionRequest& WithEngineConfiguration(EngineConfigurationT&& value) {
+    SetEngineConfiguration(std::forward<EngineConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_queryString;
   bool m_queryStringHasBeenSet = false;
@@ -205,6 +222,9 @@ class StartQueryExecutionRequest : public AthenaRequest {
 
   ResultReuseConfiguration m_resultReuseConfiguration;
   bool m_resultReuseConfigurationHasBeenSet = false;
+
+  EngineConfiguration m_engineConfiguration;
+  bool m_engineConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

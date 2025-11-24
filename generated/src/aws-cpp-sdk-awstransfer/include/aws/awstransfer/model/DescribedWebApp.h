@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/DescribedWebAppEndpointDetails.h>
 #include <aws/awstransfer/model/DescribedWebAppIdentityProviderDetails.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <aws/awstransfer/model/WebAppEndpointPolicy.h>
+#include <aws/awstransfer/model/WebAppEndpointType.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -196,6 +198,43 @@ class DescribedWebApp {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of endpoint hosting the web app. Valid values are
+   * <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for
+   * VPC-hosted endpoints that provide network isolation.</p>
+   */
+  inline WebAppEndpointType GetEndpointType() const { return m_endpointType; }
+  inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+  inline void SetEndpointType(WebAppEndpointType value) {
+    m_endpointTypeHasBeenSet = true;
+    m_endpointType = value;
+  }
+  inline DescribedWebApp& WithEndpointType(WebAppEndpointType value) {
+    SetEndpointType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The endpoint configuration details for the web app, including VPC settings if
+   * the endpoint is hosted within a VPC.</p>
+   */
+  inline const DescribedWebAppEndpointDetails& GetDescribedEndpointDetails() const { return m_describedEndpointDetails; }
+  inline bool DescribedEndpointDetailsHasBeenSet() const { return m_describedEndpointDetailsHasBeenSet; }
+  template <typename DescribedEndpointDetailsT = DescribedWebAppEndpointDetails>
+  void SetDescribedEndpointDetails(DescribedEndpointDetailsT&& value) {
+    m_describedEndpointDetailsHasBeenSet = true;
+    m_describedEndpointDetails = std::forward<DescribedEndpointDetailsT>(value);
+  }
+  template <typename DescribedEndpointDetailsT = DescribedWebAppEndpointDetails>
+  DescribedWebApp& WithDescribedEndpointDetails(DescribedEndpointDetailsT&& value) {
+    SetDescribedEndpointDetails(std::forward<DescribedEndpointDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -220,6 +259,12 @@ class DescribedWebApp {
 
   WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
   bool m_webAppEndpointPolicyHasBeenSet = false;
+
+  WebAppEndpointType m_endpointType{WebAppEndpointType::NOT_SET};
+  bool m_endpointTypeHasBeenSet = false;
+
+  DescribedWebAppEndpointDetails m_describedEndpointDetails;
+  bool m_describedEndpointDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -46,7 +46,7 @@ class ScheduleConfig {
    * <code>ScheduleExpression</code> is not provided for the
    * <code>RecorderConfig</code>, then the Edge Agent will always be set to recording
    * mode.</p> <p>For more information about Quartz, refer to the <a
-   * href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html">
+   * href="https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html">
    * <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and
    * its use.</p>
    */

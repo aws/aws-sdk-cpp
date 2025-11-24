@@ -49,7 +49,9 @@ enum class UpdateParamType {
   KubernetesNetworkConfig,
   RemoteNetworkConfig,
   DeletionProtection,
-  NodeRepairConfig
+  NodeRepairConfig,
+  UpdatedTier,
+  PreviousTier
 };
 
 namespace UpdateParamTypeMapper {

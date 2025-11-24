@@ -27,6 +27,7 @@
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/UpgradeRolloutOrder.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/WriteForwardingStatus.h>
 
@@ -519,6 +520,26 @@ class DBCluster {
   template <typename PreferredMaintenanceWindowT = Aws::String>
   DBCluster& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) {
     SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This data type represents the order in which the clusters are upgraded.</p>
+   * <ul> <li> <p>[first] - Typically used for development or testing
+   * environments.</p> </li> <li> <p>[second] - Default order for resources not
+   * specifically configured.</p> </li> <li> <p>[last] - Usually reserved for
+   * production environments.</p> </li> </ul>
+   */
+  inline UpgradeRolloutOrder GetUpgradeRolloutOrder() const { return m_upgradeRolloutOrder; }
+  inline bool UpgradeRolloutOrderHasBeenSet() const { return m_upgradeRolloutOrderHasBeenSet; }
+  inline void SetUpgradeRolloutOrder(UpgradeRolloutOrder value) {
+    m_upgradeRolloutOrderHasBeenSet = true;
+    m_upgradeRolloutOrder = value;
+  }
+  inline DBCluster& WithUpgradeRolloutOrder(UpgradeRolloutOrder value) {
+    SetUpgradeRolloutOrder(value);
     return *this;
   }
   ///@}
@@ -1795,6 +1816,9 @@ class DBCluster {
 
   Aws::String m_preferredMaintenanceWindow;
   bool m_preferredMaintenanceWindowHasBeenSet = false;
+
+  UpgradeRolloutOrder m_upgradeRolloutOrder{UpgradeRolloutOrder::NOT_SET};
+  bool m_upgradeRolloutOrderHasBeenSet = false;
 
   Aws::String m_replicationSourceIdentifier;
   bool m_replicationSourceIdentifierHasBeenSet = false;

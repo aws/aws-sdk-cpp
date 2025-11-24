@@ -580,6 +580,12 @@ namespace Aws
               std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
             } loginCredentialProviderConfig;
           } credentialProviderConfig;
+
+          /**
+           * Authentication scheme preferences in order of preference.
+           * First available auth scheme will be used for each operation.
+           */
+          Aws::Vector<Aws::String> authPreferences;
         };
 
         /**

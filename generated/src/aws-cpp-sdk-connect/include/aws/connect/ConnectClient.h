@@ -1020,6 +1020,67 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Creates a named alias that points to a specific version of a contact flow
+   * module.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateContactFlowModuleAliasOutcome CreateContactFlowModuleAlias(
+      const Model::CreateContactFlowModuleAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateContactFlowModuleAlias that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateContactFlowModuleAliasRequestT = Model::CreateContactFlowModuleAliasRequest>
+  Model::CreateContactFlowModuleAliasOutcomeCallable CreateContactFlowModuleAliasCallable(
+      const CreateContactFlowModuleAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateContactFlowModuleAlias, request);
+  }
+
+  /**
+   * An Async wrapper for CreateContactFlowModuleAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateContactFlowModuleAliasRequestT = Model::CreateContactFlowModuleAliasRequest>
+  void CreateContactFlowModuleAliasAsync(const CreateContactFlowModuleAliasRequestT& request,
+                                         const CreateContactFlowModuleAliasResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateContactFlowModuleAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an immutable snapshot of a contact flow module, preserving its
+   * content and settings at a specific point in time for version control and
+   * rollback capabilities.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateContactFlowModuleVersionOutcome CreateContactFlowModuleVersion(
+      const Model::CreateContactFlowModuleVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateContactFlowModuleVersion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateContactFlowModuleVersionRequestT = Model::CreateContactFlowModuleVersionRequest>
+  Model::CreateContactFlowModuleVersionOutcomeCallable CreateContactFlowModuleVersionCallable(
+      const CreateContactFlowModuleVersionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateContactFlowModuleVersion, request);
+  }
+
+  /**
+   * An Async wrapper for CreateContactFlowModuleVersion that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateContactFlowModuleVersionRequestT = Model::CreateContactFlowModuleVersionRequest>
+  void CreateContactFlowModuleVersionAsync(const CreateContactFlowModuleVersionRequestT& request,
+                                           const CreateContactFlowModuleVersionResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateContactFlowModuleVersion, request, handler, context);
+  }
+
+  /**
    * <p>Publishes a new version of the flow provided. Versions are immutable and
    * monotonically increasing. If the <code>FlowContentSha256</code> provided is
    * different from the <code>FlowContentSha256</code> of the <code>$LATEST</code>
@@ -1953,6 +2014,67 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Removes an alias reference, breaking the named connection to the underlying
+   * module version without affecting the version itself.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContactFlowModuleAliasOutcome DeleteContactFlowModuleAlias(
+      const Model::DeleteContactFlowModuleAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContactFlowModuleAlias that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteContactFlowModuleAliasRequestT = Model::DeleteContactFlowModuleAliasRequest>
+  Model::DeleteContactFlowModuleAliasOutcomeCallable DeleteContactFlowModuleAliasCallable(
+      const DeleteContactFlowModuleAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteContactFlowModuleAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContactFlowModuleAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteContactFlowModuleAliasRequestT = Model::DeleteContactFlowModuleAliasRequest>
+  void DeleteContactFlowModuleAliasAsync(const DeleteContactFlowModuleAliasRequestT& request,
+                                         const DeleteContactFlowModuleAliasResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteContactFlowModuleAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Removes a specific version of a contact flow module.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContactFlowModuleVersionOutcome DeleteContactFlowModuleVersion(
+      const Model::DeleteContactFlowModuleVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContactFlowModuleVersion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteContactFlowModuleVersionRequestT = Model::DeleteContactFlowModuleVersionRequest>
+  Model::DeleteContactFlowModuleVersionOutcomeCallable DeleteContactFlowModuleVersionCallable(
+      const DeleteContactFlowModuleVersionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteContactFlowModuleVersion, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContactFlowModuleVersion that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteContactFlowModuleVersionRequestT = Model::DeleteContactFlowModuleVersionRequest>
+  void DeleteContactFlowModuleVersionAsync(const DeleteContactFlowModuleVersionRequestT& request,
+                                           const DeleteContactFlowModuleVersionResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteContactFlowModuleVersion, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the particular version specified in flow version
    * identifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">AWS
@@ -2818,6 +2940,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Retrieves detailed information about a specific alias, including which
+   * version it currently points to and its metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeContactFlowModuleAliasOutcome DescribeContactFlowModuleAlias(
+      const Model::DescribeContactFlowModuleAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeContactFlowModuleAlias that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeContactFlowModuleAliasRequestT = Model::DescribeContactFlowModuleAliasRequest>
+  Model::DescribeContactFlowModuleAliasOutcomeCallable DescribeContactFlowModuleAliasCallable(
+      const DescribeContactFlowModuleAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeContactFlowModuleAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeContactFlowModuleAlias that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeContactFlowModuleAliasRequestT = Model::DescribeContactFlowModuleAliasRequest>
+  void DescribeContactFlowModuleAliasAsync(const DescribeContactFlowModuleAliasRequestT& request,
+                                           const DescribeContactFlowModuleAliasResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeContactFlowModuleAlias, request, handler, context);
+  }
+
+  /**
    * <p>Describe email address form the specified Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">AWS
@@ -3023,7 +3175,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>Gets details and status of a phone number that���s claimed to your Amazon
+   * <p>Gets details and status of a phone number that’s claimed to your Amazon
    * Connect instance or traffic distribution group.</p>  <p>If the number
    * is claimed to a traffic distribution group, and you are calling in the Amazon
    * Web Services Region where the traffic distribution group was created, you can
@@ -4640,6 +4792,66 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                    const ListContactEvaluationsResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListContactEvaluations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all aliases associated with a contact flow module, showing their
+   * current version mappings and metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContactFlowModuleAliasesOutcome ListContactFlowModuleAliases(
+      const Model::ListContactFlowModuleAliasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContactFlowModuleAliases that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListContactFlowModuleAliasesRequestT = Model::ListContactFlowModuleAliasesRequest>
+  Model::ListContactFlowModuleAliasesOutcomeCallable ListContactFlowModuleAliasesCallable(
+      const ListContactFlowModuleAliasesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListContactFlowModuleAliases, request);
+  }
+
+  /**
+   * An Async wrapper for ListContactFlowModuleAliases that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListContactFlowModuleAliasesRequestT = Model::ListContactFlowModuleAliasesRequest>
+  void ListContactFlowModuleAliasesAsync(const ListContactFlowModuleAliasesRequestT& request,
+                                         const ListContactFlowModuleAliasesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListContactFlowModuleAliases, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a paginated list of all versions for a specific contact flow
+   * module.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContactFlowModuleVersionsOutcome ListContactFlowModuleVersions(
+      const Model::ListContactFlowModuleVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContactFlowModuleVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListContactFlowModuleVersionsRequestT = Model::ListContactFlowModuleVersionsRequest>
+  Model::ListContactFlowModuleVersionsOutcomeCallable ListContactFlowModuleVersionsCallable(
+      const ListContactFlowModuleVersionsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListContactFlowModuleVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListContactFlowModuleVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListContactFlowModuleVersionsRequestT = Model::ListContactFlowModuleVersionsRequest>
+  void ListContactFlowModuleVersionsAsync(const ListContactFlowModuleVersionsRequestT& request,
+                                          const ListContactFlowModuleVersionsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListContactFlowModuleVersions, request, handler, context);
   }
 
   /**
@@ -7794,6 +8006,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                       const UpdateContactFlowMetadataResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateContactFlowMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a specific Aliases metadata, including the version it’s tied to, it’s
+   * name, and description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContactFlowModuleAliasOutcome UpdateContactFlowModuleAlias(
+      const Model::UpdateContactFlowModuleAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContactFlowModuleAlias that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateContactFlowModuleAliasRequestT = Model::UpdateContactFlowModuleAliasRequest>
+  Model::UpdateContactFlowModuleAliasOutcomeCallable UpdateContactFlowModuleAliasCallable(
+      const UpdateContactFlowModuleAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateContactFlowModuleAlias, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContactFlowModuleAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateContactFlowModuleAliasRequestT = Model::UpdateContactFlowModuleAliasRequest>
+  void UpdateContactFlowModuleAliasAsync(const UpdateContactFlowModuleAliasRequestT& request,
+                                         const UpdateContactFlowModuleAliasResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateContactFlowModuleAlias, request, handler, context);
   }
 
   /**

@@ -22,6 +22,10 @@ FilterConfiguration& FilterConfiguration::operator=(JsonView jsonValue) {
     m_manifestFilter = jsonValue.GetString("ManifestFilter");
     m_manifestFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DrmSettings")) {
+    m_drmSettings = jsonValue.GetString("DrmSettings");
+    m_drmSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Start")) {
     m_start = jsonValue.GetDouble("Start");
     m_startHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue FilterConfiguration::Jsonize() const {
 
   if (m_manifestFilterHasBeenSet) {
     payload.WithString("ManifestFilter", m_manifestFilter);
+  }
+
+  if (m_drmSettingsHasBeenSet) {
+    payload.WithString("DrmSettings", m_drmSettings);
   }
 
   if (m_startHasBeenSet) {

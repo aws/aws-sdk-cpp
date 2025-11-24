@@ -18,7 +18,8 @@ enum class EffectivePolicyType {
   CHATBOT_POLICY,
   DECLARATIVE_POLICY_EC2,
   SECURITYHUB_POLICY,
-  INSPECTOR_POLICY
+  INSPECTOR_POLICY,
+  UPGRADE_ROLLOUT_POLICY
 };
 
 namespace EffectivePolicyTypeMapper {

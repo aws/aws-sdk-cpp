@@ -75,6 +75,22 @@ GetCapacityReservationUsageResponse& GetCapacityReservationUsageResponse::operat
 
       m_instanceUsagesHasBeenSet = true;
     }
+    XmlNode interruptibleNode = resultNode.FirstChild("interruptible");
+    if (!interruptibleNode.IsNull()) {
+      m_interruptible =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interruptibleNode.GetText()).c_str()).c_str());
+      m_interruptibleHasBeenSet = true;
+    }
+    XmlNode interruptibleCapacityAllocationNode = resultNode.FirstChild("interruptibleCapacityAllocation");
+    if (!interruptibleCapacityAllocationNode.IsNull()) {
+      m_interruptibleCapacityAllocation = interruptibleCapacityAllocationNode;
+      m_interruptibleCapacityAllocationHasBeenSet = true;
+    }
+    XmlNode interruptionInfoNode = resultNode.FirstChild("interruptionInfo");
+    if (!interruptionInfoNode.IsNull()) {
+      m_interruptionInfo = interruptionInfoNode;
+      m_interruptionInfoHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

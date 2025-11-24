@@ -18,6 +18,7 @@ namespace InstanceLifecycleTypeMapper {
 static const int spot_HASH = HashingUtils::HashString("spot");
 static const int scheduled_HASH = HashingUtils::HashString("scheduled");
 static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
+static const int interruptible_capacity_reservation_HASH = HashingUtils::HashString("interruptible-capacity-reservation");
 
 InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name) {
     return InstanceLifecycleType::scheduled;
   } else if (hashCode == capacity_block_HASH) {
     return InstanceLifecycleType::capacity_block;
+  } else if (hashCode == interruptible_capacity_reservation_HASH) {
+    return InstanceLifecycleType::interruptible_capacity_reservation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue) {
       return "scheduled";
     case InstanceLifecycleType::capacity_block:
       return "capacity-block";
+    case InstanceLifecycleType::interruptible_capacity_reservation:
+      return "interruptible-capacity-reservation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
