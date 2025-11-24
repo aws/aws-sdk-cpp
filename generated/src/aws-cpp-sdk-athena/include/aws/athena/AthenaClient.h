@@ -968,9 +968,9 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aw
    * soon as <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. The
    * remaining non-timeline statistics in the response (like stage-level input and
    * output row count and data size) are updated asynchronously and may not be
-   * available immediately after a query completes. The non-timeline statistics are
-   * also not included when a query has row-level filters defined in Lake
-   * Formation.</p><p><h3>See Also:</h3>   <a
+   * available immediately after a query completes or, in some cases, may not be
+   * returned. The non-timeline statistics are also not included when a query has
+   * row-level filters defined in Lake Formation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">AWS
    * API Reference</a></p>
    */
@@ -998,6 +998,32 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
+   * <p>Gets the Live UI/Persistence UI for a session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetResourceDashboard">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourceDashboardOutcome GetResourceDashboard(const Model::GetResourceDashboardRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourceDashboard that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourceDashboardRequestT = Model::GetResourceDashboardRequest>
+  Model::GetResourceDashboardOutcomeCallable GetResourceDashboardCallable(const GetResourceDashboardRequestT& request) const {
+    return SubmitCallable(&AthenaClient::GetResourceDashboard, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourceDashboard that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetResourceDashboardRequestT = Model::GetResourceDashboardRequest>
+  void GetResourceDashboardAsync(const GetResourceDashboardRequestT& request, const GetResourceDashboardResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::GetResourceDashboard, request, handler, context);
+  }
+
+  /**
    * <p>Gets the full details of a previously created session, including the session
    * status and configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">AWS
@@ -1021,6 +1047,33 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aw
   void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AthenaClient::GetSession, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a connection endpoint and authentication token for a given session
+   * Id.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionEndpointOutcome GetSessionEndpoint(const Model::GetSessionEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  Model::GetSessionEndpointOutcomeCallable GetSessionEndpointCallable(const GetSessionEndpointRequestT& request) const {
+    return SubmitCallable(&AthenaClient::GetSessionEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  void GetSessionEndpointAsync(const GetSessionEndpointRequestT& request, const GetSessionEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::GetSessionEndpoint, request, handler, context);
   }
 
   /**

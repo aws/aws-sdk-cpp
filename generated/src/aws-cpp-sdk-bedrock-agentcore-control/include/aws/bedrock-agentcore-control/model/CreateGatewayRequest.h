@@ -9,11 +9,13 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
+#include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -153,7 +155,8 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
    * <p>The type of authorizer to use for the gateway.</p> <ul> <li> <p>
    * <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p>
    * <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM
-   * credentials.</p> </li> </ul>
+   * credentials.</p> </li> <li> <p> <code>NONE</code> - No authorization</p> </li>
+   * </ul>
    */
   inline AuthorizerType GetAuthorizerType() const { return m_authorizerType; }
   inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
@@ -201,6 +204,31 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
   template <typename KmsKeyArnT = Aws::String>
   CreateGatewayRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
     SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of configuration settings for a gateway interceptor. Gateway
+   * interceptors allow custom code to be invoked during gateway invocations.</p>
+   */
+  inline const Aws::Vector<GatewayInterceptorConfiguration>& GetInterceptorConfigurations() const { return m_interceptorConfigurations; }
+  inline bool InterceptorConfigurationsHasBeenSet() const { return m_interceptorConfigurationsHasBeenSet; }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  void SetInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations = std::forward<InterceptorConfigurationsT>(value);
+  }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  CreateGatewayRequest& WithInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    SetInterceptorConfigurations(std::forward<InterceptorConfigurationsT>(value));
+    return *this;
+  }
+  template <typename InterceptorConfigurationsT = GatewayInterceptorConfiguration>
+  CreateGatewayRequest& AddInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations.emplace_back(std::forward<InterceptorConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -274,6 +302,9 @@ class CreateGatewayRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_kmsKeyArn;
   bool m_kmsKeyArnHasBeenSet = false;
+
+  Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
+  bool m_interceptorConfigurationsHasBeenSet = false;
 
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
   bool m_exceptionLevelHasBeenSet = false;

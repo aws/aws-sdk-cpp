@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/lexv2-models/model/GenerativeAISettings.h>
+#include <aws/lexv2-models/model/SpeechDetectionSensitivity.h>
 #include <aws/lexv2-models/model/VoiceSettings.h>
 
 #include <utility>
@@ -269,6 +270,22 @@ class UpdateBotLocaleResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The updated sensitivity level for voice activity detection (VAD) in the bot
+   * locale.</p>
+   */
+  inline SpeechDetectionSensitivity GetSpeechDetectionSensitivity() const { return m_speechDetectionSensitivity; }
+  inline void SetSpeechDetectionSensitivity(SpeechDetectionSensitivity value) {
+    m_speechDetectionSensitivityHasBeenSet = true;
+    m_speechDetectionSensitivity = value;
+  }
+  inline UpdateBotLocaleResult& WithSpeechDetectionSensitivity(SpeechDetectionSensitivity value) {
+    SetSpeechDetectionSensitivity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -321,6 +338,9 @@ class UpdateBotLocaleResult {
 
   GenerativeAISettings m_generativeAISettings;
   bool m_generativeAISettingsHasBeenSet = false;
+
+  SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
+  bool m_speechDetectionSensitivityHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

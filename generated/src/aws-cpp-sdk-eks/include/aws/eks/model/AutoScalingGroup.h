@@ -20,8 +20,8 @@ namespace EKS {
 namespace Model {
 
 /**
- * <p>An Auto Scaling group that is associated with an Amazon EKS managed node
- * group.</p><p><h3>See Also:</h3>   <a
+ * <p>An Amazon EC2 Auto Scaling group that is associated with an Amazon EKS
+ * managed node group.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AutoScalingGroup">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
-   * group.</p>
+   * <p>The name of the Amazon EC2 Auto Scaling group associated with an Amazon EKS
+   * managed node group.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

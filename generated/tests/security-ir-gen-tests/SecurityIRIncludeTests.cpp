@@ -14,6 +14,7 @@
 #include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
+#include <aws/security-ir/model/ActionType.h>
 #include <aws/security-ir/model/AwsRegion.h>
 #include <aws/security-ir/model/BatchGetMemberAccountDetailsRequest.h>
 #include <aws/security-ir/model/BatchGetMemberAccountDetailsResult.h>
@@ -22,6 +23,7 @@
 #include <aws/security-ir/model/CaseAttachmentAttributes.h>
 #include <aws/security-ir/model/CaseAttachmentStatus.h>
 #include <aws/security-ir/model/CaseEditItem.h>
+#include <aws/security-ir/model/CaseMetadataEntry.h>
 #include <aws/security-ir/model/CaseStatus.h>
 #include <aws/security-ir/model/CloseCaseRequest.h>
 #include <aws/security-ir/model/CloseCaseResult.h>
@@ -36,6 +38,7 @@
 #include <aws/security-ir/model/CreateMembershipResult.h>
 #include <aws/security-ir/model/CustomerType.h>
 #include <aws/security-ir/model/EngagementType.h>
+#include <aws/security-ir/model/ExecutionStatus.h>
 #include <aws/security-ir/model/GetCaseAttachmentDownloadUrlRequest.h>
 #include <aws/security-ir/model/GetCaseAttachmentDownloadUrlResult.h>
 #include <aws/security-ir/model/GetCaseAttachmentUploadUrlRequest.h>
@@ -49,6 +52,8 @@
 #include <aws/security-ir/model/ImpactedAwsRegion.h>
 #include <aws/security-ir/model/IncidentResponder.h>
 #include <aws/security-ir/model/InternalServerException.h>
+#include <aws/security-ir/model/InvestigationAction.h>
+#include <aws/security-ir/model/InvestigationFeedback.h>
 #include <aws/security-ir/model/ListCaseEditsRequest.h>
 #include <aws/security-ir/model/ListCaseEditsResult.h>
 #include <aws/security-ir/model/ListCasesItem.h>
@@ -57,6 +62,8 @@
 #include <aws/security-ir/model/ListCommentsItem.h>
 #include <aws/security-ir/model/ListCommentsRequest.h>
 #include <aws/security-ir/model/ListCommentsResult.h>
+#include <aws/security-ir/model/ListInvestigationsRequest.h>
+#include <aws/security-ir/model/ListInvestigationsResult.h>
 #include <aws/security-ir/model/ListMembershipItem.h>
 #include <aws/security-ir/model/ListMembershipsRequest.h>
 #include <aws/security-ir/model/ListMembershipsResult.h>
@@ -72,6 +79,8 @@
 #include <aws/security-ir/model/PendingAction.h>
 #include <aws/security-ir/model/ResolverType.h>
 #include <aws/security-ir/model/SelfManagedCaseStatus.h>
+#include <aws/security-ir/model/SendFeedbackRequest.h>
+#include <aws/security-ir/model/SendFeedbackResult.h>
 #include <aws/security-ir/model/ServiceQuotaExceededException.h>
 #include <aws/security-ir/model/TagResourceRequest.h>
 #include <aws/security-ir/model/TagResourceResult.h>
@@ -89,6 +98,7 @@
 #include <aws/security-ir/model/UpdateMembershipResult.h>
 #include <aws/security-ir/model/UpdateResolverTypeRequest.h>
 #include <aws/security-ir/model/UpdateResolverTypeResult.h>
+#include <aws/security-ir/model/UsefulnessRating.h>
 #include <aws/security-ir/model/ValidationException.h>
 #include <aws/security-ir/model/ValidationExceptionField.h>
 #include <aws/security-ir/model/ValidationExceptionReason.h>

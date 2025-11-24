@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/RegisteredUserDashboardVisualEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserGenerativeQnAEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserQuickChatEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 
 #include <utility>
@@ -162,6 +163,24 @@ class RegisteredUserEmbeddingExperienceConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration details for embedding the Quick chat agent.</p>
+   */
+  inline const RegisteredUserQuickChatEmbeddingConfiguration& GetQuickChat() const { return m_quickChat; }
+  inline bool QuickChatHasBeenSet() const { return m_quickChatHasBeenSet; }
+  template <typename QuickChatT = RegisteredUserQuickChatEmbeddingConfiguration>
+  void SetQuickChat(QuickChatT&& value) {
+    m_quickChatHasBeenSet = true;
+    m_quickChat = std::forward<QuickChatT>(value);
+  }
+  template <typename QuickChatT = RegisteredUserQuickChatEmbeddingConfiguration>
+  RegisteredUserEmbeddingExperienceConfiguration& WithQuickChat(QuickChatT&& value) {
+    SetQuickChat(std::forward<QuickChatT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
   bool m_dashboardHasBeenSet = false;
@@ -177,6 +196,9 @@ class RegisteredUserEmbeddingExperienceConfiguration {
 
   RegisteredUserGenerativeQnAEmbeddingConfiguration m_generativeQnA;
   bool m_generativeQnAHasBeenSet = false;
+
+  RegisteredUserQuickChatEmbeddingConfiguration m_quickChat;
+  bool m_quickChatHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
+#include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
@@ -294,6 +295,29 @@ class CreateGatewayResult {
 
   ///@{
   /**
+   * <p>The list of interceptor configurations for the created gateway.</p>
+   */
+  inline const Aws::Vector<GatewayInterceptorConfiguration>& GetInterceptorConfigurations() const { return m_interceptorConfigurations; }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  void SetInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations = std::forward<InterceptorConfigurationsT>(value);
+  }
+  template <typename InterceptorConfigurationsT = Aws::Vector<GatewayInterceptorConfiguration>>
+  CreateGatewayResult& WithInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    SetInterceptorConfigurations(std::forward<InterceptorConfigurationsT>(value));
+    return *this;
+  }
+  template <typename InterceptorConfigurationsT = GatewayInterceptorConfiguration>
+  CreateGatewayResult& AddInterceptorConfigurations(InterceptorConfigurationsT&& value) {
+    m_interceptorConfigurationsHasBeenSet = true;
+    m_interceptorConfigurations.emplace_back(std::forward<InterceptorConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The workload identity details for the created gateway.</p>
    */
   inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
@@ -386,6 +410,9 @@ class CreateGatewayResult {
 
   Aws::String m_kmsKeyArn;
   bool m_kmsKeyArnHasBeenSet = false;
+
+  Aws::Vector<GatewayInterceptorConfiguration> m_interceptorConfigurations;
+  bool m_interceptorConfigurationsHasBeenSet = false;
 
   WorkloadIdentityDetails m_workloadIdentityDetails;
   bool m_workloadIdentityDetailsHasBeenSet = false;

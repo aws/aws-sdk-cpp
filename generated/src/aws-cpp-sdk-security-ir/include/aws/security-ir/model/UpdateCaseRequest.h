@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
+#include <aws/security-ir/model/CaseMetadataEntry.h>
 #include <aws/security-ir/model/EngagementType.h>
 #include <aws/security-ir/model/ImpactedAwsRegion.h>
 #include <aws/security-ir/model/ThreatActorIp.h>
@@ -400,6 +401,30 @@ class UpdateCaseRequest : public SecurityIRRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Update the case request with case metadata</p>
+   */
+  inline const Aws::Vector<CaseMetadataEntry>& GetCaseMetadata() const { return m_caseMetadata; }
+  inline bool CaseMetadataHasBeenSet() const { return m_caseMetadataHasBeenSet; }
+  template <typename CaseMetadataT = Aws::Vector<CaseMetadataEntry>>
+  void SetCaseMetadata(CaseMetadataT&& value) {
+    m_caseMetadataHasBeenSet = true;
+    m_caseMetadata = std::forward<CaseMetadataT>(value);
+  }
+  template <typename CaseMetadataT = Aws::Vector<CaseMetadataEntry>>
+  UpdateCaseRequest& WithCaseMetadata(CaseMetadataT&& value) {
+    SetCaseMetadata(std::forward<CaseMetadataT>(value));
+    return *this;
+  }
+  template <typename CaseMetadataT = CaseMetadataEntry>
+  UpdateCaseRequest& AddCaseMetadata(CaseMetadataT&& value) {
+    m_caseMetadataHasBeenSet = true;
+    m_caseMetadata.emplace_back(std::forward<CaseMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_caseId;
   bool m_caseIdHasBeenSet = false;
@@ -448,6 +473,9 @@ class UpdateCaseRequest : public SecurityIRRequest {
 
   Aws::Vector<Aws::String> m_impactedAccountsToDelete;
   bool m_impactedAccountsToDeleteHasBeenSet = false;
+
+  Aws::Vector<CaseMetadataEntry> m_caseMetadata;
+  bool m_caseMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

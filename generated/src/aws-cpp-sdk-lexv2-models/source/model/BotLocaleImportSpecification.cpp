@@ -38,6 +38,11 @@ BotLocaleImportSpecification& BotLocaleImportSpecification::operator=(JsonView j
     m_voiceSettings = jsonValue.GetObject("voiceSettings");
     m_voiceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("speechDetectionSensitivity")) {
+    m_speechDetectionSensitivity =
+        SpeechDetectionSensitivityMapper::GetSpeechDetectionSensitivityForName(jsonValue.GetString("speechDetectionSensitivity"));
+    m_speechDetectionSensitivityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,11 @@ JsonValue BotLocaleImportSpecification::Jsonize() const {
 
   if (m_voiceSettingsHasBeenSet) {
     payload.WithObject("voiceSettings", m_voiceSettings.Jsonize());
+  }
+
+  if (m_speechDetectionSensitivityHasBeenSet) {
+    payload.WithString("speechDetectionSensitivity",
+                       SpeechDetectionSensitivityMapper::GetNameForSpeechDetectionSensitivity(m_speechDetectionSensitivity));
   }
 
   return payload;

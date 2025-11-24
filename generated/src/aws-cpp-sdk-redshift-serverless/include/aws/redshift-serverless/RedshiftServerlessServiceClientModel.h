@@ -92,6 +92,7 @@
 #include <aws/redshift-serverless/model/UntagResourceResult.h>
 #include <aws/redshift-serverless/model/UpdateCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessResult.h>
+#include <aws/redshift-serverless/model/UpdateLakehouseConfigurationResult.h>
 #include <aws/redshift-serverless/model/UpdateNamespaceResult.h>
 #include <aws/redshift-serverless/model/UpdateScheduledActionResult.h>
 #include <aws/redshift-serverless/model/UpdateSnapshotCopyConfigurationResult.h>
@@ -188,6 +189,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateCustomDomainAssociationRequest;
 class UpdateEndpointAccessRequest;
+class UpdateLakehouseConfigurationRequest;
 class UpdateNamespaceRequest;
 class UpdateScheduledActionRequest;
 class UpdateSnapshotRequest;
@@ -254,6 +256,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, RedshiftServerlessError> TagResou
 typedef Aws::Utils::Outcome<UntagResourceResult, RedshiftServerlessError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateCustomDomainAssociationResult, RedshiftServerlessError> UpdateCustomDomainAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateEndpointAccessResult, RedshiftServerlessError> UpdateEndpointAccessOutcome;
+typedef Aws::Utils::Outcome<UpdateLakehouseConfigurationResult, RedshiftServerlessError> UpdateLakehouseConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateNamespaceResult, RedshiftServerlessError> UpdateNamespaceOutcome;
 typedef Aws::Utils::Outcome<UpdateScheduledActionResult, RedshiftServerlessError> UpdateScheduledActionOutcome;
 typedef Aws::Utils::Outcome<UpdateSnapshotResult, RedshiftServerlessError> UpdateSnapshotOutcome;
@@ -320,6 +323,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCustomDomainAssociationOutcome> UpdateCustomDomainAssociationOutcomeCallable;
 typedef std::future<UpdateEndpointAccessOutcome> UpdateEndpointAccessOutcomeCallable;
+typedef std::future<UpdateLakehouseConfigurationOutcome> UpdateLakehouseConfigurationOutcomeCallable;
 typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
 typedef std::future<UpdateScheduledActionOutcome> UpdateScheduledActionOutcomeCallable;
 typedef std::future<UpdateSnapshotOutcome> UpdateSnapshotOutcomeCallable;
@@ -512,6 +516,10 @@ typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateC
 typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateEndpointAccessRequest&,
                            const Model::UpdateEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateEndpointAccessResponseReceivedHandler;
+typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateLakehouseConfigurationRequest&,
+                           const Model::UpdateLakehouseConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateLakehouseConfigurationResponseReceivedHandler;
 typedef std::function<void(const RedshiftServerlessClient*, const Model::UpdateNamespaceRequest&, const Model::UpdateNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateNamespaceResponseReceivedHandler;

@@ -36,7 +36,9 @@
 #include <aws/connect/model/ClaimPhoneNumberResult.h>
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
+#include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
+#include <aws/connect/model/CreateContactFlowModuleVersionResult.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateContactFlowVersionResult.h>
 #include <aws/connect/model/CreateContactResult.h>
@@ -65,7 +67,9 @@
 #include <aws/connect/model/CreateVocabularyResult.h>
 #include <aws/connect/model/DeactivateEvaluationFormResult.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
+#include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
+#include <aws/connect/model/DeleteContactFlowModuleVersionResult.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowVersionResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
@@ -78,6 +82,7 @@
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
+#include <aws/connect/model/DescribeContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DescribeContactFlowModuleResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
@@ -128,6 +133,8 @@
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsResult.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
+#include <aws/connect/model/ListContactFlowModuleAliasesResult.h>
+#include <aws/connect/model/ListContactFlowModuleVersionsResult.h>
 #include <aws/connect/model/ListContactFlowModulesResult.h>
 #include <aws/connect/model/ListContactFlowVersionsResult.h>
 #include <aws/connect/model/ListContactFlowsResult.h>
@@ -225,6 +232,7 @@
 #include <aws/connect/model/UpdateContactEvaluationResult.h>
 #include <aws/connect/model/UpdateContactFlowContentResult.h>
 #include <aws/connect/model/UpdateContactFlowMetadataResult.h>
+#include <aws/connect/model/UpdateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
 #include <aws/connect/model/UpdateContactFlowNameResult.h>
@@ -303,6 +311,8 @@ class CreateAgentStatusRequest;
 class CreateContactRequest;
 class CreateContactFlowRequest;
 class CreateContactFlowModuleRequest;
+class CreateContactFlowModuleAliasRequest;
+class CreateContactFlowModuleVersionRequest;
 class CreateContactFlowVersionRequest;
 class CreateEmailAddressRequest;
 class CreateEvaluationFormRequest;
@@ -333,6 +343,8 @@ class DeleteAttachedFileRequest;
 class DeleteContactEvaluationRequest;
 class DeleteContactFlowRequest;
 class DeleteContactFlowModuleRequest;
+class DeleteContactFlowModuleAliasRequest;
+class DeleteContactFlowModuleVersionRequest;
 class DeleteContactFlowVersionRequest;
 class DeleteEmailAddressRequest;
 class DeleteEvaluationFormRequest;
@@ -362,6 +374,7 @@ class DescribeContactRequest;
 class DescribeContactEvaluationRequest;
 class DescribeContactFlowRequest;
 class DescribeContactFlowModuleRequest;
+class DescribeContactFlowModuleAliasRequest;
 class DescribeEmailAddressRequest;
 class DescribeEvaluationFormRequest;
 class DescribeHoursOfOperationRequest;
@@ -420,6 +433,8 @@ class ListAssociatedContactsRequest;
 class ListAuthenticationProfilesRequest;
 class ListBotsRequest;
 class ListContactEvaluationsRequest;
+class ListContactFlowModuleAliasesRequest;
+class ListContactFlowModuleVersionsRequest;
 class ListContactFlowModulesRequest;
 class ListContactFlowVersionsRequest;
 class ListContactFlowsRequest;
@@ -520,6 +535,7 @@ class UpdateContactAttributesRequest;
 class UpdateContactEvaluationRequest;
 class UpdateContactFlowContentRequest;
 class UpdateContactFlowMetadataRequest;
+class UpdateContactFlowModuleAliasRequest;
 class UpdateContactFlowModuleContentRequest;
 class UpdateContactFlowModuleMetadataRequest;
 class UpdateContactFlowNameRequest;
@@ -595,6 +611,8 @@ typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentSt
 typedef Aws::Utils::Outcome<CreateContactResult, ConnectError> CreateContactOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
+typedef Aws::Utils::Outcome<CreateContactFlowModuleAliasResult, ConnectError> CreateContactFlowModuleAliasOutcome;
+typedef Aws::Utils::Outcome<CreateContactFlowModuleVersionResult, ConnectError> CreateContactFlowModuleVersionOutcome;
 typedef Aws::Utils::Outcome<CreateContactFlowVersionResult, ConnectError> CreateContactFlowVersionOutcome;
 typedef Aws::Utils::Outcome<CreateEmailAddressResult, ConnectError> CreateEmailAddressOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluationFormResult, ConnectError> CreateEvaluationFormOutcome;
@@ -625,6 +643,8 @@ typedef Aws::Utils::Outcome<DeleteAttachedFileResult, ConnectError> DeleteAttach
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowResult, ConnectError> DeleteContactFlowOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
+typedef Aws::Utils::Outcome<DeleteContactFlowModuleAliasResult, ConnectError> DeleteContactFlowModuleAliasOutcome;
+typedef Aws::Utils::Outcome<DeleteContactFlowModuleVersionResult, ConnectError> DeleteContactFlowModuleVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteContactFlowVersionResult, ConnectError> DeleteContactFlowVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteEmailAddressResult, ConnectError> DeleteEmailAddressOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteEvaluationFormOutcome;
@@ -654,6 +674,7 @@ typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContact
 typedef Aws::Utils::Outcome<DescribeContactEvaluationResult, ConnectError> DescribeContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
 typedef Aws::Utils::Outcome<DescribeContactFlowModuleResult, ConnectError> DescribeContactFlowModuleOutcome;
+typedef Aws::Utils::Outcome<DescribeContactFlowModuleAliasResult, ConnectError> DescribeContactFlowModuleAliasOutcome;
 typedef Aws::Utils::Outcome<DescribeEmailAddressResult, ConnectError> DescribeEmailAddressOutcome;
 typedef Aws::Utils::Outcome<DescribeEvaluationFormResult, ConnectError> DescribeEvaluationFormOutcome;
 typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
@@ -712,6 +733,8 @@ typedef Aws::Utils::Outcome<ListAssociatedContactsResult, ConnectError> ListAsso
 typedef Aws::Utils::Outcome<ListAuthenticationProfilesResult, ConnectError> ListAuthenticationProfilesOutcome;
 typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
 typedef Aws::Utils::Outcome<ListContactEvaluationsResult, ConnectError> ListContactEvaluationsOutcome;
+typedef Aws::Utils::Outcome<ListContactFlowModuleAliasesResult, ConnectError> ListContactFlowModuleAliasesOutcome;
+typedef Aws::Utils::Outcome<ListContactFlowModuleVersionsResult, ConnectError> ListContactFlowModuleVersionsOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowVersionsResult, ConnectError> ListContactFlowVersionsOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
@@ -812,6 +835,7 @@ typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateC
 typedef Aws::Utils::Outcome<UpdateContactEvaluationResult, ConnectError> UpdateContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<UpdateContactFlowContentResult, ConnectError> UpdateContactFlowContentOutcome;
 typedef Aws::Utils::Outcome<UpdateContactFlowMetadataResult, ConnectError> UpdateContactFlowMetadataOutcome;
+typedef Aws::Utils::Outcome<UpdateContactFlowModuleAliasResult, ConnectError> UpdateContactFlowModuleAliasOutcome;
 typedef Aws::Utils::Outcome<UpdateContactFlowModuleContentResult, ConnectError> UpdateContactFlowModuleContentOutcome;
 typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError> UpdateContactFlowModuleMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateContactFlowNameResult, ConnectError> UpdateContactFlowNameOutcome;
@@ -887,6 +911,8 @@ typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
 typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
 typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
 typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
+typedef std::future<CreateContactFlowModuleAliasOutcome> CreateContactFlowModuleAliasOutcomeCallable;
+typedef std::future<CreateContactFlowModuleVersionOutcome> CreateContactFlowModuleVersionOutcomeCallable;
 typedef std::future<CreateContactFlowVersionOutcome> CreateContactFlowVersionOutcomeCallable;
 typedef std::future<CreateEmailAddressOutcome> CreateEmailAddressOutcomeCallable;
 typedef std::future<CreateEvaluationFormOutcome> CreateEvaluationFormOutcomeCallable;
@@ -917,6 +943,8 @@ typedef std::future<DeleteAttachedFileOutcome> DeleteAttachedFileOutcomeCallable
 typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
 typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
 typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
+typedef std::future<DeleteContactFlowModuleAliasOutcome> DeleteContactFlowModuleAliasOutcomeCallable;
+typedef std::future<DeleteContactFlowModuleVersionOutcome> DeleteContactFlowModuleVersionOutcomeCallable;
 typedef std::future<DeleteContactFlowVersionOutcome> DeleteContactFlowVersionOutcomeCallable;
 typedef std::future<DeleteEmailAddressOutcome> DeleteEmailAddressOutcomeCallable;
 typedef std::future<DeleteEvaluationFormOutcome> DeleteEvaluationFormOutcomeCallable;
@@ -946,6 +974,7 @@ typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
 typedef std::future<DescribeContactEvaluationOutcome> DescribeContactEvaluationOutcomeCallable;
 typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
 typedef std::future<DescribeContactFlowModuleOutcome> DescribeContactFlowModuleOutcomeCallable;
+typedef std::future<DescribeContactFlowModuleAliasOutcome> DescribeContactFlowModuleAliasOutcomeCallable;
 typedef std::future<DescribeEmailAddressOutcome> DescribeEmailAddressOutcomeCallable;
 typedef std::future<DescribeEvaluationFormOutcome> DescribeEvaluationFormOutcomeCallable;
 typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
@@ -1004,6 +1033,8 @@ typedef std::future<ListAssociatedContactsOutcome> ListAssociatedContactsOutcome
 typedef std::future<ListAuthenticationProfilesOutcome> ListAuthenticationProfilesOutcomeCallable;
 typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
 typedef std::future<ListContactEvaluationsOutcome> ListContactEvaluationsOutcomeCallable;
+typedef std::future<ListContactFlowModuleAliasesOutcome> ListContactFlowModuleAliasesOutcomeCallable;
+typedef std::future<ListContactFlowModuleVersionsOutcome> ListContactFlowModuleVersionsOutcomeCallable;
 typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
 typedef std::future<ListContactFlowVersionsOutcome> ListContactFlowVersionsOutcomeCallable;
 typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
@@ -1104,6 +1135,7 @@ typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutco
 typedef std::future<UpdateContactEvaluationOutcome> UpdateContactEvaluationOutcomeCallable;
 typedef std::future<UpdateContactFlowContentOutcome> UpdateContactFlowContentOutcomeCallable;
 typedef std::future<UpdateContactFlowMetadataOutcome> UpdateContactFlowMetadataOutcomeCallable;
+typedef std::future<UpdateContactFlowModuleAliasOutcome> UpdateContactFlowModuleAliasOutcomeCallable;
 typedef std::future<UpdateContactFlowModuleContentOutcome> UpdateContactFlowModuleContentOutcomeCallable;
 typedef std::future<UpdateContactFlowModuleMetadataOutcome> UpdateContactFlowModuleMetadataOutcomeCallable;
 typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
@@ -1245,6 +1277,14 @@ typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowR
 typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleRequest&, const Model::CreateContactFlowModuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateContactFlowModuleResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleAliasRequest&,
+                           const Model::CreateContactFlowModuleAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateContactFlowModuleAliasResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleVersionRequest&,
+                           const Model::CreateContactFlowModuleVersionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateContactFlowModuleVersionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowVersionRequest&,
                            const Model::CreateContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateContactFlowVersionResponseReceivedHandler;
@@ -1340,6 +1380,14 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowR
 typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteContactFlowModuleResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleAliasRequest&,
+                           const Model::DeleteContactFlowModuleAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteContactFlowModuleAliasResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleVersionRequest&,
+                           const Model::DeleteContactFlowModuleVersionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteContactFlowModuleVersionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowVersionRequest&,
                            const Model::DeleteContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteContactFlowVersionResponseReceivedHandler;
@@ -1432,6 +1480,10 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlo
 typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowModuleRequest&,
                            const Model::DescribeContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeContactFlowModuleResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowModuleAliasRequest&,
+                           const Model::DescribeContactFlowModuleAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeContactFlowModuleAliasResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeEmailAddressRequest&, const Model::DescribeEmailAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeEmailAddressResponseReceivedHandler;
@@ -1621,6 +1673,14 @@ typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, 
 typedef std::function<void(const ConnectClient*, const Model::ListContactEvaluationsRequest&, const Model::ListContactEvaluationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContactEvaluationsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModuleAliasesRequest&,
+                           const Model::ListContactFlowModuleAliasesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContactFlowModuleAliasesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModuleVersionsRequest&,
+                           const Model::ListContactFlowModuleVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContactFlowModuleVersionsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContactFlowModulesResponseReceivedHandler;
@@ -1929,6 +1989,10 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowC
 typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowMetadataRequest&,
                            const Model::UpdateContactFlowMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateContactFlowMetadataResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleAliasRequest&,
+                           const Model::UpdateContactFlowModuleAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateContactFlowModuleAliasResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleContentRequest&,
                            const Model::UpdateContactFlowModuleContentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -21,9 +21,11 @@ namespace KinesisVideo {
 namespace Model {
 
 /**
- * <p>The structure that contains the notification information for the KVS images
- * delivery. If this parameter is null, the configuration will be deleted from the
- * stream.</p><p><h3>See Also:</h3>   <a
+ * <p>Use this API to configure Amazon Simple Notification Service (Amazon SNS)
+ * notifications for when fragments become available in a stream. If this parameter
+ * is null, the configuration will be deleted from the stream.</p> <p>See <a
+ * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/notifications.html">Notifications
+ * in Kinesis Video Streams</a> for more information.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/NotificationConfiguration">AWS
  * API Reference</a></p>
  */

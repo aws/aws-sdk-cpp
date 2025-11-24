@@ -75,6 +75,24 @@ class IntentSummary {
 
   ///@{
   /**
+   * <p>The display name of the intent.</p>
+   */
+  inline const Aws::String& GetIntentDisplayName() const { return m_intentDisplayName; }
+  inline bool IntentDisplayNameHasBeenSet() const { return m_intentDisplayNameHasBeenSet; }
+  template <typename IntentDisplayNameT = Aws::String>
+  void SetIntentDisplayName(IntentDisplayNameT&& value) {
+    m_intentDisplayNameHasBeenSet = true;
+    m_intentDisplayName = std::forward<IntentDisplayNameT>(value);
+  }
+  template <typename IntentDisplayNameT = Aws::String>
+  IntentSummary& WithIntentDisplayName(IntentDisplayNameT&& value) {
+    SetIntentDisplayName(std::forward<IntentDisplayNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the intent.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -182,6 +200,9 @@ class IntentSummary {
 
   Aws::String m_intentName;
   bool m_intentNameHasBeenSet = false;
+
+  Aws::String m_intentDisplayName;
+  bool m_intentDisplayNameHasBeenSet = false;
 
   Aws::String m_description;
   bool m_descriptionHasBeenSet = false;

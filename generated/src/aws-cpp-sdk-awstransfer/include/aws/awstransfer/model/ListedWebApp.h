@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/WebAppEndpointType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -107,6 +108,24 @@ class ListedWebApp {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of endpoint hosting the web app. Valid values are
+   * <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for
+   * VPC-hosted endpoints.</p>
+   */
+  inline WebAppEndpointType GetEndpointType() const { return m_endpointType; }
+  inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+  inline void SetEndpointType(WebAppEndpointType value) {
+    m_endpointTypeHasBeenSet = true;
+    m_endpointType = value;
+  }
+  inline ListedWebApp& WithEndpointType(WebAppEndpointType value) {
+    SetEndpointType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -119,6 +138,9 @@ class ListedWebApp {
 
   Aws::String m_webAppEndpoint;
   bool m_webAppEndpointHasBeenSet = false;
+
+  WebAppEndpointType m_endpointType{WebAppEndpointType::NOT_SET};
+  bool m_endpointTypeHasBeenSet = false;
 };
 
 }  // namespace Model

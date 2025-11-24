@@ -34,6 +34,10 @@ ListedWebApp& ListedWebApp::operator=(JsonView jsonValue) {
     m_webAppEndpoint = jsonValue.GetString("WebAppEndpoint");
     m_webAppEndpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EndpointType")) {
+    m_endpointType = WebAppEndpointTypeMapper::GetWebAppEndpointTypeForName(jsonValue.GetString("EndpointType"));
+    m_endpointTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ListedWebApp::Jsonize() const {
 
   if (m_webAppEndpointHasBeenSet) {
     payload.WithString("WebAppEndpoint", m_webAppEndpoint);
+  }
+
+  if (m_endpointTypeHasBeenSet) {
+    payload.WithString("EndpointType", WebAppEndpointTypeMapper::GetNameForWebAppEndpointType(m_endpointType));
   }
 
   return payload;

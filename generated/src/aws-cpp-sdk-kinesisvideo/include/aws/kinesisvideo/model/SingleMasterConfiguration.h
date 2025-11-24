@@ -31,8 +31,8 @@ class SingleMasterConfiguration {
 
   ///@{
   /**
-   * <p>The period of time a signaling channel retains undelivered messages before
-   * they are discarded.</p>
+   * <p>The period of time (in seconds) a signaling channel retains undelivered
+   * messages before they are discarded. Use to update this value.</p>
    */
   inline int GetMessageTtlSeconds() const { return m_messageTtlSeconds; }
   inline bool MessageTtlSecondsHasBeenSet() const { return m_messageTtlSecondsHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ContactFlowModuleState.h>
 #include <aws/connect/model/ContactFlowModuleStatus.h>
+#include <aws/connect/model/ExternalInvocationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -183,6 +184,94 @@ class ContactFlowModule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Hash of the module content for integrity verification.</p>
+   */
+  inline const Aws::String& GetFlowModuleContentSha256() const { return m_flowModuleContentSha256; }
+  inline bool FlowModuleContentSha256HasBeenSet() const { return m_flowModuleContentSha256HasBeenSet; }
+  template <typename FlowModuleContentSha256T = Aws::String>
+  void SetFlowModuleContentSha256(FlowModuleContentSha256T&& value) {
+    m_flowModuleContentSha256HasBeenSet = true;
+    m_flowModuleContentSha256 = std::forward<FlowModuleContentSha256T>(value);
+  }
+  template <typename FlowModuleContentSha256T = Aws::String>
+  ContactFlowModule& WithFlowModuleContentSha256(FlowModuleContentSha256T&& value) {
+    SetFlowModuleContentSha256(std::forward<FlowModuleContentSha256T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the flow module.</p>
+   */
+  inline long long GetVersion() const { return m_version; }
+  inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+  inline void SetVersion(long long value) {
+    m_versionHasBeenSet = true;
+    m_version = value;
+  }
+  inline ContactFlowModule& WithVersion(long long value) {
+    SetVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Description of the version.</p>
+   */
+  inline const Aws::String& GetVersionDescription() const { return m_versionDescription; }
+  inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+  template <typename VersionDescriptionT = Aws::String>
+  void SetVersionDescription(VersionDescriptionT&& value) {
+    m_versionDescriptionHasBeenSet = true;
+    m_versionDescription = std::forward<VersionDescriptionT>(value);
+  }
+  template <typename VersionDescriptionT = Aws::String>
+  ContactFlowModule& WithVersionDescription(VersionDescriptionT&& value) {
+    SetVersionDescription(std::forward<VersionDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for the flow module.</p>
+   */
+  inline const Aws::String& GetSettings() const { return m_settings; }
+  inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+  template <typename SettingsT = Aws::String>
+  void SetSettings(SettingsT&& value) {
+    m_settingsHasBeenSet = true;
+    m_settings = std::forward<SettingsT>(value);
+  }
+  template <typename SettingsT = Aws::String>
+  ContactFlowModule& WithSettings(SettingsT&& value) {
+    SetSettings(std::forward<SettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The external invocation configuration for the flow module</p>
+   */
+  inline const ExternalInvocationConfiguration& GetExternalInvocationConfiguration() const { return m_externalInvocationConfiguration; }
+  inline bool ExternalInvocationConfigurationHasBeenSet() const { return m_externalInvocationConfigurationHasBeenSet; }
+  template <typename ExternalInvocationConfigurationT = ExternalInvocationConfiguration>
+  void SetExternalInvocationConfiguration(ExternalInvocationConfigurationT&& value) {
+    m_externalInvocationConfigurationHasBeenSet = true;
+    m_externalInvocationConfiguration = std::forward<ExternalInvocationConfigurationT>(value);
+  }
+  template <typename ExternalInvocationConfigurationT = ExternalInvocationConfiguration>
+  ContactFlowModule& WithExternalInvocationConfiguration(ExternalInvocationConfigurationT&& value) {
+    SetExternalInvocationConfiguration(std::forward<ExternalInvocationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
   bool m_arnHasBeenSet = false;
@@ -207,6 +296,21 @@ class ContactFlowModule {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_tagsHasBeenSet = false;
+
+  Aws::String m_flowModuleContentSha256;
+  bool m_flowModuleContentSha256HasBeenSet = false;
+
+  long long m_version{0};
+  bool m_versionHasBeenSet = false;
+
+  Aws::String m_versionDescription;
+  bool m_versionDescriptionHasBeenSet = false;
+
+  Aws::String m_settings;
+  bool m_settingsHasBeenSet = false;
+
+  ExternalInvocationConfiguration m_externalInvocationConfiguration;
+  bool m_externalInvocationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

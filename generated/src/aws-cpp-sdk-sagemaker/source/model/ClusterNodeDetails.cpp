@@ -94,6 +94,14 @@ ClusterNodeDetails& ClusterNodeDetails::operator=(JsonView jsonValue) {
     m_ultraServerInfo = jsonValue.GetObject("UltraServerInfo");
     m_ultraServerInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KubernetesConfig")) {
+    m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
+    m_kubernetesConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CapacityType")) {
+    m_capacityType = ClusterCapacityTypeMapper::GetClusterCapacityTypeForName(jsonValue.GetString("CapacityType"));
+    m_capacityTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -175,6 +183,14 @@ JsonValue ClusterNodeDetails::Jsonize() const {
 
   if (m_ultraServerInfoHasBeenSet) {
     payload.WithObject("UltraServerInfo", m_ultraServerInfo.Jsonize());
+  }
+
+  if (m_kubernetesConfigHasBeenSet) {
+    payload.WithObject("KubernetesConfig", m_kubernetesConfig.Jsonize());
+  }
+
+  if (m_capacityTypeHasBeenSet) {
+    payload.WithString("CapacityType", ClusterCapacityTypeMapper::GetNameForClusterCapacityType(m_capacityType));
   }
 
   return payload;

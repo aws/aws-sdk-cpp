@@ -26,6 +26,10 @@ OptimizationJobOutputConfig& OptimizationJobOutputConfig::operator=(JsonView jso
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
     m_s3OutputLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SageMakerModel")) {
+    m_sageMakerModel = jsonValue.GetObject("SageMakerModel");
+    m_sageMakerModelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue OptimizationJobOutputConfig::Jsonize() const {
 
   if (m_s3OutputLocationHasBeenSet) {
     payload.WithString("S3OutputLocation", m_s3OutputLocation);
+  }
+
+  if (m_sageMakerModelHasBeenSet) {
+    payload.WithObject("SageMakerModel", m_sageMakerModel.Jsonize());
   }
 
   return payload;

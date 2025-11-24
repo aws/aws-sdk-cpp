@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/model/ApplicationType.h>
 #include <aws/redshift/model/AuthorizedTokenIssuer.h>
 #include <aws/redshift/model/ServiceIntegrationsUnion.h>
 #include <aws/redshift/model/Tag.h>
@@ -184,6 +185,24 @@ class CreateRedshiftIdcApplicationRequest : public RedshiftRequest {
 
   ///@{
   /**
+   * <p>The type of application being created. Valid values are <code>None</code> or
+   * <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift
+   * federated permissions on cluster.</p>
+   */
+  inline ApplicationType GetApplicationType() const { return m_applicationType; }
+  inline bool ApplicationTypeHasBeenSet() const { return m_applicationTypeHasBeenSet; }
+  inline void SetApplicationType(ApplicationType value) {
+    m_applicationTypeHasBeenSet = true;
+    m_applicationType = value;
+  }
+  inline CreateRedshiftIdcApplicationRequest& WithApplicationType(ApplicationType value) {
+    SetApplicationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of tags.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -252,6 +271,9 @@ class CreateRedshiftIdcApplicationRequest : public RedshiftRequest {
 
   Aws::Vector<ServiceIntegrationsUnion> m_serviceIntegrations;
   bool m_serviceIntegrationsHasBeenSet = false;
+
+  ApplicationType m_applicationType{ApplicationType::NOT_SET};
+  bool m_applicationTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
   bool m_tagsHasBeenSet = false;

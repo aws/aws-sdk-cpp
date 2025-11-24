@@ -49,8 +49,46 @@ Aws::String UpdateOdbNetworkRequest::SerializePayload() const {
     payload.WithString("zeroEtlAccess", AccessMapper::GetNameForAccess(m_zeroEtlAccess));
   }
 
+  if (m_stsAccessHasBeenSet) {
+    payload.WithString("stsAccess", AccessMapper::GetNameForAccess(m_stsAccess));
+  }
+
+  if (m_kmsAccessHasBeenSet) {
+    payload.WithString("kmsAccess", AccessMapper::GetNameForAccess(m_kmsAccess));
+  }
+
   if (m_s3PolicyDocumentHasBeenSet) {
     payload.WithString("s3PolicyDocument", m_s3PolicyDocument);
+  }
+
+  if (m_stsPolicyDocumentHasBeenSet) {
+    payload.WithString("stsPolicyDocument", m_stsPolicyDocument);
+  }
+
+  if (m_kmsPolicyDocumentHasBeenSet) {
+    payload.WithString("kmsPolicyDocument", m_kmsPolicyDocument);
+  }
+
+  if (m_crossRegionS3RestoreSourcesToEnableHasBeenSet) {
+    Aws::Utils::Array<JsonValue> crossRegionS3RestoreSourcesToEnableJsonList(m_crossRegionS3RestoreSourcesToEnable.size());
+    for (unsigned crossRegionS3RestoreSourcesToEnableIndex = 0;
+         crossRegionS3RestoreSourcesToEnableIndex < crossRegionS3RestoreSourcesToEnableJsonList.GetLength();
+         ++crossRegionS3RestoreSourcesToEnableIndex) {
+      crossRegionS3RestoreSourcesToEnableJsonList[crossRegionS3RestoreSourcesToEnableIndex].AsString(
+          m_crossRegionS3RestoreSourcesToEnable[crossRegionS3RestoreSourcesToEnableIndex]);
+    }
+    payload.WithArray("crossRegionS3RestoreSourcesToEnable", std::move(crossRegionS3RestoreSourcesToEnableJsonList));
+  }
+
+  if (m_crossRegionS3RestoreSourcesToDisableHasBeenSet) {
+    Aws::Utils::Array<JsonValue> crossRegionS3RestoreSourcesToDisableJsonList(m_crossRegionS3RestoreSourcesToDisable.size());
+    for (unsigned crossRegionS3RestoreSourcesToDisableIndex = 0;
+         crossRegionS3RestoreSourcesToDisableIndex < crossRegionS3RestoreSourcesToDisableJsonList.GetLength();
+         ++crossRegionS3RestoreSourcesToDisableIndex) {
+      crossRegionS3RestoreSourcesToDisableJsonList[crossRegionS3RestoreSourcesToDisableIndex].AsString(
+          m_crossRegionS3RestoreSourcesToDisable[crossRegionS3RestoreSourcesToDisableIndex]);
+    }
+    payload.WithArray("crossRegionS3RestoreSourcesToDisable", std::move(crossRegionS3RestoreSourcesToDisableJsonList));
   }
 
   return payload.View().WriteReadable();

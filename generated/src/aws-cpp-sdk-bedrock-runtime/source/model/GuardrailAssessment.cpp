@@ -46,6 +46,10 @@ GuardrailAssessment& GuardrailAssessment::operator=(JsonView jsonValue) {
     m_invocationMetrics = jsonValue.GetObject("invocationMetrics");
     m_invocationMetricsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("appliedGuardrailDetails")) {
+    m_appliedGuardrailDetails = jsonValue.GetObject("appliedGuardrailDetails");
+    m_appliedGuardrailDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue GuardrailAssessment::Jsonize() const {
 
   if (m_invocationMetricsHasBeenSet) {
     payload.WithObject("invocationMetrics", m_invocationMetrics.Jsonize());
+  }
+
+  if (m_appliedGuardrailDetailsHasBeenSet) {
+    payload.WithObject("appliedGuardrailDetails", m_appliedGuardrailDetails.Jsonize());
   }
 
   return payload;

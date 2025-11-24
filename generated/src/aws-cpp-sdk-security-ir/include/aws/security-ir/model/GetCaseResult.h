@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/security-ir/model/CaseAttachmentAttributes.h>
+#include <aws/security-ir/model/CaseMetadataEntry.h>
 #include <aws/security-ir/model/CaseStatus.h>
 #include <aws/security-ir/model/ClosureCode.h>
 #include <aws/security-ir/model/EngagementType.h>
@@ -400,6 +401,29 @@ class GetCaseResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Case response metadata</p>
+   */
+  inline const Aws::Vector<CaseMetadataEntry>& GetCaseMetadata() const { return m_caseMetadata; }
+  template <typename CaseMetadataT = Aws::Vector<CaseMetadataEntry>>
+  void SetCaseMetadata(CaseMetadataT&& value) {
+    m_caseMetadataHasBeenSet = true;
+    m_caseMetadata = std::forward<CaseMetadataT>(value);
+  }
+  template <typename CaseMetadataT = Aws::Vector<CaseMetadataEntry>>
+  GetCaseResult& WithCaseMetadata(CaseMetadataT&& value) {
+    SetCaseMetadata(std::forward<CaseMetadataT>(value));
+    return *this;
+  }
+  template <typename CaseMetadataT = CaseMetadataEntry>
+  GetCaseResult& AddCaseMetadata(CaseMetadataT&& value) {
+    m_caseMetadataHasBeenSet = true;
+    m_caseMetadata.emplace_back(std::forward<CaseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -470,6 +494,9 @@ class GetCaseResult {
 
   Aws::Utils::DateTime m_closedDate{};
   bool m_closedDateHasBeenSet = false;
+
+  Aws::Vector<CaseMetadataEntry> m_caseMetadata;
+  bool m_caseMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

@@ -15,6 +15,8 @@ enum class OptimizationJobDeploymentInstanceType {
   ml_p4d_24xlarge,
   ml_p4de_24xlarge,
   ml_p5_48xlarge,
+  ml_p5e_48xlarge,
+  ml_p5en_48xlarge,
   ml_g5_xlarge,
   ml_g5_2xlarge,
   ml_g5_4xlarge,

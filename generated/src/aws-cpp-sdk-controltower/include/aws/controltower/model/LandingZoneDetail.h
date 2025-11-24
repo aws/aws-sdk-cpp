@@ -56,25 +56,6 @@ class LandingZoneDetail {
 
   ///@{
   /**
-   * <p>The landing zone manifest JSON text file that specifies the landing zone
-   * configurations. </p>
-   */
-  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
-  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-  template <typename ManifestT = Aws::Utils::Document>
-  void SetManifest(ManifestT&& value) {
-    m_manifestHasBeenSet = true;
-    m_manifest = std::forward<ManifestT>(value);
-  }
-  template <typename ManifestT = Aws::Utils::Document>
-  LandingZoneDetail& WithManifest(ManifestT&& value) {
-    SetManifest(std::forward<ManifestT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The types of remediation actions configured for the landing zone, such as
    * automatic drift correction or compliance enforcement.</p>
    */
@@ -167,12 +148,28 @@ class LandingZoneDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The landing zone manifest JSON text file that specifies the landing zone
+   * configurations. </p>
+   */
+  inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
+  inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
+  template <typename ManifestT = Aws::Utils::Document>
+  void SetManifest(ManifestT&& value) {
+    m_manifestHasBeenSet = true;
+    m_manifest = std::forward<ManifestT>(value);
+  }
+  template <typename ManifestT = Aws::Utils::Document>
+  LandingZoneDetail& WithManifest(ManifestT&& value) {
+    SetManifest(std::forward<ManifestT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_version;
   bool m_versionHasBeenSet = false;
-
-  Aws::Utils::Document m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
   bool m_remediationTypesHasBeenSet = false;
@@ -188,6 +185,9 @@ class LandingZoneDetail {
 
   LandingZoneDriftStatusSummary m_driftStatus;
   bool m_driftStatusHasBeenSet = false;
+
+  Aws::Utils::Document m_manifest;
+  bool m_manifestHasBeenSet = false;
 };
 
 }  // namespace Model

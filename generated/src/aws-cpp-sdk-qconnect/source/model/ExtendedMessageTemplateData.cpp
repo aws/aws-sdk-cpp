@@ -38,6 +38,10 @@ ExtendedMessageTemplateData& ExtendedMessageTemplateData::operator=(JsonView jso
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = jsonValue.GetString("channel");
+    m_channelHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("channelSubtype")) {
     m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
     m_channelSubtypeHasBeenSet = true;
@@ -65,6 +69,10 @@ ExtendedMessageTemplateData& ExtendedMessageTemplateData::operator=(JsonView jso
   if (jsonValue.ValueExists("language")) {
     m_language = jsonValue.GetString("language");
     m_languageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceConfigurationSummary")) {
+    m_sourceConfigurationSummary = jsonValue.GetObject("sourceConfigurationSummary");
+    m_sourceConfigurationSummaryHasBeenSet = true;
   }
   if (jsonValue.ValueExists("groupingConfiguration")) {
     m_groupingConfiguration = jsonValue.GetObject("groupingConfiguration");
@@ -134,6 +142,10 @@ JsonValue ExtendedMessageTemplateData::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", m_channel);
+  }
+
   if (m_channelSubtypeHasBeenSet) {
     payload.WithString("channelSubtype", ChannelSubtypeMapper::GetNameForChannelSubtype(m_channelSubtype));
   }
@@ -160,6 +172,10 @@ JsonValue ExtendedMessageTemplateData::Jsonize() const {
 
   if (m_languageHasBeenSet) {
     payload.WithString("language", m_language);
+  }
+
+  if (m_sourceConfigurationSummaryHasBeenSet) {
+    payload.WithObject("sourceConfigurationSummary", m_sourceConfigurationSummary.Jsonize());
   }
 
   if (m_groupingConfigurationHasBeenSet) {

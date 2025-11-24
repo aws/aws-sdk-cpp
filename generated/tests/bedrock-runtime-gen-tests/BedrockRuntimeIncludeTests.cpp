@@ -15,6 +15,7 @@
 #include <aws/bedrock-runtime/BedrockRuntimeServiceClientModel.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/AnyToolChoice.h>
+#include <aws/bedrock-runtime/model/AppliedGuardrailDetails.h>
 #include <aws/bedrock-runtime/model/ApplyGuardrailRequest.h>
 #include <aws/bedrock-runtime/model/ApplyGuardrailResult.h>
 #include <aws/bedrock-runtime/model/AsyncInvokeOutputDataConfig.h>
@@ -114,8 +115,10 @@
 #include <aws/bedrock-runtime/model/GuardrailInvocationMetrics.h>
 #include <aws/bedrock-runtime/model/GuardrailManagedWord.h>
 #include <aws/bedrock-runtime/model/GuardrailManagedWordType.h>
+#include <aws/bedrock-runtime/model/GuardrailOrigin.h>
 #include <aws/bedrock-runtime/model/GuardrailOutputContent.h>
 #include <aws/bedrock-runtime/model/GuardrailOutputScope.h>
+#include <aws/bedrock-runtime/model/GuardrailOwnership.h>
 #include <aws/bedrock-runtime/model/GuardrailPiiEntityFilter.h>
 #include <aws/bedrock-runtime/model/GuardrailPiiEntityType.h>
 #include <aws/bedrock-runtime/model/GuardrailRegexFilter.h>

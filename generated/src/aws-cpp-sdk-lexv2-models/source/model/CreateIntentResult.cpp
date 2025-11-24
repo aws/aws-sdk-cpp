@@ -29,6 +29,10 @@ CreateIntentResult& CreateIntentResult::operator=(const Aws::AmazonWebServiceRes
     m_intentName = jsonValue.GetString("intentName");
     m_intentNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intentDisplayName")) {
+    m_intentDisplayName = jsonValue.GetString("intentDisplayName");
+    m_intentDisplayNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;

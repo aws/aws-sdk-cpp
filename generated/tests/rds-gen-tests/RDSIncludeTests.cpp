@@ -480,6 +480,7 @@
 #include <aws/rds/model/TenantDatabase.h>
 #include <aws/rds/model/TenantDatabasePendingModifiedValues.h>
 #include <aws/rds/model/Timezone.h>
+#include <aws/rds/model/UpgradeRolloutOrder.h>
 #include <aws/rds/model/UpgradeTarget.h>
 #include <aws/rds/model/UserAuthConfig.h>
 #include <aws/rds/model/UserAuthConfigInfo.h>

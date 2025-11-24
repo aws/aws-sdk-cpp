@@ -11,7 +11,7 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
-      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
       {
 #foreach($entry in $AuthSchemeMapEntries)
           {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
@@ -28,7 +28,7 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
-      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
       {
 #foreach($entry in $AuthSchemeMapEntries)
           {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
@@ -52,7 +52,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
 #if(!$IsMultiAuth)
-        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end
@@ -92,7 +92,7 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
 #if(!$IsMultiAuth)
-        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end
@@ -132,7 +132,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
 #else
 #if(!$IsMultiAuth)
-        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end
@@ -153,7 +153,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
             }()
 #else
 #foreach($entry in $AuthSchemeMapEntries)
-            {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+            {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}},
 #end
 #end
         })
@@ -282,13 +282,13 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
 #if(!$IsMultiAuth)
-      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
       Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end
       {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}},
 #end
       })
 {}
@@ -302,13 +302,13 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
 #if(!$IsMultiAuth)
-        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end
         {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #end
         })
 {}
@@ -322,12 +322,12 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
 #if(!$IsMultiAuth)
-        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
 #else
         Aws::MakeShared<smithy::${AuthSchemeResolver}>(ALLOCATION_TAG, ${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}),
 #end        {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}},
 #end
         })
 {}

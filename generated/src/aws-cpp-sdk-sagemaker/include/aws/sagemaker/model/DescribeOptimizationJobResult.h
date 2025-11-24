@@ -230,6 +230,21 @@ class DescribeOptimizationJobResult {
 
   ///@{
   /**
+   * <p>The maximum number of instances to use for the optimization job.</p>
+   */
+  inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
+  inline void SetMaxInstanceCount(int value) {
+    m_maxInstanceCountHasBeenSet = true;
+    m_maxInstanceCount = value;
+  }
+  inline DescribeOptimizationJobResult& WithMaxInstanceCount(int value) {
+    SetMaxInstanceCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Settings for each of the optimization techniques that the job applies.</p>
    */
   inline const Aws::Vector<OptimizationConfig>& GetOptimizationConfigs() const { return m_optimizationConfigs; }
@@ -382,6 +397,9 @@ class DescribeOptimizationJobResult {
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
   bool m_deploymentInstanceTypeHasBeenSet = false;
+
+  int m_maxInstanceCount{0};
+  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Vector<OptimizationConfig> m_optimizationConfigs;
   bool m_optimizationConfigsHasBeenSet = false;

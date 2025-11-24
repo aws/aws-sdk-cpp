@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/EngineConfiguration.h>
+#include <aws/athena/model/MonitoringConfiguration.h>
 #include <aws/athena/model/SessionConfiguration.h>
 #include <aws/athena/model/SessionStatistics.h>
 #include <aws/athena/model/SessionStatus.h>
@@ -135,6 +136,21 @@ class GetSessionResult {
   ///@}
 
   ///@{
+
+  inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  void SetMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    m_monitoringConfigurationHasBeenSet = true;
+    m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value);
+  }
+  template <typename MonitoringConfigurationT = MonitoringConfiguration>
+  GetSessionResult& WithMonitoringConfiguration(MonitoringConfigurationT&& value) {
+    SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Contains the workgroup configuration information used by the session.</p>
    */
@@ -217,6 +233,9 @@ class GetSessionResult {
 
   Aws::String m_notebookVersion;
   bool m_notebookVersionHasBeenSet = false;
+
+  MonitoringConfiguration m_monitoringConfiguration;
+  bool m_monitoringConfigurationHasBeenSet = false;
 
   SessionConfiguration m_sessionConfiguration;
   bool m_sessionConfigurationHasBeenSet = false;

@@ -48,6 +48,10 @@ Aws::String StartQueryExecutionRequest::SerializePayload() const {
     payload.WithObject("ResultReuseConfiguration", m_resultReuseConfiguration.Jsonize());
   }
 
+  if (m_engineConfigurationHasBeenSet) {
+    payload.WithObject("EngineConfiguration", m_engineConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

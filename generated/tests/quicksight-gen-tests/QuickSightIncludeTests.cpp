@@ -1269,6 +1269,7 @@
 #include <aws/quicksight/model/RegisteredUserEmbeddingExperienceConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserGenerativeQnAEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserQuickChatEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RelationalTable.h>
 #include <aws/quicksight/model/RelativeDateTimeControlDisplayOptions.h>

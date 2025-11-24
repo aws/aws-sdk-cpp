@@ -26,6 +26,26 @@ class InitializeServiceRequest : public OdbRequest {
   AWS_ODB_API Aws::String SerializePayload() const override;
 
   AWS_ODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for
+   * service initialization.</p>
+   */
+  inline bool GetOciIdentityDomain() const { return m_ociIdentityDomain; }
+  inline bool OciIdentityDomainHasBeenSet() const { return m_ociIdentityDomainHasBeenSet; }
+  inline void SetOciIdentityDomain(bool value) {
+    m_ociIdentityDomainHasBeenSet = true;
+    m_ociIdentityDomain = value;
+  }
+  inline InitializeServiceRequest& WithOciIdentityDomain(bool value) {
+    SetOciIdentityDomain(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_ociIdentityDomain{false};
+  bool m_ociIdentityDomainHasBeenSet = false;
 };
 
 }  // namespace Model

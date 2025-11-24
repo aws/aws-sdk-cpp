@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/AppliedGuardrailDetails.h>
 #include <aws/bedrock-runtime/model/GuardrailAutomatedReasoningPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailContentPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailContextualGroundingPolicyAssessment.h>
@@ -164,6 +165,22 @@ class GuardrailAssessment {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const AppliedGuardrailDetails& GetAppliedGuardrailDetails() const { return m_appliedGuardrailDetails; }
+  inline bool AppliedGuardrailDetailsHasBeenSet() const { return m_appliedGuardrailDetailsHasBeenSet; }
+  template <typename AppliedGuardrailDetailsT = AppliedGuardrailDetails>
+  void SetAppliedGuardrailDetails(AppliedGuardrailDetailsT&& value) {
+    m_appliedGuardrailDetailsHasBeenSet = true;
+    m_appliedGuardrailDetails = std::forward<AppliedGuardrailDetailsT>(value);
+  }
+  template <typename AppliedGuardrailDetailsT = AppliedGuardrailDetails>
+  GuardrailAssessment& WithAppliedGuardrailDetails(AppliedGuardrailDetailsT&& value) {
+    SetAppliedGuardrailDetails(std::forward<AppliedGuardrailDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GuardrailTopicPolicyAssessment m_topicPolicy;
   bool m_topicPolicyHasBeenSet = false;
@@ -185,6 +202,9 @@ class GuardrailAssessment {
 
   GuardrailInvocationMetrics m_invocationMetrics;
   bool m_invocationMetricsHasBeenSet = false;
+
+  AppliedGuardrailDetails m_appliedGuardrailDetails;
+  bool m_appliedGuardrailDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

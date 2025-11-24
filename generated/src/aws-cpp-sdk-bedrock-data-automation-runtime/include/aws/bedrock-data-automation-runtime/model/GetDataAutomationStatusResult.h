@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/bedrock-data-automation-runtime/model/AutomationJobStatus.h>
 #include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -102,6 +103,55 @@ class GetDataAutomationStatusResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Job Submission time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetJobSubmissionTime() const { return m_jobSubmissionTime; }
+  template <typename JobSubmissionTimeT = Aws::Utils::DateTime>
+  void SetJobSubmissionTime(JobSubmissionTimeT&& value) {
+    m_jobSubmissionTimeHasBeenSet = true;
+    m_jobSubmissionTime = std::forward<JobSubmissionTimeT>(value);
+  }
+  template <typename JobSubmissionTimeT = Aws::Utils::DateTime>
+  GetDataAutomationStatusResult& WithJobSubmissionTime(JobSubmissionTimeT&& value) {
+    SetJobSubmissionTime(std::forward<JobSubmissionTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Job completion time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetJobCompletionTime() const { return m_jobCompletionTime; }
+  template <typename JobCompletionTimeT = Aws::Utils::DateTime>
+  void SetJobCompletionTime(JobCompletionTimeT&& value) {
+    m_jobCompletionTimeHasBeenSet = true;
+    m_jobCompletionTime = std::forward<JobCompletionTimeT>(value);
+  }
+  template <typename JobCompletionTimeT = Aws::Utils::DateTime>
+  GetDataAutomationStatusResult& WithJobCompletionTime(JobCompletionTimeT&& value) {
+    SetJobCompletionTime(std::forward<JobCompletionTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Job duration in seconds.</p>
+   */
+  inline int GetJobDurationInSeconds() const { return m_jobDurationInSeconds; }
+  inline void SetJobDurationInSeconds(int value) {
+    m_jobDurationInSecondsHasBeenSet = true;
+    m_jobDurationInSeconds = value;
+  }
+  inline GetDataAutomationStatusResult& WithJobDurationInSeconds(int value) {
+    SetJobDurationInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -127,6 +177,15 @@ class GetDataAutomationStatusResult {
 
   OutputConfiguration m_outputConfiguration;
   bool m_outputConfigurationHasBeenSet = false;
+
+  Aws::Utils::DateTime m_jobSubmissionTime{};
+  bool m_jobSubmissionTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_jobCompletionTime{};
+  bool m_jobCompletionTimeHasBeenSet = false;
+
+  int m_jobDurationInSeconds{0};
+  bool m_jobDurationInSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
   bool m_requestIdHasBeenSet = false;

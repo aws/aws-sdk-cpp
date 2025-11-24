@@ -424,6 +424,33 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Investigation performed by an agent for a security incident...</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListInvestigations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInvestigationsOutcome ListInvestigations(const Model::ListInvestigationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInvestigations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+  Model::ListInvestigationsOutcomeCallable ListInvestigationsCallable(const ListInvestigationsRequestT& request) const {
+    return SubmitCallable(&SecurityIRClient::ListInvestigations, request);
+  }
+
+  /**
+   * An Async wrapper for ListInvestigations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListInvestigationsRequestT = Model::ListInvestigationsRequest>
+  void ListInvestigationsAsync(const ListInvestigationsRequestT& request, const ListInvestigationsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityIRClient::ListInvestigations, request, handler, context);
+  }
+
+  /**
    * <p>Returns the memberships that the calling principal can access.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">AWS
@@ -475,6 +502,32 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityIRClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Send feedback based on response investigation action</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/SendFeedback">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendFeedbackOutcome SendFeedback(const Model::SendFeedbackRequest& request) const;
+
+  /**
+   * A Callable wrapper for SendFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SendFeedbackRequestT = Model::SendFeedbackRequest>
+  Model::SendFeedbackOutcomeCallable SendFeedbackCallable(const SendFeedbackRequestT& request) const {
+    return SubmitCallable(&SecurityIRClient::SendFeedback, request);
+  }
+
+  /**
+   * An Async wrapper for SendFeedback that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SendFeedbackRequestT = Model::SendFeedbackRequest>
+  void SendFeedbackAsync(const SendFeedbackRequestT& request, const SendFeedbackResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityIRClient::SendFeedback, request, handler, context);
   }
 
   /**
@@ -582,7 +635,7 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
    * <p>Updates the state transitions for a designated cases.</p> <p>
    * <b>Self-managed</b>: the following states are available for self-managed cases.
    * </p> <ul> <li> <p>Submitted → Detection and Analysis</p> </li> <li> <p>Detection
-   * and Analysis ��� Containment, Eradication, and Recovery</p> </li> <li>
+   * and Analysis → Containment, Eradication, and Recovery</p> </li> <li>
    * <p>Detection and Analysis → Post-incident Activities</p> </li> <li>
    * <p>Containment, Eradication, and Recovery → Detection and Analysis</p> </li>
    * <li> <p>Containment, Eradication, and Recovery → Post-incident Activities</p>

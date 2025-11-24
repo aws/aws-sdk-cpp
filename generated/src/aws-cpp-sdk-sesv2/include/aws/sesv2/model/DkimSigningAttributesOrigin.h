@@ -38,7 +38,9 @@ enum class DkimSigningAttributesOrigin {
   AWS_SES_US_WEST_2,
   AWS_SES_ME_CENTRAL_1,
   AWS_SES_AP_SOUTH_2,
-  AWS_SES_EU_CENTRAL_2
+  AWS_SES_EU_CENTRAL_2,
+  AWS_SES_AP_SOUTHEAST_5,
+  AWS_SES_CA_WEST_1
 };
 
 namespace DkimSigningAttributesOriginMapper {

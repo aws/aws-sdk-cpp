@@ -4,11 +4,15 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ActiveClusterOperationName.h>
+#include <aws/sagemaker/model/ClusterCapacityRequirements.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
+#include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <aws/sagemaker/model/DeploymentConfiguration.h>
@@ -72,6 +76,24 @@ class ClusterInstanceGroupDetails {
   }
   inline ClusterInstanceGroupDetails& WithTargetCount(int value) {
     SetTargetCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The minimum number of instances that must be available in the instance group
+   * of a SageMaker HyperPod cluster before it transitions to <code>InService</code>
+   * status. </p>
+   */
+  inline int GetMinCount() const { return m_minCount; }
+  inline bool MinCountHasBeenSet() const { return m_minCountHasBeenSet; }
+  inline void SetMinCount(int value) {
+    m_minCountHasBeenSet = true;
+    m_minCount = value;
+  }
+  inline ClusterInstanceGroupDetails& WithMinCount(int value) {
+    SetMinCount(value);
     return *this;
   }
   ///@}
@@ -362,6 +384,68 @@ class ClusterInstanceGroupDetails {
 
   ///@{
   /**
+   * <p>A map indicating active operations currently in progress for the instance
+   * group of a SageMaker HyperPod cluster. When there is a scaling operation in
+   * progress, this map contains a key <code>Scaling</code> with value 1. </p>
+   */
+  inline const Aws::Map<ActiveClusterOperationName, int>& GetActiveOperations() const { return m_activeOperations; }
+  inline bool ActiveOperationsHasBeenSet() const { return m_activeOperationsHasBeenSet; }
+  template <typename ActiveOperationsT = Aws::Map<ActiveClusterOperationName, int>>
+  void SetActiveOperations(ActiveOperationsT&& value) {
+    m_activeOperationsHasBeenSet = true;
+    m_activeOperations = std::forward<ActiveOperationsT>(value);
+  }
+  template <typename ActiveOperationsT = Aws::Map<ActiveClusterOperationName, int>>
+  ClusterInstanceGroupDetails& WithActiveOperations(ActiveOperationsT&& value) {
+    SetActiveOperations(std::forward<ActiveOperationsT>(value));
+    return *this;
+  }
+  inline ClusterInstanceGroupDetails& AddActiveOperations(ActiveClusterOperationName key, int value) {
+    m_activeOperationsHasBeenSet = true;
+    m_activeOperations.emplace(key, value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Kubernetes configuration for the instance group that contains labels and
+   * taints to be applied for the nodes in this instance group. </p>
+   */
+  inline const ClusterKubernetesConfigDetails& GetKubernetesConfig() const { return m_kubernetesConfig; }
+  inline bool KubernetesConfigHasBeenSet() const { return m_kubernetesConfigHasBeenSet; }
+  template <typename KubernetesConfigT = ClusterKubernetesConfigDetails>
+  void SetKubernetesConfig(KubernetesConfigT&& value) {
+    m_kubernetesConfigHasBeenSet = true;
+    m_kubernetesConfig = std::forward<KubernetesConfigT>(value);
+  }
+  template <typename KubernetesConfigT = ClusterKubernetesConfigDetails>
+  ClusterInstanceGroupDetails& WithKubernetesConfig(KubernetesConfigT&& value) {
+    SetKubernetesConfig(std::forward<KubernetesConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance capacity requirements for the instance group.</p>
+   */
+  inline const ClusterCapacityRequirements& GetCapacityRequirements() const { return m_capacityRequirements; }
+  inline bool CapacityRequirementsHasBeenSet() const { return m_capacityRequirementsHasBeenSet; }
+  template <typename CapacityRequirementsT = ClusterCapacityRequirements>
+  void SetCapacityRequirements(CapacityRequirementsT&& value) {
+    m_capacityRequirementsHasBeenSet = true;
+    m_capacityRequirements = std::forward<CapacityRequirementsT>(value);
+  }
+  template <typename CapacityRequirementsT = ClusterCapacityRequirements>
+  ClusterInstanceGroupDetails& WithCapacityRequirements(CapacityRequirementsT&& value) {
+    SetCapacityRequirements(std::forward<CapacityRequirementsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of nodes running a specific image ID since the last software
    * update request.</p>
    */
@@ -415,6 +499,9 @@ class ClusterInstanceGroupDetails {
   int m_targetCount{0};
   bool m_targetCountHasBeenSet = false;
 
+  int m_minCount{0};
+  bool m_minCountHasBeenSet = false;
+
   Aws::String m_instanceGroupName;
   bool m_instanceGroupNameHasBeenSet = false;
 
@@ -456,6 +543,15 @@ class ClusterInstanceGroupDetails {
 
   Aws::String m_desiredImageId;
   bool m_desiredImageIdHasBeenSet = false;
+
+  Aws::Map<ActiveClusterOperationName, int> m_activeOperations;
+  bool m_activeOperationsHasBeenSet = false;
+
+  ClusterKubernetesConfigDetails m_kubernetesConfig;
+  bool m_kubernetesConfigHasBeenSet = false;
+
+  ClusterCapacityRequirements m_capacityRequirements;
+  bool m_capacityRequirementsHasBeenSet = false;
 
   int m_targetStateCount{0};
   bool m_targetStateCountHasBeenSet = false;

@@ -27,10 +27,39 @@ namespace Invoicing {
  * invoice receiver for each invoice unit. As you create new accounts within your
  * Organizations using Amazon Web Services Invoice Configuration APIs, you can
  * automate the creation of new invoice units and subsequently automate the
- * addition of new accounts to your invoice units.</p> <p>Service endpoint</p>
- * <p>You can use the following endpoints for Amazon Web Services Invoice
- * Configuration:</p> <ul> <li> <p>
- * <code>https://invoicing.us-east-1.api.aws</code> </p> </li> </ul>
+ * addition of new accounts to your invoice units.</p> <p> <b>Amazon Web Services
+ * Procurement Portal Preferences</b> </p> <p>You can use Amazon Web Services
+ * Procurement Portal Preferences APIs to programmatically create, update, delete,
+ * get, and list procurement portal connections and e-invoice delivery settings.
+ * You can also programmatically fetch and modify the status of procurement portal
+ * configurations. For example, SAP Business Network or Coupa connections,
+ * configure e-invoice delivery and purchase order retrieval features.</p> <p>You
+ * can use Amazon Web Services Procurement Portal Preferences to connect e-invoice
+ * delivery to your procurement portals based on your organizational needs. By
+ * using Amazon Web Services Procurement Portal Preferences, you can configure
+ * connections to SAP Business Network and Coupa procurement portals that retrieve
+ * purchase orders and deliver Amazon Web Services invoices on the same day they
+ * are generated. You can also set up testing environments to validate invoice
+ * delivery without affecting live transactions, and manage contact information for
+ * portal setup and support. </p> <p>Administrative users should understand that
+ * billing read-only policies will show all procurement portal connection details.
+ * Review your IAM policies to ensure appropriate access controls are in place for
+ * procurement portal preferences.</p> <p> <b>Amazon Web Services Invoice
+ * Management</b> </p> <p>You can use Amazon Web Services Invoice Management APIs
+ * to programmatically list invoice summaries and get invoice documents. You can
+ * also programmatically fetch invoice documents with S3 pre-signed URLs.</p>
+ * <p>You can use Amazon Web Services Invoice Management to access invoice
+ * information based on your organizational needs. By using Amazon Web Services
+ * Invoice Management, you can retrieve paginated lists of invoice summaries that
+ * include invoice metadata such as invoice IDs, amounts, and currencies without
+ * downloading documents. You can also download invoice documents in PDF format
+ * using S3 pre-signed URLs with built-in expiration. As you manage invoices across
+ * your organization using Amazon Web Services Invoice Management APIs, you can
+ * create invoice retrieval processes and integrate invoice data into your
+ * financial systems.</p> <p>Service endpoint</p> <p>You can use the following
+ * endpoints for Amazon Web Services Invoice Configuration, Amazon Web Services
+ * Procurement Portal Preferences, and Amazon Web Services Invoice Management:</p>
+ * <ul> <li> <p> <code>https://invoicing.us-east-1.api.aws</code> </p> </li> </ul>
  */
 class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient> {
@@ -144,6 +173,38 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a procurement portal preference configuration for e-invoice delivery
+   * and purchase order retrieval. This preference defines how invoices are delivered
+   * to a procurement portal and how purchase orders are retrieved.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateProcurementPortalPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProcurementPortalPreferenceOutcome CreateProcurementPortalPreference(
+      const Model::CreateProcurementPortalPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProcurementPortalPreference that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateProcurementPortalPreferenceRequestT = Model::CreateProcurementPortalPreferenceRequest>
+  Model::CreateProcurementPortalPreferenceOutcomeCallable CreateProcurementPortalPreferenceCallable(
+      const CreateProcurementPortalPreferenceRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::CreateProcurementPortalPreference, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProcurementPortalPreference that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateProcurementPortalPreferenceRequestT = Model::CreateProcurementPortalPreferenceRequest>
+  void CreateProcurementPortalPreferenceAsync(const CreateProcurementPortalPreferenceRequestT& request,
+                                              const CreateProcurementPortalPreferenceResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::CreateProcurementPortalPreference, request, handler, context);
+  }
+
+  /**
    * <p>This deletes an invoice unit with the provided invoice unit ARN.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteInvoiceUnit">AWS
@@ -168,6 +229,37 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   void DeleteInvoiceUnitAsync(const DeleteInvoiceUnitRequestT& request, const DeleteInvoiceUnitResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&InvoicingClient::DeleteInvoiceUnit, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing procurement portal preference. This action cannot be
+   * undone. Active e-invoice delivery and PO retrieval configurations will be
+   * terminated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteProcurementPortalPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProcurementPortalPreferenceOutcome DeleteProcurementPortalPreference(
+      const Model::DeleteProcurementPortalPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProcurementPortalPreference that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteProcurementPortalPreferenceRequestT = Model::DeleteProcurementPortalPreferenceRequest>
+  Model::DeleteProcurementPortalPreferenceOutcomeCallable DeleteProcurementPortalPreferenceCallable(
+      const DeleteProcurementPortalPreferenceRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::DeleteProcurementPortalPreference, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProcurementPortalPreference that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteProcurementPortalPreferenceRequestT = Model::DeleteProcurementPortalPreferenceRequest>
+  void DeleteProcurementPortalPreferenceAsync(const DeleteProcurementPortalPreferenceRequestT& request,
+                                              const DeleteProcurementPortalPreferenceResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::DeleteProcurementPortalPreference, request, handler, context);
   }
 
   /**
@@ -228,6 +320,36 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the details of a specific procurement portal preference
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetProcurementPortalPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProcurementPortalPreferenceOutcome GetProcurementPortalPreference(
+      const Model::GetProcurementPortalPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProcurementPortalPreference that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetProcurementPortalPreferenceRequestT = Model::GetProcurementPortalPreferenceRequest>
+  Model::GetProcurementPortalPreferenceOutcomeCallable GetProcurementPortalPreferenceCallable(
+      const GetProcurementPortalPreferenceRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::GetProcurementPortalPreference, request);
+  }
+
+  /**
+   * An Async wrapper for GetProcurementPortalPreference that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetProcurementPortalPreferenceRequestT = Model::GetProcurementPortalPreferenceRequest>
+  void GetProcurementPortalPreferenceAsync(const GetProcurementPortalPreferenceRequestT& request,
+                                           const GetProcurementPortalPreferenceResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::GetProcurementPortalPreference, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves your invoice details programmatically, without line item
    * details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">AWS
@@ -283,6 +405,36 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves a list of procurement portal preferences associated with the Amazon
+   * Web Services account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalPreferences">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProcurementPortalPreferencesOutcome ListProcurementPortalPreferences(
+      const Model::ListProcurementPortalPreferencesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProcurementPortalPreferences that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListProcurementPortalPreferencesRequestT = Model::ListProcurementPortalPreferencesRequest>
+  Model::ListProcurementPortalPreferencesOutcomeCallable ListProcurementPortalPreferencesCallable(
+      const ListProcurementPortalPreferencesRequestT& request = {}) const {
+    return SubmitCallable(&InvoicingClient::ListProcurementPortalPreferences, request);
+  }
+
+  /**
+   * An Async wrapper for ListProcurementPortalPreferences that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListProcurementPortalPreferencesRequestT = Model::ListProcurementPortalPreferencesRequest>
+  void ListProcurementPortalPreferencesAsync(const ListProcurementPortalPreferencesResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                             const ListProcurementPortalPreferencesRequestT& request = {}) const {
+    return SubmitAsync(&InvoicingClient::ListProcurementPortalPreferences, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags for a resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -306,6 +458,37 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&InvoicingClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing procurement portal preference configuration. This
+   * operation can modify settings for e-invoice delivery and purchase order
+   * retrieval.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/PutProcurementPortalPreference">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutProcurementPortalPreferenceOutcome PutProcurementPortalPreference(
+      const Model::PutProcurementPortalPreferenceRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutProcurementPortalPreference that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutProcurementPortalPreferenceRequestT = Model::PutProcurementPortalPreferenceRequest>
+  Model::PutProcurementPortalPreferenceOutcomeCallable PutProcurementPortalPreferenceCallable(
+      const PutProcurementPortalPreferenceRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::PutProcurementPortalPreference, request);
+  }
+
+  /**
+   * An Async wrapper for PutProcurementPortalPreference that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutProcurementPortalPreferenceRequestT = Model::PutProcurementPortalPreferenceRequest>
+  void PutProcurementPortalPreferenceAsync(const PutProcurementPortalPreferenceRequestT& request,
+                                           const PutProcurementPortalPreferenceResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::PutProcurementPortalPreference, request, handler, context);
   }
 
   /**
@@ -384,6 +567,37 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   void UpdateInvoiceUnitAsync(const UpdateInvoiceUnitRequestT& request, const UpdateInvoiceUnitResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&InvoicingClient::UpdateInvoiceUnit, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the status of a procurement portal preference, including the
+   * activation state of e-invoice delivery and purchase order retrieval
+   * features.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateProcurementPortalPreferenceStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProcurementPortalPreferenceStatusOutcome UpdateProcurementPortalPreferenceStatus(
+      const Model::UpdateProcurementPortalPreferenceStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProcurementPortalPreferenceStatus that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateProcurementPortalPreferenceStatusRequestT = Model::UpdateProcurementPortalPreferenceStatusRequest>
+  Model::UpdateProcurementPortalPreferenceStatusOutcomeCallable UpdateProcurementPortalPreferenceStatusCallable(
+      const UpdateProcurementPortalPreferenceStatusRequestT& request) const {
+    return SubmitCallable(&InvoicingClient::UpdateProcurementPortalPreferenceStatus, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProcurementPortalPreferenceStatus that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateProcurementPortalPreferenceStatusRequestT = Model::UpdateProcurementPortalPreferenceStatusRequest>
+  void UpdateProcurementPortalPreferenceStatusAsync(const UpdateProcurementPortalPreferenceStatusRequestT& request,
+                                                    const UpdateProcurementPortalPreferenceStatusResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&InvoicingClient::UpdateProcurementPortalPreferenceStatus, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

@@ -162,9 +162,9 @@ class CreateCapacityReservationRequest : public EC2Request {
   /**
    * <p>The number of instances for which to reserve capacity.</p>  <p>You can
    * request future-dated Capacity Reservations for an instance count with a minimum
-   * of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for
-   * <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16
-   * * m5.xlarge = 64 vCPUs</i>).</p>  <p>Valid range: 1 - 1000</p>
+   * of 32 vCPUs. For example, if you request a future-dated Capacity Reservation for
+   * <code>m5.xlarge</code> instances, you must request at least 8 instances (<i>8 *
+   * m5.xlarge = 32 vCPUs</i>).</p>  <p>Valid range: 1 - 1000</p>
    */
   inline int GetInstanceCount() const { return m_instanceCount; }
   inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }

@@ -29,6 +29,7 @@
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/UpgradeRolloutOrder.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 
 #include <utility>
@@ -395,6 +396,26 @@ class DBInstance {
   template <typename PreferredMaintenanceWindowT = Aws::String>
   DBInstance& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) {
     SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This data type represents the order in which the instances are upgraded.</p>
+   * <ul> <li> <p>[first] - Typically used for development or testing
+   * environments.</p> </li> <li> <p>[second] - Default order for resources not
+   * specifically configured.</p> </li> <li> <p>[last] - Usually reserved for
+   * production environments.</p> </li> </ul>
+   */
+  inline UpgradeRolloutOrder GetUpgradeRolloutOrder() const { return m_upgradeRolloutOrder; }
+  inline bool UpgradeRolloutOrderHasBeenSet() const { return m_upgradeRolloutOrderHasBeenSet; }
+  inline void SetUpgradeRolloutOrder(UpgradeRolloutOrder value) {
+    m_upgradeRolloutOrderHasBeenSet = true;
+    m_upgradeRolloutOrder = value;
+  }
+  inline DBInstance& WithUpgradeRolloutOrder(UpgradeRolloutOrder value) {
+    SetUpgradeRolloutOrder(value);
     return *this;
   }
   ///@}
@@ -1869,6 +1890,9 @@ class DBInstance {
 
   Aws::String m_preferredMaintenanceWindow;
   bool m_preferredMaintenanceWindowHasBeenSet = false;
+
+  UpgradeRolloutOrder m_upgradeRolloutOrder{UpgradeRolloutOrder::NOT_SET};
+  bool m_upgradeRolloutOrderHasBeenSet = false;
 
   PendingModifiedValues m_pendingModifiedValues;
   bool m_pendingModifiedValuesHasBeenSet = false;
