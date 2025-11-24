@@ -139,6 +139,16 @@ DistributionConfig& DistributionConfig::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionModeNode.GetText()).c_str()));
       m_connectionModeHasBeenSet = true;
     }
+    XmlNode viewerMtlsConfigNode = resultNode.FirstChild("ViewerMtlsConfig");
+    if (!viewerMtlsConfigNode.IsNull()) {
+      m_viewerMtlsConfig = viewerMtlsConfigNode;
+      m_viewerMtlsConfigHasBeenSet = true;
+    }
+    XmlNode connectionFunctionAssociationNode = resultNode.FirstChild("ConnectionFunctionAssociation");
+    if (!connectionFunctionAssociationNode.IsNull()) {
+      m_connectionFunctionAssociation = connectionFunctionAssociationNode;
+      m_connectionFunctionAssociationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -260,6 +270,16 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const {
   if (m_connectionModeHasBeenSet) {
     XmlNode connectionModeNode = parentNode.CreateChildElement("ConnectionMode");
     connectionModeNode.SetText(ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
+  }
+
+  if (m_viewerMtlsConfigHasBeenSet) {
+    XmlNode viewerMtlsConfigNode = parentNode.CreateChildElement("ViewerMtlsConfig");
+    m_viewerMtlsConfig.AddToNode(viewerMtlsConfigNode);
+  }
+
+  if (m_connectionFunctionAssociationHasBeenSet) {
+    XmlNode connectionFunctionAssociationNode = parentNode.CreateChildElement("ConnectionFunctionAssociation");
+    m_connectionFunctionAssociation.AddToNode(connectionFunctionAssociationNode);
   }
 }
 

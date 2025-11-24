@@ -7,6 +7,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/CacheBehaviors.h>
+#include <aws/cloudfront/model/ConnectionFunctionAssociation.h>
 #include <aws/cloudfront/model/ConnectionMode.h>
 #include <aws/cloudfront/model/CustomErrorResponses.h>
 #include <aws/cloudfront/model/DefaultCacheBehavior.h>
@@ -18,6 +19,7 @@
 #include <aws/cloudfront/model/Restrictions.h>
 #include <aws/cloudfront/model/TenantConfig.h>
 #include <aws/cloudfront/model/ViewerCertificate.h>
+#include <aws/cloudfront/model/ViewerMtlsConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -573,6 +575,42 @@ class DistributionConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The distribution's viewer mTLS configuration.</p>
+   */
+  inline const ViewerMtlsConfig& GetViewerMtlsConfig() const { return m_viewerMtlsConfig; }
+  inline bool ViewerMtlsConfigHasBeenSet() const { return m_viewerMtlsConfigHasBeenSet; }
+  template <typename ViewerMtlsConfigT = ViewerMtlsConfig>
+  void SetViewerMtlsConfig(ViewerMtlsConfigT&& value) {
+    m_viewerMtlsConfigHasBeenSet = true;
+    m_viewerMtlsConfig = std::forward<ViewerMtlsConfigT>(value);
+  }
+  template <typename ViewerMtlsConfigT = ViewerMtlsConfig>
+  DistributionConfig& WithViewerMtlsConfig(ViewerMtlsConfigT&& value) {
+    SetViewerMtlsConfig(std::forward<ViewerMtlsConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The distribution's connection function association.</p>
+   */
+  inline const ConnectionFunctionAssociation& GetConnectionFunctionAssociation() const { return m_connectionFunctionAssociation; }
+  inline bool ConnectionFunctionAssociationHasBeenSet() const { return m_connectionFunctionAssociationHasBeenSet; }
+  template <typename ConnectionFunctionAssociationT = ConnectionFunctionAssociation>
+  void SetConnectionFunctionAssociation(ConnectionFunctionAssociationT&& value) {
+    m_connectionFunctionAssociationHasBeenSet = true;
+    m_connectionFunctionAssociation = std::forward<ConnectionFunctionAssociationT>(value);
+  }
+  template <typename ConnectionFunctionAssociationT = ConnectionFunctionAssociation>
+  DistributionConfig& WithConnectionFunctionAssociation(ConnectionFunctionAssociationT&& value) {
+    SetConnectionFunctionAssociation(std::forward<ConnectionFunctionAssociationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_callerReference;
   bool m_callerReferenceHasBeenSet = false;
@@ -639,6 +677,12 @@ class DistributionConfig {
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
   bool m_connectionModeHasBeenSet = false;
+
+  ViewerMtlsConfig m_viewerMtlsConfig;
+  bool m_viewerMtlsConfigHasBeenSet = false;
+
+  ConnectionFunctionAssociation m_connectionFunctionAssociation;
+  bool m_connectionFunctionAssociationHasBeenSet = false;
 };
 
 }  // namespace Model

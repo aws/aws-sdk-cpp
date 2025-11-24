@@ -215,6 +215,7 @@ class PutDestinationPolicyRequest;
 class PutIndexPolicyRequest;
 class PutIntegrationRequest;
 class PutLogEventsRequest;
+class PutLogGroupDeletionProtectionRequest;
 class PutMetricFilterRequest;
 class PutQueryDefinitionRequest;
 class PutResourcePolicyRequest;
@@ -312,6 +313,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutDestinationPo
 typedef Aws::Utils::Outcome<PutIndexPolicyResult, CloudWatchLogsError> PutIndexPolicyOutcome;
 typedef Aws::Utils::Outcome<PutIntegrationResult, CloudWatchLogsError> PutIntegrationOutcome;
 typedef Aws::Utils::Outcome<PutLogEventsResult, CloudWatchLogsError> PutLogEventsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutLogGroupDeletionProtectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutMetricFilterOutcome;
 typedef Aws::Utils::Outcome<PutQueryDefinitionResult, CloudWatchLogsError> PutQueryDefinitionOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, CloudWatchLogsError> PutResourcePolicyOutcome;
@@ -409,6 +411,7 @@ typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCall
 typedef std::future<PutIndexPolicyOutcome> PutIndexPolicyOutcomeCallable;
 typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
 typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
+typedef std::future<PutLogGroupDeletionProtectionOutcome> PutLogGroupDeletionProtectionOutcomeCallable;
 typedef std::future<PutMetricFilterOutcome> PutMetricFilterOutcomeCallable;
 typedef std::future<PutQueryDefinitionOutcome> PutQueryDefinitionOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -668,6 +671,10 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::PutIntegrat
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLogEventsResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogGroupDeletionProtectionRequest&,
+                           const Model::PutLogGroupDeletionProtectionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutLogGroupDeletionProtectionResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutMetricFilterResponseReceivedHandler;

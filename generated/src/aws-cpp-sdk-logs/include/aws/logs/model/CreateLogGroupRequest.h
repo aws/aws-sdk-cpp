@@ -133,6 +133,25 @@ class CreateLogGroupRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use this parameter to enable deletion protection for the new log group. When
+   * enabled on a log group, deletion protection blocks all deletion operations until
+   * it is explicitly disabled. By default log groups are created without deletion
+   * protection enabled.</p>
+   */
+  inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
+  inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
+  inline void SetDeletionProtectionEnabled(bool value) {
+    m_deletionProtectionEnabledHasBeenSet = true;
+    m_deletionProtectionEnabled = value;
+  }
+  inline CreateLogGroupRequest& WithDeletionProtectionEnabled(bool value) {
+    SetDeletionProtectionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupName;
   bool m_logGroupNameHasBeenSet = false;
@@ -145,6 +164,9 @@ class CreateLogGroupRequest : public CloudWatchLogsRequest {
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
   bool m_logGroupClassHasBeenSet = false;
+
+  bool m_deletionProtectionEnabled{false};
+  bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model
