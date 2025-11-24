@@ -163,6 +163,7 @@ namespace client
             identityParams.serviceName = m_serviceName;
             identityParams.operation = ctx.m_requestName;
             identityParams.region = m_clientConfiguration.region;
+            identityParams.authPreferences = m_clientConfiguration.authPreferences;
 
             if (ctx.m_pRequest) {
                 // refactor once auth scheme resolver will use it's own rule set

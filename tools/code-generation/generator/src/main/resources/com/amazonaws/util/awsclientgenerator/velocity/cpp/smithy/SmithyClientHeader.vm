@@ -18,13 +18,16 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 \#include <smithy/client/AwsSmithyClient.h>
-#if($serviceModel.hasOnlyBearerAuth())
-\#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+#if($serviceModel.hasBearerAuth())
 \#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
-#else
-\#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#end
+#if($serviceModel.hasSigV4Auth())
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #end
+#if($serviceModel.hasSigV4aAuth())
+\#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
+#end
+\#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 \#include <smithy/client/serializer/${serializer}.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 
@@ -45,7 +48,7 @@ namespace ${serviceNamespace}
   class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
     smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
-      smithy::${AuthSchemeResolver}<>,
+      smithy::AuthSchemeResolverBase<>,
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,

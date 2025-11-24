@@ -736,24 +736,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private void selectAuthschemeResolver(final ServiceModel serviceModel, VelocityContext context)
     {
-        if(serviceModel.getAuthSchemes().size() > 1)
+        //Ensure we support this auth
+        Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
+        if(firstAuthScheme.isPresent())
         {
-            context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
+            context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
         }
         else
         {
-            Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-
-            if(firstAuthScheme.isPresent())
-            {
-                context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
-            }
-            else
-            {
-                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())));
-            }
+            throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())));
         }
         context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+        context.put("AuthSchemeOptions", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemeOptions).collect(Collectors.joining(",")));
     }
 
     protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i, Optional<String> templateFile) {
@@ -765,6 +759,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("CppViewHelper", CppViewHelper.class);
         selectAuthschemeResolver(serviceModel, context);
         context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModel));
+        context.put("AuthSchemes", getSupportedAuthSchemes(serviceModel));
 
         final String fileName;
         if (i == 0) {
@@ -811,6 +806,13 @@ public abstract class CppClientGenerator implements ClientGenerator {
         throw new RuntimeException(String.format("Unsupported authScheme '%s'", authSchemeName));
     }
 
+    protected String mapAuthSchemeOptions(final String authSchemeName) {
+        if (SchemeIdMapping.containsKey(authSchemeName)) {
+            return SchemeIdMapping.get(authSchemeName);
+        }
+        throw new RuntimeException(String.format("Unsupported authScheme '%s'", authSchemeName));
+    }
+
 
     private static final Map<String, String> SchemeIdMapping = ImmutableMap.of(
             "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
@@ -822,11 +824,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
     );
 
     protected static final Map<String, String> ResolverMapping = ImmutableMap.of(
-            "aws.auth#sigv4", "SigV4AuthSchemeResolver",
-            "aws.auth#sigv4a", "SigV4aAuthSchemeResolver",
-            "bearer", "BearerTokenAuthSchemeResolver",
-            "v4", "SigV4AuthSchemeResolver",
-            "v2", "SigV4AuthSchemeResolver"
+            "aws.auth#sigv4", "GenericAuthSchemeResolver",
+            "aws.auth#sigv4a", "GenericAuthSchemeResolver",
+            "bearer", "GenericAuthSchemeResolver",
+            "v4", "GenericAuthSchemeResolver",
+            "v2", "GenericAuthSchemeResolver"
     );
 
 
