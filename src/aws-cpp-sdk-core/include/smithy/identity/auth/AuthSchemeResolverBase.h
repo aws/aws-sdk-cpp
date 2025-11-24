@@ -18,12 +18,12 @@ static const char BEARER_PREFERENCE[] = "bearer";
 static const char NO_AUTH_PREFERENCE[] = "noauth";
 
 // Global map from auth scheme name (trimmed ID) to full ID for case insensitive lookup
-static const Aws::Array<std::pair<const char*, const char*>, 4> AUTH_SCHEME_NAME_TO_ID = {
+static const Aws::Array<std::pair<const char*, const char*>, 4> AUTH_SCHEME_NAME_TO_ID = {{
     std::make_pair(SIGV4_PREFERENCE, "aws.auth#sigv4"),
     std::make_pair(SIGV4A_PREFERENCE, "aws.auth#sigv4a"),
     std::make_pair(BEARER_PREFERENCE, "smithy.api#HTTPBearerAuth"),
     std::make_pair(NO_AUTH_PREFERENCE, "smithy.api#noAuth")
-};
+}};
 
 /**
 * A base interface for code-generated interfaces for passing in the data required for determining the
