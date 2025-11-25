@@ -260,6 +260,24 @@ class LogGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether deletion protection is enabled for this log group. When
+   * enabled, deletion protection blocks all deletion operations until it is
+   * explicitly disabled.</p>
+   */
+  inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
+  inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
+  inline void SetDeletionProtectionEnabled(bool value) {
+    m_deletionProtectionEnabledHasBeenSet = true;
+    m_deletionProtectionEnabled = value;
+  }
+  inline LogGroup& WithDeletionProtectionEnabled(bool value) {
+    SetDeletionProtectionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupName;
   bool m_logGroupNameHasBeenSet = false;
@@ -293,6 +311,9 @@ class LogGroup {
 
   Aws::String m_logGroupArn;
   bool m_logGroupArnHasBeenSet = false;
+
+  bool m_deletionProtectionEnabled{false};
+  bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model
