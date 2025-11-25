@@ -50,6 +50,10 @@ class ListAccountsWithInvalidEffectivePolicyRequest : public OrganizationsReques
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
    * </p> </li> </ul>
    */
   inline EffectivePolicyType GetPolicyType() const { return m_policyType; }

@@ -25,6 +25,8 @@ static const int DECLARATIVE_POLICY_EC2_HASH = HashingUtils::HashString("DECLARA
 static const int SECURITYHUB_POLICY_HASH = HashingUtils::HashString("SECURITYHUB_POLICY");
 static const int INSPECTOR_POLICY_HASH = HashingUtils::HashString("INSPECTOR_POLICY");
 static const int UPGRADE_ROLLOUT_POLICY_HASH = HashingUtils::HashString("UPGRADE_ROLLOUT_POLICY");
+static const int BEDROCK_POLICY_HASH = HashingUtils::HashString("BEDROCK_POLICY");
+static const int S3_POLICY_HASH = HashingUtils::HashString("S3_POLICY");
 
 PolicyType GetPolicyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +50,10 @@ PolicyType GetPolicyTypeForName(const Aws::String& name) {
     return PolicyType::INSPECTOR_POLICY;
   } else if (hashCode == UPGRADE_ROLLOUT_POLICY_HASH) {
     return PolicyType::UPGRADE_ROLLOUT_POLICY;
+  } else if (hashCode == BEDROCK_POLICY_HASH) {
+    return PolicyType::BEDROCK_POLICY;
+  } else if (hashCode == S3_POLICY_HASH) {
+    return PolicyType::S3_POLICY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +88,10 @@ Aws::String GetNameForPolicyType(PolicyType enumValue) {
       return "INSPECTOR_POLICY";
     case PolicyType::UPGRADE_ROLLOUT_POLICY:
       return "UPGRADE_ROLLOUT_POLICY";
+    case PolicyType::BEDROCK_POLICY:
+      return "BEDROCK_POLICY";
+    case PolicyType::S3_POLICY:
+      return "S3_POLICY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

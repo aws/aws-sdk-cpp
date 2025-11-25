@@ -275,6 +275,38 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Attaches <a>ProxyRuleGroup</a> resources to a <a>ProxyConfiguration</a> </p>
+   * <p>A Proxy Configuration defines the monitoring and protection behavior for a
+   * Proxy. The details of the behavior are defined in the rule groups that you add
+   * to your configuration. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachRuleGroupsToProxyConfigurationOutcome AttachRuleGroupsToProxyConfiguration(
+      const Model::AttachRuleGroupsToProxyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachRuleGroupsToProxyConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename AttachRuleGroupsToProxyConfigurationRequestT = Model::AttachRuleGroupsToProxyConfigurationRequest>
+  Model::AttachRuleGroupsToProxyConfigurationOutcomeCallable AttachRuleGroupsToProxyConfigurationCallable(
+      const AttachRuleGroupsToProxyConfigurationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::AttachRuleGroupsToProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for AttachRuleGroupsToProxyConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename AttachRuleGroupsToProxyConfigurationRequestT = Model::AttachRuleGroupsToProxyConfigurationRequest>
+  void AttachRuleGroupsToProxyConfigurationAsync(const AttachRuleGroupsToProxyConfigurationRequestT& request,
+                                                 const AttachRuleGroupsToProxyConfigurationResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::AttachRuleGroupsToProxyConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
    * <a>FirewallStatus</a> for a VPC. </p> <p>The firewall defines the configuration
    * settings for an Network Firewall firewall. The settings that you can define at
@@ -342,6 +374,133 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   void CreateFirewallPolicyAsync(const CreateFirewallPolicyRequestT& request, const CreateFirewallPolicyResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::CreateFirewallPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Network Firewall <a>Proxy</a> </p> <p>Attaches a Proxy
+   * configuration to a NAT Gateway. </p> <p>To manage a proxy's tags, use the
+   * standard Amazon Web Services resource tagging operations,
+   * <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.</p>
+   * <p>To retrieve information about proxies, use <a>ListProxies</a> and
+   * <a>DescribeProxy</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProxyOutcome CreateProxy(const Model::CreateProxyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProxy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateProxyRequestT = Model::CreateProxyRequest>
+  Model::CreateProxyOutcomeCallable CreateProxyCallable(const CreateProxyRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateProxy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProxy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateProxyRequestT = Model::CreateProxyRequest>
+  void CreateProxyAsync(const CreateProxyRequestT& request, const CreateProxyResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateProxy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Network Firewall <a>ProxyConfiguration</a> </p> <p>A Proxy
+   * Configuration defines the monitoring and protection behavior for a Proxy. The
+   * details of the behavior are defined in the rule groups that you add to your
+   * configuration. </p> <p>To manage a proxy configuration's tags, use the standard
+   * Amazon Web Services resource tagging operations, <a>ListTagsForResource</a>,
+   * <a>TagResource</a>, and <a>UntagResource</a>.</p> <p>To retrieve information
+   * about proxies, use <a>ListProxyConfigurations</a> and
+   * <a>DescribeProxyConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProxyConfigurationOutcome CreateProxyConfiguration(const Model::CreateProxyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProxyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateProxyConfigurationRequestT = Model::CreateProxyConfigurationRequest>
+  Model::CreateProxyConfigurationOutcomeCallable CreateProxyConfigurationCallable(const CreateProxyConfigurationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProxyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateProxyConfigurationRequestT = Model::CreateProxyConfigurationRequest>
+  void CreateProxyConfigurationAsync(const CreateProxyConfigurationRequestT& request,
+                                     const CreateProxyConfigurationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateProxyConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Network Firewall <a>ProxyRuleGroup</a> </p> <p>Collections of
+   * related proxy filtering rules. Rule groups help you manage and reuse sets of
+   * rules across multiple proxy configurations. </p> <p>To manage a proxy rule
+   * group's tags, use the standard Amazon Web Services resource tagging operations,
+   * <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.</p>
+   * <p>To retrieve information about proxy rule groups, use
+   * <a>ListProxyRuleGroups</a> and <a>DescribeProxyRuleGroup</a>.</p> <p>To retrieve
+   * information about individual proxy rules, use <a>DescribeProxyRuleGroup</a> and
+   * <a>DescribeProxyRule</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProxyRuleGroupOutcome CreateProxyRuleGroup(const Model::CreateProxyRuleGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProxyRuleGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateProxyRuleGroupRequestT = Model::CreateProxyRuleGroupRequest>
+  Model::CreateProxyRuleGroupOutcomeCallable CreateProxyRuleGroupCallable(const CreateProxyRuleGroupRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateProxyRuleGroup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProxyRuleGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateProxyRuleGroupRequestT = Model::CreateProxyRuleGroupRequest>
+  void CreateProxyRuleGroupAsync(const CreateProxyRuleGroupRequestT& request, const CreateProxyRuleGroupResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateProxyRuleGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Creates Network Firewall <a>ProxyRule</a> resources. </p> <p>Attaches new
+   * proxy rule(s) to an existing proxy rule group. </p> <p>To retrieve information
+   * about individual proxy rules, use <a>DescribeProxyRuleGroup</a> and
+   * <a>DescribeProxyRule</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProxyRulesOutcome CreateProxyRules(const Model::CreateProxyRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProxyRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateProxyRulesRequestT = Model::CreateProxyRulesRequest>
+  Model::CreateProxyRulesOutcomeCallable CreateProxyRulesCallable(const CreateProxyRulesRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateProxyRules, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProxyRules that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateProxyRulesRequestT = Model::CreateProxyRulesRequest>
+  void CreateProxyRulesAsync(const CreateProxyRulesRequestT& request, const CreateProxyRulesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateProxyRules, request, handler, context);
   }
 
   /**
@@ -551,6 +710,115 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
       const DeleteNetworkFirewallTransitGatewayAttachmentResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::DeleteNetworkFirewallTransitGatewayAttachment, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified <a>Proxy</a>. </p> <p>Detaches a Proxy configuration
+   * from a NAT Gateway. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProxyOutcome DeleteProxy(const Model::DeleteProxyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProxy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteProxyRequestT = Model::DeleteProxyRequest>
+  Model::DeleteProxyOutcomeCallable DeleteProxyCallable(const DeleteProxyRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteProxy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProxy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteProxyRequestT = Model::DeleteProxyRequest>
+  void DeleteProxyAsync(const DeleteProxyRequestT& request, const DeleteProxyResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteProxy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified <a>ProxyConfiguration</a>. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProxyConfigurationOutcome DeleteProxyConfiguration(const Model::DeleteProxyConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteProxyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteProxyConfigurationRequestT = Model::DeleteProxyConfigurationRequest>
+  Model::DeleteProxyConfigurationOutcomeCallable DeleteProxyConfigurationCallable(
+      const DeleteProxyConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProxyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteProxyConfigurationRequestT = Model::DeleteProxyConfigurationRequest>
+  void DeleteProxyConfigurationAsync(const DeleteProxyConfigurationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DeleteProxyConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteProxyConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified <a>ProxyRuleGroup</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProxyRuleGroupOutcome DeleteProxyRuleGroup(const Model::DeleteProxyRuleGroupRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteProxyRuleGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteProxyRuleGroupRequestT = Model::DeleteProxyRuleGroupRequest>
+  Model::DeleteProxyRuleGroupOutcomeCallable DeleteProxyRuleGroupCallable(const DeleteProxyRuleGroupRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteProxyRuleGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProxyRuleGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteProxyRuleGroupRequestT = Model::DeleteProxyRuleGroupRequest>
+  void DeleteProxyRuleGroupAsync(const DeleteProxyRuleGroupResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const DeleteProxyRuleGroupRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteProxyRuleGroup, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified <a>ProxyRule</a>(s). currently attached to a
+   * <a>ProxyRuleGroup</a> </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProxyRulesOutcome DeleteProxyRules(const Model::DeleteProxyRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProxyRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteProxyRulesRequestT = Model::DeleteProxyRulesRequest>
+  Model::DeleteProxyRulesOutcomeCallable DeleteProxyRulesCallable(const DeleteProxyRulesRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteProxyRules, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProxyRules that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteProxyRulesRequestT = Model::DeleteProxyRulesRequest>
+  void DeleteProxyRulesAsync(const DeleteProxyRulesRequestT& request, const DeleteProxyRulesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteProxyRules, request, handler, context);
   }
 
   /**
@@ -816,6 +1084,118 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Returns the data objects for the specified proxy. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeProxyOutcome DescribeProxy(const Model::DescribeProxyRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeProxy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeProxyRequestT = Model::DescribeProxyRequest>
+  Model::DescribeProxyOutcomeCallable DescribeProxyCallable(const DescribeProxyRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeProxy, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeProxy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeProxyRequestT = Model::DescribeProxyRequest>
+  void DescribeProxyAsync(const DescribeProxyResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const DescribeProxyRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeProxy, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the data objects for the specified proxy configuration.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeProxyConfigurationOutcome DescribeProxyConfiguration(
+      const Model::DescribeProxyConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeProxyConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeProxyConfigurationRequestT = Model::DescribeProxyConfigurationRequest>
+  Model::DescribeProxyConfigurationOutcomeCallable DescribeProxyConfigurationCallable(
+      const DescribeProxyConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeProxyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeProxyConfigurationRequestT = Model::DescribeProxyConfigurationRequest>
+  void DescribeProxyConfigurationAsync(const DescribeProxyConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const DescribeProxyConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeProxyConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the data objects for the specified proxy configuration for the
+   * specified proxy rule group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeProxyRuleOutcome DescribeProxyRule(const Model::DescribeProxyRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeProxyRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeProxyRuleRequestT = Model::DescribeProxyRuleRequest>
+  Model::DescribeProxyRuleOutcomeCallable DescribeProxyRuleCallable(const DescribeProxyRuleRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeProxyRule, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeProxyRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeProxyRuleRequestT = Model::DescribeProxyRuleRequest>
+  void DescribeProxyRuleAsync(const DescribeProxyRuleRequestT& request, const DescribeProxyRuleResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeProxyRule, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the data objects for the specified proxy rule group. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeProxyRuleGroupOutcome DescribeProxyRuleGroup(const Model::DescribeProxyRuleGroupRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeProxyRuleGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeProxyRuleGroupRequestT = Model::DescribeProxyRuleGroupRequest>
+  Model::DescribeProxyRuleGroupOutcomeCallable DescribeProxyRuleGroupCallable(const DescribeProxyRuleGroupRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeProxyRuleGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeProxyRuleGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeProxyRuleGroupRequestT = Model::DescribeProxyRuleGroupRequest>
+  void DescribeProxyRuleGroupAsync(const DescribeProxyRuleGroupResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const DescribeProxyRuleGroupRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeProxyRuleGroup, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a resource policy that you created in a <a>PutResourcePolicy</a>
    * request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeResourcePolicy">AWS
@@ -996,6 +1376,38 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                            const DescribeVpcEndpointAssociationResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::DescribeVpcEndpointAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Detaches <a>ProxyRuleGroup</a> resources from a <a>ProxyConfiguration</a>
+   * </p> <p>A Proxy Configuration defines the monitoring and protection behavior for
+   * a Proxy. The details of the behavior are defined in the rule groups that you add
+   * to your configuration. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DetachRuleGroupsFromProxyConfigurationOutcome DetachRuleGroupsFromProxyConfiguration(
+      const Model::DetachRuleGroupsFromProxyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DetachRuleGroupsFromProxyConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DetachRuleGroupsFromProxyConfigurationRequestT = Model::DetachRuleGroupsFromProxyConfigurationRequest>
+  Model::DetachRuleGroupsFromProxyConfigurationOutcomeCallable DetachRuleGroupsFromProxyConfigurationCallable(
+      const DetachRuleGroupsFromProxyConfigurationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::DetachRuleGroupsFromProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DetachRuleGroupsFromProxyConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DetachRuleGroupsFromProxyConfigurationRequestT = Model::DetachRuleGroupsFromProxyConfigurationRequest>
+  void DetachRuleGroupsFromProxyConfigurationAsync(const DetachRuleGroupsFromProxyConfigurationRequestT& request,
+                                                   const DetachRuleGroupsFromProxyConfigurationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::DetachRuleGroupsFromProxyConfiguration, request, handler, context);
   }
 
   /**
@@ -1242,6 +1654,93 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   void ListFlowOperationsAsync(const ListFlowOperationsRequestT& request, const ListFlowOperationsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::ListFlowOperations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for the proxies that you have defined. Depending on
+   * your setting for max results and the number of proxies, a single call might not
+   * return the full list. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProxiesOutcome ListProxies(const Model::ListProxiesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProxies that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListProxiesRequestT = Model::ListProxiesRequest>
+  Model::ListProxiesOutcomeCallable ListProxiesCallable(const ListProxiesRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListProxies, request);
+  }
+
+  /**
+   * An Async wrapper for ListProxies that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListProxiesRequestT = Model::ListProxiesRequest>
+  void ListProxiesAsync(const ListProxiesResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const ListProxiesRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListProxies, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for the proxy configuration that you have defined.
+   * Depending on your setting for max results and the number of proxy
+   * configurations, a single call might not return the full list. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProxyConfigurationsOutcome ListProxyConfigurations(const Model::ListProxyConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProxyConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListProxyConfigurationsRequestT = Model::ListProxyConfigurationsRequest>
+  Model::ListProxyConfigurationsOutcomeCallable ListProxyConfigurationsCallable(const ListProxyConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListProxyConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListProxyConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListProxyConfigurationsRequestT = Model::ListProxyConfigurationsRequest>
+  void ListProxyConfigurationsAsync(const ListProxyConfigurationsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListProxyConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListProxyConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for the proxy rule groups that you have defined.
+   * Depending on your setting for max results and the number of proxy rule groups, a
+   * single call might not return the full list. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProxyRuleGroupsOutcome ListProxyRuleGroups(const Model::ListProxyRuleGroupsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProxyRuleGroups that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListProxyRuleGroupsRequestT = Model::ListProxyRuleGroupsRequest>
+  Model::ListProxyRuleGroupsOutcomeCallable ListProxyRuleGroupsCallable(const ListProxyRuleGroupsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListProxyRuleGroups, request);
+  }
+
+  /**
+   * An Async wrapper for ListProxyRuleGroups that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListProxyRuleGroupsRequestT = Model::ListProxyRuleGroupsRequest>
+  void ListProxyRuleGroupsAsync(const ListProxyRuleGroupsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListProxyRuleGroupsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListProxyRuleGroups, request, handler, context);
   }
 
   /**
@@ -1877,6 +2376,144 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const UpdateLoggingConfigurationRequestT& request = {}) const {
     return SubmitAsync(&NetworkFirewallClient::UpdateLoggingConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of the specified proxy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxyOutcome UpdateProxy(const Model::UpdateProxyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProxy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateProxyRequestT = Model::UpdateProxyRequest>
+  Model::UpdateProxyOutcomeCallable UpdateProxyCallable(const UpdateProxyRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateProxyRequestT = Model::UpdateProxyRequest>
+  void UpdateProxyAsync(const UpdateProxyRequestT& request, const UpdateProxyResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxy, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of the specified proxy configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxyConfigurationOutcome UpdateProxyConfiguration(const Model::UpdateProxyConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProxyConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProxyConfigurationRequestT = Model::UpdateProxyConfigurationRequest>
+  Model::UpdateProxyConfigurationOutcomeCallable UpdateProxyConfigurationCallable(const UpdateProxyConfigurationRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxyConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxyConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProxyConfigurationRequestT = Model::UpdateProxyConfigurationRequest>
+  void UpdateProxyConfigurationAsync(const UpdateProxyConfigurationRequestT& request,
+                                     const UpdateProxyConfigurationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxyConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of the specified proxy rule.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxyRuleOutcome UpdateProxyRule(const Model::UpdateProxyRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProxyRule that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateProxyRuleRequestT = Model::UpdateProxyRuleRequest>
+  Model::UpdateProxyRuleOutcomeCallable UpdateProxyRuleCallable(const UpdateProxyRuleRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxyRule, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxyRule that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateProxyRuleRequestT = Model::UpdateProxyRuleRequest>
+  void UpdateProxyRuleAsync(const UpdateProxyRuleRequestT& request, const UpdateProxyRuleResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxyRule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates proxy rule group priorities within a proxy
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxyRuleGroupPrioritiesOutcome UpdateProxyRuleGroupPriorities(
+      const Model::UpdateProxyRuleGroupPrioritiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProxyRuleGroupPriorities that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateProxyRuleGroupPrioritiesRequestT = Model::UpdateProxyRuleGroupPrioritiesRequest>
+  Model::UpdateProxyRuleGroupPrioritiesOutcomeCallable UpdateProxyRuleGroupPrioritiesCallable(
+      const UpdateProxyRuleGroupPrioritiesRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxyRuleGroupPriorities, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxyRuleGroupPriorities that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateProxyRuleGroupPrioritiesRequestT = Model::UpdateProxyRuleGroupPrioritiesRequest>
+  void UpdateProxyRuleGroupPrioritiesAsync(const UpdateProxyRuleGroupPrioritiesRequestT& request,
+                                           const UpdateProxyRuleGroupPrioritiesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxyRuleGroupPriorities, request, handler, context);
+  }
+
+  /**
+   * <p>Updates proxy rule priorities within a proxy rule group.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProxyRulePrioritiesOutcome UpdateProxyRulePriorities(const Model::UpdateProxyRulePrioritiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProxyRulePriorities that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProxyRulePrioritiesRequestT = Model::UpdateProxyRulePrioritiesRequest>
+  Model::UpdateProxyRulePrioritiesOutcomeCallable UpdateProxyRulePrioritiesCallable(
+      const UpdateProxyRulePrioritiesRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateProxyRulePriorities, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProxyRulePriorities that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProxyRulePrioritiesRequestT = Model::UpdateProxyRulePrioritiesRequest>
+  void UpdateProxyRulePrioritiesAsync(const UpdateProxyRulePrioritiesRequestT& request,
+                                      const UpdateProxyRulePrioritiesResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateProxyRulePriorities, request, handler, context);
   }
 
   /**
