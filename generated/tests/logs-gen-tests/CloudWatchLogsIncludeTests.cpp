@@ -243,6 +243,7 @@
 #include <aws/logs/model/PutIntegrationResult.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/PutLogEventsResult.h>
+#include <aws/logs/model/PutLogGroupDeletionProtectionRequest.h>
 #include <aws/logs/model/PutMetricFilterRequest.h>
 #include <aws/logs/model/PutQueryDefinitionRequest.h>
 #include <aws/logs/model/PutQueryDefinitionResult.h>

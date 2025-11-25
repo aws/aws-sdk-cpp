@@ -98,6 +98,7 @@
 #include <aws/logs/model/PutIndexPolicyRequest.h>
 #include <aws/logs/model/PutIntegrationRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
+#include <aws/logs/model/PutLogGroupDeletionProtectionRequest.h>
 #include <aws/logs/model/PutMetricFilterRequest.h>
 #include <aws/logs/model/PutQueryDefinitionRequest.h>
 #include <aws/logs/model/PutResourcePolicyRequest.h>
@@ -2477,6 +2478,36 @@ PutLogEventsOutcome CloudWatchLogsClient::PutLogEvents(const PutLogEventsRequest
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLogEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return PutLogEventsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutLogGroupDeletionProtectionOutcome CloudWatchLogsClient::PutLogGroupDeletionProtection(
+    const PutLogGroupDeletionProtectionRequest& request) const {
+  AWS_OPERATION_GUARD(PutLogGroupDeletionProtection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLogGroupDeletionProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutLogGroupDeletionProtection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutLogGroupDeletionProtection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutLogGroupDeletionProtection",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutLogGroupDeletionProtectionOutcome>(
+      [&]() -> PutLogGroupDeletionProtectionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLogGroupDeletionProtection, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return PutLogGroupDeletionProtectionOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

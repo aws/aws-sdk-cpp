@@ -35,6 +35,10 @@ Aws::String CreateLogGroupRequest::SerializePayload() const {
     payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
+  if (m_deletionProtectionEnabledHasBeenSet) {
+    payload.WithBool("deletionProtectionEnabled", m_deletionProtectionEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

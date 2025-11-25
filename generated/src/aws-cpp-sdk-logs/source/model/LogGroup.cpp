@@ -67,6 +67,10 @@ LogGroup& LogGroup::operator=(JsonView jsonValue) {
     m_logGroupArn = jsonValue.GetString("logGroupArn");
     m_logGroupArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deletionProtectionEnabled")) {
+    m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
+    m_deletionProtectionEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -121,6 +125,10 @@ JsonValue LogGroup::Jsonize() const {
 
   if (m_logGroupArnHasBeenSet) {
     payload.WithString("logGroupArn", m_logGroupArn);
+  }
+
+  if (m_deletionProtectionEnabledHasBeenSet) {
+    payload.WithBool("deletionProtectionEnabled", m_deletionProtectionEnabled);
   }
 
   return payload;
