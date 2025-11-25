@@ -117,6 +117,17 @@ NatGateway& NatGateway::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoProvisionZonesNode.GetText()).c_str()));
       m_autoProvisionZonesHasBeenSet = true;
     }
+    XmlNode attachedAppliancesNode = resultNode.FirstChild("attachedApplianceSet");
+    if (!attachedAppliancesNode.IsNull()) {
+      XmlNode attachedAppliancesMember = attachedAppliancesNode.FirstChild("item");
+      m_attachedAppliancesHasBeenSet = !attachedAppliancesMember.IsNull();
+      while (!attachedAppliancesMember.IsNull()) {
+        m_attachedAppliances.push_back(attachedAppliancesMember);
+        attachedAppliancesMember = attachedAppliancesMember.NextNode("item");
+      }
+
+      m_attachedAppliancesHasBeenSet = true;
+    }
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if (!routeTableIdNode.IsNull()) {
       m_routeTableId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableIdNode.GetText());
@@ -210,6 +221,15 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
             << StringUtils::URLEncode(AutoProvisionZonesStateMapper::GetNameForAutoProvisionZonesState(m_autoProvisionZones)) << "&";
   }
 
+  if (m_attachedAppliancesHasBeenSet) {
+    unsigned attachedAppliancesIdx = 1;
+    for (auto& item : m_attachedAppliances) {
+      Aws::StringStream attachedAppliancesSs;
+      attachedAppliancesSs << location << index << locationValue << ".AttachedApplianceSet." << attachedAppliancesIdx++;
+      item.OutputToStream(oStream, attachedAppliancesSs.str().c_str());
+    }
+  }
+
   if (m_routeTableIdHasBeenSet) {
     oStream << location << index << locationValue << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
@@ -281,6 +301,14 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   if (m_autoProvisionZonesHasBeenSet) {
     oStream << location << ".AutoProvisionZones="
             << StringUtils::URLEncode(AutoProvisionZonesStateMapper::GetNameForAutoProvisionZonesState(m_autoProvisionZones)) << "&";
+  }
+  if (m_attachedAppliancesHasBeenSet) {
+    unsigned attachedAppliancesIdx = 1;
+    for (auto& item : m_attachedAppliances) {
+      Aws::StringStream attachedAppliancesSs;
+      attachedAppliancesSs << location << ".AttachedApplianceSet." << attachedAppliancesIdx++;
+      item.OutputToStream(oStream, attachedAppliancesSs.str().c_str());
+    }
   }
   if (m_routeTableIdHasBeenSet) {
     oStream << location << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";

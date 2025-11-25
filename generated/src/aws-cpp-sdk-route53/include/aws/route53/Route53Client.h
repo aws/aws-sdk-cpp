@@ -2616,6 +2616,37 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient, public A
   }
 
   /**
+   * <p>Updates the features configuration for a hosted zone. This operation allows
+   * you to enable or disable specific features for your hosted zone, such as
+   * accelerated recovery.</p> <p>Accelerated recovery enables you to update DNS
+   * records in your public hosted zone even when the us-east-1 region is
+   * unavailable.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateHostedZoneFeaturesOutcome UpdateHostedZoneFeatures(const Model::UpdateHostedZoneFeaturesRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateHostedZoneFeatures that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateHostedZoneFeaturesRequestT = Model::UpdateHostedZoneFeaturesRequest>
+  Model::UpdateHostedZoneFeaturesOutcomeCallable UpdateHostedZoneFeaturesCallable(const UpdateHostedZoneFeaturesRequestT& request) const {
+    return SubmitCallable(&Route53Client::UpdateHostedZoneFeatures, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateHostedZoneFeatures that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateHostedZoneFeaturesRequestT = Model::UpdateHostedZoneFeaturesRequest>
+  void UpdateHostedZoneFeaturesAsync(const UpdateHostedZoneFeaturesRequestT& request,
+                                     const UpdateHostedZoneFeaturesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::UpdateHostedZoneFeatures, request, handler, context);
+  }
+
+  /**
    * <p>Updates the comment for a specified traffic policy version.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">AWS

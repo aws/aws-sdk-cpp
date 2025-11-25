@@ -88,6 +88,7 @@
 #include <aws/route53/model/TestDNSAnswerRequest.h>
 #include <aws/route53/model/UpdateHealthCheckRequest.h>
 #include <aws/route53/model/UpdateHostedZoneCommentRequest.h>
+#include <aws/route53/model/UpdateHostedZoneFeaturesRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -2569,6 +2570,43 @@ UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const Upda
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         return UpdateHostedZoneCommentOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateHostedZoneFeaturesOutcome Route53Client::UpdateHostedZoneFeatures(const UpdateHostedZoneFeaturesRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateHostedZoneFeatures);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHostedZoneFeatures, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateHostedZoneFeatures", "Required field: HostedZoneId, is not set");
+    return UpdateHostedZoneFeaturesOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [HostedZoneId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateHostedZoneFeatures, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateHostedZoneFeatures, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateHostedZoneFeaturesOutcome>(
+      [&]() -> UpdateHostedZoneFeaturesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateHostedZoneFeatures, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/features");
+        return UpdateHostedZoneFeaturesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

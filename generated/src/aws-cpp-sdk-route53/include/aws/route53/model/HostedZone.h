@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/HostedZoneConfig.h>
+#include <aws/route53/model/HostedZoneFeatures.h>
 #include <aws/route53/model/LinkedService.h>
 
 #include <utility>
@@ -152,6 +153,25 @@ class HostedZone {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The features configuration for the hosted zone, including accelerated
+   * recovery settings and status information.</p>
+   */
+  inline const HostedZoneFeatures& GetFeatures() const { return m_features; }
+  inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
+  template <typename FeaturesT = HostedZoneFeatures>
+  void SetFeatures(FeaturesT&& value) {
+    m_featuresHasBeenSet = true;
+    m_features = std::forward<FeaturesT>(value);
+  }
+  template <typename FeaturesT = HostedZoneFeatures>
+  HostedZone& WithFeatures(FeaturesT&& value) {
+    SetFeatures(std::forward<FeaturesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
   bool m_idHasBeenSet = false;
@@ -170,6 +190,9 @@ class HostedZone {
 
   LinkedService m_linkedService;
   bool m_linkedServiceHasBeenSet = false;
+
+  HostedZoneFeatures m_features;
+  bool m_featuresHasBeenSet = false;
 };
 
 }  // namespace Model

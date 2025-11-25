@@ -54,6 +54,11 @@ HostedZone& HostedZone::operator=(const XmlNode& xmlNode) {
       m_linkedService = linkedServiceNode;
       m_linkedServiceHasBeenSet = true;
     }
+    XmlNode featuresNode = resultNode.FirstChild("Features");
+    if (!featuresNode.IsNull()) {
+      m_features = featuresNode;
+      m_featuresHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -91,6 +96,11 @@ void HostedZone::AddToNode(XmlNode& parentNode) const {
   if (m_linkedServiceHasBeenSet) {
     XmlNode linkedServiceNode = parentNode.CreateChildElement("LinkedService");
     m_linkedService.AddToNode(linkedServiceNode);
+  }
+
+  if (m_featuresHasBeenSet) {
+    XmlNode featuresNode = parentNode.CreateChildElement("Features");
+    m_features.AddToNode(featuresNode);
   }
 }
 

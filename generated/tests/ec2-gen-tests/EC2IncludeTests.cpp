@@ -2094,6 +2094,10 @@
 #include <aws/ec2/model/NatGateway.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
 #include <aws/ec2/model/NatGatewayAddressStatus.h>
+#include <aws/ec2/model/NatGatewayApplianceModifyState.h>
+#include <aws/ec2/model/NatGatewayApplianceState.h>
+#include <aws/ec2/model/NatGatewayApplianceType.h>
+#include <aws/ec2/model/NatGatewayAttachedAppliance.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/NativeApplicationOidcOptions.h>
 #include <aws/ec2/model/NetworkAcl.h>
