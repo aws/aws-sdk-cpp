@@ -2,7 +2,7 @@ include(sdksCommon)
 
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
-set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
+set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer transfer-crt)  ## Manually generated code with a name mimicking client name
 
 if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
