@@ -2328,6 +2328,40 @@ TEST_P(TransferTests, TransferManager_TestRelativePrefix)
     }
 }
 
+TEST_P(TransferTests, TransferManager_ContentRangeVerificationTest)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String testFileName = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(testFileName, MEDIUM_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Clients[GetParam()];
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> uploadPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    uploadPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, uploadPtr->GetStatus());
+    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
+
+    auto downloadFileName = MakeDownloadFileName(RandomFileName);
+    auto createStreamFn = [=](){
+#ifdef _MSC_VER
+        return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#else
+        return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#endif
+    };
+
+    uint64_t offset = 1024;
+    uint64_t partSize = 2048;
+    std::shared_ptr<TransferHandle> downloadPtr = transferManager->DownloadFile(GetTestBucketName(), RandomFileName, offset, partSize, createStreamFn);
+    
+    downloadPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+    ASSERT_EQ(partSize, downloadPtr->GetBytesTotalSize());
+    ASSERT_EQ(partSize, downloadPtr->GetBytesTransferred());
+}
+
 INSTANTIATE_TEST_SUITE_P(Https, TransferTests, testing::Values(TestType::Https));
 INSTANTIATE_TEST_SUITE_P(Http, TransferTests, testing::Values(TestType::Http));
 
