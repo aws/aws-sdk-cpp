@@ -860,6 +860,35 @@ namespace Aws
             return rangeStream.str();
         }
 
+        static bool VerifyContentRange(const Aws::String& requestedRange, const Aws::String& responseContentRange)
+        {
+            if (requestedRange.empty() || responseContentRange.empty())
+            {
+                return false;
+            }
+
+            const auto requestPrefix = "bytes=";
+            if (requestedRange.substr(0, strlen(requestPrefix)) != requestPrefix)
+            {
+                return false;
+            }
+            Aws::String requestRange = requestedRange.substr(strlen(requestPrefix));
+
+            const auto responsePrefix = "bytes ";
+            if (responseContentRange.substr(0, strlen(responsePrefix)) != responsePrefix)
+            {
+                return false;
+            }
+            Aws::String responseRange = responseContentRange.substr(strlen(responsePrefix));
+            size_t slashPos = responseRange.find('/');
+            if (slashPos != Aws::String::npos)
+            {
+                responseRange = responseRange.substr(0, slashPos);
+            }
+
+            return requestRange == responseRange;
+        }
+
         void TransferManager::DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             auto queuedParts = handle->GetQueuedParts();
@@ -1126,7 +1155,6 @@ namespace Aws
                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
             AWS_UNREFERENCED_PARAM(client);
-            AWS_UNREFERENCED_PARAM(request);
 
             std::shared_ptr<TransferHandleAsyncContext> transferContext =
                 std::const_pointer_cast<TransferHandleAsyncContext>(std::static_pointer_cast<const TransferHandleAsyncContext>(context));
@@ -1143,8 +1171,32 @@ namespace Aws
                 handle->SetError(outcome.GetError());
                 TriggerErrorCallback(handle, outcome.GetError());
             }
-            else
+            else if (request.RangeHasBeenSet())
             {
+                const auto& requestedRange = request.GetRange();
+                const auto& responseContentRange = outcome.GetResult().GetContentRange();
+
+                if (responseContentRange.empty() || !VerifyContentRange(requestedRange, responseContentRange)) {
+                    Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                   "ContentRangeMismatch",
+                                                                   "ContentRange in response does not match requested range",
+                                                                   false);
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] ContentRange mismatch. Requested: [" << requestedRange
+                            << "] Received: [" << responseContentRange << "]");
+                    handle->ChangePartToFailed(partState);
+                    handle->SetError(error);
+                    TriggerErrorCallback(handle, error);
+                    handle->Cancel();
+
+                    if(partState->GetDownloadBuffer())
+                    {
+                        m_bufferManager.Release(partState->GetDownloadBuffer());
+                        partState->SetDownloadBuffer(nullptr);
+                    }
+                    return;
+                }
+
                 if(handle->ShouldContinue())
                 {
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
