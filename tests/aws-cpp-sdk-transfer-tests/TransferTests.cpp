@@ -9,6 +9,7 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
+#include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
@@ -158,6 +159,21 @@ public:
         EXPECT_STREQ("nestedTest", request.GetPrefix().c_str());
         listObjectsV2RequestCount++;
         return S3Client::ListObjectsV2(request);
+    }
+
+    // Override to verify checksum is being sent
+    Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const override
+    {
+        AWS_LOGSTREAM_INFO("TransferTests", "=== CompleteMultipartUpload Request ===");
+        AWS_LOGSTREAM_INFO("TransferTests", "Available ChecksumAlgorithm enum values:");
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumType: " << (int)request.GetChecksumType());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC32: " << request.GetChecksumCRC32());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC32C: " << request.GetChecksumCRC32C());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumCRC64NVME: " << request.GetChecksumCRC64NVME());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumSHA1: " << request.GetChecksumSHA1());
+        AWS_LOGSTREAM_INFO("TransferTests", "ChecksumSHA256: " << request.GetChecksumSHA256());
+        AWS_LOGSTREAM_INFO("TransferTests", "=======================================");
+        return S3Client::CompleteMultipartUpload(request);
     }
 
     // m_executor in Base class is private, we need our own one.
