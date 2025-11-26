@@ -27,16 +27,16 @@ namespace Model {
  * see <a
  * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
  * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
- * Guide</i>.</p>  <p>You cannot create recommendation preferences for Auto
- * Scaling groups at the organization and account levels. You can create
- * recommendation preferences for Auto Scaling groups only at the resource level by
- * specifying a scope name of <code>ResourceArn</code> and a scope value of the
- * Auto Scaling group Amazon Resource Name (ARN). This will configure the
- * preference for all instances that are part of the specified Auto Scaling group.
- * You also cannot create recommendation preferences at the resource level for
- * instances that are part of an Auto Scaling group. You can create recommendation
- * preferences at the resource level only for standalone instances.</p>
- * <p><h3>See Also:</h3>   <a
+ * Guide</i>.</p>  <p>You cannot create recommendation preferences for Amazon
+ * EC2 Auto Scaling groups at the organization and account levels. You can create
+ * recommendation preferences for Amazon EC2 Auto Scaling groups only at the
+ * resource level by specifying a scope name of <code>ResourceArn</code> and a
+ * scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN).
+ * This will configure the preference for all instances that are part of the
+ * specified Amazon EC2 Auto Scaling group. You also cannot create recommendation
+ * preferences at the resource level for instances that are part of an Amazon EC2
+ * Auto Scaling group. You can create recommendation preferences at the resource
+ * level only for standalone instances.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Scope">AWS
  * API Reference</a></p>
  */
@@ -77,9 +77,9 @@ class Scope {
    * must be <code>ALL_ACCOUNTS</code>.</p> </li> <li> <p> <code>AccountId</code> -
    * The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p>
    * </li> <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the
-   * Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p>
-   * </li> </ul> <p>Only EC2 instance and Auto Scaling group ARNs are currently
-   * supported.</p>
+   * Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling
+   * group.</p> </li> </ul> <p>Only EC2 instance and Amazon EC2 Auto Scaling group
+   * ARNs are currently supported.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

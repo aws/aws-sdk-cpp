@@ -22,8 +22,8 @@ namespace Model {
 /**
  * <p>Describes an error experienced when getting recommendations.</p> <p>For
  * example, an error is returned if you request recommendations for an unsupported
- * Auto Scaling group, or if you request recommendations for an instance of an
- * unsupported instance family.</p><p><h3>See Also:</h3>   <a
+ * Amazon EC2 Auto Scaling group, or if you request recommendations for an instance
+ * of an unsupported instance family.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationError">AWS
  * API Reference</a></p>
  */

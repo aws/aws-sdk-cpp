@@ -29,7 +29,8 @@ enum class ResourceType {
   RdsDbInstance,
   AuroraDbClusterStorage,
   DynamoDbReservedCapacity,
-  MemoryDbReservedInstances
+  MemoryDbReservedInstances,
+  NatGateway
 };
 
 namespace ResourceTypeMapper {

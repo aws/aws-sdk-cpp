@@ -20,10 +20,11 @@ namespace ComputeOptimizer {
 namespace Model {
 
 /**
- * <p> Describes the savings opportunity for Auto Scaling group recommendations
- * after applying the Savings Plans and Reserved Instances discounts. </p>
- * <p>Savings opportunity represents the estimated monthly savings you can achieve
- * by implementing Compute Optimizer recommendations.</p><p><h3>See Also:</h3>   <a
+ * <p> Describes the savings opportunity for Amazon EC2 Auto Scaling group
+ * recommendations after applying the Savings Plans and Reserved Instances
+ * discounts. </p> <p>Savings opportunity represents the estimated monthly savings
+ * you can achieve by implementing Compute Optimizer recommendations.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupSavingsOpportunityAfterDiscounts">AWS
  * API Reference</a></p>
  */
@@ -38,8 +39,8 @@ class AutoScalingGroupSavingsOpportunityAfterDiscounts {
   /**
    * <p> The estimated monthly savings possible as a percentage of monthly cost after
    * applying the Savings Plans and Reserved Instances discounts. This saving can be
-   * achieved by adopting Compute Optimizer’s Auto Scaling group recommendations.
-   * </p>
+   * achieved by adopting Compute Optimizer’s Amazon EC2 Auto Scaling group
+   * recommendations. </p>
    */
   inline double GetSavingsOpportunityPercentage() const { return m_savingsOpportunityPercentage; }
   inline bool SavingsOpportunityPercentageHasBeenSet() const { return m_savingsOpportunityPercentageHasBeenSet; }
@@ -56,8 +57,8 @@ class AutoScalingGroupSavingsOpportunityAfterDiscounts {
   ///@{
   /**
    * <p> An object that describes the estimated monthly savings possible by adopting
-   * Compute Optimizer’s Auto Scaling group recommendations. This is based on the
-   * Savings Plans and Reserved Instances pricing discounts. </p>
+   * Compute Optimizer’s Amazon EC2 Auto Scaling group recommendations. This is based
+   * on the Savings Plans and Reserved Instances pricing discounts. </p>
    */
   inline const AutoScalingGroupEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
   inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }

@@ -21,8 +21,9 @@ namespace Model {
 
 /**
  * <p> An object that describes the estimated monthly savings possible by adopting
- * Compute Optimizer’s Auto Scaling group recommendations. This is based on the
- * Savings Plans and Reserved Instances discounts. </p><p><h3>See Also:</h3>   <a
+ * Compute Optimizer’s Amazon EC2 Auto Scaling group recommendations. This is based
+ * on the Savings Plans and Reserved Instances discounts. </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupEstimatedMonthlySavings">AWS
  * API Reference</a></p>
  */

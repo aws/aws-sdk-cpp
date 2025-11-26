@@ -37,9 +37,9 @@ class DeleteRecommendationPreferencesRequest : public ComputeOptimizerRequest {
   /**
    * <p>The target resource type of the recommendation preference to delete.</p>
    * <p>The <code>Ec2Instance</code> option encompasses standalone instances and
-   * instances that are part of Auto Scaling groups. The
+   * instances that are part of Amazon EC2 Auto Scaling groups. The
    * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-   * an Auto Scaling group.</p>
+   * an Amazon EC2 Auto Scaling group.</p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

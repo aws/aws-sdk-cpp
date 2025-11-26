@@ -24,6 +24,9 @@ static const int EBSVolumeReadIOPS_HASH = HashingUtils::HashString("EBSVolumeRea
 static const int EBSVolumeWriteIOPS_HASH = HashingUtils::HashString("EBSVolumeWriteIOPS");
 static const int VolumeReadOpsPerSecond_HASH = HashingUtils::HashString("VolumeReadOpsPerSecond");
 static const int VolumeWriteOpsPerSecond_HASH = HashingUtils::HashString("VolumeWriteOpsPerSecond");
+static const int ActiveConnectionCount_HASH = HashingUtils::HashString("ActiveConnectionCount");
+static const int PacketsInFromSource_HASH = HashingUtils::HashString("PacketsInFromSource");
+static const int PacketsInFromDestination_HASH = HashingUtils::HashString("PacketsInFromDestination");
 
 IdleMetricName GetIdleMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +48,12 @@ IdleMetricName GetIdleMetricNameForName(const Aws::String& name) {
     return IdleMetricName::VolumeReadOpsPerSecond;
   } else if (hashCode == VolumeWriteOpsPerSecond_HASH) {
     return IdleMetricName::VolumeWriteOpsPerSecond;
+  } else if (hashCode == ActiveConnectionCount_HASH) {
+    return IdleMetricName::ActiveConnectionCount;
+  } else if (hashCode == PacketsInFromSource_HASH) {
+    return IdleMetricName::PacketsInFromSource;
+  } else if (hashCode == PacketsInFromDestination_HASH) {
+    return IdleMetricName::PacketsInFromDestination;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +86,12 @@ Aws::String GetNameForIdleMetricName(IdleMetricName enumValue) {
       return "VolumeReadOpsPerSecond";
     case IdleMetricName::VolumeWriteOpsPerSecond:
       return "VolumeWriteOpsPerSecond";
+    case IdleMetricName::ActiveConnectionCount:
+      return "ActiveConnectionCount";
+    case IdleMetricName::PacketsInFromSource:
+      return "PacketsInFromSource";
+    case IdleMetricName::PacketsInFromDestination:
+      return "PacketsInFromDestination";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

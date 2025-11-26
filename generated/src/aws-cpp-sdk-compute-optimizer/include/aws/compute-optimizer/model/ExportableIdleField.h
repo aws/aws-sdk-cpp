@@ -29,6 +29,9 @@ enum class ExportableIdleField {
   UtilizationMetricsEBSVolumeWriteIOPSMaximum,
   UtilizationMetricsVolumeReadOpsPerSecondMaximum,
   UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
+  UtilizationMetricsActiveConnectionCountMaximum,
+  UtilizationMetricsPacketsInFromSourceMaximum,
+  UtilizationMetricsPacketsInFromDestinationMaximum,
   Finding,
   FindingDescription,
   Tags

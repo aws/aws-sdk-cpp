@@ -43,9 +43,9 @@ class PutRecommendationPreferencesRequest : public ComputeOptimizerRequest {
   /**
    * <p>The target resource type of the recommendation preference to create.</p>
    * <p>The <code>Ec2Instance</code> option encompasses standalone instances and
-   * instances that are part of Auto Scaling groups. The
+   * instances that are part of Amazon EC2 Auto Scaling groups. The
    * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-   * an Auto Scaling group.</p>
+   * an Amazon EC2 Auto Scaling group.</p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -67,15 +67,16 @@ class PutRecommendationPreferencesRequest : public ComputeOptimizerRequest {
    * resource level. For more information, see <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
    * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
-   * Guide</i>.</p>  <p>You cannot create recommendation preferences for Auto
-   * Scaling groups at the organization and account levels. You can create
-   * recommendation preferences for Auto Scaling groups only at the resource level by
-   * specifying a scope name of <code>ResourceArn</code> and a scope value of the
-   * Auto Scaling group Amazon Resource Name (ARN). This will configure the
-   * preference for all instances that are part of the specified Auto Scaling group.
-   * You also cannot create recommendation preferences at the resource level for
-   * instances that are part of an Auto Scaling group. You can create recommendation
-   * preferences at the resource level only for standalone instances.</p>
+   * Guide</i>.</p>  <p>You cannot create recommendation preferences for Amazon
+   * EC2 Auto Scaling groups at the organization and account levels. You can create
+   * recommendation preferences for Amazon EC2 Auto Scaling groups only at the
+   * resource level by specifying a scope name of <code>ResourceArn</code> and a
+   * scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN).
+   * This will configure the preference for all instances that are part of the
+   * specified Amazon EC2 Auto Scaling group. You also cannot create recommendation
+   * preferences at the resource level for instances that are part of an Amazon EC2
+   * Auto Scaling group. You can create recommendation preferences at the resource
+   * level only for standalone instances.</p>
    */
   inline const Scope& GetScope() const { return m_scope; }
   inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
@@ -164,11 +165,11 @@ class PutRecommendationPreferencesRequest : public ComputeOptimizerRequest {
    * <p> The preference to control the number of days the utilization metrics of the
    * Amazon Web Services resource are analyzed. When this preference isn't specified,
    * we use the default value <code>DAYS_14</code>. </p> <p>You can only set this
-   * preference for the Amazon EC2 instance and Auto Scaling group resource types.
-   * </p>  <ul> <li> <p>Amazon EC2 instance lookback preferences can be set at
-   * the organization, account, and resource levels.</p> </li> <li> <p>Auto Scaling
-   * group lookback preferences can only be set at the resource level.</p> </li>
-   * </ul>
+   * preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group
+   * resource types. </p>  <ul> <li> <p>Amazon EC2 instance lookback
+   * preferences can be set at the organization, account, and resource levels.</p>
+   * </li> <li> <p>Amazon EC2 Auto Scaling group lookback preferences can only be set
+   * at the resource level.</p> </li> </ul>
    */
   inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
   inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
@@ -222,8 +223,8 @@ class PutRecommendationPreferencesRequest : public ComputeOptimizerRequest {
    * combination of include and exclude lists. You must specify either an
    * <code>includeList</code> or <code>excludeList</code>. If the preference is an
    * empty set of resource type values, an error occurs. </p>  <p>You can only
-   * set this preference for the Amazon EC2 instance and Auto Scaling group resource
-   * types.</p>
+   * set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling
+   * group resource types.</p>
    */
   inline const Aws::Vector<PreferredResource>& GetPreferredResources() const { return m_preferredResources; }
   inline bool PreferredResourcesHasBeenSet() const { return m_preferredResourcesHasBeenSet; }

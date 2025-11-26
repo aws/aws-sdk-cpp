@@ -33,6 +33,7 @@ static const int RdsDbInstance_HASH = HashingUtils::HashString("RdsDbInstance");
 static const int AuroraDbClusterStorage_HASH = HashingUtils::HashString("AuroraDbClusterStorage");
 static const int DynamoDbReservedCapacity_HASH = HashingUtils::HashString("DynamoDbReservedCapacity");
 static const int MemoryDbReservedInstances_HASH = HashingUtils::HashString("MemoryDbReservedInstances");
+static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +73,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::DynamoDbReservedCapacity;
   } else if (hashCode == MemoryDbReservedInstances_HASH) {
     return ResourceType::MemoryDbReservedInstances;
+  } else if (hashCode == NatGateway_HASH) {
+    return ResourceType::NatGateway;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +125,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "DynamoDbReservedCapacity";
     case ResourceType::MemoryDbReservedInstances:
       return "MemoryDbReservedInstances";
+    case ResourceType::NatGateway:
+      return "NatGateway";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

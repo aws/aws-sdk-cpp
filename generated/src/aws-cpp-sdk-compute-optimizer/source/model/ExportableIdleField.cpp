@@ -37,6 +37,12 @@ static const int UtilizationMetricsVolumeReadOpsPerSecondMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsVolumeReadOpsPerSecondMaximum");
 static const int UtilizationMetricsVolumeWriteOpsPerSecondMaximum_HASH =
     HashingUtils::HashString("UtilizationMetricsVolumeWriteOpsPerSecondMaximum");
+static const int UtilizationMetricsActiveConnectionCountMaximum_HASH =
+    HashingUtils::HashString("UtilizationMetricsActiveConnectionCountMaximum");
+static const int UtilizationMetricsPacketsInFromSourceMaximum_HASH =
+    HashingUtils::HashString("UtilizationMetricsPacketsInFromSourceMaximum");
+static const int UtilizationMetricsPacketsInFromDestinationMaximum_HASH =
+    HashingUtils::HashString("UtilizationMetricsPacketsInFromDestinationMaximum");
 static const int Finding_HASH = HashingUtils::HashString("Finding");
 static const int FindingDescription_HASH = HashingUtils::HashString("FindingDescription");
 static const int Tags_HASH = HashingUtils::HashString("Tags");
@@ -77,6 +83,12 @@ ExportableIdleField GetExportableIdleFieldForName(const Aws::String& name) {
     return ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum;
   } else if (hashCode == UtilizationMetricsVolumeWriteOpsPerSecondMaximum_HASH) {
     return ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum;
+  } else if (hashCode == UtilizationMetricsActiveConnectionCountMaximum_HASH) {
+    return ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum;
+  } else if (hashCode == UtilizationMetricsPacketsInFromSourceMaximum_HASH) {
+    return ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum;
+  } else if (hashCode == UtilizationMetricsPacketsInFromDestinationMaximum_HASH) {
+    return ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum;
   } else if (hashCode == Finding_HASH) {
     return ExportableIdleField::Finding;
   } else if (hashCode == FindingDescription_HASH) {
@@ -131,6 +143,12 @@ Aws::String GetNameForExportableIdleField(ExportableIdleField enumValue) {
       return "UtilizationMetricsVolumeReadOpsPerSecondMaximum";
     case ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum:
       return "UtilizationMetricsVolumeWriteOpsPerSecondMaximum";
+    case ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum:
+      return "UtilizationMetricsActiveConnectionCountMaximum";
+    case ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum:
+      return "UtilizationMetricsPacketsInFromSourceMaximum";
+    case ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum:
+      return "UtilizationMetricsPacketsInFromDestinationMaximum";
     case ExportableIdleField::Finding:
       return "Finding";
     case ExportableIdleField::FindingDescription:

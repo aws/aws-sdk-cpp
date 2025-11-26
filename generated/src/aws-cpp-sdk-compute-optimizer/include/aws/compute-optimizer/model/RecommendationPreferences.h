@@ -39,8 +39,8 @@ class RecommendationPreferences {
 
   ///@{
   /**
-   * <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto
-   * Scaling group recommendations.</p> <p>For example, when you specify
+   * <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon
+   * EC2 Auto Scaling group recommendations.</p> <p>For example, when you specify
    * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
    * <a>GetEC2InstanceRecommendations</a> or
    * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns

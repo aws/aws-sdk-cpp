@@ -17,6 +17,7 @@ namespace IdleFindingMapper {
 
 static const int Idle_HASH = HashingUtils::HashString("Idle");
 static const int Unattached_HASH = HashingUtils::HashString("Unattached");
+static const int Unused_HASH = HashingUtils::HashString("Unused");
 
 IdleFinding GetIdleFindingForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ IdleFinding GetIdleFindingForName(const Aws::String& name) {
     return IdleFinding::Idle;
   } else if (hashCode == Unattached_HASH) {
     return IdleFinding::Unattached;
+  } else if (hashCode == Unused_HASH) {
+    return IdleFinding::Unused;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForIdleFinding(IdleFinding enumValue) {
       return "Idle";
     case IdleFinding::Unattached:
       return "Unattached";
+    case IdleFinding::Unused:
+      return "Unused";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
