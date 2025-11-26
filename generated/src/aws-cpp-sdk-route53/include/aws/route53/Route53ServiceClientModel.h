@@ -101,6 +101,7 @@
 #include <aws/route53/model/TestDNSAnswerResult.h>
 #include <aws/route53/model/UpdateHealthCheckResult.h>
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
+#include <aws/route53/model/UpdateHostedZoneFeaturesResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceResult.h>
 /* End of service model headers required in Route53Client header */
@@ -204,6 +205,7 @@ class ListVPCAssociationAuthorizationsRequest;
 class TestDNSAnswerRequest;
 class UpdateHealthCheckRequest;
 class UpdateHostedZoneCommentRequest;
+class UpdateHostedZoneFeaturesRequest;
 class UpdateTrafficPolicyCommentRequest;
 class UpdateTrafficPolicyInstanceRequest;
 /* End of service model forward declarations required in Route53Client header */
@@ -277,6 +279,7 @@ typedef Aws::Utils::Outcome<ListVPCAssociationAuthorizationsResult, Route53Error
 typedef Aws::Utils::Outcome<TestDNSAnswerResult, Route53Error> TestDNSAnswerOutcome;
 typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Route53Error> UpdateHealthCheckOutcome;
 typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Route53Error> UpdateHostedZoneCommentOutcome;
+typedef Aws::Utils::Outcome<UpdateHostedZoneFeaturesResult, Route53Error> UpdateHostedZoneFeaturesOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Route53Error> UpdateTrafficPolicyCommentOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Route53Error> UpdateTrafficPolicyInstanceOutcome;
 /* End of service model Outcome class definitions */
@@ -350,6 +353,7 @@ typedef std::future<ListVPCAssociationAuthorizationsOutcome> ListVPCAssociationA
 typedef std::future<TestDNSAnswerOutcome> TestDNSAnswerOutcomeCallable;
 typedef std::future<UpdateHealthCheckOutcome> UpdateHealthCheckOutcomeCallable;
 typedef std::future<UpdateHostedZoneCommentOutcome> UpdateHostedZoneCommentOutcomeCallable;
+typedef std::future<UpdateHostedZoneFeaturesOutcome> UpdateHostedZoneFeaturesOutcomeCallable;
 typedef std::future<UpdateTrafficPolicyCommentOutcome> UpdateTrafficPolicyCommentOutcomeCallable;
 typedef std::future<UpdateTrafficPolicyInstanceOutcome> UpdateTrafficPolicyInstanceOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -571,6 +575,9 @@ typedef std::function<void(const Route53Client*, const Model::UpdateHealthCheckR
 typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneCommentRequest&, const Model::UpdateHostedZoneCommentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateHostedZoneCommentResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneFeaturesRequest&,
+                           const Model::UpdateHostedZoneFeaturesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateHostedZoneFeaturesResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyCommentRequest&,
                            const Model::UpdateTrafficPolicyCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTrafficPolicyCommentResponseReceivedHandler;

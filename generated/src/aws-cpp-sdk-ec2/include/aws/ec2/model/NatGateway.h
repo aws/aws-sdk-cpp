@@ -14,6 +14,7 @@
 #include <aws/ec2/model/AvailabilityMode.h>
 #include <aws/ec2/model/ConnectivityType.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
+#include <aws/ec2/model/NatGatewayAttachedAppliance.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/Tag.h>
@@ -372,6 +373,31 @@ class NatGateway {
 
   ///@{
   /**
+   * <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting
+   * traffic to prevent data exfiltration.</p>
+   */
+  inline const Aws::Vector<NatGatewayAttachedAppliance>& GetAttachedAppliances() const { return m_attachedAppliances; }
+  inline bool AttachedAppliancesHasBeenSet() const { return m_attachedAppliancesHasBeenSet; }
+  template <typename AttachedAppliancesT = Aws::Vector<NatGatewayAttachedAppliance>>
+  void SetAttachedAppliances(AttachedAppliancesT&& value) {
+    m_attachedAppliancesHasBeenSet = true;
+    m_attachedAppliances = std::forward<AttachedAppliancesT>(value);
+  }
+  template <typename AttachedAppliancesT = Aws::Vector<NatGatewayAttachedAppliance>>
+  NatGateway& WithAttachedAppliances(AttachedAppliancesT&& value) {
+    SetAttachedAppliances(std::forward<AttachedAppliancesT>(value));
+    return *this;
+  }
+  template <typename AttachedAppliancesT = NatGatewayAttachedAppliance>
+  NatGateway& AddAttachedAppliances(AttachedAppliancesT&& value) {
+    m_attachedAppliancesHasBeenSet = true;
+    m_attachedAppliances.emplace_back(std::forward<AttachedAppliancesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
    */
   inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
@@ -432,6 +458,9 @@ class NatGateway {
 
   AutoProvisionZonesState m_autoProvisionZones{AutoProvisionZonesState::NOT_SET};
   bool m_autoProvisionZonesHasBeenSet = false;
+
+  Aws::Vector<NatGatewayAttachedAppliance> m_attachedAppliances;
+  bool m_attachedAppliancesHasBeenSet = false;
 
   Aws::String m_routeTableId;
   bool m_routeTableIdHasBeenSet = false;
