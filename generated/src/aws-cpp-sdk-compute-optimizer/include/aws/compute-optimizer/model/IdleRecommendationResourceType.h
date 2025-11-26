@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
-enum class IdleRecommendationResourceType { NOT_SET, EC2Instance, AutoScalingGroup, EBSVolume, ECSService, RDSDBInstance };
+enum class IdleRecommendationResourceType { NOT_SET, EC2Instance, AutoScalingGroup, EBSVolume, ECSService, RDSDBInstance, NatGateway };
 
 namespace IdleRecommendationResourceTypeMapper {
 AWS_COMPUTEOPTIMIZER_API IdleRecommendationResourceType GetIdleRecommendationResourceTypeForName(const Aws::String& name);

@@ -17,6 +17,7 @@
 #include <aws/cost-optimization-hub/model/ElastiCacheReservedInstances.h>
 #include <aws/cost-optimization-hub/model/LambdaFunction.h>
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstances.h>
+#include <aws/cost-optimization-hub/model/NatGateway.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstances.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstance.h>
 #include <aws/cost-optimization-hub/model/RdsDbInstanceStorage.h>
@@ -372,6 +373,24 @@ class ResourceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The NAT Gateway recommendation details.</p>
+   */
+  inline const NatGateway& GetNatGateway() const { return m_natGateway; }
+  inline bool NatGatewayHasBeenSet() const { return m_natGatewayHasBeenSet; }
+  template <typename NatGatewayT = NatGateway>
+  void SetNatGateway(NatGatewayT&& value) {
+    m_natGatewayHasBeenSet = true;
+    m_natGateway = std::forward<NatGatewayT>(value);
+  }
+  template <typename NatGatewayT = NatGateway>
+  ResourceDetails& WithNatGateway(NatGatewayT&& value) {
+    SetNatGateway(std::forward<NatGatewayT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LambdaFunction m_lambdaFunction;
   bool m_lambdaFunctionHasBeenSet = false;
@@ -426,6 +445,9 @@ class ResourceDetails {
 
   MemoryDbReservedInstances m_memoryDbReservedInstances;
   bool m_memoryDbReservedInstancesHasBeenSet = false;
+
+  NatGateway m_natGateway;
+  bool m_natGatewayHasBeenSet = false;
 };
 
 }  // namespace Model

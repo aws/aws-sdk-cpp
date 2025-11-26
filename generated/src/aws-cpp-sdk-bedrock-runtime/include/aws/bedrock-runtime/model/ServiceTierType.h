@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockRuntime {
 namespace Model {
-enum class ServiceTierType { NOT_SET, priority, default_, flex };
+enum class ServiceTierType { NOT_SET, priority, default_, flex, reserved };
 
 namespace ServiceTierTypeMapper {
 AWS_BEDROCKRUNTIME_API ServiceTierType GetServiceTierTypeForName(const Aws::String& name);

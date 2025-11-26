@@ -33,8 +33,8 @@ class GetEffectiveRecommendationPreferencesRequest : public ComputeOptimizerRequ
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
-   * recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are
-   * currently supported.</p>
+   * recommendation preferences. Only EC2 instance and Amazon EC2 Auto Scaling group
+   * ARNs are currently supported.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>Describes the source of a recommendation, such as an Amazon EC2 instance or
- * Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+ * Amazon EC2 Auto Scaling group.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendationSource">AWS
  * API Reference</a></p>
  */

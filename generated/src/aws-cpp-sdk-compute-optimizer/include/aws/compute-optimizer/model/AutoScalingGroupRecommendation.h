@@ -30,7 +30,8 @@ namespace ComputeOptimizer {
 namespace Model {
 
 /**
- * <p>Describes an Auto Scaling group recommendation.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes an Amazon EC2 Auto Scaling group recommendation.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupRecommendation">AWS
  * API Reference</a></p>
  */
@@ -43,7 +44,7 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
+   * <p>The Amazon Web Services account ID of the Amazon EC2 Auto Scaling group.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -61,7 +62,7 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling group.</p>
    */
   inline const Aws::String& GetAutoScalingGroupArn() const { return m_autoScalingGroupArn; }
   inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
@@ -79,7 +80,7 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The name of the Auto Scaling group.</p>
+   * <p>The name of the Amazon EC2 Auto Scaling group.</p>
    */
   inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
   inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
@@ -97,15 +98,16 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
-   * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-   * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
-   * identifies a recommendation that can provide better performance for your
-   * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
-   * group is considered optimized when Compute Optimizer determines that the group
-   * is correctly provisioned to run your workload based on the chosen instance type.
-   * For optimized resources, Compute Optimizer might recommend a new generation
-   * instance type.</p> </li> </ul>
+   * <p>The finding classification of the Amazon EC2 Auto Scaling group.</p>
+   * <p>Findings for Amazon EC2 Auto Scaling groups include:</p> <ul> <li> <p> <b>
+   * <code>NotOptimized</code> </b>—An Amazon EC2 Auto Scaling group is considered
+   * not optimized when Compute Optimizer identifies a recommendation that can
+   * provide better performance for your workload.</p> </li> <li> <p> <b>
+   * <code>Optimized</code> </b>—An Amazon EC2 Auto Scaling group is considered
+   * optimized when Compute Optimizer determines that the group is correctly
+   * provisioned to run your workload based on the chosen instance type. For
+   * optimized resources, Compute Optimizer might recommend a new generation instance
+   * type.</p> </li> </ul>
    */
   inline Finding GetFinding() const { return m_finding; }
   inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
@@ -121,8 +123,8 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>An array of objects that describe the utilization metrics of the Auto Scaling
-   * group.</p>
+   * <p>An array of objects that describe the utilization metrics of the Amazon EC2
+   * Auto Scaling group.</p>
    */
   inline const Aws::Vector<UtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
   inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
@@ -146,8 +148,8 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The number of days for which utilization metrics were analyzed for the Auto
-   * Scaling group.</p>
+   * <p>The number of days for which utilization metrics were analyzed for the Amazon
+   * EC2 Auto Scaling group.</p>
    */
   inline double GetLookBackPeriodInDays() const { return m_lookBackPeriodInDays; }
   inline bool LookBackPeriodInDaysHasBeenSet() const { return m_lookBackPeriodInDaysHasBeenSet; }
@@ -163,8 +165,8 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>An array of objects that describe the current configuration of the Auto
-   * Scaling group.</p>
+   * <p>An array of objects that describe the current configuration of the Amazon EC2
+   * Auto Scaling group.</p>
    */
   inline const AutoScalingGroupConfiguration& GetCurrentConfiguration() const { return m_currentConfiguration; }
   inline bool CurrentConfigurationHasBeenSet() const { return m_currentConfigurationHasBeenSet; }
@@ -183,7 +185,7 @@ class AutoScalingGroupRecommendation {
   ///@{
   /**
    * <p> Describes the GPU accelerator settings for the current instance type of the
-   * Auto Scaling group. </p>
+   * Amazon EC2 Auto Scaling group. </p>
    */
   inline const GpuInfo& GetCurrentInstanceGpuInfo() const { return m_currentInstanceGpuInfo; }
   inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
@@ -201,8 +203,8 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>An array of objects that describe the recommendation options for the Auto
-   * Scaling group.</p>
+   * <p>An array of objects that describe the recommendation options for the Amazon
+   * EC2 Auto Scaling group.</p>
    */
   inline const Aws::Vector<AutoScalingGroupRecommendationOption>& GetRecommendationOptions() const { return m_recommendationOptions; }
   inline bool RecommendationOptionsHasBeenSet() const { return m_recommendationOptionsHasBeenSet; }
@@ -226,8 +228,8 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The timestamp of when the Auto Scaling group recommendation was last
-   * generated.</p>
+   * <p>The timestamp of when the Amazon EC2 Auto Scaling group recommendation was
+   * last generated.</p>
    */
   inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
   inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
@@ -245,10 +247,10 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The risk of the current Auto Scaling group not meeting the performance needs
-   * of its workloads. The higher the risk, the more likely the current Auto Scaling
-   * group configuration has insufficient capacity and cannot meet workload
-   * requirements.</p>
+   * <p>The risk of the current Amazon EC2 Auto Scaling group not meeting the
+   * performance needs of its workloads. The higher the risk, the more likely the
+   * current Amazon EC2 Auto Scaling group configuration has insufficient capacity
+   * and cannot meet workload requirements.</p>
    */
   inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
   inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
@@ -265,7 +267,7 @@ class AutoScalingGroupRecommendation {
   ///@{
   /**
    * <p>An object that describes the effective recommendation preferences for the
-   * Auto Scaling group.</p>
+   * Amazon EC2 Auto Scaling group.</p>
    */
   inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const {
     return m_effectiveRecommendationPreferences;
@@ -285,22 +287,22 @@ class AutoScalingGroupRecommendation {
 
   ///@{
   /**
-   * <p>The applications that might be running on the instances in the Auto Scaling
-   * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
-   * one of the following applications might be running on the instances:</p> <ul>
-   * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
-   * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
-   * Cassandra might be running on the instances.</p> </li> <li> <p>
-   * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
-   * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
-   * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
-   * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
-   * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
-   * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-   * running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that
-   * Kafka might be running on the instance.</p> </li> <li> <p>
-   * <code>SQLServer</code> - Infers that SQLServer might be running on the
-   * instance.</p> </li> </ul>
+   * <p>The applications that might be running on the instances in the Amazon EC2
+   * Auto Scaling group as inferred by Compute Optimizer.</p> <p>Compute Optimizer
+   * can infer if one of the following applications might be running on the
+   * instances:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR
+   * might be running on the instances.</p> </li> <li> <p>
+   * <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on
+   * the instances.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache
+   * Hadoop might be running on the instances.</p> </li> <li> <p>
+   * <code>Memcached</code> - Infers that Memcached might be running on the
+   * instances.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be
+   * running on the instances.</p> </li> <li> <p> <code>PostgreSql</code> - Infers
+   * that PostgreSQL might be running on the instances.</p> </li> <li> <p>
+   * <code>Redis</code> - Infers that Redis might be running on the instances.</p>
+   * </li> <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the
+   * instance.</p> </li> <li> <p> <code>SQLServer</code> - Infers that SQLServer
+   * might be running on the instance.</p> </li> </ul>
    */
   inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
   inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }

@@ -20,7 +20,10 @@ enum class IdleMetricName {
   EBSVolumeReadIOPS,
   EBSVolumeWriteIOPS,
   VolumeReadOpsPerSecond,
-  VolumeWriteOpsPerSecond
+  VolumeWriteOpsPerSecond,
+  ActiveConnectionCount,
+  PacketsInFromSource,
+  PacketsInFromDestination
 };
 
 namespace IdleMetricNameMapper {

@@ -38,14 +38,15 @@ class ExportAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequ
 
   ///@{
   /**
-   * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
-   * group recommendations.</p> <p>If your account is the management account of an
-   * organization, use this parameter to specify the member account for which you
-   * want to export recommendations.</p> <p>This parameter cannot be specified
-   * together with the include member accounts parameter. The parameters are mutually
-   * exclusive.</p> <p>Recommendations for member accounts are not included in the
-   * export if this parameter, or the include member accounts parameter, is
-   * omitted.</p> <p>You can specify multiple account IDs per request.</p>
+   * <p>The IDs of the Amazon Web Services accounts for which to export Amazon EC2
+   * Auto Scaling group recommendations.</p> <p>If your account is the management
+   * account of an organization, use this parameter to specify the member account for
+   * which you want to export recommendations.</p> <p>This parameter cannot be
+   * specified together with the include member accounts parameter. The parameters
+   * are mutually exclusive.</p> <p>Recommendations for member accounts are not
+   * included in the export if this parameter, or the include member accounts
+   * parameter, is omitted.</p> <p>You can specify multiple account IDs per
+   * request.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
   inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
@@ -70,7 +71,7 @@ class ExportAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequ
   ///@{
   /**
    * <p>An array of objects to specify a filter that exports a more specific set of
-   * Auto Scaling group recommendations.</p>
+   * Amazon EC2 Auto Scaling group recommendations.</p>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -193,7 +194,7 @@ class ExportAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequ
 
   ///@{
   /**
-   * <p>An object to specify the preferences for the Auto Scaling group
+   * <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group
    * recommendations to export.</p>
    */
   inline const RecommendationPreferences& GetRecommendationPreferences() const { return m_recommendationPreferences; }

@@ -24,6 +24,7 @@ static const int License_HASH = HashingUtils::HashString("License");
 static const int RdsDBInstance_HASH = HashingUtils::HashString("RdsDBInstance");
 static const int RdsDBInstanceStorage_HASH = HashingUtils::HashString("RdsDBInstanceStorage");
 static const int AuroraDBClusterStorage_HASH = HashingUtils::HashString("AuroraDBClusterStorage");
+static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
 
 RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ RecommendationSourceType GetRecommendationSourceTypeForName(const Aws::String& n
     return RecommendationSourceType::RdsDBInstanceStorage;
   } else if (hashCode == AuroraDBClusterStorage_HASH) {
     return RecommendationSourceType::AuroraDBClusterStorage;
+  } else if (hashCode == NatGateway_HASH) {
+    return RecommendationSourceType::NatGateway;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForRecommendationSourceType(RecommendationSourceType enumValu
       return "RdsDBInstanceStorage";
     case RecommendationSourceType::AuroraDBClusterStorage:
       return "AuroraDBClusterStorage";
+    case RecommendationSourceType::NatGateway:
+      return "NatGateway";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

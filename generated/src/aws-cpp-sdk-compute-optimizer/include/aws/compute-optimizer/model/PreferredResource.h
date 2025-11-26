@@ -30,8 +30,8 @@ namespace Model {
  * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/rightsizing-preferences.html">
  * Rightsizing recommendation preferences</a> in the <i>Compute Optimizer User
  * Guide</i>. </p>  <ul> <li> <p>This preference is only available for the
- * Amazon EC2 instance and Auto Scaling group resource types.</p> </li> <li>
- * <p>Compute Optimizer only supports the customization of
+ * Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p> </li>
+ * <li> <p>Compute Optimizer only supports the customization of
  * <code>Ec2InstanceTypes</code>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PreferredResource">AWS
  * API Reference</a></p>

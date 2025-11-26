@@ -67,6 +67,8 @@
 #include <aws/cost-optimization-hub/model/MemoryDbReservedInstancesConfiguration.h>
 #include <aws/cost-optimization-hub/model/MetricsByTime.h>
 #include <aws/cost-optimization-hub/model/MixedInstanceConfiguration.h>
+#include <aws/cost-optimization-hub/model/NatGateway.h>
+#include <aws/cost-optimization-hub/model/NatGatewayConfiguration.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstances.h>
 #include <aws/cost-optimization-hub/model/OpenSearchReservedInstancesConfiguration.h>
 #include <aws/cost-optimization-hub/model/Order.h>

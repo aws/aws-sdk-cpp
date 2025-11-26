@@ -42,8 +42,8 @@ class EffectiveRecommendationPreferences {
 
   ///@{
   /**
-   * <p>Describes the CPU vendor and architecture for an instance or Auto Scaling
-   * group recommendations.</p> <p>For example, when you specify
+   * <p>Describes the CPU vendor and architecture for an instance or Amazon EC2 Auto
+   * Scaling group recommendations.</p> <p>For example, when you specify
    * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
    * <a>GetEC2InstanceRecommendations</a> or
    * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns

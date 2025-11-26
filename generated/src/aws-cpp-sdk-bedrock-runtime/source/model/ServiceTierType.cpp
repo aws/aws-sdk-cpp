@@ -18,6 +18,7 @@ namespace ServiceTierTypeMapper {
 static const int priority_HASH = HashingUtils::HashString("priority");
 static const int default__HASH = HashingUtils::HashString("default");
 static const int flex_HASH = HashingUtils::HashString("flex");
+static const int reserved_HASH = HashingUtils::HashString("reserved");
 
 ServiceTierType GetServiceTierTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ServiceTierType GetServiceTierTypeForName(const Aws::String& name) {
     return ServiceTierType::default_;
   } else if (hashCode == flex_HASH) {
     return ServiceTierType::flex;
+  } else if (hashCode == reserved_HASH) {
+    return ServiceTierType::reserved;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForServiceTierType(ServiceTierType enumValue) {
       return "default";
     case ServiceTierType::flex:
       return "flex";
+    case ServiceTierType::reserved:
+      return "reserved";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

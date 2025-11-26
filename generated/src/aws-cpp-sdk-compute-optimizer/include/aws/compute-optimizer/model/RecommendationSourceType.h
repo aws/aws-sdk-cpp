@@ -20,7 +20,8 @@ enum class RecommendationSourceType {
   License,
   RdsDBInstance,
   RdsDBInstanceStorage,
-  AuroraDBClusterStorage
+  AuroraDBClusterStorage,
+  NatGateway
 };
 
 namespace RecommendationSourceTypeMapper {

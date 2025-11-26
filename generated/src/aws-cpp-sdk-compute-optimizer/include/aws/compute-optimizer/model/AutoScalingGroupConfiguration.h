@@ -23,8 +23,8 @@ namespace ComputeOptimizer {
 namespace Model {
 
 /**
- * <p>Describes the configuration of an EC2 Auto Scaling group.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Describes the configuration of an EC2 Amazon EC2 Auto Scaling
+ * group.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,8 +37,8 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p>The desired capacity, or number of instances, for the EC2 Auto Scaling
-   * group.</p>
+   * <p>The desired capacity, or number of instances, for the EC2 Amazon EC2 Auto
+   * Scaling group.</p>
    */
   inline int GetDesiredCapacity() const { return m_desiredCapacity; }
   inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
@@ -54,8 +54,8 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p>The minimum size, or minimum number of instances, for the EC2 Auto Scaling
-   * group.</p>
+   * <p>The minimum size, or minimum number of instances, for the EC2 Amazon EC2 Auto
+   * Scaling group.</p>
    */
   inline int GetMinSize() const { return m_minSize; }
   inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
@@ -71,8 +71,8 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p>The maximum size, or maximum number of instances, for the EC2 Auto Scaling
-   * group.</p>
+   * <p>The maximum size, or maximum number of instances, for the EC2 Amazon EC2 Auto
+   * Scaling group.</p>
    */
   inline int GetMaxSize() const { return m_maxSize; }
   inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
@@ -88,7 +88,7 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p>The instance type for the EC2 Auto Scaling group.</p>
+   * <p>The instance type for the EC2 Amazon EC2 Auto Scaling group.</p>
    */
   inline const Aws::String& GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -106,9 +106,9 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p> Describes the allocation strategy that the EC2 Auto Scaling group uses. This
-   * field is only available for EC2 Auto Scaling groups with mixed instance types.
-   * </p>
+   * <p> Describes the allocation strategy that the EC2 Amazon EC2 Auto Scaling group
+   * uses. This field is only available for EC2 Amazon EC2 Auto Scaling groups with
+   * mixed instance types. </p>
    */
   inline AllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
   inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
@@ -126,7 +126,7 @@ class AutoScalingGroupConfiguration {
   /**
    * <p> Describes the projected percentage reduction in instance hours after
    * adopting the recommended configuration. This field is only available for EC2
-   * Auto Scaling groups with scaling policies. </p>
+   * Amazon EC2 Auto Scaling groups with scaling policies. </p>
    */
   inline double GetEstimatedInstanceHourReductionPercentage() const { return m_estimatedInstanceHourReductionPercentage; }
   inline bool EstimatedInstanceHourReductionPercentageHasBeenSet() const { return m_estimatedInstanceHourReductionPercentageHasBeenSet; }
@@ -142,8 +142,8 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p> Describes whether the EC2 Auto Scaling group has a single instance type or a
-   * mixed instance type configuration. </p>
+   * <p> Describes whether the EC2 Amazon EC2 Auto Scaling group has a single
+   * instance type or a mixed instance type configuration. </p>
    */
   inline AsgType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -159,8 +159,8 @@ class AutoScalingGroupConfiguration {
 
   ///@{
   /**
-   * <p> List the instance types within an EC2 Auto Scaling group that has mixed
-   * instance types. </p>
+   * <p> List the instance types within an EC2 Amazon EC2 Auto Scaling group that has
+   * mixed instance types. </p>
    */
   inline const Aws::Vector<Aws::String>& GetMixedInstanceTypes() const { return m_mixedInstanceTypes; }
   inline bool MixedInstanceTypesHasBeenSet() const { return m_mixedInstanceTypesHasBeenSet; }

@@ -90,6 +90,10 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_memoryDbReservedInstances = jsonValue.GetObject("memoryDbReservedInstances");
     m_memoryDbReservedInstancesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("natGateway")) {
+    m_natGateway = jsonValue.GetObject("natGateway");
+    m_natGatewayHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -166,6 +170,10 @@ JsonValue ResourceDetails::Jsonize() const {
 
   if (m_memoryDbReservedInstancesHasBeenSet) {
     payload.WithObject("memoryDbReservedInstances", m_memoryDbReservedInstances.Jsonize());
+  }
+
+  if (m_natGatewayHasBeenSet) {
+    payload.WithObject("natGateway", m_natGateway.Jsonize());
   }
 
   return payload;

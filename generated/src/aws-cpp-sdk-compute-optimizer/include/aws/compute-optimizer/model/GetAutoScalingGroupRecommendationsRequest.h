@@ -35,11 +35,11 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
 
   ///@{
   /**
-   * <p>The ID of the Amazon Web Services account for which to return Auto Scaling
-   * group recommendations.</p> <p>If your account is the management account of an
-   * organization, use this parameter to specify the member account for which you
-   * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
-   * can be specified per request.</p>
+   * <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto
+   * Scaling group recommendations.</p> <p>If your account is the management account
+   * of an organization, use this parameter to specify the member account for which
+   * you want to return Amazon EC2 Auto Scaling group recommendations.</p> <p>Only
+   * one account ID can be specified per request.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
   inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
@@ -63,8 +63,8 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return
-   * recommendations.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for
+   * which to return recommendations.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAutoScalingGroupArns() const { return m_autoScalingGroupArns; }
   inline bool AutoScalingGroupArnsHasBeenSet() const { return m_autoScalingGroupArnsHasBeenSet; }
@@ -88,7 +88,7 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
 
   ///@{
   /**
-   * <p>The token to advance to the next page of Auto Scaling group
+   * <p>The token to advance to the next page of Amazon EC2 Auto Scaling group
    * recommendations.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -107,9 +107,9 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
 
   ///@{
   /**
-   * <p>The maximum number of Auto Scaling group recommendations to return with a
-   * single request.</p> <p>To retrieve the remaining results, make another request
-   * with the returned <code>nextToken</code> value.</p>
+   * <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return
+   * with a single request.</p> <p>To retrieve the remaining results, make another
+   * request with the returned <code>nextToken</code> value.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -126,7 +126,7 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
   ///@{
   /**
    * <p>An array of objects to specify a filter that returns a more specific list of
-   * Auto Scaling group recommendations.</p>
+   * Amazon EC2 Auto Scaling group recommendations.</p>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -150,7 +150,7 @@ class GetAutoScalingGroupRecommendationsRequest : public ComputeOptimizerRequest
 
   ///@{
   /**
-   * <p>An object to specify the preferences for the Auto Scaling group
+   * <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group
    * recommendations to return in the response.</p>
    */
   inline const RecommendationPreferences& GetRecommendationPreferences() const { return m_recommendationPreferences; }

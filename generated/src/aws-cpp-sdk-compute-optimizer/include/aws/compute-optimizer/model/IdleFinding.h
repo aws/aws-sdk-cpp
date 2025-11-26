@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ComputeOptimizer {
 namespace Model {
-enum class IdleFinding { NOT_SET, Idle, Unattached };
+enum class IdleFinding { NOT_SET, Idle, Unattached, Unused };
 
 namespace IdleFindingMapper {
 AWS_COMPUTEOPTIMIZER_API IdleFinding GetIdleFindingForName(const Aws::String& name);

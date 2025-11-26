@@ -20,6 +20,7 @@ static const int AutoScalingGroup_HASH = HashingUtils::HashString("AutoScalingGr
 static const int EBSVolume_HASH = HashingUtils::HashString("EBSVolume");
 static const int ECSService_HASH = HashingUtils::HashString("ECSService");
 static const int RDSDBInstance_HASH = HashingUtils::HashString("RDSDBInstance");
+static const int NatGateway_HASH = HashingUtils::HashString("NatGateway");
 
 IdleRecommendationResourceType GetIdleRecommendationResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ IdleRecommendationResourceType GetIdleRecommendationResourceTypeForName(const Aw
     return IdleRecommendationResourceType::ECSService;
   } else if (hashCode == RDSDBInstance_HASH) {
     return IdleRecommendationResourceType::RDSDBInstance;
+  } else if (hashCode == NatGateway_HASH) {
+    return IdleRecommendationResourceType::NatGateway;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForIdleRecommendationResourceType(IdleRecommendationResourceT
       return "ECSService";
     case IdleRecommendationResourceType::RDSDBInstance:
       return "RDSDBInstance";
+    case IdleRecommendationResourceType::NatGateway:
+      return "NatGateway";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
