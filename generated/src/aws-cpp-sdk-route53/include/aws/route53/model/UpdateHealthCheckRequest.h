@@ -284,7 +284,7 @@ class UpdateHealthCheckRequest : public Route53Request {
    * to healthy or vice versa. For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
    * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
-   * Route 53 Developer Guide</i>.</p> <p>If you don't specify a value for
+   * Route 53 Developer Guide</i>.</p> <p>Otherwise, if you don't specify a value for
    * <code>FailureThreshold</code>, the default value is three health checks.</p>
    */
   inline int GetFailureThreshold() const { return m_failureThreshold; }

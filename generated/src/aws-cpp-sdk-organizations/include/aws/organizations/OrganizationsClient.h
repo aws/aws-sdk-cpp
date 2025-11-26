@@ -186,6 +186,10 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
    * </p> </li> </ul> <p>You can only call this operation from the management account
    * or a member account that is a delegated administrator.</p><p><h3>See Also:</h3>
    * <a

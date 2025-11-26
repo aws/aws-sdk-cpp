@@ -272,9 +272,11 @@ class HealthCheckConfig {
   /**
    * <p>The number of seconds between the time that Amazon Route 53 gets a response
    * from your endpoint and the time that it sends the next health check request.
-   * Each Route 53 health checker makes requests at this interval.</p>
-   * <p>You can't change the value of <code>RequestInterval</code> after you create a
-   * health check.</p>  <p>If you don't specify a value for
+   * Each Route 53 health checker makes requests at this interval.</p> <p>
+   * <code>RequestInterval</code> is not supported when you specify a value for
+   * <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>  <p>You can't
+   * change the value of <code>RequestInterval</code> after you create a health
+   * check.</p>  <p>If you don't specify a value for
    * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
    */
   inline int GetRequestInterval() const { return m_requestInterval; }
@@ -296,8 +298,10 @@ class HealthCheckConfig {
    * to healthy or vice versa. For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
    * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon
-   * Route 53 Developer Guide</i>.</p> <p>If you don't specify a value for
-   * <code>FailureThreshold</code>, the default value is three health checks.</p>
+   * Route 53 Developer Guide</i>.</p> <p> <code>FailureThreshold</code> is not
+   * supported when you specify a value for <code>Type</code> of
+   * <code>RECOVERY_CONTROL</code>.</p> <p>Otherwise, if you don't specify a value
+   * for <code>FailureThreshold</code>, the default value is three health checks.</p>
    */
   inline int GetFailureThreshold() const { return m_failureThreshold; }
   inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
@@ -316,8 +320,10 @@ class HealthCheckConfig {
    * <p>Specify whether you want Amazon Route 53 to measure the latency between
    * health checkers in multiple Amazon Web Services regions and your endpoint, and
    * to display CloudWatch latency graphs on the <b>Health Checks</b> page in the
-   * Route 53 console.</p>  <p>You can't change the value of
-   * <code>MeasureLatency</code> after you create a health check.</p>
+   * Route 53 console.</p> <p> <code>MeasureLatency</code> is not supported when you
+   * specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+   *  <p>You can't change the value of <code>MeasureLatency</code> after
+   * you create a health check.</p>
    */
   inline bool GetMeasureLatency() const { return m_measureLatency; }
   inline bool MeasureLatencyHasBeenSet() const { return m_measureLatencyHasBeenSet; }

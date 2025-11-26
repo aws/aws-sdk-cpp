@@ -14,6 +14,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/route53/Route53ServiceClientModel.h>
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/model/AcceleratedRecoveryStatus.h>
 #include <aws/route53/model/AccountLimit.h>
 #include <aws/route53/model/AccountLimitType.h>
 #include <aws/route53/model/ActivateKeySigningKeyRequest.h>
@@ -138,6 +139,8 @@
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/route53/model/HostedZone.h>
 #include <aws/route53/model/HostedZoneConfig.h>
+#include <aws/route53/model/HostedZoneFailureReasons.h>
+#include <aws/route53/model/HostedZoneFeatures.h>
 #include <aws/route53/model/HostedZoneLimit.h>
 #include <aws/route53/model/HostedZoneLimitType.h>
 #include <aws/route53/model/HostedZoneOwner.h>
@@ -209,6 +212,8 @@
 #include <aws/route53/model/UpdateHealthCheckResult.h>
 #include <aws/route53/model/UpdateHostedZoneCommentRequest.h>
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
+#include <aws/route53/model/UpdateHostedZoneFeaturesRequest.h>
+#include <aws/route53/model/UpdateHostedZoneFeaturesResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceRequest.h>

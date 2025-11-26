@@ -19,7 +19,9 @@ enum class EffectivePolicyType {
   DECLARATIVE_POLICY_EC2,
   SECURITYHUB_POLICY,
   INSPECTOR_POLICY,
-  UPGRADE_ROLLOUT_POLICY
+  UPGRADE_ROLLOUT_POLICY,
+  BEDROCK_POLICY,
+  S3_POLICY
 };
 
 namespace EffectivePolicyTypeMapper {
