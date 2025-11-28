@@ -1,0 +1,19 @@
+name: test-build.yml
+on:
+  push: {}
+jobs:
+  simple-build:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: aws-sdk-cpp
+          submodules: recursive
+      - name: build
+        run: |
+          cd aws-sdk-cpp
+          mkdir build
+          cd build
+          cmake -G "Visual Studio 17 2022" -DUSE_CRT_HTTP_CLIENT=ON -DBUILD_ONLY="s3" ..
+          cmake --build .
