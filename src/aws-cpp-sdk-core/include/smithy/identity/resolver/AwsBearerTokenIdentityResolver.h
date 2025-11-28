@@ -104,7 +104,7 @@ class DefaultAwsBearerTokenIdentityResolver
         : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
               Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
 };
-inline const char
+const char
     AwsBearerTokenIdentityResolver::BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] =
         "BearerTokenProvider";
 
