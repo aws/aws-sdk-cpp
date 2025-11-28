@@ -71,5 +71,5 @@ class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase>
     Aws::String m_region;
 };
 
-const char BearerTokenSigner::LOGGING_TAG[] = "BearerTokenSigner";
+inline const char BearerTokenSigner::LOGGING_TAG[] = "BearerTokenSigner";
 } // namespace smithy

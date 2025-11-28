@@ -6,7 +6,7 @@
 #set($serviceNamespace = $metadata.namespace)
 #set($className = "${metadata.classNamePrefix}Client")
 \#include <aws/core/utils/Outcome.h>
-#if($serviceModel.hasBearerAuth())
+#if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
 \#include <aws/core/auth/signer/AWSAuthBearerSigner.h>
 #end
 #if($serviceModel.hasSigV4Auth())
