@@ -12,6 +12,6 @@ struct BearerTokenAuthSchemeOption
     static AuthSchemeOption bearerTokenAuthSchemeOption;
 };
 
-inline AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
+AuthSchemeOption BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption =
     AuthSchemeOption("smithy.api#HTTPBearerAuth");
 } // namespace smithy
