@@ -938,6 +938,21 @@ namespace Aws
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 getObjectOutcome.GetResult().GetBody().flush();
+
+                if (!ValidateDownloadChecksum(handle)) {
+                    Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
+                        Aws::S3::S3Errors::INTERNAL_FAILURE,
+                        "ChecksumMismatch",
+                        "Downloaded file checksum does not match expected checksum",
+                        false);
+                    handle->ChangePartToFailed(partState);
+                    handle->UpdateStatus(TransferStatus::FAILED);
+                    handle->SetError(checksumError);
+                    TriggerErrorCallback(handle, checksumError);
+                    TriggerTransferStatusUpdatedCallback(handle);
+                    return;
+                }
+
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
@@ -1000,6 +1015,21 @@ namespace Aws
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
                 handle->SetEtag(headObjectOutcome.GetResult().GetETag());
+
+                if (headObjectOutcome.GetResult().GetChecksumType() == S3::Model::ChecksumType::FULL_OBJECT) {
+                    if (!headObjectOutcome.GetResult().GetChecksumCRC32().empty()) {
+                        handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC32());
+                    } else if (!headObjectOutcome.GetResult().GetChecksumCRC32C().empty()) {
+                        handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC32C());
+                    } else if (!headObjectOutcome.GetResult().GetChecksumSHA256().empty()) {
+                        handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumSHA256());
+                    } else if (!headObjectOutcome.GetResult().GetChecksumSHA1().empty()) {
+                        handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumSHA1());
+                    } else if (!headObjectOutcome.GetResult().GetChecksumCRC64NVME().empty()) {
+                        handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC64NVME());
+                    }
+                }
+
                 /* When bucket versioning is suspended, head object will return "null" for unversioned object.
                  * Send following GetObject with "null" as versionId will result in 403 access denied error if your IAM role or policy
                  * doesn't have GetObjectVersion permission.
@@ -1240,6 +1270,22 @@ namespace Aws
                 if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
                     outcome.GetResult().GetBody().flush();
+
+                    // Validate checksum if available
+                    if (!ValidateDownloadChecksum(handle)) {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> checksumError(
+                            Aws::S3::S3Errors::INTERNAL_FAILURE,
+                            "ChecksumMismatch",
+                            "Downloaded file checksum does not match expected checksum",
+                            false);
+                        handle->UpdateStatus(TransferStatus::FAILED);
+                        handle->SetError(checksumError);
+                        TriggerErrorCallback(handle, checksumError);
+                        TriggerTransferStatusUpdatedCallback(handle);
+                        partState->SetDownloadPartStream(nullptr);
+                        return;
+                    }
+
                     handle->UpdateStatus(TransferStatus::COMPLETED);
                 }
                 else
@@ -1593,6 +1639,57 @@ namespace Aws
           } else {
             partFunc->second(part, state->GetChecksum());
           }
+        }
+
+        bool TransferManager::ValidateDownloadChecksum(const std::shared_ptr<TransferHandle>& handle) {
+            if (handle->GetChecksum().empty() || handle->GetTargetFilePath().empty()) {
+                return true;
+            }
+
+            std::shared_ptr<Aws::Utils::Crypto::Hash> hashCalculator;
+            if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                hashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
+            } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                hashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
+            } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::SHA1) {
+                hashCalculator = Aws::MakeShared<Aws::Utils::Crypto::Sha1>("TransferManager");
+            } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::SHA256) {
+                hashCalculator = Aws::MakeShared<Aws::Utils::Crypto::Sha256>("TransferManager");
+            } else {
+                hashCalculator = Aws::MakeShared<Aws::Utils::Crypto::CRC64>("TransferManager");
+            }
+
+            auto fileStream = Aws::MakeShared<Aws::FStream>("TransferManager", 
+                handle->GetTargetFilePath().c_str(), 
+                std::ios_base::in | std::ios_base::binary);
+
+            if (!fileStream->good()) {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] Failed to open downloaded file for checksum validation: " << handle->GetTargetFilePath());
+                return false;
+            }
+
+            unsigned char buffer[8192];
+            while (fileStream->read(reinterpret_cast<char*>(buffer), sizeof(buffer)) || fileStream->gcount() > 0) {
+                hashCalculator->Update(buffer, static_cast<size_t>(fileStream->gcount()));
+            }
+
+            auto hashResult = hashCalculator->GetHash();
+            if (!hashResult.IsSuccess()) {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] Failed to calculate checksum for downloaded file");
+                return false;
+            }
+
+            Aws::String calculatedChecksum = Aws::Utils::HashingUtils::Base64Encode(hashResult.GetResult());
+            if (calculatedChecksum != handle->GetChecksum()) {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] Checksum validation failed. Expected: " << handle->GetChecksum()
+                        << ", Calculated: " << calculatedChecksum);
+                return false;
+            }
+
+            return true;
         }
     }
 }

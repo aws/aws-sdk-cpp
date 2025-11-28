@@ -338,6 +338,13 @@ namespace Aws
              */
             void SetChecksumForAlgorithm(const std::shared_ptr<PartState>& state, Aws::S3::Model::CompletedPart& part);
 
+            /**
+             * Validates downloaded file checksum against expected checksum from HeadObject.
+             * @param handle The transfer handle containing checksum and file path.
+             * @return True if validation passes or no checksum to validate, false if validation fails.
+             */
+            bool ValidateDownloadChecksum(const std::shared_ptr<TransferHandle>& handle);
+
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
             Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;
