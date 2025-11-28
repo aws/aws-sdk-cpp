@@ -610,6 +610,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 9));
         operation.setAuthtype(c2jOperation.getAuthtype());
+        operation.setAuth(c2jOperation.getAuth());
         operation.setAuthorizer(c2jOperation.getAuthorizer());
         if (c2jOperation.getEndpoint() != null) {
             operation.setEndpoint(convertEndpoint(c2jOperation.getEndpoint()));
